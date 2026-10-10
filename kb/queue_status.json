@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-10T20:16:18Z",
+  "written_at": "2026-10-10T21:40:42Z",
   "session": 358,
   "moniker": "SkyFern",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_358_handoff.md",
+  "handoff": "docs/session_359_handoff.md",
   "unchecked": [
     {
       "college": "Santa Monica College",
@@ -4773,11 +4773,3553 @@
       "award": "Certificate of Achievement",
       "control_number": "46523",
       "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Business Administration: General Business Concentration",
+      "award": "Certificate of Achievement",
+      "control_number": "30113",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Business Administration: General Business Concentration",
+      "award": "A.S.",
+      "control_number": "30114",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Business Administration: Accounting Concentration",
+      "award": "Certificate of Achievement",
+      "control_number": "30115",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Business Administration: Accounting Concentration",
+      "award": "A.S.",
+      "control_number": "30116",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Business Administration: Management Concentration",
+      "award": "Certificate of Achievement",
+      "control_number": "30117",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Business Administration: Management Concentration",
+      "award": "A.S.",
+      "control_number": "30118",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Business Administration: Marketing Concentration",
+      "award": "A.S.",
+      "control_number": "30119",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Business Administration: Marketing Concentration",
+      "award": "Certificate of Achievement",
+      "control_number": "30120",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Business Administration: Real Estate Concentration",
+      "award": "Certificate of Achievement",
+      "control_number": "30121",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Business Administration: Real Estate Concentration",
+      "award": "A.S.",
+      "control_number": "30122",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Simulation and Gaming: Game Art",
+      "award": "Certificate of Achievement",
+      "control_number": "30123",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Simulation and Gaming: Game Art",
+      "award": "A.S.",
+      "control_number": "30124",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Computer Programming",
+      "award": "Certificate of Achievement",
+      "control_number": "30127",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Computer Programming",
+      "award": "A.S.",
+      "control_number": "30128",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Education Paraprofessional",
+      "award": "Certificate of Achievement",
+      "control_number": "30129",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Education Paraprofessional",
+      "award": "A.S.",
+      "control_number": "30130",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Administrative/Clinical Medical Assisting",
+      "award": "A.S.",
+      "control_number": "30133",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Administrative/Clinical Medical Assisting",
+      "award": "Certificate of Achievement",
+      "control_number": "30134",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Transcriptionist/Health Documentation Specialist",
+      "award": "Certificate of Achievement",
+      "control_number": "30135",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Transcriptionist/Health Documentation Specialist",
+      "award": "A.S.",
+      "control_number": "30136",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Dental Assistant",
+      "award": "A.S.",
+      "control_number": "30137",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Dental Assistant",
+      "award": "Certificate of Achievement",
+      "control_number": "30138",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Paramedic",
+      "award": "A.S.",
+      "control_number": "30142",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Paramedic",
+      "award": "Certificate of Achievement",
+      "control_number": "30143",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Early Childhood Education",
+      "award": "A.S.",
+      "control_number": "30144",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Early Childhood Education",
+      "award": "Certificate of Achievement",
+      "control_number": "30145",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Early Childhood Intervention Assistant",
+      "award": "Certificate of Achievement",
+      "control_number": "30146",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Early Childhood Intervention Assistant",
+      "award": "A.S.",
+      "control_number": "30147",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Social Work, Human Services, & Counseling Practices",
+      "award": "A.S.",
+      "control_number": "30148",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Social Work, Human Services, & Counseling Practices",
+      "award": "Certificate of Achievement",
+      "control_number": "30149",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Administration of Justice",
+      "award": "A.S.",
+      "control_number": "30150",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Administration of Justice",
+      "award": "Certificate of Achievement",
+      "control_number": "30151",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Administration of Justice/Law Enforcement Basic Peace Officer Academy Intensive",
+      "award": "A.S.",
+      "control_number": "30152",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Fire Technology",
+      "award": "A.S.",
+      "control_number": "30158",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Fire Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "30159",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Firefighter Academy",
+      "award": "A.S.",
+      "control_number": "30160",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Firefighter Academy",
+      "award": "Certificate of Achievement",
+      "control_number": "30161",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Community Interpretation",
+      "award": "A.S.",
+      "control_number": "30162",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Community Interpretation",
+      "award": "Certificate of Achievement",
+      "control_number": "30163",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Sociology",
+      "award": "A.A.-T",
+      "control_number": "30584",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Early Childhood Education",
+      "award": "A.S.-T",
+      "control_number": "31220",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Music",
+      "award": "A.A.-T",
+      "control_number": "32142",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Spanish",
+      "award": "A.A.-T",
+      "control_number": "32156",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "English",
+      "award": "A.A.-T",
+      "control_number": "32265",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Studio Arts",
+      "award": "A.A.-T",
+      "control_number": "32266",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Anthropology",
+      "award": "A.A.-T",
+      "control_number": "32638",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Computer Science",
+      "award": "A.S.-T",
+      "control_number": "32639",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Psychology",
+      "award": "A.A.-T",
+      "control_number": "32660",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Political Science",
+      "award": "A.A.-T",
+      "control_number": "32941",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Philosophy",
+      "award": "A.A.-T",
+      "control_number": "32946",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "History",
+      "award": "A.A.-T",
+      "control_number": "33240",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Biology",
+      "award": "A.S.-T",
+      "control_number": "33953",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Administration of Justice",
+      "award": "A.S.-T",
+      "control_number": "37196",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Kinesiology",
+      "award": "A.A.-T",
+      "control_number": "37440",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Art History",
+      "award": "A.A.-T",
+      "control_number": "37533",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Military Social Work",
+      "award": "Certificate of Achievement",
+      "control_number": "37549",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Behavioral Therapist",
+      "award": "Certificate of Achievement",
+      "control_number": "37550",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Child Welfare and Family Studies",
+      "award": "Certificate of Achievement",
+      "control_number": "37552",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Drug and Alcohol Studies",
+      "award": "Certificate of Achievement",
+      "control_number": "37553",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Multicultural Counseling & Advocacy Resources",
+      "award": "Certificate of Achievement",
+      "control_number": "37554",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Social Justice System Studies",
+      "award": "Certificate of Achievement",
+      "control_number": "37555",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "IT Technician Pathway: IT Systems Support and Sales",
+      "award": "Certificate of Achievement",
+      "control_number": "37667",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Basic Graphic Design",
+      "award": "Certificate of Achievement",
+      "control_number": "37800",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Introduction to Education Profession for ESL Students",
+      "award": "Noncredit",
+      "control_number": "38179",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Computer Maintenance and Security",
+      "award": "Noncredit",
+      "control_number": "38294",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Operating Systems and Internet Literacy",
+      "award": "Noncredit",
+      "control_number": "38295",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Guitar Performance",
+      "award": "Certificate of Achievement",
+      "control_number": "38758",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Emerging Leaders",
+      "award": "Noncredit",
+      "control_number": "38801",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Enterprise Communication",
+      "award": "Noncredit",
+      "control_number": "38802",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Workplace Essentials",
+      "award": "Noncredit",
+      "control_number": "38803",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Sales Techniques",
+      "award": "Noncredit",
+      "control_number": "38804",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Customer Relations",
+      "award": "Noncredit",
+      "control_number": "38805",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Coding Prep",
+      "award": "Noncredit",
+      "control_number": "38821",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Accounting Basics for Small Business",
+      "award": "Noncredit",
+      "control_number": "38822",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Internet of Things (IoT): Embedded Systems & Microcontrollers",
+      "award": "Noncredit",
+      "control_number": "38823",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Administration of Justice/Corrections",
+      "award": "A.S.",
+      "control_number": "38876",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Web Master: Web Developer",
+      "award": "Certificate of Achievement",
+      "control_number": "38934",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Web Master: Web Designer",
+      "award": "Certificate of Achievement",
+      "control_number": "38935",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "IT Technician Pathway: IT Systems Specialist",
+      "award": "Certificate of Achievement",
+      "control_number": "38937",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "IT Technician Pathway: Cybersecurity Specialist",
+      "award": "Certificate of Achievement",
+      "control_number": "38938",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Python Programming",
+      "award": "Certificate of Achievement",
+      "control_number": "38939",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "College Student Success",
+      "award": "Noncredit",
+      "control_number": "39002",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "College Career Readiness and Student Educational Planning",
+      "award": "Noncredit",
+      "control_number": "39003",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Information Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "39162",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Advanced American College English",
+      "award": "Noncredit",
+      "control_number": "40328",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Successful Career Transitions",
+      "award": "Noncredit",
+      "control_number": "40336",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Non-Credit Entrepreneurial Essentials",
+      "award": "Noncredit",
+      "control_number": "40355",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Non-Credit Entrepreneurial Foundations",
+      "award": "Noncredit",
+      "control_number": "40356",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Non-Credit Entrepreneurship and the Team",
+      "award": "Noncredit",
+      "control_number": "40357",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "IT Technician Pathway: Cybersecurity Healthcare Specialist",
+      "award": "Certificate of Achievement",
+      "control_number": "40390",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Entrepreneurial Essentials",
+      "award": "Certificate of Achievement",
+      "control_number": "40467",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Project Management Professional",
+      "award": "Certificate of Achievement",
+      "control_number": "40468",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Entrepreneurial Foundations",
+      "award": "Certificate of Achievement",
+      "control_number": "40492",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Entrepreneurship and the Team",
+      "award": "Certificate of Achievement",
+      "control_number": "40493",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "IT Technician Pathway: Cybersecurity Analyst",
+      "award": "Certificate of Achievement",
+      "control_number": "40505",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Family Childcare Provider",
+      "award": "Noncredit",
+      "control_number": "40564",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Fitness Professionals",
+      "award": "Certificate of Achievement",
+      "control_number": "40586",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Information Technology (IT) Cybersecurity",
+      "award": "A.S.",
+      "control_number": "41389",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Emergency Management and Homeland Security - Cybersecurity",
+      "award": "A.S.",
+      "control_number": "41529",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Emergency Management and Homeland Security - Emergency Medical Services",
+      "award": "A.S.",
+      "control_number": "41544",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Emergency Management and Homeland Security - Cybersecurity",
+      "award": "Certificate of Achievement",
+      "control_number": "41566",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Emergency Management and Homeland Security- Law Enforcement",
+      "award": "A.S.",
+      "control_number": "41630",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Business Administration 2.0",
+      "award": "A.S.-T",
+      "control_number": "41635",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Crime and Intelligence Analysis",
+      "award": "Certificate of Achievement",
+      "control_number": "41654",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Emergency Management and Homeland Security - Law Enforcement",
+      "award": "Certificate of Achievement",
+      "control_number": "41655",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Geography",
+      "award": "A.A.-T",
+      "control_number": "41670",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Crime and Intelligence Analysis",
+      "award": "A.S.",
+      "control_number": "41676",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "IT Project Management",
+      "award": "Certificate of Achievement",
+      "control_number": "41711",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Data Analytics",
+      "award": "Certificate of Achievement",
+      "control_number": "41720",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Emergency Management and Homeland Security",
+      "award": "Certificate of Achievement",
+      "control_number": "41738",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Emergency Management and Homeland Security",
+      "award": "A.S.",
+      "control_number": "41743",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Emergency Management and Homeland Security - Fire Technology",
+      "award": "A.S.",
+      "control_number": "41745",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Data Science",
+      "award": "A.S.",
+      "control_number": "41748",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Emergency Management and Homeland Security - Emergency Medical Services",
+      "award": "Certificate of Achievement",
+      "control_number": "41752",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Emergency Management and Homeland Security - Fire Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "41753",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Early Childhood Education School Age",
+      "award": "Certificate of Achievement",
+      "control_number": "42484",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Entrepreneurship",
+      "award": "A.S.",
+      "control_number": "42688",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Economics",
+      "award": "A.A.-T",
+      "control_number": "42794",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Business Administration: Logistics Management Concentration",
+      "award": "Certificate of Achievement",
+      "control_number": "42826",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A.-T",
+      "control_number": "42828",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Business Administration: Logistics Management Concentration",
+      "award": "A.S.",
+      "control_number": "42829",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Physics",
+      "award": "A.S.-T",
+      "control_number": "43792",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Child and Adolescent Development",
+      "award": "A.A.-T",
+      "control_number": "43882",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Environmental Science",
+      "award": "A.S.-T",
+      "control_number": "43884",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Modern Policing",
+      "award": "A.S.",
+      "control_number": "44790",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Drug and Alcohol Studies",
+      "award": "A.S.",
+      "control_number": "45017",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Law, Public Policy, and Society",
+      "award": "A.A.-T",
+      "control_number": "45447",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Global Studies",
+      "award": "Certificate of Achievement",
+      "control_number": "45914",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Nutrition and Dietetics",
+      "award": "A.S.-T",
+      "control_number": "46200",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Emergency Management",
+      "award": "B.S.",
+      "control_number": "46215",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Mathematics 2.0",
+      "award": "A.S.-T",
+      "control_number": "46236",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Elementary Teacher Education: Integrated Programs",
+      "award": "A.A.-T",
+      "control_number": "46532",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Business Administration: General Business Concentration",
+      "award": "Certificate of Achievement",
+      "control_number": "30055",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Business Administration: General Business Concentration",
+      "award": "A.S.",
+      "control_number": "30056",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Business Administration: Accounting Concentration",
+      "award": "A.S.",
+      "control_number": "30057",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Business Administration: Accounting Concentration",
+      "award": "Certificate of Achievement",
+      "control_number": "30058",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Business Administration: Management Concentration",
+      "award": "Certificate of Achievement",
+      "control_number": "30061",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Business Administration: Management Concentration",
+      "award": "A.S.",
+      "control_number": "30062",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Retail Management/WAFC",
+      "award": "Certificate of Achievement",
+      "control_number": "30067",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Retail Management/WAFC",
+      "award": "A.S.",
+      "control_number": "30068",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Business Administration: Logistics Management Concentration",
+      "award": "Certificate of Achievement",
+      "control_number": "30071",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Business Administration: Logistics Management Concentration",
+      "award": "A.S.",
+      "control_number": "30072",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Logistics Management",
+      "award": "A.S.",
+      "control_number": "30073",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Logistics Management",
+      "award": "Certificate of Achievement",
+      "control_number": "30074",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Business Administration: Real Estate Concentration",
+      "award": "Certificate of Achievement",
+      "control_number": "30075",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Business Administration: Real Estate Concentration",
+      "award": "A.S.",
+      "control_number": "30076",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Computer Programming",
+      "award": "Certificate of Achievement",
+      "control_number": "30081",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Computer Programming",
+      "award": "A.S.",
+      "control_number": "30082",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Drafting Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "30091",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Industrial Automation",
+      "award": "A.S.",
+      "control_number": "30092",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Industrial Automation",
+      "award": "Certificate of Achievement",
+      "control_number": "30093",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Early Childhood Education",
+      "award": "A.S.",
+      "control_number": "30098",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Early Childhood Education",
+      "award": "Certificate of Achievement",
+      "control_number": "30099",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Administration of Justice",
+      "award": "A.S.",
+      "control_number": "30102",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Administration of Justice",
+      "award": "Certificate of Achievement",
+      "control_number": "30104",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Graphic Design",
+      "award": "Certificate of Achievement",
+      "control_number": "30572",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Sociology",
+      "award": "A.A.-T",
+      "control_number": "30585",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Music Industry Studies: Performance",
+      "award": "A.A.",
+      "control_number": "30606",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Music Industry Studies: Performance",
+      "award": "Certificate of Achievement",
+      "control_number": "30607",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Graphic Design",
+      "award": "A.S.",
+      "control_number": "30667",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Early Childhood Education",
+      "award": "A.S.-T",
+      "control_number": "31219",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Music Industry Studies: Audio Production",
+      "award": "Certificate of Achievement",
+      "control_number": "31313",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Game Design",
+      "award": "Certificate of Achievement",
+      "control_number": "31316",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Game Design",
+      "award": "A.S.",
+      "control_number": "31371",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Music Industry Studies: Audio Production",
+      "award": "A.S.",
+      "control_number": "31375",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Digital Electronics",
+      "award": "A.S.",
+      "control_number": "31376",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Computer Numerical Control Programming",
+      "award": "A.S.",
+      "control_number": "31636",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Computer Numerical Control Programming",
+      "award": "Certificate of Achievement",
+      "control_number": "31641",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Digital Electronics",
+      "award": "Certificate of Achievement",
+      "control_number": "31669",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Game Programming",
+      "award": "Certificate of Achievement",
+      "control_number": "31793",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Game Programming",
+      "award": "A.S.",
+      "control_number": "31808",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Studio Arts",
+      "award": "A.A.-T",
+      "control_number": "31834",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "English",
+      "award": "A.A.-T",
+      "control_number": "32035",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Spanish",
+      "award": "A.A.-T",
+      "control_number": "32160",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Computer Science",
+      "award": "A.S.-T",
+      "control_number": "32594",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Mathematics",
+      "award": "A.S.-T",
+      "control_number": "32624",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Physics",
+      "award": "A.S.-T",
+      "control_number": "32625",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Psychology",
+      "award": "A.A.-T",
+      "control_number": "32626",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Anthropology",
+      "award": "A.A.-T",
+      "control_number": "32631",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Philosophy",
+      "award": "A.A.-T",
+      "control_number": "32830",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Political Science",
+      "award": "A.A.-T",
+      "control_number": "33090",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Supply Chain Automation",
+      "award": "A.S.",
+      "control_number": "33751",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Supply Chain Automation",
+      "award": "Certificate of Achievement",
+      "control_number": "33854",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Electrician Apprenticeship",
+      "award": "Certificate of Achievement",
+      "control_number": "33887",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Electrician",
+      "award": "A.S.",
+      "control_number": "33905",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Electrician Apprenticeship",
+      "award": "A.S.",
+      "control_number": "33906",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Electrician",
+      "award": "Certificate of Achievement",
+      "control_number": "33940",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "History",
+      "award": "A.A.-T",
+      "control_number": "33951",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Chemistry",
+      "award": "A.S.-T",
+      "control_number": "33952",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Biology",
+      "award": "A.S.-T",
+      "control_number": "35027",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Sound and Communication Systems Installer Apprenticeship",
+      "award": "Certificate of Achievement",
+      "control_number": "35308",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Sound and Communication Systems Installer Apprenticeship",
+      "award": "A.S.",
+      "control_number": "35405",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Administration of Justice",
+      "award": "A.S.-T",
+      "control_number": "35853",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Facility Maintenance",
+      "award": "Certificate of Achievement",
+      "control_number": "35938",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Facility Maintenance",
+      "award": "A.S.",
+      "control_number": "35958",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Business Information Worker",
+      "award": "Certificate of Achievement",
+      "control_number": "36468",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Business Information Worker",
+      "award": "A.S.",
+      "control_number": "36469",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Music",
+      "award": "A.S.",
+      "control_number": "36661",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Child and Adolescent Development",
+      "award": "A.A.-T",
+      "control_number": "37163",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Art History",
+      "award": "A.A.-T",
+      "control_number": "37232",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Environmental Science",
+      "award": "A.S.-T",
+      "control_number": "37311",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "MUSIC",
+      "award": "A.A.-T",
+      "control_number": "37459",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Construction Management",
+      "award": "Certificate of Achievement",
+      "control_number": "37676",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Construction Management",
+      "award": "A.S.",
+      "control_number": "38022",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Accounting Basics for Small Business",
+      "award": "Noncredit",
+      "control_number": "38535",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Customer Relations",
+      "award": "Noncredit",
+      "control_number": "38807",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Sales Techniques",
+      "award": "Noncredit",
+      "control_number": "38808",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Social Media for Business",
+      "award": "Noncredit",
+      "control_number": "38810",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Enterprise Communication",
+      "award": "Noncredit",
+      "control_number": "38814",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Emerging Leaders",
+      "award": "Noncredit",
+      "control_number": "38815",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Workplace Essentials",
+      "award": "Noncredit",
+      "control_number": "38817",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Apprenticeship: Manufacturing Technician 2",
+      "award": "Certificate of Achievement",
+      "control_number": "39998",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "GAME DEVELOPMENT CORE",
+      "award": "Certificate of Achievement",
+      "control_number": "39999",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "GAME CONCEPT ART",
+      "award": "Certificate of Achievement",
+      "control_number": "40000",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "3D GAME Modeling and Animation",
+      "award": "Certificate of Achievement",
+      "control_number": "40001",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Entrepreneurial Essentials",
+      "award": "Certificate of Achievement",
+      "control_number": "40005",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Entrepreneurial Foundations",
+      "award": "Certificate of Achievement",
+      "control_number": "40006",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Entrepreneurship and the Team",
+      "award": "Certificate of Achievement",
+      "control_number": "40007",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Game Development Core",
+      "award": "A.S.",
+      "control_number": "40012",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Game Concept Art",
+      "award": "A.S.",
+      "control_number": "40013",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "3D GAME Modeling and Animation",
+      "award": "A.S.",
+      "control_number": "40014",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Apprenticeship: Manufacturing Technician 1",
+      "award": "Certificate of Achievement",
+      "control_number": "40018",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Apprenticeship: Manufacturing Technician 2",
+      "award": "A.S.",
+      "control_number": "40064",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "DRAFTING TECHNOLOGY",
+      "award": "A.S.",
+      "control_number": "40079",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Successful Career Transitions",
+      "award": "Noncredit",
+      "control_number": "40131",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Non-Credit Entrepreneurship and the Team",
+      "award": "Noncredit",
+      "control_number": "40135",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Non- Credit Entrepreneurial Essentials",
+      "award": "Noncredit",
+      "control_number": "40136",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Non-Credit Entrepreneurial Foundations",
+      "award": "Noncredit",
+      "control_number": "40137",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "ARCHITECTURAL GRAPHICS",
+      "award": "A.S.",
+      "control_number": "40290",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "3D MECHANICAL DRAFTING",
+      "award": "A.S.",
+      "control_number": "40291",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Advanced American College English",
+      "award": "Noncredit",
+      "control_number": "40294",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Industrial Automation Non-Credit",
+      "award": "Noncredit",
+      "control_number": "40295",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "3D MECHANICAL DRAFTING",
+      "award": "Certificate of Achievement",
+      "control_number": "40318",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "ARCHITECTURAL GRAPHICS",
+      "award": "Certificate of Achievement",
+      "control_number": "40319",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Family Childcare Provider",
+      "award": "Noncredit",
+      "control_number": "40582",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Business Administration 2.0",
+      "award": "A.S.-T",
+      "control_number": "41479",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Social Justice Studies",
+      "award": "A.A.-T",
+      "control_number": "41680",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "CRIME SCENE INVESTIGATION",
+      "award": "Certificate of Achievement",
+      "control_number": "41774",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Noncredit Essential SolidWorks",
+      "award": "Noncredit",
+      "control_number": "42715",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Noncredit Essential CAD",
+      "award": "Noncredit",
+      "control_number": "42717",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Noncredit Essential Revit",
+      "award": "Noncredit",
+      "control_number": "42722",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Noncredit Essential 3D Tour",
+      "award": "Noncredit",
+      "control_number": "42723",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A.-T",
+      "control_number": "42846",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Data Analytics",
+      "award": "Certificate of Achievement",
+      "control_number": "42900",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Data Science",
+      "award": "A.S.",
+      "control_number": "42933",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Python Programming",
+      "award": "Certificate of Achievement",
+      "control_number": "42938",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Apprenticeship Carpentry, Acoustical Installer",
+      "award": "A.S.",
+      "control_number": "43309",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Apprenticeship Carpentry, Concrete",
+      "award": "A.S.",
+      "control_number": "43314",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Apprenticeship Carpentry, Drywall Finisher",
+      "award": "A.S.",
+      "control_number": "43315",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Apprenticeship Carpentry, Drywall/Lather",
+      "award": "A.S.",
+      "control_number": "43320",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Apprenticeship Carpentry, Finish Carpentry",
+      "award": "A.S.",
+      "control_number": "43321",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Apprenticeship Carpentry, Framing",
+      "award": "A.S.",
+      "control_number": "43323",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Apprenticeship Carpentry, Tilt-Up",
+      "award": "A.S.",
+      "control_number": "43324",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Apprenticeship Carpentry, Framing",
+      "award": "Certificate of Achievement",
+      "control_number": "43588",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Apprenticeship Carpentry, Tilt-Up",
+      "award": "Certificate of Achievement",
+      "control_number": "43589",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Economics",
+      "award": "A.A.-T",
+      "control_number": "43937",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Entrepreneurship",
+      "award": "A.S.",
+      "control_number": "44005",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Robotics Specialist",
+      "award": "Certificate of Achievement",
+      "control_number": "44763",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Modern Policing",
+      "award": "A.S.",
+      "control_number": "44792",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Administration of Justice: Corrections",
+      "award": "A.S.",
+      "control_number": "44879",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Administration of Justice: Corrections",
+      "award": "Certificate of Achievement",
+      "control_number": "44880",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Law, Public Policy, and Society",
+      "award": "A.A.-T",
+      "control_number": "44961",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Geography",
+      "award": "A.A.-T",
+      "control_number": "44986",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Apprenticeship Carpentry, Concrete",
+      "award": "Certificate of Achievement",
+      "control_number": "45092",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Biology Field Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "45287",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Apprenticeship Carpentry, Acoustical Installer",
+      "award": "Certificate of Achievement",
+      "control_number": "45364",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Apprenticeship Carpentry, Drywall/Lather",
+      "award": "Certificate of Achievement",
+      "control_number": "45365",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Apprenticeship Carpentry, Finish Carpentry",
+      "award": "Certificate of Achievement",
+      "control_number": "45366",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Apprenticeship Carpentry, Drywall Finisher",
+      "award": "Certificate of Achievement",
+      "control_number": "45367",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Biomedical Electronic Equipment Repair",
+      "award": "Certificate of Achievement",
+      "control_number": "45748",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Control Systems Specialist",
+      "award": "Certificate of Achievement",
+      "control_number": "45749",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Agriculture Plant Science",
+      "award": "A.S.-T",
+      "control_number": "45750",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Norco College",
+      "program": "Global Studies",
+      "award": "Certificate of Achievement",
+      "control_number": "45912",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Administration: General Business Concentration",
+      "award": "A.S.",
+      "control_number": "04455",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Administration: Accounting Concentration",
+      "award": "A.S.",
+      "control_number": "04456",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Cosmetology Business Administration - Management & Supervision",
+      "award": "A.S.",
+      "control_number": "04458",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Administration: Management Concentration",
+      "award": "A.S.",
+      "control_number": "04459",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Administration: Marketing Concentration",
+      "award": "A.S.",
+      "control_number": "04460",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Administration: Real Estate",
+      "award": "A.S.",
+      "control_number": "04461",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Executive Office Management",
+      "award": "A.S.",
+      "control_number": "04462",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Computer Programming",
+      "award": "A.S.",
+      "control_number": "04465",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "HVAC Residential Technology",
+      "award": "A.S.",
+      "control_number": "04470",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Automotive Powertrain Specialist",
+      "award": "A.S.",
+      "control_number": "04471",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Automotive Collision Repair",
+      "award": "A.S.",
+      "control_number": "04472",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Welding Technology",
+      "award": "A.S.",
+      "control_number": "04476",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Photography",
+      "award": "A.S.",
+      "control_number": "04482",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Vocational Nursing",
+      "award": "A.S.",
+      "control_number": "04486",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Early Childhood Education",
+      "award": "A.S.",
+      "control_number": "04492",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Administration of Justice",
+      "award": "A.S.",
+      "control_number": "04504",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Culinary Arts",
+      "award": "A.S.",
+      "control_number": "04512",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Cosmetology",
+      "award": "A.S.",
+      "control_number": "04513",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Automotive Electrical and Electronics Specialist",
+      "award": "A.S.",
+      "control_number": "10070",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Automotive Trim and Upholstery",
+      "award": "A.S.",
+      "control_number": "10073",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Sign Language Interpreting",
+      "award": "A.S.",
+      "control_number": "10087",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Paralegal Studies",
+      "award": "A.S.",
+      "control_number": "10097",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Cosmetology Business Administration - Entrepreneurial",
+      "award": "A.S.",
+      "control_number": "10102",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "FILM, TELEVISION AND VIDEO PRODUCTION SPECIALIST",
+      "award": "A.S.",
+      "control_number": "12134",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Exercise, Sport & Wellness: Fitness Professions",
+      "award": "A.S.",
+      "control_number": "14670",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Exercise, Sport & Wellness: Athletic Training",
+      "award": "A.S.",
+      "control_number": "14671",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Exercise, Sport and Wellness: Coaching",
+      "award": "A.S.",
+      "control_number": "14672",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Early Childhood Intervention Assistant",
+      "award": "A.S.",
+      "control_number": "15406",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Education Paraprofessional",
+      "award": "A.S.",
+      "control_number": "15495",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Administration: Human Resources",
+      "award": "A.S.",
+      "control_number": "17018",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Administration: General Business Concentration",
+      "award": "Certificate of Achievement",
+      "control_number": "22737",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Administration: Accounting Concentration",
+      "award": "Certificate of Achievement",
+      "control_number": "22739",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Administration: Human Resources",
+      "award": "Certificate of Achievement",
+      "control_number": "22742",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Administration: Management Concentration",
+      "award": "Certificate of Achievement",
+      "control_number": "22743",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Administration: Marketing Concentration",
+      "award": "Certificate of Achievement",
+      "control_number": "22745",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Administration: Real Estate",
+      "award": "Certificate of Achievement",
+      "control_number": "22749",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Executive Office Management",
+      "award": "Certificate of Achievement",
+      "control_number": "22752",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "FILM, TELEVISION AND VIDEO PRODUCTION SPECIALIST",
+      "award": "Certificate of Achievement",
+      "control_number": "22753",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Computer Programming",
+      "award": "Certificate of Achievement",
+      "control_number": "22757",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Education Paraprofessional",
+      "award": "Certificate of Achievement",
+      "control_number": "22758",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Exercise, Sport & Wellness: Fitness Professions",
+      "award": "Certificate of Achievement",
+      "control_number": "22760",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Exercise, Sport and Wellness: Coaching",
+      "award": "Certificate of Achievement",
+      "control_number": "22762",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Sign Language Interpreting",
+      "award": "Certificate of Achievement",
+      "control_number": "22763",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "HVAC Residential Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "22770",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Automotive Electrical and Electronics Specialist",
+      "award": "Certificate of Achievement",
+      "control_number": "22772",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Automotive Powertrain Specialist",
+      "award": "Certificate of Achievement",
+      "control_number": "22773",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Automotive Collision Repair",
+      "award": "Certificate of Achievement",
+      "control_number": "22775",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Automotive Trim & Upholstery",
+      "award": "Certificate of Achievement",
+      "control_number": "22777",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Welding Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "22785",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Photography",
+      "award": "Certificate of Achievement",
+      "control_number": "22789",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Exercise, Sport & Wellness: Athletic Training",
+      "award": "Certificate of Achievement",
+      "control_number": "22794",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Vocational Nursing",
+      "award": "Certificate of Achievement",
+      "control_number": "22796",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Early Childhood Education",
+      "award": "Certificate of Achievement",
+      "control_number": "22801",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Early Childhood Intervention Assistant",
+      "award": "Certificate of Achievement",
+      "control_number": "22802",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Administration of Justice",
+      "award": "Certificate of Achievement",
+      "control_number": "22808",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Cosmetology",
+      "award": "Certificate of Achievement",
+      "control_number": "22814",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Cosmetology Business Administration - Entrepreneurial",
+      "award": "Certificate of Achievement",
+      "control_number": "22815",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Cosmetology Business Administration - Management & Supervision",
+      "award": "Certificate of Achievement",
+      "control_number": "22817",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Communication Studies",
+      "award": "A.A.-T",
+      "control_number": "30578",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Sociology",
+      "award": "A.A.-T",
+      "control_number": "30581",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Theatre Arts",
+      "award": "A.A.-T",
+      "control_number": "31175",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Early Childhood Education",
+      "award": "A.S.-T",
+      "control_number": "31218",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Music",
+      "award": "A.A.",
+      "control_number": "31301",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "English",
+      "award": "A.A.-T",
+      "control_number": "31561",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Graphic Design and Printing",
+      "award": "Certificate of Achievement",
+      "control_number": "31766",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Graphic Design and Printing",
+      "award": "A.S.",
+      "control_number": "31767",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Journalism",
+      "award": "A.A.-T",
+      "control_number": "31801",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Entrepreneurship",
+      "award": "A.S.",
+      "control_number": "31892",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Entrepreneurship",
+      "award": "Certificate of Achievement",
+      "control_number": "31898",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Music",
+      "award": "A.A.-T",
+      "control_number": "32075",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Spanish",
+      "award": "A.A.-T",
+      "control_number": "32174",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Computer Science",
+      "award": "A.S.-T",
+      "control_number": "32597",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Psychology",
+      "award": "A.A.-T",
+      "control_number": "32658",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Mathematics",
+      "award": "A.S.-T",
+      "control_number": "32692",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Physics",
+      "award": "A.S.-T",
+      "control_number": "32745",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Anthropology",
+      "award": "A.A.-T",
+      "control_number": "32813",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Art History",
+      "award": "A.A.-T",
+      "control_number": "32912",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Philosophy",
+      "award": "A.A.-T",
+      "control_number": "32938",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Studio Arts",
+      "award": "A.A.-T",
+      "control_number": "33021",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Geography",
+      "award": "A.A.-T",
+      "control_number": "33218",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Economics",
+      "award": "A.A.-T",
+      "control_number": "33229",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Administration",
+      "award": "A.S.-T",
+      "control_number": "33829",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Political Science",
+      "award": "A.A.-T",
+      "control_number": "33964",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Information Worker",
+      "award": "Certificate of Achievement",
+      "control_number": "35152",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Java Programming",
+      "award": "Certificate of Achievement",
+      "control_number": "35475",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "C++ Programming",
+      "award": "Certificate of Achievement",
+      "control_number": "35489",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Information Security and Cyber Defense",
+      "award": "Certificate of Achievement",
+      "control_number": "35852",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Musical Theatre",
+      "award": "Certificate of Achievement",
+      "control_number": "37382",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Education, Human Development and Special Needs",
+      "award": "A.A.",
+      "control_number": "37383",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Child and Adolescent Development",
+      "award": "A.A.-T",
+      "control_number": "37464",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Elementary Teacher Education: Integrated Programs",
+      "award": "A.A.-T",
+      "control_number": "37483",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Skills Bootcamp",
+      "award": "Noncredit",
+      "control_number": "37826",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "CISCO Networking",
+      "award": "Certificate of Achievement",
+      "control_number": "37847",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Gig: The Solopreneurs Adventure",
+      "award": "Noncredit",
+      "control_number": "37989",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Nutrition and Dietetics",
+      "award": "A.S.-T",
+      "control_number": "38109",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Introduction to Python Programming",
+      "award": "Noncredit",
+      "control_number": "38203",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Baking and Pastry Arts",
+      "award": "Certificate of Achievement",
+      "control_number": "38257",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "IT Technician Pathway - IT Systems Support and Sales",
+      "award": "Certificate of Achievement",
+      "control_number": "38258",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Registered Nursing",
+      "award": "A.S.",
+      "control_number": "38259",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Technical Theatre",
+      "award": "Certificate of Achievement",
+      "control_number": "38264",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Skills - MOSPrep: Microsoft Office Specialist",
+      "award": "Noncredit",
+      "control_number": "38269",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Information Systems: Cyber-Skills",
+      "award": "Noncredit",
+      "control_number": "38277",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "CODING PREP",
+      "award": "Noncredit",
+      "control_number": "38620",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Piano Performance",
+      "award": "Certificate of Achievement",
+      "control_number": "38626",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Jazz Performance",
+      "award": "Certificate of Achievement",
+      "control_number": "38627",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Music Performance",
+      "award": "Certificate of Achievement",
+      "control_number": "38628",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Music Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "38699",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Geology",
+      "award": "A.S.-T",
+      "control_number": "38790",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Chemistry",
+      "award": "A.S.-T",
+      "control_number": "38838",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "College Career Readiness and Student Educational Planning",
+      "award": "Noncredit",
+      "control_number": "38915",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Manicuring Concepts",
+      "award": "Certificate of Achievement",
+      "control_number": "38928",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Cosmetology Concepts",
+      "award": "Certificate of Achievement",
+      "control_number": "38929",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Barbering Concepts",
+      "award": "Certificate of Achievement",
+      "control_number": "38930",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Accounting Basics for Small Business",
+      "award": "Noncredit",
+      "control_number": "39000",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Math Skills for the Professional Baker",
+      "award": "Noncredit",
+      "control_number": "39001",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Emerging Leaders",
+      "award": "Noncredit",
+      "control_number": "39007",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Workplace Essentials",
+      "award": "Noncredit",
+      "control_number": "39009",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "College Student Success",
+      "award": "Noncredit",
+      "control_number": "39010",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Beginning American College English",
+      "award": "Noncredit",
+      "control_number": "39011",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Advanced American College English",
+      "award": "Noncredit",
+      "control_number": "39012",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Sales Techniques",
+      "award": "Noncredit",
+      "control_number": "39050",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Enterprise Communication",
+      "award": "Noncredit",
+      "control_number": "39051",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Customer Relations",
+      "award": "Noncredit",
+      "control_number": "39052",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "ASE Undercar Specialist",
+      "award": "Noncredit",
+      "control_number": "39053",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "ASE Engine Performance and Electric Specialist",
+      "award": "Noncredit",
+      "control_number": "39054",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "ASE Powertrain Specialist",
+      "award": "Noncredit",
+      "control_number": "39055",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Corrections",
+      "award": "Certificate of Achievement",
+      "control_number": "39081",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Building Automation Control",
+      "award": "Certificate of Achievement",
+      "control_number": "39082",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Residential Installation",
+      "award": "Certificate of Achievement",
+      "control_number": "39083",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "HVAC Commercial Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "39086",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Automotive Refinishing and Paint",
+      "award": "Certificate of Achievement",
+      "control_number": "39087",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Automotive Hybrid and Electrical Vehicle",
+      "award": "Certificate of Achievement",
+      "control_number": "39088",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Basic Graphic Communication",
+      "award": "Certificate of Achievement",
+      "control_number": "39089",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Basic Graphic Design",
+      "award": "Certificate of Achievement",
+      "control_number": "39090",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Electronic Publishing and Design",
+      "award": "Certificate of Achievement",
+      "control_number": "39091",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Motion Graphics and 3D Animation",
+      "award": "Certificate of Achievement",
+      "control_number": "39092",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Information Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "39093",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Esthetician Concepts",
+      "award": "Certificate of Achievement",
+      "control_number": "39096",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Hairstyling Concepts",
+      "award": "Certificate of Achievement",
+      "control_number": "39097",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Graphic Design and Digital Media",
+      "award": "Certificate of Achievement",
+      "control_number": "39098",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "HVAC Commercial Technology",
+      "award": "A.S.",
+      "control_number": "39105",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Amazon Web Services (AWS) Cloud Computing",
+      "award": "Certificate of Achievement",
+      "control_number": "39106",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Administration: Global Business Specialized Area",
+      "award": "Certificate of Achievement",
+      "control_number": "39107",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Web Master - Web Designer",
+      "award": "Certificate of Achievement",
+      "control_number": "39118",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Web Master - Web Developer",
+      "award": "Certificate of Achievement",
+      "control_number": "39119",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Building Energy Systems Professional in HVAC Technology",
+      "award": "A.S.",
+      "control_number": "39120",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Baking and Pastry Arts",
+      "award": "A.S.",
+      "control_number": "39125",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Graphic Design and Digital Media",
+      "award": "A.S.",
+      "control_number": "39128",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Automotive Hybrid and Electrical Vehicle",
+      "award": "A.S.",
+      "control_number": "39130",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Automotive Refinishing and Paint",
+      "award": "A.S.",
+      "control_number": "39135",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Social Media for Business",
+      "award": "Noncredit",
+      "control_number": "39931",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Successful Career Transitions",
+      "award": "Noncredit",
+      "control_number": "40297",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Non-Credit Entrepreneurial Foundations",
+      "award": "Noncredit",
+      "control_number": "40298",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Information Worker Essential Preparation: Workplace Decision Making and Time Management",
+      "award": "Noncredit",
+      "control_number": "40306",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Information Worker Essential Preparation: Workplace Communication",
+      "award": "Noncredit",
+      "control_number": "40307",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Non-Credit Entrepreneurial Essentials",
+      "award": "Noncredit",
+      "control_number": "40308",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "English and Reading Support",
+      "award": "Noncredit",
+      "control_number": "40309",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Introduction to Basic Computer and IT Careers for ESL Students",
+      "award": "Noncredit",
+      "control_number": "40313",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Data Quick Start",
+      "award": "Certificate of Achievement",
+      "control_number": "40422",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Animation",
+      "award": "Certificate of Achievement",
+      "control_number": "40438",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Automotive Engine Performance Specialist",
+      "award": "Certificate of Achievement",
+      "control_number": "40439",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Automotive Engine Performance Specialist",
+      "award": "A.S.",
+      "control_number": "40440",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Automotive Undercar Specialist",
+      "award": "Certificate of Achievement",
+      "control_number": "40441",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Automotive Undercar Specialist",
+      "award": "A.S.",
+      "control_number": "40442",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Entrepreneurship and the Team",
+      "award": "Certificate of Achievement",
+      "control_number": "40443",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Entrepreneurial Essentials",
+      "award": "Certificate of Achievement",
+      "control_number": "40444",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Entrepreneurial Foundations",
+      "award": "Certificate of Achievement",
+      "control_number": "40445",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Non-Credit Entrepreneurship and the Team",
+      "award": "Noncredit",
+      "control_number": "40464",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Investigative Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "40509",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Film, Television, and Electronic Media",
+      "award": "A.S.-T",
+      "control_number": "40831",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Pipe Welding (SMAW, GMAW)",
+      "award": "Certificate of Achievement",
+      "control_number": "40866",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Basic Television Production",
+      "award": "Certificate of Achievement",
+      "control_number": "40931",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Visual Communications – Illustration",
+      "award": "Certificate of Achievement",
+      "control_number": "41045",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Administration 2.0",
+      "award": "A.S.-T",
+      "control_number": "41364",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Medical Secretary",
+      "award": "Certificate of Achievement",
+      "control_number": "41388",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Remote Work Productivity Essentials",
+      "award": "Noncredit",
+      "control_number": "41452",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Sustainability in Economics and Society",
+      "award": "A.A.",
+      "control_number": "41518",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Sustainability in Science and Technology",
+      "award": "A.S.",
+      "control_number": "41519",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Administration: Marketing Specialized Area",
+      "award": "Certificate of Achievement",
+      "control_number": "41557",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Administration: Global Business Concentration",
+      "award": "Certificate of Achievement",
+      "control_number": "41558",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Administration: Global Business Concentration",
+      "award": "A.S.",
+      "control_number": "41559",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Graphic Design and Promotional Printing Entrepreneur",
+      "award": "Noncredit",
+      "control_number": "41591",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Non-Credit Global Industry",
+      "award": "Noncredit",
+      "control_number": "41614",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Foundational Culinary Arts",
+      "award": "Certificate of Achievement",
+      "control_number": "41647",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Crime Scene Photography Essentials",
+      "award": "Certificate of Achievement",
+      "control_number": "41706",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Photojournalism Essentials",
+      "award": "Certificate of Achievement",
+      "control_number": "41708",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Professional Photography Essentials",
+      "award": "Certificate of Achievement",
+      "control_number": "41709",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Special Event Photography Essentials",
+      "award": "Certificate of Achievement",
+      "control_number": "41710",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Entrepreneurial Photography",
+      "award": "Certificate of Achievement",
+      "control_number": "41728",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Entrepreneurial Photography",
+      "award": "A.S.",
+      "control_number": "41732",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Law, Public Policy, and Society",
+      "award": "A.A.-T",
+      "control_number": "41736",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Social Justice Studies: General",
+      "award": "A.A.-T",
+      "control_number": "41749",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Social Justice Studies: Gender Studies",
+      "award": "A.A.-T",
+      "control_number": "41757",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Crime Scene Investigation",
+      "award": "Certificate of Achievement",
+      "control_number": "41972",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Digital Forensic Investigations",
+      "award": "Certificate of Achievement",
+      "control_number": "41973",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Acting",
+      "award": "Certificate of Achievement",
+      "control_number": "42683",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Community Action and Leadership Academy",
+      "award": "Certificate of Achievement",
+      "control_number": "42719",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Audio and Music Technology",
+      "award": "A.A.",
+      "control_number": "42720",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Data Analytics",
+      "award": "Certificate of Achievement",
+      "control_number": "42793",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Data Science",
+      "award": "A.S.",
+      "control_number": "42795",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Administration: General Business Specialized Area",
+      "award": "Certificate of Achievement",
+      "control_number": "42821",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Cyberpreneurship",
+      "award": "Certificate of Achievement",
+      "control_number": "42878",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A.-T",
+      "control_number": "42892",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Administration: Management Specialized Area",
+      "award": "Certificate of Achievement",
+      "control_number": "43020",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Cyberpreneurship",
+      "award": "A.S.",
+      "control_number": "43043",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Social Justice Studies: Asian American Studies",
+      "award": "A.A.-T",
+      "control_number": "43695",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Acute Care Nursing Assistant",
+      "award": "Certificate of Achievement",
+      "control_number": "43888",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Social Justice: LGBTQ Studies",
+      "award": "A.A.-T",
+      "control_number": "43896",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Social Justice: African American Studies",
+      "award": "A.A.-T",
+      "control_number": "43897",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Social Justice Studies: Ethnic Studies",
+      "award": "A.A.-T",
+      "control_number": "44155",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "CISCO Networking",
+      "award": "Certificate of Achievement",
+      "control_number": "44190",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Cosmetology Instructor Training",
+      "award": "Certificate of Achievement",
+      "control_number": "44191",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Social Justice Studies: Chicano Studies",
+      "award": "A.A.-T",
+      "control_number": "44363",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Social Justice: Native American and Indigenous Studies",
+      "award": "A.A.-T",
+      "control_number": "44469",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Data Quick Start Non-Credit",
+      "award": "Noncredit",
+      "control_number": "44816",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Public Health",
+      "award": "A.S.-T",
+      "control_number": "44865",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Graphic Art and Visual Storytelling",
+      "award": "Certificate of Achievement",
+      "control_number": "44868",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Packaging Design and Printing",
+      "award": "Certificate of Achievement",
+      "control_number": "44869",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Barbering Concepts",
+      "award": "A.S.",
+      "control_number": "44948",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Cosmetology Concepts",
+      "award": "A.S.",
+      "control_number": "44949",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Esthetician Concepts",
+      "award": "A.S.",
+      "control_number": "44950",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Income Tax Preparer",
+      "award": "Certificate of Achievement",
+      "control_number": "45810",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Intermediate American College English",
+      "award": "Noncredit",
+      "control_number": "45865",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Medical Terminology for English Language Learners",
+      "award": "Noncredit",
+      "control_number": "45866",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Global Studies",
+      "award": "Certificate of Achievement",
+      "control_number": "45919",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Acting",
+      "award": "A.A.",
+      "control_number": "46045",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Musical Theatre",
+      "award": "A.A.",
+      "control_number": "46049",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Design Agency Production",
+      "award": "Certificate of Achievement",
+      "control_number": "46056",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Advanced Collision Repair",
+      "award": "Certificate of Achievement",
+      "control_number": "46061",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Advanced Collision Repair",
+      "award": "A.S.",
+      "control_number": "46079",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Business Administration: Human Resources Specialized Area",
+      "award": "Certificate of Achievement",
+      "control_number": "46225",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Mathematics 2.0",
+      "award": "A.S.-T",
+      "control_number": "46237",
+      "loaded": "2026-10-10"
+    },
+    {
+      "college": "Riverside City College",
+      "program": "Physics 2.0",
+      "award": "A.S.-T",
+      "control_number": "46317",
+      "loaded": "2026-10-10"
     }
   ],
   "next_step": {
-    "title": "Read RCCD's three colleges",
-    "text": "You said RCCD go on Oct 10. Riverside City is being read and extracted now (about $13); Moreno Valley and Norco are read free first, and each is extracted where that read finds a page for 85% of its programs. Each loads unchecked for your reading."
+    "title": "Recover the Liberal Arts emphasis degrees at RCCD's three colleges",
+    "text": "Riverside City, Moreno Valley and Norco are read and loaded for your reading. The same seven Liberal Arts emphasis degrees found no catalog page at all three colleges, 21 programs in all; the next session teaches the read their catalog entry, then turns to Long Beach City."
   },
   "calls": [
     {
@@ -4856,9 +8398,21 @@
     "procedures": "34 colleges have one since Oct 8: the 28 whose map host refuses or never reaches the reader each name the routes tried.",
     "sierra": "The funding explainer's text is editable on the Implementation Funding tab since Oct 9, and its controls are underlined words, the First Light rule from that day.",
     "maps": "All 32 published maps are settled since Oct 8; Palo Verde's map columns were written that evening.",
-    "reading": "Cerritos read on Oct 9 and Mt. San Antonio on Oct 10, each re-read the same day for the programs COCI lists as Approved: Cerritos files 305 records (265 passing the three machine checks), Mt. San Antonio 382 (346 passing). On Oct 10 the read learned curriQunet catalogs: Riverside City, read with no model calls, found a page for 228 of its 262 programs."
+    "reading": "Cerritos read on Oct 9 and Mt. San Antonio on Oct 10, each re-read the same day for the programs COCI lists as Approved. On Oct 10 the read learned curriQunet catalogs and read RCCD's three colleges: Riverside City 237 records (216 passing the three machine checks), Moreno Valley 132 (126 passing), Norco 141 (121 passing)."
   },
   "changes": [
+    {
+      "at": "2026-10-10T21:36:00Z",
+      "text": "RCCD's three colleges show their course titles, C-ID, CCN and M-ID numbers and CPL counts, after your standing go."
+    },
+    {
+      "at": "2026-10-10T21:34:00Z",
+      "text": "Every Riverside City, Moreno Valley and Norco program the harvest read is loaded for your reading: 506 records, unchecked, beside Riverside City's four checked pilot records."
+    },
+    {
+      "at": "2026-10-10T21:30:00Z",
+      "text": "Moreno Valley found a page for 132 of its 144 programs and Norco for 141 of 150, so both were read in full the same evening."
+    },
     {
       "at": "2026-10-10T20:15:00Z",
       "text": "RCCD's three colleges are being read, after your go: Riverside City read and extracted, Moreno Valley and Norco read free first."

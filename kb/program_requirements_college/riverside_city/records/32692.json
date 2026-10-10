@@ -1,0 +1,222 @@
+{
+ "college": "Riverside City College",
+ "control_number": "32692",
+ "shape": "adt",
+ "title": "Mathematics",
+ "award": "A.S. T Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6014",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5048,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5048,
+    "output_tokens": 1734,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1734,
+  "output_tokens_details": {
+   "thinking_tokens": 665
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05487,
+ "ms": 14815,
+ "seconds": 15.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 8,
+   "share": 0.75,
+   "missing": [
+    "MAT1A",
+    "MAT1B"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "CIS5",
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "flagged": [
+    "CIS5",
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    23.0,
+    23.0
+   ],
+   "stated": [
+    23.0,
+    23.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Mathematics 2.0 - Associate in Science for Transfer (ADT) - AS1107 (CalGETC)",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Reason mathematically both abstractly and computationally.",
+    "Create and analyze mathematical models."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "MATH-C2210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH-C2210H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH-C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH-1C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CIS-5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSC-5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY-4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MAT 1A",
+    "why": "not in the text; catalog prints MATH-C2210 (Calculus I: Early Transcendentals) instead"
+   },
+   {
+    "code": "MAT 1B",
+    "why": "not in the text; catalog prints MATH-C2220 (Calculus II: Early Transcendentals) instead"
+   }
+  ],
+  "notes": [
+   "Required Courses opens with 'Select one of the following: 4.00' covering MATH-C2210 and its honors twin MATH-C2210H; recorded as one entry with MATH-C2210H as alternative. The remaining four courses (MATH-C2220, MATH-1C, MATH-2, MATH-3) sum with it to the stated 19 units, so they were read as required.",
+   "Closed list names MAT 1A (Calculus I) and MAT 1B (Calculus II); the catalog uses the common course numbers MATH-C2210 and MATH-C2220, which are not in the closed list and are flagged as catalog additions. Reviewer should confirm these are renumbered equivalents.",
+   "CIS-5 and CSC-5 carry the same title (Programming Concepts and Methodology I:C++) and appear to be cross-listed; CIS-5 is not in the closed list. Both listed separately as printed.",
+   "Program Learning Outcomes are printed once for this degree, which is the only award in the section."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

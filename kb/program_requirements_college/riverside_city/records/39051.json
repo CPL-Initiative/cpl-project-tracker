@@ -1,0 +1,184 @@
+{
+ "college": "Riverside City College",
+ "control_number": "39051",
+ "shape": "noncredit",
+ "title": "Enterprise Communication",
+ "award": "Noncredit program",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5962",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 4777,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 4777,
+    "output_tokens": 1017,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1017,
+  "output_tokens_details": {
+   "thinking_tokens": 206
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03945,
+ "ms": 8469,
+ "seconds": 9.0,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    48.0,
+    48.0
+   ],
+   "stated": [
+    48.0,
+    48.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Enterprise Communication - Certificate of Completion - CC8014",
+   "measure": "hours",
+   "total_units": {
+    "min": 48,
+    "max": 48
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Describe and apply different strategic communication techniques to a workplace scenario.",
+    "Identify your professional EI strengths and limitations. Develop a plan using behavioral techniques to increase your EI competencies.",
+    "Apply business writing concepts to writing letters and emails using complete sentences with sentence variety, clarity with pronouns, proper punctuation, paragraphing and clear organization of ideas."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "PDS-809",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PDS-812",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses",
+    "rule": "choose_units",
+    "minimum": 24,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "PDS-805",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PDS-806",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PDS-807",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PDS-813",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Completion counted in hours; all units fields hold hours (12 hours per course, total 48).",
+   "Catalog prints codes with a hyphen (PDS-809); matched to closed-list codes written with a space (PDS 809).",
+   "Elective block read as choose 24 hours (two of the four 12-hour courses); the catalog states 'Elective Courses (24 hours)' without an explicit 'select' instruction.",
+   "Every course is labeled '( Historical )' in the catalog; reviewer may want to confirm these courses are still active for 2026-2027.",
+   "The second outcome is printed as a single line containing two sentences; recorded as one outcome."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

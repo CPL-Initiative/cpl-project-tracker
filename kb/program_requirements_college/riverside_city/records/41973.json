@@ -1,0 +1,177 @@
+{
+ "college": "Riverside City College",
+ "control_number": "41973",
+ "shape": "certificate",
+ "title": "Digital Forensic Investigations",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5949",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 4897,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 4897,
+    "output_tokens": 815,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 815,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03589,
+ "ms": 6380,
+ "seconds": 6.8,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ADJ13",
+    "CIS21"
+   ],
+   "flagged": [
+    "ADJ13",
+    "CIS21"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Digital Forensic Investigation - Certificate of Achievement - CE1027",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Understand, analyze, and demonstrate a proficient level of knowledge in criminal law, criminal procedure, Constitutional criminal law, rules of evidence, and chain of custody issues both general to criminal investigations and specific to digital evidence.",
+    "Demonstrate technique and skill in basic evidence identification, collection, handling, packaging, storage, and analysis, with a specific focus in digital hardware and data.",
+    "Understand and demonstrate a proficient skillset and knowledge in basic operating systems, including Windows and Mac OS systems.",
+    "Understand and demonstrate a proficient skillset and knowledge in forensic digital analysis software programs and platforms."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (18 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "ADJ-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ-13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADJ-31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS-27A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog section title reads 'Digital Forensic Investigation' (singular) while the program title is 'Digital Forensic Investigations'; treated as the same award (CE1027).",
+   "ADJ-13 (Criminal Investigation) and CIS-21 (Introduction to Operating Systems) are required in the catalog but absent from the closed list; recorded as catalog additions.",
+   "Catalog prints codes with hyphens (e.g., ADJ-2); closed list uses spaces (ADJ 2). Matched accordingly."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

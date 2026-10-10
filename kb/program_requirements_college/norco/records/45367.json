@@ -1,0 +1,233 @@
+{
+ "college": "Norco College",
+ "control_number": "45367",
+ "shape": "certificate",
+ "title": "Apprenticeship Carpentry, Drywall Finisher",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5518",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5511,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5511,
+    "output_tokens": 1541,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1541,
+  "output_tokens_details": {
+   "thinking_tokens": 251
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05286,
+ "ms": 11692,
+ "seconds": 12.1,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    23.5,
+    23.5
+   ],
+   "stated": [
+    23.5,
+    23.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Apprenticeship Carpentry, Drywall Finisher - Associate of Science Degree and Certificate of Achievement -NAS1053/C/NCE1053",
+   "measure": "units",
+   "total_units": {
+    "min": 23.5,
+    "max": 23.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Prepares individuals to apply technical knowledge and skills to layout, cut fabricate, install, and repair wooden structures and fixtures, using hand and power tools. Includes instruction in technical mathematics, framing, construction materials and selection, job estimating, blueprint reading, foundations, and roughing-in, finish carpentry techniques, and applicable codes and standards.",
+    "Construct, erect, install, or repair structures and fixtures made of wood and comparable materials, such as concrete forms; building frameworks, including partitions, joists, studding, and rafters; and wood stairways, window and door frames, and hardwood floors.",
+    "May also install cabinets, siding, drywall, and batt or roll insulation, includes brattice builders who build doors or brattices (ventilation walls or partitions) in underground passageways."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 23.5,
+     "max": 23.5
+    },
+    "courses": [
+     {
+      "code": "CRP-471A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRP-471B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRP-472A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRP-474A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRP-476A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRP-476B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRP-477A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRP-477B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRP-477C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRP-478B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRP-478C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRP-478D",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRP-479A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRP-482B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRP-482C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints one combined section for the A.S. degree and the Certificate of Achievement; the Required Courses list (23.50 units) and the Program Learning Outcomes are shared by both awards and are recorded for the certificate.",
+   "Catalog prints codes with a hyphen (CRP-471A); these match the closed-list codes (CRP 471A etc.), so none are marked as catalog additions.",
+   "The printed outcomes read more like occupational descriptions (CIP/SOC style) than measurable learning outcomes; copied verbatim as printed."
+  ]
+ },
+ "extracted_run": "38085495452"
+}

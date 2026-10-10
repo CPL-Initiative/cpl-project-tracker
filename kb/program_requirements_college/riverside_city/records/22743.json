@@ -1,0 +1,336 @@
+{
+ "college": "Riverside City College",
+ "control_number": "22743",
+ "shape": "certificate",
+ "title": "Business Administration: Management Concentration",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6083",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5558,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5558,
+    "output_tokens": 2452,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2452,
+  "output_tokens_details": {
+   "thinking_tokens": 662
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07127,
+ "ms": 20081,
+ "seconds": 20.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 19,
+   "share": 0.947,
+   "missing": [
+    "CAT1A"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CIS1A"
+   ],
+   "flagged": [
+    "CIS1A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Administration: Management Concentration - Associate of Science Degree and Certificate of Achievement - AS521/AS521C/CE521",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Use technology to analyze business decisions and to enhance business communications.",
+    "Apply basic business and accounting calculations and analyses. Have an understanding of legal practices relating to business.",
+    "Apply sound management practices.",
+    "Analyze and apply appropriate managerial practices in one or more areas of ethics, human resources, quality management, operations, motivation."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACC-1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-18A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses: Select one of the following (BUS-10/BUS-10H)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUS-10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-10H",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses: Select one of the following (BUS-22/BUS-24)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUS-22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses: Select one of the following (CIS-1A/CIS-3/CAT-3)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CIS-1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS-3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT-3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Concentration Requirements",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "MAG-40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAG-44",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "BUS-47",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MAG-47",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-48",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAG-53",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAG-56",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAG-60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAG-200",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CAT 1A",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The section heading covers both the A.S. degree and the Certificate of Achievement (AS521/AS521C/CE521); the same requirements (Total: 30.00) apply to both, and the certificate is recorded from this shared list.",
+   "The Program Learning Outcomes are printed once for the program as a whole; the certificate shares them.",
+   "The second outcome is printed as one line containing two sentences ('Apply basic business... Have an understanding of legal practices...'); recorded as one outcome as printed.",
+   "'Required Courses Units: 18.00' covers the three required courses plus the three nested 'Select one of the following' choices; the 18 is not recorded as the stated total of the 'all' block (which sums to 9) but applies to that whole heading.",
+   "CIS-1A (Introduction to Computer Information Systems) appears in the text but is not in the closed list; recorded as a catalog addition.",
+   "Catalog prints codes with hyphens (e.g., ACC-1A, MAG-200); matched to closed-list codes ACC 1A, MAG200 etc.",
+   "MAG-200 is printed with a variable 1.00-4.00 units."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

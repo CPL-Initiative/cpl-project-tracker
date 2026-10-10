@@ -1,0 +1,5294 @@
+[
+ {
+  "control_number": "30055",
+  "title": "Business Administration: General Business Concentration",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC1A",
+   "ACC1B",
+   "BUS10",
+   "BUS18A",
+   "BUS18B",
+   "BUS20",
+   "BUS22",
+   "BUS24",
+   "BUS40",
+   "BUS47",
+   "BUS80",
+   "CAT3",
+   "CIS1A",
+   "CIS3",
+   "MAG47",
+   "MAG51",
+   "MAG53",
+   "MKT20"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5146",
+   "title": "Business Administration: General Business Concentration - Certificate of Achievement - NAS524/C/NCE524",
+   "h1": "Business Administration: General Business Concentration - Certificate of Achievement - NAS524/C/NCE524",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3502
+ },
+ {
+  "control_number": "30056",
+  "title": "Business Administration: General Business Concentration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "ACC1A",
+   "BUS10",
+   "BUS18A",
+   "BUS20",
+   "BUS22",
+   "BUS24",
+   "BUS47",
+   "CAT3",
+   "CIS1A",
+   "CIS3",
+   "MAG47",
+   "MAG53"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5273",
+   "title": "Business Administration: Management Concentration - Associate of Science Degree and Certificate of Achievement - NAS521 / NCE521",
+   "h1": "Business Administration: Management Concentration - Associate of Science Degree and Certificate of Achievement - NAS521 / NCE521",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.8
+   }
+  },
+  "listed": 18,
+  "text_chars": 2906
+ },
+ {
+  "control_number": "30057",
+  "title": "Business Administration: Accounting Concentration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "ACC1A",
+   "ACC1B",
+   "ACC55",
+   "ACC62",
+   "ACC63",
+   "ACC65",
+   "ACC66",
+   "ACC67",
+   "BUS10",
+   "BUS10H",
+   "BUS18A",
+   "BUS20",
+   "BUS22",
+   "BUS24",
+   "CAT3",
+   "CAT55",
+   "CIS1A",
+   "CIS3"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5145",
+   "title": "Business Administration: Accounting Concentration - Associate of Science Degree and Certificate of Achievement - NAS523/C/NCE523",
+   "h1": "Business Administration: Accounting Concentration - Associate of Science Degree and Certificate of Achievement - NAS523/C/NCE523",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 3380
+ },
+ {
+  "control_number": "30058",
+  "title": "Business Administration: Accounting Concentration",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.783,
+  "codes_found": [
+   "ACC1A",
+   "ACC1B",
+   "ACC40",
+   "ACC55",
+   "ACC62",
+   "ACC63",
+   "ACC65",
+   "ACC66",
+   "ACC67",
+   "BUS10",
+   "BUS10H",
+   "BUS18A",
+   "BUS20",
+   "BUS22",
+   "BUS24",
+   "CAT3",
+   "CIS1A",
+   "CIS3"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5145",
+   "title": "Business Administration: Accounting Concentration - Associate of Science Degree and Certificate of Achievement - NAS523/C/NCE523",
+   "h1": "Business Administration: Accounting Concentration - Associate of Science Degree and Certificate of Achievement - NAS523/C/NCE523",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3380
+ },
+ {
+  "control_number": "30061",
+  "title": "Business Administration: Management Concentration",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC1A",
+   "BUS10",
+   "BUS10H",
+   "BUS20",
+   "BUS22",
+   "BUS24",
+   "BUS47",
+   "BUS48",
+   "CAT3",
+   "CIS1A",
+   "CIS3",
+   "MAG44",
+   "MAG47",
+   "MAG53",
+   "MAG56",
+   "MAG60"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5148",
+   "title": "Business Administration: Management Concentration - Associate of Science Degree and Certificate of Achievement - NAS521/C/NCE521",
+   "h1": "Business Administration: Management Concentration - Associate of Science Degree and Certificate of Achievement - NAS521/C/NCE521",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3035
+ },
+ {
+  "control_number": "30062",
+  "title": "Business Administration: Management Concentration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC1A",
+   "BUS10",
+   "BUS10H",
+   "BUS18A",
+   "BUS20",
+   "BUS22",
+   "BUS24",
+   "BUS47",
+   "BUS48",
+   "CAT3",
+   "CIS1A",
+   "CIS3",
+   "MAG47",
+   "MAG53",
+   "MAG56",
+   "MAG60"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5148",
+   "title": "Business Administration: Management Concentration - Associate of Science Degree and Certificate of Achievement - NAS521/C/NCE521",
+   "h1": "Business Administration: Management Concentration - Associate of Science Degree and Certificate of Achievement - NAS521/C/NCE521",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3035
+ },
+ {
+  "control_number": "30067",
+  "title": "Retail Management/WAFC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC1A",
+   "BUS20",
+   "BUS22",
+   "BUS24",
+   "CAT3",
+   "CAT55",
+   "CIS1A",
+   "CIS3",
+   "COMM9",
+   "COMM9H",
+   "COMMC1000",
+   "COMMC1000H",
+   "MAG44",
+   "MAG51",
+   "MAG53",
+   "MAG56",
+   "MKT20",
+   "MKT42"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5226",
+   "title": "Retail Management/WAFC (Western Association of Food Chains) - Associate of Science Degree and Certificate of Achievement - NAS536/C/NCE536",
+   "h1": "Retail Management/WAFC (Western Association of Food Chains) - Associate of Science Degree and Certificate of Achievement - NAS536/C/NCE536",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3163
+ },
+ {
+  "control_number": "30068",
+  "title": "Retail Management/WAFC",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC1A",
+   "BUS20",
+   "BUS22",
+   "CAT3",
+   "CAT55",
+   "CIS1A",
+   "CIS3",
+   "COMM9",
+   "COMM9H",
+   "COMMC1000",
+   "COMMC1000H",
+   "MAG44",
+   "MAG51",
+   "MAG53",
+   "MAG56",
+   "MKT20",
+   "MKT42"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5226",
+   "title": "Retail Management/WAFC (Western Association of Food Chains) - Associate of Science Degree and Certificate of Achievement - NAS536/C/NCE536",
+   "h1": "Retail Management/WAFC (Western Association of Food Chains) - Associate of Science Degree and Certificate of Achievement - NAS536/C/NCE536",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3163
+ },
+ {
+  "control_number": "30071",
+  "title": "Business Administration: Logistics Management Concentration",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC1A",
+   "BUS10",
+   "BUS10H",
+   "BUS18A",
+   "BUS20",
+   "BUS22",
+   "BUS24",
+   "BUS80",
+   "BUS82",
+   "BUS83",
+   "BUS85",
+   "BUS86",
+   "BUS87",
+   "BUS90",
+   "CAT3",
+   "CIS1A",
+   "CIS3"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5147",
+   "title": "Business Administration: Logistics Management Concentration - Associate of Science Degree and Certificate of Achievement - NAS580/C/NCE580",
+   "h1": "Business Administration: Logistics Management Concentration - Associate of Science Degree and Certificate of Achievement - NAS580/C/NCE580",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3226
+ },
+ {
+  "control_number": "30072",
+  "title": "Business Administration: Logistics Management Concentration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC1A",
+   "BUS10",
+   "BUS10H",
+   "BUS18A",
+   "BUS20",
+   "BUS22",
+   "BUS24",
+   "BUS80",
+   "BUS82",
+   "BUS83",
+   "BUS85",
+   "BUS86",
+   "BUS87",
+   "BUS90",
+   "CAT3",
+   "CIS1A",
+   "CIS3"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5147",
+   "title": "Business Administration: Logistics Management Concentration - Associate of Science Degree and Certificate of Achievement - NAS580/C/NCE580",
+   "h1": "Business Administration: Logistics Management Concentration - Associate of Science Degree and Certificate of Achievement - NAS580/C/NCE580",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3226
+ },
+ {
+  "control_number": "30073",
+  "title": "Logistics Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS80",
+   "BUS82",
+   "BUS83",
+   "BUS85",
+   "BUS86",
+   "BUS87",
+   "BUS90"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5147",
+   "title": "Business Administration: Logistics Management Concentration - Associate of Science Degree and Certificate of Achievement - NAS580/C/NCE580",
+   "h1": "Business Administration: Logistics Management Concentration - Associate of Science Degree and Certificate of Achievement - NAS580/C/NCE580",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3169
+ },
+ {
+  "control_number": "30074",
+  "title": "Logistics Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS80",
+   "BUS82",
+   "BUS83",
+   "BUS85",
+   "BUS86",
+   "BUS87",
+   "BUS90"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5147",
+   "title": "Business Administration: Logistics Management Concentration - Associate of Science Degree and Certificate of Achievement - NAS580/C/NCE580",
+   "h1": "Business Administration: Logistics Management Concentration - Associate of Science Degree and Certificate of Achievement - NAS580/C/NCE580",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3169
+ },
+ {
+  "control_number": "30075",
+  "title": "Business Administration: Real Estate Concentration",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC1A",
+   "BUS10",
+   "BUS18A",
+   "BUS20",
+   "BUS22",
+   "BUS24",
+   "CAT3",
+   "CIS1A",
+   "CIS3",
+   "RLE80",
+   "RLE81",
+   "RLE82",
+   "RLE83",
+   "RLE84",
+   "RLE85",
+   "RLE86"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5149",
+   "title": "Business Administration: Real Estate Concentration - Associate of Science Degree and Certificate of Achievement - NAS527/C/NCE527",
+   "h1": "Business Administration: Real Estate Concentration - Associate of Science Degree and Certificate of Achievement - NAS527/C/NCE527",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3089
+ },
+ {
+  "control_number": "30076",
+  "title": "Business Administration: Real Estate Concentration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC1A",
+   "BUS10",
+   "BUS18A",
+   "BUS20",
+   "BUS24",
+   "CAT3",
+   "CIS1A",
+   "CIS3",
+   "RLE80",
+   "RLE81",
+   "RLE82",
+   "RLE83",
+   "RLE84",
+   "RLE85",
+   "RLE86"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5149",
+   "title": "Business Administration: Real Estate Concentration - Associate of Science Degree and Certificate of Achievement - NAS527/C/NCE527",
+   "h1": "Business Administration: Real Estate Concentration - Associate of Science Degree and Certificate of Achievement - NAS527/C/NCE527",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3089
+ },
+ {
+  "control_number": "30081",
+  "title": "Computer Programming",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS11",
+   "CIS12",
+   "CIS14A",
+   "CIS18A",
+   "CIS18B",
+   "CIS18C",
+   "CIS1A",
+   "CIS2",
+   "CSC11",
+   "CSC18A",
+   "CSC2"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5158",
+   "title": "Computer Programming - Associate of Science Degree and Certificate of Achievement - NAS728/C/NCE728",
+   "h1": "Computer Programming - Associate of Science Degree and Certificate of Achievement - NAS728/C/NCE728",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3014
+ },
+ {
+  "control_number": "30082",
+  "title": "Computer Programming",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS11",
+   "CIS12",
+   "CIS14B",
+   "CIS18A",
+   "CIS18B",
+   "CIS18C",
+   "CIS1A",
+   "CIS2",
+   "CSC11",
+   "CSC18A",
+   "CSC2"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5158",
+   "title": "Computer Programming - Associate of Science Degree and Certificate of Achievement - NAS728/C/NCE728",
+   "h1": "Computer Programming - Associate of Science Degree and Certificate of Achievement - NAS728/C/NCE728",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3014
+ },
+ {
+  "control_number": "30091",
+  "title": "Drafting Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARE37",
+   "CON60",
+   "CON62",
+   "DFT21",
+   "DFT27",
+   "DFT30",
+   "DFT51",
+   "DFT60",
+   "ENE21",
+   "ENE27",
+   "ENE30",
+   "ENE51",
+   "ENE60",
+   "MAN56",
+   "MATH36"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5169",
+   "title": "Drafting Technology - Associate of Science Degree and Certificate of Achievement - NAS539/C/NCE539",
+   "h1": "Drafting Technology - Associate of Science Degree and Certificate of Achievement - NAS539/C/NCE539",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2623
+ },
+ {
+  "control_number": "30092",
+  "title": "Industrial Automation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELE10",
+   "ELE27",
+   "ELE55",
+   "ELE64",
+   "ELE67",
+   "ELE74",
+   "ENE27",
+   "ENE51",
+   "ENE62",
+   "MAN55",
+   "MAN64",
+   "MAN67",
+   "MATH36"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5200",
+   "title": "Industrial Automation - Associate of Science Degree and Certificate of Achievement - NAS737/C/NCE737",
+   "h1": "Industrial Automation - Associate of Science Degree and Certificate of Achievement - NAS737/C/NCE737",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2858
+ },
+ {
+  "control_number": "30093",
+  "title": "Industrial Automation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELE10",
+   "ELE27",
+   "ELE64",
+   "ELE67",
+   "ELE74",
+   "ENE27",
+   "ENE51",
+   "ENE62",
+   "MAN55",
+   "MAN64",
+   "MATH36"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5200",
+   "title": "Industrial Automation - Associate of Science Degree and Certificate of Achievement - NAS737/C/NCE737",
+   "h1": "Industrial Automation - Associate of Science Degree and Certificate of Achievement - NAS737/C/NCE737",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2858
+ },
+ {
+  "control_number": "30096",
+  "title": "Construction Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30097",
+  "title": "Construction Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30098",
+  "title": "Early Childhood Education",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EAR19",
+   "EAR20",
+   "EAR24",
+   "EAR25",
+   "EAR26",
+   "EAR28",
+   "EAR30",
+   "EAR34",
+   "EAR40",
+   "EAR42",
+   "EAR43",
+   "EAR45",
+   "EAR46",
+   "EAR47",
+   "EAR53",
+   "KIN30",
+   "KIN6",
+   "MUS1"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5171",
+   "title": "Early Childhood Education - Associate of Science Degree and Certificate of Achievement - NAS544/C/NCE544",
+   "h1": "Early Childhood Education - Associate of Science Degree and Certificate of Achievement - NAS544/C/NCE544",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 4036
+ },
+ {
+  "control_number": "30099",
+  "title": "Early Childhood Education",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EAR19",
+   "EAR20",
+   "EAR23",
+   "EAR24",
+   "EAR25",
+   "EAR26",
+   "EAR28",
+   "EAR30",
+   "EAR34",
+   "EAR38",
+   "EAR40",
+   "EAR42",
+   "EAR43",
+   "EAR44",
+   "EAR45",
+   "EAR46",
+   "EAR47",
+   "EAR53",
+   "EAR54",
+   "KIN30",
+   "KIN6"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5171",
+   "title": "Early Childhood Education - Associate of Science Degree and Certificate of Achievement - NAS544/C/NCE544",
+   "h1": "Early Childhood Education - Associate of Science Degree and Certificate of Achievement - NAS544/C/NCE544",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 4036
+ },
+ {
+  "control_number": "30100",
+  "title": "Early Childhood Intervention Assistant",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30101",
+  "title": "Early Childhood Intervention Assistant",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30102",
+  "title": "Administration of Justice",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ1",
+   "ADJ2",
+   "ADJ3",
+   "ADJ4",
+   "ADJ5",
+   "ADJ9",
+   "POLS5",
+   "SOC20"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5133",
+   "title": "Administration of Justice - Associate of Science Degree and Certificate of Achievement - NAS504/C/NCE504",
+   "h1": "Administration of Justice - Associate of Science Degree and Certificate of Achievement - NAS504/C/NCE504",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2092
+ },
+ {
+  "control_number": "30103",
+  "title": "Kinesiology, Health & Wellness",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 111,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30104",
+  "title": "Administration of Justice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ1",
+   "ADJ2",
+   "ADJ3",
+   "ADJ4",
+   "ADJ5",
+   "ADJ9",
+   "POLS5",
+   "SOC20"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5133",
+   "title": "Administration of Justice - Associate of Science Degree and Certificate of Achievement - NAS504/C/NCE504",
+   "h1": "Administration of Justice - Associate of Science Degree and Certificate of Achievement - NAS504/C/NCE504",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2092
+ },
+ {
+  "control_number": "30105",
+  "title": "Administration & Information Systems",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 35,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30106",
+  "title": "Communication, Media & Languages",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 104,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30107",
+  "title": "Math & Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 112,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30108",
+  "title": "Fine & Applied Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 218,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30109",
+  "title": "Humanities, Philosophy & Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 316,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30110",
+  "title": "Social and Behavioral Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 134,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30111",
+  "title": "CSU General Education",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30112",
+  "title": "IGETC",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30572",
+  "title": "Graphic Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "ART22",
+   "ART39",
+   "CIS44",
+   "CIS59",
+   "CIS66",
+   "CIS78A",
+   "CIS79",
+   "CIS81"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5198",
+   "title": "Graphic Design - Associate of Science Degree and Certificate of Achievement - NAS647/C/NCE647",
+   "h1": "Graphic Design - Associate of Science Degree and Certificate of Achievement - NAS647/C/NCE647",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2636
+ },
+ {
+  "control_number": "30585",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT2",
+   "ANT2H",
+   "ETS1",
+   "PSYC48",
+   "PSYC50",
+   "PSYC8",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SJS110",
+   "SOC1",
+   "SOC10",
+   "SOC10H",
+   "SOC12",
+   "SOC15",
+   "SOC1H",
+   "SOC2",
+   "SOC20",
+   "SOC3",
+   "SOC48",
+   "SOC50",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5232",
+   "title": "Sociology - Associate in Arts for Transfer (ADT) - NAA696 (Cal-GETC)",
+   "h1": "Sociology - Associate in Arts for Transfer (ADT) - NAA696 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 3734
+ },
+ {
+  "control_number": "30606",
+  "title": "Music Industry Studies: Performance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MIS11A",
+   "MIS11B",
+   "MIS1A",
+   "MIS1B",
+   "MIS1C",
+   "MIS3",
+   "MIS7",
+   "MUS23",
+   "MUS3",
+   "MUS32A",
+   "MUS32B",
+   "MUS32C",
+   "MUS39",
+   "MUS4",
+   "MUS41",
+   "MUS79",
+   "MUS81",
+   "MUS93"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5209",
+   "title": "Music Industry Studies: Performance - Associate of Arts Degree and Certificate of Achievement - NAA645/C/NCE645",
+   "h1": "Music Industry Studies: Performance - Associate of Arts Degree and Certificate of Achievement - NAA645/C/NCE645",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3454
+ },
+ {
+  "control_number": "30607",
+  "title": "Music Industry Studies: Performance",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MIS11A",
+   "MIS11B",
+   "MIS1A",
+   "MIS1B",
+   "MIS1C",
+   "MIS3",
+   "MIS7",
+   "MUS23",
+   "MUS3",
+   "MUS32A",
+   "MUS32B",
+   "MUS32C",
+   "MUS39",
+   "MUS4",
+   "MUS41",
+   "MUS79",
+   "MUS81",
+   "MUS93"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5209",
+   "title": "Music Industry Studies: Performance - Associate of Arts Degree and Certificate of Achievement - NAA645/C/NCE645",
+   "h1": "Music Industry Studies: Performance - Associate of Arts Degree and Certificate of Achievement - NAA645/C/NCE645",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3454
+ },
+ {
+  "control_number": "30667",
+  "title": "Graphic Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "ART22",
+   "ART39",
+   "CAT79",
+   "CIS44",
+   "CIS59",
+   "CIS66",
+   "CIS78A",
+   "CIS79",
+   "CIS81"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5198",
+   "title": "Graphic Design - Associate of Science Degree and Certificate of Achievement - NAS647/C/NCE647",
+   "h1": "Graphic Design - Associate of Science Degree and Certificate of Achievement - NAS647/C/NCE647",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2636
+ },
+ {
+  "control_number": "31219",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EAR19",
+   "EAR20",
+   "EAR24",
+   "EAR25",
+   "EAR26",
+   "EAR28",
+   "EAR30",
+   "EAR42"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5170",
+   "title": "Early Childhood Education - Associate in Science for Transfer (ADT) NAS530 (CaI-GETC)",
+   "h1": "Early Childhood Education - Associate in Science for Transfer (ADT) NAS530 (CaI-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3007
+ },
+ {
+  "control_number": "31313",
+  "title": "Music Industry Studies: Audio Production",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM9",
+   "MIS12",
+   "MIS13",
+   "MIS1A",
+   "MIS1B",
+   "MIS1C",
+   "MIS2",
+   "MIS200",
+   "MIS3",
+   "MIS4",
+   "MIS7",
+   "MUS23",
+   "MUS3",
+   "MUS32A",
+   "MUS32B",
+   "MUS32C",
+   "MUS38",
+   "MUS39",
+   "MUS4",
+   "MUS93"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5208",
+   "title": "Music Industries: Audio Production - Associate of Science Degree and Certificate of Achievement - NAS684/C/NCE684",
+   "h1": "Music Industries: Audio Production - Associate of Science Degree and Certificate of Achievement - NAS684/C/NCE684",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.6
+   }
+  },
+  "listed": 20,
+  "text_chars": 3034
+ },
+ {
+  "control_number": "31316",
+  "title": "Game Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GAM1",
+   "GAM2",
+   "GAM3A",
+   "GAM3B",
+   "GAM4A",
+   "GAM5A",
+   "GAM6A",
+   "GAM7",
+   "GAM8"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5195",
+   "title": "Game Design  - Associate of Science Degree and Certificate of Achievement - NAS2005/C/NCE2005",
+   "h1": "Game Design  - Associate of Science Degree and Certificate of Achievement - NAS2005/C/NCE2005",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2350
+ },
+ {
+  "control_number": "31317",
+  "title": "Game Art: Environments and Vehicles",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31371",
+  "title": "Game Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GAM1",
+   "GAM2",
+   "GAM3A",
+   "GAM3B",
+   "GAM4A",
+   "GAM5A",
+   "GAM6A",
+   "GAM7",
+   "GAM8"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5195",
+   "title": "Game Design  - Associate of Science Degree and Certificate of Achievement - NAS2005/C/NCE2005",
+   "h1": "Game Design  - Associate of Science Degree and Certificate of Achievement - NAS2005/C/NCE2005",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2350
+ },
+ {
+  "control_number": "31375",
+  "title": "Music Industry Studies: Audio Production",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM9",
+   "MIS12",
+   "MIS13",
+   "MIS1A",
+   "MIS1B",
+   "MIS1C",
+   "MIS2",
+   "MIS200",
+   "MIS3",
+   "MIS4",
+   "MIS7",
+   "MUS23",
+   "MUS3",
+   "MUS32A",
+   "MUS32B",
+   "MUS32C",
+   "MUS38",
+   "MUS39",
+   "MUS4",
+   "MUS93"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5208",
+   "title": "Music Industries: Audio Production - Associate of Science Degree and Certificate of Achievement - NAS684/C/NCE684",
+   "h1": "Music Industries: Audio Production - Associate of Science Degree and Certificate of Achievement - NAS684/C/NCE684",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.6
+   }
+  },
+  "listed": 20,
+  "text_chars": 3034
+ },
+ {
+  "control_number": "31376",
+  "title": "Digital Electronics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DFT27",
+   "ELC11",
+   "ELC13",
+   "ELE10",
+   "ELE11",
+   "ELE13",
+   "ELE23",
+   "ELE25",
+   "ELE26",
+   "ELE27",
+   "ELE28",
+   "ELE64",
+   "ELE75",
+   "ENE27",
+   "MAN64"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5168",
+   "title": "Digital Electronics - Associate of Science Degree and Certificate of Achievement - NAS1123/C/NCE1123",
+   "h1": "Digital Electronics - Associate of Science Degree and Certificate of Achievement - NAS1123/C/NCE1123",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3634
+ },
+ {
+  "control_number": "31636",
+  "title": "Computer Numerical Control Programming",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.583,
+  "codes_found": [
+   "ENE30",
+   "ENE51",
+   "ENE60",
+   "MAN55",
+   "MAN56",
+   "MAN57",
+   "MATH36"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5279",
+   "title": "Computer Numerical Control Programming - Associate of Science Degree and Certificate of Achievement - NAS655/C/NCE655",
+   "h1": "Computer Numerical Control Programming - Associate of Science Degree and Certificate of Achievement - NAS655/C/NCE655",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3350
+ },
+ {
+  "control_number": "31641",
+  "title": "Computer Numerical Control Programming",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.615,
+  "codes_found": [
+   "ENE30",
+   "ENE51",
+   "ENE52",
+   "ENE60",
+   "MAN55",
+   "MAN56",
+   "MAN57",
+   "MATH36"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5279",
+   "title": "Computer Numerical Control Programming - Associate of Science Degree and Certificate of Achievement - NAS655/C/NCE655",
+   "h1": "Computer Numerical Control Programming - Associate of Science Degree and Certificate of Achievement - NAS655/C/NCE655",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3350
+ },
+ {
+  "control_number": "31669",
+  "title": "Digital Electronics",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DFT27",
+   "ELC11",
+   "ELC13",
+   "ELE10",
+   "ELE11",
+   "ELE13",
+   "ELE23",
+   "ELE25",
+   "ELE26",
+   "ELE27",
+   "ELE28",
+   "ELE64",
+   "ELE75",
+   "ENE27",
+   "MAN64"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5168",
+   "title": "Digital Electronics - Associate of Science Degree and Certificate of Achievement - NAS1123/C/NCE1123",
+   "h1": "Digital Electronics - Associate of Science Degree and Certificate of Achievement - NAS1123/C/NCE1123",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3634
+ },
+ {
+  "control_number": "31793",
+  "title": "Game Programming",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GAM1",
+   "GAM2",
+   "GAM3A",
+   "GAM4A",
+   "GAM4B",
+   "GAM5A",
+   "GAM6A",
+   "GAM7",
+   "GAM8"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5197",
+   "title": "Game Programming - Associate of Science Degree and Certificate of Achievement - NAS2006/C/NCE2006",
+   "h1": "Game Programming - Associate of Science Degree and Certificate of Achievement - NAS2006/C/NCE2006",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2288
+ },
+ {
+  "control_number": "31808",
+  "title": "Game Programming",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "GAM1",
+   "GAM2",
+   "GAM3A",
+   "GAM4A",
+   "GAM4B",
+   "GAM5A",
+   "GAM6A",
+   "GAM7",
+   "GAM8"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5197",
+   "title": "Game Programming - Associate of Science Degree and Certificate of Achievement - NAS2006/C/NCE2006",
+   "h1": "Game Programming - Associate of Science Degree and Certificate of Achievement - NAS2006/C/NCE2006",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2288
+ },
+ {
+  "control_number": "31834",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "ART17",
+   "ART18",
+   "ART19",
+   "ART20",
+   "ART22",
+   "ART23",
+   "ART24",
+   "ART26",
+   "ART27",
+   "ART36A",
+   "ART40A",
+   "ARTH12",
+   "ARTH5",
+   "ARTH9",
+   "ARTHC1200",
+   "ARTHC1200H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5235",
+   "title": "Studio Arts - Associate in Arts for Transfer (ADT) - NAA694 (CaI-GETC)",
+   "h1": "Studio Arts - Associate in Arts for Transfer (ADT) - NAA694 (CaI-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2768
+ },
+ {
+  "control_number": "32035",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM7",
+   "ENGL10",
+   "ENGL11",
+   "ENGL14",
+   "ENGL15",
+   "ENGL18",
+   "ENGL20",
+   "ENGL23",
+   "ENGL24",
+   "ENGL25",
+   "ENGL30",
+   "ENGL35",
+   "ENGL40",
+   "ENGL41",
+   "ENGL44",
+   "ENGL45",
+   "ENGL48",
+   "ENGL6",
+   "ENGL66",
+   "ENGL7",
+   "ENGL8",
+   "ENGL9",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "HUM23",
+   "HUM8",
+   "THE3"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5178",
+   "title": "English - Associate in Arts for Transfer (ADT) NAA649 (CaI-GETC)",
+   "h1": "English - Associate in Arts for Transfer (ADT) NAA649 (CaI-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 4515
+ },
+ {
+  "control_number": "32160",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT2",
+   "ANT2H",
+   "ANT5",
+   "ANT8",
+   "ARTH13",
+   "ARTH14",
+   "COMM12",
+   "GEG2",
+   "HIST25",
+   "HIST31",
+   "SOC1",
+   "SOC10",
+   "SOC10H",
+   "SOC1H",
+   "SPA1",
+   "SPA11",
+   "SPA12",
+   "SPA2",
+   "SPA3",
+   "SPA4",
+   "SPA8"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5234",
+   "title": "Spanish - Associate in Arts for Transfer (ADT) - NAA708 (CaI-GETC)",
+   "h1": "Spanish - Associate in Arts for Transfer (ADT) - NAA708 (CaI-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3630
+ },
+ {
+  "control_number": "32594",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "CIS11",
+   "CSC11",
+   "CSC5",
+   "CSC7",
+   "MATHC2210H",
+   "PHY4A",
+   "PHY4B"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5159",
+   "title": "Computer Science - Associate in Science for Transfer (ADT) - NAS650 (CaI-GETC)",
+   "h1": "Computer Science - Associate in Science for Transfer (ADT) - NAS650 (CaI-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2694
+ },
+ {
+  "control_number": "32624",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "CSC5",
+   "MATH1C",
+   "MATH2",
+   "MATH3",
+   "MATHC2210H",
+   "PHY4A"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5205",
+   "title": "Mathematics 2.0 - Associate in Science for Transfer (ADT) - NAS1107 (CaI-GETC)",
+   "h1": "Mathematics 2.0 - Associate in Science for Transfer (ADT) - NAS1107 (CaI-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2210
+ },
+ {
+  "control_number": "32625",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.714,
+  "codes_found": [
+   "MATH1C",
+   "MATHC2210H",
+   "PHY4A",
+   "PHY4B",
+   "PHY4C"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5219",
+   "title": "Physics 2.0 - Associate in Science for Transfer (ADT) - NAS1108 (CaI-GETC)",
+   "h1": "Physics 2.0 - Associate in Science for Transfer (ADT) - NAS1108 (CaI-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2425
+ },
+ {
+  "control_number": "32626",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYC10",
+   "PSYC11",
+   "PSYC2",
+   "PSYC33",
+   "PSYC35",
+   "PSYC35H",
+   "PSYC48",
+   "PSYC50",
+   "PSYC8",
+   "PSYC9",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC48",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5568/5257",
+   "title": "Psychology - Associate in Arts for Transfer (ADT) - NAA568",
+   "h1": "Psychology - Associate in Arts for Transfer (ADT) - NAA568",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2488
+ },
+ {
+  "control_number": "32631",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT1",
+   "ANT10",
+   "ANT16",
+   "ANT1H",
+   "ANT1L",
+   "ANT2",
+   "ANT2H",
+   "ANT3",
+   "ANT4",
+   "ANT5",
+   "ANT6",
+   "ANT7",
+   "ANT8",
+   "GEG1",
+   "GEG1H",
+   "GEG2",
+   "PSYC48",
+   "PSYC50",
+   "SOC48",
+   "SOC50",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5135",
+   "title": "Anthropology - Associate in Arts for Transfer (ADT) - NAA618 (CaI-GETC)",
+   "h1": "Anthropology - Associate in Arts for Transfer (ADT) - NAA618 (CaI-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 3581
+ },
+ {
+  "control_number": "32821",
+  "title": "Pre-Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32830",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.957,
+  "codes_found": [
+   "HIST1",
+   "HUM10",
+   "HUM10H",
+   "HUM18",
+   "HUM35",
+   "HUM4",
+   "HUM4H",
+   "HUM5",
+   "HUM5H",
+   "MATH32",
+   "PHI10",
+   "PHI10H",
+   "PHI11",
+   "PHI12",
+   "PHI18",
+   "PHI19",
+   "PHI22",
+   "PHI32",
+   "PHI33",
+   "PHI34",
+   "PHI35",
+   "PHI36"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5218",
+   "title": "Philosophy - Associate in Arts for Transfer (ADT) - NAA717 (CaI-GETC)",
+   "h1": "Philosophy - Associate in Arts for Transfer (ADT) - NAA717 (CaI-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3609
+ },
+ {
+  "control_number": "33090",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.92,
+  "codes_found": [
+   "ADJ9",
+   "ADJ9H",
+   "ECONC2002H",
+   "ETS21",
+   "ETS23",
+   "HISTC1002H",
+   "POLS11",
+   "POLS13",
+   "POLS2",
+   "POLS21",
+   "POLS23",
+   "POLS4",
+   "POLS4H",
+   "POLS5",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYC48",
+   "PSYC50",
+   "SOC3",
+   "SOC48",
+   "SOC50",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5220",
+   "title": "Political Science - Associate in Arts for Transfer (ADT) - NAA755 (CaI-GETC)",
+   "h1": "Political Science - Associate in Arts for Transfer (ADT) - NAA755 (CaI-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4316
+ },
+ {
+  "control_number": "33751",
+  "title": "Supply Chain Automation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DFT27",
+   "DFT51",
+   "ELC73",
+   "ELC74",
+   "ELC77",
+   "ELE26",
+   "ELE27",
+   "ELE55",
+   "ELE64",
+   "ELE67",
+   "ELE73",
+   "ELE74",
+   "ELE77",
+   "ENE27",
+   "ENE51",
+   "ENE62",
+   "MAN55",
+   "MAN60",
+   "MAN64",
+   "MAN67",
+   "MAN73",
+   "MAN74",
+   "MATH36",
+   "SCA1",
+   "SCT1"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5237",
+   "title": "Supply Chain Automation - Associate of Science Degree and Certificate of Achievement - NAS924/C/NCE924",
+   "h1": "Supply Chain Automation - Associate of Science Degree and Certificate of Achievement - NAS924/C/NCE924",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 3537
+ },
+ {
+  "control_number": "33854",
+  "title": "Supply Chain Automation",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DFT27",
+   "DFT51",
+   "ELC73",
+   "ELC74",
+   "ELC77",
+   "ELE26",
+   "ELE27",
+   "ELE55",
+   "ELE64",
+   "ELE73",
+   "ELE74",
+   "ELE77",
+   "ENE27",
+   "ENE51",
+   "ENE62",
+   "MAN55",
+   "MAN60",
+   "MAN64",
+   "MAN73",
+   "MAN74",
+   "MAN77",
+   "MATH36",
+   "SCA1",
+   "SCT1"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5237",
+   "title": "Supply Chain Automation - Associate of Science Degree and Certificate of Achievement - NAS924/C/NCE924",
+   "h1": "Supply Chain Automation - Associate of Science Degree and Certificate of Achievement - NAS924/C/NCE924",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 3537
+ },
+ {
+  "control_number": "33887",
+  "title": "Electrician Apprenticeship",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELE400",
+   "ELE401",
+   "ELE402",
+   "ELE403",
+   "ELE404",
+   "ELE405",
+   "ELE406",
+   "ELE407",
+   "ELE408",
+   "ELE409"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5175",
+   "title": "Electrician Apprenticeship - Associate of Science Degree and Certificate of Achievement - NAS485/C/NCE485",
+   "h1": "Electrician Apprenticeship - Associate of Science Degree and Certificate of Achievement - NAS485/C/NCE485",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3684
+ },
+ {
+  "control_number": "33905",
+  "title": "Electrician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CON66",
+   "ELC71",
+   "ELC72",
+   "ELC73",
+   "ELC74",
+   "ELC76",
+   "ELC77",
+   "ELE71",
+   "ELE72",
+   "ELE73",
+   "ELE74",
+   "ELE75",
+   "ELE76",
+   "ELE77",
+   "ENE62",
+   "MAN72",
+   "MAN73",
+   "MAN74",
+   "MAN77",
+   "MATH36"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5174",
+   "title": "Electrician - Associate of Science Degree and Certificate of Achievement - NAS766/C/NCE766",
+   "h1": "Electrician - Associate of Science Degree and Certificate of Achievement - NAS766/C/NCE766",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3234
+ },
+ {
+  "control_number": "33906",
+  "title": "Electrician Apprenticeship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELE400",
+   "ELE401",
+   "ELE402",
+   "ELE403",
+   "ELE404",
+   "ELE405",
+   "ELE406",
+   "ELE407",
+   "ELE408",
+   "ELE409"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5175",
+   "title": "Electrician Apprenticeship - Associate of Science Degree and Certificate of Achievement - NAS485/C/NCE485",
+   "h1": "Electrician Apprenticeship - Associate of Science Degree and Certificate of Achievement - NAS485/C/NCE485",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3684
+ },
+ {
+  "control_number": "33940",
+  "title": "Electrician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.95,
+  "codes_found": [
+   "CON66",
+   "ELC71",
+   "ELC72",
+   "ELC73",
+   "ELC74",
+   "ELC76",
+   "ELC77",
+   "ELE71",
+   "ELE72",
+   "ELE73",
+   "ELE74",
+   "ELE75",
+   "ELE76",
+   "ELE77",
+   "ENE62",
+   "MAN72",
+   "MAN73",
+   "MAN77",
+   "MATH36"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5174",
+   "title": "Electrician - Associate of Science Degree and Certificate of Achievement - NAS766/C/NCE766",
+   "h1": "Electrician - Associate of Science Degree and Certificate of Achievement - NAS766/C/NCE766",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3234
+ },
+ {
+  "control_number": "33951",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.862,
+  "codes_found": [
+   "COMM12",
+   "ECONC2002H",
+   "ENGL20",
+   "GEG2",
+   "HIST1",
+   "HIST14",
+   "HIST25",
+   "HIST26",
+   "HIST31",
+   "HIST34",
+   "HISTC1001H",
+   "HISTC1002H",
+   "HUM4",
+   "HUM4H",
+   "HUM5",
+   "HUM5H",
+   "POLS2",
+   "POLS4",
+   "POLS4H",
+   "POLSC1000",
+   "POLSC1000H",
+   "SOC1",
+   "SOC10",
+   "SOC10H",
+   "SOC1H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5573",
+   "title": "History - Associate in Arts for Transfer (ADT) - NAA745 (CaI-GETC)",
+   "h1": "History - Associate in Arts for Transfer (ADT) - NAA745 (CaI-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 3653
+ },
+ {
+  "control_number": "33952",
+  "title": "Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "CHE12A",
+   "CHE12B",
+   "CHE1A",
+   "CHE1B",
+   "MATHC2210H",
+   "PHY4A",
+   "PHY4B"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5153",
+   "title": "Chemistry - Associate in Science for Transfer (ADT) - NAS769 (Cal-GETC)",
+   "h1": "Chemistry - Associate in Science for Transfer (ADT) - NAS769 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2527
+ },
+ {
+  "control_number": "35027",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "BIO60",
+   "BIO61",
+   "CHE1A",
+   "CHE1B",
+   "MATHC2210H",
+   "PHY2A",
+   "PHY2B",
+   "PHY4A",
+   "PHY4B"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5143",
+   "title": "Biology - Associate in Science for Transfer (ADT) - NAS768 (CaI-GETC)",
+   "h1": "Biology - Associate in Science for Transfer (ADT) - NAS768 (CaI-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2721
+ },
+ {
+  "control_number": "35308",
+  "title": "Sound and Communication Systems Installer Apprenticeship",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELE420",
+   "ELE421",
+   "ELE422",
+   "ELE423",
+   "ELE424",
+   "ELE425",
+   "ELE499"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5233",
+   "title": "Sound and Communication Systems Installer Apprenticeship  - Associate of Science Degree and Certificate of Achievement - NAS644/C/NCE644",
+   "h1": "Sound and Communication Systems Installer Apprenticeship  - Associate of Science Degree and Certificate of Achievement - NAS644/C/NCE644",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3007
+ },
+ {
+  "control_number": "35405",
+  "title": "Sound and Communication Systems Installer Apprenticeship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELE420",
+   "ELE421",
+   "ELE422",
+   "ELE423",
+   "ELE424",
+   "ELE425",
+   "ELE499"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5233",
+   "title": "Sound and Communication Systems Installer Apprenticeship  - Associate of Science Degree and Certificate of Achievement - NAS644/C/NCE644",
+   "h1": "Sound and Communication Systems Installer Apprenticeship  - Associate of Science Degree and Certificate of Achievement - NAS644/C/NCE644",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3007
+ },
+ {
+  "control_number": "35853",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ1",
+   "ADJ12",
+   "ADJ13",
+   "ADJ19",
+   "ADJ1H",
+   "ADJ2",
+   "ADJ20",
+   "ADJ200",
+   "ADJ24",
+   "ADJ3",
+   "ADJ31",
+   "ADJ3H",
+   "ADJ4",
+   "ADJ5",
+   "ADJ8",
+   "ADJ9",
+   "ADJ9H",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYC48",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC1H",
+   "SOC20",
+   "SOC48",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5132",
+   "title": "Administration of Justice - Associate in Science for Transfer (ADT) - NAS643 (Cal-GETC)",
+   "h1": "Administration of Justice - Associate in Science for Transfer (ADT) - NAS643 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 4012
+ },
+ {
+  "control_number": "35938",
+  "title": "Facility Maintenance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CON66",
+   "ELC66",
+   "ELC68",
+   "ELC69",
+   "ELE27",
+   "ELE77",
+   "ENE27",
+   "ENE51",
+   "ENE60",
+   "MAN55",
+   "MAN68",
+   "MAN69",
+   "MAN77",
+   "MATH36"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5191",
+   "title": "Facility Maintenance - Associate of Science Degree and Certificate of Achievement - NAS771/C/NCE771",
+   "h1": "Facility Maintenance - Associate of Science Degree and Certificate of Achievement - NAS771/C/NCE771",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3039
+ },
+ {
+  "control_number": "35958",
+  "title": "Facility Maintenance",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CON66",
+   "ELC66",
+   "ELC68",
+   "ELC69",
+   "ELE27",
+   "ELE77",
+   "ENE27",
+   "ENE51",
+   "ENE60",
+   "MAN55",
+   "MAN68",
+   "MAN69",
+   "MAN77",
+   "MATH36"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5191",
+   "title": "Facility Maintenance - Associate of Science Degree and Certificate of Achievement - NAS771/C/NCE771",
+   "h1": "Facility Maintenance - Associate of Science Degree and Certificate of Achievement - NAS771/C/NCE771",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3039
+ },
+ {
+  "control_number": "36468",
+  "title": "Business Information Worker",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAT1A",
+   "CAT3",
+   "CAT31",
+   "CAT51",
+   "CIS3",
+   "CIS98A",
+   "CIS98B"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5150",
+   "title": "Business Information Worker - Associate of Science Degree and Certificate of Achievement - NAS522/C/NCE522",
+   "h1": "Business Information Worker - Associate of Science Degree and Certificate of Achievement - NAS522/C/NCE522",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2214
+ },
+ {
+  "control_number": "36469",
+  "title": "Business Information Worker",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAT1A",
+   "CAT3",
+   "CAT31",
+   "CAT51",
+   "CIS3",
+   "CIS98A",
+   "CIS98B"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5150",
+   "title": "Business Information Worker - Associate of Science Degree and Certificate of Achievement - NAS522/C/NCE522",
+   "h1": "Business Information Worker - Associate of Science Degree and Certificate of Achievement - NAS522/C/NCE522",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2214
+ },
+ {
+  "control_number": "36661",
+  "title": "Music",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "MIS11A",
+   "MIS11B",
+   "MUS38",
+   "MUS39",
+   "MUS4",
+   "MUS5",
+   "MUS6",
+   "MUS78",
+   "MUS79"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5207",
+   "title": "Music - Associate of Arts Degree - NAA564/C",
+   "h1": "Music - Associate of Arts Degree - NAA564/C",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3609
+ },
+ {
+  "control_number": "37163",
+  "title": "Child and Adolescent Development",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT2",
+   "ANT2H",
+   "BIO1",
+   "BIO10",
+   "BIO1H",
+   "EAR20",
+   "EAR24",
+   "EAR28",
+   "EAR42",
+   "PSYC9",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC10",
+   "SOC12",
+   "SOC1H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5154",
+   "title": "Child and Adolescent Development - Associate in Arts for Transfer (ADT) - NAA886 (CaI-GETC)",
+   "h1": "Child and Adolescent Development - Associate in Arts for Transfer (ADT) - NAA886 (CaI-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 4365
+ },
+ {
+  "control_number": "37169",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 29,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37232",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.96,
+  "codes_found": [
+   "ART17",
+   "ART18",
+   "ART20",
+   "ART22",
+   "ART23",
+   "ART24",
+   "ART26",
+   "ART36A",
+   "ART40A",
+   "ARTH10",
+   "ARTH12",
+   "ARTH13",
+   "ARTH14",
+   "ARTH4",
+   "ARTH5",
+   "ARTH7",
+   "ARTH8",
+   "ARTH9",
+   "ARTHC1200",
+   "ARTHC1200H",
+   "FRE2",
+   "SPA2",
+   "SPA3",
+   "SPA4"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5141",
+   "title": "Art History - Associate in Arts for Transfer (ADT) - NAA743 (Cal-GETC)",
+   "h1": "Art History - Associate in Arts for Transfer (ADT) - NAA743 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 3692
+ },
+ {
+  "control_number": "37311",
+  "title": "Environmental Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "BIO19",
+   "BIO60",
+   "BIO61",
+   "CHE1A",
+   "CHE1B",
+   "ECONC2001H",
+   "GEG1",
+   "GEG1H",
+   "GEG1L",
+   "MATHC2210H",
+   "PHY2A",
+   "PHY2B",
+   "PHY4A",
+   "PHY4B",
+   "PSYC48",
+   "SOC48",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5185",
+   "title": "Environmental Science - Associate in Science for Transfer (ADT) - NAS893 (CaI-GETC)",
+   "h1": "Environmental Science - Associate in Science for Transfer (ADT) - NAS893 (CaI-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3427
+ },
+ {
+  "control_number": "37459",
+  "title": "MUSIC",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS3",
+   "MUS31",
+   "MUS4",
+   "MUS5",
+   "MUS6",
+   "MUS70",
+   "MUS71",
+   "MUS87",
+   "MUSP70"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5206",
+   "title": "Music - Associate in Arts for Transfer (ADT) - NAA705 (CaI-GETC)",
+   "h1": "Music - Associate in Arts for Transfer (ADT) - NAA705 (CaI-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3553
+ },
+ {
+  "control_number": "37676",
+  "title": "Construction Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CON62",
+   "CON64",
+   "CON66",
+   "CON73",
+   "CON74",
+   "CON80",
+   "ELE408",
+   "ELE409",
+   "ELE424",
+   "ELE425",
+   "ELE77",
+   "ENE27",
+   "MAG51"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5161",
+   "title": "Construction Management - Associate of Science Degree and Certificate of Achievement - NAS906/C/NCE906",
+   "h1": "Construction Management - Associate of Science Degree and Certificate of Achievement - NAS906/C/NCE906",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2441
+ },
+ {
+  "control_number": "38022",
+  "title": "Construction Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "CON62",
+   "CON64",
+   "CON66",
+   "CON74",
+   "CON80",
+   "ELE408",
+   "ELE409",
+   "ELE424",
+   "ELE425",
+   "ELE77",
+   "ENE27",
+   "MAG51"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5161",
+   "title": "Construction Management - Associate of Science Degree and Certificate of Achievement - NAS906/C/NCE906",
+   "h1": "Construction Management - Associate of Science Degree and Certificate of Achievement - NAS906/C/NCE906",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2441
+ },
+ {
+  "control_number": "38535",
+  "title": "Accounting Basics for Small Business",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACC801",
+   "ACC802",
+   "ACC803"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5131",
+   "title": "Accounting Basics for Small Business - Certificate of Completion - NCC8009",
+   "h1": "Accounting Basics for Small Business - Certificate of Completion - NCC8009",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1331
+ },
+ {
+  "control_number": "38743",
+  "title": "Computerized Numerical Control Operator",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38807",
+  "title": "Customer Relations",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PDS806",
+   "PDS807",
+   "PDS813"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5165",
+   "title": "Customer Relations - Certificate of Completion - NCC8012",
+   "h1": "Customer Relations - Certificate of Completion - NCC8012",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1265
+ },
+ {
+  "control_number": "38808",
+  "title": "Sales Techniques",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PDS814",
+   "PDS815"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5227",
+   "title": "Sales Techniques - Certificate of Completion - NCC8016",
+   "h1": "Sales Techniques - Certificate of Completion - NCC8016",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1355
+ },
+ {
+  "control_number": "38810",
+  "title": "Social Media for Business",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENP801",
+   "ENP802",
+   "ENP803",
+   "ENP804",
+   "ENP805"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5231",
+   "title": "Social Media for Business - Certificate of Completion - NCC8011",
+   "h1": "Social Media for Business - Certificate of Completion - NCC8011",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1581
+ },
+ {
+  "control_number": "38814",
+  "title": "Enterprise Communication",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PDS805",
+   "PDS806",
+   "PDS807",
+   "PDS809",
+   "PDS812",
+   "PDS813"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5179",
+   "title": "Enterprise Communications - Certificate of Completion - NCC8014",
+   "h1": "Enterprise Communications - Certificate of Completion - NCC8014",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 6,
+  "text_chars": 1647
+ },
+ {
+  "control_number": "38815",
+  "title": "Emerging Leaders",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PDS801",
+   "PDS802",
+   "PDS803",
+   "PDS804"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5176",
+   "title": "Emerging Leaders - Certificate of Completion - NCC8013",
+   "h1": "Emerging Leaders - Certificate of Completion - NCC8013",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1447
+ },
+ {
+  "control_number": "38816",
+  "title": "Financial Literacy",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38817",
+  "title": "Workplace Essentials",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PDS808",
+   "PDS809",
+   "PDS810",
+   "PDS812"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5238",
+   "title": "Workplace Essentials - Certificate of Completion - NCC8017",
+   "h1": "Workplace Essentials - Certificate of Completion - NCC8017",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1517
+ },
+ {
+  "control_number": "39998",
+  "title": "Apprenticeship: Manufacturing Technician 2",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENE30",
+   "ENE51",
+   "ENE62",
+   "MAN36",
+   "MAN55",
+   "MAN56",
+   "MAN57"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5139",
+   "title": "Apprenticeship: Manufacturing Technician II - Associate of Science Degree and Certificate of Achievement - NAS967/C/NCE967",
+   "h1": "Apprenticeship: Manufacturing Technician II - Associate of Science Degree and Certificate of Achievement - NAS967/C/NCE967",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2528
+ },
+ {
+  "control_number": "39999",
+  "title": "GAME DEVELOPMENT CORE",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GAM1",
+   "GAM2",
+   "GAM3A",
+   "GAM4A",
+   "GAM5A",
+   "GAM6A",
+   "GAM7"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5196",
+   "title": "Game Development Core - Associate of Science Degree and Certificate of Achievement - NAS970/C/NCE970",
+   "h1": "Game Development Core - Associate of Science Degree and Certificate of Achievement - NAS970/C/NCE970",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2095
+ },
+ {
+  "control_number": "40000",
+  "title": "GAME CONCEPT ART",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GAM1",
+   "GAM2",
+   "GAM3A",
+   "GAM4A",
+   "GAM5A",
+   "GAM5B",
+   "GAM6A",
+   "GAM7",
+   "GAM8"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5194",
+   "title": "Game Concept Art - Associate of Science Degree and Certificate of Achievement - NAS971/C/NCE971",
+   "h1": "Game Concept Art - Associate of Science Degree and Certificate of Achievement - NAS971/C/NCE971",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2271
+ },
+ {
+  "control_number": "40001",
+  "title": "3D GAME Modeling and Animation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GAM1",
+   "GAM2",
+   "GAM3A",
+   "GAM4A",
+   "GAM5A",
+   "GAM6A",
+   "GAM6B",
+   "GAM7",
+   "GAM8"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5129",
+   "title": "3D Game Modeling and Animation - Associate of Science Degree and Certificate of Achievement - NAS972/C/NCE972",
+   "h1": "3D Game Modeling and Animation - Associate of Science Degree and Certificate of Achievement - NAS972/C/NCE972",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2267
+ },
+ {
+  "control_number": "40005",
+  "title": "Entrepreneurial Essentials",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENP50",
+   "ENP51",
+   "ENP52",
+   "ENP53"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5180",
+   "title": "Entrepreneurial Essentials - Certificate of Achievement -NCE977",
+   "h1": "Entrepreneurial Essentials - Certificate of Achievement -NCE977",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1209
+ },
+ {
+  "control_number": "40006",
+  "title": "Entrepreneurial Foundations",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENP50",
+   "ENP51",
+   "ENP53",
+   "ENP54",
+   "ENP55"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5181",
+   "title": "Entrepreneurial Foundations - Certificate of Achievement - NCE978",
+   "h1": "Entrepreneurial Foundations - Certificate of Achievement - NCE978",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1501
+ },
+ {
+  "control_number": "40007",
+  "title": "Entrepreneurship and the Team",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENP50",
+   "ENP51",
+   "ENP53",
+   "ENP54",
+   "ENP70",
+   "ENP71"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5182",
+   "title": "Entrepreneurship and The Team - Certificate of Achievement - NCE979",
+   "h1": "Entrepreneurship and The Team - Certificate of Achievement - NCE979",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1852
+ },
+ {
+  "control_number": "40012",
+  "title": "Game Development Core",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GAM1",
+   "GAM2",
+   "GAM3A",
+   "GAM4A",
+   "GAM5A",
+   "GAM6A",
+   "GAM7"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5196",
+   "title": "Game Development Core - Associate of Science Degree and Certificate of Achievement - NAS970/C/NCE970",
+   "h1": "Game Development Core - Associate of Science Degree and Certificate of Achievement - NAS970/C/NCE970",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2095
+ },
+ {
+  "control_number": "40013",
+  "title": "Game Concept Art",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GAM1",
+   "GAM2",
+   "GAM3A",
+   "GAM4A",
+   "GAM5A",
+   "GAM5B",
+   "GAM6A",
+   "GAM7",
+   "GAM8"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5194",
+   "title": "Game Concept Art - Associate of Science Degree and Certificate of Achievement - NAS971/C/NCE971",
+   "h1": "Game Concept Art - Associate of Science Degree and Certificate of Achievement - NAS971/C/NCE971",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2271
+ },
+ {
+  "control_number": "40014",
+  "title": "3D GAME Modeling and Animation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GAM1",
+   "GAM2",
+   "GAM3A",
+   "GAM4A",
+   "GAM5A",
+   "GAM6A",
+   "GAM6B",
+   "GAM7",
+   "GAM8"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5129",
+   "title": "3D Game Modeling and Animation - Associate of Science Degree and Certificate of Achievement - NAS972/C/NCE972",
+   "h1": "3D Game Modeling and Animation - Associate of Science Degree and Certificate of Achievement - NAS972/C/NCE972",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2267
+ },
+ {
+  "control_number": "40018",
+  "title": "Apprenticeship: Manufacturing Technician 1",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENE30",
+   "ENE51",
+   "ENE62",
+   "MAN55",
+   "MAN56",
+   "MAN57"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5138",
+   "title": "Apprenticeship: Manufacturing Technician I - Certificate of Achievement - NCE968",
+   "h1": "Apprenticeship: Manufacturing Technician I - Certificate of Achievement - NCE968",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2458
+ },
+ {
+  "control_number": "40064",
+  "title": "Apprenticeship: Manufacturing Technician 2",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENE30",
+   "ENE51",
+   "ENE60",
+   "ENE62",
+   "MAN36",
+   "MAN55",
+   "MAN56",
+   "MAN57"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5139",
+   "title": "Apprenticeship: Manufacturing Technician II - Associate of Science Degree and Certificate of Achievement - NAS967/C/NCE967",
+   "h1": "Apprenticeship: Manufacturing Technician II - Associate of Science Degree and Certificate of Achievement - NAS967/C/NCE967",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2528
+ },
+ {
+  "control_number": "40079",
+  "title": "DRAFTING TECHNOLOGY",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARE37",
+   "CON60",
+   "CON62",
+   "DFT21",
+   "DFT27",
+   "DFT30",
+   "DFT51",
+   "DFT60",
+   "ENE21",
+   "ENE27",
+   "ENE30",
+   "ENE51",
+   "ENE60",
+   "MAN56",
+   "MATH36"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5169",
+   "title": "Drafting Technology - Associate of Science Degree and Certificate of Achievement - NAS539/C/NCE539",
+   "h1": "Drafting Technology - Associate of Science Degree and Certificate of Achievement - NAS539/C/NCE539",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2623
+ },
+ {
+  "control_number": "40131",
+  "title": "Successful Career Transitions",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PDS809",
+   "PDS812",
+   "PDS818"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5236",
+   "title": "Successful Career Transitions - Certificate of Completion - NCC8038",
+   "h1": "Successful Career Transitions - Certificate of Completion - NCC8038",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1322
+ },
+ {
+  "control_number": "40135",
+  "title": "Non-Credit Entrepreneurship and the Team",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENP850",
+   "ENP851",
+   "ENP853",
+   "ENP854",
+   "ENP870",
+   "ENP871"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5210",
+   "title": "Non-Credit Entrepreneurship and the Team - Certificate of Completion - NCC8037",
+   "h1": "Non-Credit Entrepreneurship and the Team - Certificate of Completion - NCC8037",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1897
+ },
+ {
+  "control_number": "40136",
+  "title": "Non- Credit Entrepreneurial Essentials",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENP850",
+   "ENP851",
+   "ENP852",
+   "ENP853"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5211",
+   "title": "Non-Credit Entrepreneurial Essentials - Certificate of Completion - NCC8035",
+   "h1": "Non-Credit Entrepreneurial Essentials - Certificate of Completion - NCC8035",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1480
+ },
+ {
+  "control_number": "40137",
+  "title": "Non-Credit Entrepreneurial Foundations",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENP850",
+   "ENP851",
+   "ENP853",
+   "ENP854",
+   "ENP855"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5212",
+   "title": "Non-Credit Entrepreneurial Foundations - Certificate of Completion - NCC8036",
+   "h1": "Non-Credit Entrepreneurial Foundations - Certificate of Completion - NCC8036",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1544
+ },
+ {
+  "control_number": "40290",
+  "title": "ARCHITECTURAL GRAPHICS",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARE25",
+   "ARE37",
+   "CON60",
+   "CON62",
+   "CON74",
+   "DFT21",
+   "DFT27",
+   "DFT30",
+   "ENE21",
+   "ENE27",
+   "ENE30"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5140",
+   "title": "Architectural Graphics - Associate of Science Degree and Certificate of Achievement - NAS983/C/NCE983",
+   "h1": "Architectural Graphics - Associate of Science Degree and Certificate of Achievement - NAS983/C/NCE983",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2641
+ },
+ {
+  "control_number": "40291",
+  "title": "3D MECHANICAL DRAFTING",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DFT21",
+   "DFT27",
+   "DFT30",
+   "DFT42",
+   "DFT42B",
+   "DFT51",
+   "DFT52",
+   "DFT62",
+   "ENE21",
+   "ENE27",
+   "ENE30",
+   "ENE42",
+   "ENE42B",
+   "ENE51",
+   "ENE52",
+   "MAN35",
+   "MAN56",
+   "MATH36"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5130",
+   "title": "3D Mechanical Drafting - Associate of Science Degree and Certificate of Achievement - NAS995/C/NCE995",
+   "h1": "3D Mechanical Drafting - Associate of Science Degree and Certificate of Achievement - NAS995/C/NCE995",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 2422
+ },
+ {
+  "control_number": "40293",
+  "title": "Beginning American College English",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40294",
+  "title": "Advanced American College English",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL848",
+   "ESL849",
+   "ESL850"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5134",
+   "title": "Advanced American College English - Certificate of Competency - NCC8027",
+   "h1": "Advanced American College English - Certificate of Competency - NCC8027",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1238
+ },
+ {
+  "control_number": "40295",
+  "title": "Industrial Automation Non-Credit",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELE810",
+   "ELE827",
+   "ELE855",
+   "ELE874",
+   "ENE851",
+   "ENE862"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5201",
+   "title": "Industrial Automation - Certificate of Completion- NCC8039",
+   "h1": "Industrial Automation - Certificate of Completion- NCC8039",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 6,
+  "text_chars": 2493
+ },
+ {
+  "control_number": "40318",
+  "title": "3D MECHANICAL DRAFTING",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DFT21",
+   "DFT27",
+   "DFT30",
+   "DFT42",
+   "DFT42B",
+   "DFT51",
+   "DFT52",
+   "DFT62",
+   "ENE21",
+   "ENE27",
+   "ENE30",
+   "ENE42",
+   "ENE42B",
+   "ENE51",
+   "ENE52",
+   "MAN35",
+   "MAN56",
+   "MATH36"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5130",
+   "title": "3D Mechanical Drafting - Associate of Science Degree and Certificate of Achievement - NAS995/C/NCE995",
+   "h1": "3D Mechanical Drafting - Associate of Science Degree and Certificate of Achievement - NAS995/C/NCE995",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 2422
+ },
+ {
+  "control_number": "40319",
+  "title": "ARCHITECTURAL GRAPHICS",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARE25",
+   "ARE37",
+   "CON62",
+   "CON74",
+   "DFT21",
+   "DFT27",
+   "DFT30",
+   "ENE21",
+   "ENE27",
+   "ENE30"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5140",
+   "title": "Architectural Graphics - Associate of Science Degree and Certificate of Achievement - NAS983/C/NCE983",
+   "h1": "Architectural Graphics - Associate of Science Degree and Certificate of Achievement - NAS983/C/NCE983",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2641
+ },
+ {
+  "control_number": "40582",
+  "title": "Family Childcare Provider",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EAR810",
+   "EAR811",
+   "EAR812"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5192",
+   "title": "Family Childcare Provider - Certificate of Completion - NCC8033",
+   "h1": "Family Childcare Provider - Certificate of Completion - NCC8033",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1676
+ },
+ {
+  "control_number": "41479",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.786,
+  "codes_found": [
+   "ACC1A",
+   "ACC1B",
+   "BUS10",
+   "BUS10H",
+   "BUS24",
+   "ECONC2001H",
+   "ECONC2002H",
+   "MATH5",
+   "MATHC2210H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5144",
+   "title": "Business Administration 2.0 - Associate in Science for Transfer (ADT) - NAS1002 (CaI-GETC)",
+   "h1": "Business Administration 2.0 - Associate in Science for Transfer (ADT) - NAS1002 (CaI-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3124
+ },
+ {
+  "control_number": "41680",
+  "title": "Social Justice Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT2",
+   "ANT2H",
+   "ANT4",
+   "ANT7",
+   "ANT8",
+   "COMM12",
+   "COMM13",
+   "ENGL18",
+   "ENGL20",
+   "ENGL24",
+   "ENGL25",
+   "ENGL35",
+   "ETS14",
+   "ETS2",
+   "ETS21",
+   "ETS23",
+   "ETS27",
+   "HIST14",
+   "HIST31",
+   "HIST34",
+   "HUM10",
+   "HUM10H",
+   "HUM16",
+   "HUM35",
+   "HUM9",
+   "MUS89",
+   "MUS89H",
+   "PHI35",
+   "POLS21",
+   "POLS23",
+   "PSYC48",
+   "PSYC50",
+   "PSYC8",
+   "PSYC9",
+   "SJS110",
+   "SOC10",
+   "SOC10H",
+   "SOC15",
+   "SOC2",
+   "SOC3",
+   "SOC48",
+   "SOC50",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5230",
+   "title": "Social Justice Studies - Associate in Arts for Transfer (ADT) - NAA1004 (CaI-GETC)",
+   "h1": "Social Justice Studies - Associate in Arts for Transfer (ADT) - NAA1004 (CaI-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 44,
+  "text_chars": 5077
+ },
+ {
+  "control_number": "41774",
+  "title": "CRIME SCENE INVESTIGATION",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ12",
+   "ADJ13",
+   "ADJ2",
+   "ADJ27",
+   "ADJ3",
+   "ADJ4",
+   "PHO27"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5164",
+   "title": "Crime Scene Investigation - Certificate of Achievement - NCE1041",
+   "h1": "Crime Scene Investigation - Certificate of Achievement - NCE1041",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2298
+ },
+ {
+  "control_number": "42715",
+  "title": "Noncredit Essential SolidWorks",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DFT842B"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5570/5344",
+   "title": "Noncredit Essential SolidWorks - Certificate of Completion - NCC8047",
+   "h1": "Noncredit Essential SolidWorks - Certificate of Completion - NCC8047",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 1082
+ },
+ {
+  "control_number": "42716",
+  "title": "Noncredit Essential Fusion 360",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42717",
+  "title": "Noncredit Essential CAD",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DFT831"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5570/5341",
+   "title": "Noncredit Essential CAD - Certificate of Completion - NCC8044",
+   "h1": "Noncredit Essential CAD - Certificate of Completion - NCC8044",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 1151
+ },
+ {
+  "control_number": "42722",
+  "title": "Noncredit Essential Revit",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARE825"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5570/5343",
+   "title": "Noncredit Essential Revit - Certificate of Completion - NCC8046",
+   "h1": "Noncredit Essential Revit - Certificate of Completion - NCC8046",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 962
+ },
+ {
+  "control_number": "42723",
+  "title": "Noncredit Essential 3D Tour",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARE863",
+   "CON862"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5570/5340",
+   "title": "Noncredit Essential 3D Tour - Certificate of Completion - NCC8043",
+   "h1": "Noncredit Essential 3D Tour - Certificate of Completion - NCC8043",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1221
+ },
+ {
+  "control_number": "42846",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT2",
+   "ANT2H",
+   "COMM11",
+   "COMM12",
+   "COMM13",
+   "COMM2",
+   "COMM20",
+   "COMM3",
+   "COMM6",
+   "COMM7",
+   "COMM9",
+   "COMM9H",
+   "COMMC1000",
+   "COMMC1000H",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "JOU7",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC1H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5155",
+   "title": "Communication Studies 2.0 - Associate in Arts for Transfer (ADT) - NAA1059 (CaI-GETC)",
+   "h1": "Communication Studies 2.0 - Associate in Arts for Transfer (ADT) - NAA1059 (CaI-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3190
+ },
+ {
+  "control_number": "42900",
+  "title": "Data Analytics",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "CIS1A",
+   "CIS2",
+   "CIS20",
+   "CIS30A",
+   "CIS30E",
+   "CIS61",
+   "CIS63",
+   "CIS68A",
+   "CIS68B",
+   "CIS70A",
+   "CSC2",
+   "CSC20",
+   "CSC61",
+   "CSC63",
+   "CSC8",
+   "MATH70A",
+   "MATH70B",
+   "MATHC2210H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5166",
+   "title": "Data Analytics - Certificate of Achievement - NCE1009",
+   "h1": "Data Analytics - Certificate of Achievement - NCE1009",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 2800
+ },
+ {
+  "control_number": "42933",
+  "title": "Data Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "CIS1A",
+   "CIS2",
+   "CIS30A",
+   "CIS30E",
+   "CIS61",
+   "CIS63",
+   "CIS68A",
+   "CIS68B",
+   "CIS70A",
+   "CSC2",
+   "CSC20",
+   "CSC63",
+   "CSC8",
+   "MATH1C",
+   "MATH3",
+   "MATH70A",
+   "MATH70B",
+   "MATHC2210H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5167",
+   "title": "Data Science - Associate of Science Degree - NAS1011/C",
+   "h1": "Data Science - Associate of Science Degree - NAS1011/C",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3058
+ },
+ {
+  "control_number": "42938",
+  "title": "Python Programming",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS30A",
+   "CIS30B",
+   "CIS30C",
+   "CIS30D",
+   "CIS30E"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5223",
+   "title": "Python Programming - Certificate of Achievement - NCE938",
+   "h1": "Python Programming - Certificate of Achievement - NCE938",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1464
+ },
+ {
+  "control_number": "43309",
+  "title": "Apprenticeship Carpentry, Acoustical Installer",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRP461A",
+   "CRP461B",
+   "CRP461C",
+   "CRP462",
+   "CRP463",
+   "CRP464",
+   "CRP465",
+   "CRP466",
+   "CRP467",
+   "CRP468",
+   "CRP471A",
+   "CRP471B",
+   "CRP471C",
+   "CRP472A",
+   "CRP473C",
+   "CRP474A",
+   "CRP474B",
+   "CRP479A",
+   "CRP483"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5516",
+   "title": "Apprenticeship Carpentry, Acoustical Installer - Associate of Science Degree and Certificate of Achievement -NAS1051/C/NCE1051",
+   "h1": "Apprenticeship Carpentry, Acoustical Installer - Associate of Science Degree and Certificate of Achievement -NAS1051/C/NCE1051",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 2918
+ },
+ {
+  "control_number": "43314",
+  "title": "Apprenticeship Carpentry, Concrete",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRP404C",
+   "CRP421A",
+   "CRP421B",
+   "CRP421C",
+   "CRP421E",
+   "CRP422A",
+   "CRP423B",
+   "CRP424A",
+   "CRP424D",
+   "CRP425A",
+   "CRP425D",
+   "CRP426A",
+   "CRP426B",
+   "CRP426C",
+   "CRP426D",
+   "CRP427C",
+   "CRP427D",
+   "CRP428A",
+   "CRP428E",
+   "CRP429A",
+   "CRP429C",
+   "CRP495"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5517",
+   "title": "Apprenticeship Carpentry, Concrete - Associate of Science Degree and Certificate of Achievement - NAS1052/C/NCE1052",
+   "h1": "Apprenticeship Carpentry, Concrete - Associate of Science Degree and Certificate of Achievement - NAS1052/C/NCE1052",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 2929
+ },
+ {
+  "control_number": "43315",
+  "title": "Apprenticeship Carpentry, Drywall Finisher",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRP471A",
+   "CRP471B",
+   "CRP472A",
+   "CRP474A",
+   "CRP476A",
+   "CRP476B",
+   "CRP477A",
+   "CRP477B",
+   "CRP477C",
+   "CRP478B",
+   "CRP478C",
+   "CRP478D",
+   "CRP479A",
+   "CRP482B",
+   "CRP482C"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5518",
+   "title": "Apprenticeship Carpentry, Drywall Finisher - Associate of Science Degree and Certificate of Achievement -NAS1053/C/NCE1053",
+   "h1": "Apprenticeship Carpentry, Drywall Finisher - Associate of Science Degree and Certificate of Achievement -NAS1053/C/NCE1053",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2542
+ },
+ {
+  "control_number": "43320",
+  "title": "Apprenticeship Carpentry, Drywall/Lather",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRP471A",
+   "CRP471B",
+   "CRP471C",
+   "CRP472A",
+   "CRP472B",
+   "CRP472C",
+   "CRP473A",
+   "CRP473B",
+   "CRP473C",
+   "CRP474A",
+   "CRP474B",
+   "CRP474C",
+   "CRP475A",
+   "CRP475B",
+   "CRP475C",
+   "CRP476A",
+   "CRP476B",
+   "CRP477A",
+   "CRP477B",
+   "CRP477C",
+   "CRP478B",
+   "CRP478C",
+   "CRP478D",
+   "CRP479A",
+   "CRP479C",
+   "CRP482B",
+   "CRP482C",
+   "CRP483",
+   "CRP489"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5519",
+   "title": "Apprenticeship Carpentry, Drywall/Lather - Associate of Science Degree and Certificate of Achievement -NAS1054/C/NCE1054",
+   "h1": "Apprenticeship Carpentry, Drywall/Lather - Associate of Science Degree and Certificate of Achievement -NAS1054/C/NCE1054",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 3396
+ },
+ {
+  "control_number": "43321",
+  "title": "Apprenticeship Carpentry, Finish Carpentry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRP404C",
+   "CRP421A",
+   "CRP421B",
+   "CRP421C",
+   "CRP424D",
+   "CRP425D",
+   "CRP433A",
+   "CRP433B",
+   "CRP433C",
+   "CRP433D",
+   "CRP434A",
+   "CRP434B",
+   "CRP434C",
+   "CRP434D",
+   "CRP435C"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5520",
+   "title": "Apprenticeship Carpentry, Finish Carpentry - Associate of Science Degree and Certificate of Achievement - NAS1055/C /NCE1055",
+   "h1": "Apprenticeship Carpentry, Finish Carpentry - Associate of Science Degree and Certificate of Achievement - NAS1055/C /NCE1055",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2534
+ },
+ {
+  "control_number": "43323",
+  "title": "Apprenticeship Carpentry, Framing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRP404C",
+   "CRP421A",
+   "CRP421B",
+   "CRP421C",
+   "CRP421E",
+   "CRP422A",
+   "CRP422B",
+   "CRP422D",
+   "CRP423B",
+   "CRP423C",
+   "CRP424B",
+   "CRP424C",
+   "CRP424D",
+   "CRP425C",
+   "CRP425D",
+   "CRP426B",
+   "CRP472A"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5136",
+   "title": "Apprenticeship Carpentry, Framing - Associate of Science Degree and Certificate of Achievement - NAS1056/C/NCE1056",
+   "h1": "Apprenticeship Carpentry, Framing - Associate of Science Degree and Certificate of Achievement - NAS1056/C/NCE1056",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2900
+ },
+ {
+  "control_number": "43324",
+  "title": "Apprenticeship Carpentry, Tilt-Up",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRP402B",
+   "CRP403A",
+   "CRP404A",
+   "CRP404B",
+   "CRP405A",
+   "CRP405B",
+   "CRP405C",
+   "CRP421A",
+   "CRP421B",
+   "CRP421C",
+   "CRP422A",
+   "CRP422E",
+   "CRP424D",
+   "CRP425A",
+   "CRP426B",
+   "CRP427D",
+   "CRP429A"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5137",
+   "title": "Apprenticeship Carpentry, Tilt-Up - Associate of Science Degree and Certificate of Achievement - NAS1057/C/NCE1057",
+   "h1": "Apprenticeship Carpentry, Tilt-Up - Associate of Science Degree and Certificate of Achievement - NAS1057/C/NCE1057",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2845
+ },
+ {
+  "control_number": "43588",
+  "title": "Apprenticeship Carpentry, Framing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRP404C",
+   "CRP421A",
+   "CRP421B",
+   "CRP421C",
+   "CRP421E",
+   "CRP422A",
+   "CRP422B",
+   "CRP422D",
+   "CRP423B",
+   "CRP423C",
+   "CRP424B",
+   "CRP424C",
+   "CRP424D",
+   "CRP425C",
+   "CRP425D",
+   "CRP426B",
+   "CRP472A"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5136",
+   "title": "Apprenticeship Carpentry, Framing - Associate of Science Degree and Certificate of Achievement - NAS1056/C/NCE1056",
+   "h1": "Apprenticeship Carpentry, Framing - Associate of Science Degree and Certificate of Achievement - NAS1056/C/NCE1056",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2900
+ },
+ {
+  "control_number": "43589",
+  "title": "Apprenticeship Carpentry, Tilt-Up",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRP402B",
+   "CRP403A",
+   "CRP404A",
+   "CRP404B",
+   "CRP405A",
+   "CRP405B",
+   "CRP405C",
+   "CRP421A",
+   "CRP421C",
+   "CRP422A",
+   "CRP422E",
+   "CRP424D",
+   "CRP425A",
+   "CRP426B",
+   "CRP427D",
+   "CRP429A"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5137",
+   "title": "Apprenticeship Carpentry, Tilt-Up - Associate of Science Degree and Certificate of Achievement - NAS1057/C/NCE1057",
+   "h1": "Apprenticeship Carpentry, Tilt-Up - Associate of Science Degree and Certificate of Achievement - NAS1057/C/NCE1057",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2845
+ },
+ {
+  "control_number": "43937",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "ACC1A",
+   "ACC1B",
+   "ANT2",
+   "ANT2H",
+   "BUS24",
+   "CIS1A",
+   "ECONC2001H",
+   "ECONC2002H",
+   "MATH1C",
+   "MATH3",
+   "MATH5",
+   "MATHC2210H",
+   "POLS11",
+   "POLS2",
+   "PSYC48",
+   "PSYC50",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC1H",
+   "SOC48",
+   "SOC50",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5471",
+   "title": "Economics - Associate of Arts for Transfer (ADT) NAA757 (CaI-GETC)",
+   "h1": "Economics - Associate of Arts for Transfer (ADT) NAA757 (CaI-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 3926
+ },
+ {
+  "control_number": "44005",
+  "title": "Entrepreneurship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENP50",
+   "ENP51",
+   "ENP52",
+   "ENP53",
+   "ENP54",
+   "ENP55",
+   "ENP70",
+   "ENP71"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5473",
+   "title": "Entrepreneurship - Associate of Science Degree - NAS531/C",
+   "h1": "Entrepreneurship - Associate of Science Degree - NAS531/C",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2642
+ },
+ {
+  "control_number": "44763",
+  "title": "Robotics Specialist",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MAN10",
+   "MAN11",
+   "MAN12",
+   "MAN13",
+   "MAN15"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5579",
+   "title": "Robotics Specialist - Certificate of Achievement - NCE1100",
+   "h1": "Robotics Specialist - Certificate of Achievement - NCE1100",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1068
+ },
+ {
+  "control_number": "44792",
+  "title": "Modern Policing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.976,
+  "codes_found": [
+   "ADJ1",
+   "ADJ13",
+   "ADJ150",
+   "ADJ1H",
+   "ADJ2",
+   "ADJ3",
+   "ADJ3H",
+   "ADJ4",
+   "ADJ8",
+   "ADJ9",
+   "ADJ9H",
+   "ANT2",
+   "ANT2H",
+   "ARTH5",
+   "COMM12",
+   "COMMC1000",
+   "COMMC1000H",
+   "EAR42",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "ETS1",
+   "ETS14",
+   "ETS2",
+   "ETS23",
+   "HIST14",
+   "HIST31",
+   "HISTC1002H",
+   "PHI12",
+   "POLS23",
+   "PSYC48",
+   "PSYC8",
+   "SJS110",
+   "SOC10",
+   "SOC10H",
+   "SOC20",
+   "SOC48",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5578",
+   "title": "Modern Policing - Associate of Science Degree - NAS1096/C",
+   "h1": "Modern Policing - Associate of Science Degree - NAS1096/C",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 41,
+  "text_chars": 4752
+ },
+ {
+  "control_number": "44879",
+  "title": "Administration of Justice: Corrections",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ1",
+   "ADJ1H",
+   "ADJ20",
+   "ADJ21",
+   "ADJ22",
+   "ADJ24",
+   "ADJ25",
+   "ADJ8",
+   "POLS5",
+   "SOC20"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5583",
+   "title": "Administration of Justice: Corrections - Associate of Science Degree - NAS1097/C",
+   "h1": "Administration of Justice: Corrections - Associate of Science Degree - NAS1097/C",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2945
+ },
+ {
+  "control_number": "44880",
+  "title": "Administration of Justice: Corrections",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ20",
+   "ADJ21",
+   "ADJ22",
+   "ADJ25",
+   "ADJ8"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5582",
+   "title": "Administration of Justice: Corrections - Certificate of Achievement - NCE1098",
+   "h1": "Administration of Justice: Corrections - Certificate of Achievement - NCE1098",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2214
+ },
+ {
+  "control_number": "44961",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.925,
+  "codes_found": [
+   "ADJ1",
+   "ADJ1H",
+   "ADJ2",
+   "ADJ20",
+   "ADJ200",
+   "ADJ3",
+   "ADJ3H",
+   "ADJ4",
+   "ADJ5",
+   "ADJ8",
+   "ADJ9",
+   "ADJ9H",
+   "ANT2",
+   "ANT2H",
+   "BUS18A",
+   "COMM12",
+   "COMM2",
+   "COMM3",
+   "COMM6",
+   "COMMC1000",
+   "COMMC1000H",
+   "ECONC2001H",
+   "ECONC2002H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "ETS1",
+   "GEG2",
+   "GUI48",
+   "HISTC1001H",
+   "HISTC1002H",
+   "PHI12",
+   "POLS11",
+   "POLS2",
+   "POLS4",
+   "POLS4H",
+   "POLS5",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYC48",
+   "SJS110",
+   "SOC10",
+   "SOC10H",
+   "SOC2",
+   "SOC20",
+   "SOC48",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5581",
+   "title": "Law, Public Policy, and Society - Associate in Arts for Transfer (ADT) - NAA1008 (Cal-GETC)",
+   "h1": "Law, Public Policy, and Society - Associate in Arts for Transfer (ADT) - NAA1008 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 53,
+  "text_chars": 5977
+ },
+ {
+  "control_number": "44986",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANT2",
+   "ANT2H",
+   "GEG1",
+   "GEG1H",
+   "GEG1L",
+   "GEG2",
+   "GEG3",
+   "GEG30A",
+   "GEG30B",
+   "GEG30C",
+   "GEG30D",
+   "GEG4",
+   "GEG5",
+   "GEG6",
+   "PSYC48",
+   "SOC48",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5580",
+   "title": "Geography - Associate in Arts for Transfer (ADT) - NAA759 (Cal-GETC)",
+   "h1": "Geography - Associate in Arts for Transfer (ADT) - NAA759 (Cal-GETC)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3610
+ },
+ {
+  "control_number": "45092",
+  "title": "Apprenticeship Carpentry, Concrete",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRP404C",
+   "CRP421A",
+   "CRP421B",
+   "CRP421C",
+   "CRP421E",
+   "CRP422A",
+   "CRP423B",
+   "CRP424A",
+   "CRP424D",
+   "CRP425A",
+   "CRP425D",
+   "CRP426A",
+   "CRP426B",
+   "CRP426C",
+   "CRP426D",
+   "CRP427C",
+   "CRP427D",
+   "CRP428A",
+   "CRP428E",
+   "CRP429A",
+   "CRP429C",
+   "CRP495"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5517",
+   "title": "Apprenticeship Carpentry, Concrete - Associate of Science Degree and Certificate of Achievement - NAS1052/C/NCE1052",
+   "h1": "Apprenticeship Carpentry, Concrete - Associate of Science Degree and Certificate of Achievement - NAS1052/C/NCE1052",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 2929
+ },
+ {
+  "control_number": "45287",
+  "title": "Biology Field Technician",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO19",
+   "BIO21",
+   "BIO3",
+   "BIO5",
+   "BIO7",
+   "BIO8"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/6346",
+   "title": "Biology Field Technician - Certificate of Achievement - NCE2007",
+   "h1": "Biology Field Technician - Certificate of Achievement - NCE2007",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1001
+ },
+ {
+  "control_number": "45364",
+  "title": "Apprenticeship Carpentry, Acoustical Installer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRP461A",
+   "CRP461B",
+   "CRP461C",
+   "CRP462",
+   "CRP463",
+   "CRP464",
+   "CRP465",
+   "CRP466",
+   "CRP467",
+   "CRP468",
+   "CRP471A",
+   "CRP471B",
+   "CRP471C",
+   "CRP472A",
+   "CRP473C",
+   "CRP474A",
+   "CRP474B",
+   "CRP479A",
+   "CRP483"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5516",
+   "title": "Apprenticeship Carpentry, Acoustical Installer - Associate of Science Degree and Certificate of Achievement -NAS1051/C/NCE1051",
+   "h1": "Apprenticeship Carpentry, Acoustical Installer - Associate of Science Degree and Certificate of Achievement -NAS1051/C/NCE1051",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 2918
+ },
+ {
+  "control_number": "45365",
+  "title": "Apprenticeship Carpentry, Drywall/Lather",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRP471A",
+   "CRP471B",
+   "CRP471C",
+   "CRP472A",
+   "CRP472B",
+   "CRP472C",
+   "CRP473A",
+   "CRP473B",
+   "CRP473C",
+   "CRP474A",
+   "CRP474B",
+   "CRP474C",
+   "CRP475A",
+   "CRP475B",
+   "CRP475C",
+   "CRP476A",
+   "CRP476B",
+   "CRP477A",
+   "CRP477B",
+   "CRP477C",
+   "CRP478B",
+   "CRP478C",
+   "CRP478D",
+   "CRP479A",
+   "CRP479C",
+   "CRP482B",
+   "CRP482C",
+   "CRP483",
+   "CRP489"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5519",
+   "title": "Apprenticeship Carpentry, Drywall/Lather - Associate of Science Degree and Certificate of Achievement -NAS1054/C/NCE1054",
+   "h1": "Apprenticeship Carpentry, Drywall/Lather - Associate of Science Degree and Certificate of Achievement -NAS1054/C/NCE1054",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 3396
+ },
+ {
+  "control_number": "45366",
+  "title": "Apprenticeship Carpentry, Finish Carpentry",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRP404C",
+   "CRP421A",
+   "CRP421B",
+   "CRP421C",
+   "CRP424D",
+   "CRP425D",
+   "CRP433A",
+   "CRP433B",
+   "CRP433C",
+   "CRP433D",
+   "CRP434A",
+   "CRP434B",
+   "CRP434C",
+   "CRP434D",
+   "CRP435C"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5520",
+   "title": "Apprenticeship Carpentry, Finish Carpentry - Associate of Science Degree and Certificate of Achievement - NAS1055/C /NCE1055",
+   "h1": "Apprenticeship Carpentry, Finish Carpentry - Associate of Science Degree and Certificate of Achievement - NAS1055/C /NCE1055",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2534
+ },
+ {
+  "control_number": "45367",
+  "title": "Apprenticeship Carpentry, Drywall Finisher",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRP471A",
+   "CRP471B",
+   "CRP472A",
+   "CRP474A",
+   "CRP476A",
+   "CRP476B",
+   "CRP477A",
+   "CRP477B",
+   "CRP477C",
+   "CRP478B",
+   "CRP478C",
+   "CRP478D",
+   "CRP479A",
+   "CRP482B",
+   "CRP482C"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5518",
+   "title": "Apprenticeship Carpentry, Drywall Finisher - Associate of Science Degree and Certificate of Achievement -NAS1053/C/NCE1053",
+   "h1": "Apprenticeship Carpentry, Drywall Finisher - Associate of Science Degree and Certificate of Achievement -NAS1053/C/NCE1053",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2542
+ },
+ {
+  "control_number": "45748",
+  "title": "Biomedical Electronic Equipment Repair",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "ELC11",
+   "ELE11",
+   "ELE23",
+   "ELE25",
+   "ELE41",
+   "ELE42",
+   "ELE43",
+   "ELE44",
+   "ELE45"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/6345",
+   "title": "Biomedical Electronic Equipment Repair - Certificate of Achievement - NCE1104",
+   "h1": "Biomedical Electronic Equipment Repair - Certificate of Achievement - NCE1104",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1957
+ },
+ {
+  "control_number": "45749",
+  "title": "Control Systems Specialist",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELC73",
+   "ELC74",
+   "ELC77",
+   "ELE64",
+   "ELE73",
+   "ELE74",
+   "ELE75",
+   "ELE77",
+   "MAN10",
+   "MAN15",
+   "MAN27",
+   "MAN28",
+   "MAN33",
+   "MAN64",
+   "MAN73",
+   "MAN74",
+   "MAN77"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/6347",
+   "title": "Control Systems Specialist - Certificate of Achievement - NCE1099",
+   "h1": "Control Systems Specialist - Certificate of Achievement - NCE1099",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2626
+ },
+ {
+  "control_number": "45750",
+  "title": "Agriculture Plant Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "BIO15",
+   "BIO3",
+   "BIO5",
+   "CHE12A",
+   "CHE1A",
+   "CHE2A",
+   "CHE2B",
+   "ECONC2001H",
+   "PSYC48",
+   "SOC48",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/6344",
+   "title": "Agriculture Plant Science - Associate in Science for Transfer (ADT) - NAS1105",
+   "h1": "Agriculture Plant Science - Associate in Science for Transfer (ADT) - NAS1105",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3618
+ },
+ {
+  "control_number": "45912",
+  "title": "Global Studies",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.927,
+  "codes_found": [
+   "ANT2",
+   "ANT2H",
+   "ANT5",
+   "ANT6",
+   "ANT7",
+   "ANT8",
+   "ARA1",
+   "ARA11",
+   "ARA11H",
+   "ARA2",
+   "ARA3",
+   "ARA8",
+   "ARTH12",
+   "ARTH13",
+   "ARTH14",
+   "ARTH20",
+   "ARTH5",
+   "ARTH9",
+   "ARTHC1200",
+   "ARTHC1200H",
+   "BIO19",
+   "BUS40",
+   "BUS43",
+   "BUS46",
+   "BUS48",
+   "CHE17",
+   "CHI1",
+   "CHI11",
+   "CHI2",
+   "ECON6",
+   "ENGL34",
+   "ENGL40",
+   "ENGL41",
+   "ENGL45",
+   "ENGL6",
+   "ENGL7",
+   "ENGL8",
+   "ENGL9",
+   "ETS13",
+   "FRE1",
+   "FRE11",
+   "FRE2",
+   "FST3",
+   "GEG1",
+   "GEG1H",
+   "GEG2",
+   "GEG3",
+   "HIST1",
+   "HIST25",
+   "HIST2H",
+   "HIST32",
+   "HIST33",
+   "HIST61",
+   "HUM10",
+   "HUM10H",
+   "HUM35",
+   "HUM4",
+   "HUM4H",
+   "HUM5",
+   "HUM5H",
+   "HUM8",
+   "ITA1",
+   "ITA11",
+   "ITA2",
+   "JPN1",
+   "JPN11",
+   "JPN2",
+   "JPN3",
+   "JPN4",
+   "MUS19",
+   "MUS19H",
+   "MUS22",
+   "PHI14",
+   "PHI33",
+   "PHI36",
+   "POLS10",
+   "POLS11",
+   "POLS13",
+   "POLS17",
+   "POLS2",
+   "POLS20",
+   "POLS2H",
+   "POLS4",
+   "POLS4H",
+   "POLS6",
+   "RUS1",
+   "RUS11",
+   "RUS2",
+   "RUS3",
+   "SPA1",
+   "SPA11",
+   "SPA12",
+   "SPA2",
+   "SPA2H",
+   "SPA3",
+   "SPA4",
+   "SPA51",
+   "SPA8",
+   "THE3",
+   "THE34",
+   "THE35",
+   "THE9"
+  ],
+  "source": {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/6342",
+   "title": "Global Studies - Certificate of Achievement - NCE1119",
+   "h1": "Global Studies - Certificate of Achievement - NCE1119",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 110,
+  "text_chars": 8239
+ }
+]

@@ -1,0 +1,289 @@
+{
+ "college": "Norco College",
+ "control_number": "45750",
+ "shape": "adt",
+ "title": "Agriculture Plant Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/6344",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5697,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5697,
+    "output_tokens": 2284,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2284,
+  "output_tokens_details": {
+   "thinking_tokens": 760
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06847,
+ "ms": 17947,
+ "seconds": 18.2,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 13,
+   "share": 0.923,
+   "missing": [
+    "ECO8"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "BIO14",
+    "ECONC2001"
+   ],
+   "flagged": [
+    "BIO14",
+    "ECONC2001"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    26.0
+   ],
+   "stated": [
+    24.0,
+    26.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Agriculture Plant Science - Associate in Science for Transfer (ADT) - NAS1105",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Students will recognize the key vegetative and reproductive structures of plants and describe the processes involved in plant growth and reproduction, including respiration, photosynthesis, transpiration, growth, fertilization, and fruit development.",
+    "Students will utilize fundamental principles of plant and soil science to promote sustainable plant growth and yield across various environmental conditions.",
+    "Students will discuss the historical, current, and future challenges related to food production systems at both local and global levels.",
+    "Students will employ scientific and mathematical reasoning, along with critical thinking skills, to tackle practical issues in agricultural production systems."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIO-5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO-14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIO-15",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CHE-2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHE-1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ECON-C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON-C2001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "STAT-C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT-C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-48",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC-48",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives - List A",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "BIO-3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHE-2B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHE-12A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECO 8",
+    "why": "not in the text; catalog lists ECON-C2001 (Principles of Microeconomics) instead"
+   }
+  ],
+  "notes": [
+   "The 'Required Courses' heading prints 'Units: 20.00- 21.00', which covers the three required courses plus the three nested 'Select one of the following' choices; it was not recorded as the stated total of the 'all' block (which sums to 9 units).",
+   "BIO-14 Soil Science and Management (3 units) is required but not in the closed list; marked catalog_addition.",
+   "ECON-C2001 is not in the closed list (closed list has ECO 8 with the same title, likely the pre-common-course-numbering code); marked catalog_addition. ECON-C2001H matched to closed-list ECONC2001H.",
+   "Honors twins (ECON-C2001H, STAT-C1000H) recorded as alternatives of their non-honors courses.",
+   "The page prints a second heading with a typo: 'Agriculture Planet Science - Associate in Science for Transfer (ADT)- NAS1105'.",
+   "Program learning outcomes are printed once for the program, which is this ADT award."
+  ]
+ },
+ "extracted_run": "38085495452"
+}

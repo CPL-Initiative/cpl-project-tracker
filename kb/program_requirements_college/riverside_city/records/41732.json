@@ -1,0 +1,208 @@
+{
+ "college": "Riverside City College",
+ "control_number": "41732",
+ "shape": "degree",
+ "title": "Entrepreneurial Photography",
+ "award": "A.S. Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5965",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5264,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5264,
+    "output_tokens": 1436,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1436,
+  "output_tokens_details": {
+   "thinking_tokens": 337
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04978,
+ "ms": 11545,
+ "seconds": 12.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Entrepreneurial Photography - Associate of Science Degree and Certificate of Achievement - AS1037/AS1037C/CE1037",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate the ability to create and run a photography business.",
+    "Practice advanced business topics required for a photographic freelance environment.",
+    "Understand how to maintain a consistent photographic style throughout professional photography packages to present to clients and to complete assignments.",
+    "Create a creative and consistent brand of photography that addresses the geographic need of the photographic market.",
+    "Manage photographic lighting such as portable flashes and strobes as appropriate for freelance requirements.",
+    "Analyze contemporary trends in photography and understand how to creatively create work that is original and desirable."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (12 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "PHO-8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHO-20",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHO-9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHO-14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHO-19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses (6 units)",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "PHO-22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHO-67",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHO-15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHO-18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints one combined section for the A.S. Degree and Certificate of Achievement; the program requirements (18 units) and Program Learning Outcomes are shared by both awards and recorded here for the A.S. Degree.",
+   "The section heading is printed three times with differing award codes (AS1037/AS1037C/CE1037 and AS1037/AS1037B/AS1037C/CE1037); the first form is used.",
+   "The catalog prints codes with hyphens (PHO-8); these match closed-list codes written with a space (PHO 8).",
+   "Several courses are marked '( Historical )' (PHO-20, PHO-14, PHO-19, PHO-22, PHO-67); a reviewer may want to confirm they remain current for 2026-2027.",
+   "The elective block states 6 units without an explicit 'select' instruction; read as choose 6 units from the list.",
+   "The degree text refers to general education 'as described in the college catalog' without naming a pattern; ge_pattern left null."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

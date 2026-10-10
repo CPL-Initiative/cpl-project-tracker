@@ -1,0 +1,186 @@
+{
+ "college": "Moreno Valley College",
+ "control_number": "37800",
+ "shape": "certificate",
+ "title": "Basic Graphic Design",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4464",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5038,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5038,
+    "output_tokens": 1750,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1750,
+  "output_tokens_details": {
+   "thinking_tokens": 585
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05515,
+ "ms": 14580,
+ "seconds": 15.0,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ADM62",
+    "ADM77A"
+   ],
+   "flagged": [
+    "ADM62",
+    "ADM77A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.0,
+    17.0
+   ],
+   "stated": [
+    17.0,
+    17.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 10,
+   "courses": 0,
+   "count": 10,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Basic Graphic Design - Certificate of Achievement - MCE939",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 17
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate ethical, economic, civic, and moral responsibility regarding digital media and print.",
+    "Create a graphics project from concept to prepared artwork considering color model, resolution, target market, and, if applicable, assign substrates and inks for its production.",
+    "Create graphics projects that demonstrate basic formal design skills including typography, composition and effective imagery.",
+    "Demonstrate proofing and pre-flighting techniques, portable document format (PDF) creation, and troubleshooting of a digital file in preparation for imaging a project.",
+    "Demonstrate knowledge of the print production process from concept to production.",
+    "Demonstrate an ability to meet deadlines.",
+    "Create an advertisement suitable for a portfolio that displays consistent color harmony and the effective use of the principles and elements of design.",
+    "Analyze and explain methods and techniques to design aesthetically pleasing and effective typographic communication.",
+    "Utilize various digital image-editing tools to edit, retouch, manipulate, enhance, optimize and composite raster-based images for broad range of graphic design and digital media usages.",
+    "Understand the technical differences and strategical advantages of raster-based and vector-based images for various design outputs and digital applications."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "ADM-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-2A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-62",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADM-63A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-71A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-77A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints two outcome lists, each introduced by 'Upon successful completion of this program, students should be able to:': one after the program description (6 items) and one under the 'Program Learning Outcomes' heading (4 complete items). Both are recorded; a reviewer should confirm which list is current.",
+   "Under 'Program Learning Outcomes' a stray fragment is printed: 'considering color model, resolution, target market, and, if applicable, assign substrates and inks for its production.' It appears to be a broken remnant of the second outcome in the first list and was not recorded as a separate outcome.",
+   "Line breaks inside two PLOs ('...the principles / and elements of design.' and '...raster-based / images...') were read as spaces.",
+   "ADM-1 is printed with 3.00 units, while the closed list stores 4 units.",
+   "ADM-62 (Typography and Graphic Design) and ADM-77A (Adobe Illustrator for Graphic Art) are not in the closed list and are recorded as catalog additions.",
+   "Catalog states 17.00 units total, which is consistent with the award type of 16 to fewer than 30 units."
+  ]
+ },
+ "extracted_run": "38085493318"
+}

@@ -1,0 +1,268 @@
+{
+ "college": "Norco College",
+ "control_number": "45748",
+ "shape": "certificate",
+ "title": "Biomedical Electronic Equipment Repair",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/6345",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5137,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5137,
+    "output_tokens": 2030,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2030,
+  "output_tokens_details": {
+   "thinking_tokens": 644
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06115,
+ "ms": 17037,
+ "seconds": 17.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 10,
+   "share": 0.9,
+   "missing": [
+    "ELE810"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ELC13",
+    "ELE10",
+    "ELE13"
+   ],
+   "flagged": [
+    "ELC13",
+    "ELE10",
+    "ELE13"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.0,
+    33.0
+   ],
+   "stated": [
+    33.0,
+    33.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Biomedical Electronic Equipment Repair - Certificate of Achievement - NCE1104",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Diagnose and repair faults in electronic medical devices using schematics and test equipment.",
+    "Apply safety and regulatory standards in the servicing of biomedical equipment.",
+    "Demonstrate proficiency in preventive maintenance and calibration procedures.",
+    "Communicate effectively with healthcare staff and technical personnel.",
+    "Maintain accurate service documentation in compliance with industry standards."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ELE-10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ELE-11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELC-11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ELE-13",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELC-13",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ELE-25",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELE-23",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELE-41",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELE-42",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELE-43",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELE-44",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELE-45",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ELE 810",
+    "why": "not in the text; catalog instead lists ELE-10 Survey of Electronics (Historical, 4 units)"
+   }
+  ],
+  "notes": [
+   "The catalog prints a single 'Required Courses' list (Units: 33.00, Total: 33.00) with two nested 'Select one of the following' choices; it is split here into a required block before the choices, the two choice blocks, and a required block after them, both required blocks named 'Required Courses'. The 33.00 total applies to the whole list and is recorded in program.total_units.",
+   "ELE-25 is read as required (not part of the second 'Select one' choice) because the course units sum to the stated 33.00 only that way.",
+   "ELE-10 Survey of Electronics is marked '( Historical )' in the catalog and is not on the closed list (closed list has noncredit ELE 810 Survey of Electronics); reviewer should check whether ELE-10 is still a valid requirement.",
+   "ELE-13 and ELC-13 AC Electronics are not on the closed list and are recorded as catalog additions.",
+   "Closed list entry 'ELE42' is matched to catalog ELE-42.",
+   "The page prints two headings with slightly different titles ('Biomedical Electronic Equipment Repair' and 'Biomedical Electronics Equipment Repair'), both for NCE1104."
+  ]
+ },
+ "extracted_run": "38085495452"
+}

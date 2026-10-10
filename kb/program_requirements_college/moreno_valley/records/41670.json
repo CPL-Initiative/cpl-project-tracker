@@ -1,0 +1,283 @@
+{
+ "college": "Moreno Valley College",
+ "control_number": "41670",
+ "shape": "adt",
+ "title": "Geography",
+ "award": "A.A- T Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4525",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5590,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5590,
+    "output_tokens": 2132,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2132,
+  "output_tokens_details": {
+   "thinking_tokens": 603
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.065,
+ "ms": 16788,
+ "seconds": 17.2,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "GEG8"
+   ],
+   "flagged": [
+    "GEG8"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    20.0
+   ],
+   "stated": [
+    19.0,
+    20.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Geography - Associate in Arts for Transfer (ADT) - MAA759 (Cal-GETC)",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Identify and understand critical environmental, cultural, and social challenges of the past, present and future, at a variety of scales and use that knowledge to navigate life and career.",
+    "Utilize resources, field equipment, spatial technology, and map data to research and identify various ways of understanding geographic patterns, challenges, problems and solutions.",
+    "Analyze culture, society and the natural environment from a geographic perspective, with emphasis placed on regional patterns and the geographic theme of location."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "GEG-1L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "GEG-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEG-1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "GEG-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEG-3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives: List A",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "GEG-4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEG-7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEG-8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEG-30A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEG-30B",
+        "units": 1,
+        "catalog_addition": false
+       },
+       {
+        "code": "GEG-30C",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives: List B",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ANT-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANT-2H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEG-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEG-3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'Units: 7.00' printed under Required Courses covers the whole required section (GEG-1L plus the two nested 'Select one of the following' choices), not GEG-1L alone; it is recorded on the Required Courses block.",
+   "List A reads 'Choose 6-7 units from List A or any course not used above'; List B reads 'Choose 6 units from List B or any course not used above'. Courses from the required section not already used (e.g., the unchosen GEG-2/GEG-3) may also count toward these lists.",
+   "GEG-2 and GEG-3 appear both in the required 'Select one' choice and in List B; a course used in one cannot be reused in the other.",
+   "GEG-4, GEG-7, GEG-30A and GEG-30C are marked '( Historical )' in the catalog; GEG-8 is not on the closed list and is recorded as a catalog addition.",
+   "The page also prints a heading 'Geography - Associate in Arts for Transfer (ADT) - MAA758 (CSUGE)/MAA759 (IGETC)', which appears to be an older version of the degree; the requirements read here are for the Cal-GETC version, and the closing text names Cal-GETC.",
+   "The program learning outcomes are printed once for the program and are recorded for this ADT."
+  ]
+ },
+ "extracted_run": "38085493318"
+}

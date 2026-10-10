@@ -1,0 +1,178 @@
+{
+ "college": "Riverside City College",
+ "control_number": "10070",
+ "shape": "degree",
+ "title": "Automotive Electrical and Electronics Specialist",
+ "award": "A.S. Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5891",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 4995,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 4995,
+    "output_tokens": 1158,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1158,
+  "output_tokens_details": {
+   "thinking_tokens": 273
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04314,
+ "ms": 10055,
+ "seconds": 10.6,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "AUT6B"
+   ],
+   "flagged": [
+    "AUT6B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Electrical and Electronics Specialist - Associate of Science Degree and Certificate of Achievement - AS991/AS991C/CE991",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate safe refrigerant handling practices whilecharging automotive air conditioning systems.",
+    "Diagnose, service, and repair electrical/electronic circuitsfound on modern automobiles.",
+    "Utilize a variety of electrical/electronic test equipment totest and diagnose electrical/electronic circuits.",
+    "Demonstrate personal and shop safety procedures neededto safely work in an automotive shop environment."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "AUT-6A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT-6B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUT-7",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT-8A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT-8B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT-50",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints one combined section for the A.S. Degree and Certificate of Achievement; the requirements and Program Learning Outcomes are shared by both awards and recorded here for the A.S. Degree.",
+   "The heading is printed three times; the third version reads 'AS991/AS991B/AS991C/CE991' instead of 'AS991/AS991C/CE991'.",
+   "Outcomes are copied exactly as printed, including run-together words ('whilecharging', 'circuitsfound', 'totest', 'neededto') that appear to be text-extraction artifacts; a reviewer may wish to confirm the original wording.",
+   "Every course is labeled '( Historical )' in the catalog table, which may indicate superseded course versions; verify these remain current for 2026-2027.",
+   "AUT-6B is not in the closed list and is recorded as a catalog addition.",
+   "The degree also requires general education and graduation requirements, but no specific GE pattern is named."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

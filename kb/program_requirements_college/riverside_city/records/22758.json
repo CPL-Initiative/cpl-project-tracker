@@ -1,0 +1,311 @@
+{
+ "college": "Riverside City College",
+ "control_number": "22758",
+ "shape": "certificate",
+ "title": "Education Paraprofessional",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5956",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5554,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5554,
+    "output_tokens": 2262,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2262,
+  "output_tokens_details": {
+   "thinking_tokens": 626
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06746,
+ "ms": 17510,
+ "seconds": 17.9,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 17,
+   "share": 0.882,
+   "missing": [
+    "HIS6",
+    "HIS7"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "HISTC1001",
+    "HISTC1002"
+   ],
+   "flagged": [
+    "HISTC1001",
+    "HISTC1002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    25.0,
+    25.0
+   ],
+   "stated": [
+    25.0,
+    25.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Education Paraprofessional - Associate of Science Degree and Certificate of Achievement - AS2001/AS2001C/CE2001",
+   "measure": "units",
+   "total_units": {
+    "min": 25,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Provide assistance to a teacher in regular classroom settings or in facilitating instruction and supervision to special student populations, such as bilingual/bicultural students, special education students, adult learners, and students learning English.",
+    "Demonstrate instruction techniques of general classroom, such as assisting with lessons, maintaining order and implementing related assignments.",
+    "Engage in professional communication with teachers and related school staff."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EDU-1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EAR-20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ENGL-C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL-C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "COMM-C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM-C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM-9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM-9H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HIST-C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-C1001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-C1002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses",
+    "rule": "choose_units",
+    "minimum": 8,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "EAR-26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL-30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN-30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA-1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPA-2",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HIS 6",
+    "why": "not in the text; catalog prints HIST-C1001 (United States History to 1877) instead"
+   },
+   {
+    "code": "HIS 7",
+    "why": "not in the text; catalog prints HIST-C1002 (United States History since 1865) instead"
+   }
+  ],
+  "notes": [
+   "The page prints one combined section for the Associate of Science Degree and the Certificate of Achievement; the requirements and the 25-unit total are shared by both awards.",
+   "The program learning outcomes are printed once for the program as a whole; the certificate shares them.",
+   "The 'Required Courses' heading prints 'Units: 17.00', which covers EDU-1, EAR-20 and the three nested 'Select one' choices together (7+4+3+3); it is not recorded as the stated total of the 'all' block alone.",
+   "HIST-C1001 and HIST-C1002 are not in the closed list (which has HIS 6 and HIS 7, likely their predecessors); recorded as catalog additions.",
+   "In the electives, 'Only one of the following may be used: SPA-1 OR SPA-2' is recorded as SPA-1 with SPA-2 as alternative within the 8-unit choice.",
+   "EDU-1, EAR-20 and EAR-26 are marked '( Historical )' in the catalog; a reviewer may check whether they are still offered.",
+   "The page header also repeats a heading with codes AS603/AS603B/AS603C/CE603, possibly an older version of the program."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

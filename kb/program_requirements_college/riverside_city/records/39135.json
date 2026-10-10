@@ -1,0 +1,198 @@
+{
+ "college": "Riverside City College",
+ "control_number": "39135",
+ "shape": "degree",
+ "title": "Automotive Refinishing and Paint",
+ "award": "A.S. Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5895",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5134,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5134,
+    "output_tokens": 1327,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1327,
+  "output_tokens_details": {
+   "thinking_tokens": 355
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04708,
+ "ms": 10913,
+ "seconds": 11.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Refinishing and Paint - Associate of Science Degree and Certificate of Achievement - AS955/AS955C/CE955",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Develop entry-level skills and knowledge for employmentin the automotive industry;. i.e., employment in an autobody repair facility, automotive paint shop.",
+    "Acquire the skills and knowledge to work safely in thelab/shop environment.",
+    "Demonstrate the ability to become part of the Inter-Industry Conference on Auto Collision Repair (I-CAR)."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "AUB-50",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUB-51",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUB-52",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUB-55",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Course",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "AUB-59B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUB-56",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUB-60",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUB-82",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints a single combined section for the A.S. Degree and Certificate of Achievement; the same requirements (20 units) apply to both. The heading is printed three times, the third variant also listing AS955B.",
+   "The program learning outcomes are printed once for the program as a whole; the A.S. Degree shares them. Typos ('employmentin', ';.', 'thelab/shop') copied as printed.",
+   "The degree text refers to general education requirements but names no specific GE pattern, so ge_pattern is null.",
+   "Several courses are marked '( Historical )' in the catalog (AUB-51, AUB-52, AUB-55, AUB-59B, AUB-60); a reviewer may want to confirm they are still offered for 2026-2027.",
+   "Catalog prints codes with a hyphen (AUB-50); these match closed-list codes written with a space (AUB 50)."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

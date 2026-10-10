@@ -1,0 +1,349 @@
+{
+ "college": "Moreno Valley College",
+ "control_number": "41720",
+ "shape": "certificate",
+ "title": "Data Analytics",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4491",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5642,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5642,
+    "output_tokens": 3408,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3408,
+  "output_tokens_details": {
+   "thinking_tokens": 1507
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09073,
+ "ms": 27500,
+ "seconds": 28.0,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 19,
+   "share": 0.895,
+   "missing": [
+    "MAT1A",
+    "MAT1B"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "CIS70A",
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "flagged": [
+    "CIS70A",
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.0,
+    33.0
+   ],
+   "stated": [
+    33.0,
+    33.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Data Analytics - Certificate of Achievement - MCE1009",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Identify, extract, clean and maintain data in databases.",
+    "Interpret and evaluate data trends or patterns in complex data sets using statistical techniques, analytic methods, and tools.",
+    "Create and monitor reports to preserve data quality, identify critical issues, trends, and potential solutions."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS-1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-70B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-C2210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH-C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS-30E",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CIS-70A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH-70A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CIS-61",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSC-61",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CIS-30A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSC-8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CIS-63",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSC-63",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CIS-68A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-68B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSC-2",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSC-20",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-64",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MAT 1A",
+    "why": "not in the text; catalog lists MATH-C2210 Calculus I: Early Transcendentals instead"
+   },
+   {
+    "code": "MAT 1B",
+    "why": "not in the text; catalog lists MATH-C2220 Calculus II: Early Transcendentals instead"
+   }
+  ],
+  "notes": [
+   "The Required Courses section prints 'Units: 30.00' for the whole section, including the four 'Select one' choices; it is not recorded on the 'all' block, whose listed courses sum to 18 units. 18 + 4 x 3 = 30, consistent with MATH-70B, MATH-C2210, MATH-C2220 and CIS-30E being required courses rather than options in the preceding 'Select one' lists.",
+   "The layout is ambiguous: MATH-70B and MATH-C2210 follow the CIS-30A/CSC-8 'Select one' list, and MATH-C2220 and CIS-30E follow the CIS-63/CSC-63 list. They were read as required based on the 30-unit section total and the 3.00 printed for each 'Select one'.",
+   "In the elective list, the cross-listed courses with identical titles (CIS-2/CSC-2 and CIS-20/CSC-20) are recorded as alternatives of one choice.",
+   "MATH-C2210 and MATH-C2220 appear to be the common-course-numbered replacements for MAT 1A/MAT 1B on the closed list; CIS-70A appears to be a cross-listing of MATH-70A. These are recorded as catalog additions.",
+   "Program prerequisite: MAT-10 or a qualifying math placement level is required before entry. It is not part of the award requirements and is not placed in a block.",
+   "Catalog total: 33.00 units (30 required + 3 elective)."
+  ]
+ },
+ "extracted_run": "38085493318"
+}

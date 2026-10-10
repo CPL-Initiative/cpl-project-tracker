@@ -1,0 +1,284 @@
+{
+ "college": "Moreno Valley College",
+ "control_number": "38935",
+ "shape": "certificate",
+ "title": "Web Master: Web Designer",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4570",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5276,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5276,
+    "output_tokens": 1972,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1972,
+  "output_tokens_details": {
+   "thinking_tokens": 566
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06054,
+ "ms": 15859,
+ "seconds": 16.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "ADM62",
+    "ADM74A",
+    "ADM77A",
+    "CAT79",
+    "CIS56A",
+    "CIS72A"
+   ],
+   "flagged": [
+    "ADM62",
+    "ADM74A",
+    "ADM77A",
+    "CAT79",
+    "CIS56A",
+    "CIS72A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.0,
+    18.0
+   ],
+   "stated": [
+    17.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Web Master: Web Designer - Certificate of Achievement - MCE933",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Create valid, properly structured web pages using a variety of HTML features to form a typical 5-10 page site.",
+    "Create external style sheets that effectively control an entire web site's formatting and layout.",
+    "Design, create, test, upload and manage an accessible and standards compliant interactive web site that includes the use of text, graphics, and multimedia.",
+    "Apply design and visual communication principles to web site, page, and interface design.",
+    "Create and edit images and animations for use on the web, including photographs, logos, navigation buttons, background images, and web design mockup images."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (Core Requirements 6 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CIS-72A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS-72B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-76B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Concentration Required Courses (6 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ADM-67",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Concentration Required Courses: Select one",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ADM-71A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-56A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS-78A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Concentration Electives (5-6): Select one",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ADM-77A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CAT-79",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS-79",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Concentration Electives (5-6): Select one",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ADM-2A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-62",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADM-74A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 6-unit total printed for 'Concentration Required Courses' covers both ADM-67 and the nested 'Select one' (3 units); it is recorded on the ADM-67 block, and the nested choice carries its own printed 3.00.",
+   "'Concentration Electives (5-6)' (Units 5.00-6.00) is printed as two 'Select one' choices (3.00 and 2.00-3.00), recorded as two separate choose-one blocks.",
+   "The program description mentions emphases (graphics/animation vs. Javascript/PHP), but this section lists only one concentration's courses.",
+   "Several codes in the section (CIS-72A, CIS-56A, ADM-77A, CAT-79, ADM-62, ADM-74A) are not in the closed list and are marked as catalog additions."
+  ]
+ },
+ "extracted_run": "38085493318"
+}

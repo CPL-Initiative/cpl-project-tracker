@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 534,
+   "count": 535,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3950,6 +3950,24 @@
      "title": "A summary surface must share the unit of the detail it summarizes",
      "type": "methodology",
      "updated": "2026-08-01"
+    },
+    {
+     "created": "2026-10-10",
+     "governs": [
+      "a11y.config.js",
+      "scripts/a11y.js",
+      "tests/map_users_first_light.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-sweep-of-a-gated-view-measures-the-gate.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "a11y",
+      "ui-pass"
+     ],
+     "title": "A sweep of a gated view measures the gate",
+     "type": "methodology",
+     "updated": "2026-10-10"
     },
     {
      "created": "2026-08-09",
@@ -15222,8 +15240,29 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 329,
+   "count": 330,
    "docs": [
+    {
+     "created": "2026-10-10",
+     "governs": [],
+     "n": 359,
+     "path": "docs/session_359_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "harvest",
+      "phase-2",
+      "curriqunet",
+      "rccd",
+      "display",
+      "ui-pass",
+      "checkpoint"
+     ],
+     "title": "RCCD's three colleges read, loaded and displayed; MAP Users on First Light",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-10",
      "governs": [],
@@ -20843,5 +20882,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1090
+ "total": 1092
 }

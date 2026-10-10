@@ -1,0 +1,269 @@
+{
+ "college": "Riverside City College",
+ "control_number": "39118",
+ "shape": "certificate",
+ "title": "Web Master - Web Designer",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6066",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5334,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5334,
+    "output_tokens": 2000,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2000,
+  "output_tokens_details": {
+   "thinking_tokens": 507
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06134,
+ "ms": 15140,
+ "seconds": 15.5,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CAT79"
+   ],
+   "flagged": [
+    "CAT79"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    14.0,
+    15.0
+   ],
+   "stated": [
+    14.0,
+    15.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Web Master - Web Designer - Certificate of Achievement - CE1114",
+   "measure": "units",
+   "total_units": {
+    "min": 14,
+    "max": 15
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Create valid, properly structured web pages using avariety of HTML features to form a typical 5-10 page site.",
+    "Create external style sheets that effectively control anentire web site’s formatting and layout.",
+    "Design, create, test, upload and manage an accessible andstandards compliant interactive and responsive web sitethat includes the use of text, graphics, and multimedia.",
+    "Apply design and visual communication principles to website, page, and interface design.",
+    "Create and edit images and animations for use on theweb, including photographs, logos, navigation buttons,background images, and web design mockup images."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CIS-72A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-72B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses - Concentration: Select one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ADM-74A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-71",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses - Concentration: Select one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ADM-71A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-56A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-78A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses - Concentration: Select one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ADM-77A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT-79",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS-79",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses - Concentration: Select one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ADM-2A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-62",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints the heading 'Web Master - Web Designer - Certificate of Achievement - CE1114' twice followed by a third heading ending 'CE933'; only one set of requirements follows, so it is unclear which code it belongs to. Reviewer should confirm.",
+   "'Required Courses - Concentration' prints a section total of 6.00 units spanning its two 'Select one' blocks; 'Elective Courses - Concentration' prints 5.00-6.00 units spanning its two 'Select one' blocks.",
+   "CAT-79 (Introduction to Adobe Illustrator) is not in the closed list; it appears as an option alongside CIS-79 with the same title.",
+   "Outcomes copied as printed, including run-together words (e.g., 'avariety', 'anentire', 'andstandards', 'sitethat', 'theweb', 'buttons,background') that appear to be extraction artifacts of line breaks.",
+   "Program outcomes are printed for the program as a whole; this certificate shares them.",
+   "Catalog prints codes with hyphens (CIS-56A, CIS-79) matched to closed-list entries CIS56A and CIS79."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

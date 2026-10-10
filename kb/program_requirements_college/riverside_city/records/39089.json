@@ -1,0 +1,215 @@
+{
+ "college": "Riverside City College",
+ "control_number": "39089",
+ "shape": "certificate",
+ "title": "Basic Graphic Communication",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5901",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 4915,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 4915,
+    "output_tokens": 1557,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1557,
+  "output_tokens_details": {
+   "thinking_tokens": 478
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0508,
+ "ms": 13169,
+ "seconds": 13.5,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ADM2B",
+    "ADM84A",
+    "ADM84B"
+   ],
+   "flagged": [
+    "ADM2B",
+    "ADM84A",
+    "ADM84B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Basic Graphic Communication - Certificate of Achievement - CE949",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Create and print a project suitable for a portfolio that demonstrates effective design and proper production technique.",
+    "Create a graphics project from concept to preparedartwork considering color model, resolution, and target market.",
+    "Complete a preflight and prepress checklist and prepare aproject for print.",
+    "Demonstrate proper set-up, safe operation, and clean-upof printing press equipment.",
+    "Demonstrate an ability to meet deadlines."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (17 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "ADM-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-2B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADM-63A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-84A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADM-85A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-71A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ADM-77A",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses (3 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ADM-84B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADM-85B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "ADM-71A or ADM-77A ('Take ADM-71A or ADM-77A', 3.00 units) is printed inside the Required Courses list and recorded as one required entry with ADM-77A as its alternative; the 17-unit required total includes it.",
+   "Elective Courses block prints no explicit selection rule; read as choose 3 units from the two listed courses based on the '(3 units)' heading.",
+   "Outcomes copied exactly as printed, including apparent missing spaces ('preparedartwork', 'aproject', 'clean-upof').",
+   "Catalog titles differ from the state file for some courses (e.g., ADM-63A 'Design For Print Publication' vs. 'Adobe InDesign, Beginning'; ADM-77A 'Adobe Illustrator for Graphic Art'); codes match.",
+   "ADM-2B, ADM-84A and ADM-84B are not in the closed list and are recorded as catalog additions.",
+   "Catalog total printed as 20.00 units; the award type named in the request (16 to fewer than 30 semester units) is consistent."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

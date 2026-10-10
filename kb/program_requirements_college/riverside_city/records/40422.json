@@ -1,0 +1,174 @@
+{
+ "college": "Riverside City College",
+ "control_number": "40422",
+ "shape": "certificate",
+ "title": "Data Quick Start",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5947",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 4614,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 4614,
+    "output_tokens": 890,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 890,
+  "output_tokens_details": {
+   "thinking_tokens": 205
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03626,
+ "ms": 7732,
+ "seconds": 8.1,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 4,
+   "share": 0.5,
+   "missing": [
+    "CIS98A",
+    "CIS98B"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CAT98A",
+    "CAT98B"
+   ],
+   "flagged": [
+    "CAT98A",
+    "CAT98B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    8.0,
+    8.0
+   ],
+   "stated": [
+    8.0,
+    8.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Data Quick Start - Certificate of Achievement - CE992",
+   "measure": "units",
+   "total_units": {
+    "min": 8,
+    "max": 8
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Analyze data using Microsoft Excel data, financial, and Business Intelligence tools and functions.",
+    "Create a database to organize, query, and provide data reports using Microsoft Access.",
+    "Formulate and present solutions to business case problems using Microsoft Excel and Microsoft Access."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (8 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "CIS-62",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-94",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT-98A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CAT-98B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CIS 98A",
+    "why": "not in the text; catalog prints CAT-98A Introduction to Excel (1.50) instead"
+   },
+   {
+    "code": "CIS 98B",
+    "why": "not in the text; catalog prints CAT-98B Advanced Excel (1.50) instead"
+   }
+  ],
+  "notes": [
+   "The catalog prints CAT-98A and CAT-98B with the same titles and units as closed-list CIS 98A and CIS 98B; this is likely a subject renumbering (CIS to CAT), but they are recorded as printed and flagged as catalog additions. A reviewer should confirm.",
+   "CIS-62 and CIS-94 are printed with a hyphen; they are treated as the closed-list CIS 62 and CIS 94.",
+   "The catalog prints the section heading twice."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

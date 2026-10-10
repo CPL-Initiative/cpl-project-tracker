@@ -1,0 +1,271 @@
+{
+ "college": "Riverside City College",
+ "control_number": "04462",
+ "shape": "degree",
+ "title": "Executive Office Management",
+ "award": "A.S. Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5972",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5569,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5569,
+    "output_tokens": 1782,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1782,
+  "output_tokens_details": {
+   "thinking_tokens": 422
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05792,
+ "ms": 13455,
+ "seconds": 14.0,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "ACC55",
+    "CAT90",
+    "CAT98A",
+    "CAT98B"
+   ],
+   "flagged": [
+    "ACC55",
+    "CAT90",
+    "CAT98A",
+    "CAT98B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    34.0,
+    34.0
+   ],
+   "stated": [
+    34.0,
+    34.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Executive Office Management - Associate of Science Degree and Certificate of Achievement - AS639/AS639C/CE639",
+   "measure": "units",
+   "total_units": {
+    "min": 34,
+    "max": 34
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Prepare, proofread, and process correspondence memorandums, bills, statements, receipts, and copy information from one record to another.",
+    "Outline and explain administrative procedures and policies to personnel.",
+    "Coordinate and direct records and budget preparation to aid executives.",
+    "Schedule and document appointments, meetings, and travel arrangements.",
+    "Index, code, sort, file, retrieve and maintain office/corporation documents, records, and reports.",
+    "Compile and create basic statistical reports.",
+    "Create properly formatted and grammatically correct business documents.",
+    "Demonstrate an understanding of the planning, organizing, leading, and controlling function of management and apply these concepts and their underlying approaches and principles in the analysis of case studies."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 34,
+     "max": 34
+    },
+    "courses": [
+     {
+      "code": "ACC-55",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CAT-55",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CAT-1A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT-3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS-3",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT-30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT-31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT-51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT-61",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT-62",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT-80",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS-80",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT-90",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS-90",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CAT-98A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS-98A",
+        "units": 1.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CAT-98B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS-98B",
+        "units": 1.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MAG-44",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page covers both the A.S. Degree and the Certificate of Achievement (AS639/AS639C/CE639) with one requirements list; the heading is printed three times, the third variant adding AS639B. The A.S. shares this requirements list and the single Program Learning Outcomes list printed for the program as a whole.",
+   "ACC-55 and CAT-55 are both marked '( Historical )' in the catalog; the closed list names only CAT 55. ACC-55 recorded as a catalog addition.",
+   "CAT-90, CAT-98A and CAT-98B are printed as alternatives to CIS-90, CIS-98A and CIS-98B but are not in the closed list; recorded as catalog additions.",
+   "No general education pattern is named; the text only refers to general education requirements described in the college catalog."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

@@ -1,0 +1,1081 @@
+{
+ "college": "Moreno Valley College",
+ "control_number": "45914",
+ "shape": "certificate",
+ "title": "Global Studies",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/6365",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9997,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9997,
+    "output_tokens": 8720,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 8720,
+  "output_tokens_details": {
+   "thinking_tokens": 2420
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.21439,
+ "ms": 93722,
+ "seconds": 94.2,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 95,
+   "listed": 104,
+   "share": 0.913,
+   "missing": [
+    "HIS16",
+    "HIS17",
+    "HIS18",
+    "HIS19",
+    "HIS2",
+    "HIS35",
+    "HIS42",
+    "HIS60",
+    "HIS61"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 19,
+   "codes": [
+    "ARTH15",
+    "ARTH20",
+    "ARTHC1100",
+    "ARTHC1100H",
+    "ARTHC1200",
+    "ARTHC1200H",
+    "HIST16",
+    "HIST17",
+    "HIST18",
+    "HIST19",
+    "HIST2",
+    "HIST35",
+    "HIST42",
+    "HUM10H",
+    "HUM4H",
+    "HUM5H",
+    "JPN1",
+    "POLS2H",
+    "POLS4H"
+   ],
+   "flagged": [
+    "ARTH15",
+    "ARTH20",
+    "ARTHC1100",
+    "ARTHC1100H",
+    "ARTHC1200",
+    "ARTHC1200H",
+    "HIST16",
+    "HIST17",
+    "HIST18",
+    "HIST19",
+    "HIST2",
+    "HIST35",
+    "HIST42",
+    "HUM10H",
+    "HUM4H",
+    "HUM5H",
+    "JPN1",
+    "POLS2H",
+    "POLS4H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    17.0,
+    20.0
+   ],
+   "stated": [
+    15.0,
+    15.0
+   ],
+   "why": [
+    "'Group 7 - RCCD Study Abroad Program' chooses units but names no minimum"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Global Studies -  Certificate of Achievement - MCE1119",
+   "measure": "units",
+   "total_units": {
+    "min": 15,
+    "max": 15
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Analyze global systems (e.g., political, economic, cultural, ecological, arts, histories) and explain how local and international issues are interconnected.",
+    "Discuss the history, art, culture, politics, or religions of (an)other country(ies).",
+    "Articulate how international cultural perspectives shape human experiences, values, and decision-making.",
+    "Evaluate major global challenges (such as climate change, migration, health, inequality, or technology) using evidence-based reasoning and interdisciplinary approaches.",
+    "Communicate effectively across cultural or global contexts, demonstrating sensitivity to diverse audiences and perspectives.",
+    "Reflect on the responsibilities of global citizenship and propose ways individuals and communities can contribute to equitable and sustainable solutions."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Group 1 - Arts",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ARTH-C1100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH-C1100H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH-C1200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH-C1200H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH-3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH-5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH-9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH-12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH-13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH-14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH-15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH-20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FST-3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS-19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUS-19H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS-22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THE-3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THE-9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THE-34",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THE-35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Group 2: Natural, Behavioral, and Social Sciences",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANT-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANT-2H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANT-5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANT-6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANT-7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANT-8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO-19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHE-17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON-6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEG-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEG-1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEG-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEG-3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS-2H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS-4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS-4H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS-6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS-10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS-11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS-13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS-17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS-20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Group 3 - Business Administration",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUS-40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-43",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-46",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-48",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Group 4 - World Languages",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ARA-1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARA-2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARA-3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARA-8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARA-11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARA-11H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHI-1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHI-2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHI-11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FRE-1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FRE-2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FRE-11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITA-1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITA-2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITA-11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JPN-1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JPN-2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JPN-3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JPN-4",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JPN-11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RUS-1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RUS-2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RUS-3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RUS-11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA-1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA-2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPA-2H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA-3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA-4",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA-8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA-11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA-12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA-51",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Group 5 - English, Humanities, and Philosophy",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL-6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL-7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL-8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL-9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL-34",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL-40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL-41",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL-45",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETS-13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM-4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM-4H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM-5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM-5H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM-8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM-10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM-10H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM-35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHI-14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHI-33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHI-36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Group 6 - History",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HIST-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-2H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-42",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-61",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Group 7 - RCCD Study Abroad Program",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": []
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HIS 2",
+    "why": "catalog prints it as HIST-2 (subject HIS renamed HIST); recorded HIST-2 as a catalog addition"
+   },
+   {
+    "code": "HIS 16",
+    "why": "catalog prints it as HIST-16 (subject HIS renamed HIST); recorded HIST-16 as a catalog addition"
+   },
+   {
+    "code": "HIS 17",
+    "why": "catalog prints it as HIST-17 (subject HIS renamed HIST); recorded HIST-17 as a catalog addition"
+   },
+   {
+    "code": "HIS 18",
+    "why": "catalog prints it as HIST-18 (subject HIS renamed HIST); recorded HIST-18 as a catalog addition"
+   },
+   {
+    "code": "HIS 19",
+    "why": "catalog prints it as HIST-19 (subject HIS renamed HIST); recorded HIST-19 as a catalog addition"
+   },
+   {
+    "code": "HIS 35",
+    "why": "catalog prints it as HIST-35 (subject HIS renamed HIST); recorded HIST-35 as a catalog addition"
+   },
+   {
+    "code": "HIS 42",
+    "why": "catalog prints it as HIST-42 (subject HIS renamed HIST); recorded HIST-42 as a catalog addition"
+   },
+   {
+    "code": "HIS 60",
+    "why": "catalog prints HIST-60, which matches closed-list HIST60; HIS 60 is the older code"
+   },
+   {
+    "code": "HIS 61",
+    "why": "catalog prints HIST-61, which matches closed-list HIST61; HIS 61 is the older code"
+   }
+  ],
+  "notes": [
+   "Overall rule: 'Select a minimum of 15 units from at least four groups.' Each group is recorded as its own block; the student must draw from at least four of the seven groups. option_group left null because this is not a choice of one whole block.",
+   "Each group prints a unit amount (3.00; Group 4 prints 2.00-5.00). I read it as the minimum taken from a group when that group is used and recorded it as the block minimum and stated; reviewer should confirm.",
+   "Group 7 (RCCD Study Abroad Program) lists no courses: 'Any course taken while participating in an RCCD Study Abroad Program.' Recorded as an empty block with no minimum.",
+   "Honors versions are recorded as alternatives of their base course (ARTH-C1100H, ARTH-C1200H, MUS-19H, ANT-2H, GEG-1H, POLS-2H, POLS-4H, ARA-11H, SPA-2H, HUM-4H, HUM-5H, HUM-10H, HIST-2H).",
+   "The catalog prints history courses as HIST-16, HIST-17, HIST-18, HIST-19, HIST-2, HIST-35, HIST-42; the closed list stores these as HIS. They are flagged as catalog additions under the strict code rule but are likely the same courses under a renamed subject.",
+   "MUS-22, THE-3, THE-9 and THE-34 are marked '( Historical )' in the catalog but are still listed in Group 1.",
+   "Cross-listed pairs appear as separate entries as printed: ECON-6/POLS-6, ENGL-8/HUM-8, ETS-13/PHI-14.",
+   "THE-35 is printed as 'Classical Acting with Emphasis in Shakespearean Verse'; the closed-list title differs slightly."
+  ]
+ },
+ "extracted_run": "38085493318"
+}

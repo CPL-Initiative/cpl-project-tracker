@@ -1,0 +1,277 @@
+{
+ "college": "Norco College",
+ "control_number": "30075",
+ "shape": "certificate",
+ "title": "Business Administration: Real Estate Concentration",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5149",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5585,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5585,
+    "output_tokens": 2167,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2167,
+  "output_tokens_details": {
+   "thinking_tokens": 614
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06568,
+ "ms": 16969,
+ "seconds": 17.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "BUS10H",
+    "RLE200"
+   ],
+   "flagged": [
+    "BUS10H",
+    "RLE200"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 10,
+   "courses": 0,
+   "count": 10,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Administration: Real Estate Concentration - Associate of Science Degree and Certificate of Achievement - NAS527/C/NCE527",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Use technology to analyze business decisions and to enhance business communications.",
+    "Apply basic business and accounting calculations and analyses.",
+    "Have an understanding of legal practices relating to business.",
+    "Apply sound management practices.",
+    "Demonstrate the ability to analyze ethical and procedural problems that arise in residential real estate sales transactions from the prospective of buyers, sellers, brokers, appraisers, lenders, and escrow officers.",
+    "Discuss and evaluate real estate marketing and sales techniques.",
+    "Discuss and calculate real estate taxes and solve basic real estate mathematics problems.",
+    "Explain and evaluate methods of financing real estate purchases and securing loans with real estate.",
+    "Demonstrate the ability to analyze the factors that affect real estate values.",
+    "Discuss and evaluate real estate markets and trends."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "ACC-1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS-10H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-18A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS-24",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS-3",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "CAT-3",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "RLE-82",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RLE-80",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RLE-83",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RLE-81",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RLE-84",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RLE-85",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RLE-86",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RLE-200",
+      "units": 1,
+      "units_max": 14,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints one combined section for the A.S. degree and Certificate of Achievement (NAS527/NCE527); the certificate shares the same requirements (total 30.00 units) and the same Program Learning Outcomes list, recorded here for the certificate.",
+   "The 'Select one' choices in the core (BUS-10/BUS-10H, BUS-22/BUS-24, CIS-1A/CIS-3/CAT-3) are recorded as single entries with alternatives within the required core block.",
+   "Elective Courses block prints only 'Units: 12.00' with no explicit selection wording; read as choose 12 units from the listed RLE courses.",
+   "RLE-200 (Real Estate Work Experience, 1.00-14.00 units) and BUS-10H are not in the closed list and are marked as catalog additions.",
+   "Several courses are labeled '( Historical )' in the catalog (ACC-1A, BUS-10, BUS-10H, BUS-18A); reviewer may wish to confirm currency for 2026-2027.",
+   "Outcome text 'from the prospective of buyers' copied as printed (likely intended 'perspective')."
+  ]
+ },
+ "extracted_run": "38085495452"
+}

@@ -1,0 +1,434 @@
+{
+ "college": "Moreno Valley College",
+ "control_number": "46532",
+ "shape": "adt",
+ "title": "Elementary Teacher Education: Integrated Programs",
+ "award": "A.A- T Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4858",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6530,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6530,
+    "output_tokens": 3072,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3072,
+  "output_tokens_details": {
+   "thinking_tokens": 873
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08756,
+ "ms": 23516,
+ "seconds": 24.0,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 24,
+   "listed": 31,
+   "share": 0.774,
+   "missing": [
+    "BIO35",
+    "EAR25",
+    "GEG2",
+    "GEG3",
+    "HES1",
+    "HIS6",
+    "HIST26"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "HISTC1001"
+   ],
+   "flagged": [
+    "HISTC1001"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    37.0,
+    38.0
+   ],
+   "stated": [
+    37.0,
+    38.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Elementary Teacher Education: Integrated Programs - Associate in Arts for Transfer (ADT) - MAA1106 (Cal-GETC)",
+   "measure": "units",
+   "total_units": {
+    "min": 37,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Demonstrate knowledge of professional standards, ethics, and professionalism in elementary education classrooms to meet the diverse needs of students.",
+    "Demonstrate an understanding of historical influences, current trends, theories, and educational issues in a global context.",
+    "Demonstrate introductory subject matter competency for the Multiple Subject."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EDU-1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EAR-20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "COMM-C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM-C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ENGL-C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL-C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "POLS-C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS-C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HIST-C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-C1001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BIO-1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIO-1H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ENGL-C1003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL-C1003H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL-30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives: Complete both of the following:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "CHE-2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY-10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives: Select 3 units from the following:",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ARTH-6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH-6H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART-6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART-6H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS-19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUS-19H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THE-3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "EAR 25",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "GEG 2",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "GEG 3",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "HES1",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "BIO 35",
+    "why": "listed as a recommended course (alternative to HES-1)"
+   },
+   {
+    "code": "HIST26",
+    "why": "listed as a recommended course"
+   },
+   {
+    "code": "HIS 6",
+    "why": "not in the text; catalog prints HIST-C1001 (same title) instead"
+   }
+  ],
+  "notes": [
+   "The 'Required Courses' heading states Units: 27.00-28.00 for the whole required section (EDU-1, EAR-20 and the seven 'Select one' choices); that total is not placed on the 'all' block, which holds only EDU-1 and EAR-20.",
+   "The 'Electives' heading states Units: 10.00, covering the 'Complete both' block (7) and the 'Select 3 units' block (3); these are restricted electives, not open electives.",
+   "HIST-C1001 is not in the closed list (closed list has HIS 6 United States History to 1877 and HISTC1001H); recorded as catalog addition.",
+   "EDU-1, EAR-20, PHY-10 and THE-3 are marked '( Historical )' in the catalog.",
+   "Recommended Courses (EAR-25, GEG-2, GEG-3, HES-1 or BIO-35, HIST-26) are not required and are not placed in blocks.",
+   "Program total printed as 'Total : 37.00- 38.00'."
+  ]
+ },
+ "extracted_run": "38085493318"
+}

@@ -1,8 +1,8 @@
 {
- "_what": "MAP's credit recommendations per course at the harvest's seven colleges (the pilot's five, Santa Monica and Irvine Valley): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
+ "_what": "MAP's credit recommendations per course at the harvest's nine colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley and Norco): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
  "_source": "public.map_college_cr_unit (reviewer-gated) joined to map_colleges by college_id; exhibit titles from map_ace_exhibit_titles, else chatbox_exhibits. A college_course string naming several courses ('ADJ-13 ...(3.0), ADJ-19 ...(3.0)') counts toward each course it names. Course code = the SUBJ-NUM token with the hyphen read as a space.",
- "_read_at": "2026-10-06",
- "_read_by": "SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
+ "_read_at": "2026-10-10",
+ "_read_by": "SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
  "_refresh": "By hand, the way kb/ccr_cpl_funnel.json is refreshed: run kb/program_requirements_pilot/map_cr_by_course.sql through the Supabase MCP when the funnel reloads (map-custom-report-load.yml) or the harvest adds a college, and file the rows here.",
  "colleges": {
   "Cerritos College": {
@@ -61,6 +61,3458 @@
     },
     "titles": null,
     "untitled_exhibits": 1
+   }
+  },
+  "Moreno Valley College": {
+   "ADJ 1": {
+    "recs": 4,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Police (TATS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "CID Special Agent",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Intermediate Law Enforcement- HS CE(MVUSD)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Maritime Enforcement Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Maritime Enforcement Specialist 'A' School (ME 'A')",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master-At-Arms 'A' School",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police Basic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Working Dog Handler",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards Training (POST) Basic Academy",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Port Securityman",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 12,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 10,
+     "MAP": 2
+    }
+   },
+   "ADJ 2": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Corrections and Detention Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards Training (POST) Basic Academy",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    }
+   },
+   "ADJ 3": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CID Special Agent",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards Training (POST) Basic Academy",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    }
+   },
+   "ADJ 4": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CID Special Agent",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards Training (POST) Basic Academy",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    }
+   },
+   "ADJ 5": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards Training (POST) Basic Academy",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ADJ 8": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards Training (POST) Basic Academy",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AHS 1": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Art History",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AHS 2": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Art History",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "BIO 1": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Biology",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "BUS 3": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Electronics Technician, (Nuclear)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "CAT 3": {
+    "recs": 3,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Petroleum Supply Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Operations Specialist",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 2
+    }
+   },
+   "CIS 3": {
+    "recs": 6,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Information Systems Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aerographer's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Air Traffic Controller",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aircrewmen Mechanical (AWF) (3/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Assault Amphibious Vehicle (AAV)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Assault Amphibious Vehicle (AAV) Repairer/Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Automated Logistical Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Boatswain's Mate, Aircraft Handling",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electronics Technician (AT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Maintenance",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Structural Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Structural Mechanic, Hydraulics",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Support Equipment Technician (AS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Boatswain's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Medic Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Correctional Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Culinary Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Data Chief",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electrician's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electro-Optical Ordnance Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Maintenance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Expeditionary Airfield Systems Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Field Artillery Fire Controlman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Global Command and Control System Common Operational Picture/Maritime (GCCS COP/M) Operator 4.X",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hull Maintenance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Unit Leader",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Operator-Analyst",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician Class 'A'",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Logistics Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1A1 Tank Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Navy Counselor (Recruiter)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Patriot Launching Station Enhanced Operator/Maintainer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Personnel Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Petroleum Supply Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Ship's Serviceman or Retail Services Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Sonar Technician, Surface",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Special Warfare Boat Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Special Warfare Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Storekeeper",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "TATS Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Transportation Management Coordinator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Unit Supply Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warehouse Clerk",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Yeoman",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 54,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 54
+    }
+   },
+   "ECO 7": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Macroeconomics",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ECO 8": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Microeconomics",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FIT 1": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FIT Academy Experience (FIT-S3A, FIT-S3. FIT-1/2/4)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "FIT 2": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FIT Academy Experience (FIT-S3A, FIT-S3. FIT-1/2/4)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "FIT 4": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "FIT Academy Experience (FIT-S3A, FIT-S3. FIT-1/2/4)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "GEG 2": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Human Geography",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "HES 1": {
+    "recs": 1,
+    "titles": null,
+    "exhibits": 2,
+    "untitled_exhibits": 2,
+    "exhibits_by_source": {
+     "unnamed": 2
+    }
+   },
+   "HIS 2": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: World History: Modern",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "HIS 5": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: European History",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "HIS 6": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: U. S. History",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "HIS 7": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: U. S. History",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "HLS 1": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Emergency Management Experience (LD)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Transportation Security Administration (HLS-1)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "HLS 2": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Emergency Management Experience (LD)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "HLS 3": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Emergency Management Experience (LD)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "HLS 4": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Emergency Management Experience (LD)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Homeland Security Recovery (HLS-4)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "MUS 3": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "MUS-3 FUNDAMENTALS OF MUSIC",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "POL 1": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: U.S. Government & Politics",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "POL 2": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Comparative Government & Politics",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "PSY 1": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Psychology",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "SPA 1": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Spanish and Language",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Credit by Exam: Spanish 1 (SPA-1)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "SPA 2": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Spanish and Language",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Credit by Exam: Spanish 2 (SPA-2)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "SPA 3": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit by Exam: Spanish 3 (SPA-3)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ACC 55": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Accounting 1- HS CE(MVUSD)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Financial Management Technician",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    }
+   },
+   "ADJ 13": {
+    "recs": 3,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Master-At-Arms",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Apprentice Criminal Investigation Division (CID) Special Agent",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Apprentice Criminal Investigation Division (CID) Special Agent Reserve Component",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "CID Special Agent",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Criminal Investigation Division (CID) Special Agent Advanced Noncommissioned Officer (ANCOC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Criminal Investigation- HS CE(CRYROP)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Inspector General",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master-At-Arms 'A' School",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police Advanced Noncommissioned Officer (TATS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Working Dog Handler",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 13,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 12,
+     "MAP": 1
+    }
+   },
+   "ADJ 19": {
+    "recs": 3,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Internment/Resettlement Specialist Advanced Individual Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master-At-Arms",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police Advanced Noncommissioned Officer (TATS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police Basic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police, Advanced Leader (ALC) (TATS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Non-Lethal Individual Weapons Instructor (INIWIC)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 8,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 8
+    }
+   },
+   "ADJ 20": {
+    "recs": 4,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Corrections and Detention Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Internment/Resettlement Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Internment/Resettlement Specialist Advanced Individual Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "State Corrections Academy ADJ-C1D",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 4,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 3,
+     "MAP": 1
+    }
+   },
+   "ADJ 21": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "State Corrections Academy ADJ-C1D",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ADJ 22": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "State Corrections Academy ADJ-C1D",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ART 17": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Studio Art: Drawing",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ART 22": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Studio Art: 2-D Art and Design",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "BIO 19": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Environmental Science",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "BIO 45": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Anatomy & Physiology- HS CE(NUSD)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "BUS 10": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "BA Empowering Entrepreneurs- HS CE(MVUSD)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "BUS 22": {
+    "recs": 6,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Supply Administration and Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Adjutant General Officer Basic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Administrative Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Advanced School Seminar Program (2/18-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Army Recruiting",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Career Course DEP",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "CID Special Agent",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician, Technical",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Data Chief",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Distribution Management Specialist (11/16-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electro-Optical Ordnance Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician (3/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Logistics Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Navy Counselor (Recruiter)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Personnel Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruiter",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruiting SLC",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Supply Chain and Materials Specialist (11/21-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Transportation Management Coordinator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Yeoman",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 26,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 26
+    }
+   },
+   "BUS 47": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "RCOE Intermediate Business Ethics- HS/CE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "BUS 80": {
+    "recs": 12,
+    "titles": [
+     {
+      "recs": 3,
+      "title": "Logistics Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Automated Logistical Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Motor Transport Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Parachute Rigger",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Supply Administration and Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Transportation Management Coordinator, Phase 4",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aircrewman Helicopter",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Maintenance",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Maintenance Officer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Structural Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Food Service Technician Warrant Officer Advanced (WOAC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Air-Ground Task Force Deployment Support System/Computer-Aided Embarkation Management System",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Motor Transport Maintenance Chief",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Motor Transport Operations Chief",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Supply Chain and Materials Specialist (11/21-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Unit Supply Specialist Advanced Leader",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 19,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 19
+    }
+   },
+   "BUS 87": {
+    "recs": 5,
+    "titles": [
+     {
+      "recs": 3,
+      "title": "Automated Logistical Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Marine Aviation Supply Mechanized, Class C1",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Unit Supply Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Ammunition Technician (Phase 2)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Storekeeper",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Food Service Technician Warrant Officer Technical/Tactical Certification",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Individual Material Readiness List (IMRL) Asset Managers System, Class A",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "International Security Assistance Management CONUS",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Logistics Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Artillery Officer Basic (MAOBC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Storekeeper",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Supply Administration and Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Supply Chain Management Basic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Support Equipment Asset Manager",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warehouse Clerk",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 20,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 20
+    }
+   },
+   "CAT 31": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Corrections and Detention Specialist",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "CAT 62": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Administrative Specialist",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "CHE 1A": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Chemistry",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CHE 1B": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Chemistry",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CHE 2A": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Chemistry V2",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CIS 1A": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Information Systems Operator-Analyst",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "TATS Signal Support Systems Specialist",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 3
+    }
+   },
+   "CIS 25": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CompTIA A+ (CIS-25)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "RCOE Intermediate Cybersecurity -ITF+ HS/CE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "CIS 27": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CompTIA Security+ (CIS-27)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CIS 36": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Video Game Design (HS: CRYROP)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CMI 61": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Introduction to English & Spanish Translation (HS: RSUD)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "EMS 41": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "RCOE Public Safety Personnel/First Aid (HS: RCOE)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "EMS 50": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "EMERGENCY MEDICAL TECHNICIAN (EMS-50/51)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "RCOE Emergency Medical Technician (HS: RCOE)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 3
+    }
+   },
+   "EMS 51": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "EMERGENCY MEDICAL TECHNICIAN (EMS-50/51)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "EMS 60": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Paramedic License 2V(EMS-60/91)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "EMS 61": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Paramedic License 2V(EMS-60/91)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "EMS 62": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Paramedic License 2V(EMS-60/91)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "EMS 63": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Paramedic License 2V(EMS-60/91)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "EMS 70": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Paramedic License 2V(EMS-60/91)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "EMS 71": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Paramedic License 2V(EMS-60/91)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "EMS 80": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Paramedic License 2V(EMS-60/91)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "EMS 81": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Paramedic License 2V(EMS-60/91)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "EMS 82": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Paramedic License 2V(EMS-60/91)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "EMS 83": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Paramedic License 2V(EMS-60/91)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "EMS 91": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Paramedic License 2V(EMS-60/91)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FIT S3": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FIT Academy Experience (FIT-S3A, FIT-S3. FIT-1/2/4)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "HMS 17": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Intro Community Mental Health HS/CE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "KIN 30": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Expeditionary Combat Skills",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "HealthPro EMS Training + Basic Life Support Card",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Indirect Fire Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1A1 Abrams Armor Crewman One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M3 Bradley/CFV Cavalry Scout",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Medical Specialist",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 7,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 6,
+     "MAP": 1
+    }
+   },
+   "MAG 44": {
+    "recs": 22,
+    "titles": [
+     {
+      "recs": 4,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Assault Amphibious Vehicle (AAV)",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "M1A1 Tank Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Automated Logistical Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Distribution Management Specialist (11/16-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Yeoman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Advanced Anti-Tank Missleman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Advanced Business Solutions for Mission Support",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Advanced Leader- Common Core",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Maintenance",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Support Equipment Technician (AS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Warrant Officer Basic (Common Core) (Part A)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Battle Staff Noncommissioned",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Boatswain's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Career DEP",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "CID Special Agent",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Engineer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Medic Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Critical Skills Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician, Technical",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician (Navigation)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician, (Communications)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician, (Nuclear)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Engineman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Expeditionary Airfield Systems Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Explosive Ordnance Disposal (EOD)Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fixed-Wing Aircraft Crew Masters, KC-130",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fixed-Wing Aircraft Mechanics F-35B",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Flight Equipment Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Gunner's Mate (GM)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Helicopter Airframe Mechanic UH/AH-1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Helicopter Mechanic U/AH-1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Individual Material Readiness List Asset Manager",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Small Unit Leaders (ISULC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Squad Leader (East)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Unit Leader",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Unit Leader (IULC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman Advanced Leader (ALC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman Basic Noncommissioned Officer (NCO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician (3/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Intelligence Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mate (Nuclear)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mates (Weapons)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master-At-Arms",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "National Guard Officer Candidate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Navy Counselor (Recruiter)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Petroleum Supply Specialist Advanced Leader (ALC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Postal Clerk",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruiting and Retention NCO (Army National Guard)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Religious Program Specialist (RP)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Ship's Serviceman or Retail Services Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Special Warfare Boat Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Special Warfare Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD-II)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Supply Administration and Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Supply Chain and Materials Specialist (11/21-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Support Equipment Electrician/Refrigeration and Engine/ Gas Turbine Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tiltrotor Airframe Mechanic MV-22",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tiltrotor Mechanic MV-22",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Utilities Operations Chief",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 66,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 66
+    }
+   },
+   "MAG 51": {
+    "recs": 27,
+    "titles": [
+     {
+      "recs": 4,
+      "title": "Motor Transport Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Master-At-Arms",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Supply Administration and Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Yeoman",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Aviation Maintenance",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Aviation Structural Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Boatswain's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Construction Equipment Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Corporals",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Correctional Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Cryptologic Technician, Technical",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Explosive Ordnance Disposal (EOD)Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Fixed-Wing Aircraft Crew Masters, KC-130",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Flight Equipment Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Hull Maintenance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Individual Material Readiness List Asset Manager",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Infantry Unit Leader",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Intelligence Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Military Police Basic Noncommissioned Officer (TATS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Multichannel Transmission Systems Operator-Maintainer Basic Noncommissioned Officer",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Special Warfare Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Adjutant General Officer Basic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Advanced Anti-Tank Missleman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aerographer's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Air Traffic Controller",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aircraft Forward Looking Infrared/Electro-optical Technician, Intermediate Maintenance Activity (IMA)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aircraft Forward Looking Infrared/Electro-Optical Technician, Intermediate Maintenance Activity (IMA)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aircrewmen Mechanical (AWF)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aircrewmen Mechanical (AWF) (3/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Armament Weapons Support Equipment Managers",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Assault Amphibious Vehicle (AAV) Repairer/Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Assault Amphibious Vehicle Commander",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Automated Logistical Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Avenger System Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Boatswain's Mate, Aircraft Handling",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Boatswain's Mate, Fuels",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electrician's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electronics Technician (AT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electronics Technician (AT) (4/21-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnance Equipment Repair Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Support Equipment Technician (AS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Warrant Officer Basic (Common Core) (Part A)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Bulk Fuel Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Career Recruiter",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Chemical Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Engineer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Medic Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Construction Mechanic (CM)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Counterintelligence Agent",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Counterintelligence/Human Source Intelligence Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician (Collection)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Culinary Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Data Chief",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Distributed Leader I",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electrician's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Maintenance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician (Navigation)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician (Surface)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Explosive Ordnance Disposal Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman (FC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fixed-Wing Aircraft Mechanics F-35B",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Food Service Operations",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Food Service Specialist Advanced Noncommissioned Officer (NCO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Food Services Specialist or Culinary Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Gunner's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Gunner's Mate (GM)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Health Care Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Heavy Antiarmor Weapons Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Helicopter Airframe Mechanic UH/AH-1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Helicopter Mechanic U/AH-1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Horizontal Construction Supervisor",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Intelligence Collector",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Imagery Analysis Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Indirect Fire Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Indirect Fire Infantryman Advanced Leader (ALC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Squad Leader (East)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Unit Leader (IULC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman Advanced Leader (ALC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman Basic Noncommissioned Officer (NCO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician (3/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Intelligence Analyst",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Jumpmaster",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Logistics Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1 Armor Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M48-M60 Armor Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinery Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mates, Nuclear Power",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Maintenance Management Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Corps Recruit Depot San Diego (MCRDSD) Drill Instructor School 2012",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master Training Specialist (MTS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Materiel Storage and Handling Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Medical Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police Advanced Noncommissioned Officer (TATS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Mineman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Motor Transport Maintenance Chief",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Motor Transport Operations Chief",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "National Guard Officer Candidate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Naval Special Warfare (NSW) Platoon Leaders",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Navy Counselor (Councelor)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Patriot Launching Station Enhanced Operator/Maintainer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Personnelman, Class A",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Petroleum Supply Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Postal Clerk",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Postal Supervisor",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Radio Operator-Maintainer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Record Telecommunications Operator/Maintainer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruiting and Retention NCO (Army National Guard)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Religious Affairs Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Sergeants DEP",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Sergeants School Seminar Program (2/17-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Sonar Technician (Surface) (STG)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Special Warfare Boat Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD) I",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Support Equipment Electrician/Refrigeration and Engine/ Gas Turbine Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tiltrotor Airframe Mechanic MV-22",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tiltrotor Mechanic MV-22",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Track Vehicle Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Transportation Management Coordinator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "UH-60 M Pilot",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Utilities Chief",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warehouse Clerk",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 150,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 150
+    }
+   },
+   "MAG 56": {
+    "recs": 9,
+    "titles": [
+     {
+      "recs": 3,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Supply Administration and Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Army Recruiting",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "ARNG Unit Retention NCO",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "CID Special Agent",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist Advanced Noncommissioned Officer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Unit Leader",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Intelligence Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Navy Counselor (Councelor)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Navy Counselor (Recruiter)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Petroleum Supply Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Resident Staff Noncommissioned Officer (NCO) Academy Advanced Regular",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Staff Noncommissioned Officer (NCO) Academy Sergeants",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 15,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 15
+    }
+   },
+   "MAT 12": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Statistics",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MAT 1A": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Calculus AB (or Calculus BC/AB SubScore)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Exam: Calculus BC",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "MAT 1B": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Calculus BC",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MKT 20": {
+    "recs": 4,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Career Recruiter",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Navy Counselor (Recruiter)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruiter",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 3
+    }
+   },
+   "PHO 20": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CTE Completer Photography- HS CE(VVUSD)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "PHY 10": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Physics 1",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "PHY 11": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Physics 1",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "PHY 4A": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Physics C- Mechanics",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "RLE 80": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Real Estate Salesperson: Principles and Practices",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "RLE 81": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Real Estate Salesperson: Principles and Practices",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "RLE 83": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Real Estate Salesperson: Real Estate Finance",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ADJ C1D": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "State Corrections Academy ADJ-C1D",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "BIO 50B": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "M1A1 Abrams Armor Crewman One Station Unit Training (OSUT)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "CIS 40A": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "COMPTIA NETWORK+ (CIS-40A)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CIS 40D": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "RCOE Advanced Cybersecurity-Security+ HS/CE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CIS 41A": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CompTIA CySA+ Certification (CIS-41A)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FIT S3A": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "FIT Academy Experience (FIT-S3A, FIT-S3. FIT-1/2/4)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FIT Academy Conditioning (FIT-S3A)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 3
+    }
+   },
+   "HLS 101": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Emergency Management Experience (LD)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MAG 200": {
+    "recs": 4,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Combat Engineer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Automated Logistical Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electrical Equipment Repair Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Engineer Equipment Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Engineer Equipment Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Health Care Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hygiene Equipment Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Petroleum Supply Specialist",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 10,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 10
+    }
+   },
+   "PSF 301": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Emergency Management Experience (UD)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "PSF 309": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Emergency Management Experience (UD)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "KIN A81A": {
+    "recs": 1,
+    "titles": null,
+    "exhibits": 2,
+    "untitled_exhibits": 2,
+    "exhibits_by_source": {
+     "unnamed": 2
+    }
+   },
+   "KIN A81B": {
+    "recs": 1,
+    "titles": null,
+    "exhibits": 2,
+    "untitled_exhibits": 2,
+    "exhibits_by_source": {
+     "unnamed": 2
+    }
+   },
+   "KIN A81C": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Expeditionary Skills Training for Religious Program Specialists (RPS)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "RCCD GE A": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: Computer Science Principles",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Exam: English Literature and Composition",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Exam: Precalcululs",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Exam: Spanish Literature and Culture",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 4,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 4
+    }
+   },
+   "ENGL C1000": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: English Language and Composition",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ENGL C1000H": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Exam: English Literature and Composition",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
    }
   },
   "Mt. San Antonio College": {
@@ -198,6 +3650,3661 @@
      }
     ],
     "untitled_exhibits": 0
+   }
+  },
+  "Norco College": {
+   "ADJ 1": {
+    "recs": 3,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master-At-Arms 'A' School",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police Basic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Working Dog Handler",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards Training (POST) Basic Academy",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 6,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 5,
+     "MAP": 1
+    }
+   },
+   "ADJ 2": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards Training (POST) Basic Academy",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ADJ 3": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards Training (POST) Basic Academy",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ADJ 4": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards Training (POST) Basic Academy",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ADJ 5": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards Training (POST) Basic Academy",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ADJ 6": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Military Police",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "ADJ 8": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards Training (POST) Basic Academy",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "BUS 3": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Petroleum Supply Specialist",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 2
+    }
+   },
+   "CAT 3": {
+    "recs": 3,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Petroleum Supply Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Work Based Learning Computer Information Systems\tCIP:110101",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 2,
+     "MAP": 1
+    }
+   },
+   "CIS 3": {
+    "recs": 8,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Information Systems Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Administrative Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Assault Amphibious Vehicle (AAV)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Automated Logistical Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Boatswain's Mate, Aircraft Handling",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Maintenance Administrationman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman (AO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Precision Measurement Equipment/Calibration and Repair Technician, IMA",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Structural Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Support Equipment Technician (AS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Medic Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Construction Mechanic (CM)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician (Interpretive) (CTI)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician, Interpretive",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Culinary Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electrician's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electro-Optical Ordnance Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Expeditionary Airfield Systems Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Finance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Food Service Specialist Basic Noncommissioned Officer (NCO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Operator-Analyst",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician Class 'A'",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Logistics Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Aviation Logistics Computer Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Mechanical Maintenance Supervisor",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Medical Logistics Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Meteorology and Oceanography Analyst Forecaster",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Intelligence Basic Officer Leaders (MIBOLC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Navy Counselor (Recruiter)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Operating Room Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Personnel Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Petroleum Supply Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "TATS Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Unit Supply Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warehouse Clerk",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Wheel Vehicle Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 46,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 46
+    }
+   },
+   "CPL 1": {
+    "recs": 44,
+    "titles": [
+     {
+      "recs": 4,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Tactical Satellite/Microwave Systems Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Aviation Boatswain's Mate Fuels (ABF) Class A1",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Data Network Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Dental Assistant Strand",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Individual Augmentee Warrior Skills (USN)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Primary Leadership Development (Reserve Component)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Tactical Transmission Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Boatswain's Mate, Aircraft Handling",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Engineering Common Core (BECC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Logistics/Embarkation Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Military Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Communications Security by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Corporal's Noncommissioned Officers (NCO) Program",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Finance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fireman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fixed Wing Electrical and Instrument Intermediate Maintenance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fundamentals of Marine Corps Leadership by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Health Care Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman Basic (USN)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Patrolling",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Interior Electrician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Interior Wiring by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1A1 Abrams Armor Crewman One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinery Repairman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police Basic Noncommissioned Officer (TATS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Personal Financial Management by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Quartermaster",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Basic Military Training (BMT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Seaman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Staff Noncommissioned Officer (NCO) Academy Career",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD) I",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Terrorism Counteraction for Marines by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "The Unit Mail Clerk by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Total Army Training System (TATS) Field Artillery Surveyor",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Water Treatment Specialist Advanced Individual Training",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 39,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 39
+    }
+   },
+   "CPL 2": {
+    "recs": 47,
+    "titles": [
+     {
+      "recs": 3,
+      "title": "Data Network Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Logistics/Embarkation Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Basic Engineering Common Core (BECC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Dental Assistant Strand",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Field Medical Service Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Fireman",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Machinery Repairman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "AH-64D Attack Helicopter Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Airborne",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Airman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Assault Amphibious Vehicle (AAV)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Boatswain's Mate Aircraft Handling Advanced (ABH-V), Class C1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Boatswain's Mate, Aircraft Handling",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Electrician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Communications Security by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Counseling for Marines by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electrician's Mate Apprentice Technical Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Engineer Equipment Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Engineering Common Core",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Engineering Mechanical Core",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman Combined 'A' School (Block 0)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Food Service Officer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Health Care Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Instructor Orientation",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Interior Electrician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Introduction to Electronic Test Equipment By Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Introduction to Warfighting by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist Mate 'A' School",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mate, Class A (1200 PSI)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Combat Training (MCT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master Fitness Trainer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Basic Military Training (BMT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Seamanship Apprentice",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Semper Fit Advanced Fitness by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Solid State Devices by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Staff Noncommissioned Officer (NCO) Academy Sergeants",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Staff Noncommissioned Officers (NCO) Advanced Distance Learning Program",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD) I",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tactical Transmission Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Unit Supply Specialist",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 42,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 42
+    }
+   },
+   "CPL 3": {
+    "recs": 109,
+    "titles": [
+     {
+      "recs": 6,
+      "title": "M1A1 Abrams Tank System Maintainer",
+      "source": "ACE"
+     },
+     {
+      "recs": 4,
+      "title": "AH-64D Attack Helicopter Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 4,
+      "title": "M1A1 Abrams Armor Crewman One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Basic Combat Engineer",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Hospitalman",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Information Systems Technician (3/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Information Systems Technician Class 'A'",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Machinist's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Seaman",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "TATS Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Airman",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Aviation Boatswain's Mate Aircraft Handling Advanced (ABH-V), Class C1",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Basic Engineering Common Core Advanced",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Basic Landing Support Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "BECC MOD 9B Machinery Repairman Strand",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Engineering Professional Apprenticeship Career Tract (EPACT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Food Service Specialist Advanced Individual Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Health Care Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Individual Augmentee Warrior Skills (USN)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Instructional Delivery Continuum (IDC) - Journeyman Instructor Training (JIT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Marine Combat Training (MCT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Marine Corps Meteorological Oceanographer Analyst Forecaster",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Staff Noncommissioned Officer (NCO) Academy Career",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Storekeeper",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Tactical Satellite/Microwave Systems Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Administrative Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Airborne",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aircraft Electrical/Instrument/Flight Control Systems Technician, Intermediate Maintenance Activity (IMA), Fixed Wing",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Assault Amphibian Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Assault Amphibious Vehicle (AAV)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Assault Amphibious Vehicle Commander",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Boatswain's Mate, Aircraft Handling",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Machinist's Mate, Helicopter Fundamentals Strand, Class A1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Engineering Common Core (BECC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Boatswain's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Construction Equipment Operators",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Corporals",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Distributed Leader III",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Engineer Equipment Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Finance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman Combined 'A' School (Block 0)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Food Service Officer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fundamentals of Refrigeration by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Ground Radio Repair",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Heavy Construction Equipment Operators",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman Basic (USN)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Intermediate Logistics Embarkation (ILEC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Landing Support Specialist (1/19-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Logistics and Embarkation Specialist (1/19-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinery Repairman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Rifleman: Combat Skills by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Mathematics for Marines by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Network Switching Systems Operator-Maintainer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Non-Compliant Boarding, Visit, Board, Search and Seizure (NCB-VBSS) Team Trainer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Operations Against Guerilla Units by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Personal Financial Management by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Personnel Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Quartermaster",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Shipboard Aviation Fuels Refresher (SAFR)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Staff Noncommissioned Officer (NCO) Academy Sergeants",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Staff Noncommissioned Officers (NCO) Career Distance Education Program",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Unit Supply Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Utilities Officer/Chief by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrant Officer Candidate Screening",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 72,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 72
+    }
+   },
+   "CPL 4": {
+    "recs": 9,
+    "titles": [
+     {
+      "recs": 4,
+      "title": "Health Care Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Electronics",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Dental Assistant Strand",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "H-60 Powerplants and Related Systems (Initial) Organizational Maintenance",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Aviation Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tactical SIGINT Operators",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 6,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 6
+    }
+   },
+   "CPL 6": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Tactical Network Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Water Treatment Specialist Advanced Individual Training",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 2
+    }
+   },
+   "HES 1": {
+    "recs": 1,
+    "titles": null,
+    "exhibits": 2,
+    "untitled_exhibits": 2,
+    "exhibits_by_source": {
+     "unnamed": 2
+    }
+   },
+   "SCT 1": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automated Logistical Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Unit Supply Specialist",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 2
+    }
+   },
+   "SPA 1": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit by Exam: Spanish 1 (SPA-1)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "SPA 2": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit by Exam: Spanish 2 (SPA-2)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "SPA 3": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit by Exam: Spanish 3 (SPA-3)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ACC 62": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Personnel Specialist Class 'A' School",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "ADJ 13": {
+    "recs": 3,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Maritime Law Enforcement Boarding Officer, Class C",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master-At-Arms",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police Advanced Noncommissioned Officer (TATS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Working Dog Handler",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards Training (POST) Basic Academy",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 7,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 6,
+     "MAP": 1
+    }
+   },
+   "ADJ 19": {
+    "recs": 3,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Internment/Resettlement Specialist Advanced Individual Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master-At-Arms",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police Basic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police, Advanced Leader (ALC) (TATS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards Training (POST) Basic Academy",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 7,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 6,
+     "MAP": 1
+    }
+   },
+   "ADJ 20": {
+    "recs": 4,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Internment/Resettlement Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "California Department of Corrections and Rehabilitation Correctional Officer",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Corrections and Detention Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Internment/Resettlement Specialist Advanced Individual Training",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 4,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 3,
+     "MAP": 1
+    }
+   },
+   "ADJ 21": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "California Department of Corrections and Rehabilitation Correctional Officer",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ADJ 22": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "California Department of Corrections and Rehabilitation Correctional Officer",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "BIO 45": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Licensed Practical Nurse",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "BUS 22": {
+    "recs": 6,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Recruiter",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Supply Administration and Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Administrative Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Army Recruiting",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Maintenance Administration",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Corrections and Detention Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician (Interpretive) (CTI)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Distribution Management Specialist (11/16-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electro-Optical Ordnance Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician (3/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Navy Counselor (Recruiter)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Personnel Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Pharmacy Specialist (10/16-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Radiology Specialist (12/21-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Storekeeper",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Supply Chain and Materials Specialist (11/21-Pres)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 22,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 22
+    }
+   },
+   "BUS 80": {
+    "recs": 7,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Automated Logistical Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Parachute Rigger",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Supply Administration and Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman (AO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Engineer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Equipment Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Air-Ground Task Force Deployment Support System/Computer-Aided Embarkation Management System",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Ship's Serviceman 'A' School",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Supply Chain and Materials Specialist (11/21-Pres)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 11,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 11
+    }
+   },
+   "BUS 87": {
+    "recs": 5,
+    "titles": [
+     {
+      "recs": 3,
+      "title": "Unit Supply Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Medical Logistics Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Ammunition Technician (Phase 2)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Automated Logistical Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Boatswain's Mate, Aircraft Handling",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Storekeeper",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Individual Material Readiness List (IMRL) Asset Managers System, Class A",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinery Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Aviation Supply Mechanized, Class C1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Storekeeper",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Supply Administration and Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Supply Chain Management Basic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warehouse Clerk",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 17,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 17
+    }
+   },
+   "CAT 93": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Combat Engineer",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "CHE 10": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Machinist's Mate (Nuclear)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mates, Nuclear Power",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 2
+    }
+   },
+   "CIS 1A": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Information Systems Operator-Analyst",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 2
+    }
+   },
+   "CON 60": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "National Center for Construction Education and Research (NCCER) (10 Certificates)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELC 11": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Advanced Electronics Technical Core",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Systems Technical Core Electronics Technician/Fire Control Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronic Technology, Class A1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Gas Turbine Systems Electrical/Electrician's Mate Apprentice Technical Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Nuclear Field 'A ' School (Electrician's Mates)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 5,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 5
+    }
+   },
+   "ELC 75": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Electronics Core Apprentice Technical Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician Apprentice Technical Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Mineman Apprentice Technical Training (Block 0)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 3
+    }
+   },
+   "ELE 10": {
+    "recs": 10,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Electronics Technician Combined 'A' School (Block 1)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aircraft Electrical/Instrument/Flight Control Systems Technician, Intermediate Maintenance Activity (IMA), Fixed Wing",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electronics Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Radar Fundamentals",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Electro-Optical Ordnance Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electrician's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electrician's Mate 'A' School",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician (Surface)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician Combined 'A' School (Block 0)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Warfare Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman (Aegis) (FCA)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman (FC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman Combined 'A' School (Block 0)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "General Purpose Electronic Test Equipment Calibration and Maintenance",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Ground Radio Repair",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Gunner's Mate (GM)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Interior Communications Electrician (IC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Satellite Communications Systems Operator-Maintainer Common Core",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Submarine Fire Control Technician, Class 'A' School",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tank Turret Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "TATS Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "XM1 Tank Turret Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 25,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 25
+    }
+   },
+   "ELE 11": {
+    "recs": 5,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Electronics Technician Combined 'A' School (Block 0)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Advanced Electronics Technical Core",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnance, Class A1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman Apprentice Technical Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Systems Technical Core Electronics Technician/Fire Control Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electrician's Mate Surface Ship Electrician Advanced Maintenance",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Gas Turbine System Technician, Electrical",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tactical Satellite/Microwave Systems Operator",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 8,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 8
+    }
+   },
+   "ELE 13": {
+    "recs": 8,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Electronics Technician Combined 'A' School (Block 0)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Naval Nuclear Power School, Enlisted",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Advanced Electronics Technical Core",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Systems Technical Core Electronics Technician/Fire Control Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electrician's Mate Surface Ship Electrician Advanced Maintenance",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician Apprentice Technical Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Gas Turbine Systems Electrical/Electrician's Mate Apprentice Technical Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Nuclear Field 'A ' School (Electrician's Mates)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tactical Satellite/Microwave Systems Operator",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 9,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 9
+    }
+   },
+   "ELE 27": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Tactical Microwave Systems Operation and Maintenance",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "ELE 71": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Interior Electrician",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "ELE 75": {
+    "recs": 3,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Aviation Electrician's Mate Strand, Class A1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Advanced Electronics Technical Core",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician Combined 'A' School (Block 0)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman Apprentice Technical Training - Phase I",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 4,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 4
+    }
+   },
+   "ENE 41": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ENGINEERING GRAPHICS",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "KIN 30": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Expeditionary Combat Skills",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "HealthPro EMS Training + Basic Life Support Card",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Indirect Fire Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1A1 Abrams Armor Crewman One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Medical Specialist",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 7,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 6,
+     "MAP": 1
+    }
+   },
+   "MAG 44": {
+    "recs": 20,
+    "titles": [
+     {
+      "recs": 3,
+      "title": "Assault Amphibious Vehicle (AAV)",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Unit Supply Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Combat Engineer",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Distribution Management Specialist (11/16-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Operating Room Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Postal Clerk",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Advanced Assaultman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "AEGIS Fire Control System (FSC) Ballistic Missile Defense (BMD) Pipeline",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Armor Senior Sergeant",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Boatswain's Mate, Aircraft Handling",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Structural Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Career DEP",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Medic Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Corrections and Detention Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electrician's Mate (Nuclear) EM (NUC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician (Navigation)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Expeditionary Airfield Systems Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Explosive Ordnance Disposal (EOD)Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fixed-Wing Aircraft Mechanic, AV-8/TAV-8",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Flight Equipment Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Helicopter Crew Chief, UH-1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Helicopter Mechanic U/AH-1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Individual Material Readiness List Asset Manager",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Small Unit Leaders (ISULC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Squad Leader (East)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman Advanced Leader (ALC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician (3/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1 Armor Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mate (Nuclear)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Maintenance Supervisor",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Maneuver Senior Leader (SLC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master Leader",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master-At-Arms",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Meteorology and Oceanography Analyst Forecaster",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Metrology Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "National Guard Officer Candidate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Petroleum Supply Specialist Advanced Leader (ALC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Station Commander",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD-II)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Supply Administration and Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Supply Chain and Materials Specialist (11/21-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Support Equipment Electrician/Refrigeration and Engine/ Gas Turbine Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tiltrotor Mechanic MV-22",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Total Army Training System (TATS) Field Artillery Senior Radar/Targeting Sergeant Advanced Noncommissioned Officer (ANCOC)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 51,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 51
+    }
+   },
+   "MAG 51": {
+    "recs": 23,
+    "titles": [
+     {
+      "recs": 3,
+      "title": "M1 Armor Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Supply Administration and Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Aviation Ordnanceman (AO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Combat Engineer",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Corporals",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Electrician's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Explosive Ordnance Disposal (EOD)Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Finance Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Fire Controlman (FC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Individual Material Readiness List Asset Manager",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Machinery Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Master-At-Arms",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Military Police Basic Noncommissioned Officer (TATS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Administrative Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Advanced Assaultman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Air Support Operations Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aircraft Electrical/Instrument/Flight Control Systems Technician, Intermediate Maintenance Activity (IMA), Fixed Wing",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aircraft Mechanic, AV-8/TAV-8",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Armor Senior Sergeant",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Assault Amphibious Vehicle Commander",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Boatswain's Mate, Aircraft Handling",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Structural Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Support Equipment Technician (AS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Bulk Fuel Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Chemical, Biological, Radiological, and Nuclear Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Medic Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Construction Electrician (CE)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Construction Mechanic (CM)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Corrections and Detention Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician (Collection)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Distributed Leader I",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electrician's Mate (Nuclear) EM (NUC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician (Navigation)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Equipment Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Explosive Ordnance Disposal (EOD) Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Explosive Ordnance Disposal Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Field Artillery (FA) Firefinder Radar Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fighting Vehicle Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Finance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman (Aegis) (FCA)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fixed-Wing Aircraft Airframe Mechanic-Trainee",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fixed-Wing Aircraft Mechanic, AV-8/TAV-8",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Flight Equipment Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Health Care Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Heavy Antiarmor Weapons Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Helicopter Airframe Mechanic (A/UH-1)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Helicopter Crew Chief, UH-1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Helicopter Mechanic U/AH-1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Chemical, Biological, Radiological, Nuclear, and Explosive (CBRNE) Preparedness",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hull Maintenance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Machinegun Leader",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Senior Sergeant",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Squad Leader (East)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman Advanced Leader (ALC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician (3/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Intelligence Analyst",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Intelligence Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Logistics Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M48-M60 Armor Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mates, Nuclear Power",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Maneuver Senior Leader (SLC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master Training Specialist (MTS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Mechanical Maintenance Supervisor",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Medical Logistics Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Medical Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Mental Health Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Metrology Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Intelligence Basic Officer Leaders (MIBOLC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police Advanced Noncommissioned Officer (TATS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Motor Transport Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "National Guard Officer Candidate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Navy Counselor (Councelor)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Officer Candidate School- Class P6",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Operating Room Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Petroleum Supply Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Postal Clerk",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Quartermaster",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Division Commander School",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Sergeants DEP",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Sergeants School Seminar Program (2/17-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Storekeeper",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD) I",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Support Equipment Electrician/Refrigeration and Engine/ Gas Turbine Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tactical Communications Systems Operator/Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tank Turret Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tiltrotor Mechanic MV-22",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Unit Supply Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warehouse Clerk",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Wheel Vehicle Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 112,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 112
+    }
+   },
+   "MAG 56": {
+    "recs": 9,
+    "titles": [
+     {
+      "recs": 3,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Army Recruiting",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "M1 Armor Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Supply Administration and Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "ARNG Unit Retention NCO",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Intelligence Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Petroleum Supply Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Division Commander School",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Resident Staff Noncommissioned Officer (NCO) Academy Advanced Regular",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Retention and Transition NCO (RC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Staff Noncommissioned Officer (NCO) Academy Sergeants",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 14,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 14
+    }
+   },
+   "MKT 20": {
+    "recs": 3,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Recruiter",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Navy Counselor (Recruiter)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 2
+    }
+   },
+   "RLE 80": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "First Tuesday Real Estate School",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "RLE 81": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "First Tuesday Real Estate School",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "RLE 82": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "First Tuesday Real Estate School",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CON 200": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Combat Engineer",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "ELC 400": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship (Year 1)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "ELC 401": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship (Year 1)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "ELC 402": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship (Year 2)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "ELC 403": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship (Year 2)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "ELC 404": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship (Year 3)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "ELC 405": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship (Year 3)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "ELC 406": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship (Year 4)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELC 407": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship (Year 4)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELC 408": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship (Year 5)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELC 409": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship (Year 5)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELE 400": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELE 401": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELE 403": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELE 404": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELE 405": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELE 406": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship (Year 4)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELE 407": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship (Year 4)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELE 408": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship (Year 5)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELE 409": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship (Year 5)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELE 420": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Sound and Communication Systems Installer Apprenticeship",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELE 421": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Sound and Communication Systems Installer Apprenticeship",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELE 422": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Sound and Communication Systems Installer Apprenticeship",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELE 423": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Sound and Communication Systems Installer Apprenticeship",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELE 424": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Sound and Communication Systems Installer Apprenticeship",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELE 425": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Sound and Communication Systems Installer Apprenticeship",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELE 499": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Sound and Communication Systems Installer Apprenticeship",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MAG 200": {
+    "recs": 6,
+    "titles": [
+     {
+      "recs": 3,
+      "title": "Combat Engineer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electrician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Engineer Equipment Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Engineer Equipment Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fighting Vehicle Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Health Care Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Indirect Fire Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Senior Sergeant",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Mechanical Maintenance Supervisor",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Petroleum Supply Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tactical Communications Systems Operator/Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tank Turret Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Unit Supply Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 19,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 19
+    }
+   },
+   "KIN A81A": {
+    "recs": 1,
+    "titles": null,
+    "exhibits": 1,
+    "untitled_exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    }
+   },
+   "KIN A81B": {
+    "recs": 1,
+    "titles": null,
+    "exhibits": 1,
+    "untitled_exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    }
+   },
+   "KIN A81C": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Expeditionary Skills Training for Religious Program Specialists (RPS)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
    }
   },
   "Riverside City College": {

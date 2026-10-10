@@ -1,0 +1,339 @@
+{
+ "college": "Riverside City College",
+ "control_number": "41519",
+ "shape": "degree",
+ "title": "Sustainability in Science and Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6060",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5603,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5603,
+    "output_tokens": 2632,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2632,
+  "output_tokens_details": {
+   "thinking_tokens": 786
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07505,
+ "ms": 20998,
+ "seconds": 21.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 16,
+   "share": 0.938,
+   "missing": [
+    "MAT1A"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "MATHC2210"
+   ],
+   "flagged": [
+    "MATHC2210"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    43.0,
+    43.0
+   ],
+   "stated": [
+    43.0,
+    43.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Sustainability in Science and Technology - Associate of Science Degree - AS1035C",
+   "measure": "units",
+   "total_units": {
+    "min": 43,
+    "max": 43
+   },
+   "open_elective_units": null,
+   "ge_pattern": "IGETC Plan C",
+   "outcomes": [
+    "Define sustainability and identify major sustainability challenges.",
+    "Apply critical thinking skills, appropriate methodological and analytical tools, and diverse concepts of sustainable development to address sustainability challenges in a global context.",
+    "Demonstrate an understanding of complex relationships among ecological issues, economic growth, and social justice.",
+    "Demonstrate the ability to understand environmental changes, challenges, and solutions from a scientific perspective."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIO-19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO-60",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO-61",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CHE-1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHE-1AH",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "SOC-25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHI-34",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MATH-C2210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH-C2210H",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "STAT-C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT-C1000H",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHY-2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY-2B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "SOC-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC-1H",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SOC-50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MAT 1A",
+    "why": "not in the text; the catalog lists MATH-C2210 (Calculus I: Early Transcendentals) in its place"
+   }
+  ],
+  "notes": [
+   "The catalog prints PHY-2A, PHY-2B and SOC-50 directly after the last course of a 'Select one of the following' list with no separate heading. They are read as required courses because the stated total of 43 units only adds up that way: 13 BIO + 5 CHE + 3 SOC/PHI + 4 MATH + 4 STAT + 8 PHY + 3 SOC-1/1H + 3 SOC-50 = 43. The 'Required Courses' block name for these rows is inferred; the reviewer should check.",
+   "PHY-2A and PHY-2B are marked '( Historical )' in the catalog but are still listed as requirements.",
+   "MATH-C2210 is not in the closed list and is marked as a catalog addition. The closed list instead names MAT 1A (Calculus I), which appears to be the predecessor course.",
+   "The catalog writes course codes with a hyphen (e.g., BIO-19), while the closed list uses a space (BIO 19). They were matched as the same courses.",
+   "The catalog titles BIO-60 'Introduction to Molecular and Cellular Biology'; the closed list says 'Molecular and Cell Biology'.",
+   "The degree follows IGETC Plan C for general education. Program Learning Outcomes are printed for this degree."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 268,
  "with_closed_list": 262,
- "started": "2026-10-10T18:51:28Z",
+ "started": "2026-10-10T20:15:51Z",
  "curriqunet": {
   "catalog": 124,
   "view_prefix": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/",
@@ -20,12 +20,12 @@
  },
  "pages_read": 435,
  "loads": 447,
- "seconds": 2166.2,
- "found": 228,
+ "seconds": 2207.3,
+ "found": 237,
  "by_method": {
   "no_closed_list": 6,
-  "not_found": 34,
-  "sitemap_page": 228
+  "not_found": 25,
+  "sitemap_page": 237
  },
  "shared_pages": {
   "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6081": [
@@ -95,6 +95,12 @@
   "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5941": [
    "04512",
    "22804"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Cosmetology_Concepts": [
+   "04513",
+   "22814",
+   "38929",
+   "44949"
   ],
   "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5891": [
    "10070",
@@ -176,6 +182,10 @@
    "38257",
    "39125"
   ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/BarberingConcepts": [
+   "38930",
+   "44948"
+  ],
   "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5995": [
    "39086",
    "39105"
@@ -187,6 +197,10 @@
   "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5893": [
    "39088",
    "39130"
+  ],
+  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5971": [
+   "39096",
+   "44950"
   ],
   "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5989": [
    "39098",
@@ -223,11 +237,6 @@
  },
  "not_found": [
   {
-   "control_number": "04513",
-   "title": "Cosmetology",
-   "award": "A.S. Degree"
-  },
-  {
    "control_number": "18108",
    "title": "Administration & Information Systems",
    "award": "A.A. Degree"
@@ -263,11 +272,6 @@
    "award": "A.S. Degree"
   },
   {
-   "control_number": "22814",
-   "title": "Cosmetology",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
-  },
-  {
    "control_number": "31163",
    "title": "American Studies",
    "award": "A.A. Degree"
@@ -283,16 +287,6 @@
    "award": "A.A- T Degree"
   },
   {
-   "control_number": "38929",
-   "title": "Cosmetology Concepts",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
-  },
-  {
-   "control_number": "38930",
-   "title": "Barbering Concepts",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
-  },
-  {
    "control_number": "39084",
    "title": "Building Inspection Technology",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
@@ -300,16 +294,6 @@
   {
    "control_number": "39085",
    "title": "Zero Net Energy",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
-  },
-  {
-   "control_number": "39096",
-   "title": "Esthetician Concepts",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
-  },
-  {
-   "control_number": "39097",
-   "title": "Hairstyling Concepts",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
   },
   {
@@ -376,28 +360,13 @@
    "control_number": "44159",
    "title": "Professional Skills of Baking & Pastry Arts Non-Credit",
    "award": "Noncredit program"
-  },
-  {
-   "control_number": "44948",
-   "title": "Barbering Concepts",
-   "award": "A.S. Degree"
-  },
-  {
-   "control_number": "44949",
-   "title": "Cosmetology Concepts",
-   "award": "A.S. Degree"
-  },
-  {
-   "control_number": "44950",
-   "title": "Esthetician Concepts",
-   "award": "A.S. Degree"
   }
  ],
  "page_claimed": [],
  "coverage_bands": {
   "0.5-0.8": 12,
-  "0.8-1.0": 51,
-  "1.0": 165
+  "0.8-1.0": 52,
+  "1.0": 173
  },
- "run": "38077405309"
+ "run": "38082999076"
 }

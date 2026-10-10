@@ -1,0 +1,264 @@
+{
+ "college": "Riverside City College",
+ "control_number": "22794",
+ "shape": "certificate",
+ "title": "Exercise, Sport & Wellness: Athletic Training",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5975",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5370,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5370,
+    "output_tokens": 1784,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1784,
+  "output_tokens_details": {
+   "thinking_tokens": 406
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05716,
+ "ms": 14383,
+ "seconds": 15.0,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "KIN10",
+    "KIN14",
+    "KIN16",
+    "KIN17",
+    "KIN18",
+    "KIN19",
+    "KIN20"
+   ],
+   "flagged": [
+    "KIN10",
+    "KIN14",
+    "KIN16",
+    "KIN17",
+    "KIN18",
+    "KIN19",
+    "KIN20"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.0,
+    29.0
+   ],
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Exercise, Sports & Wellness: Athletic Training - Associate of Science Degree and Certificate of Achievement - AS597/AS597C/CE597",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate and apply knowledge of health-related fitness and wellness, injury prevention and management, strength and conditioning, and nutrition.",
+    "Identify, utilize and apply necessary principles of sport management, event management, emergency management, legal liability, and problem solving.",
+    "Demonstrate an organized approach to communication while utilizing appropriate behavior skills and recognizing different social attitudes.",
+    "Demonstrate appropriate strategies and technical skills with athletic taping, injury recognition and injury rehabilitation."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (21 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "KIN-4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN-10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN-12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN-14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN-16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN-30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN-35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses - List A (4 units)",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "KIN-17",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN-18",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN-19",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN-20",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses - List B (4 units)",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "KIN-21A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN-21B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section covers both the A.S. degree and the Certificate of Achievement (AS597/AS597C/CE597) with one shared requirements list; the certificate is read from that shared list.",
+   "The Program Learning Outcomes are printed once for the program as a whole; the certificate shares them, so they are recorded here.",
+   "The section heading is printed three times with slightly different code strings (one adds AS597B); the first is used.",
+   "The catalog prints codes with a hyphen (KIN-4). The closed-list entry 'KIN4' is matched to KIN-4.",
+   "List B is labeled 'Elective Courses' at 4 units, but holds only two 2-unit courses, so in effect both are required. It is recorded as choose_units 4.",
+   "Many courses are marked '( Historical )' in the catalog, including KIN-4, KIN-14, KIN-16, KIN-17 through KIN-20, KIN-21A, KIN-21B and KIN-35. A reviewer should check whether this listing is current for 2026-2027.",
+   "The stated total of 29.00 equals 21 + 4 + 4."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

@@ -1,0 +1,316 @@
+{
+ "college": "Norco College",
+ "control_number": "30607",
+ "shape": "certificate",
+ "title": "Music Industry Studies: Performance",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5209",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5844,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5844,
+    "output_tokens": 2290,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2290,
+  "output_tokens_details": {
+   "thinking_tokens": 533
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06918,
+ "ms": 19072,
+ "seconds": 19.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 18,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    24.0,
+    27.0
+   ],
+   "stated": [
+    36.0,
+    37.0
+   ],
+   "why": [
+    "the blocks sum to 24.0-27.0; the catalog states 36.0-37.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Music Industry Studies: Performance - Associate of Arts Degree and Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 37
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate an understanding of musicianship and music theory.",
+    "Employ music technology to create and refine musical product.",
+    "Sensitively interpret and communicate musical literature as a performer or studio musician.",
+    "Collaborate effectively with peers to create new musical works exhibiting quality and craftsmanship.",
+    "Demonstrate a fundamental understanding of intellectual property law as it applies to music."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses for Music Industry Studies: Performance",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25,
+     "max": 25
+    },
+    "courses": [
+     {
+      "code": "MIS-1A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MIS-1B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MIS-1C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS-3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS-93",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS-39",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS-79",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 1: Take MUS-41 four times over four semesters",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Ensemble option",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "MUS-41",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 2: Take both MUS-41 and MIS-81 two times each over four semesters",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Ensemble option",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "MUS-41",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS-81",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 3: Take both MIS-11A and MIS-11B two times each over four semesters",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Ensemble option",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "MIS-11A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MIS-11B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose 3-4 units from Elective Courses",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MIS-3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MIS-7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS-4",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS-23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS-32A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS-32B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS-32C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints one combined section for the A.A. degree and the Certificate of Achievement; the requirements and the Program Learning Outcomes are shared by both awards, so they are recorded for the certificate.",
+   "MUS-39 and MUS-79 must each be taken twice ('Take MUS-39 twice for a total of six units: 6.00'; same for MUS-79); each is listed once at 3 units, and the block's stated 25 units reflects the repetition.",
+   "The ensemble requirement (8 units) is 'Complete one of the following options': Option 1 takes MUS-41 four times; Options 2 and 3 take each listed course two times over four semesters. Courses are listed once per option with their per-enrollment 2 units.",
+   "Option 2's heading says 'MIS-81' but the course row lists MUS-81 Consort Singers; MUS-81 is recorded as printed in the row (matches closed-list MUS 81).",
+   "Catalog codes are printed with hyphens (e.g., MIS-1A) and match the closed-list codes (e.g., MIS 1A).",
+   "Total printed as 'Total : 36.00- 37.00'."
+  ]
+ },
+ "extracted_run": "38085495452"
+}

@@ -1,0 +1,369 @@
+{
+ "college": "Riverside City College",
+ "control_number": "32938",
+ "shape": "adt",
+ "title": "Philosophy",
+ "award": "A.A- T Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6031",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6374,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6374,
+    "output_tokens": 3076,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3076,
+  "output_tokens_details": {
+   "thinking_tokens": 1150
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08702,
+ "ms": 24065,
+ "seconds": 24.5,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 22,
+   "listed": 26,
+   "share": 0.846,
+   "missing": [
+    "HIS1",
+    "HIS2",
+    "HIS2H",
+    "HIS31"
+   ],
+   "unexplained": [
+    "HIS1",
+    "HIS2",
+    "HIS2H",
+    "HIS31"
+   ],
+   "pass": false
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "HIST1",
+    "HIST2",
+    "HIST2H",
+    "HIST31"
+   ],
+   "flagged": [],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Philosophy - Associate in Arts for Transfer (ADT) - AA717 (CalGETC)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Analyze and critically evaluate the work of major figures in philosophy",
+    "Compare and contrast different philosophical views across historical periods and contexts of human experience",
+    "Evaluate the most important topics in key areas of philosophy: theory of knowledge, metaphysics, ethics.",
+    "Demonstrate the ability to apply philosophical ideas to philosophical problems.",
+    "Express philosophical ideas and defend them in argument, both in writing and orally"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHI-32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PHI-10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHI-10H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHI-12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses - List A",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PHI-14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETS-13",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHI-19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHI-33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHI-35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM-35",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses - List B",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "PHI-11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHI-36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses - List C",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HIST-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-2H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM-4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM-4H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM-5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM-5H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM-10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM-10H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHI-18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM-18",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHI-34",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETS-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-31",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints 'Units: 6.00' for the Required Courses section as a whole (PHI-32 plus the nested 'Select one of the following' choice). It is not recorded on the PHI-32 block alone.",
+   "List A also allows 'Any course from required courses not already used.' List B allows 'Any course from List A not already used.' List C allows 'Any course from List A or List B not already used.' These courses are not repeated in the later blocks.",
+   "Cross-listed courses printed as separate rows with identical titles are recorded as alternatives: PHI-14/ETS-13, PHI-35/HUM-35, PHI-18/HUM-18 and ETS-2/HIST-31.",
+   "The catalog prints history courses as HIST-1, HIST-2, HIST-2H and HIST-31. The closed list names them HIS 1, HIS 2, HIS 2H and HIS 31 with matching titles, so they are treated as the same courses and not as catalog additions. A reviewer should confirm the subject prefix.",
+   "The page prints three headings: two read AA717 (CalGETC) and a third reads 'AA715 (CSUGE)/ AA717 (IGETC)', which may be leftover from an earlier catalog year. The closing paragraph names Cal-GETC as the GE pattern.",
+   "Program learning outcomes are printed once for the program and recorded for this ADT."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

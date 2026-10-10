@@ -1,0 +1,167 @@
+{
+ "college": "Riverside City College",
+ "control_number": "40442",
+ "shape": "degree",
+ "title": "Automotive Undercar Specialist",
+ "award": "A.S. Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Auto_Undercar_ASCE",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 4977,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 4977,
+    "output_tokens": 1144,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1144,
+  "output_tokens_details": {
+   "thinking_tokens": 259
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04279,
+ "ms": 9002,
+ "seconds": 9.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Undercar Specialist - Associate of Science Degree and Certificate of Achievement - AS975/AS975C/CE975",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate personal and shop safety procedures neededto safely work in an automotive shop environment.",
+    "Demonstrate the ability to diagnose, service and repairautomotive suspension and steering systems usingindustry approved equipment.",
+    "Demonstrate the ability to diagnose, service and repair automotive brake systems systems using industry approved equipment.",
+    "Utilize common shop equipment to correct wheel alignment and vibration concerns.",
+    "Demonstrate ability to test and diagnose electronic suspension, steering, and braking systems found on modern automobiles."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (20 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "AUT-4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT-4B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT-5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT-6A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT-50",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints one combined section for the A.S. Degree and Certificate of Achievement (heading repeated three times with slightly different codes: AS975/AS975C/CE975 and AS975/AS975B/AS975C/CE975); the requirements and program learning outcomes are shared by both awards and recorded here for the A.S. Degree.",
+   "Every course is marked '( Historical )' in the catalog table; a reviewer may want to check whether these courses are current for 2026-2027.",
+   "Outcomes are copied as printed, including run-together words ('neededto', 'repairautomotive', 'usingindustry') and the repeated word 'systems systems'.",
+   "The degree text refers to general education 'as described in the college catalog' without naming a specific GE pattern, so ge_pattern is null.",
+   "Catalog prints AUT-50 title as 'Automotive Principles' versus 'Automotive Principle' in the state file; treated as the same course."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

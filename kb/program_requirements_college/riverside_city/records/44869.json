@@ -1,0 +1,172 @@
+{
+ "college": "Riverside City College",
+ "control_number": "44869",
+ "shape": "certificate",
+ "title": "Packaging Design and Printing",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5874",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 4769,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 4769,
+    "output_tokens": 827,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 827,
+  "output_tokens_details": {
+   "thinking_tokens": 93
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03562,
+ "ms": 6606,
+ "seconds": 7.0,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.0,
+    17.0
+   ],
+   "stated": [
+    17.0,
+    17.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Packaging Design and Printing - Certificate of Achievement - CE1103",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 17
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Evaluate packaging design types, methods, and applications in the commercial printing industry.",
+    "Explore career and entrepreneurial opportunities available in packaging design and printing industries.",
+    "Understand essential role packaging design has in brand identity development.",
+    "Demonstrate the proper use of branding graphics appropriate for marketing and advertising campaigns.",
+    "Create professional quality, print ready dielines using industry specific software for commercial printing production."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "ADM-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-2B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-77A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-77B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-83",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADM-85A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes with a hyphen (e.g., ADM-1); these match the closed-list codes written with a space (ADM 1, etc.), so none are marked as catalog additions.",
+   "Catalog course titles differ slightly from the state file (e.g., 'Adobe Illustrator for Graphic Art' vs 'Adobe Illustrator'; 'Adobe Illustrator, Advanced' vs 'Advanced Adobe Illustrator'); units match.",
+   "The certificate total of 17.00 units is stated in the catalog."
+  ]
+ },
+ "extracted_run": "38082999076"
+}

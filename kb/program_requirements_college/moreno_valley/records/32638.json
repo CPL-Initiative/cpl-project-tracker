@@ -1,0 +1,362 @@
+{
+ "college": "Moreno Valley College",
+ "control_number": "32638",
+ "shape": "adt",
+ "title": "Anthropology",
+ "award": "A.A- T Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4462",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6286,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6286,
+    "output_tokens": 3314,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3314,
+  "output_tokens_details": {
+   "thinking_tokens": 1272
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09142,
+ "ms": 25957,
+ "seconds": 26.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 25,
+   "listed": 25,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "GEG8"
+   ],
+   "flagged": [
+    "GEG8"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    19.0,
+    21.0
+   ],
+   "stated": [
+    22.0,
+    23.0
+   ],
+   "why": [
+    "the blocks sum to 19.0-21.0; the catalog states 22.0-23.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Anthropology - Associate in Arts for Transfer (ADT) - MAA618 (Cal-GETC)",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Apply the holistic and comparative perspective inherent in anthropological knowledge to real world problems.",
+    "Use information resources and technology to research current issues in all four subfields of anthropology.",
+    "Synthesize and integrate theoretical perspectives specific to anthropology and general to the social and natural sciences."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses: Take ANT-1/1H and ANT-1L",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ANT-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANT-1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANT-1L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses: Select one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANT-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANT-2H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANT-6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives - List A",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ANT-3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANT-8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEG-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEG-7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT-C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT-C1000H",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC-48",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC-48",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives - List B",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "ANT-4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANT-5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANT-7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANT-10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL-22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETS-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEG-2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEG-3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA-12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives - List C",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "GEG-8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'Required Courses' heading prints Units: 10.00 for both sub-blocks combined (ANT-1/1H + ANT-1L = 4; one of ANT-2/2H or ANT-6 = 3); the 10.00 does not match 4+3=7 and should be checked.",
+   "In List A, STAT-C1000, STAT-C1000H, PSYC-48 and SOC-48 sit under 'Only one of the following may be used' (4.00); recorded as one List A entry with the other three as alternatives.",
+   "List B header prints 'Units: 6.00' while the instruction reads 'Select 6 to 7 units'; stated recorded as 6-7.",
+   "List B also allows 'Any course from List A not already used'; List C allows 'Any course from List A or B not already used.' Those courses are not repeated in the List B/C blocks.",
+   "GEG-8 (Introduction to Geographic Information Systems, with Lab) is in List C but not in the closed list; marked catalog_addition.",
+   "Catalog status labels: GEG-7 (Historical), ANT-4 (In Review), ANT-10 (Draft), ASL-22 (Approved).",
+   "The page also prints a heading 'Anthropology - Associate in Arts for Transfer (ADT) - MAA616 (CSUGE)/MAA618 (IGETC)', likely from an earlier pattern; only one requirements list is printed and it names Cal-GETC.",
+   "Codes recorded with hyphens as printed (e.g., ANT-1); they match closed-list codes such as ANT 1, ANT3, HIST1, HIST31, PSYC48."
+  ]
+ },
+ "extracted_run": "38085493318"
+}

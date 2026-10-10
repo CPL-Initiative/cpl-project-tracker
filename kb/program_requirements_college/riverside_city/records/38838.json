@@ -1,0 +1,221 @@
+{
+ "college": "Riverside City College",
+ "control_number": "38838",
+ "shape": "adt",
+ "title": "Chemistry",
+ "award": "A.S. T Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5922",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5296,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5296,
+    "output_tokens": 1397,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1397,
+  "output_tokens_details": {
+   "thinking_tokens": 283
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04912,
+ "ms": 11850,
+ "seconds": 12.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 11,
+   "share": 0.727,
+   "missing": [
+    "MAT1A",
+    "MAT1B",
+    "MATHC2210H"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "flagged": [
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Chemistry - Associate in Science for Transfer (ADT) - AS769",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Master content in inorganic and organic chemistry by describing chemical and physical structures and nomenclature, stoichiometry and solving chemical equations, and analyzing and describing the nature of chemical reactions and energy.",
+    "Measure and characterize properties of matter using a variety of research-level chemical instrumentation, laboratory techniques, statistical and computational methods.",
+    "Display effective cooperation with others on projects and clearly communicate experimental results through oral and written means.",
+    "Demonstrate professional integrity, safety, and environmental stewardship."
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 36
+    },
+    "courses": [
+     {
+      "code": "CHE-1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHE-1AH",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHE-1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHE-1BH",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHE-12A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHE-12B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-C2210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH-C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHY-4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY-4B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MAT 1A",
+    "why": "not in the text; catalog names MATH-C2210 (Calculus I: Early Transcendentals) instead, likely a renumbering"
+   },
+   {
+    "code": "MAT 1B",
+    "why": "not in the text; catalog names MATH-C2220 (Calculus II: Early Transcendentals) instead, likely a renumbering"
+   },
+   {
+    "code": "MATH C2210H",
+    "why": "not in the text; honors calculus not listed as an alternative"
+   }
+  ],
+  "notes": [
+   "Catalog prints codes with hyphens (e.g., CHE-1A); matched to closed-list codes with spaces (CHE 1A).",
+   "MATH-C2210 and MATH-C2220 are not in the closed list (which has MAT 1A, MAT 1B, MATH C2210H); recorded as catalog additions. They appear to be common-course-numbering replacements for MAT 1A/1B; reviewer should confirm.",
+   "The page prints two headings (AS769 and AS769 (CalGETC)); a single requirements list follows, read as this award's section.",
+   "Degree requires 60 CSU-transferable units including Cal-GETC; 36 units is the major total."
+  ]
+ },
+ "extracted_run": "38082999076"
+}
