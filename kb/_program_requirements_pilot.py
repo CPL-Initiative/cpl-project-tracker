@@ -518,9 +518,18 @@ def load(reader, url: str, cache: dict, spa: bool) -> dict:
     return got
 
 
-def best_text(got: dict, found_body: dict, found_content: dict) -> tuple[str, dict, str]:
+def best_text(got: dict, found_body: dict, found_content: dict,
+              courses: list[dict] | None = None) -> tuple[str, dict, str]:
     """innerText is what a reader sees; textContent also holds a hidden tab
-    (CourseLeaf keeps Requirements in a tab). Take whichever names more."""
+    (CourseLeaf keeps Requirements in a tab). The visible text stands whenever
+    it names ACCEPT_SHARE of the program's courses; the hidden text is taken
+    only when the visible text falls short of that and the hidden text names
+    more. Long Beach City's pages hide a course index that names every course
+    in the catalog, so "whichever names more" gave 378 of its 379 programs
+    the index for the model to read, and 367 records came back with no blocks
+    (run 38105864413, S362)."""
+    if courses is not None and coverage(found_body, courses) >= ACCEPT_SHARE:
+        return got.get("body") or "", found_body, "innerText"
     if len(found_content) > len(found_body):
         return got.get("content") or "", found_content, "textContent"
     return got.get("body") or "", found_body, "innerText"
@@ -540,7 +549,7 @@ def locate_html(reader, program: dict, courses: list[dict], start: str, cache: d
         got = load(reader, url, cache, spa)
         fb = find_codes(got.get("body") or "", courses)
         fc = find_codes(got.get("content") or "", courses)
-        text, found, field = best_text(got, fb, fc)
+        text, found, field = best_text(got, fb, fc, courses)
         cov = coverage(found, courses)
         trail.append({"url": url, "why": why, "status": got.get("status"),
                       "access": got.get("access"), "title": (got.get("title") or "")[:120],
@@ -632,7 +641,7 @@ def click_through(reader, program: dict, courses: list[dict], trail: list,
                 pass
             fb = find_codes(got.get("body") or "", courses)
             fc = find_codes(got.get("content") or "", courses)
-        text, found, field = best_text(got, fb, fc)
+        text, found, field = best_text(got, fb, fc, courses)
         cov = coverage(found, courses)
         body = got.get("body") or ""
         at = max(0, body.find(target[:30]))

@@ -1165,6 +1165,32 @@ with _tf.TemporaryDirectory() as td:
     check(PC.has_record(good) and not PC.has_record(bad) and not PC.has_record(os.path.join(td, "3.json")),
           "a filed row with no record is not kept, so a later read asks the model again")
 
+# S362: Long Beach City's pages hide a course index naming every course in the
+# catalog. The visible text stands whenever it names half the program's
+# courses; the hidden text is taken only when the visible text falls short.
+LB = [{"code": c} for c in ["HORT 11A", "HORT 11B", "HORT 19", "HORT 21", "MKTG 47", "FLO 286A"]]
+lb_body = "Horticulture A.S.\nRequired Courses\nHORT 11A\tIntro\t3\nHORT 19\tSoils\t3\nHORT 21\tPests\t3\nTotal Units 9"
+lb_index = "FLO 286A - Floral Design II\nHORT 11A - Intro\nHORT 11B - Plants\nHORT 19 - Soils\nHORT 21 - Pests\nMKTG 47 - Sales\n"
+lb_got = {"body": lb_body, "content": lb_index + lb_body.replace("\t", "")}
+fb, fc = P.find_codes(lb_got["body"], LB), P.find_codes(lb_got["content"], LB)
+check(len(fc) > len(fb), "the fixture's hidden index names more of the courses than the visible page")
+t, f, field = P.best_text(lb_got, fb, fc, LB)
+check(field == "innerText" and "Total Units 9" in t and "Floral" not in t,
+      "a visible page naming half the program's courses keeps its own text over a hidden index")
+check(P.best_text(lb_got, fb, fc)[2] == "textContent",
+      "called without the courses, the old rule (whichever names more) stands")
+tab_got = {"body": "Horticulture A.S.\nOverview\nRequirements", "content": lb_index}
+t, f, field = P.best_text(tab_got, P.find_codes(tab_got["body"], LB), P.find_codes(tab_got["content"], LB), LB)
+check(field == "textContent", "a page whose requirements sit in a hidden tab still reads its hidden text")
+none = S.score({"program": {"total_units": None}, "blocks": [],
+                "missing_explained": [{"code": c["code"], "why": "only in the course index"} for c in LB]}, LB, lb_index)
+check(not none["coverage"]["pass"] and none["coverage"]["none_placed"] and not none["pass"],
+      "a record placing none of the listed courses fails coverage, every course explained or not")
+some = S.score({"program": {"total_units": None}, "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "HORT 19"}]}],
+                "missing_explained": [{"code": c["code"], "why": "not printed"} for c in LB if c["code"] != "HORT 19"]}, LB, lb_body)
+check(some["coverage"]["pass"] and not some["coverage"]["none_placed"],
+      "a record placing one listed course and explaining the rest still passes coverage")
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:

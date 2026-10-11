@@ -280,7 +280,7 @@ def trail_row(url: str, why: str, got: dict, found: dict, courses: list[dict], t
 def page_text(got: dict, courses: list[dict]) -> tuple[str, dict]:
     fb = P.find_codes(got.get("body") or "", courses)
     fc = P.find_codes(got.get("content") or "", courses)
-    text, found, _ = P.best_text(got, fb, fc)
+    text, found, _ = P.best_text(got, fb, fc, courses)
     return text, found
 
 
