@@ -7,7 +7,7 @@ kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
   - "[[CLAUDE]]"
-  - "[[docs/program_requirements_harvest_lessons]]"
+  - "[[docs/program_requirements_harvest_lessons_archive]]"
   - "[[docs/kb-notes/methodology-verify-an-ask-against-what-the-reader-sees]]"
 artifacts:
   - prototype/ironworker_video/README.md
@@ -44,7 +44,7 @@ It applies to any outward artifact an advisor or a drafting model helps write fr
 
 ## See also
 
-- `[[docs/program_requirements_harvest_lessons]]` — S330: the film and the advice
+- `[[docs/program_requirements_harvest_lessons_archive]]` — S330: the film and the advice
 - `[[docs/kb-notes/methodology-verify-an-ask-against-what-the-reader-sees]]` — the reader's side of the same check
 - `prototype/ironworker_video/README.md` — the four corrections in place
 
