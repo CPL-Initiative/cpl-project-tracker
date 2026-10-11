@@ -2,18 +2,18 @@
  "college": "Norco College",
  "programs": 161,
  "with_closed_list": 150,
- "found": 149,
- "extracted": 149,
+ "found": 148,
+ "extracted": 148,
  "errors": 1,
  "passed_machine_checks": 126,
  "failed": {
   "coverage": 3,
   "invented": 4,
-  "arithmetic": 20,
+  "arithmetic": 19,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 10.03,
+ "cost_usd": 9.96,
  "cost_per_program": 0.0673,
  "not_found": [
   {
@@ -22,5 +22,5 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
   }
  ],
- "run": "38095619629"
+ "run": "38097808032"
 }

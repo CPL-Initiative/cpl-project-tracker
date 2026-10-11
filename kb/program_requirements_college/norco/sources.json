@@ -3677,43 +3677,12 @@
   "title": "Kinesiology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.724,
-  "codes_found": [
-   "BIO50A",
-   "BIO50B",
-   "KIN10",
-   "KIN30",
-   "KINA40",
-   "KINA41",
-   "KINA43",
-   "KINA44",
-   "KINA46",
-   "KINA47",
-   "KINA64A",
-   "KINA64B",
-   "KINA75A",
-   "KINA75B",
-   "KINA77A",
-   "KINA77B",
-   "KINA81A",
-   "KINA81B",
-   "KINA83",
-   "KINA89A",
-   "KINA89B"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5552",
-   "title": "Kinesiology, Health & Wellness - Associate of Arts Degree (AOE) - NAA498/C",
-   "h1": "Kinesiology, Health & Wellness - Associate of Arts Degree (AOE) - NAA498/C",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 29,
-  "text_chars": 4298
+  "text_chars": 0
  },
  {
   "control_number": "37232",
