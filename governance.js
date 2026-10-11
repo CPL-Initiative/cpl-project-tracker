@@ -84,13 +84,13 @@
       ".gov { max-width: 1100px; margin: 0 auto; color: var(--text-body); }",
       ".gov h2 { color: var(--navy-primary); margin: 16px 0 4px; }",
       ".gov h3 { color: var(--navy-primary); margin: 26px 0 4px; font-size: 1.05rem; }",
-      ".gov-intro { color: var(--text-muted); max-width: 900px; margin: 0 0 14px; font-size: .92rem; }",
+      ".gov-intro { color: var(--text-muted); max-width: var(--cpl-measure, none); margin: 0 0 14px; font-size: .92rem; }",
       ".gov-draft { font-size:.66rem; text-transform:uppercase; letter-spacing:.05em; background: var(--surface-muted);"
         + " color: var(--text-muted); border-radius:10px; padding:2px 9px; vertical-align:middle; }",
       ".gov-principle { border-left:3px solid var(--seal-blue); padding:8px 12px; margin:0 0 16px;"
         + " background: var(--surface-subtle); font-size:.92rem; }",
-      ".gov-stat { display:flex; flex-wrap:wrap; gap:10px; margin:0 0 18px; }",
-      ".gov-stat .box { flex:1 1 160px; border:1px solid var(--border); border-radius:8px;"
+      ".gov-stat { display:grid; grid-template-columns:repeat(auto-fit, minmax(120px, 1fr)); gap:10px; margin:0 0 18px; }",
+      ".gov-stat .box { border:1px solid var(--border); border-radius:8px;"
         + " background: var(--surface-subtle); padding:10px 12px; }",
       ".gov-stat .box .n { font-size:1.4rem; font-weight:700; color: var(--navy-primary); }",
       ".gov-stat .box .l { font-size:.72rem; color: var(--text-muted); }",
@@ -100,29 +100,33 @@
       ".gov-table td { padding:7px 8px; border-bottom:1px solid var(--border); vertical-align:top; }",
       ".gov-id { font-size:.68rem; color: var(--text-muted); font-variant-numeric:tabular-nums; }",
       ".gov-el { font-weight:600; }",
-      ".gov-noown { color: var(--danger, #b3261e); font-weight:600; }",
+      ".gov-noown { color: var(--red-alert); font-weight:600; }",
       ".gov-chip { font-size:.68rem; border-radius:10px; padding:1px 8px; white-space:nowrap;"
         + " background: var(--surface-muted); color: var(--text-muted); }",
-      ".gov-chip.auth { background: var(--hunter, #2c601a); color:var(--on-accent); }",
+      // A stance is a category, not a state to act on: the word and its weight carry it, never green.
+      ".gov-chip.auth { background: var(--surface-muted); color: var(--navy-primary); font-weight:600; }",
       ".gov-chip.corrob { background: var(--surface-muted); color: var(--text-body); }",
       ".gov-chip.advis { background: var(--surface-subtle); color: var(--text-muted); }",
       ".gov-live { font-size:.72rem; color: var(--text-muted); }",
       ".gov-live b { color: var(--navy-primary); }",
-      ".gov-bad { color: var(--danger, #b3261e); font-weight:600; }",
+      ".gov-bad { color: var(--red-alert); font-weight:600; }",
       ".gov-note { font-size:.75rem; color: var(--text-muted); margin-top:4px; }",
       ".gov-gate { color: var(--text-muted); padding:18px; border:1px dashed var(--border-strong);"
         + " border-radius:8px; background: var(--surface-subtle); }",
-      ".gov-btn { font-size:.78rem; padding:4px 10px; border:1px solid var(--border); border-radius:6px;"
-        + " background: var(--surface); color: var(--text-body); cursor:pointer; }",
-      ".gov-btn:hover { border-color: var(--seal-blue); color:var(--seal-blue-text,#002F6D); }",
-      ".gov-toolbar { display:flex; gap:8px; align-items:center; margin:0 0 14px; flex-wrap:wrap; }",
+      // Controls are underlined words (Sam, 2026-10-09; S366's pass): no border, no fill, 24px.
+      ".gov-btn { font:inherit; font-size:.78rem; font-weight:600; padding:2px 0; min-height:24px; min-width:24px;"
+        + " border:0; background:none; color: var(--cobalt); cursor:pointer; white-space:nowrap;"
+        + " text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
+      ".gov-btn:hover { text-decoration-thickness:2px; }",
+      ".gov-btn:focus-visible, .gov-ownbtn:focus-visible { outline:2px solid var(--seal-blue); outline-offset:2px; }",
+      ".gov-toolbar { display:flex; gap:18px; align-items:center; margin:0 0 14px; flex-wrap:wrap; }",
       ".gov-q { border-left:3px solid var(--border-strong); padding:6px 12px; margin:0 0 10px; }",
       ".gov-q .qq { font-weight:600; }",
       ".gov-q .qw { font-size:.8rem; color: var(--text-muted); }",
       // Drift candidates
       ".gov-cand { border:1px solid var(--border); border-radius:8px; padding:10px 12px; margin:0 0 18px;"
         + " background: var(--surface-subtle); }",
-      ".gov-cand h4 { margin:0 0 2px; font-size:.9rem; color: var(--navy-primary); }",
+      ".gov .gov-cand h3 { margin:0 0 2px; font-size:.9rem; color: var(--navy-primary); }",
       ".gov-cand .sub { font-size:.75rem; color: var(--text-muted); margin:0 0 8px; }",
       ".gov-cand .grp { font-size:.7rem; text-transform:uppercase; letter-spacing:.04em;"
         + " color: var(--text-muted); margin:8px 0 3px; }",
@@ -131,24 +135,31 @@
       ".gov-cand li .w { color: var(--text-muted); font-size:.74rem; }",
       ".gov-cand .none { font-size:.8rem; color: var(--text-muted); }",
       // Owner curation
-      ".gov-ownbtn { display:block; width:100%; text-align:left; background:none; border:1px dashed transparent;"
-        + " border-radius:6px; padding:3px 5px; cursor:pointer; font:inherit; color:inherit; }",
+      ".gov-ownbtn { display:block; width:100%; min-height:24px; text-align:left; background:none;"
+        + " border:1px dashed transparent; border-radius:6px; padding:3px 5px; cursor:pointer; font:inherit; color:inherit; }",
       ".gov-ownbtn:hover { border-color: var(--seal-blue); background: var(--surface-subtle); }",
       ".gov-owner { font-weight:600; color: var(--navy-primary); }",
-      ".gov-pencil { opacity:0; float:right; font-size:.8rem; color:var(--seal-blue-text,#002F6D); }",
-      ".gov-ownbtn:hover .gov-pencil { opacity:1; }",
-      ".gov-ov { position:fixed; inset:0; background:rgba(0,0,0,.42); z-index:400;"
+      ".gov-pencil { opacity:0; float:right; font-size:.8rem; color:var(--seal-blue-text); }",
+      // The pencil shows the cell acts; a keyboard user reaching the cell sees it too.
+      ".gov-ownbtn:hover .gov-pencil, .gov-ownbtn:focus-visible .gov-pencil { opacity:1; }",
+      // Above the masthead, as the other COBI dialogs sit (S366: at 390px the header painted over it).
+      ".gov-ov { position:fixed; inset:0; background:rgba(0,0,0,.42); z-index:9999;"
         + " display:flex; align-items:center; justify-content:center; padding:20px; }",
-      ".gov-dlg { background: var(--surface); border-radius:10px; padding:18px 20px; max-width:460px;"
+      // A dialog with fields is a data surface: opaque, never glass (dark --surface is 86% alpha).
+      ".gov-dlg { background: var(--surface-opaque); border-radius:10px; padding:18px 20px; max-width:460px;"
         + " width:100%; box-shadow:0 8px 30px rgba(0,0,0,.3); }",
       ".gov-dlg h3 { margin:0 0 6px; font-size:1rem; color: var(--navy-primary); }",
       ".gov-dlg label { display:block; font-size:.75rem; color: var(--text-muted); margin:10px 0 3px; }",
       ".gov-dlg input, .gov-dlg textarea { width:100%; padding:7px 9px; border:1px solid var(--border);"
         + " border-radius:6px; font:inherit; font-size:.85rem; background: var(--surface); color: var(--text-body); }",
       ".gov-dlg textarea { min-height:56px; resize:vertical; }",
-      ".gov-dlg-actions { display:flex; gap:8px; justify-content:flex-end; margin-top:14px; }",
+      ".gov-dlg-actions { display:flex; gap:18px; justify-content:flex-end; flex-wrap:wrap; margin-top:14px; }",
       ".gov-dlg-what { font-size:.78rem; color: var(--text-muted); margin:0 0 4px; }",
-      "@media (max-width: 820px) { .gov-table { display:block; overflow-x:auto; } }",
+      // A register table scrolls inside its own named region on a narrow screen; the body never
+      // scrolls sideways, and each column keeps a readable width rather than wrapping a word a line.
+      ".gov-scroll { overflow-x:auto; margin:0 0 6px; }",
+      ".gov-scroll .gov-table { margin:0; }",
+      ".gov-table { min-width:600px; }",
     ].join("\n");
     var el = document.createElement("style");
     el.id = CSS_ID; el.textContent = css;
@@ -229,7 +240,7 @@
     if (!d) return "";
     var list = d.candidates || [];
     var c = d._counts || {};
-    var h = '<div class="gov-cand"><h4>\u{1F50E} Not on the register (' + list.length + ")</h4>";
+    var h = '<div class="gov-cand"><h3>Not on the register (' + list.length + ")</h3>";
     h += '<p class="sub">Detected by scanning the repo — <b>proposals only</b>, never added automatically, '
       + "because who-decides and is-this-load-bearing are judgment calls. "
       + esc(String(c.already_mapped || 0)) + " more surface(s) already map to a row and "
@@ -249,8 +260,8 @@
         h += "</ul>";
       });
     }
-    h += '<div class="gov-toolbar" style="margin:10px 0 0"><button class="gov-btn" data-gov-refresh>'
-      + (state.refreshing ? "Refreshing\u2026" : "\u21BB Refresh") + "</button>"
+    h += '<div class="gov-toolbar" style="margin:10px 0 0"><button type="button" class="gov-btn" data-gov-refresh>'
+      + (state.refreshing ? "Refreshing\u2026" : "Refresh") + "</button>"
       + '<span class="gov-live">Re-reads the committed scan and the live figures. The repo scan itself '
       + "runs in the daily job — this button cannot re-scan the codebase from a browser.</span></div>";
     return h + "</div>";
@@ -368,12 +379,15 @@
         + (o.curated ? '<div class="gov-note">set by ' + esc(o.by || "?") + " · " + fmtDate(o.at) + "</div>" : "")
         + (o.note ? '<div class="gov-note">' + esc(o.note) + "</div>" : "")
       : '<span class="gov-noown">needs an owner</span>';
-    return '<button class="gov-ownbtn" data-own="' + esc(row.id)
+    return '<button type="button" class="gov-ownbtn" data-own="' + esc(row.id)
       + '" title="Click to assign an owner">' + body + '<span class="gov-pencil">✎</span></button>';
   }
 
   function render(root) {
     ensureCss();
+    // The shell's loading placeholder (a dashed, centered box) is inline on the root; it
+    // stayed under the painted register, centering every cell and paragraph (S366).
+    root.removeAttribute("style");
     if (!signedIn()) {
       // Was: "sign in on the Team & RACI tab … to view it" — the bounce
       // team_phrase_header.js was written to end, still live here, and by
@@ -415,7 +429,7 @@
     if (state.ownersStale) {
       h += '<div class="gov-gate"><b>Could not read the assigned owners.</b> The owner column below may be '
         + "out of date, and the “no owner” count cannot be trusted until this loads. Re-open the tab, or "
-        + "renew your session from \u2139 About in the header.</div>";
+        + "renew your session from the About menu in the header.</div>";
     }
     h += '<p class="gov-intro">A starter register: <b>who decides what</b>, <b>how much we trust each input</b>, '
       + "and <b>which loops actually run</b>. Written after a session in which every problem turned out to be a "
@@ -441,7 +455,7 @@
     // it would have been read once and never again.
     h += renderCandidates();
 
-    h += '<div class="gov-toolbar"><button class="gov-btn" data-gov-copy>⧉ Copy as Markdown</button>'
+    h += '<div class="gov-toolbar"><button type="button" class="gov-btn" data-gov-copy>Copy as Markdown</button>'
       + '<span class="gov-live">Share it with anyone who should be in this conversation.</span></div>';
 
     // ── Decision rights ──
@@ -449,9 +463,11 @@
     h += '<p class="gov-intro">The load-bearing question for each element: <b>whose call is this?</b> '
       + "Where the answer is “the college,” our job is to route to a determination they already made — never to "
       + "make one for them. Where it is ours, say so plainly; ambiguity produces both over-reach and paralysis.</p>";
-    h += '<table class="gov-table"><colgroup><col style="width:20%"><col style="width:26%"><col style="width:14%">'
+    h += '<div class="gov-scroll" role="region" tabindex="0" aria-label="Who decides what">'
+      + '<table class="gov-table"><colgroup><col style="width:20%"><col style="width:26%"><col style="width:14%">'
       + '<col style="width:14%"><col style="width:26%"></colgroup><thead><tr>'
-      + "<th>Element</th><th>What it drives</th><th>Who decides</th><th>Our owner</th><th>When it's empty</th>"
+      + '<th scope="col">Element</th><th scope="col">What it drives</th><th scope="col">Who decides</th>'
+      + '<th scope="col">Our owner</th><th scope="col">When it\'s empty</th>'
       + "</tr></thead><tbody>";
     (R.decision_rights || []).forEach(function (d) {
       h += "<tr>"
@@ -462,35 +478,39 @@
         + "<td>" + owner(d) + "</td>"
         + "<td>" + esc(d.when_empty) + "</td></tr>";
     });
-    h += "</tbody></table>";
+    h += "</tbody></table></div>";
 
     // ── Acceptance standards ──
     h += "<h3>How far each input is trusted</h3>";
     h += '<p class="gov-intro">You already have the best version of this for TOP codes — '
       + "<b>corroborating only, never gating, two-signals-agree</b>. That standard is the template; the rest of "
       + "this table applies it to every other input. Decide a new input's stance <i>before</i> depending on it.</p>";
-    h += '<table class="gov-table"><colgroup><col style="width:20%"><col style="width:18%"><col style="width:62%">'
-      + "</colgroup><thead><tr><th>Input</th><th>Stance</th><th>Rule</th></tr></thead><tbody>";
+    h += '<div class="gov-scroll" role="region" tabindex="0" aria-label="How far each input is trusted">'
+      + '<table class="gov-table"><colgroup><col style="width:20%"><col style="width:18%"><col style="width:62%">'
+      + '</colgroup><thead><tr><th scope="col">Input</th><th scope="col">Stance</th><th scope="col">Rule</th>'
+      + "</tr></thead><tbody>";
     (R.acceptance_standards || []).forEach(function (a) {
       h += "<tr><td><span class=\"gov-id\">" + esc(a.id) + '</span><br><span class="gov-el">'
         + esc(a.input) + "</span></td><td>" + stanceChip(a.stance) + "</td><td>" + esc(a.rule) + "</td></tr>";
     });
-    h += "</tbody></table>";
+    h += "</tbody></table></div>";
 
     // ── Cadences ──
     h += "<h3>Which loops actually run</h3>";
     h += '<p class="gov-intro">A cadence nobody runs is a document, not governance. The "last run" column is '
       + "measured live, not asserted — which is the point.</p>";
-    h += '<table class="gov-table"><colgroup><col style="width:26%"><col style="width:22%"><col style="width:18%">'
+    h += '<div class="gov-scroll" role="region" tabindex="0" aria-label="Which loops actually run">'
+      + '<table class="gov-table"><colgroup><col style="width:26%"><col style="width:22%"><col style="width:18%">'
       + '<col style="width:34%"></colgroup><thead><tr>'
-      + "<th>Loop</th><th>Frequency</th><th>Owner</th><th>State</th></tr></thead><tbody>";
+      + '<th scope="col">Loop</th><th scope="col">Frequency</th><th scope="col">Owner</th><th scope="col">State</th>'
+      + "</tr></thead><tbody>";
     (R.cadences || []).forEach(function (c) {
       h += "<tr><td><span class=\"gov-id\">" + esc(c.id) + '</span><br><span class="gov-el">'
         + esc(c.loop) + "</span></td><td>" + esc(c.frequency) + "</td><td>" + owner(c) + "</td>"
         + "<td>" + cadenceState(c) + (c.note ? '<div class="gov-note">' + esc(c.note) + "</div>" : "")
         + "</td></tr>";
     });
-    h += "</tbody></table>";
+    h += "</tbody></table></div>";
 
     // ── Open questions ──
     h += "<h3>Open questions — the actual review</h3>";
@@ -547,11 +567,13 @@
       .filter(function (r) { return r.id === id; })[0];
     if (!row) return;
     var cur = ownerOf(row);
+    // Focus goes back to the cell that opened the dialog when it closes (WCAG 2.4.3).
+    var opener = document.activeElement;
     var old = document.getElementById("gov-own-dlg");
     if (old) old.parentNode.removeChild(old);
     var ov = document.createElement("div");
     ov.id = "gov-own-dlg"; ov.className = "gov-ov";
-    ov.innerHTML = '<div class="gov-dlg" role="dialog" aria-label="Assign an owner">'
+    ov.innerHTML = '<div class="gov-dlg" role="dialog" aria-modal="true" aria-label="Assign an owner">'
       + "<h3>" + esc(row.element || row.loop) + "</h3>"
       + '<p class="gov-dlg-what"><span class="gov-id">' + esc(id) + "</span> — "
       + esc(row.drives || row.frequency || "") + "</p>"
@@ -562,13 +584,17 @@
       + '<textarea id="gov-own-note" placeholder="Scope, caveats, or what exactly they own">'
       + esc(cur && cur.note ? cur.note : "") + "</textarea>"
       + '<div class="gov-dlg-actions">'
-      + '<button class="gov-btn" data-own-cancel>Cancel</button>'
-      + '<button class="gov-btn" data-own-clear>Clear owner</button>'
-      + '<button class="gov-btn" data-own-save><b>Save</b></button>'
+      + '<button type="button" class="gov-btn" data-own-cancel>Cancel</button>'
+      + '<button type="button" class="gov-btn" data-own-clear>Clear owner</button>'
+      + '<button type="button" class="gov-btn" data-own-save>Save</button>'
       + "</div></div>";
     document.body.appendChild(ov);
-    function close() { if (ov.parentNode) ov.parentNode.removeChild(ov); }
+    function close() {
+      if (ov.parentNode) ov.parentNode.removeChild(ov);
+      if (opener && opener.focus && document.body.contains(opener)) opener.focus();
+    }
     ov.addEventListener("click", function (e) { if (e.target === ov) close(); });
+    ov.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
     ov.querySelector("[data-own-cancel]").addEventListener("click", close);
     var nameEl = ov.querySelector("#gov-own-name");
     if (nameEl.focus) nameEl.focus();
@@ -584,6 +610,9 @@
       // save itself had always worked — only the UI lied. (Sam, 2026-08-07.)
       var saving = saveOwner(id, name, note);
       render(root);
+      // The repaint replaced the cell that opened the dialog; focus its successor.
+      var cell = root.querySelector('[data-own="' + String(id).replace(/["\\]/g, "") + '"]');
+      if (cell && cell.focus) cell.focus();
       saving.catch(function () {
         alert("Could not save that owner. Unlock with the team phrase "
           + "(the About menu in the header) and try again.");
@@ -798,7 +827,10 @@
     gov.appendChild(det);
 
     det.addEventListener("toggle", function () {
-      if (!det.open || docs.loaded || docs.loading) { return; }
+      if (!det.open || docs.loading) { return; }
+      // A repaint (Refresh, an owner saved, the tab reopened) mounts a fresh, empty panel
+      // over an index already loaded: paint it from memory rather than leave it blank.
+      if (docs.loaded) { paintDocs(det); return; }
       docs.loading = true; paintDocs(det);
       fetch(DOCS_URL).then(function (r) {
         if (!r.ok) throw new Error("index " + r.status);
@@ -833,7 +865,7 @@
     if (!btn) return;
     btn.addEventListener("click", function () {
       var md = toMarkdown();
-      var done = function () { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "⧉ Copy as Markdown"; }, 1400); };
+      var done = function () { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "Copy as Markdown"; }, 1400); };
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(md).then(done, done);
       } else {

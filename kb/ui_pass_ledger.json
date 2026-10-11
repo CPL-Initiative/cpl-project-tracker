@@ -151,8 +151,8 @@
    "name": "Governance",
    "page": "index.html#governance",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-11",
+   "outcome": "S366: seeded governance-editor (+dark): h2->h4 skip, three tables scrolling at 390/320 unreachable by keyboard (named regions, th scope), Docs panel blank after a repaint, the shell's dashed centered placeholder left on the root, dialog on glass with no Escape or focus return; controls as underlined words, the green stance chip and 3 glyphs removed, raw hex fallbacks gone. Wiring: figures agree; sierra_feedback row caps fixed in a sibling PR."
   },
   {
    "id": "cobi:team-phrases",

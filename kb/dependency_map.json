@@ -1319,7 +1319,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 622,
+     "line": 651,
      "tabs": [
       "governance"
      ]
@@ -5016,7 +5016,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 664
+     "line": 714
     },
     {
      "id": "module:college_briefing.js",
@@ -5798,7 +5798,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 621,
+     "line": 650,
      "tabs": [
       "governance"
      ]
@@ -20250,7 +20250,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 274,
+     "line": 285,
      "tabs": [
       "governance"
      ]
@@ -20260,7 +20260,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 309,
+     "line": 320,
      "tabs": [
       "governance"
      ]
@@ -21137,7 +21137,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 177,
+     "line": 188,
      "tabs": [
       "governance"
      ]
@@ -21268,7 +21268,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 164,
+     "line": 175,
      "tabs": [
       "governance"
      ]
@@ -21795,7 +21795,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 198,
+     "line": 209,
      "tabs": [
       "governance"
      ]
