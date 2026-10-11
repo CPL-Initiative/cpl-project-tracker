@@ -1428,6 +1428,8 @@
     ".cplpw-rmark { font-size:.8rem; color: var(--text-body); overflow-wrap:anywhere; }",
     ".cplpw-rmark b { font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; color: var(--seal-blue-text); margin-right:4px; }",
     ".cplpw-rmark.lead b { color: var(--text-muted); }",
+    ".cplpw-rdiffer { margin:0 0 10px; font-size:.88rem; color: var(--text-body); }",
+    ".cplpw-rdiffer b { display:inline-block; margin-right:8px; padding:0 6px; border:1px solid var(--border-strong); border-radius:4px; font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; color: var(--text-muted); }",
     ".cplpw-ralt { font-size:.8rem; color: var(--text-muted); border-top:1px dashed var(--border-strong); padding-top:4px; margin-top:2px; overflow-wrap:anywhere; }",
     ".cplpw-ralt b { color: var(--text-strong); }",
     ".cplpw-rfork { background: var(--surface-opaque); border:1px solid var(--border-strong); border-radius:10px; margin-bottom:12px; min-width:0; }",
@@ -1529,6 +1531,14 @@
       out.push({ kind: "consider", label: "For consideration", text: c.credential + (c.cid ? " (statewide recommendation for " + c.cid + ")" : "")
         + (consider.length > 1 ? "; " + (consider.length - 1) + " more" : "") });
     }
+    /* A course the catalog prints off the program's list that COCI carries on the program
+       under some status (Sam, 2026-10-11: "list them with a chip noting the Coci status so
+       the college can follow up if needed"). */
+    var coci = info && info.coci;
+    if (coci) {
+      out.push({ kind: "coci", label: "In COCI", text: (coci.status || "no status") + " on this program (" + coci.program_ccn + ")"
+        + (coci.current_ccn ? "; current version " + coci.current_ccn : "") });
+    }
     return out;
   }
 
@@ -1581,7 +1591,7 @@
     li.setAttribute("data-code", c.code);
     li.appendChild(el("span", "code", c.code));
     if (info.title) li.appendChild(el("span", "ttl", info.title));
-    var u = c.units != null ? roepAmt(c.units, c.units_max, m) : (info.units_from_state_file != null ? roepAmt(info.units_from_state_file, null, m) + " (state file)" : "");
+    var u = c.units != null ? roepAmt(c.units, c.units_max, m) : (info.units_from_state_file != null ? roepAmt(info.units_from_state_file, null, m) + " (COCI)" : "");
     if (u) li.appendChild(el("span", "u", u));
     marks.forEach(function (k) {
       li.appendChild(el("span", "cplpw-rmark" + (k.kind === "here" ? "" : " lead"), [el("b", null, k.label), k.text]));
@@ -1619,6 +1629,15 @@
     var box = el("section", "cplpw-rmap");
     box.setAttribute("aria-label", "Program requirements");
     box.appendChild(el("h3", null, "Requirements, as the catalog prints them"));
+    /* A unit difference is kept as printed and chipped (Sam, 2026-10-11: "Preserve the unit
+       difference and highlight with a chip"). */
+    var differ = ((rec.display || {}).checks || {}).units_differ;
+    if (differ) {
+      var dm = roepMeasure(rec);
+      box.appendChild(el("p", "cplpw-rdiffer", [el("b", null, "Units differ"),
+        "The blocks add to " + roepAmt(differ.blocks[0], differ.blocks[1], dm) + "; the catalog prints " +
+        roepAmt(differ.printed[0], differ.printed[1], dm) + ". The record keeps both as printed."]));
+    }
     var blocks = rec.record.blocks || [];
     var done = {};
     blocks.forEach(function (b) {

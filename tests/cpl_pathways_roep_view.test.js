@@ -320,6 +320,35 @@ function click(w, root, value) {
   }
 }
 
+// ── (k) COCI's word on a mismatched course, COCI's units, and a unit difference kept (Sam, 2026-10-11) ──
+// "list them with a chip noting the Coci status so the college can follow up if needed";
+// "State the units from COCI when the program at the college does not"; "Preserve the unit
+// difference and highlight with a chip". The failures this guards: a course COCI carries on the
+// program Inactive shown only as off the list; a blank where the catalog prints no units; a unit
+// difference the page hides.
+{
+  const w = freshWindow();
+  const T = w.CPL_PATHWAYS_TAB;
+  const root = w.document.getElementById("cpl-pathways-root");
+  const rec = JSON.parse(JSON.stringify(w.CPL_PATHWAYS_ROEP.programs.find((p) => p.key === "cerritos_42158")));
+  rec.record.blocks[0].courses.push({ code: "EMS 80", units: null, alternatives: [], catalog_addition: true });
+  rec.display.courses["EMS 80"] = { title: "Paramedic Field Externship", units_from_state_file: 9,
+    coci: { status: "Inactive", program_ccn: "CCC000584685", current_ccn: "CCC000616276" } };
+  rec.display.checks.units_differ = { blocks: [29.5, 31.5], printed: [30.5, 30.5] };
+  T._roepView.lay = "req"; T._roepView.who = "college";
+  T._renderRoepProgram(root, rec);
+  const tile = root.querySelector('.cplpw-rmap .cplpw-rtile[data-code="EMS 80"]');
+  check("(k) a course COCI carries on the program under another status names it in words, with both control numbers",
+    !!tile && /In COCI\s*Inactive on this program \(CCC000584685\); current version CCC000616276/.test(tile.textContent), tile && tile.textContent);
+  check("(k) where the catalog prints no units, COCI's show, labeled", !!tile && tile.querySelector(".u").textContent === "9 units (COCI)",
+    tile && tile.querySelector(".u") && tile.querySelector(".u").textContent);
+  const differ = root.querySelector(".cplpw-rmap .cplpw-rdiffer");
+  check("(k) a unit difference is kept and chipped above the requirements",
+    !!differ && /^Units differ/.test(differ.textContent) && /The blocks add to 29\.5–31\.5 units; the catalog prints 30\.5 units\./.test(differ.textContent),
+    differ && differ.textContent);
+  check("(k) the chips are drawn on tokens, never a raw color", !/\.cplpw-rdiffer[^"]*#[0-9a-fA-F]{3,6}/.test(SRC));
+}
+
 let failed = 0;
 for (const [name, ok, why] of results) {
   if (!ok) { failed++; console.log("FAIL " + name + (why !== undefined ? "  [" + (typeof why === "string" ? why : JSON.stringify(why)) + "]" : "")); }

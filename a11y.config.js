@@ -348,16 +348,19 @@ async function seedRecords(page, theme) {
       record: { program: { measure: "units" }, blocks: [
         { name: "Choose 6 units", rule: "choose_units", minimum: 6, courses: [
           { code: "ARTH 4", units: 3, alternatives: [], catalog_addition: true },
-          { code: "ARTH 27", units: 3, alternatives: [] }] }] },
-      display: { build: "2360b83e8100", built: "2026-10-06", checks: { coverage: { listed: 23, placed: 21 }, additions: 4, arithmetic: "equal" },
+          { code: "ARTH 27", units: null, alternatives: [] }] }] },
+      /* S360: the COCI status chip, COCI's units and a kept unit difference (Sam's rules 1-3) */
+      display: { build: "2360b83e8100", built: "2026-10-06", checks: { coverage: { listed: 23, placed: 21 }, additions: 4, arithmetic: "unequal",
+        units_differ: { blocks: [25.5, 25.5], printed: [26.5, 26.5] } },
         counts: { here: 1, courses: 2 }, figure: {},
         courses: {
           "ARTH 4": { title: "Art History Survey", ids: [{ kind: "C-ID", id: "ARTH 110", title: "Survey of Western Art from Prehistory through the Middle Ages" },
             { kind: "M-ID", id: "ARTH M1001", title: "Art History: Prehistoric to Gothic" }],
             here: { recs: 1, credentials_n: 1, exhibits_n: 2, untitled_n: 1, exhibits: [{ exhibit: "MAPCX-AP-1-001", title: "AP Art History",
               credential: "AP Art History", type: "Credit By Exam", recs: ["3 units in Art History"] }] },
-            adopt: { credentials_n: 1, colleges_n: 1, credentials: [{ credential: "CLEP Humanities", colleges: ["Saddleback College"] }] } },
-          "ARTH 27": { title: "Art of the Americas", identity: { kind: "CCR", id: "ARTH M1027", title: "Art of the Americas" } } },
+            adopt: { credentials_n: 1, colleges_n: 1, credentials: [{ credential: "CLEP Humanities", colleges: ["Saddleback College"] }] },
+            coci: { status: "Inactive", program_ccn: "CCC000520884", current_ccn: "CCC000607187" } },
+          "ARTH 27": { title: "Art of the Americas", units_from_state_file: 3, identity: { kind: "CCR", id: "ARTH M1027", title: "Art of the Americas" } } },
         gaps: [
           { kind: "Catalog and state file differ", owner: "college", text: "The state's Program Course File lists ARTH C1100; the reader found it not in the text." },
           { kind: "Check not met", owner: "procedure", text: "The blocks add to 25.5 units; the catalog prints 26.5 units." },

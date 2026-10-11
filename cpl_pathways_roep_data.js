@@ -1,7 +1,7 @@
 window.CPL_PATHWAYS_ROEP = {
  "_generated_by": "kb/_build_roep_display.py",
  "_note": "Each harvested program's catalog record and its display facts: CPL in three kinds per course, the up-to figure, the gaps and the map's status. The same facts sit in program_requirement_records.display, where Sierra reads them; both carry this build stamp. Do not edit; rerun the builder.",
- "build": "f571b009992c",
+ "build": "195fe0c35a2d",
  "built": "2026-10-10",
  "inputs": {
   "records": 1225,
@@ -234,7 +234,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "f571b009992c",
+    "build": "195fe0c35a2d",
     "built": "2026-10-10"
    }
   },
@@ -552,6 +552,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "HED 201": {
       "title": null,
+      "coci": {
+       "status": "Inactive",
+       "program_ccn": "CCC000592776",
+       "current_ccn": "CCC000645443"
+      },
       "identity": {
        "kind": "CCR",
        "id": "HLTH M1203",
@@ -657,19 +662,43 @@ window.CPL_PATHWAYS_ROEP = {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "Cerritos College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists PSYC 210; the reader found it not in the text."
+      "text": "The state's Program Course File lists PSYC 210; the reader found it not in the text. The program points at PSYC 210 CCC000638105, Active in COCI.",
+      "coci": [
+       {
+        "code": "PSYC 210",
+        "status": "Active",
+        "program_ccn": "CCC000638105",
+        "current_ccn": null
+       }
+      ]
      },
      {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "Cerritos College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists STAT C1000E; the reader found it not in the text."
+      "text": "The state's Program Course File lists STAT C1000E; the reader found it not in the text. The program points at STAT C1000E CCC000624976, Active in COCI.",
+      "coci": [
+       {
+        "code": "STAT C1000E",
+        "status": "Active",
+        "program_ccn": "CCC000624976",
+        "current_ccn": null
+       }
+      ]
      },
      {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "Cerritos College's program record in the state's curriculum inventory",
-      "text": "The catalog prints HED 201 for this program; the state's Program Course File does not list it."
+      "text": "The catalog prints HED 201 for this program, and the state's Program Course File carries it there: the program points at HED 201 CCC000592776, Inactive in COCI; COCI's current HED 201 is CCC000645443.",
+      "coci": [
+       {
+        "code": "HED 201",
+        "status": "Inactive",
+        "program_ccn": "CCC000592776",
+        "current_ccn": "CCC000645443"
+       }
+      ]
      },
      {
       "kind": "Reader's note",
@@ -713,7 +742,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "f571b009992c",
+    "build": "195fe0c35a2d",
     "built": "2026-10-10"
    }
   },
@@ -1737,7 +1766,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "f571b009992c",
+    "build": "195fe0c35a2d",
     "built": "2026-10-10"
    }
   },
@@ -2606,7 +2635,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "f571b009992c",
+    "build": "195fe0c35a2d",
     "built": "2026-10-10"
    }
   },
@@ -3183,6 +3212,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "ARTH 28": {
       "title": "Contemporary Art History",
+      "coci": {
+       "status": "Inactive",
+       "program_ccn": "CCC000530779",
+       "current_ccn": "CCC000653149"
+      },
       "identity": {
        "kind": "CCR",
        "id": "ARTH M1114",
@@ -3382,19 +3416,49 @@ window.CPL_PATHWAYS_ROEP = {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "Irvine Valley College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists ARTH C1100; the reader found it not in the text."
+      "text": "The state's Program Course File lists ARTH C1100; the reader found it not in the text. The program points at ARTH C1100 CCC000530776, Active in COCI.",
+      "coci": [
+       {
+        "code": "ARTH C1100",
+        "status": "Active",
+        "program_ccn": "CCC000530776",
+        "current_ccn": null
+       }
+      ]
      },
      {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "Irvine Valley College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists ARTH C1200; the reader found it not in the text."
+      "text": "The state's Program Course File lists ARTH C1200; the reader found it not in the text. The program points at ARTH C1200 CCC000530777, Active in COCI.",
+      "coci": [
+       {
+        "code": "ARTH C1200",
+        "status": "Active",
+        "program_ccn": "CCC000530777",
+        "current_ccn": null
+       }
+      ]
      },
      {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "Irvine Valley College's program record in the state's curriculum inventory",
-      "text": "The catalog prints ARTH 4, ARTH 25, ARTH 26, ARTH 28 for this program; the state's Program Course File does not list them."
+      "text": "The catalog prints ARTH 28 for this program, and the state's Program Course File carries it there: the program points at ARTH 28 CCC000530779, Inactive in COCI; COCI's current ARTH 28 is CCC000653149.",
+      "coci": [
+       {
+        "code": "ARTH 28",
+        "status": "Inactive",
+        "program_ccn": "CCC000530779",
+        "current_ccn": "CCC000653149"
+       }
+      ]
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "Irvine Valley College's program record in the state's curriculum inventory",
+      "text": "The catalog prints ARTH 4, ARTH 25, ARTH 26 for this program; the state's Program Course File does not list them."
      },
      {
       "kind": "Reader's note",
@@ -3649,7 +3713,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": null
     },
-    "build": "f571b009992c",
+    "build": "195fe0c35a2d",
     "built": "2026-10-10"
    }
   },
@@ -4446,7 +4510,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "f571b009992c",
+    "build": "195fe0c35a2d",
     "built": "2026-10-10"
    }
   },
@@ -5249,7 +5313,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "f571b009992c",
+    "build": "195fe0c35a2d",
     "built": "2026-10-10"
    }
   },
@@ -6796,7 +6860,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "f571b009992c",
+    "build": "195fe0c35a2d",
     "built": "2026-10-10"
    }
   },
@@ -7266,13 +7330,29 @@ window.CPL_PATHWAYS_ROEP = {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "San Diego Miramar College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists ECON 120; the reader found it not in the text; catalog lists ECON C2002 Principles of Macroeconomics instead."
+      "text": "The state's Program Course File lists ECON 120; the reader found it not in the text; catalog lists ECON C2002 Principles of Macroeconomics instead. The program points at ECON 120 CCC000370148, Active in COCI.",
+      "coci": [
+       {
+        "code": "ECON 120",
+        "status": "Active",
+        "program_ccn": "CCC000370148",
+        "current_ccn": null
+       }
+      ]
      },
      {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "San Diego Miramar College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists ECON 121; the reader found it not in the text; catalog lists ECON C2001 Principles of Microeconomics instead."
+      "text": "The state's Program Course File lists ECON 121; the reader found it not in the text; catalog lists ECON C2001 Principles of Microeconomics instead. The program points at ECON 121 CCC000353695, Active in COCI.",
+      "coci": [
+       {
+        "code": "ECON 121",
+        "status": "Active",
+        "program_ccn": "CCC000353695",
+        "current_ccn": null
+       }
+      ]
      },
      {
       "kind": "Catalog and state file differ",
@@ -7316,7 +7396,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "f571b009992c",
+    "build": "195fe0c35a2d",
     "built": "2026-10-10"
    }
   },
@@ -8267,6 +8347,7 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "FIRE 86": {
       "title": "Basic Fire Academy",
+      "units_from_state_file": 14.5,
       "identity": {
        "kind": "CCR",
        "id": "FIRE M1209",
@@ -8499,7 +8580,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "f571b009992c",
+    "build": "195fe0c35a2d",
     "built": "2026-10-10"
    }
   },
@@ -9494,6 +9575,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "NURS 212": {
       "title": null,
+      "coci": {
+       "status": "Approved",
+       "program_ccn": "CCC000543769",
+       "current_ccn": null
+      },
       "identity": {
        "kind": "CCR",
        "id": "NRSR M1182",
@@ -9640,7 +9726,15 @@ window.CPL_PATHWAYS_ROEP = {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "Mt. San Antonio College's program record in the state's curriculum inventory",
-      "text": "The catalog prints NURS 212 for this program; the state's Program Course File does not list it."
+      "text": "The catalog prints NURS 212 for this program, and the state's Program Course File carries it there: the program points at NURS 212 CCC000543769, Approved in COCI.",
+      "coci": [
+       {
+        "code": "NURS 212",
+        "status": "Approved",
+        "program_ccn": "CCC000543769",
+        "current_ccn": null
+       }
+      ]
      },
      {
       "kind": "Fixed by a rerun",
@@ -9714,7 +9808,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "f571b009992c",
+    "build": "195fe0c35a2d",
     "built": "2026-10-10"
    }
   },
@@ -10429,7 +10523,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "f571b009992c",
+    "build": "195fe0c35a2d",
     "built": "2026-10-10"
    }
   },
@@ -10710,13 +10804,29 @@ window.CPL_PATHWAYS_ROEP = {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "Mt. San Antonio College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists VOC HEP; the reader found it listed as a recommended elective, not required."
+      "text": "The state's Program Course File lists VOC HEP; the reader found it listed as a recommended elective, not required. The program points at VOC HEP CCC000606306, Active in COCI.",
+      "coci": [
+       {
+        "code": "VOC HEP",
+        "status": "Active",
+        "program_ccn": "CCC000606306",
+        "current_ccn": null
+       }
+      ]
      },
      {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "Mt. San Antonio College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists VOC NCLXP; the reader found it listed as a recommended elective, not required."
+      "text": "The state's Program Course File lists VOC NCLXP; the reader found it listed as a recommended elective, not required. The program points at VOC NCLXP CCC000646953, Active in COCI.",
+      "coci": [
+       {
+        "code": "VOC NCLXP",
+        "status": "Active",
+        "program_ccn": "CCC000646953",
+        "current_ccn": null
+       }
+      ]
      },
      {
       "kind": "No printed total",
@@ -10766,7 +10876,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "unstated",
      "reviewer": "ok"
     },
-    "build": "f571b009992c",
+    "build": "195fe0c35a2d",
     "built": "2026-10-10"
    }
   },
@@ -11107,7 +11217,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "f571b009992c",
+    "build": "195fe0c35a2d",
     "built": "2026-10-10"
    }
   },
@@ -11955,6 +12065,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "ADJ-12": {
       "title": null,
+      "coci": {
+       "status": "Inactive",
+       "program_ccn": "CCC000529834",
+       "current_ccn": null
+      },
       "identity": {
        "kind": "C-ID",
        "id": "AJ 150",
@@ -12001,6 +12116,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "ADJ-13": {
       "title": null,
+      "coci": {
+       "status": "Inactive",
+       "program_ccn": "CCC000041996",
+       "current_ccn": "CCC000658708"
+      },
       "identity": {
        "kind": "C-ID",
        "id": "AJ 140",
@@ -12808,6 +12928,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "SOC-48": {
       "title": "Statistics for the Behavioral Sciences",
+      "coci": {
+       "status": "Inactive",
+       "program_ccn": "CCC000578633",
+       "current_ccn": "CCC000650087"
+      },
       "identity": {
        "kind": "C-ID",
        "id": "MATH 110",
@@ -12863,7 +12988,43 @@ window.CPL_PATHWAYS_ROEP = {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "Riverside City College's program record in the state's curriculum inventory",
-      "text": "The catalog prints ADJ-12, ADJ-13, SOC-48 for this program; the state's Program Course File does not list them."
+      "text": "The catalog prints ADJ-12 for this program, and the state's Program Course File carries it there: the program points at ADJ-12 CCC000529834, Inactive in COCI.",
+      "coci": [
+       {
+        "code": "ADJ-12",
+        "status": "Inactive",
+        "program_ccn": "CCC000529834",
+        "current_ccn": null
+       }
+      ]
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "Riverside City College's program record in the state's curriculum inventory",
+      "text": "The catalog prints ADJ-13 for this program, and the state's Program Course File carries it there: the program points at ADJ-13 CCC000041996, Inactive in COCI; COCI's current ADJ-13 is CCC000658708.",
+      "coci": [
+       {
+        "code": "ADJ-13",
+        "status": "Inactive",
+        "program_ccn": "CCC000041996",
+        "current_ccn": "CCC000658708"
+       }
+      ]
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "Riverside City College's program record in the state's curriculum inventory",
+      "text": "The catalog prints SOC-48 for this program, and the state's Program Course File carries it there: the program points at SOC-48 CCC000578633, Inactive in COCI; COCI's current SOC-48 is CCC000650087.",
+      "coci": [
+       {
+        "code": "SOC-48",
+        "status": "Inactive",
+        "program_ccn": "CCC000578633",
+        "current_ccn": "CCC000650087"
+       }
+      ]
      },
      {
       "kind": "Reader's note",
@@ -12913,7 +13074,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "f571b009992c",
+    "build": "195fe0c35a2d",
     "built": "2026-10-10"
    }
   },
@@ -13220,7 +13381,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "f571b009992c",
+    "build": "195fe0c35a2d",
     "built": "2026-10-10"
    }
   },
@@ -13727,6 +13888,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "CIS-27B": {
       "title": null,
+      "coci": {
+       "status": "Inactive",
+       "program_ccn": "CCC000596997",
+       "current_ccn": "CCC000645221"
+      },
       "identity": {
        "kind": "C-ID",
        "id": "ITIS 164",
@@ -13779,6 +13945,11 @@ window.CPL_PATHWAYS_ROEP = {
      },
      "CIS-5": {
       "title": "Programming Concepts and Methodology I: C++",
+      "coci": {
+       "status": "Inactive",
+       "program_ccn": "CCC000601297",
+       "current_ccn": "CCC000654206"
+      },
       "identity": {
        "kind": "C-ID",
        "id": "COMP 122",
@@ -13893,7 +14064,29 @@ window.CPL_PATHWAYS_ROEP = {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "Riverside City College's program record in the state's curriculum inventory",
-      "text": "The catalog prints CIS-27B, CIS-5 for this program; the state's Program Course File does not list them."
+      "text": "The catalog prints CIS-27B for this program, and the state's Program Course File carries it there: the program points at CIS-27B CCC000596997, Inactive in COCI; COCI's current CIS-27B is CCC000645221.",
+      "coci": [
+       {
+        "code": "CIS-27B",
+        "status": "Inactive",
+        "program_ccn": "CCC000596997",
+        "current_ccn": "CCC000645221"
+       }
+      ]
+     },
+     {
+      "kind": "Catalog and state file differ",
+      "owner": "college",
+      "where": "Riverside City College's program record in the state's curriculum inventory",
+      "text": "The catalog prints CIS-5 for this program, and the state's Program Course File carries it there: the program points at CIS-5 CCC000601297, Inactive in COCI; COCI's current CIS-5 is CCC000654206.",
+      "coci": [
+       {
+        "code": "CIS-5",
+        "status": "Inactive",
+        "program_ccn": "CCC000601297",
+        "current_ccn": "CCC000654206"
+       }
+      ]
      },
      {
       "kind": "Reader's note",
@@ -13937,7 +14130,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "f571b009992c",
+    "build": "195fe0c35a2d",
     "built": "2026-10-10"
    }
   },
@@ -15176,13 +15369,29 @@ window.CPL_PATHWAYS_ROEP = {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "Santa Monica College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists COSM 64; the reader found it not printed in the Barbering section; Level 4 lists 'COSM 11C, Salon Management (2)', likely a misprint for COSM 64."
+      "text": "The state's Program Course File lists COSM 64; the reader found it not printed in the Barbering section; Level 4 lists 'COSM 11C, Salon Management (2)', likely a misprint for COSM 64. The program points at COSM 64 CCC000423260, Active in COCI.",
+      "coci": [
+       {
+        "code": "COSM 64",
+        "status": "Active",
+        "program_ccn": "CCC000423260",
+        "current_ccn": null
+       }
+      ]
      },
      {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "Santa Monica College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists COSM 95D; the reader found it named only in the Esthetician and Nail Care sections, not in the Barbering list."
+      "text": "The state's Program Course File lists COSM 95D; the reader found it named only in the Esthetician and Nail Care sections, not in the Barbering list. The program points at COSM 95D CCC000393988, Active in COCI.",
+      "coci": [
+       {
+        "code": "COSM 95D",
+        "status": "Active",
+        "program_ccn": "CCC000393988",
+        "current_ccn": null
+       }
+      ]
      },
      {
       "kind": "Check not met",
@@ -15558,7 +15767,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "incomplete",
      "reviewer": null
     },
-    "build": "f571b009992c",
+    "build": "195fe0c35a2d",
     "built": "2026-10-10"
    }
   },
@@ -16267,25 +16476,57 @@ window.CPL_PATHWAYS_ROEP = {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "West Los Angeles College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists CIS 101; the reader found it named only in the preceding Paralegal program section."
+      "text": "The state's Program Course File lists CIS 101; the reader found it named only in the preceding Paralegal program section. The program points at CIS 101 CCC000608379, Active in COCI.",
+      "coci": [
+       {
+        "code": "CIS 101",
+        "status": "Active",
+        "program_ccn": "CCC000608379",
+        "current_ccn": null
+       }
+      ]
      },
      {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "West Los Angeles College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists CIS 113; the reader found it not in the text."
+      "text": "The state's Program Course File lists CIS 113; the reader found it not in the text. The program points at CIS 113 CCC000608380, Active in COCI.",
+      "coci": [
+       {
+        "code": "CIS 113",
+        "status": "Active",
+        "program_ccn": "CCC000608380",
+        "current_ccn": null
+       }
+      ]
      },
      {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "West Los Angeles College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists CIS 236; the reader found it not in the text."
+      "text": "The state's Program Course File lists CIS 236; the reader found it not in the text. The program points at CIS 236 CCC000608371, Active in COCI.",
+      "coci": [
+       {
+        "code": "CIS 236",
+        "status": "Active",
+        "program_ccn": "CCC000608371",
+        "current_ccn": null
+       }
+      ]
      },
      {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "West Los Angeles College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists CIS 237; the reader found it not in the text."
+      "text": "The state's Program Course File lists CIS 237; the reader found it not in the text. The program points at CIS 237 CCC000608372, Active in COCI.",
+      "coci": [
+       {
+        "code": "CIS 237",
+        "status": "Active",
+        "program_ccn": "CCC000608372",
+        "current_ccn": null
+       }
+      ]
      },
      {
       "kind": "Catalog and state file differ",
@@ -16329,7 +16570,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "f571b009992c",
+    "build": "195fe0c35a2d",
     "built": "2026-10-10"
    }
   },
@@ -17187,31 +17428,71 @@ window.CPL_PATHWAYS_ROEP = {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "West Los Angeles College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists BIOLOGY 3; the reader found it not in the text."
+      "text": "The state's Program Course File lists BIOLOGY 3; the reader found it not in the text. The program points at BIOLOGY 3 CCC000079626, Active in COCI.",
+      "coci": [
+       {
+        "code": "BIOLOGY 3",
+        "status": "Active",
+        "program_ccn": "CCC000079626",
+        "current_ccn": null
+       }
+      ]
      },
      {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "West Los Angeles College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists KIN 232; the reader found it not in the text."
+      "text": "The state's Program Course File lists KIN 232; the reader found it not in the text. The program points at KIN 232 CCC000225676, Active in COCI.",
+      "coci": [
+       {
+        "code": "KIN 232",
+        "status": "Active",
+        "program_ccn": "CCC000225676",
+        "current_ccn": null
+       }
+      ]
      },
      {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "West Los Angeles College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists KIN 288; the reader found it not in the text."
+      "text": "The state's Program Course File lists KIN 288; the reader found it not in the text. The program points at KIN 288 CCC000107995, Active in COCI.",
+      "coci": [
+       {
+        "code": "KIN 288",
+        "status": "Active",
+        "program_ccn": "CCC000107995",
+        "current_ccn": null
+       }
+      ]
      },
      {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "West Los Angeles College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists KIN 303; the reader found it not in the text."
+      "text": "The state's Program Course File lists KIN 303; the reader found it not in the text. The program points at KIN 303 CCC000243866, Active in COCI.",
+      "coci": [
+       {
+        "code": "KIN 303",
+        "status": "Active",
+        "program_ccn": "CCC000243866",
+        "current_ccn": null
+       }
+      ]
      },
      {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "West Los Angeles College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists KIN 345; the reader found it not in the text."
+      "text": "The state's Program Course File lists KIN 345; the reader found it not in the text. The program points at KIN 345 CCC000264720, Active in COCI.",
+      "coci": [
+       {
+        "code": "KIN 345",
+        "status": "Active",
+        "program_ccn": "CCC000264720",
+        "current_ccn": null
+       }
+      ]
      },
      {
       "kind": "Catalog and state file differ",
@@ -17273,7 +17554,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "f571b009992c",
+    "build": "195fe0c35a2d",
     "built": "2026-10-10"
    }
   },
@@ -18011,7 +18292,15 @@ window.CPL_PATHWAYS_ROEP = {
       "kind": "Catalog and state file differ",
       "owner": "college",
       "where": "West Los Angeles College's program record in the state's curriculum inventory",
-      "text": "The state's Program Course File lists REALES010; the reader found it named only in the Real Estate Broker section."
+      "text": "The state's Program Course File lists REALES010; the reader found it named only in the Real Estate Broker section. The program points at REALES010 CCC000097667, Active in COCI; COCI's current REALES010 is CCC000651130.",
+      "coci": [
+       {
+        "code": "REALES010",
+        "status": "Active",
+        "program_ccn": "CCC000097667",
+        "current_ccn": "CCC000651130"
+       }
+      ]
      },
      {
       "kind": "Reader's note",
@@ -18043,7 +18332,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "f571b009992c",
+    "build": "195fe0c35a2d",
     "built": "2026-10-10"
    }
   },
@@ -18191,7 +18480,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "f571b009992c",
+    "build": "195fe0c35a2d",
     "built": "2026-10-10"
    }
   }

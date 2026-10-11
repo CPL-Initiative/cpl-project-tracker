@@ -643,6 +643,9 @@
       ".prh-fix { display:grid; gap:8px; }",
       ".prh-fix[hidden] { display:none; }",
       ".prh-said { font-size:.875rem; color:var(--text-muted); }",
+      /* COCI's word on a mismatched course, and a unit difference kept as printed: quiet chips the college reads */
+      ".prh-coci { display:inline-block; margin:2px 0 0; padding:0 6px; border:1px solid var(--border-strong); border-radius:4px; font-size:.75rem; font-weight:600; line-height:1.5; color:var(--text-muted); overflow-wrap:anywhere; }",
+      ".prh-alts .prh-coci { display:table; }",
       ".prh-btn { font:inherit; font-size:.9rem; font-weight:600; color:var(--text-body); background:var(--surface-opaque); border:1px solid var(--border-strong); border-radius:8px; padding:6px 14px; min-height:44px; cursor:pointer; }",
       ".prh-btn:hover { border-color:var(--cobalt); }",
       ".prh-btn.prh-primary { background:var(--text-strong); color:var(--paper); border-color:var(--text-strong); }",
@@ -1088,17 +1091,29 @@
     if (d.opener && d.opener.focus) d.opener.focus();
   }
 
-  function rowMark(c, byCode) {
-    var ns = [];
-    [c.code].concat((c.alternatives || []).map(function (a) { return a && (a.code || a); })).forEach(function (x) {
+  /* What COCI says of a course the catalog prints off the program's list (Sam, 2026-10-11:
+     "list them with a chip noting the Coci status so the college can follow up if needed.
+     Make this a rule for all such courses."): its status on the program, the control number
+     the program points at, and the current version's. The display build carries it. */
+  function cociText(f) {
+    return "In COCI: " + (f.status || "no status") + " on this program (" + f.program_ccn + ")" +
+      (f.current_ccn ? "; current version " + f.current_ccn : "");
+  }
+  function rowMark(c, byCode, courses) {
+    var ns = [], codes = [c.code].concat((c.alternatives || []).map(function (a) { return a && (a.code || a); }));
+    codes.forEach(function (x) {
       (byCode[x] || []).forEach(function (n) { if (ns.indexOf(n) < 0) ns.push(n); });
     });
     ns.sort(function (a, b) { return a - b; });
-    if (!c.catalog_addition && !ns.length) return null;
+    var chips = codes.map(function (x) {
+      var f = courses && courses[x] && courses[x].coci;
+      return f ? el("span", { cls: "prh-coci", text: (codes.length > 1 ? x + " " : "") + cociText(f) }) : null;
+    }).filter(Boolean);
+    if (!c.catalog_addition && !ns.length && !chips.length) return null;
     var label = ns.length ? (ns.length === 1 ? "Flag " + ns[0] : "Flags " + ns.slice(0, -1).join(", ") + " and " + ns[ns.length - 1]) : null;
     return el("span", { cls: "prh-alts" }, [
-      c.catalog_addition ? "Printed in the catalog; not on the state's list" + (label ? ". " : "") : null,
-      label ? el("b", { cls: "prh-mark", text: label }) : null]);
+      c.catalog_addition ? (chips.length ? "Printed in the catalog; off the program's list as read" : "Printed in the catalog; not on the state's list") + (label ? ". " : "") : null,
+      label ? el("b", { cls: "prh-mark", text: label }) : null].concat(chips));
   }
 
   /* ── a person's reading: the state line, the verdict box, the one write ── */
@@ -1371,10 +1386,17 @@
     var counts = disp.counts || {};
     var figure = disp.figure || {};
     var courses = disp.courses || {};
-    function dd(label, value) { return el("div", { cls: "prh-check" }, [el("dt", { text: label }), el("dd", { text: value })]); }
+    function dd(label, value) {
+      return el("div", { cls: "prh-check" }, [el("dt", { text: label }), typeof value === "string" ? el("dd", { text: value }) : el("dd", {}, [value])]);
+    }
     function wide(d) { d.className += " prh-check-wide"; return d; }
     var placed = ck.listed != null ? ck.placed + " of " + ck.listed + " placed" : "Not measured";
+    /* A unit difference is kept as printed and chipped (Sam, 2026-10-11: "Preserve the unit
+       difference and highlight with a chip"). */
+    var differ = (disp.checks || {}).units_differ;
     var arith = ck.arithmetic === "equal" ? "Equal, " + span(p.total_min, p.total_max) + " " + unit
+      : differ ? el("span", { cls: "prh-coci prh-differ", text: "Units differ: the blocks add to " + span(differ.blocks[0], differ.blocks[1]) +
+          "; the catalog prints " + span(differ.printed[0], differ.printed[1]) + " " + unit })
       : ck.arithmetic === "unstated" ? "Catalog prints no total" : (ck.arithmetic || "Not measured");
     var reader = ck.reviewer === "ok" ? "Matches the catalog" : ck.reviewer === "fix" ? "Fixed after review" : "Not read";
     var cpl = counts.here
@@ -1421,8 +1443,8 @@
         var alts = (c.alternatives || []).map(function (a) { return a.code || a; });
         return [
           [c.code, alts.length ? el("span", { cls: "prh-alts", text: "or " + alts.join(", ") }) : null, idChips(info)],
-          [info.title || "", rowMark(c, F.byCode)],
-          span(c.units, c.units_max),
+          [info.title || "", rowMark(c, F.byCode, courses)],
+          c.units != null || info.units_from_state_file == null ? span(c.units, c.units_max) : fmt(info.units_from_state_file) + " (COCI)",
           n || hasLeads(info) ? cplButton(p, c.code, info, n) : el("span", { cls: "prh-quiet", text: "0" })
         ];
       }), p.program_title + ": " + (b.name || "courses"), true)])));

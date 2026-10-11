@@ -947,7 +947,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2557,
+     "line": 2576,
      "tabs": [
       "cpl-pathways"
      ]
@@ -1323,7 +1323,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1527,
+     "line": 1549,
      "tabs": [
       "program-requirements"
      ]
@@ -1415,7 +1415,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2556,
+     "line": 2575,
      "tabs": [
       "cpl-pathways"
      ]
@@ -1555,7 +1555,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 426
+     "line": 429
     }
    ],
    "main_committers": []
@@ -2261,7 +2261,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2555,
+     "line": 2574,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4904,7 +4904,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2771,
+     "line": 2790,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4974,7 +4974,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2765,
+     "line": 2784,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5010,7 +5010,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 448
+     "line": 451
     },
     {
      "id": "module:college_briefing.js",
@@ -5253,7 +5253,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1966,
+     "line": 1985,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5296,7 +5296,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2738,
+     "line": 2757,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5319,7 +5319,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2125,
+     "line": 2144,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5368,7 +5368,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2779,
+     "line": 2798,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5511,7 +5511,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2752,
+     "line": 2771,
      "tabs": [
       "cpl-pathways"
      ]
