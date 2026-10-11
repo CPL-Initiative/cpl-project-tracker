@@ -205,13 +205,15 @@
       R + " .nclp-toolbar{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin:0 0 1.1rem;",
       "padding:.55rem .65rem;background:var(--surface-subtle);border:1px solid var(--border);border-radius:8px;}",
       R + " .nclp-jump{display:flex;flex-wrap:wrap;gap:.3rem;align-items:center;}",
-      R + " a.nclp-jl{font-size:.78rem;color:var(--accent-link);text-decoration:none;",
-      "border:1px solid transparent;border-radius:999px;padding:.2rem .55rem;}",
-      R + " a.nclp-jl:hover{border-color:var(--border-strong);background:var(--surface-opaque);}",
+      // Controls are underlined words (Sam, 2026-10-09; S365's pass): no border, no fill, 24px.
+      R + " a.nclp-jl{font-size:.78rem;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;",
+      "text-underline-offset:3px;display:inline-flex;align-items:center;min-height:24px;padding:0 .2rem;}",
+      R + " a.nclp-jl:hover{text-decoration-thickness:2px;}",
       R + " .nclp-spacer{flex:1 1 auto;min-width:.5rem;}",
-      R + " .nclp-btn{font:inherit;font-size:.78rem;padding:.26rem .62rem;cursor:pointer;white-space:nowrap;",
-      "border:1px solid var(--border-strong);border-radius:6px;background:var(--surface-opaque);color:var(--text-body);}",
-      R + " .nclp-btn:hover{border-color:var(--cobalt);color:var(--cobalt);}",
+      R + " .nclp-btn{font:inherit;font-size:.78rem;font-weight:600;padding:2px 0;min-height:24px;min-width:24px;cursor:pointer;",
+      "white-space:nowrap;border:0;background:none;color:var(--cobalt);text-decoration:underline;",
+      "text-decoration-thickness:1px;text-underline-offset:3px;}",
+      R + " .nclp-btn:hover{text-decoration-thickness:2px;}",
       // stats
       R + " .nclp-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:.6rem;margin:0 0 1.2rem;}",
       R + " .nclp-stat{background:var(--surface-opaque);border:1px solid var(--border);border-radius:8px;padding:.7rem .8rem;}",
@@ -229,7 +231,7 @@
       "transition:transform .15s ease;display:inline-block;}",
       "@media (prefers-reduced-motion:reduce){" + R + " details.nclp-sec>summary::before{transition:none;}}",
       R + " details.nclp-sec[open]>summary::before{transform:rotate(90deg);}",
-      R + " details.nclp-sec>summary h3{margin:0;font-size:1.02rem;color:var(--text-strong);font-weight:700;display:inline;}",
+      R + " details.nclp-sec>summary h2{margin:0;font-size:1.02rem;color:var(--text-strong);font-weight:700;display:inline;}",
       R + " details.nclp-sec>summary .cnt{font-size:.74rem;color:var(--text-muted);",
       "border:1px solid var(--border-strong);border-radius:999px;padding:.1rem .5rem;margin-left:auto;}",
       R + " .nclp-body{padding:0 .9rem 1rem;}",
@@ -243,9 +245,9 @@
       // cards
       R + " .nclp-card{border:1px solid var(--border);border-radius:8px;background:var(--surface-opaque);",
       "padding:.8rem .9rem;margin:0 0 .55rem;}",
-      R + " .nclp-card h4{margin:0 0 .3rem;font-size:.95rem;color:var(--text-strong);display:flex;",
+      R + " .nclp-card h3{margin:0 0 .3rem;font-size:.95rem;color:var(--text-strong);display:flex;",
       "flex-wrap:wrap;gap:.45rem;align-items:baseline;font-weight:600;}",
-      R + " .nclp-card h4 .id{color:var(--text-muted);font-weight:700;font-size:.76rem;font-variant-numeric:tabular-nums;}",
+      R + " .nclp-card h3 .id{color:var(--text-muted);font-weight:700;font-size:.76rem;font-variant-numeric:tabular-nums;}",
       R + " .nclp-card p{margin:.3rem 0;color:var(--text-muted);font-size:.86rem;line-height:1.5;}",
       R + " .nclp-card p.next{color:var(--text-body);}",
       R + " .nclp-card p.next b{color:var(--cobalt);}",
@@ -257,7 +259,7 @@
       R + " .nclp-chip.t2{border-color:var(--hunter);color:var(--hunter);}",
       R + " .nclp-chip.t4{border-color:var(--crimson);color:var(--crimson);}",
       R + " .nclp-chip.open{border-color:var(--mustard-text);color:var(--mustard-text);}",
-      R + " .nclp-chip.sec2{border-color:var(--border);color:var(--text-muted);opacity:.85;}",
+      R + " .nclp-chip.sec2{border-color:var(--border);color:var(--text-muted);}",
       // targets
       R + " details.nclp-tg{margin:.5rem 0 0;}",
       R + " details.nclp-tg>summary{cursor:pointer;font-size:.8rem;color:var(--accent-link);}",
@@ -310,8 +312,9 @@
       // artifacts — a linked document sitting alongside the written notes
       R + " .nclp-note.nclp-art{border-left-color:var(--cobalt);}",
       R + " .nclp-arthead{display:flex;align-items:baseline;gap:.4rem;}",
+      // A title standing alone, not a link inside a sentence, so it clears 24px (S365, seeded sweep).
       R + " a.nclp-artlink{font-size:.84rem;font-weight:600;color:var(--accent-link);text-decoration:none;",
-      "overflow-wrap:anywhere;}",
+      "overflow-wrap:anywhere;display:inline-block;min-height:24px;line-height:24px;}",
       R + " a.nclp-artlink:hover{text-decoration:underline;}",
       R + " .nclp-addrow{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;}",
       R + " .nclp-hint{font-size:.76rem;color:var(--text-muted);margin:0;line-height:1.45;}",
@@ -323,10 +326,10 @@
       R + " .nclp-blsub{font-size:.79rem;color:var(--text-muted);margin:.3rem 0 0;max-width:var(--cpl-measure,none);line-height:1.5;}",
       R + " .nclp-blsub code{font-size:.95em;background:var(--surface-subtle);border:1px solid var(--border);",
       "border-radius:4px;padding:.05rem .3rem;color:var(--text-body);}",
-      R + " button.nclp-addnote,#" + ROOT_ID + " button.nclp-revise{font:inherit;font-size:.76rem;cursor:pointer;",
-      "border:1px dashed var(--border-strong);border-radius:999px;padding:.18rem .6rem;",
-      "background:transparent;color:var(--accent-link);}",
-      R + " button.nclp-addnote:hover,#" + ROOT_ID + " button.nclp-revise:hover{border-style:solid;border-color:var(--cobalt);}",
+      R + " button.nclp-addnote,#" + ROOT_ID + " button.nclp-revise{font:inherit;font-size:.76rem;font-weight:600;cursor:pointer;",
+      "border:0;padding:2px 0;min-height:24px;min-width:24px;background:none;color:var(--cobalt);",
+      "text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}",
+      R + " button.nclp-addnote:hover,#" + ROOT_ID + " button.nclp-revise:hover{text-decoration-thickness:2px;}",
       R + " .nclp-locked{font-size:.78rem;color:var(--text-muted);font-style:italic;margin:0;}",
       R + " .nclp-editor{background:var(--surface-subtle);border:1px solid var(--border-strong);",
       "border-radius:6px;padding:.6rem;margin:0 0 .5rem;display:flex;flex-direction:column;gap:.4rem;}",
@@ -346,8 +349,8 @@
       "@media (prefers-reduced-motion:reduce){" + R + " .nclp-flash{animation:none;",
       "outline:2px solid var(--cobalt);outline-offset:2px;}}",
       // narrative
-      R + " .nclp-nar h4{font-size:.92rem;color:var(--text-strong);margin:1.1rem 0 .35rem;font-weight:700;}",
-      R + " .nclp-nar h4:first-child{margin-top:0;}",
+      R + " .nclp-nar h3{font-size:.92rem;color:var(--text-strong);margin:1.1rem 0 .35rem;font-weight:700;}",
+      R + " .nclp-nar h3:first-child{margin-top:0;}",
       R + " .nclp-nar p{margin:0 0 .7rem;max-width:var(--cpl-measure,none);font-size:.9rem;color:var(--text-body);line-height:1.6;}",
       R + " .nclp-nar b{color:var(--text-strong);}",
       // print
@@ -528,7 +531,7 @@
       var n = now.artifacts - was.artifacts;
       d.push(n + " new artifact" + (n === 1 ? "" : "s"));
     }
-    return d.length ? "✓ " + d.join(" · ") : "✓ Up to date";
+    return d.length ? d.join(" · ") : "Up to date";
   }
 
   function fmtDate(iso) {
@@ -585,7 +588,7 @@
       b.appendChild(head);
       if (a.why) b.appendChild(el("p", "nt", a.why));
       var meta = el("div", "nclp-meta");
-      meta.appendChild(chip(a.source === "drive" ? "📄 Drive" : "🔗 Web"));
+      meta.appendChild(chip(a.source === "drive" ? "Drive" : "Web"));
       if (a.added_by) meta.appendChild(chip(a.added_by));
       if (a.created_at) meta.appendChild(chip(fmtDate(a.created_at)));
       meta.appendChild(a.integrated_at
@@ -607,7 +610,7 @@
       add.type = "button";
       add.addEventListener("click", function () { openEditor(wrap, itemId, null); });
       row.appendChild(add);
-      var att = el("button", "nclp-addnote", "📎 Attach artifact");
+      var att = el("button", "nclp-addnote", "Attach artifact");
       att.type = "button";
       att.title = "Link a Google Drive document or a web page. Claude reads it on the next integration run.";
       att.addEventListener("click", function () { openArtifactEditor(wrap, itemId, null); });
@@ -618,7 +621,7 @@
       // listener above already accepts a phrase entered anywhere, so the copy
       // was sending people to a tab they no longer needed to visit.
       wrap.appendChild(el("p", "nclp-locked",
-        "Unlock with the team phrase (🔒 in the header) to add insight here."));
+        "Unlock with the team phrase (Sign in, in the header) to add insight here."));
     }
     return wrap;
   }
@@ -781,7 +784,7 @@
   // ── Narrative ──────────────────────────────────────────────────────────────
   function buildNarrative(mount, d, dorm, live) {
     var w = el("div", "nclp-nar");
-    function h(t) { w.appendChild(el("h4", null, t)); }
+    function h(t) { w.appendChild(el("h3", null, t)); }
     function p(t) { w.appendChild(rich(el("p"), t)); }
     var slots = dorm ? dorm.reduce(function (a, r) { return a + r.n; }, 0) : 0;
     var swT = live && live.statewide_total, swC = live && live.statewide_converting;
@@ -829,7 +832,7 @@
     d.id = id;
     d.open = true;
     var s = el("summary");
-    s.appendChild(el("h3", null, title));
+    s.appendChild(el("h2", null, title));
     if (count) s.appendChild(el("span", "cnt", count));
     d.appendChild(s);
     var b = el("div", "nclp-body");
@@ -860,7 +863,7 @@
 
   // ── Cards ──────────────────────────────────────────────────────────────────
   function oppCard(o) {
-    var c = el("div", "nclp-card"), h = el("h4");
+    var c = el("div", "nclp-card"), h = el("h3");
     c.id = itemDomId(o.id);
     h.appendChild(el("span", "id", o.id));
     h.appendChild(document.createTextNode(o.title));
@@ -922,6 +925,9 @@
       return;
     }
     var w = el("div", "nclp-tw"), t = el("table"), cg = document.createElement("colgroup");
+    // It scrolls at 390px, so a keyboard must reach it: a named, focusable region (S365).
+    w.setAttribute("tabindex", "0"); w.setAttribute("role", "region");
+    w.setAttribute("aria-label", "Dormant statewide exhibits");
     ["32%", "30%", "9%", "29%"].forEach(function (x) {
       var c = document.createElement("col"); c.style.width = x; cg.appendChild(c);
     });
@@ -962,7 +968,7 @@
       body.textContent = "";
       d.use_cases.filter(function (u) { return state.uc === "all" || String(u.tier) === state.uc; })
         .forEach(function (u) {
-          var c = el("div", "nclp-card"), h = el("h4");
+          var c = el("div", "nclp-card"), h = el("h3");
           c.id = itemDomId(u.id);
           h.appendChild(el("span", "id", u.id));
           h.appendChild(document.createTextNode(u.title));
@@ -999,7 +1005,7 @@
       body.textContent = "";
       d.questions.filter(function (q) { return state.q === "all" || q.status === state.q; })
         .forEach(function (q) {
-          var c = el("div", "nclp-card"), h = el("h4");
+          var c = el("div", "nclp-card"), h = el("h3");
           c.id = itemDomId(q.id);
           h.appendChild(el("span", "id", q.id));
           h.appendChild(document.createTextNode(q.q));
@@ -1272,7 +1278,7 @@
     // Pulls the register, notes, artifacts and backlog again — everything a
     // browser can refresh on its own. It reports what CHANGED rather than just
     // flashing "done", because "nothing new" is a real and useful answer.
-    btn("↻ Refresh", function (b) {
+    btn("Refresh", function (b) {
       var label = b.textContent;
       b.disabled = true;
       b.textContent = "Refreshing…";
@@ -1297,11 +1303,11 @@
     btn("Collapse all", function () {
       Array.prototype.forEach.call(allSecs(), function (x) { x.open = false; });
     });
-    btn("⧉ Copy report", function (b) {
+    btn("Copy report", function (b) {
       var txt = buildReport(d, state.dorm, state.live);
       function done(ok) {
         b.textContent = ok ? "Copied" : "Copy failed";
-        setTimeout(function () { b.textContent = "⧉ Copy report"; }, 1600);
+        setTimeout(function () { b.textContent = "Copy report"; }, 1600);
       }
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(txt).then(function () { done(true); }, function () { done(false); });
@@ -1314,12 +1320,12 @@
         document.body.removeChild(ta);
       }
     });
-    btn("↓ Markdown", function () {
+    btn("Download Markdown", function () {
       downloadBlob(new Blob([buildReport(d, state.dorm, state.live)], { type: "text/markdown;charset=utf-8" }),
         reportFilename(d, "md"));
     });
-    btn("↓ Word", function (b) { exportWord(d, state.dorm, state.live, b); });
-    btn("↑ Promote notes", function (b) {
+    btn("Download Word", function (b) { exportWord(d, state.dorm, state.live, b); });
+    btn("Promote notes", function (b) {
       var packet = buildPromotionPacket(d);
       if (!packet) {
         b.textContent = canWrite() ? "Nothing to promote" : "Unlock to use";
@@ -1329,7 +1335,7 @@
       downloadBlob(new Blob([packet], { type: "text/markdown;charset=utf-8" }),
         String(d._as_of || "").replace(/-/g, "") + "_NC_Learning_Partners_Promotion_Packet.md");
     });
-    btn("🖨 Print / PDF", function () {
+    btn("Print / PDF", function () {
       Array.prototype.forEach.call(allSecs(), function (x) { x.open = true; });
       setTimeout(function () { window.print(); }, 60);
     });
@@ -1378,9 +1384,9 @@
       var parts = [];
       if (pendingN) parts.push(pendingN + " note" + (pendingN === 1 ? "" : "s"));
       if (pendingA) parts.push(pendingA + " artifact" + (pendingA === 1 ? "" : "s"));
-      head.appendChild(el("b", null, "⏳ " + parts.join(" and ") + " waiting to be read"));
+      head.appendChild(el("b", null, parts.join(" and ") + " waiting to be read"));
     } else {
-      head.appendChild(el("b", null, "✓ Everything added here has been integrated"));
+      head.appendChild(el("b", null, "Everything added here has been integrated"));
     }
     strip.appendChild(head);
 

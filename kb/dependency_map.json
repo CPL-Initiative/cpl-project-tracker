@@ -1070,7 +1070,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 638,
+     "line": 641,
      "tabs": [
       "nc-learning-partners"
      ]
@@ -5016,7 +5016,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 628
+     "line": 664
     },
     {
      "id": "module:college_briefing.js",
@@ -5561,7 +5561,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1487,
+     "line": 1493,
      "tabs": [
       "nc-learning-partners"
      ]
