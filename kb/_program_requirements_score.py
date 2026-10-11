@@ -8,7 +8,8 @@ because the Data Mart Program Course File (coci_program_courses) names every
 course the program lists, and Sam's review added a structural one:
 
   coverage       the listed courses the record places in a block, out of all
-                 of them. Bar: 100%, or each missing course explained.
+                 of them. Bar: 100%, or each missing course explained, and at
+                 least one placed (a record placing none read other text).
   invented       courses the record places that the list lacks. Bar: 0, or
                  each one flagged as a catalog addition.
   arithmetic     required units plus each block's minimum plus open electives,
@@ -406,18 +407,25 @@ def score(record: dict, closed: list[dict], text: str | None = None) -> dict:
     rep_codes = repeated(record)
     outs = outcomes_check(record, text)
     n = len(listed)
+    # A record that places none of the listed courses read some other text:
+    # explaining every course away is no reading of the program. Long Beach
+    # City's capture gave the model a hidden course index, and 89 records with
+    # no block passed on "appears only in the course index" (S362).
+    none_placed = bool(n) and len(missing) == n
+    cov_ok = not unexplained and not none_placed
     return {
         "measure": measure(record),
         "coverage": {"placed": n - len(missing), "listed": n,
                      "share": round((n - len(missing)) / n, 3) if n else None,
                      "missing": missing, "unexplained": unexplained,
-                     "pass": not unexplained},
+                     "none_placed": none_placed,
+                     "pass": cov_ok},
         "invented": {"count": len(invented), "codes": invented, "flagged": flagged,
                      "pass": not unflagged},
         "arithmetic": arith,
         "repeated": {"codes": rep_codes, "pass": not rep_codes},
         "outcomes": outs,
         "careers": careers_check(record, text),
-        "pass": (not unexplained and not unflagged and arith["pass"] and not rep_codes
+        "pass": (cov_ok and not unflagged and arith["pass"] and not rep_codes
                  and outs["pass"]),
     }

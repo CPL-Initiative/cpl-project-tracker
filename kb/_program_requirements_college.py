@@ -270,7 +270,7 @@ def candidates(program: dict, pages: list[dict]) -> list[dict]:
             continue
         fb = P.find_codes(pg.get("body") or "", courses)
         fc = P.find_codes(pg.get("content") or "", courses)
-        text, found, field = P.best_text(pg["got"], fb, fc)
+        text, found, field = P.best_text(pg["got"], fb, fc, courses)
         cov = P.coverage(found, courses)
         if cov < P.ACCEPT_SHARE:
             continue
@@ -775,10 +775,11 @@ def has_record(path: str) -> bool:
 
 
 def unchanged(prev: dict | None, src: dict) -> bool:
-    """A source read from the same page as the filed one, naming the same
-    courses, so the filed record still stands and the model need not be asked
-    again."""
-    return bool(prev) and (prev.get("source") or {}).get("url") == (src.get("source") or {}).get("url") \
+    """A source read from the same page as the filed one, from the same text
+    (visible or hidden), naming the same courses, so the filed record still
+    stands and the model need not be asked again."""
+    a, b = ((prev or {}).get("source") or {}), (src.get("source") or {})
+    return bool(prev) and a.get("url") == b.get("url") and a.get("text_from") == b.get("text_from") \
         and prev.get("coverage") == src.get("coverage") and prev.get("codes_found") == src.get("codes_found")
 
 

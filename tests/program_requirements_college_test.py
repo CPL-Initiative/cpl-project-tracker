@@ -371,6 +371,9 @@ prev = {"source": {"url": "u"}, "coverage": 1.0, "codes_found": ["A1"]}
 check(C.unchanged(prev, {"source": {"url": "u"}, "coverage": 1.0, "codes_found": ["A1"]}) and
       not C.unchanged(prev, {"source": {"url": "v"}, "coverage": 1.0, "codes_found": ["A1"]}) and
       not C.unchanged(None, prev), "only a source from the same page, naming the same courses, keeps its record")
+check(not C.unchanged({"source": {"url": "u", "text_from": "textContent"}, "coverage": 1.0, "codes_found": ["A1"]},
+                      {"source": {"url": "u", "text_from": "innerText"}, "coverage": 1.0, "codes_found": ["A1"]}),
+      "a source read from the visible text never keeps a record filed from the hidden text (Long Beach City, S362)")
 
 # ── the source a full college files keeps the pilot's shape ─────────────────
 reg = {"catalog_url": start, "catalog_year": "2026-2027", "catalog_platform": "courseleaf", "catalog_format": "html_per_program"}
