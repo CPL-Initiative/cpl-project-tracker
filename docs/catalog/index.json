@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 538,
+   "count": 539,
    "docs": [
     {
      "created": "2026-08-14",
@@ -8234,6 +8234,26 @@
      "updated": "2026-08-14"
     },
     {
+     "created": "2026-10-11",
+     "governs": [
+      "kb/_program_requirements_pilot.py",
+      "kb/_college_page_read.py",
+      "tests/program_requirements_pilot_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-test-a-reader-fix-on-the-page-it-failed-on.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "harvest",
+      "capture",
+      "testing",
+      "fixtures"
+     ],
+     "title": "Test a reader fix on the page it failed on",
+     "type": "methodology",
+     "updated": "2026-10-11"
+    },
+    {
      "created": "2026-08-29",
      "governs": [
       "docs/scenarios/README.md",
@@ -15296,8 +15316,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 334,
+   "count": 335,
    "docs": [
+    {
+     "created": "2026-10-11",
+     "governs": [],
+     "n": 364,
+     "path": "docs/session_364_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "harvest",
+      "phase-2",
+      "long-beach-city",
+      "decision-sheet"
+     ],
+     "title": "Long Beach City's full read lands; load, display, PR; Sheet 63",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-11",
      "governs": [],
@@ -21018,5 +21056,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1099
+ "total": 1101
 }

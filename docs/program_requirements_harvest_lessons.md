@@ -825,3 +825,49 @@ chose the lecture rate (*"handy when comparing mirrored courses ... and for fund
 estimating only, and never in Sierra (*"misconstrued as real units"*): hours / 16 rounded down to the half unit keeps his
 bands whole (48-54 h = 3.0); the first half unit falls at 56 h where his note said 63, put to him. Both pages show it;
 Sierra reads named display fields only and a test fails if she names it (#1984, build `2a73f45c9c84`).
+
+## S363 SkyCedar, 2026-10-11: Long Beach City's tab bar sits in a nav, and the full read runs
+
+**The trial that checked the fix found the fix had never fired.** S362's reader (#1980) read a hidden Requirements tab
+cell by cell, tested on a page built to look like Long Beach City's. The 12-program trial (run 38139252216, $0.85)
+read `textContent` for all 12 programs and 11 records came back empty again, the model reading the course index. The
+filed `sources.json` named the field it used for each program, which is what showed it.
+
+**The real page, probed in the runner.** The sandbox cannot reach the college (the proxy refuses the host), so a probe
+on its own branch (`claude/s363-lbcc-probe`, run 38146508042, no model calls) loaded four pages through the census
+Reader and filed each page's HTML with an account of every tab link and its panel. Every page keeps its tab bar in
+`<nav id="tabs">`; the Program Requirements link is a `role=tab` inside it, pointing at a hidden
+`#programrequirementstextcontainer` outside the menus. PAGE_JS dropped every link inside a `nav` as a site menu, so
+`tabPanels` held only the page's search dialog (a `Close this window` button outside the menus). The course index is
+a separate hidden menu, `nav#cl-menu`, naming courses in 120 subjects.
+
+**The fix (#1986, merged on `test`):** a tab of the page's own tab bar (`role=tab`, or a link inside
+`[role=tablist]`, `#tabs`, `ul.tabs`) counts wherever it sits; a hidden panel naming no course is left out. Checked in
+Chromium against the four pages' own HTML with the probe's hidden elements hidden again: coverage 1.00, 1.00, 1.00,
+0.97 on `innerText+tabs` (0.00 on the visible text alone), no index in the model's window. The repo already had a page
+reader for exactly this (`kb/_college_page_read.py`, plans in `kb/college_reads/`, `college-page-read.yml`); the probe
+script written instead stays on its branch and is not merged.
+
+**Trial 2 (run 38147472758, $0.85):** 11 of 12 programs `innerText+tabs`, all 11 with blocks, 9 passing the machine
+checks (trial 1: 1). Architectural Design and Biological Sciences fail arithmetic (a course pair printed with one unit
+figure; an area-of-emphasis choice). Engineering A.S. was given the Engineering Technology page, whose tab names none
+of its courses, so it fell back to `textContent` and placed none; `places_none` keeps it out of the load and display.
+Any program with no page of its own can still win a page through the index this way, at about $0.07 an extraction.
+
+**The full read** (run 38152016534 from `claude/s363-lbcc`, 15:37Z) runs on Sam's go; the trial's 12 records are
+kept. The display builder's dated reads gained Long Beach City first: 33 course codes in `map_cr_by_course.json`
+(per-course fingerprint 5c7d3a90393e710daa4f686a2f56c917, equal in SQL and over the filed rows) and its registry row.
+The display dry run already counts KINPP 23 and five more Kinesiology courses as CPL here.
+
+**Pushes that wake workflows.** A change to `kb/_program_requirements_pilot.py` runs the pilot capture
+(`program-requirements-pilot.yml`, page loads only, read-only); a new branch cut from an older branch compares its
+paths with the default branch. Check `push.paths` of every workflow before pushing a branch that touches the readers.
+
+Memory rows: `sam-full-lbcc-read-if-trial-2-passes-2026-10-11`, `sam-load-display-lbcc-after-full-read-2026-10-11`,
+`roep-lbcc-tab-bar-inside-nav-2026-10-11`.
+
+### Moved from the lane (S363 compaction)
+
+**Sam's ruling (Sheet 59 card 1, in chat ~19:45Z 2026-10-10, "RCCD go!", as proposed):** carried out by S358; Long Beach City follows. Memory row `sam-rccd-go-sheet-59-card-1-2026-10-10`.
+
+**Sam's ruling (Sheet 60 card 1, 2026-10-10T23:52Z, "remove"):** the eight rows the Approved re-reads no longer carried are removed (S359, #1968); full rows and the rollback in `kb/receipts/program_requirement_records_eight_dropped_removed_2026-10-10_s359.json`.
