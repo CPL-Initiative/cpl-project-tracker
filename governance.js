@@ -206,7 +206,10 @@
     // written with and what a hand-run curl would still carry. Dropping either one
     // makes this count depend on the other being remembered. They cannot disagree —
     // the DB derives 'ci' FROM page='smoke'.
-    var fb = fetch(REST + "/sierra_feedback?select=page,status&limit=1000", { headers: authHeaders() })
+    // Excluded on the server too (S366): CI rows grow about 46 a week, and an unfiltered
+    // read under a 1,000-row cap would count an arbitrary 1,000 once the table passed it.
+    var fb = fetch(REST + "/sierra_feedback?select=page,status&or=(page.is.null,page.neq.smoke)&limit=1000",
+        { headers: authHeaders() })
       .then(function (r) { return r.ok ? r.json() : []; })
       .then(function (rows) {
         var real = (rows || []).filter(function (r) {
