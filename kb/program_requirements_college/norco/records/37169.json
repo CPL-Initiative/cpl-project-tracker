@@ -1,0 +1,257 @@
+{
+ "college": "Norco College",
+ "control_number": "37169",
+ "shape": "adt",
+ "title": "Kinesiology",
+ "award": "A.A- T Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5552",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6582,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6582,
+    "output_tokens": 2476,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2476,
+  "output_tokens_details": {
+   "thinking_tokens": 749
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07585,
+ "ms": 20411,
+ "seconds": 21.2,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 29,
+   "share": 0.0,
+   "missing": [
+    "BIO50A",
+    "BIO50B",
+    "CHE1A",
+    "KIN10",
+    "KIN30",
+    "KINA40",
+    "KINA41",
+    "KINA43",
+    "KINA44",
+    "KINA46",
+    "KINA47",
+    "KINA62",
+    "KINA64A",
+    "KINA64B",
+    "KINA75A",
+    "KINA75B",
+    "KINA77A",
+    "KINA77B",
+    "KINA81A",
+    "KINA81B",
+    "KINA83",
+    "KINA89A",
+    "KINA89B",
+    "PHY2A",
+    "PHY4A",
+    "PSYC48",
+    "SOC48",
+    "STATC1000",
+    "STATC1000H"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found in text (the page prints only 'Kinesiology, Health & Wellness - Associate of Arts Degree (AOE) - NAA498/C')",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIO 50A",
+    "why": "named only in the Kinesiology, Health & Wellness AA (AOE) section; AA-T section not in the text"
+   },
+   {
+    "code": "BIO 50B",
+    "why": "named only in the Kinesiology, Health & Wellness AA (AOE) section; AA-T section not in the text"
+   },
+   {
+    "code": "CHE 1A",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN 10",
+    "why": "named only in the Kinesiology, Health & Wellness AA (AOE) section; AA-T section not in the text"
+   },
+   {
+    "code": "KIN 30",
+    "why": "named only in the Kinesiology, Health & Wellness AA (AOE) section; AA-T section not in the text"
+   },
+   {
+    "code": "KIN A41",
+    "why": "named only in the Kinesiology, Health & Wellness AA (AOE) section; AA-T section not in the text"
+   },
+   {
+    "code": "KIN A43",
+    "why": "named only in the Kinesiology, Health & Wellness AA (AOE) section; AA-T section not in the text"
+   },
+   {
+    "code": "KIN A44",
+    "why": "named only in the Kinesiology, Health & Wellness AA (AOE) section; AA-T section not in the text"
+   },
+   {
+    "code": "KIN A46",
+    "why": "named only in the Kinesiology, Health & Wellness AA (AOE) section; AA-T section not in the text"
+   },
+   {
+    "code": "KIN A62",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A64A",
+    "why": "named only in the Kinesiology, Health & Wellness AA (AOE) section; AA-T section not in the text"
+   },
+   {
+    "code": "KIN A64B",
+    "why": "named only in the Kinesiology, Health & Wellness AA (AOE) section; AA-T section not in the text"
+   },
+   {
+    "code": "KIN A75A",
+    "why": "named only in the Kinesiology, Health & Wellness AA (AOE) section; AA-T section not in the text"
+   },
+   {
+    "code": "KIN A75B",
+    "why": "named only in the Kinesiology, Health & Wellness AA (AOE) section; AA-T section not in the text"
+   },
+   {
+    "code": "KIN A77A",
+    "why": "named only in the Kinesiology, Health & Wellness AA (AOE) section; AA-T section not in the text"
+   },
+   {
+    "code": "KIN A77B",
+    "why": "named only in the Kinesiology, Health & Wellness AA (AOE) section; AA-T section not in the text"
+   },
+   {
+    "code": "KIN A81A",
+    "why": "named only in the Kinesiology, Health & Wellness AA (AOE) section; AA-T section not in the text"
+   },
+   {
+    "code": "KIN A81B",
+    "why": "named only in the Kinesiology, Health & Wellness AA (AOE) section; AA-T section not in the text"
+   },
+   {
+    "code": "KIN A83",
+    "why": "named only in the Kinesiology, Health & Wellness AA (AOE) section; AA-T section not in the text"
+   },
+   {
+    "code": "KIN A89A",
+    "why": "named only in the Kinesiology, Health & Wellness AA (AOE) section; AA-T section not in the text"
+   },
+   {
+    "code": "KIN A89B",
+    "why": "named only in the Kinesiology, Health & Wellness AA (AOE) section; AA-T section not in the text"
+   },
+   {
+    "code": "KINA40",
+    "why": "printed as KIN A40 only in the Kinesiology, Health & Wellness AA (AOE) section; AA-T section not in the text"
+   },
+   {
+    "code": "KINA47",
+    "why": "printed as KIN A47 only in the Kinesiology, Health & Wellness AA (AOE) section; AA-T section not in the text"
+   },
+   {
+    "code": "PHY 2A",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHY 4A",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC 48",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 48",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog text supplied is for a different award: Kinesiology, Health & Wellness - Associate of Arts Degree (AOE), NAA498/C, an area-of-emphasis degree (18 units: 3 units each in HES and KIN academic courses plus 12 elective units). It does not contain the Kinesiology A.A-T section, so no blocks, totals or outcomes were recorded for the A.A-T.",
+   "The Program Learning Outcomes printed on the page belong to the Kinesiology, Health & Wellness AA (AOE) and were not recorded for the A.A-T.",
+   "Closed-list courses CHE 1A, PHY 2A/4A, PSYC 48/SOC 48/STAT C1000(H) and KIN A62 suggest the A.A-T has its own requirement list; a reviewer should locate the correct Kinesiology AA-T page for 2026-2027."
+  ]
+ },
+ "extracted_run": "38095619629"
+}
