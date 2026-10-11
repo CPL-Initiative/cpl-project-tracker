@@ -110,8 +110,8 @@
    "name": "Contracts",
    "page": "index.html#contracts",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-11",
+   "outcome": "First pass. The register is gated, so the signed-out sweep measured its gate; a seeded reviewer sweep (contracts and contracts-dark, the V0718 fixture through the tab's own load) found the band's faint labels at 3.56:1 in dark, where --navy-primary turns light, text in the decorative --text-faint at 3.62:1 in light (item numbers, the caret, the executed note), and a status chip on the browser's dark button face at 1.99:1. The band is now --seal-blue in both themes with --white and --on-seal-blue-muted, that text is --text-muted, the chip sets its own ground, and Draft, Record, Confirm, Open and Choose a file are underlined words; the hover's raw #fff is gone. Reads four tables no other view reads. Guarded by tests/contracts_first_light.test.js."
   },
   {
    "id": "cobi:vision-2030",

@@ -510,6 +510,70 @@ async function seedWorkplanGoalsEditor(page, theme, modal) {
   await page.waitForTimeout(300);
 }
 
+// Contracts as a reviewer sees it (S364 UI pass): the register is gated, so the signed-out
+// cobi sweep measures the gate. The seed stubs the tab's four reads with the V0718 fixture
+// from tests/contracts.test.js (matched by table, the narrowest point), holds a reviewer
+// session so the ledger's quarters and the documents' controls are live, and opens Goal 1
+// and its first deliverable.
+async function seedContracts(page, theme) {
+  // The motion check seeds a page opened without the route's hash, and contracts.js loads
+  // only when its tab activates: open the tab first, as seedProgress does.
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "contracts") location.hash = "contracts"; });
+  await page.waitForFunction(() => !!window.CPL_CONTRACTS, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    try {
+      sessionStorage.setItem("cpl_sb", JSON.stringify({ access_token: "aaaaaaaaaa.bbbbbbbbbbbbbbbbbbbbbbbb.cccccccccccccccccccc", email: "seed@example.org" }));
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const C = { id: "c1", agreement_no: "V0718", title: "Mapping Articulated Pathways for CPL",
+      vendor_name: "Academic Senate for California Community Colleges", vendor_short: "ASCCC",
+      fiscal_agent: "Rancho Santiago CCD", amount_total: "1063900.00", term_start_est: "2025-06-30",
+      term_executed: "2025-08-07", term_end: "2028-06-30", status: "executed", parse_status: "proposed",
+      co_monitor: { name: "Monitor Name", email: "monitor@example.org" },
+      vendor_contact: { name: "Contact Name", title: "Representative" },
+      funding_ref: { funding_year: "2024-25", chapter: "22", statute: "2024" }, invoice_cadence: "quarterly",
+      report_clause: "Every quarterly invoice must include a summary of tasks performed for each deliverable.",
+      report_clause_ref: "Section D", findings: [{ title: "The term start is ambiguous", detail: "Cover page vs Section B.", ref: "Section B" }] };
+    const D = [
+      { id: "d1", contract_id: "c1", goal_no: 1, goal_title: "Expand faculty-led development", goal_amount: "376120.00", seq: 1,
+        kind: "obligation", status: "not_started", label: "Form 15-30 distinct faculty workgroups", countable_target: "15-30",
+        countable_unit: "workgroups", recorded_count: null, source_ref: "Goal 1, deliverable 1",
+        goal_outcome: "College credit recommendations documented on CPL exhibits.",
+        detail: { verbatim: "Form 15-30 distinct faculty workgroups.", parts: ["Developing credit recommendations"],
+          funded_by: "Faculty stipends", evaluated_by: "Quarterly check-ins.", note: "The hourly rate is not stated." } },
+      { id: "d2", contract_id: "c1", goal_no: 1, seq: 2, kind: "obligation", status: "complete", label: "Recruit faculty for each workgroup", recorded_count: null },
+      { id: "d3", contract_id: "c1", goal_no: 1, seq: 50, kind: "evaluation", status: "not_started", cadence: "quarterly", label: "Quarterly check-ins with the Chancellor's Office" },
+      { id: "d4", contract_id: "c1", goal_no: 2, goal_title: "Strengthen faculty leadership", goal_amount: "567780.00", seq: 1, kind: "obligation",
+        status: "in_progress", label: "Appoint and stipend CPL Liaisons", countable_target: "115", countable_unit: "liaisons", recorded_count: 40 },
+      { id: "d5", contract_id: "c1", goal_no: 2, seq: 10, kind: "role_duty", status: "not_started", label: "Serve as primary points of contact" },
+    ];
+    const R = [{ id: "r1", contract_id: "c1", period_label: "2025-26 Q1", status: "received" }];
+    const F = [{ id: "f1", contract_id: "c1", kind: "agreement", filename: "V0718_executed.pdf", mime: "application/pdf",
+      bytes: 812345, pages: 42, doc_date: "2025-08-07", storage_path: "c1/V0718.pdf" }];
+    const real = window.fetch;
+    window.fetch = function (url, opts) {
+      const u = String(url);
+      const body = /\/cpl_contracts\?/.test(u) ? [C] : /\/cpl_contract_deliverables\?/.test(u) ? D
+        : /\/cpl_contract_reports\?/.test(u) ? R : /\/cpl_contract_documents\?/.test(u) ? F : null;
+      if (body) return Promise.resolve(new Response(JSON.stringify(body), { status: 200, headers: { "Content-Type": "application/json" } }));
+      return real.apply(this, arguments);
+    };
+    if (window.CPL_CONTRACTS) window.CPL_CONTRACTS.activate();
+  });
+  await page.waitForFunction(() => window.CPL_CONTRACTS && window.CPL_CONTRACTS._state.contracts.length && !window.CPL_CONTRACTS._state.loading,
+    null, { timeout: 20000 });
+  await page.evaluate(() => {
+    const g = document.querySelector('#contracts-root [data-goal] .ctr-gh');
+    if (g) g.click();
+    const t = document.querySelector('#contracts-root [data-toggle]');
+    if (t) t.click();
+  });
+  await page.waitForTimeout(300);
+}
+
 async function seedMyCollegeReports(page, signin) {
   await page.evaluate(() => new Promise((res) => {
     if (window.CPL_FUNDING_TAB) return res();
@@ -913,6 +977,24 @@ module.exports = {
       await page.waitForTimeout(900);
     },
     mayHideBelow: [],
+  },
+  /* ── Contracts, signed in (S364 UI pass) ─────────────────────────────────
+     The register is gated; the cobi sweep measures its gate. */
+  "contracts": {
+    file: "index.html",
+    title: "Contracts, a reviewer's view of the V0718 fixture",
+    routes: [{ hash: "contracts", name: "reviewer" }],
+    widths: [390, 1440],
+    seed: (page) => seedContracts(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "contracts-dark": {
+    file: "index.html",
+    title: "Contracts, a reviewer's view of the V0718 fixture, dark",
+    routes: [{ hash: "contracts", name: "reviewer" }],
+    widths: [390, 1440],
+    seed: (page) => seedContracts(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── Annual Workplan Goals, signed in (S364) ─────────────────────────────
      The editor's words, its save states and the Add new row dialog paint only
