@@ -531,7 +531,7 @@
     "  margin: 0 0 10px; padding: 7px 12px; font-size: .78rem; color: var(--text-muted);",
     "  border: 1px dashed var(--border-strong); border-radius: 8px; background: var(--surface-subtle); }",
     ".cplfund-cardsize-d { display: flex; align-items: center; gap: 6px; }",
-    ".cplfund-cardsize-d input[type=\"range\"] { width: 120px; max-width: 38vw; accent-color: var(--seal-blue-text,#002F6D); }",
+    ".cplfund-cardsize-d input[type=\"range\"] { width: 120px; max-width: 38vw; min-height: 24px; accent-color: var(--seal-blue-text,#002F6D); }",
     ".cplfund-cardsize-d output { font-weight: 600; color: var(--text-body); min-width: 7ch; }",
     ".cplfund-rfund { display: flex; flex-wrap: wrap; gap: 3px 8px; align-items: baseline; margin: 0 0 6px; }",
     ".cplfund-rfund-lab { font-weight: 600; color: var(--text-body); font-size: .82rem; }",
@@ -1176,6 +1176,26 @@
     // clear focus ring and an aria-sort arrow that mirrors the visible one.
     ".cplfund-table th[tabindex]:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: -2px; }",
     ".cplfund-seg button:focus-visible, .cplfund-optbtn:focus-visible, .cplfund-colmenu > summary:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: 1px; }",
+    // Controls are underlined words (Sam, 2026-10-09; S364 UI pass): no border, no fill, underlined at rest,
+    // 24px tall, and the lead action is the first word, never a filled button. Each selector repeats the rule it
+    // overrides, so it carries the same specificity and wins by coming later. The toggles in a set (.cplfund-seg,
+    // .cplfund-subtabs, .cplfund-pvchip) keep their frames: they mark the selected one with weight and aria-pressed.
+    ".cplfund-optbtn, .cplfund-textbtn, .cplfund-textbtn.primary, .cplfund-reqdel, .cplfund-optin-jump, .cplfund-card-eye, .cplfund-card-x, .cplfund-kindtoggle, " +
+      ".cplfund-authbar button.rst, .cplfund-authbar button.rst.primary, .cplfund-strip button.rst, .cplfund-addproj button.rst { border: 0; border-radius: 2px; background: none; color: var(--cobalt); font-weight: 600; padding: 2px 0; min-height: 24px; min-width: 24px; white-space: nowrap; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }",
+    ".cplfund-optbtn:hover, .cplfund-textbtn:hover, .cplfund-textbtn.primary:hover, .cplfund-reqdel:hover, .cplfund-optin-jump:hover, .cplfund-card-eye:hover, .cplfund-card-x:hover, .cplfund-kindtoggle:hover, " +
+      ".cplfund-authbar button.rst:hover, .cplfund-strip button.rst:hover, .cplfund-addproj button.rst:hover { background: none; color: var(--seal-blue-text, var(--cobalt)); text-decoration-thickness: 2px; }",
+    // Words sit 18px apart: the old frames separated them, and a row of bare words needs the space instead.
+    ".cplfund-optbtn, .cplfund-optin-jump { margin-left: 18px; }",
+    ".cplfund-actions .cplfund-optbtn, .cplfund-toolbar .cplfund-optbtn, .cplfund-rep-row .cplfund-optbtn { margin-left: 0; }",
+    ".cplfund-actions, .cplfund-toolbar, .cplfund-reptoolbar, .cplfund-addproj, .cplfund-authbar { column-gap: 18px; }",
+    // A state the word already names keeps its ink: a hidden line (Show to public) and the opt-in's No.
+    ".cplfund-card-eye.off { color: var(--mustard-text); }",
+    // The view in use is the word that is not a link: weight and aria-pressed carry it, never a fill.
+    '.cplfund-actions [data-viewmode][aria-pressed="true"] { background: none; color: var(--text-body); font-weight: 700; text-decoration: none; cursor: default; }',
+    ".cplfund-colane-no, .cplfund-colane-no:hover { color: var(--red-alert); }",
+    ".cplfund-textbtn:focus-visible, .cplfund-reqdel:focus-visible, .cplfund-optin-jump:focus-visible, .cplfund-card-eye:focus-visible, .cplfund-card-x:focus-visible, .cplfund-kindtoggle:focus-visible, " +
+      ".cplfund-authbar button.rst:focus-visible, .cplfund-strip button.rst:focus-visible, .cplfund-addproj button.rst:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: 2px; }",
+    ".cplfund-textbtn:disabled, .cplfund-optbtn:disabled, .cplfund-authbar button.rst:disabled { color: var(--text-muted); text-decoration: none; cursor: default; }",
     // ── mobile (Sam, 2026-07-28: make it mobile friendly) ──
     "@media (max-width: 700px) { .cplfund-toolbar input[type=search] { min-width: 140px; flex: 1; } }",
     // Reclaim the edge gutter + tighten the dense table on small screens so more
@@ -1204,7 +1224,8 @@
     // The project/scenario selects carry long option text — stack the strip and
     // let the controls fill the row so a wide <select> can't push the page wider.
     "  .cplfund-strip { flex-direction: column; align-items: stretch; gap: 8px; }",
-    "  .cplfund-ctl { max-width: 100%; }",
+    // A word control keeps its line, so the row wraps instead: the scenario hint drops below its words.
+    "  .cplfund-ctl { max-width: 100%; flex-wrap: wrap; }",
     "  .cplfund-strip select, .cplfund-ed-sel, .cplfund-strip input, .cplfund-addproj select, .cplfund-addproj input { max-width: 100%; min-width: 0; }",
     // The +Project name input carries an inline min-width:220px — override it so
     // the curator add-state can't overflow on a narrow phone.
@@ -5647,7 +5668,7 @@
         '<input type="text" id="cplFundProjName" placeholder="New project name…" aria-label="New project name" style="min-width:220px;">' +
         '<label class="cplfund-ctl-lbl">Area</label><select id="cplFundProjArea" aria-label="Project area">' + areaOpts + "</select>" +
         '<button type="button" class="rst" id="cplFundProjCreate">Create</button>' +
-        '<button type="button" class="rst" id="cplFundProjCancel" style="background:var(--surface-opaque);color:var(--text-body);border:1px solid var(--border-strong);">Cancel</button>' +
+        '<button type="button" class="rst" id="cplFundProjCancel">Cancel</button>' +
         '<span class="dk" style="font-size:.8rem;">clones the current model (' + esc(proj.label) + ") as the new project&#39;s Scenario 1</span></div>";
     }
     return '<div class="cplfund-strip">' + projBlock + scBlock + "</div>" + addForm;
@@ -6874,13 +6895,13 @@
       return !poolHidden(b.field) && poolPublicHidden(b.field);
     });
     var pubNote = (pubOff.length && !publicMode() && unlocked())
-      ? '<div class="cplfund-reqrestore"><span class="dk">Hidden from the ' +
+      ? '<p class="cplfund-reqrestore"><span class="dk">Hidden from the ' +
         '<a href="funding-model/" target="_blank" rel="noopener">public college page</a> ' +
         '(display only &mdash; the funding math is unchanged):</span> ' +
         pubOff.map(function (b) {
           var def = b.def || base().pool.admin_cost_label;
           return "<strong>" + esc(poolLabel(b.field, def)) + "</strong>";
-        }).join(" &middot; ") + "</div>"
+        }).join(" &middot; ") + "</p>"
       : "";
 
     // Restore chips for any hidden core boxes.

@@ -102,8 +102,8 @@
    "name": "Implementation Funding",
    "page": "index.html#implementation-funding",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-11",
+   "outcome": "Measured clean signed out in light and dark at desktop and 390px, and in the Public view and My CPL Funding; a new seeded curator sweep (funding-curator, both themes) found the editing controls the signed-out sweep never paints. Every boxed or filled control became an underlined cobalt word (Rename, Remove, Hide from public, Add project, New scenario, Publish, Save), the view in use (Internal or Public) shows by weight and aria-pressed rather than a fill, Cancel lost its inline box, Edit (22.6px wide) and the card-size sliders (19.9px tall) reach 24px, words keep their line so New scenario no longer wraps over its hint at 390px, and the hidden-from-public note became a paragraph so its link takes the inline exception. My College and the explainer call the same model (_alloc, _grant), so their figures agree by construction. Tokens only on screen; the print and memo windows keep literal colors, being separate documents. Guarded by tests/cpl_funding_controls_first_light.test.js."
   },
   {
    "id": "cobi:contracts",
