@@ -176,6 +176,32 @@ check(any(g["text"].startswith("The state's Program Course File lists ID 36") an
           and (g.get("coci") or [{}])[0].get("status") == "Approved" for g in gs),
       "gaps: a listed course the catalog does not print carries its COCI status")
 
+# 2c. A program that points at a retired version of a course the college still offers lists
+# that course (Sam, 2026-10-11, Cerritos 02226's ENGT 116 and 117: "If the Program Course file
+# has 116 and 117 as active, it shouldn't matter that they have older inactive versions"; then
+# "go"). The failures this guards: such a course flagged for the college as off the list; a
+# current version the file itself calls Inactive treated as offered; a course with no current
+# version losing its flag.
+fx_keep = {"on_program": {(X, "P1", b.ck(c)): {"status": "Inactive", "ccn": n + "0"}
+                          for c, n in (("AA 1", "A"), ("BB 2", "B"), ("CC 3", "C"), ("DD 4", "D"))},
+           "current": {(X, b.ck("AA 1")): {"ccn": "A1"}, (X, b.ck("BB 2")): {"ccn": "B1"},
+                       (X, b.ck("CC 3")): {"ccn": "C1"}, (X, b.ck("DD 4")): {"ccn": "D0"}},
+           "status_of": {"A1": "Active", "C1": "Inactive"}, "offered": {"B1", "C1"},
+           "keep": ("Active", "Approved", "Active - Teachout Only")}
+fk = lambda code: b.coci_facts(fx_keep, "X College", "P1", code)
+check(fk("AA 1").get("listed") is True and fk("AA 1")["program_ccn"] == "A0" and fk("AA 1")["current_ccn"] == "A1",
+      "coci_facts: a retired pointer whose current version the file calls Active is listed (got %s)" % fk("AA 1"))
+check(fk("BB 2").get("listed") is True,
+      "coci_facts: a current version on no program counts as offered when Fall 2025's course basic report carries it")
+check(not fk("CC 3").get("listed"), "coci_facts: the file's own Inactive for the current version wins over the course basic report")
+check(not fk("DD 4").get("listed") and fk("DD 4")["current_ccn"] is None,
+      "coci_facts: a course with no current version is not listed")
+filed_k = {"record": {"blocks": [{"rule": "all", "courses": [
+    {"code": c, "units": 3, "catalog_addition": True} for c in ("AA 1", "BB 2", "CC 3", "DD 4")]}]}, "score": {}}
+gk = b.gaps_for("X College", "courseleaf", "A.S. Degree", "units", filed_k, None, {"min": None}, None, fk)
+named = sorted((g.get("coci") or [{}])[0].get("code") for g in gk if g["kind"] == "Catalog and state file differ")
+check(named == ["CC 3", "DD 4"], "gaps: no flag for a course the program lists through an older version (got %s)" % named)
+
 # 3. the committed outputs agree with each other
 data = load_js()
 progs = data["programs"]

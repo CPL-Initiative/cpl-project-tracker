@@ -62,6 +62,7 @@ today.
 from __future__ import annotations
 
 import argparse
+import csv
 import glob
 import hashlib
 import json
@@ -426,7 +427,21 @@ def state_lists(colleges) -> tuple[dict, dict, dict]:
             col = norm_college(c["college"])
             if col in want and c.get("code"):
                 current.setdefault((col, ck(c["code"])), {"ccn": ctl, "units": c.get("units")})
-    return by_program, by_code, {"on_program": on_program, "current": current}
+    # Each course version's status, from any program that carries it (a kept status wins), so
+    # coci_facts() can say whether the current version is one a student can take.
+    status_of = {}
+    for r in mem:
+        ctl, st = r["CourseControlNumber"], r["CourseStatus"]
+        if ctl and ctl != "NULL" and (ctl not in status_of or (status_of[ctl] not in bpc.KEEP_STATUS and st in bpc.KEEP_STATUS)):
+            status_of[ctl] = st
+    # A current version on no program has no status in that file; the college's Fall 2025
+    # course basic report (MIS CB) names the versions it offered that term.
+    offered = set()
+    with open(bpc.CB_MASTER, encoding="utf-8-sig", newline="") as fh:
+        for r in csv.DictReader(fh):
+            offered.add((r.get("CB_CONTROL_NUMBER") or "").strip())
+    return by_program, by_code, {"on_program": on_program, "current": current, "status_of": status_of,
+                                 "offered": offered, "keep": tuple(bpc.KEEP_STATUS)}
 
 
 def coci_facts(coci: dict, college: str, control: str, code: str) -> dict | None:
@@ -437,8 +452,22 @@ def coci_facts(coci: dict, college: str, control: str, code: str) -> dict | None
     if not st:
         return None
     cur = (coci["current"].get((norm_college(college), ck(code))) or {}).get("ccn")
-    return OrderedDict([("status", st["status"]), ("program_ccn", st["ccn"]),
-                        ("current_ccn", cur if cur and cur != st["ccn"] else None)])
+    f = OrderedDict([("status", st["status"]), ("program_ccn", st["ccn"]),
+                     ("current_ccn", cur if cur and cur != st["ccn"] else None)])
+    # A program that points at a retired version of a course the college still offers lists
+    # that course (Sam, 2026-10-11, Cerritos 02226's ENGT 116 and 117: "If the Program Course
+    # file has 116 and 117 as active, it shouldn't matter that they have older inactive
+    # versions"; then "go"). It counts as on the program's list, and placed, with no flag;
+    # the chip stays so the college can update the pointer in COCI.
+    # The current version is one the college offers when the Program Course File gives it a
+    # kept status, or, where it sits on no program there, the Fall 2025 course basic report
+    # carries it. A status the file does give wins: it is COCI's word as of the file's date.
+    keep = coci.get("keep") or ()
+    cur_status = (coci.get("status_of") or {}).get(f["current_ccn"]) if f["current_ccn"] else None
+    offered = cur_status in keep if cur_status is not None else f["current_ccn"] in (coci.get("offered") or ())
+    if f["current_ccn"] and st["status"] not in keep and offered:
+        f["listed"] = True
+    return f
 
 
 def coci_words(code: str, f: dict) -> str:
@@ -638,6 +667,8 @@ def gaps_for(college: str, platform: str, award: str, measure: str, filed: dict,
     unlisted = [a for a in adds if not coci_of(a)]
     for a in adds:
         f = coci_of(a)
+        if f and f.get("listed"):
+            continue
         if f:
             g.append({"kind": "Catalog and state file differ", "owner": "college", "where": state,
                       "text": "The catalog prints %s for this program, and the state's Program Course File carries it "
@@ -891,8 +922,11 @@ def build() -> dict:
         verdict = (verdicts.get(key) or {}).get("v")
         score = filed.get("score") or {}
         cov = score.get("coverage") or {}
+        # A course the program lists through a retired version is on its list (coci_facts):
+        # it leaves the additions and joins the listed and placed counts, once per code.
         adds = sum(1 for b in blocks for c in courses_of(b) for x in [c] + list(c.get("alternatives") or [])
-                   if x.get("catalog_addition"))
+                   if x.get("catalog_addition") and not ((courses.get(x["code"]) or {}).get("coci") or {}).get("listed"))
+        relisted = len({ck(code) for code, e in courses.items() if (e.get("coci") or {}).get("listed")})
         display = OrderedDict()
         display["v"] = SHAPE_VERSION
         display["figure"] = {"up_to": pl["cpl"], "measure": measure, "total": total, "picks": pl["picks"],
@@ -921,7 +955,10 @@ def build() -> dict:
                                    measure, filed, verdict, total, seconds,
                                    lambda code: coci_facts(coci, college, control, code))
         display["map"] = seq or map_status(college, reg)
-        display["checks"] = {"checked": row["checked"], "coverage": {"placed": cov.get("placed"), "listed": cov.get("listed")},
+        placed_n, listed_n = cov.get("placed"), cov.get("listed")
+        if relisted and placed_n is not None and listed_n is not None:
+            placed_n, listed_n = placed_n + relisted, listed_n + relisted
+        display["checks"] = {"checked": row["checked"], "coverage": {"placed": placed_n, "listed": listed_n},
                              "additions": adds, "arithmetic": (score.get("arithmetic") or {}).get("status"),
                              "reviewer": verdict}
         # A unit difference kept and chipped (Sam, 2026-10-11, Agricultural Science and
