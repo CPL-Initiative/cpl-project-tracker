@@ -4534,52 +4534,12 @@
   "title": "Kinesiology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.612,
-  "codes_found": [
-   "BIO50A",
-   "BIO50B",
-   "KIN30",
-   "KIN36",
-   "KINA11",
-   "KINA21",
-   "KINA28",
-   "KINA29",
-   "KINA31A",
-   "KINA31B",
-   "KINA43",
-   "KINA44",
-   "KINA55",
-   "KINA57A",
-   "KINA57B",
-   "KINA64A",
-   "KINA64B",
-   "KINA67",
-   "KINA68",
-   "KINA71",
-   "KINA75A",
-   "KINA75B",
-   "KINA77A",
-   "KINA77B",
-   "KINA81A",
-   "KINA81B",
-   "KINA89A",
-   "KINA89B",
-   "KINA90A",
-   "KINA90B"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6234",
-   "title": "Kinesiology, Health and Wellness - Associate of Arts Degree - AA498/AA498C",
-   "h1": "Kinesiology, Health and Wellness - Associate of Arts Degree - AA498/AA498C",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 49,
-  "text_chars": 4206
+  "text_chars": 0
  },
  {
   "control_number": "37483",
@@ -6222,30 +6182,12 @@
   "title": "Building Energy Systems Professional in HVAC Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.889,
-  "codes_found": [
-   "AIR61A",
-   "AIR64A",
-   "AIR75",
-   "AIR76",
-   "AIR77",
-   "AIR84",
-   "AIR90",
-   "EST22"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/5718",
-   "title": "HVAC Commercial Technology - Associate of Science Degree and Certificate of Achievement - AS946/AS946C/CE946",
-   "h1": "HVAC Commercial Technology - Associate of Science Degree and Certificate of Achievement - AS946/AS946C/CE946",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.333
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 2256
+  "text_chars": 0
  },
  {
   "control_number": "39125",
@@ -6436,46 +6378,12 @@
   "title": "Dance",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.8,
-  "codes_found": [
-   "DAN6",
-   "DAN6H",
-   "DAN7",
-   "DAN8",
-   "DAN9",
-   "DAND10",
-   "DAND13",
-   "DAND20",
-   "DAND21",
-   "DAND22",
-   "DAND23",
-   "DAND29",
-   "DAND31",
-   "DAND32",
-   "DAND33",
-   "DAND34",
-   "DAND37",
-   "DAND38",
-   "DAND39",
-   "DAND43",
-   "DAND44",
-   "DAND47",
-   "DAND50",
-   "DAND60"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6232",
-   "title": "Fine and Applied Arts - Associate of Arts Degree - AA496/AA496C",
-   "h1": "Fine and Applied Arts - Associate of Arts Degree - AA496/AA496C",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 30,
-  "text_chars": 4022
+  "text_chars": 0
  },
  {
   "control_number": "40297",
@@ -6914,31 +6822,12 @@
   "title": "Pilates Dance/Conditioning Instructor",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.692,
-  "codes_found": [
-   "DAND21",
-   "DAND22",
-   "DAND32",
-   "DAND33",
-   "DAND37",
-   "DAND38",
-   "DAND46",
-   "DAND49",
-   "DAND50"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6233",
-   "title": "Humanities, Philosophy & Arts - Associate of Arts Degree - AA497/AA497C",
-   "h1": "Humanities, Philosophy & Arts - Associate of Arts Degree - AA497/AA497C",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 13,
-  "text_chars": 3611
+  "text_chars": 0
  },
  {
   "control_number": "40464",

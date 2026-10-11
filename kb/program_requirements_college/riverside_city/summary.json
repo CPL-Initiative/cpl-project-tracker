@@ -2,18 +2,18 @@
  "college": "Riverside City College",
  "programs": 268,
  "with_closed_list": 262,
- "found": 248,
- "extracted": 248,
+ "found": 244,
+ "extracted": 244,
  "errors": 1,
- "passed_machine_checks": 222,
+ "passed_machine_checks": 221,
  "failed": {
   "coverage": 9,
   "invented": 9,
-  "arithmetic": 17,
+  "arithmetic": 14,
   "repeated": 0,
   "outcomes": 1
  },
- "cost_usd": 15.16,
+ "cost_usd": 14.9,
  "cost_per_program": 0.0611,
  "not_found": [
   {
@@ -87,5 +87,5 @@
    "award": "Noncredit program"
   }
  ],
- "run": "38095615434"
+ "run": "38097844006"
 }
