@@ -42,12 +42,11 @@ the greeting and did not write again. Sam's CPL Queue routine fires at 05:05Z on
 
 ## In flight
 
-- **#2005** (Noncredit & Learning Partners UI pass) was open and green-bound at sign-off. If it is still open: confirm
-  `test` passed on its head and merge (squash). It carries the ledger's hold on CPL Pathways and the NC lesson.
+Nothing. #2005 (Noncredit & Learning Partners) merged at sign-off; it carries the ledger's hold on CPL Pathways.
 
 ## Next in the queue
 
-- **The UI pass:** after #2005, `python3 scripts/ui_pass.py --next` names **Governance** (never audited; a gated
+- **The UI pass:** `python3 scripts/ui_pass.py --next` names **Governance** (never audited; a gated
   register, so seed it before you trust a clean sweep).
 - **Harvest NEXT ①:** Long Beach City's 74 records that place none still wait on its reading procedure.
 - **Remainders named, not open:** below a 981px frame the veteran map scrolls inside COBI's frame by design; the full
@@ -61,7 +60,7 @@ the greeting and did not write again. Sam's CPL Queue routine fires at 05:05Z on
 shared with the annual report; widths held to 0-100; daily run dispatched and the section verified live) · #2002 the
 harvest lane's NEEDS SAM · #2003 Team & RACI edit mode by keyboard and the dark jump highlight at AA (`--gold-soft` dark
 `#40320E`) · #2004 Military Partnerships (the framed map stops repeating the tab's heading; the link takes its token) ·
-#2005 Noncredit & Learning Partners · vault #307 Sheets 64-65. New seeded targets: `raci-editor`, `raci-directory`,
+#2005 Noncredit & Learning Partners · vault #307 Sheets 64-65 and #308 the session note. New seeded targets: `raci-editor`, `raci-directory`,
 `nc-partners-editor`, each with `-dark`.
 
 ## Safety patterns
