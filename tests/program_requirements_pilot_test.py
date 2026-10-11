@@ -1188,6 +1188,18 @@ check(field == "textContent", "a page whose requirements sit in a hidden tab sti
 # through the index, the visible page one, the requirements tab four.
 check("tabPanels" in P.PAGE_JS and "const cellText" in P.PAGE_JS and "!t.el.closest(MENU)" in P.PAGE_JS,
       "PAGE_JS reads each hidden tab panel cell by cell, outside the site's menus")
+# The real pages keep their tab bar in <nav id="tabs"> (probe run 38146508042,
+# S363): a rule dropping every link inside a nav dropped the Requirements tab,
+# and the 12-program trial (run 38139252216) read textContent for all 12.
+check("a.getAttribute('role') === 'tab' || a.closest(TAB_BAR) || !a.closest(MENU)" in P.PAGE_JS
+      and "#tabs" in P.PAGE_JS.split("const TAB_BAR", 1)[1].split(";", 1)[0],
+      "a tab of the page's own tab bar counts even inside a nav; other menu links do not")
+dialog = {"tabPanels": [{"label": "Close this window", "id": "search-dialog",
+                         "text": "Close this window\nSearch\nSearch catalog\nSubmit search\nSearch Catalog Only"},
+                        {"label": "Program Requirements", "id": "programrequirementstextcontainer",
+                         "text": "Program Requirements\nHORT 11A\tIntro to Horticulture\t3"}]}
+check(P.hidden_tabs_text(dialog).count("[Tab:") == 1 and "search" not in P.hidden_tabs_text(dialog).lower(),
+      "a hidden panel naming no course (the page's search dialog) is left out of the model's text")
 lbt_req = "Program Requirements\nRequired Courses\nHORT 11A\tIntro to Horticulture\t3\nHORT 19\tSoils\t3\nHORT 21\tPests\t3\nMKTG 47\tSales\t3\nTotal Units\t12"
 lbt_got = {"body": "Horticulture - Associate in Science\nOverview\nProgram Requirements\nStudents enrolling in HORT 11A learn plant care.",
            "content": lb_index + "Horticulture - Associate in ScienceStudents enrolling in HORT 11A learn plant care.HORT 19Soils3",
