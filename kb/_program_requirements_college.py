@@ -256,6 +256,53 @@ def label_score(page: dict, program: dict) -> tuple[int, float]:
     return award_hit, round(hits / len(tokens), 3) if tokens else 0.0
 
 
+# The words an award adds to a heading ("Physical Sciences - Associate in Science"),
+# set aside before a heading is matched to a program's title: "science" in an A.S.
+# heading is the award, not the subject (S366).
+HEADING_AWARD = re.compile(
+    r"associate (?:in|of) (?:science|arts)(?: (?:for )?transfer(?: degree)?)?|"
+    r"certificate of (?:achievement|accomplishment|completion|competency)|transfer degree|"
+    r"\ba\.?\s?[as]\.?(?:\s*-\s*t)?\b|\bdegree\b|\bcertificate\b", re.I)
+LEVEL = re.compile(r"\blevel\s*(\d+|[ivx]+)\b", re.I)
+
+
+def heading_match(page: dict, program: dict) -> tuple[float, float]:
+    """(the share of the program's title words its heading names, the share of the
+    heading's own words the title names), award words set aside. The heading is the
+    page's h1, else its title before a "|". A title word and a heading word match when
+    equal, or when one begins the other and both run past three letters (Science,
+    Sciences). Two different levels ("Level 2", "Level 1") score (0, 0)."""
+    head = page.get("h1") or (page.get("title") or "").split("|")[0]
+    title = program.get("title") or ""
+    lt, lh = LEVEL.search(title), LEVEL.search(head)
+    if lt and lh and lt.group(1).lower() != lh.group(1).lower():
+        return 0.0, 0.0
+    t = set(P.title_tokens(title))
+    h = set(P.title_tokens(HEADING_AWARD.sub(" ", head)))
+    if not t or not h:
+        return 0.0, 0.0
+
+    def named(words, others):
+        return sum(1 for w in words if w in others or any(
+            len(w) > 3 and len(x) > 3 and (x.startswith(w) or w.startswith(x)) for x in others))
+    return round(named(t, h) / len(t), 3), round(named(h, t) / len(h), 3)
+
+
+# A page reached only through its hidden text must name the program in its heading.
+# Long Beach City hides an A-Z course index that names every course in its catalog,
+# so every page held every program's codes in textContent and cleared the coverage
+# net; Photography A.A.'s page went to seven programs (run 38152016534, S366).
+# Measured on that run's 74 records that placed none: these two shares kept the 10
+# programs read from their own page and turned away 58 of the rest.
+HIDDEN_HEADING_TITLE = 0.5    # the heading names half the title's words
+HIDDEN_HEADING_OWN = 0.6      # and the title names 60% of the heading's own words
+
+
+def heading_names_program(page: dict, program: dict) -> bool:
+    of_title, of_heading = heading_match(page, program)
+    return of_title >= HIDDEN_HEADING_TITLE and of_heading >= HIDDEN_HEADING_OWN
+
+
 def candidates(program: dict, pages: list[dict]) -> list[dict]:
     """Every page naming at least ACCEPT_SHARE of the program's listed courses,
     best first: the page naming its award, then the larger share of its title,
@@ -274,6 +321,8 @@ def candidates(program: dict, pages: list[dict]) -> list[dict]:
         cov = P.coverage(found, courses)
         if cov < P.ACCEPT_SHARE:
             continue
+        if field == "textContent" and not heading_names_program(pg, program):
+            continue   # hidden text alone is no evidence: an index names every course
         award_hit, title = label_score(pg, program)
         if len(want) < SMALL_LIST and title < 0.5:
             continue   # a list this short names its courses on many pages; the page must name the program too

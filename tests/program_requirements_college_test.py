@@ -213,6 +213,49 @@ tiny = {"control_number": "5", "title": "Automotive Electrical", "award": "Certi
         "closed_list": [{"code": "ABC 101"}]}
 check(C.candidates(tiny, PG) == [], "a one-course list takes no page whose label does not name the program")
 
+# ── a page reached only through hidden text must name the program (S366) ──
+# Long Beach City hides an A-Z course index naming every course, so every page held
+# every program's codes in textContent: Photography A.A.'s page went to seven programs.
+INDEX = " ".join("FD %d FILM %d FLOR %d" % (i, i, i) for i in range(1, 9))   # the hidden index
+
+
+def hidden_page(url, h1, visible):
+    content = visible + " " + INDEX
+    return {"url": url, "h1": h1, "title": h1 + " | LBCC", "body": visible, "content": content,
+            "got": {"body": visible, "content": content, "title": h1 + " | LBCC", "h1": h1},
+            "codes": C.page_codes(content)}
+
+
+fashion = {"control_number": "02686", "title": "Fashion Design", "award": "A.A. Degree",
+           "closed_list": [{"code": "FD %d" % i} for i in range(1, 7)]}
+photo = hidden_page(start + "degrees-certificates/digital-media-arts/photography-aa/",
+                    "Photography - Associate in Arts", "Photography, A.A. Program Requirements")
+own = hidden_page(start + "degrees-certificates/fashion/fashion-design-aa/",
+                  "Fashion Design - Associate in Arts", "Fashion Design, A.A.")
+check(C.candidates(fashion, [photo]) == [],
+      "a page whose courses sit only in hidden text is not a program's page when its heading names another program")
+check([c["url"] for c in C.candidates(fashion, [photo, own])] == [own["url"]],
+      "the program's own page, its heading naming the program, is still read from its hidden text")
+visible_photo = dict(photo, body="Photography " + " ".join("FD %d" % i for i in range(1, 7)),
+                     got=dict(photo["got"], body="Photography " + " ".join("FD %d" % i for i in range(1, 7))))
+check(len(C.candidates(fashion, [visible_photo])) == 1,
+      "the heading rule binds hidden text only: courses printed on the page still make it a candidate")
+# The pairs measured on the 74 (run 38152016534, sources.json): own pages kept, the rest turned away.
+for title, h1, want in [
+        ("Physical Sciences", "Physical Sciences - Associate in Science", True),
+        ("Office Technologies-Microsoft Excel", "Microsoft Excel - Certificate of Completion", True),
+        ("Office Technologies-Microsoft Word", "Microsoft Word for Windows - Certificate of Completion", True),
+        ("Electrical Technology, CISCO Certified Network Installation Associate",
+         "CISCO Certified Network Installation Associate - Certificate of Achievement", True),
+        ("Computer Science", "Computer Aided Design - Mechanical - Associate in Science", False),
+        ("Fashion Design", "Photography - Associate in Arts", False),
+        ("History", "Art History - Associate in Arts Transfer Degree", False),
+        ("Floral Design", "Architectural Design - Certificate of Achievement", False),
+        ("Workplace Language Skills for ESL Level 2",
+         "Workplace Language Skills for ESL – Level 1 - Certificate of Competency", False)]:
+    check(C.heading_names_program({"h1": h1}, {"title": title}) is want,
+          "%s on '%s': %s" % (title, h1, "its own page" if want else "another program's page"))
+
 check({"COS60A1", "COS60B3", "BAK80", "THE30"} <= C.page_codes("COS-60A1 Cosmetology\nCOS-60B3\nBAK-80 THE-30"),
       "the code net reads a number ending in letters and digits (COS 60A1), as the exact test does")
 
