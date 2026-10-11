@@ -502,6 +502,14 @@ with open(os.path.join(ROOT, ".github", "workflows", "program-requirements-extra
 check(not re.search(r"^\s*schedule:", xwf, re.M) and "sources" not in xwf,
       "the extraction pass runs by hand or when its own code changes, never on a schedule "
       "or because a fixture changed")
+# S361: a merge from main carried the script into a branch, and the push ran the full pilot ($1.59).
+# On a push, the guard compares the script with main's; the extraction and its setup wait on it.
+_guard = re.search(r"id: guard\n\s+if: github\.event_name == 'push'\n(?:.*\n)*?\s+if git diff --quiet FETCH_HEAD -- "
+                   r"kb/_program_requirements_extract\.py; then\n\s+echo \"run=no\"", xwf)
+_extract = re.search(r"- name: Extract and score\n\s+if: steps\.guard\.outputs\.run != 'no'\n", xwf)
+check(bool(_guard) and bool(_extract) and xwf.index("id: guard") < xwf.index("- name: Extract and score"),
+      "a push whose extraction script matches main's makes no model calls (the guard runs first, "
+      "and Extract and score waits on it); a dispatch always runs")
 
 # ── The scorer: the plan's three automatic bars ──────────────────────────────
 rec = {"program": {"total_units": 33.5, "open_elective_units": 0},

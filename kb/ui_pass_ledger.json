@@ -86,8 +86,8 @@
    "name": "Annual Workplan Goals",
    "page": "index.html#workplan-goals",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-11",
+   "outcome": "AA in both themes at desktop and 390px: the id, Contributes to, the separator and the pencil moved from #888/#999/#bbb to --text-muted; the primary chip took the themed --gold-soft ground (1.75:1 in dark); the subsidiary marker took --seal-blue-text (1.15:1 in dark); the table wrapper became a focusable named region. Reads no dataset. Remaining for a later pass: the curator-only editing tints and the add modal's boxed buttons (raw hex, not yet underlined words)."
   },
   {
    "id": "cobi:budget",

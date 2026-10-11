@@ -15,6 +15,14 @@ name: Program requirements extraction
 # authenticates the call (the cpl-news.yml pattern). Each run spends model
 # tokens, so it runs by hand or when this workflow or its script changes,
 # never on a schedule and never because a fixture changed.
+#
+# A PUSH RUNS ONLY WHEN THE BRANCH'S OWN SCRIPT DIFFERS FROM MAIN'S (S361).
+# The paths filter compares a push with the branch's previous push, so merging
+# main into a branch that predates a change to the script, or rebasing onto it,
+# starts the full pilot (22 programs, $1.59 on 2026-10-11, run 38105582450)
+# with nothing of the branch's to test. Three such runs in two sessions
+# (S360, S361). The guard step compares the script with main's and skips the
+# extraction when they match; a dispatch always runs.
 
 on:
   workflow_dispatch:
@@ -44,11 +52,25 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
+      - name: On a push, run only when the branch's script differs from main's
+        id: guard
+        if: github.event_name == 'push'
+        run: |
+          git fetch --no-tags --depth=1 origin main
+          if git diff --quiet FETCH_HEAD -- kb/_program_requirements_extract.py; then
+            echo "run=no" >> "$GITHUB_OUTPUT"
+            echo "kb/_program_requirements_extract.py matches main's: nothing of this branch's to test, so no model calls. Dispatch the workflow to run it."
+          else
+            echo "run=yes" >> "$GITHUB_OUTPUT"
+          fi
+
       - uses: actions/setup-python@v7
+        if: steps.guard.outputs.run != 'no'
         with:
           python-version: '3.12'
 
       - name: Extract and score
+        if: steps.guard.outputs.run != 'no'
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           ONLY: ${{ github.event.inputs.only }}
