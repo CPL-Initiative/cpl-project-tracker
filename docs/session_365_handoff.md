@@ -31,21 +31,25 @@ Neither holds anything for you except what **In flight** names. Sam's CPL Queue 
 
 ## In flight
 
-1. **Long Beach City's full read** (run 38152016534, `claude/s363-lbcc`) was still in Capture at 2h40m when the second
-   session last reported (18:17Z), against a 240-minute job limit (19:37Z): the tab-reading reader is slower than S362's
-   2h15m. Check the run first. If it filed and the second session finished, confirm the PR merged, the load receipt is
-   committed under `kb/receipts/`, and the display's combined md5 matches. If the run timed out, it filed nothing: the
-   job limit is the fix (`timeout-minutes` on the read job), then a fresh dispatch on Sam's standing go.
-2. **#1995** (the second session's, `claude/s364-retired-version-listed`): a program pointing at a retired version of a
-   course the college still offers lists it, placed, no flag, COCI chip kept (Sam). Code only; its display build rides
-   Long Beach City's. Check whether it merged.
+Nothing. The second S364 session finished its items at 20:05Z and holds no PR, check-in or watch.
+
+1. **Long Beach City is live** (#1999, merged 20:05Z). Read run 38152016534 (3 h 33 m capture, $20.64, 379 of 391
+   programs, 274 passing); load run 38168152744 inserted 305 unchecked (receipt
+   `kb/receipts/program_requirement_records_college_long_beach_city_38168152744.json`); 74 placing none stay out, 73
+   of them read from `textContent`. Display build `344441813b01` applied by run 38169184493 and verified live: 1,515
+   rows on one build, combined md5 `1175b4461d127143789b49e79154c2c4`, 29 checked. The read job may now run 360
+   minutes (Sam's go). A receipt writes a stalling word (*drop*) as a JSON escape (`unstalled()`).
+2. **#1995 merged** (Sam's retired-version ruling); the build above carries it: 538 course entries.
+3. **#1993 merged:** Program records builds a record's blocks and a closed college's cards on first open (Sam had to
+   tell his browser to wait).
+4. Memory rows: `sam-lbcc-raise-timeout-rerun-2026-10-11` (Sam), `roep-lbcc-full-read-loaded-2026-10-11`,
+   `roep-receipt-stall-word-in-record-text-2026-10-11`. `kb/queue_status.json` re-stamped 20:07Z: 1,486 unchecked.
 
 ## Next in the queue
 
 - **The UI pass:** `python3 scripts/ui_pass.py --next` names **Vision 2030** (never audited). Contracts is done (#1997).
   Seed any signed-in, gated or transient state before you trust a clean sweep (below).
-- **Harvest lane NEXT ④:** CPL Pathways' display file splits per college. Do not start it while a Long Beach City display
-  build is in flight; both write `cpl_pathways_roep_data.js`.
+- **Harvest lane NEXT ④:** CPL Pathways' display file splits per college. No display build is in flight.
 - **UI leftovers:** Team & RACI's edit-mode keyboard access (clickable cells need a button inside). The funding tab's
   print and memo windows keep literal colors by design (separate documents with no tokens).
 

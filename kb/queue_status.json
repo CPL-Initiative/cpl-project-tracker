@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "written_at": "2026-10-11T19:00:05Z",
+  "written_at": "2026-10-11T20:07:26Z",
   "session": 364,
   "moniker": "SkyJuniper",
   "run": "Sam's session",
@@ -2052,6 +2052,2141 @@
       "loaded": "2026-10-10"
     },
     {
+      "college": "Long Beach City College",
+      "program": "Horticulture",
+      "award": "A.S.",
+      "control_number": "02616",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Architectural Design",
+      "award": "A.S.",
+      "control_number": "02617",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Biological Sciences",
+      "award": "A.S.",
+      "control_number": "02618",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Business – General Business Concentration",
+      "award": "A.A.",
+      "control_number": "02619",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Business – Accounting Concentration",
+      "award": "A.A.",
+      "control_number": "02620",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Business – Marketing Concentration",
+      "award": "A.A.",
+      "control_number": "02625",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Business: Global Trade and Logistics Concentration",
+      "award": "A.A.",
+      "control_number": "02626",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Journalism",
+      "award": "A.A.",
+      "control_number": "02631",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Television Producer",
+      "award": "A.A.",
+      "control_number": "02632",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Child Development  Special Education Assistant",
+      "award": "A.A.",
+      "control_number": "02635",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Kinesiology",
+      "award": "A.A.",
+      "control_number": "02636",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Metal Fabrication Technology",
+      "award": "A.S.",
+      "control_number": "02663",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Music",
+      "award": "A.A.",
+      "control_number": "02668",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Theatre-General",
+      "award": "A.A.",
+      "control_number": "02670",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Dance",
+      "award": "A.A.",
+      "control_number": "02671",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Registered Nursing",
+      "award": "A.S.",
+      "control_number": "02677",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Nursing: Vocational/Practical",
+      "award": "A.S.",
+      "control_number": "02678",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Medical Assisting: Combined Administrative/Clinical",
+      "award": "A.S.",
+      "control_number": "02680",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Diagnostic Medical Imaging (Radiologic Technology)",
+      "award": "A.S.",
+      "control_number": "02683",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Dietetic Service Supervisor",
+      "award": "A.A.",
+      "control_number": "02690",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "English, Language and Literature",
+      "award": "A.A.",
+      "control_number": "02691",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Communication Studies",
+      "award": "A.A.",
+      "control_number": "02693",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Mathematics",
+      "award": "A.S.",
+      "control_number": "02695",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Social Work",
+      "award": "A.A.",
+      "control_number": "02700",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Fire Science",
+      "award": "A.S.",
+      "control_number": "02705",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Culinary Arts",
+      "award": "A.S.",
+      "control_number": "02713",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Photojournalism",
+      "award": "Certificate of Achievement",
+      "control_number": "08803",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Television Broadcast News",
+      "award": "A.A.",
+      "control_number": "08804",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Television Performance",
+      "award": "A.A.",
+      "control_number": "08805",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Art",
+      "award": "A.A.",
+      "control_number": "08818",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Theatre- Acting Academy",
+      "award": "A.A.",
+      "control_number": "08829",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "LVN-to-RN Career Ladder",
+      "award": "A.S.",
+      "control_number": "08834",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Child Development: Early Childhood Education",
+      "award": "A.A.",
+      "control_number": "08838",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Baking & Pastry Arts",
+      "award": "A.S.",
+      "control_number": "08841",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "English, Creative Writing",
+      "award": "A.A.",
+      "control_number": "08844",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Medical Assisting: Clinical Option",
+      "award": "Certificate of Achievement",
+      "control_number": "11315",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Television Multimedia Production",
+      "award": "Certificate of Achievement",
+      "control_number": "12003",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Fashion Design: Patternmaker/Technical Design",
+      "award": "Certificate of Achievement",
+      "control_number": "13843",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Fashion Design: Custom Apparel Design",
+      "award": "Certificate of Achievement",
+      "control_number": "13844",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Computer Aided Design – Mechanical",
+      "award": "Certificate of Achievement",
+      "control_number": "14904",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Computer Aided Design - Mechanical",
+      "award": "A.S.",
+      "control_number": "14905",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Addiction Treatment Counseling and Mental Health Studies",
+      "award": "A.A.",
+      "control_number": "15577",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Metal Fabrication Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "19427",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Horticulture",
+      "award": "Certificate of Achievement",
+      "control_number": "20750",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Business - General Business Concentration",
+      "award": "Certificate of Achievement",
+      "control_number": "20753",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Business - Accounting Concentration",
+      "award": "Certificate of Achievement",
+      "control_number": "20754",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Business - Management Concentration",
+      "award": "Certificate of Achievement",
+      "control_number": "20757",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Business: Global Trade and Logistics",
+      "award": "Certificate of Achievement",
+      "control_number": "20758",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Business - Marketing Concentration",
+      "award": "Certificate of Achievement",
+      "control_number": "20759",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Television Producer",
+      "award": "Certificate of Achievement",
+      "control_number": "20875",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Television Performance",
+      "award": "Certificate of Achievement",
+      "control_number": "20878",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Television Broadcast News",
+      "award": "Certificate of Achievement",
+      "control_number": "20880",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Child Development Special Education Assistant",
+      "award": "Certificate of Achievement",
+      "control_number": "20895",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Medical Assisting: Combined Administrative/Clinical",
+      "award": "Certificate of Achievement",
+      "control_number": "20936",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Diagnostic Medical Imaging (Radiologic Technology)",
+      "award": "Certificate of Achievement",
+      "control_number": "20937",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "LVN-to-RN Career Ladder",
+      "award": "Certificate of Achievement",
+      "control_number": "20938",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Fashion Design",
+      "award": "Certificate of Achievement",
+      "control_number": "20944",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Fashion Design: Wardrobe Designer/Stylist",
+      "award": "Certificate of Achievement",
+      "control_number": "21006",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Fashion Merchandising",
+      "award": "Certificate of Achievement",
+      "control_number": "21008",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Dietetic Service Supervisor",
+      "award": "Certificate of Achievement",
+      "control_number": "21013",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Baking & Pastry Arts",
+      "award": "Certificate of Achievement",
+      "control_number": "21014",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Culinary Arts",
+      "award": "Certificate of Achievement",
+      "control_number": "21017",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Fire Science",
+      "award": "Certificate of Achievement",
+      "control_number": "21029",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Psychology",
+      "award": "A.A.-T",
+      "control_number": "30650",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Communication Studies",
+      "award": "A.A.-T",
+      "control_number": "30676",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Sociology",
+      "award": "A.A.-T",
+      "control_number": "30745",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Early Childhood Education",
+      "award": "A.S.-T",
+      "control_number": "31123",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Business Administration",
+      "award": "A.S.-T",
+      "control_number": "31215",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Geology",
+      "award": "A.S.-T",
+      "control_number": "31223",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "English",
+      "award": "A.A.-T",
+      "control_number": "31289",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Kinesiology",
+      "award": "A.A.-T",
+      "control_number": "31665",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Political Science",
+      "award": "A.A.-T",
+      "control_number": "31812",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "MUSIC",
+      "award": "A.A.-T",
+      "control_number": "32634",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Geography",
+      "award": "A.A.-T",
+      "control_number": "32979",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Web Development",
+      "award": "A.S.",
+      "control_number": "33190",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Spanish",
+      "award": "A.A.-T",
+      "control_number": "33302",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "ANTHROPOLOGY",
+      "award": "A.A.-T",
+      "control_number": "33303",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Web Development-Full Stack",
+      "award": "Certificate of Achievement",
+      "control_number": "33600",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Studio Arts",
+      "award": "A.A.-T",
+      "control_number": "33668",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Journalism",
+      "award": "A.A.-T",
+      "control_number": "33670",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Art History",
+      "award": "A.A.-T",
+      "control_number": "33671",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Film Production",
+      "award": "Certificate of Achievement",
+      "control_number": "35386",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Digital Media: Multimedia Interaction & Game Design",
+      "award": "Certificate of Achievement",
+      "control_number": "35418",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Photography",
+      "award": "Certificate of Achievement",
+      "control_number": "35419",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Linguistics",
+      "award": "A.A.",
+      "control_number": "35420",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Film, Television, and Electronic Media",
+      "award": "A.S.-T",
+      "control_number": "35539",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Nutrition and Dietetics",
+      "award": "A.S.-T",
+      "control_number": "35540",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Biology",
+      "award": "A.S.-T",
+      "control_number": "35556",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Theatre Arts",
+      "award": "A.A.-T",
+      "control_number": "35803",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Economics",
+      "award": "A.A.-T",
+      "control_number": "35914",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Reading Skills for ESL Students-Level 1",
+      "award": "Noncredit",
+      "control_number": "35951",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "English for Everyday-Level 1",
+      "award": "Noncredit",
+      "control_number": "36105",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Business – Management Concentration",
+      "award": "A.A.",
+      "control_number": "36430",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Home Remodeling",
+      "award": "Noncredit",
+      "control_number": "36967",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Computer Hardware Technician",
+      "award": "Noncredit",
+      "control_number": "37086",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Welding Technology",
+      "award": "A.S.",
+      "control_number": "37189",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "CSU GE-Breadth",
+      "award": "Certificate of Achievement",
+      "control_number": "37213",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Formula Room Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "37222",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Workplace Language Skills for ESL Level 1",
+      "award": "Noncredit",
+      "control_number": "37266",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Intermediate Oral Skills",
+      "award": "Noncredit",
+      "control_number": "37269",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Intermediate Grammar",
+      "award": "Noncredit",
+      "control_number": "37270",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Intermediate Reading and Writing",
+      "award": "Noncredit",
+      "control_number": "37271",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "American Sign Language and Deaf Studies",
+      "award": "A.A.",
+      "control_number": "37284",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Electric & Hybrid Vehicles",
+      "award": "Certificate of Achievement",
+      "control_number": "37302",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Automotive Technology",
+      "award": "A.S.",
+      "control_number": "37303",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Automotive Engine Performance Service",
+      "award": "Certificate of Achievement",
+      "control_number": "37304",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Automotive Engine and Transmission Service",
+      "award": "Certificate of Achievement",
+      "control_number": "37305",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Alternative Fuel Vehicles",
+      "award": "Certificate of Achievement",
+      "control_number": "37307",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "High Voltage Test Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "37308",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Advanced Manufacturing and Design Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "37324",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Automotive Maintenance Service",
+      "award": "Certificate of Achievement",
+      "control_number": "37336",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Cloud Computing",
+      "award": "Certificate of Achievement",
+      "control_number": "37343",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Home Remodeling",
+      "award": "Certificate of Achievement",
+      "control_number": "37345",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Engineering Automation Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "37347",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Library Technician",
+      "award": "A.S.",
+      "control_number": "37348",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Advanced Manufacturing Technology Core Skills",
+      "award": "Certificate of Achievement",
+      "control_number": "37349",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Engineering Technology",
+      "award": "A.S.",
+      "control_number": "37350",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Advanced Manufacturing Technology",
+      "award": "A.S.",
+      "control_number": "37354",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Advanced Transportation Technology",
+      "award": "A.S.",
+      "control_number": "37401",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Automotive Quick Service",
+      "award": "Noncredit",
+      "control_number": "37449",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Construction Apprenticeship Readiness",
+      "award": "Noncredit",
+      "control_number": "37451",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Office Technologies-Job Search Skills",
+      "award": "Noncredit",
+      "control_number": "37469",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Electrical Apprenticeship Preparation",
+      "award": "Certificate of Achievement",
+      "control_number": "37485",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Electrical Technology, General Industrial Electrician",
+      "award": "Certificate of Achievement",
+      "control_number": "37496",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "General Industrial Electrician",
+      "award": "Certificate of Achievement",
+      "control_number": "37497",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Electrical Technology, High Voltage Test Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "37498",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Forklift Fundamentals",
+      "award": "Noncredit",
+      "control_number": "37509",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Advanced Transportation Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "37655",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Electrical Technology, CISCO Certified Network Installation Associate",
+      "award": "A.S.",
+      "control_number": "37656",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Electrical Technology, Automation Technician",
+      "award": "A.S.",
+      "control_number": "37658",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Electrical Technology, General Industrial Electrician",
+      "award": "A.S.",
+      "control_number": "37659",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Electrical Technology, High Voltage Test Technician",
+      "award": "A.S.",
+      "control_number": "37660",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Electrical Technology, Solar Installation and Maintenance",
+      "award": "A.S.",
+      "control_number": "37661",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Automation Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "37729",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "CISCO Certified Network Installation Associate",
+      "award": "Certificate of Achievement",
+      "control_number": "37730",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Construction Apprenticeship Readiness",
+      "award": "Certificate of Achievement",
+      "control_number": "37763",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Traffic Signal Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "37767",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Solar Installation and Maintenance",
+      "award": "Certificate of Achievement",
+      "control_number": "37770",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Electrical Technology, Traffic Signal Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "37873",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Electrical Technology, Traffic Signal Technician",
+      "award": "A.S.",
+      "control_number": "37875",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Electrical Technology, Solar Installation and Maintenance",
+      "award": "Certificate of Achievement",
+      "control_number": "37883",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "ESL Literacy",
+      "award": "Noncredit",
+      "control_number": "38286",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Japanese",
+      "award": "A.A.",
+      "control_number": "38453",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Japanese",
+      "award": "Certificate of Achievement",
+      "control_number": "38454",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "French",
+      "award": "Certificate of Achievement",
+      "control_number": "38456",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Gender and Sexuality Studies",
+      "award": "Certificate of Achievement",
+      "control_number": "38457",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Robotic Welding Automation",
+      "award": "Certificate of Achievement",
+      "control_number": "38536",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Gas Tungsten Arc Welding (GTAW)",
+      "award": "Certificate of Achievement",
+      "control_number": "38541",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Advanced Arc Welding (SMAW and FCAW)",
+      "award": "Certificate of Achievement",
+      "control_number": "38542",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Cake Decorating Techniques",
+      "award": "Noncredit",
+      "control_number": "38558",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Library Technician Public Services",
+      "award": "Noncredit",
+      "control_number": "38560",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Library Technician Technical Services",
+      "award": "Noncredit",
+      "control_number": "38561",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "ESL Reading for Citizenship",
+      "award": "Noncredit",
+      "control_number": "38562",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Family Child Care Management",
+      "award": "Noncredit",
+      "control_number": "38564",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Reading in the Health Sciences",
+      "award": "Noncredit",
+      "control_number": "38622",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Fashion Design- Advanced Apparel Construction",
+      "award": "Noncredit",
+      "control_number": "38675",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Fashion Design-Industrial Sewing and Factory Production Methods",
+      "award": "Noncredit",
+      "control_number": "38676",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Fashion Design-Swimwear Construction",
+      "award": "Noncredit",
+      "control_number": "38678",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Fashion Design-Textile Surface Design",
+      "award": "Noncredit",
+      "control_number": "38679",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Show Business – Commercials, Voice-Over, Film Acting",
+      "award": "Certificate of Achievement",
+      "control_number": "38861",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Computer Information Competency",
+      "award": "Noncredit",
+      "control_number": "38996",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Social Competency Skills",
+      "award": "Noncredit",
+      "control_number": "38997",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Adult Learning Skills",
+      "award": "Noncredit",
+      "control_number": "38998",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Transitioning to Higher Learning",
+      "award": "Noncredit",
+      "control_number": "38999",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Certified Dietary Manager (CDM) Board Exam Preparation",
+      "award": "Noncredit",
+      "control_number": "39127",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Foundations in Academic Research",
+      "award": "Noncredit",
+      "control_number": "39377",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Jewelry Entrepreneurship",
+      "award": "Certificate of Achievement",
+      "control_number": "39454",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Foundational Skills",
+      "award": "Noncredit",
+      "control_number": "39495",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Financial Literacy",
+      "award": "Noncredit",
+      "control_number": "39498",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "TEAS Preparation",
+      "award": "Noncredit",
+      "control_number": "39499",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Physics",
+      "award": "A.S.-T",
+      "control_number": "39570",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Adult Literacy",
+      "award": "Noncredit",
+      "control_number": "39955",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Applied Design in Art: 3D Materials and Processes",
+      "award": "Certificate of Achievement",
+      "control_number": "40028",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Educational Aide II",
+      "award": "Certificate of Achievement",
+      "control_number": "40029",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Educational Aide I",
+      "award": "Certificate of Achievement",
+      "control_number": "40031",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Social Justice Studies",
+      "award": "A.A.-T",
+      "control_number": "40218",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Global Studies",
+      "award": "A.A.-T",
+      "control_number": "40229",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Sculptural Design: 3D Materials and Processes",
+      "award": "Certificate of Achievement",
+      "control_number": "40399",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Electrical Program Preparation",
+      "award": "Noncredit",
+      "control_number": "40401",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Basic Oxy-Acetylene Welding",
+      "award": "Noncredit",
+      "control_number": "40402",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Basic Gas Tungsten Arc Welding",
+      "award": "Noncredit",
+      "control_number": "40403",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Basic Arc Welding",
+      "award": "Noncredit",
+      "control_number": "40483",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Television Sports Broadcasting",
+      "award": "A.A.",
+      "control_number": "40500",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Cyber Security",
+      "award": "Certificate of Achievement",
+      "control_number": "40660",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Information Technology Cybersecurity",
+      "award": "Certificate of Achievement",
+      "control_number": "40674",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Television Sports Broadcasting",
+      "award": "Certificate of Achievement",
+      "control_number": "40727",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Hospitality Management",
+      "award": "A.S.-T",
+      "control_number": "40756",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Information Technology Cybersecurity",
+      "award": "A.S.",
+      "control_number": "40807",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Fashion Design",
+      "award": "A.S.",
+      "control_number": "40915",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Building Information Modeling (BIM) Coordinator",
+      "award": "Certificate of Achievement",
+      "control_number": "40982",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Personal Trainer",
+      "award": "Certificate of Achievement",
+      "control_number": "40983",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Nutrition Assistant",
+      "award": "A.S.",
+      "control_number": "40984",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Fashion Merchandising",
+      "award": "A.S.",
+      "control_number": "41028",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Telecommuting Fundamentals",
+      "award": "Noncredit",
+      "control_number": "41195",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Cloud Computing",
+      "award": "A.S.",
+      "control_number": "41220",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Microsoft Essentials",
+      "award": "Certificate of Achievement",
+      "control_number": "41552",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Computer Hardware Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "41553",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Telecommuting Fundamentals",
+      "award": "Certificate of Achievement",
+      "control_number": "41567",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Digital and Social Media",
+      "award": "Certificate of Achievement",
+      "control_number": "41649",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Microsoft Windows Networking Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "41799",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "UNIX Network Administrator",
+      "award": "Certificate of Achievement",
+      "control_number": "41818",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Business Administration 2.0",
+      "award": "A.S.-T",
+      "control_number": "41830",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Design Management",
+      "award": "A.S.",
+      "control_number": "41835",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "DRE Exam Preparation",
+      "award": "Noncredit",
+      "control_number": "41877",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "ARE Exam Prep",
+      "award": "Noncredit",
+      "control_number": "41878",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Basic Semi-Automatic Welding",
+      "award": "Noncredit",
+      "control_number": "41879",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "IPC-620 Wire Harness Assembly and Inspection",
+      "award": "Noncredit",
+      "control_number": "41880",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Cryptocurrency Fundamentals",
+      "award": "Noncredit",
+      "control_number": "41881",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Parent Educator",
+      "award": "Noncredit",
+      "control_number": "41882",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Exploring Welding and Metal Fabrication",
+      "award": "Noncredit",
+      "control_number": "41883",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "PHP Web Programmer",
+      "award": "Certificate of Achievement",
+      "control_number": "41900",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Front End Web Developer",
+      "award": "Certificate of Achievement",
+      "control_number": "41901",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "UCTP in Physics",
+      "award": "A.S.-T",
+      "control_number": "42047",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Special Education Paraprofessional",
+      "award": "Certificate of Achievement",
+      "control_number": "42150",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Semi-Automatic Welding",
+      "award": "Certificate of Achievement",
+      "control_number": "42151",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Commercial Music",
+      "award": "Certificate of Achievement",
+      "control_number": "42156",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Interior Design",
+      "award": "A.S.",
+      "control_number": "42161",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Advanced Baking & Pastry Arts",
+      "award": "Certificate of Achievement",
+      "control_number": "42166",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Library Technician School & Youth Services",
+      "award": "Noncredit",
+      "control_number": "42190",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Light-Duty Diesel Generator Engine Maintenance",
+      "award": "Noncredit",
+      "control_number": "42304",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Fundamentals of Academic Research",
+      "award": "Noncredit",
+      "control_number": "42324",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Digital Media: Comics & Animation",
+      "award": "Certificate of Achievement",
+      "control_number": "42500",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Digital Media: Graphic Design",
+      "award": "Certificate of Achievement",
+      "control_number": "42501",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Spanish for Medical Professionals",
+      "award": "Certificate of Achievement",
+      "control_number": "42825",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Design Basics",
+      "award": "Certificate of Achievement",
+      "control_number": "42961",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Introduction to Gas Tungsten Arc Welding (GTAW)",
+      "award": "Certificate of Achievement",
+      "control_number": "42968",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Introduction to Shielded Metal Arc Welding (SMAW)",
+      "award": "Certificate of Achievement",
+      "control_number": "42969",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Administrative Assistant, Customer Relations Specialist",
+      "award": "Certificate of Achievement",
+      "control_number": "42970",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Yoga Teacher Training",
+      "award": "Certificate of Achievement",
+      "control_number": "42995",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Administrative Assistant, Office Support",
+      "award": "Certificate of Achievement",
+      "control_number": "43009",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Registered Nursing",
+      "award": "A.S.",
+      "control_number": "43021",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Administrative Assistant, Human Resources Support",
+      "award": "Certificate of Achievement",
+      "control_number": "43065",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Photography",
+      "award": "A.A.",
+      "control_number": "43070",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A.-T",
+      "control_number": "43106",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "SketchUp Essentials",
+      "award": "Noncredit",
+      "control_number": "43249",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "REVIT Essentials",
+      "award": "Noncredit",
+      "control_number": "43250",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Adobe for Designers",
+      "award": "Noncredit",
+      "control_number": "43251",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "AutoCAD Essentials",
+      "award": "Noncredit",
+      "control_number": "43252",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Educator Workforce Preparation",
+      "award": "Noncredit",
+      "control_number": "43285",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "FCC Amateur Radio Technician Preparation",
+      "award": "Noncredit",
+      "control_number": "43286",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Design Introduction",
+      "award": "Noncredit",
+      "control_number": "43287",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Robotics Exploration",
+      "award": "Noncredit",
+      "control_number": "43288",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Power Generation Technician - Electrical",
+      "award": "Noncredit",
+      "control_number": "43289",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Designing with Rhinoceros",
+      "award": "Noncredit",
+      "control_number": "43290",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Solidworks Essentials",
+      "award": "Noncredit",
+      "control_number": "43291",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Administrative Assistant, Customer Support",
+      "award": "A.S.",
+      "control_number": "43303",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Administrative Assistant, Office Support",
+      "award": "A.S.",
+      "control_number": "43304",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Administrative Assistant, Virtual Support",
+      "award": "A.S.",
+      "control_number": "43305",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Construction Management Fundamentals",
+      "award": "Noncredit",
+      "control_number": "43331",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Networking Fundamentals",
+      "award": "Noncredit",
+      "control_number": "43332",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Family Violence Specialist",
+      "award": "Certificate of Achievement",
+      "control_number": "43363",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Administrative Assistant, Virtual Support",
+      "award": "Certificate of Achievement",
+      "control_number": "43371",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Administrative Assistant, Human Resources Support",
+      "award": "A.S.",
+      "control_number": "43372",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Interior Design",
+      "award": "Certificate of Achievement",
+      "control_number": "43384",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Aides, Assistants and Caregivers",
+      "award": "Certificate of Achievement",
+      "control_number": "43407",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Microsoft Access for Windows",
+      "award": "Noncredit",
+      "control_number": "43408",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Microsoft Excel",
+      "award": "Noncredit",
+      "control_number": "43409",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Microsoft Office",
+      "award": "Noncredit",
+      "control_number": "43410",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Microsoft Outlook",
+      "award": "Noncredit",
+      "control_number": "43415",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Microsoft PowerPoint",
+      "award": "Noncredit",
+      "control_number": "43416",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Microsoft Word for Windows",
+      "award": "Noncredit",
+      "control_number": "43417",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Introduction to Computers",
+      "award": "Noncredit",
+      "control_number": "43418",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Industrial Design",
+      "award": "A.S.",
+      "control_number": "43438",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Engineering Technology Advanced",
+      "award": "Certificate of Achievement",
+      "control_number": "43482",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Metal Fabrication Technology",
+      "award": "Noncredit",
+      "control_number": "43662",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Data Analytics",
+      "award": "Certificate of Achievement",
+      "control_number": "43689",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Ethnic Studies",
+      "award": "A.A.",
+      "control_number": "43800",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Archaeology Field Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "43801",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Trauma Studies",
+      "award": "Certificate of Achievement",
+      "control_number": "43802",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Design/Build",
+      "award": "Noncredit",
+      "control_number": "43868",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Digital Fashion Design",
+      "award": "Noncredit",
+      "control_number": "43869",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Skills for Professional Helpers",
+      "award": "Noncredit",
+      "control_number": "43875",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Library Technician Basic Digitization",
+      "award": "Noncredit",
+      "control_number": "43895",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Human Resources Essentials",
+      "award": "Certificate of Achievement",
+      "control_number": "43941",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Human Resource Management",
+      "award": "Certificate of Achievement",
+      "control_number": "43942",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Urban Planning",
+      "award": "A.S.",
+      "control_number": "43943",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Data Analytics",
+      "award": "A.S.",
+      "control_number": "44166",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Communication Studies",
+      "award": "Certificate of Achievement",
+      "control_number": "44315",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "French",
+      "award": "A.A.",
+      "control_number": "44316",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Cultural Diversity and Awareness",
+      "award": "Certificate of Achievement",
+      "control_number": "44317",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Health Education and Promotion",
+      "award": "Certificate of Achievement",
+      "control_number": "44318",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Vocational Nursing Program Preparation",
+      "award": "Noncredit",
+      "control_number": "44324",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Breastfeeding and Nutrition",
+      "award": "Noncredit",
+      "control_number": "44330",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Community Health Worker",
+      "award": "Certificate of Achievement",
+      "control_number": "44435",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Basic Baking Skills",
+      "award": "Noncredit",
+      "control_number": "44550",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Social Work and Human Services",
+      "award": "A.A.-T",
+      "control_number": "44747",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Dance",
+      "award": "Certificate of Achievement",
+      "control_number": "44752",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Cal-GETC",
+      "award": "Certificate of Achievement",
+      "control_number": "44848",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Catering & Mobile Food Operation",
+      "award": "Noncredit",
+      "control_number": "45575",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Nutrition, Wellness, and Healthy Cooking",
+      "award": "Certificate of Achievement",
+      "control_number": "45840",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Child Nutrition Management",
+      "award": "Certificate of Achievement",
+      "control_number": "45848",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Nutrition and Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "45849",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Nutrition and Fitness Education",
+      "award": "Certificate of Achievement",
+      "control_number": "45850",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Nutrition and Wellness for Healthy Aging",
+      "award": "Certificate of Achievement",
+      "control_number": "45851",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "AI Literacy",
+      "award": "Noncredit",
+      "control_number": "45949",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Sustainability",
+      "award": "Certificate of Achievement",
+      "control_number": "46002",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Sustainable Design/Build",
+      "award": "Noncredit",
+      "control_number": "46039",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "ADU Remodeling",
+      "award": "Certificate of Achievement",
+      "control_number": "46203",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Carpentry",
+      "award": "Certificate of Achievement",
+      "control_number": "46204",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Construction Inspection",
+      "award": "Certificate of Achievement",
+      "control_number": "46205",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Construction Inspection",
+      "award": "A.S.",
+      "control_number": "46206",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Construction Management",
+      "award": "A.S.",
+      "control_number": "46207",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Construction Management",
+      "award": "Certificate of Achievement",
+      "control_number": "46208",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Artificial Intelligence for Digital Transformation",
+      "award": "A.S.",
+      "control_number": "46279",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Trauma Studies",
+      "award": "A.S.",
+      "control_number": "46290",
+      "loaded": "2026-10-11"
+    },
+    {
       "college": "Moreno Valley College",
       "program": "Business Administration: General Business Concentration",
       "award": "Certificate of Achievement",
@@ -2320,42 +4455,49 @@
     {
       "college": "Moreno Valley College",
       "program": "Kinesiology, Health and Wellness",
-      "award": "",
+      "award": "A.A.",
       "control_number": "30164",
       "loaded": "2026-10-11"
     },
     {
       "college": "Moreno Valley College",
       "program": "Administration & Information Systems",
-      "award": "",
+      "award": "A.A.",
       "control_number": "30165",
       "loaded": "2026-10-11"
     },
     {
       "college": "Moreno Valley College",
       "program": "Communication, Media & Languages",
-      "award": "",
+      "award": "A.A.",
       "control_number": "30166",
       "loaded": "2026-10-11"
     },
     {
       "college": "Moreno Valley College",
       "program": "Math & Sciences",
-      "award": "",
+      "award": "A.S.",
       "control_number": "30167",
       "loaded": "2026-10-11"
     },
     {
       "college": "Moreno Valley College",
       "program": "Fine & Applied Arts",
-      "award": "",
+      "award": "A.A.",
       "control_number": "30168",
       "loaded": "2026-10-11"
     },
     {
       "college": "Moreno Valley College",
+      "program": "Humanities, Philosophy & Arts",
+      "award": "A.A.",
+      "control_number": "30169",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Moreno Valley College",
       "program": "Social and Behavioral Studies",
-      "award": "",
+      "award": "A.A.",
       "control_number": "30170",
       "loaded": "2026-10-11"
     },
@@ -2376,7 +4518,7 @@
     {
       "college": "Moreno Valley College",
       "program": "American Studies",
-      "award": "",
+      "award": "A.A.",
       "control_number": "31232",
       "loaded": "2026-10-11"
     },
@@ -5701,7 +7843,7 @@
     {
       "college": "Norco College",
       "program": "Kinesiology, Health & Wellness",
-      "award": "A.A. Degree",
+      "award": "A.A.",
       "control_number": "30103",
       "loaded": "2026-10-11"
     },
@@ -5715,35 +7857,42 @@
     {
       "college": "Norco College",
       "program": "Administration & Information Systems",
-      "award": "A.A. Degree",
+      "award": "A.A.",
       "control_number": "30105",
       "loaded": "2026-10-11"
     },
     {
       "college": "Norco College",
       "program": "Communication, Media & Languages",
-      "award": "A.A. Degree",
+      "award": "A.A.",
       "control_number": "30106",
       "loaded": "2026-10-11"
     },
     {
       "college": "Norco College",
       "program": "Math & Sciences",
-      "award": "A.S. Degree",
+      "award": "A.S.",
       "control_number": "30107",
       "loaded": "2026-10-11"
     },
     {
       "college": "Norco College",
       "program": "Fine & Applied Arts",
-      "award": "A.A. Degree",
+      "award": "A.A.",
       "control_number": "30108",
       "loaded": "2026-10-11"
     },
     {
       "college": "Norco College",
+      "program": "Humanities, Philosophy & Arts",
+      "award": "A.A.",
+      "control_number": "30109",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Norco College",
       "program": "Social and Behavioral Studies",
-      "award": "A.A. Degree",
+      "award": "A.A.",
       "control_number": "30110",
       "loaded": "2026-10-11"
     },
@@ -6786,49 +8935,49 @@
     {
       "college": "Riverside City College",
       "program": "Administration & Information Systems",
-      "award": "A.A. Degree",
+      "award": "A.A.",
       "control_number": "18108",
       "loaded": "2026-10-11"
     },
     {
       "college": "Riverside City College",
       "program": "Communication, Media & Languages",
-      "award": "A.A. Degree",
+      "award": "A.A.",
       "control_number": "18109",
       "loaded": "2026-10-11"
     },
     {
       "college": "Riverside City College",
       "program": "Fine & Applied Arts",
-      "award": "A.A. Degree",
+      "award": "A.A.",
       "control_number": "18110",
       "loaded": "2026-10-11"
     },
     {
       "college": "Riverside City College",
       "program": "Humanities, Philosophy & Arts",
-      "award": "A.A. Degree",
+      "award": "A.A.",
       "control_number": "18111",
       "loaded": "2026-10-11"
     },
     {
       "college": "Riverside City College",
       "program": "Kinesiology, Health and Wellness",
-      "award": "A.A. Degree",
+      "award": "A.A.",
       "control_number": "18112",
       "loaded": "2026-10-11"
     },
     {
       "college": "Riverside City College",
       "program": "Social and Behavioral Studies",
-      "award": "A.A. Degree",
+      "award": "A.A.",
       "control_number": "18113",
       "loaded": "2026-10-11"
     },
     {
       "college": "Riverside City College",
       "program": "Math & Sciences",
-      "award": "A.S. Degree",
+      "award": "A.S.",
       "control_number": "18114",
       "loaded": "2026-10-11"
     },
@@ -7045,7 +9194,7 @@
     {
       "college": "Riverside City College",
       "program": "American Studies",
-      "award": "A.A. Degree",
+      "award": "A.A.",
       "control_number": "31163",
       "loaded": "2026-10-11"
     },
@@ -8259,25 +10408,11 @@
       "award": "A.S.",
       "control_number": "43767",
       "loaded": "2026-10-07"
-    },
-    {
-      "college": "Moreno Valley College",
-      "program": "Humanities, Philosophy & Arts",
-      "award": "A.A.",
-      "control_number": "30169",
-      "loaded": "2026-10-11"
-    },
-    {
-      "college": "Norco College",
-      "program": "Humanities, Philosophy & Arts",
-      "award": "A.A.",
-      "control_number": "30109",
-      "loaded": "2026-10-11"
     }
   ],
   "next_step": {
-    "title": "Load and display Long Beach City from its full read",
-    "text": "The full read from each page's Requirements tab was still capturing at the checkpoint. A second session this evening loads its records unchecked on Sam's go, applies the display build and merges the PR; the next session confirms it landed."
+    "title": "Find Long Beach City's 74 programs that have no record",
+    "text": "Their pages showed no requirements the reader could open, so the load left them out; Long Beach City's reading procedure looks for each requirements page before those programs are read again."
   },
   "calls": [],
   "notes": {
@@ -8285,9 +10420,21 @@
     "procedures": "34 colleges have one since Oct 8: the 28 whose map host refuses or never reaches the reader each name the routes tried.",
     "sierra": "The funding explainer's text is editable on the Implementation Funding tab since Oct 9, and its controls are underlined words, the First Light rule from that day.",
     "maps": "All 32 published maps are settled since Oct 8; Palo Verde's map columns were written that evening.",
-    "reading": "Cerritos read on Oct 9 and Mt. San Antonio on Oct 10. RCCD's three colleges were read on Oct 10 and their Liberal Arts emphasis programs recovered on Oct 11. 18 records that read another program's page were removed on Oct 11, leaving 1,210. Long Beach City's full read from each page's Requirements tab was still capturing at 18:30 UTC on Oct 11."
+    "reading": "Cerritos read on Oct 9 and Mt. San Antonio on Oct 10. RCCD's three colleges were read on Oct 10 and their Liberal Arts emphasis programs recovered on Oct 11. 18 records that read another program's page were removed on Oct 11. Long Beach City was read and loaded the same evening: 305 records, unchecked, for 1,515 in all."
   },
   "changes": [
+    {
+      "at": "2026-10-11T19:53Z",
+      "text": "Long Beach City's 305 records are live and displayed, unchecked. 74 programs whose pages showed no requirements the reader could open stay out until its reading procedure finds them."
+    },
+    {
+      "at": "2026-10-11T18:37Z",
+      "text": "A program that lists a retired version of a course the college still offers now counts that course as listed, with no flag; a chip names both versions so the college can update COCI."
+    },
+    {
+      "at": "2026-10-11T18:23Z",
+      "text": "Program records opens faster: a record's course blocks and a closed college's records are built when first opened."
+    },
     {
       "at": "2026-10-11T19:01Z",
       "text": "The Contracts register passes AA in light and dark for a reviewer, and its controls are underlined words."
