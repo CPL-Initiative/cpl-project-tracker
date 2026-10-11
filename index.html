@@ -1576,7 +1576,7 @@
         /* Vision 2030 Section */
         .vision-section {
             background-color: var(--surface-opaque);
-            padding: 2rem;
+            padding: clamp(1rem, 4vw, 2rem);
             border-radius: 8px;
             margin-bottom: 2rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -1587,15 +1587,17 @@
             font-size: 1.5rem;
         }
 
+        /* min(300px, 100%): a column never asks for more than the pane holds, so
+           the cards fit a 320px phone; at 300px flat they scrolled it 44px (S365). */
         .vision-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
             gap: 1.5rem;
         }
 
         .vision-card {
             background-color: var(--bg-off-white);
-            padding: 1.5rem;
+            padding: clamp(1rem, 3vw, 1.5rem);
             border-radius: 8px;
             border-left: 5px solid var(--gold-accent);
         }
@@ -1605,21 +1607,47 @@
             margin-bottom: 0.75rem;
         }
 
+        .vision-card h3.goal-title {
+            color: var(--mustard-text);
+        }
+
         .vision-card p {
             font-size: 0.9rem;
             color: var(--text-gray);
             line-height: 1.5;
         }
 
+        .vision-card .goal-target {
+            font-size: 0.85rem;
+        }
+
+        .vision-card .goal-bullets {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin: 0.3rem 0 0.5rem 1.2rem;
+            padding: 0;
+        }
+
+        .vision-card .goal-bullets li {
+            margin-bottom: 0.2rem;
+        }
+
+        /* The bar sits above its label at every width. Beside it, the label took
+           the row and left the bar 0px on a phone and 12px at 1024 (S365). */
         .goal-progress {
             margin-top: 1rem;
             display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0.4rem;
+        }
+
+        .goal-progress-label {
+            font-weight: 600;
         }
 
         .goal-progress-bar {
-            flex: 1;
+            flex: none;
             height: 6px;
             background-color: var(--surface-muted);
             border-radius: 3px;
