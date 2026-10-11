@@ -219,7 +219,41 @@ function remountPath() {
   });
 }
 
-Promise.resolve().then(errorPath).then(happyPath).then(remountPath).then(report).catch(function (e) {
+// A repaint WHILE the index loads: the first panel started the fetch, a repaint mounted a
+// second, and opening it found the load in flight and returned. The fetch then painted the
+// first panel, detached, and the one on screen stayed blank. The seeded sweep hit it when
+// governance-editor-dark ran fourth in a sequence (S366).
+function loadRacePath() {
+  const w = makeWin();
+  let land;
+  w.fetch = function () {
+    return new Promise(function (res) { land = function () { res({ ok: true, json: function () { return Promise.resolve(IDX); } }); }; });
+  };
+  const tick = () => new Promise(function (res) { setTimeout(res, 20); });
+  const root = w.document.getElementById("governance-root");
+  root.innerHTML = '<div class="gov"></div>';
+  w.CPL_GOVERNANCE._mountDocs(root);
+  let second;
+  // Opening a <details> fires its toggle as a later task (jsdom as in a browser), so each
+  // step waits a tick: the second panel's toggle must fire while the fetch is in flight.
+  root.querySelector(".gov-docs").open = true;
+  return tick().then(function () {
+    root.innerHTML = '<div class="gov"></div>';      // a repaint before the index lands
+    w.CPL_GOVERNANCE._mountDocs(root);
+    second = root.querySelector(".gov-docs");
+    second.open = true;
+    return tick();
+  }).then(function () {
+    check("race: the panel opened mid-load says it is loading", /Loading/.test(second.textContent));
+    land();
+    return tick();
+  }).then(function () {
+    check("race: when the index lands, the panel on screen paints its lanes",
+      second.querySelectorAll(".gov-lane").length === IDX.lanes.length);
+  });
+}
+
+Promise.resolve().then(errorPath).then(happyPath).then(remountPath).then(loadRacePath).then(report).catch(function (e) {
   check("async chain completed", false);
   console.error(e);
   report();
