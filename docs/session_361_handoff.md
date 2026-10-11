@@ -44,6 +44,20 @@ index and catalog, today's docs audit, the vault session note, the UI pass ledge
 - **Sierra (`cpl-chat`) deploy.** Her `ruleOf` read any unknown rule as "all required"; the fix is on the rules branch.
   Deploy only on his "deploy Sierra", before any record with a recommended block is checked; then `cpl-chat-smoke.yml`.
 
+## Sam's replies after the handoff (2026-10-11 ~02:15Z): "retry and deploy Sierra"
+
+- **Deploy Sierra: his go is given.** The `cpl-chat` change (recommended reads "not required", careers line) is on
+  `claude/s360-rules-4-5`; `cpl-chat-deploy.yml` deploys from main only. Merge #1972, then the rules branch, then
+  dispatch `cpl-chat-deploy.yml` (function `cpl-chat`, confirm `DEPLOY`) and `cpl-chat-smoke.yml` (deploy playbook,
+  pipeline_reference section 7c). Then deploy `program-requirements-extract` the same way and run the sample.
+- **39120: the retry timed out a third time** with his approval given (no migration recorded, row still live, 1,226
+  rows). The connector, not an unanswered prompt, is the cause. Hand Sam the paste (SQL and read-back in
+  `kb/receipts/program_requirement_records_rcc_39120_removed_2026-10-11_s360.sql`), or try `execute_sql` with the same
+  guarded statement and read back.
+- **This was an EMERGENCY checkpoint (Rule 9a).** Not refreshed: the lessons doc, KB notes, `kb/queue_status.json`,
+  the To-Do feed, the pipeline tab, kb/README, root README, the docs audit, the vault session note, the UI pass ledger,
+  section 11.
+
 ## What shipped (S360)
 
 #1970 (the review flow: the reading room opens the catalog by itself, a verdict brings the next record, no home-tab
