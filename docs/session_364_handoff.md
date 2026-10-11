@@ -1,5 +1,5 @@
 ---
-title: Session 364 handoff — Long Beach City's full read lands; load, display, PR; Sheet 63
+title: Session 364 handoff — Long Beach City's full read lands; load, display, PR; Sheet 63; the routine at 05:05Z
 date: 2026-10-11
 session: 363 (SkyCedar)
 tags: [handoff, program-requirements, harvest, phase-2, long-beach-city, decision-sheet]
@@ -8,14 +8,14 @@ status: current
 
 # You are Session 364
 
-Your moniker is **SkyJuniper**. SkyCedar (S363, `session_01JnVSyV6sQrgR97iE7eW17h`) checkpointed at about 16:10Z on
-2026-10-11 while Long Beach City's full read ran. If S363 is still working when you start, it is the one writer until it
-signs off: `list_sessions`, and check what it holds (a `send_later` for about 17:55Z on the full read, an artifact
-watch on Sheet 63).
+Your moniker is **SkyJuniper**. SkyCedar (S363, `session_01JnVSyV6sQrgR97iE7eW17h`) signed off at about 16:45Z on
+2026-10-11 at the context warning (104,467 tokens left) and holds nothing: its 17:55Z check-in on the full read is
+deleted, #1988 merged and unwatched, the Sheet 63 artifact watch stopped. Sam's CPL Queue routine is on again and fires
+at 05:05Z on 2026-10-12 (10:05 PM PDT); if it started you, follow `docs/reference/scheduled_sessions.md`.
 
 ## First, in this order
 
-0. **One writer.** `list_sessions`; agree with S363 if it is still working.
+0. **One writer.** `list_sessions`. S363 holds nothing.
 1. **Rule 8:** `cpl_memory` tags `program-requirements-harvest`, `long-beach-city`. S363 rows:
    `sam-full-lbcc-read-if-trial-2-passes-2026-10-11`, `sam-load-display-lbcc-after-full-read-2026-10-11` (both Sam's
    words, verified), `roep-lbcc-tab-bar-inside-nav-2026-10-11`, `roep-page-probe-exists-college-page-read-2026-10-11`.
@@ -25,7 +25,8 @@ watch on Sheet 63).
 ## In flight
 
 1. **Long Beach City's full read** (run 38152016534, `claude/s363-lbcc`, head `a94dc08`, dispatched 15:37Z, about
-   2 h 15 m and $22; the trial's 12 records are kept). When it files:
+   2 h 15 m and $22; the trial's 12 records are kept). It should have filed by about 17:55Z: fetch the branch first.
+   Before the load, merge `origin/main` into `claude/s363-lbcc` (it lacks #1987 and #1988). Then:
    - Check `kb/program_requirements_college/long_beach_city/summary.json` and `sources.json`: `source.text_from` should
      read `innerText+tabs` on most programs. Count records with no blocks and records that place none (a program with
      no page of its own can still win a page through the hidden index, as Engineering A.S. did; `places_none` keeps
@@ -42,9 +43,9 @@ watch on Sheet 63).
    140 would change under "9 hours past the band". On his answer: record it in the harvest lane (drop its NEEDS SAM),
    remove the card from `CPLBrain/decision-sheets/_build_open_asks_decision_sheet.py` in the same change, and rebuild
    the display if the rule changes.
-3. **The UI pass** names `cobi:budget` (Budget, never audited). S363 meant to run it after this checkpoint; if
-   `kb/ui_pass_ledger.json` still shows it unrecorded, it is yours: `/a11y-pass` on that view, a fix PR, then
-   `python3 scripts/ui_pass.py --record cobi:budget "..."`.
+3. **The UI pass** for Budget is done (#1988, recorded in the ledger). The next view is whatever
+   `python3 scripts/ui_pass.py --next` names. Budget's edit-state cell tints and the sign-in widget's wash still carry
+   raw colors with no token (they show only while a signed-in editor saves).
 
 ## Sam's decisions this session
 
@@ -52,10 +53,13 @@ watch on Sheet 63).
 - ~14:40Z: *"merge #1986 when test passes"*; merged.
 - ~14:45Z: *"load and display Long Beach when the full read lands"*.
 - ~15:50Z: *"checkpoint while the read runs"*.
+- ~16:20Z: *"continue with the Budget UI pass"*; ~16:25Z: he moved the CPL Queue routine to 10 PM PDT so it fires
+  after the day's sessions (on, next run 05:05Z 2026-10-12).
 
 ## What shipped (S363)
 
-#1986 (the reader counts a tab bar's own tabs inside a nav; a hidden panel naming no course is left out), Long Beach
+#1986 (the reader counts a tab bar's own tabs inside a nav; a hidden panel naming no course is left out); #1987 (the
+checkpoint); #1988 (the Budget tab's UI pass; `daily-dashboard.yml` dispatched to publish it); Long Beach
 City in the dated reads (on `claude/s363-lbcc`, in the coming PR), Open Asks Sheet 63, this checkpoint. KB note
 `methodology-test-a-reader-fix-on-the-page-it-failed-on`; `methodology-a-page-can-hide-text-that-names-every-course`
 gained the nav section. The diagnostic branch `claude/s363-lbcc-probe` holds four pages' HTML and is not for merge.
@@ -73,7 +77,7 @@ gained the nav section. The diagnostic branch `claude/s363-lbcc-probe` holds fou
 ## Not refreshed / skipped this checkpoint
 
 The Pipeline tab (the M-ID pipeline did not move), kb/README and README (no structure or surface change), §11's row
-(Phase 2's state did not change; the standing-sheet pointer moved to Sheet 63). The UI pass is described above.
+(Phase 2's state did not change; the standing-sheet pointer moved to Sheet 63). The UI pass ran (Budget, #1988).
 
 ## Sign-off line for Sam
 

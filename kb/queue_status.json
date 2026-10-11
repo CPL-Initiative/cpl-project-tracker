@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "written_at": "2026-10-11T16:00:11Z",
+  "written_at": "2026-10-11T16:39:46Z",
   "session": 363,
   "moniker": "SkyCedar",
   "run": "Sam's session",
@@ -8276,8 +8276,8 @@
     }
   ],
   "next_step": {
-    "title": "Load and display Long Beach City when its full read lands",
-    "text": "The reader now opens the Requirements tab each Long Beach City page keeps in its tab bar; the second trial read 11 of 12 programs from it. The full read runs; on Sam's go its records load unchecked, then the display build applies and the PR merges."
+    "title": "Load and display Long Beach City from its full read",
+    "text": "The full read ran from each page's Requirements tab. The next session checks its records, loads them unchecked on Sam's go, applies the display build and merges the PR."
   },
   "calls": [
     {
@@ -8294,6 +8294,10 @@
     "reading": "Cerritos read on Oct 9 and Mt. San Antonio on Oct 10. RCCD's three colleges were read on Oct 10 and their Liberal Arts emphasis programs recovered on Oct 11. 18 records that read another program's page were removed on Oct 11, leaving 1,210. Long Beach City is being read from each page's Requirements tab."
   },
   "changes": [
+    {
+      "at": "2026-10-11T16:40Z",
+      "text": "The Budget tab passes AA in light and dark at desktop and phone widths: its bar labels read on each fill, its tables scroll by keyboard, and its controls are underlined words."
+    },
     {
       "at": "2026-10-11T16:05Z",
       "text": "Long Beach City's pages keep the requirements in a tab the reader skipped; it now opens that tab, and the second trial read 11 of 12 programs from it."
@@ -8329,10 +8333,6 @@
     {
       "at": "2026-10-11T02:40Z",
       "text": "Riverside City 39120, which read another program's page, was removed on Sam's ruling; he ran the delete himself."
-    },
-    {
-      "at": "2026-10-11T03:14Z",
-      "text": "The Annual Workplan Goals tab meets AA contrast in both themes and its table scrolls by keyboard."
     }
   ],
   "headline": [
