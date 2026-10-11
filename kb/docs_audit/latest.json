@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1107,
-    "bytes": 11505811,
+    "files": 1108,
+    "bytes": 11511443,
     "over_budget": 6,
-    "handoff_max": 360,
+    "handoff_max": 361,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59999,
     "superseded_files": 0,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 119,
-        "bytes": 3376427,
+        "bytes": 3376692,
         "over": 3
       },
       "index": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 36,
-        "bytes": 331793,
+        "bytes": 331971,
         "over": 1
       },
       "handoff": {
-        "files": 331,
-        "bytes": 2687640,
+        "files": 332,
+        "bytes": 2692829,
         "over": 0
       }
     },
@@ -61,16 +61,16 @@
       "vault_heavy_path": 60
     },
     "vault": {
-      "files": 5087,
-      "bytes": 1853035249,
-      "heavy_bytes": 842592769,
-      "heavy_share": 0.455,
+      "files": 5123,
+      "bytes": 1876211343,
+      "heavy_bytes": 865166290,
+      "heavy_share": 0.461,
       "ignore_filters": [
         "cpl-project-tracker/kb/regional_cpl_out",
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
-        "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/kb/receipts",
+        "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/tmc",
         "cpl-project-tracker/unified_courses_member_desc.js",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
@@ -517,22 +517,22 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "kb/receipts",
+      "detail": {
+        "bytes": 47053902,
+        "kind": "dir"
+      },
+      "message": "directory totals 47,053,902 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "kb/unclassified_fold",
       "detail": {
         "bytes": 27370217,
         "kind": "dir"
       },
       "message": "directory totals 27,370,217 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "kb/receipts",
-      "detail": {
-        "bytes": 24480381,
-        "kind": "dir"
-      },
-      "message": "directory totals 24,480,381 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

@@ -889,3 +889,46 @@ census keeps it. Its capture ran more than two hours.
 **Sheet 60 answered:** "remove" (23:52:04Z); the eight rows are deleted, each guarded by its md5 against the live read
 (#1968). A data UPDATE or DELETE goes through `apply_migration` with a committed receipt because `execute_sql`'s guard
 refuses it; an insert into `cpl_memory` that timed out twice landed on the third, shorter try.
+
+## S360 SkyLichen, 2026-10-11: COCI's status on every mismatched course, rules 4 and 5, and a delete the connector would not run
+
+*Written by S361 SkyBirch from S360's PRs and memory rows; S360 checkpointed at the context warning (Rule 9a) and left
+this section unwritten.*
+
+**The reading flow (#1970).** Sam: *"Have the split screen open automatically when I click in to review. When I choose
+Confirm or Save Note close the screens and bring me to the next item to confirm."* The reading room opens the catalog's
+window by itself; a verdict in side by side opens the next waiting record in place, catalog with it; with none left, the
+screens close. The home-tab flash came from the panes painting before `tabs.js` routed: a guard in the `<head>` of both
+HTMLs hides them until it does, and lifts itself after 15 seconds if the script never comes.
+
+**RCCD's recovered programs (#1971, display `f571b009992c`).** Riverside City's re-run with #1967 added 7, Moreno Valley 7,
+Norco 6. The re-read no longer files Riverside City 39120 (Building Energy Systems Professional in HVAC Technology,
+A.S.), whose page was HVAC Commercial Technology's (AS946, the page 39105 reads; the reader's note said TITLE MISMATCH).
+
+**Most catalog additions are on their own program in COCI, under another status (#1972, display `195fe0c35a2d`).**
+Reading the Program Course File under every status, 1,025 of 1,610 catalog-addition entries sit on their program: 715
+Inactive, 159 Active, 128 Approved, 23 Deleted. The raw export keeps every status; `assemble()` keeps three, which is why
+no reading saw them. Sam's rules 1 to 3 from the Mt. San Antonio sample are built: a chip names the COCI status, COCI's
+units fill in where the catalog prints none (labeled *(COCI)*), and a unit difference between the blocks' sum and the
+printed total stays on the record (79 programs). Sam also noted (01:40Z): *"RCCD and others publish catalog agenda to
+correct errors and late approved courses"*, so an addendum may settle a mismatch before it is the college's to fix.
+
+**Rules 4 and 5 (#1974, record shape 4, extraction v5).** A `recommended` block (minimum null, counts toward nothing) and
+`program.careers`, word for word. The scorer adds nothing for a recommended block and reports careers missing from the
+text without holding a record back. Careers stay out of the requirements fingerprint, on the server too
+(`program_record_fp`; all 1,226 live fingerprints unchanged). Sierra's `ruleOf` had read any unknown rule as "all
+required", so a recommended block would have been read to a student as required: her fix ships with the rules, and her
+deploy must come before any record with a recommended block is checked.
+
+**Sheet 61 answered, both his own call (01:26Z):** card 1 "rules" (Long Beach City's 379 programs extract once rules 4
+and 5 ship), card 2 "remove" (39120). In chat: *"Go Long Beach and remove stale"*, then *"retry and deploy Sierra"*.
+
+**A destructive statement has no working path from a session.** The guarded delete of 39120 timed out three times in
+`apply_migration`, the third with Sam's approval given, no migration recorded and nothing in `pg_stat_activity`, while
+inserts and updates the same hour applied at once. `execute_sql` refuses it at the repo's Supabase guard. S359's eight
+removals went through `apply_migration`; today the same call does not return. The receipt (`kb/receipts/
+program_requirement_records_rcc_39120_removed_2026-10-11_s360.sql`) is the paste for Sam's SQL editor.
+
+**A push that touches the extraction script starts the pilot extraction** on the live function, against whatever
+version is deployed. Both pushes of the rules branch started one (runs 38103589673 and, after S361's rebase,
+38104914021); each was canceled.
