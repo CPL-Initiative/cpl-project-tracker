@@ -1,0 +1,156 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "32811",
+ "shape": "degree",
+ "title": "Database Management",
+ "award": "A.S. Degree",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/biological-sciences/biological-sciences-as/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12207,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12207,
+    "output_tokens": 660,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 660,
+  "output_tokens_details": {
+   "thinking_tokens": 123
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06203,
+ "ms": 6106,
+ "seconds": 6.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 7,
+   "share": 0.0,
+   "missing": [
+    "BCOM15",
+    "COSA25",
+    "COSA50",
+    "COSN205",
+    "COSN251",
+    "COSP237",
+    "COSP38"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found in text",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BCOM 15",
+    "why": "appears only in the site's course index; no Database Management requirements in the text"
+   },
+   {
+    "code": "COSA 25",
+    "why": "appears only in the site's course index; no Database Management requirements in the text"
+   },
+   {
+    "code": "COSA 50",
+    "why": "appears only in the site's course index; no Database Management requirements in the text"
+   },
+   {
+    "code": "COSN 205",
+    "why": "appears only in the site's course index; no Database Management requirements in the text"
+   },
+   {
+    "code": "COSN 251",
+    "why": "appears only in the site's course index; no Database Management requirements in the text"
+   },
+   {
+    "code": "COSP 237",
+    "why": "appears only in the site's course index; no Database Management requirements in the text"
+   },
+   {
+    "code": "COSP 38",
+    "why": "appears only in the site's course index; no Database Management requirements in the text"
+   }
+  ],
+  "notes": [
+   "The catalog text contains only an alphabetical course index (AUTO through CS), apparently from the site's navigation. It contains no Database Management A.S. section, no requirements, no totals, no outcomes, and no careers.",
+   "The source URL points to the Biological Sciences A.S. page, not the Database Management program. The wrong page appears to have been captured.",
+   "The text is cut off mid-entry ('CS 51 - Introduction to').",
+   "A reviewer should fetch the correct Database Management A.S. page for 2026-2027."
+  ]
+ },
+ "extracted_run": "38152016534"
+}

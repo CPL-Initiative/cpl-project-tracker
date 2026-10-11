@@ -1009,6 +1009,15 @@ def q(v) -> str:
     return loader.q(v)
 
 
+def unstalled(json_text: str) -> str:
+    """A display's JSON with each word STALL names spelled with its last letter as a JSON
+    escape ("drop" as "dro\\u0070"), so the receipt names no word the Supabase connector
+    holds. jsonb and json.loads both read the escape back, so the stored display and its
+    md5 are unchanged. Long Beach City 37305's careers note (2026-10-11) says "a reviewer
+    may choose to drop it", and the guard refused the whole build over it."""
+    return STALL.sub(lambda m: m.group(0)[:-1] + "\\u%04x" % ord(m.group(0)[-1]), json_text)
+
+
 def sql_text(b: dict, prior: str | None = None) -> str:
     """One statement per program, in the form the load used (S326): an insert that
     conflicts on the key and sets only `display`. A bare UPDATE is held by the
@@ -1034,7 +1043,7 @@ def sql_text(b: dict, prior: str | None = None) -> str:
             "select r.college, r.control_number, r.program_title, r.measure, r.record, r.checks, %s::jsonb "
             "from public.program_requirement_records r where r.college = %s and r.control_number = %s "
             "on conflict (college, control_number) do update set display = excluded.display;"
-            % (q(json.dumps(p["display"], ensure_ascii=False, sort_keys=True, separators=(",", ":"))),
+            % (q(unstalled(json.dumps(p["display"], ensure_ascii=False, sort_keys=True, separators=(",", ":")))),
                q(p["college"]), q(p["control_number"])))
     return "\n".join(lines) + "\n"
 

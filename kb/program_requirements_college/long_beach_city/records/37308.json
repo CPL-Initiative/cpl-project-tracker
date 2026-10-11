@@ -1,0 +1,274 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "37308",
+ "shape": "certificate",
+ "title": "High Voltage Test Technician",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-high-voltage-test-technician/electrical-technology-high-voltage-test-technician-certificate-achievement/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5860,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5860,
+    "output_tokens": 1621,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1621,
+  "output_tokens_details": {
+   "thinking_tokens": 377
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05586,
+ "ms": 13014,
+ "seconds": 13.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 9,
+   "codes": [
+    "ELECT204",
+    "ELECT209",
+    "ELECT212",
+    "ELECT214",
+    "ELECT225",
+    "ELECT240",
+    "ELECT242",
+    "ELECT253",
+    "ELECT435A"
+   ],
+   "flagged": [
+    "ELECT204",
+    "ELECT209",
+    "ELECT212",
+    "ELECT214",
+    "ELECT225",
+    "ELECT240",
+    "ELECT242",
+    "ELECT253",
+    "ELECT435A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    40.5,
+    40.5
+   ],
+   "stated": [
+    40.5,
+    40.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Electrical Technology, High Voltage Test Technician - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 40.5,
+    "max": 40.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Develop procedures for the successful maintenance and troubleshooting of high voltage electrical switchgear, over-current protection and power distribution systems."
+   ],
+   "careers": [
+    "high voltage testing and certification industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28.5,
+     "max": 28.5
+    },
+    "courses": [
+     {
+      "code": "ELECT 204",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELECT 209",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELECT 212",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELECT 214",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELECT 225",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELECT 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELECT 242",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELECT 253",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELECT 435A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "IN ADDITION, complete the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "ELECT 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECT 256",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECT 265",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECT 266",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECT 267",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECT 268",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The award is classified as 8S/12Q to fewer than 16S/24Q units, and the closed list holds only the six courses in the 'IN ADDITION' block (12 units). The catalog, however, prints a 'REQUIRED COURSES' block of 28.5 units (ELECT 204-435A, apparently the Electrical Technology certificate coursework) and a Total Units of 40.5. Total recorded as printed (40.5); reviewer should check whether the 28.5-unit block is a prerequisite/companion certificate rather than part of this award.",
+   "The description says students complete both the Electrical Technology Certificate of Achievement and this certificate, which supports reading the first block as the Electrical Technology coursework.",
+   "Program admission requirement: new students must attend an Electrical orientation prior to enrollment (not a course).",
+   "Career entry taken from 'entry-level employment in the high voltage testing and certification industry' in the description; no separate careers heading is printed."
+  ]
+ },
+ "extracted_run": "38152016534"
+}

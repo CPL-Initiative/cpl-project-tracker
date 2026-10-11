@@ -1,0 +1,162 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "45949",
+ "shape": "noncredit",
+ "title": "AI Literacy",
+ "award": "Noncredit program",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/artificial-intelligence/ai-literacy-certificate-completion/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5632,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5632,
+    "output_tokens": 882,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 882,
+  "output_tokens_details": {
+   "thinking_tokens": 258
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04017,
+ "ms": 8724,
+ "seconds": 9.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 1,
+   "listed": 2,
+   "share": 0.5,
+   "missing": [
+    "COSA660"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "AI645"
+   ],
+   "flagged": [
+    "AI645"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    108.0,
+    108.0
+   ],
+   "stated": [
+    108.0,
+    108.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "AI Literacy - Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 108,
+    "max": 108
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Explain the fundamental concepts of Artificial Intelligence and Machine Learning in business, healthcare, education, and creative industries.",
+    "Identify and apply AI-powered tools to improve workplace efficiency and decision-making.",
+    "Evaluate ethical concerns in AI applications related to data privacy, automation, and algorithmic bias."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AI 640",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AI 645",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COSA 660",
+    "why": "not in the text; the catalog lists AI 645 under the same title, Fundamentals of Generative AI"
+   }
+  ],
+  "notes": [
+   "Award is a noncredit Certificate of Completion counted in hours; course hours and the total (108) are as printed.",
+   "Closed list writes AI640; the catalog prints AI 640, treated as the same course.",
+   "AI 645 Fundamentals of Generative AI is not in the closed list (marked catalog_addition); the closed list instead names COSA 660 with the identical title. A reviewer should check whether the course was renumbered from COSA 660 to AI 645.",
+   "The description mentions 'entry-level positions in industries utilizing AI-driven tools' and application areas (business, healthcare, education), but names no specific career or occupation, so careers is left empty."
+  ]
+ },
+ "extracted_run": "38152016534"
+}

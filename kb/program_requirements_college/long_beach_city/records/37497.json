@@ -1,0 +1,268 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "37497",
+ "shape": "certificate",
+ "title": "General Industrial Electrician",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-general-industrial-electrician/electrical-technology-general-industrial-electrician-certificate-achievement/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5905,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5905,
+    "output_tokens": 1522,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1522,
+  "output_tokens_details": {
+   "thinking_tokens": 379
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05406,
+ "ms": 12611,
+ "seconds": 13.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 9,
+   "codes": [
+    "ELECT204",
+    "ELECT209",
+    "ELECT212",
+    "ELECT214",
+    "ELECT225",
+    "ELECT240",
+    "ELECT242",
+    "ELECT253",
+    "ELECT435A"
+   ],
+   "flagged": [
+    "ELECT204",
+    "ELECT209",
+    "ELECT212",
+    "ELECT214",
+    "ELECT225",
+    "ELECT240",
+    "ELECT242",
+    "ELECT253",
+    "ELECT435A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    41.5,
+    41.5
+   ],
+   "stated": [
+    41.5,
+    41.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Electrical Technology, General Industrial Electrician - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 41.5,
+    "max": 41.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Develop procedures for the successful installation, maintenance and troubleshooting of electrical systems."
+   ],
+   "careers": [
+    "electrical maintenance and troubleshooting industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 57,
+     "max": 57
+    },
+    "courses": [
+     {
+      "code": "ELECT 204",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELECT 209",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELECT 212",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELECT 214",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELECT 225",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELECT 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELECT 242",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELECT 253",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELECT 435A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "IN ADDITION, complete the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "ELECT 245",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECT 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECT 271",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECT 275",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECT 277",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The REQUIRED COURSES subtotal is printed as 57 units, but the nine listed courses sum to 28.5 units; 28.5 + 13 matches the printed Total Units of 41.5. The 57 subtotal appears to be a catalog error and is recorded as printed.",
+   "The catalog total of 41.5 units does not fit the stated award band (8 to fewer than 16 semester units); reviewer should check the award type or the closed list, which names only the five 'IN ADDITION' courses.",
+   "All nine REQUIRED COURSES are absent from the closed list and are recorded as catalog additions.",
+   "Program admission requirement: new students must attend an Electrical orientation prior to enrollment (not a course).",
+   "The career entry is taken from 'entry-level employment in the electrical maintenance and troubleshooting industry'."
+  ]
+ },
+ "extracted_run": "38152016534"
+}

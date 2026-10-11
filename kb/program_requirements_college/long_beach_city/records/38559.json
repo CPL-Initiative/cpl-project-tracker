@@ -1,0 +1,158 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "38559",
+ "shape": "noncredit",
+ "title": "Library Technician",
+ "award": "Noncredit program",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/library-technician/foundations-academic-research-certificate-competency/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7096,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7096,
+    "output_tokens": 913,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 913,
+  "output_tokens_details": {
+   "thinking_tokens": 249
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04664,
+ "ms": 9055,
+ "seconds": 9.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 8,
+   "share": 0.0,
+   "missing": [
+    "LIB600",
+    "LIB610",
+    "LIB620",
+    "LIB630",
+    "LIB640",
+    "LIB641",
+    "LIB650",
+    "LIB651"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(no program section found in the supplied text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "LIB 600",
+    "why": "appears only in a site-wide course index list, not in a requirements section"
+   },
+   {
+    "code": "LIB 610",
+    "why": "appears only in a site-wide course index list, not in a requirements section"
+   },
+   {
+    "code": "LIB 620",
+    "why": "appears only in a site-wide course index list, not in a requirements section"
+   },
+   {
+    "code": "LIB 630",
+    "why": "appears only in a site-wide course index list, not in a requirements section"
+   },
+   {
+    "code": "LIB 640",
+    "why": "appears only in a site-wide course index list, not in a requirements section"
+   },
+   {
+    "code": "LIB 641",
+    "why": "appears only in a site-wide course index list, not in a requirements section"
+   },
+   {
+    "code": "LIB 650",
+    "why": "appears only in a site-wide course index list, not in a requirements section"
+   },
+   {
+    "code": "LIB 651",
+    "why": "appears only in a site-wide course index list, not in a requirements section"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text is only an alphabetical course index from the site (KINPF through MATH courses), not the Library Technician program page. It has no program heading, requirements, totals, outcomes or careers.",
+   "The source URL points to a 'Foundations of Academic Research' certificate of competency, which would likely involve LIB 601/LIB 602 rather than the closed-list courses. A reviewer should check that the URL matches the Library Technician noncredit program.",
+   "measure is set to 'units' by default because the text states neither hours nor units. A noncredit program would normally be counted in hours, so the actual catalog page should be checked.",
+   "The text cuts off mid-entry ('MATH 605 - Ethnomat') and starts mid-entry ('- Football (Men)'), so it is a fragment of a longer list."
+  ]
+ },
+ "extracted_run": "38152016534"
+}

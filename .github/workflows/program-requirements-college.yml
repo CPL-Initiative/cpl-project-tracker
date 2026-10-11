@@ -81,7 +81,10 @@ jobs:
       (github.event_name == 'push' && (startsWith(github.event.head_commit.message, '[read]') ||
                                        startsWith(github.event.head_commit.message, '[extract]'))))
     runs-on: ubuntu-latest
-    timeout-minutes: 240
+    # 360 is a hosted runner's limit. Long Beach City's full read with the tab reader (#1986) was
+    # still capturing at 3 h 23 m of 240 (run 38152016534); Sam, 2026-10-11: "go ahead and raise the
+    # timeout and re-run if needed".
+    timeout-minutes: 360
     permissions:
       contents: write
     env:

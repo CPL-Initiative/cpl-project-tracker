@@ -1,0 +1,624 @@
+{
+ "college": "Long Beach City College",
+ "load_run": "38168152744",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-11T19:28:51Z",
+ "records": 379,
+ "posted": 305,
+ "batches": 13,
+ "inserted": 305,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "02638",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "02659",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "02684",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "02686",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "02696",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "02701",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "08808",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "08810",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "08831",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "08832",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "08835",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "08837",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "08840",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "10082",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11308",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11311",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11312",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11314",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "13842",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "14898",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19426",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20751",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20752",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20872",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20888",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20892",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20897",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20915",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20934",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20940",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20941",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21010",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21024",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21025",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21027",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21028",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31888",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32811",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32907",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33390",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33811",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33841",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33849",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33850",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35183",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35192",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36104",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36106",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36432",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36433",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36845",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36846",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37214",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37267",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37268",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37293",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37301",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37341",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37344",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37346",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37402",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37495",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37562",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37563",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37564",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37663",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38455",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38540",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38559",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38669",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39922",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42401",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43008",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45899",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "38147472758",
+  "38152016534"
+ ],
+ "machine_pass": 274,
+ "inserted_keys": [
+  "02616",
+  "02617",
+  "02618",
+  "02619",
+  "02620",
+  "02625",
+  "02626",
+  "02631",
+  "02632",
+  "02635",
+  "02636",
+  "02663",
+  "02668",
+  "02670",
+  "02671",
+  "02677",
+  "02678",
+  "02680",
+  "02683",
+  "02690",
+  "02691",
+  "02693",
+  "02695",
+  "02700",
+  "02705",
+  "02713",
+  "08803",
+  "08804",
+  "08805",
+  "08818",
+  "08829",
+  "08834",
+  "08838",
+  "08841",
+  "08844",
+  "11315",
+  "12003",
+  "13843",
+  "13844",
+  "14904",
+  "14905",
+  "15577",
+  "19427",
+  "20750",
+  "20753",
+  "20754",
+  "20757",
+  "20758",
+  "20759",
+  "20875",
+  "20878",
+  "20880",
+  "20895",
+  "20936",
+  "20937",
+  "20938",
+  "20944",
+  "21006",
+  "21008",
+  "21013",
+  "21014",
+  "21017",
+  "21029",
+  "30650",
+  "30676",
+  "30745",
+  "31123",
+  "31215",
+  "31223",
+  "31289",
+  "31665",
+  "31812",
+  "32634",
+  "32979",
+  "33190",
+  "33302",
+  "33303",
+  "33600",
+  "33668",
+  "33670",
+  "33671",
+  "35386",
+  "35418",
+  "35419",
+  "35420",
+  "35539",
+  "35540",
+  "35556",
+  "35803",
+  "35914",
+  "35951",
+  "36105",
+  "36430",
+  "36967",
+  "37086",
+  "37189",
+  "37213",
+  "37222",
+  "37266",
+  "37269",
+  "37270",
+  "37271",
+  "37284",
+  "37302",
+  "37303",
+  "37304",
+  "37305",
+  "37307",
+  "37308",
+  "37324",
+  "37336",
+  "37343",
+  "37345",
+  "37347",
+  "37348",
+  "37349",
+  "37350",
+  "37354",
+  "37401",
+  "37449",
+  "37451",
+  "37469",
+  "37485",
+  "37496",
+  "37497",
+  "37498",
+  "37509",
+  "37655",
+  "37656",
+  "37658",
+  "37659",
+  "37660",
+  "37661",
+  "37729",
+  "37730",
+  "37763",
+  "37767",
+  "37770",
+  "37873",
+  "37875",
+  "37883",
+  "38286",
+  "38453",
+  "38454",
+  "38456",
+  "38457",
+  "38536",
+  "38541",
+  "38542",
+  "38558",
+  "38560",
+  "38561",
+  "38562",
+  "38564",
+  "38622",
+  "38675",
+  "38676",
+  "38678",
+  "38679",
+  "38861",
+  "38996",
+  "38997",
+  "38998",
+  "38999",
+  "39127",
+  "39377",
+  "39454",
+  "39495",
+  "39498",
+  "39499",
+  "39570",
+  "39955",
+  "40028",
+  "40029",
+  "40031",
+  "40218",
+  "40229",
+  "40399",
+  "40401",
+  "40402",
+  "40403",
+  "40483",
+  "40500",
+  "40660",
+  "40674",
+  "40727",
+  "40756",
+  "40807",
+  "40915",
+  "40982",
+  "40983",
+  "40984",
+  "41028",
+  "41195",
+  "41220",
+  "41552",
+  "41553",
+  "41567",
+  "41649",
+  "41799",
+  "41818",
+  "41830",
+  "41835",
+  "41877",
+  "41878",
+  "41879",
+  "41880",
+  "41881",
+  "41882",
+  "41883",
+  "41900",
+  "41901",
+  "42047",
+  "42150",
+  "42151",
+  "42156",
+  "42161",
+  "42166",
+  "42190",
+  "42304",
+  "42324",
+  "42500",
+  "42501",
+  "42825",
+  "42961",
+  "42968",
+  "42969",
+  "42970",
+  "42995",
+  "43009",
+  "43021",
+  "43065",
+  "43070",
+  "43106",
+  "43249",
+  "43250",
+  "43251",
+  "43252",
+  "43285",
+  "43286",
+  "43287",
+  "43288",
+  "43289",
+  "43290",
+  "43291",
+  "43303",
+  "43304",
+  "43305",
+  "43331",
+  "43332",
+  "43363",
+  "43371",
+  "43372",
+  "43384",
+  "43407",
+  "43408",
+  "43409",
+  "43410",
+  "43415",
+  "43416",
+  "43417",
+  "43418",
+  "43438",
+  "43482",
+  "43662",
+  "43689",
+  "43800",
+  "43801",
+  "43802",
+  "43868",
+  "43869",
+  "43875",
+  "43895",
+  "43941",
+  "43942",
+  "43943",
+  "44166",
+  "44315",
+  "44316",
+  "44317",
+  "44318",
+  "44324",
+  "44330",
+  "44435",
+  "44550",
+  "44747",
+  "44752",
+  "44848",
+  "45575",
+  "45840",
+  "45848",
+  "45849",
+  "45850",
+  "45851",
+  "45949",
+  "46002",
+  "46039",
+  "46203",
+  "46204",
+  "46205",
+  "46206",
+  "46207",
+  "46208",
+  "46279",
+  "46290"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Long Beach City College' and checked = false and control_number in ('02616', '02617', '02618', '02619', '02620', '02625', '02626', '02631', '02632', '02635', '02636', '02663', '02668', '02670', '02671', '02677', '02678', '02680', '02683', '02690', '02691', '02693', '02695', '02700', '02705', '02713', '08803', '08804', '08805', '08818', '08829', '08834', '08838', '08841', '08844', '11315', '12003', '13843', '13844', '14904', '14905', '15577', '19427', '20750', '20753', '20754', '20757', '20758', '20759', '20875', '20878', '20880', '20895', '20936', '20937', '20938', '20944', '21006', '21008', '21013', '21014', '21017', '21029', '30650', '30676', '30745', '31123', '31215', '31223', '31289', '31665', '31812', '32634', '32979', '33190', '33302', '33303', '33600', '33668', '33670', '33671', '35386', '35418', '35419', '35420', '35539', '35540', '35556', '35803', '35914', '35951', '36105', '36430', '36967', '37086', '37189', '37213', '37222', '37266', '37269', '37270', '37271', '37284', '37302', '37303', '37304', '37305', '37307', '37308', '37324', '37336', '37343', '37345', '37347', '37348', '37349', '37350', '37354', '37401', '37449', '37451', '37469', '37485', '37496', '37497', '37498', '37509', '37655', '37656', '37658', '37659', '37660', '37661', '37729', '37730', '37763', '37767', '37770', '37873', '37875', '37883', '38286', '38453', '38454', '38456', '38457', '38536', '38541', '38542', '38558', '38560', '38561', '38562', '38564', '38622', '38675', '38676', '38678', '38679', '38861', '38996', '38997', '38998', '38999', '39127', '39377', '39454', '39495', '39498', '39499', '39570', '39955', '40028', '40029', '40031', '40218', '40229', '40399', '40401', '40402', '40403', '40483', '40500', '40660', '40674', '40727', '40756', '40807', '40915', '40982', '40983', '40984', '41028', '41195', '41220', '41552', '41553', '41567', '41649', '41799', '41818', '41830', '41835', '41877', '41878', '41879', '41880', '41881', '41882', '41883', '41900', '41901', '42047', '42150', '42151', '42156', '42161', '42166', '42190', '42304', '42324', '42500', '42501', '42825', '42961', '42968', '42969', '42970', '42995', '43009', '43021', '43065', '43070', '43106', '43249', '43250', '43251', '43252', '43285', '43286', '43287', '43288', '43289', '43290', '43291', '43303', '43304', '43305', '43331', '43332', '43363', '43371', '43372', '43384', '43407', '43408', '43409', '43410', '43415', '43416', '43417', '43418', '43438', '43482', '43662', '43689', '43800', '43801', '43802', '43868', '43869', '43875', '43895', '43941', '43942', '43943', '44166', '44315', '44316', '44317', '44318', '44324', '44330', '44435', '44550', '44747', '44752', '44848', '45575', '45840', '45848', '45849', '45850', '45851', '45949', '46002', '46039', '46203', '46204', '46205', '46206', '46207', '46208', '46279', '46290');"
+}

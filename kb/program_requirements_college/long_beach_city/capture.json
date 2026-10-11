@@ -1,0 +1,3961 @@
+{
+ "college": "Long Beach City College",
+ "catalog_url": "https://lbcc-public.courseleaf.com/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 391,
+ "with_closed_list": 385,
+ "started": "2026-10-11T15:38:00Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://lbcc-public.courseleaf.com/sitemap.xml",
+  "status": 200,
+  "listed": 2503,
+  "nested": 0,
+  "program_pages": 626,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 626,
+ "loads": 643,
+ "seconds": 12756.3,
+ "found": 379,
+ "by_method": {
+  "no_closed_list": 6,
+  "not_found": 4,
+  "page_claimed": 2,
+  "sitemap_page": 379
+ },
+ "shared_pages": {
+  "https://lbcc-public.courseleaf.com//degrees-certificates/biological-sciences/biological-sciences-as/": [
+   "02618",
+   "32811"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/engineering-technology/engineering-technology-as/": [
+   "02638",
+   "37350"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/computer-science/computer-science-as/": [
+   "02659",
+   "35183",
+   "36433"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/dance/dance-aa/": [
+   "02671",
+   "02684",
+   "08840",
+   "11308",
+   "11311",
+   "11312"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/registered-nursing/registered-nursing-as/": [
+   "02677",
+   "43021"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/photography-aa/": [
+   "02686",
+   "02701",
+   "08831",
+   "08835",
+   "08837",
+   "10082",
+   "13842",
+   "43070"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/communication-studies/communication-studies-aa/": [
+   "02693",
+   "08832"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/computer-aided-design-mechanical/computer-aided-design-mechanical-as/": [
+   "08808",
+   "14905"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-automation-technician/electrical-technology-automation-technician-as/": [
+   "08810",
+   "37658"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/medical-assisting-program/medical-assisting-administrative-clinical-certificate-achievement/": [
+   "11314",
+   "11315",
+   "20936"
+  ],
+  "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-patterns/": [
+   "14898",
+   "21028",
+   "33811",
+   "37214",
+   "42401"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/building-information-modeling-certificate-achievement/": [
+   "20752",
+   "40982"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/cloud-computing-certificate-achievement/": [
+   "20892",
+   "37343"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-automation-technician/automation-technician-certificate-achievement/": [
+   "20897",
+   "37663",
+   "37729"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/engineering-technology/engineering-technology-advanced-certificate-achievement/": [
+   "20915",
+   "43482"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/baking-pastry-arts/advanced-baking-pastry-arts-certificate-achievement/": [
+   "21014",
+   "42166"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/social-work/aides-assistants-caregivers-certificate-achievement/": [
+   "21025",
+   "43407"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/communication-studies/communication-studies-2.0-aat/": [
+   "30676",
+   "43106"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/business/business-administration-2.0-ast/": [
+   "31215",
+   "41830"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/art/art-history-aat/": [
+   "31888",
+   "33671"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/information-technology-cybersecurity-as/": [
+   "32907",
+   "40807"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/information-technology-cybersecurity-certificate-achievement/": [
+   "33849",
+   "40674"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/english-everyday-level-1-certificate-competency/": [
+   "36104",
+   "36105",
+   "36106"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/cloud-computing-as/": [
+   "36432",
+   "41220"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/microsoft-power-point/": [
+   "36845",
+   "43416"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/microsoft-outlook/": [
+   "36846",
+   "43415"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/workplace-language-skills-esl-level-1-certificate-competency/": [
+   "37266",
+   "37267",
+   "37268"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/metal-fabrication-technology/robotic-welding-automation-certificate-achievement/": [
+   "37293",
+   "38536"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/automotive-technology/automotive-engine-performance-service-certificate-achievement/": [
+   "37301",
+   "37304"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-high-voltage-test-technician/electrical-technology-high-voltage-test-technician-certificate-achievement/": [
+   "37308",
+   "37498"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/advanced-manufacturing/advanced-manufacturing-design-technology-certificate-achievement/": [
+   "37324",
+   "37402"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/construction-technology/adu-remodeling-certificate-achievement/": [
+   "37341",
+   "46203"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/construction-technology/construction-management-as/": [
+   "37344",
+   "46207"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/engineering-technology/engineering-automation-technology-certificate-achievement/": [
+   "37346",
+   "37347"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-cisco-certified-network-installation-associate/cisco-certified-network-installation-associate-certificate-achievement/": [
+   "37495",
+   "37730"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-general-industrial-electrician/electrical-technology-general-industrial-electrician-certificate-achievement/": [
+   "37496",
+   "37497"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/microsoft-access-windows/": [
+   "37562",
+   "43408"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/microsoft-excel/": [
+   "37563",
+   "43409"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/microsoft-word-windows/": [
+   "37564",
+   "43417"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-traffic-signal-technician/electrical-technology-traffic-signal-technician-certificate-achievement/": [
+   "37767",
+   "37873"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-solar-installation-maintenance/electrical-technology-solar-installation-maintenance-certificate-achievement/": [
+   "37770",
+   "37883"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/welding-technology/introduction-shielded-metal-arc-welding-smaw-certificate-achievement/": [
+   "38540",
+   "42969"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/library-technician/foundations-academic-research-certificate-competency/": [
+   "38559",
+   "39377"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/design-introduction-certificate-completion/": [
+   "38669",
+   "43287"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/physical-sciences/physics-uctp/": [
+   "39570",
+   "42047"
+  ],
+  "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-customer-support/administrative-assistant-customer-relations-specialist-certificate-achievement/": [
+   "42970",
+   "43008"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "39497",
+   "title": "GED/HiSET Preparation Spanish",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "39500",
+   "title": "GED/HiSET Preparation",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "43258",
+   "title": "Barbering",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "43837",
+   "title": "Barbering",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "12778",
+   "title": "Advanced Transportation Technology--Alternative Fuels",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://lbcc-public.courseleaf.com//degrees-certificates/advanced-transportation/advanced-transportation-technology-as/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/advanced-transportation/advanced-transportation-technology-certifcate-achievement/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/advanced-transportation/alternative-fuel-vehicles-certificate-achievement/"
+   ]
+  },
+  {
+   "control_number": "12779",
+   "title": "Advanced Transportation Technology--Electric Vehicles",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://lbcc-public.courseleaf.com//degrees-certificates/advanced-transportation/advanced-transportation-technology-as/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/advanced-transportation/electric--hybrid-vehicles-certificate-achievement/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/advanced-transportation/advanced-transportation-technology-certifcate-achievement/",
+    "https://lbcc-public.courseleaf.com//degrees-certificates/advanced-transportation/alternative-fuel-vehicles-certificate-achievement/"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 28,
+  "0.8-1.0": 45,
+  "1.0": 306
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/long_beach_city",
+  "kept": 12,
+  "programs": 367,
+  "list": [
+   {
+    "control_number": "02659",
+    "title": "Drafting -- Architectural (Occupational Program)",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-science/computer-science-as/",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02663",
+    "title": "Metal Fabrication Technology",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/metal-fabrication-technology/metal-fabrication-technology-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02668",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/music/music-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02670",
+    "title": "Theatre-General",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/theatre-arts/theatre-general-aa/",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02671",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/dance/dance-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02677",
+    "title": "Registered Nursing",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/registered-nursing/registered-nursing-as/",
+    "coverage": 0.65,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02678",
+    "title": "Nursing: Vocational/Practical",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/nursing-vocational-practical/nursing-vocationalpractical-as/",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02680",
+    "title": "Medical Assisting: Combined Administrative/Clinical",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/medical-assisting-program/medical-assisting-administrativec-linical-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02683",
+    "title": "Diagnostic Medical Imaging (Radiologic Technology)",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/diagnostic-medical-imaging/diagnostic-medical-imaging-radiologic-technology/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02684",
+    "title": "Family and Consumer Studies",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/dance/dance-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02686",
+    "title": "Fashion Design",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/photography-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02690",
+    "title": "Dietetic Service Supervisor",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/nutrition-dietetics/dietetic-service-supervisor-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02691",
+    "title": "English, Language and Literature",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english/english-language-literature-aa/",
+    "coverage": 0.86,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02693",
+    "title": "Communication Studies",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/communication-studies/communication-studies-aa/",
+    "coverage": 0.842,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02695",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/mathematics/mathematics-as/",
+    "coverage": 0.769,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02696",
+    "title": "Physical Sciences",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/physical-sciences/physical-sciences-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02700",
+    "title": "Social Work",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/social-work/social-work-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02701",
+    "title": "Administration of Justice",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/photography-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02705",
+    "title": "Fire Science",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/fire-science/fire-science-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02713",
+    "title": "Culinary Arts",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/culinary-arts/culinary-arts-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08803",
+    "title": "Photojournalism",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/journalism/photojournalism-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08804",
+    "title": "Television Broadcast News",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/television-broadcast-news/television-broadcast-news-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08805",
+    "title": "Television Performance",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/television-performance/television-performance-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08808",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-aided-design-mechanical/computer-aided-design-mechanical-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08810",
+    "title": "Electrical Technology",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-automation-technician/electrical-technology-automation-technician-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08818",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/art/art-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08829",
+    "title": "Theatre- Acting Academy",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/theatre-arts/theatre-acting-academy-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08831",
+    "title": "Film",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/photography-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08832",
+    "title": "Foreign Languages",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/communication-studies/communication-studies-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08834",
+    "title": "LVN-to-RN Career Ladder",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/nursing-lvn-rn-career-ladder-program/lvn-rn-career-ladder-as/",
+    "coverage": 0.842,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08835",
+    "title": "Floral Design",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/photography-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08837",
+    "title": "Fashion Merchandising",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/photography-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08838",
+    "title": "Child Development: Early Childhood Education",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/child-development-early-childhood-education/child-development-early-childhood-education-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08840",
+    "title": "Nutrition Assistant",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/dance/dance-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08841",
+    "title": "Baking & Pastry Arts",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/baking-pastry-arts/baking-pastry-arts-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08844",
+    "title": "English, Creative Writing",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english/english-creative-writing-aa/",
+    "coverage": 0.884,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10082",
+    "title": "Physical Sciences",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/photography-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11308",
+    "title": "Digital Design and Publication",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/dance/dance-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11311",
+    "title": "Journalism- Public Relations",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/dance/dance-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11312",
+    "title": "Journalism- Publications Specialist",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/dance/dance-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11314",
+    "title": "Medical Assisting: Administrative Option",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/medical-assisting-program/medical-assisting-administrative-clinical-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11315",
+    "title": "Medical Assisting: Clinical Option",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/medical-assisting-program/medical-assisting-administrative-clinical-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12003",
+    "title": "Television Multimedia Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/television-producer/television-multimedia-production-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13842",
+    "title": "Fashion Design: Assistant Designer/Stylist",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/photography-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13843",
+    "title": "Fashion Design: Patternmaker/Technical Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/fashion-design-patternmakertechnical-design-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13844",
+    "title": "Fashion Design: Custom Apparel Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/fashion-design-custom-apparel-design-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14898",
+    "title": "Drafting Architectural -- Core Skills",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-patterns/",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14904",
+    "title": "Computer Aided Design – Mechanical",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-aided-design-mechanical/computer-aided-design-mechanical-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14905",
+    "title": "Computer Aided Design - Mechanical",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-aided-design-mechanical/computer-aided-design-mechanical-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15577",
+    "title": "Addiction Treatment Counseling and Mental Health Studies",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/addiction-treatment-counseling-mental-health-studies/human-services-addiction-studies-aa/",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19426",
+    "title": "Metal Fabrication Technology Advanced Skills",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/advanced-manufacturing/advanced-manufacturing-technology-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19427",
+    "title": "Metal Fabrication Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/metal-fabrication-technology/metal-fabrication-technology-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20750",
+    "title": "Horticulture",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/horticulture/horticulture-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20751",
+    "title": "Floral Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/architectural-design-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20752",
+    "title": "Architectural Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/building-information-modeling-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20753",
+    "title": "Business - General Business Concentration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/business-general-business-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20754",
+    "title": "Business - Accounting Concentration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/business-accounting-certificate-achievement/",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20757",
+    "title": "Business - Management Concentration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/business-management-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20758",
+    "title": "Business: Global Trade and Logistics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/business-global-trade-logistics-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20759",
+    "title": "Business - Marketing Concentration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/business-marketing-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20872",
+    "title": "Computer Support Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-science/computer-science-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20875",
+    "title": "Television Producer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/television-producer/television-producer-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20878",
+    "title": "Television Performance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/television-performance/television-performance-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20880",
+    "title": "Television Broadcast News",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/television-broadcast-news/television-broadcast-news-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20888",
+    "title": "Digital Design and Publication",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://lbcc-public.courseleaf.com//noncredit/programs-of-study/fashion-design/digital-fashion-design-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20892",
+    "title": "Computer Security and Networking",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/cloud-computing-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20895",
+    "title": "Child Development Special Education Assistant",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/child-development-special-education-assistant/child-development-special-education-assistant-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20897",
+    "title": "Electrical Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-automation-technician/automation-technician-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20915",
+    "title": "Drafting Architectural- Advanced Skills",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/engineering-technology/engineering-technology-advanced-certificate-achievement/",
+    "coverage": 0.973,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20934",
+    "title": "Foreign Languages",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/world-languages/spanish-certificate-achievement/",
+    "coverage": 0.966,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20936",
+    "title": "Medical Assisting: Combined Administrative/Clinical",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/medical-assisting-program/medical-assisting-administrative-clinical-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20937",
+    "title": "Diagnostic Medical Imaging (Radiologic Technology)",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/diagnostic-medical-imaging/diagnostic-medical-imaging-radiologic-technology-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20938",
+    "title": "LVN-to-RN Career Ladder",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/nursing-lvn-rn-career-ladder-program/lvn-rn-career-ladder-29-unit-option-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20940",
+    "title": "Nursing: Vocational/Practical",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/nursing-vocational-practical/home-health-aide-certificate-accomplishment/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20941",
+    "title": "Family and Consumer Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/addiction-treatment-counseling-mental-health-studies/addiction-studies-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20944",
+    "title": "Fashion Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/fashion-design-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21006",
+    "title": "Fashion Design: Wardrobe Designer/Stylist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/fashion-design-wardrobe-designer-stylist-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21008",
+    "title": "Fashion Merchandising",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-merchandising/fashion-merchandising-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21010",
+    "title": "Child Development Early Childhood Education",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/child-development-early-childhood-education/cdece-assistant-teacher-certificate-accomplishment/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21013",
+    "title": "Dietetic Service Supervisor",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/nutrition-dietetics/dietetic-service-supervisor-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21014",
+    "title": "Baking & Pastry Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/baking-pastry-arts/advanced-baking-pastry-arts-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21017",
+    "title": "Culinary Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/culinary-arts/culinary-arts-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21024",
+    "title": "Library Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/library-technician/foundations-academic-research-certificate-accomplishment/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21025",
+    "title": "Social Work",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/social-work/aides-assistants-caregivers-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21027",
+    "title": "Addiction Treatment Counseling and Mental Health Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/addiction-treatment-counseling-mental-health-studies/mental-health-studies-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21028",
+    "title": "Administration of Justice",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-patterns/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21029",
+    "title": "Fire Science",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/fire-science/fire-science-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30650",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/psychology/psychology-aat/",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30676",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/communication-studies/communication-studies-2.0-aat/",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30745",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/sociology/sociology-aat/",
+    "coverage": 0.706,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31123",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/child-development-early-childhood-education/early-childhood-education-ast/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31215",
+    "title": "Business Administration",
+    "award": "A.S. T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/business-administration-2.0-ast/",
+    "coverage": 0.615,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31223",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/geology/geology-ast/",
+    "coverage": 0.583,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31289",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english/english-aat/",
+    "coverage": 0.811,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31665",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/kinesiology/kinesiology-aat/",
+    "coverage": 0.971,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31812",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/political-science/political-science-aat/",
+    "coverage": 0.714,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31888",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/art/art-history-aat/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32634",
+    "title": "MUSIC",
+    "award": "A.A- T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/music/music-aat/",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32811",
+    "title": "Database Management",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/biological-sciences/biological-sciences-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32907",
+    "title": "Computer Technology",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/information-technology-cybersecurity-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32979",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/geography/geography-aat/",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33190",
+    "title": "Web Development",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/web-development/web-development-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33302",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/world-languages/spanish-aat/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33303",
+    "title": "ANTHROPOLOGY",
+    "award": "A.A- T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/anthropology/anthropology-aat/",
+    "coverage": 0.708,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33390",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-philosophy/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33600",
+    "title": "Web Development-Full Stack",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/web-development/web-development-full-stack-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33668",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/art/studio-arts-aat/",
+    "coverage": 0.905,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33670",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/journalism/journalism-aat/",
+    "coverage": 0.76,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33671",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/art/art-history-aat/",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33811",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-patterns/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33841",
+    "title": "Database Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/database-management/database-administrator-specialist-certificate-accomplishment/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33849",
+    "title": "Computer Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/information-technology-cybersecurity-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33850",
+    "title": "Computer Science",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-science/android-app-developer-certificate-accomplishment/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35183",
+    "title": "Business Information Worker",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-science/computer-science-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35192",
+    "title": "Business Information Worker",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business-information-worker/business-digital-literacy-certificate-accomplishment/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35386",
+    "title": "Film Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/film-production/film-production-certificate-achievement/",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35418",
+    "title": "Digital Media: Multimedia Interaction & Game Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/digital-media-multimedia-interaction-game-design-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35419",
+    "title": "Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/photography-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35420",
+    "title": "Linguistics",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/linguistics/linguistics-aa/",
+    "coverage": 0.892,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35539",
+    "title": "Film, Television, and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/film-television-electronic-media/film-television-electronic-media-ast/",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35540",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/nutrition-dietetics/nutrition-dietetics-ast/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35556",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/biological-sciences/biology-ast/",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35803",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/theatre-arts/theatre-arts-aat/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35914",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/economics-aat/",
+    "coverage": 0.688,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35951",
+    "title": "Reading Skills for ESL Students-Level 1",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/reading-skills-esl-students-level-1-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36104",
+    "title": "English for Everyday-Level 2",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/english-everyday-level-1-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36105",
+    "title": "English for Everyday-Level 1",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/english-everyday-level-1-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36106",
+    "title": "English for Everyday-Level 3",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/english-everyday-level-1-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36430",
+    "title": "Business – Management Concentration",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/business-management-concentration-aa/",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36432",
+    "title": "Computer Security and Networking",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/cloud-computing-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36433",
+    "title": "Computer Support Specialist",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-science/computer-science-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36845",
+    "title": "Office Technologies-Microsoft PowerPoint",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/microsoft-power-point/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36846",
+    "title": "Office Technologies- Microsoft Outlook",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/microsoft-outlook/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36967",
+    "title": "Home Remodeling",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/construction-technology/home-remodeling-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37086",
+    "title": "Computer Hardware Technician",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business-information-worker/computer-hardware-technician-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37189",
+    "title": "Welding Technology",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/welding-technology/welding-technology-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37213",
+    "title": "CSU GE-Breadth",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-plans/plan-a/",
+    "coverage": 0.821,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37214",
+    "title": "IGETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-patterns/",
+    "coverage": 0.995,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37222",
+    "title": "Formula Room Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/nutrition-dietetics/formula-room-technician-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37266",
+    "title": "Workplace Language Skills for ESL Level 1",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/workplace-language-skills-esl-level-1-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37267",
+    "title": "Workplace Language Skills for ESL Level 2",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/workplace-language-skills-esl-level-1-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37268",
+    "title": "Workplace Language Skills for ESL Level 3",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/workplace-language-skills-esl-level-1-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37269",
+    "title": "Intermediate Oral Skills",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/intermediate-oral-skills-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37270",
+    "title": "Intermediate Grammar",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/intermediate-grammar-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37271",
+    "title": "Intermediate Reading and Writing",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/intermediate-reading-writing-certificate-competency/",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37284",
+    "title": "American Sign Language and Deaf Studies",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/american-sign-language-deaf-studies/american-sign-language-deaf-studies-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37293",
+    "title": "Welding Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/metal-fabrication-technology/robotic-welding-automation-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37301",
+    "title": "Automotive Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/automotive-technology/automotive-engine-performance-service-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37302",
+    "title": "Electric & Hybrid Vehicles",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/advanced-transportation/electric--hybrid-vehicles-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37303",
+    "title": "Automotive Technology",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/automotive-technology/automotive-technology-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37304",
+    "title": "Automotive Engine Performance Service",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/automotive-technology/automotive-engine-performance-service-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37305",
+    "title": "Automotive Engine and Transmission Service",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/automotive-technology/automotive-engine-transmission-service-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37307",
+    "title": "Alternative Fuel Vehicles",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/advanced-transportation/alternative-fuel-vehicles-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37308",
+    "title": "High Voltage Test Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-high-voltage-test-technician/electrical-technology-high-voltage-test-technician-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37324",
+    "title": "Advanced Manufacturing and Design Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/advanced-manufacturing/advanced-manufacturing-design-technology-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37336",
+    "title": "Automotive Maintenance Service",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/automotive-technology/automotive-maintenance-service-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37341",
+    "title": "Construction Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/construction-technology/adu-remodeling-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37343",
+    "title": "Cloud Computing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/cloud-computing-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37344",
+    "title": "Construction Technology",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/construction-technology/construction-management-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37345",
+    "title": "Home Remodeling",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/construction-technology/home-remodeling-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37346",
+    "title": "Engineering Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/engineering-technology/engineering-automation-technology-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37347",
+    "title": "Engineering Automation Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/engineering-technology/engineering-automation-technology-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37348",
+    "title": "Library Technician",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/library-technician/library-technician-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37349",
+    "title": "Advanced Manufacturing Technology Core Skills",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/advanced-manufacturing/advanced-manufacturing-technology-core-skills-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37350",
+    "title": "Engineering Technology",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/engineering-technology/engineering-technology-as/",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37354",
+    "title": "Advanced Manufacturing Technology",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/advanced-manufacturing/advanced-manufacturing-technology/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37401",
+    "title": "Advanced Transportation Technology",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/advanced-transportation/advanced-transportation-technology-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37402",
+    "title": "Advanced Manufacturing Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/advanced-manufacturing/advanced-manufacturing-design-technology-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37449",
+    "title": "Automotive Quick Service",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/automotive-technology/automotive-quick-service-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37451",
+    "title": "Construction Apprenticeship Readiness",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/construction-technology/construction-apprenticeship-readiness-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37469",
+    "title": "Office Technologies-Job Search Skills",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business-information-worker/office-technologies--job-search-skills-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37485",
+    "title": "Electrical Apprenticeship Preparation",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology/electrical-apprenticeship-preparation-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37495",
+    "title": "Electrical Technology, CISCO Certified Network Installation Associate",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-cisco-certified-network-installation-associate/cisco-certified-network-installation-associate-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37496",
+    "title": "Electrical Technology, General Industrial Electrician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-general-industrial-electrician/electrical-technology-general-industrial-electrician-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37497",
+    "title": "General Industrial Electrician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-general-industrial-electrician/electrical-technology-general-industrial-electrician-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37498",
+    "title": "Electrical Technology, High Voltage Test Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-high-voltage-test-technician/electrical-technology-high-voltage-test-technician-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37509",
+    "title": "Forklift Fundamentals",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/construction-technology/forklift-fundamentals-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37562",
+    "title": "Office Technologies-Microsoft Access",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/microsoft-access-windows/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37563",
+    "title": "Office Technologies-Microsoft Excel",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/microsoft-excel/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37564",
+    "title": "Office Technologies-Microsoft Word",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/microsoft-word-windows/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37655",
+    "title": "Advanced Transportation Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/advanced-transportation/advanced-transportation-technology-certifcate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37656",
+    "title": "Electrical Technology, CISCO Certified Network Installation Associate",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-cisco-certified-network-installation-associate/electrical-technology-cisco-certified-network-installation-associate-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37658",
+    "title": "Electrical Technology, Automation Technician",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-automation-technician/electrical-technology-automation-technician-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37659",
+    "title": "Electrical Technology, General Industrial Electrician",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-general-industrial-electrician/-electrical-technology-general-industrial-electrician-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37660",
+    "title": "Electrical Technology, High Voltage Test Technician",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-high-voltage-test-technician/electrical-technology-high-voltage-test-technician-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37661",
+    "title": "Electrical Technology, Solar Installation and Maintenance",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-solar-installation-maintenance/electrical-technology-solar-installation-maintenance-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37663",
+    "title": "Electrical Technology, Automation Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-automation-technician/automation-technician-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37729",
+    "title": "Automation Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-automation-technician/automation-technician-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37730",
+    "title": "CISCO Certified Network Installation Associate",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-cisco-certified-network-installation-associate/cisco-certified-network-installation-associate-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37763",
+    "title": "Construction Apprenticeship Readiness",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/construction-technology/construction-apprenticeship-readiness-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37767",
+    "title": "Traffic Signal Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-traffic-signal-technician/electrical-technology-traffic-signal-technician-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37770",
+    "title": "Solar Installation and Maintenance",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-solar-installation-maintenance/electrical-technology-solar-installation-maintenance-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37873",
+    "title": "Electrical Technology, Traffic Signal Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-traffic-signal-technician/electrical-technology-traffic-signal-technician-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37875",
+    "title": "Electrical Technology, Traffic Signal Technician",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-traffic-signal-technician/electrical-technology-traffic-signal-technician-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37883",
+    "title": "Electrical Technology, Solar Installation and Maintenance",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-solar-installation-maintenance/electrical-technology-solar-installation-maintenance-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38286",
+    "title": "ESL Literacy",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/esl-literacy-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38453",
+    "title": "Japanese",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/world-languages/japanese-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38454",
+    "title": "Japanese",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/world-languages/japanese-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38455",
+    "title": "Spanish",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/world-languages/spanish-medical-professionals-certificate-accomplishment/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38456",
+    "title": "French",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/world-languages/french-certificate-achievement/",
+    "coverage": 0.786,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38457",
+    "title": "Gender and Sexuality Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/gender-sexuality-studies/gender-sexuality-studies-certificate-achievement/",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38536",
+    "title": "Robotic Welding Automation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/metal-fabrication-technology/robotic-welding-automation-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38540",
+    "title": "Shielded Metal Arc Welding (SMAW)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/welding-technology/introduction-shielded-metal-arc-welding-smaw-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38541",
+    "title": "Gas Tungsten Arc Welding (GTAW)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/welding-technology/gas-tungsten-arc-welding-gtaw-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38542",
+    "title": "Advanced Arc Welding (SMAW and FCAW)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/welding-technology/shielded-metal-arc-welding-smaw-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38558",
+    "title": "Cake Decorating Techniques",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/nutrition-dietetics/cake-decorating-techniques-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38559",
+    "title": "Library Technician",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/library-technician/foundations-academic-research-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38560",
+    "title": "Library Technician Public Services",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/library-technician/library-technician-public-services-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38561",
+    "title": "Library Technician Technical Services",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/library-technician/library-technician-technical-services-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38562",
+    "title": "ESL Reading for Citizenship",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/esl-reading-citizenship-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38564",
+    "title": "Family Child Care Management",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/child-development-early-childhood-education/family-child-care-management-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38622",
+    "title": "Reading in the Health Sciences",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/reading/reading-health-sciences-certificate-completion/",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38669",
+    "title": "Security Guard Training",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/design-introduction-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38675",
+    "title": "Fashion Design- Advanced Apparel Construction",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/fashion-design-advanced-apparel-construction-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38676",
+    "title": "Fashion Design-Industrial Sewing and Factory Production Methods",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/fashion-design-industrial-sewing-factory-production-methods-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38678",
+    "title": "Fashion Design-Swimwear Construction",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/fashion-design-swimwear-construction-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38679",
+    "title": "Fashion Design-Textile Surface Design",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/fashion-design-textile-surface-design-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38861",
+    "title": "Show Business – Commercials, Voice-Over, Film Acting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/theatre-arts/show-business-commercials-voice-over-film-acting-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38996",
+    "title": "Computer Information Competency",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-technology/computer-information-competency-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38997",
+    "title": "Social Competency Skills",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/counseling-student-development/social-competency-skills-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38998",
+    "title": "Adult Learning Skills",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/counseling-student-development/adult-learning-skills-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38999",
+    "title": "Transitioning to Higher Learning",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/counseling-student-development/transitioning-higher-learning-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39127",
+    "title": "Certified Dietary Manager (CDM) Board Exam Preparation",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/nutrition-dietetics/certified-dietary-manager-cdm-board-exam-preparation-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39377",
+    "title": "Foundations in Academic Research",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/library-technician/foundations-academic-research-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39454",
+    "title": "Jewelry Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/art/jewelry-entrepreneurship-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39495",
+    "title": "Foundational Skills",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/foundational-skills/foundational-skills-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39498",
+    "title": "Financial Literacy",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/financial-literacy/financial-literacy-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39499",
+    "title": "TEAS Preparation",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/teas-preparation/teas-preparation-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39570",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/physical-sciences/physics-uctp/",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39922",
+    "title": "Economics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/business-business-economics-certificate-accomplishment/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39955",
+    "title": "Adult Literacy",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/reading/adult-literacy-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40028",
+    "title": "Applied Design in Art: 3D Materials and Processes",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/art/applied-design-3d-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40029",
+    "title": "Educational Aide II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/elementary-teacher-education/educational-aide2-certificate-achievement/",
+    "coverage": 0.85,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40031",
+    "title": "Educational Aide I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/elementary-teacher-education/educational-aide1-certificate-achievement/",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40218",
+    "title": "Social Justice Studies",
+    "award": "A.A- T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/social-justice-studies/social-justice-studies-aat/",
+    "coverage": 0.792,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40229",
+    "title": "Global Studies",
+    "award": "A.A- T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/global-studies/global-studies-aat/",
+    "coverage": 0.619,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40399",
+    "title": "Sculptural Design: 3D Materials and Processes",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/art/sculptural-design-3d-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40401",
+    "title": "Electrical Program Preparation",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology/electrical-program-preparation-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40402",
+    "title": "Basic Oxy-Acetylene Welding",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/welding-technology/basic-oxy-acetylene-welding-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40403",
+    "title": "Basic Gas Tungsten Arc Welding",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/welding-technology/basic-gas-tungsten-arc-welding-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40483",
+    "title": "Basic Arc Welding",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/welding-technology/basic-arc-welding-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40500",
+    "title": "Television Sports Broadcasting",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/television-sports-broadcasting/television-sports-broadcasting-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40660",
+    "title": "Cyber Security",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/cyber-security-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40674",
+    "title": "Information Technology Cybersecurity",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/information-technology-cybersecurity-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40727",
+    "title": "Television Sports Broadcasting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/television-sports-broadcasting/television-sports-broadcasting-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40756",
+    "title": "Hospitality Management",
+    "award": "A.S. T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/hospitality-management/hospitality-management-ast/",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40807",
+    "title": "Information Technology Cybersecurity",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/information-technology-cybersecurity-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40915",
+    "title": "Fashion Design",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/fashion-design-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40982",
+    "title": "Building Information Modeling (BIM) Coordinator",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/building-information-modeling-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40983",
+    "title": "Personal Trainer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/kinesiology/personal-trainer-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40984",
+    "title": "Nutrition Assistant",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/nutrition-dietetics/nutrition-assistant-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41028",
+    "title": "Fashion Merchandising",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-merchandising/fashion-merchandising-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41195",
+    "title": "Telecommuting Fundamentals",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business-information-worker/telecommuting-fundamentals-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41220",
+    "title": "Cloud Computing",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/cloud-computing-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41552",
+    "title": "Microsoft Essentials",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business-information-worker/microsoft-essentials-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41553",
+    "title": "Computer Hardware Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/computer-hardware-technician-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41567",
+    "title": "Telecommuting Fundamentals",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business-information-worker/telecommuting-fundamentals-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41649",
+    "title": "Digital and Social Media",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business-information-worker/digital-social-media-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41799",
+    "title": "Microsoft Windows Networking Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/microsoft-windows-networking-technician-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41818",
+    "title": "UNIX Network Administrator",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/unix-network-administrator-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41830",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/business-administration-2.0-ast/",
+    "coverage": 0.769,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41835",
+    "title": "Design Management",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/design-management/design-management-as/",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41877",
+    "title": "DRE Exam Preparation",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/dre-exam-preparation-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41878",
+    "title": "ARE Exam Prep",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/are-exam-prep-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41879",
+    "title": "Basic Semi-Automatic Welding",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/welding-technology/basic-semi-automatic-welding-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41880",
+    "title": "IPC-620 Wire Harness Assembly and Inspection",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology/ipc-620-wire-harness-assembly-inspection-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41881",
+    "title": "Cryptocurrency Fundamentals",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-technology/cryptocurrency-fundamentals-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41882",
+    "title": "Parent Educator",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/child-development-early-childhood-education/parent-educator-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41883",
+    "title": "Exploring Welding and Metal Fabrication",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/welding-technology/exploring-welding-metal-fabrication-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41900",
+    "title": "PHP Web Programmer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/web-development/php-web-programmer-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41901",
+    "title": "Front End Web Developer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/web-development/front-end-web-developer-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42047",
+    "title": "UCTP in Physics",
+    "award": "A.S. T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/physical-sciences/physics-uctp/",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42150",
+    "title": "Special Education Paraprofessional",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/child-development-early-childhood-education/special-education-paraprofessional-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42151",
+    "title": "Semi-Automatic Welding",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/welding-technology/semi-automatic-welding-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42156",
+    "title": "Commercial Music",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/music/commercial-music-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42161",
+    "title": "Interior Design",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/interior-design/interior-design-as/",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42166",
+    "title": "Advanced Baking & Pastry Arts",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/baking-pastry-arts/advanced-baking-pastry-arts-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42190",
+    "title": "Library Technician School & Youth Services",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/library-technician/library-technician-school-youth-services-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42304",
+    "title": "Light-Duty Diesel Generator Engine Maintenance",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/automotive-technology/light-duty-diesel-generator-engine-maintenance-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42324",
+    "title": "Fundamentals of Academic Research",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//noncredit/programs-of-study/library-technician/foundations-academic-research-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42401",
+    "title": "Criminal Forensics",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-patterns/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42500",
+    "title": "Digital Media: Comics & Animation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/digital-media-comics-animation-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42501",
+    "title": "Digital Media: Graphic Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/digital-media-graphic-design-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42825",
+    "title": "Spanish for Medical Professionals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/world-languages/spanish-medical-professionals-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42961",
+    "title": "Design Basics",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/design-basics-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42968",
+    "title": "Introduction to Gas Tungsten Arc Welding (GTAW)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/welding-technology/introduction-gas-tungsten-arc-welding-gtaw-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42969",
+    "title": "Introduction to Shielded Metal Arc Welding (SMAW)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/welding-technology/introduction-shielded-metal-arc-welding-smaw-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42970",
+    "title": "Administrative Assistant, Customer Relations Specialist",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-customer-support/administrative-assistant-customer-relations-specialist-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42995",
+    "title": "Yoga Teacher Training",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/kinesiology/yoga-teacher-training-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43008",
+    "title": "Administrative Assistant, Customer Support",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-customer-support/administrative-assistant-customer-relations-specialist-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43009",
+    "title": "Administrative Assistant, Office Support",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-support/administrative-assistant-office-support-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43021",
+    "title": "Registered Nursing",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/registered-nursing/registered-nursing-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43065",
+    "title": "Administrative Assistant, Human Resources Support",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-human-resources-support/administrative-assistant-human-resources-support-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43070",
+    "title": "Photography",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/photography-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43106",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/communication-studies/communication-studies-2.0-aat/",
+    "coverage": 0.762,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43249",
+    "title": "SketchUp Essentials",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/sketchup-essentials-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43250",
+    "title": "REVIT Essentials",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/revit-essentials-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43251",
+    "title": "Adobe for Designers",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/adobe-designers-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43252",
+    "title": "AutoCAD Essentials",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/autocad-essentials-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43285",
+    "title": "Educator Workforce Preparation",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/elementary-teacher-education/educator-workforce-preparation-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43286",
+    "title": "FCC Amateur Radio Technician Preparation",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology/fcc-amateur-radio-technician-preparation-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43287",
+    "title": "Design Introduction",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/design-introduction-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43288",
+    "title": "Robotics Exploration",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology/robotics-exploration-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43289",
+    "title": "Power Generation Technician - Electrical",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology/power-generation-technician-electrical-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43290",
+    "title": "Designing with Rhinoceros",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/designing-rhinoceros-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43291",
+    "title": "Solidworks Essentials",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/industrial-design/solidworks-essentials-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43303",
+    "title": "Administrative Assistant, Customer Support",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-customer-support/administrative-assistant-customer-support-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43304",
+    "title": "Administrative Assistant, Office Support",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-support/administrative-assistant-office-support-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43305",
+    "title": "Administrative Assistant, Virtual Support",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-virtual-support/administrative-assistant-virtual-support-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43331",
+    "title": "Construction Management Fundamentals",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/construction-technology/construction-management-fundamentals-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43332",
+    "title": "Networking Fundamentals",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/networking-fundamentals/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43363",
+    "title": "Family Violence Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/social-work/family-violence-specialist-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43371",
+    "title": "Administrative Assistant, Virtual Support",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-virtual-support/administrative-assistant-virtual-support-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43372",
+    "title": "Administrative Assistant, Human Resources Support",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-human-resources-support/administrative-assistant-human-resources-support-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43384",
+    "title": "Interior Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/interior-design/interior-design-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43407",
+    "title": "Aides, Assistants and Caregivers",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/social-work/aides-assistants-caregivers-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43408",
+    "title": "Microsoft Access for Windows",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/microsoft-access-windows/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43409",
+    "title": "Microsoft Excel",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/microsoft-excel/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43410",
+    "title": "Microsoft Office",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/microsoft-office/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43415",
+    "title": "Microsoft Outlook",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/microsoft-outlook/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43416",
+    "title": "Microsoft PowerPoint",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/microsoft-power-point/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43417",
+    "title": "Microsoft Word for Windows",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/microsoft-word-windows/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43418",
+    "title": "Introduction to Computers",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/introduction-computers/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43438",
+    "title": "Industrial Design",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/industrial-design/industrial-design-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43482",
+    "title": "Engineering Technology Advanced",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/engineering-technology/engineering-technology-advanced-certificate-achievement/",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43662",
+    "title": "Metal Fabrication Technology",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/metal-fabrication-technology/metal-fabrication-technology-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43689",
+    "title": "Data Analytics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/data-analytics/data-analytics-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43800",
+    "title": "Ethnic Studies",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/ethnic-studies/ethnic-studies-aa/",
+    "coverage": 0.758,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43801",
+    "title": "Archaeology Field Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/anthropology/archaeology-field-technician-certificate-achievement/",
+    "coverage": 0.714,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43802",
+    "title": "Trauma Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/trauma-studies/trauma-studies-certificate-achievement/",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43868",
+    "title": "Design/Build",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/design-build-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43869",
+    "title": "Digital Fashion Design",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/digital-fashion-design-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43875",
+    "title": "Skills for Professional Helpers",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/social-work/skills-professional-helpers-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43895",
+    "title": "Library Technician Basic Digitization",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/library-technician/library-technician-basic-digitization-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43941",
+    "title": "Human Resources Essentials",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-human-resources-support/human-resources-essential-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43942",
+    "title": "Human Resource Management",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/human-resources-management-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43943",
+    "title": "Urban Planning",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/urban-planning/urban-planning-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44166",
+    "title": "Data Analytics",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/data-analytics/data-analytics-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44315",
+    "title": "Communication Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/communication-studies/communication-studies-certificate-achievement/",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44316",
+    "title": "French",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/world-languages/french-aa/",
+    "coverage": 0.714,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44317",
+    "title": "Cultural Diversity and Awareness",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/sociology/cultural-diversity-awareness-certificate-achievement/",
+    "coverage": 0.763,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44318",
+    "title": "Health Education and Promotion",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/public-health-science/health-education-promotion-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44324",
+    "title": "Vocational Nursing Program Preparation",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/mathematics/vocational-nursing-program-preparation-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44330",
+    "title": "Breastfeeding and Nutrition",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/nutrition-dietetics/breastfeeding-nutrition-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44435",
+    "title": "Community Health Worker",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/public-health-science/community-health-worker-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44550",
+    "title": "Basic Baking Skills",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/baking-pastry-arts/basic-baking-skills-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44747",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/social-work/social-work-and-human-services-aat/",
+    "coverage": 0.694,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44752",
+    "title": "Dance",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/dance/dance-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44848",
+    "title": "Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-plans/plan-c/",
+    "coverage": 0.825,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45575",
+    "title": "Catering & Mobile Food Operation",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/culinary-arts/catering-mobile-food-operations-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45840",
+    "title": "Nutrition, Wellness, and Healthy Cooking",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/nutrition-dietetics/nutrition-wellness-healthy-cooking-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45848",
+    "title": "Child Nutrition Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/nutrition-dietetics/child-nutrition-management-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45849",
+    "title": "Nutrition and Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/nutrition-dietetics/nutrition-technology-certificate-achievement/",
+    "coverage": 0.714,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45850",
+    "title": "Nutrition and Fitness Education",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/nutrition-dietetics/nutrition-fitness-eduction-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45851",
+    "title": "Nutrition and Wellness for Healthy Aging",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/nutrition-dietetics/nutrition-wellness-healthy-aging-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45899",
+    "title": "Athletic Coaching",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/kinesiology/athletic-coaching-certificate-accomplishment/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45949",
+    "title": "AI Literacy",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/artificial-intelligence/ai-literacy-certificate-completion/",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46002",
+    "title": "Sustainability",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/physical-sciences/sustainability-certificate-achievement/",
+    "coverage": 0.851,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46039",
+    "title": "Sustainable Design/Build",
+    "award": "Noncredit program",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/sustainable-design-build-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46203",
+    "title": "ADU Remodeling",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/construction-technology/adu-remodeling-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46204",
+    "title": "Carpentry",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/construction-technology/carpentry-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46205",
+    "title": "Construction Inspection",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/construction-technology/construction-inspection-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46206",
+    "title": "Construction Inspection",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/construction-technology/construction-inspection-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46207",
+    "title": "Construction Management",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/construction-technology/construction-management-as/",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46208",
+    "title": "Construction Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/construction-technology/construction-management-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46279",
+    "title": "Artificial Intelligence for Digital Transformation",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/artificial-intelligence/artificial-intelligence-digital-transformation-as/",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46290",
+    "title": "Trauma Studies",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/trauma-studies/trauma-studies-as/",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38152016534"
+}

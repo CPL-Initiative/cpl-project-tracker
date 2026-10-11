@@ -1,8 +1,8 @@
 {
- "_what": "MAP's credit recommendations per course at the harvest's nine colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley and Norco): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
+ "_what": "MAP's credit recommendations per course at the harvest's ten colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco and Long Beach City): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
  "_source": "public.map_college_cr_unit (reviewer-gated) joined to map_colleges by college_id; exhibit titles from map_ace_exhibit_titles, else chatbox_exhibits. A college_course string naming several courses ('ADJ-13 ...(3.0), ADJ-19 ...(3.0)') counts toward each course it names. Course code = the SUBJ-NUM token with the hyphen read as a space.",
- "_read_at": "2026-10-10",
- "_read_by": "SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
+ "_read_at": "2026-10-11",
+ "_read_by": "SkyCedar (S363) through the Supabase MCP: Long Beach City added (33 course codes; the per-course fingerprint over code, recs, exhibits, untitled exhibits and titles reads 5c7d3a90393e710daa4f686a2f56c917 in SQL and over the filed rows). Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
  "_refresh": "By hand, the way kb/ccr_cpl_funnel.json is refreshed: run kb/program_requirements_pilot/map_cr_by_course.sql through the Supabase MCP when the funnel reloads (map-custom-report-load.yml) or the harvest adds a college, and file the rows here.",
  "colleges": {
   "Cerritos College": {
@@ -61,6 +61,888 @@
     },
     "titles": null,
     "untitled_exhibits": 1
+   }
+  },
+  "Long Beach City College": {
+   "ADJUS 2": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Maritime Enforcement Specialist (ME)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ADJUS 20": {
+    "recs": 5,
+    "exhibits": 6,
+    "exhibits_by_source": {
+     "ACE": 6
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Internment/Resettlement Specialist Advanced Individual Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Corrections by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Internment/Resettlement Specialist Advanced Noncommissioned Officer (ANCOC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Maritime Enforcement Specialist (ME)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police, Advanced Leader (ALC) (TATS)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ADJUS 3": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Corrections and Detention Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Maritime Enforcement Specialist (ME)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ADJUS 4": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Maritime Enforcement Specialist (ME)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ADJUS 6": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Maritime Law Enforcement Boarding Officer, Class C",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ADJUS 8": {
+    "recs": 1,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "ACE": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Maritime Law Enforcement Boarding Officer, Class C",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTO 212": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automatic Transmissions",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTO 214": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTO 215": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Light Wheel Vehicle Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTO 216": {
+    "recs": 3,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "ACE": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Light Wheel Vehicle Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tracked Vehicle Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTO 219": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Tracked Vehicle Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "BCOM 15": {
+    "recs": 4,
+    "exhibits": 17,
+    "exhibits_by_source": {
+     "ACE": 17
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Administrative Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Army Recruiting",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Chief Warrant Officer Professional Development",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician (Interpretive) (CTI)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician, Technical",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Distribution Management Specialist (11/16-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Logistics Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinery Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Personnel Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruiter",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Supply Chain and Materials Specialist (11/21-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Transportation Management Coordinator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Yeoman",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COMM 10": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Instructor",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COMM 31": {
+    "recs": 2,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "ACE": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Corporals",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD) I",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSA 30": {
+    "recs": 4,
+    "exhibits": 12,
+    "exhibits_by_source": {
+     "ACE": 12
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Aviation Electronics Technician (AT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician, Interpretive",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician, Technical",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Operator-Analyst",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Logistics Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Personnel Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Storekeeper",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warehouse Clerk",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Yeoman",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSN 10": {
+    "recs": 5,
+    "exhibits": 12,
+    "exhibits_by_source": {
+     "ACE": 12
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Electronics",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Data Systems Administrator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician, (Nuclear) (1/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician 'A' School",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician Block 1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Network Administrator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Nodal Network Systems Operator-Maintainer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tactical Computer Network Operator (TCNO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "TATS Radio Operator-Maintainer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "TATS Signal Support Systems Specialist",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSN 230": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Information Systems Operator-Analyst",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSN 5": {
+    "recs": 4,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "ACE": 3
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Information Systems Operator-Analyst",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician 'A' School",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "TATS Signal Support Systems Specialist",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COSS 71": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Information Systems Operator-Analyst",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "TATS Signal Support Systems Specialist",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CPL 1": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Personal Financial Management by Correspondence",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIRE 1": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Engineering Professional Apprenticeship Career Tract (EPACT)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "HSA 401": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Maritime Enforcement Specialist (ME)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "KING 76": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Recruit Training",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "KINPF 12": {
+    "recs": 3,
+    "exhibits": 5,
+    "exhibits_by_source": {
+     "ACE": 5
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "21B10 Combat Engineer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cavalry Scout",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Indirect Fire Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Basic Military Training (BMT)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "KINPF 22": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Basic Military Training (BMT)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "KINPF 42": {
+    "recs": 4,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "ACE": 3
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Seaman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Swim Skills Maintenance and Improvement",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "KINPP 12": {
+    "recs": 2,
+    "exhibits": 4,
+    "exhibits_by_source": {
+     "ACE": 4
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Infantry Marine",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Mortarman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Combat Training (MCT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Corps Recruit Depot San Diego (MCRDSD) Drill Instructor School 2012",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "KINPP 23": {
+    "recs": 10,
+    "exhibits": 9,
+    "exhibits_by_source": {
+     "ACE": 9
+    },
+    "titles": [
+     {
+      "recs": 4,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Cavalry Scout",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Expeditionary Combat Skills",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "21B10 Combat Engineer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman Apprentice Technical Training - Phase I",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M3 Bradley/CFV Cavalry Scout",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Basic Military Training (BMT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "KINPP 4": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Licensed Practical Nurse",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MGMT 49": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman (AO)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MGMT 50": {
+    "recs": 2,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "ACE": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD) I",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MGMT 58": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Corporals",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD) I",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "PHYS 2A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Naval Nuclear Power School, Enlisted",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
    }
   },
   "Moreno Valley College": {

@@ -1,0 +1,215 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "31223",
+ "shape": "adt",
+ "title": "Geology",
+ "award": "A.S. T Degree",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/geology/geology-ast/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6258,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6258,
+    "output_tokens": 1466,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1466,
+  "output_tokens_details": {
+   "thinking_tokens": 476
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05435,
+ "ms": 12573,
+ "seconds": 12.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    27.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "why": [
+    "the blocks sum to 27.0-30.0; the catalog states 30.0-30.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Geology - Associate in Science Transfer Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Differentiate between unsupported opinion and verifiable scientific fact supported by observations, experiments, and scientific theory.",
+    "Demonstrate a basic understanding of the field of geology by applying basic geologic concepts verbally and in writing."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 30,
+     "max": 30
+    },
+    "courses": [
+     {
+      "code": "GEOL 1",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOL 1H",
+        "units": 4.5,
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 2",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 2L",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 3",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOL 3H",
+        "units": 4.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1A",
+      "units": 5.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1B",
+      "units": 5.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH C2210H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH C2220H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The first core row is 'GEOL 1/1H 4.5 OR GEOL 2 & 2L 4.5': GEOL 2 and GEOL 2L must be taken together as one path (combined 4.5 units printed); they are recorded as alternatives of GEOL 1 with null units because the catalog prints no separate units for each.",
+   "'Required Subtotal 30' is recorded as the major total; the 34 units beside 'Complete the following' refer to Cal-GETC (general education) and are not counted.",
+   "The requirements table names Cal-GETC, but the narrative paragraph says the 60 units 'consist of the IGETC pattern'; reviewer may wish to confirm the GE pattern.",
+   "Transferable electives 'as needed to reach 60 transferable units' are degree-level electives outside the major total, so open_elective_units is null.",
+   "The description mentions 'meaningful career employment' but names no specific career, so careers is empty."
+  ]
+ },
+ "extracted_run": "38152016534"
+}

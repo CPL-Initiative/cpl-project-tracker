@@ -1,0 +1,212 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "43802",
+ "shape": "certificate",
+ "title": "Trauma Studies",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/trauma-studies/trauma-studies-certificate-achievement/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12238,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12238,
+    "output_tokens": 1505,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1505,
+  "output_tokens_details": {
+   "thinking_tokens": 680
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07905,
+ "ms": 13212,
+ "seconds": 13.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 9,
+   "share": 0.667,
+   "missing": [
+    "PSYCH41",
+    "PSYTS39",
+    "PSYTS40"
+   ],
+   "unexplained": [
+    "PSYTS39",
+    "PSYTS40"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "PSY_TS39",
+    "PSY_TS40",
+    "PSY_TS41"
+   ],
+   "flagged": [
+    "PSY_TS41"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    16.0
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Trauma Studies - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Analyze the types, the causes, and the impacts of trauma, and how they relate to the principles of a trauma-informed approach."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYCH 11H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYCH 4",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY_TS 39",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY_TS 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY_TS 41",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "PSYCH 41",
+    "why": "catalog prints this course (same title, Trauma-Informed Care and Frontline Work) as PSY_TS 41; recorded under that code as a catalog addition"
+   }
+  ],
+  "notes": [
+   "PSY_TS 39 and PSY_TS 40 are treated as the closed-list entries PSYTS39 and PSYTS40 (same titles, formatting difference only).",
+   "PSY_TS 41 is printed under a different subject than the closed list's PSYCH 41 (same title); flagged as catalog addition — reviewer should confirm whether these are the same course.",
+   "PSYCH 4 appears as an 'or' option on the PSYCH 11/11H row with no units printed beside it; units left null.",
+   "The long course list at the top of the text is a site navigation menu, not part of the program requirements, and was ignored."
+  ]
+ },
+ "extracted_run": "38152016534"
+}
