@@ -1,0 +1,179 @@
+{
+ "college": "Riverside City College",
+ "control_number": "40446",
+ "shape": "certificate",
+ "title": "Pilates Dance/Conditioning Instructor",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6233",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6756,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6756,
+    "output_tokens": 1061,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1061,
+  "output_tokens_details": {
+   "thinking_tokens": 219
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04824,
+ "ms": 9061,
+ "seconds": 9.9,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 13,
+   "share": 0.0,
+   "missing": [
+    "DAN14",
+    "DAND21",
+    "DAND22",
+    "DAND32",
+    "DAND33",
+    "DAND37",
+    "DAND38",
+    "DAND46",
+    "DAND49",
+    "DAND50",
+    "KIN36",
+    "KIN38",
+    "KIN43"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "DAN 14",
+    "why": "not in the text; no Pilates certificate section present"
+   },
+   {
+    "code": "DAN D21",
+    "why": "appears only in another program's studio course list (Humanities, Philosophy and Arts)"
+   },
+   {
+    "code": "DAN D22",
+    "why": "appears only in another program's studio course list (Humanities, Philosophy and Arts)"
+   },
+   {
+    "code": "DAN D32",
+    "why": "appears only in another program's studio course list (Humanities, Philosophy and Arts)"
+   },
+   {
+    "code": "DAN D33",
+    "why": "appears only in another program's studio course list (Humanities, Philosophy and Arts)"
+   },
+   {
+    "code": "DAN D37",
+    "why": "appears only in another program's studio course list (Humanities, Philosophy and Arts)"
+   },
+   {
+    "code": "DAN D38",
+    "why": "appears only in another program's studio course list (Humanities, Philosophy and Arts)"
+   },
+   {
+    "code": "DAN D46",
+    "why": "appears only in another program's studio course list (Humanities, Philosophy and Arts)"
+   },
+   {
+    "code": "DAN D49",
+    "why": "appears only in another program's studio course list (Humanities, Philosophy and Arts)"
+   },
+   {
+    "code": "DAN D50",
+    "why": "appears only in another program's studio course list (Humanities, Philosophy and Arts)"
+   },
+   {
+    "code": "KIN 36",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN 38",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN 43",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text does not contain the Pilates Dance/Conditioning Instructor Certificate of Achievement section. It appears to be from the Humanities, Philosophy and Arts program (an Associate of Arts degree): a list of included disciplines and applicable studio courses, ending with the Associate of Arts Degree heading.",
+   "section_heading is left empty because no heading for this award is printed in the text.",
+   "No blocks, total units or outcomes were recorded, because the requirements for this award are not in the text.",
+   "Several DAN courses on the closed list (D21, D22, D32, D33, D37, D38, D46, D49, D50) appear in the text, but only within the other program's list of applicable studio courses. They were not placed as requirements of this certificate.",
+   "The source page should be re-fetched so the correct section can be reviewed."
+  ]
+ },
+ "extracted_run": "38095615434"
+}

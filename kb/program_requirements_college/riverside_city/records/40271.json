@@ -1,0 +1,263 @@
+{
+ "college": "Riverside City College",
+ "control_number": "40271",
+ "shape": "degree",
+ "title": "Dance",
+ "award": "A.A. Degree",
+ "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6232",
+ "record_shape": 3,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6704,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6704,
+    "output_tokens": 2429,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2429,
+  "output_tokens_details": {
+   "thinking_tokens": 681
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0754,
+ "ms": 18610,
+ "seconds": 19.1,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 30,
+   "share": 0.0,
+   "missing": [
+    "DAN6",
+    "DAN6H",
+    "DAN7",
+    "DAN8",
+    "DAN9",
+    "DAND10",
+    "DAND13",
+    "DAND20",
+    "DAND21",
+    "DAND22",
+    "DAND23",
+    "DAND26",
+    "DAND29",
+    "DAND30A",
+    "DAND30B",
+    "DAND30C",
+    "DAND31",
+    "DAND31B",
+    "DAND32",
+    "DAND33",
+    "DAND34",
+    "DAND37",
+    "DAND38",
+    "DAND39",
+    "DAND43",
+    "DAND44",
+    "DAND47",
+    "DAND5",
+    "DAND50",
+    "DAND60"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "No Dance A.A. Degree section in the text (text shows the Fine and Applied Arts Area of Emphasis A.A. Degree)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "DAN 6",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN 6H",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN 7",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN 8",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN 9",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN D10",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN D13",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN D20",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN D21",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN D22",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN D23",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN D26",
+    "why": "not in the text"
+   },
+   {
+    "code": "DAN D29",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN D30A",
+    "why": "not in the text"
+   },
+   {
+    "code": "DAN D30B",
+    "why": "not in the text"
+   },
+   {
+    "code": "DAN D30C",
+    "why": "not in the text"
+   },
+   {
+    "code": "DAN D31",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN D31B",
+    "why": "not in the text"
+   },
+   {
+    "code": "DAN D32",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN D33",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN D34",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN D37",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN D38",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN D39",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN D43",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN D44",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN D47",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN D5",
+    "why": "not in the text"
+   },
+   {
+    "code": "DAN D50",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   },
+   {
+    "code": "DAN D60",
+    "why": "Dance A.A. section not in the text; named only in the Fine and Applied Arts emphasis discipline list"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text is the Fine and Applied Arts Area of Emphasis A.A. Degree (18 units across up to three disciplines, 9 from one discipline), not the Dance A.A. Degree. No Dance A.A. requirements, total or outcomes are printed, so no blocks or outcomes are recorded.",
+   "The Program Learning Outcomes in the text belong to the Fine and Applied Arts A.A., not the Dance A.A., and were not recorded.",
+   "The Fine and Applied Arts Dance discipline list also names DAN D9, DAN D46, DAN D48, DAN D49 and DAN D51, which are not in the closed list.",
+   "Reviewer should check the source URL; it may point to the wrong catalog page for the Dance A.A. Degree."
+  ]
+ },
+ "extracted_run": "38095615434"
+}

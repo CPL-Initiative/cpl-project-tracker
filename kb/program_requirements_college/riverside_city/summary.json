@@ -2,68 +2,23 @@
  "college": "Riverside City College",
  "programs": 268,
  "with_closed_list": 262,
- "found": 237,
- "extracted": 237,
- "errors": 0,
- "passed_machine_checks": 216,
+ "found": 248,
+ "extracted": 248,
+ "errors": 1,
+ "passed_machine_checks": 222,
  "failed": {
   "coverage": 9,
   "invented": 9,
-  "arithmetic": 13,
+  "arithmetic": 17,
   "repeated": 0,
   "outcomes": 1
  },
- "cost_usd": 13.3,
- "cost_per_program": 0.0561,
+ "cost_usd": 15.16,
+ "cost_per_program": 0.0611,
  "not_found": [
-  {
-   "control_number": "18108",
-   "title": "Administration & Information Systems",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "18109",
-   "title": "Communication, Media & Languages",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "18110",
-   "title": "Fine & Applied Arts",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "18111",
-   "title": "Humanities, Philosophy & Arts",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "18112",
-   "title": "Kinesiology, Health and Wellness",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "18113",
-   "title": "Social and Behavioral Studies",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "18114",
-   "title": "Math & Sciences",
-   "award": "A.S. Degree"
-  },
-  {
-   "control_number": "31163",
-   "title": "American Studies",
-   "award": "A.A. Degree"
-  },
   {
    "control_number": "33230",
    "title": "History",
-   "award": "A.A- T Degree"
-  },
-  {
-   "control_number": "37474",
-   "title": "Kinesiology",
    "award": "A.A- T Degree"
   },
   {
@@ -74,16 +29,6 @@
   {
    "control_number": "39085",
    "title": "Zero Net Energy",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
-  },
-  {
-   "control_number": "40271",
-   "title": "Dance",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "40446",
-   "title": "Pilates Dance/Conditioning Instructor",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
   },
   {
@@ -142,5 +87,5 @@
    "award": "Noncredit program"
   }
  ],
- "run": "38082999076"
+ "run": "38095615434"
 }

@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 268,
  "with_closed_list": 262,
- "started": "2026-10-10T20:15:51Z",
+ "started": "2026-10-10T23:37:23Z",
  "curriqunet": {
   "catalog": 124,
   "view_prefix": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/",
@@ -20,12 +20,12 @@
  },
  "pages_read": 435,
  "loads": 447,
- "seconds": 2207.3,
- "found": 237,
+ "seconds": 2126.3,
+ "found": 248,
  "by_method": {
   "no_closed_list": 6,
-  "not_found": 25,
-  "sitemap_page": 237
+  "not_found": 14,
+  "sitemap_page": 248
  },
  "shared_pages": {
   "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6081": [
@@ -237,53 +237,8 @@
  },
  "not_found": [
   {
-   "control_number": "18108",
-   "title": "Administration & Information Systems",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "18109",
-   "title": "Communication, Media & Languages",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "18110",
-   "title": "Fine & Applied Arts",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "18111",
-   "title": "Humanities, Philosophy & Arts",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "18112",
-   "title": "Kinesiology, Health and Wellness",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "18113",
-   "title": "Social and Behavioral Studies",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "18114",
-   "title": "Math & Sciences",
-   "award": "A.S. Degree"
-  },
-  {
-   "control_number": "31163",
-   "title": "American Studies",
-   "award": "A.A. Degree"
-  },
-  {
    "control_number": "33230",
    "title": "History",
-   "award": "A.A- T Degree"
-  },
-  {
-   "control_number": "37474",
-   "title": "Kinesiology",
    "award": "A.A- T Degree"
   },
   {
@@ -294,16 +249,6 @@
   {
    "control_number": "39085",
    "title": "Zero Net Energy",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
-  },
-  {
-   "control_number": "40271",
-   "title": "Dance",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "40446",
-   "title": "Pilates Dance/Conditioning Instructor",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
   },
   {
@@ -364,9 +309,126 @@
  ],
  "page_claimed": [],
  "coverage_bands": {
-  "0.5-0.8": 12,
-  "0.8-1.0": 52,
-  "1.0": 173
+  "0.5-0.8": 15,
+  "0.8-1.0": 58,
+  "1.0": 175
  },
- "run": "38082999076"
+ "would_extract": {
+  "against": "kb/program_requirements_college/riverside_city",
+  "kept": 237,
+  "programs": 11,
+  "list": [
+   {
+    "control_number": "18108",
+    "title": "Administration & Information Systems",
+    "award": "A.A. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Admin_Info_Systems",
+    "coverage": 0.939,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "18109",
+    "title": "Communication, Media & Languages",
+    "award": "A.A. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6231",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "18110",
+    "title": "Fine & Applied Arts",
+    "award": "A.A. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6287",
+    "coverage": 0.991,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "18111",
+    "title": "Humanities, Philosophy & Arts",
+    "award": "A.A. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6288",
+    "coverage": 0.942,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "18112",
+    "title": "Kinesiology, Health and Wellness",
+    "award": "A.A. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6289",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "18113",
+    "title": "Social and Behavioral Studies",
+    "award": "A.A. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6291",
+    "coverage": 0.937,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "18114",
+    "title": "Math & Sciences",
+    "award": "A.S. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6290",
+    "coverage": 0.955,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31163",
+    "title": "American Studies",
+    "award": "A.A. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6285",
+    "coverage": 0.745,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37474",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6234",
+    "coverage": 0.612,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "40271",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6232",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "40446",
+    "title": "Pilates Dance/Conditioning Instructor",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6233",
+    "coverage": 0.692,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   }
+  ]
+ },
+ "run": "38095615434"
 }
