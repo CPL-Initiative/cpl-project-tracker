@@ -955,6 +955,7 @@ def load_rows(college: str, folder: str | None = None) -> tuple[list[dict], list
     machine checks and its own extraction run; it never carries checked, which
     the function writes false."""
     from _program_requirements_load import record_read
+    from _program_requirements_score import places_none
     dest = folder or os.path.join(COLLEGE_DIR, slug_of(college))
     with open(os.path.join(dest, "capture.json")) as fh:
         year = json.load(fh).get("catalog_year")
@@ -981,6 +982,8 @@ def load_rows(college: str, folder: str | None = None) -> tuple[list[dict], list
             why = "a total that is not a number"
         elif not run.isdigit():
             why = "no extraction run"
+        elif places_none(rec.get("score")):
+            why = "places none of its listed courses (another program's page)"
         if why:
             skipped.append({"control_number": key, "why": why})
             continue

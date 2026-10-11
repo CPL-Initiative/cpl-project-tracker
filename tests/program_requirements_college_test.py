@@ -502,11 +502,16 @@ try:
     rec("00005", record={"program": {"measure": "credits", "total_units": {}}, "blocks": []})
     rec("00006", record={"program": {"measure": "units", "total_units": {"min": "18"}}, "blocks": []})
     rec("00007", extracted_run=None)
+    # Sam, Open Asks Sheet 62 card 1 ("remove them"): a record placing none of its courses read another page.
+    rec("00008", score={"coverage": {"pass": True, "placed": 0, "listed": 6}, "invented": {"pass": True},
+                        "arithmetic": {"status": "unstated"}, "pass": True})
     rows, skipped = C.load_rows("Cerritos College", folder=tmp)
     check([r["control_number"] for r in rows] == ["00001", "00002"]
-          and [s["control_number"] for s in skipped] == ["00003", "00004", "00005", "00006", "00007"],
+          and [s["control_number"] for s in skipped] == ["00003", "00004", "00005", "00006", "00007", "00008"],
           "the load leaves out an errored record, another college's, an unknown measure, a total that is "
-          "not a number and a record with no run, each with its reason: %r" % skipped)
+          "not a number, a record with no run and one placing none of its courses, each with its reason: %r" % skipped)
+    check("another program's page" in skipped[-1]["why"],
+          "a record placing none of its listed courses is never loaded, even one that passed as scored")
     check(all(not {"checked", "checked_by", "checked_at"} & set(r) for r in rows),
           "a load row never carries checked: the function writes every row unchecked")
     check([r["extracted_run"] for r in rows] == ["37961137169", "37966828676"],
@@ -533,7 +538,7 @@ try:
     finally:
         C.COLLEGE_DIR, C.RECEIPTS = real
     check(code == 1 and receipt["inserted_keys"] == ["00001"] and receipt["error"].startswith("batch 2")
-          and receipt["posted"] == 2 and len(receipt["skipped"]) == 5,
+          and receipt["posted"] == 2 and len(receipt["skipped"]) == 6,
           "a load that stops mid-way still files a receipt naming what it inserted and where it stopped")
     check(receipt["rollback"] and "checked = false" in receipt["rollback"] and "'00001'" in receipt["rollback"]
           and "'00002'" not in receipt["rollback"],

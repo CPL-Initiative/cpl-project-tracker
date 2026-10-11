@@ -1212,6 +1212,10 @@ some = S.score({"program": {"total_units": None}, "blocks": [{"name": "Required"
 check(some["coverage"]["pass"] and not some["coverage"]["none_placed"],
       "a record placing one listed course and explaining the rest still passes coverage")
 
+check(S.places_none({"coverage": {"listed": 6, "placed": 0}}) and not S.places_none({"coverage": {"listed": 6, "placed": 1}})
+      and not S.places_none({"coverage": {"listed": 0, "placed": 0}}) and not S.places_none(None),
+      "places_none: a program with listed courses and none placed, and nothing else")
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:
