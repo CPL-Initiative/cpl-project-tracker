@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-330 document(s).
+331 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 360 | [Sam's review flow first; the emphasis loads, the COCI status chips, Long Beach City](../session_360_handoff.md) | 2026-10-11 |
 | 359 | [RCCD's three colleges read, loaded and displayed; MAP Users on First Light](../session_359_handoff.md) | 2026-10-10 |
 | 358 | [curriQunet catalogs read as data; the next college on Open Asks Sheet 59](../session_358_handoff.md) | 2026-10-10 |
 | 357 | [the display applied from the runner; Mt. San Antonio loaded; Approved programs read](../session_357_handoff.md) | 2026-10-10 |

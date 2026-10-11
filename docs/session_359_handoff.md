@@ -4,6 +4,8 @@ date: 2026-10-10
 session: 358 (SkyFern)
 tags: [handoff, program-requirements, harvest, phase-2, curriqunet, rccd, display, ui-pass, checkpoint]
 status: current
+superseded: true
+superseded_by: session_360_handoff.md
 ---
 
 # You are Session 359
