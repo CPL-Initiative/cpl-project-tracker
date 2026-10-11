@@ -1,0 +1,147 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "43288",
+ "shape": "noncredit",
+ "title": "Robotics Exploration",
+ "award": "Noncredit program",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology/robotics-exploration-certificate-completion/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5683,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5683,
+    "output_tokens": 361,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 361,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.02995,
+ "ms": 3886,
+ "seconds": 4.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    54.0,
+    54.0
+   ],
+   "stated": [
+    54.0,
+    54.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Robotics Exploration - Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 54,
+    "max": 54
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate the ability to program an industrial robot to pick up parts from one location and drop them off at a specified second location."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ELECT 630A",
+      "units": 27,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECT 630B",
+      "units": 27,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate of completion counted in hours; Total Hours 54 as printed.",
+   "The 'Careers' text appears only in the site footer menu, so it was not recorded as a career."
+  ]
+ },
+ "extracted_run": "38152016534"
+}

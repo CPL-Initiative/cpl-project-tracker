@@ -1,0 +1,183 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "37222",
+ "shape": "certificate",
+ "title": "Formula Room Technician",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/nutrition-dietetics/formula-room-technician-certificate-achievement/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5856,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5856,
+    "output_tokens": 673,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 673,
+  "output_tokens_details": {
+   "thinking_tokens": 106
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03688,
+ "ms": 5109,
+ "seconds": 5.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "NUTR24"
+   ],
+   "flagged": [
+    "NUTR24"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.0,
+    17.0
+   ],
+   "stated": [
+    17.0,
+    17.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Formula Room Technician - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 17
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Evaluate proper safety and sanitation techniques utilized in food service systems.",
+    "Create menus for modified diets in the health care setting."
+   ],
+   "careers": [
+    "Formula Room Technician",
+    "Formula Room Human Milk Technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COSA 1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR 21",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR 24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NUTR 32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR 34",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "NUTR 24 (Sanitation, Safety and Equipment, 3 units) is required in the catalog but absent from the closed list; recorded as a catalog addition.",
+   "Catalog total of 17 units matches the sum of the required courses."
+  ]
+ },
+ "extracted_run": "38152016534"
+}

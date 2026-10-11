@@ -1,0 +1,223 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "41830",
+ "shape": "adt",
+ "title": "Business Administration 2.0",
+ "award": "A.S. T Degree",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/business-administration-2.0-ast/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6355,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6355,
+    "output_tokens": 1631,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1631,
+  "output_tokens_details": {
+   "thinking_tokens": 620
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05804,
+ "ms": 13875,
+ "seconds": 14.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.0,
+    30.0
+   ],
+   "stated": [
+    29.0,
+    30.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Administration 2.0 - Associate in Science Transfer Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Analyze the nature, environment, and roles of businesses and their importance to the economy.",
+    "Demonstrate knowledge of theory and skill sets related to the primary elements and terminologies of business as they relate to society."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 29,
+     "max": 30
+    },
+    "courses": [
+     {
+      "code": "ACCTG 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GBUS 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW 18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 37",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 47",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'Required Subtotal 29-30' is recorded as both the award total and the block's stated total; the 60-unit Degree Total includes Cal-GETC and transferable electives and is not the major total.",
+   "Transferable electives 'if needed to reach 60 transferable units' are outside the major subtotal, so open_elective_units is null.",
+   "MATH 47 is printed on an 'or' row with no units beside it; units left null (closed list stores 3).",
+   "The 4-5 unit range is printed on the shared STAT C1000/C1000H row covering the 'or STAT C1000E' option; STAT C1000H given 4 as part of the same row, STAT C1000E has no units printed beside it (closed list stores 5).",
+   "The 'Careers' text appears only in the site footer menu, so no careers are recorded.",
+   "The Program Student Learning Outcomes are printed on this degree's own overview page."
+  ]
+ },
+ "extracted_run": "38152016534"
+}

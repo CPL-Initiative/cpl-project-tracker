@@ -1,0 +1,447 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "20937",
+ "shape": "certificate",
+ "title": "Diagnostic Medical Imaging (Radiologic Technology)",
+ "award": "Certificate of Achievement requiring 60+S/90+Q units",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/diagnostic-medical-imaging/diagnostic-medical-imaging-radiologic-technology-certificate-achievement/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6690,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6690,
+    "output_tokens": 3453,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3453,
+  "output_tokens_details": {
+   "thinking_tokens": 878
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09582,
+ "ms": 25963,
+ "seconds": 26.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 19,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "AH60",
+    "AH61",
+    "ANAT41",
+    "DMI462",
+    "LEARN11"
+   ],
+   "flagged": [
+    "AH60",
+    "AH61",
+    "ANAT41",
+    "DMI462",
+    "LEARN11"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    81.5,
+    81.5
+   ],
+   "stated": [
+    71.5,
+    71.5
+   ],
+   "why": [
+    "the blocks sum to 81.5-81.5; the catalog states 71.5-71.5"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Diagnostic Medical Imaging (Radiologic Technology) Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 71.5,
+    "max": 71.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Diagram the photographic and digital process and define the technical factors utilized in medical image formation.",
+    "Distinguish the fundamental structure of matter, diagram the production of x-rays, and examine how different radiographic techniques effect the resulting image on a radiograph.",
+    "Assess how radiation effects body systems, differentiate between different types of radiation and their effects on human tissue, and formulate ways to decrease exposure.",
+    "Manage proper patient positioning of the skeletal system, cranium, and viscera to achieve industry standard radiograph.(Active - Currently Assessing)",
+    "Demonstrate ability to properly use all equipment required to produce a diagnostic radiograph; produce an industry standard and diagnostic radiograph",
+    "Demonstrate understanding of the knowledge and skills necessary to function as professional, ethical, accurate, and reliable members of the Radiology health care team."
+   ],
+   "careers": [
+    "medical imaging professionals"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Prerequisite Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ANAT 41",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AH 60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AH 61",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "FIRST YEAR Spring Semester REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DMI 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMI 403",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "FIRST YEAR Summer Session REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DMI 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "FIRST YEAR Fall Semester REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DMI 11",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMI 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMI 21",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMI 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "FIRST YEAR Winter Session REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DMI 40A",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "FIRST YEAR Spring Semester REQUIRED COURSES (second spring)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DMI 24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMI 31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMI 40B",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMI 60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SECOND YEAR Summer Session REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DMI 40C",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SECOND YEAR Fall Semester REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DMI 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMI 40D",
+      "units": 10,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMI 222",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SECOND YEAR Winter Session REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DMI 61",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SECOND YEAR Spring Semester REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DMI 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMI 40E",
+      "units": 10,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "RECOMMENDED but not required courses",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DMI 462",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LEARN 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog's 'Total Units 71.5' covers the DMI program course schedule only; it excludes the 10 prerequisite units (ANAT 41, AH 60, AH 61), which are recorded as a separate prerequisite block and must be completed within five years before the first spring semester of the program.",
+   "The award label says 60+S/90+Q units; the catalog states 71.5 units for program requirements.",
+   "The catalog prints DMI 40D; the closed list stores it as 'DMI40D' (no space, units not stored). Treated as the same closed-list course, catalog_addition false.",
+   "The program schedule is printed by term; each term heading 'REQUIRED COURSES' is recorded as its own 'all' block. The second spring block falls under the FIRST YEAR heading in the catalog (two spring semesters are listed under FIRST YEAR); block names add year labels for clarity.",
+   "The Certificate of Achievement option is available to students who already hold an associate degree or higher; they still follow the DMI program application and waitlist process.",
+   "One outcome is printed with the annotation '(Active - Currently Assessing)', copied as printed.",
+   "The career entry is taken from 'employment as practicing medical imaging professionals in acute care hospitals, medical clinics and/or private offices.'"
+  ]
+ },
+ "extracted_run": "38152016534"
+}

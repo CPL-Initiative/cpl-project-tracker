@@ -1,0 +1,281 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "11315",
+ "shape": "certificate",
+ "title": "Medical Assisting: Clinical Option",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/medical-assisting-program/medical-assisting-administrative-clinical-certificate-achievement/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6244,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6244,
+    "output_tokens": 1821,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1821,
+  "output_tokens_details": {
+   "thinking_tokens": 518
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0614,
+ "ms": 15298,
+ "seconds": 15.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "ACCTG200",
+    "COSA10",
+    "COSA15",
+    "COSA25",
+    "MA290"
+   ],
+   "flagged": [
+    "ACCTG200",
+    "COSA10",
+    "COSA15",
+    "COSA25",
+    "MA290"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    33.0
+   ],
+   "stated": [
+    31.0,
+    33.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Medical Assisting: Combined Administrative/Clinical - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate clinical patient skills",
+    "Demonstrate administrative patient skills.",
+    "Demonstrate medical office employability skills"
+   ],
+   "careers": [
+    "Administrative/Clinical Medical Assistant"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25,
+     "max": 26
+    },
+    "courses": [
+     {
+      "code": "ANAT 41",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "BIO 60",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "AH 60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AH 276",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 280",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 282",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 286",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 288",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 290",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Accounting Option",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Administrative Options",
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "ACCTG 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COSA 1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSA 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Database Option",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Administrative Options",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "COSA 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COSA 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The program is named 'Medical Assisting: Clinical Option', but the source page is titled 'Medical Assisting: Combined Administrative/Clinical - Certificate of Achievement' (Plan Code 3608). No separate Clinical Option section appears in the text. A reviewer should confirm this is the right program page.",
+   "The catalog total of 31-33 units exceeds the award band stated for this program (16 to fewer than 30 semester units), which is another sign that the page may describe a different program.",
+   "The range '4-5' is printed on the ANAT 41 row for the pair 'ANAT 41 or BIO 60'. No separate units are printed for BIO 60, so its units are null. The state file stores ANAT 41 as 5 units and BIO 60 as 4.",
+   "'Administrative Options' block: the student completes either the Accounting Option or the Database Option. The combined subtotal for this choice is printed as 6-7 units.",
+   "The program student learning outcomes are recorded as printed. The first and third have no ending period; the second does.",
+   "The page shows a single outcomes list, printed in the overview section of this certificate."
+  ]
+ },
+ "extracted_run": "38152016534"
+}

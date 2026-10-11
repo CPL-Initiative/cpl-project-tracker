@@ -1,0 +1,181 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "38541",
+ "shape": "certificate",
+ "title": "Gas Tungsten Arc Welding (GTAW)",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/welding-technology/gas-tungsten-arc-welding-gtaw-certificate-achievement/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5965,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5965,
+    "output_tokens": 568,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 568,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03522,
+ "ms": 4714,
+ "seconds": 4.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "WELD480",
+    "WELD482"
+   ],
+   "flagged": [
+    "WELD480",
+    "WELD482"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    15.0,
+    15.0
+   ],
+   "stated": [
+    15.0,
+    15.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Gas Tungsten Arc Welding (GTAW) - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 15,
+    "max": 15
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate introductory level skills to produce quality welds in the flat, horizontal, and vertical positions using the GTAW (Gas Tungsten Arc Welding) process."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MTFAB 260",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 50",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 214",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 480",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WELD 481",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 482",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "WELD 480 and WELD 482 are listed in the catalog's required courses but are not in the closed list; recorded as catalog additions.",
+   "Total Units 15 is stated in the catalog; the listed course units sum to 15."
+  ]
+ },
+ "extracted_run": "38152016534"
+}

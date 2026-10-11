@@ -1,0 +1,422 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "43800",
+ "shape": "degree",
+ "title": "Ethnic Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/ethnic-studies/ethnic-studies-aa/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7272,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7272,
+    "output_tokens": 2805,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2805,
+  "output_tokens_details": {
+   "thinking_tokens": 736
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08519,
+ "ms": 20475,
+ "seconds": 21.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 30,
+   "listed": 33,
+   "share": 0.909,
+   "missing": [
+    "SOCIC1000",
+    "SOCIC1000H",
+    "SOCIO11H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "SOCSC1H"
+   ],
+   "flagged": [
+    "SOCSC1H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Ethnic Studies - Associate in Arts",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "ge_pattern": "LBCC-GE or Cal-GETC",
+   "outcomes": [
+    "Apply major theoretical concepts from the field of Ethnic Studies to analyze historical and current social issues through race and intersectional lenses."
+   ],
+   "careers": [
+    "education",
+    "research",
+    "community advocacy",
+    "city planning",
+    "health and human services",
+    "marketing",
+    "law",
+    "fine arts"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ETHST 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHST 1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHST 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMAN 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCSC 7",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "History and Culture emphasis",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ANTHR 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTHR 2H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 27A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 27B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMAN 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUMAN 1H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCSC 1",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCSC 1H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Literature and Language emphasis",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTHR 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHST 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Philosophy and Sociology emphasis",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ETHST 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 10H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCIO 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCIO 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Performing and Visual Arts emphasis",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ART 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 19",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 20",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 24",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "SOCIO 11H",
+    "why": "not in the text; only SOCIO 11 is listed"
+   },
+   {
+    "code": "SOCIC1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCIC1000H",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Total of 24 is the printed 'Required Subtotal'; the 60-unit degree total includes GE (LBCC-GE or Cal-GETC, 27-34) and electives to reach 60, which are not part of the major.",
+   "SOCSC 7 is printed as an 'or' alternative to HUMAN 7 without units beside it; units left null.",
+   "DANCE 19, DANCE 20 and DANCE 24 are printed without units; units left null (closed list stores 3, 2, 2).",
+   "SOCSC 1H appears as an alternative to HUMAN 1/1H but is not in the closed list; marked catalog_addition.",
+   "Catalog prints 'HUMAN 1/1H ... or SOCSC 1 ... or SOCSC 1H' as one choice; recorded HUMAN 1 with HUMAN 1H, SOCSC 1 and SOCSC 1H as alternatives.",
+   "Only one program student learning outcome is printed."
+  ]
+ },
+ "extracted_run": "38152016534"
+}

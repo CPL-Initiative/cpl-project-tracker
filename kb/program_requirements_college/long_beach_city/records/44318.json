@@ -1,0 +1,180 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "44318",
+ "shape": "certificate",
+ "title": "Health Education and Promotion",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/public-health-science/health-education-promotion-certificate-achievement/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5778,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5778,
+    "output_tokens": 788,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 788,
+  "output_tokens_details": {
+   "thinking_tokens": 222
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03887,
+ "ms": 7378,
+ "seconds": 7.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    9.0,
+    9.0
+   ],
+   "stated": [
+    9.0,
+    9.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Health Education and Promotion - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 9,
+    "max": 9
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate the knowledge, skills, and strategies of public health that aim to improve individual and community health."
+   ],
+   "careers": [
+    "public health",
+    "health education",
+    "health promotion",
+    "community health worker",
+    "health sciences",
+    "human services"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "PH 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PH 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "IN ADDITION, complete THREE (3) units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HLED 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLED 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The description also mentions 'other health-related careers that benefit from foundational knowledge and skills in health education, promotion, and advocacy'; this generic phrase was not recorded as a career.",
+   "The state file title for PH 22 is misspelled ('Helath'); the catalog prints 'Health and Social Justice'."
+  ]
+ },
+ "extracted_run": "38152016534"
+}

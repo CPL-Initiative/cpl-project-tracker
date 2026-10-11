@@ -1,0 +1,182 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "08808",
+ "shape": "degree",
+ "title": "Computer Science",
+ "award": "A.S. Degree",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-aided-design-mechanical/computer-aided-design-mechanical-as/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13620,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13620,
+    "output_tokens": 782,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 782,
+  "output_tokens_details": {
+   "thinking_tokens": 99
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07012,
+ "ms": 7771,
+ "seconds": 8.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 12,
+   "share": 0.0,
+   "missing": [
+    "CS11",
+    "CS21",
+    "CS22",
+    "CS31",
+    "CS51",
+    "CS61",
+    "MATHC2210",
+    "MATHC2210H",
+    "MATHC2220",
+    "MATHC2220H",
+    "PHYS3A",
+    "PHYS3B"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CS 11",
+    "why": "named only in a course index list; no program requirements in the text"
+   },
+   {
+    "code": "CS 21",
+    "why": "named only in a course index list; no program requirements in the text"
+   },
+   {
+    "code": "CS 22",
+    "why": "named only in a course index list; no program requirements in the text"
+   },
+   {
+    "code": "CS 31",
+    "why": "named only in a course index list; no program requirements in the text"
+   },
+   {
+    "code": "CS 51",
+    "why": "named only in a course index list; no program requirements in the text"
+   },
+   {
+    "code": "CS 61",
+    "why": "named only in a course index list; no program requirements in the text"
+   },
+   {
+    "code": "MATH C2210",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH C2210H",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH C2220",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH C2220H",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 3A",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 3B",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog text contains no section for the Computer Science A.S. Degree. It is only an alphabetical course index (COSE through ESL), apparently taken from the site's navigation, and it is cut off at both ends.",
+   "The source URL points to the Computer-Aided Design Mechanical A.S. page, not Computer Science, so the wrong page may have been retrieved.",
+   "No requirements, totals, outcomes or careers could be recorded. section_heading is left empty because no program heading appears.",
+   "CS 11, CS 21, CS 22, CS 31, CS 51 and CS 61 appear in the index list along with CS 12, which is not on the closed list. That list is not a requirements section, so none of these courses were placed.",
+   "A reviewer should obtain the Computer Science A.S. page for the 2026-2027 catalog."
+  ]
+ },
+ "extracted_run": "38152016534"
+}

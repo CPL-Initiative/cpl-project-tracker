@@ -1,0 +1,240 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "08832",
+ "shape": "degree",
+ "title": "Foreign Languages",
+ "award": "A.A. Degree",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/communication-studies/communication-studies-aa/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13822,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13822,
+    "output_tokens": 1378,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1378,
+  "output_tokens_details": {
+   "thinking_tokens": 253
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08285,
+ "ms": 12024,
+ "seconds": 12.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 24,
+   "share": 0.0,
+   "missing": [
+    "FREN1",
+    "FREN2",
+    "FREN25A",
+    "FREN3",
+    "FREN4",
+    "JAPAN1",
+    "JAPAN2",
+    "JAPAN3",
+    "JAPAN4",
+    "LING1",
+    "LING3",
+    "SPAN1",
+    "SPAN10",
+    "SPAN10H",
+    "SPAN2",
+    "SPAN25A",
+    "SPAN25B",
+    "SPAN25C",
+    "SPAN25D",
+    "SPAN3",
+    "SPAN4",
+    "SPAN8",
+    "SPAN9",
+    "SPAN9H"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found: the text holds no Foreign Languages A.A. section",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "FREN 1",
+    "why": "appears only in a site-wide course index, not in any requirements section"
+   },
+   {
+    "code": "FREN 2",
+    "why": "appears only in a site-wide course index, not in any requirements section"
+   },
+   {
+    "code": "FREN 25A",
+    "why": "appears only in a site-wide course index, not in any requirements section"
+   },
+   {
+    "code": "FREN 3",
+    "why": "appears only in a site-wide course index, not in any requirements section"
+   },
+   {
+    "code": "FREN 4",
+    "why": "appears only in a site-wide course index, not in any requirements section"
+   },
+   {
+    "code": "JAPAN 1",
+    "why": "appears only in a site-wide course index, not in any requirements section"
+   },
+   {
+    "code": "JAPAN 2",
+    "why": "appears only in a site-wide course index, not in any requirements section"
+   },
+   {
+    "code": "JAPAN 3",
+    "why": "appears only in a site-wide course index, not in any requirements section"
+   },
+   {
+    "code": "JAPAN 4",
+    "why": "appears only in a site-wide course index, not in any requirements section"
+   },
+   {
+    "code": "LING 1",
+    "why": "appears only in a site-wide course index, not in any requirements section"
+   },
+   {
+    "code": "LING 3",
+    "why": "appears only in a site-wide course index, not in any requirements section"
+   },
+   {
+    "code": "SPAN 1",
+    "why": "not in the text (index cut off at MUSIC)"
+   },
+   {
+    "code": "SPAN 10",
+    "why": "not in the text (index cut off at MUSIC)"
+   },
+   {
+    "code": "SPAN 10H",
+    "why": "not in the text (index cut off at MUSIC)"
+   },
+   {
+    "code": "SPAN 2",
+    "why": "not in the text (index cut off at MUSIC)"
+   },
+   {
+    "code": "SPAN 25A",
+    "why": "not in the text (index cut off at MUSIC)"
+   },
+   {
+    "code": "SPAN 25B",
+    "why": "not in the text (index cut off at MUSIC)"
+   },
+   {
+    "code": "SPAN 25C",
+    "why": "not in the text (index cut off at MUSIC)"
+   },
+   {
+    "code": "SPAN 25D",
+    "why": "not in the text (index cut off at MUSIC)"
+   },
+   {
+    "code": "SPAN 3",
+    "why": "not in the text (index cut off at MUSIC)"
+   },
+   {
+    "code": "SPAN 4",
+    "why": "not in the text (index cut off at MUSIC)"
+   },
+   {
+    "code": "SPAN 8",
+    "why": "not in the text (index cut off at MUSIC)"
+   },
+   {
+    "code": "SPAN 9",
+    "why": "not in the text (index cut off at MUSIC)"
+   },
+   {
+    "code": "SPAN 9H",
+    "why": "not in the text (index cut off at MUSIC)"
+   }
+  ],
+  "notes": [
+   "The source URL points to the Communication Studies A.A. page, not Foreign Languages; the wrong page appears to have been fetched.",
+   "The catalog text is only an alphabetical course index (site navigation), running from 'H 271WE' to a truncated 'MUSIC 13AD'. It prints no program description, requirements, units, outcomes or careers for the Foreign Languages A.A.",
+   "No blocks were recorded because no requirement rules appear in the text; the correct Foreign Languages A.A. page should be retrieved and re-read."
+  ]
+ },
+ "extracted_run": "38152016534"
+}

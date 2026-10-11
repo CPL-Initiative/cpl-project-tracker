@@ -1,0 +1,196 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "31123",
+ "shape": "adt",
+ "title": "Early Childhood Education",
+ "award": "A.S. T Degree",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/child-development-early-childhood-education/early-childhood-education-ast/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6095,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6095,
+    "output_tokens": 1386,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1386,
+  "output_tokens_details": {
+   "thinking_tokens": 476
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0521,
+ "ms": 11258,
+ "seconds": 11.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Early Childhood Education - Associate in Science Transfer Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Design, implement, and evaluate environments and activities that support optimum developmental play and learning outcomes for all young children.",
+    "Demonstrate responsive care and teaching practices for young children through the integration of assessment, theory, and practice.",
+    "Apply effective guidance and interaction strategies to support children's social learning, peer relations, and self-confidence.",
+    "Incorporate ethical and professional standards engaging in collaborative learning and reflective practices."
+   ],
+   "careers": [
+    "fully qualified teacher in a public or private early childhood setting"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "CDECE 19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDECE 48",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDECE 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDECE 53",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDECE 61",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDECE 66",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDECE 68",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints 'CDEV C1000'; closed list stores 'CDEVC1000' (same course, spacing differs), so it is treated as on the closed list.",
+   "total_units is the printed 'Required Subtotal 24'; the 60-unit degree total includes Cal-GETC (34) and transferable electives as needed, which are not part of the major total, so open_elective_units is null.",
+   "The career entry is read from the description sentence stating the degree fulfills the state education requirement for a fully qualified teacher in a public or private early childhood setting; reviewer may wish to confirm it counts as a named occupation.",
+   "Program Student Learning Outcomes are printed on the program's own page for this A.S.-T degree."
+  ]
+ },
+ "extracted_run": "38152016534"
+}

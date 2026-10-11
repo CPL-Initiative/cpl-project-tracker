@@ -1,0 +1,221 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "39570",
+ "shape": "adt",
+ "title": "Physics",
+ "award": "A.S. T Degree",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/physical-sciences/physics-uctp/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6427,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6427,
+    "output_tokens": 1402,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1402,
+  "output_tokens_details": {
+   "thinking_tokens": 346
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05375,
+ "ms": 11577,
+ "seconds": 12.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "CHEM1A",
+    "CHEM1B",
+    "MATH84"
+   ],
+   "flagged": [
+    "CHEM1A",
+    "CHEM1B",
+    "MATH84"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    45.5,
+    45.5
+   ],
+   "stated": [
+    45.5,
+    45.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "UCTP in Physics - Associate in Science UC Transfer Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 45.5,
+    "max": 45.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Analyze problems and formulate solutions using a combination of graphs, drawings, equations, and conceptual reasoning."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 45.5,
+     "max": 45.5
+    },
+    "courses": [
+     {
+      "code": "CHEM 1A",
+      "units": 5.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 1B",
+      "units": 5.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 3A",
+      "units": 5.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 3B",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 3C",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH C2210H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH C2220H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 80",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 84",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page is titled 'UCTP in Physics - Associate in Science UC Transfer Degree' (Plan Code 5539C), a UC Transfer Pathway degree, while the requested award is 'A.S. T Degree'; reviewer should confirm this is the intended program/award.",
+   "total_units records the printed major 'Subtotal Units 45.5'; the page also prints 'Degree Total 61.5-65.5' including Cal-GETC/IGETC units (16-20).",
+   "The line 'IN ADDITION, complete the following: 1 34' contains an unexplained '34' (possibly footnote markers 1 and 3/4 or a stray value); not used.",
+   "GE pattern is printed as Cal-GETC, with subtotal labeled IGETC; GE areas were not placed in blocks.",
+   "The single Program Student Learning Outcome is printed for the program page as a whole; recorded for this award.",
+   "MATH C2210/C2210H and MATH C2220/C2220H are recorded with the honors versions as alternatives.",
+   "CHEM 1A, CHEM 1B and MATH 84 are required in the catalog but absent from the closed list (catalog additions)."
+  ]
+ },
+ "extracted_run": "38152016534"
+}

@@ -1,0 +1,173 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "37302",
+ "shape": "certificate",
+ "title": "Electric & Hybrid Vehicles",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/advanced-transportation/electric--hybrid-vehicles-certificate-achievement/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5861,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5861,
+    "output_tokens": 751,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 751,
+  "output_tokens_details": {
+   "thinking_tokens": 148
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03846,
+ "ms": 6454,
+ "seconds": 7.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    15.0,
+    15.0
+   ],
+   "stated": [
+    15.0,
+    15.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Electric & Hybrid Vehicles - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 15,
+    "max": 15
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Define the pros and cons of various types of propulsion systems to include electric vehicles and hybrid fueled vehicles.",
+    "Formulate diagnostic strategies for resolving vehicle concerns."
+   ],
+   "careers": [
+    "technicians",
+    "service writers",
+    "parts support specialists"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AUTO 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 216",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 280",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The overview text refers to 'The degree' although this page is for the Certificate of Achievement; the description also names 'entry and mid-level technician, service writer, and parts support specialist positions' at automotive dealerships, the ports of Long Beach and Los Angeles, and transit.",
+   "Stated total of 15 units equals the sum of the five required courses; the award title's range (8 to fewer than 16 units) is consistent."
+  ]
+ },
+ "extracted_run": "38152016534"
+}

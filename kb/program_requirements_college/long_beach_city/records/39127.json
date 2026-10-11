@@ -1,0 +1,147 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "39127",
+ "shape": "noncredit",
+ "title": "Certified Dietary Manager (CDM) Board Exam Preparation",
+ "award": "Noncredit program",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/nutrition-dietetics/certified-dietary-manager-cdm-board-exam-preparation-certificate-completion/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5762,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5762,
+    "output_tokens": 398,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 398,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03101,
+ "ms": 3632,
+ "seconds": 4.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certified Dietary Manager (CDM) Board Exam Preparation - Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Synthesize theories and principles necessary for licensure as a Certified Dietary Manager (CDM)."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NUTR 601",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR 602",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate of completion counted in hours; total of 36 hours is taken from the 'Total Hours' line.",
+   "The description mentions 'dietary managers in health care institutions' only as the credentialing exam's context, not as a stated career, so careers is left empty."
+  ]
+ },
+ "extracted_run": "38152016534"
+}

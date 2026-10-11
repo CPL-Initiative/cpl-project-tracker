@@ -1,0 +1,436 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "44317",
+ "shape": "certificate",
+ "title": "Cultural Diversity and Awareness",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/sociology/cultural-diversity-awareness-certificate-achievement/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7328,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7328,
+    "output_tokens": 2870,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2870,
+  "output_tokens_details": {
+   "thinking_tokens": 659
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08671,
+ "ms": 20701,
+ "seconds": 21.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 38,
+   "listed": 38,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    15.0,
+    15.0
+   ],
+   "stated": [
+    15.0,
+    15.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Cultural Diversity and Awareness - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 15,
+    "max": 15
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Apply multi-cultural, equity-minded, and interdisciplinary perspectives in social and professional settings."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Cultural Diversity Area of Emphasis",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTHR 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTHR 2H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTHR 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMAN 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUMAN 1H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCSC 1",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCSC 1H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCIO 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Intercultural Communication Area of Emphasis",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTHR 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Gender and Sexuality Area of Emphasis",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 10H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCIO 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Inequity and Privilege Area of Emphasis",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ETHST 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHST 1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMAN 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCSC 7",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 7H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCIO 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCIO 11H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Historical Context Area of Emphasis",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTHR 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTHR 3H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 2C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 2CH",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 27B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints 'SOCI C1000/C1000H'; matched to closed-list SOCIC1000 and SOCIC1000H (same code without a space), so not marked as catalog additions.",
+   "Slash-paired codes (e.g., ANTHR 2/2H) were recorded as a course with its honors twin as an alternative; the printed 3 units were applied to both.",
+   "For HUMAN 1, units are printed only on the HUMAN 1 line; the 'or' alternatives HUMAN 1H, SOCSC 1, SOCSC 1H have no printed units and are recorded as null.",
+   "Rule: 'Complete THREE (3) units from each Area of Emphasis below' — each area recorded as choose_units with minimum 3; total 15 units.",
+   "The catalog prints ANTHR 4 as 'Linguistic Anthropology'; closed list title is 'Linguistics Anthropology'.",
+   "No careers are named; the description refers only generally to a 'professional landscape' and 'workforce'."
+  ]
+ },
+ "extracted_run": "38152016534"
+}

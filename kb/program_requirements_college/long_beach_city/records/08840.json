@@ -1,0 +1,190 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "08840",
+ "shape": "degree",
+ "title": "Nutrition Assistant",
+ "award": "A.A. Degree",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/dance/dance-aa/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7879,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7879,
+    "output_tokens": 980,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 980,
+  "output_tokens_details": {
+   "thinking_tokens": 163
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05112,
+ "ms": 8355,
+ "seconds": 8.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 14,
+   "share": 0.0,
+   "missing": [
+    "NUTR20",
+    "NUTR21",
+    "NUTR227",
+    "NUTR230A",
+    "NUTR230B",
+    "NUTR236",
+    "NUTR240A",
+    "NUTR240B",
+    "NUTR25",
+    "NUTR26",
+    "NUTR28",
+    "NUTR32",
+    "NUTR34",
+    "NUTR35"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(none: the text holds no section for the Nutrition Assistant A.A. Degree)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "NUTR 20",
+    "why": "appears only in a course index list, not in program requirements"
+   },
+   {
+    "code": "NUTR 21",
+    "why": "appears only in a course index list, not in program requirements"
+   },
+   {
+    "code": "NUTR 227",
+    "why": "appears only in a course index list, not in program requirements"
+   },
+   {
+    "code": "NUTR 230A",
+    "why": "appears only in a course index list, not in program requirements"
+   },
+   {
+    "code": "NUTR 230B",
+    "why": "appears only in a course index list, not in program requirements"
+   },
+   {
+    "code": "NUTR 236",
+    "why": "appears only in a course index list, not in program requirements"
+   },
+   {
+    "code": "NUTR 240A",
+    "why": "appears only in a course index list, not in program requirements"
+   },
+   {
+    "code": "NUTR 240B",
+    "why": "appears only in a course index list, not in program requirements"
+   },
+   {
+    "code": "NUTR 25",
+    "why": "appears only in a course index list, not in program requirements"
+   },
+   {
+    "code": "NUTR 26",
+    "why": "appears only in a course index list, not in program requirements"
+   },
+   {
+    "code": "NUTR 28",
+    "why": "appears only in a course index list, not in program requirements"
+   },
+   {
+    "code": "NUTR 32",
+    "why": "appears only in a course index list, not in program requirements"
+   },
+   {
+    "code": "NUTR 34",
+    "why": "appears only in a course index list, not in program requirements"
+   },
+   {
+    "code": "NUTR 35",
+    "why": "appears only in a course index list, not in program requirements"
+   }
+  ],
+  "notes": [
+   "The source URL points to the Dance A.A. page, not Nutrition Assistant. The catalog text is an alphabetical course index fragment (MGMT through PHOT) from site navigation. It contains no requirements, totals, outcomes or careers for the Nutrition Assistant A.A. Degree.",
+   "No blocks were recorded. The correct catalog page for the Nutrition Assistant A.A. Degree (2026-2027) should be retrieved and reviewed.",
+   "The course index also lists NUTR courses that are not on the closed list (e.g., NUTR 22, 23, 24, 31, 233, 250-262, 601, 602, 610, 611, 653). None was recorded because the text gives no program context for them."
+  ]
+ },
+ "extracted_run": "38152016534"
+}

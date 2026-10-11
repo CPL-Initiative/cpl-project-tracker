@@ -1,0 +1,200 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "20757",
+ "shape": "certificate",
+ "title": "Business - Management Concentration",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/business-management-certificate-achievement/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5959,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5959,
+    "output_tokens": 1360,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1360,
+  "output_tokens_details": {
+   "thinking_tokens": 471
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05104,
+ "ms": 12064,
+ "seconds": 12.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    23.0
+   ],
+   "stated": [
+    21.0,
+    23.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business: Management - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate a strong understanding of the theories and roles that Management functions play within an organization.",
+    "Identify the role that ethics, social responsibility, and diversity play in planning and implementing organizational goals."
+   ],
+   "careers": [
+    "entry-level supervisory or human resources position"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GBUS 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW 18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 1A",
+      "units": 3,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "ACCTG 200",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGMT 49",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MGMT 50",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGMT 58",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGMT 60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGMT 80",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The range 3-5 is printed on the ACCTG 1A row and appears to cover the ACCTG 1A / ACCTG 200 choice as a whole (the state file stores ACCTG 1A at 5 and ACCTG 200 at 3); it is recorded on ACCTG 1A as printed. No units are printed beside ACCTG 200.",
+   "No units are printed beside the MGMT 50 alternative; the 3 units appear only on the MGMT 49 row.",
+   "The catalog titles MGMT 50 'Human Resource Management'; the state file titles it 'Human Resources Management'.",
+   "The career entry is taken from the program description ('an entry-level supervisory or human resources position in a small/medium-sized business'). The description also mentions skills for an 'entrepreneurial startup', which was not recorded as a career.",
+   "No total block unit figure is printed apart from the program Total Units of 21-23."
+  ]
+ },
+ "extracted_run": "38152016534"
+}

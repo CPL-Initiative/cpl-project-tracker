@@ -1,0 +1,524 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "46002",
+ "shape": "certificate",
+ "title": "Sustainability",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/physical-sciences/sustainability-certificate-achievement/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7497,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7497,
+    "output_tokens": 4211,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4211,
+  "output_tokens_details": {
+   "thinking_tokens": 1323
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.11421,
+ "ms": 30661,
+ "seconds": 31.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 47,
+   "listed": 47,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.5,
+    18.5
+   ],
+   "stated": [
+    16.5,
+    18.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Sustainability - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 16.5,
+    "max": 18.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Analyze practical and theoretical issues and data related to sustainability from current and historical perspectives.",
+    "Evaluate perspectives of diverse stakeholders regarding a wide range of sustainability issues."
+   ],
+   "careers": [
+    "sustainability"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses: Physical Sciences",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 4.5,
+     "max": 4.5
+    },
+    "courses": [
+     {
+      "code": "PGEOG 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PGEOG 1L",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses: Choose ONE Social Science",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BIO 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCIO 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Course: Economics",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ECON 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG 5",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses: Choose ONE Math",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 21B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 37",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 45",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "MATH 45S",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 47",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 50",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH C2210H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH C2220H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 80",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 84",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses: Choose ONE additional for Breadth, Depth, or Experiential Learning (minimum 3 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTHR 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCHT 83",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCHT 91",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL C1001L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DSGN 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DSGN 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 50",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENVRS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASH 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 1",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PGEOG 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 7H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PH 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PH 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The breadth block heading says 'Choose ONE' but also '(minimum 3 units)'; recorded as choose_units 3 since some listed courses (ENGR 50, BIOL C1001L) are only 1 unit. Reviewer should check whether a 1-unit course alone can satisfy it.",
+   "BIOL C1001 and BIOL C1001L are printed with a space; the closed list stores BIOLC1001 and BIOLC1001L without a space. Treated as the same courses.",
+   "Combined rows 'STAT C1000/C1000E/C1000H 4-5' and 'MATH 45/45S 4-5' print one unit range for the row; the range is recorded on the first course and the alternatives' individual units are left null because the catalog does not print them separately (state file stores STAT C1000E 5, STAT C1000H 4, MATH 45S 5).",
+   "ECON/GEOG 5 recorded as ECON 5 with cross-listed alternative GEOG 5.",
+   "BIO 11 and GEOG 2 appear in both the Social Science block and the Breadth block, as printed.",
+   "Program Student Learning Outcomes are printed on the program page for this certificate.",
+   "Career field taken from the description: 'explore a career in sustainability'; the other fields named (business, economics, architecture, engineering, sciences) are student majors, not careers, and were not recorded."
+  ]
+ },
+ "extracted_run": "38152016534"
+}
