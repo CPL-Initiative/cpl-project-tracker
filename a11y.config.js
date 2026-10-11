@@ -658,6 +658,43 @@ async function seedNcPartnersEditor(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// Team Phrases signed in as a reviewer (S366): the phrases are readable only to a reviewer,
+// so the unseeded sweeps measure the sign-in form alone. The seed stores a reviewer session
+// the way the tab reads it, stubs the team_access read with four rows, activates the tab,
+// and paints one revealed phrase and a saved and a failed message.
+async function seedTeamPhrases(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "team-phrases") location.hash = "team-phrases"; });
+  await page.waitForFunction(() => !!window.CPL_TEAM_PHRASES, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    try {
+      sessionStorage.setItem("cpl_sb", JSON.stringify({ access_token: "seed.seed.seed", refresh_token: "seed",
+        email: "seed@example.org", exp: Date.now() + 3600 * 1000 }));
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const ROWS = ["team", "ci", "gr", "fin"].map((id) => ({ id, secret: "seed-" + id + "-phrase", updated_at: "2026-10-01T00:00:00Z" }));
+    const real = window.fetch;
+    window.fetch = function (url) {
+      if (/\/team_access\?/.test(String(url))) {
+        return Promise.resolve(new Response(JSON.stringify(ROWS), { status: 200, headers: { "Content-Type": "application/json" } }));
+      }
+      return real.apply(this, arguments);
+    };
+    window.CPL_TEAM_PHRASES.activate();
+  });
+  await page.waitForFunction(() => !!document.querySelector("#team-phrases-root [data-phrase]"), null, { timeout: 20000 });
+  await page.evaluate(() => {
+    const T = window.CPL_TEAM_PHRASES, st = T._state;
+    st.reveal.ci = true;
+    st.msg.team = { text: "Saved. Share the new phrase with the people who need it.", kind: "ok" };
+    st.msg.gr = { text: "save failed (500)", kind: "err" };
+    T.render(document.getElementById("team-phrases-root"));
+  });
+  await page.waitForTimeout(300);
+}
+
 async function seedMyCollegeReports(page, signin) {
   await page.evaluate(() => new Promise((res) => {
     if (window.CPL_FUNDING_TAB) return res();
@@ -1110,6 +1147,22 @@ module.exports = {
     routes: [{ hash: "nc-learning-partners", name: "editor" }],
     widths: [390, 1440],
     seed: (page) => seedNcPartnersEditor(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "team-phrases-reviewer": {
+    file: "index.html",
+    title: "Team Phrases signed in as a reviewer: the four phrases, one revealed, a saved and a failed message",
+    routes: [{ hash: "team-phrases", name: "reviewer" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedTeamPhrases(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "team-phrases-reviewer-dark": {
+    file: "index.html",
+    title: "Team Phrases signed in as a reviewer, dark",
+    routes: [{ hash: "team-phrases", name: "reviewer" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedTeamPhrases(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "contracts": {
