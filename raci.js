@@ -890,13 +890,21 @@
         itemCell.appendChild(inBtn);
       }
       tr.appendChild(itemCell);
+      // An editable cell holds a real <button> (S365): a click handler on a <td>
+      // reaches a mouse and nothing else. Its name says which role on which row,
+      // and carries the cell's visible words (WCAG 2.5.3, label in name).
       ROLES.forEach(function (role) {
-        var cell = el("td", { "class": "raci-cell" + (canEdit ? " raci-cell-edit" : ""),
-          title: canEdit ? "Click to assign " + role.label : "" }, []);
+        var cell = el("td", { "class": "raci-cell" + (canEdit ? " raci-cell-edit" : "") }, []);
         var ns = names(rc[role.k]);
-        if (ns.length) ns.forEach(function (n) { cell.appendChild(chip(n)); });
-        else cell.appendChild(el("span", { "class": "raci-empty" }, [canEdit ? "+ assign" : "—"]));
-        if (canEdit) cell.addEventListener("click", function () { openRoleEditor(item, role.k); });
+        var body = canEdit ? el("button", { type: "button", "class": "raci-cell-btn", title: "Assign " + role.label,
+          "aria-label": role.label + ", " + (item.isActivity ? "Activity " + item.id : item.id) + " " + item.name + ": " +
+            (ns.length ? ns.join(", ") : "assign") }, []) : cell;
+        if (ns.length) ns.forEach(function (n) { body.appendChild(chip(n)); });
+        else body.appendChild(el("span", { "class": "raci-empty" + (canEdit ? " raci-cell-add" : "") }, [canEdit ? "+ assign" : "—"]));
+        if (canEdit) {
+          body.addEventListener("click", function () { openRoleEditor(item, role.k); });
+          cell.appendChild(body);
+        }
         tr.appendChild(cell);
       });
       tbl.appendChild(tr);
@@ -978,41 +986,51 @@
   }
 
   // A click-to-edit Team Directory cell (name / role / email). Read-only for
-  // anonymous viewers; a signed-in reviewer clicks to edit, Enter/blur saves
-  // (optimistic, rolls back on failure), Esc cancels.
+  // anonymous viewers; a signed-in reviewer opens it with the button inside
+  // (S365: a click on the <td> reached a mouse and nothing else), Enter/blur
+  // saves (optimistic, rolls back on failure), Esc cancels. Enter and Esc hand
+  // focus back to the cell's button, so a keyboard keeps its place in the table.
   function editCell(m, field, cls) {
     var td = el("td", { "class": cls || "" }, []);
-    function show() {
+    function show(refocus) {
       td.innerHTML = "";
       var v = m[field];
-      if (field === "email" && v && !state.sess) td.appendChild(el("a", { href: "mailto:" + v }, [v]));
-      else if (v) td.appendChild(document.createTextNode(v));
-      else td.appendChild(el("span", { "class": "raci-empty" }, [state.sess ? "+ add" : "—"]));
-      if (state.sess) { td.classList.add("raci-edit-cell"); td.title = "Click to edit"; }
+      if (!state.sess) {
+        if (field === "email" && v) td.appendChild(el("a", { href: "mailto:" + v }, [v]));
+        else td.appendChild(v ? document.createTextNode(v) : el("span", { "class": "raci-empty" }, ["\u2014"]));
+        return;
+      }
+      td.classList.add("raci-edit-cell");
+      var btn = el("button", { type: "button", "class": "raci-edit-btn", title: "Edit",
+        "aria-label": "Edit " + field + " for " + (m.name || "this member") + ": " + (v || "add") },
+        [v ? v : el("span", { "class": "raci-empty raci-cell-add" }, ["+ add"])]);
+      btn.addEventListener("click", edit);
+      td.appendChild(btn);
+      if (refocus) btn.focus();
     }
     function edit() {
       if (!state.sess || td.querySelector("input")) return;
       td.innerHTML = "";
-      var inp = el("input", { type: field === "email" ? "email" : "text", "class": "raci-in raci-cell-in" });
+      var inp = el("input", { type: field === "email" ? "email" : "text", "class": "raci-in raci-cell-in",
+        "aria-label": field.charAt(0).toUpperCase() + field.slice(1) + " for " + (m.name || "this member") });
       inp.value = m[field] || "";
       td.appendChild(inp); inp.focus(); inp.select();
       var done = false;
-      function save() {
+      function save(refocus) {
         if (done) return; done = true;
         var nv = inp.value.trim();
-        if (nv === (m[field] || "")) { show(); return; }
-        var old = m[field]; m[field] = nv; show();
+        if (nv === (m[field] || "")) { show(refocus); return; }
+        var old = m[field]; m[field] = nv; show(refocus);
         patchMember(m, field, nv).then(function (r) { if (!r.ok) throw new Error(); })
           .catch(function () { m[field] = old; show(); alert("Could not save — are you a signed-in reviewer?"); });
       }
       inp.addEventListener("keydown", function (e) {
-        if (e.key === "Enter") { e.preventDefault(); save(); }
-        else if (e.key === "Escape") { done = true; show(); }
+        if (e.key === "Enter") { e.preventDefault(); save(true); }
+        else if (e.key === "Escape") { done = true; show(true); }
       });
-      inp.addEventListener("blur", save);
+      inp.addEventListener("blur", function () { save(false); });
     }
     show();
-    if (state.sess) td.addEventListener("click", function () { edit(); });
     return td;
   }
 
@@ -1059,11 +1077,20 @@
       // Last-nudged + response-status cells (the accountability columns).
       var nudgedTd = el("td", { "class": "raci-nudged-cell" }, [m.last_nudged_at ? relTime(m.last_nudged_at) : "—"]);
       var st = nudgeStatus(m);
-      var statusTd = el("td", { "class": "raci-status-cell " + st.cls }, [st.txt]);
+      // Signed in, the status word is a button (S365) that marks a response now;
+      // focus returns to the same member's button after the table repaints.
+      var statusTd = el("td", { "class": "raci-status-cell " + st.cls }, canEdit ? [] : [st.txt]);
       if (canEdit) {
-        statusTd.title = "Click to mark this member as having responded now";
-        statusTd.style.cursor = "pointer";
-        statusTd.addEventListener("click", function () { markResponded(m); });
+        var stBtn = el("button", { type: "button", "class": "raci-status-btn", "data-raci-status": m.id,
+          title: "Mark this member as having responded now",
+          "aria-label": (st.txt === "\u2014" ? "No nudge yet" : st.txt) + ". Mark " + (m.name || "this member") +
+            " as responded now" }, [st.txt]);
+        stBtn.addEventListener("click", function () {
+          markResponded(m);
+          var again = document.querySelector('.raci-status-btn[data-raci-status="' + m.id + '"]');
+          if (again) again.focus();
+        });
+        statusTd.appendChild(stBtn);
       }
       tbl.appendChild(el("tr", { "class": on ? "" : "raci-row-muted" }, [
         editCell(m, "name", "raci-dir-n"),
@@ -1490,6 +1517,11 @@
       ".raci-item-name{color:var(--text-strong);}" +
       ".raci-cell{min-width:120px;}" +
       ".raci-cell-edit{cursor:pointer;}.raci-cell-edit:hover{background:var(--surface-2);}" +
+      // The buttons inside editable cells (S365): the cell's own font and ink, a
+      // 24px floor, and the add and status words underlined as controls are.
+      ".raci-cell-btn,.raci-edit-btn,.raci-status-btn{margin:0;padding:0;border:0;background:none;font:inherit;color:inherit;cursor:pointer;min-height:24px;min-width:24px;}" +
+      ".raci-cell-btn,.raci-edit-btn{display:block;width:100%;text-align:left;}.raci-edit-btn{cursor:text;}" +
+      ".raci-status-btn,.raci-cell-add{text-decoration:underline;text-underline-offset:2px;}" +
       ".raci-chip{display:inline-block;background:var(--surface-2);border:1px solid var(--border);color:var(--navy-secondary);border-radius:11px;padding:.05rem .5rem;margin:.1rem .2rem .1rem 0;font-size:.75rem;font-weight:600;}" +
       ".raci-empty{color:var(--text-muted);font-size:.78rem;}" +
       ".raci-filter-bar{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.7rem;}" +

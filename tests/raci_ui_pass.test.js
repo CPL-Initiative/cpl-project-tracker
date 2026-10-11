@@ -178,6 +178,68 @@ function makeDom() {
   const dirGlyphs = Array.from(doc.querySelectorAll("#raci-root button, .raci-status-cell")).filter((b) => EMOJI.test(b.textContent));
   check("(f) directory controls and status words carry no glyph", dirGlyphs.length === 0, dirGlyphs.map((b) => b.textContent).join(" | "));
 
+  // ── (k) Edit mode by keyboard (S365). The RACI cells, the directory cells and
+  // the status word each carried a click handler on the <td>, which a keyboard
+  // cannot reach. Each now holds a <button>, named for what it changes and
+  // carrying its visible words (WCAG 2.5.3); Enter and Esc in a directory input
+  // hand focus back to the cell's button.
+  check("(k) no click handler is bound to a table cell",
+    !/\b(cell|td|statusTd)\.addEventListener\("click"/.test(RACI));
+  check("(k) the cell buttons take the cell's font and ink and clear 24px",
+    /\.raci-cell-btn,\.raci-edit-btn,\.raci-status-btn\{[^}]*font:inherit[^}]*color:inherit[^}]*min-height:24px[^}]*min-width:24px/.test(CSS["raci.js"]));
+  {
+    const dom2 = makeDom();
+    const w2 = dom2.window, d2 = w2.document;
+    w2.CPL_RACI_TAB.boot();
+    await new Promise((r) => setTimeout(r, 30));
+    const cells = Array.from(d2.querySelectorAll("td.raci-cell-edit"));
+    check("(k) every editable RACI cell holds a named button",
+      cells.length >= 4 && cells.every((c) => {
+        const b = c.querySelector("button.raci-cell-btn");
+        return b && b.getAttribute("type") === "button" && /^(Responsible|Accountable|Consulted|Informed), /.test(b.getAttribute("aria-label") || "");
+      }), String(cells.length));
+    const zara = cells.map((c) => c.querySelector("button")).find((b) => b && /Zara Quinn/.test(b.textContent));
+    check("(k) a filled cell's button names the people it shows", !!zara && /: Zara Quinn$/.test(zara.getAttribute("aria-label")));
+    if (zara) zara.click();
+    await new Promise((r) => setTimeout(r, 10));
+    check("(k) pressing the button opens the role editor", !!d2.querySelector(".raci-modal"));
+    const x2 = d2.querySelector(".raci-x"); if (x2) x2.click();
+
+    Array.from(d2.querySelectorAll(".raci-tg")).find((b) => /Directory/.test(b.textContent)).click();
+    await new Promise((r) => setTimeout(r, 10));
+    const nameBtn = d2.querySelector(".raci-dir-n button.raci-edit-btn");
+    check("(k) a directory cell holds a named edit button",
+      !!nameBtn && /^Edit name for .+: .+/.test(nameBtn.getAttribute("aria-label") || ""));
+    if (nameBtn) nameBtn.click();
+    const inp = d2.querySelector(".raci-dir-n input");
+    check("(k) the button opens a named input", !!inp && /^Name for /.test(inp.getAttribute("aria-label") || "") && d2.activeElement === inp);
+    if (inp) inp.dispatchEvent(new w2.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+    const back = d2.querySelector(".raci-dir-n button.raci-edit-btn");
+    check("(k) Esc puts the button back and focus on it", !!back && d2.activeElement === back);
+    const st = Array.from(d2.querySelectorAll(".raci-status-cell button.raci-status-btn"));
+    check("(k) each status word is a button named for the member it marks",
+      st.length === 2 && st.every((b) => / Mark .+ as responded now$/.test(b.getAttribute("aria-label") || "")));
+  }
+
+  // ── (l) The jump highlight in dark (S365). A Where-To jump holds the row on
+  // --gold-soft for 2.6 s, and the row's controls are --cobalt words: 4.16:1 in
+  // dark at #4A3A10 (seeded by the raci-editor-dark sweep). Both dark :root
+  // blocks of both HTMLs must keep the pair at AA.
+  (function () {
+    const lum = (h) => { const v = [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16) / 255)
+      .map((c) => (c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4)));
+      return 0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2]; };
+    const ratio = (a, b) => { const [x, y] = [lum(a), lum(b)].sort((p, q) => q - p); return (x + 0.05) / (y + 0.05); };
+    for (const f of ["index.html", "CPL_Dashboard.html"]) {
+      const html = fs.readFileSync(f, "utf8");
+      const golds = [...html.matchAll(/--gold-soft:\s*(#[0-9A-Fa-f]{6})/g)].map((m) => m[1]);
+      const cobalts = [...html.matchAll(/--cobalt:\s*(#[0-9A-Fa-f]{6})/g)].map((m) => m[1]).filter((c) => c.toUpperCase() !== "#0047AB");
+      check(f + ": (l) the dark jump highlight keeps its controls at AA (--cobalt on --gold-soft >= 4.5)",
+        golds.length === 2 && cobalts.length === 2 && golds.every((g, i) => ratio(cobalts[i], g) >= 4.5),
+        golds.map((g, i) => cobalts[i] + " on " + g + " " + ratio(cobalts[i], g).toFixed(2)).join(", "));
+    }
+  })();
+
   // ── Mission Control (mounts below the matrix in the same tab) ──
   const mdom = new JSDOM("<!doctype html><html><head></head><body><div id='raci-root'></div></body></html>",
     { runScripts: "outside-only", url: "https://cpl-initiative.github.io/cpl-project-tracker/" });
