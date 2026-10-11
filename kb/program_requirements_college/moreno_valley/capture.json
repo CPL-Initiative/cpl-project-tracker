@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 149,
  "with_closed_list": 144,
- "started": "2026-10-10T20:54:07Z",
+ "started": "2026-10-10T23:37:43Z",
  "curriqunet": {
   "catalog": 115,
   "view_prefix": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/",
@@ -20,12 +20,12 @@
  },
  "pages_read": 252,
  "loads": 264,
- "seconds": 1234.4,
- "found": 132,
+ "seconds": 1244.4,
+ "found": 140,
  "by_method": {
   "no_closed_list": 5,
-  "not_found": 12,
-  "sitemap_page": 132
+  "not_found": 4,
+  "sitemap_page": 140
  },
  "shared_pages": {
   "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4470": [
@@ -139,46 +139,6 @@
  },
  "not_found": [
   {
-   "control_number": "30164",
-   "title": "Kinesiology, Health and Wellness",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "30165",
-   "title": "Administration & Information Systems",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "30166",
-   "title": "Communication, Media & Languages",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "30167",
-   "title": "Math & Sciences",
-   "award": "A.S. Degree"
-  },
-  {
-   "control_number": "30168",
-   "title": "Fine & Applied Arts",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "30169",
-   "title": "Humanities, Philosophy & Arts",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "30170",
-   "title": "Social and Behavioral Studies",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "31232",
-   "title": "American Studies",
-   "award": "A.A. Degree"
-  },
-  {
    "control_number": "37393",
    "title": "Fire Service Leadership",
    "award": "A.S. Degree"
@@ -202,8 +162,95 @@
  "page_claimed": [],
  "coverage_bands": {
   "0.5-0.8": 4,
-  "0.8-1.0": 29,
-  "1.0": 99
+  "0.8-1.0": 35,
+  "1.0": 101
  },
- "run": "38085493318"
+ "would_extract": {
+  "against": "kb/program_requirements_college/moreno_valley",
+  "kept": 132,
+  "programs": 8,
+  "list": [
+   {
+    "control_number": "30164",
+    "title": "Kinesiology, Health and Wellness",
+    "award": "A.A. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4926",
+    "coverage": 0.991,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "30165",
+    "title": "Administration & Information Systems",
+    "award": "A.A. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4921",
+    "coverage": 0.935,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "30166",
+    "title": "Communication, Media & Languages",
+    "award": "A.A. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4923",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "30167",
+    "title": "Math & Sciences",
+    "award": "A.S. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4927",
+    "coverage": 0.942,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "30168",
+    "title": "Fine & Applied Arts",
+    "award": "A.A. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4924",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "30169",
+    "title": "Humanities, Philosophy & Arts",
+    "award": "A.A. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4925",
+    "coverage": 0.976,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "30170",
+    "title": "Social and Behavioral Studies",
+    "award": "A.A. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4928",
+    "coverage": 0.908,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31232",
+    "title": "American Studies",
+    "award": "A.A. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4922",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   }
+  ]
+ },
+ "run": "38095617505"
 }
