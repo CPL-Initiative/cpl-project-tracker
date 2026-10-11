@@ -1113,7 +1113,12 @@
      "list them with a chip noting the Coci status so the college can follow up if needed.
      Make this a rule for all such courses."): its status on the program, the control number
      the program points at, and the current version's. The display build carries it. */
+  /* f.listed: the program lists the course through an older version, and the college still
+     offers the current one (Sam, 2026-10-11: "it shouldn't matter that they have older
+     inactive versions"). The chip stays so the college can update the pointer in COCI. */
   function cociText(f) {
+    if (f.listed) return "In COCI: the program lists an older version (" + f.program_ccn + ", " + (f.status || "no status") +
+      "); current version " + f.current_ccn;
     return "In COCI: " + (f.status || "no status") + " on this program (" + f.program_ccn + ")" +
       (f.current_ccn ? "; current version " + f.current_ccn : "");
   }
@@ -1127,10 +1132,12 @@
       var f = courses && courses[x] && courses[x].coci;
       return f ? el("span", { cls: "prh-coci", text: (codes.length > 1 ? x + " " : "") + cociText(f) }) : null;
     }).filter(Boolean);
-    if (!c.catalog_addition && !ns.length && !chips.length) return null;
+    var own = courses && courses[c.code] && courses[c.code].coci;
+    var addition = c.catalog_addition && !(own && own.listed);
+    if (!addition && !ns.length && !chips.length) return null;
     var label = ns.length ? (ns.length === 1 ? "Flag " + ns[0] : "Flags " + ns.slice(0, -1).join(", ") + " and " + ns[ns.length - 1]) : null;
     return el("span", { cls: "prh-alts" }, [
-      c.catalog_addition ? (chips.length ? "Printed in the catalog; off the program's list as read" : "Printed in the catalog; not on the state's list") + (label ? ". " : "") : null,
+      addition ? (chips.length ? "Printed in the catalog; off the program's list as read" : "Printed in the catalog; not on the state's list") + (label ? ". " : "") : null,
       label ? el("b", { cls: "prh-mark", text: label }) : null].concat(chips));
   }
 

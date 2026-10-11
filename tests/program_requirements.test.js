@@ -1502,6 +1502,29 @@ block("(21)", function () {
     /\.prh-college \.prh-rec \{ content-visibility:auto; contain-intrinsic-size:auto 240px; \}/.test(SRC));
 });
 
+// ── (22) A course the program lists through an older version (Sam, 2026-10-11) ──
+// Cerritos 02226 points at retired versions of ENGT 116 and 117: "If the Program Course file has
+// 116 and 117 as active, it shouldn't matter that they have older inactive versions"; then "go".
+// The failures this guards: such a row read as off the program's list, and the chip that lets
+// the college update the pointer lost along with the mark.
+block("(22)", function () {
+  const m = loadModule();
+  const rec = JSON.parse(JSON.stringify(IRONWORKER));
+  rec.record.blocks[0].courses.push({ code: "ENGT 116", units: 4, alternatives: [], catalog_addition: true });
+  rec.display.courses = Object.assign({}, rec.display.courses, { "ENGT 116": { title: "Blueprint Reading and Production",
+    coci: { status: "Inactive", program_ccn: "CCC000385118", current_ccn: "CCC000643455", listed: true } } });
+  m.M._state.registry = REGISTRY; m.M._state.records = [rec]; m.M._state.view = "records";
+  m.M._state.open = { "Cerritos College|42158": true }; m.M._render();
+  const row = Array.prototype.filter.call(m.root.querySelectorAll("article.prh-rec tr"), function (tr) { return /ENGT 116/.test(tr.textContent); })[0];
+  check("(22) a course listed through an older version reads as on the program's list",
+    !!row && !/off the program's list/.test(row.textContent) && !/not on the state's list/.test(row.textContent) && !/Flag/.test(row.textContent),
+    row && row.textContent);
+  check("(22) its chip names both versions in words, for the college to update",
+    !!row && !!row.querySelector(".prh-coci") &&
+    row.querySelector(".prh-coci").textContent === "In COCI: the program lists an older version (CCC000385118, Inactive); current version CCC000643455",
+    row && row.querySelector(".prh-coci") && row.querySelector(".prh-coci").textContent);
+});
+
 Promise.all(pending).then(function () {
   let pass = 0;
   for (const [name, ok, why] of results) {

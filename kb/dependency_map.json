@@ -953,7 +953,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2600,
+     "line": 2603,
      "tabs": [
       "cpl-pathways"
      ]
@@ -1329,7 +1329,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1598,
+     "line": 1605,
      "tabs": [
       "program-requirements"
      ]
@@ -1421,7 +1421,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2599,
+     "line": 2602,
      "tabs": [
       "cpl-pathways"
      ]
@@ -2267,7 +2267,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2598,
+     "line": 2601,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4910,7 +4910,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2814,
+     "line": 2817,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4980,7 +4980,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2808,
+     "line": 2811,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5259,7 +5259,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2009,
+     "line": 2012,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5302,7 +5302,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2781,
+     "line": 2784,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5325,7 +5325,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2168,
+     "line": 2171,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5374,7 +5374,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2822,
+     "line": 2825,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5384,14 +5384,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 100
+     "line": 101
     },
     {
      "id": "script:kb/_build_roep_display.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 100
+     "line": 101
     },
     {
      "id": "script:kb/_program_requirements_display_apply.py",
@@ -5517,7 +5517,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2795,
+     "line": 2798,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5634,7 +5634,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 99
+     "line": 100
     },
     {
      "id": "script:kb/_preseed_null_issuers.py",
@@ -8085,7 +8085,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 94
+     "line": 95
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -8754,7 +8754,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 97
+     "line": 98
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -12073,7 +12073,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 82
+     "line": 83
     }
    ],
    "served": true,
@@ -12086,7 +12086,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 83
+     "line": 84
     }
    ],
    "served": true,
@@ -14310,7 +14310,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 98
+     "line": 99
     },
     {
      "id": "script:kb/_cred_rename_apply.py",
@@ -18171,7 +18171,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 96
+     "line": 97
     },
     {
      "id": "script:kb/_esl_package_actionable.py",
@@ -18311,7 +18311,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 95
+     "line": 96
     },
     {
      "id": "script:kb/_esl_ladder_relevel_dryrun.py",
