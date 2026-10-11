@@ -4,7 +4,7 @@
   "supabase_tables": 97,
   "rpcs": 36,
   "edge_functions": 7,
-  "file_datasets": 621,
+  "file_datasets": 622,
   "external_services": 166,
   "consumers": 426,
   "workflows": 47,
@@ -924,7 +924,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 13132
+     "line": 13140
     },
     {
      "id": "workflow:daily-dashboard.yml",
@@ -4820,7 +4820,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12696
+     "line": 12704
     }
    ],
    "served": true,
@@ -5098,7 +5098,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13030
+     "line": 13038
     },
     {
      "id": "script:funding/_build_funding_ess.py",
@@ -5732,7 +5732,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12637
+     "line": 12645
     }
    ],
    "served": true,
@@ -6283,7 +6283,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12693
+     "line": 12701
     }
    ],
    "served": true,
@@ -6706,7 +6706,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13344
+     "line": 13352
     },
     {
      "id": "workflow:daily-dashboard.yml",
@@ -6752,7 +6752,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13364
+     "line": 13372
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -16219,14 +16219,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12465
+     "line": 12473
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 12465
+     "line": 12473
     },
     {
      "id": "script:fact-sheet/_build_statewide_recs.py",
@@ -16349,7 +16349,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12695
+     "line": 12703
     }
    ],
    "served": true,
@@ -16372,14 +16372,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12495
+     "line": 12503
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 12495
+     "line": 12503
     }
    ],
    "producers": [
@@ -16578,6 +16578,19 @@
    "main_committers": []
   },
   "file:tests/bash_read_guard_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/budget_section_first_light_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -17904,7 +17917,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12697
+     "line": 12705
     }
    ],
    "served": true,
@@ -22815,6 +22828,7 @@
     "tests/context_budget_test.py",
     "tests/merge_chain_flatten_test.py",
     "tests/unified_units_range_test.py",
+    "tests/budget_section_first_light_test.py",
     "tests/legacy_anchor_duplicates_test.py",
     "tests/top_code_lookup_code4_test.py",
     "tests/eacr_matrix_payload_test.py",

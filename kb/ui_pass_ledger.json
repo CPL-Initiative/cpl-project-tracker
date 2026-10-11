@@ -94,8 +94,8 @@
    "name": "Budget",
    "page": "index.html#budget",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-11",
+   "outcome": "The bar's labels were white on every fill (1.21:1 in dark, where --navy-primary turns light): each fill now carries its own text color; the as-of line and the gray dot failed AA (the dot removed); the two holders that scroll at 390px are focusable and named; the section's raw hex became tokens; the editor's Sign in and Sign out are underlined words. Measured clean in light and dark at desktop and 390px. Left: the edit-state cell tints and the widget's rgba wash have no tokens yet."
   },
   {
    "id": "cobi:implementation-funding",

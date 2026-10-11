@@ -192,7 +192,6 @@
       widget.appendChild(btnIn);
       // Team-phrase alternative (Phase 1 widening, 2026-07-03).
       if (window.CPL_TEAM_PHRASE) {
-        widget.appendChild(el("span", { "style": "color:#999;" }, ["·"]));
         widget.appendChild(window.CPL_TEAM_PHRASE.unlockRow({
           blurb: "or the team phrase:",
           onUnlocked: function () { onChange(); }
