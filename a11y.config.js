@@ -489,6 +489,27 @@ async function seedBudgetEditor(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// Annual Workplan Goals as a signed-in editor sees it (S364): the auth widget's words, one
+// editable cell in each save state, and, with `modal`, the Add new row dialog open. The
+// session is the shape workplan_goals.js reads from sessionStorage; it re-reads on its own
+// cpl-team-pass-dropped event.
+async function seedWorkplanGoalsEditor(page, theme, modal) {
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate((openModal) => {
+    try {
+      sessionStorage.setItem("cpl_sb", JSON.stringify({ access_token: "seed.seed.seed", email: "seed@example.org" }));
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    window.dispatchEvent(new CustomEvent("cpl-team-pass-dropped"));
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const cells = document.querySelectorAll("#tab-workplan-goals .wpg-editable");
+    ["wpg-saving", "wpg-saved", "wpg-error"].forEach((c, i) => { if (cells[i]) cells[i].classList.add(c); });
+    if (openModal) { const add = document.querySelector("#tab-workplan-goals .wpg-btn-add"); if (add) add.click(); }
+  }, !!modal);
+  await page.waitForTimeout(300);
+}
+
 async function seedMyCollegeReports(page, signin) {
   await page.evaluate(() => new Promise((res) => {
     if (window.CPL_FUNDING_TAB) return res();
@@ -892,6 +913,41 @@ module.exports = {
       await page.waitForTimeout(900);
     },
     mayHideBelow: [],
+  },
+  /* ── Annual Workplan Goals, signed in (S364) ─────────────────────────────
+     The editor's words, its save states and the Add new row dialog paint only
+     for a signed-in editor; the cobi sweep is signed out. */
+  "workplan-goals-editor": {
+    file: "index.html",
+    title: "Annual Workplan Goals, signed in, one cell in each save state",
+    routes: [{ hash: "workplan-goals", name: "editor" }],
+    widths: [390, 1440],
+    seed: (page) => seedWorkplanGoalsEditor(page, "light", false),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "workplan-goals-editor-dark": {
+    file: "index.html",
+    title: "Annual Workplan Goals, signed in, one cell in each save state, dark",
+    routes: [{ hash: "workplan-goals", name: "editor" }],
+    widths: [390, 1440],
+    seed: (page) => seedWorkplanGoalsEditor(page, "dark", false),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "workplan-goals-add": {
+    file: "index.html",
+    title: "Annual Workplan Goals, the Add new row dialog",
+    routes: [{ hash: "workplan-goals", name: "add" }],
+    widths: [390, 1440],
+    seed: (page) => seedWorkplanGoalsEditor(page, "light", true),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "workplan-goals-add-dark": {
+    file: "index.html",
+    title: "Annual Workplan Goals, the Add new row dialog, dark",
+    routes: [{ hash: "workplan-goals", name: "add" }],
+    widths: [390, 1440],
+    seed: (page) => seedWorkplanGoalsEditor(page, "dark", true),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── Budget, signed in, mid-save (S364) ──────────────────────────────────
      The save states paint only while a write is in flight; the cobi sweep is
