@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1108,
-    "bytes": 11511443,
+    "files": 1110,
+    "bytes": 11528634,
     "over_budget": 6,
-    "handoff_max": 361,
+    "handoff_max": 362,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59999,
     "superseded_files": 0,
@@ -26,32 +26,32 @@
       },
       "other": {
         "files": 119,
-        "bytes": 3376692,
+        "bytes": 3407802,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 10463,
+        "bytes": 10035,
         "over": 0
       },
       "lessons": {
         "files": 81,
-        "bytes": 2356627,
+        "bytes": 2334623,
         "over": 2
       },
       "kb_note": {
-        "files": 538,
-        "bytes": 2682862,
+        "files": 539,
+        "bytes": 2686532,
         "over": 0
       },
       "roadmap_lane": {
         "files": 36,
-        "bytes": 331971,
+        "bytes": 331979,
         "over": 1
       },
       "handoff": {
-        "files": 332,
-        "bytes": 2692829,
+        "files": 333,
+        "bytes": 2697664,
         "over": 0
       }
     },
@@ -61,9 +61,9 @@
       "vault_heavy_path": 60
     },
     "vault": {
-      "files": 5123,
-      "bytes": 1876211343,
-      "heavy_bytes": 865166290,
+      "files": 5127,
+      "bytes": 1876254233,
+      "heavy_bytes": 865167450,
       "heavy_share": 0.461,
       "ignore_filters": [
         "cpl-project-tracker/kb/regional_cpl_out",
@@ -415,13 +415,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 708095,
+        "bytes": 709147,
         "limit": 150000,
         "lane": "other",
-        "over_by": 558095,
-        "ratio": 4.72
+        "over_by": 559147,
+        "ratio": 4.73
       },
-      "message": "708,095 B is 4.7× the other budget (150,000 B) — candidate for compaction",
+      "message": "709,147 B is 4.7× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -519,10 +519,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 47053902,
+        "bytes": 47055062,
         "kind": "dir"
       },
-      "message": "directory totals 47,053,902 B inside the vault"
+      "message": "directory totals 47,055,062 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-332 document(s).
+333 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 362 | [Long Beach City's read, the two-call extraction, and RCCD's three Humanities programs](../session_362_handoff.md) | 2026-10-11 |
 | 361 | [rules 4 and 5 deploy and sample, then Long Beach City; 39120's delete; Sierra's go](../session_361_handoff.md) | 2026-10-11 |
 | 360 | [Sam's review flow first; the emphasis loads, the COCI status chips, Long Beach City](../session_360_handoff.md) | 2026-10-11 |
 | 359 | [RCCD's three colleges read, loaded and displayed; MAP Users on First Light](../session_359_handoff.md) | 2026-10-10 |

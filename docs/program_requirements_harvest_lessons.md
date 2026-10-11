@@ -747,3 +747,44 @@ program_requirement_records_rcc_39120_removed_2026-10-11_s360.sql`) is the paste
 **A push that touches the extraction script starts the pilot extraction** on the live function, against whatever
 version is deployed. Both pushes of the rules branch started one (runs 38103589673 and, after S361's rebase,
 38104914021); each was canceled.
+
+## S361 SkyBirch, 2026-10-11: rules 4 and 5 live, 39120 removed, Long Beach City reading, and a program read in two calls
+
+**Shipped.** #1972 (COCI's status, units and unit differences) and #1974 (rules 4 and 5) merged; Sierra (`cpl-chat`,
+run 38105455751) and `program-requirements-extract` v5 (run 38105512705) deployed from main, both byte-verified. The
+five-program sample (run 38105588567, $0.39) kept every prior block, labels, rules and course counts alike, and added only
+what the rules ask: recommended blocks at Cerritos 41982, Irvine Valley 10265 and Mt. San Antonio 42916 (where VOC HEP and
+VOC NCLXP moved out of missing_explained), careers where the page prints them. Santa Monica 43767 fails the arithmetic as
+it did before (the salon block prints no minimum). Long Beach City's read with extraction started from `claude/s361-lbcc`
+(run 38105864413), the card 1 plan: show a sample, then read once.
+
+**39120 is gone, by Sam's hand.** The repo's Supabase guard refuses a `delete` through `execute_sql`, and `apply_migration`
+had timed out three times. Sam ran the receipt's guarded delete in the SQL editor as a one-statement paste (a CTE returning
+the removed count); the session read back 0 rows, 1,225 live, every row on display build `195fe0c35a2d`. A destructive
+data write the session cannot run goes to Sam as that paste, with the read-back the session makes after.
+
+**A path filter compares pushes, not branches.** `program-requirements-extract.yml` runs on a `claude/**` push that
+touches its script. Merging main into the checkpoint branch after #1974 carried the script's change in, and the next push
+ran the full 22-program pilot ($1.59, run 38105582450, nothing written; it did serve as a full-pilot check of v5: 21 of 22
+pass, Santa Monica as before). S360 had canceled two such runs. #1976 adds a guard step: on a push, skip unless the
+branch's script differs from main's; its own push proved it (setup and extraction skipped, run 38106437059). KB note:
+`methodology-a-path-filter-compares-pushes-not-branches`.
+
+**The smoke's NOCE read failed for ten minutes, not because of the deploy.** Three smoke runs between 02:31Z and 02:43Z
+read `college_program_courses` for NOCE as empty (7v); the function answered as anon in 448 ms at 02:45Z, and the smoke
+dispatched at 02:47Z passed in full (run 38106291463). One branch run also caught Sierra saying "COCI" after the user's
+follow-up used the word; the main run passed that check.
+
+**One reply cannot hold a 316-course record.** Measured over 1,219 filed records: about 54 output tokens per course
+(Fine & Applied Arts, 215 courses, 11,200 tokens in 78 s), so Humanities, Philosophy & Arts (316) stops at the 16,000 cap
+at all three RCCD colleges (110 s). The gateway ends a request that sends nothing back for 150 s (Mt. San Antonio 24171),
+so a larger cap or streaming cannot hold it either. Sam: *"go with splitting the program into two calls"*. #1978
+(extraction v6): a program over 240 listed courses, or a single call that runs past the cap or the idle limit, is read in
+parts sent at once; each part holds the courses the text names first in its half, every block the section prints, and the
+whole closed list (so catalog_addition keeps its meaning); `merge_parts()` aligns blocks by name and rule, drops an entry
+whose first code the block already places, orders entries by where the block prints them, and keeps disagreements in
+notes. A filed row with no record is no longer kept, so the next read retries it. Not yet deployed.
+
+**The UI pass took Annual Workplan Goals** (#1977): four grey labels below AA in light, the primary chip and the
+subsidiary marker unreadable in dark, the table's scroller unreachable by keyboard at 390 px; all pass after, measured on
+the HTML the generator writes. The curator-only editing tints and the add form's boxed buttons wait for a later pass.

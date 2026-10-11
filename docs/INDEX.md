@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 536 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 537 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 86 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 55 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 332 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1095** | |
+| Session handoffs | 333 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1097** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-11 (S361 SkyBirch): rules 4 and 5 merged and deployed with Sierra (#1974), COCI status chips (#1972), Riverside City 39120 removed by Sam's own paste, Long Beach City's read started, the extraction push guard (#1976), the Workplan Goals UI pass (#1977), the two-call extraction built (#1978); S360's lessons section and S327-S333 moved to the archive; KB note `methodology-a-path-filter-compares-pushes-not-branches`; handoff 362 (SkyAlder).
 - 2026-10-11 (S359 SkyMoss): RCCD's Liberal Arts emphasis read (#1965-#1967), Sheet 60's eight rows removed (#1968), Sam's Mt. San Antonio reading rules; KB note `methodology-a-missing-course-may-be-a-retired-version`; handoff 360.
 - 2026-10-10 S357 SkyCanopy: curriQunet catalogs read as data (KB note `methodology-a-javascript-catalog-is-data-read-what-it-fetches`); district catalogs scoped; Open Asks Sheets 58 and 59; handoff 358.
 - 2026-10-10 (S356 SkyThicket): Sam's three rulings (apply display build 5be53871ebf4; read Approved programs; a standing go for each display build after a college load); the college workflow's display job applies a receipt from the runner, verified by one combined hash (5be53871ebf4 on 292, 153ead0ce992 on 605); Mt. San Antonio read and loaded (313 records); the Approved programs loaded at both colleges (+33, +70) and `ee814befc65d` on 700; Team & RACI's first UI pass (#1957); KB note `methodology-a-receipt-too-large-for-the-connector-applies-from-the-runner`; handoff 357.
@@ -129,6 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-09 (S353 SkyHearth): Phase 2 of the ROEP harvest opens at Cerritos (#1941: sitemap-first read, 283 of 288 programs, a page goes to one program); the funding explainer's typed passages edit on the tab and its masthead follows Sam's marks (#1940); First Light rule, controls are underlined words (#1942); KB note `methodology-anchor-a-marker-a-workflow-reads`; handoff 354.
 - 2026-10-09 (S352 SkyMeridian): the Fact Sheet's `--on-accent` (#1934); its First Light mock-up built from its own code (#1935) and, on Sam's "Fact Sheet looks great!", ported with a screen-only dark mode (#1938); the Dashboard's first UI pass, clean light and dark (#1937); `ui_pass_lessons` S352 section; KB note `methodology-an-undefined-css-token-fails-to-an-invisible-state` third case; handoff 353.
 - 2026-10-09 (S351 SkyLark): UI passes on the privacy page (First Light's type and dark, #1929), the funding explainer (the Columns menu opens on the screen, #1930) and SkyView (chip tokens; on-accent ink on three dark fills at 2.65:1, #1932); the picker reaches a view nobody has audited before a re-pass (#1931); new lessons doc `ui_pass_lessons.md`; the fill-and-ink KB note gains its second case; handoff 352.
-- 2026-10-09 (S350 SkyTide): the veteran map ported to First Light on Sam's Sheet 55 ruling, COBI's frame on `?embed=1` with a marker size floor, `build_selfcontained.py --check` in CI (#1924); the Library record at version 55 (Sam's paste); KB note `methodology-check-a-page-inside-every-frame-that-embeds-it`; the Fact Sheet's first UI pass (#1926; the glyph sweep reads the standalone pages now) and Open Asks Sheet 56; handoff 351.
-- 2026-10-09 (S349 SkyHarbor): the docked Sierra full screen when she answers (#1921); the first UI pass on Sierra's public page; the veteran map mock-up and Sheet 55 (#1922); KB note `methodology-a-sweep-sees-only-the-states-its-seed-reaches`; handoff 350.
-- 2026-10-08 (S348 SkyMeadow): Sierra's public page ported to the approved mock-up, her logo set in five rounds with Sam; new lessons doc `sierra_page_redesign_lessons.md`; handoff 349.
