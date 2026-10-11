@@ -477,10 +477,45 @@ PAGE_JS = """() => {
                                   .replace(/[ \\t]+\\n/g, '\\n').replace(/\\n{3,}/g, '\\n\\n').trim().slice(0, 6000)}));
   const outcomeProbe = tabProbe.map(t => ({label: t.label, target: t.target, chars: t.chars}))
     .concat(byId.slice(0, 12).map(e => ({label: '(id)', target: e.id, chars: (e.textContent || '').trim().length})));
+  // A requirements panel a catalog keeps in a tab the reader never opens (Long
+  // Beach City's CourseLeaf pages, S362): the panel each tab points at (its
+  // href="#id" or aria-controls), hidden, outside the site's menus, read cell
+  // by cell so a course code never runs into its title as it does in the
+  // page's textContent ("JOURN 80Mass Communication").
+  const MENU = 'nav, header, footer, [role=navigation]';
+  const cellText = e => {
+    const out = [];
+    const walk = n => {
+      for (const c of n.childNodes) {
+        if (c.nodeType === 3) { out.push(c.textContent); continue; }
+        if (c.nodeType !== 1 || /^(SCRIPT|STYLE|NOSCRIPT|TEMPLATE)$/.test(c.tagName)) continue;
+        if (/^(TD|TH)$/.test(c.tagName)) out.push('\\t');
+        walk(c);
+        if (/^(P|DIV|LI|TR|H[1-6]|DT|DD|BR|TABLE|UL|OL|SECTION|CAPTION)$/.test(c.tagName)) out.push('\\n');
+      }
+    };
+    walk(e);
+    return out.join('').replace(/\\u00a0/g, ' ').replace(/[ \\t]*\\n\\s*/g, '\\n')
+      .replace(/\\t[ \\t]*/g, '\\t').replace(/\\n\\t/g, '\\n').trim();
+  };
+  const tabPanels = Array.from(document.querySelectorAll(
+      '[role=tab], [aria-controls], [role=tablist] a[href^="#"], ul.tabs a[href^="#"], #tabs a[href^="#"]'))
+    .filter(a => !a.closest(MENU))
+    .map(a => {
+      const id = (a.getAttribute('aria-controls') || (a.getAttribute('href') || '').replace(/^#/, '')).trim();
+      const el = id && !/[\\/:]/.test(id) ? document.getElementById(id) : null;
+      return {label: (a.innerText || a.textContent || '').trim().slice(0, 60), el};
+    })
+    .filter(t => t.el && !t.el.closest(MENU) && !t.el.getClientRects().length
+                 && (t.el.textContent || '').trim().length > 40)
+    .filter((t, i, all) => all.findIndex(o => o.el === t.el) === i)
+    .filter((t, i, all) => !all.some(o => o.el !== t.el && o.el.contains(t.el)))
+    .slice(0, 8)
+    .map(t => ({label: t.label, id: t.el.id, text: cellText(t.el).slice(0, 60000)}));
   return {title: document.title || '', h1: h1 ? h1.innerText : '', links,
           body: document.body ? document.body.innerText : '',
           content: document.body ? document.body.textContent : '',
-          courselists: lists, clickables, outcomeTabs, outcomeProbe};
+          courselists: lists, clickables, outcomeTabs, outcomeProbe, tabPanels};
 }"""
 
 
@@ -518,18 +553,44 @@ def load(reader, url: str, cache: dict, spa: bool) -> dict:
     return got
 
 
+INDEX_SUBJECTS = 40   # a tab panel naming courses in more subjects than this is a course index
+SUBJECT_TOKEN = re.compile(r"\b([A-Z][A-Z&]{1,7})[ \u00a0]?\d{1,4}[A-Z]?\b")
+
+
+def hidden_tabs_text(got: dict) -> str:
+    """The hidden tab panels PAGE_JS read cell by cell, each under a line
+    naming its tab, leaving out any panel that reads as a catalog-wide course
+    index (courses in more than INDEX_SUBJECTS subjects)."""
+    parts = []
+    for t in got.get("tabPanels") or []:
+        text = (t.get("text") or "").strip()
+        if not text or len({m.group(1) for m in SUBJECT_TOKEN.finditer(text)}) > INDEX_SUBJECTS:
+            continue
+        parts.append("[Tab: %s]\n%s" % ((t.get("label") or t.get("id") or "").strip(), text))
+    return "\n\n".join(parts)
+
+
 def best_text(got: dict, found_body: dict, found_content: dict,
               courses: list[dict] | None = None) -> tuple[str, dict, str]:
     """innerText is what a reader sees; textContent also holds a hidden tab
-    (CourseLeaf keeps Requirements in a tab). The visible text stands whenever
-    it names ACCEPT_SHARE of the program's courses; the hidden text is taken
-    only when the visible text falls short of that and the hidden text names
-    more. Long Beach City's pages hide a course index that names every course
-    in the catalog, so "whichever names more" gave 378 of its 379 programs
-    the index for the model to read, and 367 records came back with no blocks
-    (run 38105864413, S362)."""
-    if courses is not None and coverage(found_body, courses) >= ACCEPT_SHARE:
-        return got.get("body") or "", found_body, "innerText"
+    (CourseLeaf keeps Requirements in a tab). With the program's courses:
+    the visible text stands whenever it names ACCEPT_SHARE of them; short of
+    that, the visible text with the page's hidden tab panels appended
+    (innerText+tabs) when that reaches the share or names as many as the
+    whole hidden page; textContent only after both. Long Beach City keeps
+    Program Requirements in a tab and hides a course index that names every
+    course in the catalog, so "whichever names more" gave 378 of its 379
+    programs the index to read and 367 records came back with no blocks (run
+    38105864413, S362). Without the courses the old rule stands."""
+    if courses is not None:
+        if coverage(found_body, courses) >= ACCEPT_SHARE:
+            return got.get("body") or "", found_body, "innerText"
+        tabs = hidden_tabs_text(got)
+        if tabs:
+            both = (got.get("body") or "") + "\n\n" + tabs
+            found_both = find_codes(both, courses)
+            if coverage(found_both, courses) >= ACCEPT_SHARE or len(found_both) >= len(found_content):
+                return both, found_both, "innerText+tabs"
     if len(found_content) > len(found_body):
         return got.get("content") or "", found_content, "textContent"
     return got.get("body") or "", found_body, "innerText"

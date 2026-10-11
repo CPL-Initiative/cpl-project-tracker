@@ -1182,6 +1182,27 @@ check(P.best_text(lb_got, fb, fc)[2] == "textContent",
 tab_got = {"body": "Horticulture A.S.\nOverview\nRequirements", "content": lb_index}
 t, f, field = P.best_text(tab_got, P.find_codes(tab_got["body"], LB), P.find_codes(tab_got["content"], LB), LB)
 check(field == "textContent", "a page whose requirements sit in a hidden tab still reads its hidden text")
+# The Long Beach City page as Chromium read it through PAGE_JS (S362, a fixture
+# built like its pages: minified, a hidden A-Z index naming every course, and
+# Program Requirements in a hidden tab): the hidden page names all six courses
+# through the index, the visible page one, the requirements tab four.
+check("tabPanels" in P.PAGE_JS and "const cellText" in P.PAGE_JS and "!t.el.closest(MENU)" in P.PAGE_JS,
+      "PAGE_JS reads each hidden tab panel cell by cell, outside the site's menus")
+lbt_req = "Program Requirements\nRequired Courses\nHORT 11A\tIntro to Horticulture\t3\nHORT 19\tSoils\t3\nHORT 21\tPests\t3\nMKTG 47\tSales\t3\nTotal Units\t12"
+lbt_got = {"body": "Horticulture - Associate in Science\nOverview\nProgram Requirements\nStudents enrolling in HORT 11A learn plant care.",
+           "content": lb_index + "Horticulture - Associate in ScienceStudents enrolling in HORT 11A learn plant care.HORT 19Soils3",
+           "tabPanels": [{"label": "Program Requirements", "id": "programrequirementstextcontainer", "text": lbt_req}]}
+fb, fc = P.find_codes(lbt_got["body"], LB), P.find_codes(lbt_got["content"], LB)
+check(P.best_text(lbt_got, fb, fc)[2] == "textContent", "the old rule gave Long Beach City's page its hidden index")
+t, f, field = P.best_text(lbt_got, fb, fc, LB)
+check(field == "innerText+tabs" and "[Tab: Program Requirements]" in t and "MKTG 47\tSales" in t
+      and sorted(f) == ["HORT11A", "HORT19", "HORT21", "MKTG47"],
+      "a page keeping its requirements in a hidden tab reads the visible text with that tab, not the index: %s" % field)
+check("Floral" not in P.text_window(t, f), "the window the model reads holds no course index")
+idx_panel = {"tabPanels": [{"label": "Courses A-Z", "id": "az", "text": "\n".join(
+    "S%s%s 1 - Course" % (chr(65 + i // 26), chr(65 + i % 26)) for i in range(60))}, {"label": "Requirements", "id": "r", "text": lbt_req}]}
+check(P.hidden_tabs_text(idx_panel).count("[Tab:") == 1 and "Courses A-Z" not in P.hidden_tabs_text(idx_panel),
+      "a tab panel naming courses in more than %d subjects reads as a course index and is left out" % P.INDEX_SUBJECTS)
 none = S.score({"program": {"total_units": None}, "blocks": [],
                 "missing_explained": [{"code": c["code"], "why": "only in the course index"} for c in LB]}, LB, lb_index)
 check(not none["coverage"]["pass"] and none["coverage"]["none_placed"] and not none["pass"],
