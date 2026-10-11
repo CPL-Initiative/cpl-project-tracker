@@ -5016,7 +5016,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 495
+     "line": 516
     },
     {
      "id": "module:college_briefing.js",
@@ -22099,7 +22099,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1100,
+     "line": 1104,
      "tabs": [
       "workplan-goals"
      ]
