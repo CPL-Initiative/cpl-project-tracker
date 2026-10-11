@@ -2,60 +2,20 @@
  "college": "Moreno Valley College",
  "programs": 149,
  "with_closed_list": 144,
- "found": 132,
- "extracted": 132,
- "errors": 0,
- "passed_machine_checks": 126,
+ "found": 140,
+ "extracted": 140,
+ "errors": 1,
+ "passed_machine_checks": 132,
  "failed": {
   "coverage": 2,
   "invented": 2,
-  "arithmetic": 4,
+  "arithmetic": 5,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 7.77,
- "cost_per_program": 0.0589,
+ "cost_usd": 9.46,
+ "cost_per_program": 0.0676,
  "not_found": [
-  {
-   "control_number": "30164",
-   "title": "Kinesiology, Health and Wellness",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "30165",
-   "title": "Administration & Information Systems",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "30166",
-   "title": "Communication, Media & Languages",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "30167",
-   "title": "Math & Sciences",
-   "award": "A.S. Degree"
-  },
-  {
-   "control_number": "30168",
-   "title": "Fine & Applied Arts",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "30169",
-   "title": "Humanities, Philosophy & Arts",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "30170",
-   "title": "Social and Behavioral Studies",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "31232",
-   "title": "American Studies",
-   "award": "A.A. Degree"
-  },
   {
    "control_number": "37393",
    "title": "Fire Service Leadership",
@@ -77,5 +37,5 @@
    "award": "A.S. Degree"
   }
  ],
- "run": "38085493318"
+ "run": "38095617505"
 }
