@@ -222,3 +222,11 @@ its steady fill, which reproduced S356's deferred 4.16:1 (`--cobalt` on `--gold-
 `#4A3A10` to `#40320E` (4.71:1): every ink on that fill in dark is light, so each gains contrast. The full `cobi-dark`
 sweep fails the same 11 routes as main, none of them new. Guard: `tests/raci_ui_pass.test.js` (11 new; none pass on the
 old files).
+
+**Military Partnerships (#2004): a frame below its own breakpoint.** The tab frames the veteran map with `?embed=1`, and the
+map's embed layout (fill the frame, its own title for screen readers only) starts at a 981px frame. Beside COBI's sidebar a
+1280 laptop gives a 936px frame, so the map printed its own title under the tab's heading and scrolled inside the frame;
+on a phone that title pushed the map below the frame's fold. The title now goes to screen readers at every width in the
+embed (content 2,094px to 1,843 at 320). The frame still scrolls below 981px, as the map's CSS states: its stage is in
+`vh`, so sizing the frame to its content would feed back. The paragraph's link took the browser's default ink in both
+themes; a link in a static shell needs its token written on it. Guard: `tests/military_partnerships_ui_pass.test.js`.
