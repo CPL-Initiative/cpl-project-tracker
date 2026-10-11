@@ -4,17 +4,17 @@
  "with_closed_list": 144,
  "found": 140,
  "extracted": 140,
- "errors": 1,
+ "errors": 0,
  "passed_machine_checks": 132,
  "failed": {
   "coverage": 2,
   "invented": 2,
-  "arithmetic": 5,
+  "arithmetic": 6,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 9.46,
- "cost_per_program": 0.0676,
+ "cost_usd": 9.6,
+ "cost_per_program": 0.0686,
  "not_found": [
   {
    "control_number": "37393",
@@ -37,5 +37,5 @@
    "award": "A.S. Degree"
   }
  ],
- "run": "38095617505"
+ "run": "38111056537"
 }
