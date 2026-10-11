@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 535,
+   "count": 536,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1094,6 +1094,24 @@
      "title": "A count-based guard passes when its subject disappears",
      "type": "methodology",
      "updated": "2026-09-09"
+    },
+    {
+     "created": "2026-10-11",
+     "governs": [
+      "kb/reference/coci_program_course_file.csv.gz",
+      "chatbox/build_program_courses.py",
+      "kb/_build_roep_display.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-missing-course-may-be-a-retired-version.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "coci",
+      "program-requirements-harvest"
+     ],
+     "title": "A course missing from a program's state list may be on it in a retired version",
+     "type": "methodology",
+     "updated": "2026-10-11"
     },
     {
      "created": "2026-09-07",
@@ -15240,8 +15258,28 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 330,
+   "count": 331,
    "docs": [
+    {
+     "created": "2026-10-11",
+     "governs": [],
+     "n": 360,
+     "path": "docs/session_360_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "harvest",
+      "phase-2",
+      "rccd",
+      "records-view",
+      "coci-status",
+      "checkpoint"
+     ],
+     "title": "Sam's review flow first; the emphasis loads, the COCI status chips, Long Beach City",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-10",
      "governs": [],
@@ -20882,5 +20920,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1092
+ "total": 1094
 }

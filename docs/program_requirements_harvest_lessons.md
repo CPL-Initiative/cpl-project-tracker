@@ -851,3 +851,41 @@ the checked count held at 27; no row is left without a display; the eight rows t
 🔨 **Phase 2, a college at a time (Sam, 2026-10-09, "Cerritos first"): Cerritos is read, loaded and sampled (Sam confirmed 12 of 12); Mt. San Antonio is read and loaded; both are being re-read for their Approved programs.** `kb/_program_requirements_college.py` on `program-requirements-college.yml` (#1941) reads the sitemap once and each program page once; `assign()` gives a page to the programs whose award its address names and whose title it names most fully, and a loser reads none (`page_claimed`). A push reads only on `[read]`/`[extract]` and loads on `[load]` (or a dispatch); the load posts the committed records through `program_requirement_records_college_load()` (insert-only, unchecked, each row keeps its extraction run, service role by grant and a body check) and commits a receipt naming every inserted key, which is the rollback. **Read** (runs 37961137169, 37966828676; $16.64): 274 of 288 programs, 238 pass the three machine checks; 14 found no page of their own. **Loaded** (run 37970640026): 270 unchecked beside the four checked pilot rows. **Reading** (Sam, 2026-10-09, on his phone): Program records has Find a record (search, Waiting on your reading, college; #1946), and a Progress call that names records answers each on its card through the verdict RPC (#1947). Under the tab's title, **Sam's to-dos (N)** goes to the open calls; a finished call reads **Answered** with a check. Opening a record on a call starts **Side by side**: the record beside its catalog page in a sandboxed frame, or, for a host `kb/catalog_framing.json` records as refusing (42 of 108, Cerritos among them), the reading room: the record in a COBI window on the right half, the catalog on the left, Next waiting record moving both (rerun `catalog-framing.yml` for a new host). Each course shows its titles, its C-ID/CCN/M-ID numbers and its CPL count (opens the exhibits view), from the display build. **The sample held (Sam, 2026-10-10 ~01:50Z):** he confirmed all 12; seven are checked, and the five failing a machine check (Cerritos 32563, 44153, 15512, 02235; Santa Monica 43767) stay unchecked though he read each as printed: those checks flag the catalog against the state file. **Mt. San Antonio** (Sam: "Go on Mt SAC!", 2026-10-10): run 38059865531 read 317 of 344 programs from their own pages, $17.27, 291 passing the three machine checks (25 fail arithmetic, 1 extraction error); load run 38064248268 inserted 313 unchecked beside the 3 checked pilot rows (receipt `kb/receipts/program_requirement_records_college_mt_san_antonio_38064248268.json`). A ten-record sample is on the Progress call. **Approved programs too** (Sam, 2026-10-10, "go on call 2"): `STATUS_FILTER` takes Active, Active - Teachout Only and Approved; all 117 Approved at the two colleges carry a state course list. Re-read and loaded the same day: Cerritos 305 records (265 passing; 33 inserted; 37 extracted, $2.42; 19170 and 19172 lost their pages to Approved programs), Mt. San Antonio 382 (346 passing; 70 inserted; 71 extracted, $4.47; six lost pages). Those 8 live rows stay on build `153ead0ce992`; 700 hold `ee814befc65d` (md5 verified). **Display** (Sam, 2026-10-10, "Yes build"): each build applies by the college workflow's **display job** (dispatch `step=display`; `kb/_program_requirements_display_apply.py` applies the full receipt of the build the page carries, one PATCH a program, and commits `<receipt>.applied_<run>.json` with each row's prior build, the rollback). Verified by combined md5 against the receipt. **NEXT:** ② Rebuild the display after each load and dispatch `step=display`: **Sam's standing go (2026-10-10, "Go")** covers every display build that follows a college load, checked programs included. ③ Sam reads the Mt. San Antonio sample. ④ CPL Pathways' display file splits per college. ⑤ The curriQunet read is built (#1961): the start page names the catalog id, `cq_index` walks the degree and certificate sections, and each program's `_getPage` is one page for `assign()`. Riverside City, capture only: 228 of 262 programs found a page (lessons, S357); 27 colleges use curriQunet.
 
 **Sam's ruling (Sheet 59 card 1, in chat ~19:45Z 2026-10-10, "RCCD go!", as proposed):** RCCD's three colleges read next: Riverside City extracted (its capture found 228 of 262), Moreno Valley and Norco captured first and extracted where the capture finds a page for 85% of their programs; Long Beach City after them. Memory row `sam-rccd-go-sheet-59-card-1-2026-10-10`.
+
+## S359 SkyMoss, 2026-10-10/11: the Liberal Arts emphases, duplicate index entries, and Sam's Mt. San Antonio rules
+
+**A curriQunet subject list prints bare numbers.** RCCD's seven Liberal Arts emphasis degrees are ordinary index entries
+(Riverside City 6290 Math and Science AS493; run 38092150229), but their pages print "Mathematics (MATH): C2210, 5, 9"
+and "Biology (BIO) 1, 1H, 4" (run 38092480434), so the read matched almost none of 110 listed courses.
+`cq_subject_lists()` (#1965) reads each number with its subject; a number may lead with any letter (#1966: Kinesiology's
+A03, V01; Dance's D10). Coverage on the real pages: Math and Science 0.955, Administration and Information Systems 0.939,
+Kinesiology, Health and Wellness 1.0 (0.009 as printed). Re-captures recovered 20 of the 21 plus American Studies at two
+colleges; nothing else moved. Humanities, Philosophy & Arts (316 listed courses) runs past the extraction's max_tokens at
+all three colleges and loads no record.
+
+**One program under two index entries is one page.** Norco lists Kinesiology, Health & Wellness A.A. as 5545 and 5552
+(both NAA498/C); Riverside City repeats three emphasis entries in a second list (6232-6234). Read as separate pages, the
+Kinesiology A.A.-T, Dance and Pilates each took an emphasis page and extracted empty (coverage 0.0). `cq_group()` (#1967)
+groups claims by the local award codes an index title ends with, so `page_winners()` keeps the page for the program whose
+award it names. Measured first: of 526 RCCD programs with a page, four sat on a page naming another award, and only the
+A.A.-T was wrong, so a blanket award rule would have dropped good pages.
+
+**A capture now names what an extraction would pay for** (`would_extract` in `capture_preview.json`, against the filed
+read by `unchanged()`), so an extraction go can name its programs and cost first. Moreno Valley's recovered programs cost
+$1.69, Norco's $1.78, Riverside City's $1.86.
+
+**Sam's Mt. San Antonio sample (2026-10-10 23:55Z to 00:10Z).** Four confirmed, six marked Needs a fix, with five rules
+(memory row `sam-mtsac-sample-reading-rules-2026-10-11`, vault braindump 2026-10-11 00:10). Measured at once: the five
+catalog additions (EMS 80, AGAG 1, KIN 24, CISP 71, ID 12) sit in the full Program Course File on the same programs as
+**Inactive** under an older control number, and COCI's course list carries the active version (EMS 80: CCC000584685 on
+the program, CCC000616276 current). `coci_program_courses` and the display build keep Active, Approved and Teachout only
+(`KEEP_STATUS` in `chatbox/build_program_courses.py`), so no reading saw them. Neither COCI's course list nor the MIS
+Master Course File holds noncredit hours (both give VOC BS36 and BM61 0 units).
+
+**Long Beach City's registry row named the college's page about its catalog.** www.lbcc.edu/college-catalog links
+"This Year's Catalog" to https://lbcc-public.courseleaf.com/ (run 38092181470); corrected with `corrected_by` so the
+census keeps it. Its capture ran more than two hours.
+
+**Sheet 60 answered:** "remove" (23:52:04Z); the eight rows are deleted, each guarded by its md5 against the live read
+(#1968). A data UPDATE or DELETE goes through `apply_migration` with a committed receipt because `execute_sql`'s guard
+refuses it; an insert into `cpl_memory` that timed out twice landed on the third, shorter try.

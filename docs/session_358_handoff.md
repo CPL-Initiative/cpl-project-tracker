@@ -4,6 +4,8 @@ date: 2026-10-10
 session: 357 (SkyCanopy)
 tags: [handoff, program-requirements, harvest, phase-2, curriqunet, decision-sheet, checkpoint]
 status: current
+superseded: true
+superseded_by: session_360_handoff.md
 ---
 
 # You are Session 358
