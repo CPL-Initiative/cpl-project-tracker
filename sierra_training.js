@@ -63,12 +63,11 @@
     /\bunable to find\b/i,
   ];
   var TURN_LIMIT = 500;   // newest N turns analyzed (surfaced in the UI)
-  // Raised 200 → 500 (2026-08-07). The fetch is unfiltered, so the CI smoke rows
-  // (see isSmoke below — ~1 per run, and they can never be deleted) consume this
-  // budget alongside real reports. At 200 they would have started evicting real
-  // feedback from the queue within months. If this is ever hit, the next step is
-  // excluding page='smoke' server-side — use or=(page.is.null,page.neq.smoke),
-  // since a bare page=not.eq.smoke silently drops NULL-page rows too.
+  // The cap on each of the two feedback reads (loadFeedback). Until S366 one
+  // unfiltered read carried the CI smoke rows inside this cap: 452 rows on
+  // 2026-10-11, about 46 of them CI rows a week, so within a week the oldest real
+  // reports, triaged or not, would have fallen off the newest-first read. Real
+  // reports are now excluded from nothing and the CI rows have a cap of their own.
   var FEEDBACK_LIMIT = 500;
 
   var STATUSES = ["new", "triaged", "addressed"];
@@ -210,6 +209,7 @@
   var state = {
     loading: false, error: null, gated: false,
     feedback: null, turns: null,
+    smokeTotal: null,  // exact count of CI feedback rows (loadFeedback), past the read's cap
     // feedback-queue filters
     fRating: "", fAudience: "", fPage: "", fStatus: "open", fNote: false, fSmoke: false, fDays: "",
     open: {},          // turn_id → expanded
@@ -905,12 +905,40 @@
   }
 
   // ── Data ──
+  // Two reads, so the CI rows never take a real report's place under the cap.
+  // Real reports exclude page='smoke' on the server: or=(page.is.null,page.neq.smoke),
+  // because a bare page=neq.smoke drops NULL-page rows too. The CI rows (status 'ci'
+  // is derived from page='smoke') come apart, for the opt-in "include automated test
+  // messages" view, with an exact count so its label stays true past the cap. A row
+  // is in one read or the other (turn_id is the key), so the merge de-duplicates only
+  // when a test stub answers both reads alike.
   function loadFeedback() {
-    var url = REST + "/sierra_feedback?select=turn_id,created_at,updated_at,page,audience,rating,note,question,response,status"
-      + "&order=created_at.desc&limit=" + FEEDBACK_LIMIT;
-    return fetch(url, { headers: authHeaders() }).then(function (r) {
-      if (!r.ok) throw new Error("feedback " + r.status);
-      return r.json();
+    var cols = "select=turn_id,created_at,updated_at,page,audience,rating,note,question,response,status";
+    var order = "&order=created_at.desc&limit=" + FEEDBACK_LIMIT;
+    var real = fetch(REST + "/sierra_feedback?" + cols + "&or=(page.is.null,page.neq.smoke)" + order,
+      { headers: authHeaders() }).then(function (r) {
+        if (!r.ok) throw new Error("feedback " + r.status);
+        return r.json();
+      });
+    var h = authHeaders();
+    h["Prefer"] = "count=exact";
+    var ci = fetch(REST + "/sierra_feedback?" + cols + "&page=eq.smoke" + order, { headers: h })
+      .then(function (r) {
+        if (!r.ok) throw new Error("feedback " + r.status);
+        var m = /\/(\d+)\s*$/.exec((r.headers && r.headers.get && r.headers.get("content-range")) || "");
+        state.smokeTotal = m ? +m[1] : null;
+        return r.json();
+      });
+    return Promise.all([real, ci]).then(function (res) {
+      var seen = {}, out = [];
+      (res[0] || []).concat(res[1] || []).forEach(function (f) {
+        var k = f && f.turn_id != null ? String(f.turn_id) : null;
+        if (k !== null && seen[k]) return;
+        if (k !== null) seen[k] = true;
+        out.push(f);
+      });
+      out.sort(function (a, b) { return String(b.created_at || "").localeCompare(String(a.created_at || "")); });
+      return out;
     });
   }
   function loadTurns() {
@@ -2079,7 +2107,8 @@
     var focusWant = pendingFocus(root);
 
     var fbAll = state.feedback || [];
-    var smokeCount = fbAll.filter(isSmoke).length;
+    // The CI read is capped; its exact count (Content-Range) keeps the label true past the cap.
+    var smokeCount = Math.max(state.smokeTotal || 0, fbAll.filter(isSmoke).length);
     // Stats follow the same rule as the queue: CI rows are excluded unless the
     // reviewer opts in. Counting them made the thumbs-down total read 38 when
     // only 10 were real reports — a headline that is 74% our own smoke test
