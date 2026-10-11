@@ -1,0 +1,20 @@
+{
+ "college": "Long Beach City College",
+ "programs": 12,
+ "with_closed_list": 12,
+ "found": 12,
+ "extracted": 12,
+ "errors": 0,
+ "passed_machine_checks": 1,
+ "failed": {
+  "coverage": 11,
+  "invented": 0,
+  "arithmetic": 11,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 0.85,
+ "cost_per_program": 0.071,
+ "not_found": [],
+ "run": "38139252216"
+}
