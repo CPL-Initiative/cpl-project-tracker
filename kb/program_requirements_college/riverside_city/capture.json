@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 268,
  "with_closed_list": 262,
- "started": "2026-10-11T00:17:14Z",
+ "started": "2026-10-11T03:28:38Z",
  "curriqunet": {
   "catalog": 124,
   "view_prefix": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/",
@@ -20,7 +20,7 @@
  },
  "pages_read": 435,
  "loads": 447,
- "seconds": 2162.8,
+ "seconds": 2130.5,
  "found": 244,
  "by_method": {
   "no_closed_list": 6,
@@ -357,9 +357,20 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/riverside_city",
-  "kept": 244,
-  "programs": 0,
-  "list": []
+  "kept": 243,
+  "programs": 1,
+  "list": [
+   {
+    "control_number": "18111",
+    "title": "Humanities, Philosophy & Arts",
+    "award": "A.A. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6288",
+    "coverage": 0.942,
+    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6288",
+    "was_coverage": 0.942,
+    "was_method": "sitemap_page"
+   }
+  ]
  },
- "run": "38097844006"
+ "run": "38108461470"
 }
