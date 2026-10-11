@@ -19,3 +19,6 @@ values
  'Sam chose to read Long Beach City after the extraction learns his two new rules, and to remove one stale Riverside City record.',
  array['program-requirements-harvest','decision-sheet','rccd','long-beach-city'], array['program_requirement_records','chatbox/supabase/functions/program-requirements-extract/index.ts'],
  'Sam, Open Asks Sheet 61 replies (items 1-2, done through 2)', 's360-2026-10-11', '2026-10-11', 'verified');
+
+-- Second batch, APPLIED 2026-10-11 ~02:10Z (cpl_memory_2026_10_11_s360_findings): roep-catalog-additions-retired-on-program-2026-10-11,
+-- roep-record-shape-4-recommended-careers-2026-10-11, roep-delete-via-mcp-times-out-2026-10-11 (text as applied; see the migration).
