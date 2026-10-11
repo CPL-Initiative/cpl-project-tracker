@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-11T04:56:47Z",
-  "session": 361,
-  "moniker": "SkyBirch",
+  "written_at": "2026-10-11T13:50:07Z",
+  "session": 362,
+  "moniker": "SkyAlder",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_362_handoff.md",
+  "handoff": "docs/session_363_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -656,13 +656,6 @@
       "program": "New Product Development and Fabrication",
       "award": "A.S.",
       "control_number": "19092",
-      "loaded": "2026-10-09"
-    },
-    {
-      "college": "Cerritos College",
-      "program": "Liberal Arts and Sciences: Communication",
-      "award": "A.A.",
-      "control_number": "19163",
       "loaded": "2026-10-09"
     },
     {
@@ -1654,13 +1647,6 @@
     },
     {
       "college": "Cerritos College",
-      "program": "Automotive Technology: Automotive Electrical & Engine Performance Technician",
-      "award": "Certificate of Achievement",
-      "control_number": "41071",
-      "loaded": "2026-10-09"
-    },
-    {
-      "college": "Cerritos College",
       "program": "Entry Level Quick Service Technician",
       "award": "Certificate of Achievement",
       "control_number": "41073",
@@ -1951,13 +1937,6 @@
       "program": "Welding Technology: Process Pipe Welding",
       "award": "Certificate of Achievement",
       "control_number": "45255",
-      "loaded": "2026-10-09"
-    },
-    {
-      "college": "Cerritos College",
-      "program": "Welding Technology: Process Pipe Welding",
-      "award": "A.S.",
-      "control_number": "45259",
       "loaded": "2026-10-09"
     },
     {
@@ -2294,13 +2273,6 @@
       "program": "Administration of Justice",
       "award": "Certificate of Achievement",
       "control_number": "30151",
-      "loaded": "2026-10-10"
-    },
-    {
-      "college": "Moreno Valley College",
-      "program": "Administration of Justice/Law Enforcement Basic Peace Officer Academy Intensive",
-      "award": "A.S.",
-      "control_number": "30152",
       "loaded": "2026-10-10"
     },
     {
@@ -3565,13 +3537,6 @@
     },
     {
       "college": "Mt. San Antonio College",
-      "program": "Electronic Systems Technology - Level II",
-      "award": "Certificate of Achievement",
-      "control_number": "14039",
-      "loaded": "2026-10-10"
-    },
-    {
-      "college": "Mt. San Antonio College",
       "program": "Interior Design: Level III",
       "award": "Certificate of Achievement",
       "control_number": "14115",
@@ -3915,13 +3880,6 @@
     },
     {
       "college": "Mt. San Antonio College",
-      "program": "Basic Skills",
-      "award": "Noncredit",
-      "control_number": "24058",
-      "loaded": "2026-10-10"
-    },
-    {
-      "college": "Mt. San Antonio College",
       "program": "Administrative Assistant - Level 2",
       "award": "Noncredit",
       "control_number": "24066",
@@ -4114,13 +4072,6 @@
       "program": "Psychology",
       "award": "A.A.-T",
       "control_number": "30762",
-      "loaded": "2026-10-10"
-    },
-    {
-      "college": "Mt. San Antonio College",
-      "program": "Basic Career Readiness",
-      "award": "Noncredit",
-      "control_number": "30805",
       "loaded": "2026-10-10"
     },
     {
@@ -4531,23 +4482,9 @@
     },
     {
       "college": "Mt. San Antonio College",
-      "program": "ESL - Beginning Level",
-      "award": "Noncredit",
-      "control_number": "38082",
-      "loaded": "2026-10-10"
-    },
-    {
-      "college": "Mt. San Antonio College",
       "program": "Care Coordinator – Level 1",
       "award": "Noncredit",
       "control_number": "38083",
-      "loaded": "2026-10-10"
-    },
-    {
-      "college": "Mt. San Antonio College",
-      "program": "Baking and Pastry - Level I",
-      "award": "Certificate of Achievement",
-      "control_number": "38084",
       "loaded": "2026-10-10"
     },
     {
@@ -4573,13 +4510,6 @@
     },
     {
       "college": "Mt. San Antonio College",
-      "program": "ESL - Advanced Level",
-      "award": "Noncredit",
-      "control_number": "38094",
-      "loaded": "2026-10-10"
-    },
-    {
-      "college": "Mt. San Antonio College",
       "program": "Sports Medicine",
       "award": "Noncredit",
       "control_number": "38095",
@@ -4590,13 +4520,6 @@
       "program": "Occupational Therapy Aide",
       "award": "Noncredit",
       "control_number": "38096",
-      "loaded": "2026-10-10"
-    },
-    {
-      "college": "Mt. San Antonio College",
-      "program": "ESL - Intermediate Level",
-      "award": "Noncredit",
-      "control_number": "38097",
       "loaded": "2026-10-10"
     },
     {
@@ -4713,13 +4636,6 @@
     },
     {
       "college": "Mt. San Antonio College",
-      "program": "Child Development - Level I",
-      "award": "Certificate of Achievement",
-      "control_number": "39517",
-      "loaded": "2026-10-10"
-    },
-    {
-      "college": "Mt. San Antonio College",
       "program": "Fashion Computer Aided Design",
       "award": "Noncredit",
       "control_number": "39646",
@@ -4772,13 +4688,6 @@
       "program": "CIS Professional in JAVA Programming",
       "award": "Certificate of Achievement",
       "control_number": "40141",
-      "loaded": "2026-10-10"
-    },
-    {
-      "college": "Mt. San Antonio College",
-      "program": "CIS Professional in Excel and Acces",
-      "award": "Certificate of Achievement",
-      "control_number": "40142",
       "loaded": "2026-10-10"
     },
     {
@@ -4916,13 +4825,6 @@
     },
     {
       "college": "Mt. San Antonio College",
-      "program": "Electronics Technology - Level 1",
-      "award": "Certificate of Achievement",
-      "control_number": "41116",
-      "loaded": "2026-10-10"
-    },
-    {
-      "college": "Mt. San Antonio College",
       "program": "Electronics Technology - Level 2",
       "award": "Certificate of Achievement",
       "control_number": "41117",
@@ -4989,13 +4891,6 @@
       "program": "Engineering with Emphasis in Electrical Engineering Applications AS",
       "award": "A.S.",
       "control_number": "41561",
-      "loaded": "2026-10-10"
-    },
-    {
-      "college": "Mt. San Antonio College",
-      "program": "Electronics Technology - Level 1",
-      "award": "Noncredit",
-      "control_number": "41569",
       "loaded": "2026-10-10"
     },
     {
@@ -5290,20 +5185,6 @@
       "program": "Business Administration 2.0",
       "award": "A.S.-T",
       "control_number": "42657",
-      "loaded": "2026-10-10"
-    },
-    {
-      "college": "Mt. San Antonio College",
-      "program": "ESL Written Communication - Advanced Level",
-      "award": "Noncredit",
-      "control_number": "42726",
-      "loaded": "2026-10-10"
-    },
-    {
-      "college": "Mt. San Antonio College",
-      "program": "ESL Written Communication - Intermediate Level",
-      "award": "Noncredit",
-      "control_number": "42727",
       "loaded": "2026-10-10"
     },
     {
@@ -5675,13 +5556,6 @@
       "program": "Business Administration: General Business Concentration",
       "award": "Certificate of Achievement",
       "control_number": "30055",
-      "loaded": "2026-10-10"
-    },
-    {
-      "college": "Norco College",
-      "program": "Business Administration: General Business Concentration",
-      "award": "A.S.",
-      "control_number": "30056",
       "loaded": "2026-10-10"
     },
     {
@@ -8385,16 +8259,30 @@
       "award": "A.S.",
       "control_number": "43767",
       "loaded": "2026-10-07"
+    },
+    {
+      "college": "Moreno Valley College",
+      "program": "Humanities, Philosophy & Arts",
+      "award": "A.A.",
+      "control_number": "30169",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Norco College",
+      "program": "Humanities, Philosophy & Arts",
+      "award": "A.A.",
+      "control_number": "30109",
+      "loaded": "2026-10-11"
     }
   ],
   "next_step": {
-    "title": "Load Long Beach City, finish RCCD's longest programs, then one display build",
-    "text": "Long Beach City's read is still running. Riverside City's and Moreno Valley's Humanities, Philosophy and Arts programs are read in two calls and loaded; Norco's is being read. One display build then brings all of them to the page and to Sierra."
+    "title": "Read Long Beach City again, its own pages this time",
+    "text": "The first read gave the model a hidden course index and is not loaded. The reader now takes the visible page, or the hidden requirements tab read cell by cell. A 12-program trial is running; the rest follow on Sam's go, then load, display and PR."
   },
   "calls": [
     {
-      "title": "A source for noncredit course hours",
-      "text": "Sam asked that a program state COCI's units when the college prints none. For noncredit programs the hours are in no file the harvest holds: COCI's course list and the MIS course file both give 0.",
+      "title": "Noncredit hours as estimated equivalent units (answered)",
+      "text": "No state file carries hours; the catalogs print them for 331 of 395 course entries. Sam: lecture rate (16-18 hours a unit), for estimating only, never in Sierra. Both pages show it (#1984).",
       "if_no_reply": "Noncredit programs keep showing no printed total until a source is found."
     }
   ],
@@ -8406,6 +8294,14 @@
     "reading": "Cerritos read on Oct 9 and Mt. San Antonio on Oct 10. RCCD's three colleges were read on Oct 10 and their Liberal Arts emphasis programs recovered on Oct 11: 1,225 records in all. Since Oct 11 a record names the courses the catalog recommends in a block of their own and the careers the catalog names. Long Beach City is being read."
   },
   "changes": [
+    {
+      "at": "2026-10-11T13:49Z",
+      "text": "Noncredit programs show their hours as estimated equivalent units at the lecture rate, marked for estimating only, not awarded units."
+    },
+    {
+      "at": "2026-10-11T13:49Z",
+      "text": "18 records that read another program's page are removed (Sam's ruling); a record placing none of its courses is never loaded again."
+    },
     {
       "at": "2026-10-11T02:16Z",
       "text": "Each catalog course missing from the state's list now shows its COCI status, COCI's units fill in where the catalog prints none, and a unit difference stays on the record."
