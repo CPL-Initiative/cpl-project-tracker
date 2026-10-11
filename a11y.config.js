@@ -574,6 +574,54 @@ async function seedContracts(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// Team & RACI in edit mode (S365): the stored team phrase unlocks editing exactly as a real
+// session does, and the seed stubs the tab's two reads (team_members, item_raci) so the matrix
+// paints its editable cells, each a button since S365, and one row holds the jump highlight.
+// With `view` "directory" it shows the
+// Team Directory, whose name, role, email and status cells are buttons too.
+async function seedRaciEditor(page, theme, view) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "raci") location.hash = "raci"; });
+  await page.waitForFunction(() => !!window.CPL_RACI_TAB, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    try {
+      localStorage.setItem("cpl_team_pass", "seed-phrase");
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const M = [
+      { id: "m1", name: "Member One", email: "one@example.org", role: "Operations", nudge: true,
+        last_nudged_at: "2026-09-01T00:00:00Z", last_response_at: null },
+      { id: "m2", name: "Member Two", email: "two@example.org", role: "", nudge: false, last_nudged_at: null, last_response_at: null },
+    ];
+    const RR = [{ item_type: "project", item_id: "1.1", raci: { R: [{ name: "Member One" }], A: [], C: [], I: [] } }];
+    const real = window.fetch;
+    window.fetch = function (url) {
+      const u = String(url);
+      const body = /\/team_members\?/.test(u) ? M : /\/item_raci\?/.test(u) ? RR : null;
+      if (body) return Promise.resolve(new Response(JSON.stringify(body), { status: 200, headers: { "Content-Type": "application/json" } }));
+      return real.apply(this, arguments);
+    };
+    window.CPL_RACI_TAB.boot();
+  });
+  await page.waitForFunction(() => !!document.querySelector("#raci-root .raci-cell-btn"), null, { timeout: 20000 });
+  // The row a Where-To jump lands on holds --gold-soft for 2.6 s (focusItem). Hold it, at
+  // its steady fill (the fade's first frames are motion, not a state), so its words measure.
+  if (view !== "directory") await page.evaluate(() => {
+    const row = document.querySelector('#raci-root tr[data-raci-key="project:1.1"]');
+    if (row) { row.classList.add("raci-row-focus"); row.querySelectorAll("td").forEach((td) => { td.style.animation = "none"; }); }
+  });
+  if (view === "directory") {
+    await page.evaluate(() => {
+      const t = Array.from(document.querySelectorAll("#raci-root .raci-tg")).find((b) => /Directory/.test(b.textContent));
+      if (t) t.click();
+    });
+    await page.waitForFunction(() => !!document.querySelector("#raci-root .raci-edit-btn"), null, { timeout: 20000 });
+  }
+  await page.waitForTimeout(300);
+}
+
 async function seedMyCollegeReports(page, signin) {
   await page.evaluate(() => new Promise((res) => {
     if (window.CPL_FUNDING_TAB) return res();
@@ -980,6 +1028,38 @@ module.exports = {
   },
   /* ── Contracts, signed in (S364 UI pass) ─────────────────────────────────
      The register is gated; the cobi sweep measures its gate. */
+  "raci-editor": {
+    file: "index.html",
+    title: "Team & RACI in edit mode, the matrix's cells as buttons",
+    routes: [{ hash: "raci", name: "editor" }],
+    widths: [390, 1440],
+    seed: (page) => seedRaciEditor(page, "light", "matrix"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "raci-editor-dark": {
+    file: "index.html",
+    title: "Team & RACI in edit mode, the matrix's cells as buttons, dark",
+    routes: [{ hash: "raci", name: "editor" }],
+    widths: [390, 1440],
+    seed: (page) => seedRaciEditor(page, "dark", "matrix"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "raci-directory": {
+    file: "index.html",
+    title: "Team & RACI in edit mode, the Team Directory's cells as buttons",
+    routes: [{ hash: "raci", name: "directory" }],
+    widths: [390, 1440],
+    seed: (page) => seedRaciEditor(page, "light", "directory"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "raci-directory-dark": {
+    file: "index.html",
+    title: "Team & RACI in edit mode, the Team Directory's cells as buttons, dark",
+    routes: [{ hash: "raci", name: "directory" }],
+    widths: [390, 1440],
+    seed: (page) => seedRaciEditor(page, "dark", "directory"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
   "contracts": {
     file: "index.html",
     title: "Contracts, a reviewer's view of the V0718 fixture",

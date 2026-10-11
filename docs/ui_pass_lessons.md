@@ -201,3 +201,24 @@ route's hash and the tab's script loads only when activated (the first cut timed
 text in the decorative `--text-faint` at 3.62:1, and a `<button>` chip with no ground of its own on Chromium's dark
 button face (`#6B6B6B`) at 1.99:1. Guard: `tests/contracts_first_light.test.js` (16; 1 passes on the old file).
 
+
+
+## S365 SkyRowan, 2026-10-11: Vision 2030, and Team & RACI's two leftovers (#2001, #2003)
+
+**Vision 2030 (#2001): a clean sweep over a page that scrolled sideways.** `npm run a11y` passed the tab in light and dark
+before any change. The `cobi` targets measure two widths, and the faults sat at the others: at 320px the grid's 300px
+column floor scrolled the page 44px, and each goal bar shared a flex row with a long label that took the row, leaving the
+bar 0px on a phone and 12px at 1024. Read element widths at 320 and 390 yourself. The fix is `min(300px, 100%)` and the
+bar above its label with `flex: none` (in a column, `flex: 1` sets a basis of 0 and collapses a fixed 6px height). The
+wiring check found the tab's two Action cards in wording no source carries; both views now read `V2030_ACTIONS`, the CPL
+Workplan's own words. The goals' progress differs between the tab and the annual report; that is Open Asks Sheet 65 card 1.
+
+**Team & RACI: a click handler on a `<td>` reaches a mouse and nothing else.** The matrix's role cells, the directory's
+name, role and email cells and the nudge status word each now hold a `<button>` named for what it changes, carrying its
+visible words (2.5.3). Enter and Esc in a directory input return focus to the cell's button. Seeded targets
+`raci-editor`, `raci-directory` (each with `-dark`) hold a team phrase and stub `team_members` and `item_raci`; breaking
+the buttons' floor on purpose failed eight targets, so the sweep measures them. The seed also holds the jump highlight at
+its steady fill, which reproduced S356's deferred 4.16:1 (`--cobalt` on `--gold-soft` in dark). The fix is the token,
+`#4A3A10` to `#40320E` (4.71:1): every ink on that fill in dark is light, so each gains contrast. The full `cobi-dark`
+sweep fails the same 11 routes as main, none of them new. Guard: `tests/raci_ui_pass.test.js` (11 new; none pass on the
+old files).

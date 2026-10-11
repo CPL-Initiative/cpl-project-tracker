@@ -295,12 +295,13 @@ const RACI_ROWS = [
   const statusCells = tdoc.querySelectorAll(".raci-status-cell");
   check("overdue member (nudged 10d, no response) flagged", !!tdoc.querySelector(".raci-st-overdue"));
   check("responded member shows ✓", !!tdoc.querySelector(".raci-st-ok") && /responded/.test(tdoc.body.textContent));
-  // Clicking the overdue member's status cell records a response (PATCH last_response_at).
+  // Pressing the overdue member's status button records a response (PATCH last_response_at).
+  // The button inside the cell holds the control since S365 (keyboard access).
   if (statusCells.length) {
-    statusCells[0].click();
+    statusCells[0].querySelector(".raci-status-btn").click();
     await new Promise((r) => setTimeout(r, 30));
     const resp = sts._writes.filter((x) => /team_members/.test(x.url) && x.method === "PATCH" && x.body && x.body.last_response_at);
-    check("clicking Status records a response (PATCH last_response_at)", resp.length >= 1);
+    check("pressing Status records a response (PATCH last_response_at)", resp.length >= 1);
   }
 
   // ── (l) Expired-token auto-refresh on write (the "saves don't persist" bug) ──
@@ -314,7 +315,7 @@ const RACI_ROWS = [
   let eTog = null;
   edoc.querySelectorAll(".raci-tg").forEach(function (b) { if (/Directory/.test(b.textContent)) eTog = b; });
   if (eTog) eTog.click();
-  const eStatus = edoc.querySelector(".raci-status-cell");
+  const eStatus = edoc.querySelector(".raci-status-cell .raci-status-btn");
   if (eStatus) {
     eStatus.click();
     await new Promise((r) => setTimeout(r, 40));
