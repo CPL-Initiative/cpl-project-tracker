@@ -10416,8 +10416,12 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None,
 EXHIBIT_ANALYSIS_CSS = """
 /* ═══ MAP Articulation Analysis Cards ═══ */
 /* ─── Budget inline editor (budget_editor.js) ─── */
+/* Tokens only (S364, finishing S363's Budget pass): the widget and the hover take the
+   themed --surface-subtle; the save states take the dark-only tints with their light
+   fallbacks (the pastels sat under light text in dark, unreadable), and a failed save
+   is a red outline on a muted ground, the status line naming the error beside it. */
 .budget-auth-widget { display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center;
-    background:rgba(0,71,171,0.06); border:1px solid var(--border-strong); border-radius:8px;
+    background:var(--surface-subtle); border:1px solid var(--border-strong); border-radius:8px;
     padding:0.7rem 1rem; margin:0 0 1.25rem 0; font-size:0.85rem; }
 .budget-auth-widget input[type=email] { padding:0.4rem 0.6rem; border:1px solid var(--border-strong);
     border-radius:5px; font-size:0.85rem; min-width:200px; }
@@ -10428,12 +10432,12 @@ EXHIBIT_ANALYSIS_CSS = """
 .budget-btn:hover { text-decoration-thickness:2px; }
 .budget-btn-out { color:var(--text-muted); margin-left:auto; }
 .budget-cell.budget-on { cursor:pointer; transition:background 0.15s; border-radius:3px; }
-.budget-cell.budget-on:hover { background:rgba(0,71,171,0.06); outline:1px dashed var(--cobalt); }
+.budget-cell.budget-on:hover { background:var(--surface-subtle); outline:1px dashed var(--cobalt); }
 .budget-cell-input { width:100%; box-sizing:border-box; text-align:right; padding:2px 4px;
     border:1px solid var(--cobalt); border-radius:3px; font-size:0.85rem; font-family:inherit; }
-.budget-cell.budget-saving { background:#FFF6D9; }
-.budget-cell.budget-saved { background:#DBF0DD; }
-.budget-cell.budget-error { background:#F7D9D9; }
+.budget-cell.budget-saving { background:var(--cpl-warn-bg, #FFF6D9); }
+.budget-cell.budget-saved { background:var(--cpl-green-soft, #DBF0DD); }
+.budget-cell.budget-error { background:var(--surface-muted); outline:2px solid var(--red-alert); outline-offset:-2px; }
 /* ─── Doublewide KPI card (Statewide Exhibits per-category rollup) ─── */
 .kpi-card-wide { grid-column: span 2; }
 .kpi-card-wide .kpi-footnote {
