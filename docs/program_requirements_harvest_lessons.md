@@ -934,3 +934,24 @@ committed `sources.json` and records (no new read), most of them were never on t
   `lbcc-public.courseleaf.com`. A sitemap-only read on the workflow would list the programs COCI calls Active that the
   catalog does not print, which is the college's to settle (its addendum first, Sam's rule).
 
+
+### S366, later the same day: the second cause, and both fixes (#2012)
+
+- **The own pages hold their requirements in a tab that names under half of COCI's list.** Two page reads with no
+  model call (`kb/college_reads/lbcc_own_pages_placed_none.json`, runs 38183849639 and 38184044746). The first read
+  opened nothing, because the Program Requirements panel sits behind a `role=tab` link in a `<nav>` outside `<main>`;
+  the reader's `expand` now clicks a page's own tabs. The second read printed each panel. Physical Sciences A.S. names
+  about 13 of COCI's 35 courses and describes its math and computer choices in words; Microsoft Excel prints COSA 601
+  and COSA 618 (90 hours) where COCI lists COSA 615-617; CISCO prints CISCO 250-253 (8 units) of COCI's 13; Athletic
+  Coaching prints four KINPP courses on a local Certificate of Accomplishment page against 23. Under the 50% share,
+  `best_text()` took whichever text named more, and on this host that is always the hidden index.
+- **Fixes (#2012).** `best_text()` reads a page with tab panels from its tabs, whatever share they name; only Long
+  Beach City's pages carry tab panels (every other college's 1,219 sources read `innerText`), so no other record
+  moves. `candidates()` takes a hidden-text page only when its heading names the program: half the title's words and
+  60% of the heading's own words, award words set aside, never a different level; on the 74 it keeps the 10 own
+  pages and 6 renamed or sibling pages and turns away 58.
+- **What is left is the college's.** Excel's mismatch (catalog COSA 601, 618; COCI 615-617) is a COCI record the
+  college has not updated, or a catalog change COCI has not caught: addendum first (Sam's rule), then the college.
+- **The sandbox cannot read run artifacts.** The proxy refuses the artifact store's host
+  (`productionresultssa5.blob.core.windows.net`), so a page's full captured text is out of reach here; a page read on
+  the runner was the workaround. Sam can allow the host in the environment's network settings.

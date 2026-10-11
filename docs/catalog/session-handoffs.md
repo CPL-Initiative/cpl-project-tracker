@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-337 document(s).
+338 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 367 | [Long Beach City's 74 fixed in #2012 (re-read next), Sheet 65 card 2 answered, two UI passes](../session_367_handoff.md) | 2026-10-11 |
 | 366 | [Sheet 65 open (Vision 2030 goal figures, CPL Pathways' records), four UI passes](../session_366_handoff.md) | 2026-10-11 |
 | 365 | [Sheet 63 carried out, four UI passes, Long Beach City with the second S364 session](../session_365_handoff.md) | 2026-10-11 |
 | 364 | [Long Beach City's full read lands; load, display, PR; Sheet 63; the routine at 05:05Z](../session_364_handoff.md) | 2026-10-11 |

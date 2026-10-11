@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-11T21:54:03Z",
-  "session": 365,
-  "moniker": "SkyRowan",
+  "written_at": "2026-10-11T23:31:02Z",
+  "session": 366,
+  "moniker": "SkyHazel",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_366_handoff.md",
+  "handoff": "docs/session_367_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -10411,23 +10411,26 @@
     }
   ],
   "next_step": {
-    "title": "Find Long Beach City's 74 programs that have no record",
-    "text": "Their pages showed no requirements the reader could open, so the load left them out; Long Beach City's reading procedure looks for each requirements page before those programs are read again."
+    "title": "Read Long Beach City again with the two fixes",
+    "text": "Once #2012 merges, the college is read again: a page whose courses sit only in hidden text must now name the program in its heading, and a page with tabs is read from its tabs. Programs left with no page go to the college as a list, since the state shows them active and the catalog does not print them."
   },
-  "calls": [
-    {
-      "title": "Which records CPL Pathways shows (Open Asks Sheet 65, card 2)",
-      "text": "A file per college would be 18.2 MB and would show the public 1,486 records nobody has checked; the proposal is that the page reads each record from the table when opened. With no reply, CPL Pathways keeps showing the pilot's 22."
-    }
-  ],
+  "calls": [],
   "notes": {
     "addenda": "The reading agent starts after the Oct 11 census apply; until then a mismatch is read against the college's addendum by hand.",
     "procedures": "34 colleges have one since Oct 8: the 28 whose map host refuses or never reaches the reader each name the routes tried.",
     "sierra": "The funding explainer's text is editable on the Implementation Funding tab since Oct 9, and its controls are underlined words, the First Light rule from that day.",
     "maps": "All 32 published maps are settled since Oct 8; Palo Verde's map columns were written that evening.",
-    "reading": "Cerritos read on Oct 9 and Mt. San Antonio on Oct 10. RCCD's three colleges were read on Oct 10 and their Liberal Arts emphasis programs recovered on Oct 11. 18 records that read another program's page were removed on Oct 11. Long Beach City was read and loaded the same evening: 305 records, unchecked, for 1,515 in all."
+    "reading": "Cerritos read on Oct 9 and Mt. San Antonio on Oct 10. RCCD's three colleges were read on Oct 10 and their Liberal Arts emphasis programs recovered on Oct 11. 18 records that read another program's page were removed on Oct 11. Long Beach City was read and loaded the same evening: 305 records, unchecked, for 1,515 in all. Its 74 left out mostly read another program's page; the fixes wait on #2012."
   },
   "changes": [
+    {
+      "at": "2026-10-11T23:16Z",
+      "text": "Sam chose CPL Pathways' records: it will read each record from the table when opened, so anyone sees checked records and a reviewer sees all, with unchecked ones marked."
+    },
+    {
+      "at": "2026-10-11T23:33Z",
+      "text": "Long Beach City's 74 programs left out have two causes, both fixed for the next read: a hidden course index on every page, and requirements tabs that list fewer courses than the state's file."
+    },
     {
       "at": "2026-10-11T21:12Z",
       "text": "Open Asks Sheet 65 asks which records CPL Pathways shows, measured before any of it was built: 18.2 MB for all 1,515 records, and only 29 checked."
@@ -10475,14 +10478,6 @@
     {
       "at": "2026-10-11T16:05Z",
       "text": "Long Beach City's pages keep the requirements in a tab the reader skipped; it now opens that tab, and the second trial read 11 of 12 programs from it."
-    },
-    {
-      "at": "2026-10-11T15:37Z",
-      "text": "Long Beach City's full read started on Sam's go after the second trial passed."
-    },
-    {
-      "at": "2026-10-11T13:49Z",
-      "text": "Noncredit programs show their hours as estimated equivalent units at the lecture rate, marked for estimating only, not awarded units."
     }
   ],
   "headline": [
