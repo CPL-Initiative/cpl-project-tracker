@@ -13,8 +13,9 @@ the second half. This checkpoint ran at a context warning (108k left), so it is 
 
 ## First, in this order
 
-0. **One writer.** `list_sessions`. S366 may still hold the #2012 subscription and check-in `trig_011KnzjKMkjpXD6rQRXUeCnJ`
-   (23:42Z); if S366 is idle, take #2012 over.
+0. **One writer, and three open PRs to merge on `test`.** S366 let go of all of them at a context emergency (23:37Z):
+   #2013 (this checkpoint), vault samueltlee/CPLBrain#309 (the session note), and #2012 (Long Beach City's fixes,
+   below). Subscribe, merge each on `test`, tracker before vault. S366's check-in trigger was deleted.
 1. **Rule 8:** `cpl_memory` tags `program-requirements-harvest`, `long-beach-city`, `ui-pass`, `sierra-feedback`.
 2. **Read Open Asks Sheet 65's replies** (https://claude.ai/artifact/7gAZzsrv9LRLaYdQxvyFvv, current; card 2 is
    answered in chat, below, so only card 1 is open).
