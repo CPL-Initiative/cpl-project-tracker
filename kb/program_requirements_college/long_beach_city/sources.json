@@ -1,0 +1,490 @@
+[
+ {
+  "control_number": "02616",
+  "title": "Horticulture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FLO286A",
+   "FLO286B",
+   "HORT11A",
+   "HORT11B",
+   "HORT11C",
+   "HORT11D",
+   "HORT15A",
+   "HORT15B",
+   "HORT19",
+   "HORT202",
+   "HORT21",
+   "HORT223",
+   "HORT227",
+   "HORT26A",
+   "HORT26B",
+   "HORT30",
+   "HORT430",
+   "MKTG47"
+  ],
+  "source": {
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/horticulture/horticulture-as/",
+   "title": "Horticulture - Associate in Science | LBCC",
+   "h1": "Horticulture - Associate in Science",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3896
+ },
+ {
+  "control_number": "02617",
+  "title": "Architectural Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCHT20",
+   "ARCHT21",
+   "ARCHT22",
+   "ARCHT34",
+   "ARCHT36",
+   "ARCHT61",
+   "ARCHT62",
+   "ARCHT65",
+   "ARCHT65A",
+   "ARCHT65B",
+   "ARCHT71",
+   "ARCHT91",
+   "ARCHT93",
+   "DSGN20"
+  ],
+  "source": {
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/architectural-design-as/",
+   "title": "Architectural Design - Associate in Science | LBCC",
+   "h1": "Architectural Design - Associate in Science",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3717
+ },
+ {
+  "control_number": "02618",
+  "title": "Biological Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.828,
+  "codes_found": [
+   "AH60",
+   "ANAT1",
+   "ANAT41",
+   "BIO11",
+   "BIO2",
+   "BIO20",
+   "BIO22",
+   "BIO25",
+   "BIO30",
+   "BIO5",
+   "BIO60",
+   "BIO61",
+   "CHEM2",
+   "CHEM3",
+   "COMM25",
+   "GEOG10",
+   "GEOL1",
+   "GEOL2",
+   "LEARN11",
+   "PGEOG2",
+   "PHYSI1",
+   "PSYCC1000",
+   "READ84",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/biological-sciences/biological-sciences-as/",
+   "title": "Biological Sciences - Associate in Science | LBCC",
+   "h1": "Biological Sciences - Associate in Science",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 4374
+ },
+ {
+  "control_number": "02619",
+  "title": "Business – General Business Concentration",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTG200",
+   "BCOM25",
+   "ECON4",
+   "ECONC2002",
+   "GBUS10",
+   "GBUS25",
+   "GBUS5",
+   "IBUS1",
+   "LAW18",
+   "LAW19",
+   "MGMT49",
+   "MKTG47"
+  ],
+  "source": {
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/business-general-business-concentration-aa/",
+   "title": "Business: General Business Concentration - Associate in Arts | LBCC",
+   "h1": "Business: General Business Concentration - Associate in Arts",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3448
+ },
+ {
+  "control_number": "02620",
+  "title": "Business – Accounting Concentration",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTG1B",
+   "ACCTG200",
+   "ACCTG205",
+   "ACCTG228",
+   "ACCTG229",
+   "ACCTG230",
+   "ECONC2001",
+   "ECONC2002",
+   "GBUS5",
+   "LAW18",
+   "LAW19"
+  ],
+  "source": {
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/business-acconting-concentration-aa/",
+   "title": "Business: Accounting Concentration - Associate in Arts | LBCC",
+   "h1": "Business: Accounting Concentration - Associate in Arts",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3487
+ },
+ {
+  "control_number": "02625",
+  "title": "Business – Marketing Concentration",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTG200",
+   "BCOM25",
+   "ECONC2001",
+   "GBUS25",
+   "GBUS5",
+   "LAW18",
+   "LAW19",
+   "MKTG40",
+   "MKTG41",
+   "MKTG47"
+  ],
+  "source": {
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/business-marketing-concentration-aa/",
+   "title": "Business: Marketing Concentration - Associate in Arts | LBCC",
+   "h1": "Business: Marketing Concentration - Associate in Arts",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3350
+ },
+ {
+  "control_number": "02626",
+  "title": "Business: Global Trade and Logistics Concentration",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTG200",
+   "ECON5",
+   "ECONC2002",
+   "GBUS5",
+   "IBUS1",
+   "IBUS20",
+   "IBUS52",
+   "IBUS60",
+   "IBUS75",
+   "LAW18",
+   "LAW19"
+  ],
+  "source": {
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/business-global-trade-logistics-concentration-aa/",
+   "title": "Business: Global Trade and Logistics Concentration - Associate in Arts | LBCC",
+   "h1": "Business: Global Trade and Logistics Concentration - Associate in Arts",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3436
+ },
+ {
+  "control_number": "02631",
+  "title": "Journalism",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "JOURN10",
+   "JOURN20",
+   "JOURN35",
+   "JOURN5",
+   "JOURN80",
+   "JOURN82",
+   "JOURN83",
+   "JOURN86"
+  ],
+  "source": {
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/journalism/journalism-aa/",
+   "title": "Journalism - Associate in Arts | LBCC",
+   "h1": "Journalism - Associate in Arts",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3325
+ },
+ {
+  "control_number": "02632",
+  "title": "Television Producer",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "TV1",
+   "TV12",
+   "TV13",
+   "TV14",
+   "TV15",
+   "TV16",
+   "TV2",
+   "TV21",
+   "TV34",
+   "TV36",
+   "TV37",
+   "TV4",
+   "TV40",
+   "TV60",
+   "TV70WE",
+   "TV8"
+  ],
+  "source": {
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/television-producer/television-producer-aa/",
+   "title": "Television Producer - Associate in Arts | LBCC",
+   "h1": "Television Producer - Associate in Arts",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3682
+ },
+ {
+  "control_number": "02635",
+  "title": "Child Development  Special Education Assistant",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDECE19",
+   "CDECE47",
+   "CDECE59",
+   "CDECE61",
+   "CDSED5",
+   "CDSED67",
+   "CDSED69",
+   "CDSED70"
+  ],
+  "source": {
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/child-development-special-education-assistant/child-development-special-education-assistant-aa/",
+   "title": "Child Development: Special Education Assistant - Associate in Arts | LBCC",
+   "h1": "Child Development: Special Education Assistant - Associate in Arts",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3448
+ },
+ {
+  "control_number": "02636",
+  "title": "Kinesiology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.961,
+  "codes_found": [
+   "ANAT1",
+   "ANAT41",
+   "BIOLC1001",
+   "COMMC1000",
+   "COMMC1004",
+   "HLED3",
+   "HLED4",
+   "HLED5",
+   "KINA1",
+   "KING10",
+   "KING10B",
+   "KING14",
+   "KING14B",
+   "KING2",
+   "KING2B",
+   "KING55",
+   "KING60",
+   "KING65",
+   "KING65B",
+   "KING66",
+   "KING66B",
+   "KING7",
+   "KING70",
+   "KING70B",
+   "KING74",
+   "KING76",
+   "KING84",
+   "KING86",
+   "KING90",
+   "KING90B",
+   "KING92",
+   "KING92B",
+   "KING94",
+   "KINPF10",
+   "KINPF10B",
+   "KINPF12",
+   "KINPF12B",
+   "KINPF14",
+   "KINPF17",
+   "KINPF17B",
+   "KINPF18",
+   "KINPF18B",
+   "KINPF21",
+   "KINPF22",
+   "KINPF22B",
+   "KINPF23",
+   "KINPF24",
+   "KINPF3",
+   "KINPF4",
+   "KINPF42",
+   "KINPF53",
+   "KINPF53B",
+   "KINPF54",
+   "KINPF54B",
+   "KINPF6",
+   "KINPF8",
+   "KINPF81",
+   "KINPF82",
+   "KINPF83",
+   "KINPF8B",
+   "KINPP1",
+   "KINPP10",
+   "KINPP14",
+   "KINPP15",
+   "KINPP23",
+   "KINPP233",
+   "KINPP4",
+   "KINPP5",
+   "KINPP7",
+   "KINPP70",
+   "KINPP75",
+   "KINPP8",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/kinesiology/kinesiology-aa/",
+   "title": "Kinesiology - Associate in Arts | LBCC",
+   "h1": "Kinesiology - Associate in Arts",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 76,
+  "text_chars": 6159
+ },
+ {
+  "control_number": "02638",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1000H",
+   "ENGR17",
+   "ENGR17L",
+   "ENGR35",
+   "ENGR3B",
+   "ENGR44",
+   "ENGR50",
+   "ENGR54",
+   "ESL1S",
+   "MATH80",
+   "PHYS3A",
+   "PHYS3B"
+  ],
+  "source": {
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/engineering-technology/engineering-technology-as/",
+   "title": "Engineering Technology - Associate in Science | LBCC",
+   "h1": "Engineering Technology - Associate in Science",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 16000
+ }
+]

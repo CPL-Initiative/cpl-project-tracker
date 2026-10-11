@@ -1,0 +1,162 @@
+{
+ "college": "Long Beach City College",
+ "catalog_url": "https://lbcc-public.courseleaf.com/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 12,
+ "with_closed_list": 12,
+ "started": "2026-10-11T14:31:30Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://lbcc-public.courseleaf.com/sitemap.xml",
+  "status": 200,
+  "listed": 2503,
+  "nested": 0,
+  "program_pages": 626,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 626,
+ "loads": 627,
+ "seconds": 3312.8,
+ "found": 12,
+ "by_method": {
+  "sitemap_page": 12
+ },
+ "shared_pages": {},
+ "not_found": [],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 0,
+  "0.8-1.0": 6,
+  "1.0": 6
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 12,
+  "list": [
+   {
+    "control_number": "02616",
+    "title": "Horticulture",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/horticulture/horticulture-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02617",
+    "title": "Architectural Design",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/architectural-design-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02618",
+    "title": "Biological Sciences",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/biological-sciences/biological-sciences-as/",
+    "coverage": 0.828,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02619",
+    "title": "Business – General Business Concentration",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/business-general-business-concentration-aa/",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02620",
+    "title": "Business – Accounting Concentration",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/business-acconting-concentration-aa/",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02625",
+    "title": "Business – Marketing Concentration",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/business-marketing-concentration-aa/",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02626",
+    "title": "Business: Global Trade and Logistics Concentration",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/business-global-trade-logistics-concentration-aa/",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02631",
+    "title": "Journalism",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/journalism/journalism-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02632",
+    "title": "Television Producer",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/television-producer/television-producer-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02635",
+    "title": "Child Development  Special Education Assistant",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/child-development-special-education-assistant/child-development-special-education-assistant-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02636",
+    "title": "Kinesiology",
+    "award": "A.A. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/kinesiology/kinesiology-aa/",
+    "coverage": 0.961,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02638",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://lbcc-public.courseleaf.com//degrees-certificates/engineering-technology/engineering-technology-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38147472758"
+}
