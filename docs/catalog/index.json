@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 537,
+   "count": 538,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2673,6 +2673,26 @@
      "title": "A one-shot hand-off must not consume what it cannot deliver",
      "type": "methodology",
      "updated": "2026-08-13"
+    },
+    {
+     "created": "2026-10-11",
+     "governs": [
+      "kb/_program_requirements_pilot.py",
+      "kb/_program_requirements_score.py",
+      "tests/program_requirements_pilot_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-page-can-hide-text-that-names-every-course.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "harvest",
+      "capture",
+      "courseleaf",
+      "cost"
+     ],
+     "title": "A page can hide text that names every course",
+     "type": "methodology",
+     "updated": "2026-10-11"
     },
     {
      "created": "2026-09-10",
@@ -15276,8 +15296,28 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 333,
+   "count": 334,
    "docs": [
+    {
+     "created": "2026-10-11",
+     "governs": [],
+     "n": 363,
+     "path": "docs/session_363_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "harvest",
+      "phase-2",
+      "long-beach-city",
+      "noncredit",
+      "equivalent-units",
+      "sheet-62"
+     ],
+     "title": "Long Beach City read again from its own pages; noncredit equivalent units; Sheet 62 carried out",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-11",
      "governs": [],
@@ -20978,5 +21018,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1097
+ "total": 1099
 }

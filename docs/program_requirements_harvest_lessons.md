@@ -795,3 +795,33 @@ Valley 30169 (run 38111056537) each went to the model alone, the rest of the col
 (the catalog prints HIST where the state file says HIS), no repeated code, and the parts read the same two blocks with no
 disagreement to report. The arithmetic stays incomplete: the catalog states the studio allowance in prose ("up to three
 units may be from a studio course"), so the block has no minimum, as at Santa Monica 43767.
+
+## S362 SkyAlder, 2026-10-11: Long Beach City's hidden index, 18 wrong-page records removed, noncredit equivalent units
+
+**Long Beach City's first read gave the model the wrong text.** Run 38105864413 ($22.66): 12 of 379 records carry any
+block. Every page hides an A-Z course index naming every course and keeps Program Requirements in a hidden tab, so
+`best_text()`'s "whichever names more" chose `textContent` for 378 of 379 programs (none at the five colleges before),
+and the window opened in the index. 89 empty records passed the machine checks by explaining every course away. Not
+loaded. #1980: the visible text at half the courses, else the visible text plus each hidden tab panel read cell by cell
+(`innerText+tabs`), `textContent` last; `unchanged()` compares the text a source came from; the scorer fails a record
+placing none of its courses. Checked in Chromium on a page built like Long Beach City's before any spend; a 12-program
+trial runs first (Sam: *"go ahead with the full Long Beach read after the trial"*). The run's artifact was out of
+reach (the proxy refuses the blob host), so the diagnosis came from the records' own notes and `sources.json`. KB note:
+`methodology-a-page-can-hide-text-that-names-every-course`.
+
+**RCCD's three Humanities, Philosophy & Arts programs loaded and displayed** (Norco 30109 read in two calls like the
+other two: 305 of 316 placed, the studio rule in prose), display build `f1de75baa344` (#1981).
+
+**Sheet 62: 18 records that read another program's page, removed** (Sam: *"remove them"*). Each placed none of its
+listed courses (Cerritos 3, Mt. San Antonio 13, Moreno Valley 1, Norco 1; 3 passed as scored). The receipt holds each row
+as `to_jsonb(r)::text`: read as JSON, the connector rewrote `0.0` as `0` and the md5 guard would have refused the row.
+`apply_migration` ran the guarded delete (S360's had timed out); 1,210 rows live. `places_none` keeps such a record out
+of every later load and display build (#1983).
+
+**Noncredit hours as estimated equivalent units.** No state file holds hours: COCI's course list carries UnitValue only
+(0 for all but 2 of 11,435 noncredit courses; 847 descriptions name hours in mixed forms), the Program Course File no
+units, MIS CB units only. The catalogs print hours for 331 of 395 course entries in the loaded noncredit programs. Sam
+chose the lecture rate (*"handy when comparing mirrored courses ... and for funding based on equivalent FTES"*), for
+estimating only, and never in Sierra (*"misconstrued as real units"*): hours / 16 rounded down to the half unit keeps his
+bands whole (48-54 h = 3.0); the first half unit falls at 56 h where his note said 63, put to him. Both pages show it;
+Sierra reads named display fields only and a test fails if she names it (#1984, build `2a73f45c9c84`).
