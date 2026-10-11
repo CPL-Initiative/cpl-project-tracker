@@ -1058,9 +1058,8 @@ block("(15d)", function () {
       /\.prh-split-rec \{[^}]*overflow:auto/.test(SRC));
     rec.querySelector(".prh-verdict button").click();
     return tick().then(tick).then(function () {
-      d.dispatchEvent(new r.w.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
       const back = Array.prototype.filter.call(r.root.querySelectorAll("article.prh-rec"), function (a) { return /^Art/.test(a.getAttribute("aria-label")); })[0];
-      check("(15d) Escape closes it and frees the page", !r.w.document.querySelector(".prh-split") && !r.root.hasAttribute("inert"));
+      check("(15d) with nothing else waiting, the verdict closes the split and frees the page", !r.w.document.querySelector(".prh-split") && !r.root.hasAttribute("inert"));
       check("(15d) a verdict saved in the split shows on the card behind", /^Confirmed by you/.test(back.querySelector(".prh-state").textContent),
         back.querySelector(".prh-state").textContent);
       check("(15d) focus returns to that record's Side by side", r.w.document.activeElement === wordButton(back, "Side by side"));
@@ -1159,28 +1158,31 @@ block("(16d)", function () {
   const opened = []; let closed = 0;
   r.w.open = function (u, n, f) { opened.push([u, n, f]); return { focus: function () {} }; };
   r.w.close = function () { closed++; };
+  r.w.focus = function () {};
   Object.defineProperty(r.w, "screen", { value: { availWidth: 1440, availHeight: 900, availLeft: 0, availTop: 0 }, configurable: true });
   return r.M._load().then(function () {
     callReady(r, [CALL2]);
     r.M._state.framing = { "example.org": { frames: false } };
+    opened.length = 0;
     r.M.closeSplit(true); r.M.openKey("Irvine Valley College|10265");
     const d = r.w.document.querySelector(".prh-split");
     check("(16d) the record window opens its record by itself, the whole window, no frame",
       r.M.RECORD_KEY === "Irvine Valley College|10265" && !!d && /prh-split-solo/.test(d.className) && !d.querySelector("iframe") &&
       /^Art/.test(d.querySelector("#prh-split-t").textContent));
-    wordButton(d, "Show the catalog on the left").click();
-    check("(16d) Show the catalog on the left opens the named catalog window on the left half",
+    check("(16d) and opens the named catalog window on the left half by itself (Sam, 2026-10-11)",
       opened.length === 1 && opened[0][0] === "https://example.org/art" && opened[0][1] === "prh-catalog" &&
       /left=0,top=0,width=720,height=900/.test(opened[0][2]), JSON.stringify(opened));
+    wordButton(d, "Show the catalog on the left").click();
+    check("(16d) Show the catalog on the left opens it again", opened.length === 2 && opened[1][1] === "prh-catalog", JSON.stringify(opened));
     wordButton(d, "Next waiting record").click();
-    check("(16d) with nothing else waiting, Next says so and stays", /Every record on this call has your reading/.test(d.textContent) &&
+    check("(16d) with nothing else waiting, Next says so and stays", /Nothing else waits on your reading/.test(d.textContent) &&
       r.w.document.querySelector(".prh-split") === d);
     r.M._state.review.records[0].checked = false;
     wordButton(d, "Next waiting record").click();
     const d2 = r.w.document.querySelector(".prh-split");
     check("(16d) Next moves the record and the catalog window on one click",
       d2 !== d && d2.querySelector("#prh-split-t").textContent.indexOf(IRONWORKER.program_title) === 0 &&
-      opened.length === 2 && opened[1][0] === IRONWORKER.source_url && opened[1][1] === "prh-catalog", JSON.stringify(opened));
+      opened.length === 3 && opened[2][0] === IRONWORKER.source_url && opened[2][1] === "prh-catalog", JSON.stringify(opened));
     wordButton(d2, "Close").click();
     check("(16d) Close closes the reading room's window", closed === 1);
   });
@@ -1252,6 +1254,147 @@ block("(17)", function () {
   d.parentNode.dispatchEvent(new m.w.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
   check("(17) Escape closes it and returns to the count", !m.w.document.querySelector(".prh-exdialog") && m.w.document.activeElement === cpl && !m.root.hasAttribute("inert"));
   check("(17) tokens only in the new CSS", !/\.prh-(id|tip|cplbtn|exback|exdialog|exlist|extype)[^"]*#[0-9a-fA-F]{3,6}/.test(SRC));
+});
+
+// ── (18) Sam, 2026-10-11, reading the Mt. San Antonio sample ──
+// "Have the split screen open automatically when I click in to review. When I choose Confirm or
+// Save Note close the screens and bring me to the next item to confirm. Note when opening the
+// confirm list the first screen that pops up is the COBI main tab then it flashed to the confirm
+// screen--just seems like an unnecessary delay." The failures this guards: a reading room that
+// waits for a second click to show the catalog, a verdict that leaves the reader on a finished
+// record, a next record that ignores the call or the list the reader came from, a last verdict
+// that leaves the screens open, and a link that paints the home tab before its own.
+function room(r) {
+  const opened = [], wins = [];
+  r.w.open = function (u, n, f) {
+    opened.push([u, n, f]);
+    const w = { closed: false, focus: function () {}, close: function () { w.closed = true; } };
+    wins.push(w); return w;
+  };
+  r.w.focus = function () {};
+  Object.defineProperty(r.w, "screen", { value: { availWidth: 1440, availHeight: 900, availLeft: 0, availTop: 0 }, configurable: true });
+  return { opened: opened, wins: wins };
+}
+block("(18a)", function () {
+  const r = reviewerReady(null, SPLIT_URL);
+  const o = room(r);
+  r.w.document.documentElement.classList.add("prh-room");
+  return r.M._load().then(function () {
+    const d = r.w.document.querySelector(".prh-split");
+    check("(18a) the reading room opens its record and the catalog's window on the left, with no second click",
+      !!d && /^Art/.test(d.querySelector("#prh-split-t").textContent) && o.opened.length === 1 &&
+      o.opened[0][0] === "https://example.org/art" && o.opened[0][1] === "prh-catalog" && /left=0,top=0,width=720/.test(o.opened[0][2]),
+      JSON.stringify(o.opened));
+    check("(18a) the page shows only once the record is up (the head guard's class is gone)",
+      !r.w.document.documentElement.classList.contains("prh-room"));
+    r.w.open = function () { return null; };
+    r.M.closeSplit(true); r.M.openKey("Irvine Valley College|10265");
+    const held = r.w.document.querySelector(".prh-split");
+    check("(18a) a browser that holds the window back gets the word that opens it and says how to let it open by itself",
+      /held back the catalog's window/.test(held.textContent) && /allowing pop-ups for this site/.test(held.textContent) &&
+      !!wordButton(held, "Show the catalog on the left"));
+  });
+});
+block("(18b)", function () {
+  const r = reviewerReady();
+  return r.M._load().then(function () {
+    r.M._state.review.records[0].checked = false;
+    callReady(r, [CALL2]); r.M._state.view = "progress"; r.M._render();
+    r.root.querySelector('details[data-sec="progress:call:0"] .prh-callrec summary').click();
+    const d = r.w.document.querySelector(".prh-split");
+    check("(18b) clicking a record on the call opens side by side", !!d && /^Art/.test(d.querySelector("#prh-split-t").textContent));
+    d.querySelector(".prh-verdict button").click();
+    return tick().then(tick).then(function () {
+      const d2 = r.w.document.querySelector(".prh-split");
+      check("(18b) Confirm saves and brings the next record on the call, in place",
+        r.posts.length === 1 && r.posts[0].body.p_verdict === "confirm" && d2 !== d && !d.isConnected &&
+        d2.querySelector("#prh-split-t").textContent.indexOf(IRONWORKER.program_title) === 0);
+      check("(18b) the next record says what was saved", /Confirmed Art; it is checked\./.test(d2.querySelector(".prh-split-bar").textContent),
+        d2.querySelector(".prh-split-bar").textContent);
+      const box = d2.querySelector(".prh-verdict");
+      box.querySelectorAll("button")[1].click();
+      box.querySelector("textarea").value = "Read the electives from the addendum.";
+      Array.prototype.filter.call(box.querySelectorAll("button"), function (b) { return b.textContent === "Save the note"; })[0].click();
+      return tick().then(tick).then(function () {
+        const status = r.root.querySelector('.prh-mast p[role="status"]');
+        check("(18b) Save the note on the last record closes the screens", r.posts.length === 2 && r.posts[1].body.p_verdict === "needs_fix" &&
+          !r.w.document.querySelector(".prh-split") && !r.root.hasAttribute("inert"));
+        check("(18b) and the tab says the note saved and nothing else waits", !!status &&
+          /^Saved your note on Apprenticeship: Field Ironworkers\. Nothing else waits on your reading\.$/.test(status.textContent),
+          status && status.textContent);
+        check("(18b) the to-do word reads all answered", r.root.querySelector("#prh-todo-go").textContent === "Sam's to-dos: all answered");
+        check("(18b) focus returns to the last record's line on the call",
+          r.w.document.activeElement && r.w.document.activeElement.getAttribute("data-split") === "Cerritos College|42158");
+      });
+    });
+  });
+});
+block("(18c)", function () {
+  const r = reviewerReady(null, SPLIT_URL);
+  const o = room(r);
+  let closed = 0, told = null;
+  r.w.close = function () { closed++; };
+  Object.defineProperty(r.w, "opener", { value: { CPL_PROGRAM_REQUIREMENTS: { notice: function (t) { told = t; } } }, configurable: true });
+  return r.M._load().then(function () {
+    callReady(r, [CALL2]);
+    r.M.closeSplit(true); r.M.openKey("Irvine Valley College|10265");
+    r.w.document.querySelector(".prh-split .prh-verdict button").click();
+    return tick().then(tick).then(function () {
+      check("(18c) the last verdict in the reading room closes its window and the catalog's",
+        closed === 1 && o.wins.length >= 1 && o.wins[o.wins.length - 1].closed === true, closed + " " + JSON.stringify(o.wins));
+      check("(18c) and tells the tab that opened it", /^Confirmed Art; it is checked\. Nothing else waits on your reading\.$/.test(told || ""), told);
+    });
+  });
+});
+block("(18d)", function () {
+  const r = reviewerReady();
+  return r.M._load().then(function () {
+    const IVC2 = Object.assign(JSON.parse(JSON.stringify(ART)), { control_number: "10300", program_title: "Art History", requirements_fp: "fp-ah", checked: false });
+    r.M._state.review.records.push(IVC2);
+    r.M._state.review.records[0].checked = false;
+    const art = r.M._state.review.records[1];
+    check("(18d) a record on no call: the next waiting one in the Records view's order", r.M.nextToRead(art) === IVC2,
+      r.M.nextToRead(art) && r.M.nextToRead(art).control_number);
+    r.M._state.rcollege = "Irvine Valley College";
+    check("(18d) under the Records view's college filter, it stays at that college",
+      r.M.nextToRead(IVC2) === art, r.M.nextToRead(IVC2) && r.M.nextToRead(IVC2).control_number);
+    r.M._state.rcollege = "all";
+    callReady(r, [CALL2, { title: "One more", text: "", records: [{ college: "Irvine Valley College", control_number: "10300" }] }]);
+    r.M._state.review.records[0].checked = true;
+    check("(18d) a record on a call whose others are answered goes on to the next call's", r.M.nextToRead(art) === IVC2);
+  });
+});
+block("(18e)", function () {
+  const head = DASH.slice(0, DASH.indexOf("</head>"));
+  const at = head.indexOf('<script src="cpl_theme.js"></script>');
+  const m = /<script>\s*\(function \(\) \{\s*try \{\s*var d = document\.documentElement, tab[\s\S]*?<\/script>/.exec(head);
+  check("(18e) the head guard sits right after the theme control, in both HTMLs", at > 0 && !!m && m.index > at && INDEX.indexOf(m[0]) > 0);
+  const guard = m ? m[0].replace(/^<script>|<\/script>$/g, "") : "";
+  function run(url) {
+    const dom = new JSDOM("<!doctype html><html><head></head><body></body></html>", { url: url, runScripts: "dangerously" });
+    const s = dom.window.document.createElement("script"); s.textContent = guard; dom.window.document.head.appendChild(s);
+    return dom.window.document;
+  }
+  const deep = run("https://example.org/#program-requirements");
+  check("(18e) a link to a tab hides every pane until tabs.js routes", !!deep.getElementById("cpl-deeplink") &&
+    /\.cpl-tab-pane\{display:none!important\}/.test(deep.getElementById("cpl-deeplink").textContent));
+  const home = run("https://example.org/");
+  check("(18e) the home page paints as it parses", !home.getElementById("cpl-deeplink") && !home.documentElement.classList.contains("prh-room"));
+  const rm = run(SPLIT_URL);
+  check("(18e) the reading room shows one line until its record is up", rm.documentElement.classList.contains("prh-room") &&
+    /Opening the record/.test(rm.getElementById("prh-room-guard").textContent) && /opacity:0!important/.test(rm.getElementById("prh-room-guard").textContent));
+  check("(18e) each guard lifts by itself if its script never comes", /setTimeout\([\s\S]*classList\.remove\("prh-room"\)[\s\S]*cpl-deeplink[\s\S]*15000/.test(guard));
+  const TABS = fs.readFileSync("tabs.js", "utf8");
+  const dom = new JSDOM('<!doctype html><html><head><style id="cpl-deeplink">.cpl-tab-pane{display:none!important}</style></head><body>' +
+    '<nav class="cpl-tabs"><button class="cpl-tab" data-tab="dashboard">D</button><button class="cpl-tab" data-tab="program-requirements">P</button></nav>' +
+    '<div class="cpl-tab-pane active" data-tab="dashboard"></div><div class="cpl-tab-pane" data-tab="program-requirements"></div></body></html>',
+    { url: "https://example.org/#program-requirements", runScripts: "dangerously" });
+  dom.window.scrollTo = function () {};
+  const ts = dom.window.document.createElement("script"); ts.textContent = TABS; dom.window.document.body.appendChild(ts);
+  const pr = dom.window.document.querySelector('.cpl-tab-pane[data-tab="program-requirements"]');
+  return tick().then(function () {
+    check("(18e) tabs.js routes to the linked tab and lifts the guard", pr.classList.contains("active") && !dom.window.document.getElementById("cpl-deeplink"));
+  });
 });
 
 Promise.all(pending).then(function () {

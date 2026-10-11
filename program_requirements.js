@@ -124,7 +124,7 @@
 
   var state = { registry: null, records: null, error: null, loading: false, progress: null,
     view: "progress", q: "", show: "all", platform: "all", rq: "", rshow: "all", rcollege: "all", open: {}, secs: null,
-    review: null, sessionWired: false, framing: null };
+    review: null, sessionWired: false, framing: null, notice: null };
 
   /* ── small helpers ── */
   function el(tag, attrs, kids) {
@@ -311,6 +311,8 @@
       state.loading = false;
       render();
       if (RECORD_KEY && !state.recordOpened) { state.recordOpened = true; openKey(RECORD_KEY); }
+      /* A record that did not open shows the tab, with whatever it could read. */
+      if (!split.on) roomShown();
     });
   }
 
@@ -1166,7 +1168,8 @@
       });
     });
   }
-  function verdictBox(p, flags, line) {
+  /* onSaved: the box sits in side by side, which moves to the next record once a verdict saves. */
+  function verdictBox(p, flags, line, onSaved) {
     var key = p.college + "|" + p.control_number;
     var id = "prh-v-" + String(key).replace(/[^A-Za-z0-9]+/g, "-");
     var fails = machineFails(p);
@@ -1209,6 +1212,7 @@
       busy(true); said.textContent = "Saving your reading…";
       postVerdict(p, "confirm", null).then(function (res) {
         done(res, "confirm", null);
+        if (onSaved) { onSaved("Confirmed " + p.program_title + (res.checked ? "; it is checked." : "; it stays unchecked until its checks pass.")); return; }
         said.textContent = res.checked ? "Confirmed. The record is checked, and Sierra may quote it."
           : "Confirmed and logged. The record stays unchecked until its checks pass.";
       }, function (e) { said.textContent = verdictError(e); }).then(function () { busy(false); });
@@ -1224,6 +1228,7 @@
       busy(true); said.textContent = "Saving your note…";
       postVerdict(p, "needs_fix", text).then(function (res) {
         done(res, "needs_fix", text);
+        if (onSaved) { onSaved("Saved your note on " + p.program_title + "."); return; }
         fix.hidden = true; fixBtn.setAttribute("aria-expanded", "false"); note.value = "";
         said.textContent = res.filed === false ? "Saved your note in the verdict log. The record stays unchecked."
           : "Saved your note. It joins " + shortCollege(p.college) + "'s open questions on its reading procedure, and the record stays unchecked.";
@@ -1432,7 +1437,7 @@
       el("summary", { text: "Notes for the reading procedure (" + gaps.length + ")" }),
       el("ul", {}, gaps.map(function (g) { return el("li", { text: (g.kind ? g.kind + ": " : "") + g.text }); }))]));
     var art = el("article", { cls: "prh-rec" + (isOpen ? " prh-open" : ""), "aria-label": p.program_title + ", " + p.college },
-      [head, body, reviewing ? verdictBox(p, F.flags, line) : null]);
+      [head, body, reviewing ? verdictBox(p, F.flags, line, opts.split ? function (saved) { advanceFrom(p, saved); } : null) : null]);
     btn.addEventListener("click", function () {
       var open = body.hidden;
       body.hidden = !open;
@@ -1993,14 +1998,23 @@
   }
   function wideScreen() { return (window.innerWidth || 0) >= 900 && screenBox().w >= 1000; }
   /* The catalog in its named window on the left half: a second call moves the same window to
-     the next page. Its opener is cut, so the college's page cannot reach this one. */
-  function openCatalogWindow(url) {
+     the next page. Its opener is cut, so the college's page cannot reach this one. stay: the
+     reading room opened it by itself, so the record keeps the focus. */
+  var catalogWin = null;
+  function openCatalogWindow(url, stay) {
     var b = screenBox();
     var w = window.open(url, "prh-catalog", "popup,left=" + b.left + ",top=" + b.top + ",width=" + b.half + ",height=" + b.h);
     if (!w) return null;
+    catalogWin = w;
     try { w.opener = null; } catch (e) { /* already the college's page */ }
-    try { w.focus(); } catch (e) { /* the browser decides */ }
+    if (stay) { try { window.focus(); } catch (e) { /* the browser decides */ } }
+    else { try { w.focus(); } catch (e) { /* the browser decides */ } }
     return w;
+  }
+  function closeCatalogWindow() {
+    var w = catalogWin;
+    catalogWin = null;
+    try { if (w && !w.closed) w.close(); } catch (e) { /* a window the reader opened by hand stays */ }
   }
   /* The record in COBI's own page, in a named window on the right half. A window already
      reading takes the next record in place; a new one loads the tab and opens it there. */
@@ -2045,31 +2059,85 @@
     }
     return null;
   }
-  function onCall(p) {
-    var Q = state.progress && state.progress.queue;
-    return !!(Q && Array.isArray(Q.calls) && Q.calls.some(function (c) {
-      return callRefs(c).some(function (r) { return r.college === p.college && r.control_number === p.control_number; });
-    }));
+  function readable(q) { return !!(q && q.source_url && q.requirements_fp && stateLine(q).waiting); }
+  /* The next record waiting on the reader (Sam, 2026-10-11: "bring me to the next item to
+     confirm"). A record on a call: the next waiting one on that call, then on the calls after
+     it. Any other record: the next waiting one in the list the Records view shows, in its order
+     (college, then control number) and under its search and filters. */
+  function nextToRead(p) {
+    function same(r) { return !!r && r.college === p.college && r.control_number === p.control_number; }
+    var Q = state.progress && state.progress.queue, calls = Q && Array.isArray(Q.calls) ? Q.calls : [];
+    var at = -1;
+    calls.forEach(function (c, i) { if (at < 0 && callRefs(c).some(same)) at = i; });
+    if (at >= 0) {
+      var q = nextWaiting(p);
+      if (q) return q;
+      for (var n = 1; n < calls.length; n++) {
+        var refs = callRefs(calls[(at + n) % calls.length]);
+        for (var j = 0; j < refs.length; j++) { var r = recordFor(refs[j]); if (!same(r) && readable(r)) return r; }
+      }
+      return null;
+    }
+    var P = filterRecords((state.review && state.review.records) || [], state.rq, state.rshow, state.rcollege, isWaiting);
+    var i0 = -1;
+    P.forEach(function (r, i) { if (i0 < 0 && same(r)) i0 = i; });
+    for (var k = 1; k <= P.length; k++) {
+      var r2 = P[(i0 + k) % P.length];
+      if (!same(r2) && readable(r2)) return r2;
+    }
+    return null;
   }
-  function openSplit(p, opener) {
+  /* After Confirm or Save the note in side by side (Sam, 2026-10-11: "When I choose Confirm or
+     Save Note close the screens and bring me to the next item to confirm"): the next record
+     opens in place, its catalog with it, and says what was saved. With nothing left, the
+     screens close, the catalog's window too, and the tab says so. */
+  function advanceFrom(p, saved) {
+    var q = nextToRead(p);
+    if (q) { openSplit(q, split.opener, saved); return; }
+    state.notice = saved + " Nothing else waits on your reading.";
+    closeCatalogWindow();
+    if (RECORD_KEY) {
+      try {
+        var M = window.opener && window.opener.CPL_PROGRAM_REQUIREMENTS;
+        if (M && typeof M.notice === "function") M.notice(state.notice);
+      } catch (e) { /* the opener moved on */ }
+    }
+    closeSplit();
+  }
+  function notice(text) {
+    state.notice = text || null;
+    if (document.getElementById(ROOT_ID)) render();
+  }
+  /* The reading room hides the page until its record is up, so COBI's home tab never shows
+     first (Sam, 2026-10-11). The guard is the prh-room class the head script sets. */
+  function roomShown() { document.documentElement.classList.remove("prh-room"); }
+  function openSplit(p, opener, saved) {
     var frames = framingOf(p.source_url);
-    if (frames === false && !RECORD_KEY && wideScreen() && openRecordWindow(p)) return;
+    if (frames === false && !RECORD_KEY && wideScreen() && openRecordWindow(p)) {
+      if (split.on) closeSplit();
+      return;
+    }
     var carry = split.changed, back = split.on ? split.opener : null;
     closeSplit(true);
+    state.notice = null;
     var name = p.program_title + " " + award(p.award);
-    /* In the reading room the catalog always has its window, so the record takes the whole one. */
+    /* In the reading room the catalog always has its window, so the record takes the whole one.
+       It opens that window by itself (Sam, 2026-10-11: "Have the split screen open automatically
+       when I click in to review"). A browser that holds back a window no click asked for keeps
+       the word that opens it. */
     var solo = !!RECORD_KEY;
-    var said = el("span", { cls: "prh-small prh-quiet", "aria-live": "polite" });
+    var held = solo && !openCatalogWindow(p.source_url, true);
+    var said = el("span", { cls: "prh-small prh-quiet", "aria-live": "polite",
+      text: [saved || "", held ? "Your browser held back the catalog's window: Show the catalog on the left opens it, and allowing pop-ups for this site opens it by itself." : ""].join(" ").trim() });
     var own = el("button", { cls: "prh-word", type: "button",
       text: solo ? "Show the catalog on the left" : "Open the catalog in its own window" });
     own.addEventListener("click", function () { openCatalogWindow(p.source_url); });
     var next = null;
-    if (onCall(p)) {
+    if (state.review && state.review.records) {
       next = el("button", { cls: "prh-word", type: "button", text: "Next waiting record" });
       next.addEventListener("click", function () {
-        var q = nextWaiting(p);
-        if (!q) { said.textContent = "Every record on this call has your reading."; return; }
-        if (solo || framingOf(q.source_url) === false) openCatalogWindow(q.source_url);
+        var q = nextToRead(p);
+        if (!q) { said.textContent = "Nothing else waits on your reading."; return; }
         openSplit(q, split.opener);
       });
     }
@@ -2105,6 +2173,7 @@
     split.inert.forEach(function (n) { n.setAttribute("inert", ""); });
     document.documentElement.classList.add("prh-split-open");
     document.body.appendChild(node);
+    roomShown();
     split.on = true; split.node = node; split.opener = opener || back || null; split.changed = carry;
     split.key = p.college + "|" + p.control_number;
     document.getElementById("prh-split-t").focus();
@@ -2152,6 +2221,7 @@
     wrap.appendChild(el("header", { cls: "prh-mast" }, [
       titlerow,
       state.error || !state.registry ? null : todoLine(),
+      state.notice ? el("p", { cls: "prh-said", role: "status", text: state.notice }) : null,
       el("p", { cls: "prh-meta", text: "How each program's courses count toward its award, read from the college's own catalog, and the reading procedure each college's agent runs by. With these records, CPL Pathways shows which courses a learner can clear through CPL and how many units that saves." }),
       meta]));
     if (state.error) {
@@ -2232,6 +2302,7 @@
 
   function choose(id, focus) {
     state.view = id;
+    state.notice = null;
     safeSet(VIEW_KEY, id);
     render();
     if (focus) {
@@ -2256,7 +2327,7 @@
     collegeDrafts: collegeDrafts, draftText: draftText, flagsFor: flagsFor, flagSummary: flagSummary,
     machineFails: machineFails, verdictError: verdictError, VERDICT_RPC: VERDICT_RPC,
     todoCount: todoCount, goToTodos: goToTodos, openSplit: openSplit, closeSplit: closeSplit, framingOf: framingOf, FRAMING_URL: FRAMING_URL,
-    openKey: openKey, nextWaiting: nextWaiting, callAnswered: callAnswered, RECORD_KEY: RECORD_KEY,
+    openKey: openKey, nextWaiting: nextWaiting, nextToRead: nextToRead, notice: notice, callAnswered: callAnswered, RECORD_KEY: RECORD_KEY,
     exhibitCount: exhibitCount, openExhibits: openExhibits, closeExhibits: closeExhibits,
     MILESTONES: MILESTONES, PARTS: PARTS, progressContext: progressContext, headlineFacts: headlineFacts, nextRun: nextRun, nextWeekly: nextWeekly
   };

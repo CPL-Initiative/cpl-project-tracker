@@ -21,6 +21,43 @@
          every navigation. Rule 4: identical in both HTMLs. -->
     <script src="cpl_theme.js"></script>
 
+    <!-- A link to a tab opens on that tab (Sam, 2026-10-11: "the first screen that pops up is
+         the COBI main tab then it flashed to the confirm screen--just seems like an unnecessary
+         delay"). The page paints while it parses and tabs.js routes once the parse ends, so a
+         link to a tab painted the home tab first. This hides the panes until tabs.js routes
+         (it removes #cpl-deeplink), and the Program Requirements reading room (?prh_split=)
+         shows one line until its record is up (program_requirements.js removes the prh-room
+         class). Each guard lifts by itself 15 seconds after load if its script never comes.
+         Rule 4: identical in both HTMLs. -->
+    <script>
+    (function () {
+      try {
+        var d = document.documentElement, tab = (location.hash || "").replace(/^#/, "").split("/")[0];
+        function style(id, css) {
+          var s = document.createElement("style");
+          s.id = id; s.textContent = css;
+          document.head.appendChild(s);
+        }
+        var panes = !!tab && tab !== "dashboard", room = /[?&]prh_split=/.test(location.search);
+        if (panes) style("cpl-deeplink", ".cpl-tab-pane{display:none!important}");
+        if (room) {
+          d.classList.add("prh-room");
+          style("prh-room-guard", "html.prh-room body>*{opacity:0!important;pointer-events:none!important}" +
+            "html.prh-room body::after{content:\"Opening the record\\2026\";position:fixed;inset:0;display:grid;place-items:center;" +
+            "font:1rem/1.4 'Source Sans 3',system-ui,sans-serif;color:var(--text-muted)}");
+        }
+        if (!panes && !room) return;
+        window.addEventListener("load", function () {
+          setTimeout(function () {
+            d.classList.remove("prh-room");
+            var g = document.getElementById("cpl-deeplink");
+            if (g && g.parentNode) g.parentNode.removeChild(g);
+          }, 15000);
+        });
+      } catch (e) { /* the page shows as it always did */ }
+    })();
+    </script>
+
     <style>
         * {
             margin: 0;
