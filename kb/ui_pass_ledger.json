@@ -118,8 +118,8 @@
    "name": "Vision 2030",
    "page": "index.html#vision-2030",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-11",
+   "outcome": "S365 #2001: sweep clean light+dark before and after; measured at 320/390/1024: 44px sideways scroll at 320 (grid floor 300px -> min(300px,100%)), bars 0px on phones and 12px at 1024 (label took the row; bar now above it), Action 1a/5 text matched no source (now the CPL Workplan's words, shared with the annual report), Goal 1 fill width:1419.5% (held to 0-100, bars aria-hidden), inline styles to classes. Goal figures differ from the annual report: Open Asks Sheet 64 card 1."
   },
   {
    "id": "cobi:military-partnerships",
