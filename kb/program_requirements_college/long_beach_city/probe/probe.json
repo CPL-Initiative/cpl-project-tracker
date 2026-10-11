@@ -1,0 +1,2684 @@
+{
+ "02616": {
+  "url": "https://lbcc-public.courseleaf.com/degrees-certificates/horticulture/horticulture-as/",
+  "status": 200,
+  "access": "ok",
+  "final_url": "https://lbcc-public.courseleaf.com/degrees-certificates/horticulture/horticulture-as/",
+  "error": null,
+  "probe": {
+   "tabs": [
+    {
+     "label": "Skip to Content",
+     "tag": "A",
+     "href": "#contentarea",
+     "role": null,
+     "aria_controls": null,
+     "onclick": "",
+     "in_menu": "nav.accessible",
+     "in_tablist": null,
+     "parents": [
+      "li",
+      "ul",
+      "div.accessible-menu"
+     ],
+     "target": {
+      "el": "main#contentarea",
+      "rects": 1,
+      "display": "block",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": null,
+      "text_chars": 4046,
+      "inner_chars": 1048,
+      "subjects": 1,
+      "head": "Home›Degrees/Certificates›Horticulture›Horticulture - Associate in Science Horticulture - Associate in Science Print Options Apply Now //<![CDATA[ var defshow = \"text\"; var bodycontainer = \"#body\"; va"
+     }
+    },
+    {
+     "label": "Open\nSearch",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "search-dialog",
+     "onclick": "showSearchDialog(); return false;",
+     "in_menu": "nav.lbcc-nav",
+     "in_tablist": null,
+     "parents": [
+      "li",
+      "ul",
+      "nav.lbcc-nav"
+     ],
+     "target": {
+      "el": "div#search-dialog.screen.inactivescreen",
+      "rects": 0,
+      "display": "none",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": null,
+      "text_chars": 234,
+      "inner_chars": 234,
+      "subjects": 0,
+      "head": "Close this window Search Search catalog Submit search Search location Search Catalog Only Search LBCC"
+     }
+    },
+    {
+     "label": "Menu",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "navigation",
+     "onclick": "",
+     "in_menu": "header#header",
+     "in_tablist": null,
+     "parents": [
+      "div.wrap",
+      "div.header-lower",
+      "header#header"
+     ],
+     "target": {
+      "el": "nav#navigation",
+      "rects": 1,
+      "display": "block",
+      "visibility": "visible",
+      "aria_hidden": "false",
+      "hidden_attr": false,
+      "in_menu": "nav#navigation",
+      "text_chars": 1463,
+      "inner_chars": 191,
+      "subjects": 0,
+      "head": "Search catalog Submit search Search location Search Catalog Only Search LBCC Programs Courses Courses Course Descriptions Search Course Course Outline of Record (COR) Course Descriptions Search Course"
+     }
+    },
+    {
+     "label": "COURSES",
+     "tag": "A",
+     "href": "#",
+     "role": null,
+     "aria_controls": null,
+     "onclick": "",
+     "in_menu": "nav#navigation",
+     "in_tablist": null,
+     "parents": [
+      "li.isparent",
+      "ul#main-nav.clearfix",
+      "nav#navigation"
+     ],
+     "target": null
+    },
+    {
+     "label": "Courses",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "psub1",
+     "onclick": "",
+     "in_menu": "nav#navigation",
+     "in_tablist": null,
+     "parents": [
+      "li.isparent",
+      "ul#main-nav.clearfix",
+      "nav#navigation"
+     ],
+     "target": {
+      "el": "ul#psub1.mSub",
+      "rects": 0,
+      "display": "none",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": "nav#navigation",
+      "text_chars": 150,
+      "inner_chars": 150,
+      "subjects": 0,
+      "head": "Course Descriptions Search Course Course Outline of Record (COR)"
+     }
+    },
+    {
+     "label": "A-Z INDEX",
+     "tag": "A",
+     "href": "#",
+     "role": null,
+     "aria_controls": null,
+     "onclick": "",
+     "in_menu": "nav#navigation",
+     "in_tablist": null,
+     "parents": [
+      "li.isparent",
+      "ul#main-nav.clearfix",
+      "nav#navigation"
+     ],
+     "target": null
+    },
+    {
+     "label": "A-Z Index",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "psub2",
+     "onclick": "",
+     "in_menu": "nav#navigation",
+     "in_tablist": null,
+     "parents": [
+      "li.isparent",
+      "ul#main-nav.clearfix",
+      "nav#navigation"
+     ],
+     "target": {
+      "el": "ul#psub2.mSub",
+      "rects": 0,
+      "display": "none",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": "nav#navigation",
+      "text_chars": 138,
+      "inner_chars": 138,
+      "subjects": 0,
+      "head": "Degrees/Certificates A-Z Catalog A-Z Departments A-Z"
+     }
+    },
+    {
+     "label": "Overview",
+     "tag": "A",
+     "href": "#textcontainer",
+     "role": "tab",
+     "aria_controls": "textcontainer",
+     "onclick": "return showSection('text');",
+     "in_menu": "nav#tabs",
+     "in_tablist": "ul.clearfix",
+     "parents": [
+      "li#texttab.active",
+      "ul.clearfix",
+      "nav#tabs"
+     ],
+     "target": {
+      "el": "div#textcontainer.page_content.tab_content",
+      "rects": 1,
+      "display": "block",
+      "visibility": "visible",
+      "aria_hidden": "false",
+      "hidden_attr": false,
+      "in_menu": null,
+      "text_chars": 876,
+      "inner_chars": 877,
+      "subjects": 0,
+      "head": "Plan Code: 2962 This program is designed to furnish students with knowledge of the entry-level skills necessary to embark upon a career in the horticulture industry. It includes emphasis on practical "
+     }
+    },
+    {
+     "label": "Program Requirements",
+     "tag": "A",
+     "href": "#programrequirementstextcontainer",
+     "role": "tab",
+     "aria_controls": "programrequirementstextcontainer",
+     "onclick": "return showSection('programrequirementstext');",
+     "in_menu": "nav#tabs",
+     "in_tablist": "ul.clearfix",
+     "parents": [
+      "li#programrequirementstexttab",
+      "ul.clearfix",
+      "nav#tabs"
+     ],
+     "target": {
+      "el": "div#programrequirementstextcontainer.page_content.tab_content",
+      "rects": 0,
+      "display": "none",
+      "visibility": "visible",
+      "aria_hidden": "true",
+      "hidden_attr": false,
+      "in_menu": null,
+      "text_chars": 1554,
+      "inner_chars": 1554,
+      "subjects": 1,
+      "head": "Program Requirements This degree requires the completion of General Education coursework plus the following: Course List Code Number Course Title Units REQUIRED COURSES HORT 11APlant Identification: T"
+     }
+    },
+    {
+     "label": "Back to top",
+     "tag": "A",
+     "href": "#header",
+     "role": null,
+     "aria_controls": null,
+     "onclick": "",
+     "in_menu": "footer#footer",
+     "in_tablist": null,
+     "parents": [
+      "footer#footer",
+      "body",
+      "html.js"
+     ],
+     "target": {
+      "el": "header#header",
+      "rects": 1,
+      "display": "block",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": "header#header",
+      "text_chars": 1713,
+      "inner_chars": 251,
+      "subjects": 0,
+      "head": "Catalog Home Class Schedule Registration Dates Open Search Menu Search catalog Submit search Search location Search Catalog Only Search LBCC Programs Courses Courses Course Descriptions Search Course "
+     }
+    },
+    {
+     "label": "Close this window",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "#print-dialog",
+     "onclick": "hidePrintDialog(); return false;",
+     "in_menu": null,
+     "in_tablist": null,
+     "parents": [
+      "div.print-header",
+      "div#print-dialog.screen.inactivescreen",
+      "body"
+     ],
+     "target": null
+    },
+    {
+     "label": "Send Page to Printer",
+     "tag": "A",
+     "href": "#",
+     "role": "button",
+     "aria_controls": null,
+     "onclick": "hidePrintDialog();window.print();return false",
+     "in_menu": null,
+     "in_tablist": null,
+     "parents": [
+      "p",
+      "li",
+      "ul"
+     ],
+     "target": null
+    },
+    {
+     "label": "Close this window",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "search-dialog",
+     "onclick": "hideSearchDialog(); return false;",
+     "in_menu": null,
+     "in_tablist": null,
+     "parents": [
+      "div.search-header",
+      "div#search-dialog.screen.inactivescreen",
+      "body"
+     ],
+     "target": {
+      "el": "div#search-dialog.screen.inactivescreen",
+      "rects": 0,
+      "display": "none",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": null,
+      "text_chars": 234,
+      "inner_chars": 234,
+      "subjects": 0,
+      "head": "Close this window Search Search catalog Submit search Search location Search Catalog Only Search LBCC"
+     }
+    }
+   ],
+   "hidden": [
+    {
+     "el": "ul#/student-resources/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 840,
+     "subjects": 0,
+     "head": "Admissions &​ RecordsToggle Admissions &​ Records Admissions Requirements Applying to the College Registration Procedures Enrollment Priorities Procedures for Application to School of Health and Scien"
+    },
+    {
+     "el": "ul#/academic-policies-support/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 418,
+     "subjects": 0,
+     "head": "Academic PoliciesToggle Academic Policies Academic Policies and Board Procedures Student Office Hours and Syllabi Course Numbering System Student Scholarship Student Attendance and Auditing Course Req"
+    },
+    {
+     "el": "ul#/academic-requirements/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 637,
+     "subjects": 0,
+     "head": "General Education, Transfer and Degree/​Certificate RequirementsToggle General Education, Transfer and Degree/​Certificate Requirements General Information General Education Patterns General Education"
+    },
+    {
+     "el": "ul#/degrees-certificates/administrative-assistant-office-technologies/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 428,
+     "subjects": 0,
+     "head": "Introduction to Computers -​ Certificate of Completion Microsoft Access for Windows -​ Certificate of Completion Microsoft Excel -​ Certificate of Completion Microsoft Office -​ Certificate of Complet"
+    },
+    {
+     "el": "ul#/degrees-certificates/architectural-design/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 678,
+     "subjects": 0,
+     "head": "Architectural Design -​ Associate in Science Architectural Design -​ Certificate of Achievement Building Information Modeling (BIM) Coordinator -​ Certificate of Achievement Design Basics -​ Certifica"
+    },
+    {
+     "el": "ul#/degrees-certificates/automotive-technology/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 502,
+     "subjects": 0,
+     "head": "Automotive Technology -​ Associate in Science Automotive Engine and Transmission Service -​ Certificate of Achievement Automotive Engine Performance Service -​ Certificate of Achievement Automotive Ma"
+    },
+    {
+     "el": "ul#/degrees-certificates/business/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 1726,
+     "subjects": 0,
+     "head": "Economics -​ Associate in Arts Transfer Degree Business Administration 2.0 -​ Associate in Science Transfer Degree Business: Accounting Concentration -​ Associate in Arts Business: General Business Co"
+    },
+    {
+     "el": "ul#/degrees-certificates/business-information-worker/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 768,
+     "subjects": 0,
+     "head": "Digital and Social Media -​ Certificate of Achievement Microsoft Essentials -​ Certificate of Achievement Telecommuting Fundamentals -​ Certificate of Achievement Business Digital Literacy -​ Certific"
+    },
+    {
+     "el": "ul#/degrees-certificates/child-development-early-childhood-education/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 1208,
+     "subjects": 0,
+     "head": "Early Childhood Education -​ Associate in Science Transfer Degree Child Development: Early Childhood Education -​ Associate in Arts Child Development: Early Childhood Education -​ Certificate of Achie"
+    },
+    {
+     "el": "ul#/degrees-certificates/computer-security-networking/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 648,
+     "subjects": 0,
+     "head": "Cloud Computing -​ Associate in Science Computer Security and Networking -​ Associate in Science Information Technology Cybersecurity -​ Associate in Science Cloud Computing -​ Certificate of Achievem"
+    },
+    {
+     "el": "ul#/degrees-certificates/construction-technology/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 759,
+     "subjects": 0,
+     "head": "Construction Inspection -​ Associate in Science Construction Management -​ Associate in Science Construction Technology -​ Associate in Science ADU Remodeling -​ Certificate of Achievement Carpentry -"
+    },
+    {
+     "el": "ul#/degrees-certificates/electrical-technology/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 403,
+     "subjects": 0,
+     "head": "Electrical Apprenticeship Preparation -​ Certificate of Achievement Electrical Program Preparation -​ Certificate of Completion FCC Amateur Radio Technician Preparation -​ Certificate of Completion IP"
+    },
+    {
+     "el": "ul#/degrees-certificates/english-second-language/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 905,
+     "subjects": 0,
+     "head": "English for Every Day – Level 1 -​ Certificate of Competency English for Every Day – Level 2 -​ Certificate of Competency English for Every Day – Level 3 -​ Certificate of Competency ESL Literacy -​ C"
+    },
+    {
+     "el": "ul#/degrees-certificates/fashion-design/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 680,
+     "subjects": 0,
+     "head": "Fashion Design -​ Associate in Science Fashion Design -​ Certificate of Achievement Fashion Design: Custom Apparel Design -​ Certificate of Achievement Fashion Design: Patternmaker/​Technical Design -"
+    },
+    {
+     "el": "ul#/degrees-certificates/library-technician/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 554,
+     "subjects": 0,
+     "head": "Library Technician -​ Associate in Science Library Technician -​ Certificate of Achievement Foundations in Academic Research -​ Certificate of Accomplishment Library Technician -​ Certificate of Compl"
+    },
+    {
+     "el": "ul#/degrees-certificates/medical-assisting-program/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 472,
+     "subjects": 0,
+     "head": "Medical Assisting: Combined Administrative/​Clinical -​ Associate in Science Medical Assisting: Administrative Option -​ Certificate of Achievement Medical Assisting: Clinical Option -​ Certificate of"
+    },
+    {
+     "el": "ul#/degrees-certificates/nutrition-dietetics/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 805,
+     "subjects": 0,
+     "head": "Nutrition and Dietetics -​ Associate in Science Transfer Degree Dietetic Service Supervisor -​ Associate in Arts Nutrition Assistant -​ Associate in Science Child Nutrition Management -​ Certificate o"
+    },
+    {
+     "el": "ul#/degrees-certificates/welding-technology/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 744,
+     "subjects": 0,
+     "head": "Welding Technology -​ Associate in Science Gas Tungsten Arc Welding (GTAW) -​ Certificate of Achievement Introduction to Gas Tungsten Arc Welding (GTAW) -​ Certificate of Achievement Introduction to S"
+    },
+    {
+     "el": "ul#/course-descriptions/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 3620,
+     "subjects": 0,
+     "head": "C-​ID Numbering Accounting (ACCTG) Addiction Treatment Counseling &​ Mental Health Studies (ATCMHS) Administration of Justice (ADJUS) Advanced Manufacturing Tech (ADMT) Allied Health (AH) American Sig"
+    },
+    {
+     "el": "ul#/noncredit/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 7612,
+     "subjects": 0,
+     "head": "WelcomeToggle Welcome Mission, Vision, and Values President's Message Academic Senate Message Community Partners What is Noncredit? Noncredit Programs of StudyToggle Noncredit Programs of Study Admini"
+    },
+    {
+     "el": "ul#/courses/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 67725,
+     "subjects": 120,
+     "head": "ACCTG 1A -​ Financial Accounting ACCTG 1B -​ Managerial Accounting ACCTG 200 -​ Introduction to Accounting ACCTG 205 -​ Fundamentals of Tax ACCTG 228 -​ Computerized Gen Ledger Account Systems ACCTG 2"
+    },
+    {
+     "el": "div#programrequirementstextcontainer.page_content.tab_content",
+     "parents": [
+      "main#contentarea",
+      "div#col-content"
+     ],
+     "role": "tabpanel",
+     "labelledby": "programrequirementstexttab",
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": null,
+     "text_chars": 1554,
+     "subjects": 1,
+     "head": "Program Requirements This degree requires the completion of General Education coursework plus the following: Course List Code Number Course Title Units REQUIRED COURSES HORT 11APlant Identification: T"
+    }
+   ],
+   "inner_chars": 7831,
+   "content_chars": 119525
+  },
+  "tabPanels": [
+   {
+    "label": "Close this window",
+    "id": "search-dialog",
+    "chars": 101
+   }
+  ],
+  "hidden_tabs_chars": 126,
+  "best_text": {
+   "field": "textContent",
+   "innerText": 0.0,
+   "textContent": 1.0,
+   "chosen": 1.0
+  }
+ },
+ "02631": {
+  "url": "https://lbcc-public.courseleaf.com/degrees-certificates/journalism/journalism-aa/",
+  "status": 200,
+  "access": "ok",
+  "final_url": "https://lbcc-public.courseleaf.com/degrees-certificates/journalism/journalism-aa/",
+  "error": null,
+  "probe": {
+   "tabs": [
+    {
+     "label": "Skip to Content",
+     "tag": "A",
+     "href": "#contentarea",
+     "role": null,
+     "aria_controls": null,
+     "onclick": "",
+     "in_menu": "nav.accessible",
+     "in_tablist": null,
+     "parents": [
+      "li",
+      "ul",
+      "div.accessible-menu"
+     ],
+     "target": {
+      "el": "main#contentarea",
+      "rects": 1,
+      "display": "block",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": null,
+      "text_chars": 2920,
+      "inner_chars": 557,
+      "subjects": 0,
+      "head": "Home›Degrees/Certificates›Journalism›Journalism - Associate in Arts Journalism - Associate in Arts Print Options Apply Now //<![CDATA[ var defshow = \"text\"; var bodycontainer = \"#body\"; var validhashe"
+     }
+    },
+    {
+     "label": "Open\nSearch",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "search-dialog",
+     "onclick": "showSearchDialog(); return false;",
+     "in_menu": "nav.lbcc-nav",
+     "in_tablist": null,
+     "parents": [
+      "li",
+      "ul",
+      "nav.lbcc-nav"
+     ],
+     "target": {
+      "el": "div#search-dialog.screen.inactivescreen",
+      "rects": 0,
+      "display": "none",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": null,
+      "text_chars": 234,
+      "inner_chars": 234,
+      "subjects": 0,
+      "head": "Close this window Search Search catalog Submit search Search location Search Catalog Only Search LBCC"
+     }
+    },
+    {
+     "label": "Menu",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "navigation",
+     "onclick": "",
+     "in_menu": "header#header",
+     "in_tablist": null,
+     "parents": [
+      "div.wrap",
+      "div.header-lower",
+      "header#header"
+     ],
+     "target": {
+      "el": "nav#navigation",
+      "rects": 1,
+      "display": "block",
+      "visibility": "visible",
+      "aria_hidden": "false",
+      "hidden_attr": false,
+      "in_menu": "nav#navigation",
+      "text_chars": 1463,
+      "inner_chars": 191,
+      "subjects": 0,
+      "head": "Search catalog Submit search Search location Search Catalog Only Search LBCC Programs Courses Courses Course Descriptions Search Course Course Outline of Record (COR) Course Descriptions Search Course"
+     }
+    },
+    {
+     "label": "COURSES",
+     "tag": "A",
+     "href": "#",
+     "role": null,
+     "aria_controls": null,
+     "onclick": "",
+     "in_menu": "nav#navigation",
+     "in_tablist": null,
+     "parents": [
+      "li.isparent",
+      "ul#main-nav.clearfix",
+      "nav#navigation"
+     ],
+     "target": null
+    },
+    {
+     "label": "Courses",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "psub1",
+     "onclick": "",
+     "in_menu": "nav#navigation",
+     "in_tablist": null,
+     "parents": [
+      "li.isparent",
+      "ul#main-nav.clearfix",
+      "nav#navigation"
+     ],
+     "target": {
+      "el": "ul#psub1.mSub",
+      "rects": 0,
+      "display": "none",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": "nav#navigation",
+      "text_chars": 150,
+      "inner_chars": 150,
+      "subjects": 0,
+      "head": "Course Descriptions Search Course Course Outline of Record (COR)"
+     }
+    },
+    {
+     "label": "A-Z INDEX",
+     "tag": "A",
+     "href": "#",
+     "role": null,
+     "aria_controls": null,
+     "onclick": "",
+     "in_menu": "nav#navigation",
+     "in_tablist": null,
+     "parents": [
+      "li.isparent",
+      "ul#main-nav.clearfix",
+      "nav#navigation"
+     ],
+     "target": null
+    },
+    {
+     "label": "A-Z Index",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "psub2",
+     "onclick": "",
+     "in_menu": "nav#navigation",
+     "in_tablist": null,
+     "parents": [
+      "li.isparent",
+      "ul#main-nav.clearfix",
+      "nav#navigation"
+     ],
+     "target": {
+      "el": "ul#psub2.mSub",
+      "rects": 0,
+      "display": "none",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": "nav#navigation",
+      "text_chars": 138,
+      "inner_chars": 138,
+      "subjects": 0,
+      "head": "Degrees/Certificates A-Z Catalog A-Z Departments A-Z"
+     }
+    },
+    {
+     "label": "Overview",
+     "tag": "A",
+     "href": "#textcontainer",
+     "role": "tab",
+     "aria_controls": "textcontainer",
+     "onclick": "return showSection('text');",
+     "in_menu": "nav#tabs",
+     "in_tablist": "ul.clearfix",
+     "parents": [
+      "li#texttab.active",
+      "ul.clearfix",
+      "nav#tabs"
+     ],
+     "target": {
+      "el": "div#textcontainer.page_content.tab_content",
+      "rects": 1,
+      "display": "block",
+      "visibility": "visible",
+      "aria_hidden": "false",
+      "hidden_attr": false,
+      "in_menu": null,
+      "text_chars": 399,
+      "inner_chars": 398,
+      "subjects": 0,
+      "head": "Plan Code: 1411 This degree, with an emphasis in newspapers and magazines, provides a basic program for students interested in careers requiring journalistic training, such as newspaper or Internet re"
+     }
+    },
+    {
+     "label": "Program Requirements",
+     "tag": "A",
+     "href": "#programrequirementstextcontainer",
+     "role": "tab",
+     "aria_controls": "programrequirementstextcontainer",
+     "onclick": "return showSection('programrequirementstext');",
+     "in_menu": "nav#tabs",
+     "in_tablist": "ul.clearfix",
+     "parents": [
+      "li#programrequirementstexttab",
+      "ul.clearfix",
+      "nav#tabs"
+     ],
+     "target": {
+      "el": "div#programrequirementstextcontainer.page_content.tab_content",
+      "rects": 0,
+      "display": "none",
+      "visibility": "visible",
+      "aria_hidden": "true",
+      "hidden_attr": false,
+      "in_menu": null,
+      "text_chars": 909,
+      "inner_chars": 909,
+      "subjects": 0,
+      "head": "Program Requirements Course List Code Number Course Title Units REQUIRED COURSES JOURN 10Intro to Global Media Communications3 JOURN 20Beginning Newswriting and Reporting4 JOURN 80Multimedia Newsroom:"
+     }
+    },
+    {
+     "label": "Back to top",
+     "tag": "A",
+     "href": "#header",
+     "role": null,
+     "aria_controls": null,
+     "onclick": "",
+     "in_menu": "footer#footer",
+     "in_tablist": null,
+     "parents": [
+      "footer#footer",
+      "body",
+      "html.js"
+     ],
+     "target": {
+      "el": "header#header",
+      "rects": 1,
+      "display": "block",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": "header#header",
+      "text_chars": 1713,
+      "inner_chars": 251,
+      "subjects": 0,
+      "head": "Catalog Home Class Schedule Registration Dates Open Search Menu Search catalog Submit search Search location Search Catalog Only Search LBCC Programs Courses Courses Course Descriptions Search Course "
+     }
+    },
+    {
+     "label": "Close this window",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "#print-dialog",
+     "onclick": "hidePrintDialog(); return false;",
+     "in_menu": null,
+     "in_tablist": null,
+     "parents": [
+      "div.print-header",
+      "div#print-dialog.screen.inactivescreen",
+      "body"
+     ],
+     "target": null
+    },
+    {
+     "label": "Send Page to Printer",
+     "tag": "A",
+     "href": "#",
+     "role": "button",
+     "aria_controls": null,
+     "onclick": "hidePrintDialog();window.print();return false",
+     "in_menu": null,
+     "in_tablist": null,
+     "parents": [
+      "p",
+      "li",
+      "ul"
+     ],
+     "target": null
+    },
+    {
+     "label": "Close this window",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "search-dialog",
+     "onclick": "hideSearchDialog(); return false;",
+     "in_menu": null,
+     "in_tablist": null,
+     "parents": [
+      "div.search-header",
+      "div#search-dialog.screen.inactivescreen",
+      "body"
+     ],
+     "target": {
+      "el": "div#search-dialog.screen.inactivescreen",
+      "rects": 0,
+      "display": "none",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": null,
+      "text_chars": 234,
+      "inner_chars": 234,
+      "subjects": 0,
+      "head": "Close this window Search Search catalog Submit search Search location Search Catalog Only Search LBCC"
+     }
+    }
+   ],
+   "hidden": [
+    {
+     "el": "ul#/student-resources/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 840,
+     "subjects": 0,
+     "head": "Admissions &​ RecordsToggle Admissions &​ Records Admissions Requirements Applying to the College Registration Procedures Enrollment Priorities Procedures for Application to School of Health and Scien"
+    },
+    {
+     "el": "ul#/academic-policies-support/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 418,
+     "subjects": 0,
+     "head": "Academic PoliciesToggle Academic Policies Academic Policies and Board Procedures Student Office Hours and Syllabi Course Numbering System Student Scholarship Student Attendance and Auditing Course Req"
+    },
+    {
+     "el": "ul#/academic-requirements/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 637,
+     "subjects": 0,
+     "head": "General Education, Transfer and Degree/​Certificate RequirementsToggle General Education, Transfer and Degree/​Certificate Requirements General Information General Education Patterns General Education"
+    },
+    {
+     "el": "ul#/degrees-certificates/administrative-assistant-office-technologies/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 428,
+     "subjects": 0,
+     "head": "Introduction to Computers -​ Certificate of Completion Microsoft Access for Windows -​ Certificate of Completion Microsoft Excel -​ Certificate of Completion Microsoft Office -​ Certificate of Complet"
+    },
+    {
+     "el": "ul#/degrees-certificates/architectural-design/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 678,
+     "subjects": 0,
+     "head": "Architectural Design -​ Associate in Science Architectural Design -​ Certificate of Achievement Building Information Modeling (BIM) Coordinator -​ Certificate of Achievement Design Basics -​ Certifica"
+    },
+    {
+     "el": "ul#/degrees-certificates/automotive-technology/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 502,
+     "subjects": 0,
+     "head": "Automotive Technology -​ Associate in Science Automotive Engine and Transmission Service -​ Certificate of Achievement Automotive Engine Performance Service -​ Certificate of Achievement Automotive Ma"
+    },
+    {
+     "el": "ul#/degrees-certificates/business/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 1726,
+     "subjects": 0,
+     "head": "Economics -​ Associate in Arts Transfer Degree Business Administration 2.0 -​ Associate in Science Transfer Degree Business: Accounting Concentration -​ Associate in Arts Business: General Business Co"
+    },
+    {
+     "el": "ul#/degrees-certificates/business-information-worker/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 768,
+     "subjects": 0,
+     "head": "Digital and Social Media -​ Certificate of Achievement Microsoft Essentials -​ Certificate of Achievement Telecommuting Fundamentals -​ Certificate of Achievement Business Digital Literacy -​ Certific"
+    },
+    {
+     "el": "ul#/degrees-certificates/child-development-early-childhood-education/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 1208,
+     "subjects": 0,
+     "head": "Early Childhood Education -​ Associate in Science Transfer Degree Child Development: Early Childhood Education -​ Associate in Arts Child Development: Early Childhood Education -​ Certificate of Achie"
+    },
+    {
+     "el": "ul#/degrees-certificates/computer-security-networking/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 648,
+     "subjects": 0,
+     "head": "Cloud Computing -​ Associate in Science Computer Security and Networking -​ Associate in Science Information Technology Cybersecurity -​ Associate in Science Cloud Computing -​ Certificate of Achievem"
+    },
+    {
+     "el": "ul#/degrees-certificates/construction-technology/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 759,
+     "subjects": 0,
+     "head": "Construction Inspection -​ Associate in Science Construction Management -​ Associate in Science Construction Technology -​ Associate in Science ADU Remodeling -​ Certificate of Achievement Carpentry -"
+    },
+    {
+     "el": "ul#/degrees-certificates/electrical-technology/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 403,
+     "subjects": 0,
+     "head": "Electrical Apprenticeship Preparation -​ Certificate of Achievement Electrical Program Preparation -​ Certificate of Completion FCC Amateur Radio Technician Preparation -​ Certificate of Completion IP"
+    },
+    {
+     "el": "ul#/degrees-certificates/english-second-language/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 905,
+     "subjects": 0,
+     "head": "English for Every Day – Level 1 -​ Certificate of Competency English for Every Day – Level 2 -​ Certificate of Competency English for Every Day – Level 3 -​ Certificate of Competency ESL Literacy -​ C"
+    },
+    {
+     "el": "ul#/degrees-certificates/fashion-design/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 680,
+     "subjects": 0,
+     "head": "Fashion Design -​ Associate in Science Fashion Design -​ Certificate of Achievement Fashion Design: Custom Apparel Design -​ Certificate of Achievement Fashion Design: Patternmaker/​Technical Design -"
+    },
+    {
+     "el": "ul#/degrees-certificates/library-technician/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 554,
+     "subjects": 0,
+     "head": "Library Technician -​ Associate in Science Library Technician -​ Certificate of Achievement Foundations in Academic Research -​ Certificate of Accomplishment Library Technician -​ Certificate of Compl"
+    },
+    {
+     "el": "ul#/degrees-certificates/medical-assisting-program/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 472,
+     "subjects": 0,
+     "head": "Medical Assisting: Combined Administrative/​Clinical -​ Associate in Science Medical Assisting: Administrative Option -​ Certificate of Achievement Medical Assisting: Clinical Option -​ Certificate of"
+    },
+    {
+     "el": "ul#/degrees-certificates/nutrition-dietetics/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 805,
+     "subjects": 0,
+     "head": "Nutrition and Dietetics -​ Associate in Science Transfer Degree Dietetic Service Supervisor -​ Associate in Arts Nutrition Assistant -​ Associate in Science Child Nutrition Management -​ Certificate o"
+    },
+    {
+     "el": "ul#/degrees-certificates/welding-technology/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 744,
+     "subjects": 0,
+     "head": "Welding Technology -​ Associate in Science Gas Tungsten Arc Welding (GTAW) -​ Certificate of Achievement Introduction to Gas Tungsten Arc Welding (GTAW) -​ Certificate of Achievement Introduction to S"
+    },
+    {
+     "el": "ul#/course-descriptions/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 3620,
+     "subjects": 0,
+     "head": "C-​ID Numbering Accounting (ACCTG) Addiction Treatment Counseling &​ Mental Health Studies (ATCMHS) Administration of Justice (ADJUS) Advanced Manufacturing Tech (ADMT) Allied Health (AH) American Sig"
+    },
+    {
+     "el": "ul#/noncredit/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 7612,
+     "subjects": 0,
+     "head": "WelcomeToggle Welcome Mission, Vision, and Values President's Message Academic Senate Message Community Partners What is Noncredit? Noncredit Programs of StudyToggle Noncredit Programs of Study Admini"
+    },
+    {
+     "el": "ul#/courses/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 67725,
+     "subjects": 120,
+     "head": "ACCTG 1A -​ Financial Accounting ACCTG 1B -​ Managerial Accounting ACCTG 200 -​ Introduction to Accounting ACCTG 205 -​ Fundamentals of Tax ACCTG 228 -​ Computerized Gen Ledger Account Systems ACCTG 2"
+    },
+    {
+     "el": "div#programrequirementstextcontainer.page_content.tab_content",
+     "parents": [
+      "main#contentarea",
+      "div#col-content"
+     ],
+     "role": "tabpanel",
+     "labelledby": "programrequirementstexttab",
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": null,
+     "text_chars": 909,
+     "subjects": 0,
+     "head": "Program Requirements Course List Code Number Course Title Units REQUIRED COURSES JOURN 10Intro to Global Media Communications3 JOURN 20Beginning Newswriting and Reporting4 JOURN 80Multimedia Newsroom:"
+    }
+   ],
+   "inner_chars": 7388,
+   "content_chars": 118399
+  },
+  "tabPanels": [
+   {
+    "label": "Close this window",
+    "id": "search-dialog",
+    "chars": 101
+   }
+  ],
+  "hidden_tabs_chars": 126
+ },
+ "02632": {
+  "url": "https://lbcc-public.courseleaf.com/degrees-certificates/television-producer/television-producer-aa/",
+  "status": 200,
+  "access": "ok",
+  "final_url": "https://lbcc-public.courseleaf.com/degrees-certificates/television-producer/television-producer-aa/",
+  "error": null,
+  "probe": {
+   "tabs": [
+    {
+     "label": "Skip to Content",
+     "tag": "A",
+     "href": "#contentarea",
+     "role": null,
+     "aria_controls": null,
+     "onclick": "",
+     "in_menu": "nav.accessible",
+     "in_tablist": null,
+     "parents": [
+      "li",
+      "ul",
+      "div.accessible-menu"
+     ],
+     "target": {
+      "el": "main#contentarea",
+      "rects": 1,
+      "display": "block",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": null,
+      "text_chars": 4053,
+      "inner_chars": 1256,
+      "subjects": 1,
+      "head": "Home›Degrees/Certificates›Television Producer›Television Producer - Associate in Arts Television Producer - Associate in Arts Print Options Apply Now //<![CDATA[ var defshow = \"text\"; var bodycontaine"
+     }
+    },
+    {
+     "label": "Open\nSearch",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "search-dialog",
+     "onclick": "showSearchDialog(); return false;",
+     "in_menu": "nav.lbcc-nav",
+     "in_tablist": null,
+     "parents": [
+      "li",
+      "ul",
+      "nav.lbcc-nav"
+     ],
+     "target": {
+      "el": "div#search-dialog.screen.inactivescreen",
+      "rects": 0,
+      "display": "none",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": null,
+      "text_chars": 234,
+      "inner_chars": 234,
+      "subjects": 0,
+      "head": "Close this window Search Search catalog Submit search Search location Search Catalog Only Search LBCC"
+     }
+    },
+    {
+     "label": "Menu",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "navigation",
+     "onclick": "",
+     "in_menu": "header#header",
+     "in_tablist": null,
+     "parents": [
+      "div.wrap",
+      "div.header-lower",
+      "header#header"
+     ],
+     "target": {
+      "el": "nav#navigation",
+      "rects": 1,
+      "display": "block",
+      "visibility": "visible",
+      "aria_hidden": "false",
+      "hidden_attr": false,
+      "in_menu": "nav#navigation",
+      "text_chars": 1463,
+      "inner_chars": 191,
+      "subjects": 0,
+      "head": "Search catalog Submit search Search location Search Catalog Only Search LBCC Programs Courses Courses Course Descriptions Search Course Course Outline of Record (COR) Course Descriptions Search Course"
+     }
+    },
+    {
+     "label": "COURSES",
+     "tag": "A",
+     "href": "#",
+     "role": null,
+     "aria_controls": null,
+     "onclick": "",
+     "in_menu": "nav#navigation",
+     "in_tablist": null,
+     "parents": [
+      "li.isparent",
+      "ul#main-nav.clearfix",
+      "nav#navigation"
+     ],
+     "target": null
+    },
+    {
+     "label": "Courses",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "psub1",
+     "onclick": "",
+     "in_menu": "nav#navigation",
+     "in_tablist": null,
+     "parents": [
+      "li.isparent",
+      "ul#main-nav.clearfix",
+      "nav#navigation"
+     ],
+     "target": {
+      "el": "ul#psub1.mSub",
+      "rects": 0,
+      "display": "none",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": "nav#navigation",
+      "text_chars": 150,
+      "inner_chars": 150,
+      "subjects": 0,
+      "head": "Course Descriptions Search Course Course Outline of Record (COR)"
+     }
+    },
+    {
+     "label": "A-Z INDEX",
+     "tag": "A",
+     "href": "#",
+     "role": null,
+     "aria_controls": null,
+     "onclick": "",
+     "in_menu": "nav#navigation",
+     "in_tablist": null,
+     "parents": [
+      "li.isparent",
+      "ul#main-nav.clearfix",
+      "nav#navigation"
+     ],
+     "target": null
+    },
+    {
+     "label": "A-Z Index",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "psub2",
+     "onclick": "",
+     "in_menu": "nav#navigation",
+     "in_tablist": null,
+     "parents": [
+      "li.isparent",
+      "ul#main-nav.clearfix",
+      "nav#navigation"
+     ],
+     "target": {
+      "el": "ul#psub2.mSub",
+      "rects": 0,
+      "display": "none",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": "nav#navigation",
+      "text_chars": 138,
+      "inner_chars": 138,
+      "subjects": 0,
+      "head": "Degrees/Certificates A-Z Catalog A-Z Departments A-Z"
+     }
+    },
+    {
+     "label": "Overview",
+     "tag": "A",
+     "href": "#textcontainer",
+     "role": "tab",
+     "aria_controls": "textcontainer",
+     "onclick": "return showSection('text');",
+     "in_menu": "nav#tabs",
+     "in_tablist": "ul.clearfix",
+     "parents": [
+      "li#texttab.active",
+      "ul.clearfix",
+      "nav#tabs"
+     ],
+     "target": {
+      "el": "div#textcontainer.page_content.tab_content",
+      "rects": 1,
+      "display": "block",
+      "visibility": "visible",
+      "aria_hidden": "false",
+      "hidden_attr": false,
+      "in_menu": null,
+      "text_chars": 1069,
+      "inner_chars": 1070,
+      "subjects": 0,
+      "head": "Plan Code: 1253 This program teaches the fundamentals of knowledge and skills needed for today’s media producer via Broadcast, Cable, Web, and other forms of digital media program content. Students pr"
+     }
+    },
+    {
+     "label": "Program Requirements",
+     "tag": "A",
+     "href": "#programrequirementstextcontainer",
+     "role": "tab",
+     "aria_controls": "programrequirementstextcontainer",
+     "onclick": "return showSection('programrequirementstext');",
+     "in_menu": "nav#tabs",
+     "in_tablist": "ul.clearfix",
+     "parents": [
+      "li#programrequirementstexttab",
+      "ul.clearfix",
+      "nav#tabs"
+     ],
+     "target": {
+      "el": "div#programrequirementstextcontainer.page_content.tab_content",
+      "rects": 0,
+      "display": "none",
+      "visibility": "visible",
+      "aria_hidden": "true",
+      "hidden_attr": false,
+      "in_menu": null,
+      "text_chars": 1353,
+      "inner_chars": 1353,
+      "subjects": 1,
+      "head": "Program Requirements This degree requires the completion of General Education coursework plus the following: Course List Code Number Course Title Units REQUIRED COURSES TV 1Intro to TV & Emerging Medi"
+     }
+    },
+    {
+     "label": "Back to top",
+     "tag": "A",
+     "href": "#header",
+     "role": null,
+     "aria_controls": null,
+     "onclick": "",
+     "in_menu": "footer#footer",
+     "in_tablist": null,
+     "parents": [
+      "footer#footer",
+      "body",
+      "html.js"
+     ],
+     "target": {
+      "el": "header#header",
+      "rects": 1,
+      "display": "block",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": "header#header",
+      "text_chars": 1713,
+      "inner_chars": 251,
+      "subjects": 0,
+      "head": "Catalog Home Class Schedule Registration Dates Open Search Menu Search catalog Submit search Search location Search Catalog Only Search LBCC Programs Courses Courses Course Descriptions Search Course "
+     }
+    },
+    {
+     "label": "Close this window",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "#print-dialog",
+     "onclick": "hidePrintDialog(); return false;",
+     "in_menu": null,
+     "in_tablist": null,
+     "parents": [
+      "div.print-header",
+      "div#print-dialog.screen.inactivescreen",
+      "body"
+     ],
+     "target": null
+    },
+    {
+     "label": "Send Page to Printer",
+     "tag": "A",
+     "href": "#",
+     "role": "button",
+     "aria_controls": null,
+     "onclick": "hidePrintDialog();window.print();return false",
+     "in_menu": null,
+     "in_tablist": null,
+     "parents": [
+      "p",
+      "li",
+      "ul"
+     ],
+     "target": null
+    },
+    {
+     "label": "Close this window",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "search-dialog",
+     "onclick": "hideSearchDialog(); return false;",
+     "in_menu": null,
+     "in_tablist": null,
+     "parents": [
+      "div.search-header",
+      "div#search-dialog.screen.inactivescreen",
+      "body"
+     ],
+     "target": {
+      "el": "div#search-dialog.screen.inactivescreen",
+      "rects": 0,
+      "display": "none",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": null,
+      "text_chars": 234,
+      "inner_chars": 234,
+      "subjects": 0,
+      "head": "Close this window Search Search catalog Submit search Search location Search Catalog Only Search LBCC"
+     }
+    }
+   ],
+   "hidden": [
+    {
+     "el": "ul#/student-resources/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 840,
+     "subjects": 0,
+     "head": "Admissions &​ RecordsToggle Admissions &​ Records Admissions Requirements Applying to the College Registration Procedures Enrollment Priorities Procedures for Application to School of Health and Scien"
+    },
+    {
+     "el": "ul#/academic-policies-support/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 418,
+     "subjects": 0,
+     "head": "Academic PoliciesToggle Academic Policies Academic Policies and Board Procedures Student Office Hours and Syllabi Course Numbering System Student Scholarship Student Attendance and Auditing Course Req"
+    },
+    {
+     "el": "ul#/academic-requirements/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 637,
+     "subjects": 0,
+     "head": "General Education, Transfer and Degree/​Certificate RequirementsToggle General Education, Transfer and Degree/​Certificate Requirements General Information General Education Patterns General Education"
+    },
+    {
+     "el": "ul#/degrees-certificates/administrative-assistant-office-technologies/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 428,
+     "subjects": 0,
+     "head": "Introduction to Computers -​ Certificate of Completion Microsoft Access for Windows -​ Certificate of Completion Microsoft Excel -​ Certificate of Completion Microsoft Office -​ Certificate of Complet"
+    },
+    {
+     "el": "ul#/degrees-certificates/architectural-design/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 678,
+     "subjects": 0,
+     "head": "Architectural Design -​ Associate in Science Architectural Design -​ Certificate of Achievement Building Information Modeling (BIM) Coordinator -​ Certificate of Achievement Design Basics -​ Certifica"
+    },
+    {
+     "el": "ul#/degrees-certificates/automotive-technology/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 502,
+     "subjects": 0,
+     "head": "Automotive Technology -​ Associate in Science Automotive Engine and Transmission Service -​ Certificate of Achievement Automotive Engine Performance Service -​ Certificate of Achievement Automotive Ma"
+    },
+    {
+     "el": "ul#/degrees-certificates/business/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 1726,
+     "subjects": 0,
+     "head": "Economics -​ Associate in Arts Transfer Degree Business Administration 2.0 -​ Associate in Science Transfer Degree Business: Accounting Concentration -​ Associate in Arts Business: General Business Co"
+    },
+    {
+     "el": "ul#/degrees-certificates/business-information-worker/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 768,
+     "subjects": 0,
+     "head": "Digital and Social Media -​ Certificate of Achievement Microsoft Essentials -​ Certificate of Achievement Telecommuting Fundamentals -​ Certificate of Achievement Business Digital Literacy -​ Certific"
+    },
+    {
+     "el": "ul#/degrees-certificates/child-development-early-childhood-education/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 1208,
+     "subjects": 0,
+     "head": "Early Childhood Education -​ Associate in Science Transfer Degree Child Development: Early Childhood Education -​ Associate in Arts Child Development: Early Childhood Education -​ Certificate of Achie"
+    },
+    {
+     "el": "ul#/degrees-certificates/computer-security-networking/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 648,
+     "subjects": 0,
+     "head": "Cloud Computing -​ Associate in Science Computer Security and Networking -​ Associate in Science Information Technology Cybersecurity -​ Associate in Science Cloud Computing -​ Certificate of Achievem"
+    },
+    {
+     "el": "ul#/degrees-certificates/construction-technology/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 759,
+     "subjects": 0,
+     "head": "Construction Inspection -​ Associate in Science Construction Management -​ Associate in Science Construction Technology -​ Associate in Science ADU Remodeling -​ Certificate of Achievement Carpentry -"
+    },
+    {
+     "el": "ul#/degrees-certificates/electrical-technology/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 403,
+     "subjects": 0,
+     "head": "Electrical Apprenticeship Preparation -​ Certificate of Achievement Electrical Program Preparation -​ Certificate of Completion FCC Amateur Radio Technician Preparation -​ Certificate of Completion IP"
+    },
+    {
+     "el": "ul#/degrees-certificates/english-second-language/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 905,
+     "subjects": 0,
+     "head": "English for Every Day – Level 1 -​ Certificate of Competency English for Every Day – Level 2 -​ Certificate of Competency English for Every Day – Level 3 -​ Certificate of Competency ESL Literacy -​ C"
+    },
+    {
+     "el": "ul#/degrees-certificates/fashion-design/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 680,
+     "subjects": 0,
+     "head": "Fashion Design -​ Associate in Science Fashion Design -​ Certificate of Achievement Fashion Design: Custom Apparel Design -​ Certificate of Achievement Fashion Design: Patternmaker/​Technical Design -"
+    },
+    {
+     "el": "ul#/degrees-certificates/library-technician/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 554,
+     "subjects": 0,
+     "head": "Library Technician -​ Associate in Science Library Technician -​ Certificate of Achievement Foundations in Academic Research -​ Certificate of Accomplishment Library Technician -​ Certificate of Compl"
+    },
+    {
+     "el": "ul#/degrees-certificates/medical-assisting-program/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 472,
+     "subjects": 0,
+     "head": "Medical Assisting: Combined Administrative/​Clinical -​ Associate in Science Medical Assisting: Administrative Option -​ Certificate of Achievement Medical Assisting: Clinical Option -​ Certificate of"
+    },
+    {
+     "el": "ul#/degrees-certificates/nutrition-dietetics/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 805,
+     "subjects": 0,
+     "head": "Nutrition and Dietetics -​ Associate in Science Transfer Degree Dietetic Service Supervisor -​ Associate in Arts Nutrition Assistant -​ Associate in Science Child Nutrition Management -​ Certificate o"
+    },
+    {
+     "el": "ul#/degrees-certificates/welding-technology/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 744,
+     "subjects": 0,
+     "head": "Welding Technology -​ Associate in Science Gas Tungsten Arc Welding (GTAW) -​ Certificate of Achievement Introduction to Gas Tungsten Arc Welding (GTAW) -​ Certificate of Achievement Introduction to S"
+    },
+    {
+     "el": "ul#/course-descriptions/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 3620,
+     "subjects": 0,
+     "head": "C-​ID Numbering Accounting (ACCTG) Addiction Treatment Counseling &​ Mental Health Studies (ATCMHS) Administration of Justice (ADJUS) Advanced Manufacturing Tech (ADMT) Allied Health (AH) American Sig"
+    },
+    {
+     "el": "ul#/noncredit/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 7612,
+     "subjects": 0,
+     "head": "WelcomeToggle Welcome Mission, Vision, and Values President's Message Academic Senate Message Community Partners What is Noncredit? Noncredit Programs of StudyToggle Noncredit Programs of Study Admini"
+    },
+    {
+     "el": "ul#/courses/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 67725,
+     "subjects": 120,
+     "head": "ACCTG 1A -​ Financial Accounting ACCTG 1B -​ Managerial Accounting ACCTG 200 -​ Introduction to Accounting ACCTG 205 -​ Fundamentals of Tax ACCTG 228 -​ Computerized Gen Ledger Account Systems ACCTG 2"
+    },
+    {
+     "el": "div#programrequirementstextcontainer.page_content.tab_content",
+     "parents": [
+      "main#contentarea",
+      "div#col-content"
+     ],
+     "role": "tabpanel",
+     "labelledby": "programrequirementstexttab",
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": null,
+     "text_chars": 1353,
+     "subjects": 1,
+     "head": "Program Requirements This degree requires the completion of General Education coursework plus the following: Course List Code Number Course Title Units REQUIRED COURSES TV 1Intro to TV & Emerging Medi"
+    }
+   ],
+   "inner_chars": 8113,
+   "content_chars": 119532
+  },
+  "tabPanels": [
+   {
+    "label": "Close this window",
+    "id": "search-dialog",
+    "chars": 101
+   }
+  ],
+  "hidden_tabs_chars": 126
+ },
+ "02636": {
+  "url": "https://lbcc-public.courseleaf.com/degrees-certificates/kinesiology/kinesiology-aa/",
+  "status": 200,
+  "access": "ok",
+  "final_url": "https://lbcc-public.courseleaf.com/degrees-certificates/kinesiology/kinesiology-aa/",
+  "error": null,
+  "probe": {
+   "tabs": [
+    {
+     "label": "Skip to Content",
+     "tag": "A",
+     "href": "#contentarea",
+     "role": null,
+     "aria_controls": null,
+     "onclick": "",
+     "in_menu": "nav.accessible",
+     "in_tablist": null,
+     "parents": [
+      "li",
+      "ul",
+      "div.accessible-menu"
+     ],
+     "target": {
+      "el": "main#contentarea",
+      "rects": 1,
+      "display": "block",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": null,
+      "text_chars": 6027,
+      "inner_chars": 925,
+      "subjects": 0,
+      "head": "Home›Degrees/Certificates›Kinesiology›Kinesiology - Associate in Arts Kinesiology - Associate in Arts Print Options Apply Now //<![CDATA[ var defshow = \"text\"; var bodycontainer = \"#body\"; var validha"
+     }
+    },
+    {
+     "label": "Open\nSearch",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "search-dialog",
+     "onclick": "showSearchDialog(); return false;",
+     "in_menu": "nav.lbcc-nav",
+     "in_tablist": null,
+     "parents": [
+      "li",
+      "ul",
+      "nav.lbcc-nav"
+     ],
+     "target": {
+      "el": "div#search-dialog.screen.inactivescreen",
+      "rects": 0,
+      "display": "none",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": null,
+      "text_chars": 234,
+      "inner_chars": 234,
+      "subjects": 0,
+      "head": "Close this window Search Search catalog Submit search Search location Search Catalog Only Search LBCC"
+     }
+    },
+    {
+     "label": "Menu",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "navigation",
+     "onclick": "",
+     "in_menu": "header#header",
+     "in_tablist": null,
+     "parents": [
+      "div.wrap",
+      "div.header-lower",
+      "header#header"
+     ],
+     "target": {
+      "el": "nav#navigation",
+      "rects": 1,
+      "display": "block",
+      "visibility": "visible",
+      "aria_hidden": "false",
+      "hidden_attr": false,
+      "in_menu": "nav#navigation",
+      "text_chars": 1463,
+      "inner_chars": 191,
+      "subjects": 0,
+      "head": "Search catalog Submit search Search location Search Catalog Only Search LBCC Programs Courses Courses Course Descriptions Search Course Course Outline of Record (COR) Course Descriptions Search Course"
+     }
+    },
+    {
+     "label": "COURSES",
+     "tag": "A",
+     "href": "#",
+     "role": null,
+     "aria_controls": null,
+     "onclick": "",
+     "in_menu": "nav#navigation",
+     "in_tablist": null,
+     "parents": [
+      "li.isparent",
+      "ul#main-nav.clearfix",
+      "nav#navigation"
+     ],
+     "target": null
+    },
+    {
+     "label": "Courses",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "psub1",
+     "onclick": "",
+     "in_menu": "nav#navigation",
+     "in_tablist": null,
+     "parents": [
+      "li.isparent",
+      "ul#main-nav.clearfix",
+      "nav#navigation"
+     ],
+     "target": {
+      "el": "ul#psub1.mSub",
+      "rects": 0,
+      "display": "none",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": "nav#navigation",
+      "text_chars": 150,
+      "inner_chars": 150,
+      "subjects": 0,
+      "head": "Course Descriptions Search Course Course Outline of Record (COR)"
+     }
+    },
+    {
+     "label": "A-Z INDEX",
+     "tag": "A",
+     "href": "#",
+     "role": null,
+     "aria_controls": null,
+     "onclick": "",
+     "in_menu": "nav#navigation",
+     "in_tablist": null,
+     "parents": [
+      "li.isparent",
+      "ul#main-nav.clearfix",
+      "nav#navigation"
+     ],
+     "target": null
+    },
+    {
+     "label": "A-Z Index",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "psub2",
+     "onclick": "",
+     "in_menu": "nav#navigation",
+     "in_tablist": null,
+     "parents": [
+      "li.isparent",
+      "ul#main-nav.clearfix",
+      "nav#navigation"
+     ],
+     "target": {
+      "el": "ul#psub2.mSub",
+      "rects": 0,
+      "display": "none",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": "nav#navigation",
+      "text_chars": 138,
+      "inner_chars": 138,
+      "subjects": 0,
+      "head": "Degrees/Certificates A-Z Catalog A-Z Departments A-Z"
+     }
+    },
+    {
+     "label": "Overview",
+     "tag": "A",
+     "href": "#textcontainer",
+     "role": "tab",
+     "aria_controls": "textcontainer",
+     "onclick": "return showSection('text');",
+     "in_menu": "nav#tabs",
+     "in_tablist": "ul.clearfix",
+     "parents": [
+      "li#texttab.active",
+      "ul.clearfix",
+      "nav#tabs"
+     ],
+     "target": {
+      "el": "div#textcontainer.page_content.tab_content",
+      "rects": 1,
+      "display": "block",
+      "visibility": "visible",
+      "aria_hidden": "false",
+      "hidden_attr": false,
+      "in_menu": null,
+      "text_chars": 762,
+      "inner_chars": 763,
+      "subjects": 0,
+      "head": "Plan Code: 1701 This program prepares students for entry-level positions as physical activity specialists in fitness, health, and medical settings (i.e. health clubs, rehabilitative exercise centers, "
+     }
+    },
+    {
+     "label": "Program Requirements",
+     "tag": "A",
+     "href": "#programrequirementstextcontainer",
+     "role": "tab",
+     "aria_controls": "programrequirementstextcontainer",
+     "onclick": "return showSection('programrequirementstext');",
+     "in_menu": "nav#tabs",
+     "in_tablist": "ul.clearfix",
+     "parents": [
+      "li#programrequirementstexttab",
+      "ul.clearfix",
+      "nav#tabs"
+     ],
+     "target": {
+      "el": "div#programrequirementstextcontainer.page_content.tab_content",
+      "rects": 0,
+      "display": "none",
+      "visibility": "visible",
+      "aria_hidden": "true",
+      "hidden_attr": false,
+      "in_menu": null,
+      "text_chars": 3658,
+      "inner_chars": 3658,
+      "subjects": 0,
+      "head": "Program Requirements This degree requires the completion of General Education coursework plus the following: Course List Code Number Course Title Units REQUIRED COURSES KINPP 1Introduction to Kinesiol"
+     }
+    },
+    {
+     "label": "Back to top",
+     "tag": "A",
+     "href": "#header",
+     "role": null,
+     "aria_controls": null,
+     "onclick": "",
+     "in_menu": "footer#footer",
+     "in_tablist": null,
+     "parents": [
+      "footer#footer",
+      "body",
+      "html.js"
+     ],
+     "target": {
+      "el": "header#header",
+      "rects": 1,
+      "display": "block",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": "header#header",
+      "text_chars": 1713,
+      "inner_chars": 251,
+      "subjects": 0,
+      "head": "Catalog Home Class Schedule Registration Dates Open Search Menu Search catalog Submit search Search location Search Catalog Only Search LBCC Programs Courses Courses Course Descriptions Search Course "
+     }
+    },
+    {
+     "label": "Close this window",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "#print-dialog",
+     "onclick": "hidePrintDialog(); return false;",
+     "in_menu": null,
+     "in_tablist": null,
+     "parents": [
+      "div.print-header",
+      "div#print-dialog.screen.inactivescreen",
+      "body"
+     ],
+     "target": null
+    },
+    {
+     "label": "Send Page to Printer",
+     "tag": "A",
+     "href": "#",
+     "role": "button",
+     "aria_controls": null,
+     "onclick": "hidePrintDialog();window.print();return false",
+     "in_menu": null,
+     "in_tablist": null,
+     "parents": [
+      "p",
+      "li",
+      "ul"
+     ],
+     "target": null
+    },
+    {
+     "label": "Close this window",
+     "tag": "BUTTON",
+     "href": null,
+     "role": null,
+     "aria_controls": "search-dialog",
+     "onclick": "hideSearchDialog(); return false;",
+     "in_menu": null,
+     "in_tablist": null,
+     "parents": [
+      "div.search-header",
+      "div#search-dialog.screen.inactivescreen",
+      "body"
+     ],
+     "target": {
+      "el": "div#search-dialog.screen.inactivescreen",
+      "rects": 0,
+      "display": "none",
+      "visibility": "visible",
+      "aria_hidden": null,
+      "hidden_attr": false,
+      "in_menu": null,
+      "text_chars": 234,
+      "inner_chars": 234,
+      "subjects": 0,
+      "head": "Close this window Search Search catalog Submit search Search location Search Catalog Only Search LBCC"
+     }
+    }
+   ],
+   "hidden": [
+    {
+     "el": "ul#/student-resources/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 840,
+     "subjects": 0,
+     "head": "Admissions &​ RecordsToggle Admissions &​ Records Admissions Requirements Applying to the College Registration Procedures Enrollment Priorities Procedures for Application to School of Health and Scien"
+    },
+    {
+     "el": "ul#/academic-policies-support/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 418,
+     "subjects": 0,
+     "head": "Academic PoliciesToggle Academic Policies Academic Policies and Board Procedures Student Office Hours and Syllabi Course Numbering System Student Scholarship Student Attendance and Auditing Course Req"
+    },
+    {
+     "el": "ul#/academic-requirements/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 637,
+     "subjects": 0,
+     "head": "General Education, Transfer and Degree/​Certificate RequirementsToggle General Education, Transfer and Degree/​Certificate Requirements General Information General Education Patterns General Education"
+    },
+    {
+     "el": "ul#/degrees-certificates/administrative-assistant-office-technologies/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 428,
+     "subjects": 0,
+     "head": "Introduction to Computers -​ Certificate of Completion Microsoft Access for Windows -​ Certificate of Completion Microsoft Excel -​ Certificate of Completion Microsoft Office -​ Certificate of Complet"
+    },
+    {
+     "el": "ul#/degrees-certificates/architectural-design/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 678,
+     "subjects": 0,
+     "head": "Architectural Design -​ Associate in Science Architectural Design -​ Certificate of Achievement Building Information Modeling (BIM) Coordinator -​ Certificate of Achievement Design Basics -​ Certifica"
+    },
+    {
+     "el": "ul#/degrees-certificates/automotive-technology/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 502,
+     "subjects": 0,
+     "head": "Automotive Technology -​ Associate in Science Automotive Engine and Transmission Service -​ Certificate of Achievement Automotive Engine Performance Service -​ Certificate of Achievement Automotive Ma"
+    },
+    {
+     "el": "ul#/degrees-certificates/business/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 1726,
+     "subjects": 0,
+     "head": "Economics -​ Associate in Arts Transfer Degree Business Administration 2.0 -​ Associate in Science Transfer Degree Business: Accounting Concentration -​ Associate in Arts Business: General Business Co"
+    },
+    {
+     "el": "ul#/degrees-certificates/business-information-worker/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 768,
+     "subjects": 0,
+     "head": "Digital and Social Media -​ Certificate of Achievement Microsoft Essentials -​ Certificate of Achievement Telecommuting Fundamentals -​ Certificate of Achievement Business Digital Literacy -​ Certific"
+    },
+    {
+     "el": "ul#/degrees-certificates/child-development-early-childhood-education/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 1208,
+     "subjects": 0,
+     "head": "Early Childhood Education -​ Associate in Science Transfer Degree Child Development: Early Childhood Education -​ Associate in Arts Child Development: Early Childhood Education -​ Certificate of Achie"
+    },
+    {
+     "el": "ul#/degrees-certificates/computer-security-networking/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 648,
+     "subjects": 0,
+     "head": "Cloud Computing -​ Associate in Science Computer Security and Networking -​ Associate in Science Information Technology Cybersecurity -​ Associate in Science Cloud Computing -​ Certificate of Achievem"
+    },
+    {
+     "el": "ul#/degrees-certificates/construction-technology/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 759,
+     "subjects": 0,
+     "head": "Construction Inspection -​ Associate in Science Construction Management -​ Associate in Science Construction Technology -​ Associate in Science ADU Remodeling -​ Certificate of Achievement Carpentry -"
+    },
+    {
+     "el": "ul#/degrees-certificates/electrical-technology/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 403,
+     "subjects": 0,
+     "head": "Electrical Apprenticeship Preparation -​ Certificate of Achievement Electrical Program Preparation -​ Certificate of Completion FCC Amateur Radio Technician Preparation -​ Certificate of Completion IP"
+    },
+    {
+     "el": "ul#/degrees-certificates/english-second-language/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 905,
+     "subjects": 0,
+     "head": "English for Every Day – Level 1 -​ Certificate of Competency English for Every Day – Level 2 -​ Certificate of Competency English for Every Day – Level 3 -​ Certificate of Competency ESL Literacy -​ C"
+    },
+    {
+     "el": "ul#/degrees-certificates/fashion-design/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 680,
+     "subjects": 0,
+     "head": "Fashion Design -​ Associate in Science Fashion Design -​ Certificate of Achievement Fashion Design: Custom Apparel Design -​ Certificate of Achievement Fashion Design: Patternmaker/​Technical Design -"
+    },
+    {
+     "el": "ul#/degrees-certificates/library-technician/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 554,
+     "subjects": 0,
+     "head": "Library Technician -​ Associate in Science Library Technician -​ Certificate of Achievement Foundations in Academic Research -​ Certificate of Accomplishment Library Technician -​ Certificate of Compl"
+    },
+    {
+     "el": "ul#/degrees-certificates/medical-assisting-program/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 472,
+     "subjects": 0,
+     "head": "Medical Assisting: Combined Administrative/​Clinical -​ Associate in Science Medical Assisting: Administrative Option -​ Certificate of Achievement Medical Assisting: Clinical Option -​ Certificate of"
+    },
+    {
+     "el": "ul#/degrees-certificates/nutrition-dietetics/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 805,
+     "subjects": 0,
+     "head": "Nutrition and Dietetics -​ Associate in Science Transfer Degree Dietetic Service Supervisor -​ Associate in Arts Nutrition Assistant -​ Associate in Science Child Nutrition Management -​ Certificate o"
+    },
+    {
+     "el": "ul#/degrees-certificates/welding-technology/.nav.leveltwo",
+     "parents": [
+      "li.isparent",
+      "ul#/degrees-certificates/.nav.levelone"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 744,
+     "subjects": 0,
+     "head": "Welding Technology -​ Associate in Science Gas Tungsten Arc Welding (GTAW) -​ Certificate of Achievement Introduction to Gas Tungsten Arc Welding (GTAW) -​ Certificate of Achievement Introduction to S"
+    },
+    {
+     "el": "ul#/course-descriptions/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 3620,
+     "subjects": 0,
+     "head": "C-​ID Numbering Accounting (ACCTG) Addiction Treatment Counseling &​ Mental Health Studies (ATCMHS) Administration of Justice (ADJUS) Advanced Manufacturing Tech (ADMT) Allied Health (AH) American Sig"
+    },
+    {
+     "el": "ul#/noncredit/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 7612,
+     "subjects": 0,
+     "head": "WelcomeToggle Welcome Mission, Vision, and Values President's Message Academic Senate Message Community Partners What is Noncredit? Noncredit Programs of StudyToggle Noncredit Programs of Study Admini"
+    },
+    {
+     "el": "ul#/courses/.nav.levelone",
+     "parents": [
+      "li.isparent",
+      "ul#/.nav.levelzero"
+     ],
+     "role": null,
+     "labelledby": null,
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": "nav#cl-menu.togglenav",
+     "text_chars": 67725,
+     "subjects": 120,
+     "head": "ACCTG 1A -​ Financial Accounting ACCTG 1B -​ Managerial Accounting ACCTG 200 -​ Introduction to Accounting ACCTG 205 -​ Fundamentals of Tax ACCTG 228 -​ Computerized Gen Ledger Account Systems ACCTG 2"
+    },
+    {
+     "el": "div#programrequirementstextcontainer.page_content.tab_content",
+     "parents": [
+      "main#contentarea",
+      "div#col-content"
+     ],
+     "role": "tabpanel",
+     "labelledby": "programrequirementstexttab",
+     "display": "none",
+     "visibility": "visible",
+     "in_menu": null,
+     "text_chars": 3658,
+     "subjects": 0,
+     "head": "Program Requirements This degree requires the completion of General Education coursework plus the following: Course List Code Number Course Title Units REQUIRED COURSES KINPP 1Introduction to Kinesiol"
+    }
+   ],
+   "inner_chars": 7908,
+   "content_chars": 121506
+  },
+  "tabPanels": [
+   {
+    "label": "Close this window",
+    "id": "search-dialog",
+    "chars": 101
+   }
+  ],
+  "hidden_tabs_chars": 126
+ }
+}
