@@ -47,6 +47,9 @@
 -- Receipt: kb/receipts/program_record_verdicts_2026-10-08_s347.sql.
 
 -- 1. The fingerprint, the machine checks, and the computed field the page selects.
+-- The fingerprint leaves out the outcomes and (record shape 4, S360) the careers: neither is a
+-- requirement a person confirms, so a rerun that only adds them keeps the verdict. Leaving out a
+-- key no record carried changed no fingerprint (S360 measured all of them before and after).
 create or replace function public.program_record_fp(rec jsonb)
 returns text
 language sql
@@ -54,7 +57,7 @@ immutable
 set search_path = public
 as $$
   select md5(jsonb_build_object(
-    'program', coalesce(rec->'program', '{}'::jsonb) - 'outcomes',
+    'program', coalesce(rec->'program', '{}'::jsonb) - 'outcomes' - 'careers',
     'blocks',  coalesce(rec->'blocks', '[]'::jsonb))::text);
 $$;
 

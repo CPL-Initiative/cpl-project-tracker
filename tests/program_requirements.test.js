@@ -1434,6 +1434,24 @@ block("(19)", function () {
     !!zz && /not on the state's list/.test(zz.textContent) && !zz.querySelector(".prh-coci"));
 });
 
+// ── (20) Recommended electives as their own block, and the careers the catalog names (Sam, 2026-10-11) ──
+// "The recommended Electives should be added with blocks"; "grab the career info". The failures this
+// guards: a recommended block read as required, and careers the record keeps but the tab never shows.
+block("(20)", function () {
+  const m = loadModule();
+  const rec = JSON.parse(JSON.stringify(IRONWORKER));
+  rec.record.blocks.push({ name: "Recommended Electives", rule: "recommended", minimum: null, option_group: null,
+    stated: { min: null, max: null }, courses: [{ code: "WELD 100", units: 3, alternatives: [] }] });
+  rec.record.program.careers = ["ironworker", "rigger"];
+  m.M._state.registry = REGISTRY; m.M._state.records = [rec]; m.M._state.view = "records";
+  m.M._state.open = { "Cerritos College|42158": true }; m.M._render();
+  const art = m.root.querySelector("article.prh-rec");
+  const h = Array.prototype.filter.call(art.querySelectorAll(".prh-body h4"), function (x) { return /Recommended Electives/.test(x.textContent); })[0];
+  check("(20) a recommended block says in words that it is not required", !!h && /Recommended, not required/.test(h.textContent), h && h.textContent);
+  check("(20) ruleText names it", m.M.ruleText({ rule: "recommended" }, "units", {}) === "Recommended, not required");
+  check("(20) the careers the catalog names show on the record", /Careers the catalog names: ironworker; rigger\./.test(art.textContent));
+});
+
 Promise.all(pending).then(function () {
   let pass = 0;
   for (const [name, ok, why] of results) {

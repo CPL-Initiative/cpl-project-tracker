@@ -44,6 +44,13 @@
 // exactly as printed (program.outcomes, course_outcomes), and the scorer checks
 // each one appears in the catalog text word for word. The comparison with
 // credential skills waits for the skills file.
+// Version 5 (S360, 2026-10-11): record shape version 4, Sam's reading rules 4
+// and 5 from the Mt. San Antonio sample (Open Asks Sheet 61 card 1, "rules"):
+// "The recommended Electives should be added with blocks", so a course the
+// catalog recommends goes in a block of rule "recommended", which never counts
+// toward the award's total; and "grab the career info", so program.careers
+// keeps each career, job title or field the catalog prints for the program,
+// word for word.
 // Deploy with the Supabase MCP deploy_edge_function (project
 // hvuwhnbuahrtptokpqfh, slug program-requirements-extract).
 //
@@ -68,7 +75,7 @@ const RECORD_SCHEMA = {
     program: {
       type: "object",
       additionalProperties: false,
-      required: ["section_heading", "measure", "total_units", "open_elective_units", "ge_pattern", "outcomes"],
+      required: ["section_heading", "measure", "total_units", "open_elective_units", "ge_pattern", "outcomes", "careers"],
       properties: {
         section_heading: {
           type: "string",
@@ -99,6 +106,11 @@ const RECORD_SCHEMA = {
           items: { type: "string" },
           description: "Each program or student learning outcome the catalog prints for this award, word for word, one entry per outcome, without its list number, bullet or lead-in. Empty when the text prints none.",
         },
+        careers: {
+          type: "array",
+          items: { type: "string" },
+          description: "Each career, job title, occupation or career field the text names for this program ('platform artist', 'sound technician', 'careers in education'), word for word as printed, one entry each, without the lead-in ('such as:', 'Career opportunities include'). Empty when the text names none.",
+        },
       },
     },
     blocks: {
@@ -109,10 +121,14 @@ const RECORD_SCHEMA = {
         required: ["name", "rule", "minimum", "option_group", "stated", "courses"],
         properties: {
           name: { type: "string", description: "The block's name as the catalog prints it." },
-          rule: { type: "string", enum: ["all", "choose_courses", "choose_units"] },
+          rule: {
+            type: "string",
+            enum: ["all", "choose_courses", "choose_units", "recommended"],
+            description: "'recommended' holds courses the catalog recommends but does not require; they never count toward the award's total.",
+          },
           minimum: {
             ...NUM_OR_NULL,
-            description: "N for 'choose N courses' or 'choose N units'; null for 'all'.",
+            description: "N for 'choose N courses' or 'choose N units'; null for 'all' and 'recommended'.",
           },
           option_group: {
             anyOf: [{ type: "string" }, { type: "null" }],
@@ -196,6 +212,7 @@ Each block holds courses under one rule, in the catalog's order and with its nam
 - "all": every course is required.
 - "choose_courses": the student picks N courses from the list; minimum is N.
 - "choose_units": the student picks courses totaling N units; minimum is N.
+- "recommended": courses the catalog recommends but does not require ("Recommended Courses", "Recommended Electives", "students are encouraged to take"); minimum is null, and they never count toward the award's total. A course from the closed list that the catalog lists only as recommended goes in this block, not in missing_explained.
 A course with an "or" option or an honors twin is one entry whose alternatives hold the other courses, each with its own units and catalog_addition. A nested choice ("one of the following") inside a required list is its own block.
 
 When the student completes one of several whole blocks ("Select one of the following options", "one of the following sequences"), record each option as its own block and give those blocks the same option_group; a block outside such a choice has option_group null. Under a heading that offers sequences, each sequence is its own block of required courses in that option_group, even when the catalog prints the courses as "or" rows that pair the sequences position by position: "BIOL 1A or BIOL 21" then "BIOL 1B or BIOL 22" under "Select one of the following sequences" is the sequence BIOL 1A and BIOL 1B, or the sequence BIOL 21 and BIOL 22.
@@ -206,11 +223,13 @@ When the catalog prints a total for a block ("6-22 units", "Select a minimum of 
 
 Write each code as the catalog prints it, with the units printed beside it. Write every code with its subject: "CHLD 67 & 67L" is CHLD 67 and CHLD 67L. When the catalog prints a range beside a course ("MICR 1 4-5"), units is 4 and units_max 5; else units_max is null. When a code in the section is missing from the closed list, record it with catalog_addition true, on the course or on the alternative that names it.
 
-program.measure is "units" unless the catalog counts the award in hours, as noncredit programs usually do ("Total Hours of Completion (136 Hours)", "Intro to Lighting Retrofits (40 Hours)"). With "hours", every units field holds hours: the hours printed beside each course and the total hours in total_units. The closed list's 0 units for a noncredit course are not its hours. List every closed-list course you do not place in missing_explained, with the reason in a few words (for example, "named only in the A.S. section", "listed as a recommended course", "not in the text").
+program.measure is "units" unless the catalog counts the award in hours, as noncredit programs usually do ("Total Hours of Completion (136 Hours)", "Intro to Lighting Retrofits (40 Hours)"). With "hours", every units field holds hours: the hours printed beside each course and the total hours in total_units. The closed list's 0 units for a noncredit course are not its hours. List every closed-list course you do not place in missing_explained, with the reason in a few words (for example, "named only in the A.S. section", "not in the text").
 
 program.total_units is the total the catalog states for this award's requirements: the major or the certificate, without general education. A range ("27-29 units") is min 27 and max 29. When the text states no total, both are null; never compute one yourself. open_elective_units is set only when the catalog names open electives as part of that total. General education courses never go in a block.
 
 Outcomes. Copy each program learning outcome (or program student learning outcome) the text prints for this award into program.outcomes exactly as printed: the same words, spelling, capitals and punctuation. One entry per outcome. Leave out its list number or bullet and the lead-in sentence ("Upon successful completion of this program, students should be able to:"). Read a line break inside an outcome as a space. Never reword, shorten, merge, split or complete an outcome, and never write one the text does not print. When the page prints one outcomes list for the program as a whole, and the award shares it, record it and say so in notes. Outcomes printed under a single course go in course_outcomes under that course's code, the same way. When the text prints a heading for outcomes but no outcomes under it, both stay empty; say so in notes.
+
+Careers. Copy each career, job title, occupation or career field the text names for this program into program.careers, word for word, one entry each: "such as: platform artist, educator, barber" is three entries, and "prepares students for careers in education, professional sports, writing, and healthcare" is four ("education", "professional sports", "writing", "healthcare"). Read them from the program's own section, its description and a careers or career opportunities heading. Never write a career the text does not name, and never take one from a course description or the site's menus. Empty when the text names none.
 
 Record only what the text states. Use notes for anything a reviewer should check: a table cut off at a page break, a rule you read as ambiguous, a section that seems to belong to another catalog year.`;
 

@@ -39,7 +39,7 @@ THE RECORD, version 2 (one per program per catalog year; the extractor writes it
                  "total_units": 30.5 | {"min": 27, "max": 29} | null,
                  "open_elective_units": 0, ...},
      "blocks": [{"name": "Required Courses",
-                 "rule": "all" | "choose_courses" | "choose_units",
+                 "rule": "all" | "choose_courses" | "choose_units" | "recommended",
                  "minimum": null | number,       # N courses or N units
                  "option_group": null | "Option",  # blocks sharing one are alternatives
                  "stated": {"min": 6, "max": 22},  # the block total the catalog prints
@@ -179,6 +179,10 @@ def block_units(block: dict, listed: dict, hours: bool = False
     computed when it cannot. The block total the catalog prints stands in when
     a course's units are missing or the rule picks units."""
     rule, minimum = block.get("rule"), _num(block.get("minimum"))
+    # Courses the catalog recommends count toward nothing (Sam's rule 4, 2026-10-11:
+    # "The recommended Electives should be added with blocks").
+    if rule == "recommended":
+        return (0.0, 0.0), []
     stated = _span(block.get("stated"))
     spans = [choice_units(c, listed, hours) for c in block.get("courses") or []]
     if rule == "all":
@@ -329,13 +333,28 @@ def outcomes_check(record: dict, text: str | None) -> dict:
 
 def requirements_md5(record: dict) -> str:
     """A fingerprint of the requirements a person reads (the program's figures
-    and every block), leaving out the outcomes, which the scorer checks word
-    for word. A rerun that changes the requirements changes it; one that only
-    adds outcomes does not."""
-    program = {k: v for k, v in (record.get("program") or {}).items() if k != "outcomes"}
+    and every block), leaving out the outcomes and the careers, which the
+    scorer checks word for word. A rerun that changes the requirements changes
+    it; one that only adds outcomes or careers does not. The server's
+    program_record_fp (chatbox/supabase_program_record_verdicts.sql) leaves out
+    the same two."""
+    program = {k: v for k, v in (record.get("program") or {}).items() if k not in ("outcomes", "careers")}
     body = {"program": program, "blocks": record.get("blocks") or []}
     return hashlib.md5(json.dumps(body, sort_keys=True, ensure_ascii=False,
                                   separators=(",", ":")).encode()).hexdigest()
+
+
+def careers_check(record: dict, text: str | None) -> dict:
+    """Each career the record keeps (record shape v4, Sam's rule 5) must appear in
+    the catalog text as printed, as an outcome must. Reported beside the checks;
+    it holds no record back."""
+    careers = [c for c in ((record.get("program") or {}).get("careers") or [])]
+    if text is None:
+        return {"count": len(careers), "not_verbatim": list(careers), "pass": not careers}
+    readings = [r.lower() for r in _readings(text)]
+    bad = [c for c in careers if not _flat(c if isinstance(c, str) else "") or
+           not any(_flat(c).lower() in r for r in readings)]
+    return {"count": len(careers), "not_verbatim": bad, "pass": not bad}
 
 
 def score(record: dict, closed: list[dict], text: str | None = None) -> dict:
@@ -398,6 +417,7 @@ def score(record: dict, closed: list[dict], text: str | None = None) -> dict:
         "arithmetic": arith,
         "repeated": {"codes": rep_codes, "pass": not rep_codes},
         "outcomes": outs,
+        "careers": careers_check(record, text),
         "pass": (not unexplained and not unflagged and arith["pass"] and not rep_codes
                  and outs["pass"]),
     }

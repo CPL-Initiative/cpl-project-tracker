@@ -566,6 +566,9 @@ def plan(blocks: list, has, units_of=None, hints=None, path=False) -> dict:
 
     total, seen, pick_codes = 0.0, set(), []
     for b in blocks:
+        # Courses the catalog recommends count toward nothing (Sam's rule 4, 2026-10-11).
+        if b.get("rule") == "recommended":
+            continue
         g = b.get("option_group")
         if g:
             if g in seen:

@@ -3457,6 +3457,8 @@ function requirementLines(rec: any, titles: Map<string, string>, college?: strin
       return `choose ${n} course${n === 1 ? "" : "s"}`;
     }
     if (b.rule === "choose_units") return `choose ${fmtAmount(b.minimum, null, measure) || "the units the catalog names"}`;
+    // Courses the catalog recommends count toward nothing (Sam's rule 4, 2026-10-11).
+    if (b.rule === "recommended") return "recommended, not required; these count toward no requirement and no total";
     return "all required";
   };
   const blockLines = (b: any, pad: string): string => {
@@ -3482,6 +3484,8 @@ function requirementLines(rec: any, titles: Map<string, string>, college?: strin
     : `  The catalog prints no program total. Say so; never add one up.\n`;
   if (prog.open_elective_units) out += `  Open electives: ${fmtAmount(prog.open_elective_units, null, measure)}.\n`;
   if (prog.ge_pattern) out += `  General education: the ${prog.ge_pattern} pattern, beside the major.\n`;
+  // The careers the catalog names (Sam's rule 5, 2026-10-11), as printed.
+  if (Array.isArray(prog.careers) && prog.careers.length) out += `  Careers the catalog names for it: ${prog.careers.join("; ")}.\n`;
   out += displayLines(disp, college || "the college", measure, total);
   return out;
 }

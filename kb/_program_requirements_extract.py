@@ -44,8 +44,10 @@ FUNCTION = "program-requirements-extract"
 MIN_COVERAGE = 0.5      # a fixture whose page named fewer listed codes was not the program's page
 # The record shape the function writes (its header names each version). Shape 3
 # (S334, Sam's sheet 33 card 4): program and course outcomes as printed, which
-# the scorer checks word for word against the catalog text.
-RECORD_SHAPE = 3
+# the scorer checks word for word against the catalog text. Shape 4 (S360, Sam's
+# rules 4 and 5, Open Asks Sheet 61 card 1): a block of rule "recommended" for
+# courses the catalog recommends, and program.careers as printed.
+RECORD_SHAPE = 4
 
 # Dollars per million tokens, Claude Opus 5.5 (claude-api skill, cached 2026-09-25).
 PRICE = {"claude-opus-5-5": {"input": 4.00, "output": 20.00, "cache_read": 0.20, "cache_write": 5.00}}
@@ -56,7 +58,9 @@ def load_sources(only: str = "") -> list[dict]:
     for path in sorted(glob.glob(os.path.join(SOURCES, "*.json"))):
         with open(path) as fh:
             src = json.load(fh)
-        if only and only.lower() not in (src["college"] + " " + src["control_number"]).lower():
+        # A comma-separated list matches any of its parts ("cerritos_41982,ivc,smc"), the file's name included.
+        hay = (src["college"] + " " + src["control_number"] + " " + os.path.basename(path)).lower()
+        if only and not any(t.strip().lower() in hay for t in only.split(",") if t.strip()):
             continue
         src["_file"] = os.path.relpath(path, os.path.dirname(HERE))
         out.append(src)
@@ -94,7 +98,7 @@ def call(src: dict, key: str) -> dict:
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument("--only", default="", help="programs whose college or number contains this")
+    ap.add_argument("--only", default="", help="programs whose college, number or file name contains this (comma-separated: any)")
     args = ap.parse_args(argv)
     key = os.environ.get("SUPABASE_SERVICE_KEY")
     if not key:

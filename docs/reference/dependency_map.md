@@ -198,7 +198,8 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 
 | Dataset | Read by | Written by |
 |---|---|---|
-| `cpl-chat` | tabs: `chatbot`, `gr-priorities`, `memory` · modules: `prototype/ccr_universe.js`, `prototype/check_skyview_sweep.js` · pages: `fact-sheet/index.html`, `funding-model/index.html`, `prototype/skyview.html`, `sierra/index.html` | produced by: `chatbox/supabase/functions/cpl-chat/index.ts`, `cpl-chat-deploy.yml` |
+| `FN` | none found | produced by: `cpl-chat-deploy.yml` |
+| `cpl-chat` | tabs: `chatbot`, `gr-priorities`, `memory` · modules: `prototype/ccr_universe.js`, `prototype/check_skyview_sweep.js` · pages: `fact-sheet/index.html`, `funding-model/index.html`, `prototype/skyview.html`, `sierra/index.html` | produced by: `chatbox/supabase/functions/cpl-chat/index.ts` |
 | `cpl-chat-preview` | none found | produced by: `cpl-chat-preview-ab.yml` |
 | `cpl-news-harvest` | none found | produced by: `chatbox/supabase/functions/cpl-news-harvest/index.ts` |
 | `generate-letter` | pages: `budget-support/web/curator.html`, `budget-support/web/new-letter.html` | — |
@@ -1064,5 +1065,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 97 Supabase tables · 36 RPCs · 6 edge functions · 621 file
+Coverage: 97 Supabase tables · 36 RPCs · 7 edge functions · 621 file
 datasets · 166 external services · 426 consumers · 47 workflows · 39 tabs.
