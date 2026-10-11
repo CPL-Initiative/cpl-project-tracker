@@ -823,7 +823,8 @@ of every later load and display build (#1983).
 units, MIS CB units only. The catalogs print hours for 331 of 395 course entries in the loaded noncredit programs. Sam
 chose the lecture rate (*"handy when comparing mirrored courses ... and for funding based on equivalent FTES"*), for
 estimating only, and never in Sierra (*"misconstrued as real units"*): hours / 16 rounded down to the half unit keeps his
-bands whole (48-54 h = 3.0); the first half unit falls at 56 h where his note said 63, put to him. Both pages show it;
+bands whole (48-54 h = 3.0); the first half unit falls at 56 h where his note said 63. Put to him on Open Asks Sheet 63,
+he kept it (*Keep hours / 16*, 16:11Z): one rule at every size. Both pages show it;
 Sierra reads named display fields only and a test fails if she names it (#1984, build `2a73f45c9c84`).
 
 ## S363 SkyCedar, 2026-10-11: Long Beach City's tab bar sits in a nav, and the full read runs
