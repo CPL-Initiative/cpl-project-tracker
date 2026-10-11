@@ -7,7 +7,7 @@ kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
   - "[[CLAUDE]]"
-  - "[[docs/program_requirements_harvest_lessons]]"
+  - "[[docs/program_requirements_harvest_lessons_archive]]"
   - "[[docs/kb-notes/methodology-two-mode-sync]]"
   - "[[docs/kb-notes/adr-supersede-dont-mutate-synthetic-layer]]"
 artifacts:
@@ -28,7 +28,7 @@ artifacts:
 Sam ruled on open-asks sheet 39 (2026-10-05) that OSHA takes one name as issuer across the Credential
 Reference (CER), and that a trainer is never the issuer. The card proposed writing issuer override rows into
 `kb_curation`. Reading the two syncs that carry those rows into `kb/credentials.json` showed the proposal would
-not have worked. Story: [`program_requirements_harvest_lessons`](../program_requirements_harvest_lessons.md), S333.
+not have worked. Story: [`program_requirements_harvest_lessons_archive`](../program_requirements_harvest_lessons_archive.md), S333.
 
 ## The claim
 

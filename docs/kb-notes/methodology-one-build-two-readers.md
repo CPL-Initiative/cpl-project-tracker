@@ -7,7 +7,7 @@ kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
   - "[[CLAUDE]]"
-  - "[[docs/program_requirements_harvest_lessons]]"
+  - "[[docs/program_requirements_harvest_lessons_archive]]"
   - "[[docs/reference/lanes/program-requirements-harvest]]"
 artifacts:
   - kb/_build_roep_display.py
@@ -27,7 +27,7 @@ CPL Pathways shows each program's CPL "up to" figure and the CPL on each course;
 Sierra answers the same questions in conversation. Sam asked for both
 (2026-10-04): the page for colleges and the public, Sierra "wired to understand
 all the included data and considerations". Lessons:
-[`docs/program_requirements_harvest_lessons.md`](../program_requirements_harvest_lessons.md), S327.
+[`docs/program_requirements_harvest_lessons_archive.md`](../program_requirements_harvest_lessons_archive.md), S327.
 
 ## The claim
 

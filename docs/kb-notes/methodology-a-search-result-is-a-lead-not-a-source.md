@@ -6,7 +6,7 @@ tags: [methodology, college-page-read, program-requirements, web-search, provena
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
-  - "[[docs/program_requirements_harvest_lessons]]"
+  - "[[docs/program_requirements_harvest_lessons_archive]]"
   - "[[docs/reference/lanes/program-requirements-harvest]]"
 artifacts:
   - kb/_college_page_read.py
@@ -20,7 +20,7 @@ artifacts:
 
 ## Context
 
-The program requirements harvest reads each college's public pages from a runner, and a session finds those pages by web search. For Cerritos College's list of articulated high school courses, search returned confident results: titled pages, snippets describing a public agreement search, even a page described as listing agreements by district. Three of them were dead. Detail: [the lessons doc](../program_requirements_harvest_lessons.md), S331.
+The program requirements harvest reads each college's public pages from a runner, and a session finds those pages by web search. For Cerritos College's list of articulated high school courses, search returned confident results: titled pages, snippets describing a public agreement search, even a page described as listing agreements by district. Three of them were dead. Detail: [the lessons archive](../program_requirements_harvest_lessons_archive.md), S331.
 
 ## The claim
 
@@ -50,7 +50,7 @@ It does not mean search is unreliable for finding things. Search found the leads
 
 ## See also
 
-- `[[docs/program_requirements_harvest_lessons]]`: S331, reads 7-12
+- `[[docs/program_requirements_harvest_lessons_archive]]`: S331, reads 7-12
 - `[[docs/kb-notes/methodology-search-the-awarding-body-not-just-the-name]]`: the other half of searching well
 - PR #1860: the reads and the reader's expand and rows steps
 
