@@ -277,7 +277,8 @@ def candidates(program: dict, pages: list[dict]) -> list[dict]:
         award_hit, title = label_score(pg, program)
         if len(want) < SMALL_LIST and title < 0.5:
             continue   # a list this short names its courses on many pages; the page must name the program too
-        out.append({"url": pg["url"], "coverage": cov, "found": found, "text": text, "field": field,
+        out.append({"url": pg["url"], "group": pg.get("group") or pg["url"], "coverage": cov, "found": found,
+                    "text": text, "field": field,
                     "got": pg["got"], "label": {"award": award_hit, "title": title},
                     "key": (award_hit, title, round(cov, 3))})
     out.sort(key=lambda c: c["key"], reverse=True)
@@ -321,15 +322,15 @@ def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
         for cn, cands in ranked.items():
             if pos[cn] < len(cands):
                 c = cands[pos[cn]]
-                by_page.setdefault(c["url"], []).append((cn, c))
+                by_page.setdefault(c.get("group") or c["url"], []).append((cn, c))
         moved = False
-        for url, claims in by_page.items():
+        for claims in by_page.values():
             if len(claims) < 2:
                 continue
             keep = page_winners(claims)
-            for cn, _ in claims:
+            for cn, c in claims:
                 if cn not in keep:
-                    lost.setdefault(cn, []).append(url)
+                    lost.setdefault(cn, []).append(c["url"])
                     pos[cn] += 1
                     moved = True
         if not moved:
@@ -567,6 +568,23 @@ def cq_index(get, catalog: int, root: str) -> tuple[list[dict], dict]:
     return list(entries.values()), account
 
 
+# A curriQunet catalog can list one program under two index entries: Norco's
+# Kinesiology, Health & Wellness A.A. is 5545 ("... - (AOE) NAA498/C") and 5552
+# ("... (AOE) - NAA498/C"). Read as two pages, the A.A. took one and the
+# Kinesiology A.A.-T took the other, an emphasis page with none of its
+# requirements (S359, run 38095619629). Entries naming the same local award
+# codes are one page when programs compete for it (assign() groups claims by
+# it), so the program whose award the page names keeps it.
+CQ_LOCAL_CODE = re.compile(r"\b[A-Z]{1,4}\d{2,5}[A-Z]?(?:/[A-Z0-9]{1,8})*\b")
+
+
+def cq_group(title: str, url: str) -> str:
+    """The local award codes an index title ends with, or the page's own address."""
+    tail = (title or "").rsplit(" - ", 1)[-1]
+    codes = sorted(set(CQ_LOCAL_CODE.findall(tail)))
+    return "codes:" + "+".join(codes) if codes else url
+
+
 def cq_page(entry: dict, page: dict | None, prefix: str) -> dict | None:
     """One program entry's page in the shape assign() reads."""
     if not page:
@@ -577,7 +595,7 @@ def cq_page(entry: dict, page: dict | None, prefix: str) -> dict | None:
     got = {"final_url": url, "title": title, "h1": title, "body": text, "content": text,
            "status": 200, "access": "ok", "links": []}
     return {"url": url, "title": title, "h1": title, "body": text, "content": text, "got": got,
-            "codes": page_codes(text), "node": entry.get("id")}
+            "codes": page_codes(text), "node": entry.get("id"), "group": cq_group(entry.get("text") or title, url)}
 
 
 def cq_json(reader, url: str, errors: list) -> dict | None:
