@@ -297,7 +297,7 @@
       // Team-phrase alternative (Phase 1 widening, 2026-07-03) — validated
       // server-side before store; one unlock covers every phrase-enabled tab.
       if (window.CPL_TEAM_PHRASE) {
-        widget.appendChild(el("span", { "style": "color:#999;" }, ["·"]));
+        widget.appendChild(el("span", { "style": "color:var(--text-muted);" }, ["·"]));
         widget.appendChild(window.CPL_TEAM_PHRASE.unlockRow({
           blurb: "or the team phrase:",
           onUnlocked: function () { onChange(); }
@@ -794,8 +794,8 @@
       + '.wpg-act-chip { display:inline-block;padding:0.05rem 0.4rem;background:var(--surface-muted);color:var(--navy-secondary);border-radius:10px;font-size:0.7rem;font-weight:600; }'
       // Session 85 — Current hybrid + title editor affordances
       + '.wpg-live-badge { display:inline-block;margin-left:0.35rem;padding:0.02rem 0.34rem;background:var(--cobalt,#2A6FB0);color:var(--on-accent);border-radius:8px;font-size:0.6rem;font-weight:700;letter-spacing:0.02em;vertical-align:middle;white-space:nowrap; }'
-      + '.wpg-manual-hint { color:#bbb;font-size:0.72rem; }'
-      + '.wpg-editable.wpg-manual-hint, .wpg-editable .wpg-manual-hint { color:#4D7EA8; }'
+      + '.wpg-manual-hint { color:var(--text-muted);font-size:0.72rem; }'
+      + '.wpg-editable.wpg-manual-hint, .wpg-editable .wpg-manual-hint { color:var(--cobalt); }'
       + '.wpg-title-cell { border-radius:3px; }';
     var style = document.createElement("style");
     style.id = "wpg-editor-styles";
@@ -893,7 +893,7 @@
       assocBox.appendChild(lbl);
     });
     if (!ids.activities.length) {
-      assocBox.appendChild(el("span", { "style": "color:#888;font-size:0.78rem;" },
+      assocBox.appendChild(el("span", { "style": "color:var(--text-muted);font-size:0.78rem;" },
         ["(no Activities exist yet — add an Activity first, then return here)"]));
     }
     assocSection.appendChild(assocBox);
@@ -914,7 +914,7 @@
       var grid = el("div", { "class": "wpg-grid-years" }, []);
       YEARS.forEach(function (y) {
         var box = el("div", {}, []);
-        box.appendChild(el("div", { "style": "font-size:0.7rem;color:#888;margin-bottom:0.15rem;" }, [y.lbl]));
+        box.appendChild(el("div", { "style": "font-size:0.7rem;color:var(--text-muted);margin-bottom:0.15rem;" }, [y.lbl]));
         var input = el("input", { "type": "number", "step": "any", "value": "0", "placeholder": "0" }, []);
         store[y.key] = input;
         box.appendChild(input);

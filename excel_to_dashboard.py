@@ -1287,7 +1287,7 @@ def render_annual_goals_table_html(annual_goals, activities=None):
 
     html = '''        <div style="margin:2rem 0;padding:1.5rem;background:var(--surface-opaque);border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
             <h2 style="color:var(--navy-primary);margin:0 0 1rem 0;">Annual Workplan Goals</h2>
-            <div style="overflow-x:auto;">
+            <div style="overflow-x:auto;" tabindex="0" role="region" aria-label="Annual Workplan Goals table">
             <table style="width:100%;border-collapse:collapse;font-size:0.82rem;">
                 <thead>
                     <tr style="background:var(--seal-blue);color:#fff;">
@@ -1376,9 +1376,9 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                     f'data-assoc="{html_escape(assoc_json, quote=True)}" '
                     f'data-assoc-backfilled="{1 if row.get("assoc_backfilled") else 0}" '
                     f'data-activities="{html_escape(activity_options_json, quote=True)}" '
-                    f'style="font-size:0.65rem;color:#888;font-weight:400;'
+                    f'style="font-size:0.65rem;color:var(--text-muted);font-weight:400;'
                     f'margin-top:0.15rem;">'
-                    f'<span style="color:#888;">Contributes to:</span> '
+                    f'<span style="color:var(--text-muted);">Contributes to:</span> '
                     f'{chips_html}'
                     f'<span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span>'
                     f'</div>'
@@ -1406,13 +1406,13 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                 _pad_left = 0.6 + _indent_rem
                 _nest_style = ("border-left:3px solid var(--seal-blue);"
                                if _depth >= 2 else "")
-                _sub_marker = ('<span style="color:var(--seal-blue);opacity:0.65;" '
+                _sub_marker = ('<span style="color:var(--seal-blue-text,#002F6D);" '
                                'aria-hidden="true">↳ </span>' if _depth >= 2 else '')
                 name_cell = (f'<td rowspan="3" style="padding:0.4rem 0.6rem 0.4rem {_pad_left:.2f}rem;'
                              f'border:1px solid #ddd;{_nest_style}'
                              f'vertical-align:top;font-weight:600;background:var(--surface-opaque);">'
                              f'{_sub_marker}'
-                             f'<span style="color:#888;font-size:0.75rem;">{html_escape(row["id"])}</span> '
+                             f'<span style="color:var(--text-muted);font-size:0.75rem;">{html_escape(row["id"])}</span> '
                              f'<span class="wpg-title-cell" data-title-edit="1" '
                              f'data-pid="{html_escape(row["id"], quote=True)}">'
                              f'{html_escape(row["name"])}</span>{desc_line}{chip_line}</td>')
@@ -2652,7 +2652,7 @@ def render_workplan_goals_html(
                 f'data-activities="{html_escape(activity_options_json, quote=True)}" '
                 f'style="font-size:0.72rem;color:var(--text-muted);font-weight:400;'
                 f'margin-top:0.2rem;">'
-                f'<span style="color:#888;">Contributes to:</span> '
+                f'<span style="color:var(--text-muted);">Contributes to:</span> '
                 f'{chips_html}'
                 f'<span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span>'
                 f'</div>'
@@ -3235,9 +3235,9 @@ def render_awg_projects_section_html(work_projects):
     return (
         '<div class="workplan-goals-section" id="awgProjectsSection" style="margin-top:2rem;">\n'
         '            <h2 style="margin-bottom:0.25rem;">Projects '
-        f'<span style="font-size:0.9rem;color:#888;">({len(work_projects)})</span>'
+        f'<span style="font-size:0.9rem;color:var(--text-muted);">({len(work_projects)})</span>'
         '<span id="awgProjectsAddSlot"></span></h2>\n'
-        '            <p style="color:#888;font-size:0.78rem;margin:0 0 1rem 0;">'
+        '            <p style="color:var(--text-muted);font-size:0.78rem;margin:0 0 1rem 0;">'
         'Work-item projects (sprints, demonstrations, initiatives) that contribute to the '
         'sub-activities above. Table/Archive lives on the Activities tab; '
         'tabled and archived projects are excluded here.</p>\n'
@@ -10774,7 +10774,7 @@ EXHIBIT_ANALYSIS_CSS = """
 .proj-btn-submit:disabled { opacity:0.6; cursor:not-allowed; }
 /* ── Activity↔Project association editor (workplan_goals.js) ── */
 /* Primary association chip (★) reads slightly bolder than a plain chip. */
-.wpg-act-chip-primary { background:#FBF3DA !important; color:var(--mustard-text) !important; }
+.wpg-act-chip-primary { background:var(--gold-soft,#FBF3DA) !important; color:var(--mustard-text) !important; }
 /* The ✎ pencil + click affordance only appear once a curator is signed in
    (workplan_goals.js adds .wpg-assoc-on to editable chip cells). */
 .wpg-assoc-edit-hint { color:var(--text-faint); font-size:0.72rem; opacity:0; transition:opacity 0.15s; }
@@ -10916,7 +10916,7 @@ def render_assoc_chip_line(pid, assoc_records, activity_options_json,
         f'data-assoc-backfilled="{1 if backfilled else 0}" '
         f'data-activities="{html_escape(activity_options_json, quote=True)}" '
         f'style="{cell_style}">'
-        f'<span style="color:#888;">Contributes to:</span> '
+        f'<span style="color:var(--text-muted);">Contributes to:</span> '
         f'{chips_html}'
         f'<span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span>'
         f'</div>'
