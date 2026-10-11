@@ -230,3 +230,10 @@ on a phone that title pushed the map below the frame's fold. The title now goes 
 embed (content 2,094px to 1,843 at 320). The frame still scrolls below 981px, as the map's CSS states: its stage is in
 `vh`, so sizing the frame to its content would feed back. The paragraph's link took the browser's default ink in both
 themes; a link in a static shell needs its token written on it. Guard: `tests/military_partnerships_ui_pass.test.js`.
+
+**Noncredit & Learning Partners (#2005): a team-phrase view the sweep had never painted.** The tab's notes, artifacts
+and Revise controls render only for a team-phrase holder, so the unseeded sweeps measured a tab without them. The seed
+`nc-partners-editor` (with `-dark`) holds the phrase, stubs the three reads and calls the tab's `activate()` again, which
+repaints and re-pulls; it found an artifact's title link 20px tall at once. The unseeded sweeps found an h1 to h3 skip,
+a chip at 4.38:1 (`opacity:.85` on `--text-muted` again; opacity dims every ink inside it) and a scrolling table no
+keyboard could reach. CPL Pathways is held in the ledger until Open Asks Sheet 65 card 2 rules on its record source.

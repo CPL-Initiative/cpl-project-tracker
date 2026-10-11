@@ -135,15 +135,16 @@
    "page": "index.html#cpl-pathways",
    "audience": "staff",
    "last": null,
-   "outcome": null
+   "outcome": null,
+   "hold": "Open Asks Sheet 65 card 2 (S365) decides where its program records come from; the pass follows the ruling. Default state sweeps clean light and dark (2026-10-11)."
   },
   {
    "id": "cobi:nc-learning-partners",
    "name": "Noncredit & Learning Partners",
    "page": "index.html#nc-learning-partners",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-11",
+   "outcome": "S365: sweeps found an h1 -> h3 skip (sections now h2, cards h3), the section chip at 4.38:1 (opacity .85 on --text-muted, removed) and the dormant table unreachable by keyboard at 390px (a named region); a new team-phrase seed (nc-partners-editor, -dark) painted notes, an artifact and Revise for the first time and found the artifact title link 20px tall (24px now); controls became underlined words and the toolbar, Attach artifact and status lines dropped their glyphs. Both themes and both seeds pass."
   },
   {
    "id": "cobi:governance",
