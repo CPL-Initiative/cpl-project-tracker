@@ -4,6 +4,8 @@ date: 2026-10-10
 session: 355 (SkyBramble)
 tags: [handoff, program-requirements, harvest, phase-2, records, checkpoint, emergency]
 status: current
+superseded: true
+superseded_by: session_360_handoff.md
 ---
 
 # You are Session 356
