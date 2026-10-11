@@ -1,4 +1,4 @@
-/* team_phrases.js — 🔑 Team Phrases admin tab (window.CPL_TEAM_PHRASES)
+/* team_phrases.js — Team Phrases admin tab (window.CPL_TEAM_PHRASES)
  *
  * Sam, 2026-08-12: "I lost track of where Manage team phrases is. It should be
  * a tab that requires a magic link to view, though it should show up as a tab."
@@ -93,7 +93,8 @@
     draft: {},           // id -> in-progress value
     busy: {},            // id -> save in flight
     msg: {},             // id -> {text, kind}
-    signInMsg: ""
+    signInMsg: "",
+    signInKind: ""       // "ok" | "err" | "" — the sign-in message's kind
   };
 
   // ── Auth (shared cpl_sb magic-link session — the raci.js shape) ───────────
@@ -220,7 +221,8 @@
       } catch (e) {}
       state.busy[id] = false;
       state.draft[id] = null;
-      state.msg[id] = { text: "✓ Saved. Share the new " + def.label + " phrase with the people who need it.", kind: "ok" };
+      // Was "Share the new " + label + " phrase": the shared label already ends in "phrase" (S366).
+      state.msg[id] = { text: "Saved. Share the new phrase with the people who need it.", kind: "ok" };
       render(root);
     }).catch(function (e) {
       state.busy[id] = false;
@@ -236,31 +238,40 @@
     st.id = "tphx-css";
     st.textContent = [
       "#team-phrases-root{padding:0 0 2rem;max-width:900px;margin:0 auto;}",
-      ".tphx h2{color:var(--navy-primary,#0A2240);margin:0 0 .25rem;}",
+      ".tphx h2{color:var(--navy-primary);margin:0 0 .25rem;}",
       // ⚠️ --text-muted, NOT --text-faint: faint is #87877F, 3.24:1 on this card
       // against the 4.5:1 floor, and this paragraph is the tab's only explanation
       // of what a phrase opens — essential text, which faint is never for.
-      ".tphx-intro{color:var(--text-muted,#5C5C55);font-size:.9rem;margin:0 0 1rem;max-width:var(--cpl-measure,none);line-height:1.5;}",
+      ".tphx-intro{color:var(--text-muted);font-size:.9rem;margin:0 0 1rem;max-width:var(--cpl-measure,none);line-height:1.5;}",
+      // A chip is a category, quiet (S366's pass): the gold fill was a second warning beside the real one.
       ".tphx-gatechip{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;",
-      "background:var(--gold-accent,#B8860B);color:var(--on-mustard);border-radius:4px;padding:.1rem .4rem;vertical-align:middle;margin-left:.4rem;}",
-      ".tphx-card{background:var(--surface-0,#fff);border:1px solid var(--border,#e0e0e0);border-radius:10px;padding:14px 16px;margin-bottom:12px;}",
-      ".tphx-card h3{margin:0 0 .2rem;font-size:1rem;color:var(--navy-primary,#0A2240);}",
-      ".tphx-opens{font-size:.82rem;color:var(--text-body,#444);margin:.1rem 0 .3rem;line-height:1.45;}",
-      ".tphx-who{font-size:.78rem;color:var(--text-muted,#6b7280);margin:0 0 .6rem;}",
-      ".tphx-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}",
-      ".tphx-in{flex:1 1 240px;min-width:0;padding:6px 10px;border:1px solid var(--border-strong,#ccc);border-radius:6px;font-size:.9rem;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;}",
-      ".tphx-btn{padding:6px 12px;border:1px solid var(--border-strong,#ccc);border-radius:6px;background:var(--surface-subtle,#f5f5f5);font-size:.8rem;font-weight:600;cursor:pointer;font-family:inherit;color:var(--text-body,#333);}",
-      ".tphx-btn:hover{background:var(--surface-muted,#ececec);}",
-      ".tphx-btn[disabled]{opacity:.5;cursor:default;}",
-      ".tphx-btn-go{background:var(--seal-blue,#00356B);color:#fff;border-color:var(--seal-blue,#00356B);}",
+      "background:var(--surface-muted);color:var(--text-muted);border-radius:4px;padding:.1rem .4rem;vertical-align:middle;margin-left:.4rem;}",
+      ".tphx-card{background:var(--surface-opaque);border:1px solid var(--border);border-radius:10px;padding:14px 16px;margin-bottom:12px;}",
+      ".tphx-card h3{margin:0 0 .2rem;font-size:1rem;color:var(--navy-primary);}",
+      ".tphx-opens{font-size:.82rem;color:var(--text-body);margin:.1rem 0 .3rem;line-height:1.45;}",
+      ".tphx-who{font-size:.78rem;color:var(--text-muted);margin:0 0 .6rem;}",
+      ".tphx-label{display:block;font-size:.75rem;color:var(--text-muted);margin:0 0 .25rem;}",
+      ".tphx-row{display:flex;gap:18px;align-items:center;flex-wrap:wrap;}",
+      ".tphx-in{flex:1 1 240px;min-width:0;padding:6px 10px;border:1px solid var(--border-strong);border-radius:6px;font-size:.9rem;",
+      "font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--surface-opaque);color:var(--text-body);}",
+      // Controls are underlined words (Sam, 2026-10-09; S366's pass): no border, no fill, 24px.
+      ".tphx-btn{font:inherit;font-size:.8rem;font-weight:600;padding:2px 0;min-height:24px;min-width:24px;cursor:pointer;",
+      "white-space:nowrap;border:0;background:none;color:var(--cobalt);text-decoration:underline;",
+      "text-decoration-thickness:1px;text-underline-offset:3px;}",
+      ".tphx-btn:hover{text-decoration-thickness:2px;}",
+      ".tphx-btn:focus-visible{outline:2px solid var(--seal-blue);outline-offset:2px;}",
+      ".tphx-btn[disabled]{opacity:.6;cursor:default;text-decoration:none;}",
       ".tphx-msg{font-size:.78rem;margin-top:6px;min-height:1em;}",
-      ".tphx-msg.err{color:var(--danger-text,#c00);}",
-      ".tphx-msg.ok{color:var(--success-text,#2A7D4F);}",
-      ".tphx-warn{font-size:.82rem;background:var(--mustard-fill,#f2dca0);color:var(--on-mustard);border-radius:8px;padding:10px 14px;margin:0 0 1rem;line-height:1.5;}",
-      ".tphx-gate{background:var(--surface-1,#fafbfc);border:1px solid var(--border,#e0e0e0);border-radius:10px;padding:18px;max-width:560px;}",
-      ".tphx-gate h3{margin:0 0 .4rem;font-size:1rem;color:var(--navy-primary,#0A2240);}",
-      ".tphx-gate p{font-size:.85rem;color:var(--text-body,#444);line-height:1.5;margin:.3rem 0 .8rem;}",
-      ".tphx-slot{font-size:.72rem;color:var(--text-muted,#6b7280);margin-top:.4rem;}",
+      ".tphx-msg.err{color:var(--danger-text);}",
+      ".tphx-msg.ok{color:var(--success-text);}",
+      // Muted by default (CLAUDE.md): a quiet ground and a mustard rule, not a full mustard fill on every visit.
+      ".tphx-warn{font-size:.82rem;background:var(--surface-subtle);color:var(--text-strong);border-left:3px solid var(--mustard-fill);",
+      "border-radius:0 8px 8px 0;padding:10px 14px;margin:0 0 1rem;line-height:1.5;}",
+      ".tphx-gate{background:var(--surface-1);border:1px solid var(--border);border-radius:10px;padding:18px;max-width:560px;}",
+      ".tphx-gate h3{margin:0 0 .4rem;font-size:1rem;color:var(--navy-primary);}",
+      ".tphx-gate p{font-size:.85rem;color:var(--text-body);line-height:1.5;margin:.3rem 0 .8rem;}",
+      ".tphx-who-signed{font-size:.8rem;color:var(--text-muted);}",
+      ".tphx-slot{font-size:.72rem;color:var(--text-muted);margin-top:.4rem;}",
       "@media (max-width:640px){.tphx-in{flex-basis:100%;}}"
     ].join("");
     document.head.appendChild(st);
@@ -277,7 +288,7 @@
     if (!root) return;
     ensureCss();
     var h = '<div class="tphx">';
-    h += '<h2>🔑 Team Phrases <span class="tphx-gatechip">Reviewer sign-in</span></h2>';
+    h += '<h2>Team Phrases <span class="tphx-gatechip">Reviewer sign-in</span></h2>';
     h += '<p class="tphx-intro">The shared phrases that unlock COBI\'s team tabs — what each one opens, and how to '
       + "change one. Viewing and changing them needs a <b>magic-link sign-in</b>, not a phrase: someone who only holds "
       + "a phrase must not be able to read or rotate it, or rotating away from them would mean nothing.</p>";
@@ -292,10 +303,11 @@
       h += '<div class="tphx-gate"><h3>Sign in to view the phrases</h3>'
         + "<p>We'll email you a one-time link. Your address has to be on the reviewer list — "
         + "the phrases themselves are only readable to a reviewer, enforced by the database, not by this page.</p>"
+        + '<label class="tphx-label" for="tphx-email">Your email address</label>'
         + '<div class="tphx-row">'
-        + '<input class="tphx-in" type="email" data-email placeholder="you@rccd.edu" autocomplete="email">'
-        + '<button class="tphx-btn tphx-btn-go" data-signin>Email me a link</button></div>'
-        + '<div class="tphx-msg' + (/^✓/.test(state.signInMsg) ? " ok" : (state.signInMsg ? " err" : "")) + '">'
+        + '<input class="tphx-in" id="tphx-email" type="email" data-email placeholder="you@rccd.edu" autocomplete="email">'
+        + '<button type="button" class="tphx-btn" data-signin>Email me a link</button></div>'
+        + '<div class="tphx-msg' + (state.signInMsg ? " " + (state.signInKind || "err") : "") + '" role="status">'
         + esc(state.signInMsg) + "</div></div></div>";
       root.innerHTML = h; wire(root); return;
     }
@@ -307,7 +319,7 @@
         + "<p>You're signed in as <b>" + esc((state.sess && state.sess.email) || "(unknown)") + "</b>, but that address "
         + "isn't on the reviewer list, so the database returns nothing here. This is not an empty list — it's a "
         + "closed door. Ask an existing reviewer to add you.</p>"
-        + '<div class="tphx-row"><button class="tphx-btn" data-signout>Sign out</button></div></div></div>';
+        + '<div class="tphx-row"><button type="button" class="tphx-btn" data-signout>Sign out</button></div></div></div>';
       root.innerHTML = h; wire(root); return;
     }
 
@@ -315,17 +327,17 @@
       h += '<div class="tphx-gate"><h3>Could not read the phrases</h3>'
         + "<p>" + esc(state.error || "unknown error") + ". This is a failed read, <b>not</b> an empty list — "
         + "nothing has been changed. Try again, or sign in afresh.</p>"
-        + '<div class="tphx-row"><button class="tphx-btn" data-reload>Try again</button>'
-        + '<button class="tphx-btn" data-signout>Sign out</button></div></div></div>';
+        + '<div class="tphx-row"><button type="button" class="tphx-btn" data-reload>Try again</button>'
+        + '<button type="button" class="tphx-btn" data-signout>Sign out</button></div></div></div>';
       root.innerHTML = h; wire(root); return;
     }
 
     h += '<p class="tphx-warn">⚠ Changing a phrase takes effect immediately for everyone. Anyone holding the old one '
       + "is locked out until you tell them the new one — there is no notification. Your own browser is updated "
       + "automatically so you don't lock yourself out.</p>";
-    h += '<div class="tphx-row" style="margin-bottom:.8rem;"><span style="font-size:.8rem;color:var(--text-muted,#6b7280);">'
+    h += '<div class="tphx-row" style="margin-bottom:.8rem;"><span class="tphx-who-signed">'
       + "Signed in as <b>" + esc((state.sess && state.sess.email) || "(reviewer)") + "</b></span>"
-      + '<button class="tphx-btn" data-signout>Sign out</button></div>';
+      + '<button type="button" class="tphx-btn" data-signout>Sign out</button></div>';
 
     PHRASES.forEach(function (def) {
       var row = rowFor(def);
@@ -333,7 +345,7 @@
       var shown = !!state.reveal[def.id];
       var m = state.msg[def.id];
       h += '<div class="tphx-card">'
-        + "<h3>" + esc(def.label) + "</h3>"
+        + '<h3 id="tphx-h-' + esc(def.id) + '">' + esc(def.label) + "</h3>"
         + '<p class="tphx-opens"><b>Opens:</b> ' + esc(def.opens) + "</p>"
         + '<p class="tphx-who"><b>Who needs it:</b> ' + esc(def.who) + "</p>";
       if (!row) {
@@ -341,14 +353,18 @@
         // rather than rendering a blank box that looks editable.
         h += '<p class="tphx-msg err">No row for “' + esc(def.id) + "” in team_access — it has never been set.</p>";
       } else {
-        h += '<div class="tphx-row">'
-          + '<input class="tphx-in" type="' + (shown ? "text" : "password") + '" data-phrase="' + esc(def.id) + '" '
+        // The field's name is the card's heading and its own word, so four fields read apart.
+        h += '<label class="tphx-label" id="tphx-l-' + esc(def.id) + '" for="tphx-in-' + esc(def.id) + '">Phrase</label>'
+          + '<div class="tphx-row">'
+          + '<input class="tphx-in" id="tphx-in-' + esc(def.id) + '" type="' + (shown ? "text" : "password") + '" data-phrase="' + esc(def.id) + '" '
+          + 'aria-labelledby="tphx-h-' + esc(def.id) + ' tphx-l-' + esc(def.id) + '" '
           + 'value="' + esc(val) + '" autocomplete="off" spellcheck="false">'
-          + '<button class="tphx-btn" data-reveal="' + esc(def.id) + '">' + (shown ? "Hide" : "Reveal") + "</button>"
-          + '<button class="tphx-btn tphx-btn-go" data-save="' + esc(def.id) + '"'
+          + '<button type="button" class="tphx-btn" data-reveal="' + esc(def.id) + '" aria-pressed="' + (shown ? "true" : "false") + '">'
+          + (shown ? "Hide" : "Reveal") + "</button>"
+          + '<button type="button" class="tphx-btn" data-save="' + esc(def.id) + '"'
           + (state.busy[def.id] ? " disabled" : "") + ">" + (state.busy[def.id] ? "Saving…" : "Save") + "</button>"
           + "</div>";
-        h += '<div class="tphx-msg' + (m && m.kind ? " " + m.kind : "") + '">' + esc(m ? m.text : "") + "</div>";
+        h += '<div class="tphx-msg' + (m && m.kind ? " " + m.kind : "") + '" role="status">' + esc(m ? m.text : "") + "</div>";
         if (def.slot) {
           h += '<div class="tphx-slot">Stored on a holder\'s browser as <code>' + esc(def.slot) + "</code>.</div>";
         }
@@ -367,15 +383,18 @@
       si.addEventListener("click", function () {
         var em = root.querySelector("[data-email]");
         var v = (em && em.value || "").trim();
-        if (!v) { state.signInMsg = "Enter your email address."; render(root); return; }
+        // The message's kind is stated, not read from a leading check mark (S366: the glyph is gone).
+        if (!v) { state.signInMsg = "Enter your email address."; state.signInKind = "err"; render(root); return; }
         si.disabled = true;
-        state.signInMsg = "Sending…"; render(root);
+        state.signInMsg = "Sending…"; state.signInKind = ""; render(root);
         signIn(v).then(function (r) {
-          state.signInMsg = r.ok ? "✓ Check your email for the sign-in link."
+          state.signInMsg = r.ok ? "Check your email for the sign-in link."
             : "Could not send the link (" + r.status + ").";
+          state.signInKind = r.ok ? "ok" : "err";
           render(root);
         }).catch(function () {
           state.signInMsg = "Could not reach the server — try again in a moment.";
+          state.signInKind = "err";
           render(root);
         });
       });
