@@ -5016,7 +5016,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 516
+     "line": 580
     },
     {
      "id": "module:college_briefing.js",
@@ -19793,7 +19793,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1083,
+     "line": 1086,
      "tabs": [
       "contracts"
      ]
@@ -19818,7 +19818,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1019,
+     "line": 1022,
      "tabs": [
       "contracts"
      ]
