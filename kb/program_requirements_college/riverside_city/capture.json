@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 268,
  "with_closed_list": 262,
- "started": "2026-10-10T20:15:51Z",
+ "started": "2026-10-11T00:17:14Z",
  "curriqunet": {
   "catalog": 124,
   "view_prefix": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/",
@@ -20,12 +20,13 @@
  },
  "pages_read": 435,
  "loads": 447,
- "seconds": 2207.3,
- "found": 237,
+ "seconds": 2162.8,
+ "found": 244,
  "by_method": {
   "no_closed_list": 6,
-  "not_found": 25,
-  "sitemap_page": 237
+  "not_found": 14,
+  "page_claimed": 4,
+  "sitemap_page": 244
  },
  "shared_pages": {
   "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6081": [
@@ -237,53 +238,8 @@
  },
  "not_found": [
   {
-   "control_number": "18108",
-   "title": "Administration & Information Systems",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "18109",
-   "title": "Communication, Media & Languages",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "18110",
-   "title": "Fine & Applied Arts",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "18111",
-   "title": "Humanities, Philosophy & Arts",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "18112",
-   "title": "Kinesiology, Health and Wellness",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "18113",
-   "title": "Social and Behavioral Studies",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "18114",
-   "title": "Math & Sciences",
-   "award": "A.S. Degree"
-  },
-  {
-   "control_number": "31163",
-   "title": "American Studies",
-   "award": "A.A. Degree"
-  },
-  {
    "control_number": "33230",
    "title": "History",
-   "award": "A.A- T Degree"
-  },
-  {
-   "control_number": "37474",
-   "title": "Kinesiology",
    "award": "A.A- T Degree"
   },
   {
@@ -294,16 +250,6 @@
   {
    "control_number": "39085",
    "title": "Zero Net Energy",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
-  },
-  {
-   "control_number": "40271",
-   "title": "Dance",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "40446",
-   "title": "Pilates Dance/Conditioning Instructor",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
   },
   {
@@ -362,11 +308,58 @@
    "award": "Noncredit program"
   }
  ],
- "page_claimed": [],
+ "page_claimed": [
+  {
+   "control_number": "37474",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6289",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6234"
+   ]
+  },
+  {
+   "control_number": "39120",
+   "title": "Building Energy Systems Professional in HVAC Technology",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5995",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/5718"
+   ]
+  },
+  {
+   "control_number": "40271",
+   "title": "Dance",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6287",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6288",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6232",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6233"
+   ]
+  },
+  {
+   "control_number": "40446",
+   "title": "Pilates Dance/Conditioning Instructor",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6287",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6288",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6232",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6233"
+   ]
+  }
+ ],
  "coverage_bands": {
-  "0.5-0.8": 12,
-  "0.8-1.0": 52,
-  "1.0": 173
+  "0.5-0.8": 13,
+  "0.8-1.0": 56,
+  "1.0": 175
  },
- "run": "38082999076"
+ "would_extract": {
+  "against": "kb/program_requirements_college/riverside_city",
+  "kept": 244,
+  "programs": 0,
+  "list": []
+ },
+ "run": "38097844006"
 }
