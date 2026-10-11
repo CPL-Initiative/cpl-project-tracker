@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 1115,
-    "bytes": 11567176,
-    "over_budget": 6,
+    "bytes": 11568914,
+    "over_budget": 7,
     "handoff_max": 365,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59999,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 119,
-        "bytes": 3409119,
+        "bytes": 3409118,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 10603,
+        "bytes": 10617,
         "over": 0
       },
       "lessons": {
         "files": 81,
-        "bytes": 2345315,
+        "bytes": 2346139,
         "over": 2
       },
       "kb_note": {
@@ -46,23 +46,23 @@
       },
       "roadmap_lane": {
         "files": 36,
-        "bytes": 331897,
-        "over": 1
+        "bytes": 332134,
+        "over": 2
       },
       "handoff": {
         "files": 336,
-        "bytes": 2715190,
+        "bytes": 2715854,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 23,
-      "oversized_doc": 6,
+      "oversized_doc": 7,
       "vault_heavy_path": 60
     },
     "vault": {
-      "files": 5149,
-      "bytes": 1919677288,
+      "files": 5150,
+      "bytes": 1919697466,
       "heavy_bytes": 901181612,
       "heavy_share": 0.469,
       "ignore_filters": [
@@ -398,6 +398,19 @@
       },
       "message": "20,285 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/common-cr-reference.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 20152,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 152,
+        "ratio": 1.01
+      },
+      "message": "20,152 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/program-requirements-harvest.md"
     },
     {
       "rule": "house_voice",
