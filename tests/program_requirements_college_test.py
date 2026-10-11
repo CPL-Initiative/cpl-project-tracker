@@ -318,6 +318,26 @@ gkh = C.assign([{"control_number": "18112", "title": "Kinesiology, Health and We
 check(gkh and gkh["coverage"] == 1.0,
       "the real Kinesiology, Health and Wellness page (run 38094747667) names its activity and varsity courses: %r"
       % ((gkh and gkh["coverage"]),))
+# one program under two index entries (Norco 5545 and 5552, run 38095619629):
+# the entries are one page when programs compete, so the A.A.-T never reads
+# the A.A.'s page through its second entry
+E1 = {"id": 5545, "text": "Kinesiology, Health and Wellness - Associate of Arts Degree - (AOE) NAA498/C",
+      "aliaspath": "5367/5467/5545"}
+E2 = {"id": 5552, "text": "Kinesiology, Health & Wellness - Associate of Arts Degree (AOE) - NAA498/C",
+      "aliaspath": "5367/5569/5552"}
+NCP = "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/"
+P1, P2 = C.cq_page(E1, KHW, NCP), C.cq_page(E2, KHW, NCP)
+check(P1["group"] == P2["group"] == "codes:NAA498/C" and P1["url"] != P2["url"]
+      and C.cq_group("Degrees and Certificates Explained", "u") == "u",
+      "two index entries naming the same local award codes are one page; a title naming none keeps its address")
+gdup = C.assign([{"control_number": "30103", "title": "Kinesiology, Health & Wellness", "award": "A.A. Degree",
+                  "closed_list": KH_LIST},
+                 {"control_number": "37169", "title": "Kinesiology", "award": "A.A- T Degree",
+                  "closed_list": KH_LIST[:8]}], [P1, P2])
+check(gdup["30103"]["best"] and gdup["37169"]["best"] is None
+      and gdup["37169"]["lost"] and gdup["37169"]["lost"][0] in (P1["url"], P2["url"]),
+      "the A.A. keeps its page and the A.A.-T reads none, naming the page it lost: %r"
+      % ({k: (v["best"] and v["best"]["url"], v["lost"]) for k, v in gdup.items()},))
 raw = "\n".join(C.cq_text(b.get("text") or "") for b in MS["body"])
 check(P.coverage(P.find_codes(raw, MS_LIST), MS_LIST) < 0.5,
       "read as printed, the page names under half the list: the failure the expansion fixes")
