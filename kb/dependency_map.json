@@ -3223,7 +3223,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 338
+     "line": 340
     }
    ],
    "main_committers": []
@@ -18528,14 +18528,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 640
+     "line": 642
     },
     {
      "id": "script:veteran-sprint-map/build_selfcontained.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 640
+     "line": 642
     }
    ],
    "served": true,
