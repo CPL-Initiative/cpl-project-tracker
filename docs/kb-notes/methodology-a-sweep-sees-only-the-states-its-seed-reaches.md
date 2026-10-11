@@ -84,3 +84,12 @@ way the editor reads it, fire the editor's own re-read event, then add one state
 cells. A transient state is a class or attribute the code sets and later removes, so the seed sets it and holds it.
 List a view's write states (saving, saved, failed, disabled while in flight) with the states a reader reaches by acting.
 
+
+## The widths a target runs are a seed too (S365)
+
+The `cobi` targets measure two widths. Vision 2030 passed both themes while it scrolled 44px sideways at 320px (a
+300px grid floor) and drew every goal bar 0px wide on a phone (a long label took the bar's flex row). Neither shows at
+the widths the target runs. A pass reads `documentElement.scrollWidth` and the widths of the elements it cares about at
+320 and 390 itself. The same session's seeds found what no unseeded sweep could: Team & RACI's edit-mode buttons and the
+jump highlight at 4.16:1 in dark (`raci-editor`), and Noncredit & Learning Partners' artifact link at 20px
+(`nc-partners-editor`).

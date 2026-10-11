@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 539,
+   "count": 540,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1488,6 +1488,27 @@
      "title": "A figure tagged to two owners is claimed twice",
      "type": "methodology",
      "updated": "2026-09-14"
+    },
+    {
+     "created": "2026-10-11",
+     "governs": [
+      "kb/_build_roep_display.py",
+      "cpl_pathways_roep_data.js",
+      "program_requirements.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-published-file-carries-past-the-tables-read-gate.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "privacy",
+      "supabase",
+      "rls",
+      "generated-files",
+      "program-requirements"
+     ],
+     "title": "A file generated for a public page carries past the table's read gate",
+     "type": "methodology",
+     "updated": "2026-10-11"
     },
     {
      "created": "2026-09-09",
@@ -15321,8 +15342,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 336,
+   "count": 337,
    "docs": [
+    {
+     "created": "2026-10-11",
+     "governs": [],
+     "n": 366,
+     "path": "docs/session_366_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "ui-pass",
+      "first-light",
+      "accessibility",
+      "vision-2030",
+      "decision-sheet",
+      "program-requirements"
+     ],
+     "title": "Sheet 65 open (Vision 2030 goal figures, CPL Pathways' records), four UI passes",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-11",
      "governs": [],
@@ -21080,5 +21120,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1102
+ "total": 1104
 }

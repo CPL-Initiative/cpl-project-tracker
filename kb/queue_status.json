@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-11T20:07:26Z",
-  "session": 364,
-  "moniker": "SkyJuniper",
+  "written_at": "2026-10-11T21:54:03Z",
+  "session": 365,
+  "moniker": "SkyRowan",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_365_handoff.md",
+  "handoff": "docs/session_366_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -10414,7 +10414,12 @@
     "title": "Find Long Beach City's 74 programs that have no record",
     "text": "Their pages showed no requirements the reader could open, so the load left them out; Long Beach City's reading procedure looks for each requirements page before those programs are read again."
   },
-  "calls": [],
+  "calls": [
+    {
+      "title": "Which records CPL Pathways shows (Open Asks Sheet 65, card 2)",
+      "text": "A file per college would be 18.2 MB and would show the public 1,486 records nobody has checked; the proposal is that the page reads each record from the table when opened. With no reply, CPL Pathways keeps showing the pilot's 22."
+    }
+  ],
   "notes": {
     "addenda": "The reading agent starts after the Oct 11 census apply; until then a mismatch is read against the college's addendum by hand.",
     "procedures": "34 colleges have one since Oct 8: the 28 whose map host refuses or never reaches the reader each name the routes tried.",
@@ -10423,6 +10428,10 @@
     "reading": "Cerritos read on Oct 9 and Mt. San Antonio on Oct 10. RCCD's three colleges were read on Oct 10 and their Liberal Arts emphasis programs recovered on Oct 11. 18 records that read another program's page were removed on Oct 11. Long Beach City was read and loaded the same evening: 305 records, unchecked, for 1,515 in all."
   },
   "changes": [
+    {
+      "at": "2026-10-11T21:12Z",
+      "text": "Open Asks Sheet 65 asks which records CPL Pathways shows, measured before any of it was built: 18.2 MB for all 1,515 records, and only 29 checked."
+    },
     {
       "at": "2026-10-11T19:53Z",
       "text": "Long Beach City's 305 records are live and displayed, unchecked. 74 programs whose pages showed no requirements the reader could open stay out until its reading procedure finds them."
