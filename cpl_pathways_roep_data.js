@@ -1,15 +1,15 @@
 window.CPL_PATHWAYS_ROEP = {
  "_generated_by": "kb/_build_roep_display.py",
  "_note": "Each harvested program's catalog record and its display facts: CPL in three kinds per course, the up-to figure, the gaps and the map's status. The same facts sit in program_requirement_records.display, where Sierra reads them; both carry this build stamp. Do not edit; rerun the builder.",
- "build": "2a73f45c9c84",
- "built": "2026-10-10",
+ "build": "344441813b01",
+ "built": "2026-10-11",
  "inputs": {
-  "records": 1210,
-  "map_read_at": "2026-10-10",
-  "registry_read_at": "2026-10-10",
+  "records": 1515,
+  "map_read_at": "2026-10-11",
+  "registry_read_at": "2026-10-11",
   "articulations": "2026-09-03T20:19:16Z",
-  "memberships": "2026-10-11 12:58",
-  "cer": "2026-10-11T12:58:37+00:00"
+  "memberships": "2026-10-11 18:12",
+  "cer": "2026-10-11T18:12:30+00:00"
  },
  "definitions": {
   "here": "Articulated here: the college has articulated CPL to this course. MAP holds a credit recommendation for it at this college (military, industry or exam credit), or MAP's articulated-exhibit feed names the course at this college.",
@@ -262,8 +262,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2a73f45c9c84",
-    "built": "2026-10-10"
+    "build": "344441813b01",
+    "built": "2026-10-11"
    }
   },
   {
@@ -583,7 +583,8 @@ window.CPL_PATHWAYS_ROEP = {
       "coci": {
        "status": "Inactive",
        "program_ccn": "CCC000592776",
-       "current_ccn": "CCC000645443"
+       "current_ccn": "CCC000645443",
+       "listed": true
       },
       "identity": {
        "kind": "CCR",
@@ -715,20 +716,6 @@ window.CPL_PATHWAYS_ROEP = {
       ]
      },
      {
-      "kind": "Catalog and state file differ",
-      "owner": "college",
-      "where": "Cerritos College's program record in the state's curriculum inventory",
-      "text": "The catalog prints HED 201 for this program, and the state's Program Course File carries it there: the program points at HED 201 CCC000592776, Inactive in COCI; COCI's current HED 201 is CCC000645443.",
-      "coci": [
-       {
-        "code": "HED 201",
-        "status": "Inactive",
-        "program_ccn": "CCC000592776",
-        "current_ccn": "CCC000645443"
-       }
-      ]
-     },
-     {
       "kind": "Reader's note",
       "owner": "procedure",
       "where": "Cerritos College's CourseLeaf reading procedure",
@@ -763,15 +750,15 @@ window.CPL_PATHWAYS_ROEP = {
     "checks": {
      "checked": true,
      "coverage": {
-      "placed": 8,
-      "listed": 10
+      "placed": 9,
+      "listed": 11
      },
-     "additions": 1,
+     "additions": 0,
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2a73f45c9c84",
-    "built": "2026-10-10"
+    "build": "344441813b01",
+    "built": "2026-10-11"
    }
   },
   {
@@ -1794,8 +1781,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2a73f45c9c84",
-    "built": "2026-10-10"
+    "build": "344441813b01",
+    "built": "2026-10-11"
    }
   },
   {
@@ -2663,8 +2650,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2a73f45c9c84",
-    "built": "2026-10-10"
+    "build": "344441813b01",
+    "built": "2026-10-11"
    }
   },
   {
@@ -3243,7 +3230,8 @@ window.CPL_PATHWAYS_ROEP = {
       "coci": {
        "status": "Inactive",
        "program_ccn": "CCC000530779",
-       "current_ccn": "CCC000653149"
+       "current_ccn": "CCC000653149",
+       "listed": true
       },
       "identity": {
        "kind": "CCR",
@@ -3465,20 +3453,6 @@ window.CPL_PATHWAYS_ROEP = {
         "status": "Active",
         "program_ccn": "CCC000530777",
         "current_ccn": null
-       }
-      ]
-     },
-     {
-      "kind": "Catalog and state file differ",
-      "owner": "college",
-      "where": "Irvine Valley College's program record in the state's curriculum inventory",
-      "text": "The catalog prints ARTH 28 for this program, and the state's Program Course File carries it there: the program points at ARTH 28 CCC000530779, Inactive in COCI; COCI's current ARTH 28 is CCC000653149.",
-      "coci": [
-       {
-        "code": "ARTH 28",
-        "status": "Inactive",
-        "program_ccn": "CCC000530779",
-        "current_ccn": "CCC000653149"
        }
       ]
      },
@@ -3734,15 +3708,15 @@ window.CPL_PATHWAYS_ROEP = {
     "checks": {
      "checked": false,
      "coverage": {
-      "placed": 21,
-      "listed": 23
+      "placed": 22,
+      "listed": 24
      },
-     "additions": 7,
+     "additions": 6,
      "arithmetic": "equal",
      "reviewer": null
     },
-    "build": "2a73f45c9c84",
-    "built": "2026-10-10"
+    "build": "344441813b01",
+    "built": "2026-10-11"
    }
   },
   {
@@ -4538,8 +4512,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2a73f45c9c84",
-    "built": "2026-10-10"
+    "build": "344441813b01",
+    "built": "2026-10-11"
    }
   },
   {
@@ -5341,8 +5315,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2a73f45c9c84",
-    "built": "2026-10-10"
+    "build": "344441813b01",
+    "built": "2026-10-11"
    }
   },
   {
@@ -6888,8 +6862,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2a73f45c9c84",
-    "built": "2026-10-10"
+    "build": "344441813b01",
+    "built": "2026-10-11"
    }
   },
   {
@@ -7424,8 +7398,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2a73f45c9c84",
-    "built": "2026-10-10"
+    "build": "344441813b01",
+    "built": "2026-10-11"
    }
   },
   {
@@ -8608,8 +8582,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "2a73f45c9c84",
-    "built": "2026-10-10"
+    "build": "344441813b01",
+    "built": "2026-10-11"
    }
   },
   {
@@ -9836,8 +9810,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "2a73f45c9c84",
-    "built": "2026-10-10"
+    "build": "344441813b01",
+    "built": "2026-10-11"
    }
   },
   {
@@ -10551,8 +10525,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2a73f45c9c84",
-    "built": "2026-10-10"
+    "build": "344441813b01",
+    "built": "2026-10-11"
    }
   },
   {
@@ -10904,8 +10878,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "unstated",
      "reviewer": "ok"
     },
-    "build": "2a73f45c9c84",
-    "built": "2026-10-10"
+    "build": "344441813b01",
+    "built": "2026-10-11"
    }
   },
   {
@@ -11245,8 +11219,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2a73f45c9c84",
-    "built": "2026-10-10"
+    "build": "344441813b01",
+    "built": "2026-10-11"
    }
   },
   {
@@ -11632,7 +11606,7 @@ window.CPL_PATHWAYS_ROEP = {
       "consider": [
        {
         "credential": "POST Basic Academy",
-        "credit": "3 hours in Intro to Administration of Justice",
+        "credit": "3 hours in Community Relations",
         "cid": "AJ 110",
         "colleges_n": 32
        }
@@ -11710,7 +11684,7 @@ window.CPL_PATHWAYS_ROEP = {
       "consider": [
        {
         "credential": "POST Basic Academy",
-        "credit": "3 hours in Intro to Administration of Justice",
+        "credit": "3 hours in Community Relations",
         "cid": "AJ 110",
         "colleges_n": 32
        }
@@ -12959,7 +12933,8 @@ window.CPL_PATHWAYS_ROEP = {
       "coci": {
        "status": "Inactive",
        "program_ccn": "CCC000578633",
-       "current_ccn": "CCC000650087"
+       "current_ccn": "CCC000650087",
+       "listed": true
       },
       "identity": {
        "kind": "C-ID",
@@ -13041,20 +13016,6 @@ window.CPL_PATHWAYS_ROEP = {
       ]
      },
      {
-      "kind": "Catalog and state file differ",
-      "owner": "college",
-      "where": "Riverside City College's program record in the state's curriculum inventory",
-      "text": "The catalog prints SOC-48 for this program, and the state's Program Course File carries it there: the program points at SOC-48 CCC000578633, Inactive in COCI; COCI's current SOC-48 is CCC000650087.",
-      "coci": [
-       {
-        "code": "SOC-48",
-        "status": "Inactive",
-        "program_ccn": "CCC000578633",
-        "current_ccn": "CCC000650087"
-       }
-      ]
-     },
-     {
       "kind": "Reader's note",
       "owner": "procedure",
       "where": "Riverside City College's CurriQunet META reading procedure",
@@ -13095,15 +13056,15 @@ window.CPL_PATHWAYS_ROEP = {
     "checks": {
      "checked": true,
      "coverage": {
-      "placed": 24,
-      "listed": 24
+      "placed": 25,
+      "listed": 25
      },
-     "additions": 3,
+     "additions": 2,
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2a73f45c9c84",
-    "built": "2026-10-10"
+    "build": "344441813b01",
+    "built": "2026-10-11"
    }
   },
   {
@@ -13453,8 +13414,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2a73f45c9c84",
-    "built": "2026-10-10"
+    "build": "344441813b01",
+    "built": "2026-10-11"
    }
   },
   {
@@ -13963,7 +13924,8 @@ window.CPL_PATHWAYS_ROEP = {
       "coci": {
        "status": "Inactive",
        "program_ccn": "CCC000596997",
-       "current_ccn": "CCC000645221"
+       "current_ccn": "CCC000645221",
+       "listed": true
       },
       "identity": {
        "kind": "C-ID",
@@ -14020,7 +13982,8 @@ window.CPL_PATHWAYS_ROEP = {
       "coci": {
        "status": "Inactive",
        "program_ccn": "CCC000601297",
-       "current_ccn": "CCC000654206"
+       "current_ccn": "CCC000654206",
+       "listed": true
       },
       "identity": {
        "kind": "C-ID",
@@ -14133,34 +14096,6 @@ window.CPL_PATHWAYS_ROEP = {
     },
     "gaps": [
      {
-      "kind": "Catalog and state file differ",
-      "owner": "college",
-      "where": "Riverside City College's program record in the state's curriculum inventory",
-      "text": "The catalog prints CIS-27B for this program, and the state's Program Course File carries it there: the program points at CIS-27B CCC000596997, Inactive in COCI; COCI's current CIS-27B is CCC000645221.",
-      "coci": [
-       {
-        "code": "CIS-27B",
-        "status": "Inactive",
-        "program_ccn": "CCC000596997",
-        "current_ccn": "CCC000645221"
-       }
-      ]
-     },
-     {
-      "kind": "Catalog and state file differ",
-      "owner": "college",
-      "where": "Riverside City College's program record in the state's curriculum inventory",
-      "text": "The catalog prints CIS-5 for this program, and the state's Program Course File carries it there: the program points at CIS-5 CCC000601297, Inactive in COCI; COCI's current CIS-5 is CCC000654206.",
-      "coci": [
-       {
-        "code": "CIS-5",
-        "status": "Inactive",
-        "program_ccn": "CCC000601297",
-        "current_ccn": "CCC000654206"
-       }
-      ]
-     },
-     {
       "kind": "Reader's note",
       "owner": "procedure",
       "where": "Riverside City College's CurriQunet META reading procedure",
@@ -14195,15 +14130,15 @@ window.CPL_PATHWAYS_ROEP = {
     "checks": {
      "checked": true,
      "coverage": {
-      "placed": 11,
-      "listed": 11
+      "placed": 13,
+      "listed": 13
      },
-     "additions": 2,
+     "additions": 0,
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2a73f45c9c84",
-    "built": "2026-10-10"
+    "build": "344441813b01",
+    "built": "2026-10-11"
    }
   },
   {
@@ -15839,8 +15774,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "incomplete",
      "reviewer": null
     },
-    "build": "2a73f45c9c84",
-    "built": "2026-10-10"
+    "build": "344441813b01",
+    "built": "2026-10-11"
    }
   },
   {
@@ -16642,8 +16577,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2a73f45c9c84",
-    "built": "2026-10-10"
+    "build": "344441813b01",
+    "built": "2026-10-11"
    }
   },
   {
@@ -17626,8 +17561,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2a73f45c9c84",
-    "built": "2026-10-10"
+    "build": "344441813b01",
+    "built": "2026-10-11"
    }
   },
   {
@@ -18404,8 +18339,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2a73f45c9c84",
-    "built": "2026-10-10"
+    "build": "344441813b01",
+    "built": "2026-10-11"
    }
   },
   {
@@ -18572,8 +18507,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "2a73f45c9c84",
-    "built": "2026-10-10"
+    "build": "344441813b01",
+    "built": "2026-10-11"
    }
   }
  ]

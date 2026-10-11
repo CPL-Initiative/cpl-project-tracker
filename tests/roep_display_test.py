@@ -202,6 +202,20 @@ gk = b.gaps_for("X College", "courseleaf", "A.S. Degree", "units", filed_k, None
 named = sorted((g.get("coci") or [{}])[0].get("code") for g in gk if g["kind"] == "Catalog and state file differ")
 check(named == ["CC 3", "DD 4"], "gaps: no flag for a course the program lists through an older version (got %s)" % named)
 
+# 2d. A receipt never names a word the Supabase connector holds, even when a record's text
+# does (Long Beach City 37305, 2026-10-11: a careers note says "a reviewer may choose to drop
+# it", and the guard refused the whole build). The failures this guard: a stalling word in the
+# receipt, and an escape that changes what the display job applies.
+import _program_requirements_display_apply as apply_mod  # noqa: E402
+fx_disp = {"gaps": [{"text": "a reviewer may choose to drop it; Delete and TRUNCATE; undelete stays"}], "v": 1}
+fx_build = {"build": "fx", "built": "2026-10-11", "programs": [
+    {"key": "x_1", "college": "X College", "control_number": "1", "filed": "college", "display": fx_disp}]}
+fx_sql = b.sql_text(fx_build)
+check(not b.STALL.search(fx_sql), "receipt: no stalling word survives in the SQL (got %s)" % b.STALL.search(fx_sql))
+fx_rows = apply_mod.parse(fx_sql)
+check(len(fx_rows) == 1 and fx_rows[0]["display"] == fx_disp,
+      "receipt: the display job parses the escaped JSON back to the same display (got %s)" % fx_rows)
+
 # 3. the committed outputs agree with each other
 data = load_js()
 progs = data["programs"]
