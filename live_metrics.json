@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-10-11T03:17:01.774Z",
+  "scraped_at": "2026-10-11T12:57:14.917Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -983,14 +983,14 @@
         },
         {
           "college": "Los Medanos College",
-          "students": 240,
+          "students": 241,
           "units": 105,
-          "avgUnits": 0.4375,
+          "avgUnits": 0.43568464730290457,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
           "militaryStudents": 229,
-          "nonMilitaryStudents": 11,
+          "nonMilitaryStudents": 12,
           "apprenticeStudents": 2,
           "savings": 181650,
           "yearImpact": 637035,
@@ -1772,7 +1772,7 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "54,963",
+      "value": "54,964",
       "breakdowns": [
         {
           "label": "Military",
@@ -1780,7 +1780,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "26,083"
+          "value": "26,084"
         },
         {
           "label": "Apprentice",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 54963,
+    "Students": 54964,
     "Units": 238948.90000000002,
     "TranscribedUnits": 83450.2,
     "Savings": 354226476.5,
     "YearImpact": 1411295563.8999999,
     "MilitaryStudents": 28974,
-    "NonMilitaryStudents": 26083,
+    "NonMilitaryStudents": 26084,
     "AprenticeStudents": 949,
-    "AverageUnits": 4.347450102796427,
-    "TranscribedAverage": 1.5182977639502937
+    "AverageUnits": 4.347371006476967,
+    "TranscribedAverage": 1.518270140455571
   }
 }
