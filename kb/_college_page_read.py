@@ -299,9 +299,10 @@ TEXT_JS = """() => {
 # A page may keep its answer in a collapsed section (read 6, 2026-10-04: Cerritos's
 # CCAP page closes "Participating High Schools" in an accordion, and innerText
 # skips what is not shown). A plan's page with "expand": true opens every
-# <details> and clicks every collapsed toggle that stays on the page (a button,
-# or a link to a fragment), then reads. A panel still not shown after its click
-# is read by textContent. Never a link to another address: that would be a load.
+# <details>, clicks every collapsed toggle that stays on the page (a button,
+# or a link to a fragment) and every unselected tab naming a panel on the page,
+# then reads. A panel still not shown after its click is read by textContent.
+# Never a link to another address: that would be a load.
 EXPAND_JS = """() => {
   const root = document.querySelector('main, [role=main], #main-content, #main, #content') || document.body;
   let opened = 0;
@@ -310,6 +311,15 @@ EXPAND_JS = """() => {
     'button[aria-expanded="false"], [role=button][aria-expanded="false"], a[aria-expanded="false"], [data-toggle=collapse], [data-bs-toggle=collapse]'))
     .filter(b => b.tagName !== 'A' || (b.getAttribute('href') || '#').startsWith('#')).slice(0, 40);
   toggles.forEach(b => { try { b.click(); opened++; } catch (e) {} });
+  // A page's own tabs (S366: Long Beach City keeps Program Requirements in a role=tab
+  // panel, its tab bar in a <nav> outside <main>): click each unselected tab that names
+  // a panel on this page, so the panels it holds are read below.
+  const tabs = Array.from(document.querySelectorAll('[role=tab]'))
+    .filter(t => t.getAttribute('aria-selected') !== 'true')
+    .filter(t => t.getAttribute('aria-controls') || (t.getAttribute('href') || '').startsWith('#'))
+    .slice(0, 12);
+  tabs.forEach(t => { try { t.click(); opened++; } catch (e) {} });
+  toggles.push(...tabs);
   return {opened: opened, ids: toggles.map(b => b.getAttribute('aria-controls') ||
     ((b.getAttribute('href') || '').startsWith('#') ? b.getAttribute('href').slice(1) : '') ||
     (b.getAttribute('data-target') || b.getAttribute('data-bs-target') || '').replace(/^#/, '')).filter(Boolean)};
