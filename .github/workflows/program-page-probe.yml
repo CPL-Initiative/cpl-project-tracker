@@ -1,0 +1,50 @@
+name: Program page probe
+
+# A diagnostic, not a read: loads the few catalog pages kb/_program_page_probe.py
+# names through the census's Reader and commits each page's HTML and an account
+# of its tabs to the branch that pushed it. No model calls. S363: why Long
+# Beach City's trial read (run 38139252216) found no hidden Requirements tab.
+
+on:
+  push:
+    branches: ['claude/**']
+    paths:
+      - '.github/workflows/program-page-probe.yml'
+      - 'kb/_program_page_probe.py'
+
+concurrency:
+  group: program-page-probe-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Install Playwright + Chromium
+        run: |
+          pip install --quiet playwright
+          python -m playwright install --with-deps chromium
+      - name: Probe
+        env:
+          CENSUS_DELAY_MS: '4000'
+        run: python3 kb/_program_page_probe.py --out kb/program_requirements_college/long_beach_city/probe
+      - name: Commit to the branch that ran it
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kb/program_requirements_college/long_beach_city/probe
+          if git diff --cached --quiet; then echo "nothing to file"; exit 0; fi
+          git commit -m "File the page probe (run ${{ github.run_id }})"
+          for i in 1 2 3 4; do
+            git push origin "HEAD:${{ github.ref_name }}" && exit 0
+            sleep $((i * 5)); git pull --rebase origin "${{ github.ref_name }}"
+          done
+          exit 1
