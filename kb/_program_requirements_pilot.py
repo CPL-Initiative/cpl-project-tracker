@@ -596,8 +596,12 @@ def best_text(got: dict, found_body: dict, found_content: dict,
         if tabs:
             both = (got.get("body") or "") + "\n\n" + tabs
             found_both = find_codes(both, courses)
-            if coverage(found_both, courses) >= ACCEPT_SHARE or len(found_both) >= len(found_content):
-                return both, found_both, "innerText+tabs"
+            # A page with tabs is read as a reader sees it, the visible text and its tab
+            # panels, whatever share they name: Long Beach City's Program Requirements
+            # tab names fewer courses than COCI lists (Physical Sciences A.S. 13 of 35;
+            # Microsoft Excel prints COSA 601 and 618, COCI lists 615-617), and the
+            # fallback below read its hidden course index instead (S366, 74 records).
+            return both, found_both, "innerText+tabs"
     if len(found_content) > len(found_body):
         return got.get("content") or "", found_content, "textContent"
     return got.get("body") or "", found_body, "innerText"

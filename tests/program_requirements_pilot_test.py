@@ -1180,6 +1180,13 @@ check(field == "innerText" and "Total Units 9" in t and "Floral" not in t,
 check(P.best_text(lb_got, fb, fc)[2] == "textContent",
       "called without the courses, the old rule (whichever names more) stands")
 tab_got = {"body": "Horticulture A.S.\nOverview\nRequirements", "content": lb_index}
+# S366: a tab naming fewer than half the listed courses is still the page's requirements.
+# Physical Sciences A.S. prints 13 of COCI's 35; the index in textContent names all 35.
+few = [{"code": c} for c in ["CHEM 1A", "PHYS 2A"] + ["MATH %d" % n for n in range(27, 33)]]
+few_got = {"body": "Physical Sciences, A.S. Overview", "content": "Overview CHEM 1A PHYS 2A " + " ".join("MATH %d" % n for n in range(27, 33)),
+           "tabPanels": [{"label": "Program Requirements", "text": "REQUIRED COURSES CHEM 1A General Chemistry PHYS 2A General Physics; five units of any Mathematics course"}]}
+check(P.best_text(few_got, P.find_codes(few_got["body"], few), P.find_codes(few_got["content"], few), few)[2] == "innerText+tabs",
+      "a page with tabs is read from its tabs even when they name fewer than half the listed courses")
 t, f, field = P.best_text(tab_got, P.find_codes(tab_got["body"], LB), P.find_codes(tab_got["content"], LB), LB)
 check(field == "textContent", "a page whose requirements sit in a hidden tab still reads its hidden text")
 # The Long Beach City page as Chromium read it through PAGE_JS (S362, a fixture
