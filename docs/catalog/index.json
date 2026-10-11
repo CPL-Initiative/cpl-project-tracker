@@ -1509,7 +1509,7 @@
      ],
      "title": "A fill that does not flip needs ink that does not flip either",
      "type": "methodology",
-     "updated": "2026-10-09"
+     "updated": "2026-10-11"
     },
     {
      "created": "2026-09-11",
@@ -4062,7 +4062,7 @@
      ],
      "title": "A sweep sees only the states its seed reaches \u2014 seed through the code that paints them",
      "type": "methodology",
-     "updated": "2026-10-09"
+     "updated": "2026-10-11"
     },
     {
      "created": "2026-08-19",
@@ -12704,7 +12704,12 @@
       "tests/public_pages_a11y.test.js",
       "tests/cpl_funding_colmenu_edge.test.js",
       "tests/ccr_skyview_first_light.test.js",
-      "tests/ui_pass_test.py"
+      "tests/ui_pass_test.py",
+      "tests/cpl_funding_controls_first_light.test.js",
+      "tests/budget_section_first_light_test.py",
+      "tests/workplan_goals_editor_first_light.test.js",
+      "budget_editor.js",
+      "workplan_goals.js"
      ],
      "path": "docs/ui_pass_lessons.md",
      "status": null,
@@ -15316,8 +15321,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 335,
+   "count": 336,
    "docs": [
+    {
+     "created": "2026-10-11",
+     "governs": [],
+     "n": 365,
+     "path": "docs/session_365_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "ui-pass",
+      "first-light",
+      "accessibility",
+      "program-requirements",
+      "long-beach-city",
+      "decision-sheet"
+     ],
+     "title": "Sheet 63 carried out, three UI passes, Long Beach City with the second S364 session",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-11",
      "governs": [],
@@ -21056,5 +21080,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1101
+ "total": 1102
 }

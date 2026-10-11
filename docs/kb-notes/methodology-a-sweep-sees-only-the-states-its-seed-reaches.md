@@ -1,7 +1,7 @@
 ---
 title: A sweep sees only the states its seed reaches — seed through the code that paints them
 created: 2026-10-09
-updated: 2026-10-09
+updated: 2026-10-11
 tags: [methodology, accessibility, testing, verification, sierra]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -70,3 +70,17 @@ the row is the widget's.
 - When a measurement fails for a structural reason (disabled, inert, a closed
   `<details>`), teach the engine the reason in one place, with the reason written down,
   rather than exempting the target.
+
+## A state that lasts a second is a view too (S364)
+
+A cell being saved paints for the length of one network write, and a failed save until the next click. No sweep, signed
+out or signed in, has ever seen either. On the Budget editor the saving tint read **1.35:1** in dark (light text on
+`#FFF6D9`); on Annual Workplan Goals a title cell in its navy row read **1.06:1** on the saving tint in light as well
+as dark, because the tint was picked against body rows and the cell kept the row's white text. Both editors had passed
+their earlier UI passes.
+
+The seeds that found them (`budget-editor`, `workplan-goals-editor` in `a11y.config.js`) put the session in storage the
+way the editor reads it, fire the editor's own re-read event, then add one state class to each of three editable
+cells. A transient state is a class or attribute the code sets and later removes, so the seed sets it and holds it.
+List a view's write states (saving, saved, failed, disabled while in flight) with the states a reader reaches by acting.
+

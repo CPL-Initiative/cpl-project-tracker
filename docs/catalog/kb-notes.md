@@ -91,7 +91,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A field the resolver never reaches can disagree with the record forever](../kb-notes/methodology-a-field-the-resolver-never-reaches-can-disagree-forever.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [A figure is only wrong relative to the payload it names](../kb-notes/methodology-a-figure-is-only-wrong-relative-to-the-payload-it-names.md) | methodology | published | 2026-09-06 | 2026-09-06 |
 | [A figure tagged to two owners is claimed twice](../kb-notes/methodology-a-figure-tagged-to-two-owners-is-claimed-twice.md) | methodology | published | 2026-09-14 | 2026-09-14 |
-| [A fill that does not flip needs ink that does not flip either](../kb-notes/methodology-a-fill-that-does-not-flip-needs-ink-that-does-not-either.md) | methodology | published | 2026-09-09 | 2026-10-09 |
+| [A fill that does not flip needs ink that does not flip either](../kb-notes/methodology-a-fill-that-does-not-flip-needs-ink-that-does-not-either.md) | methodology | published | 2026-09-09 | 2026-10-11 |
 | [A filter must be able to see what you are about to declare missing](../kb-notes/methodology-a-filter-must-be-able-to-see-what-you-declare-missing.md) | methodology | published | 2026-09-11 | 2026-09-11 |
 | [A filter needs a field — prose is not a facet](../kb-notes/methodology-a-filter-needs-a-field.md) | methodology | published | 2026-08-18 |  |
 | [A filter, the column that justifies it, and the export must share one source](../kb-notes/methodology-a-filter-and-what-justifies-it-must-share-one-source.md) | methodology | published | 2026-08-16 | 2026-08-16 |
@@ -223,7 +223,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A summary surface must share the unit of the detail it summarizes](../kb-notes/methodology-a-summary-must-share-the-unit-of-its-detail.md) | methodology | published | 2026-08-01 | 2026-08-01 |
 | [A sweep of a gated view measures the gate](../kb-notes/methodology-a-sweep-of-a-gated-view-measures-the-gate.md) | methodology | published | 2026-10-10 | 2026-10-10 |
 | [A sweep scoped by a proxy leaves a shadow](../kb-notes/methodology-a-sweep-scoped-by-a-proxy-leaves-a-shadow.md) | methodology | published | 2026-08-09 | 2026-08-09 |
-| [A sweep sees only the states its seed reaches — seed through the code that paints them](../kb-notes/methodology-a-sweep-sees-only-the-states-its-seed-reaches.md) | methodology | published | 2026-10-09 | 2026-10-09 |
+| [A sweep sees only the states its seed reaches — seed through the code that paints them](../kb-notes/methodology-a-sweep-sees-only-the-states-its-seed-reaches.md) | methodology | published | 2026-10-09 | 2026-10-11 |
 | [A tag scan cannot see a fetch](../kb-notes/methodology-a-tag-scan-cannot-see-a-fetch.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A team-curated Supabase table needs team_pass_ok() on UPDATE too, not just SELECT + INSERT](../kb-notes/methodology-team-curated-table-needs-update-rls.md) | methodology | published | 2026-07-26 | 2026-07-26 |
 | [A test file is a memory budget, and the process boundary is the only allocator](../kb-notes/methodology-a-test-file-is-a-memory-budget.md) | methodology | published | 2026-08-20 | 2026-08-20 |

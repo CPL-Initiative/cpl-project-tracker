@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 86 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 55 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 335 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1101** | |
+| Session handoffs | 336 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1102** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-11 (S364 SkyJuniper): Sam kept hours / 16 on Open Asks Sheet 63 (#1990); the Implementation Funding UI pass with a seeded curator sweep (#1991); Budget's and Annual Workplan Goals' editors read mid-save in both themes, controls as words (#1992, #1994); a second S364 session ran Long Beach City and the Program Requirements speed fix (#1993); KB notes `methodology-a-sweep-sees-only-the-states-its-seed-reaches` and `methodology-a-fill-that-does-not-flip-needs-ink-that-does-not-either` gained sections; handoff 365.
 - 2026-10-11 (S363 SkyCedar): Long Beach City's Requirements tab sits inside `<nav id="tabs">`, found by a runner probe; the reader counts a tab bar's own tabs (#1986); trial 2 read 11 of 12 from the tab and the full read runs; Long Beach City in the display builder's dated reads; Open Asks Sheet 63 (where a half unit starts); the Budget tab's UI pass (#1988); KB note `methodology-test-a-reader-fix-on-the-page-it-failed-on`; handoff 364 (SkyJuniper).
 - 2026-10-11 (S361 SkyBirch): rules 4 and 5 merged and deployed with Sierra (#1974), COCI status chips (#1972), Riverside City 39120 removed by Sam's own paste, Long Beach City's read started, the extraction push guard (#1976), the Workplan Goals UI pass (#1977), the two-call extraction built (#1978); S360's lessons section and S327-S333 moved to the archive; KB note `methodology-a-path-filter-compares-pushes-not-branches`; handoff 362 (SkyAlder).
 - 2026-10-11 (S359 SkyMoss): RCCD's Liberal Arts emphasis read (#1965-#1967), Sheet 60's eight rows removed (#1968), Sam's Mt. San Antonio reading rules; KB note `methodology-a-missing-course-may-be-a-retired-version`; handoff 360.

@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1114,
-    "bytes": 11554942,
+    "files": 1115,
+    "bytes": 11567176,
     "over_budget": 6,
-    "handoff_max": 364,
+    "handoff_max": 365,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59999,
     "superseded_files": 0,
@@ -26,32 +26,32 @@
       },
       "other": {
         "files": 119,
-        "bytes": 3408960,
+        "bytes": 3409119,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 10042,
+        "bytes": 10603,
         "over": 0
       },
       "lessons": {
         "files": 81,
-        "bytes": 2342053,
+        "bytes": 2345315,
         "over": 2
       },
       "kb_note": {
         "files": 541,
-        "bytes": 2693372,
+        "bytes": 2695053,
         "over": 0
       },
       "roadmap_lane": {
         "files": 36,
-        "bytes": 331882,
+        "bytes": 331897,
         "over": 1
       },
       "handoff": {
-        "files": 335,
-        "bytes": 2708634,
+        "files": 336,
+        "bytes": 2715190,
         "over": 0
       }
     },
@@ -61,9 +61,9 @@
       "vault_heavy_path": 60
     },
     "vault": {
-      "files": 5146,
-      "bytes": 1919633793,
-      "heavy_bytes": 901181616,
+      "files": 5149,
+      "bytes": 1919677288,
+      "heavy_bytes": 901181612,
       "heavy_share": 0.469,
       "ignore_filters": [
         "cpl-project-tracker/kb/regional_cpl_out",
@@ -699,10 +699,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 12723246,
+        "bytes": 12723223,
         "kind": "file"
       },
-      "message": "12,723,246 B single file inside the vault"
+      "message": "12,723,223 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -849,10 +849,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6715709,
+        "bytes": 6715708,
         "kind": "file"
       },
-      "message": "6,715,709 B single file inside the vault"
+      "message": "6,715,708 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1039,10 +1039,10 @@
       "fixable": false,
       "path": "kb/cr_reference_worklist.json",
       "detail": {
-        "bytes": 2354271,
+        "bytes": 2354291,
         "kind": "file"
       },
-      "message": "2,354,271 B single file inside the vault"
+      "message": "2,354,291 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
