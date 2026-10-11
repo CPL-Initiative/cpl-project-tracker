@@ -134,6 +134,13 @@ pp = b.plan(pick, has, None, hp, path=True)
 check(pp["cpl"] == 0 and pp["picks"] == [],
       "plan: along the map, the map's picks (N4 in a choice, N5 over its or) count in place of the CPL course (got %s)" % pp)
 
+# 2a. A recommended block counts toward nothing (Sam's rule 4, 2026-10-11): its CPL course adds
+# no units to the figure, and the figure picks no course from it.
+rec_blocks = [{"rule": "all", "courses": [{"code": "C1", "units": 3}]},
+              {"rule": "recommended", "minimum": None, "courses": [{"code": "C9", "units": 4}]}]
+rp = b.plan(rec_blocks, has)
+check(rp["cpl"] == 3 and rp["picks"] == ["C1"], "plan: a recommended block adds nothing to the figure (got %s)" % rp)
+
 # 2b. COCI's word on a mismatched course (Sam, 2026-10-11, reading the Mt. San Antonio sample:
 # "find the 2 courses in COCI with a different status ... list them with a chip noting the Coci
 # status so the college can follow up if needed. Make this a rule for all such courses."). The

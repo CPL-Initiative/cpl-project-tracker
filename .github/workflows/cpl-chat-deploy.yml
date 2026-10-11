@@ -33,6 +33,12 @@ name: cpl-chat deploy
 #
 # AFTER A RUN: this triggers nothing automatically. Dispatch cpl-chat-smoke.yml
 # and read mode 7, per the deploy playbook in CLAUDE.md §7c.
+#
+# ONE MORE FUNCTION (S360, 2026-10-11): program-requirements-extract, the
+# harvest's model call (20 KB, with non-ASCII in its prompt), deploys the same
+# way, for the same two reasons: the bytes come from git and verify_jwt stays
+# off (its caller check authenticates; header of its index.ts). The choice list
+# is the allowlist; cpl-chat stays the default.
 
 on:
   workflow_dispatch:
@@ -41,6 +47,14 @@ on:
         description: 'Type DEPLOY to confirm this goes to production'
         required: true
         default: ''
+      function:
+        description: 'Which Edge Function to deploy from main'
+        type: choice
+        required: false
+        default: cpl-chat
+        options:
+          - cpl-chat
+          - program-requirements-extract
 
 concurrency:
   group: cpl-chat-deploy
@@ -64,8 +78,10 @@ jobs:
 
       - name: Record the bytes we are about to ship
         id: pre
+        env:
+          FN: ${{ inputs.function || 'cpl-chat' }}
         run: |
-          F=chatbox/supabase/functions/cpl-chat/index.ts
+          F=chatbox/supabase/functions/$FN/index.ts
           echo "sha=$(sha256sum $F | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
           echo "Deploying $F — $(wc -c < $F) bytes, $(wc -l < $F) lines"
           sha256sum $F
@@ -113,7 +129,7 @@ jobs:
               ;;
           esac
 
-      - name: Deploy cpl-chat
+      - name: Deploy the function
         # MUST run from chatbox/. The CLI resolves functions at
         # <cwd>/supabase/functions/<slug>/index.ts, and in this repo the
         # supabase/ tree lives under chatbox/, not at the root — so running
@@ -124,13 +140,15 @@ jobs:
         working-directory: chatbox
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          FN: ${{ inputs.function || 'cpl-chat' }}
         run: |
           # --no-verify-jwt is REQUIRED: the widget sends the anon key, not a
           # user JWT. Shipping verify_jwt=true 401s every first-party surface.
+          # program-requirements-extract runs with it off too (its caller check).
           # --debug so a 403 reports WHICH endpoint and identity was refused.
-          test -f supabase/functions/cpl-chat/index.ts \
+          test -f "supabase/functions/$FN/index.ts" \
             || { echo "::error::entrypoint missing from $(pwd)"; exit 1; }
-          supabase functions deploy cpl-chat \
+          supabase functions deploy "$FN" \
             --project-ref hvuwhnbuahrtptokpqfh \
             --no-verify-jwt \
             --debug
@@ -138,8 +156,9 @@ jobs:
       - name: Byte-verify what actually landed
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          FN: ${{ inputs.function || 'cpl-chat' }}
         run: |
-          F=chatbox/supabase/functions/cpl-chat/index.ts
+          F=chatbox/supabase/functions/$FN/index.ts
           echo "Repo sha256:  ${{ steps.pre.outputs.sha }}"
           echo
           echo "The deploy step uploads the checked-out file directly, so a"
