@@ -237,3 +237,19 @@ and Revise controls render only for a team-phrase holder, so the unseeded sweeps
 repaints and re-pulls; it found an artifact's title link 20px tall at once. The unseeded sweeps found an h1 to h3 skip,
 a chip at 4.38:1 (`opacity:.85` on `--text-muted` again; opacity dims every ink inside it) and a scrolling table no
 keyboard could reach. CPL Pathways is held in the ledger until Open Asks Sheet 65 card 2 rules on its record source.
+
+**Governance (S366): a gated register, and a placeholder that outlived its load.** The register is gated on the read, so
+the unseeded sweeps measured only the locked banner. The seed `governance-editor` (with `-dark`, at 320, 390 and 1440)
+holds the phrase, stubs the four gated reads and opens Docs & doctrine. It found an h2 to h4 skip and three register
+tables scrolling at 390 and 320 with no keyboard path; breaking either fix on purpose fails it again. The seed's second
+width found a real bug: a repaint mounts a fresh Docs panel over an index already loaded, and the toggle handler returned
+before painting, so the reopened panel was blank. Screenshots at five widths showed what no check measures: the shell's
+loading placeholder (dashed border, `text-align:center`, inline on the root) stayed under the painted register and
+centered every cell, paragraph and list item. Clear a shell's inline placeholder when the view paints
+(`root.removeAttribute("style")`, as ten other tabs do). The owner dialog sat on glass (`--surface` is 86% alpha in dark)
+with page text showing through, and had no Escape and no focus return. First Light: the "authoritative" chip was a green
+fill on a category, and raw hex sat in fallbacks. The wiring check agreed on screen (25 colleges route nowhere, 14
+untriaged feedback rows, in Governance, MAP Users and the Queue) and found a latent drift: all three `sierra_feedback`
+readers fetch the CI rows and filter in the browser under a row cap (Sierra Training 500, the others 1,000) with 452 rows
+and about 46 CI rows a week; the sibling PR filters on the server. Guards: `tests/governance_ui_pass.test.js` (18 of 20
+fail on the old file; the two that pass are a precondition and the input taking focus) and the remount check in `tests/governance_docs_panel.test.js`.
