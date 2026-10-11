@@ -1,15 +1,15 @@
 window.CPL_PATHWAYS_ROEP = {
  "_generated_by": "kb/_build_roep_display.py",
  "_note": "Each harvested program's catalog record and its display facts: CPL in three kinds per course, the up-to figure, the gaps and the map's status. The same facts sit in program_requirement_records.display, where Sierra reads them; both carry this build stamp. Do not edit; rerun the builder.",
- "build": "57100ecf39c0",
+ "build": "2a73f45c9c84",
  "built": "2026-10-10",
  "inputs": {
   "records": 1210,
   "map_read_at": "2026-10-10",
   "registry_read_at": "2026-10-10",
   "articulations": "2026-09-03T20:19:16Z",
-  "memberships": "2026-10-11 03:17",
-  "cer": "2026-10-11T03:18:12+00:00"
+  "memberships": "2026-10-11 12:58",
+  "cer": "2026-10-11T12:58:37+00:00"
  },
  "definitions": {
   "here": "Articulated here: the college has articulated CPL to this course. MAP holds a credit recommendation for it at this college (military, industry or exam credit), or MAP's articulated-exhibit feed names the course at this college.",
@@ -111,6 +111,18 @@ window.CPL_PATHWAYS_ROEP = {
      "path_picks": [],
      "path_why": "No pathway map has been read for this program."
     },
+    "equivalent_units": {
+     "rate": "lecture",
+     "hours_per_unit": [
+      16,
+      18
+     ],
+     "total": {
+      "min": 8.5,
+      "max": 8.5
+     },
+     "up_to": 0.0
+    },
     "counts": {
      "courses": 4,
      "here": 0,
@@ -131,6 +143,10 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "ELEC M9043",
         "title": "Introduction to Energy Surveying"
        }
+      ],
+      "equivalent_units": [
+       2.5,
+       null
       ]
      },
      "AED 90.02": {
@@ -146,6 +162,10 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "ELEC M9013",
         "title": "Basic Electricity and Wiring Fundamentals"
        }
+      ],
+      "equivalent_units": [
+       2.5,
+       null
       ]
      },
      "AED 90.03": {
@@ -161,6 +181,10 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "ELEC M9052",
         "title": "Introduction to Lighting Retrofits"
        }
+      ],
+      "equivalent_units": [
+       2.5,
+       null
       ]
      },
      "AED 90.05": {
@@ -176,6 +200,10 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "ELEC M90AC",
         "title": "OSHA-10 Training"
        }
+      ],
+      "equivalent_units": [
+       1.0,
+       null
       ]
      }
     },
@@ -234,7 +262,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "57100ecf39c0",
+    "build": "2a73f45c9c84",
     "built": "2026-10-10"
    }
   },
@@ -742,7 +770,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "57100ecf39c0",
+    "build": "2a73f45c9c84",
     "built": "2026-10-10"
    }
   },
@@ -1766,7 +1794,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "57100ecf39c0",
+    "build": "2a73f45c9c84",
     "built": "2026-10-10"
    }
   },
@@ -2635,7 +2663,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "57100ecf39c0",
+    "build": "2a73f45c9c84",
     "built": "2026-10-10"
    }
   },
@@ -3713,7 +3741,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": null
     },
-    "build": "57100ecf39c0",
+    "build": "2a73f45c9c84",
     "built": "2026-10-10"
    }
   },
@@ -4510,7 +4538,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "57100ecf39c0",
+    "build": "2a73f45c9c84",
     "built": "2026-10-10"
    }
   },
@@ -5313,7 +5341,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "57100ecf39c0",
+    "build": "2a73f45c9c84",
     "built": "2026-10-10"
    }
   },
@@ -6860,7 +6888,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "57100ecf39c0",
+    "build": "2a73f45c9c84",
     "built": "2026-10-10"
    }
   },
@@ -7396,7 +7424,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "57100ecf39c0",
+    "build": "2a73f45c9c84",
     "built": "2026-10-10"
    }
   },
@@ -8580,7 +8608,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "57100ecf39c0",
+    "build": "2a73f45c9c84",
     "built": "2026-10-10"
    }
   },
@@ -9808,7 +9836,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "57100ecf39c0",
+    "build": "2a73f45c9c84",
     "built": "2026-10-10"
    }
   },
@@ -10523,7 +10551,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "57100ecf39c0",
+    "build": "2a73f45c9c84",
     "built": "2026-10-10"
    }
   },
@@ -10876,7 +10904,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "unstated",
      "reviewer": "ok"
     },
-    "build": "57100ecf39c0",
+    "build": "2a73f45c9c84",
     "built": "2026-10-10"
    }
   },
@@ -11217,7 +11245,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "57100ecf39c0",
+    "build": "2a73f45c9c84",
     "built": "2026-10-10"
    }
   },
@@ -13074,7 +13102,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "57100ecf39c0",
+    "build": "2a73f45c9c84",
     "built": "2026-10-10"
    }
   },
@@ -13192,6 +13220,18 @@ window.CPL_PATHWAYS_ROEP = {
      "path_picks": [],
      "path_why": "No pathway map has been read for this program."
     },
+    "equivalent_units": {
+     "rate": "lecture",
+     "hours_per_unit": [
+      16,
+      18
+     ],
+     "total": {
+      "min": 15.0,
+      "max": 15.0
+     },
+     "up_to": 0.0
+    },
     "counts": {
      "courses": 8,
      "here": 0,
@@ -13212,6 +13252,10 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "CULN M1130",
         "title": "ServSafe Food Safety"
        }
+      ],
+      "equivalent_units": [
+       2.0,
+       null
       ]
      },
      "CUL-825": {
@@ -13239,7 +13283,11 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         }
        ]
-      }
+      },
+      "equivalent_units": [
+       1.5,
+       null
+      ]
      },
      "CUL-826": {
       "title": "Food Cost Accounting",
@@ -13254,6 +13302,10 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "CULN M90AE",
         "title": "Food Cost Accounting"
        }
+      ],
+      "equivalent_units": [
+       1.5,
+       null
       ]
      },
      "CUL-827": {
@@ -13269,6 +13321,10 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "CULN M90CI",
         "title": "Culinary Purchasing and Receiving"
        }
+      ],
+      "equivalent_units": [
+       1.5,
+       null
       ]
      },
      "CUL-828A": {
@@ -13284,6 +13340,10 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "CULN M90CD",
         "title": "Culinary Food Preparation 1"
        }
+      ],
+      "equivalent_units": [
+       1.5,
+       null
       ]
      },
      "CUL-828B": {
@@ -13299,6 +13359,10 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "CULN M90CE",
         "title": "Culinary Food Preparation 2"
        }
+      ],
+      "equivalent_units": [
+       1.5,
+       null
       ]
      },
      "CUL-824": {
@@ -13326,7 +13390,11 @@ window.CPL_PATHWAYS_ROEP = {
          ]
         }
        ]
-      }
+      },
+      "equivalent_units": [
+       1.5,
+       null
+      ]
      },
      "CUL-842": {
       "title": "International Cuisine",
@@ -13341,6 +13409,10 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "CULN M1092",
         "title": "International Cuisine"
        }
+      ],
+      "equivalent_units": [
+       1.5,
+       null
       ]
      }
     },
@@ -13381,7 +13453,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "57100ecf39c0",
+    "build": "2a73f45c9c84",
     "built": "2026-10-10"
    }
   },
@@ -14130,7 +14202,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "57100ecf39c0",
+    "build": "2a73f45c9c84",
     "built": "2026-10-10"
    }
   },
@@ -15767,7 +15839,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "incomplete",
      "reviewer": null
     },
-    "build": "57100ecf39c0",
+    "build": "2a73f45c9c84",
     "built": "2026-10-10"
    }
   },
@@ -16570,7 +16642,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "57100ecf39c0",
+    "build": "2a73f45c9c84",
     "built": "2026-10-10"
    }
   },
@@ -17554,7 +17626,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "57100ecf39c0",
+    "build": "2a73f45c9c84",
     "built": "2026-10-10"
    }
   },
@@ -18332,7 +18404,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "57100ecf39c0",
+    "build": "2a73f45c9c84",
     "built": "2026-10-10"
    }
   },
@@ -18411,6 +18483,18 @@ window.CPL_PATHWAYS_ROEP = {
      "path_picks": [],
      "path_why": "No pathway map has been read for this program."
     },
+    "equivalent_units": {
+     "rate": "lecture",
+     "hours_per_unit": [
+      16,
+      18
+     ],
+     "total": {
+      "min": 0.5,
+      "max": 1.0
+     },
+     "up_to": 0.0
+    },
     "counts": {
      "courses": 2,
      "here": 0,
@@ -18431,6 +18515,10 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "VOCE M90EO",
         "title": "Supervisory/Trainee Real Estate Appraiser"
        }
+      ],
+      "equivalent_units": [
+       0.0,
+       0.5
       ]
      },
      "VOC ED 198CE": {
@@ -18446,6 +18534,10 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "VOCE M90EP",
         "title": "Fed & State Laws and Regs. for CA Appraisers"
        }
+      ],
+      "equivalent_units": [
+       0.0,
+       0.5
       ]
      }
     },
@@ -18480,7 +18572,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "57100ecf39c0",
+    "build": "2a73f45c9c84",
     "built": "2026-10-10"
    }
   }

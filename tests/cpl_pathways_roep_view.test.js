@@ -349,6 +349,36 @@ function click(w, root, value) {
   check("(k) the chips are drawn on tokens, never a raw color", !/\.cplpw-rdiffer[^"]*#[0-9a-fA-F]{3,6}/.test(SRC));
 }
 
+// ── (m) A noncredit program's hours as estimated equivalent units (Sam, 2026-10-11) ──
+// "apply a carnegy unit conversion to list equivalent units and note they are equivalent, not awarded
+// units"; then "I'm a little afraid they'll be misconstrued as real units rather than estimated
+// equivalents"; "Let's use lecture rate". The display build converts (16-18 hours a unit, in half units);
+// the page only reads it.
+{
+  const w = freshWindow();
+  const T = w.CPL_PATHWAYS_TAB;
+  const root = w.document.getElementById("cpl-pathways-root");
+  const rec = w.CPL_PATHWAYS_ROEP.programs.find((p) => p.measure === "hours" && p.display.equivalent_units &&
+    p.display.equivalent_units.total.min != null);
+  T._roepView.lay = "req"; T._roepView.who = "college";
+  if (rec) T._renderRoepProgram(root, rec);
+  const line = root.querySelector(".cplpw-rmap .cplpw-requiv");
+  const e = rec && rec.display.equivalent_units;
+  check("(m) a noncredit program states its hours as estimated equivalent units, not awarded units",
+    !!line && /^Estimated equivalent units/.test(line.textContent) && line.textContent.indexOf("at the lecture rate, 16–18 hours a unit (Title 5 section 55002.5)") > -1 &&
+    /For estimating only: equivalents, not awarded units\.$/.test(line.textContent) &&
+    Math.abs(Number((line.textContent.match(/is about ([0-9.]+) units?/) || [])[1]) - e.total.min) < 0.05,
+    line && line.textContent);
+  const eqTile = Array.from(root.querySelectorAll(".cplpw-rmap .cplpw-rtile .u")).find((u) => /estimated equivalent\)$/.test(u.textContent));
+  check("(m) a course with printed hours carries its estimated equivalent beside them", !!eqTile && /hours \(about [0-9.]+ units?, estimated equivalent\)$/.test(eqTile.textContent),
+    eqTile && eqTile.textContent);
+  const w2 = freshWindow();
+  const root2 = w2.document.getElementById("cpl-pathways-root");
+  w2.CPL_PATHWAYS_TAB._roepView.lay = "req";
+  w2.CPL_PATHWAYS_TAB._renderRoepProgram(root2, w2.CPL_PATHWAYS_ROEP.programs.find((p) => p.key === "cerritos_42158"));
+  check("(m) a units program shows no equivalent line", !root2.querySelector(".cplpw-requiv") && !/estimated equivalent/.test(root2.textContent));
+}
+
 // ── (l) Recommended electives as their own block, and the careers the catalog names (Sam, 2026-10-11) ──
 {
   const w = freshWindow();

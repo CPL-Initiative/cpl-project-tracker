@@ -1403,6 +1403,24 @@ block("(18e)", function () {
 // COCI when the program at the college does not"; "Preserve the unit difference and highlight with
 // a chip". The failures this guards: a course COCI carries on the program read only as off the
 // list, a blank units cell, and a unit difference shown as the bare word "unequal".
+// (20) A noncredit program's hours as estimated equivalent units (Sam, 2026-10-11): the display build's
+// lecture rate (16-18 hours a unit, Title 5 section 55002.5), labeled for estimating only, not awarded
+// units; a units program carries no such row.
+block("(20)", function () {
+  const m = loadModule();
+  const rec = JSON.parse(JSON.stringify(IRONWORKER));
+  rec.measure = "hours"; rec.total_min = 324; rec.total_max = 324;
+  rec.display.equivalent_units = { rate: "lecture", hours_per_unit: [16, 18], total: { min: 20, max: 20 }, up_to: 0 };
+  m.M._state.registry = REGISTRY; m.M._state.records = [rec]; m.M._state.view = "records"; m.M._render();
+  const eq = Array.prototype.filter.call(m.root.querySelectorAll("article.prh-rec .prh-check"), function (d) {
+    return d.querySelector("dt").textContent === "Estimated equivalent units"; })[0];
+  check("(20) a noncredit record states its hours as estimated equivalent units, not awarded units",
+    !!eq && eq.querySelector("dd").textContent === "About 20 at the lecture rate, 16–18 hours a unit (Title 5 section 55002.5); for estimating only, not awarded units",
+    eq && eq.textContent);
+  m.M._state.records = [JSON.parse(JSON.stringify(IRONWORKER))]; m.M._render();
+  check("(20) a units record carries no equivalent row", !/Estimated equivalent units/.test(m.root.textContent));
+});
+
 block("(19)", function () {
   const m = loadModule();
   const rec = JSON.parse(JSON.stringify(IRONWORKER));

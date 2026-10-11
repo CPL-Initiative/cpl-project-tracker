@@ -953,7 +953,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2586,
+     "line": 2600,
      "tabs": [
       "cpl-pathways"
      ]
@@ -1329,7 +1329,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1555,
+     "line": 1565,
      "tabs": [
       "program-requirements"
      ]
@@ -1421,7 +1421,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2585,
+     "line": 2599,
      "tabs": [
       "cpl-pathways"
      ]
@@ -2267,7 +2267,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2584,
+     "line": 2598,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4910,7 +4910,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2800,
+     "line": 2814,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4980,7 +4980,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2794,
+     "line": 2808,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5259,7 +5259,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1995,
+     "line": 2009,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5302,7 +5302,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2767,
+     "line": 2781,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5325,7 +5325,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2154,
+     "line": 2168,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5374,7 +5374,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2808,
+     "line": 2822,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5517,7 +5517,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2781,
+     "line": 2795,
      "tabs": [
       "cpl-pathways"
      ]

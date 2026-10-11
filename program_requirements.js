@@ -1378,6 +1378,16 @@
     });
   }
 
+  /* A noncredit program's hours as estimated equivalent units, from the display build (the lecture rate,
+     16-18 hours a unit in half units, Title 5 section 55002.5). Sam, 2026-10-11: for estimating only. */
+  function equivRow(p, disp) {
+    var e = p.measure === "hours" ? (disp || {}).equivalent_units : null;
+    if (!e || !e.total || e.total.min == null) return null;
+    return el("div", { cls: "prh-check" }, [el("dt", { text: "Estimated equivalent units" }),
+      el("dd", { text: "About " + span(e.total.min, e.total.max) + " at the lecture rate, " + (e.hours_per_unit || []).join("–") +
+        " hours a unit (Title 5 section 55002.5); for estimating only, not awarded units" })]);
+  }
+
   /* opts.split: the card drawn in the side by side view, its blocks open and no Side by side word. */
   function recordCard(p, opts) {
     opts = opts || {};
@@ -1420,7 +1430,7 @@
         el("span", { cls: "prh-rctl" }, [btn, !opts.split && p.source_url ? splitButton(p) : null])]),
       el("dl", { cls: "prh-checks" }, [dd("Courses", placed),
         dd("Off the state list", ck.additions ? ck.additions + ", printed in the catalog" : "None"),
-        dd("Units", arith), dd("Person's reading", reader),
+        dd("Units", arith), equivRow(p, disp), dd("Person's reading", reader),
         F.flags.length ? wide(dd("Flags", flagSummary(F.flags))) : null]),
       cpl]);
     var body = el("div", { cls: "prh-body", id: bodyId });
