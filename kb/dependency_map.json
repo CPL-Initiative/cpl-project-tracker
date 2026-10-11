@@ -1555,7 +1555,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 426
+     "line": 429
     }
    ],
    "main_committers": []
@@ -5010,7 +5010,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 448
+     "line": 451
     },
     {
      "id": "module:college_briefing.js",
