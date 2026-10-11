@@ -147,7 +147,7 @@ on the college's harvest-tab row and My College to-dos; the MAP team sends.
 
 **Sam's ruling (Sheet 59 card 1, in chat ~19:45Z 2026-10-10, "RCCD go!", as proposed):** carried out by S358; Long Beach City follows. Memory row `sam-rccd-go-sheet-59-card-1-2026-10-10`.
 
-**Sam's rulings (Sheet 61, 2026-10-11T01:26Z, both his own call; in chat: "Go Long Beach and remove stale"):** card 1 "rules", Long Beach City (379 of 385 programs found a page) reads once the extraction carries rules 4 and 5, after Sam sees a sample (NEXT ①); card 2 "remove", Riverside City 39120 (it read HVAC Commercial Technology's page) goes with a receipt holding the full row (delete awaits Sam's confirmation) (`kb/receipts/program_requirement_records_rcc_39120_removed_2026-10-11_s360.*`). Memory row `sam-sheet-61-rulings-lbcc-rules-remove-39120-2026-10-11`.
+**Sam's rulings (Sheet 61, 2026-10-11T01:26Z, both his own call; in chat: "Go Long Beach and remove stale"):** card 1 "rules", Long Beach City (379 of 385 programs found a page) reads once the extraction carries rules 4 and 5, after Sam sees a sample (NEXT ①); card 2 "remove", Riverside City 39120 (it read HVAC Commercial Technology's page) goes with a receipt holding the full row (awaits Sam's confirm) (`kb/receipts/program_requirement_records_rcc_39120_removed_2026-10-11_s360.*`). Memory row `sam-sheet-61-rulings-lbcc-rules-remove-39120-2026-10-11`.
 
 **Sam's ruling (Sheet 60 card 1, 2026-10-10T23:52Z, "remove"):** the eight rows the Approved re-reads no longer carried are removed (S359, #1968); full rows and the rollback in `kb/receipts/program_requirement_records_eight_dropped_removed_2026-10-10_s359.json`.
 
