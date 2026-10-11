@@ -907,3 +907,30 @@ The plan was a session's (S353, *"366 KB for 22 records"*), written before the h
 ruled on it. It went to him as Open Asks Sheet 65 card 2, proposing that the tab read a record from the table when a
 reader opens it, as the Program Requirements tab already does. The measurement script is a few lines over
 `kb/_build_roep_display.py`'s `build()`; the lane file names the card.
+
+## S366 SkyHazel, 2026-10-11: Long Beach City's 74 mostly read another program's page
+
+The lane named the 74 records that place none as waiting on Long Beach City's reading procedure. Read from the
+committed `sources.json` and records (no new read), most of them were never on their own page.
+
+- **Why.** `candidates()` admits a page that names enough of a program's listed codes, and Long Beach City's hidden A-Z
+  course index puts every code in every page's `textContent` (S362). Every page clears the net at coverage 1.0.
+  `page_winners()` then keeps a page for every claimant tied at the top title score, and when the page names none of
+  their titles that top is 0: Photography A.A. went to Fashion Design, Film, Floral Design, Fashion Merchandising,
+  Administration of Justice, Physical Sciences A.A. and Fashion Design: Assistant Designer; Dance A.A. to five;
+  General Education Patterns to five.
+- **What the 74 are, by eye.** 11 read their own page and placed none: the reading procedure proper (Physical
+  Sciences A.S., the five noncredit Office certificates, CISCO, Automation Technician, SMAW, Athletic Coaching, and
+  IGETC on the GE Patterns page). 4 ESL Level 2 and 3 programs read the Level 1 page. About 10 read a page that may be
+  the program renamed or a sibling (Engineering on Engineering Technology, Economics on Business Economics). About 49
+  read a plainly different program's page.
+- **The live data is clean.** `places_none` kept all 74 out of the load. Of the 305 loaded, 301 read
+  `innerText+tabs` and one page names under half its program's title (CSU GE-Breadth on LBCC-GE, the right page).
+- **The title score is weak where the heading carries the award.** "Computer Science" scores 1.0 on *Computer Aided
+  Design - Mechanical - Associate in Science*: *science* comes from the award. A fix in `assign()` should take a page
+  reached only through hidden text only when its heading names the program with the award words set aside.
+- **What it cannot settle from here.** Whether each of the ~49 has any page in the 2026-27 catalog: the sitemap lists
+  2,503 addresses (626 program pages), but the capture keeps only counts, and the sandbox's proxy refuses
+  `lbcc-public.courseleaf.com`. A sitemap-only read on the workflow would list the programs COCI calls Active that the
+  catalog does not print, which is the college's to settle (its addendum first, Sam's rule).
+
