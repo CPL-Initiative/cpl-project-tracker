@@ -1,7 +1,7 @@
 ---
 title: "Governance & team enablement — lane state"
 created: 2026-08-28
-updated: 2026-09-27
+updated: 2026-10-11
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -102,6 +102,17 @@ not paperwork: DR-26's first cut read under `using (true)`, and mapping it is
 what made "who can see this" a question someone asked out loud.
 
 ## Status
+
+⏳ **NEEDS SAM — Vision 2030 goal figures: which figure each bar shows (S365, Open Asks Sheet 64 card 1).** The
+Vision 2030 tab and the annual report (`CPL_DATA.vision2030`) state the three CPL goals' progress differently, and no
+person owns either figure (an acceptance-standard gap: an input with no named source). Goal 1: the tab's bar divides
+the 14,195 credit recommendations in MAP by the workplan's 1,000, which counts recommendations the faculty-industry
+workgroups generate (CPL Workplan, July 2025, Activity 2, p. 4), and paints a full bar labeled 1419.5%; the report
+measures students, 22% of 250,000. Goals 2 and 3 have no measure: the tab paints active colleges (89%) and a fixed 65%;
+the report states the generator's defaults, 55% and 60% (`V2030_G2_PROGRESS` / `V2030_G3_PROGRESS`, unset in
+`kb/dashboard_config.json`). Proposed: one set of figures for both views; Goal 1 measures students, the credit
+recommendation count shows without a percent of the workgroup target; Goals 2 and 3 show the figure Sam sets, TBA
+until he does. The UI pass (#2001) left every figure as it was.
 
 ✅ **RULED (Sam, open-asks sheet 8 card 1, 2026-09-30 18:52Z): curate a public draft of the CO style guide note.** The public-audience source is `CPLBrain/05-knowledge/consolidated/writing-about-cpl-in-the-chancellors-office-style.md` (manifest bucket `promote`); the curated copy is CPL-Initiative/cpl-knowledge-base#24, a draft a person reviews and merges. The internal note stays [`reference-cccco-style-guide`](../../kb-notes/reference-cccco-style-guide.md). ⚠️ The public `playbooks/map-ui-brand-standards.md` lists a CCCCO palette that differs from Brand Basics (Dark Blue `#003B71` vs `#002F6D`, Gold `#D4A843` vs `#FFB600`, Dark Gray `#555555` vs `#555759`); flagged in #24, a separate call. The dashed frame around the funding tab is COBI's placeholder on 18 tab roots, left as is.
 

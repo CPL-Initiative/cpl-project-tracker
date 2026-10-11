@@ -717,6 +717,21 @@ CPL_GOALS = {
     },
 }
 
+# ── The Vision 2030 actions the CPL Workplan addresses ─────────────
+# Verbatim from the Vision 2030: Credit for Prior Learning Workplan (July 2025,
+# p. 1; map.rccd.edu/wp-content/uploads/2025/07/credit-for-prior-learning-workplan.pdf).
+# One list for both views that state them: the Vision 2030 tab's cards
+# (render_vision_2030_html) and CPL_DATA.vision2030.actions (the annual report).
+# Until S365 each view carried its own wording, and the tab's matched no source.
+V2030_ACTIONS = [
+    {"id": "Action 1a", "desc": "Scale Credit for Prior Learning opportunities with a focus on military "
+                                "service, apprenticeships, and technical industry certifications, including "
+                                "service corps programs."},
+    {"id": "Action 5", "desc": "Provide flexible course scheduling and credit for prior learning opportunities "
+                               "to optimize working learners’ abilities to reach their educational goals "
+                               "in an efficient timeline."},
+]
+
 
 def fmt_date(val):
     if isinstance(val, datetime):
@@ -1251,6 +1266,85 @@ def read_config_overrides():
     if overrides:
         print(f"  Config overrides from kb/dashboard_config.json: {list(overrides.keys())}")
     return overrides
+
+
+def _kpi_int(kpis, key, default):
+    """A headline KPI's value as an int ("14,195" -> 14195), or the default."""
+    try:
+        return int(str(kpis.get(key, {}).get("value", default)).replace(",", ""))
+    except (ValueError, TypeError, AttributeError):
+        return int(default)
+
+
+def _bar_width(pct):
+    """A progress fill's width, held to 0-100. A fill wider than its track
+    (Goal 1's credit recommendations wrote width:1419.5%) is clipped by the
+    track's overflow and says nothing the label does not."""
+    return f"{max(0.0, min(float(pct), 100.0)):.1f}"
+
+
+def render_vision_2030_html(kpis):
+    """The Vision 2030 tab's section, from its start marker through its end marker.
+
+    S365's UI pass moved this out of main() so it can be rendered and tested on
+    its own. The pane's figures are unchanged from the inline version; what
+    changed is the markup:
+      * the actions are V2030_ACTIONS, the workplan's own words, shared with
+        CPL_DATA.vision2030 (the annual report);
+      * each bar is aria-hidden, because the label beside it carries every
+        number the bar paints, and its width is held to 0-100;
+      * the goal cards' inline styles became classes (.goal-title,
+        .goal-target, .goal-bullets, .goal-progress-label) in the template's
+        <style>, where the 390px layout fix lives too.
+    """
+    esc = html_escape
+    recs_val = _kpi_int(kpis, "credit_recommendations", "576")
+    students_val = _kpi_int(kpis, "cumulative_students", "42620")
+    colleges_val = _kpi_int(kpis, "active_colleges", "84")
+    recs_pct = round(recs_val / 1000 * 100, 1)
+    students_pct = round(students_val / 250000 * 100, 1)
+
+    def goal_card(goal_key, width, label):
+        g = CPL_GOALS[goal_key]
+        bullets = "".join(f'\n                        <li>{esc(b)}</li>' for b in g["bullets"])
+        return (
+            '\n                <div class="vision-card">'
+            f'\n                    <h3 class="goal-title">{esc(g["title"])}</h3>'
+            f'\n                    <p class="goal-target">{esc(g["target"])}</p>'
+            f'\n                    <ul class="goal-bullets">{bullets}'
+            '\n                    </ul>'
+            '\n                    <div class="goal-progress">'
+            '\n                        <div class="goal-progress-bar" aria-hidden="true">'
+            f'\n                            <div class="goal-progress-fill" style="width:{_bar_width(width)}%;"></div>'
+            '\n                        </div>'
+            f'\n                        <span class="goal-progress-label">{label}</span>'
+            '\n                    </div>'
+            '\n                </div>\n'
+        )
+
+    actions = "".join(
+        '\n                <div class="vision-card">'
+        f'\n                    <h3>Vision 2030 {esc(a["id"])}</h3>'
+        f'\n                    <p>{esc(a["desc"])}</p>'
+        '\n                </div>\n'
+        for a in V2030_ACTIONS)
+
+    out = ('<!-- Vision 2030 Section -->'
+           '\n        <div class="vision-section">'
+           '\n            <h2>Vision 2030 Alignment</h2>'
+           '\n'
+           '\n            <div class="vision-grid">'
+           + actions
+           + goal_card("Goal 1", recs_pct,
+                       f'Credit Recs: {recs_pct}% ({fmt_number(recs_val)}/1,000) &nbsp;|&nbsp; '
+                       f'Students: {students_pct}% ({fmt_number(students_val)}/250,000)')
+           + goal_card("Goal 2", colleges_val / 116 * 100,
+                       f'Active Colleges: {colleges_val} of 116 ({colleges_val / 116 * 100:.0f}%)')
+           + goal_card("Goal 3", 65,
+                       '1,000+ trained; $5M ongoing secured; Title 5 updates advancing')
+           + '            </div>'
+           '\n        </div>')
+    return out + '\n        <!-- End Vision 2030 Section -->\n        '
 
 
 def render_annual_goals_table_html(annual_goals, activities=None):
@@ -12415,10 +12509,7 @@ def main():
         "live_updates": live_updates,
         "budget":       budget,
         "vision2030": {
-            "actions": [
-                {"id": "Action 1a", "desc": "Scale CPL opportunities with focus on military service, apprenticeships, and technical industry certifications."},
-                {"id": "Action 5", "desc": "Provide flexible course scheduling and CPL opportunities to optimize working learners' abilities to reach educational goals."},
-            ],
+            "actions": [dict(a) for a in V2030_ACTIONS],
             "goals": [
                 {
                     "id": "Goal 1",
@@ -13227,82 +13318,8 @@ def main():
                 v2030_end_consumes = v2030_end
             data_start_marker = v2030_end  # back-compat var name kept for the next block
             if v2030_start != -1 and v2030_end != -1:
-                # Use live KPI data for progress calculations
-                recs_val = int(str(kpis.get("credit_recommendations", {}).get("value", "576")).replace(",", ""))
-                students_val = int(str(kpis.get("cumulative_students", {}).get("value", "42620")).replace(",", ""))
-                colleges_val = int(str(kpis.get("active_colleges", {}).get("value", "84")).replace(",", ""))
-                recs_pct = round(recs_val / 1000 * 100, 1)
-                students_pct = round(students_val / 250000 * 100, 1)
-
-                new_v2030 = f'''<!-- Vision 2030 Section -->
-        <div class="vision-section">
-            <h2>Vision 2030 Alignment</h2>
-
-            <div class="vision-grid">
-                <div class="vision-card">
-                    <h3>Vision 2030 Action 1a</h3>
-                    <p>Develop infrastructure to ensure that multiple pathways to a baccalaureate degree are available to all students, including completion via the community college system, including expansion of CPL and credential recognition.</p>
-                </div>
-
-                <div class="vision-card">
-                    <h3>Vision 2030 Action 5</h3>
-                    <p>Advance equitable and transparent credentialing systems within and across the California higher education systems that recognize both traditional and competency-based learning.</p>
-                </div>
-
-                <div class="vision-card">
-                    <h3 style="color:var(--mustard-text);">{CPL_GOALS["Goal 1"]["title"]}</h3>
-                    <p style="font-size:0.85rem;">{CPL_GOALS["Goal 1"]["target"]}</p>
-                    <ul style="font-size:0.82rem;color:var(--text-muted);margin:0.3rem 0 0.5rem 1.2rem;padding:0;">'''
-                for b in CPL_GOALS["Goal 1"]["bullets"]:
-                    new_v2030 += f'\n                        <li style="margin-bottom:0.2rem;">{b}</li>'
-                new_v2030 += f'''
-                    </ul>
-                    <div class="goal-progress">
-                        <div class="goal-progress-bar">
-                            <div class="goal-progress-fill" style="width:{recs_pct}%;"></div>
-                        </div>
-                        <span style="font-weight:600;">Credit Recs: {recs_pct}% ({fmt_number(recs_val)}/1,000) &nbsp;|&nbsp; Students: {students_pct}% ({fmt_number(students_val)}/250,000)</span>
-                    </div>
-                </div>
-
-                <div class="vision-card">
-                    <h3 style="color:var(--mustard-text);">{CPL_GOALS["Goal 2"]["title"]}</h3>
-                    <p style="font-size:0.85rem;">{CPL_GOALS["Goal 2"]["target"]}</p>
-                    <ul style="font-size:0.82rem;color:var(--text-muted);margin:0.3rem 0 0.5rem 1.2rem;padding:0;">'''
-                for b in CPL_GOALS["Goal 2"]["bullets"]:
-                    new_v2030 += f'\n                        <li style="margin-bottom:0.2rem;">{b}</li>'
-                new_v2030 += f'''
-                    </ul>
-                    <div class="goal-progress">
-                        <div class="goal-progress-bar">
-                            <div class="goal-progress-fill" style="width:{min(colleges_val / 116 * 100, 100):.1f}%;"></div>
-                        </div>
-                        <span style="font-weight:600;">Active Colleges: {colleges_val} of 116 ({colleges_val / 116 * 100:.0f}%)</span>
-                    </div>
-                </div>
-
-                <div class="vision-card">
-                    <h3 style="color:var(--mustard-text);">{CPL_GOALS["Goal 3"]["title"]}</h3>
-                    <p style="font-size:0.85rem;">{CPL_GOALS["Goal 3"]["target"]}</p>
-                    <ul style="font-size:0.82rem;color:var(--text-muted);margin:0.3rem 0 0.5rem 1.2rem;padding:0;">'''
-                for b in CPL_GOALS["Goal 3"]["bullets"]:
-                    new_v2030 += f'\n                        <li style="margin-bottom:0.2rem;">{b}</li>'
-                new_v2030 += '''
-                    </ul>
-                    <div class="goal-progress">
-                        <div class="goal-progress-bar">
-                            <div class="goal-progress-fill" style="width:65%;"></div>
-                        </div>
-                        <span style="font-weight:600;">1,000+ trained; $5M ongoing secured; Title 5 updates advancing</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        '''
-                # Append the End-marker so future runs can re-locate the boundary.
-                new_v2030 = new_v2030.rstrip() + '\n        <!-- End Vision 2030 Section -->\n        '
-                html = html[:v2030_start] + new_v2030 + html[v2030_end_consumes:]
+                # Live KPI data drives the progress figures (render_vision_2030_html).
+                html = html[:v2030_start] + render_vision_2030_html(kpis) + html[v2030_end_consumes:]
                 print("  Rebuilt Vision 2030 section with updated CPL Goal data")
 
             # ── Remove the old standalone applyFilters script block if present ──

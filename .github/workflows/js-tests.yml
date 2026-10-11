@@ -602,6 +602,14 @@ jobs:
         run: |
           pip install --quiet openpyxl
           python3 tests/budget_section_first_light_test.py
+      # The Vision 2030 tab's First Light pass (S365): the section is generated,
+      # so the bars' widths and names, the actions' one wording and the 320px
+      # layout are guarded on the generator and both HTMLs. Imports the
+      # generator. Same non-required check.
+      - name: Vision 2030 section First Light (excel_to_dashboard.py)
+        run: |
+          pip install --quiet openpyxl
+          python3 tests/vision_2030_first_light_test.py
       # Curated-anchor duplicates lane (Session 226) — the May 2026 curated
       # common-course anchors whose title and discipline exactly match a
       # catalog identity, offered to the curator as a worklist lane (never

@@ -852,6 +852,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/umbrella_codes_are_declared_test.py` | workflows: `js-tests.yml` | — |
 | `tests/unified_units_range_test.py` | workflows: `js-tests.yml` | — |
 | `tests/video_context_test.py` | workflows: `js-tests.yml` | — |
+| `tests/vision_2030_first_light_test.py` | workflows: `js-tests.yml` | — |
 | `tests/zband_retire_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tmc/tmc_or_groups.json` | scripts: `tmc/_parse_tmc_pdfs.py` | — |
 | `tmc_builder.js` | pages: `CPL_Dashboard.html` | — |
@@ -1065,5 +1066,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 97 Supabase tables · 36 RPCs · 7 edge functions · 621 file
+Coverage: 97 Supabase tables · 36 RPCs · 7 edge functions · 622 file
 datasets · 166 external services · 426 consumers · 47 workflows · 39 tabs.
