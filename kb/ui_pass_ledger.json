@@ -87,31 +87,31 @@
    "page": "index.html#workplan-goals",
    "audience": "staff",
    "last": "2026-10-11",
-   "outcome": "AA in both themes at desktop and 390px: the id, Contributes to, the separator and the pencil moved from #888/#999/#bbb to --text-muted; the primary chip took the themed --gold-soft ground (1.75:1 in dark); the subsidiary marker took --seal-blue-text (1.15:1 in dark); the table wrapper became a focusable named region. Reads no dataset. Remaining for a later pass: the curator-only editing tints and the add modal's boxed buttons (raw hex, not yet underlined words)."
+   "outcome": "AA in both themes at desktop and 390px (S361): the id, Contributes to, the separator and the pencil moved from #888/#999/#bbb to --text-muted; the primary chip took the themed --gold-soft ground; the subsidiary marker took --seal-blue-text; the table wrapper became a focusable named region. S364 finished the editor with seeded signed-in sweeps (workplan-goals-editor and workplan-goals-add, both themes): a title cell in its navy row read 1.06:1 on the pale saving tint in light as well as dark, so each save state sets its own ink on a tint that flips with the theme and a failed save is a red outline; Add new row, Sign in, Sign out, Lock and the dialog's Add row and Cancel are underlined words with the lead word first (the lock emoji gone); the dialog's radio labels reach 24px; #ccc, #4D7EA8, #A33 and #2A7D4F became tokens. Reads no dataset."
   },
   {
    "id": "cobi:budget",
    "name": "Budget",
    "page": "index.html#budget",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-11",
+   "outcome": "The bar's labels were white on every fill (1.21:1 in dark, where --navy-primary turns light): each fill now carries its own text color; the as-of line and the gray dot failed AA (the dot removed); the two holders that scroll at 390px are focusable and named; the section's raw hex became tokens; the editor's Sign in and Sign out are underlined words (S363). S364 finished it with a seeded signed-in sweep (budget-editor, both themes): a cell mid-save read 1.35:1 in dark (light text on the #FFF6D9 pastel), so the save states take the dark-only tints with light fallbacks, a failed save is a red outline on a muted ground, the widget and the hover wash are --surface-subtle, and the editor's status line and rejected input use --red-alert and --green-progress rather than #A33 and #2A7D4F. Measured clean in light and dark at desktop and 390px, signed out and signed in."
   },
   {
    "id": "cobi:implementation-funding",
    "name": "Implementation Funding",
    "page": "index.html#implementation-funding",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-11",
+   "outcome": "Measured clean signed out in light and dark at desktop and 390px, and in the Public view and My CPL Funding; a new seeded curator sweep (funding-curator, both themes) found the editing controls the signed-out sweep never paints. Every boxed or filled control became an underlined cobalt word (Rename, Remove, Hide from public, Add project, New scenario, Publish, Save), the view in use (Internal or Public) shows by weight and aria-pressed rather than a fill, Cancel lost its inline box, Edit (22.6px wide) and the card-size sliders (19.9px tall) reach 24px, words keep their line so New scenario no longer wraps over its hint at 390px, and the hidden-from-public note became a paragraph so its link takes the inline exception. My College and the explainer call the same model (_alloc, _grant), so their figures agree by construction. Tokens only on screen; the print and memo windows keep literal colors, being separate documents. Guarded by tests/cpl_funding_controls_first_light.test.js."
   },
   {
    "id": "cobi:contracts",
    "name": "Contracts",
    "page": "index.html#contracts",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-11",
+   "outcome": "First pass. The register is gated, so the signed-out sweep measured its gate; a seeded reviewer sweep (contracts and contracts-dark, the V0718 fixture through the tab's own load) found the band's faint labels at 3.56:1 in dark, where --navy-primary turns light, text in the decorative --text-faint at 3.62:1 in light (item numbers, the caret, the executed note), and a status chip on the browser's dark button face at 1.99:1. The band is now --seal-blue in both themes with --white and --on-seal-blue-muted, that text is --text-muted, the chip sets its own ground, and Draft, Record, Confirm, Open and Choose a file are underlined words; the hover's raw #fff is gone. Reads four tables no other view reads. Guarded by tests/contracts_first_light.test.js."
   },
   {
    "id": "cobi:vision-2030",

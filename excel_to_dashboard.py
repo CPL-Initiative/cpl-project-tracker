@@ -10416,22 +10416,28 @@ def render_exhibit_analysis_html(tables, kpi_params=None, xlsx_export_dir=None,
 EXHIBIT_ANALYSIS_CSS = """
 /* ═══ MAP Articulation Analysis Cards ═══ */
 /* ─── Budget inline editor (budget_editor.js) ─── */
+/* Tokens only (S364, finishing S363's Budget pass): the widget and the hover take the
+   themed --surface-subtle; the save states take the dark-only tints with their light
+   fallbacks (the pastels sat under light text in dark, unreadable), and a failed save
+   is a red outline on a muted ground, the status line naming the error beside it. */
 .budget-auth-widget { display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center;
-    background:rgba(0,71,171,0.06); border:1px solid var(--border-strong); border-radius:8px;
+    background:var(--surface-subtle); border:1px solid var(--border-strong); border-radius:8px;
     padding:0.7rem 1rem; margin:0 0 1.25rem 0; font-size:0.85rem; }
 .budget-auth-widget input[type=email] { padding:0.4rem 0.6rem; border:1px solid var(--border-strong);
     border-radius:5px; font-size:0.85rem; min-width:200px; }
-.budget-btn { background:var(--cobalt); color:var(--on-accent); border:none; border-radius:5px;
-    padding:0.4rem 0.9rem; font-size:0.82rem; cursor:pointer; }
-.budget-btn:hover { background:#003B8E; }
-.budget-btn-out { background:var(--text-muted); margin-left:auto; }
+/* Controls are underlined words (First Light, Sam 2026-10-09; S363 UI pass). */
+.budget-btn { border:0; background:none; color:var(--cobalt); font-weight:600; padding:2px 0;
+    min-height:24px; font-size:0.85rem; cursor:pointer; text-decoration:underline;
+    text-decoration-thickness:1px; text-underline-offset:3px; }
+.budget-btn:hover { text-decoration-thickness:2px; }
+.budget-btn-out { color:var(--text-muted); margin-left:auto; }
 .budget-cell.budget-on { cursor:pointer; transition:background 0.15s; border-radius:3px; }
-.budget-cell.budget-on:hover { background:rgba(0,71,171,0.06); outline:1px dashed var(--cobalt); }
+.budget-cell.budget-on:hover { background:var(--surface-subtle); outline:1px dashed var(--cobalt); }
 .budget-cell-input { width:100%; box-sizing:border-box; text-align:right; padding:2px 4px;
     border:1px solid var(--cobalt); border-radius:3px; font-size:0.85rem; font-family:inherit; }
-.budget-cell.budget-saving { background:#FFF6D9; }
-.budget-cell.budget-saved { background:#DBF0DD; }
-.budget-cell.budget-error { background:#F7D9D9; }
+.budget-cell.budget-saving { background:var(--cpl-warn-bg, #FFF6D9); }
+.budget-cell.budget-saved { background:var(--cpl-green-soft, #DBF0DD); }
+.budget-cell.budget-error { background:var(--surface-muted); outline:2px solid var(--red-alert); outline-offset:-2px; }
 /* ─── Doublewide KPI card (Statewide Exhibits per-category rollup) ─── */
 .kpi-card-wide { grid-column: span 2; }
 .kpi-card-wide .kpi-footnote {
@@ -11734,7 +11740,7 @@ def render_budget_html(budget, data_source_stamp=None):
         return '''<!-- Budget Section -->
         <div class="budget-section">
             <h2>CPL Budget & Expenditures</h2>
-            <p style="color:#999;">Budget data not available</p>
+            <p style="color:var(--text-muted);">Budget data not available</p>
         </div>
         <!-- End Budget Section -->'''
 
@@ -11753,16 +11759,21 @@ def render_budget_html(budget, data_source_stamp=None):
     # the Summary + Detail sections show a "pending" note rather than empty tables.
     expenditures_held = bool(budget.get("_expenditures_held")) or not expenditures
     stamp_html = (
-        f'        <p style="color:#888;font-size:0.75rem;margin:0 0 1.25rem 0;">'
+        f'        <p style="color:var(--text-muted);font-size:0.75rem;margin:0 0 1.25rem 0;">'
         f'Budget data as of {data_source_stamp}</p>\n'
         if data_source_stamp else ''
     )
 
-    # Color scheme
+    # Color scheme. Each fill carries the text color that reads on it in both
+    # themes (S363 UI pass: white on --navy-primary read 1.21:1 in dark, where that
+    # token turns light). --on-accent flips with the ink fills; mustard and cobalt
+    # stay bright in both themes, so they take the dark ink of --on-mustard.
     colors = ["var(--navy-primary)", "var(--navy-secondary)", "var(--green-progress)", "var(--gold-accent)", "var(--light-blue)"]
+    text_on = ["var(--on-accent)", "var(--on-accent)", "var(--on-accent)", "var(--on-mustard)", "var(--on-mustard)"]
 
     # === SECTION 1: FUNDING OVERVIEW ===
-    funding_html = '<div class="budget-funding-overview" id="budget-funding">\n'
+    # A holder that scrolls at a narrow width is reachable from the keyboard and named.
+    funding_html = '<div class="budget-funding-overview" id="budget-funding" tabindex="0" role="region" aria-label="CPL 5-Year Funding Plan">\n'
     funding_html += f'        <h3>CPL 5-Year Funding Plan</h3>\n'
     funding_html += f'        <p style="font-size:1.3rem;font-weight:bold;color:var(--navy-primary);margin-bottom:1.5rem;">{fmt_dollars(grand_total)} Total Allocation</p>\n'
 
@@ -11776,8 +11787,9 @@ def render_budget_html(budget, data_source_stamp=None):
             source_total = source.get("total", 0)
             pct = (source_total / total_funding * 100) if total_funding > 0 else 0
             color = colors[idx % len(colors)]
+            ink = text_on[idx % len(text_on)]
             source_label = source.get("name", "")
-            funding_html += f'                <div style="flex:{pct:.1f}%;background-color:{color};display:flex;align-items:center;justify-content:center;color:white;font-size:0.75rem;font-weight:bold;text-align:center;" title="{source_label}: {fmt_dollars(source_total)}">'
+            funding_html += f'                <div style="flex:{pct:.1f}%;background-color:{color};display:flex;align-items:center;justify-content:center;color:{ink};font-size:0.75rem;font-weight:bold;text-align:center;" title="{source_label}: {fmt_dollars(source_total)}">'
             if pct > 8:
                 funding_html += f'{pct:.0f}%'
             funding_html += '</div>\n'
@@ -11828,7 +11840,7 @@ def render_budget_html(budget, data_source_stamp=None):
         total = source.get("total", 0)
         bid = source.get("id")
 
-        funding_html += f'                <tr style="border-bottom:1px solid #ddd;">\n'
+        funding_html += f'                <tr style="border-bottom:1px solid var(--border);">\n'
         funding_html += f'                    <td style="padding:8px;font-weight:500;">{source_name}</td>\n'
         for idx in range(5):
             val = budget_by_year[idx] if idx < len(budget_by_year) else 0
@@ -11855,7 +11867,7 @@ def render_budget_html(budget, data_source_stamp=None):
     for cat in expense_categories[:8]:  # Top 8 categories
         cat_name = cat.get("name", "")
         total = cat.get("total", 0)
-        summary_html += f'                        <tr style="border-bottom:1px solid #eee;">\n'
+        summary_html += f'                        <tr style="border-bottom:1px solid var(--border);">\n'
         summary_html += f'                            <td style="padding:6px;text-align:left;">{cat_name}</td>\n'
         summary_html += f'                            <td style="padding:6px;text-align:right;font-weight:bold;">{fmt_dollars(total)}</td>\n'
         summary_html += f'                        </tr>\n'
@@ -11873,7 +11885,7 @@ def render_budget_html(budget, data_source_stamp=None):
     for area in expense_areas:
         area_name = area.get("name", "")
         total = area.get("total", 0)
-        summary_html += f'                        <tr style="border-bottom:1px solid #eee;">\n'
+        summary_html += f'                        <tr style="border-bottom:1px solid var(--border);">\n'
         summary_html += f'                            <td style="padding:6px;text-align:left;">{area_name}</td>\n'
         summary_html += f'                            <td style="padding:6px;text-align:right;font-weight:bold;">{fmt_dollars(total)}</td>\n'
         summary_html += f'                        </tr>\n'
@@ -11903,14 +11915,14 @@ def render_budget_html(budget, data_source_stamp=None):
         items = exp_by_type[exp_type]
         type_total = sum(e.get("total", 0) for e in items)
 
-        detail_html += f'        <details style="margin-bottom:1rem;border:1px solid #ddd;border-radius:4px;padding:1rem;">\n'
+        detail_html += f'        <details style="margin-bottom:1rem;border:1px solid var(--border);border-radius:4px;padding:1rem;">\n'
         detail_html += f'            <summary style="font-weight:bold;cursor:pointer;padding:0.5rem 0;user-select:none;">\n'
         detail_html += f'                {exp_type} <span style="float:right;color:var(--text-muted);">{fmt_dollars(type_total)}</span>\n'
         detail_html += f'            </summary>\n'
-        detail_html += f'            <div style="margin-top:1rem;overflow-x:auto;">\n'
+        detail_html += f'            <div style="margin-top:1rem;overflow-x:auto;" tabindex="0" role="region" aria-label="{exp_type} expenditures">\n'
         detail_html += f'                <table style="width:100%;border-collapse:collapse;font-size:0.8rem;">\n'
         detail_html += f'                    <thead>\n'
-        detail_html += f'                        <tr style="background-color:#f9f9f9;border-bottom:1px solid #ddd;">\n'
+        detail_html += f'                        <tr style="background-color:var(--surface-subtle);border-bottom:1px solid var(--border);">\n'
         detail_html += f'                            <th style="padding:6px;text-align:left;">Description</th>\n'
         detail_html += f'                            <th style="padding:6px;text-align:left;">Category</th>\n'
         detail_html += f'                            <th style="padding:6px;text-align:left;">Source</th>\n'
@@ -11928,7 +11940,7 @@ def render_budget_html(budget, data_source_stamp=None):
             budget_by_year = item.get("budget_by_year", [])
             total = item.get("total", 0)
 
-            detail_html += f'                        <tr style="border-bottom:1px solid #eee;">\n'
+            detail_html += f'                        <tr style="border-bottom:1px solid var(--border);">\n'
             detail_html += f'                            <td style="padding:6px;font-size:0.75rem;">{desc}</td>\n'
             detail_html += f'                            <td style="padding:6px;font-size:0.75rem;">{category}</td>\n'
             detail_html += f'                            <td style="padding:6px;font-size:0.75rem;">{source}</td>\n'
@@ -11964,7 +11976,7 @@ def render_budget_html(budget, data_source_stamp=None):
     personnel_html += '        <h3>Personnel Plan</h3>\n'
 
     if personnel:
-        personnel_html += '        <div style="overflow-x:auto;">\n'
+        personnel_html += '        <div style="overflow-x:auto;" tabindex="0" role="region" aria-label="Personnel Plan">\n'
         personnel_html += '            <table style="width:100%;border-collapse:collapse;margin-bottom:1.5rem;font-size:0.85rem;">\n'
         personnel_html += '                <thead>\n'
         personnel_html += '                    <tr style="background-color:var(--surface-subtle);border-bottom:2px solid var(--navy-primary);">\n'
@@ -11983,7 +11995,7 @@ def render_budget_html(budget, data_source_stamp=None):
             fte_by_year = pos.get("fte_by_year", [])
             total_comp = pos.get("total_comp", 0)
 
-            personnel_html += f'                    <tr style="border-bottom:1px solid #ddd;">\n'
+            personnel_html += f'                    <tr style="border-bottom:1px solid var(--border);">\n'
             personnel_html += f'                        <td style="padding:8px;">{title}</td>\n'
 
             for fte in fte_by_year:
@@ -11996,7 +12008,7 @@ def render_budget_html(budget, data_source_stamp=None):
         total_fte = personnel_totals.get("total_fte", 0)
         total_comp = personnel_totals.get("total_comp", 0)
 
-        personnel_html += '                    <tr style="background-color:#f9f9f9;border-top:2px solid var(--navy-primary);border-bottom:2px solid var(--navy-primary);font-weight:bold;">\n'
+        personnel_html += '                    <tr style="background-color:var(--surface-subtle);border-top:2px solid var(--navy-primary);border-bottom:2px solid var(--navy-primary);font-weight:bold;">\n'
         personnel_html += f'                        <td style="padding:8px;">TOTAL</td>\n'
         # Calculate totals by year from individual positions
         for year_idx in range(5):

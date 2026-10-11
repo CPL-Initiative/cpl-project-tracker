@@ -1540,7 +1540,10 @@
        the college can follow up if needed"). */
     var coci = info && info.coci;
     if (coci) {
-      out.push({ kind: "coci", label: "In COCI", text: (coci.status || "no status") + " on this program (" + coci.program_ccn + ")"
+      /* coci.listed: the program lists the course through an older version (Sam, 2026-10-11) */
+      out.push({ kind: "coci", label: "In COCI", text: coci.listed
+        ? "the program lists an older version (" + coci.program_ccn + ", " + (coci.status || "no status") + "); current version " + coci.current_ccn
+        : (coci.status || "no status") + " on this program (" + coci.program_ccn + ")"
         + (coci.current_ccn ? "; current version " + coci.current_ccn : "") });
     }
     return out;

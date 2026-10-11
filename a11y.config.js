@@ -445,6 +445,135 @@ async function seedMapUsers(page, theme, lens) {
 }
 
 // Seeds My College's Reported expenditures section for the two targets below.
+// The funding tab as a signed-in curator sees it (S364 UI pass): the scenario strip, the
+// publish bar and every card's editing words (Remove, Hide from public, revenue/deduction).
+// The sweep has no session to sign in with, so it stands in a fresh one the way
+// cpl_session.js answers, then renders the tab again; no write can follow, since the
+// sweep aborts the tab's reads and writes.
+async function seedFundingCurator(page, theme) {
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    const s = { email: "seed@example.org", access_token: "seed", expires_at: Math.floor(Date.now() / 1000) + 3600 };
+    if (window.CPL_SESSION) { window.CPL_SESSION.get = () => s; window.CPL_SESSION.isFresh = () => true; }
+    const T = window.CPL_FUNDING_TAB;
+    if (T && T.render) T.render();
+  });
+  await page.waitForTimeout(700);
+  // First Light's greeting opens 650 ms after load and would cover the screenshots.
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForTimeout(200);
+}
+
+// The Budget editor as a signed-in editor sees it mid-save (S364): the auth widget,
+// the editable cells, and one cell in each save state (saving, saved, failed), which
+// show only while a write is in flight and never in the signed-out sweep. The session
+// is the shape budget_editor.js reads from sessionStorage; the editor re-reads it on
+// its own cpl-team-pass-dropped event.
+async function seedBudgetEditor(page, theme) {
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    try {
+      sessionStorage.setItem("cpl_sb", JSON.stringify({ access_token: "seed.seed.seed", email: "seed@example.org" }));
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    window.dispatchEvent(new CustomEvent("cpl-team-pass-dropped"));
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const cells = document.querySelectorAll('#budget-funding .budget-cell[data-editable="1"]');
+    ["budget-saving", "budget-saved", "budget-error"].forEach((c, i) => { if (cells[i]) cells[i].classList.add(c); });
+  });
+  await page.waitForTimeout(300);
+}
+
+// Annual Workplan Goals as a signed-in editor sees it (S364): the auth widget's words, one
+// editable cell in each save state, and, with `modal`, the Add new row dialog open. The
+// session is the shape workplan_goals.js reads from sessionStorage; it re-reads on its own
+// cpl-team-pass-dropped event.
+async function seedWorkplanGoalsEditor(page, theme, modal) {
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate((openModal) => {
+    try {
+      sessionStorage.setItem("cpl_sb", JSON.stringify({ access_token: "seed.seed.seed", email: "seed@example.org" }));
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    window.dispatchEvent(new CustomEvent("cpl-team-pass-dropped"));
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const cells = document.querySelectorAll("#tab-workplan-goals .wpg-editable");
+    ["wpg-saving", "wpg-saved", "wpg-error"].forEach((c, i) => { if (cells[i]) cells[i].classList.add(c); });
+    if (openModal) { const add = document.querySelector("#tab-workplan-goals .wpg-btn-add"); if (add) add.click(); }
+  }, !!modal);
+  await page.waitForTimeout(300);
+}
+
+// Contracts as a reviewer sees it (S364 UI pass): the register is gated, so the signed-out
+// cobi sweep measures the gate. The seed stubs the tab's four reads with the V0718 fixture
+// from tests/contracts.test.js (matched by table, the narrowest point), holds a reviewer
+// session so the ledger's quarters and the documents' controls are live, and opens Goal 1
+// and its first deliverable.
+async function seedContracts(page, theme) {
+  // The motion check seeds a page opened without the route's hash, and contracts.js loads
+  // only when its tab activates: open the tab first, as seedProgress does.
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "contracts") location.hash = "contracts"; });
+  await page.waitForFunction(() => !!window.CPL_CONTRACTS, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    try {
+      sessionStorage.setItem("cpl_sb", JSON.stringify({ access_token: "aaaaaaaaaa.bbbbbbbbbbbbbbbbbbbbbbbb.cccccccccccccccccccc", email: "seed@example.org" }));
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const C = { id: "c1", agreement_no: "V0718", title: "Mapping Articulated Pathways for CPL",
+      vendor_name: "Academic Senate for California Community Colleges", vendor_short: "ASCCC",
+      fiscal_agent: "Rancho Santiago CCD", amount_total: "1063900.00", term_start_est: "2025-06-30",
+      term_executed: "2025-08-07", term_end: "2028-06-30", status: "executed", parse_status: "proposed",
+      co_monitor: { name: "Monitor Name", email: "monitor@example.org" },
+      vendor_contact: { name: "Contact Name", title: "Representative" },
+      funding_ref: { funding_year: "2024-25", chapter: "22", statute: "2024" }, invoice_cadence: "quarterly",
+      report_clause: "Every quarterly invoice must include a summary of tasks performed for each deliverable.",
+      report_clause_ref: "Section D", findings: [{ title: "The term start is ambiguous", detail: "Cover page vs Section B.", ref: "Section B" }] };
+    const D = [
+      { id: "d1", contract_id: "c1", goal_no: 1, goal_title: "Expand faculty-led development", goal_amount: "376120.00", seq: 1,
+        kind: "obligation", status: "not_started", label: "Form 15-30 distinct faculty workgroups", countable_target: "15-30",
+        countable_unit: "workgroups", recorded_count: null, source_ref: "Goal 1, deliverable 1",
+        goal_outcome: "College credit recommendations documented on CPL exhibits.",
+        detail: { verbatim: "Form 15-30 distinct faculty workgroups.", parts: ["Developing credit recommendations"],
+          funded_by: "Faculty stipends", evaluated_by: "Quarterly check-ins.", note: "The hourly rate is not stated." } },
+      { id: "d2", contract_id: "c1", goal_no: 1, seq: 2, kind: "obligation", status: "complete", label: "Recruit faculty for each workgroup", recorded_count: null },
+      { id: "d3", contract_id: "c1", goal_no: 1, seq: 50, kind: "evaluation", status: "not_started", cadence: "quarterly", label: "Quarterly check-ins with the Chancellor's Office" },
+      { id: "d4", contract_id: "c1", goal_no: 2, goal_title: "Strengthen faculty leadership", goal_amount: "567780.00", seq: 1, kind: "obligation",
+        status: "in_progress", label: "Appoint and stipend CPL Liaisons", countable_target: "115", countable_unit: "liaisons", recorded_count: 40 },
+      { id: "d5", contract_id: "c1", goal_no: 2, seq: 10, kind: "role_duty", status: "not_started", label: "Serve as primary points of contact" },
+    ];
+    const R = [{ id: "r1", contract_id: "c1", period_label: "2025-26 Q1", status: "received" }];
+    const F = [{ id: "f1", contract_id: "c1", kind: "agreement", filename: "V0718_executed.pdf", mime: "application/pdf",
+      bytes: 812345, pages: 42, doc_date: "2025-08-07", storage_path: "c1/V0718.pdf" }];
+    const real = window.fetch;
+    window.fetch = function (url, opts) {
+      const u = String(url);
+      const body = /\/cpl_contracts\?/.test(u) ? [C] : /\/cpl_contract_deliverables\?/.test(u) ? D
+        : /\/cpl_contract_reports\?/.test(u) ? R : /\/cpl_contract_documents\?/.test(u) ? F : null;
+      if (body) return Promise.resolve(new Response(JSON.stringify(body), { status: 200, headers: { "Content-Type": "application/json" } }));
+      return real.apply(this, arguments);
+    };
+    if (window.CPL_CONTRACTS) window.CPL_CONTRACTS.activate();
+  });
+  await page.waitForFunction(() => window.CPL_CONTRACTS && window.CPL_CONTRACTS._state.contracts.length && !window.CPL_CONTRACTS._state.loading,
+    null, { timeout: 20000 });
+  await page.evaluate(() => {
+    const g = document.querySelector('#contracts-root [data-goal] .ctr-gh');
+    if (g) g.click();
+    const t = document.querySelector('#contracts-root [data-toggle]');
+    if (t) t.click();
+  });
+  await page.waitForTimeout(300);
+}
+
 async function seedMyCollegeReports(page, signin) {
   await page.evaluate(() => new Promise((res) => {
     if (window.CPL_FUNDING_TAB) return res();
@@ -848,6 +977,97 @@ module.exports = {
       await page.waitForTimeout(900);
     },
     mayHideBelow: [],
+  },
+  /* ── Contracts, signed in (S364 UI pass) ─────────────────────────────────
+     The register is gated; the cobi sweep measures its gate. */
+  "contracts": {
+    file: "index.html",
+    title: "Contracts, a reviewer's view of the V0718 fixture",
+    routes: [{ hash: "contracts", name: "reviewer" }],
+    widths: [390, 1440],
+    seed: (page) => seedContracts(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "contracts-dark": {
+    file: "index.html",
+    title: "Contracts, a reviewer's view of the V0718 fixture, dark",
+    routes: [{ hash: "contracts", name: "reviewer" }],
+    widths: [390, 1440],
+    seed: (page) => seedContracts(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── Annual Workplan Goals, signed in (S364) ─────────────────────────────
+     The editor's words, its save states and the Add new row dialog paint only
+     for a signed-in editor; the cobi sweep is signed out. */
+  "workplan-goals-editor": {
+    file: "index.html",
+    title: "Annual Workplan Goals, signed in, one cell in each save state",
+    routes: [{ hash: "workplan-goals", name: "editor" }],
+    widths: [390, 1440],
+    seed: (page) => seedWorkplanGoalsEditor(page, "light", false),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "workplan-goals-editor-dark": {
+    file: "index.html",
+    title: "Annual Workplan Goals, signed in, one cell in each save state, dark",
+    routes: [{ hash: "workplan-goals", name: "editor" }],
+    widths: [390, 1440],
+    seed: (page) => seedWorkplanGoalsEditor(page, "dark", false),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "workplan-goals-add": {
+    file: "index.html",
+    title: "Annual Workplan Goals, the Add new row dialog",
+    routes: [{ hash: "workplan-goals", name: "add" }],
+    widths: [390, 1440],
+    seed: (page) => seedWorkplanGoalsEditor(page, "light", true),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "workplan-goals-add-dark": {
+    file: "index.html",
+    title: "Annual Workplan Goals, the Add new row dialog, dark",
+    routes: [{ hash: "workplan-goals", name: "add" }],
+    widths: [390, 1440],
+    seed: (page) => seedWorkplanGoalsEditor(page, "dark", true),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── Budget, signed in, mid-save (S364) ──────────────────────────────────
+     The save states paint only while a write is in flight; the cobi sweep is
+     signed out and never sees them. */
+  "budget-editor": {
+    file: "index.html",
+    title: "Budget, signed in, one cell in each save state",
+    routes: [{ hash: "budget", name: "editor" }],
+    widths: [390, 1440],
+    seed: (page) => seedBudgetEditor(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "budget-editor-dark": {
+    file: "index.html",
+    title: "Budget, signed in, one cell in each save state, dark",
+    routes: [{ hash: "budget", name: "editor" }],
+    widths: [390, 1440],
+    seed: (page) => seedBudgetEditor(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── The funding tab, signed in (S364 UI pass) ───────────────────────────
+     The cobi sweep is signed out, so it never paints the curator's controls,
+     the ones the 2026-10-09 rule turned into underlined words. */
+  "funding-curator": {
+    file: "index.html",
+    title: "Implementation Funding, signed in as a curator",
+    routes: [{ hash: "implementation-funding", name: "curator" }],
+    widths: [390, 1440],
+    seed: (page) => seedFundingCurator(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "funding-curator-dark": {
+    file: "index.html",
+    title: "Implementation Funding, signed in as a curator, dark",
+    routes: [{ hash: "implementation-funding", name: "curator" }],
+    widths: [390, 1440],
+    seed: (page) => seedFundingCurator(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── My College: Reported expenditures (S308, 2026-09-30) ─────────────────
      The Reporting box's college half. A contact MAP lists for a college reads

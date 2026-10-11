@@ -13,6 +13,11 @@ artifacts:
   - tests/cpl_funding_colmenu_edge.test.js
   - tests/ccr_skyview_first_light.test.js
   - tests/ui_pass_test.py
+  - tests/cpl_funding_controls_first_light.test.js
+  - tests/budget_section_first_light_test.py
+  - tests/workplan_goals_editor_first_light.test.js
+  - budget_editor.js
+  - workplan_goals.js
 related:
   - "[[sierra-page-redesign]]"
   - "[[cobi-dark-mode]]"
@@ -156,3 +161,43 @@ focusable region that scrolls below 560px, so the desktop sticky header still ho
 ten labels at eight sites, because each label sat on its own concatenated line after the `<button` line, and four were
 `\u{1F...}` escapes.
 `tests/map_users_first_light.test.js` reads the rendered buttons instead, and fails on the old code 14 of 16.
+
+
+## S364 SkyJuniper, 2026-10-11: Implementation Funding, and the two editors' leftovers (#1991, #1992, #1994)
+
+**Implementation Funding passed signed out and in both public views, and still had 21 small targets.** The curator's
+controls never paint without a session, so `funding-curator` (both themes) stands in a fresh `CPL_SESSION` and renders
+the tab again. The pass turned every boxed or filled control into an underlined word with one rule that repeats each
+boxed selector and wins by order (the rules are spread over 1,100 lines of one CSS array; editing each in place would
+have touched thirty). The toggles in a set keep their frames; the Internal/Public word in use is bold body text with
+`aria-pressed` rather than a filled box. Two targets were not controls at all: a link inside a `<div>` sentence the
+engine does not treat as inline (a `<p>` takes the exception), and two range sliders at 19.9px.
+
+**Words wrap where boxes did not.** With the frame gone, "New scenario" broke over two lines at 390px and its second
+line ran under the hint beside it. `white-space: nowrap` on the word and `flex-wrap` on its row moved the hint below
+instead. Look at the narrow screenshot after a conversion; the sweep passed it.
+
+**The leftovers were worse than "no tokens yet".** Budget's ledger line and Workplan Goals' both said the edit tints
+lacked tokens. Seeded mid-save, each failed outright: 1.35:1 (Budget, dark) and 1.06:1 (Workplan Goals, light and dark,
+a navy row's white text on the saving tint). KB notes: the transient-state section of
+`methodology-a-sweep-sees-only-the-states-its-seed-reaches` and the state-ink section of
+`methodology-a-fill-that-does-not-flip-needs-ink-that-does-not-either`. A failed save is now a red outline on a muted
+ground, so the status line's words carry it and color does not stand alone.
+
+**Generated CSS is measured by injecting it into a working copy.** Budget's editor CSS lives in
+`EXHIBIT_ANALYSIS_CSS` (Rule 1). The sweep measured the page with the new block swapped in between its markers, the
+page was restored, and the PR stayed code only; `daily-dashboard.yml` was dispatched after the merge.
+
+**Seeds added this session:** `funding-curator`, `budget-editor`, `workplan-goals-editor`, `workplan-goals-add`, each
+light and dark. Guards: `tests/cpl_funding_controls_first_light.test.js` (36; 6 pass on the old file),
+`tests/budget_section_first_light_test.py` (3 new, all failing on the old files),
+`tests/workplan_goals_editor_first_light.test.js` (12; none pass on the old file).
+
+**Contracts (#1997): the gate, the flipping band, a chip on the browser's button face.** The signed-out sweeps measured
+the register's gate. The seeded target stubs the tab's four reads with the V0718 fixture so its own `load()` paints it;
+it must first set `#contracts` and wait for `CPL_CONTRACTS`, because the motion check seeds a page loaded without the
+route's hash and the tab's script loads only when activated (the first cut timed out). It found the band's labels at
+3.56:1 in dark (`--navy-primary` turns light; the band is now `--seal-blue` with `--white` and `--on-seal-blue-muted`),
+text in the decorative `--text-faint` at 3.62:1, and a `<button>` chip with no ground of its own on Chromium's dark
+button face (`#6B6B6B`) at 1.99:1. Guard: `tests/contracts_first_light.test.js` (16; 1 passes on the old file).
+

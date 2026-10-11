@@ -230,20 +230,18 @@
     if (state.sess) {
       widget.appendChild(el("span", { "style": "font-weight:600;" },
         state.sess.teamPass
-          ? ["✓ Editing unlocked (team phrase)"]
+          ? ["Editing unlocked (team phrase)"]
           : ["Signed in as ", state.sess.email || "(no email)"]));
       var sub = el("span", { "style": "color:var(--text-muted);" }, ["Click any goal/stretch/current cell or a sub-activity title to edit • Enter saves • Esc cancels"]);
       widget.appendChild(sub);
       var btnAdd = el("button", {
-        "class": "wpg-btn wpg-btn-add",
-        "style": "margin-left:auto;padding:0.35rem 0.75rem;border:1px solid var(--cobalt);background:var(--cobalt);color:var(--on-accent);border-radius:5px;font-size:0.8rem;cursor:pointer;font-weight:600;"
-      }, ["+ Add new row"]);
+        "class": "wpg-btn wpg-btn-add"
+      }, ["Add new row"]);
       btnAdd.addEventListener("click", function () { openAddModal(state); });
       widget.appendChild(btnAdd);
       var btnOut = el("button", {
-        "class": "wpg-btn",
-        "style": "padding:0.35rem 0.75rem;border:1px solid #ccc;background:var(--surface-opaque);color:var(--text-strong);border-radius:5px;font-size:0.8rem;cursor:pointer;"
-      }, [state.sess.teamPass ? "🔒 Lock" : "Sign out"]);
+        "class": "wpg-btn"
+      }, [state.sess.teamPass ? "Lock" : "Sign out"]);
       btnOut.addEventListener("click", function () {
         signOut();
         onChange();
@@ -255,11 +253,10 @@
       var emailInput = el("input", {
         "type": "email",
         "placeholder": "you@example.edu",
-        "style": "padding:0.35rem 0.5rem;border:1px solid #ccc;border-radius:5px;font-size:0.8rem;min-width:180px;"
+        "style": "padding:0.35rem 0.5rem;border:1px solid var(--border-strong);border-radius:5px;font-size:0.8rem;min-width:180px;"
       }, []);
       var btnIn = el("button", {
-        "class": "wpg-btn",
-        "style": "padding:0.35rem 0.75rem;border:0;background:var(--cobalt);color:var(--on-accent);border-radius:5px;font-size:0.8rem;cursor:pointer;"
+        "class": "wpg-btn"
       }, ["Sign in"]);
       var status = el("span", { "style": "color:var(--text-muted);flex-basis:100%;font-size:0.8rem;" }, []);
 
@@ -267,27 +264,27 @@
         var email = (emailInput.value || "").trim();
         if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
           status.textContent = "Enter a valid email address.";
-          status.style.color = "#A33";
+          status.style.color = "var(--red-alert)";
           return;
         }
         status.style.color = "var(--text-strong)";
         status.textContent = "Sending magic link...";
         signIn(email).then(function (r) {
           if (r.ok) {
-            status.style.color = "#2A7D4F";
+            status.style.color = "var(--green-progress)";
             status.innerHTML = '✉ Magic link sent to <strong>' + email + '</strong>. Click the link in your inbox to finish signing in.';
           } else if (r.status === 429) {
-            status.style.color = "#A33";
+            status.style.color = "var(--red-alert)";
             status.textContent = "Too many sign-in emails. Wait a few minutes, then try again.";
           } else if (r.status === 400 || r.status === 422) {
-            status.style.color = "#A33";
+            status.style.color = "var(--red-alert)";
             status.textContent = "Server rejected the sign-in — confirm your email is on the allowed-reviewers list.";
           } else {
-            status.style.color = "#A33";
+            status.style.color = "var(--red-alert)";
             status.textContent = "Sign-in failed (HTTP " + r.status + ").";
           }
         }).catch(function (e) {
-          status.style.color = "#A33";
+          status.style.color = "var(--red-alert)";
           status.textContent = "Network error sending magic link: " + e.message;
         });
       });
@@ -384,7 +381,7 @@
       "type": "text",
       "value": isPct && oldNum ? (Math.round(oldNum * 100) + "%") : (oldNum || ""),
       "class": "wpg-cell-input",
-      "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;text-align:right;background:var(--surface-opaque);"
+      "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid var(--cobalt);border-radius:3px;text-align:right;background:var(--surface-opaque);"
     }, []);
 
     cell.classList.add("wpg-editing");
@@ -402,7 +399,7 @@
     function commit() {
       var newNum = parseInput(input.value, isPct);
       if (newNum === null) {
-        input.style.borderColor = "#A33";
+        input.style.borderColor = "var(--red-alert)";
         return;
       }
       if (newNum === oldNum) {
@@ -506,7 +503,7 @@
       "type": "text",
       "value": isPct && oldNum ? (Math.round(oldNum * 100) + "%") : (oldNum || ""),
       "class": "wpg-cell-input",
-      "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;text-align:right;background:var(--surface-opaque);"
+      "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid var(--cobalt);border-radius:3px;text-align:right;background:var(--surface-opaque);"
     }, []);
     cell.classList.add("wpg-editing");
     var prevHtml = cell.innerHTML;
@@ -527,7 +524,7 @@
     }
     function commit() {
       var newNum = parseInput(input.value, isPct);
-      if (newNum === null) { input.style.borderColor = "#A33"; return; }
+      if (newNum === null) { input.style.borderColor = "var(--red-alert)"; return; }
       if (newNum === oldNum) { cancel(); return; }
       // The TOTAL cell mirrors the single Current value (no ✎ hint there).
       var totalCell = document.querySelector(
@@ -580,7 +577,7 @@
       "type": "text",
       "value": oldName,
       "class": "wpg-title-input",
-      "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;background:var(--surface-opaque);"
+      "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid var(--cobalt);border-radius:3px;background:var(--surface-opaque);"
     }, []);
     cell.classList.add("wpg-editing");
     var prevHtml = cell.innerHTML;
@@ -595,7 +592,7 @@
     }
     function commit() {
       var newName = (input.value || "").trim();
-      if (!newName) { input.style.borderColor = "#A33"; return; }
+      if (!newName) { input.style.borderColor = "var(--red-alert)"; return; }
       if (newName === oldName.trim()) { cancel(); return; }
       cell.classList.remove("wpg-editing");
       cell.textContent = newName;
@@ -638,9 +635,9 @@
     if (oldVal === "—") oldVal = "";  // the "—" placeholder means empty
     var field = opts.multiline
       ? el("textarea", { "class": "wpg-title-input",
-          "style": "width:100%;box-sizing:border-box;min-height:3.4em;padding:3px 5px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;background:var(--surface-opaque);color:var(--text-strong);resize:vertical;" }, [])
+          "style": "width:100%;box-sizing:border-box;min-height:3.4em;padding:3px 5px;font:inherit;border:1px solid var(--cobalt);border-radius:3px;background:var(--surface-opaque);color:var(--text-strong);resize:vertical;" }, [])
       : el("input", { "type": "text", "class": "wpg-title-input",
-          "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;background:var(--surface-opaque);color:var(--text-strong);" }, []);
+          "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid var(--cobalt);border-radius:3px;background:var(--surface-opaque);color:var(--text-strong);" }, []);
     field.value = oldVal;
     cell.classList.add("wpg-editing");
     var prevHtml = cell.innerHTML;
@@ -660,7 +657,7 @@
       if (done) return;
       var val = (field.value || "").trim();
       if (val === (oldVal || "").trim()) { cancel(); return; }
-      if (opts.required && !val) { field.style.borderColor = "#A33"; return; }
+      if (opts.required && !val) { field.style.borderColor = "var(--red-alert)"; return; }
       done = true;
       cell.classList.remove("wpg-editing");
       cell.classList.add("wpg-saving");
@@ -766,31 +763,38 @@
     if (document.getElementById("wpg-editor-styles")) return;
     var css = ''
       + '.wpg-editable { cursor: pointer; transition: background 0.15s; }'
-      + '.wpg-editable:hover { background: #F0F4F8 !important; outline: 1px dashed #4D7EA8; }'
+      + '.wpg-editable:hover { background: var(--surface-subtle) !important; outline: 1px dashed var(--cobalt); }'
       + '.wpg-editing { background: var(--surface-opaque) !important; padding: 0 !important; }'
-      + '.wpg-saving { background: #FFF8E1 !important; }'
-      + '.wpg-saved { background: #E8F5E9 !important; transition: background 0.4s; }'
-      + '.wpg-error { background: #FFEBEE !important; transition: background 0.4s; }'
+      // The save states read in both themes (S364): the dark-only tints with their light
+      // fallbacks, and a failed save as a red outline, the status line naming the error.
+      // Each sets its ink too: a title cell sits in a navy row with white text, which read
+      // 1.06:1 on the pale tint in light as well as dark.
+      + '.wpg-saving { background: var(--cpl-warn-bg, #FFF8E1) !important; color: var(--text-strong) !important; }'
+      + '.wpg-saved { background: var(--cpl-green-soft, #E8F5E9) !important; color: var(--text-strong) !important; transition: background 0.4s; }'
+      + '.wpg-error { background: var(--surface-muted) !important; color: var(--text-strong) !important; outline: 2px solid var(--red-alert); outline-offset: -2px; transition: background 0.4s; }'
+      + '.wpg-saving *, .wpg-saved *, .wpg-error * { color: var(--text-strong) !important; }'
+      // Controls are underlined words (Sam, 2026-10-09; S364): no border, no fill, 24px tall.
+      + '.wpg-btn, .wpg-modal-card .wpg-modal-actions button, .wpg-modal-card .wpg-btn-cancel, .wpg-modal-card .wpg-btn-submit { border:0 !important;background:none;color:var(--cobalt);font-weight:600;padding:2px 0;min-height:24px;font-size:0.85rem;font-family:inherit;cursor:pointer;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;border-radius:2px; }'
+      + '.wpg-btn:hover, .wpg-modal-card .wpg-modal-actions button:hover { text-decoration-thickness:2px; }'
+      + '.wpg-btn:focus-visible, .wpg-modal-card .wpg-modal-actions button:focus-visible { outline:2px solid var(--gold-accent);outline-offset:2px; }'
+      + '.wpg-btn-add { margin-left:auto; }'
       // PR-C add-flow modal
       + '.wpg-modal-overlay { position:fixed;inset:0;background:rgba(10,34,64,0.55);z-index:9999;display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;padding:3rem 1rem; }'
       + '.wpg-modal-card { background:var(--surface-opaque);border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,0.25);max-width:640px;width:100%;padding:1.5rem;font-family:inherit;color:var(--text-strong); }'
       + '.wpg-modal-card h3 { margin:0 0 0.25rem 0;color:var(--text-strong);font-size:1.1rem; }'
       + '.wpg-modal-card .wpg-sub { color:var(--text-muted);font-size:0.8rem;margin-bottom:1rem; }'
       + '.wpg-modal-card label { display:block;font-size:0.78rem;color:var(--text-muted);margin:0.6rem 0 0.2rem 0;font-weight:600; }'
-      + '.wpg-modal-card input[type="text"], .wpg-modal-card input[type="number"] { width:100%;padding:0.4rem 0.55rem;border:1px solid #ccc;border-radius:5px;font-size:0.85rem;box-sizing:border-box; }'
+      + '.wpg-modal-card input[type="text"], .wpg-modal-card input[type="number"] { width:100%;padding:0.4rem 0.55rem;border:1px solid var(--border-strong);border-radius:5px;font-size:0.85rem;box-sizing:border-box; }'
       + '.wpg-modal-card .wpg-radio-row { display:flex;gap:1.5rem;margin:0.3rem 0 0.5rem 0; }'
-      + '.wpg-modal-card .wpg-radio-row label { display:flex;align-items:center;gap:0.4rem;font-weight:500;color:var(--text-strong);margin:0;font-size:0.9rem;cursor:pointer; }'
+      + '.wpg-modal-card .wpg-radio-row label { display:flex;align-items:center;gap:0.4rem;font-weight:500;color:var(--text-strong);margin:0;font-size:0.9rem;cursor:pointer;min-height:24px; }'
       + '.wpg-modal-card .wpg-grid-years { display:grid;grid-template-columns:repeat(5,1fr);gap:0.4rem; }'
-      + '.wpg-modal-card .wpg-assoc-checkboxes { display:flex;flex-wrap:wrap;gap:0.6rem;padding:0.5rem 0.6rem;background:#F4F5F7;border-radius:5px; }'
+      + '.wpg-modal-card .wpg-assoc-checkboxes { display:flex;flex-wrap:wrap;gap:0.6rem;padding:0.5rem 0.6rem;background:var(--surface-subtle);border-radius:5px; }'
       + '.wpg-modal-card .wpg-assoc-checkboxes label { display:flex;align-items:center;gap:0.3rem;font-size:0.78rem;font-weight:500;margin:0;color:var(--text-strong);cursor:pointer; }'
       + '.wpg-modal-card .wpg-status { margin-top:0.75rem;font-size:0.82rem;min-height:1.2em; }'
-      + '.wpg-modal-card .wpg-status.ok { color:#2A7D4F; }'
-      + '.wpg-modal-card .wpg-status.err { color:#A33; }'
-      + '.wpg-modal-card .wpg-modal-actions { display:flex;justify-content:flex-end;gap:0.5rem;margin-top:1rem; }'
-      + '.wpg-modal-card .wpg-modal-actions button { padding:0.4rem 0.9rem;border-radius:5px;font-size:0.85rem;cursor:pointer;border:0; }'
-      + '.wpg-modal-card .wpg-btn-cancel { background:var(--surface-opaque);border:1px solid #ccc !important;color:var(--text-strong); }'
-      + '.wpg-modal-card .wpg-btn-submit { background:var(--cobalt);color:var(--on-accent);font-weight:600; }'
-      + '.wpg-modal-card .wpg-btn-submit:disabled { opacity:0.6;cursor:not-allowed; }'
+      + '.wpg-modal-card .wpg-status.ok { color:var(--green-progress); }'
+      + '.wpg-modal-card .wpg-status.err { color:var(--red-alert); }'
+      + '.wpg-modal-card .wpg-modal-actions { display:flex;justify-content:flex-end;gap:0.5rem 18px;margin-top:1rem; }'
+      + '.wpg-modal-card .wpg-btn-submit:disabled { color:var(--text-muted);text-decoration:none;cursor:not-allowed; }'
       + '.wpg-act-chip { display:inline-block;padding:0.05rem 0.4rem;background:var(--surface-muted);color:var(--navy-secondary);border-radius:10px;font-size:0.7rem;font-weight:600; }'
       // Session 85 — Current hybrid + title editor affordances
       + '.wpg-live-badge { display:inline-block;margin-left:0.35rem;padding:0.02rem 0.34rem;background:var(--cobalt,#2A6FB0);color:var(--on-accent);border-radius:8px;font-size:0.6rem;font-weight:700;letter-spacing:0.02em;vertical-align:middle;white-space:nowrap; }'
@@ -932,8 +936,8 @@
     var actions = el("div", { "class": "wpg-modal-actions" }, []);
     var btnCancel = el("button", { "class": "wpg-btn-cancel", "type": "button" }, ["Cancel"]);
     var btnSubmit = el("button", { "class": "wpg-btn-submit", "type": "button" }, ["Add row"]);
+    actions.appendChild(btnSubmit);   // the lead word first: no fill marks it (S364)
     actions.appendChild(btnCancel);
-    actions.appendChild(btnSubmit);
     card.appendChild(actions);
 
     function syncKindUI() {

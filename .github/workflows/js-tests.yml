@@ -594,6 +594,14 @@ jobs:
         run: |
           pip install --quiet openpyxl
           python3 tests/unified_units_range_test.py
+      # The Budget tab's First Light pass (S363): the section is generated, so the
+      # bar's text colors, the scrollers' names and the editor's word buttons are
+      # guarded on the generator, not the HTML. Imports the generator. Same
+      # non-required check.
+      - name: Budget section First Light (excel_to_dashboard.py)
+        run: |
+          pip install --quiet openpyxl
+          python3 tests/budget_section_first_light_test.py
       # Curated-anchor duplicates lane (Session 226) — the May 2026 curated
       # common-course anchors whose title and discipline exactly match a
       # catalog identity, offered to the curator as a worklist lane (never

@@ -347,6 +347,14 @@ function click(w, root, value) {
     !!differ && /^Units differ/.test(differ.textContent) && /The blocks add to 29\.5–31\.5 units; the catalog prints 30\.5 units\./.test(differ.textContent),
     differ && differ.textContent);
   check("(k) the chips are drawn on tokens, never a raw color", !/\.cplpw-rdiffer[^"]*#[0-9a-fA-F]{3,6}/.test(SRC));
+  // Sam, 2026-10-11, Cerritos 02226: a program pointing at a retired version of a course the
+  // college still offers lists it ("it shouldn't matter that they have older inactive versions").
+  rec.display.courses["EMS 80"].coci.listed = true;
+  T._renderRoepProgram(root, rec);
+  const tile2 = root.querySelector('.cplpw-rmap .cplpw-rtile[data-code="EMS 80"]');
+  check("(k) a course listed through an older version says so, naming both versions",
+    !!tile2 && /In COCI\s*the program lists an older version \(CCC000584685, Inactive\); current version CCC000616276/.test(tile2.textContent) &&
+    !/Inactive on this program/.test(tile2.textContent), tile2 && tile2.textContent);
 }
 
 // ── (m) A noncredit program's hours as estimated equivalent units (Sam, 2026-10-11) ──

@@ -161,29 +161,29 @@
         var email = (emailInput.value || "").trim();
         if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
           status.textContent = "Enter a valid email address.";
-          status.style.color = "#A33";
+          status.style.color = "var(--red-alert)";
           return;
         }
         status.style.color = "var(--text-strong)";
         status.textContent = "Sending magic link...";
         signIn(email).then(function (r) {
           if (r.ok) {
-            status.style.color = "#2A7D4F";
+            status.style.color = "var(--green-progress)";
             status.innerHTML = "✉ Magic link sent to <strong></strong>. "
               + "Click the link in your inbox to finish signing in.";
             status.querySelector("strong").textContent = email; // no HTML injection
           } else if (r.status === 429) {
-            status.style.color = "#A33";
+            status.style.color = "var(--red-alert)";
             status.textContent = "Too many sign-in emails. Wait a few minutes, then try again.";
           } else if (r.status === 400 || r.status === 422) {
-            status.style.color = "#A33";
+            status.style.color = "var(--red-alert)";
             status.textContent = "Server rejected the sign-in — confirm your email is on the allowed-reviewers list.";
           } else {
-            status.style.color = "#A33";
+            status.style.color = "var(--red-alert)";
             status.textContent = "Sign-in failed (HTTP " + r.status + ").";
           }
         }).catch(function (e) {
-          status.style.color = "#A33";
+          status.style.color = "var(--red-alert)";
           status.textContent = "Network error sending magic link: " + e.message;
         });
       });
@@ -192,7 +192,6 @@
       widget.appendChild(btnIn);
       // Team-phrase alternative (Phase 1 widening, 2026-07-03).
       if (window.CPL_TEAM_PHRASE) {
-        widget.appendChild(el("span", { "style": "color:#999;" }, ["·"]));
         widget.appendChild(window.CPL_TEAM_PHRASE.unlockRow({
           blurb: "or the team phrase:",
           onUnlocked: function () { onChange(); }
@@ -260,9 +259,9 @@
     function commit() {
       if (done) return;
       var raw = (input.value || "").trim();
-      if (raw === "") { input.style.borderColor = "#A33"; return; }   // require a number (0 is allowed, blank is not)
+      if (raw === "") { input.style.borderColor = "var(--red-alert)"; return; }   // require a number (0 is allowed, blank is not)
       var n = parseFloat(raw.replace(/[$,]/g, ""));
-      if (!Number.isFinite(n) || n < 0) { input.style.borderColor = "#A33"; return; }
+      if (!Number.isFinite(n) || n < 0) { input.style.borderColor = "var(--red-alert)"; return; }
       var normalized = String(n);
       if (normalized === oldVal) { cancel(); return; }
 

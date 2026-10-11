@@ -1,7 +1,7 @@
 ---
 title: A fill that does not flip needs ink that does not flip either
 created: 2026-09-09
-updated: 2026-10-09
+updated: 2026-10-11
 tags: [methodology, dark-mode, ui, tokens, a11y]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -99,3 +99,13 @@ measured clean (`methodology-a-sweep-sees-only-the-states-its-seed-reaches`). Th
 CSS: list every declaration whose ink is a literal while its fill is a token, then ask whether that fill flips.
 `tests/ccr_skyview_first_light.test.js` pins the three rules to `var(--on-accent)` and the template to no raw hex
 outside a token declaration.
+
+## A state fill sets its own ink (S364)
+
+A state class that paints a fill over cells it does not own inherits whatever ink each cell already had. Annual
+Workplan Goals' saving tint (`#FFF8E1`) sat under the body rows' dark text and under the activity title's white text
+in its navy row: **1.06:1** in light, on a view that passed AA at rest. The fix pairs the fill and the ink in the same
+rule (`.wpg-saving { background: var(--cpl-warn-bg, #FFF8E1); color: var(--text-strong) }`, and the same for every
+descendant), so the state reads the same on any row it lands on. When a fill is a state rather than a surface, the
+rule that sets it sets the ink too.
+
