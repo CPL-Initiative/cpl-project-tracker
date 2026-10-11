@@ -3,7 +3,7 @@
  "stats": {
   "supabase_tables": 97,
   "rpcs": 36,
-  "edge_functions": 6,
+  "edge_functions": 7,
   "file_datasets": 621,
   "external_services": 166,
   "consumers": 426,
@@ -12,6 +12,16 @@
   "tabs": 39
  },
  "datasets": {
+  "edgefn:FN": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:cpl-chat-deploy.yml",
+     "how": "deploy"
+    }
+   ],
+   "main_committers": []
+  },
   "edgefn:cpl-chat": {
    "consumers": [
     {
@@ -91,10 +101,6 @@
     {
      "by": "file:chatbox/supabase/functions/cpl-chat/index.ts",
      "how": "source"
-    },
-    {
-     "by": "workflow:cpl-chat-deploy.yml",
-     "how": "deploy"
     }
    ],
    "main_committers": []
@@ -307,7 +313,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 6352
+     "line": 6356
     },
     {
      "id": "edgefn:cpl-news-harvest",
@@ -947,7 +953,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2576,
+     "line": 2586,
      "tabs": [
       "cpl-pathways"
      ]
@@ -1013,7 +1019,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 4815
+     "line": 4819
     }
    ],
    "main_committers": []
@@ -1323,7 +1329,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1549,
+     "line": 1555,
      "tabs": [
       "program-requirements"
      ]
@@ -1415,7 +1421,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2575,
+     "line": 2585,
      "tabs": [
       "cpl-pathways"
      ]
@@ -1905,7 +1911,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 5677
+     "line": 5681
     }
    ],
    "main_committers": []
@@ -2261,7 +2267,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2574,
+     "line": 2584,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4904,7 +4910,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2790,
+     "line": 2800,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4974,7 +4980,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2784,
+     "line": 2794,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5253,7 +5259,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1985,
+     "line": 1995,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5296,7 +5302,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2757,
+     "line": 2767,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5319,7 +5325,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2144,
+     "line": 2154,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5368,7 +5374,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2798,
+     "line": 2808,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5511,7 +5517,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2771,
+     "line": 2781,
      "tabs": [
       "cpl-pathways"
      ]
@@ -18794,7 +18800,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 3574
+     "line": 3578
     },
     {
      "id": "script:chatbox/smoke_test.sh",
@@ -18912,7 +18918,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5445
+     "line": 5449
     }
    ],
    "main_committers": []
@@ -19004,7 +19010,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5983
+     "line": 5987
     }
    ],
    "main_committers": []
@@ -19082,7 +19088,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 4141
+     "line": 4145
     },
     {
      "id": "script:chatbox/smoke_test.sh",
@@ -19258,7 +19264,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5449
+     "line": 5453
     },
     {
      "id": "module:kb-portal/composer_util.js",
@@ -19381,7 +19387,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 220
+     "line": 239
     }
    ],
    "main_committers": []
@@ -19460,7 +19466,7 @@
      "kind": "edgefn",
      "direction": "write",
      "how": "literal",
-     "line": 6601
+     "line": 6605
     },
     {
      "id": "module:sierra_training.js",
@@ -19482,7 +19488,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 3827
+     "line": 3831
     },
     {
      "id": "script:kb/_course_title_cleanup_apply.py",
@@ -19654,7 +19660,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 4154
+     "line": 4158
     }
    ],
    "main_committers": []
@@ -20810,7 +20816,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 4461
+     "line": 4465
     },
     {
      "id": "module:college_briefing.js",
@@ -21533,7 +21539,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 3592
+     "line": 3596
     },
     {
      "id": "module:college_briefing.js",
@@ -21818,7 +21824,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 5748
+     "line": 5752
     },
     {
      "id": "module:sierra_training.js",
@@ -21850,7 +21856,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 5136
+     "line": 5140
     },
     {
      "id": "module:sierra_training.js",
@@ -22430,7 +22436,7 @@
    "adds": [],
    "push": null,
    "deploys": [
-    "cpl-chat"
+    "FN"
    ],
    "chain": [],
    "urls": [

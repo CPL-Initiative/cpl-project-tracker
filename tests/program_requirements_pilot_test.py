@@ -701,7 +701,7 @@ for field in ('"outcomes"', '"course_outcomes"'):
 check("exactly as printed" in fn and "Never reword" in fn,
       "the prompt tells the model to copy each outcome as printed and never reword one")
 import _program_requirements_extract as X3  # noqa: E402
-check(X3.RECORD_SHAPE == 3, "the extraction pass stamps record shape 3 on what it files")
+check(X3.RECORD_SHAPE == 4, "the extraction pass stamps record shape 4 on what it files")
 
 PLO_TEXT = ("Program Learning Outcomes\nUpon completion of this program, the student will be able to:\n"
             "1. Meet the educational requirements to qualify for the \nDRE Real Estate Broker license exam. \n"
@@ -1004,6 +1004,49 @@ check("if host(url) in refused:" in ssrc and "refused_hosts(registry, entry[\"co
       "the program read skips every host the registry records as refused")
 check("SEQUENCE_READ: ${{ github.event.inputs.read }}" in sactive,
       "the workflow passes the request through; a push never sets it")
+
+# Record shape 4 (S360): Sam's reading rules 4 and 5 from the Mt. San Antonio sample (Open Asks
+# Sheet 61 card 1, "rules"): "The recommended Electives should be added with blocks", and "grab
+# the career info". The failures this guards: a recommended course counted toward the award's
+# total or its CPL figure, a recommended course left in missing_explained, a career the text
+# does not print, and a verdict that goes stale when a rerun only adds careers.
+fn4 = open(os.path.join(ROOT, "chatbox", "supabase", "functions", "program-requirements-extract", "index.ts")).read()
+check('"recommended"]' in fn4 and "careers:" in fn4 and '"outcomes", "careers"]' in fn4,
+      "the function's schema offers rule recommended and requires program.careers (record shape 4)")
+check("A course from the closed list that the catalog lists only as recommended goes in this block, not in missing_explained" in fn4
+      and '"listed as a recommended course"' not in fn4,
+      "the prompt places a recommended course in its block, never in missing_explained")
+check("Never write a career the text does not name" in fn4, "the prompt keeps careers to what the text names")
+rec4 = {"program": {"measure": "units", "total_units": {"min": 6, "max": 6}, "outcomes": [], "careers": ["platform artist", "barber"]},
+        "blocks": [{"name": "Required", "rule": "all", "minimum": None, "option_group": None, "stated": {"min": None, "max": None},
+                    "courses": [{"code": "ART 1", "units": 3, "alternatives": []}, {"code": "ART 2", "units": 3, "alternatives": []}]},
+                   {"name": "Recommended Electives", "rule": "recommended", "minimum": None, "option_group": None,
+                    "stated": {"min": None, "max": None}, "courses": [{"code": "MUS 20", "units": 3, "alternatives": []}]}],
+        "course_outcomes": [], "missing_explained": [], "notes": []}
+closed4 = [{"code": "ART 1", "units": 3}, {"code": "ART 2", "units": 3}, {"code": "MUS 20", "units": 3}]
+text4 = "Required ART 1 ART 2. Recommended Electives MUS 20. Careers such as: Platform artist, barber. Total 6 units"
+sc4 = S.score(rec4, closed4, text4)
+check(sc4["arithmetic"]["status"] == "equal" and sc4["arithmetic"]["computed"] == [6.0, 6.0],
+      "a recommended block adds nothing to the units (got %s)" % sc4["arithmetic"])
+check(sc4["coverage"]["pass"] and sc4["coverage"]["placed"] == 3,
+      "a closed-list course placed as recommended counts as placed")
+check(sc4["careers"] == {"count": 2, "not_verbatim": [], "pass": True},
+      "careers named in the text pass, capitals aside (got %s)" % sc4["careers"])
+bad4 = {**rec4, "program": {**rec4["program"], "careers": ["astronaut"]}}
+check(not S.careers_check(bad4, text4)["pass"] and S.score(bad4, closed4, text4)["pass"] == sc4["pass"],
+      "a career the text does not name is reported, and holds no record back")
+no_careers = {**rec4, "program": {k: v for k, v in rec4["program"].items() if k != "careers"}}
+check(S.requirements_md5(rec4) == S.requirements_md5(no_careers),
+      "adding careers leaves the requirements fingerprint as it was")
+chat = open(os.path.join(ROOT, "chatbox", "supabase", "functions", "cpl-chat", "index.ts"), encoding="utf-8").read()
+check('if (b.rule === "recommended") return "recommended, not required' in chat and "Careers the catalog names for it" in chat,
+      "Sierra reads a recommended block as not required (an unknown rule reads as all required) and names the careers")
+dep = open(os.path.join(ROOT, ".github", "workflows", "cpl-chat-deploy.yml")).read()
+check("- program-requirements-extract" in dep and 'supabase functions deploy "$FN"' in dep and "--no-verify-jwt" in dep,
+      "the extraction function deploys from git through the deploy workflow's allowlist, verify_jwt off")
+fp_sql = open(os.path.join(ROOT, "chatbox", "supabase_program_record_verdicts.sql")).read()
+check("- 'outcomes' - 'careers'" in fp_sql,
+      "the server's fingerprint leaves out the careers too, so a verdict pins to the requirements alone")
 
 if failures:
     print("FAIL: %d" % len(failures))

@@ -113,7 +113,7 @@ function click(w, root, value) {
   const adoptCode = Object.keys(courses).find((k) => courses[k].adopt);
   const adoptTile = adoptCode && tiles.find((t) => t.getAttribute("data-code") === adoptCode);
   check("(c) a could-adopt lead is named in words", !adoptCode || (adoptTile && /Could adopt/.test(adoptTile.textContent)));
-  check("(c) every band's rule is in words", [...root.querySelectorAll(".cplpw-rband .cplpw-rrule")].every((n) => /^(All of these|Choose )/.test(n.textContent)));
+  check("(c) every band's rule is in words", [...root.querySelectorAll(".cplpw-rband .cplpw-rrule")].every((n) => /^(All of these|Choose |Recommended, not required)/.test(n.textContent)));
   check("(c) the tiles are list items in a list", tiles.every((t) => t.parentNode.tagName === "UL"));
 
   // the gaps: read-only, with their trace
@@ -347,6 +347,24 @@ function click(w, root, value) {
     !!differ && /^Units differ/.test(differ.textContent) && /The blocks add to 29\.5–31\.5 units; the catalog prints 30\.5 units\./.test(differ.textContent),
     differ && differ.textContent);
   check("(k) the chips are drawn on tokens, never a raw color", !/\.cplpw-rdiffer[^"]*#[0-9a-fA-F]{3,6}/.test(SRC));
+}
+
+// ── (l) Recommended electives as their own block, and the careers the catalog names (Sam, 2026-10-11) ──
+{
+  const w = freshWindow();
+  const T = w.CPL_PATHWAYS_TAB;
+  const root = w.document.getElementById("cpl-pathways-root");
+  const rec = JSON.parse(JSON.stringify(w.CPL_PATHWAYS_ROEP.programs.find((p) => p.key === "cerritos_42158")));
+  rec.record.blocks.push({ name: "Recommended Electives", rule: "recommended", minimum: null, option_group: null,
+    stated: { min: null, max: null }, courses: [{ code: "WELD 100", units: 3, alternatives: [] }] });
+  rec.record.program.careers = ["ironworker", "rigger"];
+  T._roepView.lay = "req"; T._roepView.who = "college";
+  T._renderRoepProgram(root, rec);
+  const band = [...root.querySelectorAll(".cplpw-rband")].find((b) => /Recommended Electives/.test(b.textContent));
+  check("(l) a recommended block reads as recommended, not required",
+    !!band && band.querySelector(".cplpw-rroe").textContent === "Recommended" && band.querySelector(".cplpw-rrule").textContent === "Recommended, not required");
+  const car = root.querySelector(".cplpw-rprog .cplpw-rcareers");
+  check("(l) the careers the catalog names show on the program card", !!car && car.textContent === "Careers the catalog namesironworker; rigger.", car && car.textContent);
 }
 
 let failed = 0;

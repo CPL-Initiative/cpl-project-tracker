@@ -1403,6 +1403,8 @@
     ".cplpw-rchecks dt { font-size:.72rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color: var(--text-muted); }",
     ".cplpw-rchecks dd { margin:0; color: var(--text-body); }",
     ".cplpw-rchecks dd.miss { color: var(--mustard-text); font-weight:600; }",
+    ".cplpw-rcareers { margin:8px 0 0; font-size:.9rem; color: var(--text-body); }",
+    ".cplpw-rcareers b { margin-right:8px; color: var(--text-strong); }",
     ".cplpw-routcomes summary { cursor:pointer; font-weight:600; color: var(--text-strong); }",
     ".cplpw-routcomes summary:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
     ".cplpw-routcomes ol { margin:8px 0 0; padding-left:1.3em; display:grid; gap:4px; color: var(--text-body); }",
@@ -1502,6 +1504,8 @@
   function roepRoe(b, m) {
     var n = b.minimum;
     if (b.rule === "all") return { label: "Required", rule: "All of these" };
+    /* Courses the catalog recommends, which count toward nothing (Sam's rule 4, 2026-10-11) */
+    if (b.rule === "recommended") return { label: "Recommended", rule: "Recommended, not required" };
     var choose = b.rule === "choose_units" ? "Choose " + roepAmt(n, null, m || "units") : "Choose " + (n || 1) + " course" + ((n || 1) === 1 ? "" : "s");
     if (/elective/i.test(b.name || "")) return { label: "Elective", rule: choose };
     return { label: "Choose from a list", rule: choose };
@@ -1911,6 +1915,12 @@
         : hasTot ? "Do not add up to the printed total" : "No printed total to check", checks.arithmetic !== "equal" && checks.arithmetic !== "unstated");
       row("A person's reading", checks.reviewer === "ok" ? "Matches the catalog" : checks.reviewer === "fix" ? "Fixed by a procedure rerun" : "Not yet read");
       card.appendChild(dl);
+    }
+    var careers = (rec.record.program || {}).careers || [];
+    if (careers.length) {
+      /* The careers the catalog names (Sam's rule 5, 2026-10-11: "our goal is to close the loop
+         on academic pathways to have them result in career opportunities") */
+      card.appendChild(el("p", "cplpw-rcareers", [el("b", null, "Careers the catalog names"), careers.join("; ") + "."]));
     }
     var outs = roepOutcomes(rec);
     if (outs) card.appendChild(outs);

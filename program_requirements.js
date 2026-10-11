@@ -518,6 +518,8 @@
   }
   function ruleText(b, measure, groups) {
     var unit = measure === "hours" ? "hours" : "units";
+    /* Courses the catalog recommends count toward nothing (Sam's rule 4, 2026-10-11) */
+    if (b.rule === "recommended") return "Recommended, not required";
     if (b.rule === "choose_units") return "Choose " + fmt(b.minimum) + " " + unit;
     if (b.rule === "choose_courses") return "Choose " + fmt(b.minimum) + (Number(b.minimum) === 1 ? " course" : " courses");
     if (b.option_group) return "Take one of " + (groups[b.option_group] || 2) + " options";
@@ -1450,6 +1452,10 @@
       }), p.program_title + ": " + (b.name || "courses"), true)])));
     });
     if (p.total_min != null) body.appendChild(el("p", { cls: "prh-small", style: "margin:0", text: "Program total: " + span(p.total_min, p.total_max) + " " + unit + "." }));
+    /* The careers the catalog names (Sam's rule 5, 2026-10-11) */
+    var careers = (p.record && p.record.program && p.record.program.careers) || [];
+    if (careers.length) body.appendChild(el("p", { cls: "prh-small", style: "margin:0" }, [
+      el("b", { text: "Careers the catalog names: " }), careers.join("; ") + "."]));
     body.appendChild(el("p", { cls: "prh-small prh-quiet", style: "margin:0" }, [
       "Read from ", p.source_url ? link(p.source_url, "the catalog page") : "the catalog",
       " (" + yr(p.catalog_year) + ")" + (p.checked_by ? "; read against the catalog by " + p.checked_by : "") + ".",
