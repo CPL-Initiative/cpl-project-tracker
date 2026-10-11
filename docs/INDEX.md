@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 539 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 540 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 86 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 55 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 336 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1102** | |
+| Session handoffs | 337 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1104** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-11 (S365 SkyRowan): UI passes on Vision 2030 (#2001; the actions now the CPL Workplan's words), Military Partnerships (#2004) and Noncredit & Learning Partners (#2005), and Team & RACI's two leftovers (#2003); Open Asks Sheet 65 (the Vision 2030 goal figures; which records CPL Pathways shows, measured at 18.2 MB and past the checked gate); KB note `methodology-a-published-file-carries-past-the-tables-read-gate`; handoff 366.
 - 2026-10-11 (S364, second session): Long Beach City read, loaded and displayed, 305 of 379 (#1999; display build `344441813b01`, 1,515 rows); Program records builds on first open (#1993); Sam's retired-version ruling (#1995); the read job may run 360 minutes; handoff 365 and queue status corrected (#2000).
 - 2026-10-11 (S364 SkyJuniper): Sam kept hours / 16 on Open Asks Sheet 63 (#1990); the Implementation Funding and Contracts UI passes with seeded sweeps (#1991, #1997); Budget's and Annual Workplan Goals' editors read mid-save in both themes, controls as words (#1992, #1994); a second S364 session ran Long Beach City and the Program Requirements speed fix (#1993); KB notes `methodology-a-sweep-sees-only-the-states-its-seed-reaches` and `methodology-a-fill-that-does-not-flip-needs-ink-that-does-not-either` gained sections; handoff 365.
 - 2026-10-11 (S363 SkyCedar): Long Beach City's Requirements tab sits inside `<nav id="tabs">`, found by a runner probe; the reader counts a tab bar's own tabs (#1986); trial 2 read 11 of 12 from the tab and the full read runs; Long Beach City in the display builder's dated reads; Open Asks Sheet 63 (where a half unit starts); the Budget tab's UI pass (#1988); KB note `methodology-test-a-reader-fix-on-the-page-it-failed-on`; handoff 364 (SkyJuniper).
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-11 (S359 SkyMoss): RCCD's Liberal Arts emphasis read (#1965-#1967), Sheet 60's eight rows removed (#1968), Sam's Mt. San Antonio reading rules; KB note `methodology-a-missing-course-may-be-a-retired-version`; handoff 360.
 - 2026-10-10 S357 SkyCanopy: curriQunet catalogs read as data (KB note `methodology-a-javascript-catalog-is-data-read-what-it-fetches`); district catalogs scoped; Open Asks Sheets 58 and 59; handoff 358.
 - 2026-10-10 (S356 SkyThicket): Sam's three rulings (apply display build 5be53871ebf4; read Approved programs; a standing go for each display build after a college load); the college workflow's display job applies a receipt from the runner, verified by one combined hash (5be53871ebf4 on 292, 153ead0ce992 on 605); Mt. San Antonio read and loaded (313 records); the Approved programs loaded at both colleges (+33, +70) and `ee814befc65d` on 700; Team & RACI's first UI pass (#1957); KB note `methodology-a-receipt-too-large-for-the-connector-applies-from-the-runner`; handoff 357.
-- 2026-10-09 (S354 SkyFurrow): Cerritos loaded unchecked through `program_requirement_records_college_load()` (#1941, 270 records, receipt per load); reads gated on `[read]`/`[extract]`; the Activities UI pass (#1945); Program records gains Find a record and the scorer's course counts (#1946); a Progress call answers its records on its card (#1947), all for Sam reading on his phone.

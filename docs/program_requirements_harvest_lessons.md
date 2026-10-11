@@ -886,3 +886,24 @@ Memory rows: `sam-full-lbcc-read-if-trial-2-passes-2026-10-11`, `sam-load-displa
 - **Retired-version pointers (#1995).** A program in the Program Course File that points at a retired version of a course the college still offers lists that course: placed, no flag, chip kept. The current version is offered when the file gives it a kept status or, on no program there, the Fall 2025 course basic report carries it. 538 course entries in build `344441813b01`.
 - **Program records was slow for a signed-in reader (#1993).** Every card and every course table, hidden, was built on each draw (294,000 elements, 3.7 s for 1,210 records); blocks and closed colleges now build on first open.
 - **Close-out (#2000).** The S365 handoff and `kb/queue_status.json` were written while the read still ran; the second session corrected both after #1999 (1,486 unchecked, the next step the 74 left out). A test shard that stops mid-run with no ✗ FAILED line and no summary is the runner, not the PR: `suite (4)` did so on #2000 after 71 of 103 files and passed locally in full.
+
+## S365 SkyRowan, 2026-10-11: the per-college split, measured before it was built
+
+The lane's NEXT ④ was to split `cpl_pathways_roep_data.js` per college so CPL Pathways shows every harvested program,
+not the pilot's 22. S365 measured the plan on display build `344441813b01` before writing any of it:
+
+- **Size.** All 1,515 records come to 18.2 MB of compact JSON (25.9 MB as the builder writes it, `indent=1`): 2.4 to
+  4.0 MB for each large college, about 16 KB a program. Course facts are half of it (8.9 MB), the gaps 16%, the
+  catalog record 27%.
+- **A shared course table per college saves a third** (18.2 to 12.3 MB), and 1,779 course entries differ between two
+  programs at one college, so the facts are not purely per course.
+- **Churn.** Every record carries the build stamp, so each display build would rewrite every byte.
+- **The gate.** `program_requirement_records` lets anon and authenticated read checked records only
+  (`program_requirement_records_read`, `using (checked)`); an allowed reviewer reads all. 29 of 1,515 are checked, at
+  six colleges. A file per college on Pages would publish the 1,486 unchecked records past that gate. The pilot's
+  file already carries two unchecked of its 22.
+
+The plan was a session's (S353, *"366 KB for 22 records"*), written before the harvest reached 1,515 records; Sam had not
+ruled on it. It went to him as Open Asks Sheet 65 card 2, proposing that the tab read a record from the table when a
+reader opens it, as the Program Requirements tab already does. The measurement script is a few lines over
+`kb/_build_roep_display.py`'s `build()`; the lane file names the card.
