@@ -159,8 +159,8 @@
    "name": "Team Phrases",
    "page": "index.html#team-phrases",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-11",
+   "outcome": "S366: seeded team-phrases-reviewer (+dark) passed contrast and targets; read on screen: five unnamed inputs, the save message's doubled 'phrase', a key emoji and two leading check marks (one choosing its own color), boxed and filled buttons, a full mustard warning and a gold chip, ~15 raw hex fallbacks. All fixed; wiring: team_access is only a reviewer probe in Sierra Training."
   },
   {
    "id": "cobi:admin",

@@ -253,3 +253,14 @@ untriaged feedback rows, in Governance, MAP Users and the Queue) and found a lat
 readers fetch the CI rows and filter in the browser under a row cap (Sierra Training 500, the others 1,000) with 452 rows
 and about 46 CI rows a week; the sibling PR filters on the server. Guards: `tests/governance_ui_pass.test.js` (18 of 20
 fail on the old file; the two that pass are a precondition and the input taking focus) and the remount check in `tests/governance_docs_panel.test.js`.
+
+**Team Phrases (S366): a reviewer-only view whose faults the sweep cannot see.** The phrases are readable only to a
+reviewer, so the unseeded sweeps measured the sign-in form. The seed `team-phrases-reviewer` (with `-dark`) stores a
+reviewer session the way the tab reads it and stubs `team_access`; contrast and target size passed in both themes at
+once. Everything it found came from reading the page: five inputs with no name (placeholders only), a save message
+that said "Shared team phrase phrase" (the code appended " phrase" to a label already ending in it), a key emoji in
+the heading and check marks leading two messages, one of which chose its own color by matching the mark. Name a field
+in a repeated card by the card's heading and its own word (`aria-labelledby` on both), so four fields read apart. The
+warning was a full mustard fill on every visit; muted by default, it is now a quiet ground and a mustard rule. Wiring:
+Sierra Training reads `team_access` only as a one-row reviewer probe, so there is no shared figure to compare. Guard:
+`tests/team_phrases_ui_pass.test.js` (14 of 15 fail on the old file).

@@ -5016,7 +5016,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 714
+     "line": 751
     },
     {
      "id": "module:college_briefing.js",
@@ -21972,7 +21972,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 166,
+     "line": 167,
      "tabs": [
       "team-phrases"
      ]
@@ -21982,7 +21982,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 199,
+     "line": 200,
      "tabs": [
       "team-phrases"
      ]
