@@ -190,7 +190,36 @@ function happyPath() {
   });
 }
 
-Promise.resolve().then(errorPath).then(happyPath).then(report).catch(function (e) {
+// A repaint (Refresh, an owner saved, the tab reopened) mounts a fresh panel over an
+// index already loaded. Opening it must paint the lanes from memory: until S366 the
+// toggle handler returned early once the index had loaded, so the reopened panel was
+// blank. The seeded sweep (governance-editor) found it.
+function remountPath() {
+  const w = makeWin();
+  let fetches = 0;
+  w.fetch = function () {
+    fetches++;
+    return Promise.resolve({ ok: true, json: function () { return Promise.resolve(IDX); } });
+  };
+  const root = w.document.getElementById("governance-root");
+  root.innerHTML = '<div class="gov"></div>';
+  w.CPL_GOVERNANCE._mountDocs(root);
+  const first = root.querySelector(".gov-docs");
+  first.open = true;
+  first.dispatchEvent(new w.Event("toggle"));
+  return new Promise(function (res) { setTimeout(res, 50); }).then(function () {
+    root.innerHTML = '<div class="gov"></div>';      // what render() does
+    w.CPL_GOVERNANCE._mountDocs(root);
+    const again = root.querySelector(".gov-docs");
+    again.open = true;
+    again.dispatchEvent(new w.Event("toggle"));
+    check("remount: a reopened panel paints its lanes",
+      again.querySelectorAll(".gov-lane").length === IDX.lanes.length);
+    check("remount: …from memory, without fetching the index again", fetches === 1);
+  });
+}
+
+Promise.resolve().then(errorPath).then(happyPath).then(remountPath).then(report).catch(function (e) {
   check("async chain completed", false);
   console.error(e);
   report();

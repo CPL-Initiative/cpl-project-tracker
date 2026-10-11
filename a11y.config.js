@@ -658,6 +658,56 @@ async function seedNcPartnersEditor(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// Governance with the team phrase (S366): the register is gated on the read, so the
+// unseeded sweep measures only the locked banner. The seed holds the phrase, stubs the
+// four gated reads (map_contact_gaps, map_college_nudges, sierra_feedback,
+// governance_owners) so every live cell and both red states paint, activates the tab,
+// and opens Docs & doctrine with one lane expanded. The register, the drift scan and the
+// docs index are the committed files, served as they are on Pages.
+async function seedGovernance(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "governance") location.hash = "governance"; });
+  await page.waitForFunction(() => !!window.CPL_GOVERNANCE, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    try {
+      localStorage.setItem("cpl_team_pass", "seed-phrase");
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const G = [
+      { college: "College One", college_kind: "college", has_student_contact: true, has_coordinator: true,
+        landing_page_url: "https://example.org/one", active_users: 4, synced_at: "2026-10-10T06:00:00Z" },
+      { college: "College Two", college_kind: "college", has_student_contact: false, has_coordinator: true,
+        landing_page_url: null, active_users: 0, synced_at: "2026-10-10T06:00:00Z" },
+    ];
+    const NU = [{ college: "College Two", last_nudged_at: "2026-10-01T00:00:00Z" }];
+    const FB = [{ page: "sierra", status: "new" }, { page: "sierra", status: "addressed" }];
+    const OW = [{ register_id: "DR-01", owner: "Member One", note: "Owns the student contact field.",
+      set_by: "seed@example.org", set_at: "2026-10-02T00:00:00Z" }];
+    const real = window.fetch;
+    window.fetch = function (url) {
+      const u = String(url);
+      const body = /\/map_contact_gaps\?/.test(u) ? G : /\/map_college_nudges\?/.test(u) ? NU
+        : /\/sierra_feedback\?/.test(u) ? FB : /\/governance_owners\?/.test(u) ? OW : null;
+      if (body) return Promise.resolve(new Response(JSON.stringify(body), { status: 200, headers: { "Content-Type": "application/json" } }));
+      return real.apply(this, arguments);
+    };
+    window.CPL_GOVERNANCE.activate();
+  });
+  await page.waitForFunction(() => !!document.querySelector("#governance-root .gov-table"), null, { timeout: 20000 });
+  await page.evaluate(() => {
+    const d = document.querySelector("#governance-root .gov-docs");
+    if (d) d.open = true;
+  });
+  await page.waitForFunction(() => !!document.querySelector("#governance-root .gov-lane"), null, { timeout: 20000 });
+  await page.evaluate(() => {
+    const l = document.querySelector("#governance-root .gov-lane");
+    if (l) l.open = true;
+  });
+  await page.waitForTimeout(300);
+}
+
 // Team Phrases signed in as a reviewer (S366): the phrases are readable only to a reviewer,
 // so the unseeded sweeps measure the sign-in form alone. The seed stores a reviewer session
 // the way the tab reads it, stubs the team_access read with four rows, activates the tab,
@@ -1147,6 +1197,22 @@ module.exports = {
     routes: [{ hash: "nc-learning-partners", name: "editor" }],
     widths: [390, 1440],
     seed: (page) => seedNcPartnersEditor(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "governance-editor": {
+    file: "index.html",
+    title: "Governance with the team phrase: the register, live figures, owners, Docs & doctrine",
+    routes: [{ hash: "governance", name: "editor" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedGovernance(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "governance-editor-dark": {
+    file: "index.html",
+    title: "Governance with the team phrase: the register, live figures, owners, Docs & doctrine, dark",
+    routes: [{ hash: "governance", name: "editor" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedGovernance(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "team-phrases-reviewer": {
