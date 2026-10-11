@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-538 document(s).
+539 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -434,6 +434,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [SUBJ4-consumer semantics — umbrella allowances and alias families must be mirrored everywhere](../kb-notes/methodology-subj4-consumer-semantics.md) | methodology | published | 2026-06-12 |  |
 | [Surface a finer derived layer on a single-grain reference tab (without breaking the grain)](../kb-notes/methodology-surface-derived-layer-on-single-grain-tab.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Tell a parser defect from a people defect before you build a curation queue](../kb-notes/methodology-tell-a-parser-defect-from-a-people-defect.md) | methodology | published | 2026-08-14 | 2026-08-14 |
+| [Test a reader fix on the page it failed on](../kb-notes/methodology-test-a-reader-fix-on-the-page-it-failed-on.md) | methodology | published | 2026-10-11 | 2026-10-11 |
 | [Testing a rule without cueing the answer](../kb-notes/methodology-testing-a-rule-without-cueing-the-answer.md) | methodology | published | 2026-08-29 | 2026-08-29 |
 | [The feedback queue already knew — collection is not the bottleneck, triage is](../kb-notes/methodology-the-feedback-queue-already-knew.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [The first run of a new instrument measures the instrument](../kb-notes/methodology-the-first-run-of-a-new-instrument-measures-the-instrument.md) | methodology | published | 2026-09-04 | 2026-09-04 |

@@ -43,3 +43,11 @@ visible text at `ACCEPT_SHARE`, else `innerText+tabs` (PAGE_JS's `tabPanels`, ou
 courses in more than 40 subjects left out as an index), else `textContent`. A new platform or a college whose
 `sources.json` shows `textContent` on most programs gets a look at the page before its extraction is paid for: run a
 small `limit` first.
+
+**A page's own tab bar can sit inside a nav (S363).** Long Beach City keeps its tabs in `<nav id="tabs">`, each a
+`role=tab` link, and the first version of `tabPanels` dropped every link inside a `nav` as a site menu: the trial
+(run 38139252216) read `textContent` for all 12 programs. A tab of the page's tab bar (`role=tab`, or a link inside
+`[role=tablist]`, `#tabs`, `ul.tabs`) now counts wherever it sits, while the panel it opens must still sit outside the
+menus; a hidden panel naming no course (the page's search dialog) is left out. Trial 2 (run 38147472758): 11 of 12 on
+`innerText+tabs`. The fix was found by probing the real page, which the built fixture could not show:
+[methodology-test-a-reader-fix-on-the-page-it-failed-on](methodology-test-a-reader-fix-on-the-page-it-failed-on.md).
