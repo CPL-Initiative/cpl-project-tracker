@@ -126,8 +126,8 @@
    "name": "Military Partnerships",
    "page": "index.html#military-partnerships",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-11",
+   "outcome": "S365: sweeps clean light+dark (tab and the three veteran-map targets) before and after; measured 320/390/1280: below a 981px frame the map printed its own h1 and lede under the tab's heading, pushing the map below the frame's fold on a phone (content 2,094px at 320 -> 1,843; 1,715 at 390 -> 1,547), now screen-reader-only at every width in the embed; the paragraph's link painted browser-default ink (#0000EE / #9E9EFF), now --accent-link, arrow glyph dropped. Remainder named: below a 981px frame the map scrolls inside its frame by design (its stage is in vh)."
   },
   {
    "id": "cobi:cpl-pathways",
