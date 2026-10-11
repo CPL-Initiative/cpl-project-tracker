@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "written_at": "2026-10-11T18:28:43Z",
+  "written_at": "2026-10-11T19:00:05Z",
   "session": 364,
   "moniker": "SkyJuniper",
   "run": "Sam's session",
@@ -8289,6 +8289,10 @@
   },
   "changes": [
     {
+      "at": "2026-10-11T19:01Z",
+      "text": "The Contracts register passes AA in light and dark for a reviewer, and its controls are underlined words."
+    },
+    {
       "at": "2026-10-11T18:25Z",
       "text": "Annual Workplan Goals' editor reads in light and dark while a value saves, and its controls and its Add new row dialog are underlined words."
     },
@@ -8323,10 +8327,6 @@
     {
       "at": "2026-10-11T13:49Z",
       "text": "Noncredit programs show their hours as estimated equivalent units at the lecture rate, marked for estimating only, not awarded units."
-    },
-    {
-      "at": "2026-10-11T13:49Z",
-      "text": "18 records that read another program's page are removed (Sam's ruling); a record placing none of its courses is never loaded again."
     }
   ],
   "headline": [

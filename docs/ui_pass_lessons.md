@@ -193,3 +193,11 @@ light and dark. Guards: `tests/cpl_funding_controls_first_light.test.js` (36; 6 
 `tests/budget_section_first_light_test.py` (3 new, all failing on the old files),
 `tests/workplan_goals_editor_first_light.test.js` (12; none pass on the old file).
 
+**Contracts (#1997): the gate, the flipping band, a chip on the browser's button face.** The signed-out sweeps measured
+the register's gate. The seeded target stubs the tab's four reads with the V0718 fixture so its own `load()` paints it;
+it must first set `#contracts` and wait for `CPL_CONTRACTS`, because the motion check seeds a page loaded without the
+route's hash and the tab's script loads only when activated (the first cut timed out). It found the band's labels at
+3.56:1 in dark (`--navy-primary` turns light; the band is now `--seal-blue` with `--white` and `--on-seal-blue-muted`),
+text in the decorative `--text-faint` at 3.62:1, and a `<button>` chip with no ground of its own on Chromium's dark
+button face (`#6B6B6B`) at 1.99:1. Guard: `tests/contracts_first_light.test.js` (16; 1 passes on the old file).
+

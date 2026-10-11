@@ -1,5 +1,5 @@
 ---
-title: Session 365 handoff — Sheet 63 carried out, three UI passes, Long Beach City with the second S364 session
+title: Session 365 handoff — Sheet 63 carried out, four UI passes, Long Beach City with the second S364 session
 date: 2026-10-11
 session: 364 (SkyJuniper)
 tags: [handoff, ui-pass, first-light, accessibility, program-requirements, long-beach-city, decision-sheet]
@@ -10,7 +10,7 @@ status: current
 
 Your moniker is **SkyRowan**. Session 364 ran as **two sessions** on Sam's word, split by item so each had one writer:
 
-- **SkyJuniper** (`session_014GrqugcqCFynYMBm4NnpT2`, this handoff's writer): Sheet 63, three UI passes, the checkpoint.
+- **SkyJuniper** (`session_014GrqugcqCFynYMBm4NnpT2`, this handoff's writer): Sheet 63, four UI passes, the checkpoint.
   Started on S363's stale greeting at 17:06Z and took the handoff's own name.
 - **The second S364 session** (`session_019Sz6r6eargwVNTX8qC6K7a`, started by Sam at 17:34Z with the S364 greeting):
   Long Beach City end to end, the Program Requirements speed fix (#1993), and Sam's retired-version ruling (#1995). It
@@ -42,8 +42,8 @@ Neither holds anything for you except what **In flight** names. Sam's CPL Queue 
 
 ## Next in the queue
 
-- **The UI pass:** `python3 scripts/ui_pass.py --next` names **Contracts** (never audited). Seed any signed-in or
-  transient state before you trust a clean sweep (below).
+- **The UI pass:** `python3 scripts/ui_pass.py --next` names **Vision 2030** (never audited). Contracts is done (#1997).
+  Seed any signed-in, gated or transient state before you trust a clean sweep (below).
 - **Harvest lane NEXT ④:** CPL Pathways' display file splits per college. Do not start it while a Long Beach City display
   build is in flight; both write `cpl_pathways_roep_data.js`.
 - **UI leftovers:** Team & RACI's edit-mode keyboard access (clickable cells need a button inside). The funding tab's
@@ -61,14 +61,19 @@ Neither holds anything for you except what **In flight** names. Sam's CPL Queue 
 Funding UI pass: controls as underlined words, the view in use by weight, 24px targets, a seeded curator sweep); #1992
 (the Budget editor read 1.35:1 in dark mid-save; tokens only; `daily-dashboard.yml` dispatched to publish it, run
 38162594241); #1994 (the Annual Workplan Goals editor read 1.06:1 in light as well as dark mid-save; controls as words;
-the dialog's radio labels at 24px). The second session: #1993 (Program records 3.7 s to 0.36 s). New seeded targets in
-`a11y.config.js`: `funding-curator`, `budget-editor`, `workplan-goals-editor`, `workplan-goals-add`, each with `-dark`.
+the dialog's radio labels at 24px); #1997 (the Contracts UI pass: the band holds `--seal-blue` in both themes, text off
+the decorative `--text-faint`, a chip off the browser's dark button face, controls as words). The second session: #1993 (Program records 3.7 s to 0.36 s). New seeded targets in
+`a11y.config.js`: `funding-curator`, `budget-editor`, `workplan-goals-editor`, `workplan-goals-add`, `contracts`, each
+with `-dark`.
 
 ## Safety patterns
 
 - **A clean sweep covers only the states its seed reaches.** A signed-in editor's controls and a cell mid-save are views
   no unseeded sweep paints; seed them through the view's own session read and state classes (KB notes
   `methodology-a-sweep-sees-only-the-states-its-seed-reaches`, `methodology-a-fill-that-does-not-flip-needs-ink-that-does-not-either`).
+- **A seed opens its own tab.** The sweep's motion check seeds a page loaded without the route's hash, and a lazy tab
+  (Contracts) loads its script only when activated: set `location.hash` and wait for the tab's global first, as
+  `seedProgress` and `seedContracts` do. A gated tab's reads are stubbed per table so its own `load()` paints it.
 - **Generated CSS is measured in a working copy.** Swap the new `EXHIBIT_ANALYSIS_CSS` block into `index.html` between its
   markers, measure, `git checkout index.html`, ship code only, dispatch the daily run after merge (Rule 1).
 - **A vault decision-sheet PR reads tracker main.** Its `coverage` check fails until the tracker PR that drops the lane's
@@ -79,7 +84,8 @@ the dialog's radio labels at 24px). The second session: #1993 (Program records 3
 
 The Pipeline tab (the M-ID pipeline did not move), `kb/README.md` and `README.md` (no structure or surface change), §11's
 row (no lane changed state), and the harvest lane (the second session is rewriting its NEXT ① with the Long Beach City
-PR; S364's Sheet 63 edit to it landed in #1990). The UI pass ran (Implementation Funding, #1991). Held at sign-off: no PR
+PR; S364's Sheet 63 edit to it landed in #1990). The UI pass ran (Implementation Funding #1991, Contracts #1997). Signed
+off at about 160,000 tokens left, early, so the next pass starts fresh. Held at sign-off: no PR
 subscription, no check-in, no artifact watch.
 
 ## Sign-off line for Sam
