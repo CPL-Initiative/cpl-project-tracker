@@ -56,8 +56,11 @@ Nothing. The second S364 session finished its items at 20:05Z and holds no PR, c
 ## Sam's decisions this session
 
 - 16:11Z (Open Asks Sheet 63, card 1, his own call): *"Keep hours / 16"*. Recorded in #1990; the display was already so.
-- Via the second session (17:3xZ onward): the Program Requirements tab was slow enough that his browser asked to wait
-  (fixed in #1993), and the retired-version ruling (#1995).
+- To the second session, in chat (memory rows name each): ~17:45Z the Program Requirements program blocks were slow
+  enough that his browser asked to wait (fixed in #1993); ~18:00Z on Cerritos 02226, *"If the Program Course file has
+  116 and 117 as active, it shouldn't matter that they have older inactive versions"*, then *"go"* (#1995,
+  `sam-retired-version-pointer-not-a-flag-2026-10-11`); ~19:03Z *"go ahead and raise the timeout and re-run if
+  needed"* (`sam-lbcc-raise-timeout-rerun-2026-10-11`; the read filed in time, the limit is now 360).
 
 ## What shipped (S364)
 
@@ -86,11 +89,12 @@ with `-dark`.
 
 ## Not refreshed / skipped this checkpoint
 
-The Pipeline tab (the M-ID pipeline did not move), `kb/README.md` and `README.md` (no structure or surface change), §11's
-row (no lane changed state), and the harvest lane (the second session is rewriting its NEXT ① with the Long Beach City
-PR; S364's Sheet 63 edit to it landed in #1990). The UI pass ran (Implementation Funding #1991, Contracts #1997). Signed
-off at about 160,000 tokens left, early, so the next pass starts fresh. Held at sign-off: no PR
-subscription, no check-in, no artifact watch.
+The Pipeline tab (the M-ID pipeline did not move), `kb/README.md` and `README.md` (no structure or surface change), The second session's
+checkpoint (#2000) moved §11's harvest row to six colleges and the lane's NEXT ① to the 74 programs left out; its UI pass
+is skipped (context warning, no room for a fix PR), so Vision 2030 stays due. The UI pass ran in the first session
+(Implementation Funding #1991, Contracts #1997). Held at sign-off by both sessions: no PR subscription, no check-in, no
+artifact watch. One CI note: #2000's `suite (4)` stopped after 71 of 103 files with no failing test (passes locally);
+if a shard ever ends with no FAILED line and no summary, re-run it once before looking for a cause in the PR.
 
 ## Sign-off line for Sam
 
