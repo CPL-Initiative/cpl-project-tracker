@@ -863,6 +863,11 @@ The display dry run already counts KINPP 23 and five more Kinesiology courses as
 (`program-requirements-pilot.yml`, page loads only, read-only); a new branch cut from an older branch compares its
 paths with the default branch. Check `push.paths` of every workflow before pushing a branch that touches the readers.
 
+**Sign-off at the context warning.** S363 reached 104,467 tokens left before the full read landed, so the load and
+display pass to the next session (handoff 364): Sam's go stands, the dated reads are in place, and the read branch
+needs `origin/main` merged in first. Sam moved the CPL Queue routine to 05:05Z (10:05 PM PDT) so it fires after the
+day's sessions; S363 let go of its check-in, PR watches and the Sheet 63 watch in the sign-off turn.
+
 Memory rows: `sam-full-lbcc-read-if-trial-2-passes-2026-10-11`, `sam-load-display-lbcc-after-full-read-2026-10-11`,
 `roep-lbcc-tab-bar-inside-nav-2026-10-11`.
 

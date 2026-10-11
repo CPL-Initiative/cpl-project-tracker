@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 364 | [Long Beach City's full read lands; load, display, PR; Sheet 63](../session_364_handoff.md) | 2026-10-11 |
+| 364 | [Long Beach City's full read lands; load, display, PR; Sheet 63; the routine at 05:05Z](../session_364_handoff.md) | 2026-10-11 |
 | 363 | [Long Beach City read again from its own pages; noncredit equivalent units; Sheet 62 carried out](../session_363_handoff.md) | 2026-10-11 |
 | 362 | [Long Beach City's read, the two-call extraction, and RCCD's three Humanities programs](../session_362_handoff.md) | 2026-10-11 |
 | 361 | [rules 4 and 5 deploy and sample, then Long Beach City; 39120's delete; Sierra's go](../session_361_handoff.md) | 2026-10-11 |
