@@ -924,7 +924,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 13140
+     "line": 13144
     },
     {
      "id": "workflow:daily-dashboard.yml",
@@ -4820,7 +4820,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12704
+     "line": 12708
     }
    ],
    "served": true,
@@ -5016,7 +5016,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 474
+     "line": 495
     },
     {
      "id": "module:college_briefing.js",
@@ -5098,7 +5098,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13038
+     "line": 13042
     },
     {
      "id": "script:funding/_build_funding_ess.py",
@@ -5732,7 +5732,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12645
+     "line": 12649
     }
    ],
    "served": true,
@@ -6283,7 +6283,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12701
+     "line": 12705
     }
    ],
    "served": true,
@@ -6706,7 +6706,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13352
+     "line": 13356
     },
     {
      "id": "workflow:daily-dashboard.yml",
@@ -6752,7 +6752,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13372
+     "line": 13376
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -16219,14 +16219,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12473
+     "line": 12477
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 12473
+     "line": 12477
     },
     {
      "id": "script:fact-sheet/_build_statewide_recs.py",
@@ -16349,7 +16349,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12703
+     "line": 12707
     }
    ],
    "served": true,
@@ -16372,14 +16372,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12503
+     "line": 12507
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 12503
+     "line": 12507
     }
    ],
    "producers": [
@@ -17917,7 +17917,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12705
+     "line": 12709
     }
    ],
    "served": true,

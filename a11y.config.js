@@ -468,6 +468,27 @@ async function seedFundingCurator(page, theme) {
   await page.waitForTimeout(200);
 }
 
+// The Budget editor as a signed-in editor sees it mid-save (S364): the auth widget,
+// the editable cells, and one cell in each save state (saving, saved, failed), which
+// show only while a write is in flight and never in the signed-out sweep. The session
+// is the shape budget_editor.js reads from sessionStorage; the editor re-reads it on
+// its own cpl-team-pass-dropped event.
+async function seedBudgetEditor(page, theme) {
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    try {
+      sessionStorage.setItem("cpl_sb", JSON.stringify({ access_token: "seed.seed.seed", email: "seed@example.org" }));
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    window.dispatchEvent(new CustomEvent("cpl-team-pass-dropped"));
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const cells = document.querySelectorAll('#budget-funding .budget-cell[data-editable="1"]');
+    ["budget-saving", "budget-saved", "budget-error"].forEach((c, i) => { if (cells[i]) cells[i].classList.add(c); });
+  });
+  await page.waitForTimeout(300);
+}
+
 async function seedMyCollegeReports(page, signin) {
   await page.evaluate(() => new Promise((res) => {
     if (window.CPL_FUNDING_TAB) return res();
@@ -871,6 +892,25 @@ module.exports = {
       await page.waitForTimeout(900);
     },
     mayHideBelow: [],
+  },
+  /* ── Budget, signed in, mid-save (S364) ──────────────────────────────────
+     The save states paint only while a write is in flight; the cobi sweep is
+     signed out and never sees them. */
+  "budget-editor": {
+    file: "index.html",
+    title: "Budget, signed in, one cell in each save state",
+    routes: [{ hash: "budget", name: "editor" }],
+    widths: [390, 1440],
+    seed: (page) => seedBudgetEditor(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "budget-editor-dark": {
+    file: "index.html",
+    title: "Budget, signed in, one cell in each save state, dark",
+    routes: [{ hash: "budget", name: "editor" }],
+    widths: [390, 1440],
+    seed: (page) => seedBudgetEditor(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── The funding tab, signed in (S364 UI pass) ───────────────────────────
      The cobi sweep is signed out, so it never paints the curator's controls,
