@@ -1596,6 +1596,10 @@
     li.appendChild(el("span", "code", c.code));
     if (info.title) li.appendChild(el("span", "ttl", info.title));
     var u = c.units != null ? roepAmt(c.units, c.units_max, m) : (info.units_from_state_file != null ? roepAmt(info.units_from_state_file, null, m) + " (COCI)" : "");
+    /* A noncredit course's hours as estimated equivalent units, from the display build (the lecture
+       rate, 16-18 hours a unit; Sam, 2026-10-11: for estimating only, not awarded units). */
+    var eq = m === "hours" && c.units != null ? (info.equivalent_units || [])[0] : null;
+    if (u && eq) u += " (about " + roepAmt(eq, (info.equivalent_units || [])[1], "units") + ", estimated equivalent)";
     if (u) li.appendChild(el("span", "u", u));
     marks.forEach(function (k) {
       li.appendChild(el("span", "cplpw-rmark" + (k.kind === "here" ? "" : " lead"), [el("b", null, k.label), k.text]));
@@ -1635,6 +1639,16 @@
     box.appendChild(el("h3", null, "Requirements, as the catalog prints them"));
     /* A unit difference is kept as printed and chipped (Sam, 2026-10-11: "Preserve the unit
        difference and highlight with a chip"). */
+    /* Estimated equivalent units for a noncredit program (Sam, 2026-10-11): the display build's lecture
+       rate, 16-18 hours a unit in half units (Title 5 section 55002.5), for estimating only. */
+    var equiv = roepMeasure(rec) === "hours" ? (rec.display || {}).equivalent_units : null;
+    if (equiv && equiv.total && equiv.total.min != null) {
+      var ft = ((rec.display || {}).figure || {}).total || {};
+      box.appendChild(el("p", "cplpw-rdiffer cplpw-requiv", [el("b", null, "Estimated equivalent units"),
+        roepAmt(ft.min, ft.max, "hours") + " is about " + roepAmt(equiv.total.min, equiv.total.max, "units") +
+        " at the lecture rate, " + (equiv.hours_per_unit || []).join("–") + " hours a unit (Title 5 section 55002.5). " +
+        "For estimating only: equivalents, not awarded units."]));
+    }
     var differ = ((rec.display || {}).checks || {}).units_differ;
     if (differ) {
       var dm = roepMeasure(rec);

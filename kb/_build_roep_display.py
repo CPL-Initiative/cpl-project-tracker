@@ -469,6 +469,26 @@ def courses_of(block):
     return block.get("courses") or []
 
 
+# Estimated equivalent units for a noncredit program's hours (Sam, 2026-10-11): "apply a carnegy unit
+# conversion to list equivalent units and note they are equivalent, not awarded units", then "Let's use
+# lecture rate just for simplicity's sake. It will be handy when comparing mirrored courses (which are the
+# same contact hours CR/NC) and for funding based on equivalent FTES. We can do our best to note they are
+# for estimating purposes only." His bands: lecture 16-18 hours = 1.0, 32-36 = 2.0, 48-54 = 3.0 (Title 5
+# section 55002.5). The hours divided by 16, rounded down to the half unit, keep every band whole: 54 hours
+# is 3.0, and the next half unit starts at 56. Pages only; Sierra never cites them (Sam, same day).
+LECTURE_HOURS_PER_UNIT = (16, 18)
+
+
+def equivalent_units(hours):
+    """Hours as estimated equivalent units at the lecture rate, in half units; None where no hours are printed."""
+    if hours is None:
+        return None
+    try:
+        return int(float(hours) * 2 // LECTURE_HOURS_PER_UNIT[0]) / 2
+    except (TypeError, ValueError):
+        return None
+
+
 def least(units) -> float | None:
     """The least a map prints for an item: "1-4" is 1, "3" is 3, nothing is None."""
     m = re.match(r"\s*(\d+(?:\.\d+)?)", str(units or ""))
@@ -879,6 +899,18 @@ def build() -> dict:
                              "path": along["cpl"] if along else None,
                              "path_picks": along["picks"] if along else [],
                              "path_why": None if along else "No pathway map has been read for this program."}
+        if measure == "hours":
+            display["equivalent_units"] = {"rate": "lecture", "hours_per_unit": list(LECTURE_HOURS_PER_UNIT),
+                                           "total": {"min": equivalent_units(total["min"]),
+                                                     "max": equivalent_units(total["max"])},
+                                           "up_to": equivalent_units(pl["cpl"])}
+            for b in blocks:
+                for c in courses_of(b):
+                    for x in [c] + list(c.get("alternatives") or []):
+                        e = courses.get(x.get("code"))
+                        if e is not None and x.get("units") is not None and "equivalent_units" not in e:
+                            e["equivalent_units"] = [equivalent_units(x["units"]),
+                                                     equivalent_units(x.get("units_max"))]
         display["counts"] = {"courses": len(courses),
                              "here": sum(1 for e in courses.values() if e.get("here")),
                              "adopt": sum(1 for e in courses.values() if e.get("adopt")),

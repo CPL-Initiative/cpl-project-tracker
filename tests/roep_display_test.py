@@ -355,6 +355,29 @@ def field_names(v, out):
     return out
 
 
+# Estimated equivalent units for a noncredit program's hours (Sam, 2026-10-11): the lecture rate, Title 5
+# section 55002.5, labeled on the pages as for estimating only, not awarded units; Sierra never cites them
+# (Sam: "I'm a little afraid they'll be misconstrued as real units rather than estimated equivalents").
+# Sam's bands (2026-10-11, lecture rate): 16-18 hours = 1.0, 32-36 = 2.0, 48-54 = 3.0, in half units.
+check(b.LECTURE_HOURS_PER_UNIT == (16, 18)
+      and [b.equivalent_units(h) for h in (8, 16, 18, 32, 36, 48, 54, 55, 56, 324)] == [0.5, 1, 1, 2, 2, 3, 3, 3, 3.5, 20]
+      and b.equivalent_units(None) is None, "hours become estimated equivalent units at the lecture rate, every band whole")
+eq_bad = []
+for key, d in sql.items():
+    e, f = d.get("equivalent_units"), (d.get("figure") or {})
+    if f.get("measure") == "hours":
+        tmin = (f.get("total") or {}).get("min")
+        if not e or e.get("rate") != "lecture" or e.get("hours_per_unit") != [16, 18] or \
+                (e.get("total") or {}).get("min") != b.equivalent_units(tmin):
+            eq_bad.append(key)
+    elif e is not None:
+        eq_bad.append(key)
+check(not eq_bad and any(d.get("equivalent_units") for d in sql.values()),
+      "every noncredit program carries its total as equivalent units, and no units program does: %r" % eq_bad[:5])
+chat = open(os.path.join(ROOT, "chatbox", "supabase", "functions", "cpl-chat", "index.ts")).read()
+check("equivalent_units" not in chat and "equivalent units" not in chat.lower(),
+      "Sierra never reads or names equivalent units (Sam, 2026-10-11)")
+
 names = field_names(read, set()) | field_names(data, set()) | field_names(list(sql.values()), set())
 check(not [n for n in names if re.search(r"student|learner_id|ssn|emplid", n, re.I)],
       "no student field in the read or either output")
