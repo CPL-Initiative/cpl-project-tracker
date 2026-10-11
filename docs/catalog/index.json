@@ -15258,8 +15258,28 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 331,
+   "count": 332,
    "docs": [
+    {
+     "created": "2026-10-11",
+     "governs": [],
+     "n": 361,
+     "path": "docs/session_361_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "harvest",
+      "phase-2",
+      "long-beach-city",
+      "coci-status",
+      "record-shape-4",
+      "emergency-checkpoint"
+     ],
+     "title": "rules 4 and 5 deploy and sample, then Long Beach City; 39120's delete; Sierra's go",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-11",
      "governs": [],
@@ -20920,5 +20940,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1094
+ "total": 1095
 }

@@ -1,0 +1,488 @@
+{
+ "note": "S360 SkyLichen, 2026-10-11: the one program_requirement_records row Sam's Open Asks Sheet 61 item 2 ruled removed (\"remove\", 2026-10-11T01:26:24Z, through 2). Read live just before the delete; row_md5 is md5(to_jsonb(r)::text) of that read, and row_text is that text exactly (its md5 matches).",
+ "rollback": "insert into public.program_requirement_records select * from jsonb_populate_record(null::public.program_requirement_records, '<row_text>'::jsonb);",
+ "rows": [
+  {
+   "college": "Riverside City College",
+   "control_number": "39120",
+   "row_md5": "6aa0c2e371934c7c4168142ceb6b4632",
+   "row_text": "{\"award\": \"A.S. Degree\", \"checks\": {\"listed\": 9, \"placed\": 8, \"coverage\": true, \"invented\": true, \"arithmetic\": \"equal\"}, \"record\": {\"blocks\": [{\"name\": \"Required Courses\", \"rule\": \"all\", \"stated\": {\"max\": 36, \"min\": 36}, \"courses\": [{\"code\": \"AIR-61A\", \"units\": 3, \"units_max\": null, \"alternatives\": [], \"catalog_addition\": false}, {\"code\": \"AIR-61B\", \"units\": 3, \"units_max\": null, \"alternatives\": [], \"catalog_addition\": true}, {\"code\": \"AIR-64A\", \"units\": 3, \"units_max\": null, \"alternatives\": [], \"catalog_addition\": false}, {\"code\": \"AIR-64B\", \"units\": 3, \"units_max\": null, \"alternatives\": [], \"catalog_addition\": true}, {\"code\": \"AIR-75\", \"units\": 3, \"units_max\": null, \"alternatives\": [], \"catalog_addition\": false}, {\"code\": \"AIR-76\", \"units\": 3, \"units_max\": null, \"alternatives\": [], \"catalog_addition\": false}, {\"code\": \"AIR-77\", \"units\": 3, \"units_max\": null, \"alternatives\": [], \"catalog_addition\": false}, {\"code\": \"AIR-78\", \"units\": 3, \"units_max\": null, \"alternatives\": [], \"catalog_addition\": true}, {\"code\": \"AIR-83\", \"units\": 3, \"units_max\": null, \"alternatives\": [], \"catalog_addition\": true}, {\"code\": \"AIR-84\", \"units\": 3, \"units_max\": null, \"alternatives\": [], \"catalog_addition\": false}, {\"code\": \"AIR-90\", \"units\": 3, \"units_max\": null, \"alternatives\": [], \"catalog_addition\": false}, {\"code\": \"EST-22\", \"units\": 3, \"units_max\": null, \"alternatives\": [], \"catalog_addition\": false}], \"minimum\": null, \"option_group\": null}], \"program\": {\"measure\": \"units\", \"outcomes\": [\"Demonstrate technical knowledge and skills needed to repair, install, service, and maintain commercial HVAC systems in operating condition.\", \"Utilize diagnostic techniques and testing equipment in the repair of commercial HVAC systems.\", \"Apply principles of mechanics, electricity, and electronics to the repair of commercial HVAC systems.\"], \"ge_pattern\": null, \"total_units\": {\"max\": 36, \"min\": 36}, \"section_heading\": \"HVAC Commercial Technology - Associate of Science Degree and Certificate of Achievement - AS946/AS946C/CE946\", \"open_elective_units\": null}}, \"checked\": false, \"college\": \"Riverside City College\", \"display\": {\"v\": 1, \"map\": {\"url\": null, \"host\": null, \"text\": \"The weekly census found no published term-by-term program map on Riverside City College's site (census run census-20261004T152832Z-s4of4).\", \"status\": \"none\", \"checked_run\": \"census-20261004T152832Z-s4of4\"}, \"gaps\": [{\"kind\": \"Catalog and state file differ\", \"text\": \"The state's Program Course File lists CAT 61; the reader found it not in the text.\", \"owner\": \"college\", \"where\": \"Riverside City College's program record in the state's curriculum inventory\"}, {\"kind\": \"Catalog and state file differ\", \"text\": \"The catalog prints AIR-61B, AIR-64B, AIR-78, AIR-83 for this program; the state's Program Course File does not list them.\", \"owner\": \"college\", \"where\": \"Riverside City College's program record in the state's curriculum inventory\"}, {\"kind\": \"Reader's note\", \"text\": \"TITLE MISMATCH: the catalog text is for 'HVAC Commercial Technology' (AS946/AS946B/AS946C/CE946), not 'Building Energy Systems Professional in HVAC Technology'. No section with the named program title appears. The section was recorded because the source URL was given for this program and 8 of 9 closed-list courses appear in it; a reviewer should confirm whether this is a renamed program or the wrong page.\", \"owner\": \"procedure\", \"where\": \"Riverside City College's CurriQunet META reading procedure\"}, {\"kind\": \"Reader's note\", \"text\": \"The heading is printed three times; the third version adds AS946B to the codes (AS946/AS946B/AS946C/CE946).\", \"owner\": \"procedure\", \"where\": \"Riverside City College's CurriQunet META reading procedure\"}, {\"kind\": \"Reader's note\", \"text\": \"The page prints one requirements list and one Program Learning Outcomes list for the program as a whole, shared by the A.S. degree and the Certificate of Achievement; recorded here for the A.S. degree.\", \"owner\": \"procedure\", \"where\": \"Riverside City College's CurriQunet META reading procedure\"}, {\"kind\": \"Reader's note\", \"text\": \"Most AIR courses are marked '( Historical )' in the catalog; only EST-22 is marked '( Active )'. The requirement list may be outdated for the 2026-2027 catalog year.\", \"owner\": \"procedure\", \"where\": \"Riverside City College's CurriQunet META reading procedure\"}, {\"kind\": \"Reader's note\", \"text\": \"The A.S. degree also requires general education and other graduation requirements; no specific GE pattern is named.\", \"owner\": \"procedure\", \"where\": \"Riverside City College's CurriQunet META reading procedure\"}, {\"kind\": \"Reader's note\", \"text\": \"CAT 61 (Professional Office Procedures) from the closed list does not appear in this text.\", \"owner\": \"procedure\", \"where\": \"Riverside City College's CurriQunet META reading procedure\"}], \"build\": \"3746c15d32ba\", \"built\": \"2026-10-10\", \"checks\": {\"checked\": null, \"coverage\": {\"listed\": 9, \"placed\": 8}, \"reviewer\": null, \"additions\": 4, \"arithmetic\": \"equal\"}, \"counts\": {\"here\": 1, \"adopt\": 3, \"courses\": 12, \"consider\": 0}, \"figure\": {\"path\": null, \"picks\": [\"AIR-61A\"], \"total\": {\"max\": 36, \"min\": 36}, \"up_to\": 3.0, \"measure\": \"units\", \"path_why\": \"No pathway map has been read for this program.\", \"path_picks\": []}, \"courses\": {\"AIR-75\": {\"ids\": [{\"id\": \"HVAC M1058\", \"kind\": \"M-ID\", \"title\": \"Electrical Fundamentals for HVAC/R\"}], \"adopt\": {\"colleges_n\": 1, \"credentials\": [{\"colleges\": [\"San Bernardino Valley College\"], \"credential\": \"Welding for HVAC/R\"}], \"credentials_n\": 1}, \"title\": \"HVAC/R Systems Design\", \"identity\": {\"id\": \"HVAC M1058\", \"kind\": \"CCR\", \"title\": \"HVAC/R Fundamentals\"}}, \"AIR-76\": {\"ids\": [{\"id\": \"HVAC M1030\", \"kind\": \"M-ID\", \"title\": \"Electrical Concepts for Facilities Maintenance Technicians\"}], \"adopt\": {\"colleges_n\": 1, \"credentials\": [{\"colleges\": [\"San Jose City College\"], \"credential\": \"Introduction to Facilities Maintenance\"}], \"credentials_n\": 1}, \"title\": \"Facilities Maintenance/Chillers\", \"identity\": {\"id\": \"HVAC M1030\", \"kind\": \"CCR\", \"title\": \"Facilities Maintenance - Chillers\"}}, \"AIR-77\": {\"ids\": [{\"id\": \"HVAC M1037\", \"kind\": \"M-ID\", \"title\": \"Energy Conservation Methods for HVACR\"}], \"title\": \"Energy Conservation Methods for HVACR\", \"identity\": {\"id\": \"HVAC M1037\", \"kind\": \"CCR\", \"title\": \"Energy Conservation Methods for HVACR\"}}, \"AIR-78\": {\"ids\": [{\"id\": \"HVAC M1062\", \"kind\": \"M-ID\", \"title\": \"Safe Refrigerant Handling & Management\"}], \"title\": \"Safe Refrigerant Handling & Management\", \"identity\": {\"id\": \"HVAC M1062\", \"kind\": \"CCR\", \"title\": \"Safe Refrigerant Handling & Management\"}}, \"AIR-83\": {\"ids\": [{\"id\": \"HVAC M1110\", \"kind\": \"M-ID\", \"title\": \"Maintaining Efficient Operation of Electric Cooling & Heating Equipment\"}], \"adopt\": {\"colleges_n\": 1, \"credentials\": [{\"colleges\": [\"Merced College\"], \"credential\": \"ASE A7 — Heating and Air Conditioning\"}, {\"colleges\": [\"Merced College\"], \"credential\": \"Introduction to Automotive Technology\"}], \"credentials_n\": 2}, \"title\": \"All Weather Heating & Cooling System\", \"identity\": {\"id\": \"HVAC M1110\", \"kind\": \"CCR\", \"title\": \"Maintaining Efficient Operation of Electric Cooling & Heating Equipment\"}}, \"AIR-84\": {\"ids\": [{\"id\": \"HVAC M1101\", \"kind\": \"M-ID\", \"title\": \"Boiler and Hydronic Heating\"}], \"title\": \"Boiler and Hydronic Heating\", \"identity\": {\"id\": \"HVAC M1101\", \"kind\": \"CCR\", \"title\": \"Boiler and Hydronic Heating\"}}, \"AIR-90\": {\"ids\": [{\"id\": \"HVAC M1019\", \"kind\": \"M-ID\", \"title\": \"Building Automation Fundamentals\"}], \"title\": \"Building Automation Fundamentals\", \"identity\": {\"id\": \"HVAC M1019\", \"kind\": \"CCR\", \"title\": \"Building Automation Fundamentals\"}}, \"EST-22\": {\"ids\": [{\"id\": \"CNSR M1011\", \"kind\": \"M-ID\", \"title\": \"California Mechanical Codes\"}], \"title\": \"California Mechanical Codes\", \"identity\": {\"id\": \"CNSR M1011\", \"kind\": \"CCR\", \"title\": \"California Mechanical Codes\"}}, \"AIR-61A\": {\"ids\": [{\"id\": \"HVAC M10AB\", \"kind\": \"M-ID\", \"title\": \"Beginning Air Conditioning and Refrigeration 1\"}], \"here\": {\"recs\": 4, \"exhibits\": [{\"title\": \"Air Conditioning and Refrigeration, Class C\", \"recs_n\": 3, \"source\": \"ACE\"}, {\"title\": \"Refrigeration and Air Conditioning Systems Technicians\", \"recs_n\": 1, \"source\": \"ACE\"}], \"exhibits_n\": 2, \"untitled_n\": 0, \"credentials\": [\"Air Conditioning and Refrigeration, Class C\", \"Refrigeration and Air Conditioning Systems Technicians\"], \"credentials_n\": 2}, \"title\": \"Beginning Air Conditioning and Refrigeration 1\", \"identity\": {\"id\": \"HVAC M10AB\", \"kind\": \"CCR\", \"title\": \"Beginning Air Conditioning and Refrigeration 1\"}}, \"AIR-61B\": {\"ids\": [{\"id\": \"HVAC M10DZ\", \"kind\": \"M-ID\", \"title\": \"Advanced Air Conditioning and Refrigeration 2\"}], \"title\": \"Advanced Air Conditioning and Refrigeration II\", \"identity\": {\"id\": \"HVAC M10DZ\", \"kind\": \"CCR\", \"title\": \"Advanced Air Conditioning and Refrigeration 2\"}}, \"AIR-64A\": {\"ids\": [{\"id\": \"HVAC M10ET\", \"kind\": \"M-ID\", \"title\": \"Beginning Air Conditioning and Refrigeration Electricity\"}], \"title\": \"Beginning Air Conditioning and Refrigeration Electricity\", \"identity\": {\"id\": \"HVAC M10ET\", \"kind\": \"CCR\", \"title\": \"Beginning Air Conditioning and Refrigeration Electricity\"}}, \"AIR-64B\": {\"ids\": [{\"id\": \"HVAC M10DW\", \"kind\": \"M-ID\", \"title\": \"Advanced Air Conditioning and Refrigeration Electricity 2\"}], \"title\": \"Advanced Air Conditioning and Refrigeration Electricity II\", \"identity\": {\"id\": \"HVAC M10DW\", \"kind\": \"CCR\", \"title\": \"Advanced Air Conditioning and Refrigeration Electricity 2\"}}}}, \"measure\": \"units\", \"loaded_at\": \"2026-10-10T21:12:09.199945+00:00\", \"total_max\": 36, \"total_min\": 36, \"checked_at\": null, \"checked_by\": null, \"source_url\": \"https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/5718\", \"catalog_year\": \"2026-2027\", \"extracted_run\": 38082999076, \"program_title\": \"Building Energy Systems Professional in HVAC Technology\", \"control_number\": \"39120\"}",
+   "row": {
+    "award": "A.S. Degree",
+    "checks": {
+     "listed": 9,
+     "placed": 8,
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal"
+    },
+    "record": {
+     "blocks": [
+      {
+       "name": "Required Courses",
+       "rule": "all",
+       "stated": {
+        "max": 36,
+        "min": 36
+       },
+       "courses": [
+        {
+         "code": "AIR-61A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AIR-61B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "AIR-64A",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AIR-64B",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "AIR-75",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AIR-76",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AIR-77",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AIR-78",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "AIR-83",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": true
+        },
+        {
+         "code": "AIR-84",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "AIR-90",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "EST-22",
+         "units": 3,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ],
+       "minimum": null,
+       "option_group": null
+      }
+     ],
+     "program": {
+      "measure": "units",
+      "outcomes": [
+       "Demonstrate technical knowledge and skills needed to repair, install, service, and maintain commercial HVAC systems in operating condition.",
+       "Utilize diagnostic techniques and testing equipment in the repair of commercial HVAC systems.",
+       "Apply principles of mechanics, electricity, and electronics to the repair of commercial HVAC systems."
+      ],
+      "ge_pattern": null,
+      "total_units": {
+       "max": 36,
+       "min": 36
+      },
+      "section_heading": "HVAC Commercial Technology - Associate of Science Degree and Certificate of Achievement - AS946/AS946C/CE946",
+      "open_elective_units": null
+     }
+    },
+    "checked": false,
+    "college": "Riverside City College",
+    "display": {
+     "v": 1,
+     "map": {
+      "url": null,
+      "host": null,
+      "text": "The weekly census found no published term-by-term program map on Riverside City College's site (census run census-20261004T152832Z-s4of4).",
+      "status": "none",
+      "checked_run": "census-20261004T152832Z-s4of4"
+     },
+     "gaps": [
+      {
+       "kind": "Catalog and state file differ",
+       "text": "The state's Program Course File lists CAT 61; the reader found it not in the text.",
+       "owner": "college",
+       "where": "Riverside City College's program record in the state's curriculum inventory"
+      },
+      {
+       "kind": "Catalog and state file differ",
+       "text": "The catalog prints AIR-61B, AIR-64B, AIR-78, AIR-83 for this program; the state's Program Course File does not list them.",
+       "owner": "college",
+       "where": "Riverside City College's program record in the state's curriculum inventory"
+      },
+      {
+       "kind": "Reader's note",
+       "text": "TITLE MISMATCH: the catalog text is for 'HVAC Commercial Technology' (AS946/AS946B/AS946C/CE946), not 'Building Energy Systems Professional in HVAC Technology'. No section with the named program title appears. The section was recorded because the source URL was given for this program and 8 of 9 closed-list courses appear in it; a reviewer should confirm whether this is a renamed program or the wrong page.",
+       "owner": "procedure",
+       "where": "Riverside City College's CurriQunet META reading procedure"
+      },
+      {
+       "kind": "Reader's note",
+       "text": "The heading is printed three times; the third version adds AS946B to the codes (AS946/AS946B/AS946C/CE946).",
+       "owner": "procedure",
+       "where": "Riverside City College's CurriQunet META reading procedure"
+      },
+      {
+       "kind": "Reader's note",
+       "text": "The page prints one requirements list and one Program Learning Outcomes list for the program as a whole, shared by the A.S. degree and the Certificate of Achievement; recorded here for the A.S. degree.",
+       "owner": "procedure",
+       "where": "Riverside City College's CurriQunet META reading procedure"
+      },
+      {
+       "kind": "Reader's note",
+       "text": "Most AIR courses are marked '( Historical )' in the catalog; only EST-22 is marked '( Active )'. The requirement list may be outdated for the 2026-2027 catalog year.",
+       "owner": "procedure",
+       "where": "Riverside City College's CurriQunet META reading procedure"
+      },
+      {
+       "kind": "Reader's note",
+       "text": "The A.S. degree also requires general education and other graduation requirements; no specific GE pattern is named.",
+       "owner": "procedure",
+       "where": "Riverside City College's CurriQunet META reading procedure"
+      },
+      {
+       "kind": "Reader's note",
+       "text": "CAT 61 (Professional Office Procedures) from the closed list does not appear in this text.",
+       "owner": "procedure",
+       "where": "Riverside City College's CurriQunet META reading procedure"
+      }
+     ],
+     "build": "3746c15d32ba",
+     "built": "2026-10-10",
+     "checks": {
+      "checked": null,
+      "coverage": {
+       "listed": 9,
+       "placed": 8
+      },
+      "reviewer": null,
+      "additions": 4,
+      "arithmetic": "equal"
+     },
+     "counts": {
+      "here": 1,
+      "adopt": 3,
+      "courses": 12,
+      "consider": 0
+     },
+     "figure": {
+      "path": null,
+      "picks": [
+       "AIR-61A"
+      ],
+      "total": {
+       "max": 36,
+       "min": 36
+      },
+      "up_to": 3.0,
+      "measure": "units",
+      "path_why": "No pathway map has been read for this program.",
+      "path_picks": []
+     },
+     "courses": {
+      "AIR-75": {
+       "ids": [
+        {
+         "id": "HVAC M1058",
+         "kind": "M-ID",
+         "title": "Electrical Fundamentals for HVAC/R"
+        }
+       ],
+       "adopt": {
+        "colleges_n": 1,
+        "credentials": [
+         {
+          "colleges": [
+           "San Bernardino Valley College"
+          ],
+          "credential": "Welding for HVAC/R"
+         }
+        ],
+        "credentials_n": 1
+       },
+       "title": "HVAC/R Systems Design",
+       "identity": {
+        "id": "HVAC M1058",
+        "kind": "CCR",
+        "title": "HVAC/R Fundamentals"
+       }
+      },
+      "AIR-76": {
+       "ids": [
+        {
+         "id": "HVAC M1030",
+         "kind": "M-ID",
+         "title": "Electrical Concepts for Facilities Maintenance Technicians"
+        }
+       ],
+       "adopt": {
+        "colleges_n": 1,
+        "credentials": [
+         {
+          "colleges": [
+           "San Jose City College"
+          ],
+          "credential": "Introduction to Facilities Maintenance"
+         }
+        ],
+        "credentials_n": 1
+       },
+       "title": "Facilities Maintenance/Chillers",
+       "identity": {
+        "id": "HVAC M1030",
+        "kind": "CCR",
+        "title": "Facilities Maintenance - Chillers"
+       }
+      },
+      "AIR-77": {
+       "ids": [
+        {
+         "id": "HVAC M1037",
+         "kind": "M-ID",
+         "title": "Energy Conservation Methods for HVACR"
+        }
+       ],
+       "title": "Energy Conservation Methods for HVACR",
+       "identity": {
+        "id": "HVAC M1037",
+        "kind": "CCR",
+        "title": "Energy Conservation Methods for HVACR"
+       }
+      },
+      "AIR-78": {
+       "ids": [
+        {
+         "id": "HVAC M1062",
+         "kind": "M-ID",
+         "title": "Safe Refrigerant Handling & Management"
+        }
+       ],
+       "title": "Safe Refrigerant Handling & Management",
+       "identity": {
+        "id": "HVAC M1062",
+        "kind": "CCR",
+        "title": "Safe Refrigerant Handling & Management"
+       }
+      },
+      "AIR-83": {
+       "ids": [
+        {
+         "id": "HVAC M1110",
+         "kind": "M-ID",
+         "title": "Maintaining Efficient Operation of Electric Cooling & Heating Equipment"
+        }
+       ],
+       "adopt": {
+        "colleges_n": 1,
+        "credentials": [
+         {
+          "colleges": [
+           "Merced College"
+          ],
+          "credential": "ASE A7 — Heating and Air Conditioning"
+         },
+         {
+          "colleges": [
+           "Merced College"
+          ],
+          "credential": "Introduction to Automotive Technology"
+         }
+        ],
+        "credentials_n": 2
+       },
+       "title": "All Weather Heating & Cooling System",
+       "identity": {
+        "id": "HVAC M1110",
+        "kind": "CCR",
+        "title": "Maintaining Efficient Operation of Electric Cooling & Heating Equipment"
+       }
+      },
+      "AIR-84": {
+       "ids": [
+        {
+         "id": "HVAC M1101",
+         "kind": "M-ID",
+         "title": "Boiler and Hydronic Heating"
+        }
+       ],
+       "title": "Boiler and Hydronic Heating",
+       "identity": {
+        "id": "HVAC M1101",
+        "kind": "CCR",
+        "title": "Boiler and Hydronic Heating"
+       }
+      },
+      "AIR-90": {
+       "ids": [
+        {
+         "id": "HVAC M1019",
+         "kind": "M-ID",
+         "title": "Building Automation Fundamentals"
+        }
+       ],
+       "title": "Building Automation Fundamentals",
+       "identity": {
+        "id": "HVAC M1019",
+        "kind": "CCR",
+        "title": "Building Automation Fundamentals"
+       }
+      },
+      "EST-22": {
+       "ids": [
+        {
+         "id": "CNSR M1011",
+         "kind": "M-ID",
+         "title": "California Mechanical Codes"
+        }
+       ],
+       "title": "California Mechanical Codes",
+       "identity": {
+        "id": "CNSR M1011",
+        "kind": "CCR",
+        "title": "California Mechanical Codes"
+       }
+      },
+      "AIR-61A": {
+       "ids": [
+        {
+         "id": "HVAC M10AB",
+         "kind": "M-ID",
+         "title": "Beginning Air Conditioning and Refrigeration 1"
+        }
+       ],
+       "here": {
+        "recs": 4,
+        "exhibits": [
+         {
+          "title": "Air Conditioning and Refrigeration, Class C",
+          "recs_n": 3,
+          "source": "ACE"
+         },
+         {
+          "title": "Refrigeration and Air Conditioning Systems Technicians",
+          "recs_n": 1,
+          "source": "ACE"
+         }
+        ],
+        "exhibits_n": 2,
+        "untitled_n": 0,
+        "credentials": [
+         "Air Conditioning and Refrigeration, Class C",
+         "Refrigeration and Air Conditioning Systems Technicians"
+        ],
+        "credentials_n": 2
+       },
+       "title": "Beginning Air Conditioning and Refrigeration 1",
+       "identity": {
+        "id": "HVAC M10AB",
+        "kind": "CCR",
+        "title": "Beginning Air Conditioning and Refrigeration 1"
+       }
+      },
+      "AIR-61B": {
+       "ids": [
+        {
+         "id": "HVAC M10DZ",
+         "kind": "M-ID",
+         "title": "Advanced Air Conditioning and Refrigeration 2"
+        }
+       ],
+       "title": "Advanced Air Conditioning and Refrigeration II",
+       "identity": {
+        "id": "HVAC M10DZ",
+        "kind": "CCR",
+        "title": "Advanced Air Conditioning and Refrigeration 2"
+       }
+      },
+      "AIR-64A": {
+       "ids": [
+        {
+         "id": "HVAC M10ET",
+         "kind": "M-ID",
+         "title": "Beginning Air Conditioning and Refrigeration Electricity"
+        }
+       ],
+       "title": "Beginning Air Conditioning and Refrigeration Electricity",
+       "identity": {
+        "id": "HVAC M10ET",
+        "kind": "CCR",
+        "title": "Beginning Air Conditioning and Refrigeration Electricity"
+       }
+      },
+      "AIR-64B": {
+       "ids": [
+        {
+         "id": "HVAC M10DW",
+         "kind": "M-ID",
+         "title": "Advanced Air Conditioning and Refrigeration Electricity 2"
+        }
+       ],
+       "title": "Advanced Air Conditioning and Refrigeration Electricity II",
+       "identity": {
+        "id": "HVAC M10DW",
+        "kind": "CCR",
+        "title": "Advanced Air Conditioning and Refrigeration Electricity 2"
+       }
+      }
+     }
+    },
+    "measure": "units",
+    "loaded_at": "2026-10-10T21:12:09.199945+00:00",
+    "total_max": 36,
+    "total_min": 36,
+    "checked_at": null,
+    "checked_by": null,
+    "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/5718",
+    "catalog_year": "2026-2027",
+    "extracted_run": 38082999076,
+    "program_title": "Building Energy Systems Professional in HVAC Technology",
+    "control_number": "39120"
+   }
+  }
+ ]
+}
