@@ -498,9 +498,14 @@ PAGE_JS = """() => {
     return out.join('').replace(/\\u00a0/g, ' ').replace(/[ \\t]*\\n\\s*/g, '\\n')
       .replace(/\\t[ \\t]*/g, '\\t').replace(/\\n\\t/g, '\\n').trim();
   };
+  // A page's own tab bar can sit inside a nav (Long Beach City's CourseLeaf
+  // pages keep their role=tab links in <nav id="tabs">: probe run
+  // 38146508042, S363), so a tab of a tab bar counts wherever it sits; any
+  // other link inside the site's menus does not.
+  const TAB_BAR = '[role=tablist], #tabs, ul.tabs';
   const tabPanels = Array.from(document.querySelectorAll(
       '[role=tab], [aria-controls], [role=tablist] a[href^="#"], ul.tabs a[href^="#"], #tabs a[href^="#"]'))
-    .filter(a => !a.closest(MENU))
+    .filter(a => a.getAttribute('role') === 'tab' || a.closest(TAB_BAR) || !a.closest(MENU))
     .map(a => {
       const id = (a.getAttribute('aria-controls') || (a.getAttribute('href') || '').replace(/^#/, '')).trim();
       const el = id && !/[\\/:]/.test(id) ? document.getElementById(id) : null;
@@ -560,11 +565,13 @@ SUBJECT_TOKEN = re.compile(r"\b([A-Z][A-Z&]{1,7})[ \u00a0]?\d{1,4}[A-Z]?\b")
 def hidden_tabs_text(got: dict) -> str:
     """The hidden tab panels PAGE_JS read cell by cell, each under a line
     naming its tab, leaving out any panel that reads as a catalog-wide course
-    index (courses in more than INDEX_SUBJECTS subjects)."""
+    index (courses in more than INDEX_SUBJECTS subjects) and any that names
+    no course at all (the search dialog every Long Beach City page hides)."""
     parts = []
     for t in got.get("tabPanels") or []:
         text = (t.get("text") or "").strip()
-        if not text or len({m.group(1) for m in SUBJECT_TOKEN.finditer(text)}) > INDEX_SUBJECTS:
+        subjects = {m.group(1) for m in SUBJECT_TOKEN.finditer(text)}
+        if not subjects or len(subjects) > INDEX_SUBJECTS:
             continue
         parts.append("[Tab: %s]\n%s" % ((t.get("label") or t.get("id") or "").strip(), text))
     return "\n\n".join(parts)
