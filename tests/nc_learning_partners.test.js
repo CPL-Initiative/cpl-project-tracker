@@ -332,10 +332,10 @@ const savedNotes = st.notes, savedArts = st.artifacts, savedSeen = st.seen;
 st.notes = {}; st.artifacts = {}; st.seen = null;
 ok("first refresh makes no claim it cannot back up", M.changeSummary() === "");
 st.notes = { "OPP-1": [{ id: 1 }] };
-ok("a new note is reported as new", M.changeSummary() === "✓ 1 new note");
-ok("no change reports up to date", M.changeSummary() === "✓ Up to date");
+ok("a new note is reported as new", M.changeSummary() === "1 new note");
+ok("no change reports up to date", M.changeSummary() === "Up to date");
 st.artifacts = { "Q-1": [{ id: 1 }, { id: 2 }] };
-ok("new artifacts are pluralised", M.changeSummary() === "✓ 2 new artifacts");
+ok("new artifacts are pluralised", M.changeSummary() === "2 new artifacts");
 st.notes = savedNotes; st.artifacts = savedArts; st.seen = savedSeen;
 
 // Provenance is a field: a name typed once should persist, and the schema must

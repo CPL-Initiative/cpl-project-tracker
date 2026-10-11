@@ -622,6 +622,42 @@ async function seedRaciEditor(page, theme, view) {
   await page.waitForTimeout(300);
 }
 
+// Noncredit & Learning Partners with the team phrase (S365): notes, artifacts and Revise
+// controls render only for a team-phrase holder, so the unseeded sweep never painted them.
+// The seed holds the phrase, stubs the three reads (nc_partner_notes, nc_artifacts,
+// nc_integration_backlog) and activates the tab again, which repaints and re-pulls them.
+async function seedNcPartnersEditor(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "nc-learning-partners") location.hash = "nc-learning-partners"; });
+  await page.waitForFunction(() => !!window.CPL_NC_LEARNING_PARTNERS, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    try {
+      localStorage.setItem("cpl_team_pass", "seed-phrase");
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const N = [
+      { id: "n1", item_id: "OPP-3", body: "A seeded note on an opportunity.", author: "Seed Author",
+        created_at: "2026-10-01T00:00:00Z", promoted_at: null, promoted_to: null },
+      { id: "n2", item_id: "Q-1", body: "A seeded note, already promoted.", author: "Seed Author",
+        created_at: "2026-09-20T00:00:00Z", promoted_at: "2026-09-25T00:00:00Z", promoted_to: "register" },
+    ];
+    const A = [{ id: "a1", item_id: "OPP-3", url: "https://example.org/artifact", title: "A seeded artifact",
+      source: "link", why: "Context for the opportunity.", added_by: "Seed Author", created_at: "2026-10-02T00:00:00Z", integrated_at: null }];
+    const real = window.fetch;
+    window.fetch = function (url) {
+      const u = String(url);
+      const body = /\/nc_partner_notes\?/.test(u) ? N : /\/nc_artifacts\?/.test(u) ? A : /\/nc_integration_backlog\?/.test(u) ? [] : null;
+      if (body) return Promise.resolve(new Response(JSON.stringify(body), { status: 200, headers: { "Content-Type": "application/json" } }));
+      return real.apply(this, arguments);
+    };
+    window.CPL_NC_LEARNING_PARTNERS.activate();
+  });
+  await page.waitForFunction(() => !!document.querySelector("#nc-learning-partners-root .nclp-revise, .nclp-revise"), null, { timeout: 20000 });
+  await page.waitForTimeout(300);
+}
+
 async function seedMyCollegeReports(page, signin) {
   await page.evaluate(() => new Promise((res) => {
     if (window.CPL_FUNDING_TAB) return res();
@@ -1058,6 +1094,22 @@ module.exports = {
     routes: [{ hash: "raci", name: "directory" }],
     widths: [390, 1440],
     seed: (page) => seedRaciEditor(page, "dark", "directory"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "nc-partners-editor": {
+    file: "index.html",
+    title: "Noncredit & Learning Partners with the team phrase: notes, artifacts, Revise",
+    routes: [{ hash: "nc-learning-partners", name: "editor" }],
+    widths: [390, 1440],
+    seed: (page) => seedNcPartnersEditor(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "nc-partners-editor-dark": {
+    file: "index.html",
+    title: "Noncredit & Learning Partners with the team phrase: notes, artifacts, Revise, dark",
+    routes: [{ hash: "nc-learning-partners", name: "editor" }],
+    widths: [390, 1440],
+    seed: (page) => seedNcPartnersEditor(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "contracts": {
