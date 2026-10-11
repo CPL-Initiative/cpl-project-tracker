@@ -369,15 +369,17 @@ def cer_adopters() -> tuple[dict, str | None]:
     return n, cer.get("_generated_at")
 
 
-def state_lists(colleges) -> tuple[dict, dict]:
+def state_lists(colleges) -> tuple[dict, dict, dict]:
     """The state's Program Course File for these colleges, assembled the way
     coci_program_courses is (chatbox/build_program_courses.py, imported, never re-made), so
     a full-college record's closed list carries the codes, titles, control numbers and C-IDs
-    the pilot's sources carry. Returns (college, program) -> closed list, and (college, ck)
-    -> the course, which titles a course the catalog prints off the list."""
+    the pilot's sources carry. Returns (college, program) -> closed list, (college, ck)
+    -> the course, which titles a course the catalog prints off the list, and the COCI
+    facts coci_facts() reads: each course's status on its program under every status, and
+    the course list's current version of each code."""
     want = {norm_college(c) for c in colleges}
     if not want:
-        return {}, {}
+        return {}, {}, {"on_program": {}, "current": {}}
     sys.path.insert(0, os.path.join(ROOT, "chatbox"))
     import build_program_courses as bpc
     courses = bpc.load_courses()
@@ -396,7 +398,52 @@ def state_lists(colleges) -> tuple[dict, dict]:
              "units": r["units"], "cid": r["cid"], "course_college": r["course_college"]}
         by_program[(col, r["program_control_number"])].append(e)
         by_code.setdefault((col, ck(r["course_code"])), e)
-    return by_program, by_code
+    # Every status the file gives a course on a kept program (Sam, 2026-10-11, reading the Mt.
+    # San Antonio sample: "find the 2 courses in COCI with a different status ... list them
+    # with a chip noting the Coci status so the college can follow up if needed. Make this a
+    # rule for all such courses."). assemble() keeps three statuses, so a course the catalog
+    # prints can read as off the list while the program carries it Inactive under an older
+    # control number (EMS 80, AGAG 1, KIN 24, CISP 71 and ID 12 at Mt. San Antonio). A kept
+    # status wins over a retired one: the program then lists a version a student can take.
+    on_program = {}
+    for r in mem:
+        college = xwalk.get(r["CollegeCode"])
+        if not college or norm_college(college) not in want or r["ProgramControlNumber"] in ("", "NULL"):
+            continue
+        if r["ProgramStatus"] not in bpc.KEEP_STATUS:
+            continue
+        k = (norm_college(college), r["ProgramControlNumber"], ck(r["CrsId"]))
+        cur = on_program.get(k)
+        if cur is None or (cur["status"] not in bpc.KEEP_STATUS and r["CourseStatus"] in bpc.KEEP_STATUS):
+            on_program[k] = {"status": r["CourseStatus"], "ccn": r["CourseControlNumber"]}
+    # COCI's course list: the current version of each code at the college, for its control
+    # number and its units (Sam, same sample: "State the units from COCI when the program at
+    # the college does not").
+    current = {}
+    for ctl, versions in courses.items():
+        for c in versions:
+            col = norm_college(c["college"])
+            if col in want and c.get("code"):
+                current.setdefault((col, ck(c["code"])), {"ccn": ctl, "units": c.get("units")})
+    return by_program, by_code, {"on_program": on_program, "current": current}
+
+
+def coci_facts(coci: dict, college: str, control: str, code: str) -> dict | None:
+    """What COCI says of a course on a program: its status there, the control number the
+    program points at, and the current version's when it differs. None when the program
+    carries the course under no status."""
+    st = coci["on_program"].get((norm_college(college), control, ck(code)))
+    if not st:
+        return None
+    cur = (coci["current"].get((norm_college(college), ck(code))) or {}).get("ccn")
+    return OrderedDict([("status", st["status"]), ("program_ccn", st["ccn"]),
+                        ("current_ccn", cur if cur and cur != st["ccn"] else None)])
+
+
+def coci_words(code: str, f: dict) -> str:
+    """The facts in a sentence, for the gap the college reads."""
+    s = "the program points at %s %s, %s in COCI" % (code, f["program_ccn"], f["status"] or "with no status")
+    return s + ("; COCI's current %s is %s" % (code, f["current_ccn"]) if f.get("current_ccn") else "")
 
 
 def college_records(pilot_keys: set) -> list[tuple]:
@@ -537,7 +584,7 @@ def plan(blocks: list, has, units_of=None, hints=None, path=False) -> dict:
 
 # ── gaps: the mock-up's gapsFor(), ported ───────────────────────────────────────
 def gaps_for(college: str, platform: str, award: str, measure: str, filed: dict, verdict: str | None,
-             total: dict, seconds: list | None = None) -> list:
+             total: dict, seconds: list | None = None, coci_of=None) -> list:
     rec, score = filed["record"], filed.get("score") or {}
     proc = "%s's %s reading procedure" % (college, PLATFORM.get(platform, platform or "catalog"))
     state = "%s's program record in the state's curriculum inventory" % college
@@ -548,17 +595,32 @@ def gaps_for(college: str, platform: str, award: str, measure: str, filed: dict,
                   "text": "MAP lists %s %s on the %s articulation (%s) beside %s, the %s the recommendation names."
                           % (s["code"], s["title"], s["credential"], s["recommendation"],
                              " and ".join(s["beside"]), "course" if len(s["beside"]) == 1 else "courses")})
+    coci_of = coci_of or (lambda code: None)
     for m in rec.get("missing_explained") or []:
-        g.append({"kind": "Catalog and state file differ", "owner": "college", "where": state,
-                  "text": "The state's Program Course File lists %s; the reader found it %s." % (m["code"], m["why"])})
+        f = coci_of(m["code"])
+        gap = {"kind": "Catalog and state file differ", "owner": "college", "where": state,
+               "text": "The state's Program Course File lists %s; the reader found it %s.%s"
+                       % (m["code"], m["why"], " " + coci_words(m["code"], f)[0].upper() + coci_words(m["code"], f)[1:] + "." if f else "")}
+        if f:
+            gap["coci"] = [OrderedDict([("code", m["code"])] + list(f.items()))]
+        g.append(gap)
     # A course printed in two blocks is one course off the list (Irvine Valley's Art
-    # A.A. prints ARTH 4, 25 and 26 in both elective lists): name each once.
+    # A.A. prints ARTH 4, 25 and 26 in both elective lists): name each once. One the
+    # program carries under another status gets its own gap, naming that status.
     adds = list(OrderedDict.fromkeys(x["code"] for b in rec["blocks"] for c in courses_of(b)
                                      for x in [c] + list(c.get("alternatives") or []) if x.get("catalog_addition")))
-    if adds:
+    unlisted = [a for a in adds if not coci_of(a)]
+    for a in adds:
+        f = coci_of(a)
+        if f:
+            g.append({"kind": "Catalog and state file differ", "owner": "college", "where": state,
+                      "text": "The catalog prints %s for this program, and the state's Program Course File carries it "
+                              "there: %s." % (a, coci_words(a, f)),
+                      "coci": [OrderedDict([("code", a)] + list(f.items()))]})
+    if unlisted:
         g.append({"kind": "Catalog and state file differ", "owner": "college", "where": state,
                   "text": "The catalog prints %s for this program; the state's Program Course File does not list %s."
-                          % (", ".join(adds), "it" if len(adds) == 1 else "them")})
+                          % (", ".join(unlisted), "it" if len(unlisted) == 1 else "them")})
     arith = score.get("arithmetic") or {}
     if arith.get("status") and arith["status"] != "equal":
         if total.get("min") is not None:
@@ -665,7 +727,7 @@ def build() -> dict:
                      filed, json.load(open(os.path.join(ROOT, filed["source_file"]))),
                      loaded[(filed["college"], filed["control_number"])]))
     phase2 = college_records(set(loaded))
-    lists, by_code = state_lists({w[3]["college"] for w in work} | {c[2]["college"] for c in phase2})
+    lists, by_code, coci = state_lists({w[3]["college"] for w in work} | {c[2]["college"] for c in phase2})
     for key, path, filed, cap in phase2:
         work.append((key, "college", path, filed,
                      {"closed_list": lists.get((norm_college(filed["college"]), filed["control_number"]), []),
@@ -699,8 +761,19 @@ def build() -> dict:
                     # a course the catalog prints off the program's list keeps the title the
                     # state's file gives it elsewhere at the college (Sam, 2026-10-10)
                     entry["title"] = lc.get("title") or off.get("title")
+                    # units where the catalog prints none: the program's list, else COCI's current
+                    # version of the course (Sam, 2026-10-11: "State the units from COCI")
+                    cur = coci["current"].get((norm_college(college), k)) or {}
                     if x.get("units") is None and lc.get("units") is not None:
                         entry["units_from_state_file"] = lc["units"]
+                    elif x.get("units") is None and cur.get("units") is not None:
+                        entry["units_from_state_file"] = cur["units"]
+                    # a course the catalog prints off the list that the program carries under
+                    # another status: the chip the college follows up on
+                    if x.get("catalog_addition"):
+                        f = coci_facts(coci, college, control, x["code"])
+                        if f:
+                            entry["coci"] = f
                     entry["identity"] = {k2: v for k2, v in (ref or {}).items() if k2 in ("kind", "id", "title")} or None
                     numbers = ident.all_ids(ids, lc.get("cid") or off.get("cid"))
                     if numbers:
@@ -777,10 +850,11 @@ def build() -> dict:
             return bool(e.get("here"))
 
         def units_of(c):
-            """The catalog's units; where it prints none beside a course, the state file's."""
+            """The catalog's units; where it prints none beside a course, COCI's (the course entry's
+            units_from_state_file: the program's list, else the course's current version)."""
             if c.get("units") is not None:
                 return float(c["units"])
-            return float(((listed.get(ck(c["code"])) or {}).get("units")) or 0)
+            return float((courses.get(c["code"]) or {}).get("units_from_state_file") or 0)
 
         seq = term_map(key, college, list(courses))
         hints = map_hints(seq)
@@ -806,11 +880,20 @@ def build() -> dict:
         display["courses"] = courses
         seconds = [s for code in courses for s in second.get((norm_college(college), ck(code)), [])]
         display["gaps"] = gaps_for(college, reg.get("catalog_platform") or src.get("platform"), row.get("award") or "",
-                                   measure, filed, verdict, total, seconds)
+                                   measure, filed, verdict, total, seconds,
+                                   lambda code: coci_facts(coci, college, control, code))
         display["map"] = seq or map_status(college, reg)
         display["checks"] = {"checked": row["checked"], "coverage": {"placed": cov.get("placed"), "listed": cov.get("listed")},
                              "additions": adds, "arithmetic": (score.get("arithmetic") or {}).get("status"),
                              "reviewer": verdict}
+        # A unit difference kept and chipped (Sam, 2026-10-11, Agricultural Science and
+        # Technology: "Preserve the unit difference and highlight with a chip"): the blocks'
+        # sum beside the printed total, both as the catalog prints them.
+        arith = score.get("arithmetic") or {}
+        comp = arith.get("computed") or [None, None]
+        if arith.get("status") == "unequal" and total.get("min") is not None and comp[0] is not None:
+            display["checks"]["units_differ"] = {"blocks": [comp[0], comp[1] if comp[1] is not None else comp[0]],
+                                                 "printed": [total["min"], total["max"] if total["max"] is not None else total["min"]]}
         programs.append(OrderedDict([
             ("key", key), ("filed", folder),
             ("college", college), ("control_number", control),

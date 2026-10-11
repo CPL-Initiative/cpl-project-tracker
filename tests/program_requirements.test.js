@@ -1397,6 +1397,43 @@ block("(18e)", function () {
   });
 });
 
+// ── (19) COCI's word on a mismatched course, COCI's units, a unit difference kept (Sam, 2026-10-11) ──
+// His notes on the Mt. San Antonio sample: "list them with a chip noting the Coci status so the
+// college can follow up if needed. Make this a rule for all such courses"; "State the units from
+// COCI when the program at the college does not"; "Preserve the unit difference and highlight with
+// a chip". The failures this guards: a course COCI carries on the program read only as off the
+// list, a blank units cell, and a unit difference shown as the bare word "unequal".
+block("(19)", function () {
+  const m = loadModule();
+  const rec = JSON.parse(JSON.stringify(IRONWORKER));
+  rec.checks.arithmetic = "unequal";
+  rec.record.blocks[0].courses.push({ code: "EMS 80", units: null, alternatives: [], catalog_addition: true });
+  rec.display.courses = Object.assign({}, rec.display.courses, { "EMS 80": { title: "Paramedic Field Externship",
+    units_from_state_file: 9, coci: { status: "Inactive", program_ccn: "CCC000584685", current_ccn: "CCC000616276" } } });
+  rec.display.checks = Object.assign({}, rec.display.checks, { arithmetic: "unequal", units_differ: { blocks: [29.5, 31.5], printed: [30.5, 30.5] } });
+  m.M._state.registry = REGISTRY; m.M._state.records = [rec]; m.M._state.view = "records"; m.M._render();
+  const art = m.root.querySelector("article.prh-rec");
+  const row = Array.prototype.filter.call(art.querySelectorAll("tr"), function (tr) { return /EMS 80/.test(tr.textContent); })[0];
+  const chip = row && row.querySelector(".prh-coci");
+  check("(19) a catalog addition COCI carries on the program wears a chip naming its status and both control numbers",
+    !!chip && chip.textContent === "In COCI: Inactive on this program (CCC000584685); current version CCC000616276", chip && chip.textContent);
+  check("(19) and its mark no longer says the state's list lacks it", !!row && !/not on the state's list/.test(row.textContent) &&
+    /off the program's list as read/.test(row.textContent));
+  check("(19) where the catalog prints no units, COCI's show, labeled", !!row && /9 \(COCI\)/.test(row.textContent), row && row.textContent);
+  const units = Array.prototype.filter.call(art.querySelectorAll(".prh-check"), function (d) { return d.querySelector("dt").textContent === "Units"; })[0];
+  check("(19) a unit difference is kept and chipped in words",
+    !!units && !!units.querySelector(".prh-coci.prh-differ") &&
+    units.querySelector("dd").textContent === "Units differ: the blocks add to 29.5–31.5; the catalog prints 30.5 units", units && units.textContent);
+  check("(19) the chip is drawn on tokens", /\.prh-coci \{[^}]*border:1px solid var\(--border-strong\)[^}]*color:var\(--text-muted\)/.test(SRC) &&
+    !/\.prh-coci[^"]*#[0-9a-fA-F]{3,6}/.test(SRC));
+  const plain = JSON.parse(JSON.stringify(IRONWORKER));
+  plain.record.blocks[0].courses.push({ code: "ZZ 1", units: 3, alternatives: [], catalog_addition: true });
+  m.M._state.records = [plain]; m.M._render();
+  const zz = Array.prototype.filter.call(m.root.querySelectorAll("article.prh-rec tr"), function (tr) { return /ZZ 1/.test(tr.textContent); })[0];
+  check("(19) an addition COCI carries under no status keeps its plain mark and no chip",
+    !!zz && /not on the state's list/.test(zz.textContent) && !zz.querySelector(".prh-coci"));
+});
+
 Promise.all(pending).then(function () {
   let pass = 0;
   for (const [name, ok, why] of results) {

@@ -134,6 +134,41 @@ pp = b.plan(pick, has, None, hp, path=True)
 check(pp["cpl"] == 0 and pp["picks"] == [],
       "plan: along the map, the map's picks (N4 in a choice, N5 over its or) count in place of the CPL course (got %s)" % pp)
 
+# 2b. COCI's word on a mismatched course (Sam, 2026-10-11, reading the Mt. San Antonio sample:
+# "find the 2 courses in COCI with a different status ... list them with a chip noting the Coci
+# status so the college can follow up if needed. Make this a rule for all such courses."). The
+# failures this guards: a catalog addition the program carries Inactive under an older control
+# number read as "not on the state's list"; the current version named when it is the same one;
+# a course on no program under any status given a status; a listed course the catalog does not
+# print without its status.
+X = b.norm_college("X College")
+fx_coci = {"on_program": {(X, "P1", b.ck("EMS 80")): {"status": "Inactive", "ccn": "CCC1"},
+                          (X, "P1", b.ck("ID 36")): {"status": "Approved", "ccn": "CCC3"}},
+           "current": {(X, b.ck("EMS 80")): {"ccn": "CCC2", "units": 9.0},
+                       (X, b.ck("ID 36")): {"ccn": "CCC3", "units": 2.0}}}
+f = b.coci_facts(fx_coci, "X College", "P1", "EMS80")
+check(f == {"status": "Inactive", "program_ccn": "CCC1", "current_ccn": "CCC2"},
+      "coci_facts: the program's status and control number, and the current version (got %s)" % f)
+check(b.coci_facts(fx_coci, "X College", "P1", "ID 36")["current_ccn"] is None,
+      "coci_facts: a current version that is the program's own is not named twice")
+check(b.coci_facts(fx_coci, "X College", "P2", "EMS 80") is None,
+      "coci_facts: a course the program carries under no status has none")
+filed_fx = {"record": {"blocks": [{"rule": "all", "courses": [
+    {"code": "EMS 80", "units": 9, "catalog_addition": True}, {"code": "ZZ 1", "units": 3, "catalog_addition": True}]}],
+    "missing_explained": [{"code": "ID 36", "why": "not in the text"}]}, "score": {}}
+gs = b.gaps_for("X College", "courseleaf", "A.S. Degree", "units", filed_fx, None, {"min": None}, None,
+                lambda code: b.coci_facts(fx_coci, "X College", "P1", code))
+ems_g = [g for g in gs if (g.get("coci") or [{}])[0].get("code") == "EMS 80"]
+check(len(ems_g) == 1 and "EMS 80 CCC1, Inactive in COCI" in ems_g[0]["text"] and "current EMS 80 is CCC2" in ems_g[0]["text"]
+      and ems_g[0]["owner"] == "college",
+      "gaps: a catalog addition the program carries under another status names it, for the college (got %s)" % ems_g)
+check(any("prints ZZ 1 for this program; the state's Program Course File does not list it." in g["text"] for g in gs)
+      and not any("EMS 80" in g["text"] and "does not list" in g["text"] for g in gs),
+      "gaps: only an addition COCI carries under no status reads as unlisted")
+check(any(g["text"].startswith("The state's Program Course File lists ID 36") and "ID 36 CCC3, Approved in COCI" in g["text"]
+          and (g.get("coci") or [{}])[0].get("status") == "Approved" for g in gs),
+      "gaps: a listed course the catalog does not print carries its COCI status")
+
 # 3. the committed outputs agree with each other
 data = load_js()
 progs = data["programs"]
@@ -164,6 +199,15 @@ check(arch.get("title") and any(i["kind"] == "M-ID" and i["id"] and i.get("title
 hed = ((sql.get(("Cerritos College", "41982")) or {}).get("courses") or {}).get("HED 100", {}).get("here") or {}
 check(hed.get("exhibits_n") == 1 and hed.get("exhibits") and hed["exhibits"][0].get("credential") == "Basic Military Training",
       "the CPL count is the exhibits articulated here, MAP's untitled row not counted beside the feed's named one (HED 100: %s)" % hed)
+# The rule on the real records (S359's Mt. San Antonio sample): EMS 80 is on the paramedic program
+# Inactive under CCC000584685 while COCI's current EMS 80 is CCC000616276; Agricultural Science and
+# Technology keeps its unit difference, the blocks' 29.5-31.5 beside the printed 30.5.
+ems = ((sql.get(("Mt. San Antonio College", "03059")) or {}).get("courses") or {}).get("EMS 80") or {}
+check(ems.get("coci") == {"status": "Inactive", "program_ccn": "CCC000584685", "current_ccn": "CCC000616276"},
+      "Mt. San Antonio EMS 80 carries its COCI status on the paramedic program (got %s)" % ems.get("coci"))
+ag = ((sql.get(("Mt. San Antonio College", "02990")) or {}).get("checks") or {}).get("units_differ")
+check(ag == {"blocks": [29.5, 31.5], "printed": [30.5, 30.5]},
+      "Agricultural Science and Technology keeps its unit difference as printed (got %s)" % ag)
 for p in progs:
     d = p["display"]
     key = (p["college"], p["control_number"])
