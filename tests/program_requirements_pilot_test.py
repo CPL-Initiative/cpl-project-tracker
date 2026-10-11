@@ -1056,6 +1056,115 @@ fp_sql = open(os.path.join(ROOT, "chatbox", "supabase_program_record_verdicts.sq
 check("- 'outcomes' - 'careers'" in fp_sql,
       "the server's fingerprint leaves out the careers too, so a verdict pins to the requirements alone")
 
+# ── A program read in parts (S361; Sam, 2026-10-11: "go with splitting the program into two calls") ──
+import _program_requirements_extract as XP  # noqa: E402
+PT = ("Required Courses: AAA 1 Intro 3, AAA 2 or AAA 2H Next 3, CAT 5 Lab 1. "
+      "Electives (select 6 units): BBB 1 One 3, BBB 2 Two 3, AAA 1 Intro 3.")
+PCL = [{"code": c, "units": 3} for c in ("BBB 2", "AAA 1", "ZZZ 9", "AAA 2", "BBB 1", "AAA 2H")]
+sp = XP.split_codes(PCL, PT, 2)
+check(sp == [["AAA 1", "AAA 2", "AAA 2H"], ["BBB 1", "BBB 2", "ZZZ 9"]],
+      "split_codes orders the closed list by where the text first names each course, the ones it never "
+      "names last, and halves it (%s)" % sp)
+check(len(XP.split_codes([{"code": "Q %d" % i} for i in range(7)], PT, 2)) == 2,
+      "a closed list the text never names still splits into the parts asked for")
+check(XP.split_codes([{"code": "AAA 1"}], PT, 2) == [["AAA 1"]], "a single course makes a single part")
+
+def _blk(name, rule, courses, minimum=None, stated=(None, None)):
+    return {"name": name, "rule": rule, "minimum": minimum, "option_group": None,
+            "stated": {"min": stated[0], "max": stated[1]}, "courses": courses}
+def _c(code, alts=(), add=False):
+    return {"code": code, "units": 3, "units_max": None, "catalog_addition": add,
+            "alternatives": [{"code": a, "units": 3, "catalog_addition": False} for a in alts]}
+part1 = {"program": {"section_heading": "X", "measure": "units", "total_units": {"min": 13, "max": 13},
+                     "open_elective_units": None, "ge_pattern": None, "outcomes": [], "careers": []},
+         "blocks": [_blk("Required Courses", "all", [_c("AAA 1"), _c("AAA 2", ["AAA 2H"]), _c("CAT 5", add=True)]),
+                    _blk("Electives", "choose_units", [_c("AAA 1")], 6),
+                    _blk("Recommended", "recommended", [])],
+         "course_outcomes": [], "missing_explained": [{"code": "ZZZ 9", "why": "not in the text"},
+                                                       {"code": "BBB 1", "why": "another part"}],
+         "notes": ["one"]}
+part2 = {"program": dict(part1["program"], careers=["technician"]),
+         "blocks": [_blk("Required Courses", "all", [_c("AAA 2H")]),
+                    _blk("Electives", "choose_units", [_c("BBB 1"), _c("BBB 2")], 6, (6, 6))],
+         "course_outcomes": [{"code": "BBB 1", "outcomes": ["Do one."]}], "missing_explained": [],
+         "notes": ["two"]}
+mrec, mprob = XP.merge_parts([part1, part2], PT)
+check([b["name"] for b in mrec["blocks"]] == ["Required Courses", "Electives", "Recommended"],
+      "the merge keeps every block in the catalog's order, one a part left out included")
+check([c["code"] for c in mrec["blocks"][0]["courses"]] == ["AAA 1", "AAA 2", "CAT 5"],
+      "an entry whose first code the block already places (AAA 2H, an alternative of AAA 2) is dropped")
+check([c["code"] for c in mrec["blocks"][1]["courses"]] == ["BBB 1", "BBB 2", "AAA 1"],
+      "entries take the catalog's order within the block, a course printed in two blocks by where this block prints it")
+check(mrec["blocks"][1]["stated"] == {"min": 6, "max": 6} and not mprob,
+      "a block total one part read fills in, and parts that agree report no problem")
+check([m["code"] for m in mrec["missing_explained"]] == ["ZZZ 9"],
+      "missing_explained drops a course another part placed")
+check(mrec["program"]["careers"] == ["technician"] and mrec["course_outcomes"][0]["code"] == "BBB 1",
+      "careers and outcomes come from the part that read them")
+check(mrec["notes"][0] == "one" and "Part 2: two" in mrec["notes"]
+      and any("Read in 2 parts" in n for n in mrec["notes"]), "the notes keep each part's, and say it was read in parts")
+msc = S.score(mrec, PCL, PT)
+check(msc["repeated"]["pass"], "the merged record repeats no code inside a block")
+part2b = dict(part2, blocks=[_blk("Required Courses", "all", []),
+                             _blk("Electives", "choose_units", [_c("BBB 1")], 9)])
+_, prob_b = XP.merge_parts([part1, part2b], PT)
+check(any("different minimum" in p for p in prob_b), "two parts that read a block's minimum differently are flagged")
+
+calls = []
+def fake_post(body, key):
+    calls.append(body)
+    part = body.get("part")
+    if part is None:
+        return {"error": "the record ran past max_tokens", "stop_reason": "max_tokens", "model": "claude-opus-5-5",
+                "usage": {"input_tokens": 1000, "output_tokens": 16000}, "ms": 110000}
+    return {"error": None, "stop_reason": "end_turn", "model": "claude-opus-5-5", "ms": 60000,
+            "usage": {"input_tokens": 1000, "output_tokens": 8000}, "record": [part1, part2][part["index"] - 1]}
+src_small = {"college": "C", "title": "T", "award": "A", "text": PT, "closed_list": PCL}
+_orig_post = XP._post
+XP._post = fake_post
+try:
+    got = XP.call(src_small, "k")
+finally:
+    XP._post = _orig_post
+check(len(calls) == 3 and calls[0].get("part") is None and [c["part"]["index"] for c in calls[1:]] == [1, 2]
+      and all(c["part"]["of"] == 2 for c in calls[1:]) and calls[2]["part"]["codes"] == ["BBB 1", "BBB 2", "ZZZ 9"]
+      and all(c["closed_list"] == PCL for c in calls),
+      "a single call that runs past max_tokens is read again in two parts, each with the whole closed list")
+check(got["parts"] == 2 and got["usage"] == {"input_tokens": 3000, "output_tokens": 32000}
+      and got["error"] is None and got["record"]["blocks"][1]["courses"][0]["code"] == "BBB 1"
+      and abs(XP.cost(got["model"], got["usage"]) - 0.652) < 1e-9,
+      "the parts' usage includes the failed call, so the cost is what the program spent")
+calls.clear()
+big = {"college": "C", "title": "T", "award": "A", "text": PT,
+       "closed_list": [{"code": "Q %d" % i} for i in range(XP.SPLIT_AT + 1)]}
+XP._post = fake_post
+try:
+    calls.clear()
+    XP.call(big, "k")
+finally:
+    XP._post = _orig_post
+check(len(calls) == 2 and all(c.get("part") for c in calls),
+      "a program over %d listed courses goes straight to parts, with no single call first" % XP.SPLIT_AT)
+def failing_post(body, key):
+    if (body.get("part") or {}).get("index") == 2:
+        return {"error": "HTTP 504: IDLE_TIMEOUT", "usage": {"output_tokens": 0}}
+    return fake_post(body, key)
+gf = XP.call_in_parts(src_small, "k", {"text": PT}, post=failing_post)
+check(gf["record"] is None and gf["error"].startswith("part 2 of 2: HTTP 504"),
+      "a part that fails fails the record, named by part")
+fn = open(os.path.join(ROOT, "chatbox", "supabase", "functions", "program-requirements-extract", "index.ts")).read()
+check("function partRequest(part: Part)" in fn and "readPart(body.part, closed.length)" in fn
+      and "userMessage(body, closed, text, part)" in fn and "].concat(part ? [\"\", partRequest(part)] : [])" in fn,
+      "the function reads body.part and asks for that part only; a body without part reads as version 5 did")
+import _program_requirements_college as PC  # noqa: E402
+import tempfile as _tf  # noqa: E402
+with _tf.TemporaryDirectory() as td:
+    good, bad = os.path.join(td, "1.json"), os.path.join(td, "2.json")
+    json.dump({"record": {"blocks": []}}, open(good, "w"))
+    json.dump({"record": None, "error": "the record ran past max_tokens"}, open(bad, "w"))
+    check(PC.has_record(good) and not PC.has_record(bad) and not PC.has_record(os.path.join(td, "3.json")),
+          "a filed row with no record is not kept, so a later read asks the model again")
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:

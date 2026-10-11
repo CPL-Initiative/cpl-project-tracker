@@ -51,7 +51,18 @@
 // toward the award's total; and "grab the career info", so program.careers
 // keeps each career, job title or field the catalog prints for the program,
 // word for word.
-// Deploy with the Supabase MCP deploy_edge_function (project
+// Version 6 (S361, 2026-10-11): a program read in parts. Sam, 2026-10-11: "go
+// with splitting the program into two calls". A record holds about 54 output
+// tokens per course, so Humanities, Philosophy & Arts (316 listed courses) ran
+// past max_tokens at all three RCCD colleges, and the gateway ends a request
+// that sends nothing back for 150 s, which rules out one longer call. An
+// optional body.part ({index, of, codes}) asks for one part of the record: every
+// block the section prints, with only the entries whose first code is in that
+// part's codes (part 1 also takes every catalog addition). The runner
+// (kb/_program_requirements_extract.py, call) sends the parts at once and merges
+// them. A body without part reads exactly as version 5 did.
+// Deploy from main with cpl-chat-deploy.yml (function program-requirements-extract);
+// before S360 it went out with the Supabase MCP deploy_edge_function (project
 // hvuwhnbuahrtptokpqfh, slug program-requirements-extract).
 //
 // Secrets used (already set project-wide): ANTHROPIC_API_KEY, SUPABASE_URL.
@@ -253,8 +264,40 @@ function reply(status: number, body: unknown): Response {
 }
 
 type Course = { code: string; title?: string; units?: number | null; cid?: string | null };
+type Part = { index: number; of: number; codes: string[] };
 
-function userMessage(p: Record<string, unknown>, closed: Course[], text: string): string {
+// A part of a record too long for one reply (version 6). The model sees the
+// whole closed list, so catalog_addition still means "not in the closed list",
+// and is told which of its courses this part records.
+function partRequest(part: Part): string {
+  const additions = part.index === 1
+    ? ", and every entry whose first code is not in the closed list (a catalog addition)"
+    : "";
+  return [
+    `This record is read in ${part.of} parts, because the whole record is too long for one reply. This is part ${part.index} of ${part.of}.`,
+    "In this part:",
+    "- Record every block the section prints, in the catalog's order, with its name, rule, minimum, option_group and stated exactly as you would for the whole record, including a block that holds none of this part's courses (its courses list is then empty).",
+    `- In each block, list only the entries whose first code is one of this part's courses${additions}. An entry keeps every alternative the catalog prints with it, whichever part an alternative belongs to.`,
+    "- course_outcomes: only the courses this part lists.",
+    "- missing_explained: only this part's courses that you do not place.",
+    "- program: record it in full, the same in every part.",
+    "",
+    "This part's courses:",
+    part.codes.join("\n"),
+  ].join("\n");
+}
+
+function readPart(raw: unknown, closedCount: number): Part | null | "bad" {
+  if (raw === undefined || raw === null) return null;
+  const p = raw as Record<string, unknown>;
+  const index = Number(p.index), of = Number(p.of);
+  const codes = Array.isArray(p.codes) ? p.codes.filter((c) => typeof c === "string" && c.trim()) as string[] : [];
+  if (!Number.isInteger(of) || of < 2 || of > 6 || !Number.isInteger(index) || index < 1 || index > of) return "bad";
+  if (!codes.length || codes.length > closedCount) return "bad";
+  return { index, of, codes };
+}
+
+function userMessage(p: Record<string, unknown>, closed: Course[], text: string, part: Part | null = null): string {
   const list = closed
     .map((c) => `${c.code}\t${c.title ?? ""}\t${c.units ?? "units not stored"}`)
     .join("\n");
@@ -272,7 +315,7 @@ function userMessage(p: Record<string, unknown>, closed: Course[], text: string)
     "<catalog_text>",
     text,
     "</catalog_text>",
-  ].join("\n");
+  ].concat(part ? ["", partRequest(part)] : []).join("\n");
 }
 
 Deno.serve(async (req) => {
@@ -295,6 +338,10 @@ Deno.serve(async (req) => {
   if (text.length > MAX_TEXT) {
     return reply(413, { error: `text is ${text.length} characters; the limit is ${MAX_TEXT}` });
   }
+  const part = readPart(body.part, closed.length);
+  if (part === "bad") {
+    return reply(400, { error: "part must be {index, of, codes}: 1 <= index <= of, 2 <= of <= 6, codes from the closed list" });
+  }
 
   const client = new Anthropic();
   const t0 = Date.now();
@@ -306,13 +353,14 @@ Deno.serve(async (req) => {
       fallbacks: "default",
       output_config: { effort: EFFORT, format: { type: "json_schema", schema: RECORD_SCHEMA } },
       system: SYSTEM,
-      messages: [{ role: "user", content: userMessage(body, closed, text) }],
+      messages: [{ role: "user", content: userMessage(body, closed, text, part) }],
     } as any);
     const out = {
       model: response.model,
       stop_reason: response.stop_reason,
       usage: response.usage,
       ms: Date.now() - t0,
+      part: part ? { index: part.index, of: part.of } : null,
       record: null as unknown,
       error: null as string | null,
     };
