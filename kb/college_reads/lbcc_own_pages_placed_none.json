@@ -1,0 +1,52 @@
+{
+ "_readme": "S366 SkyHazel, 2026-10-11. Long Beach City's full read (run 38152016534) gave 11 programs their own page, and each still placed none of its courses: the capture fell back to textContent, which on this host also carries a hidden A-Z course index. This read loads four of those pages, opens their collapsed sections, and prints the table rows naming the program's own listed codes (the rows filter is built from each program's codes_found, so the hidden index cannot flood the log), to see where the requirements sit. Page loads only, no model call.",
+ "college": "Long Beach City College",
+ "questions": {
+  "physical_sciences": "Physical Sciences A.S. (02696): where the requirement list sits on the page (a visible table, a tab panel, a collapsed section), and its heading.",
+  "excel": "Microsoft Excel noncredit certificate (37563): where its required courses or hours are listed.",
+  "cisco": "CISCO Certified Network Installation Associate (37495): where its required courses are listed.",
+  "athletic_coaching": "Athletic Coaching (45899): where its required courses are listed, and whether the page's award (Certificate of Accomplishment) is the state program's."
+ },
+ "keywords": [
+  "[Pp]rogram [Rr]equirements",
+  "[Rr]equired [Cc]ourses",
+  "[Tt]otal (?:[Uu]nits|[Hh]ours)",
+  "[Ss]elect",
+  "role=\"tab\"",
+  "[Cc]ertificate of"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "physical_sciences"
+   ],
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/physical-sciences/physical-sciences-as/",
+   "expand": true,
+   "rows": "\\b(?:ASTRC\\s?1001|ASTRC\\s?1001H|CHEM\\s?12A|CHEM\\s?12B|CHEM\\s?1A|CHEM\\s?1B|CHEM\\s?2|CHEM\\s?3|COSA\\s?30|ENVRS\\s?1|GEOL\\s?18|GEOL\\s?2|GEOL\\s?2F|GEOL\\s?2L|GEOL\\s?4|GEOL\\s?7|MATH\\s?27|MATH\\s?28|MATH\\s?29|MATH\\s?37|MATH\\s?40|MATH\\s?45|MATH\\s?50|MATH\\s?55|MATH\\s?80|MATH\\s?84|MATHC\\s?2210|MATHC\\s?2210H|MATHC\\s?2220|MATHC\\s?2220H|PHYS\\s?2A|PHYS\\s?2B|PHYS\\s?3A|PHYS\\s?3B|PHYS\\s?3C)\\b"
+  },
+  {
+   "answers": [
+    "excel"
+   ],
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/microsoft-excel/",
+   "expand": true,
+   "rows": "\\b(?:COSA\\s?615|COSA\\s?616|COSA\\s?617)\\b"
+  },
+  {
+   "answers": [
+    "cisco"
+   ],
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-cisco-certified-network-installation-associate/cisco-certified-network-installation-associate-certificate-achievement/",
+   "expand": true,
+   "rows": "\\b(?:CISCO\\s?250|CISCO\\s?251|CISCO\\s?252|CISCO\\s?253|ELECT\\s?204|ELECT\\s?209|ELECT\\s?212|ELECT\\s?214|ELECT\\s?225|ELECT\\s?240|ELECT\\s?242|ELECT\\s?253|ELECT\\s?435A)\\b"
+  },
+  {
+   "answers": [
+    "athletic_coaching"
+   ],
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/kinesiology/athletic-coaching-certificate-accomplishment/",
+   "expand": true,
+   "rows": "\\b(?:KING\\s?10|KING\\s?14|KING\\s?60|KING\\s?65|KING\\s?7|KING\\s?70|KING\\s?74|KING\\s?76|KING\\s?84|KING\\s?86|KING\\s?90|KING\\s?92|KING\\s?94|KINPF\\s?10|KINPF\\s?12|KINPF\\s?14|KINPF\\s?22|KINPF\\s?53|KINPF\\s?54|KINPP\\s?14|KINPP\\s?15|KINPP\\s?23|KINPP\\s?5)\\b"
+  }
+ ]
+}
