@@ -8,34 +8,36 @@ status: current
 
 # You are Session 362
 
-Your moniker is **SkyAlder**. SkyBirch (S361, `session_01DC4o6CVGDEbXQneus7oCfk`) wrote this checkpoint at about 03:25Z on
-2026-10-11 with ample context left and kept working; if it is still live (`list_sessions`), agree one writer before you touch
-the queue below.
+Your moniker is **SkyAlder**. SkyBirch (S361, `session_01DC4o6CVGDEbXQneus7oCfk`) refreshed this checkpoint at the context
+warning (about 05:05Z, 2026-10-11) and signed off; it holds no check-in and no PR watch.
 
 ## First, in this order
 
-0. **One writer.** `list_sessions`. S361 holds a check-in for Long Beach City (`trig_01QHag2Lna3oZorbb2EUvGXz`, 04:55Z) and
-   watches tracker #1975 and #1978 and vault #297. If S361 has signed off, it named in its last message what it dropped.
+0. **One writer.** `list_sessions`. S361 holds nothing; four workflow runs it started may still be running (above).
 1. **Rule 8:** `cpl_memory` tags `program-requirements-harvest`, `extraction`, `long-beach-city`. S361 rows:
    `sam-split-long-program-into-two-calls-2026-10-11`, `roep-rcc-39120-removed-by-sam-2026-10-11`,
    `sierra-and-extract-v5-deployed-rules-4-5-2026-10-11`, `roep-extract-push-runs-on-merged-main-2026-10-11`,
    `roep-two-call-split-built-2026-10-11`.
 2. **No sheet is open.** Nothing waits on Sam.
 
-## In flight
+## In flight (S361 signed off at the context warning, about 05:05Z)
 
-1. **Long Beach City's read** (run 38105864413 on `claude/s361-lbcc`, started 02:39Z; about 2 h of capture, then about $22
-   of extraction). When it lands: read `summary.json` on the branch (found, extracted, passing, cost), dispatch
-   `program-requirements-college.yml` with `step=load` from the same branch, then `step=display` (Sam's standing go for a
-   display after a load), regenerate the dependency map if the applied-record commit stales it, open the PR, merge on
-   `test`. Add Long Beach City to the builder's dated reads first if the display build asks for it.
-2. **#1978, the two-call extraction (v6)**: merge on `test`. Then dispatch `cpl-chat-deploy.yml` on main (function
-   `program-requirements-extract`, confirm `DEPLOY`); a body without `part` reads as v5, so the deploy is safe beside any
-   read. Then re-read Riverside City, Moreno Valley and Norco, one at a time, with extraction, each from its own `claude/*`
-   branch: the capture costs nothing, and only the Humanities, Philosophy & Arts program (failed) and any changed program
-   go to the model. Read each run's summary for `parts: 2` on the Humanities record and its four checks; then load and
-   display as above. Mt. San Antonio 24171 (an idle timeout) is retried the same way at its next read.
-3. **#1975 (this checkpoint)** and **vault #297 (session notes S360 and S361)**: merge on `test` / `coverage`.
+1. **Long Beach City's read** (run 38105864413 on `claude/s361-lbcc`, started 02:39Z, still running at 05:00Z): when it
+   files, read `summary.json` (found, extracted, passing; count `extracted_run` for the run's own cost), dispatch
+   `program-requirements-college.yml` `step=load` from the same branch. Add Long Beach City to the builder's dated reads
+   (`kb/program_requirements_pilot/map_cr_by_course.json`, `registry_read.json`) before its display.
+2. **RCCD's Humanities, Philosophy & Arts, read in two calls (v6 deployed, run 38108425951):**
+   - Riverside City 18111: read and loaded (runs 38108461470, 38111047238; branch `claude/s361-rcc-reread`).
+   - Moreno Valley 30169: read (run 38111056537); its load was dispatched at 04:57Z on `claude/s361-mvc-reread`: confirm
+     the receipt commit and the live row.
+   - Norco 30109: read dispatched at 04:58Z on `claude/s361-norco-reread`; when it files, check the record (parts 2, its
+     checks), then `step=load`.
+3. **One display build** covering every load above (Sam's standing go): run `kb/_build_roep_display.py`, commit the build
+   and its receipt to one branch, dispatch `step=display` from it, regenerate the dependency map after the applied-record
+   commit, then open one PR carrying the three re-read branches' commits (merge them into it) and merge on `test`.
+4. Refresh `kb/queue_status.json`: add 30169 and 30109 when loaded, and Long Beach City's rows.
+
+Nothing is watched or scheduled: S361 dropped its PR subscriptions (all its PRs merged) and has no pending check-in.
 
 ## Sam's decisions this session
 

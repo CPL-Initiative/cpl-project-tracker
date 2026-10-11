@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "written_at": "2026-10-11T03:22:43Z",
+  "written_at": "2026-10-11T04:56:47Z",
   "session": 361,
   "moniker": "SkyBirch",
   "run": "Sam's session",
@@ -6932,6 +6932,13 @@
     },
     {
       "college": "Riverside City College",
+      "program": "Humanities, Philosophy & Arts",
+      "award": "A.A. Degree",
+      "control_number": "18111",
+      "loaded": "2026-10-11"
+    },
+    {
+      "college": "Riverside City College",
       "program": "Kinesiology, Health and Wellness",
       "award": "A.A. Degree",
       "control_number": "18112",
@@ -8381,8 +8388,8 @@
     }
   ],
   "next_step": {
-    "title": "Load Long Beach City's records, then read RCCD's three longest programs in two calls",
-    "text": "Long Beach City's read with extraction is running; its records load unchecked and join the page when it lands. The extraction then learns to read a program too long for one reply in two calls, on Sam's choice, and Riverside City, Moreno Valley and Norco are read again so their Humanities, Philosophy and Arts programs get records."
+    "title": "Load Long Beach City, finish RCCD's longest programs, then one display build",
+    "text": "Long Beach City's read is still running. Riverside City's and Moreno Valley's Humanities, Philosophy and Arts programs are read in two calls and loaded; Norco's is being read. One display build then brings all of them to the page and to Sierra."
   },
   "calls": [
     {
@@ -8422,6 +8429,14 @@
     {
       "at": "2026-10-11T03:14Z",
       "text": "The Annual Workplan Goals tab meets AA contrast in both themes and its table scrolls by keyboard."
+    },
+    {
+      "at": "2026-10-11T03:27Z",
+      "text": "The extraction reads a program too long for one reply in two calls, on Sam's choice."
+    },
+    {
+      "at": "2026-10-11T04:16Z",
+      "text": "Riverside City's Humanities, Philosophy and Arts program, read in two calls, was loaded for reading."
     }
   ],
   "headline": [

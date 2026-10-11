@@ -788,3 +788,10 @@ notes. A filed row with no record is no longer kept, so the next read retries it
 **The UI pass took Annual Workplan Goals** (#1977): four grey labels below AA in light, the primary chip and the
 subsidiary marker unreadable in dark, the table's scroller unreachable by keyboard at 390 px; all pass after, measured on
 the HTML the generator writes. The curator-only editing tints and the add form's boxed buttons wait for a later pass.
+
+**The two-call read on real records (S361, after #1978 deployed).** Riverside City 18111 (run 38108461470) and Moreno
+Valley 30169 (run 38111056537) each went to the model alone, the rest of the college kept from the same page: two parts,
+75 s, $0.50 each. Coverage 295 of 313 and 289 of 296 with every missing course explained, catalog additions all flagged
+(the catalog prints HIST where the state file says HIS), no repeated code, and the parts read the same two blocks with no
+disagreement to report. The arithmetic stays incomplete: the catalog states the studio allowance in prose ("up to three
+units may be from a studio course"), so the block has no minimum, as at Santa Monica 43767.
