@@ -72,6 +72,21 @@ ok("the editor's buttons are underlined words with no fill",
    btn and "text-decoration:underline" in btn.group(1) and "background:none" in btn.group(1)
    and "min-height:24px" in btn.group(1))
 
+# S364 finished the pass: the editor's own rules carry no raw color. The save states
+# were pastels under dark mode's light text ($15.0M read 1.35:1 on #FFF6D9 in the seeded
+# a11y.config.js budget-editor-dark sweep); a hex survives only as the light fallback
+# of a dark-only tint, the repo's pattern for those tokens (tests/cpl_theme.test.js).
+editor = css[css.index("/* ─── Budget inline editor"):css.index("/* ─── Doublewide KPI card")]
+bare = re.sub(r"var\(--[a-z-]+, ?#[0-9A-Fa-f]{6}\)", "", editor)
+ok("the editor's CSS carries no raw color outside a dark-only token's fallback: %s"
+   % (re.findall(r"#[0-9A-Fa-f]{3,6}\b|rgba?\(", bare) or "none"),
+   not re.findall(r"#[0-9A-Fa-f]{3,6}\b|rgba?\(", bare))
+ok("a failed save is a red outline, never a fill that only color reads",
+   re.search(r"\.budget-cell\.budget-error \{[^}]*outline:2px solid var\(--red-alert\)", editor))
+js = open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "budget_editor.js")).read()
+ok("budget_editor.js sets no raw color inline (the status line and a rejected input)",
+   not re.findall(r"style\.\w+\s*=\s*\"#", js))
+
 if failures:
     print("\n%d failure(s)" % len(failures))
     sys.exit(1)

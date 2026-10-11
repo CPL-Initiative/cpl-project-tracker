@@ -263,15 +263,29 @@
   }
   /* A section: a <details> whose summary carries its heading and, shut, the line that
      says what is inside, so a closed tab still reads. */
+  /* kids as a function: the section's contents are built the first time it is open, so a
+     closed college's records cost nothing until the reader opens it. opts.open opens it now. */
   function section(key, title, meta, kids, opts) {
     opts = opts || {};
+    var lazy = typeof kids === "function";
+    var b = el("div", { cls: "prh-sec-b" }, lazy ? null : kids);
     var d = el("details", { cls: "prh-sec" + (opts.cls ? " " + opts.cls : ""), "data-sec": key }, [
       el("summary", { cls: "prh-sec-sum" }, [
         opts.label ? el("span", { cls: "prh-sec-label" }, [opts.mark ? doneMark() : null, opts.label]) : null,
         el(opts.h || "h3", { cls: "prh-sec-t", text: title }),
         meta ? el("span", { cls: "prh-sec-meta", text: meta }) : null]),
-      el("div", { cls: "prh-sec-b" }, kids)]);
-    if (secOpen(key)) d.setAttribute("open", "");
+      b]);
+    if (opts.open || secOpen(key)) d.setAttribute("open", "");
+    if (lazy) {
+      var built = false;
+      var fill = function () {
+        if (built || !d.hasAttribute("open")) return;
+        built = true;
+        kids().forEach(function (k) { if (k != null) b.appendChild(k); });
+      };
+      fill();
+      d.addEventListener("toggle", fill);
+    }
     d.addEventListener("toggle", function () { secSet(key, d.open); });
     return d;
   }
@@ -594,6 +608,8 @@
       ".prh-small { font-size:.8125rem; }",
       ".prh-alts { display:block; font-size:.8125rem; color:var(--text-muted); }",
       ".prh-rec, .prh-card { background:var(--surface-opaque); border:1px solid var(--border); border-radius:8px; margin-bottom:8px; }",
+      /* A college lists hundreds of records: the browser lays out only the cards near the screen. */
+      ".prh-college .prh-rec { content-visibility:auto; contain-intrinsic-size:auto 240px; }",
       ".prh-card { padding:16px; display:grid; gap:12px; margin-bottom:18px; }",
       ".prh-rhead { padding:12px 14px; display:grid; gap:8px 18px; grid-template-columns:minmax(0,1.4fr) minmax(0,2.2fr) minmax(0,1fr); align-items:start; }",
       ".prh-rec.prh-open .prh-rhead { border-bottom:1px solid var(--border); }",
@@ -1349,15 +1365,17 @@
         var n = list.length < totals[c] ? list.length + " of " + totals[c] : String(totals[c]);
         var meta = ((PLATFORM[reg.catalog_platform] || "") + " catalog, " + yr(list[0].catalog_year)).trim() + " · " +
           n + (totals[c] === 1 ? " program" : " programs") + (nd ? " · " + nd + (nd === 1 ? " draft" : " drafts") + " for the college" : "");
-        var sec = section("records:" + c, c, meta, [drafts[c] && !narrowed ? draftsBox(c, drafts[c]) : null].concat(list.map(function (p) { return recordCard(p); })),
-          { cls: "prh-college" });
         /* A narrowed list opens its colleges, so a match is never hidden in a closed section. */
-        if (narrowed) sec.setAttribute("open", "");
+        var sec = section("records:" + c, c, meta, function () {
+          return [drafts[c] && !narrowed ? draftsBox(c, drafts[c]) : null].concat(list.map(function (p) { return recordCard(p); }));
+        }, { cls: "prh-college", open: narrowed });
         drawn.push(box.appendChild(sec));
       });
       count.textContent = "Showing " + rows.length + " of " + P.length;
     }
-    [q, showSel, colSel].forEach(function (c) { c.addEventListener("input", draw); c.addEventListener("change", draw); });
+    /* One event each: a select fires both input and change, and each draw rebuilds the list. */
+    q.addEventListener("input", draw);
+    [showSel, colSel].forEach(function (c) { c.addEventListener("change", draw); });
     box.appendChild(section("records:find", "Find a record", "By name or control number, what waits, and the college", [
       el("div", { cls: "prh-controls prh-rfind", role: "search", "aria-label": "Find a program record" }, [
         el("label", { "for": "prh-rq" }, ["Find a program", q]),
@@ -1442,6 +1460,32 @@
       cpl]);
     var body = el("div", { cls: "prh-body", id: bodyId });
     body.hidden = !isOpen;
+    /* The blocks are built the first time they show (Sam, 2026-10-11: "the program blocks
+       are slow to load on click--times out my browser once and I have to tell it to wait").
+       A signed-in reader holds every record, and building all their course tables up front,
+       hidden, came to 294,000 elements and 3.7 s per draw for 1,210 records. */
+    var filled = false;
+    function fill() {
+      if (filled) return;
+      filled = true;
+      fillBody(body, p, F, courses, unit, disp);
+    }
+    if (isOpen) fill();
+    var art = el("article", { cls: "prh-rec" + (isOpen ? " prh-open" : ""), "aria-label": p.program_title + ", " + p.college },
+      [head, body, reviewing ? verdictBox(p, F.flags, line, opts.split ? function (saved) { advanceFrom(p, saved); } : null) : null]);
+    btn.addEventListener("click", function () {
+      var open = body.hidden;
+      if (open) fill();
+      body.hidden = !open;
+      state.open[key] = open;
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      btn.textContent = open ? "Hide the blocks" : "Show the blocks";
+      art.classList.toggle("prh-open", open);
+    });
+    return art;
+  }
+  /* A record's blocks, its total, its careers and its source line, drawn into its body. */
+  function fillBody(body, p, F, courses, unit, disp) {
     var blocks = (p.record && p.record.blocks) || [];
     var groups = {};
     blocks.forEach(function (b) { if (b.option_group) groups[b.option_group] = (groups[b.option_group] || 0) + 1; });
@@ -1481,17 +1525,6 @@
     if (gaps.length) body.appendChild(el("details", { cls: "prh-notes" }, [
       el("summary", { text: "Notes for the reading procedure (" + gaps.length + ")" }),
       el("ul", {}, gaps.map(function (g) { return el("li", { text: (g.kind ? g.kind + ": " : "") + g.text }); }))]));
-    var art = el("article", { cls: "prh-rec" + (isOpen ? " prh-open" : ""), "aria-label": p.program_title + ", " + p.college },
-      [head, body, reviewing ? verdictBox(p, F.flags, line, opts.split ? function (saved) { advanceFrom(p, saved); } : null) : null]);
-    btn.addEventListener("click", function () {
-      var open = body.hidden;
-      body.hidden = !open;
-      state.open[key] = open;
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
-      btn.textContent = open ? "Hide the blocks" : "Show the blocks";
-      art.classList.toggle("prh-open", open);
-    });
-    return art;
   }
 
   function viewSequences() {

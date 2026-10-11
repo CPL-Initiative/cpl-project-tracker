@@ -746,6 +746,16 @@ block("(11)", function () {
   const card = root.querySelector('article[aria-label="Art, Irvine Valley College"]');
   check("(11) the record's head counts its flags", card && /Flags3: 2 for the college, 1 for the reading procedure/.test(card.querySelector(".prh-checks").textContent),
     card && card.querySelector(".prh-checks").textContent);
+  /* Sam, 2026-10-11: "the program blocks are slow to load on click--times out my browser". A
+     record's blocks are built the first time they show, so a draw of 1,210 records builds no
+     hidden course tables; the button still names the body it controls before then. */
+  const body = card.querySelector(".prh-body"), show = card.querySelector(".prh-toggle");
+  check("(11) a record's blocks are built when first shown, not before", body.hidden && !body.childNodes.length &&
+    show.getAttribute("aria-controls") === body.id && show.textContent === "Show the blocks", body.childNodes.length + " nodes");
+  show.click();
+  check("(11) Show the blocks builds them once", !body.hidden && body.querySelectorAll("table").length === ART.record.blocks.length, body.querySelectorAll("table").length + " tables");
+  show.click(); show.click();
+  check("(11) and hiding and showing again keeps the one copy", !body.hidden && body.querySelectorAll("table").length === ART.record.blocks.length, body.querySelectorAll("table").length + " tables");
   const whole = card.querySelector(".prh-flags");
   check("(11) whole-record flags sit before the blocks under their own heading",
     whole && /On the whole record/.test(whole.textContent) && whole.querySelectorAll(".prh-flag").length === 2);
@@ -1429,7 +1439,8 @@ block("(19)", function () {
   rec.display.courses = Object.assign({}, rec.display.courses, { "EMS 80": { title: "Paramedic Field Externship",
     units_from_state_file: 9, coci: { status: "Inactive", program_ccn: "CCC000584685", current_ccn: "CCC000616276" } } });
   rec.display.checks = Object.assign({}, rec.display.checks, { arithmetic: "unequal", units_differ: { blocks: [29.5, 31.5], printed: [30.5, 30.5] } });
-  m.M._state.registry = REGISTRY; m.M._state.records = [rec]; m.M._state.view = "records"; m.M._render();
+  m.M._state.registry = REGISTRY; m.M._state.records = [rec]; m.M._state.view = "records";
+  m.M._state.open = { "Cerritos College|42158": true }; m.M._render();
   const art = m.root.querySelector("article.prh-rec");
   const row = Array.prototype.filter.call(art.querySelectorAll("tr"), function (tr) { return /EMS 80/.test(tr.textContent); })[0];
   const chip = row && row.querySelector(".prh-coci");
@@ -1468,6 +1479,27 @@ block("(20)", function () {
   check("(20) a recommended block says in words that it is not required", !!h && /Recommended, not required/.test(h.textContent), h && h.textContent);
   check("(20) ruleText names it", m.M.ruleText({ rule: "recommended" }, "units", {}) === "Recommended, not required");
   check("(20) the careers the catalog names show on the record", /Careers the catalog names: ironworker; rigger\./.test(art.textContent));
+});
+
+// ── (21) A closed college costs nothing until it opens (Sam, 2026-10-11) ──
+// "The program blocks are slow to load on click--times out my browser once and I have to tell
+// it to wait". A signed-in reader holds every record; drawing them all, closed sections and
+// hidden blocks included, took 3.7 s and 294,000 elements for 1,210 records. The failures this
+// guards: a closed college that builds its cards anyway, one that opens empty, and a long
+// list the browser lays out in full when only a screenful shows.
+block("(21)", function () {
+  const m = loadModule();
+  m.M._state.registry = REGISTRY; m.M._state.records = [IRONWORKER, ART]; m.M._state.view = "records";
+  m.M._state.secs = { "*": false }; m.M._render();
+  const cerr = m.root.querySelector('details[data-sec="records:Cerritos College"]');
+  check("(21) a closed college builds none of its records", !!cerr && !cerr.hasAttribute("open") &&
+    !m.root.querySelector("article.prh-rec"), m.root.querySelectorAll("article.prh-rec").length + " cards");
+  cerr.setAttribute("open", ""); cerr.dispatchEvent(new m.w.Event("toggle"));
+  cerr.dispatchEvent(new m.w.Event("toggle"));
+  check("(21) opening it builds its records once", cerr.querySelectorAll("article.prh-rec").length === 1 &&
+    !m.root.querySelector('details[data-sec="records:Irvine Valley College"] article.prh-rec'));
+  check("(21) the browser lays out only the cards near the screen",
+    /\.prh-college \.prh-rec \{ content-visibility:auto; contain-intrinsic-size:auto 240px; \}/.test(SRC));
 });
 
 // ── (22) A course the program lists through an older version (Sam, 2026-10-11) ──

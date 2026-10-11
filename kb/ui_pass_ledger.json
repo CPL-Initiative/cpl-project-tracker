@@ -95,15 +95,15 @@
    "page": "index.html#budget",
    "audience": "staff",
    "last": "2026-10-11",
-   "outcome": "The bar's labels were white on every fill (1.21:1 in dark, where --navy-primary turns light): each fill now carries its own text color; the as-of line and the gray dot failed AA (the dot removed); the two holders that scroll at 390px are focusable and named; the section's raw hex became tokens; the editor's Sign in and Sign out are underlined words. Measured clean in light and dark at desktop and 390px. Left: the edit-state cell tints and the widget's rgba wash have no tokens yet."
+   "outcome": "The bar's labels were white on every fill (1.21:1 in dark, where --navy-primary turns light): each fill now carries its own text color; the as-of line and the gray dot failed AA (the dot removed); the two holders that scroll at 390px are focusable and named; the section's raw hex became tokens; the editor's Sign in and Sign out are underlined words (S363). S364 finished it with a seeded signed-in sweep (budget-editor, both themes): a cell mid-save read 1.35:1 in dark (light text on the #FFF6D9 pastel), so the save states take the dark-only tints with light fallbacks, a failed save is a red outline on a muted ground, the widget and the hover wash are --surface-subtle, and the editor's status line and rejected input use --red-alert and --green-progress rather than #A33 and #2A7D4F. Measured clean in light and dark at desktop and 390px, signed out and signed in."
   },
   {
    "id": "cobi:implementation-funding",
    "name": "Implementation Funding",
    "page": "index.html#implementation-funding",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-11",
+   "outcome": "Measured clean signed out in light and dark at desktop and 390px, and in the Public view and My CPL Funding; a new seeded curator sweep (funding-curator, both themes) found the editing controls the signed-out sweep never paints. Every boxed or filled control became an underlined cobalt word (Rename, Remove, Hide from public, Add project, New scenario, Publish, Save), the view in use (Internal or Public) shows by weight and aria-pressed rather than a fill, Cancel lost its inline box, Edit (22.6px wide) and the card-size sliders (19.9px tall) reach 24px, words keep their line so New scenario no longer wraps over its hint at 390px, and the hidden-from-public note became a paragraph so its link takes the inline exception. My College and the explainer call the same model (_alloc, _grant), so their figures agree by construction. Tokens only on screen; the print and memo windows keep literal colors, being separate documents. Guarded by tests/cpl_funding_controls_first_light.test.js."
   },
   {
    "id": "cobi:contracts",
