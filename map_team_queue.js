@@ -430,7 +430,10 @@
     return Promise.all([
       jget(REST + "/map_contact_gaps?select=college,college_kind,primary_contact_email,"
         + "has_student_contact,has_coordinator,landing_page_url,synced_at"),
-      jget(REST + "/sierra_feedback?select=created_at,status,page,rating&order=created_at.asc&limit=1000"),
+      // CI rows excluded on the server (S366): oldest first under a 1,000-row cap, an
+      // unfiltered read would have dropped the newest real reports once CI rows filled it.
+      jget(REST + "/sierra_feedback?select=created_at,status,page,rating&or=(page.is.null,page.neq.smoke)"
+        + "&order=created_at.asc&limit=1000"),
       jget(REST + "/governance_owners?select=register_id,owner"),
       jget(REST + "/map_college_nudges?select=college,last_nudged_at"),
       jget(REST + "/map_data_loads?select=table_name,loaded_at&order=loaded_at.desc&limit=20"),
