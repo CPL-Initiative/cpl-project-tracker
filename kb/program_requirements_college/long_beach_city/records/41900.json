@@ -1,0 +1,137 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "41900",
+ "shape": "certificate",
+ "title": "PHP Web Programmer",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/web-development/php-web-programmer-certificate-achievement/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7101,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7101,
+    "output_tokens": 560,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 560,
+  "output_tokens_details": {
+   "thinking_tokens": 138
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0396,
+ "ms": 5974,
+ "seconds": 6.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 4,
+   "share": 0.0,
+   "missing": [
+    "COSP38",
+    "COSW10",
+    "COSW200",
+    "COSW30"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COSP 38",
+    "why": "appears only in the site's course index list; no program requirements in the text"
+   },
+   {
+    "code": "COSW 10",
+    "why": "appears only in the site's course index list; no program requirements in the text"
+   },
+   {
+    "code": "COSW 200",
+    "why": "appears only in the site's course index list; no program requirements in the text"
+   },
+   {
+    "code": "COSW 30",
+    "why": "appears only in the site's course index list; no program requirements in the text"
+   }
+  ],
+  "notes": [
+   "The catalog text holds only an alphabetical course index from the site's navigation (COSA through CULAR, cut off at 'CULAR 610 - Introduction to Hospital'). It contains no section for the PHP Web Programmer Certificate of Achievement: no heading, requirements, unit total, outcomes or careers. section_heading is left empty for that reason.",
+   "All four closed-list courses appear in the index list, but nothing in the text assigns them to this award, so none was placed in a block. A reviewer should fetch the program's requirements section from the source page."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

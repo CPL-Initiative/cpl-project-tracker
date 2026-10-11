@@ -1,0 +1,148 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "45848",
+ "shape": "certificate",
+ "title": "Child Nutrition Management",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/nutrition-dietetics/child-nutrition-management-certificate-achievement/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13450,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13450,
+    "output_tokens": 640,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 640,
+  "output_tokens_details": {
+   "thinking_tokens": 150
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0666,
+ "ms": 8454,
+ "seconds": 8.7,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 6,
+   "share": 0.0,
+   "missing": [
+    "CDECE19",
+    "CDEVC1000",
+    "NUTR20",
+    "NUTR21",
+    "NUTR24",
+    "NUTR34"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CDECE 19",
+    "why": "appears only in the site's course index list, not in a program requirements section"
+   },
+   {
+    "code": "CDEVC1000",
+    "why": "no requirements section in the text; CDEV C1000 appears only in the course index list"
+   },
+   {
+    "code": "NUTR 20",
+    "why": "not in the text"
+   },
+   {
+    "code": "NUTR 21",
+    "why": "not in the text"
+   },
+   {
+    "code": "NUTR 24",
+    "why": "not in the text"
+   },
+   {
+    "code": "NUTR 34",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text contains only an alphabetical course index (AUTO through DMI), apparently site navigation, cut off mid-entry ('DMI 451 - Radiation Protect'). It has no Child Nutrition Management section, no requirements, no total units, no outcomes and no careers, so section_heading is left empty and no blocks are recorded.",
+   "The index stops before the NUTR subject, so the NUTR courses on the closed list cannot be found in this text. A reviewer should re-fetch the program page itself.",
+   "The closed-list code CDEVC1000 is printed in the index as 'CDEV C1000'. An honors twin, CDEV C1000H, also appears in the index."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

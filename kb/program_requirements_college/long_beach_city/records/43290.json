@@ -1,0 +1,126 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "43290",
+ "shape": "noncredit",
+ "title": "Designing with Rhinoceros",
+ "award": "Noncredit program",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/designing-rhinoceros-certificate-completion/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7156,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7156,
+    "output_tokens": 602,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 602,
+  "output_tokens_details": {
+   "thinking_tokens": 190
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04066,
+ "ms": 6842,
+ "seconds": 7.3,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "ARCHT635",
+    "ARCHT661"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ARCHT 635",
+    "why": "appears only in the site's course index list, not in a requirements section for this program"
+   },
+   {
+    "code": "ARCHT 661",
+    "why": "appears only in the site's course index list, not in a requirements section for this program"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text contains only an alphabetical course index from the site navigation (ADN through ART 50, cut off mid-entry). It does not contain the Designing with Rhinoceros certificate section, so no heading, requirements, total hours, outcomes or careers could be recorded.",
+   "section_heading is left empty because no program heading appears in the text.",
+   "measure is set to hours because this is a noncredit program, but the text prints no hours for any course or for the program.",
+   "The index lists both ARCHT 635 Rhino Basics and ARCHT 661 Fundamental Design Studio, which match the closed list. Their place in the requirements cannot be confirmed from this text. A reviewer should re-fetch the program page."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

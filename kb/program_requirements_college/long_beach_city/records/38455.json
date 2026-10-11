@@ -1,0 +1,243 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "38455",
+ "shape": "certificate",
+ "title": "Spanish",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/world-languages/spanish-certificate-achievement/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 14048,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 14048,
+    "output_tokens": 995,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 995,
+  "output_tokens_details": {
+   "thinking_tokens": 158
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07609,
+ "ms": 9178,
+ "seconds": 9.7,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 25,
+   "share": 0.0,
+   "missing": [
+    "ART11",
+    "HIST18",
+    "HIST8A",
+    "HIST8AH",
+    "HIST8B",
+    "HIST8BH",
+    "HUMAN1",
+    "HUMAN1H",
+    "LING1",
+    "LING3",
+    "SPAN1",
+    "SPAN10",
+    "SPAN10H",
+    "SPAN2",
+    "SPAN200",
+    "SPAN201",
+    "SPAN25A",
+    "SPAN25B",
+    "SPAN25C",
+    "SPAN25D",
+    "SPAN3",
+    "SPAN4",
+    "SPAN8",
+    "SPAN9",
+    "SPAN9H"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(not found in text: Spanish, Certificate of Achievement section absent)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ART 11",
+    "why": "appears only in the site's course index listing, not in a requirements section"
+   },
+   {
+    "code": "HIST 18",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 8A",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 8AH",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 8B",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 8BH",
+    "why": "not in the text"
+   },
+   {
+    "code": "HUMAN 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "HUMAN 1H",
+    "why": "not in the text"
+   },
+   {
+    "code": "LING 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "LING 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 10H",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 200",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 201",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 25A",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 25B",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 25C",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 25D",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 8",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 9",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 9H",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text contains only an alphabetical course index from the site's navigation (AI through COSA, cut off mid-entry at 'COSA 613 - Microsoft Word'); it does not include the Spanish Certificate of Achievement section, its requirements, total units, outcomes or careers.",
+   "ART 11 appears in the course index but not as a program requirement, so it was not placed in a block.",
+   "The page should be re-fetched so the actual requirements section for the Spanish Certificate of Achievement can be read."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

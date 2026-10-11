@@ -1,0 +1,126 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "43285",
+ "shape": "noncredit",
+ "title": "Educator Workforce Preparation",
+ "award": "Noncredit program",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/elementary-teacher-education/educator-workforce-preparation-certificate-competency/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10256,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10256,
+    "output_tokens": 571,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 571,
+  "output_tokens_details": {
+   "thinking_tokens": 185
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05244,
+ "ms": 6010,
+ "seconds": 6.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "COUNS650",
+    "EDUC650"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COUNS 650",
+    "why": "Appears only in the site's course index menu; no program requirements section in the text"
+   },
+   {
+    "code": "EDUC 650",
+    "why": "Appears only in the site's course index menu; no program requirements section in the text"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text holds only a fragment of the site's alphabetical course index (COSA through ELECT), cut off at both ends. It contains no section for the Educator Workforce Preparation award: no heading, requirements, totals, outcomes or careers.",
+   "section_heading is left empty because no program heading appears in the text.",
+   "measure is left as 'units' by default because the text states no hours. This is a noncredit program, so the actual page likely counts it in hours. A reviewer should check the source page.",
+   "COUNS 650 and EDUC 650 do appear in the course index, which confirms the codes exist. The text does not show how they count toward this award."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

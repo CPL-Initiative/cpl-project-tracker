@@ -1,0 +1,126 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "43875",
+ "shape": "noncredit",
+ "title": "Skills for Professional Helpers",
+ "award": "Noncredit program",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/social-work/skills-professional-helpers-certificate-completion/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6836,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6836,
+    "output_tokens": 658,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 658,
+  "output_tokens_details": {
+   "thinking_tokens": 267
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0405,
+ "ms": 6799,
+ "seconds": 7.2,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "SW607",
+    "SW645"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "SW 607",
+    "why": "Named only in a site-wide course index list; the text has no requirements section for this program."
+   },
+   {
+    "code": "SW 645",
+    "why": "Named only in a site-wide course index list; the text has no requirements section for this program."
+   }
+  ],
+  "notes": [
+   "The catalog text is only part of an alphabetical course index (REAL through TEAS), probably site navigation. It holds no section for Skills for Professional Helpers: no heading, requirements, total, outcomes or careers. section_heading is left empty for this reason.",
+   "SW 607 and SW 645 appear in the index, but nothing says how they count toward the award, so no blocks are recorded.",
+   "Measure is set to 'hours' because the award is a noncredit program. The text states no hours, so total_units is null.",
+   "The text appears cut off at the end ('TEAS 605 - TEA'). A reviewer should fetch the actual program page to record its requirements."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

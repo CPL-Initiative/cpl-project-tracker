@@ -1,0 +1,163 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "45850",
+ "shape": "certificate",
+ "title": "Nutrition and Fitness Education",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/nutrition-dietetics/nutrition-fitness-eduction-certificate-achievement/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11519,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11519,
+    "output_tokens": 760,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 760,
+  "output_tokens_details": {
+   "thinking_tokens": 126
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06128,
+ "ms": 7738,
+ "seconds": 8.1,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 9,
+   "share": 0.0,
+   "missing": [
+    "KINPP12",
+    "KINPP4",
+    "KINPP75",
+    "NUTR20",
+    "NUTR22",
+    "NUTR255",
+    "NUTR256",
+    "NUTR26",
+    "NUTR261"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "KINPP 12",
+    "why": "appears only in the site's course index menu; no program requirements section in the text"
+   },
+   {
+    "code": "KINPP 4",
+    "why": "appears only in the site's course index menu; no program requirements section in the text"
+   },
+   {
+    "code": "KINPP 75",
+    "why": "appears only in the site's course index menu; no program requirements section in the text"
+   },
+   {
+    "code": "NUTR 20",
+    "why": "appears only in the site's course index menu; no program requirements section in the text"
+   },
+   {
+    "code": "NUTR 22",
+    "why": "appears only in the site's course index menu; no program requirements section in the text"
+   },
+   {
+    "code": "NUTR 255",
+    "why": "appears only in the site's course index menu; no program requirements section in the text"
+   },
+   {
+    "code": "NUTR 256",
+    "why": "appears only in the site's course index menu; no program requirements section in the text"
+   },
+   {
+    "code": "NUTR 26",
+    "why": "appears only in the site's course index menu; no program requirements section in the text"
+   },
+   {
+    "code": "NUTR 261",
+    "why": "appears only in the site's course index menu; no program requirements section in the text"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text contains only a fragment of the site's alphabetical course navigation list (JOURN through PHIL), cut off at both ends. It holds no section for the Nutrition and Fitness Education Certificate of Achievement: no heading, requirements, unit total, outcomes or careers. So section_heading is empty and no blocks are recorded.",
+   "All closed-list courses appear in the navigation list, but that list does not show program requirements. The page should be re-fetched to capture the program's requirements content.",
+   "The source URL spells 'eduction', which may be a typo in the page slug."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

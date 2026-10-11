@@ -1,0 +1,498 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "02636",
+ "shape": "degree",
+ "title": "Kinesiology",
+ "award": "A.A. Degree",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/kinesiology/kinesiology-aa/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 14981,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 14981,
+    "output_tokens": 2511,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2511,
+  "output_tokens_details": {
+   "thinking_tokens": 592
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.11014,
+ "ms": 20086,
+ "seconds": 20.6,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 76,
+   "share": 0.0,
+   "missing": [
+    "ANAT1",
+    "ANAT41",
+    "BIOLC1001",
+    "COMMC1000",
+    "COMMC1000H",
+    "COMMC1004",
+    "HLED3",
+    "HLED4",
+    "HLED5",
+    "KINA1",
+    "KING10",
+    "KING10B",
+    "KING14",
+    "KING14B",
+    "KING2",
+    "KING2B",
+    "KING55",
+    "KING60",
+    "KING65",
+    "KING65B",
+    "KING66",
+    "KING66B",
+    "KING7",
+    "KING70",
+    "KING70B",
+    "KING74",
+    "KING76",
+    "KING84",
+    "KING86",
+    "KING90",
+    "KING90B",
+    "KING92",
+    "KING92B",
+    "KING94",
+    "KINPF10",
+    "KINPF10B",
+    "KINPF12",
+    "KINPF12B",
+    "KINPF14",
+    "KINPF17",
+    "KINPF17B",
+    "KINPF18",
+    "KINPF18B",
+    "KINPF21",
+    "KINPF22",
+    "KINPF22B",
+    "KINPF23",
+    "KINPF24",
+    "KINPF3",
+    "KINPF4",
+    "KINPF42",
+    "KINPF53",
+    "KINPF53B",
+    "KINPF54",
+    "KINPF54B",
+    "KINPF6",
+    "KINPF8",
+    "KINPF81",
+    "KINPF82",
+    "KINPF83",
+    "KINPF8B",
+    "KINPP1",
+    "KINPP10",
+    "KINPP14",
+    "KINPP15",
+    "KINPP17",
+    "KINPP23",
+    "KINPP233",
+    "KINPP4",
+    "KINPP5",
+    "KINPP7",
+    "KINPP70",
+    "KINPP75",
+    "KINPP8",
+    "PSYCC1000",
+    "PSYCC1000H"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(no Kinesiology A.A. section found in the text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANAT 1",
+    "why": "appears only in the site's course index, not in a program section"
+   },
+   {
+    "code": "ANAT 41",
+    "why": "appears only in the site's course index, not in a program section"
+   },
+   {
+    "code": "BIOLC1001",
+    "why": "only BIOL C1001 appears, in the site's course index, not in a program section"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "appears only in the site's course index, not in a program section"
+   },
+   {
+    "code": "COMM C1000H",
+    "why": "appears only in the site's course index, not in a program section"
+   },
+   {
+    "code": "COMM C1004",
+    "why": "appears only in the site's course index, not in a program section"
+   },
+   {
+    "code": "HLED 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "HLED 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "HLED 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINA 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 10B",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 14",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 14B",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 2B",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 55",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 60",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 65",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 65B",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 66",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 66B",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 7",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 70",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 70B",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 74",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 76",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 84",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 86",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 90",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 90B",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 92",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 92B",
+    "why": "not in the text"
+   },
+   {
+    "code": "KING 94",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 10B",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 12",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 12B",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 14",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 17",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 17B",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 18",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 18B",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 21",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 22",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 22B",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 23",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 24",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 42",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 53",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 53B",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 54",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 54B",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 6",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 8",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 81",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 82",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 83",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPF 8B",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPP 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPP 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPP 14",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPP 15",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPP 17",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPP 23",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPP 233",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPP 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPP 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPP 7",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPP 70",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPP 75",
+    "why": "not in the text"
+   },
+   {
+    "code": "KINPP 8",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text is only a fragment of the site's alphabetical course index/navigation menu (ADJUS through CONST); it contains no Kinesiology A.A. program section, requirements, totals, outcomes or careers. The page should be re-fetched so the program content can be read.",
+   "The course index is truncated at CONST 220, before HLED, KIN*, and PSYC subjects.",
+   "Closed-list code BIOLC1001 appears in the index as 'BIOL C1001'."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

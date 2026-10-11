@@ -1,0 +1,178 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "40756",
+ "shape": "adt",
+ "title": "Hospitality Management",
+ "award": "A.S. T Degree",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/hospitality-management/hospitality-management-ast/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13643,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13643,
+    "output_tokens": 688,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 688,
+  "output_tokens_details": {
+   "thinking_tokens": 148
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06833,
+ "ms": 5866,
+ "seconds": 6.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 12,
+   "share": 0.0,
+   "missing": [
+    "ACCTG1A",
+    "CULAR10",
+    "CULAR20",
+    "CULAR30",
+    "CULAR90",
+    "ECONC2001",
+    "ECONC2001H",
+    "LAW18",
+    "MATH21B",
+    "STATC1000",
+    "STATC1000E",
+    "STATC1000H"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACCTG 1A",
+    "why": "appears only in the site's Course Outlines of Record menu, not in a requirements section"
+   },
+   {
+    "code": "CULAR 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "CULAR 20",
+    "why": "not in the text"
+   },
+   {
+    "code": "CULAR 30",
+    "why": "not in the text"
+   },
+   {
+    "code": "CULAR 90",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON C2001H",
+    "why": "not in the text"
+   },
+   {
+    "code": "LAW 18",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 21B",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000E",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text contains only site navigation: a list of noncredit certificate links and an alphabetical Course Outlines of Record menu that cuts off at CDECE 47. It holds no section for the Hospitality Management A.S.-T degree, so no heading, requirements, totals, GE pattern, outcomes or careers could be recorded.",
+   "section_heading is left empty because no program heading appears in the text.",
+   "A reviewer should re-fetch the source page to capture the actual program requirements."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

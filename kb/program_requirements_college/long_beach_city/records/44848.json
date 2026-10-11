@@ -1,0 +1,1063 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "44848",
+ "shape": "certificate",
+ "title": "Cal-GETC",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-plans/plan-c/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 17613,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 17613,
+    "output_tokens": 6380,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 6380,
+  "output_tokens_details": {
+   "thinking_tokens": 1417
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.19805,
+ "ms": 44413,
+ "seconds": 44.8,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 189,
+   "share": 0.0,
+   "missing": [
+    "ANAT1",
+    "ANAT41",
+    "ANTHC1001",
+    "ANTHC1001H",
+    "ANTHC1001L",
+    "ANTHR10",
+    "ANTHR11",
+    "ANTHR2",
+    "ANTHR2H",
+    "ANTHR3",
+    "ANTHR4",
+    "ART10",
+    "ART11",
+    "ART3",
+    "ART4",
+    "ART5",
+    "ARTHC1100",
+    "ARTHC1100H",
+    "ARTHC1200",
+    "ARTHC1200H",
+    "ASTRC1001",
+    "ASTRC1001H",
+    "ASTRC1001L",
+    "BIO1A",
+    "BIO1B",
+    "BIO2",
+    "BIO20",
+    "BIO30",
+    "BIO5",
+    "BIO60",
+    "BIO60L",
+    "BIOLC1001",
+    "BIOLC1001L",
+    "CHEM1A",
+    "CHEM1B",
+    "CHEM2",
+    "CHEM3",
+    "CHEM4",
+    "COMM25",
+    "COMM30",
+    "COMM60",
+    "COMMC1000",
+    "COMMC1000H",
+    "DANCE1",
+    "DANCE19",
+    "ECON3",
+    "ECON4",
+    "ECON5",
+    "ECONC2001",
+    "ECONC2001H",
+    "ECONC2002",
+    "ECONC2002H",
+    "ENGL33",
+    "ENGL33H",
+    "ENGL37",
+    "ENGL38",
+    "ENGL39",
+    "ENGL41",
+    "ENGL42",
+    "ENGL43A",
+    "ENGL43B",
+    "ENGL44",
+    "ENGL44H",
+    "ENGL45",
+    "ENGL45H",
+    "ENGL46",
+    "ENGL47",
+    "ENGLC1000",
+    "ENGLC1000H",
+    "ENGLC1001",
+    "ENGLC1001H",
+    "ENGLC1003",
+    "FILM1",
+    "FILM10",
+    "FILM2A",
+    "FILM2B",
+    "FREN2",
+    "FREN3",
+    "GEOG2",
+    "GEOG40",
+    "GEOG5",
+    "GEOL1",
+    "GEOL10",
+    "GEOL18",
+    "GEOL2",
+    "GEOL2L",
+    "GEOL3",
+    "GEOL3H",
+    "GEOL5",
+    "GER2",
+    "HIST18",
+    "HIST1A",
+    "HIST1B",
+    "HIST25",
+    "HIST27A",
+    "HIST27B",
+    "HIST2B",
+    "HIST2C",
+    "HIST8A",
+    "HIST8AH",
+    "HIST8B",
+    "HIST8BH",
+    "HIST9A",
+    "HIST9C",
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H",
+    "HUMAN1",
+    "HUMAN1H",
+    "HUMAN7",
+    "JAPAN2",
+    "JAPAN3",
+    "JAPAN4",
+    "LING1",
+    "LING3",
+    "MATH21B",
+    "MATH45",
+    "MATH47",
+    "MATH50",
+    "MATH80",
+    "MATH84",
+    "MATHC2210",
+    "MATHC2210H",
+    "MATHC2220",
+    "MATHC2220H",
+    "MUSIC32",
+    "MUSIC35",
+    "MUSIC40",
+    "MUSIC40H",
+    "MUSIC89",
+    "PGEOG1",
+    "PGEOG1L",
+    "PGEOG2",
+    "PHIL10",
+    "PHIL14",
+    "PHIL16",
+    "PHIL3",
+    "PHIL4",
+    "PHIL5",
+    "PHIL6",
+    "PHIL6H",
+    "PHIL7",
+    "PHIL7H",
+    "PHIL9",
+    "PHYS2A",
+    "PHYS2B",
+    "PHYS3A",
+    "PHYS3B",
+    "PHYS3C",
+    "PHYS4",
+    "PHYSI1",
+    "POLSC10",
+    "POLSC1000",
+    "POLSC1000H",
+    "POLSC11",
+    "POLSC2",
+    "POLSC2H",
+    "POLSC3",
+    "POLSC4",
+    "POLSC4H",
+    "POLSC9",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "PSYCH11",
+    "PSYCH14",
+    "SOCIC1000",
+    "SOCIC1000H",
+    "SOCIO11",
+    "SOCIO13",
+    "SOCIO2",
+    "SOCIO40",
+    "SOCSC1",
+    "SOCSC1H",
+    "SOCSC7",
+    "SPAN10",
+    "SPAN10H",
+    "SPAN2",
+    "SPAN25A",
+    "SPAN25B",
+    "SPAN25C",
+    "SPAN25D",
+    "SPAN3",
+    "SPAN4",
+    "SPAN9",
+    "SPAN9H",
+    "STATC1000",
+    "STATC1000H",
+    "TART25"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANAT 1",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "ANAT 41",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "ANTHC1001",
+    "why": "only in site course index menu (as ANTH C1001); plan requirements not in text"
+   },
+   {
+    "code": "ANTHC1001H",
+    "why": "only in site course index menu (as ANTH C1001H); plan requirements not in text"
+   },
+   {
+    "code": "ANTHC1001L",
+    "why": "only in site course index menu (as ANTH C1001L); plan requirements not in text"
+   },
+   {
+    "code": "ANTHR 10",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "ANTHR 11",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "ANTHR 2",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "ANTHR 2H",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "ANTHR 3",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "ANTHR 4",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "ART 10",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "ART 11",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "ART 3",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "ART 4",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "ART 5",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "ARTHC1100",
+    "why": "only in site course index menu (as ARTH C1100); plan requirements not in text"
+   },
+   {
+    "code": "ARTHC1100H",
+    "why": "only in site course index menu (as ARTH C1100H); plan requirements not in text"
+   },
+   {
+    "code": "ARTHC1200",
+    "why": "only in site course index menu (as ARTH C1200); plan requirements not in text"
+   },
+   {
+    "code": "ARTHC1200H",
+    "why": "only in site course index menu (as ARTH C1200H); plan requirements not in text"
+   },
+   {
+    "code": "ASTR C1001",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "ASTR C1001H",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "ASTR C1001L",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "BIO 1A",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "BIO 1B",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "BIO 2",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "BIO 20",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "BIO 30",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "BIO 5",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "BIO 60",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "BIO 60L",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "BIOLC1001",
+    "why": "only in site course index menu (as BIOL C1001); plan requirements not in text"
+   },
+   {
+    "code": "BIOLC1001L",
+    "why": "only in site course index menu (as BIOL C1001L); plan requirements not in text"
+   },
+   {
+    "code": "CHEM 1A",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "CHEM 1B",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "CHEM 2",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "CHEM 3",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "CHEM 4",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "COMM 25",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "COMM 30",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "COMM 60",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "COMM C1000H",
+    "why": "only in site course index menu; plan requirements not in text"
+   },
+   {
+    "code": "DANCE 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANCE 19",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON C2001H",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON C2002H",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 33",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 33H",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 37",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 38",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 39",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 41",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 42",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 43A",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 43B",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 44",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 44H",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 45",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 45H",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 46",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 47",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C1000H",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C1001H",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C1003",
+    "why": "not in the text"
+   },
+   {
+    "code": "FILM 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "FILM 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "FILM 2A",
+    "why": "not in the text"
+   },
+   {
+    "code": "FILM 2B",
+    "why": "not in the text"
+   },
+   {
+    "code": "FREN 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "FREN 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 40",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 18",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 2L",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 3H",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "GER 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 18",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 1A",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 1B",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 25",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 27A",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 27B",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 2B",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 2C",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 8A",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 8AH",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 8B",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 8BH",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 9A",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 9C",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST C1001",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST C1001H",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST C1002H",
+    "why": "not in the text"
+   },
+   {
+    "code": "HUMAN 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "HUMAN 1H",
+    "why": "not in the text"
+   },
+   {
+    "code": "HUMAN 7",
+    "why": "not in the text"
+   },
+   {
+    "code": "JAPAN 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "JAPAN 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "JAPAN 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "LING 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "LING 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 21B",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 45",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 47",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 50",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 80",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 84",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH C2210",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH C2210H",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH C2220",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH C2220H",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSIC 32",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSIC 35",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSIC 40",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSIC 40H",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSIC 89",
+    "why": "not in the text"
+   },
+   {
+    "code": "PGEOG 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "PGEOG 1L",
+    "why": "not in the text"
+   },
+   {
+    "code": "PGEOG 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHIL 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHIL 14",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHIL 16",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHIL 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHIL 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHIL 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHIL 6",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHIL 6H",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHIL 7",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHIL 7H",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHIL 9",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 2A",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 2B",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 3A",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 3B",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 3C",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYSI 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "POLS C1000H",
+    "why": "not in the text"
+   },
+   {
+    "code": "POLSC 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "POLSC 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "POLSC 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "POLSC 2H",
+    "why": "not in the text"
+   },
+   {
+    "code": "POLSC 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "POLSC 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "POLSC 4H",
+    "why": "not in the text"
+   },
+   {
+    "code": "POLSC 9",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYCH 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYCH 14",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCIC1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCIC1000H",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCIO 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCIO 13",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCIO 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCIO 40",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCSC 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCSC 1H",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCSC 7",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 10H",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 25A",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 25B",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 25C",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 25D",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 9",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 9H",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "not in the text"
+   },
+   {
+    "code": "TART 25",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text is only an alphabetical course index from the site's navigation menu (starting mid-word at 'ent' and cut off at CONST 220); it contains no Plan C / Cal-GETC requirements, area headings, unit totals, outcomes or careers. No section heading for the award is printed, so section_heading is left empty.",
+   "Some closed-list courses (ANAT through COMM) appear in the menu index, but only as course links, not as requirements, so none were placed in blocks.",
+   "Total units, GE pattern, outcomes and careers are left null/empty because the text states none. The award is itself the Cal-GETC pattern; a reviewer should re-extract from the actual Plan C page content."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

@@ -1,0 +1,189 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "37660",
+ "shape": "degree",
+ "title": "Electrical Technology, High Voltage Test Technician",
+ "award": "A.S. Degree",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-high-voltage-test-technician/electrical-technology-high-voltage-test-technician-as/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7942,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7942,
+    "output_tokens": 723,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 723,
+  "output_tokens_details": {
+   "thinking_tokens": 70
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04623,
+ "ms": 6475,
+ "seconds": 7.0,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 15,
+   "share": 0.0,
+   "missing": [
+    "ELECT204",
+    "ELECT209",
+    "ELECT212",
+    "ELECT214",
+    "ELECT225",
+    "ELECT240",
+    "ELECT242",
+    "ELECT250",
+    "ELECT253",
+    "ELECT256",
+    "ELECT265",
+    "ELECT266",
+    "ELECT267",
+    "ELECT268",
+    "ELECT435A"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not present in the supplied text (only a site-wide course index is shown)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ELECT 204",
+    "why": "appears only in site-wide course index; no requirements section in text"
+   },
+   {
+    "code": "ELECT 209",
+    "why": "appears only in site-wide course index; no requirements section in text"
+   },
+   {
+    "code": "ELECT 212",
+    "why": "appears only in site-wide course index; no requirements section in text"
+   },
+   {
+    "code": "ELECT 214",
+    "why": "appears only in site-wide course index; no requirements section in text"
+   },
+   {
+    "code": "ELECT 225",
+    "why": "appears only in site-wide course index; no requirements section in text"
+   },
+   {
+    "code": "ELECT 240",
+    "why": "appears only in site-wide course index; no requirements section in text"
+   },
+   {
+    "code": "ELECT 242",
+    "why": "appears only in site-wide course index; no requirements section in text"
+   },
+   {
+    "code": "ELECT 250",
+    "why": "appears only in site-wide course index; no requirements section in text"
+   },
+   {
+    "code": "ELECT 253",
+    "why": "appears only in site-wide course index; no requirements section in text"
+   },
+   {
+    "code": "ELECT 256",
+    "why": "appears only in site-wide course index; no requirements section in text"
+   },
+   {
+    "code": "ELECT 265",
+    "why": "appears only in site-wide course index; no requirements section in text"
+   },
+   {
+    "code": "ELECT 266",
+    "why": "appears only in site-wide course index; no requirements section in text"
+   },
+   {
+    "code": "ELECT 267",
+    "why": "appears only in site-wide course index; no requirements section in text"
+   },
+   {
+    "code": "ELECT 268",
+    "why": "appears only in site-wide course index; no requirements section in text"
+   },
+   {
+    "code": "ELECT 435A",
+    "why": "appears only in site-wide course index; no requirements section in text"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "38105864413"
+}

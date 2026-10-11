@@ -1,0 +1,193 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "46207",
+ "shape": "degree",
+ "title": "Construction Management",
+ "award": "A.S. Degree",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/construction-technology/construction-management-as/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13826,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13826,
+    "output_tokens": 943,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 943,
+  "output_tokens_details": {
+   "thinking_tokens": 179
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07416,
+ "ms": 10207,
+ "seconds": 10.7,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 15,
+   "share": 0.0,
+   "missing": [
+    "ARCHT91",
+    "CONST15",
+    "CONST211",
+    "CONST230",
+    "CONST275",
+    "CONST280",
+    "CONST281",
+    "CONST283",
+    "CONST284",
+    "CONST285",
+    "CONST290",
+    "CONST50",
+    "CONST70",
+    "DSGN10",
+    "ELECT253"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found in text",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ARCHT 91",
+    "why": "appears only in site course-list menu; no requirements section in text"
+   },
+   {
+    "code": "CONST 15",
+    "why": "appears only in site course-list menu; no requirements section in text"
+   },
+   {
+    "code": "CONST 211",
+    "why": "appears only in site course-list menu; no requirements section in text"
+   },
+   {
+    "code": "CONST 230",
+    "why": "appears only in site course-list menu; no requirements section in text"
+   },
+   {
+    "code": "CONST 275",
+    "why": "appears only in site course-list menu; no requirements section in text"
+   },
+   {
+    "code": "CONST 280",
+    "why": "appears only in site course-list menu; no requirements section in text"
+   },
+   {
+    "code": "CONST 281",
+    "why": "appears only in site course-list menu; no requirements section in text"
+   },
+   {
+    "code": "CONST 283",
+    "why": "appears only in site course-list menu; no requirements section in text"
+   },
+   {
+    "code": "CONST 284",
+    "why": "not in the text"
+   },
+   {
+    "code": "CONST 285",
+    "why": "appears only in site course-list menu; no requirements section in text"
+   },
+   {
+    "code": "CONST 290",
+    "why": "appears only in site course-list menu; no requirements section in text"
+   },
+   {
+    "code": "CONST 50",
+    "why": "appears only in site course-list menu; no requirements section in text"
+   },
+   {
+    "code": "CONST 70",
+    "why": "appears only in site course-list menu; no requirements section in text"
+   },
+   {
+    "code": "DSGN10",
+    "why": "not in the text"
+   },
+   {
+    "code": "ELECT 253",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text contains only an alphabetical course-list navigation menu (AI through COSA, truncated mid-entry at 'COSA 610 - Micr'); it does not include the Construction Management A.S. program section, its requirements, total units, outcomes, or careers.",
+   "No blocks were recorded because no requirement rules are printed; a reviewer should re-fetch the program page content.",
+   "Several closed-list courses (e.g., CONST 15, CONST 70, ARCHT 91) appear in the menu listing, but that listing is not a statement of program requirements."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

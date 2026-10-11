@@ -1,0 +1,126 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "38558",
+ "shape": "noncredit",
+ "title": "Cake Decorating Techniques",
+ "award": "Noncredit program",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/nutrition-dietetics/cake-decorating-techniques-certificate-completion/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6825,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6825,
+    "output_tokens": 558,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 558,
+  "output_tokens_details": {
+   "thinking_tokens": 184
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03846,
+ "ms": 5745,
+ "seconds": 6.1,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "FT651",
+    "FT652"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found in text (only a site-wide course index is present)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "FT 651",
+    "why": "appears only in site-wide course index; no program requirements in text"
+   },
+   {
+    "code": "FT 652",
+    "why": "appears only in site-wide course index; no program requirements in text"
+   }
+  ],
+  "notes": [
+   "The supplied text is an alphabetical course index from the site's navigation (FASH through GLST), not the Cake Decorating Techniques certificate section. No requirements, hours, total, outcomes or careers are printed, so no blocks were recorded.",
+   "FT 651 and FT 652 appear in the index but without any requirement rule; the program page content should be re-fetched.",
+   "Measure left as 'units' by default; as a noncredit certificate of completion it is likely counted in hours, but the text states none.",
+   "The index text is cut off mid-entry ('GLST 2 - Global Iss')."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

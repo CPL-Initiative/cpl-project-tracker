@@ -1,0 +1,177 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "31223",
+ "shape": "adt",
+ "title": "Geology",
+ "award": "A.S. T Degree",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/geology/geology-ast/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13549,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13549,
+    "output_tokens": 631,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 631,
+  "output_tokens_details": {
+   "thinking_tokens": 112
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06682,
+ "ms": 8381,
+ "seconds": 8.8,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 12,
+   "share": 0.0,
+   "missing": [
+    "CHEM1A",
+    "CHEM1B",
+    "GEOL1",
+    "GEOL1H",
+    "GEOL2",
+    "GEOL2L",
+    "GEOL3",
+    "GEOL3H",
+    "MATHC2210",
+    "MATHC2210H",
+    "MATHC2220",
+    "MATHC2220H"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not present in the provided text",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CHEM 1A",
+    "why": "appears only in the site's course index menu, not in a program section"
+   },
+   {
+    "code": "CHEM 1B",
+    "why": "appears only in the site's course index menu, not in a program section"
+   },
+   {
+    "code": "GEOL 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 1H",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 2L",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL 3H",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH C2210",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH C2210H",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH C2220",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH C2220H",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text contains only part of the site's alphabetical course navigation list (BIO through EDUC), cut off at both ends. It has no Geology A.S.-T section, no requirements, no total units, no GE pattern, no outcomes and no careers.",
+   "Nothing was recorded. The page content for the Geology A.S.-T program should be re-fetched and reviewed."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

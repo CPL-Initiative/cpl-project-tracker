@@ -1,0 +1,268 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "31888",
+ "shape": "adt",
+ "title": "History",
+ "award": "A.A- T Degree",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/art/art-history-aat/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 14061,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 14061,
+    "output_tokens": 1434,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1434,
+  "output_tokens_details": {
+   "thinking_tokens": 203
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08492,
+ "ms": 12722,
+ "seconds": 13.1,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 30,
+   "share": 0.0,
+   "missing": [
+    "HIST18",
+    "HIST1A",
+    "HIST1AH",
+    "HIST1B",
+    "HIST1BH",
+    "HIST25",
+    "HIST27A",
+    "HIST27AH",
+    "HIST27B",
+    "HIST27BH",
+    "HIST2B",
+    "HIST2C",
+    "HIST2CH",
+    "HIST8A",
+    "HIST8AH",
+    "HIST8B",
+    "HIST8BH",
+    "HIST9A",
+    "HIST9B",
+    "HIST9C",
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H",
+    "HUMAN1",
+    "HUMAN1H",
+    "HUMAN7",
+    "SOCSC1",
+    "SOCSC1H",
+    "SOCSC7"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HIST 18",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST 1A",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST 1AH",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST 1B",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST 1BH",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST 25",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST 27A",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST 27AH",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST 27B",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST 27BH",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST 2B",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST 2C",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST 2CH",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST 8A",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST 8AH",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST 8B",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST 8BH",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST 9A",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST 9B",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST 9C",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST C1001",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST C1001H",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HIST C1002H",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HUMAN 1",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HUMAN 1H",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "HUMAN 7",
+    "why": "only in site course index; no program requirements in text"
+   },
+   {
+    "code": "SOCSC 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCSC 1H",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCSC 7",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text contains no History A.A-T program section: it is only an alphabetical course index (site navigation list, FIRE through NUTR), starting and ending mid-list. No heading, requirements, unit totals, GE pattern, outcomes or careers are printed, so section_heading is left empty and no blocks are recorded.",
+   "The source URL points to the Art History AA-T page (/art/art-history-aat/), not the History A.A-T; the page fetched appears to be the wrong program and/or truncated. A reviewer should retrieve the correct History A.A-T catalog page.",
+   "SOCSC courses do not appear even in the course index excerpt (it skips from NUTR onward is cut off), so they are marked 'not in the text'."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

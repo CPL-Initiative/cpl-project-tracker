@@ -1,0 +1,192 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "40984",
+ "shape": "degree",
+ "title": "Nutrition Assistant",
+ "award": "A.S. Degree",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/nutrition-dietetics/nutrition-assistant-as/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13781,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13781,
+    "output_tokens": 995,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 995,
+  "output_tokens_details": {
+   "thinking_tokens": 149
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07502,
+ "ms": 8575,
+ "seconds": 9.0,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 15,
+   "share": 0.0,
+   "missing": [
+    "NUTR20",
+    "NUTR21",
+    "NUTR22",
+    "NUTR227",
+    "NUTR230A",
+    "NUTR230B",
+    "NUTR236",
+    "NUTR24",
+    "NUTR240A",
+    "NUTR25",
+    "NUTR28",
+    "NUTR31",
+    "NUTR32",
+    "NUTR34",
+    "NUTR35"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Nutrition Assistant - Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "NUTR 20",
+    "why": "not in the requirements text; appears only in the site-wide course index"
+   },
+   {
+    "code": "NUTR 21",
+    "why": "not in the requirements text; appears only in the site-wide course index"
+   },
+   {
+    "code": "NUTR 22",
+    "why": "not in the requirements text; appears only in the site-wide course index"
+   },
+   {
+    "code": "NUTR 227",
+    "why": "not in the requirements text; appears only in the site-wide course index"
+   },
+   {
+    "code": "NUTR 230A",
+    "why": "not in the requirements text; appears only in the site-wide course index"
+   },
+   {
+    "code": "NUTR 230B",
+    "why": "not in the requirements text; appears only in the site-wide course index"
+   },
+   {
+    "code": "NUTR 236",
+    "why": "not in the requirements text; appears only in the site-wide course index"
+   },
+   {
+    "code": "NUTR 24",
+    "why": "not in the requirements text; appears only in the site-wide course index"
+   },
+   {
+    "code": "NUTR 240A",
+    "why": "not in the requirements text; appears only in the site-wide course index"
+   },
+   {
+    "code": "NUTR 25",
+    "why": "not in the requirements text; appears only in the site-wide course index"
+   },
+   {
+    "code": "NUTR 28",
+    "why": "not in the requirements text; appears only in the site-wide course index"
+   },
+   {
+    "code": "NUTR 32",
+    "why": "not in the requirements text; appears only in the site-wide course index"
+   },
+   {
+    "code": "NUTR 34",
+    "why": "not in the requirements text; appears only in the site-wide course index"
+   },
+   {
+    "code": "NUTR 35",
+    "why": "not in the requirements text; appears only in the site-wide course index"
+   },
+   {
+    "code": "NUTR31",
+    "why": "not in the requirements text; 'NUTR 31' appears only in the site-wide course index"
+   }
+  ],
+  "notes": [
+   "The catalog text contains only a site-wide course index (navigation list) and the page header 'Nutrition Assistant - Associate in Science'; the page content is cut off in page script before any description, program requirements, total units, GE pattern, outcomes or careers are printed. No blocks were recorded. A reviewer should fetch the full 'Program Requirements' tab of the page.",
+   "Courses listed in the site-wide course index (e.g., NUTR 20, NUTR 31) were not treated as requirements because that list is site navigation, not this award's section."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

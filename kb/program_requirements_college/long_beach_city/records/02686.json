@@ -1,0 +1,213 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "02686",
+ "shape": "degree",
+ "title": "Fashion Design",
+ "award": "A.A. Degree",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/photography-aa/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7978,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7978,
+    "output_tokens": 1422,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1422,
+  "output_tokens_details": {
+   "thinking_tokens": 216
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06035,
+ "ms": 11384,
+ "seconds": 11.9,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 19,
+   "share": 0.0,
+   "missing": [
+    "FASH10",
+    "FASH20",
+    "FASH200",
+    "FASH21",
+    "FASH215",
+    "FASH216",
+    "FASH24",
+    "FASH25",
+    "FASH26",
+    "FASH27",
+    "FASH3",
+    "FASH32",
+    "FASH36",
+    "FASH37",
+    "FASH45",
+    "FASH5",
+    "FASH50",
+    "FASH51",
+    "FASH9"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "FASH 10",
+    "why": "only in an alphabetical course index; no Fashion Design A.A. requirements in text"
+   },
+   {
+    "code": "FASH 20",
+    "why": "only in an alphabetical course index; no Fashion Design A.A. requirements in text"
+   },
+   {
+    "code": "FASH 200",
+    "why": "only in an alphabetical course index; no Fashion Design A.A. requirements in text"
+   },
+   {
+    "code": "FASH 21",
+    "why": "only in an alphabetical course index; no Fashion Design A.A. requirements in text"
+   },
+   {
+    "code": "FASH 215",
+    "why": "only in an alphabetical course index; no Fashion Design A.A. requirements in text"
+   },
+   {
+    "code": "FASH 216",
+    "why": "only in an alphabetical course index; no Fashion Design A.A. requirements in text"
+   },
+   {
+    "code": "FASH 24",
+    "why": "only in an alphabetical course index; no Fashion Design A.A. requirements in text"
+   },
+   {
+    "code": "FASH 25",
+    "why": "only in an alphabetical course index; no Fashion Design A.A. requirements in text"
+   },
+   {
+    "code": "FASH 26",
+    "why": "only in an alphabetical course index; no Fashion Design A.A. requirements in text"
+   },
+   {
+    "code": "FASH 27",
+    "why": "only in an alphabetical course index; no Fashion Design A.A. requirements in text"
+   },
+   {
+    "code": "FASH 3",
+    "why": "only in an alphabetical course index; no Fashion Design A.A. requirements in text"
+   },
+   {
+    "code": "FASH 32",
+    "why": "only in an alphabetical course index; no Fashion Design A.A. requirements in text"
+   },
+   {
+    "code": "FASH 36",
+    "why": "only in an alphabetical course index; no Fashion Design A.A. requirements in text"
+   },
+   {
+    "code": "FASH 37",
+    "why": "only in an alphabetical course index; no Fashion Design A.A. requirements in text"
+   },
+   {
+    "code": "FASH 45",
+    "why": "only in an alphabetical course index; no Fashion Design A.A. requirements in text"
+   },
+   {
+    "code": "FASH 5",
+    "why": "only in an alphabetical course index; no Fashion Design A.A. requirements in text"
+   },
+   {
+    "code": "FASH 50",
+    "why": "only in an alphabetical course index; no Fashion Design A.A. requirements in text"
+   },
+   {
+    "code": "FASH 51",
+    "why": "only in an alphabetical course index; no Fashion Design A.A. requirements in text"
+   },
+   {
+    "code": "FASH 9",
+    "why": "only in an alphabetical course index; no Fashion Design A.A. requirements in text"
+   }
+  ],
+  "notes": [
+   "The supplied text is not the Fashion Design A.A. program section: it is an alphabetical index of course codes and titles (ESL through FLO), cut off mid-entry at 'FLO 290 - Floral Creati'. No requirements, units, totals, outcomes or careers are printed, so no blocks were recorded and section_heading is left empty.",
+   "The source URL points to the Photography A.A. page (digital-media-arts/photography-aa), not a Fashion Design page; the correct catalog page should be retrieved and re-read.",
+   "All closed-list FASH courses appear in the index, along with other FASH courses not on the closed list (e.g., FASH 210, 213, 23, 230, 240, 244, 258, 271WE, 39, 41, 46, 47, 52 and 600-level noncredit twins), but the text does not show which, if any, belong to the A.A. degree."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

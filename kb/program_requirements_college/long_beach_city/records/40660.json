@@ -1,0 +1,142 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "40660",
+ "shape": "certificate",
+ "title": "Cyber Security",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/cyber-security-certificate-achievement/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7487,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7487,
+    "output_tokens": 501,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 501,
+  "output_tokens_details": {
+   "thinking_tokens": 97
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03997,
+ "ms": 4896,
+ "seconds": 5.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 5,
+   "share": 0.0,
+   "missing": [
+    "COSN10",
+    "COSN5",
+    "COSS272",
+    "COSS273",
+    "COSS71"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not present in text (only a site-wide course index was captured)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COSN 10",
+    "why": "appears only in the site's course index list, not in a requirements section"
+   },
+   {
+    "code": "COSN 5",
+    "why": "appears only in the site's course index list, not in a requirements section"
+   },
+   {
+    "code": "COSS 272",
+    "why": "appears only in the site's course index list, not in a requirements section"
+   },
+   {
+    "code": "COSS 273",
+    "why": "appears only in the site's course index list, not in a requirements section"
+   },
+   {
+    "code": "COSS 71",
+    "why": "appears only in the site's course index list, not in a requirements section"
+   }
+  ],
+  "notes": [
+   "The captured text is an alphabetical course index from the site navigation (CONST through CULAR), cut off at both ends; it contains no Cyber Security Certificate of Achievement section, requirements, totals, outcomes or careers.",
+   "No blocks were recorded because the text states no requirements; the source page should be re-fetched to capture the program's requirements table."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

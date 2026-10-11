@@ -1,0 +1,138 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "37304",
+ "shape": "certificate",
+ "title": "Automotive Engine Performance Service",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/automotive-technology/automotive-engine-performance-service-certificate-achievement/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7224,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7224,
+    "output_tokens": 607,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 607,
+  "output_tokens_details": {
+   "thinking_tokens": 162
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04104,
+ "ms": 7173,
+ "seconds": 7.6,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 4,
+   "share": 0.0,
+   "missing": [
+    "AUTO200",
+    "AUTO216",
+    "AUTO218",
+    "AUTO219"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AUTO 200",
+    "why": "appears only in a site-wide course index list, not in a program requirements section"
+   },
+   {
+    "code": "AUTO 216",
+    "why": "appears only in a site-wide course index list, not in a program requirements section"
+   },
+   {
+    "code": "AUTO 218",
+    "why": "appears only in a site-wide course index list, not in a program requirements section"
+   },
+   {
+    "code": "AUTO 219",
+    "why": "appears only in a site-wide course index list, not in a program requirements section"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text has no section for the Automotive Engine Performance Service Certificate of Achievement. It holds only an alphabetical course index (ART through AUTO), likely site navigation, and is cut off at both ends. section_heading is therefore empty.",
+   "No requirements, total units, outcomes or careers could be recorded. A reviewer should re-fetch the program page content.",
+   "The closed-list courses AUTO 200, 216, 218 and 219 appear in the index, along with many other AUTO courses. The index is not a statement of the award's requirements, so none were placed in blocks."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

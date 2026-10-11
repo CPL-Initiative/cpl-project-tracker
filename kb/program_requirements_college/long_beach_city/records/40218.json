@@ -1,0 +1,234 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "40218",
+ "shape": "adt",
+ "title": "Social Justice Studies",
+ "award": "A.A- T Degree",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/social-justice-studies/social-justice-studies-aat/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13804,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13804,
+    "output_tokens": 857,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 857,
+  "output_tokens_details": {
+   "thinking_tokens": 209
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07236,
+ "ms": 7471,
+ "seconds": 7.9,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 24,
+   "share": 0.0,
+   "missing": [
+    "COMM25",
+    "HIST25",
+    "HIST27A",
+    "HIST27AH",
+    "HIST27B",
+    "HIST27BH",
+    "HIST33",
+    "HIST8A",
+    "HIST8AH",
+    "HIST8B",
+    "HIST8BH",
+    "MUSIC32",
+    "PHIL1",
+    "PHIL10",
+    "PHIL10H",
+    "PHIL1H",
+    "PSYCH2",
+    "SOCIO11",
+    "SOCIO11H",
+    "SOCIO13",
+    "SOCIO17",
+    "STATC1000",
+    "STATC1000E",
+    "STATC1000H"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not present in the supplied text",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 25",
+    "why": "appears only in a site-wide course index list, not in a program requirements section"
+   },
+   {
+    "code": "HIST 25",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 27A",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 27AH",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 27B",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 27BH",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 33",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 8A",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 8AH",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 8B",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 8BH",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUSIC 32",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHIL 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHIL 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHIL 10H",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHIL 1H",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYCH 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCIO 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCIO 11H",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCIO 13",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCIO 17",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000E",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "not in the text"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "38105864413"
+}

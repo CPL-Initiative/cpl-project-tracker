@@ -1,0 +1,126 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "43332",
+ "shape": "noncredit",
+ "title": "Networking Fundamentals",
+ "award": "Noncredit program",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/networking-fundamentals/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6690,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6690,
+    "output_tokens": 714,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 714,
+  "output_tokens_details": {
+   "thinking_tokens": 331
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04104,
+ "ms": 7744,
+ "seconds": 14.6,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "COSN605",
+    "COSN610"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "(no program section heading in the supplied text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COSN 605",
+    "why": "appears only in a course index list; no requirements section in the text"
+   },
+   {
+    "code": "COSN 610",
+    "why": "appears only in a course index list; no requirements section in the text"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text holds only an alphabetical course index (COSA through COUNS), apparently site navigation. It has no Networking Fundamentals program section, requirements, totals, outcomes or careers.",
+   "COSN 605 and COSN 610 appear in that index, but the text does not state they are required, so they were not placed in any block.",
+   "Measure is left as 'units' by default because the text states no hours or units for the award, though this is a noncredit program that would likely be counted in hours.",
+   "The text is cut off mid-entry ('COUNS 855 - Strategies for Academic S'). A reviewer should fetch the full program page."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

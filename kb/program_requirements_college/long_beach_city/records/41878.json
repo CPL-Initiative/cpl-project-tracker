@@ -1,0 +1,145 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "41878",
+ "shape": "noncredit",
+ "title": "ARE Exam Prep",
+ "award": "Noncredit program",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/are-exam-prep-certificate-completion/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7170,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7170,
+    "output_tokens": 732,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 732,
+  "output_tokens_details": {
+   "thinking_tokens": 244
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04332,
+ "ms": 7648,
+ "seconds": 8.1,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 6,
+   "share": 0.0,
+   "missing": [
+    "ARCHT601",
+    "ARCHT602",
+    "ARCHT603",
+    "ARCHT604",
+    "ARCHT605",
+    "ARCHT606"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "(no ARE Exam Prep section in the text)",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ARCHT 601",
+    "why": "named only in the site's course index, not in a requirements section"
+   },
+   {
+    "code": "ARCHT 602",
+    "why": "named only in the site's course index, not in a requirements section"
+   },
+   {
+    "code": "ARCHT 603",
+    "why": "named only in the site's course index, not in a requirements section"
+   },
+   {
+    "code": "ARCHT 604",
+    "why": "named only in the site's course index, not in a requirements section"
+   },
+   {
+    "code": "ARCHT 605",
+    "why": "named only in the site's course index, not in a requirements section"
+   },
+   {
+    "code": "ARCHT 606",
+    "why": "named only in the site's course index, not in a requirements section"
+   }
+  ],
+  "notes": [
+   "The catalog text holds only a fragment of the site's alphabetical course index (ADN through ART); it prints no ARE Exam Prep program section, requirements, total hours, outcomes or careers. The page should be re-fetched.",
+   "Measure set to 'hours' because this is a noncredit program; the text states no hours for the award or for any course.",
+   "The course index also lists ARCHT 607 - ARE Exam Prep VII, which is not in the closed list; it was not recorded because no requirements text places it in this program."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

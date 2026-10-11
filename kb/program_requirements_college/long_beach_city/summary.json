@@ -1,0 +1,41 @@
+{
+ "college": "Long Beach City College",
+ "programs": 391,
+ "with_closed_list": 385,
+ "found": 379,
+ "extracted": 379,
+ "errors": 0,
+ "passed_machine_checks": 99,
+ "failed": {
+  "coverage": 2,
+  "invented": 2,
+  "arithmetic": 278,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 22.66,
+ "cost_per_program": 0.0598,
+ "not_found": [
+  {
+   "control_number": "39497",
+   "title": "GED/HiSET Preparation Spanish",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "39500",
+   "title": "GED/HiSET Preparation",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "43258",
+   "title": "Barbering",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "43837",
+   "title": "Barbering",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  }
+ ],
+ "run": "38105864413"
+}

@@ -1,0 +1,199 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "02705",
+ "shape": "degree",
+ "title": "Fire Science",
+ "award": "A.S. Degree",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/fire-science/fire-science-as/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13496,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13496,
+    "output_tokens": 856,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 856,
+  "output_tokens_details": {
+   "thinking_tokens": 148
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0711,
+ "ms": 8338,
+ "seconds": 9.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 17,
+   "share": 0.0,
+   "missing": [
+    "EMT251",
+    "EMT251L",
+    "FIRE1",
+    "FIRE2",
+    "FIRE240",
+    "FIRE3",
+    "FIRE4",
+    "FIRE5",
+    "FIRE53",
+    "FIRE54",
+    "FIRE57",
+    "FIRE58",
+    "FIRE61",
+    "FIRE62",
+    "FIRE64",
+    "FIRE65",
+    "PUBAD1"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(no Fire Science A.S. section in the text; only a course index list)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "EMT 251",
+    "why": "named only in the site's course index list; no requirements section in the text"
+   },
+   {
+    "code": "EMT 251L",
+    "why": "named only in the site's course index list; no requirements section in the text"
+   },
+   {
+    "code": "FIRE 1",
+    "why": "named only in the site's course index list; no requirements section in the text"
+   },
+   {
+    "code": "FIRE 2",
+    "why": "named only in the site's course index list; no requirements section in the text"
+   },
+   {
+    "code": "FIRE 240",
+    "why": "named only in the site's course index list; no requirements section in the text"
+   },
+   {
+    "code": "FIRE 3",
+    "why": "named only in the site's course index list; no requirements section in the text"
+   },
+   {
+    "code": "FIRE 4",
+    "why": "named only in the site's course index list; no requirements section in the text"
+   },
+   {
+    "code": "FIRE 5",
+    "why": "named only in the site's course index list; no requirements section in the text"
+   },
+   {
+    "code": "FIRE 53",
+    "why": "named only in the site's course index list; no requirements section in the text"
+   },
+   {
+    "code": "FIRE 54",
+    "why": "named only in the site's course index list; no requirements section in the text"
+   },
+   {
+    "code": "FIRE 57",
+    "why": "named only in the site's course index list; no requirements section in the text"
+   },
+   {
+    "code": "FIRE 58",
+    "why": "named only in the site's course index list; no requirements section in the text"
+   },
+   {
+    "code": "FIRE 61",
+    "why": "named only in the site's course index list; no requirements section in the text"
+   },
+   {
+    "code": "FIRE 62",
+    "why": "named only in the site's course index list; no requirements section in the text"
+   },
+   {
+    "code": "FIRE 64",
+    "why": "named only in the site's course index list; no requirements section in the text"
+   },
+   {
+    "code": "FIRE 65",
+    "why": "named only in the site's course index list; no requirements section in the text"
+   },
+   {
+    "code": "PUBAD 1",
+    "why": "not in the text"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "38105864413"
+}

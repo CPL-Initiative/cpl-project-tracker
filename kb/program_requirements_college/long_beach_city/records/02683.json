@@ -1,0 +1,209 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "02683",
+ "shape": "degree",
+ "title": "Diagnostic Medical Imaging (Radiologic Technology)",
+ "award": "A.S. Degree",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/diagnostic-medical-imaging/diagnostic-medical-imaging-radiologic-technology/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8177,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8177,
+    "output_tokens": 1001,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1001,
+  "output_tokens_details": {
+   "thinking_tokens": 173
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05273,
+ "ms": 10022,
+ "seconds": 10.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 19,
+   "share": 0.0,
+   "missing": [
+    "DMI10",
+    "DMI11",
+    "DMI12",
+    "DMI14",
+    "DMI15",
+    "DMI20",
+    "DMI21",
+    "DMI222",
+    "DMI24",
+    "DMI30",
+    "DMI31",
+    "DMI403",
+    "DMI40A",
+    "DMI40B",
+    "DMI40C",
+    "DMI40D",
+    "DMI40E",
+    "DMI60",
+    "DMI61"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(no section for this award in the text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "DMI 10",
+    "why": "not in the text; program requirements not printed, code appears only in site course index"
+   },
+   {
+    "code": "DMI 11",
+    "why": "not in the text; program requirements not printed, code appears only in site course index"
+   },
+   {
+    "code": "DMI 12",
+    "why": "not in the text; program requirements not printed, code appears only in site course index"
+   },
+   {
+    "code": "DMI 14",
+    "why": "not in the text; program requirements not printed, code appears only in site course index"
+   },
+   {
+    "code": "DMI 15",
+    "why": "not in the text; program requirements not printed, code appears only in site course index"
+   },
+   {
+    "code": "DMI 20",
+    "why": "not in the text; program requirements not printed, code appears only in site course index"
+   },
+   {
+    "code": "DMI 21",
+    "why": "not in the text; program requirements not printed, code appears only in site course index"
+   },
+   {
+    "code": "DMI 222",
+    "why": "not in the text; program requirements not printed, code appears only in site course index"
+   },
+   {
+    "code": "DMI 24",
+    "why": "not in the text; program requirements not printed, code appears only in site course index"
+   },
+   {
+    "code": "DMI 30",
+    "why": "not in the text; program requirements not printed, code appears only in site course index"
+   },
+   {
+    "code": "DMI 31",
+    "why": "not in the text; program requirements not printed, code appears only in site course index"
+   },
+   {
+    "code": "DMI 403",
+    "why": "not in the text; program requirements not printed, code appears only in site course index"
+   },
+   {
+    "code": "DMI 40A",
+    "why": "not in the text; program requirements not printed, code appears only in site course index"
+   },
+   {
+    "code": "DMI 40B",
+    "why": "not in the text; program requirements not printed, code appears only in site course index"
+   },
+   {
+    "code": "DMI 40C",
+    "why": "not in the text; program requirements not printed, code appears only in site course index"
+   },
+   {
+    "code": "DMI 40E",
+    "why": "not in the text; program requirements not printed, code appears only in site course index"
+   },
+   {
+    "code": "DMI 60",
+    "why": "not in the text; program requirements not printed, code appears only in site course index"
+   },
+   {
+    "code": "DMI 61",
+    "why": "not in the text; program requirements not printed, code appears only in site course index"
+   },
+   {
+    "code": "DMI40D",
+    "why": "not in the text; program requirements not printed (site course index lists it as DMI 40D)"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "38105864413"
+}

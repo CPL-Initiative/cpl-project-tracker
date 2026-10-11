@@ -1,0 +1,222 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "43106",
+ "shape": "adt",
+ "title": "Communication Studies 2.0",
+ "award": "A.A- T Degree",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/communication-studies/communication-studies-2.0-aat/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 14092,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 14092,
+    "output_tokens": 1095,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1095,
+  "output_tokens_details": {
+   "thinking_tokens": 200
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07827,
+ "ms": 9812,
+ "seconds": 10.3,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 21,
+   "share": 0.0,
+   "missing": [
+    "ANTHR2",
+    "ANTHR2H",
+    "COMM25",
+    "COMM30",
+    "COMM31",
+    "COMM40",
+    "COMM45",
+    "COMM50",
+    "COMM60",
+    "COMMC1000",
+    "COMMC1000H",
+    "COMMC1004",
+    "ENGLC1001",
+    "ENGLC1001H",
+    "ENGLC1002",
+    "JOURN10",
+    "JOURN20",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "SOCIC1000",
+    "SOCIC1000H"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(no section for this award in the text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTHR 2",
+    "why": "appears only in the site's course index, not in a requirements section"
+   },
+   {
+    "code": "ANTHR 2H",
+    "why": "appears only in the site's course index, not in a requirements section"
+   },
+   {
+    "code": "COMM 25",
+    "why": "appears only in the site's course index, not in a requirements section"
+   },
+   {
+    "code": "COMM 30",
+    "why": "appears only in the site's course index, not in a requirements section"
+   },
+   {
+    "code": "COMM 31",
+    "why": "appears only in the site's course index, not in a requirements section"
+   },
+   {
+    "code": "COMM 40",
+    "why": "appears only in the site's course index, not in a requirements section"
+   },
+   {
+    "code": "COMM 45",
+    "why": "appears only in the site's course index, not in a requirements section"
+   },
+   {
+    "code": "COMM 50",
+    "why": "appears only in the site's course index, not in a requirements section"
+   },
+   {
+    "code": "COMM 60",
+    "why": "appears only in the site's course index, not in a requirements section"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "appears only in the site's course index, not in a requirements section"
+   },
+   {
+    "code": "COMM C1000H",
+    "why": "appears only in the site's course index, not in a requirements section"
+   },
+   {
+    "code": "COMM C1004",
+    "why": "appears only in the site's course index, not in a requirements section"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C1001H",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C1002",
+    "why": "not in the text"
+   },
+   {
+    "code": "JOURN 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "JOURN 20",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCIC1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCIC1000H",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text contains only an alphabetical course index from the site's navigation (ADJUS through CONST), cut off mid-entry at 'CONST 260 - ADU In'. It contains no program description, requirements, total units, outcomes or careers for the Communication Studies 2.0 A.A-T. No blocks were recorded; the page should be re-fetched to capture the requirements section.",
+   "Because the index is truncated at CONST, courses with later subjects (ENGL, JOURN, PSYC, SOCI) do not appear at all."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

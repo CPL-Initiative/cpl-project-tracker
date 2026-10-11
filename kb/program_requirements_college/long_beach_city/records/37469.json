@@ -1,0 +1,131 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "37469",
+ "shape": "noncredit",
+ "title": "Office Technologies-Job Search Skills",
+ "award": "Noncredit program",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/business-information-worker/office-technologies--job-search-skills-certificate-completion/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6897,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6897,
+    "output_tokens": 705,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 705,
+  "output_tokens_details": {
+   "thinking_tokens": 263
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04169,
+ "ms": 6964,
+ "seconds": 7.4,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 3,
+   "share": 0.0,
+   "missing": [
+    "BCOM622",
+    "BCOM623",
+    "BCOM624"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "(no program section in the supplied text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BCOM 622",
+    "why": "appears only in a site-wide course index list, not in a requirements section"
+   },
+   {
+    "code": "BCOM 623",
+    "why": "appears only in a site-wide course index list, not in a requirements section"
+   },
+   {
+    "code": "BCOM 624",
+    "why": "appears only in a site-wide course index list, not in a requirements section"
+   }
+  ],
+  "notes": [
+   "The supplied text is only a fragment of the site's alphabetical course index (AUTO through CDECE), cut off at both ends. It contains no section for the Office Technologies-Job Search Skills certificate: no heading, requirements, total, outcomes or careers.",
+   "BCOM 622, 623 and 624 appear only as entries in that index. They are not placed in a block because the text does not state any requirement rule for them.",
+   "Measure is recorded as 'units' by default because the text does not state hours. As a noncredit program, the actual catalog page likely counts the award in hours; a reviewer should check the program page itself.",
+   "The program page should be re-fetched to capture the actual requirements table."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

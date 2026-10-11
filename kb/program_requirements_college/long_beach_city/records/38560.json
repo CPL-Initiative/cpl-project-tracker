@@ -1,0 +1,131 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "38560",
+ "shape": "noncredit",
+ "title": "Library Technician Public Services",
+ "award": "Noncredit program",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/library-technician/library-technician-public-services-certificate-completion/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6916,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6916,
+    "output_tokens": 722,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 722,
+  "output_tokens_details": {
+   "thinking_tokens": 269
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0421,
+ "ms": 8355,
+ "seconds": 8.7,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 3,
+   "share": 0.0,
+   "missing": [
+    "LIB600",
+    "LIB610",
+    "LIB630"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "LIB 600",
+    "why": "not in the text as a requirement; appears only in the site's course index listing"
+   },
+   {
+    "code": "LIB 610",
+    "why": "not in the text as a requirement; appears only in the site's course index listing"
+   },
+   {
+    "code": "LIB 630",
+    "why": "not in the text as a requirement; appears only in the site's course index listing"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text contains only a fragment of the site's alphabetical course index (KINPF through MATH), apparently from navigation menus, and is cut off mid-entry ('MATH'). It does not include the Library Technician Public Services program section, so no heading, requirements, total, outcomes or careers could be recorded.",
+   "section_heading is left empty because no program heading appears in the text.",
+   "measure is set to 'units' by default; as a noncredit program the award is likely counted in hours, but the text states no hours. A reviewer should check the actual program page.",
+   "LIB 600, LIB 610 and LIB 630 (and their credit counterparts LIB 200, LIB 210, LIB 230) appear only as index entries, not as program requirements."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

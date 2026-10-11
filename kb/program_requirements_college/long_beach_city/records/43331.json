@@ -1,0 +1,136 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "43331",
+ "shape": "noncredit",
+ "title": "Construction Management Fundamentals",
+ "award": "Noncredit program",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/construction-technology/construction-management-fundamentals-certificate-completion/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7350,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7350,
+    "output_tokens": 710,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 710,
+  "output_tokens_details": {
+   "thinking_tokens": 220
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0436,
+ "ms": 7121,
+ "seconds": 7.5,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 4,
+   "share": 0.0,
+   "missing": [
+    "CONST615",
+    "CONST670",
+    "CONST675",
+    "COSA601"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "(no section for Construction Management Fundamentals in the supplied text)",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CONST 615",
+    "why": "appears only in the site's course-index list, not in a program requirements section"
+   },
+   {
+    "code": "CONST 670",
+    "why": "appears only in the site's course-index list, not in a program requirements section"
+   },
+   {
+    "code": "CONST 675",
+    "why": "appears only in the site's course-index list, not in a program requirements section"
+   },
+   {
+    "code": "COSA 601",
+    "why": "appears only in the site's course-index list, not in a program requirements section"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text is an alphabetical course index from the site navigation, beginning mid-entry with '...ISCO 250'. It contains no program heading, description, requirements table, total hours, outcomes or careers for Construction Management Fundamentals.",
+   "The page content appears to have been cut off or not captured. A reviewer should re-fetch the program page to record the requirements.",
+   "Measure was set to 'hours' because this is a noncredit certificate of completion. The text states no hours, so total_units is null.",
+   "Credit counterparts CONST 15, CONST 70, CONST 275, CONST 290 and COSA 1 also appear in the index, but no requirement ties them to this award."
+  ]
+ },
+ "extracted_run": "38105864413"
+}

@@ -1,0 +1,303 @@
+{
+ "college": "Long Beach City College",
+ "control_number": "35420",
+ "shape": "degree",
+ "title": "Linguistics",
+ "award": "A.A. Degree",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/linguistics/linguistics-aa/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 14046,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 14046,
+    "output_tokens": 1340,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1340,
+  "output_tokens_details": {
+   "thinking_tokens": 173
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08298,
+ "ms": 12447,
+ "seconds": 12.8,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 37,
+   "share": 0.0,
+   "missing": [
+    "ASL2",
+    "ASL3",
+    "ASL4",
+    "CDECE58",
+    "CHIN2",
+    "COMM25",
+    "ENGL24",
+    "FREN2",
+    "FREN25A",
+    "FREN2C",
+    "FREN3",
+    "FREN4",
+    "GER2",
+    "ITAL2",
+    "ITAL2C",
+    "JAPAN2",
+    "JAPAN3",
+    "JAPAN4",
+    "KHMER10",
+    "KHMER9",
+    "LING1",
+    "LING1H",
+    "LING3",
+    "PHIL12",
+    "PSYCC1000",
+    "SPAN10",
+    "SPAN10H",
+    "SPAN2",
+    "SPAN25A",
+    "SPAN25B",
+    "SPAN25C",
+    "SPAN25D",
+    "SPAN3",
+    "SPAN4",
+    "SPAN8",
+    "SPAN9",
+    "SPAN9H"
+   ],
+   "unexplained": [],
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not present in text (Linguistics A.A. section not found)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ASL 2",
+    "why": "appears only in site-wide course index, not in program requirements"
+   },
+   {
+    "code": "ASL 3",
+    "why": "appears only in site-wide course index, not in program requirements"
+   },
+   {
+    "code": "ASL 4",
+    "why": "appears only in site-wide course index, not in program requirements"
+   },
+   {
+    "code": "CDECE 58",
+    "why": "appears only in site-wide course index, not in program requirements"
+   },
+   {
+    "code": "CHIN 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM 25",
+    "why": "appears only in site-wide course index, not in program requirements"
+   },
+   {
+    "code": "ENGL 24",
+    "why": "not in the text"
+   },
+   {
+    "code": "FREN 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "FREN 25A",
+    "why": "not in the text"
+   },
+   {
+    "code": "FREN 2C",
+    "why": "not in the text"
+   },
+   {
+    "code": "FREN 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "FREN 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "GER 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "ITAL 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "ITAL 2C",
+    "why": "not in the text"
+   },
+   {
+    "code": "JAPAN 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "JAPAN 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "JAPAN 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "KHMER 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "KHMER 9",
+    "why": "not in the text"
+   },
+   {
+    "code": "LING 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "LING 1H",
+    "why": "not in the text"
+   },
+   {
+    "code": "LING 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHIL 12",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 10H",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 25A",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 25B",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 25C",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 25D",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 8",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 9",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 9H",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text is a fragment of the site-wide alphabetical course index (ARCHT through COSP, cut off mid-entry at both ends); it contains no Linguistics A.A. section, requirements, units, totals, outcomes, or careers.",
+   "No blocks were recorded because no program requirements appear in the text. A reviewer should re-fetch the program page (linguistics-aa) to capture the actual requirements.",
+   "Some closed-list courses (ASL 2, ASL 3, ASL 4, CDECE 58, COMM 25) appear in the course index only, without units or any indication they belong to this award; they were not placed."
+  ]
+ },
+ "extracted_run": "38105864413"
+}
