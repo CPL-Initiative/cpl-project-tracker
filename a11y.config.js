@@ -445,6 +445,29 @@ async function seedMapUsers(page, theme, lens) {
 }
 
 // Seeds My College's Reported expenditures section for the two targets below.
+// The funding tab as a signed-in curator sees it (S364 UI pass): the scenario strip, the
+// publish bar and every card's editing words (Remove, Hide from public, revenue/deduction).
+// The sweep has no session to sign in with, so it stands in a fresh one the way
+// cpl_session.js answers, then renders the tab again; no write can follow, since the
+// sweep aborts the tab's reads and writes.
+async function seedFundingCurator(page, theme) {
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    const s = { email: "seed@example.org", access_token: "seed", expires_at: Math.floor(Date.now() / 1000) + 3600 };
+    if (window.CPL_SESSION) { window.CPL_SESSION.get = () => s; window.CPL_SESSION.isFresh = () => true; }
+    const T = window.CPL_FUNDING_TAB;
+    if (T && T.render) T.render();
+  });
+  await page.waitForTimeout(700);
+  // First Light's greeting opens 650 ms after load and would cover the screenshots.
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForTimeout(200);
+}
+
 async function seedMyCollegeReports(page, signin) {
   await page.evaluate(() => new Promise((res) => {
     if (window.CPL_FUNDING_TAB) return res();
@@ -848,6 +871,25 @@ module.exports = {
       await page.waitForTimeout(900);
     },
     mayHideBelow: [],
+  },
+  /* ── The funding tab, signed in (S364 UI pass) ───────────────────────────
+     The cobi sweep is signed out, so it never paints the curator's controls,
+     the ones the 2026-10-09 rule turned into underlined words. */
+  "funding-curator": {
+    file: "index.html",
+    title: "Implementation Funding, signed in as a curator",
+    routes: [{ hash: "implementation-funding", name: "curator" }],
+    widths: [390, 1440],
+    seed: (page) => seedFundingCurator(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "funding-curator-dark": {
+    file: "index.html",
+    title: "Implementation Funding, signed in as a curator, dark",
+    routes: [{ hash: "implementation-funding", name: "curator" }],
+    widths: [390, 1440],
+    seed: (page) => seedFundingCurator(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── My College: Reported expenditures (S308, 2026-09-30) ─────────────────
      The Reporting box's college half. A contact MAP lists for a college reads
