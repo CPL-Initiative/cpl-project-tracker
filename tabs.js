@@ -67,6 +67,10 @@
       p.classList.toggle('active', on);
       if (on) activePane = p;
     });
+    // A link to a tab kept every pane hidden while the page parsed, so the home tab never
+    // painted first (the #cpl-deeplink guard in the <head> of both HTMLs). Routed: lift it.
+    var guard = document.getElementById('cpl-deeplink');
+    if (guard && guard.parentNode) guard.parentNode.removeChild(guard);
     // Render the section TOC under the active rail item BEFORE the scroll
     // happens, so the TOC click handlers are wired by the time a sub-section
     // hash lands here.
