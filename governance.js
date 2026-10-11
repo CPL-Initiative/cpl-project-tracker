@@ -652,7 +652,8 @@
   // puts it in NOISE — right for `--changed`, wrong for this question.
   var DOCS_URL = "docs/catalog/index.json";
   var GH = "https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/";
-  var docs = { loaded: false, loading: false, error: null, data: null, q: "" };
+  var docs = { loaded: false, loading: false, error: null, data: null, q: "",
+               host: null };   // the panel open on screen; a repaint mounts a new one
 
   function ensureDocsCss() {
     if (document.getElementById("gov-docs-css")) return;
@@ -830,19 +831,22 @@
     gov.appendChild(det);
 
     det.addEventListener("toggle", function () {
-      if (!det.open || docs.loading) { return; }
-      // A repaint (Refresh, an owner saved, the tab reopened) mounts a fresh, empty panel
-      // over an index already loaded: paint it from memory rather than leave it blank.
-      if (docs.loaded) { paintDocs(det); return; }
+      if (!det.open) { return; }
+      // A repaint (Refresh, an owner saved, the tab reopened) mounts a fresh, empty panel.
+      // The fetch paints whichever panel is open on screen when it lands (docs.host), and a
+      // panel opened over an index already loaded paints from memory. Before S366 both cases
+      // painted the panel that started the fetch, detached, and left the visible one blank.
+      docs.host = det;
+      if (docs.loaded || docs.loading) { paintDocs(det); return; }
       docs.loading = true; paintDocs(det);
       fetch(DOCS_URL).then(function (r) {
         if (!r.ok) throw new Error("index " + r.status);
         return r.json();
       }).then(function (j) {
-        docs.data = j; docs.loaded = true; docs.loading = false; paintDocs(det);
+        docs.data = j; docs.loaded = true; docs.loading = false; paintDocs(docs.host || det);
       }).catch(function (e) {
         docs.error = (e && e.message) || String(e);
-        docs.loading = false; paintDocs(det);
+        docs.loading = false; paintDocs(docs.host || det);
       });
     });
   }
