@@ -347,16 +347,22 @@ _wx = tempfile.mkdtemp()
 try:
     os.makedirs(os.path.join(_wx, "records"))
     json.dump([{"control_number": "1", "source": {"url": "u"}, "coverage": 1.0, "codes_found": ["A1"]},
-               {"control_number": "2", "source": None, "coverage": 0.0, "codes_found": [], "method": "not_found"}],
+               {"control_number": "2", "source": None, "coverage": 0.0, "codes_found": [], "method": "not_found"},
+               {"control_number": "4", "source": {"url": "w"}, "coverage": 1.0, "codes_found": ["D1"]}],
               open(os.path.join(_wx, "sources.json"), "w"))
-    open(os.path.join(_wx, "records", "1.json"), "w").write("{}")
+    open(os.path.join(_wx, "records", "1.json"), "w").write(json.dumps({"record": {"blocks": []}}))
+    # S361: a call that ran past max_tokens filed its row with no record; the next read asks again.
+    open(os.path.join(_wx, "records", "4.json"), "w").write(
+        json.dumps({"record": None, "error": "the record ran past max_tokens"}))
     wx = C.would_extract("X", [
         {"control_number": "1", "source": {"url": "u"}, "coverage": 1.0, "codes_found": ["A1"], "text": "t"},
         {"control_number": "2", "source": {"url": "v"}, "coverage": 0.9, "codes_found": ["B1"], "text": "t"},
-        {"control_number": "3", "source": None, "coverage": 0.0, "codes_found": [], "text": ""}], folder=_wx)
-    check(wx["kept"] == 1 and wx["programs"] == 1 and wx["list"][0]["control_number"] == "2"
+        {"control_number": "3", "source": None, "coverage": 0.0, "codes_found": [], "text": ""},
+        {"control_number": "4", "source": {"url": "w"}, "coverage": 1.0, "codes_found": ["D1"], "text": "t"}], folder=_wx)
+    check(wx["kept"] == 1 and wx["programs"] == 2 and [x["control_number"] for x in wx["list"]] == ["2", "4"]
           and wx["list"][0]["was_method"] == "not_found",
-          "a capture names the programs an extraction would send to the model, and keeps the rest: %r" % wx)
+          "a capture names the programs an extraction would send to the model (an errored record among them), "
+          "and keeps the rest: %r" % wx)
 finally:
     shutil.rmtree(_wx, ignore_errors=True)
 

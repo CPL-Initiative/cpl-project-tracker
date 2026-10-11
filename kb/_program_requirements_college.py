@@ -763,6 +763,17 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
     return 0
 
 
+def has_record(path: str) -> bool:
+    """A filed record file that holds a record. A call that failed (ran past
+    max_tokens, timed out) files its row with no record, and a later read asks
+    the model again instead of keeping it (S361)."""
+    try:
+        with open(path) as fh:
+            return isinstance(json.load(fh).get("record"), dict)
+    except (OSError, ValueError, AttributeError):
+        return False
+
+
 def unchanged(prev: dict | None, src: dict) -> bool:
     """A source read from the same page as the filed one, naming the same
     courses, so the filed record still stands and the model need not be asked
@@ -788,7 +799,7 @@ def would_extract(college: str, recs: list[dict], folder: str | None = None) -> 
         if (r.get("coverage") or 0) < bar or not r.get("text"):
             continue
         cn = r["control_number"]
-        filed = os.path.isfile(os.path.join(folder, "records", cn + ".json"))
+        filed = has_record(os.path.join(folder, "records", cn + ".json"))
         if filed and unchanged(prev.get(cn), r):
             kept += 1
             continue
@@ -824,7 +835,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         fresh = []
         for src in sources:
             path = os.path.join(keep_from, "records", src["control_number"] + ".json")
-            if unchanged(prev.get(src["control_number"]), src) and os.path.isfile(path):
+            if unchanged(prev.get(src["control_number"]), src) and has_record(path):
                 with open(path) as fh:
                     _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), json.load(fh))
                 kept += 1
@@ -849,7 +860,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                "source_url": (src.get("source") or {}).get("url"), "record_shape": X.RECORD_SHAPE,
                "model": got.get("model"), "stop_reason": got.get("stop_reason"), "usage": got.get("usage"),
                "cost_usd": X.cost(got.get("model"), got.get("usage")), "ms": got.get("ms"),
-               "seconds": round(time.time() - t0, 1), "error": got.get("error"), "score": sc,
+               "seconds": round(time.time() - t0, 1), "parts": got.get("parts"), "error": got.get("error"), "score": sc,
                "record": rec, "extracted_run": run_id}
         _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), row)
         print("%-6s %s cov %-5s arith %-10s $%s %s" % (
