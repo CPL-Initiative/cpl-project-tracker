@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 161,
  "with_closed_list": 150,
- "started": "2026-10-11T00:16:22Z",
+ "started": "2026-10-11T04:56:59Z",
  "curriqunet": {
   "catalog": 116,
   "view_prefix": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/",
@@ -20,7 +20,7 @@
  },
  "pages_read": 277,
  "loads": 289,
- "seconds": 1368.3,
+ "seconds": 1379.7,
  "found": 148,
  "by_method": {
   "no_closed_list": 11,
@@ -205,9 +205,20 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/norco",
-  "kept": 148,
-  "programs": 0,
-  "list": []
+  "kept": 147,
+  "programs": 1,
+  "list": [
+   {
+    "control_number": "30109",
+    "title": "Humanities, Philosophy & Arts",
+    "award": "A.A. Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5551",
+    "coverage": 0.965,
+    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5551",
+    "was_coverage": 0.965,
+    "was_method": "sitemap_page"
+   }
+  ]
  },
- "run": "38097808032"
+ "run": "38113150250"
 }

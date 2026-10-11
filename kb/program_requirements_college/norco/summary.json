@@ -4,17 +4,17 @@
  "with_closed_list": 150,
  "found": 148,
  "extracted": 148,
- "errors": 1,
+ "errors": 0,
  "passed_machine_checks": 126,
  "failed": {
   "coverage": 3,
   "invented": 4,
-  "arithmetic": 19,
+  "arithmetic": 20,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 9.96,
- "cost_per_program": 0.0673,
+ "cost_usd": 10.12,
+ "cost_per_program": 0.0684,
  "not_found": [
   {
    "control_number": "31317",
@@ -22,5 +22,5 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
   }
  ],
- "run": "38097808032"
+ "run": "38113150250"
 }
