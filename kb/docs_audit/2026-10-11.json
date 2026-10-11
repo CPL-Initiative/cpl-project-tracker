@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1110,
-    "bytes": 11529299,
+    "bytes": 11529351,
     "over_budget": 6,
     "handoff_max": 362,
     "always_loaded_files": 1,
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 36,
-        "bytes": 331920,
+        "bytes": 331972,
         "over": 1
       },
       "handoff": {
@@ -61,15 +61,15 @@
       "vault_heavy_path": 60
     },
     "vault": {
-      "files": 5130,
-      "bytes": 1883686497,
-      "heavy_bytes": 865457023,
-      "heavy_share": 0.459,
+      "files": 5138,
+      "bytes": 1907622250,
+      "heavy_bytes": 889233937,
+      "heavy_share": 0.466,
       "ignore_filters": [
         "lbcc/kb/regional_cpl_out",
         "lbcc/kb/reference",
-        "lbcc/cip_fitcheck",
         "lbcc/kb/receipts",
+        "lbcc/cip_fitcheck",
         "lbcc/kb/unclassified_fold",
         "lbcc/tmc",
         "lbcc/unified_courses_member_desc.js",
@@ -507,22 +507,22 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "kb/receipts",
+      "detail": {
+        "bytes": 70831976,
+        "kind": "dir"
+      },
+      "message": "directory totals 70,831,976 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "cip_fitcheck",
       "detail": {
         "bytes": 51991148,
         "kind": "dir"
       },
       "message": "directory totals 51,991,148 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "kb/receipts",
-      "detail": {
-        "bytes": 47055062,
-        "kind": "dir"
-      },
-      "message": "directory totals 47,055,062 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

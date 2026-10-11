@@ -76,6 +76,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 
 import _program_requirements_load as loader  # noqa: E402  (checked logic, one place)
+from _program_requirements_score import places_none  # noqa: E402
 
 PILOT = os.path.join(HERE, "program_requirements_pilot")
 MAP_READ = os.path.join(PILOT, "map_cr_by_course.json")
@@ -457,6 +458,8 @@ def college_records(pilot_keys: set) -> list[tuple]:
             if filed.get("error") or not filed.get("record") or \
                     (filed["college"], filed["control_number"]) in pilot_keys:
                 continue
+            if places_none(filed.get("score")):
+                continue   # another program's page: Sam, Open Asks Sheet 62 card 1 ("remove them")
             out.append(("%s_%s" % (os.path.basename(folder), filed["control_number"]), path, filed, cap))
     return out
 

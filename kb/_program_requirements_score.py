@@ -358,6 +358,16 @@ def careers_check(record: dict, text: str | None) -> dict:
     return {"count": len(careers), "not_verbatim": bad, "pass": not bad}
 
 
+def places_none(score: dict | None) -> bool:
+    """A scored record that places none of its program's listed courses: the model
+    read another program's page or a course-description listing. Sam, Open Asks
+    Sheet 62 card 1 (2026-10-11, "remove them"): such a record leaves the live
+    table, and each program shows no record until its college's reading
+    procedure finds its own page, so the load and the display build leave it out."""
+    cov = (score or {}).get("coverage") or {}
+    return bool(cov.get("listed")) and cov.get("placed") == 0
+
+
 def score(record: dict, closed: list[dict], text: str | None = None) -> dict:
     """The automatic bars. text is the catalog text the record was read
     from; without it a record that states no figure cannot pass."""
