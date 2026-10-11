@@ -19,3 +19,15 @@ values
  array['program-requirements-harvest','phase-2','long-beach-city','registry'], array['program_source_registry'],
  'S359, college page read run 38092181470', 's359-2026-10-10', '2026-10-10', 'verified')
 on conflict (slug) do nothing;
+
+-- Added after Sam's Sheet 60 reply (2026-10-10T23:52:04Z), inserted live at ~00:00Z:
+insert into public.cpl_memory (slug, title, kind, summary, detail, plain, tags, affects, source, author, event_date, status)
+values ('sam-remove-eight-dropped-rows-sheet-60-2026-10-10',
+ 'Sam: remove the eight program records the Approved re-reads no longer carry (Sheet 60 card 1)',
+ 'decision',
+ 'Sam, 2026-10-10T23:52:04Z, Open Asks Sheet 60 item 1, his own call: "remove" (Remove them). S359 removed the eight unchecked rows (Cerritos 19170, 19172; Mt. San Antonio 31598, 32892, 38942, 43373, 43777, 43999), each only while its md5 matched the live read and no verdict named it. Live after: 1,206 rows.',
+ 'Receipt with each full row and the rollback: kb/receipts/program_requirement_records_eight_dropped_removed_2026-10-10_s359.json (migration program_requirement_records_eight_dropped_removed_2026_10_10_s359). Two of the eight showed another program''s requirements.',
+ 'The program records list no longer shows eight readings the current catalog read does not support.',
+ array['program-requirements-harvest','phase-2','decision-sheet','sam-ruling'], array['program_requirement_records'],
+ 'Sam, Open Asks Sheet 60 replies (item 1, done through 1)', 's359-2026-10-10', '2026-10-10', 'verified')
+on conflict (slug) do nothing;

@@ -4,6 +4,8 @@
 -- also holds the rollback (jsonb_populate_recordset over its rows array).
 -- Guard: a row is removed only while its md5(to_jsonb(r)::text) equals the read's, it is unchecked, and no verdict
 -- names it, so a row a person touched since the read is left alone.
+-- Applied 2026-10-10 ~23:58Z as migration program_requirement_records_eight_dropped_removed_2026_10_10_s359 (execute_sql's
+-- guard routes data writes away from it). Read back: none of the eight remain; 1,206 rows live (1,214 before); 29 checked.
 with target(college, control_number, row_md5) as (values
   ('Cerritos College', '19170', '5ac6d9a77b6f69594b9c117327efe552'),
   ('Cerritos College', '19172', 'b8b1515eb0d3dd441664eb697b9e4727'),
