@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Computer Technology",
  "award": "A.S. Degree",
- "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/information-technology-cybersecurity-as/",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-technology/computer-technology-as/",
  "record_shape": 4,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13482,
+  "input_tokens": 6077,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13482,
-    "output_tokens": 573,
+    "input_tokens": 6077,
+    "output_tokens": 1017,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,38 +30,28 @@
     "model": null
    }
   ],
-  "output_tokens": 573,
+  "output_tokens": 1017,
   "output_tokens_details": {
-   "thinking_tokens": 196
+   "thinking_tokens": 217
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.06539,
- "ms": 6189,
- "seconds": 6.7,
+ "cost_usd": 0.04465,
+ "ms": 9011,
+ "seconds": 9.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 9,
    "listed": 9,
-   "share": 0.0,
-   "missing": [
-    "COSA50",
-    "COSN5",
-    "COSP7",
-    "COSP8",
-    "COSW20",
-    "CS21",
-    "MATH50",
-    "STATC1000",
-    "STATC1000H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -70,92 +60,141 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    32.0,
+    32.0
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    32.0,
+    32.0
+   ],
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Computer Technology - Associate in Science",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 32,
+    "max": 32
    },
    "open_elective_units": null,
-   "ge_pattern": null,
-   "outcomes": [],
-   "careers": []
+   "ge_pattern": "LBCC-GE or Cal-GETC",
+   "outcomes": [
+    "Demonstrate the ability to write, analyze, and debug a program in a number of languages and environments.",
+    "Demonstrate the ability to install, configure, and troubleshoot common PC hardware, software, and operating systems."
+   ],
+   "careers": [
+    "computer-related fields"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "COSA 50",
-    "why": "named only in the site's course index list; no program requirements section in the text"
-   },
-   {
-    "code": "COSN 5",
-    "why": "named only in the site's course index list; no program requirements section in the text"
-   },
-   {
-    "code": "COSP 7",
-    "why": "named only in the site's course index list; no program requirements section in the text"
-   },
-   {
-    "code": "COSP 8",
-    "why": "named only in the site's course index list; no program requirements section in the text"
-   },
-   {
-    "code": "COSW 20",
-    "why": "named only in the site's course index list; no program requirements section in the text"
-   },
-   {
-    "code": "CS 21",
-    "why": "named only in the site's course index list; no program requirements section in the text"
-   },
-   {
-    "code": "MATH 50",
-    "why": "not in the text"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "not in the text"
-   },
-   {
-    "code": "STAT C1000H",
-    "why": "not in the text"
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 32,
+     "max": 32
+    },
+    "courses": [
+     {
+      "code": "CS 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSA 50",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSN 5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSP 7",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSP 8",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSW 20",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 50",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Total of 32 taken from 'Required Subtotal 32'; minimum degree total is 60 with GE (LBCC-GE or Cal-GETC, 27-34 units) and electives as needed to reach 60.",
+   "STAT C1000/C1000H printed as one row; recorded STAT C1000 with honors alternative STAT C1000H, both 4 units.",
+   "Electives to reach 60 degree-applicable units are outside the major total, so open_elective_units left null.",
+   "Career entry 'computer-related fields' taken from the description 'employment in a variety of computer-related fields'."
+  ]
  },
- "extracted_run": "38152016534"
+ "extracted_run": "38185403454"
 }

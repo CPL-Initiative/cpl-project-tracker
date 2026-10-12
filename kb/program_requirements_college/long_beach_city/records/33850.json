@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Computer Science",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-science/android-app-developer-certificate-accomplishment/",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-science/computer-science-certificate-achievement/",
  "record_shape": 4,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13639,
+  "input_tokens": 6128,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13639,
-    "output_tokens": 528,
+    "input_tokens": 6128,
+    "output_tokens": 1231,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,41 +30,28 @@
     "model": null
    }
   ],
-  "output_tokens": 528,
+  "output_tokens": 1231,
   "output_tokens_details": {
-   "thinking_tokens": 95
+   "thinking_tokens": 306
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.06512,
- "ms": 6131,
- "seconds": 6.6,
+ "cost_usd": 0.04913,
+ "ms": 10218,
+ "seconds": 10.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 12,
    "listed": 12,
-   "share": 0.0,
-   "missing": [
-    "CS11",
-    "CS21",
-    "CS22",
-    "CS31",
-    "CS51",
-    "CS61",
-    "MATHC2210",
-    "MATHC2210H",
-    "MATHC2220",
-    "MATHC2220H",
-    "PHYS3A",
-    "PHYS3B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -73,104 +60,170 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    32.0,
+    32.0
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    32.0,
+    32.0
+   ],
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Computer Science - Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 32,
+    "max": 32
    },
    "open_elective_units": null,
    "ge_pattern": null,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Demonstrate a knowledge of common algorithms, their performance, and what applications to use them for.",
+    "Create computer programs with object oriented design principles, and demonstrate a solid understanding of the practice of programming.",
+    "Articulate the basic structures of a processor and their relation to each other and performance, and demonstrate an understanding of assembly language."
+   ],
+   "careers": [
+    "computer software and hardware related fields"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CS 11",
-    "why": "appears only in the site's course index list, not in any program requirements"
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CS 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CS 21",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 31",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CS 21",
-    "why": "appears only in the site's course index list, not in any program requirements"
-   },
-   {
-    "code": "CS 22",
-    "why": "appears only in the site's course index list, not in any program requirements"
-   },
-   {
-    "code": "CS 31",
-    "why": "appears only in the site's course index list, not in any program requirements"
-   },
-   {
-    "code": "CS 51",
-    "why": "appears only in the site's course index list, not in any program requirements"
-   },
-   {
-    "code": "CS 61",
-    "why": "appears only in the site's course index list, not in any program requirements"
-   },
-   {
-    "code": "MATH C2210",
-    "why": "not in the text"
-   },
-   {
-    "code": "MATH C2210H",
-    "why": "not in the text"
-   },
-   {
-    "code": "MATH C2220",
-    "why": "not in the text"
-   },
-   {
-    "code": "MATH C2220H",
-    "why": "not in the text"
-   },
-   {
-    "code": "PHYS 3A",
-    "why": "not in the text"
-   },
-   {
-    "code": "PHYS 3B",
-    "why": "not in the text"
+    "name": "IN ADDITION, complete the following:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 29,
+     "max": 29
+    },
+    "courses": [
+     {
+      "code": "CS 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 61",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH C2210H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH C2220H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 3A",
+      "units": 5.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 3B",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints no units beside the 'or' rows CS 21 and CS 31; their units are left null (the state file stores 3 each).",
+   "MATH C2210/C2210H and MATH C2220/C2220H are printed as slash pairs with one unit value (5); the honors twins are recorded as alternatives with that value.",
+   "Career entry taken from the description: 'prepares a student for an entry-level job in the computer software and hardware related fields'."
+  ]
  },
- "extracted_run": "38152016534"
+ "extracted_run": "38185403454"
 }
