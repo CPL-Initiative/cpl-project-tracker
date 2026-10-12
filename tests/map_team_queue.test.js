@@ -263,6 +263,25 @@ function byId(items) {
   check("xss: hand-tracked title is escaped", (html.match(/&lt;img/g) || []).length >= 2);
 })();
 
+// (i) S368 UI pass — the shell's placeholder, the heading, the words a reader sees
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const root = w.document.getElementById("map-queue-root");
+  // The tab shell paints a dashed, centered loading box inline on the root; it stayed
+  // under the painted queue and centered every heading and item.
+  root.setAttribute("style", "border:1px dashed; text-align:center;");
+  w.CPL_MAP_QUEUE._state.items = w.CPL_MAP_QUEUE._buildQueue(FULL, NOW);
+  w.CPL_MAP_QUEUE.render(root);
+  check("ui pass: the shell's loading placeholder comes off the root", !root.getAttribute("style"));
+  const h2 = root.querySelector("h2");
+  check("ui pass: the heading is words, no emoji", h2 && h2.textContent.trim() === "MAP Team Queue");
+  check("ui pass: a Go to link is words, no arrow",
+    root.querySelectorAll("[data-goto]").length > 0
+    && Array.prototype.every.call(root.querySelectorAll("[data-goto]"), (a) => !/→/.test(a.textContent)));
+  check("ui pass: American spelling in the rendered items (counseling, counselors)",
+    !/counsell/i.test(SRC));
+})();
+
 // ── Report ──
 let failed = 0;
 results.forEach(function (r) {
