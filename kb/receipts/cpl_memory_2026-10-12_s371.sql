@@ -1,0 +1,13 @@
+-- S371 SkyMaple, 2026-10-12. Rule 8 ingest, applied through execute_sql: INSERT-only, idempotent on slug,
+-- each row logged to cpl_memory_log (actor SkyMapleS371, action create).
+-- Rollback: delete from public.cpl_memory where author = 'SkyMapleS371' and event_date = '2026-10-12';
+-- Rows (slug, kind, status):
+--   sierra-7c-precedent-miss-is-model-variance-2026-10-12   fact      proposed
+--   map-users-empty-roster-was-anon-read-2026-10-12          pitfall   proposed
+--   miramar-on-sdccd-curriqunet-2026-10-12                   opportunity proposed
+--   sam-go-miramar-mesa-extraction-2026-10-12                decision  verified (Sam, in chat)
+--   sam-build-painting-gallery-2026-10-12                    decision  verified (Sam, in chat)
+--   first-light-almanac-hidden-reviewer-2026-10-12           fact      proposed
+--   mesa-registry-custom-html-is-curriqunet-2026-10-12       fact      proposed
+-- The full text of each row is in cpl_memory; this receipt names them so the rollback and the audit can find them.
+select slug, kind, status from public.cpl_memory where author = 'SkyMapleS371' order by created_at;

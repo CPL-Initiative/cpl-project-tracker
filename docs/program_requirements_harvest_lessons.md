@@ -601,3 +601,19 @@ reaches the catalog. Make it the first step for every new platform variant, not 
 - **A display apply makes the live smoke time out.** The cpl-chat smoke that ran while run 38251047970 wrote 1,745 display rows failed 7l four times on statement timeouts (57014) in `college_program_courses`; the next smoke, with no write beside it, passed 7l. Same family as S276's loader window: read a smoke against what the database was doing.
 - **Merge the tracker PR before the vault PR that depends on its lane markers.** Vault #317 (both Sheet 68 cards out of the builder) ran its coverage check against tracker main while #2028 (the lane's marker dropped) was still open, and failed; after #2028 merged, the vault's main run passed. I merged #317 without reading its checks first. The order is tracker merge, then vault push.
 - **An insert into `cpl_memory` that times out four times lands when it is short.** The receipt's long form (title, summary, detail) timed out through `execute_sql` and `apply_migration` alike, with nothing in `pg_stat_activity`; a shorter title and summary with no detail landed at once. Two statements, then the log row (`action` takes `create`, not `insert`).
+
+## S371 SkyMaple, 2026-10-12: San Diego City displayed, and the SDCCD host holds two more Leading colleges
+
+**San Diego City is live (#2034).** Display run 38266706124 applied build `0f4e4158a2df`; S371 read back all 1,909 rows on
+that build, San Diego City's 164 among them, each placing at least one course (2,515 courses). The page file carries only
+the pilot's records (22), by design: CPL Pathways reads the table.
+
+**A registry row can hide a readable college.** The lane said San Diego City and Chaffey were the last Leading colleges on a
+platform the read handles. The registry says San Diego Miramar is on `sdccd.curriqunet.com`, and S369's own read of the
+host's `_getCatalogs` lists Mesa as catalog 70 while Mesa's row reads `custom_html` (the census filed its page about the
+catalog). Measure the remaining colleges from the registry and the host's own list before declaring a platform exhausted.
+Sam gave the go for both (*"go ahead with Miramar and Mesa extraction"*); Mesa waits on its registry correction (#2037),
+which the `execute_sql` guard holds for Sam.
+
+**A capture-only pass is a check, not a step, once the reader is proven on the host.** S371 canceled Miramar's
+capture-only run for a read with extraction: the reader had just read San Diego City on the same host and page shape.

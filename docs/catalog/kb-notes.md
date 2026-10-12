@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-540 document(s).
+541 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -421,6 +421,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Reuse the model, not its formula — a derivation can be wrong for cases its special case never touches](../kb-notes/methodology-reuse-the-model-not-its-formula.md) | methodology | published | 2026-08-11 | 2026-08-22 |
 | [Revoking from anon does not remove the PUBLIC grant](../kb-notes/methodology-revoking-from-anon-does-not-remove-the-public-grant.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [RLS is not a gate in front of a service-role edge function](../kb-notes/methodology-rls-is-not-a-gate-in-front-of-a-service-role-function.md) | methodology | published | 2026-08-09 | 2026-08-09 |
+| [Same context size, different answer, means the model varied](../kb-notes/methodology-same-context-size-means-the-model-varied.md) | methodology | published | 2026-10-12 | 2026-10-12 |
 | [Search the awarding body, not just the credential's name](../kb-notes/methodology-search-the-awarding-body-not-just-the-name.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [Separate affordance visibility from action eligibility](../kb-notes/methodology-affordance-visibility-vs-action-eligibility.md) | methodology | published | 2026-06-28 | 2026-06-28 |
 | [Shared grid columns must share one unit](../kb-notes/methodology-shared-grid-columns-must-share-one-unit.md) | methodology | published | 2026-09-01 | 2026-09-01 |
