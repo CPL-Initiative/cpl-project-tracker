@@ -4,10 +4,10 @@
   "supabase_tables": 97,
   "rpcs": 36,
   "edge_functions": 7,
-  "file_datasets": 630,
+  "file_datasets": 633,
   "external_services": 167,
-  "consumers": 429,
-  "workflows": 48,
+  "consumers": 431,
+  "workflows": 49,
   "data_js_files": 69,
   "tabs": 39
  },
@@ -7307,6 +7307,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_course_outline_census.py": {
+   "consumers": [
+    {
+     "id": "workflow:course-outline-census.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_course_title_cleanup_apply.py": {
    "consumers": [
     {
@@ -10208,6 +10221,17 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/course_outline_census/census_*.json": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:course-outline-census.yml",
+     "how": "commit"
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/cr_reference_worklist.json": {
@@ -16851,6 +16875,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/course_outline_census_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/course_title_cleanup_apply_test.py": {
    "consumers": [
     {
@@ -21790,6 +21827,13 @@
      ]
     },
     {
+     "id": "script:kb/_course_outline_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 219
+    },
+    {
      "id": "script:kb/_program_requirements_pilot.py",
      "kind": "script",
      "direction": "read",
@@ -22591,6 +22635,20 @@
    "chain": [],
    "urls": []
   },
+  "course-outline-census.yml": {
+   "name": "Course outline census",
+   "crons": [],
+   "scripts": [
+    "kb/_course_outline_census.py"
+   ],
+   "adds": [
+    "kb/course_outline_census/census_*.json"
+   ],
+   "push": "triggering branch",
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
   "course-title-cleanup-apply.yml": {
    "name": "Course title cleanup apply",
    "crons": [],
@@ -22953,6 +23011,7 @@
     "tests/program_source_census_test.py",
     "tests/program_requirements_pilot_test.py",
     "tests/program_requirements_college_test.py",
+    "tests/course_outline_census_test.py",
     "tests/program_requirements_display_apply_test.py",
     "tests/college_page_read_test.py",
     "tests/program_map_parse_test.py",
