@@ -66,9 +66,9 @@ check("(2) the text is escaped", sec && /Business &lt;Administration&gt; 2\.0/.t
 check("(2) each program names its award, control number and catalog year",
   sec && /\(A\.S\. Degree, control number 35030, 2026-2027 catalog\)/.test(sec.body));
 // Every record is public since Sam's Open Asks Sheet 67 (2026-10-12): one no person has
-// checked says so, in CPL Pathways' words, and a checked one carries no mark.
-check("(2) an unchecked record says not yet checked", sec && /control number 41496, 2026-2027 catalog, not yet checked\)/.test(sec.body));
-check("(2) a checked record carries no mark", sec && !/control number 35030[^)]*not yet checked/.test(sec.body));
+// checked says so in Sam's words, and a checked one carries no mark.
+check("(2) an unchecked record says not yet confirmed", sec && /control number 41496, 2026-2027 catalog, not yet confirmed\)/.test(sec.body));
+check("(2) a checked record carries no mark", sec && !/control number 35030[^)]*not yet confirmed/.test(sec.body));
 check("(2) the read selects checked, so the mark can be drawn",
   /program_requirement_records\?college=eq\.[^;]*select=[^"]*\bchecked\b/.test(fs.readFileSync("college_briefing.js", "utf8")));
 check("(2) no emoji or symbol stands in for a word (the glyph rule)",

@@ -2005,7 +2005,7 @@
     card.setAttribute("aria-label", rec.title + ", " + roepAward(rec));
     var top = el("div", "top");
     top.appendChild(el("div", null, [el("h2", null, rec.title || ""), el("div", "award", roepAward(rec) + " · " + rec.college)]));
-    top.appendChild(el("span", "cplpw-rstatus" + (checks.checked ? "" : " open"), checks.checked ? "Checked record" : "Not yet checked"));
+    top.appendChild(el("span", "cplpw-rstatus" + (checks.checked ? "" : " open"), checks.checked ? "Checked record" : "Not yet confirmed"));
     card.appendChild(top);
     var proc = el("p", "procline");
     proc.appendChild(document.createTextNode("Read from the "));
@@ -2837,7 +2837,7 @@
       rg.label = "Catalog records, Beta draft";
       items.forEach(function (it, i) {
         if (it.kind === "roep" && mine(it)) rg.appendChild(option(i, it.prog.college + " — " + it.prog.title + " · " + roepAward(it.prog)
-          + (roepChecked(it.prog) ? "" : " (not yet checked)")));
+          + (roepChecked(it.prog) ? "" : " (not yet confirmed)")));
       });
       if (rg.children.length) sel.appendChild(rg);
       var shown = items.filter(mine);

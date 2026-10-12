@@ -123,7 +123,7 @@ function pickRecord(w, root, title) {
     const opts = recordOptions(root.querySelector("select.cplpw-select")).map((o) => o.textContent);
     check("(a) the selector lists the table's programs", opts.length === 1 && /Norco College — Table Program One/.test(opts[0]), opts);
     check("(a) and none of the pilot file's", !opts.some((t) => t.indexOf(uncheckedFile.title) >= 0 || t.indexOf(checkedFile.title) >= 0), opts);
-    check("(a) a checked program carries no mark", !/not yet checked/.test(opts[0] || "x"), opts[0]);
+    check("(a) a checked program carries no mark", !/not yet confirmed/.test(opts[0] || "x"), opts[0]);
     const listCall = f.calls.find((c) => /program_requirement_records\?select=/.test(c.url) && !/college=eq/.test(c.url));
     check("(b) a signed-out page reads the list with the anon key", !!listCall && !listCall.reviewer, listCall && listCall.auth);
     check("(b) the list read asks for the light columns only", !!listCall && !/record|display/.test(listCall.url.split("select=")[1].split("&")[0]), listCall && listCall.url);
@@ -140,7 +140,7 @@ function pickRecord(w, root, title) {
     const opts = recordOptions(root.querySelector("select.cplpw-select")).map((o) => o.textContent);
     check("(b) a reviewer reads with the session's token", f.calls.some((c) => c.reviewer && /program_requirement_records/.test(c.url)));
     check("(b) a reviewer sees every record", opts.length === 2, opts);
-    check("(b) an unchecked record says so", opts.some((t) => /Table Program Two/.test(t) && /\(not yet checked\)$/.test(t)), opts);
+    check("(b) an unchecked record says so", opts.some((t) => /Table Program Two/.test(t) && /\(not yet confirmed\)$/.test(t)), opts);
   }
 
   // ── (c) opening a program reads that one record ──
@@ -165,7 +165,7 @@ function pickRecord(w, root, title) {
     const card = root.querySelector(".cplpw-rprog");
     check("(c) the record renders", !!card && /Table Program Two/.test(card.textContent));
     check("(c) the row's checked wins over the build's copy (built checked, row unchecked)",
-      !!card && /Not yet checked/.test(card.textContent) && !/Checked record/.test(card.textContent), card && card.textContent.slice(0, 200));
+      !!card && /Not yet confirmed/.test(card.textContent) && !/Checked record/.test(card.textContent), card && card.textContent.slice(0, 200));
     // opening it again reads nothing
     const n = f.calls.length;
     pickRecord(w, root, "Table Program One");

@@ -51,7 +51,7 @@
  * rpc/program_record_verdict_add (chatbox/supabase_program_record_verdicts.sql), gated to
  * an allowed reviewer on the server, holding the fingerprint of the requirements the page
  * showed. Since Sam's Open Asks Sheet 67 (2026-10-12, "Every record, from the table") the public
- * reads every record too, and a record no person has checked says Not yet checked.
+ * reads every record too, and a record no person has checked says Not yet confirmed.
  *
  * A FAILED READ SAYS SO; it never renders as zero colleges or zero records.
  * Tests: tests/program_requirements.test.js
@@ -1445,9 +1445,9 @@
     var reviewing = !!(state.review && state.review.records && p.requirements_fp);
     var sl = reviewing ? stateLine(p) : null;
     /* The public reads every record (Sam, Open Asks Sheet 67), and one no person has checked
-       says so, in CPL Pathways' words. */
+       says so in Sam's words (Sheet 65: "marked not yet confirmed"). */
     var line = sl ? el("span", { cls: "prh-state" + (sl.waiting ? " prh-state-waiting" : ""), text: sl.text })
-      : !p.checked ? el("span", { cls: "prh-state prh-state-open", text: "Not yet checked" }) : null;
+      : !p.checked ? el("span", { cls: "prh-state prh-state-open", text: "Not yet confirmed" }) : null;
     var bodyId = "prh-body-" + String(key).replace(/[^A-Za-z0-9]+/g, "-");
     var isOpen = !!opts.split || !!state.open[key];
     var btn = el("button", { cls: "prh-toggle", type: "button", "aria-expanded": isOpen ? "true" : "false",

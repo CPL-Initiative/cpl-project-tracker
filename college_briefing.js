@@ -1831,10 +1831,10 @@
       + "team will follow up with you on each one.</p>";
     drafts.forEach(function (d) {
       // Every record is public since Sam's Open Asks Sheet 67 (2026-10-12); one no person
-      // has checked says so, in CPL Pathways' words.
+      // has checked says so in Sam's words (Sheet 65: "marked not yet confirmed").
       var meta = [d.award, d.control_number ? "control number " + d.control_number : "",
                   d.catalog_year ? d.catalog_year + " catalog" : "",
-                  d.checked ? "" : "not yet checked"].filter(Boolean).join(", ");
+                  d.checked ? "" : "not yet confirmed"].filter(Boolean).join(", ");
       body += '<h4 class="cb-dr-h">' + esc(d.program) + (meta ? ' <span class="cb-dr-m">(' + esc(meta) + ")</span>" : "") + "</h4>"
         + '<ul class="cb-dr">' + d.items.map(function (i) {
           return "<li>" + (i.kind ? esc(i.kind) + ": " : "") + esc(i.text) + "</li>";

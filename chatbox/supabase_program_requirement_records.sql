@@ -58,7 +58,7 @@ alter table public.program_requirement_records enable row level security;
 -- READ (Sam, Open Asks Sheet 67, 2026-10-12, "Every record, from the table", and his go
 -- in session the same day; on Sheet 65 he wrote "I want every record to show marked not
 -- yet confirmed"): the public reads every record. CPL Pathways, Program Requirements and
--- My College mark one no person has checked as Not yet checked; Sierra reads checked rows
+-- My College mark one no person has checked as Not yet confirmed; Sierra reads checked rows
 -- only (cpl-chat filters `checked` itself). Public catalog data with no student detail;
 -- checked_by names the staff member who confirmed a record, as it already did on the
 -- checked rows. Applied as migration program_requirement_records_read_every_row_2026_10_12.
