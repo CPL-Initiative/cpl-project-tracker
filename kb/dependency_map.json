@@ -4,7 +4,7 @@
   "supabase_tables": 97,
   "rpcs": 36,
   "edge_functions": 7,
-  "file_datasets": 636,
+  "file_datasets": 637,
   "external_services": 175,
   "consumers": 433,
   "workflows": 50,
@@ -17035,6 +17035,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/course_outline_registry_fill_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/course_title_cleanup_apply_test.py": {
    "consumers": [
     {
@@ -23256,6 +23269,7 @@
     "tests/stop_hook_git_check_test.py",
     "tests/video_context_test.py",
     "tests/kpi_history_no_gaps_test.py",
+    "tests/course_outline_registry_fill_test.py",
     "tests/course_outline_index_test.py"
    ],
    "adds": [],
