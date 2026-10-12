@@ -268,7 +268,7 @@ const DEFAULT_GATES = [
   check("the page says taking an item off the menu does not lock it",
     /Taking something off the menu does not lock it/.test(root.innerHTML));
   check("the security column is labelled as the only real control",
-    /Who can read it/.test(root.innerHTML) && /<th title="Which sites show it/.test(root.innerHTML));
+    /Who can read it/.test(root.innerHTML) && /<th[^>]*title="Which sites show it/.test(root.innerHTML));
   check("the arrange section renders with drag targets",
     root.querySelectorAll("[data-drop-container]").length > 1 &&
     root.querySelectorAll("[data-drag^='tab:']").length > 0);
@@ -279,6 +279,43 @@ const DEFAULT_GATES = [
     root.innerHTML.indexOf("Sierra Training") !== -1 && root.innerHTML.indexOf("sierra-training") !== -1);
   check("Admin reports itself as shown on every site", /Every site/.test(root.innerHTML));
 })();
+
+// ── S368 UI pass: the heading's caret, the scroll regions, the link row ─────
+BLOCKS.push((async function () {
+  const w = makeWin();
+  const api = w.CPL_ADMIN_TAB;
+  const root = w.document.getElementById("admin-root");
+  // nav_groups.js paints a heading as a label span beside a caret span (&#9660;),
+  // which the old strip of ▾▸ missed: the Heading column read "Workplan▼".
+  w.document.querySelector("nav.cpl-tabs").insertAdjacentHTML("beforeend",
+    '<div class="cpl-nav-group"><button class="cpl-nav-group-head"><span>Workplan</span>'
+    + '<span class="cpl-nav-caret">&#9660;</span></button><div class="cpl-nav-group-body">'
+    + '<button class="cpl-tab" data-tab="raci">Team &amp; RACI</button></div></div>');
+  await api._loadGates();
+  api.render(root);
+  const raci = api._navItems().filter((it) => it.tab === "raci")[0];
+  check("a heading's caret never reaches the Heading column", raci && raci.group === "Workplan");
+  const wraps = root.querySelectorAll(".adm-tablewrap");
+  check("every scrolling table is a named region a keyboard can reach",
+    wraps.length >= 2 && Array.prototype.every.call(wraps, (x) =>
+      x.getAttribute("role") === "region" && x.getAttribute("tabindex") === "0" && !!x.getAttribute("aria-label")));
+  const ths = root.querySelectorAll(".adm-table th");
+  check("every header cell is scoped", ths.length >= 8 && Array.prototype.every.call(ths, (x) => x.getAttribute("scope") === "col"));
+  check("the search field has a name, not only a placeholder",
+    !!(root.querySelector("[data-q]") && root.querySelector("[data-q]").getAttribute("aria-label")));
+  check("a top-level item reads Top level, without decorative dashes",
+    /Top level/.test(root.innerHTML) && !/— top level —/.test(root.innerHTML));
+  const linkRow = root.querySelector('.adm-item[data-drag="tab:fact-sheet"]');
+  const chips = linkRow ? Array.prototype.map.call(linkRow.querySelectorAll(".adm-g"), (c) => c.textContent.trim()) : [];
+  check("a link row says A link once, not link A link", chips.length && chips.indexOf("link") === -1
+    && chips.filter((c) => /link/i.test(c)).length === 1);
+  const out = makeWin({ jwt: false });
+  await out.CPL_ADMIN_TAB._loadGates();
+  const outRoot = out.document.getElementById("admin-root");
+  out.CPL_ADMIN_TAB.render(outRoot);
+  check("the signed-out page names the About control as the header prints it",
+    /<b>About<\/b> in the header/.test(outRoot.innerHTML) && outRoot.innerHTML.indexOf("ℹ") === -1);
+})());
 
 // ── (e) the three non-ok states ─────────────────────────────────────────────
 BLOCKS.push((async function () {
