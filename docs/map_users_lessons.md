@@ -479,3 +479,10 @@ Education, San Diego College of Continuing Education) have zero MAP presence.
 Durable: [`methodology-a-copy-with-no-refresh-path-is-a-fossil`](kb-notes/methodology-a-copy-with-no-refresh-path-is-a-fossil.md),
 [`methodology-a-provenance-label-must-say-why-not-what`](kb-notes/methodology-a-provenance-label-must-say-why-not-what.md).
 PRs #1164, #1167.
+
+## S371 SkyMaple, 2026-10-12: "no records" was a signed-out read
+
+Sam saw no records on every roster. The edge logs answered it in two queries: `request.sb.jwt.authorization.payload.role`
+was `anon` and each roster response was 2 bytes (`[]`), while the summary returned 128 colleges. After signing in he saw
+the rosters. The tab had said "No roster rows returned. Unlock with the team phrase (the About menu in the header)": the
+first sentence read as missing data, and the control lives in the header's Sign in menu. #2036 says why first.

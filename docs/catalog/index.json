@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 540,
+   "count": 541,
    "docs": [
     {
      "created": "2026-08-14",
@@ -7973,6 +7973,24 @@
      "updated": "2026-08-09"
     },
     {
+     "created": "2026-10-12",
+     "governs": [
+      "chatbox/supabase/functions/cpl-chat/index.ts",
+      "chatbox/smoke_test.sh"
+     ],
+     "path": "docs/kb-notes/methodology-same-context-size-means-the-model-varied.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "sierra",
+      "smoke",
+      "retrieval"
+     ],
+     "title": "Same context size, different answer, means the model varied",
+     "type": "methodology",
+     "updated": "2026-10-12"
+    },
+    {
      "created": "2026-08-13",
      "governs": [
       "search_college_credentials",
@@ -15342,8 +15360,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 342,
+   "count": 343,
    "docs": [
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "n": 372,
+     "path": "docs/session_372_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "san-diego-miramar",
+      "san-diego-mesa",
+      "first-light",
+      "sierra"
+     ],
+     "title": "load Miramar, finish the painting gallery, Mesa's registry row",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-12",
      "governs": [],
@@ -21210,5 +21246,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1109
+ "total": 1111
 }

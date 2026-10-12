@@ -4,12 +4,12 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-10-11",
+ "as_of": "2026-10-12",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 46810,
-  "pa": 42726,
+  "pe": 46849,
+  "pa": 42765,
   "ppa": 119,
   "p2": 3567,
   "p3": 16737,
@@ -17,8 +17,8 @@ window.CPL_FUNDING_PERF = {
   "ppe": 129,
   "pac": 5256,
   "ptc": 4608,
-  "pe_u": 1460925.7,
-  "pa_u": 238227.4,
+  "pe_u": 1462767.2,
+  "pa_u": 238461.4,
   "ppa_u": 721.5,
   "ppe_u": 6825.5,
   "pac_u": 37495.45,
@@ -1167,10 +1167,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 27.0
   },
   "Merritt": {
-   "pe": 16,
-   "pe_u": 796.0,
-   "pa": 16,
-   "pa_u": 84.0,
+   "pe": 55,
+   "pe_u": 2637.5,
+   "pa": 55,
+   "pa_u": 318.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -4002,8 +4002,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 28386,
-   "pa": 26083,
+   "pe": 28425,
+   "pa": 26122,
    "p3": 2589
   },
   "Military | Other": {
@@ -4059,13 +4059,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1460925.7,
-   "pa_u": 238227.4,
+   "pe_u": 1462767.2,
+   "pa_u": 238461.4,
    "p3_u": 83386.7
   },
   "map": {
-   "pe_u": 1467751.2,
-   "pa_u": 238948.9,
+   "pe_u": 1469592.7,
+   "pa_u": 239182.9,
    "p3_u": 83450.2
   },
   "ratio": {
@@ -4140,6 +4140,7 @@ window.CPL_FUNDING_PERF = {
   "Irvine": false,
   "Saddleback": false,
   "West Valley": true,
+  "Merritt": false,
   "Skyline": false,
   "Berkeley City": true,
   "Copper Mountain": true,
@@ -4157,7 +4158,6 @@ window.CPL_FUNDING_PERF = {
   "Los Medanos": true,
   "Compton": false,
   "Canada": false,
-  "Merritt": false,
   "Alameda": false,
   "Cuesta": true,
   "Columbia": false,
@@ -4191,7 +4191,7 @@ window.CPL_FUNDING_PERF = {
   "Folsom Lake": false,
   "Palomar": false
  },
- "vet_star_as_of": "2026-10-11",
+ "vet_star_as_of": "2026-10-12",
  "vet_star_threshold": 0.75,
  "vet_star_n": 60,
  "vet_jst": {
@@ -4520,6 +4520,11 @@ window.CPL_FUNDING_PERF = {
    "jst": 56,
    "pct": 1.1667
   },
+  "Merritt": {
+   "vets": 82,
+   "jst": 54,
+   "pct": 0.6585
+  },
   "Skyline": {
    "vets": 167,
    "jst": 105,
@@ -4604,11 +4609,6 @@ window.CPL_FUNDING_PERF = {
    "vets": 47,
    "jst": 30,
    "pct": 0.6383
-  },
-  "Merritt": {
-   "vets": 82,
-   "jst": 15,
-   "pct": 0.1829
   },
   "Alameda": {
    "vets": 30,

@@ -191,3 +191,13 @@ form only: on 2026-10-02 a quoted bad sentence was reproduced word for word.
 **A push-triggered smoke measures production, not the branch.** The smoke on #2032's head ran the
 old deployed prompt and failed 7c, as it had to. The branch's own evidence is the A/B
 (`cpl-chat-preview-ab.yml` on the branch), and the merge-then-deploy waits on that grid.
+
+## S371 SkyMaple, 2026-10-12: 7c's opening holds; its precedent miss is the model
+
+The deployed v90 opens 7c on the course's own college. Smoke 38269835553 then failed 7c's precedent check: the answer said
+no CNA-to-LVN precedent existed. A retrieval gap was the first suspicion and was wrong: the failing and passing turns carry
+the same `context_chars` (70,554) and uncached input (26,369) in `chat_interactions.timings`, and 13 of 15 turns on the
+question in 30 hours cite NURVN 414. The probes reach Acute Care Nursing Assistant through *vocational nursing*, and
+`pickHeldTitles` keeps it among the four held titles. Note that `fetchCredentialRecs` turns an RPC error into an empty map,
+which `buildPrecedentLines` renders as "none ... the request would be a first": a timeout there would produce the same
+sentence, so check the timings before reading either cause into it. Whether to tune the precedent line is Sam's call.

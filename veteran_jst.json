@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-11T21:15:32.026985+00:00",
+  "scraped_at": "2026-10-12T15:34:06.344400+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 28974,
+    "jst": 29013,
     "star_colleges": 60
   },
   "computed_star_colleges": 60,
@@ -335,6 +335,11 @@
       "jst": 56,
       "star": true
     },
+    "Merritt College": {
+      "vets": 82,
+      "jst": 54,
+      "star": false
+    },
     "Skyline College": {
       "vets": 167,
       "jst": 105,
@@ -418,11 +423,6 @@
     "Cañada College": {
       "vets": 47,
       "jst": 30,
-      "star": false
-    },
-    "Merritt College": {
-      "vets": 82,
-      "jst": 15,
       "star": false
     },
     "College of Alameda": {

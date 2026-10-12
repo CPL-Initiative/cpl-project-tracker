@@ -1628,7 +1628,7 @@
       + "</select>"
       + '<span class="mapu-auth">' + (signedIn()
         ? "Signed in — roster visible"
-        : "Unlock with the team phrase (the About menu in the header) to see names &amp; emails") + "</span>"
+        : "Sign in (the header\u2019s Sign in menu: the team phrase or an email link) to see names &amp; emails") + "</span>"
       + '<span class="mapu-count">' + rows.length + " college" + (rows.length === 1 ? "" : "s") + "</span>"
       + "</div>";
 
@@ -1685,7 +1685,7 @@
   function gapsHtml() {
     if (state.gapsError) {
       return '<div class="mapu-empty">Could not load the contact worklist ('
-        + esc(state.gapsError) + "). Unlock with the team phrase (the About menu in the header) and try again.</div>";
+        + esc(state.gapsError) + "). Sign in from the header\u2019s Sign in menu (the team phrase or an email link) and try again.</div>";
     }
     if (!state.gaps) return '<p class="mapu-gate">Loading the contact worklist…</p>';
     var rows = gapRows();
@@ -1833,7 +1833,7 @@
   function contactsHtml() {
     if (state.gapsError) {
       return '<div class="mapu-empty">Could not load the contact directory ('
-        + esc(state.gapsError) + "). Unlock with the team phrase (the About menu in the header) and try again.</div>";
+        + esc(state.gapsError) + "). Sign in from the header\u2019s Sign in menu (the team phrase or an email link) and try again.</div>";
     }
     if (!state.gaps) return '<p class="mapu-gate">Loading the contact directory…</p>';
     var rows = contactRows();
@@ -2000,9 +2000,13 @@
 
   function rosterHtml(rows) {
     if (!rows || !rows.length) {
-      return '<div class="mapu-gate">No roster rows returned. '
-        + (signedIn() ? "This college has no users on record." :
-          "Unlock with the team phrase (the About menu in the header) to view names &amp; emails.") + "</div>";
+      /* Signed out, the gated read returns no rows by design, and "No roster
+       * rows returned" read as "this college has no users" (Sam, 2026-10-12,
+       * S371: "the roster view and all are showing with no records" until he
+       * signed in). Say why first, then where. */
+      return '<div class="mapu-gate">'
+        + (signedIn() ? "No roster rows returned. This college has no users on record." :
+          "Names and emails show once you sign in. Use the header\u2019s Sign in menu: the team phrase or an email link.") + "</div>";
     }
     var h = "<table><thead><tr><th>Name</th><th>Email</th><th>Role</th>"
       + "<th>Status</th><th>Disciplines</th><th>Last updated</th><th>Username</th>"
@@ -2024,7 +2028,7 @@
       cell.innerHTML = rosterHtml(rows);
     }).catch(function () {
       cell.innerHTML = '<div class="mapu-gate">Could not load the roster. '
-        + "Unlock with the team phrase (the About menu in the header) and try again.</div>";
+        + "Sign in from the header\u2019s Sign in menu (the team phrase or an email link) and try again.</div>";
     });
   }
 

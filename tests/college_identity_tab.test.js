@@ -68,7 +68,7 @@ const COLLEGES = [
     district: "Los Angeles Community College District", mis_district_code: "740", mis_college_code: "743" },
   { college_id: 133, college_name: "Futuro Health", entity_kind: "partner", variants: [],
     district: null, mis_district_code: null, mis_college_code: null,
-    mis_absent_why: "A partner organisation, not a California Community College." },
+    mis_absent_why: "A partner organization, not a California Community College." },
 ];
 
 block("(2)", function () {
@@ -333,6 +333,46 @@ block("(5)", function () {
     "a link that lands on 'Nothing outstanding' teaches the reader to ignore it");
   check("(5) …and the roster still renders",
     two.root.innerHTML.indexOf(">Every entity (") >= 0);
+});
+
+// ── (6) A phone, a placeholder code, words for the arrow (S371 UI pass) ─────
+// The seeded sweep (a11y.config.js college-identity-roster) measured the
+// roster for the first time: at 390px the six columns ran into each other and
+// a path in the snapshot note pushed the 320px page 49px sideways.
+block("(6)", function () {
+  const { w, M, root } = loadModule();
+  w.CPL_COLLEGE_IDENTITY = { generated: "2026-08-23", linted: true, observed_names: 130,
+    counts: { entities: 120, with_variants: 118, with_district: 118 },
+    findings: [{ name: "Cypress College ", "class": "whitespace", resolves_to: "Cypress College", why: "Trailing space." }] };
+  const ROWS = COLLEGES.concat([
+    { college_id: 24, college_name: "Calbright College Non-Credit", entity_kind: "college", variants: [],
+      district: "California Online Community College District", mis_district_code: "X00", mis_college_code: "X02",
+      mis_absent_why: "not in the supplied Appendix A" },
+    { college_id: 5, college_name: "Testing College", entity_kind: "test", is_test: true, variants: [] }]);
+  M._state.live = ROWS; M._state.contacts = null; M._state.error = null;
+  M._render(root);
+  const cells = Array.from(root.querySelectorAll(".cid-t tbody td:not(.cid-why)"));
+  check("(6) ⚠ every roster cell names its column (data-label) for the stacked phone layout",
+    cells.length === ROWS.length * 6 && cells.every(function (td) { return !!td.getAttribute("data-label"); }),
+    "below 560px each cell prints its label; a cell without one prints a bare value");
+  const css = (w.document.getElementById("cid-css") || {}).textContent || "";
+  check("(6) …and below 560px the table stacks, its header row kept for a screen reader",
+    /@media \(max-width:560px\)[^@]*\.cid-t thead \{ position:absolute/.test(css)
+      && /\.cid-t tbody td::before \{ content:attr\(data-label\)/.test(css));
+  check("(6) ⚠ a path in a note may break: 49px of sideways scroll at 320px",
+    /\.cid-flag code, \.cid-note code \{ overflow-wrap:anywhere; \}/.test(css));
+  const supp = Array.from(root.querySelectorAll(".cid-t tr.cid-supp td:first-child > span"));
+  check("(6) the suppressed chip shares one span with the name, so the stacked grid keeps them together",
+    supp.length === 1 && !!supp[0].querySelector(".cid-tag.suppressed"));
+  const why = Array.from(root.querySelectorAll(".cid-t td.cid-why")).map(function (td) { return td.textContent; });
+  check("(6) ⚠ a row with a code and a reason reads as a placeholder, not \"No MIS code\" beside the code",
+    why.some(function (t) { return /^Placeholder code, not an MIS code — not in the supplied Appendix A/.test(t); })
+      && !why.some(function (t) { return /^No MIS code — not in the supplied Appendix A/.test(t); }));
+  check("(6) …and a row with no code still says No MIS code",
+    why.some(function (t) { return /^No MIS code — A partner organization/.test(t); }));
+  const find = root.querySelector("#cid-findings .cid-find");
+  check("(6) a finding says \"resolves to\" in words, no arrow",
+    !!find && /resolves to Cypress College/.test(find.textContent) && !/\u2192/.test(root.textContent));
 });
 
 let pass = 0;
