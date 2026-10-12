@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-542 document(s).
+543 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -201,6 +201,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A settled ruling does not enforce itself — the consumer has to change](../kb-notes/methodology-a-settled-ruling-does-not-enforce-itself.md) | methodology | published | 2026-08-13 | 2026-09-27 |
 | [A share is not a fact until you have measured the whole](../kb-notes/methodology-a-share-is-not-a-fact-until-you-have-measured-the-whole.md) | methodology | published | 2026-09-11 | 2026-09-11 |
 | [A shared credential can only scope to a surface that is exclusive to its group](../kb-notes/methodology-a-shared-credential-can-only-scope-to-an-exclusive-surface.md) | methodology | published | 2026-08-12 | 2026-08-12 |
+| [A sign-in form is no proof of a closed system, and a catalog host is no proof of a public outline](../kb-notes/methodology-a-sign-in-form-is-no-proof-of-a-closed-system.md) | methodology | published | 2026-10-12 | 2026-10-12 |
 | [A silent input cap is a content swap, and the model fills the vacuum with its own instructions](../kb-notes/methodology-a-silent-input-cap-is-a-content-swap.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [A similarity threshold can't bridge a zero-overlap synonym — use a curated synonym map](../kb-notes/methodology-synonym-map-vs-similarity-threshold.md) | methodology | published | 2026-06-16 | 2026-06-18 |
 | [A single-decider guard is only as wide as the files it reads](../kb-notes/methodology-a-single-decider-guard-is-only-as-wide-as-the-files-it-reads.md) | methodology | published | 2026-09-19 | 2026-09-19 |

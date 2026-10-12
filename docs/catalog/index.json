@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 542,
+   "count": 543,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3612,6 +3612,21 @@
      "title": "A shared credential can only scope to a surface that is exclusive to its group",
      "type": "methodology",
      "updated": "2026-08-12"
+    },
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-sign-in-form-is-no-proof-of-a-closed-system.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "course-outlines",
+      "census",
+      "measurement"
+     ],
+     "title": "A sign-in form is no proof of a closed system, and a catalog host is no proof of a public outline",
+     "type": "methodology",
+     "updated": "2026-10-12"
     },
     {
      "created": "2026-08-24",
@@ -15378,8 +15393,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 344,
+   "count": 345,
    "docs": [
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "n": 374,
+     "path": "docs/session_374_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "course-outlines",
+      "san-diego-mesa",
+      "sierra"
+     ],
+     "title": "the SLO read on RCCD's outlines, after the course outline fields and the index",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-12",
      "governs": [],
@@ -21282,5 +21314,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1113
+ "total": 1115
 }
