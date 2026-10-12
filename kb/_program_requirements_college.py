@@ -523,6 +523,36 @@ def cq_catalog_id(urls: list[str]) -> int | None:
     return None
 
 
+# San Diego City (S369; reads 38203841691 and 38204183571): the registry's start
+# page, a district alias view (catalog/alias/city26-27/iq/15489), draws an empty
+# "Active Catalogs" shell in a headless browser and fetches nothing, so no
+# catalog id is heard. The host's own list names it: _getCatalogs gives
+# "City 2026-2027" 69, "Mesa 2026-2027" 70, "Miramar 2026-2027" 71. The catalog
+# whose title's words all appear in the college's name, in the registry's year,
+# is the one read.
+CQ_YEAR = re.compile(r"\b(?:19|20)\d\d\s*[-/]\s*(?:(?:19|20)?\d\d)\b")
+
+
+def cq_catalog_from_list(catalogs, college: str, year: str | None) -> int | None:
+    """The id of the one catalog in a host's _getCatalogs list that names this
+    college (every word of its title, the year aside, is a word of the
+    college's name) and, where the title carries a year, the registry's year.
+    None when no catalog or more than one does."""
+    words = set(re.findall(r"[a-z]+", (college or "").lower()))
+    want = re.sub(r"\D", "", year or "")
+    hits = []
+    for c in catalogs if isinstance(catalogs, list) else []:
+        title = c.get("Title") or ""
+        y = CQ_YEAR.search(title)
+        named = set(re.findall(r"[a-z]+", CQ_YEAR.sub(" ", title).lower()))
+        if not named or not named <= words or c.get("IsDeleted"):
+            continue
+        if y and want and re.sub(r"\D", "", y.group(0)) not in (want, want[:4] + want[-2:]):
+            continue
+        hits.append(c.get("Id"))
+    return int(hits[0]) if len(hits) == 1 and hits[0] is not None else None
+
+
 def cq_base(start: str) -> tuple[str, str]:
     """(the host root, the view prefix a node's aliaspath follows): Riverside City's
     https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5842/6111 gives
@@ -665,6 +695,25 @@ def cq_group(title: str, url: str) -> str:
     return "codes:" + "+".join(codes) if codes else url
 
 
+def cq_title_key(nav: dict) -> str:
+    """An entry's title as one key: case, spacing and dashes folded."""
+    return "title:" + re.sub(r"[\s\u2013\u2014-]+", " ", (nav.get("text") or "").lower()).strip()
+
+
+def cq_distinct(entries: list[dict]) -> tuple[list[dict], int]:
+    """Each program entry once. Chaffey lists every program in its index and
+    again under its school, under two ids with one title (401 entries for 202
+    programs, 1,226 loads in run 38203335820); the first is read."""
+    out, keys = [], set()
+    for e in entries:
+        k = cq_title_key(e)
+        if k in keys:
+            continue
+        keys.add(k)
+        out.append(e)
+    return out, len(entries) - len(out)
+
+
 def cq_children(get, catalog: int, root: str, page: dict) -> tuple[list[dict], list[dict]]:
     """(the entry's own child pages, the program entries among its children):
     the visible nodes the entry's page lists, read once each, up to
@@ -736,13 +785,19 @@ def cq_pages(reader, start: str, report: dict) -> list[dict]:
     errors: list = []
     report["curriqunet"] = {"catalog": catalog, "view_prefix": prefix, "errors": errors}
     if catalog is None:
-        report["curriqunet"]["stopped"] = "the start page's scripts named no catalog id"
+        catalog = cq_catalog_from_list(cq_json(reader, root + "/catalog/_getCatalogs", errors),
+                                       report.get("college"), report.get("catalog_year"))
+        report["curriqunet"].update(catalog=catalog, catalog_from="_getCatalogs")
+    if catalog is None:
+        report["curriqunet"]["stopped"] = "the start page's scripts named no catalog id, nor did the host's catalog list"
         return []
     entries, account = cq_index(lambda u: cq_json(reader, u, errors), catalog, root)
     report["curriqunet"].update(account)
     pages = []
     get = lambda u: cq_json(reader, u, errors)  # noqa: E731
-    queue, seen, i = list(entries), {e.get("id") for e in entries}, 0
+    entries, dropped = cq_distinct(entries)
+    report["curriqunet"]["same_title_entries"] = dropped
+    queue, seen, i = list(entries), {e.get("id") for e in entries} | {cq_title_key(e) for e in entries}, 0
     while i < len(queue) and i < MAX_PAGES:
         e = queue[i]
         i += 1
@@ -751,8 +806,8 @@ def cq_pages(reader, start: str, report: dict) -> list[dict]:
         if page and e.get("haschildbodynavs"):
             children, more = cq_children(get, catalog, root, page)
             for m in more:
-                if m.get("id") not in seen:
-                    seen.add(m.get("id"))
+                if m.get("id") not in seen and cq_title_key(m) not in seen:
+                    seen.update((m.get("id"), cq_title_key(m)))
                     queue.append(m)
         pg = cq_page(e, page, prefix, children)
         if pg:

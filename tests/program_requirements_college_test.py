@@ -501,6 +501,28 @@ check(PCH["url"] == "https://chaffey.curriqunet.com/catalog/iq/19210/bth/busadmi
 check(C.cq_page(BUS, bus_page, "x")["codes"] == set(),
       "without its Requirements child the entry's page names no course (the first capture's 0)")
 
+# ── curriQunet: San Diego City's catalog from the host's list, and each program once (S369) ──
+# Reads 38203841691 and 38204183571: the alias start page draws an empty "Active
+# Catalogs" shell and fetches nothing; _getCatalogs names City 2026-2027 as 69.
+SDCCD = [{"Id": 69, "Title": "City 2026-2027"}, {"Id": 70, "Title": "Mesa 2026-2027"},
+         {"Id": 71, "Title": "Miramar 2026-2027"}]
+check(C.cq_catalog_from_list(SDCCD, "San Diego City College", "2026-2027") == 69
+      and C.cq_catalog_from_list(SDCCD, "San Diego Mesa College", "2026-2027") == 70
+      and C.cq_catalog_from_list(SDCCD, "San Diego Miramar College", "2026-2027") == 71,
+      "the host's catalog list gives each college the catalog its title names")
+check(C.cq_catalog_from_list(SDCCD, "San Diego City College", "2025-2026") is None
+      and C.cq_catalog_from_list(SDCCD + [{"Id": 60, "Title": "City 2025-2026"}], "San Diego City College", "2026-2027") == 69
+      and C.cq_catalog_from_list(SDCCD + [{"Id": 72, "Title": "City 2026-2027"}], "San Diego City College", "2026-2027") is None
+      and C.cq_catalog_from_list(None, "San Diego City College", "2026-2027") is None
+      and C.cq_catalog_from_list([{"Id": 5, "Title": "2026-2027 Catalog"}], "Chaffey College", "2026-2027") is None,
+      "only the registry's year counts, two candidates are none, and a title naming no college word is none")
+same, dropped = C.cq_distinct([BUS, dict(BUS, id=18990, aliaspath="19210/program_index/18990"),
+                               {"id": 19951, "text": "Accounting - A.S. Degree"}])
+check([e["id"] for e in same] == [19915, 19951] and dropped == 1,
+      "a program the index and its school both list is read once, from the first entry")
+check([e["id"] for e in C.cq_distinct([ENTRY, {"id": 5877, "text": "Accounting Basics for Small Business - Certificate of Completion - CC8009"}])[0]]
+      == [5878, 5877], "Riverside City's entries, each titled once, are all kept")
+
 # ── the source a full college files keeps the pilot's shape ─────────────────
 reg = {"catalog_url": start, "catalog_year": "2026-2027", "catalog_platform": "courseleaf", "catalog_format": "html_per_program"}
 src = C.source_record("Cerritos College", aa, reg, best, "sitemap_page")
