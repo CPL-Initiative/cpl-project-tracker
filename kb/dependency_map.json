@@ -597,7 +597,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 261
+     "line": 270
     }
    ],
    "main_committers": []
@@ -1057,7 +1057,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 262
+     "line": 271
     }
    ],
    "main_committers": []
@@ -1445,7 +1445,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 271
+     "line": 280
     }
    ],
    "main_committers": []
@@ -1530,7 +1530,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 266
+     "line": 275
     }
    ],
    "main_committers": []
@@ -2009,7 +2009,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 257
+     "line": 266
     },
     {
      "id": "script:kb/_program_requirements_college.py",
@@ -2056,7 +2056,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 259
+     "line": 268
     }
    ],
    "main_committers": []
@@ -2108,7 +2108,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 269
+     "line": 278
     }
    ],
    "main_committers": []
@@ -2152,7 +2152,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 264
+     "line": 273
     }
    ],
    "main_committers": []
@@ -2221,7 +2221,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 265
+     "line": 274
     }
    ],
    "main_committers": []
@@ -21934,7 +21934,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 396
+     "line": 431
     },
     {
      "id": "script:kb/_program_requirements_pilot.py",

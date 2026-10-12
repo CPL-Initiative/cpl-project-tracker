@@ -158,7 +158,8 @@ def choose(hosts: list[dict]) -> dict | None:
     public one, then a sign-in one, then whatever was seen."""
     def rank(h):
         acc = h.get("access")
-        return (acc == "public" and bool(h.get("outline_words") or h.get("slos")),
+        return (VERDICT_RANK.get((h.get("outline") or {}).get("verdict"), -1),
+                acc == "public" and bool(h.get("outline_words") or h.get("slos")),
                 acc == "public", acc == "sign_in", bool(h.get("status")))
     return max(hosts, key=rank) if hosts else None
 
@@ -167,12 +168,18 @@ def row_for(college: str, hosts: list[dict], slo_pages: list[dict], evidence: li
     pick = choose(hosts)
     if not pick:
         return {"college": college, "cor_system": "none_found", "cor_url": None,
-                "cor_access": "not_found", "cor_prints_slos": bool(slo_pages),
+                "cor_access": "not_found", "cor_outline": "none_found", "cor_outline_url": None,
+                "cor_prints_slos": False, "cor_slo": None,
                 "slo_pages": slo_pages[:3], "hosts": [], "evidence": evidence}
+    out = pick.get("outline") or {}
     return {"college": college, "cor_system": pick["system"],
             "cor_url": pick.get("final_url") or pick["url"],
             "cor_access": pick.get("access") or "unreached",
-            "cor_prints_slos": bool(pick.get("slos") or slo_pages),
+            # S373: what one course's outline showed, measured; the college's own
+            # pages naming SLOs stay as evidence and no longer set the flag
+            "cor_outline": out.get("verdict") or "not_probed", "cor_outline_url": out.get("url"),
+            "cor_prints_slos": out.get("verdict") in ("outline_with_slos", "slos"),
+            "cor_slo": out.get("slo"),
             "slo_pages": slo_pages[:3], "hosts": hosts, "evidence": evidence}
 
 
@@ -233,11 +240,13 @@ def cor_one(reader, reg: dict) -> dict:
         page = reader.load(info["url"])
         note(page, "system: " + info["system"])
         body = page.get("body") or ""
-        hosts.append({**info, "host": key, "status": page.get("status"),
-                      "final_url": page.get("final_url"), "title": (page.get("title") or "")[:120],
-                      "access": access_of(page),
-                      "outline_words": bool(OUTLINE_TEXT.search(body + " " + (page.get("title") or ""))),
-                      "slos": bool(SLO_TEXT.search(body))})
+        host = {**info, "host": key, "status": page.get("status"),
+                "final_url": page.get("final_url"), "title": (page.get("title") or "")[:120],
+                "access": access_of(page),
+                "outline_words": bool(OUTLINE_TEXT.search(body + " " + (page.get("title") or ""))),
+                "slos": bool(SLO_TEXT.search(body))}
+        host["outline"] = outline_of(reader, college, info["system"], info["url"], page)
+        hosts.append(host)
     return row_for(college, hosts, slo_pages, evidence)
 
 
@@ -345,12 +354,19 @@ def probe_page(page: dict) -> dict:
             "outline_fields": outline_fields(body), "slo": slo_snippet(body)}
 
 
+VERDICT_RANK = {"outline_with_slos": 6, "slos": 5, "outline": 4, "list_only": 3,
+                "sign_in": 2, "refused": 1, "unreached": 0}
+
+
 def probe_verdict(start: dict, pages: list[dict]) -> str:
-    """outline_with_slos, outline (fields, no SLO heading), list_only, sign_in,
-    refused or unreached: the best a college's pages reached."""
+    """outline_with_slos; slos (a course's page prints its outcomes with few outline
+    fields, as an eLumen catalog course page does); outline (fields, no SLO heading);
+    list_only; sign_in; refused; unreached: the best a college's pages reached."""
     seen = [start] + pages
     if any(p["outline_fields"] >= 3 and p["slo"] and p["access"] == "public" for p in seen):
         return "outline_with_slos"
+    if any(p["slo"] and p["access"] == "public" for p in pages):
+        return "slos"
     if any(p["outline_fields"] >= 3 and p["access"] == "public" for p in seen):
         return "outline"
     if any(p["access"] == "public" for p in seen):
@@ -361,13 +377,14 @@ def probe_verdict(start: dict, pages: list[dict]) -> str:
     return "unreached"
 
 
-def probe_one(reader, college: str, system: str, start_url: str, why: str) -> dict:
+def probe_one(reader, college: str, system: str, start_url: str, why: str,
+              follow: int = PROBE_FOLLOW, first: dict | None = None) -> dict:
     start_host = urllib.parse.urlparse(start_url).netloc.lower()
-    first = load_full(reader, start_url)
+    first = first if first is not None else load_full(reader, start_url)
     start = probe_page(first)
     links = outline_links(first, start_host)
     pages, done = [], {start_url}
-    for cand in links[:PROBE_FOLLOW]:
+    for cand in links[:follow]:
         if cand["href"] in done:
             continue
         done.add(cand["href"])
@@ -387,6 +404,24 @@ def probe_one(reader, college: str, system: str, start_url: str, why: str) -> di
             "links": links[:12], "pages": pages, "verdict": probe_verdict(start, pages)}
 
 
+def outline_of(reader, college: str, system: str, url: str, page: dict) -> dict:
+    """One course's outline from a system host, as the probe reads it: curriQunet
+    lists its public outline reports on the dashboard at the host's root, so the
+    root is read there; elsewhere the page already loaded is the start. Follows one
+    link (and one step further from a list)."""
+    p = urllib.parse.urlparse(url)
+    if system == "curriqunet" and p.path.strip("/"):
+        start, first = "%s://%s/" % (p.scheme or "https", p.netloc), None
+    else:
+        start, first = url, page
+    got = probe_one(reader, college, system, start, "census", follow=1, first=first)
+    best = next((x for x in got["pages"] if x.get("slo")), None) or \
+        next((x for x in got["pages"] if x.get("outline_fields", 0) >= 3), None)
+    return {"verdict": got["verdict"], "start": start,
+            "url": (best or {}).get("final_url") or (best or {}).get("url"),
+            "slo": ((best or {}).get("slo") or "")[:300] or None}
+
+
 def load_registry() -> list[dict]:
     url = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co")
     key = os.environ.get("SUPABASE_SERVICE_KEY") or os.environ.get("SUPABASE_ANON_KEY")
@@ -403,6 +438,7 @@ def load_registry() -> list[dict]:
 def summarize(rows: list[dict]) -> dict:
     count = lambda k: {v: sum(1 for r in rows if r[k] == v) for v in sorted({r[k] for r in rows})}
     return {"colleges": len(rows), "by_system": count("cor_system"), "by_access": count("cor_access"),
+            "by_outline": count("cor_outline"),
             "prints_slos": sum(1 for r in rows if r["cor_prints_slos"])}
 
 

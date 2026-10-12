@@ -85,8 +85,9 @@ check("4 a public host that shows outlines wins over a public one and a sign-in 
 check("4 a sign-in host is recorded when it is the only one met",
       cor.choose(hosts[:1])["system"] == "coursedog")
 none = cor.row_for("X College", [], [{"url": "https://x.edu/slo", "snippet": "Student Learning Outcomes"}], [])
-check("4 no host met reads none_found and not_found, and an SLO page on the college's own site still counts",
-      none["cor_system"] == "none_found" and none["cor_access"] == "not_found" and none["cor_prints_slos"] is True)
+check("4 no host met reads none_found and not_found; an SLO page on the college's own site stays evidence, never the flag (S373)",
+      none["cor_system"] == "none_found" and none["cor_access"] == "not_found" and none["cor_prints_slos"] is False
+      and none["slo_pages"])
 picked = cor.row_for("Y College", hosts, [], [])
 check("4 the row carries the chosen system, its access and every host met",
       picked["cor_system"] == "curriqunet" and picked["cor_access"] == "public" and len(picked["hosts"]) == 3)
@@ -151,6 +152,41 @@ check("6 the verdict is the best a college's pages reached",
       and cor.probe_verdict({"outline_fields": 0, "slo": None, "access": "unreached"}, []) == "unreached")
 check("6 the probe names at least one college on each public system run 2 met",
       {s for _, s, _, _ in cor.PROBE} >= {"curriqunet", "elumen", "curricunet", "coursedog"})
+
+# 7. The census reads one course's outline per host (S373).
+probed = [{"system": "elumen", "url": "c", "access": "public", "status": 200, "outline_words": True,
+           "outline": {"verdict": "list_only"}},
+          {"system": "curriqunet", "url": "d", "access": "sign_in", "status": 200,
+           "outline": {"verdict": "outline_with_slos", "url": "https://x.curriqunet.com/DynamicReports/1", "slo": "SLO"}}]
+row = cor.row_for("Z College", probed, [], [])
+check("7 the host whose course outline printed SLOs is recorded, over a public catalog with none",
+      row["cor_system"] == "curriqunet" and row["cor_outline"] == "outline_with_slos" and row["cor_prints_slos"] is True
+      and row["cor_outline_url"].endswith("/DynamicReports/1"))
+check("7 a course page that prints outcomes with few outline fields reads slos (an eLumen catalog course page)",
+      cor.probe_verdict({"outline_fields": 0, "slo": None, "access": "public"},
+                        [{"outline_fields": 2, "slo": "Student Learning Outcomes: 1. Demonstrate", "access": "public"}]) == "slos")
+
+
+class _CqReader:
+    def __init__(self):
+        self.loaded = []
+        self.page = _Page()
+
+    def load(self, url):
+        self.loaded.append(url)
+        if url.endswith(".curriqunet.com/"):
+            return {"url": url, "final_url": url, "status": 200, "body": "Dashboard", "links": [
+                {"href": "https://x.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7?entityType=Course&reportId=4",
+                 "text": "Course Outline"}]}
+        return {"url": url, "final_url": url, "status": 200, "body": "x", "links": []}
+
+
+cq = _CqReader()
+got = cor.outline_of(cq, "X College", "curriqunet", "https://x.curriqunet.com/catalog/iq/123", {"links": []})
+check("7 on curriQunet the census opens the dashboard at the host's root, where the outline reports are, and follows one",
+      cq.loaded[:2] == ["https://x.curriqunet.com/",
+                        "https://x.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7?entityType=Course&reportId=4"]
+      and got["verdict"] in ("outline_with_slos", "slos") and got["slo"], (cq.loaded, got))
 
 # 5. Nothing writes.
 src = open(os.path.join(ROOT, "kb", "_course_outline_census.py")).read()
