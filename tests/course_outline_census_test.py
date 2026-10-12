@@ -68,6 +68,14 @@ links = cor.curriculum_links(page, "cerritos.edu")
 check("3 the college's curriculum and outline pages are followed; another college's and a system host are not",
       links == ["https://www.cerritos.edu/curriculum/committee.htm", "https://www.cerritos.edu/academic/cor.htm"], links)
 
+# 3b. The sitemap names the curriculum pages.
+xml = "<urlset><url><loc>https://www.cerritos.edu/curriculum/</loc></url><url><loc>https://www.cerritos.edu/curriculum/minutes/2025-10.htm</loc></url>" \
+      "<url><loc>https://www.cerritos.edu/academic-senate/course-outlines-of-record.htm</loc></url><url><loc>https://www.cerritos.edu/athletics/</loc></url>" \
+      "<url><loc>https://www.cerritos.edu/curriculum/handbook.pdf</loc></url><url><loc>https://www.other.edu/curriculum/</loc></url></urlset>"
+cu = cor.curriculum_urls(cor.sitemap_urls(xml), "cerritos.edu")
+check("3b the sitemap's curriculum and outline pages are kept, shortest first; minutes, a PDF and another college's are not",
+      cu == ["https://www.cerritos.edu/curriculum/", "https://www.cerritos.edu/academic-senate/course-outlines-of-record.htm"], cu)
+
 # 4. The host recorded.
 hosts = [{"system": "coursedog", "url": "a", "access": "sign_in", "status": 200},
          {"system": "curriqunet", "url": "b", "access": "public", "status": 200, "outline_words": True},

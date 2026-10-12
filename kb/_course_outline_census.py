@@ -69,6 +69,9 @@ SLO_TEXT = re.compile(
     r"upon (successful )?completion of (this|the) course", re.I)
 OUTLINE_TEXT = re.compile(r"course outline|outline of record|search (for )?courses|course search", re.I)
 
+CURRICULUM_PATH = re.compile(r"curricul|course-outline|outlines?-of-record|/cor(s)?(/|$|\.)", re.I)
+LOC = re.compile(r"<loc>\s*([^<\s]+)\s*</loc>", re.I)
+
 MAX_CURRICULUM_PAGES = 3
 MAX_HOSTS = 3
 
@@ -132,6 +135,20 @@ def curriculum_links(page: dict, site: str) -> list[str]:
     return list(dict.fromkeys(out))
 
 
+def sitemap_urls(text: str) -> list[str]:
+    """Every <loc> in a sitemap or sitemap index."""
+    return LOC.findall(text or "")
+
+
+def curriculum_urls(urls: list[str], site: str) -> list[str]:
+    """Sitemap entries on the college's own site whose path names curriculum or
+    course outlines, shortest first (a committee's landing page before its minutes)."""
+    keep = [u for u in urls if census.registrable(urllib.parse.urlparse(u).netloc) == site
+            and CURRICULUM_PATH.search(urllib.parse.urlparse(u).path)
+            and not re.search(r"\.(pdf|docx?|xlsx?)$|minutes|agenda", u, re.I)]
+    return sorted(dict.fromkeys(keep), key=len)
+
+
 def choose(hosts: list[dict]) -> dict | None:
     """The host to record: a public one that shows outlines or SLOs first, then any
     public one, then a sign-in one, then whatever was seen."""
@@ -192,6 +209,16 @@ def cor_one(reader, reg: dict) -> dict:
         take_links(page, why)
         if site:
             queue += curriculum_links(page, site)
+    # Homepages seldom link the curriculum committee (S372 sample: 6 of 12 found
+    # nothing), so the college's sitemap names the pages; an index's first two
+    # child sitemaps are read too.
+    if home and site:
+        root = census.site_root(home)
+        smap = reader.load(root + "sitemap.xml")
+        locs = sitemap_urls(smap.get("html") or smap.get("body") or "")
+        for child in [u for u in locs if u.lower().endswith(".xml")][:2]:
+            locs += sitemap_urls((reader.load(child).get("html") or ""))
+        queue = curriculum_urls(locs, site)[:2] + queue
     for url in list(dict.fromkeys(queue))[:MAX_CURRICULUM_PAGES]:
         page = reader.load(url)
         note(page, "curriculum page")
