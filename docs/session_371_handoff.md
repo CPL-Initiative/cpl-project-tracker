@@ -23,9 +23,15 @@ at the context warning (about 109k left), and lets go of its watches and check-i
    main once no other smoke is running (the merge's push starts one against whatever was live). Delete the preview
    function (`cpl-chat-preview-ab.yml` with `cleanup=true`). The A/B preview pass logged one database timeout on 7p's
    negative control (57014), which no prompt reaches; the compare step counts only `7r` controls.
-3. **San Diego City** (`claude/s369-sdcity-read`): read run 38252422845 (capture plus extraction). When it has filed:
-   check found/pass, dispatch `step=load`, merge `origin/main` in, `python3 kb/_build_roep_display.py`, commit, dispatch
-   `step=display`, read back the build (every row on it), open a PR and merge on `test`. Its dated reads are on main (99841af).
+3. **San Diego City is loaded; confirm its display, then merge** (`claude/s369-sdcity-read`, no PR yet). Read run 38252422845:
+   168 of 191 extracted, 157 pass, $12.67. Load run 38265697602 inserted 164 unchecked (22333, 22352, 22367, 38732 stay out,
+   each placing none of its courses). Main merged in (f514161); display build `0f4e4158a2df` committed (ae90dad) and
+   `step=display` dispatched in the same moment as the push, so the run may have checked out the commit before it.
+   Read back: every row should carry build `0f4e4158a2df` (1,909 expected); if the run applied `496f2a71470a`, dispatch
+   `step=display` again. Then add Chaffey's style lane line for San Diego City, open the PR and merge it on `test`.
+
+   **This handoff was amended at an EMERGENCY context line (S370, ~14:58Z), after the full checkpoint (#2033).** Not
+   refreshed for the San Diego City load: the harvest lane (still says extracting), lessons, queue status, INDEX history.
 
 ## Next in the queue
 
