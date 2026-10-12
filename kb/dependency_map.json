@@ -313,7 +313,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 6356
+     "line": 6442
     },
     {
      "id": "edgefn:cpl-news-harvest",
@@ -1019,7 +1019,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 4819
+     "line": 4902
     }
    ],
    "main_committers": []
@@ -1923,7 +1923,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 5681
+     "line": 5764
     }
    ],
    "main_committers": []
@@ -18970,7 +18970,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5449
+     "line": 5532
     }
    ],
    "main_committers": []
@@ -19062,7 +19062,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5987
+     "line": 6070
     }
    ],
    "main_committers": []
@@ -19140,7 +19140,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 4145
+     "line": 4225
     },
     {
      "id": "script:chatbox/smoke_test.sh",
@@ -19316,7 +19316,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5453
+     "line": 5536
     },
     {
      "id": "module:kb-portal/composer_util.js",
@@ -19518,7 +19518,7 @@
      "kind": "edgefn",
      "direction": "write",
      "how": "literal",
-     "line": 6605
+     "line": 6691
     },
     {
      "id": "module:sierra_training.js",
@@ -19712,7 +19712,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 4158
+     "line": 4238
     }
    ],
    "main_committers": []
@@ -20868,7 +20868,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 4465
+     "line": 4548
     },
     {
      "id": "module:college_briefing.js",
@@ -21896,7 +21896,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 5752
+     "line": 5835
     },
     {
      "id": "module:sierra_training.js",
@@ -21928,7 +21928,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 5140
+     "line": 5223
     },
     {
      "id": "module:sierra_training.js",
