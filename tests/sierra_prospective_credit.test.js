@@ -62,6 +62,7 @@ const fs = require("fs");
 const { liftBlock } = require("./lib/lift_ts");
 
 const results = [];
+const PENDING = [];
 function check(name, cond, why) { results.push([name, !!cond, why]); }
 function block(label, fn) {
   try { fn(); } catch (e) { check(label + " — driver threw: " + (e && e.message), false); }
@@ -79,7 +80,7 @@ try {
      "heldCredentialPhrases", "pickHeldTitles", "sameKind", "namesHeld", "contentStems", "stemToken",
      "RELATED_PROGRAMS", "TYPICAL_COURSES_PER_PROGRAM", "isBackgroundTitle", "heldProgramTops", "relatedProgramTops",
      "titleCaseIfShouting", "typicalFoldKey", "foldTypicalRows", "buildQuickList", "buildPrecedentLines", "buildRelatedPrograms",
-     "fetchTypicalCourses", "fetchProgramTeachers"]);
+     "fetchTypicalCourses", "fetchProgramTeachers", "fetchPrecedentCourses", "precedentCourseKey"]);
   F = liftBlock(SRC, "// A SUBSTRING INSIDE A WORD IS NOT A MATCH ON THE WORD",
     "async function fetchStatewideRecommendations(", ["isFalseFriend"]);
 } catch (e) { liftErr = e; }
@@ -770,9 +771,9 @@ block("11. quick list, precedent lines, flyer, the college on every course line,
     (() => { const v = G.buildProspectiveContext(pairs5, courses, heldTitles, null, orange, ["cna"], heldTerms); return !/QUICK LIST|PRECEDENT ON RECORD|OTHER PROGRAMS/.test(v) && /  - Pasadena City College · NURS 102/.test(v); })());
 
   // Wiring, the rule, the smoke, the schema of record.
-  check("(11) ⭐ the handler runs the three reads concurrently and hands the folded typical rows, the teachers, the record and the geography to the builder",
-    /const \[courseRows, typicalRows, teacherRows\] = await Promise\.all\(\[\s*fetchProgramCourses\(pairs, sb\),\s*fetchTypicalCourses\(typicalTops, sb\),\s*fetchProgramTeachers\(related\.map\(\(t: any\) => String\(t\.top\)\), sb\),\s*\]\);/.test(SRC)
-    && /\{ typical: foldTypicalRows\(typicalRows\), teachers: teacherRows, recs, adopters, geoMap \}\)/.test(SRC));
+  check("(11) ⭐ the handler runs the reads concurrently (v91: four, the precedent's course the fourth) and hands the folded typical rows, the teachers, the record and the geography to the builder",
+    /const \[courseRows, typicalRows, teacherRows, precedentCourses\] = await Promise\.all\(\[\s*fetchProgramCourses\(pairs, sb\),\s*fetchTypicalCourses\(typicalTops, sb\),\s*fetchProgramTeachers\(related\.map\(\(t: any\) => String\(t\.top\)\), sb\),\s*heldPhrases\.length > 0 \? fetchPrecedentCourses\(/.test(SRC)
+    && /\{ typical: foldTypicalRows\(typicalRows\), teachers: teacherRows, recs, adopters, geoMap, precedentCourses \}\)/.test(SRC));
   check("(11) the typical-courses read is the program_typical_courses RPC and the teachers read is one PostgREST query on the offerings rollup, both fail-safe",
     /sb\.rpc\("program_typical_courses", \{ top_codes: codes, min_colleges: 2, per_top: 40 \}\)/.test(SRC) && /typical courses unavailable/.test(SRC)
     && /sb\.from\("coci_college_offerings"\)\s*\.select\("college, top_code, top_title, course_count"\)/.test(SRC) && /program teachers unavailable/.test(SRC));
@@ -813,6 +814,57 @@ block("11. quick list, precedent lines, flyer, the college on every course line,
   check("(11) ⭐ the file stores the normal form and recomputes it right after the normalizer",
     normAt !== -1 && colAt > normAt && recAt > colAt && recAt < sql.indexOf("create or replace function public.program_typical_courses(")
     && /A0 FAIL: % rows carry a stale title_norm/.test(fs.readFileSync("chatbox/verify_program_typical_courses.sql", "utf8")));
+
+  // The paired course names its program (S372; Sam, Sheet 69 item 3, "Tune it").
+  const nurvn = { college: "Chaffey College", subject: "NURVN", course_number: "414",
+    course_title: "Acute Care Nursing Assistant: Vocational Nursing Foundations", units: "6.0", top_code: "1230.20", top_title: "Licensed Vocational Nursing" };
+  const info = new Map([[G.precedentCourseKey("Chaffey College", "NURVN 414"), nurvn]]);
+  const lvn = [{ top: "1230.20", title: "Licensed Vocational Nursing" }];
+  const tuned = G.buildPrecedentLines(["Acute Care Nursing Assistant"], recs, adopters, info, lvn);
+  check("(13) ⭐ the Chaffey line names NURVN 414's program and marks it as the precedent for the program the visitor wants to enter",
+    tuned.includes("  - Chaffey College articulated Acute Care Nursing Assistant against 6 hours in Acute Care Nursing Assistant: Vocational Nursing Foundations (NURVN 414) — NURVN 414 is a Licensed Vocational Nursing course at Chaffey College (6 units), the program the visitor wants to enter: this is the precedent for this request"), tuned);
+  check("(13) ⭐ a marked line carries the instruction never to call the request a first",
+    /A line that names the program the visitor wants to enter is the precedent for this request: cite its college, course and units after the courses, and never say the request would be a first\./.test(tuned), tuned);
+  const noTarget = G.buildPrecedentLines(["Acute Care Nursing Assistant"], recs, adopters, info, null);
+  check("(13) without a target section the line names the course's program but marks nothing",
+    /NURVN 414 is a Licensed Vocational Nursing course at Chaffey College \(6 units\)/.test(noTarget)
+    && !/the program the visitor wants to enter/.test(noTarget) && !/never say the request would be a first/.test(noTarget), noTarget);
+  const topOnly = new Map([[G.precedentCourseKey("Chaffey College", "NURVN 414"), { ...nurvn, course_title: "Nurse Assistant" }]]);
+  check("(13) ⭐ the TOP code alone never marks a line: a course whose title shares no word with the program's stays unmarked",
+    !/the program the visitor wants to enter/.test(G.buildPrecedentLines(["Acute Care Nursing Assistant"], recs, adopters, topOnly, lvn)));
+  check("(13) a different program's TOP marks nothing, and no course line renders the line as before",
+    !/the program the visitor wants to enter/.test(G.buildPrecedentLines(["Acute Care Nursing Assistant"], recs, adopters, info, [{ top: "1230.10", title: "Registered Nursing" }]))
+    && G.buildPrecedentLines(["Acute Care Nursing Assistant"], recs, adopters, null, lvn) === G.buildPrecedentLines(["Acute Care Nursing Assistant"], recs, adopters));
+  check("(13) the course key reads NURVN-414, NURVN 414 and nurvn414 alike",
+    G.precedentCourseKey("Chaffey College", "NURVN-414") === G.precedentCourseKey("Chaffey College", "NURVN 414")
+    && G.precedentCourseKey("Chaffey College", "nurvn414") === G.precedentCourseKey("Chaffey College", "NURVN 414"));
+  const calls = [];
+  const fakeSb = (rows, err) => ({
+    from(t) {
+      const q = { t, ins: [] };
+      q.select = () => q;
+      q.in = (c, v) => { q.ins.push([c, v]); return q; };
+      q.limit = () => { calls.push(q); return Promise.resolve({ data: rows, error: err || null }); };
+      return q;
+    },
+  });
+  PENDING.push(G.fetchPrecedentCourses(["Acute Care Nursing Assistant", "Certified Nurse Assistant (CNA) Certification"], recs, adopters, fakeSb([nurvn])).then((m) => {
+    const q = calls[0];
+    check("(13) ⭐ one read of chatbox_college_courses for the single adopter's course; two-adopter lines are never read",
+      q && q.t === "chatbox_college_courses" && JSON.stringify(q.ins) === JSON.stringify([["college", ["Chaffey College"]], ["subject", ["NURVN"]], ["course_number", ["414"]]])
+      && m instanceof Map && m.get(G.precedentCourseKey("Chaffey College", "NURVN 414")) === nurvn, JSON.stringify(q && q.ins));
+    return G.fetchPrecedentCourses(["Acute Care Nursing Assistant"], recs, adopters, fakeSb(null, { message: "timeout" }));
+  }).then((m) => {
+    check("(13) a failed read is null, and the line renders as before", m === null);
+    return Promise.all([G.fetchPrecedentCourses([], recs, adopters, fakeSb([])), G.fetchPrecedentCourses(["Acute Care Nursing Assistant"], null, adopters, fakeSb([]))]);
+  }).then(([a, b]) => check("(13) no held title or no record makes no read", a === null && b === null && calls.length === 2))
+    .catch((e) => check("(13) fetchPrecedentCourses — driver threw: " + (e && e.message), false)));
+  const fullTuned = G.buildProspectiveContext(pairs5, courses, heldTitles, null, orange, ["cna"], heldTerms, { ...extras, precedentCourses: info });
+  check("(13) ⭐ inside the Orange County block the Chaffey precedent is marked for the LVN program",
+    /NURVN 414 is a Licensed Vocational Nursing course at Chaffey College \(6 units\), the program the visitor wants to enter: this is the precedent for this request/.test(fullTuned));
+  check("(13) the turn reads the precedent's course beside the other three, only with a holding phrase, and fails safe",
+    /heldPhrases\.length > 0 \? fetchPrecedentCourses\(heldTitles, recs, adopters, sb\)\.catch\(\(\) => null\) : Promise\.resolve\(null\)/.test(SRC)
+    && /precedentCourses \}\);/.test(SRC));
 });
 
 // Smoke run 38255175428 (2026-10-12, S370): 7c opened "Start by asking Santa Ana College's
@@ -840,10 +892,12 @@ block("12. the request goes to the course's own college, and the answer is writt
 });
 
 // ── Report ──────────────────────────────────────────────────────────────────
-let passed = 0;
-for (const [name, ok, why] of results) {
-  if (ok) passed++;
-  console.log(`  ${ok ? "ok  " : "FAIL"} ${name}${!ok && why ? " — " + why : ""}`);
-}
-console.log(`\nsierra_prospective_credit.test.js: ${passed}/${results.length} checks passed`);
-if (passed !== results.length) process.exit(1);
+Promise.all(PENDING).then(() => {
+  let passed = 0;
+  for (const [name, ok, why] of results) {
+    if (ok) passed++;
+    console.log(`  ${ok ? "ok  " : "FAIL"} ${name}${!ok && why ? " — " + why : ""}`);
+  }
+  console.log(`\nsierra_prospective_credit.test.js: ${passed}/${results.length} checks passed`);
+  if (passed !== results.length) process.exitCode = 1;
+});
