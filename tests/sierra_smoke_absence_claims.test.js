@@ -79,6 +79,13 @@ const SGV_ARTIC_PRONOUN = "**Precedent:** The only CNA-type articulation on reco
   + "(LACCD GE 7) for CNA credentials — proof that colleges do credit CNA training, even though no San Gabriel Valley "
   + "college has set this up yet for LVN specifically.";
 
+// Recorded, run 38251043198 (2026-10-12, S370): a verb between "has yet" and the
+// articulation. The answer had already led with Pasadena NURS 102, Rio Hondo VN 61
+// and Citrus VNRS 150.
+const SGV_ARTIC_SETUP = "- No college in the San Gabriel Valley (or statewide) has yet set up a formal CPL articulation "
+  + "specifically matching a CNA into LVN coursework — so this would be a **request for review**, not a guaranteed award. "
+  + "Faculty at the college make the final call.";
+
 if (RE_7C && RE_7S && fn) {
   check("7s: a pronoun for the articulation the same sentence names passes (\"has set this up yet for LVN\")",
     !fails(SGV_ARTIC_PRONOUN, RE_7S));
@@ -88,6 +95,12 @@ if (RE_7C && RE_7S && fn) {
     fails("Articulations are rare, and no San Gabriel Valley college has set up an LVN program.", RE_7S));
   check("7s: …and the pronoun sentence does not excuse a bare program claim beside it",
     fails(SGV_ARTIC_PRONOUN + " No San Gabriel Valley college offers an LVN entry program.", RE_7S));
+  check("7s: an articulation absence with a verb before it passes (\"has yet set up a formal CPL articulation\")",
+    !fails(SGV_ARTIC_SETUP, RE_7S));
+  check("7s: …and does not excuse a bare program claim beside it",
+    fails(SGV_ARTIC_SETUP + " No San Gabriel Valley college offers an LVN entry program.", RE_7S));
+  check("7s: …\"has set up an LVN program\" with no articulation still fails",
+    fails("No college in the San Gabriel Valley has yet set up a formal LVN program.", RE_7S));
   check("7s: an articulation absence with \"an exhibit ... articulating\" passes", !fails(SGV_ARTIC_EXHIBIT, RE_7S));
   check("7s: \"has no exhibit for LVN\" passes as an articulation absence",
     !fails("No San Gabriel Valley college has an existing LVN exhibit yet.", RE_7S));
