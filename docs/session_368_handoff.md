@@ -13,7 +13,7 @@ start only; it checkpointed at the context warning (108k left) and let go of eve
 
 ## First, in this order
 
-0. **One writer.** S367 holds no PR subscription, no check-in and no artifact watch (its 03:35Z check-in was cancelled).
+0. **One writer.** S367 holds no PR subscription, no check-in and no artifact watch (its 03:35Z check-in was canceled).
    Sam's routine fires at 05:05Z daily (`trig_01L8K64ZKYb5eALdT4HW6NAV`): if you are it, or it is live, agree one writer.
    **Merge S367's two checkpoint PRs on `test`, tracker before vault** (branch `claude/s367-checkpoint` in both repos;
    the vault PR adds Sheet 67's card and the session note, and its coverage check reads tracker main).
