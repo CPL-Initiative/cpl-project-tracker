@@ -815,6 +815,30 @@ block("11. quick list, precedent lines, flyer, the college on every course line,
     && /A0 FAIL: % rows carry a stale title_norm/.test(fs.readFileSync("chatbox/verify_program_typical_courses.sql", "utf8")));
 });
 
+// Smoke run 38255175428 (2026-10-12, S370): 7c opened "Start by asking Santa Ana College's
+// CPL coordinator to review your CNA training against VN 220 ... at Long Beach City College",
+// then corrected itself in the same sentence. The place block says to treat the place as home
+// and the request bullet named "<college>" without saying which, so the opening fused a
+// college in the place with the nearest course outside it. The rule now says whose
+// coordinator takes the request, states it positively (a quoted bad sentence gets
+// reproduced: cpl_memory prompt-quoting-bad-sentence-reproduced-2026-10-02), and asks for
+// the answer to be written once, in order.
+block("12. the request goes to the course's own college, and the answer is written once", () => {
+  const rule = (SRC.match(/const PROSPECTIVE_RULE = `([\s\S]*?)`;/) || [])[1] || "";
+  const lead = rule.slice(rule.indexOf("- LEAD WITH THE ANSWER."), rule.indexOf("\n", rule.indexOf("- LEAD WITH THE ANSWER.")));
+  check("(12) ⭐ the LEAD bullet sends the request to the college that teaches the course, even outside the place",
+    /The request goes to the college that teaches the course: the coordinator you name in that sentence is that college's, even when the nearest course sits outside the visitor's place/.test(lead));
+  check("(12) ⭐ …a college in the place enters only for what it teaches itself",
+    /a college in the place enters the answer only for what it teaches itself/.test(lead));
+  check("(12) ⭐ the LEAD bullet asks for the answer written straight through, never restarted",
+    /Choose that course and its college before the first word, then write the answer straight through/.test(lead)
+    && /never stops partway to restart or correct itself/.test(lead));
+  check("(12) the request bullet names whose coordinator: the college that teaches the course",
+    /ask the CPL coordinator at <the college that teaches the course> to review your <credential> against <course>/.test(rule));
+  check("(12) the rule never quotes the recorded self-correction (a quoted bad sentence gets reproduced)",
+    !/let me give you the right starting point/i.test(SRC) && !/Start by asking Santa Ana/i.test(rule));
+});
+
 // ── Report ──────────────────────────────────────────────────────────────────
 let passed = 0;
 for (const [name, ok, why] of results) {
