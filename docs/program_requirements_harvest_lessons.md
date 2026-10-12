@@ -969,3 +969,27 @@ committed `sources.json` and records (no new read), most of them were never on t
 - **The check-run listing can stay stale for 15 minutes.** `get_check_runs` showed three shards in progress long after they passed; `get_check_run` by id and `list_workflow_jobs` with `filter: latest` read fresh.
 
 **Two answers to one card.** Sheet 65 card 2 was answered in chat at ~23:16Z (*Read from the table*) and on the sheet at 23:46Z (*Every record, marked*, after eight versions, note: "I want every record to show marked not yet confirmed"). The later answer is his deliberate words but contradicts a direct chat answer, so it is asked on Open Asks Sheet 67 before anything is built; #2015 stands meanwhile. Opening the table's public read would reach College Briefing and Program Requirements' public view too (Sierra filters `checked` itself).
+
+## S368 SkyWillow, 2026-10-12: every record public, Long Beach City's re-read, and two curriQunet misses
+
+**Every record is public (Sam, Open Asks Sheet 67 card 1, *Every record, from the table*; "Apply it" in session).** #2021
+marks an unchecked record *Not yet confirmed* on CPL Pathways, Program Requirements and My College (the card's words, his
+Sheet 65 words; CPL Pathways had said *Not yet checked*). Sierra filters `checked` herself, so
+`tests/sierra_program_courses.test.js` now names her filter as the gate. The policy (`using (true)`) did not apply:
+`apply_migration` timed out twice and wrote nothing, so it went to Sam as a paste. The page marks shipped first, so the
+public never sees an unmarked draft.
+
+**Long Beach City's re-read (run 38185403454, #2012's fixes):** 367 of 391 found (was 379), 311 pass the machine checks (was
+274), coverage failures 25 (was 76), none invented (was 2), $19.13. Four have no page: GED/HiSET Preparation 39500, its
+Spanish twin 39497, Barbering 43258 (noncredit, Approved) and 43837 (Active); no addendum on file. Load dispatched as run
+38200167207 (305 rows before it).
+
+**Chaffey and San Diego City: both captures found 0 (Sam: *both, capture now*; then *Chaffee next*).** Chaffey (run
+38197183697): the walk found catalog 718 and the section Degrees and Certificates, read 40 nodes in 80 calls, listed no
+program entry and stopped at its node cap. Its program index nests differently from Riverside City's tablist and linklist.
+San Diego City (run 38197175054): the registry's address is a district alias (`/catalog/alias/city26-27/iq/15489`), and the
+start page's scripts named no catalog id. Both readers need a runner probe of the catalog's own calls before any
+extraction. The capture-first rule saved about $21 of model calls on two reads that would have extracted nothing.
+
+**Pattern:** a capture-only dispatch per college, on its own branch, costs no model calls and answers whether the reader
+reaches the catalog. Make it the first step for every new platform variant, not only every new platform.

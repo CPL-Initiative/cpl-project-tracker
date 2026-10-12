@@ -15342,8 +15342,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 339,
+   "count": 340,
    "docs": [
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "n": 369,
+     "path": "docs/session_369_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "long-beach-city",
+      "chaffey",
+      "san-diego-city",
+      "cpl-pathways",
+      "ui-pass"
+     ],
+     "title": "load and display Long Beach City, fix the curriQunet reader for Chaffey, the policy paste",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-12",
      "governs": [],
@@ -21155,5 +21174,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1106
+ "total": 1107
 }
