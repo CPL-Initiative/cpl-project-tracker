@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-541 document(s).
+542 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -72,6 +72,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A count gate cannot see a reorder](../kb-notes/methodology-a-count-gate-cannot-see-a-reorder.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [A count-based guard passes when its subject disappears](../kb-notes/methodology-a-count-based-guard-passes-when-its-subject-disappears.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [A course missing from a program's state list may be on it in a retired version](../kb-notes/methodology-a-missing-course-may-be-a-retired-version.md) | methodology | published | 2026-10-11 | 2026-10-11 |
+| [A course title reads as its level, so name the course's program beside it](../kb-notes/methodology-a-course-title-reads-as-its-level.md) | methodology | published | 2026-10-12 | 2026-10-12 |
 | [A coverage line takes both numbers from one universe](../kb-notes/methodology-a-coverage-line-takes-both-numbers-from-one-universe.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [A crosswalk's value is the lint, not the mapping](../kb-notes/methodology-a-crosswalks-value-is-the-lint-not-the-mapping.md) | methodology | published | 2026-08-21 | 2026-08-21 |
 | [A curation table that cannot store a reason will never build a reason KB](../kb-notes/methodology-a-curation-table-that-cannot-store-a-reason.md) | methodology | published | 2026-09-20 | 2026-09-20 |

@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 541 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 542 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 86 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 55 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 343 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1111** | |
+| Session handoffs | 344 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1113** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-12 S372 SkyRedwood: Miramar displayed (#2041), Mesa's row applied (#2037), Sierra v91 7c precedent (#2040), the painting gallery (#2038), the course outline census (#2042 draft, Sheet 70); KB note methodology-a-course-title-reads-as-its-level.
 - **2026-10-12 (S371 SkyMaple)**: San Diego City displayed (#2034); College Identity UI pass (#2035); MAP Users sign-in wording (#2036); Mesa registry receipt (#2037, held) and the painting gallery (#2038, step 1); new KB note `methodology-same-context-size-means-the-model-varied`; handoff 372 (SkyRedwood).
 - 2026-10-12 S370 SkyHolly: Long Beach City 38542 removed (Sheet 68 card 2, #2028); Chaffey read, loaded and displayed (#2027, build 496f2a71470a, 1,745 rows); San Diego City extracting; My College UI pass and the public contact measure (#2030); smoke 7s verb shape (#2031); Sierra 7c opening fix (#2032, A/B then deploy); handoff 371 (SkyMaple).
 - 2026-10-12 S369 SkyLaurel: Long Beach City displayed (05811159eeee), the read policy live, curriQunet reader fixes for Chaffey and San Diego City, smoke 7s; handoff 370 (SkyHolly).

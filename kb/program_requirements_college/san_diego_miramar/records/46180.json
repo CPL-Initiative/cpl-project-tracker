@@ -1,0 +1,191 @@
+{
+ "college": "San Diego Miramar College",
+ "control_number": "46180",
+ "shape": "certificate",
+ "title": "Fire Fighter 1 Academy",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/22305",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9553,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9553,
+    "output_tokens": 1853,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1853,
+  "output_tokens_details": {
+   "thinking_tokens": 566
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07527,
+ "ms": 15413,
+ "seconds": 15.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.5,
+    16.5
+   ],
+   "stated": [
+    16.5,
+    16.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Courses Required for the Major:",
+   "measure": "units",
+   "total_units": {
+    "min": 16.5,
+    "max": 16.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Identify and comprehend laws, regulations, codes and standards that influence fire department operations, and identify regulatory and advisory organizations that create and mandate them, especially in the areas of fire prevention, building codes and ordinances, and firefighter health and safety.",
+    "Demonstrate the ability to analyze, appraise and evaluate fire and emergency incidents and identify components of emergency management and fire fighter safety including: Size-up, report on conditions, Incident Command System; RECEO; 10 Standard Firefighting Orders; 18 Situations that Shout “Watch Out “; and common factors associated with injuries and line of duty deaths.",
+    "Identify and describe common types of building construction and conditions associated with structural collapse and firefighter safety. Differentiate between fire detection and fire suppression systems. Student will design and diagram a wet and dry fire protection system, and identify alarm system components and their operations.",
+    "Analyze the causes of fire, determine extinguishing agents and methods, differentiate the stages of the fire and fire development, and compare methods of heat transfer",
+    "Identify and describe the apparatus used in the f ire service, and the equipment and maintenance of fire apparatus and equipment.",
+    "Identify minimum qualifications and entry level skills for firefighter hiring. The student will be able to describe the following elements: application process; written exam process; physical agility exam, oral interview, chief’s interview; background investigation; and fire fighter probationary process. Students will identify fire service history, culture and diversity.",
+    "Calculate flow requirements for fire apparatus, diagram a pump and plumbing schematic for fire apparatus, and apply mathematic formulae to hydraulics problems."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Courses Required for the Major:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16.5,
+     "max": 16.5
+    },
+    "courses": [
+     {
+      "code": "FACD 100D",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FACD 100F",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FACD 170",
+      "units": 8.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FACD 171",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FACD 172",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FACD 173",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FACD 174",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog text begins mid-sentence; the program's own heading was cut off, so section_heading uses the requirements heading 'Courses Required for the Major:'.",
+   "Outcomes were split by line breaks as printed; outcome 3 and outcome 6 each contain several sentences on one line and were kept as single outcomes. 'f ire' copied as printed.",
+   "The description says the program meets California fire fighter requirements for entry-level employment but names no career list explicitly; careers left empty. Course descriptions mention 'a career in the fire service' but were not used per instructions.",
+   "Courses also print lab hours (e.g., FACD 170 408-459 hours lab), but the award is counted in semester units (16.5).",
+   "FACD 173 description lists prerequisite 'FIPT 100D', possibly a typo for FACD 100D."
+  ]
+ },
+ "extracted_run": "38275241459"
+}

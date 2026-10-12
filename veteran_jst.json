@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-12T15:34:06.344400+00:00",
+  "scraped_at": "2026-10-12T19:05:22.368187+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 29013,
+    "jst": 29021,
     "star_colleges": 60
   },
   "computed_star_colleges": 60,
@@ -17,7 +17,7 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 374,
+      "jst": 375,
       "star": true
     },
     "City College of San Francisco": {
@@ -42,7 +42,7 @@
     },
     "Moreno Valley College": {
       "vets": 916,
-      "jst": 1044,
+      "jst": 1047,
       "star": true
     },
     "Bakersfield College": {
@@ -462,7 +462,7 @@
     },
     "Moorpark College": {
       "vets": 179,
-      "jst": 229,
+      "jst": 232,
       "star": true
     },
     "Monterey Peninsula College": {
@@ -487,7 +487,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 115,
+      "jst": 116,
       "star": false
     },
     "Butte College": {

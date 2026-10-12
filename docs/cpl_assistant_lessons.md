@@ -1814,3 +1814,16 @@ prose. `tests/sierra_program_courses.test.js` block 9 re-derives the smoke's ter
   saying why once on the PR) kept every grid readable.
 
 **Next:** read `timings` over real traffic; switch the prospective-credit block from TOP to the real lists.
+
+## Moved from the lane (S372)
+
+From `docs/reference/lanes/sierra-retrieval-corpus.md`, verbatim, to keep the lane under its budget:
+
+**S308/S309 (the two chains joined, 2026-09-30).** ⚠️ **The two-view gap is mostly a double count:** on 253 college × exhibit × catalog year × recommendation keys at 24 colleges, `View_CollegeExhibitCRByCatalogYear` reads exactly twice the student view for the same students, 6,782 of the 8,474 units; `cpl_memory` `map-catalog-year-view-doubles-applied-2026-09-30`. **WRONG (Sam, sheets 14 and 16 card 1): v76 gave CCSF's split statewide.** ✅ **v77 (#1808) answers it:** the matcher strips a possessive (`sierra_geo_ranking` 3b); smoke 15e asks his question (run 36947828031: 13,914 units, led by Default Credit, matching the rows). ✅ **The place (S314, v80, #1813):** it leads only when its colleges teach the program asked (v78/v79 led 7c with Orange County CNA courses); the absence is said once; the prompt quotes no wrong sentence. First clean smoke (run 36961860002): 7c leads LBCC VN 220, 7s Rio Hondo VN 61, all pass. ⚠️ **7c's catalog reads still time out under load:** run 36943057866 (23:55Z) lost `program_typical_courses`, `search_college_programs` and a `chatbox_college_courses` read to the 8 s limit together; 48 ms quiet, 3,800 ms during a smoke. ✅ Migration `chatbox_college_courses_top_code_idx` (S315): `program_typical_courses` 1,521 → 15.5 ms (quiet database), 4,215 → 419 buffers. ✅ **7p (#1796):** `coci_college_programs` stores its four search vectors (`cx_search_norm`'s file recomputes them); identical on 13 term sets, a 4-term call 1,473 → 415 ms.
+
+## S372 SkyRedwood (2026-10-12): 7c's precedent line names the course's program (v91)
+
+- **The miss was a misreading the line invited.** Production's side of A/B 38281837466 wrote: Chaffey's Acute Care Nursing Assistant articulation is "against CNA-level courses, not LVN ones ... would be a first". NURVN 414's title begins "Acute Care Nursing Assistant", so the model read the course as CNA level. S371 had shown the context was the same on passing and failing turns; this run shows what the model did with it.
+- **The fix names the course's field from the catalog data** (`fetchPrecedentCourses`, one read of `chatbox_college_courses`): "NURVN 414 is a Licensed Vocational Nursing course at Chaffey College (6 units), the program the visitor wants to enter: this is the precedent for this request". The mark needs a title word to agree with the TOP, so TOP never decides alone. NURVN 414 is not on Chaffey's Vocational Nursing program list, so the line names the course's field, not a program list.
+- **Read the A/B's answers, not only its grid.** The grid read clean both ways; the candidate's 7s turn had 11.5k fewer context characters, which looked like a regression until `timings.slowest_read` showed `search_college_programs` cut at the 5,000 ms route limit, a read the change does not touch.
+- **The push smoke can straddle a deploy.** Smoke 341 started at 17:26:41Z, a minute before v91 went live; its 7c turn (17:29:50Z) was on v91. Judge a smoke turn by its own timestamp.

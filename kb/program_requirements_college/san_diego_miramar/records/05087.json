@@ -1,0 +1,283 @@
+{
+ "college": "San Diego Miramar College",
+ "control_number": "05087",
+ "shape": "degree",
+ "title": "Child Development",
+ "award": "A.S. Degree",
+ "source_url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20008",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10598,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10598,
+    "output_tokens": 2293,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2293,
+  "output_tokens_details": {
+   "thinking_tokens": 849
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08825,
+ "ms": 19911,
+ "seconds": 20.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CHIL101"
+   ],
+   "flagged": [
+    "CHIL101"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.0,
+    29.0
+   ],
+   "stated": [
+    26.0,
+    29.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Child Development - Associate of Science Degree: Miramar",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Communicate effectively with children, families, staff, and the community.",
+    "Plan and implement developmentally appropriate curriculum for children.",
+    "Apply human development growth theories and principles to early childhood settings."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "CHIL 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHIL 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIL 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIL 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIL 141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIL 180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIL 151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Concurrent enrollment in (2-4 units total):",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CHIL 270",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIL 275",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following three options: CHIL 160 AND CHIL 161",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Select one of the following three options",
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CHIL 160",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIL 161",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following three options: CHIL 165",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Select one of the following three options",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHIL 165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following three options: CHIL 175",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Select one of the following three options",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHIL 175",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "CHIL 101 (Human Growth and Development, 3 units) is required in the catalog but not in the closed list; recorded as a catalog addition.",
+   "Concurrent enrollment block: catalog prints CHIL 270 OR CHIL 275 with the note 'Must select 2-4 units in CHIL 270 or 275'; recorded as a choose_units block with minimum 2 and stated 2-4. Reviewer may check whether units may be combined across both courses.",
+   "The three-option group prints 'Semester Units: 3.0- 4.0' for the group as a whole; the 4.0 printed applies to the CHIL 160 AND CHIL 161 option. The CHIL 165 and CHIL 175 options print no separate total.",
+   "CHIL 161 is marked '(Historical)' in the requirements list.",
+   "The program description names no specific career titles beyond saying the degree prepares students to provide instruction to children and supervise Assistant and Associate Teachers; careers left empty.",
+   "No named GE pattern; text refers to the Academic Requirements section of the catalog.",
+   "The catalog text is cut off mid-sentence in the CHIL 175 course description."
+  ]
+ },
+ "extracted_run": "38275241459"
+}
