@@ -4555,7 +4555,7 @@
      ],
      "title": "A wrong column is worse than a missing one",
      "type": "methodology",
-     "updated": "2026-08-07"
+     "updated": "2026-10-12"
     },
     {
      "created": "2026-07-24",
@@ -12215,9 +12215,9 @@
       "program-requirements",
       "catalog-harvest"
      ],
-     "title": "Program requirements harvest lessons \u2014 archive (S320-S333)",
+     "title": "Program requirements harvest lessons \u2014 archive (S320-S347)",
      "type": null,
-     "updated": "2026-10-11"
+     "updated": "2026-10-12"
     },
     {
      "created": "2026-10-03",
@@ -15342,8 +15342,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 341,
+   "count": 342,
    "docs": [
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "n": 371,
+     "path": "docs/session_371_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "san-diego-city",
+      "sierra",
+      "smoke",
+      "my-college"
+     ],
+     "title": "deploy the Sierra 7c fix, load and display San Diego City, College Identity's UI pass",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-12",
      "governs": [],
@@ -21192,5 +21210,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1108
+ "total": 1109
 }
