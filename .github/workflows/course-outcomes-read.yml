@@ -91,12 +91,12 @@ jobs:
           if [ -z "$changed" ]; then echo "Nothing new."; exit 0; fi
           tar -czf "$RUNNER_TEMP/slice.tgz" $changed
           for i in 1 2 3 4; do
-            git fetch -q --depth=1 origin "${{ github.ref_name }}" &&
+            git fetch -q --depth=1 origin ${{ github.ref_name }} &&
             git checkout -q -f -B land FETCH_HEAD &&
             tar -xzf "$RUNNER_TEMP/slice.tgz" &&
             git add kb/course_outcomes/ &&
             { git diff --cached --quiet || git commit -q -m "Course outcomes read (run ${{ github.run_id }}, part ${{ matrix.part }})"; } &&
-            git push origin HEAD:"${{ github.ref_name }}" && exit 0
+            git push origin HEAD:${{ github.ref_name }} && exit 0
             sleep $((i * 5))
           done
           exit 1
