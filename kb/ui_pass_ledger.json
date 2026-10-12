@@ -190,8 +190,8 @@
    "name": "College Identity",
    "page": "index.html#college-identity",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-12",
+   "outcome": "S371: seeded roster targets (college-identity-roster, -dark: both reads stood in with real map_colleges rows). Found and fixed: 49px sideways scroll at 320px (a path in the snapshot note); six columns colliding at 390px (now a labeled stack below 560px); the placeholder codes X00/X02 and 570/X01 read beside 'No MIS code' (now 'Placeholder code, not an MIS code'); an arrow for 'resolves to'. Wiring agrees: My College and Funding drop the 8 sandbox rows as the suppressed note says. Tokens all defined in both themes. Open: two partner rows say 'organisation' in live data; receipt filed, the write needs Sam (the repo guard holds it)."
   },
   {
    "id": "cobi:annual-report",

@@ -886,6 +886,65 @@ async function seedMapQueue(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// College Identity's roster (S371 UI pass). The tab reads map_colleges (public) and
+// map_college_contacts (reviewer or team phrase) live; with every read aborted the cobi
+// sweep paints only the failed-read notice and the snapshot's findings. The seed stands in
+// both reads with real map_colleges rows (each row shape the table draws: variants, a
+// continuing-education arm, a partner with no MIS code, a placeholder code, suppressed
+// sandbox rows) and contact names that raise a live whitespace and an unknown finding.
+async function seedCollegeIdentity(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "college-identity") location.hash = "college-identity"; });
+  await page.waitForFunction(() => !!window.CPL_COLLEGE_IDENTITY_TAB, null, { timeout: 20000 });
+  // The tab's own first load (every read aborted) must finish before the stand-ins go in.
+  await page.waitForFunction(() => {
+    const st = window.CPL_COLLEGE_IDENTITY_TAB._state;
+    return !st.loading && (st.live || st.error);
+  }, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const row = (id, name, kind, variants, district, d, c, why, test) => ({ college_id: id, college_name: name,
+      entity_kind: kind, is_test: !!test, variants: variants, district: district, mis_district_code: d,
+      mis_college_code: c, mis_absent_why: why || null });
+    const PARTNER = "A partner organization we host a CPL landing page for, not a California Community College. "
+      + "No MIS code exists, and none should be invented.";
+    const COLLEGES = [
+      row(24, "Calbright College Non-Credit", "college", ["CALBRIGHT", "Calbright College"],
+        "California Online Community College District", "X00", "X02",
+        "not in the supplied Appendix A (searched CALBRIGHT); statewide online college, launched 2018"),
+      row(9, "Chaffey College", "college", ["CHAFFEY", "Chaffey"], "Chaffey Community College District", "920", "921"),
+      row(133, "Futuro Health", "partner", [], null, null, null, PARTNER),
+      row(73, "Los Angeles Southwest College", "college", ["LA Southwest", "LA SWEST", "Southwest", "Southwest College", "LA Swest"],
+        "Los Angeles Community College District", "740", "745"),
+      row(4, "NORCO College - Syllabus Manager", "test", [], null, null, null, null, true),
+      row(119, "San Diego College of Continuing Education", "continuing_education",
+        ["San Diego Adult", "SAN DIEGO ADULT", "San Diego College of Continuing Education Credit", "San Diego Continuing Education"],
+        "San Diego Community College District", "070", "076"),
+      row(96, "San Diego City College", "college", ["SAN DIEGO CITY", "San Diego City"], "San Diego Community College District", "070", "071"),
+      row(5, "Testing College", "test", [], null, null, null, null, true),
+    ];
+    const CONTACTS = [{ college: "Chaffey College" }, { college: "San Diego City " }, { college: "Example Unlisted College" }];
+    const json = (b) => Promise.resolve(new Response(JSON.stringify(b), { status: 200, headers: { "Content-Type": "application/json" } }));
+    const real = window.fetch;
+    window.fetch = function (url) {
+      const u = String(url);
+      if (/\/map_colleges\?/.test(u)) return json(COLLEGES);
+      if (/\/map_college_contacts\?/.test(u)) return json(CONTACTS);
+      return real.apply(this, arguments);
+    };
+    const M = window.CPL_COLLEGE_IDENTITY_TAB;
+    M._state.live = null; M._state.error = null; M._state.contacts = null;
+    M.activate();
+  });
+  await page.waitForFunction(() => {
+    const st = window.CPL_COLLEGE_IDENTITY_TAB._state;
+    return !st.loading && st.live && st.live.length && document.querySelector("#college-identity-root .cid-t");
+  }, null, { timeout: 20000 });
+  await page.waitForTimeout(300);
+}
+
 async function seedMyCollegeReports(page, signin) {
   await page.evaluate(() => new Promise((res) => {
     if (window.CPL_FUNDING_TAB) return res();
@@ -1629,6 +1688,25 @@ module.exports = {
     routes: [{ hash: "college-briefing", name: "college-page" }],
     widths: [320, 390, 1440],
     seed: (page) => seedMyCollegePage(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── College Identity: the roster with both reads stood in (S371 UI pass) ──
+     The cobi target paints the failed-read notice: the sandbox reaches no
+     database. These seed the table a reader uses (seedCollegeIdentity). */
+  "college-identity-roster": {
+    file: "index.html",
+    title: "College Identity: the roster and the live contact findings",
+    routes: [{ hash: "college-identity", name: "roster" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedCollegeIdentity(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "college-identity-roster-dark": {
+    file: "index.html",
+    title: "College Identity: the roster and the live contact findings, dark",
+    routes: [{ hash: "college-identity", name: "roster" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedCollegeIdentity(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "my-college-page-dark": {
