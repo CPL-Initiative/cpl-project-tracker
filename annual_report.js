@@ -140,7 +140,9 @@
       var bits = [];
       if (g.target) bits.push("Target: " + g.target);
       if (g.current) bits.push("Current: " + g.current);
-      if (typeof g.progress === "number") bits.push(g.progress + "% to goal");
+      // A goal no figure measures yet says TBA (Sam, 2026-09-28: "show TBA everywhere so
+      // when it changes, it will already be wired"; Open Asks Sheet 66 card 1).
+      bits.push(typeof g.progress === "number" ? g.progress + "% to goal" : "Progress: TBA");
       out.push(line + (bits.length ? "  \n" + bits.join(" · ") : ""));
     });
     return out.join("\n\n");
