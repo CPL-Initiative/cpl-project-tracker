@@ -491,10 +491,25 @@ def index_links(reader, start: str, cache: dict) -> list[str]:
 # codes: "Acting - Associate of Arts Degree and Certificate of Achievement -
 # AA1050/AA1050C/CE1050". So the read is one navigation call per list and one
 # page call per program, with no rendering and no PDF export.
+#
+# Chaffey (S369; reads 38202133197 and 38202752228) files the same way with three
+# differences. Degrees and Certificates (19210) shows a tab list of an index and
+# six schools. A program entry is titled "Business Administration 2.0 for
+# Transfer - AS-T Degree", with no local codes, so the award words had to take
+# "degree" and AS-T, and A.S. before a space (a dot then a space is no word
+# boundary). And the entry holds a child, "Requirements" (19916), whose page
+# carries the curriculum; the entry's own page carries only its title. So an
+# entry may have children: the read takes each visible child's page as part of
+# the entry's page, and a child that is itself a program becomes an entry. The
+# first capture (run 38197183697) spent its 80 calls walking every program as a
+# section and the Student Classifications and Programs section, and found none.
 CQ_CATALOG_ID = re.compile(r"/catalog/(?:_getnavigation\?id=|_getactivecatalogbyid/|_getpage\?catalogid=)(\d+)", re.I)
 CQ_SECTION = re.compile(r"degree|certificate|program|major|award", re.I)
-CQ_AWARD = re.compile(r"\b(?:associate|certificate|a\.\s?a\.|a\.\s?s\.|bachelor|noncredit|non-credit)\b", re.I)
-CQ_MAX_CALLS = 80         # navigation and section pages, before any program page
+CQ_SECTION_FIRST = re.compile(r"degree|certificate", re.I)
+CQ_AWARD = re.compile(r"\b(?:associate|certificate|degree|bachelor|noncredit|non-credit)\b"
+                      r"|\b(?:a\.\s?[as]\.|a[as]-t)(?!\w)", re.I)
+CQ_MAX_CALLS = 400        # navigation and section pages, before any program page
+CQ_MAX_CHILDREN = 4       # an entry's own child pages read (Chaffey's Requirements)
 CQ_MAX_DEPTH = 4
 CQ_BREAK = re.compile(r"<\s*(?:br|/p|/div|/tr|/li|/h[1-6]|/table)\b[^>]*>", re.I)
 
@@ -506,6 +521,36 @@ def cq_catalog_id(urls: list[str]) -> int | None:
         if m:
             return int(m.group(1))
     return None
+
+
+# San Diego City (S369; reads 38203841691 and 38204183571): the registry's start
+# page, a district alias view (catalog/alias/city26-27/iq/15489), draws an empty
+# "Active Catalogs" shell in a headless browser and fetches nothing, so no
+# catalog id is heard. The host's own list names it: _getCatalogs gives
+# "City 2026-2027" 69, "Mesa 2026-2027" 70, "Miramar 2026-2027" 71. The catalog
+# whose title's words all appear in the college's name, in the registry's year,
+# is the one read.
+CQ_YEAR = re.compile(r"\b(?:19|20)\d\d\s*[-/]\s*(?:(?:19|20)?\d\d)\b")
+
+
+def cq_catalog_from_list(catalogs, college: str, year: str | None) -> int | None:
+    """The id of the one catalog in a host's _getCatalogs list that names this
+    college (every word of its title, the year aside, is a word of the
+    college's name) and, where the title carries a year, the registry's year.
+    None when no catalog or more than one does."""
+    words = set(re.findall(r"[a-z]+", (college or "").lower()))
+    want = re.sub(r"\D", "", year or "")
+    hits = []
+    for c in catalogs if isinstance(catalogs, list) else []:
+        title = c.get("Title") or ""
+        y = CQ_YEAR.search(title)
+        named = set(re.findall(r"[a-z]+", CQ_YEAR.sub(" ", title).lower()))
+        if not named or not named <= words or c.get("IsDeleted"):
+            continue
+        if y and want and re.sub(r"\D", "", y.group(0)) not in (want, want[:4] + want[-2:]):
+            continue
+        hits.append(c.get("Id"))
+    return int(hits[0]) if len(hits) == 1 and hits[0] is not None else None
 
 
 def cq_base(start: str) -> tuple[str, str]:
@@ -577,11 +622,24 @@ def cq_lists(page: dict) -> list[dict]:
 
 
 def cq_is_program(nav: dict) -> bool:
-    """A program entry: a leaf whose title names an award after a dash, as the
-    index writes them. "Degrees and Certificates Explained" names no award and
-    has no dash; the index itself has children."""
+    """A program entry: its title names an award after a dash, as the index
+    writes them. "Degrees and Certificates Explained" names no award and has no
+    dash, nor does the index. Riverside City's entries are leaves; Chaffey's
+    each hold a Requirements child, which cq_pages reads as part of the entry."""
     text = nav.get("text") or ""
-    return not nav.get("haschildbodynavs") and " - " in text and bool(CQ_AWARD.search(text))
+    return " - " in text and bool(CQ_AWARD.search(text))
+
+
+def cq_hidden(nav: dict) -> bool:
+    """A node the catalog keeps out of its web view (Chaffey's blank sibling of
+    each Requirements node), or one with no title."""
+    if not (nav.get("text") or "").strip():
+        return True
+    try:
+        cfg = json.loads(nav.get("config") or "{}")
+    except (TypeError, ValueError):
+        return False
+    return bool(((cfg or {}).get("nodeConfig") or {}).get("excludeFromWebView"))
 
 
 def cq_index(get, catalog: int, root: str) -> tuple[list[dict], dict]:
@@ -590,6 +648,9 @@ def cq_index(get, catalog: int, root: str) -> tuple[list[dict], dict]:
     the JSON at url, or None."""
     top = get("%s/Catalog/_getNavigation?id=%d&navigationtypeId=1" % (root, catalog)) or {}
     sections = [n for n in top.get("navs") or [] if CQ_SECTION.search(n.get("text") or "")]
+    # Degrees and certificates first: Chaffey's Student Classifications and
+    # Programs section comes before it and holds no program.
+    sections.sort(key=lambda n: not CQ_SECTION_FIRST.search(n.get("text") or ""))
     entries: dict[int, dict] = {}
     seen: set = set()
     calls = 1
@@ -634,11 +695,50 @@ def cq_group(title: str, url: str) -> str:
     return "codes:" + "+".join(codes) if codes else url
 
 
-def cq_page(entry: dict, page: dict | None, prefix: str) -> dict | None:
-    """One program entry's page in the shape assign() reads."""
+def cq_title_key(nav: dict) -> str:
+    """An entry's title as one key: case, spacing and dashes folded."""
+    return "title:" + re.sub(r"[\s\u2013\u2014-]+", " ", (nav.get("text") or "").lower()).strip()
+
+
+def cq_distinct(entries: list[dict]) -> tuple[list[dict], int]:
+    """Each program entry once. Chaffey lists every program in its index and
+    again under its school, under two ids with one title (401 entries for 202
+    programs, 1,226 loads in run 38203335820); the first is read."""
+    out, keys = [], set()
+    for e in entries:
+        k = cq_title_key(e)
+        if k in keys:
+            continue
+        keys.add(k)
+        out.append(e)
+    return out, len(entries) - len(out)
+
+
+def cq_children(get, catalog: int, root: str, page: dict) -> tuple[list[dict], list[dict]]:
+    """(the entry's own child pages, the program entries among its children):
+    the visible nodes the entry's page lists, read once each, up to
+    CQ_MAX_CHILDREN. `get(url)` returns the JSON at url, or None."""
+    own, more = [], []
+    for nl in cq_lists(page):
+        kids = get("%s/Catalog/_getNavigation?id=%d&parentId=%s" % (root, catalog, nl.get("id"))) or {}
+        for k in kids.get("navs") or []:
+            if cq_is_program(k):
+                more.append(k)
+            elif not cq_hidden(k) and len(own) < CQ_MAX_CHILDREN:
+                child = get("%s/Catalog/_getPage?catalogId=%d&id=%s" % (root, catalog, k.get("id")))
+                if child:
+                    own.append(child)
+    return own, more
+
+
+def cq_page(entry: dict, page: dict | None, prefix: str, children: list | None = None) -> dict | None:
+    """One program entry's page in the shape assign() reads, its own child
+    pages (Chaffey's Requirements) read after it."""
     if not page:
         return None
     title, text = cq_page_text(page)
+    for child in children or []:
+        text = "\n".join(t for t in (text, cq_page_text(child)[1]) if t)
     title = title or (entry.get("text") or "")
     url = prefix + (entry.get("aliaspath") or str(entry.get("id")))
     got = {"final_url": url, "title": title, "h1": title, "body": text, "content": text,
@@ -685,18 +785,36 @@ def cq_pages(reader, start: str, report: dict) -> list[dict]:
     errors: list = []
     report["curriqunet"] = {"catalog": catalog, "view_prefix": prefix, "errors": errors}
     if catalog is None:
-        report["curriqunet"]["stopped"] = "the start page's scripts named no catalog id"
+        catalog = cq_catalog_from_list(cq_json(reader, root + "/catalog/_getCatalogs", errors),
+                                       report.get("college"), report.get("catalog_year"))
+        report["curriqunet"].update(catalog=catalog, catalog_from="_getCatalogs")
+    if catalog is None:
+        report["curriqunet"]["stopped"] = "the start page's scripts named no catalog id, nor did the host's catalog list"
         return []
     entries, account = cq_index(lambda u: cq_json(reader, u, errors), catalog, root)
     report["curriqunet"].update(account)
     pages = []
-    for i, e in enumerate(entries[:MAX_PAGES]):
-        pg = cq_page(e, cq_json(reader, "%s/Catalog/_getPage?catalogId=%d&id=%s" % (root, catalog, e.get("id")),
-                                errors), prefix)
+    get = lambda u: cq_json(reader, u, errors)  # noqa: E731
+    entries, dropped = cq_distinct(entries)
+    report["curriqunet"]["same_title_entries"] = dropped
+    queue, seen, i = list(entries), {e.get("id") for e in entries} | {cq_title_key(e) for e in entries}, 0
+    while i < len(queue) and i < MAX_PAGES:
+        e = queue[i]
+        i += 1
+        page = get("%s/Catalog/_getPage?catalogId=%d&id=%s" % (root, catalog, e.get("id")))
+        children = []
+        if page and e.get("haschildbodynavs"):
+            children, more = cq_children(get, catalog, root, page)
+            for m in more:
+                if m.get("id") not in seen and cq_title_key(m) not in seen:
+                    seen.update((m.get("id"), cq_title_key(m)))
+                    queue.append(m)
+        pg = cq_page(e, page, prefix, children)
         if pg:
             pages.append(pg)
-        if i % 50 == 49:
-            print("  read %d of %d program pages" % (i + 1, len(entries)), flush=True)
+        if i % 50 == 0:
+            print("  read %d of %d program pages" % (i, len(queue)), flush=True)
+    report["curriqunet"]["entries_read"] = i
     del errors[40:]
     return pages
 

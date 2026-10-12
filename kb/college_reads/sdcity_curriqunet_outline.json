@@ -1,0 +1,36 @@
+{
+ "_readme": "S369 SkyLaurel, 2026-10-12. San Diego City's capture (run 38197175054) loaded the registry's catalog address, a district alias view (https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15489), and its scripts named no catalog id the reader knows (_getNavigation?id=, _getActiveCatalogById/, _getPage?catalogId=), so it read no program. Sam chose San Diego City after Chaffey (2026-10-12). This read loads that address with \"network\": true, to see which calls the catalog's scripts make from an alias view, and the district host's catalog list as JSON. No model call; two page loads and the data calls the browser makes for the first. Read 2 (S369): read 1 (run 38203841691) found the alias view an empty Active Catalogs page that fetched nothing, and _getCatalogs names City 2026-2027 as catalog 69 (Mesa 70, Miramar 71). This read loads catalog 69's top navigation and alias paths as JSON, and the node 15489 under the plain view address with \"network\": true, to learn whether a view without the alias draws.",
+ "college": "San Diego City College",
+ "questions": {
+  "outline_source": "Which addresses the alias view's scripts fetch, and where the catalog id appears in them.",
+  "catalogs": "Which catalogs the district host lists, with their ids and aliases.",
+  "sections": "Catalog 69's sections, their ids, and where programs sit."
+ },
+ "keywords": [
+  "[Cc]atalog",
+  "city26-27",
+  "[Dd]egree",
+  "[Cc]ertificate"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "sections"
+   ],
+   "url": "https://sdccd.curriqunet.com/Catalog/_getNavigation?id=69&navigationtypeId=1"
+  },
+  {
+   "answers": [
+    "sections"
+   ],
+   "url": "https://sdccd.curriqunet.com/Catalog/_getAliasPathsForCatalog?id=69"
+  },
+  {
+   "answers": [
+    "outline_source"
+   ],
+   "url": "https://sdccd.curriqunet.com/catalog/iq/15489",
+   "network": true
+  }
+ ]
+}
