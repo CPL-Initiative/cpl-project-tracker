@@ -161,6 +161,45 @@ async function seedRoepRecord(page, theme, lay) {
   await page.waitForTimeout(200);
 }
 
+// CPL Pathways' catalog records as the table serves them (Sheet 65 card 2, S367). The
+// sweep aborts the table reads, so the seed hands the tab the list it would have read
+// (the pilot's programs, an unchecked record with a long title, and one record no read
+// has fetched) through the tab's own landing path, then opens one of the two:
+//   "unchecked"  the record read from the table, marked Not yet checked;
+//   "failed"     a record whose read fails (the sweep aborts it), which says so.
+async function seedRoepTable(page, theme, which) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "cpl-pathways") location.hash = "cpl-pathways"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForFunction(() => {
+    const T = window.CPL_PATHWAYS_TAB;
+    const s = document.querySelector("#cpl-pathways-root select.cplpw-select");
+    return T && T._roepTable && s && s.querySelector('optgroup[label="Catalog records, Beta draft"] option');
+  }, null, { timeout: 60000 });
+  await page.evaluate((which) => {
+    const T = window.CPL_PATHWAYS_TAB, R = T._roepTable;
+    const file = (window.CPL_PATHWAYS_ROEP || {}).programs || [];
+    const base = file.find((p) => /Field Ironworkers/.test(p.title)) || file[0];
+    const lbcc = { college: "Long Beach City College", control_number: "37305",
+      program_title: "Ironworking Technology: Reinforcing and Structural Field Practice", award: "Certificate of Achievement", checked: false };
+    const unread = { college: "Norco College", control_number: "90001", program_title: "A Record No Read Has Fetched", award: "A.S. Degree", checked: false };
+    R.index = [lbcc, unread].concat(file.map((p) => ({ college: p.college, control_number: p.control_number,
+      program_title: p.title, award: p.award, checked: !!(p.display && p.display.checks && p.display.checks.checked) })));
+    const disp = JSON.parse(JSON.stringify(base.display));
+    disp.checks = Object.assign({}, disp.checks, { checked: false });
+    R.records[lbcc.college + "|" + lbcc.control_number] = { key: lbcc.college + "|" + lbcc.control_number, table: true,
+      college: lbcc.college, control_number: lbcc.control_number, title: lbcc.program_title, award: lbcc.award,
+      catalog_year: base.catalog_year, source_url: base.source_url, platform: "custom_html", measure: base.measure,
+      record: base.record, display: disp, checked: false };
+    R.error = null;
+    T._roepIndexLanded();
+    const s = document.querySelector("#cpl-pathways-root select.cplpw-select");
+    const want = which === "failed" ? /A Record No Read Has Fetched/ : /Ironworking Technology: Reinforcing/;
+    const o = Array.from(s.querySelectorAll('optgroup[label="Catalog records, Beta draft"] option')).find((x) => want.test(x.textContent));
+    if (o) { s.value = o.value; s.dispatchEvent(new Event("change", { bubbles: true })); }
+  }, which);
+  await page.waitForTimeout(400);
+}
+
 // Narrows CPL Pathways to one college through its College select (Sam, 2026-10-08).
 async function seedCollegeSelect(page) {
   await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "cpl-pathways") location.hash = "cpl-pathways"; });
@@ -1354,6 +1393,22 @@ module.exports = {
     routes: [{ hash: "cpl-pathways", name: "roep-record-term" }],
     widths: [390, 1440],
     seed: (page) => seedRoepRecord(page, "dark", "term"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "cpl-pathways-table": {
+    file: "index.html",
+    title: "CPL Pathways: an unchecked record read from the table",
+    routes: [{ hash: "cpl-pathways", name: "table-unchecked" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedRoepTable(page, "light", "unchecked"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "cpl-pathways-table-dark": {
+    file: "index.html",
+    title: "CPL Pathways: a record read that failed, dark",
+    routes: [{ hash: "cpl-pathways", name: "table-failed" }],
+    widths: [390, 1440],
+    seed: (page) => seedRoepTable(page, "dark", "failed"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "cpl-pathways-college": {

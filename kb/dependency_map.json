@@ -558,7 +558,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 309
+     "line": 348
     }
    ],
    "main_committers": []
@@ -953,7 +953,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2745,
+     "line": 2762,
      "tabs": [
       "cpl-pathways"
      ]
@@ -1112,7 +1112,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 216
+     "line": 255
     }
    ],
    "main_committers": []
@@ -1421,7 +1421,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2744,
+     "line": 2761,
      "tabs": [
       "cpl-pathways"
      ]
@@ -1561,7 +1561,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 429
+     "line": 468
     }
    ],
    "main_committers": []
@@ -2267,7 +2267,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2743,
+     "line": 2760,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4910,7 +4910,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3010,
+     "line": 3027,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4980,7 +4980,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3004,
+     "line": 3021,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5016,7 +5016,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 751
+     "line": 790
     },
     {
      "id": "module:college_briefing.js",
@@ -5259,7 +5259,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2154,
+     "line": 2161,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5302,7 +5302,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2970,
+     "line": 2987,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5325,7 +5325,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2313,
+     "line": 2328,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5370,11 +5370,18 @@
   "file:cpl_pathways_roep_data.js": {
    "consumers": [
     {
+     "id": "module:a11y.config.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "global",
+     "line": 180
+    },
+    {
      "id": "module:cpl_pathways.js",
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3018,
+     "line": 3035,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5517,7 +5524,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2991,
+     "line": 3008,
      "tabs": [
       "cpl-pathways"
      ]
@@ -21569,7 +21576,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1546,
+     "line": 1553,
      "tabs": [
       "cpl-pathways"
      ]
@@ -21633,7 +21640,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1547,
+     "line": 1554,
      "tabs": [
       "cpl-pathways"
      ]
