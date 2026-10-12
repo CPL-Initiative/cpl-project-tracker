@@ -170,8 +170,10 @@
     ".cplpw-stagesel button.on.draft { background: var(--mustard-fill); color: var(--on-mustard); }",
     ".cplpw-stagesel button.on.active { background: var(--hunter, var(--green-progress)); color: var(--surface-opaque); }",
     ".cplpw-stagesel button.on.tabled { background: var(--surface-muted); color: var(--text-strong); }",
-    ".cplpw-pdfbtn { margin-left:auto; background: var(--seal-blue, var(--navy-primary)); color: var(--white); border:none; border-radius:8px; padding:7px 14px; font-weight:600; font-size:.8rem; cursor:pointer; font-family:inherit; }",
-    ".cplpw-pdfbtn:hover { opacity:.92; }",
+    /* Controls are underlined words (Sam, 2026-10-09): no border, no fill, 24px tall. */
+    ".cplpw-pdfbtn { margin-left:auto; font-size:.85rem; border:0; border-radius:2px; background:none; color: var(--cobalt); font-weight:600; padding:2px 0; min-height:24px; cursor:pointer; font-family:inherit; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
+    ".cplpw-pdfbtn:hover { text-decoration-thickness:2px; }",
+    ".cplpw-pdfbtn:focus-visible, .cplpw-qa .go:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
     /* The BIG status banner */
     ".cplpw-stagebanner { display:flex; align-items:center; gap:14px; border-radius:10px; padding:12px 18px; margin: 8px 0 12px; }",
     ".cplpw-stagebanner .big { font-size:1.18rem; font-weight:800; letter-spacing:.16em; }",
@@ -248,8 +250,8 @@
     ".cplpw-adoptopts li { margin:1px 0; }",
     /* ⚡ Quick Adopt intake */
     ".cplpw-qa { margin-top:8px; }",
-    ".cplpw-qa .go { background: var(--seal-blue, var(--navy-primary)); color: var(--white); border:none; border-radius:6px; padding:5px 12px; font-weight:700; font-size:.74rem; cursor:pointer; font-family:inherit; }",
-    ".cplpw-qa .go:hover { opacity:.92; }",
+    ".cplpw-qa .go { font-size:.85rem; border:0; border-radius:2px; background:none; color: var(--cobalt); font-weight:600; padding:2px 0; min-height:24px; cursor:pointer; font-family:inherit; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
+    ".cplpw-qa .go:hover { text-decoration-thickness:2px; }",
     ".cplpw-qa-form { margin-top:8px; display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:6px; max-width:640px; }",
     ".cplpw-qa-form input, .cplpw-qa-form textarea { padding:6px 9px; border:1px solid var(--border-strong); border-radius:6px; font-size:.78rem; font-family:inherit; background: var(--surface-opaque); color: var(--text-body); }",
     ".cplpw-qa-form textarea { grid-column: 1 / -1; min-height:44px; }",
@@ -1045,7 +1047,8 @@
     "@media (max-width: 560px) { .cplpw-lpoints li { grid-template-columns:minmax(0, 1fr); } .cplpw-lpoints .cplpw-lchip { justify-self:start; } }",
     ".cplpw-lcpl { margin:12px 0 0; padding:9px 12px; border-radius:10px; background: var(--surface-subtle); color: var(--text-body); }",
     ".cplpw-lcpl strong { color: var(--text-strong); }",
-    ".cplpw-lopen { margin-top:10px; padding:6px 12px; border-radius:8px; border:1px solid var(--cobalt); background:transparent; color: var(--cobalt); font:inherit; font-weight:600; cursor:pointer; }",
+    ".cplpw-lopen { margin-top:10px; font:inherit; border:0; border-radius:2px; background:none; color: var(--cobalt); font-weight:600; padding:2px 0; min-height:24px; cursor:pointer; font-family:inherit; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
+    ".cplpw-lopen:hover { text-decoration-thickness:2px; }",
     ".cplpw-lopen:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
     ".cplpw-lblocks { display:grid; grid-template-columns:minmax(0, 1fr); gap:14px; margin-top:12px; min-width:0; }",
     ".cplpw-lblock { min-width:0; }",
@@ -1375,12 +1378,16 @@
     ".cplpw-roep .rdraft { display:inline-block; font-size:.7rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:2px 9px; border-radius:999px; border:1px solid var(--mustard-text); color: var(--mustard-text); }",
     ".cplpw-rcontrols { display:flex; flex-wrap:wrap; gap:10px 18px; align-items:end; }",
     ".cplpw-rseglabel { display:grid; gap:4px; font-size:.8rem; font-weight:600; color: var(--text-muted); }",
-    ".cplpw-rseg { display:inline-flex; flex-wrap:wrap; border:1px solid var(--border-strong); border-radius:8px; overflow:hidden; }",
-    ".cplpw-rseg button { font:inherit; font-weight:600; color: var(--text-body); background: var(--surface-opaque); border:0; border-right:1px solid var(--border-strong); padding:8px 14px; min-height:44px; cursor:pointer; }",
-    ".cplpw-rseg button:last-child { border-right:0; }",
-    ".cplpw-rseg button[aria-pressed='true'] { background: var(--text-strong); color: var(--surface-opaque); }",
+    /* Controls are underlined words (Sam, 2026-10-09): no border, no fill, 24px tall,
+       18px apart. In a toggle set the view in use is the word that is not a link:
+       weight and aria-pressed carry it, never a fill. */
+    ".cplpw-rseg { display:inline-flex; flex-wrap:wrap; column-gap:18px; }",
+    ".cplpw-rseg button { font:inherit; font-weight:600; color: var(--cobalt); background:none; border:0; border-radius:2px; padding:2px 0; min-height:24px; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
+    ".cplpw-rseg button:hover { text-decoration-thickness:2px; }",
+    ".cplpw-rseg button[aria-pressed='true'] { color: var(--text-strong); font-weight:700; text-decoration:none; cursor:default; }",
     ".cplpw-rseg button:focus-visible, .cplpw-rask:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
-    ".cplpw-rask { display:inline-flex; align-items:center; font-weight:700; color: var(--seal-blue-text); text-decoration:none; border:1px solid var(--border-strong); border-radius:8px; padding:8px 14px; min-height:44px; background: var(--surface-opaque); }",
+    ".cplpw-rask { display:inline-flex; align-items:center; font-weight:600; color: var(--cobalt); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; padding:2px 0; min-height:24px; }",
+    ".cplpw-rask:hover { text-decoration-thickness:2px; }",
     /* the program card */
     ".cplpw-rprog { background: var(--surface-opaque); border:1px solid var(--border); border-radius:12px; padding:16px 18px; display:grid; gap:12px; min-width:0; }",
     ".cplpw-rprog .top { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 20px; align-items:baseline; }",
@@ -1483,7 +1490,7 @@
   }
 
   var ROEP_PLATFORM = { courseleaf: "CourseLeaf", curriqunet: "CurriQunet META", elumen: "eLumen", acalog: "Acalog",
-    pdf: "PDF catalog", custom_html: "college's own catalog pages", smartcatalog: "SmartCatalog", coursedog: "Coursedog" };
+    pdf: "PDF catalog", custom_html: "catalog pages", smartcatalog: "SmartCatalog", coursedog: "Coursedog" };
   // One view state for the tab: the layout and the viewer stay as the reader
   // leaves them when another program opens.
   var roepView = { lay: "req", who: "college" };
@@ -2173,11 +2180,11 @@
     var s = document.createElement("style");
     s.id = "cplccr-css";
     s.textContent =
-      ".cplccr .ccr-toggle{display:inline-flex;border:1px solid var(--border);border-radius:9px;overflow:hidden;margin:2px 0 12px}" +
-      ".cplccr .ccr-vt{font:inherit;font-size:.8rem;font-weight:600;padding:6px 14px;border:0;background:none;color:var(--text-muted);cursor:pointer}" +
-      ".cplccr .ccr-vt+.ccr-vt{border-left:1px solid var(--border)}" +
-      ".cplccr .ccr-vt.on{background:var(--cpl-green-soft,#e7f2ea);color:var(--cpl-green,#2f6d3a)}" +
-      ".cplccr .ccr-vt:focus-visible{outline:2px solid var(--cpl-green,#2f6d3a);outline-offset:-2px}" +
+      ".cplccr .ccr-toggle{display:inline-flex;flex-wrap:wrap;column-gap:18px;margin:2px 0 12px}" +
+      ".cplccr .ccr-vt{font:inherit;font-size:.85rem;font-weight:600;padding:2px 0;min-height:24px;border:0;border-radius:2px;background:none;color:var(--cobalt);cursor:pointer;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}" +
+      ".cplccr .ccr-vt:hover{text-decoration-thickness:2px}" +
+      ".cplccr .ccr-vt.on{color:var(--text-strong);font-weight:700;text-decoration:none;cursor:default}" +
+      ".cplccr .ccr-vt:focus-visible{outline:3px solid var(--focus-ring, var(--cobalt));outline-offset:2px}" +
       ".cplccr.view-student .col-only{display:none}" +
       ".cplccr .ccr-intro{font-size:.86rem;color:var(--text-muted);line-height:1.55;margin:0 0 6px}" +
       ".cplccr .ccr-intro b{color:var(--text-body)}" +
@@ -2209,23 +2216,31 @@
     var b = document.createElement("button");
     b.type = "button";
     b.className = "ccr-vt" + (on ? " on" : "");
+    b.setAttribute("aria-pressed", on ? "true" : "false");
     b.textContent = label;
     return b;
+  }
+  // A toggle set marks the view in use with weight and aria-pressed, never color alone.
+  function ccrVtPick(on, off) {
+    on.classList.add("on"); on.setAttribute("aria-pressed", "true");
+    off.classList.remove("on"); off.setAttribute("aria-pressed", "false");
   }
   function renderCcrViews(prog, ccr) {
     ensureCcrCss();
     var box = el("div", "cplpw-sec wide cplccr view-student");
     // Student / College toggle
     var tog = el("div", "ccr-toggle");
-    var bS = ccrVtBtn("🎓 Explore CPL — student", true);
-    var bC = ccrVtBtn("🏛️ Curate & validate — college", false);
+    tog.setAttribute("role", "group");
+    tog.setAttribute("aria-label", "View for");
+    var bS = ccrVtBtn("Explore CPL — student", true);
+    var bC = ccrVtBtn("Curate & validate — college", false);
     bS.addEventListener("click", function () {
       box.classList.remove("view-college"); box.classList.add("view-student");
-      bS.classList.add("on"); bC.classList.remove("on");
+      ccrVtPick(bS, bC);
     });
     bC.addEventListener("click", function () {
       box.classList.remove("view-student"); box.classList.add("view-college");
-      bC.classList.add("on"); bS.classList.remove("on");
+      ccrVtPick(bC, bS);
     });
     tog.appendChild(bS); tog.appendChild(bC); box.appendChild(tog);
     // Student-facing CPL intro
@@ -2458,15 +2473,17 @@
     var box = el("div", "cplpw-sec wide cplccr cplmem view-student");
     // Student / College toggle (same affordance as the CCR two-view)
     var tog = el("div", "ccr-toggle");
-    var bS = ccrVtBtn("🎓 Explore CPL — student", true);
-    var bC = ccrVtBtn("🏛️ Curate & validate — college", false);
+    tog.setAttribute("role", "group");
+    tog.setAttribute("aria-label", "View for");
+    var bS = ccrVtBtn("Explore CPL — student", true);
+    var bC = ccrVtBtn("Curate & validate — college", false);
     bS.addEventListener("click", function () {
       box.classList.remove("view-college"); box.classList.add("view-student");
-      bS.classList.add("on"); bC.classList.remove("on");
+      ccrVtPick(bS, bC);
     });
     bC.addEventListener("click", function () {
       box.classList.remove("view-student"); box.classList.add("view-college");
-      bC.classList.add("on"); bS.classList.remove("on");
+      ccrVtPick(bC, bS);
     });
     tog.appendChild(bS); tog.appendChild(bC); box.appendChild(tog);
 
@@ -2477,7 +2494,7 @@
     // ── The bachelor's own course requirements ──
     var bsCpl = (mem.courses || []).filter(function (c) { return c.cpl; }).length;
     var h1 = el("div", "mem-sech");
-    h1.appendChild(el("span", "k", "📘 The bachelor's course requirements"));
+    h1.appendChild(el("span", "k", "The bachelor's course requirements"));
     h1.appendChild(el("span", "c", (mem.n_resolved || (mem.courses || []).length) + " courses" +
       (bsCpl ? " · " + bsCpl + " with course-level CPL" : "")));
     box.appendChild(h1);
@@ -2497,7 +2514,7 @@
         document.createTextNode(" — the lower-division prior-learning credit travels straight into the bachelor's pathway.")]));
       var totCpl = qual.reduce(function (a, q) { return a + (q.n_cpl || 0); }, 0);
       var h2 = el("div", "mem-sech");
-      h2.appendChild(el("span", "k", "🎖️ Where the CPL lives"));
+      h2.appendChild(el("span", "k", "Where the CPL lives"));
       h2.appendChild(el("span", "c", qual.length + " qualifying credential" + (qual.length === 1 ? "" : "s") +
         (totCpl ? " · " + totCpl + " courses with CPL" : "")));
       box.appendChild(h2);
@@ -3042,6 +3059,7 @@
     _openRoepProgram: openRoepProgram,
     _readRoepIndex: readRoepIndex,
     _roepTable: roepTable,
+    _roepIndexLanded: roepIndexLanded,
     _roepView: roepView,
     _ladderBlocks: ladderBlocks,
     _certificateFigures: certificateFigures,

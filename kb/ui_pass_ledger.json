@@ -134,8 +134,8 @@
    "name": "CPL Pathways",
    "page": "index.html#cpl-pathways",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-12",
+   "outcome": "S367, after Sheet 65 card 2 (#2015, the table read): sweeps clean light+dark before and after on the tab, the catalog record (both layouts) and the college select; two new seeds (cpl-pathways-table: an unchecked record read from the table at 320/390/1440; -dark: a record read that failed) paint the table states, and screenshots with the table stubbed read 23 programs, no sideways scroll at 320. Found and fixed: the provenance line read 'Long Beach City College's college's own catalog pages reading procedure' (custom_html label); the record's Lay out and Viewer toggles, Ask Sierra, PDF, Quick Adopt and the ladder's open button were boxed or filled, now underlined words (24px; PDF measured 24px, the open word 30px, both themes), the view in use in weight; the Student/College toggle gained aria-pressed and a labeled group, its fill gone; four decorative emoji left a toggle and two headings. Remainder named: the stage selector and the program pills still fill to mark state (a toggle set colored by stage), and the tab's 30 status and legend marks (the check, the diamond) stay with their legend; wiring: program_requirement_records and program_source_registry are now shared with Program Requirements and College Briefing under one read policy, not compared live (the sandbox cannot reach Supabase)."
   },
   {
    "id": "cobi:nc-learning-partners",
