@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Foreign Languages",
  "award": "A.A. Degree",
- "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/communication-studies/communication-studies-aa/",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/world-languages/",
  "record_shape": 4,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13822,
+  "input_tokens": 10534,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13822,
-    "output_tokens": 1378,
+    "input_tokens": 10534,
+    "output_tokens": 1446,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 1378,
+  "output_tokens": 1446,
   "output_tokens_details": {
-   "thinking_tokens": 253
+   "thinking_tokens": 342
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.08285,
- "ms": 12024,
- "seconds": 12.6,
+ "cost_usd": 0.07106,
+ "ms": 12433,
+ "seconds": 12.8,
  "parts": null,
  "error": null,
  "score": {
@@ -119,7 +119,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Not found: the text holds no Foreign Languages A.A. section",
+   "section_heading": "World Languages",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -135,106 +135,107 @@
   "missing_explained": [
    {
     "code": "FREN 1",
-    "why": "appears only in a site-wide course index, not in any requirements section"
+    "why": "appears only in course descriptions; no requirements section in the text"
    },
    {
     "code": "FREN 2",
-    "why": "appears only in a site-wide course index, not in any requirements section"
+    "why": "appears only in course descriptions; no requirements section in the text"
    },
    {
     "code": "FREN 25A",
-    "why": "appears only in a site-wide course index, not in any requirements section"
+    "why": "appears only in course descriptions; no requirements section in the text"
    },
    {
     "code": "FREN 3",
-    "why": "appears only in a site-wide course index, not in any requirements section"
+    "why": "appears only in course descriptions; no requirements section in the text"
    },
    {
     "code": "FREN 4",
-    "why": "appears only in a site-wide course index, not in any requirements section"
+    "why": "appears only in course descriptions; no requirements section in the text"
    },
    {
     "code": "JAPAN 1",
-    "why": "appears only in a site-wide course index, not in any requirements section"
+    "why": "appears only in course descriptions; no requirements section in the text"
    },
    {
     "code": "JAPAN 2",
-    "why": "appears only in a site-wide course index, not in any requirements section"
+    "why": "appears only in course descriptions; no requirements section in the text"
    },
    {
     "code": "JAPAN 3",
-    "why": "appears only in a site-wide course index, not in any requirements section"
+    "why": "appears only in course descriptions; no requirements section in the text"
    },
    {
     "code": "JAPAN 4",
-    "why": "appears only in a site-wide course index, not in any requirements section"
+    "why": "appears only in course descriptions; no requirements section in the text"
    },
    {
     "code": "LING 1",
-    "why": "appears only in a site-wide course index, not in any requirements section"
+    "why": "not in the text"
    },
    {
     "code": "LING 3",
-    "why": "appears only in a site-wide course index, not in any requirements section"
+    "why": "not in the text"
    },
    {
     "code": "SPAN 1",
-    "why": "not in the text (index cut off at MUSIC)"
+    "why": "appears only in course descriptions; no requirements section in the text"
    },
    {
     "code": "SPAN 10",
-    "why": "not in the text (index cut off at MUSIC)"
+    "why": "not in the text (course list cut off)"
    },
    {
     "code": "SPAN 10H",
-    "why": "not in the text (index cut off at MUSIC)"
+    "why": "not in the text (course list cut off)"
    },
    {
     "code": "SPAN 2",
-    "why": "not in the text (index cut off at MUSIC)"
+    "why": "not in the text (course list cut off)"
    },
    {
     "code": "SPAN 25A",
-    "why": "not in the text (index cut off at MUSIC)"
+    "why": "not in the text (course list cut off)"
    },
    {
     "code": "SPAN 25B",
-    "why": "not in the text (index cut off at MUSIC)"
+    "why": "not in the text (course list cut off)"
    },
    {
     "code": "SPAN 25C",
-    "why": "not in the text (index cut off at MUSIC)"
+    "why": "not in the text (course list cut off)"
    },
    {
     "code": "SPAN 25D",
-    "why": "not in the text (index cut off at MUSIC)"
+    "why": "not in the text (course list cut off)"
    },
    {
     "code": "SPAN 3",
-    "why": "not in the text (index cut off at MUSIC)"
+    "why": "not in the text (course list cut off)"
    },
    {
     "code": "SPAN 4",
-    "why": "not in the text (index cut off at MUSIC)"
+    "why": "not in the text (course list cut off)"
    },
    {
     "code": "SPAN 8",
-    "why": "not in the text (index cut off at MUSIC)"
+    "why": "not in the text (course list cut off)"
    },
    {
     "code": "SPAN 9",
-    "why": "not in the text (index cut off at MUSIC)"
+    "why": "not in the text (course list cut off)"
    },
    {
     "code": "SPAN 9H",
-    "why": "not in the text (index cut off at MUSIC)"
+    "why": "not in the text (course list cut off)"
    }
   ],
   "notes": [
-   "The source URL points to the Communication Studies A.A. page, not Foreign Languages; the wrong page appears to have been fetched.",
-   "The catalog text is only an alphabetical course index (site navigation), running from 'H 271WE' to a truncated 'MUSIC 13AD'. It prints no program description, requirements, units, outcomes or careers for the Foreign Languages A.A.",
-   "No blocks were recorded because no requirement rules appear in the text; the correct Foreign Languages A.A. page should be retrieved and re-read."
+   "The text contains only the World Languages department overview and part of the Courses tab; no requirements section for a 'Foreign Languages' A.A. degree is printed, so no blocks were recorded.",
+   "The page's program menu lists French - Associate in Arts and Japanese - Associate in Arts and a Spanish AA-T, but no 'Foreign Languages' A.A.; the 2026-2027 catalog may have replaced the combined degree with language-specific degrees. A reviewer should check the French and Japanese A.A. pages.",
+   "The Courses tab text is cut off at SPAN 1H, so later Spanish and any LING course descriptions are not in the text.",
+   "No total units, outcomes, or named careers are printed for this award; the overview mentions only 'to provide a pool of students to fill positions in the community', which names no specific career."
   ]
  },
- "extracted_run": "38152016534"
+ "extracted_run": "38185403454"
 }

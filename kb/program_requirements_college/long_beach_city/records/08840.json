@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Nutrition Assistant",
  "award": "A.A. Degree",
- "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/dance/dance-aa/",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/nutrition-dietetics/",
  "record_shape": 4,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7879,
+  "input_tokens": 9435,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7879,
-    "output_tokens": 980,
+    "input_tokens": 9435,
+    "output_tokens": 1379,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 980,
+  "output_tokens": 1379,
   "output_tokens_details": {
-   "thinking_tokens": 163
+   "thinking_tokens": 405
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.05112,
- "ms": 8355,
- "seconds": 8.9,
+ "cost_usd": 0.06532,
+ "ms": 12136,
+ "seconds": 12.4,
  "parts": null,
  "error": null,
  "score": {
@@ -109,7 +109,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "(none: the text holds no section for the Nutrition Assistant A.A. Degree)",
+   "section_heading": "Nutrition and Dietetics",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -125,66 +125,67 @@
   "missing_explained": [
    {
     "code": "NUTR 20",
-    "why": "appears only in a course index list, not in program requirements"
+    "why": "not in the text as a requirement; appears only in the Courses tab descriptions"
    },
    {
     "code": "NUTR 21",
-    "why": "appears only in a course index list, not in program requirements"
+    "why": "not in the text as a requirement; appears only in the Courses tab descriptions"
    },
    {
     "code": "NUTR 227",
-    "why": "appears only in a course index list, not in program requirements"
+    "why": "not in the text as a requirement; appears only in the Courses tab descriptions"
    },
    {
     "code": "NUTR 230A",
-    "why": "appears only in a course index list, not in program requirements"
+    "why": "not in the text as a requirement; appears only in the Courses tab descriptions"
    },
    {
     "code": "NUTR 230B",
-    "why": "appears only in a course index list, not in program requirements"
+    "why": "not in the text as a requirement; appears only in the Courses tab descriptions"
    },
    {
     "code": "NUTR 236",
-    "why": "appears only in a course index list, not in program requirements"
+    "why": "not in the text as a requirement; appears only in the Courses tab descriptions"
    },
    {
     "code": "NUTR 240A",
-    "why": "appears only in a course index list, not in program requirements"
+    "why": "not in the text as a requirement; appears only in the Courses tab descriptions"
    },
    {
     "code": "NUTR 240B",
-    "why": "appears only in a course index list, not in program requirements"
+    "why": "not in the text as a requirement; appears only in the Courses tab descriptions"
    },
    {
     "code": "NUTR 25",
-    "why": "appears only in a course index list, not in program requirements"
+    "why": "not in the text as a requirement; appears only in the Courses tab descriptions"
    },
    {
     "code": "NUTR 26",
-    "why": "appears only in a course index list, not in program requirements"
+    "why": "not in the text as a requirement; appears only in the Courses tab descriptions"
    },
    {
     "code": "NUTR 28",
-    "why": "appears only in a course index list, not in program requirements"
+    "why": "not in the text as a requirement; appears only in the Courses tab descriptions"
    },
    {
     "code": "NUTR 32",
-    "why": "appears only in a course index list, not in program requirements"
+    "why": "not in the text as a requirement; appears only in the Courses tab descriptions"
    },
    {
     "code": "NUTR 34",
-    "why": "appears only in a course index list, not in program requirements"
+    "why": "not in the text as a requirement; appears only in the Courses tab descriptions"
    },
    {
     "code": "NUTR 35",
-    "why": "appears only in a course index list, not in program requirements"
+    "why": "not in the text as a requirement; appears only in the Courses tab descriptions"
    }
   ],
   "notes": [
-   "The source URL points to the Dance A.A. page, not Nutrition Assistant. The catalog text is an alphabetical course index fragment (MGMT through PHOT) from site navigation. It contains no requirements, totals, outcomes or careers for the Nutrition Assistant A.A. Degree.",
-   "No blocks were recorded. The correct catalog page for the Nutrition Assistant A.A. Degree (2026-2027) should be retrieved and reviewed.",
-   "The course index also lists NUTR courses that are not on the closed list (e.g., NUTR 22, 23, 24, 31, 233, 250-262, 601, 602, 610, 611, 653). None was recorded because the text gives no program context for them."
+   "The supplied text contains only the site navigation menu, the Nutrition and Dietetics department overview, and the Courses tab (course descriptions). It does not include the Programs tab section for the Nutrition Assistant A.A. Degree, so no requirement blocks, total units, GE pattern or program outcomes could be recorded. The award's section should be retrieved and re-read.",
+   "section_heading is set to the page heading 'Nutrition and Dietetics' because no heading for the Nutrition Assistant A.A. Degree appears in the text.",
+   "The department overview mentions 'trained food service professionals' and 'entry-level jobs' for the Nutrition and Dietetics program as a whole. These were not recorded as careers for this award because the award's own section is absent; a reviewer may decide otherwise.",
+   "The Courses tab text is cut off mid-description at NUTR 252."
   ]
  },
- "extracted_run": "38152016534"
+ "extracted_run": "38185403454"
 }

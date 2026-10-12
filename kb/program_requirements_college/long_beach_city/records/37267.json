@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Workplace Language Skills for ESL Level 2",
  "award": "Noncredit program",
- "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/workplace-language-skills-esl-level-1-certificate-competency/",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/workplace-language-skills-esl-level-2-certificate-competency/",
  "record_shape": 4,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6768,
+  "input_tokens": 5734,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6768,
-    "output_tokens": 678,
+    "input_tokens": 5734,
+    "output_tokens": 366,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,31 +30,28 @@
     "model": null
    }
   ],
-  "output_tokens": 678,
+  "output_tokens": 366,
   "output_tokens_details": {
-   "thinking_tokens": 267
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.04063,
- "ms": 7418,
- "seconds": 7.9,
+ "cost_usd": 0.03026,
+ "ms": 3322,
+ "seconds": 3.6,
  "parts": null,
  "error": null,
  "score": {
-  "measure": "units",
+  "measure": "hours",
   "coverage": {
-   "placed": 0,
+   "placed": 2,
    "listed": 2,
-   "share": 0.0,
-   "missing": [
-    "ESL672",
-    "ESL673"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -64,24 +61,28 @@
   },
   "arithmetic": {
    "pass": true,
-   "status": "unstated",
-   "computed": null,
-   "stated": null,
-   "why": [
-    "the catalog prints no total, no hours and no units"
-   ]
+   "status": "equal",
+   "computed": [
+    180.0,
+    180.0
+   ],
+   "stated": [
+    180.0,
+    180.0
+   ],
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -90,39 +91,57 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "(no section for this award in the text)",
-   "measure": "units",
+   "section_heading": "Workplace Language Skills for ESL – Level 2 - Certificate of Competency",
+   "measure": "hours",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 180,
+    "max": 180
    },
    "open_elective_units": null,
    "ge_pattern": null,
-   "outcomes": [],
+   "outcomes": [
+    "ESL students will be able to competently use listening, speaking, reading and writing skills in the workplace at an intermediate level."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ESL 672",
-    "why": "appears only in a site-wide alphabetical course index, not in a program requirements section"
-   },
-   {
-    "code": "ESL 673",
-    "why": "appears only in a site-wide alphabetical course index, not in a program requirements section"
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESL 672",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 673",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The catalog text is only a fragment of the site's alphabetical course index (ENGL through ETHST), likely navigation content. It contains no requirements section, total, outcomes or careers for Workplace Language Skills for ESL Level 2.",
-   "The source URL points to the Level 1 certificate of competency page, not Level 2. A reviewer should fetch the correct Level 2 page.",
-   "measure is left as 'units' because the text states no hours. A noncredit certificate of competency would normally be counted in hours.",
-   "No blocks are recorded because no requirement rule is printed. ESL 672 and ESL 673 appear in the index, but nothing shows how they count toward the award."
+   "Noncredit certificate of competency counted in hours; Total Hours 180 as printed.",
+   "'Careers' appears only in the site footer menu, not as program content; no careers recorded."
   ]
  },
- "extracted_run": "38152016534"
+ "extracted_run": "38185403454"
 }

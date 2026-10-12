@@ -456,12 +456,11 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.867,
   "codes_found": [
    "CHEM1A",
    "ENGLC1000",
    "ENGLC1000E",
-   "ENGLC1000H",
    "ENGR17",
    "ENGR17L",
    "ENGR35",
@@ -469,23 +468,22 @@
    "ENGR44",
    "ENGR50",
    "ENGR54",
-   "ESL1S",
    "MATH80",
    "PHYS3A",
    "PHYS3B"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/engineering-technology/engineering-technology-as/",
-   "title": "Engineering Technology - Associate in Science | LBCC",
-   "h1": "Engineering Technology - Associate in Science",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/engineering/engineering-as/",
+   "title": "Engineering - Associate in Science | LBCC",
+   "h1": "Engineering - Associate in Science",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 15,
-  "text_chars": 16000
+  "text_chars": 3374
  },
  {
   "control_number": "02659",
@@ -501,17 +499,17 @@
    "ARCHT66"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-science/computer-science-as/",
-   "title": "Computer Science - Associate in Science | LBCC",
-   "h1": "Computer Science - Associate in Science",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/",
+   "title": "Architectural Design | LBCC",
+   "h1": "Architectural Design",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 1,
-    "title": 0.0
+    "award": 0,
+    "title": 0.333
    }
   },
   "listed": 5,
-  "text_chars": 4533
+  "text_chars": 16000
  },
  {
   "control_number": "02663",
@@ -833,28 +831,12 @@
   "title": "Family and Consumer Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "CDECE47",
-   "FASH10",
-   "FASH20",
-   "FASH9",
-   "NUTR20",
-   "NUTR21"
-  ],
-  "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/dance/dance-aa/",
-   "title": "Dance - Associate in Arts | LBCC",
-   "h1": "Dance - Associate in Arts",
-   "text_from": "textContent",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "02686",
@@ -885,17 +867,17 @@
    "FASH9"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/photography-aa/",
-   "title": "Photography - Associate in Arts | LBCC",
-   "h1": "Photography - Associate in Arts",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/",
+   "title": "Fashion Design | LBCC",
+   "h1": "Fashion Design",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 1,
-    "title": 0.0
+    "award": 0,
+    "title": 1.0
    }
   },
   "listed": 19,
-  "text_chars": 5642
+  "text_chars": 16000
  },
  {
   "control_number": "02690",
@@ -1071,57 +1053,12 @@
   "title": "Physical Sciences",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "ASTRC1001",
-   "ASTRC1001H",
-   "CHEM12A",
-   "CHEM12B",
-   "CHEM1A",
-   "CHEM1B",
-   "CHEM2",
-   "CHEM3",
-   "COSA30",
-   "ENVRS1",
-   "GEOL18",
-   "GEOL2",
-   "GEOL2F",
-   "GEOL2L",
-   "GEOL4",
-   "GEOL7",
-   "MATH27",
-   "MATH28",
-   "MATH29",
-   "MATH37",
-   "MATH40",
-   "MATH45",
-   "MATH50",
-   "MATH55",
-   "MATH80",
-   "MATH84",
-   "MATHC2210",
-   "MATHC2210H",
-   "MATHC2220",
-   "MATHC2220H",
-   "PHYS2A",
-   "PHYS2B",
-   "PHYS3A",
-   "PHYS3B",
-   "PHYS3C"
-  ],
-  "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/physical-sciences/physical-sciences-as/",
-   "title": "Physical Sciences - Associate in Science | LBCC",
-   "h1": "Physical Sciences - Associate in Science",
-   "text_from": "textContent",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 35,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "02700",
@@ -1162,7 +1099,7 @@
   "title": "Administration of Justice",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
+  "method": "link_search",
   "coverage": 1.0,
   "codes_found": [
    "ADJUS10",
@@ -1184,14 +1121,11 @@
    "PUBAD1"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/photography-aa/",
-   "title": "Photography - Associate in Arts | LBCC",
-   "h1": "Photography - Associate in Arts",
+   "url": "https://lbcc-public.courseleaf.com/",
+   "title": "2026-2027 Catalog | LBCC",
+   "h1": "ACADEMIC CATALOG",
    "text_from": "textContent",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
+   "label": null
   },
   "listed": 17,
   "text_chars": 16000
@@ -1378,7 +1312,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.833,
   "codes_found": [
    "CS11",
    "CS21",
@@ -1387,24 +1321,22 @@
    "CS51",
    "CS61",
    "MATHC2210",
-   "MATHC2210H",
    "MATHC2220",
-   "MATHC2220H",
    "PHYS3A",
    "PHYS3B"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-aided-design-mechanical/computer-aided-design-mechanical-as/",
-   "title": "Computer Aided Design - Mechanical - Associate in Science | LBCC",
-   "h1": "Computer Aided Design - Mechanical - Associate in Science",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-science/computer-science-as/",
+   "title": "Computer Science - Associate in Science | LBCC",
+   "h1": "Computer Science - Associate in Science",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 16000
+  "text_chars": 3384
  },
  {
   "control_number": "08810",
@@ -1412,48 +1344,35 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.519,
   "codes_found": [
-   "CISCO250",
-   "CISCO251",
-   "CISCO252",
-   "CISCO253",
-   "ELECT202",
    "ELECT204",
    "ELECT209",
    "ELECT212",
    "ELECT214",
    "ELECT225",
-   "ELECT227",
-   "ELECT230A",
-   "ELECT230B",
    "ELECT240",
    "ELECT242",
    "ELECT245",
    "ELECT250",
    "ELECT253",
-   "ELECT262",
-   "ELECT263",
    "ELECT271",
    "ELECT275",
    "ELECT277",
-   "ELECT280",
-   "ELECT284",
-   "ELECT435A",
-   "ELECT435B"
+   "ELECT435A"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-automation-technician/electrical-technology-automation-technician-as/",
-   "title": "Electrical Technology, Automation Technician - Associate in Science | LBCC",
-   "h1": "Electrical Technology, Automation Technician - Associate in Science",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-general-industrial-electrician/-electrical-technology-general-industrial-electrician-as/",
+   "title": "Electrical Technology, General Industrial Electrician - Associate in Science | LBCC",
+   "h1": "Electrical Technology, General Industrial Electrician - Associate in Science",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 27,
-  "text_chars": 16000
+  "text_chars": 3603
  },
  {
   "control_number": "08818",
@@ -1597,13 +1516,13 @@
    "TV16"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/photography-aa/",
-   "title": "Photography - Associate in Arts | LBCC",
-   "h1": "Photography - Associate in Arts",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/film-television-electronic-media/",
+   "title": "Film, Television & Electronic Media | LBCC",
+   "h1": "Film, Television & Electronic Media",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 1,
-    "title": 0.0
+    "award": 0,
+    "title": 1.0
    }
   },
   "listed": 11,
@@ -1615,7 +1534,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.917,
   "codes_found": [
    "FREN1",
    "FREN2",
@@ -1626,8 +1545,6 @@
    "JAPAN2",
    "JAPAN3",
    "JAPAN4",
-   "LING1",
-   "LING3",
    "SPAN1",
    "SPAN10",
    "SPAN10H",
@@ -1643,13 +1560,13 @@
    "SPAN9H"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/communication-studies/communication-studies-aa/",
-   "title": "Communication Studies - Associate in Arts | LBCC",
-   "h1": "Communication Studies - Associate in Arts",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/world-languages/",
+   "title": "World Languages | LBCC",
+   "h1": "World Languages",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 1,
-    "title": 0.0
+    "award": 0,
+    "title": 0.5
    }
   },
   "listed": 24,
@@ -1698,7 +1615,7 @@
   "title": "Floral Design",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
+  "method": "link_search",
   "coverage": 1.0,
   "codes_found": [
    "ART30",
@@ -1717,14 +1634,11 @@
    "MKTG40"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/photography-aa/",
-   "title": "Photography - Associate in Arts | LBCC",
-   "h1": "Photography - Associate in Arts",
+   "url": "https://lbcc-public.courseleaf.com/",
+   "title": "2026-2027 Catalog | LBCC",
+   "h1": "ACADEMIC CATALOG",
    "text_from": "textContent",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
+   "label": null
   },
   "listed": 14,
   "text_chars": 16000
@@ -1748,17 +1662,17 @@
    "FASH9"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/photography-aa/",
-   "title": "Photography - Associate in Arts | LBCC",
-   "h1": "Photography - Associate in Arts",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-merchandising/",
+   "title": "Fashion Merchandising | LBCC",
+   "h1": "Fashion Merchandising",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 1,
-    "title": 0.0
+    "award": 0,
+    "title": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 5642
+  "text_chars": 16000
  },
  {
   "control_number": "08838",
@@ -1833,17 +1747,17 @@
    "NUTR35"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/dance/dance-aa/",
-   "title": "Dance - Associate in Arts | LBCC",
-   "h1": "Dance - Associate in Arts",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/nutrition-dietetics/",
+   "title": "Nutrition and Dietetics | LBCC",
+   "h1": "Nutrition and Dietetics",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 1,
-    "title": 0.0
+    "award": 0,
+    "title": 0.5
    }
   },
   "listed": 14,
-  "text_chars": 5179
+  "text_chars": 12833
  },
  {
   "control_number": "08841",
@@ -1946,88 +1860,24 @@
   "title": "Physical Sciences",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "ASTRC1001",
-   "ASTRC1001H",
-   "CHEM12A",
-   "CHEM12B",
-   "CHEM1A",
-   "CHEM1B",
-   "CHEM2",
-   "CHEM3",
-   "COSA30",
-   "ENVRS1",
-   "GEOL18",
-   "GEOL2",
-   "GEOL2F",
-   "GEOL2L",
-   "GEOL4",
-   "GEOL7",
-   "MATH27",
-   "MATH28",
-   "MATH29",
-   "MATH37",
-   "MATH40",
-   "MATH45",
-   "MATH50",
-   "MATH55",
-   "MATH80",
-   "MATH84",
-   "MATHC2210",
-   "MATHC2210H",
-   "MATHC2220",
-   "MATHC2220H",
-   "PHYS2A",
-   "PHYS2B",
-   "PHYS3A",
-   "PHYS3B",
-   "PHYS3C"
-  ],
-  "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/photography-aa/",
-   "title": "Photography - Associate in Arts | LBCC",
-   "h1": "Photography - Associate in Arts",
-   "text_from": "textContent",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 35,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "11308",
   "title": "Digital Design and Publication",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "JOURN20",
-   "JOURN5",
-   "JOURN80",
-   "JOURN81",
-   "JOURN82",
-   "JOURN83",
-   "JOURN86",
-   "JOURN87",
-   "JOURN88"
-  ],
-  "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/dance/dance-aa/",
-   "title": "Dance - Associate in Arts | LBCC",
-   "h1": "Dance - Associate in Arts",
-   "text_from": "textContent",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 4372
+  "text_chars": 0
  },
  {
   "control_number": "11311",
@@ -2045,44 +1895,29 @@
    "JOURN83"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/dance/dance-aa/",
-   "title": "Dance - Associate in Arts | LBCC",
-   "h1": "Dance - Associate in Arts",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/journalism/",
+   "title": "Journalism | LBCC",
+   "h1": "Journalism",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 1,
-    "title": 0.0
+    "award": 0,
+    "title": 0.333
    }
   },
   "listed": 6,
-  "text_chars": 4298
+  "text_chars": 7695
  },
  {
   "control_number": "11312",
   "title": "Journalism- Publications Specialist",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "JOURN20",
-   "JOURN35",
-   "JOURN81",
-   "JOURN82",
-   "JOURN83"
-  ],
-  "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/dance/dance-aa/",
-   "title": "Dance - Associate in Arts | LBCC",
-   "h1": "Dance - Associate in Arts",
-   "text_from": "textContent",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 4248
+  "text_chars": 0
  },
  {
   "control_number": "11314",
@@ -2189,60 +2024,52 @@
   "title": "Advanced Transportation Technology--Alternative Fuels",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "link_search",
+  "coverage": 1.0,
+  "codes_found": [
+   "MTFAB50"
+  ],
+  "source": {
+   "url": "https://lbcc-public.courseleaf.com/",
+   "title": "2026-2027 Catalog | LBCC",
+   "h1": "ACADEMIC CATALOG",
+   "text_from": "textContent",
+   "label": null
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 4000
  },
  {
   "control_number": "12779",
   "title": "Advanced Transportation Technology--Electric Vehicles",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "link_search",
+  "coverage": 1.0,
+  "codes_found": [
+   "MTFAB50"
+  ],
+  "source": {
+   "url": "https://lbcc-public.courseleaf.com/",
+   "title": "2026-2027 Catalog | LBCC",
+   "h1": "ACADEMIC CATALOG",
+   "text_from": "textContent",
+   "label": null
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 4000
  },
  {
   "control_number": "13842",
   "title": "Fashion Design: Assistant Designer/Stylist",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "FASH10",
-   "FASH200",
-   "FASH21",
-   "FASH216",
-   "FASH24",
-   "FASH25",
-   "FASH26",
-   "FASH27",
-   "FASH3",
-   "FASH36",
-   "FASH45",
-   "FASH46",
-   "FASH5",
-   "FASH9"
-  ],
-  "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/photography-aa/",
-   "title": "Photography - Associate in Arts | LBCC",
-   "h1": "Photography - Associate in Arts",
-   "text_from": "textContent",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 14,
-  "text_chars": 5642
+  "text_chars": 0
  },
  {
   "control_number": "13843",
@@ -2342,17 +2169,17 @@
    "ARCHT66"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-patterns/",
-   "title": "General Education Patterns | LBCC",
-   "h1": "General Education Patterns",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/industrial-design/",
+   "title": "Industrial Design | LBCC",
+   "h1": "Industrial Design",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 1,
+    "award": 0,
     "title": 0.0
    }
   },
   "listed": 6,
-  "text_chars": 5042
+  "text_chars": 16000
  },
  {
   "control_number": "14904",
@@ -2464,30 +2291,28 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.778,
   "codes_found": [
    "ELECT202",
-   "ELECT253",
    "MTFAB202",
    "MTFAB204",
    "MTFAB206",
    "MTFAB260",
    "MTFAB421",
-   "MTFAB50",
-   "WELD221"
+   "MTFAB50"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/advanced-manufacturing/advanced-manufacturing-technology-certificate-achievement/",
-   "title": "Advanced Manufacturing Technology - Certificate of Achievement | LBCC",
-   "h1": "Advanced Manufacturing Technology - Certificate of Achievement",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/metal-fabrication-technology/",
+   "title": "Metal Fabrication Technology | LBCC",
+   "h1": "Metal Fabrication Technology",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 1,
-    "title": 0.4
+    "award": 0,
+    "title": 0.6
    }
   },
   "listed": 9,
-  "text_chars": 16000
+  "text_chars": 12937
  },
  {
   "control_number": "19427",
@@ -2566,7 +2391,7 @@
   "title": "Floral Design",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "link_search",
   "coverage": 1.0,
   "codes_found": [
    "ART30",
@@ -2585,14 +2410,11 @@
    "MKTG40"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/architectural-design-certificate-achievement/",
-   "title": "Architectural Design - Certificate of Achievement | LBCC",
-   "h1": "Architectural Design - Certificate of Achievement",
+   "url": "https://lbcc-public.courseleaf.com/",
+   "title": "2026-2027 Catalog | LBCC",
+   "h1": "ACADEMIC CATALOG",
    "text_from": "textContent",
-   "label": {
-    "award": 1,
-    "title": 0.5
-   }
+   "label": null
   },
   "listed": 14,
   "text_chars": 16000
@@ -2603,7 +2425,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.909,
   "codes_found": [
    "ARCHT20",
    "ARCHT36",
@@ -2613,22 +2435,21 @@
    "ARCHT81",
    "COMM60",
    "ENGLC1001",
-   "ENGLC1001H",
    "MATH40",
    "PHYS2A"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/building-information-modeling-certificate-achievement/",
-   "title": "Building Information Modeling (BIM) Coordinator - Certificate of Achievement | LBCC",
-   "h1": "Building Information Modeling (BIM) Coordinator - Certificate of Achievement",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/architectural-design-certificate-achievement/",
+   "title": "Architectural Design - Certificate of Achievement | LBCC",
+   "h1": "Architectural Design - Certificate of Achievement",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 16000
+  "text_chars": 2918
  },
  {
   "control_number": "20753",
@@ -2792,7 +2613,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.7,
   "codes_found": [
    "BCOM15",
    "BCOM222",
@@ -2800,23 +2621,20 @@
    "BCOM263",
    "COSA2",
    "COSA5",
-   "COSA50",
-   "COSK200",
-   "COSN10",
-   "COSN5"
+   "COSA50"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-science/computer-science-certificate-achievement/",
-   "title": "Computer Science - Certificate of Achievement | LBCC",
-   "h1": "Computer Science - Certificate of Achievement",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-customer-support/",
+   "title": "Administrative Assistant, Customer Support | LBCC",
+   "h1": "Administrative Assistant, Customer Support",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 1,
+    "award": 0,
     "title": 0.333
    }
   },
   "listed": 10,
-  "text_chars": 13655
+  "text_chars": 16000
  },
  {
   "control_number": "20875",
@@ -2933,21 +2751,18 @@
   "title": "Digital Design and Publication",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "link_search",
   "coverage": 1.0,
   "codes_found": [
    "JOURN20",
    "JOURN5"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//noncredit/programs-of-study/fashion-design/digital-fashion-design-certificate-completion/",
-   "title": "Digital Fashion Design - Certificate of Completion | LBCC",
-   "h1": "Digital Fashion Design - Certificate of Completion",
+   "url": "https://lbcc-public.courseleaf.com/",
+   "title": "2026-2027 Catalog | LBCC",
+   "h1": "ACADEMIC CATALOG",
    "text_from": "textContent",
-   "label": {
-    "award": 0,
-    "title": 0.667
-   }
+   "label": null
   },
   "listed": 2,
   "text_chars": 4078
@@ -2983,17 +2798,17 @@
    "CS21"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/cloud-computing-certificate-achievement/",
-   "title": "Cloud Computing - Certificate of Achievement | LBCC",
-   "h1": "Cloud Computing - Certificate of Achievement",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/computer-security-networking-certificate-achievement/",
+   "title": "Computer Security and Networking - Certificate of Achievement | LBCC",
+   "h1": "Computer Security and Networking - Certificate of Achievement",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 21,
-  "text_chars": 15380
+  "text_chars": 3529
  },
  {
   "control_number": "20895",
@@ -3031,48 +2846,35 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.519,
   "codes_found": [
-   "CISCO250",
-   "CISCO251",
-   "CISCO252",
-   "CISCO253",
-   "ELECT202",
    "ELECT204",
    "ELECT209",
    "ELECT212",
    "ELECT214",
    "ELECT225",
-   "ELECT227",
-   "ELECT230A",
-   "ELECT230B",
    "ELECT240",
    "ELECT242",
    "ELECT245",
    "ELECT250",
    "ELECT253",
-   "ELECT262",
-   "ELECT263",
    "ELECT271",
    "ELECT275",
    "ELECT277",
-   "ELECT280",
-   "ELECT284",
-   "ELECT435A",
-   "ELECT435B"
+   "ELECT435A"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-automation-technician/automation-technician-certificate-achievement/",
-   "title": "Automation Technician - Certificate of Achievement | LBCC",
-   "h1": "Automation Technician - Certificate of Achievement",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-general-industrial-electrician/electrical-technology-general-industrial-electrician-certificate-achievement/",
+   "title": "Electrical Technology, General Industrial Electrician - Certificate of Achievement | LBCC",
+   "h1": "Electrical Technology, General Industrial Electrician - Certificate of Achievement",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 27,
-  "text_chars": 16000
+  "text_chars": 3259
  },
  {
   "control_number": "20905",
@@ -3104,17 +2906,8 @@
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.973,
+  "coverage": 0.73,
   "codes_found": [
-   "ARCHT230",
-   "ARCHT231",
-   "ARCHT232",
-   "ARCHT61",
-   "ARCHT62",
-   "ARCHT65",
-   "ARCHT66",
-   "CONST15",
-   "ELECT202",
    "MATH110",
    "MATH110A",
    "MATH110B",
@@ -3144,13 +2937,13 @@
    "STATC1000H"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/engineering-technology/engineering-technology-advanced-certificate-achievement/",
-   "title": "Engineering Technology Advanced - Certificate of Achievement | LBCC",
-   "h1": "Engineering Technology Advanced - Certificate of Achievement",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/mathematics/",
+   "title": "Mathematics | LBCC",
+   "h1": "Mathematics",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 1,
-    "title": 0.25
+    "award": 0,
+    "title": 0.0
    }
   },
   "listed": 37,
@@ -3161,50 +2954,12 @@
   "title": "Foreign Languages",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.966,
-  "codes_found": [
-   "CHIN1",
-   "FREN1",
-   "FREN2",
-   "FREN25A",
-   "FREN3",
-   "FREN4",
-   "GER1",
-   "GER2",
-   "ITAL1",
-   "ITAL2",
-   "JAPAN1",
-   "JAPAN2",
-   "JAPAN3",
-   "LING1",
-   "LING3",
-   "SPAN1",
-   "SPAN10",
-   "SPAN10H",
-   "SPAN2",
-   "SPAN25A",
-   "SPAN25B",
-   "SPAN25C",
-   "SPAN25D",
-   "SPAN3",
-   "SPAN4",
-   "SPAN8",
-   "SPAN9",
-   "SPAN9H"
-  ],
-  "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/world-languages/spanish-certificate-achievement/",
-   "title": "Spanish - Certificate of Achievement | LBCC",
-   "h1": "Spanish - Certificate of Achievement",
-   "text_from": "textContent",
-   "label": {
-    "award": 1,
-    "title": 0.5
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 29,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "20936",
@@ -3320,10 +3075,9 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.941,
   "codes_found": [
    "BIO60",
-   "VN215",
    "VN220",
    "VN225",
    "VN230",
@@ -3341,45 +3095,29 @@
    "VN265L"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/nursing-vocational-practical/home-health-aide-certificate-accomplishment/",
-   "title": "Home Health Aide - Certificate of Accomplishment | LBCC",
-   "h1": "Home Health Aide - Certificate of Accomplishment",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/nursing-vocational-practical/nursing-vocationalpractical-certificate-achievement/",
+   "title": "Nursing: Vocational/Practical - Certificate of Achievement | LBCC",
+   "h1": "Nursing: Vocational/Practical - Certificate of Achievement",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 16000
+  "text_chars": 3744
  },
  {
   "control_number": "20941",
   "title": "Family and Consumer Studies",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "CDECE47",
-   "FASH10",
-   "FASH20",
-   "FASH9",
-   "NUTR20",
-   "NUTR21"
-  ],
-  "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/addiction-treatment-counseling-mental-health-studies/addiction-studies-certificate-achievement/",
-   "title": "Addiction Treatment Counseling & Mental Health Studies - Certificate of Achievement | LBCC",
-   "h1": "Addiction Treatment Counseling & Mental Health Studies - Certificate of Achievement",
-   "text_from": "textContent",
-   "label": {
-    "award": 1,
-    "title": 0.333
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "20944",
@@ -3548,17 +3286,17 @@
    "CDSED70"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/child-development-early-childhood-education/cdece-assistant-teacher-certificate-accomplishment/",
-   "title": "CDECE: Assistant Teacher - Certificate of Accomplishment | LBCC",
-   "h1": "CDECE: Assistant Teacher - Certificate of Accomplishment",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/child-development-early-childhood-education/child-development-early-childhood-education-certificate-achievement/",
+   "title": "Child Development: Early Childhood Education - Certificate of Achievement | LBCC",
+   "h1": "Child Development: Early Childhood Education - Certificate of Achievement",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 27,
-  "text_chars": 16000
+  "text_chars": 6026
  },
  {
   "control_number": "21013",
@@ -3671,17 +3409,17 @@
    "LIB271WE"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/library-technician/foundations-academic-research-certificate-accomplishment/",
-   "title": "Foundations in Academic Research - Certificate of Accomplishment | LBCC",
-   "h1": "Foundations in Academic Research - Certificate of Accomplishment",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/library-technician/library-technician-certificate-achievement/",
+   "title": "Library Technician - Certificate of Achievement | LBCC",
+   "h1": "Library Technician - Certificate of Achievement",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 16000
+  "text_chars": 3169
  },
  {
   "control_number": "21025",
@@ -3705,17 +3443,17 @@
    "SW7"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/social-work/aides-assistants-caregivers-certificate-achievement/",
-   "title": "Aides, Assistants and Caregivers - Certificate of Achievement | LBCC",
-   "h1": "Aides, Assistants and Caregivers - Certificate of Achievement",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/social-work/social-work-certificate-achievement/",
+   "title": "Social Work - Certificate of Achievement | LBCC",
+   "h1": "Social Work - Certificate of Achievement",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 16000
+  "text_chars": 3034
  },
  {
   "control_number": "21027",
@@ -3723,7 +3461,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.923,
   "codes_found": [
    "ATCMHS153",
    "ATCMHS162",
@@ -3736,62 +3474,32 @@
    "ATCMHS50",
    "ATCMHS72A",
    "ATCMHS72B",
-   "PSYCC1000",
-   "PSYCC1000H"
+   "PSYCC1000"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/addiction-treatment-counseling-mental-health-studies/mental-health-studies-certificate-achievement/",
-   "title": "Mental Health Studies - Certificate of Accomplishment | LBCC",
-   "h1": "Mental Health Studies - Certificate of Accomplishment",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/addiction-treatment-counseling-mental-health-studies/addiction-studies-certificate-achievement/",
+   "title": "Addiction Treatment Counseling & Mental Health Studies - Certificate of Achievement | LBCC",
+   "h1": "Addiction Treatment Counseling & Mental Health Studies - Certificate of Achievement",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 13,
-  "text_chars": 16000
+  "text_chars": 3047
  },
  {
   "control_number": "21028",
   "title": "Administration of Justice",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "ADJUS2",
-   "ADJUS3",
-   "ADJUS4",
-   "ADJUS5",
-   "ADJUS6",
-   "COMM30",
-   "COMMC1000",
-   "COMMC1000H",
-   "ENGL105",
-   "ENGLC1000",
-   "ENGLC1000E",
-   "ENGLC1000H",
-   "ESL1S",
-   "POLSC1000",
-   "POLSC1000H",
-   "PSYCC1000",
-   "PSYCC1000H",
-   "SOCIC1000",
-   "SOCIC1000H"
-  ],
-  "source": {
-   "url": "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-patterns/",
-   "title": "General Education Patterns | LBCC",
-   "h1": "General Education Patterns",
-   "text_from": "textContent",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 19,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "21029",
@@ -4180,51 +3888,42 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.7,
   "codes_found": [
    "HIST18",
    "HIST1A",
-   "HIST1AH",
    "HIST1B",
-   "HIST1BH",
    "HIST25",
    "HIST27A",
-   "HIST27AH",
    "HIST27B",
-   "HIST27BH",
    "HIST2B",
    "HIST2C",
    "HIST2CH",
    "HIST8A",
-   "HIST8AH",
    "HIST8B",
-   "HIST8BH",
    "HIST9A",
    "HIST9B",
    "HIST9C",
    "HISTC1001",
-   "HISTC1001H",
    "HISTC1002",
-   "HISTC1002H",
    "HUMAN1",
-   "HUMAN1H",
    "HUMAN7",
    "SOCSC1",
    "SOCSC1H",
    "SOCSC7"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/art/art-history-aat/",
-   "title": "Art History - Associate in Arts Transfer Degree | LBCC",
-   "h1": "Art History - Associate in Arts Transfer Degree",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/history/history-aat/",
+   "title": "History - Associate in Arts Transfer Degree | LBCC",
+   "h1": "History - Associate in Arts Transfer Degree",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 30,
-  "text_chars": 16000
+  "text_chars": 4588
  },
  {
   "control_number": "32634",
@@ -4270,29 +3969,12 @@
   "title": "Database Management",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "BCOM15",
-   "COSA25",
-   "COSA50",
-   "COSN205",
-   "COSN251",
-   "COSP237",
-   "COSP38"
-  ],
-  "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/biological-sciences/biological-sciences-as/",
-   "title": "Biological Sciences - Associate in Science | LBCC",
-   "h1": "Biological Sciences - Associate in Science",
-   "text_from": "textContent",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 7,
-  "text_chars": 14045
+  "text_chars": 0
  },
  {
   "control_number": "32907",
@@ -4300,7 +3982,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.889,
   "codes_found": [
    "COSA50",
    "COSN5",
@@ -4309,21 +3991,20 @@
    "COSW20",
    "CS21",
    "MATH50",
-   "STATC1000",
-   "STATC1000H"
+   "STATC1000"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/information-technology-cybersecurity-as/",
-   "title": "Information Technology Cybersecurity - Associate in Science | LBCC",
-   "h1": "Information Technology Cybersecurity - Associate in Science",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-technology/computer-technology-as/",
+   "title": "Computer Technology - Associate in Science | LBCC",
+   "h1": "Computer Technology - Associate in Science",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 16000
+  "text_chars": 3186
  },
  {
   "control_number": "32979",
@@ -4481,7 +4162,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.938,
   "codes_found": [
    "HIST1A",
    "HIST1B",
@@ -4494,24 +4175,23 @@
    "PHIL4",
    "PHIL5",
    "PHIL6",
-   "PHIL6H",
    "PHIL7",
    "PHIL7H",
    "PHIL8",
    "PHIL9"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-philosophy/",
-   "title": "General Education Philosophy | LBCC",
-   "h1": "General Education Philosophy",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/philosophy/philosophy-aat/",
+   "title": "Philosophy - Associate in Arts Transfer Degree | LBCC",
+   "h1": "Philosophy - Associate in Arts Transfer Degree",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 16,
-  "text_chars": 16000
+  "text_chars": 4298
  },
  {
   "control_number": "33600",
@@ -4674,7 +4354,7 @@
   "title": "Administration of Justice",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
+  "method": "link_search",
   "coverage": 1.0,
   "codes_found": [
    "ADJUS2",
@@ -4692,14 +4372,11 @@
    "STATC1000H"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-patterns/",
-   "title": "General Education Patterns | LBCC",
-   "h1": "General Education Patterns",
+   "url": "https://lbcc-public.courseleaf.com/",
+   "title": "2026-2027 Catalog | LBCC",
+   "h1": "ACADEMIC CATALOG",
    "text_from": "textContent",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
+   "label": null
   },
   "listed": 13,
   "text_chars": 16000
@@ -4709,29 +4386,12 @@
   "title": "Database Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "BCOM15",
-   "COSA25",
-   "COSA50",
-   "COSN205",
-   "COSN251",
-   "COSP237",
-   "COSP38"
-  ],
-  "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/database-management/database-administrator-specialist-certificate-accomplishment/",
-   "title": "Database Administrator Specialist - Certificate of Accomplishment | LBCC",
-   "h1": "Database Administrator Specialist - Certificate of Accomplishment",
-   "text_from": "textContent",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 7,
-  "text_chars": 14045
+  "text_chars": 0
  },
  {
   "control_number": "33849",
@@ -4739,7 +4399,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.889,
   "codes_found": [
    "COSA50",
    "COSN5",
@@ -4748,21 +4408,20 @@
    "COSW20",
    "CS21",
    "MATH50",
-   "STATC1000",
-   "STATC1000H"
+   "STATC1000"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/information-technology-cybersecurity-certificate-achievement/",
-   "title": "Information Technology Cybersecurity - Certificate of Achievement | LBCC",
-   "h1": "Information Technology Cybersecurity - Certificate of Achievement",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-technology/computer-technology-certificate-achievement/",
+   "title": "Computer Technology - Certificate of Achievement | LBCC",
+   "h1": "Computer Technology - Certificate of Achievement",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 16000
+  "text_chars": 2844
  },
  {
   "control_number": "33850",
@@ -4770,7 +4429,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.833,
   "codes_found": [
    "CS11",
    "CS21",
@@ -4779,24 +4438,22 @@
    "CS51",
    "CS61",
    "MATHC2210",
-   "MATHC2210H",
    "MATHC2220",
-   "MATHC2220H",
    "PHYS3A",
    "PHYS3B"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-science/android-app-developer-certificate-accomplishment/",
-   "title": "Android App Developer - Certificate of Accomplishment | LBCC",
-   "h1": "Android App Developer - Certificate of Accomplishment",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-science/computer-science-certificate-achievement/",
+   "title": "Computer Science - Certificate of Achievement | LBCC",
+   "h1": "Computer Science - Certificate of Achievement",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 16000
+  "text_chars": 3056
  },
  {
   "control_number": "35183",
@@ -4804,7 +4461,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.833,
   "codes_found": [
    "BCOM15",
    "BCOM222",
@@ -4820,23 +4477,20 @@
    "COSA3",
    "COSA30",
    "COSA35",
-   "COSA5",
-   "COSK200",
-   "COSK209",
-   "COSK233"
+   "COSA5"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-science/computer-science-as/",
-   "title": "Computer Science - Associate in Science | LBCC",
-   "h1": "Computer Science - Associate in Science",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business-information-worker/",
+   "title": "Business Information Worker | LBCC",
+   "h1": "Business Information Worker",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 1,
-    "title": 0.0
+    "award": 0,
+    "title": 1.0
    }
   },
   "listed": 18,
-  "text_chars": 12966
+  "text_chars": 16000
  },
  {
   "control_number": "35192",
@@ -4844,14 +4498,8 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.5,
   "codes_found": [
-   "BCOM15",
-   "BCOM222",
-   "BCOM25",
-   "BCOM260",
-   "BCOM262",
-   "BCOM263",
    "COSA10",
    "COSA15",
    "COSA2",
@@ -4860,23 +4508,20 @@
    "COSA3",
    "COSA30",
    "COSA35",
-   "COSA5",
-   "COSK200",
-   "COSK209",
-   "COSK233"
+   "COSA5"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business-information-worker/business-digital-literacy-certificate-accomplishment/",
-   "title": "Business Digital Literacy - Certificate of Accomplishment | LBCC",
-   "h1": "Business Digital Literacy - Certificate of Accomplishment",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-human-resources-support/",
+   "title": "Administrative Assistant, Human Resources Support | LBCC",
+   "h1": "Administrative Assistant, Human Resources Support",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 1,
-    "title": 1.0
+    "award": 0,
+    "title": 0.0
    }
   },
   "listed": 18,
-  "text_chars": 12966
+  "text_chars": 13220
  },
  {
   "control_number": "35386",
@@ -5262,17 +4907,17 @@
    "ESL643"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/english-everyday-level-1-certificate-competency/",
-   "title": "English for Every Day – Level 1 - Certificate of Competency | LBCC",
-   "h1": "English for Every Day – Level 1 - Certificate of Competency",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/english-everyday-level-2-certificate-competency/",
+   "title": "English for Every Day – Level 2 - Certificate of Competency | LBCC",
+   "h1": "English for Every Day – Level 2 - Certificate of Competency",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 4036
+  "text_chars": 2587
  },
  {
   "control_number": "36105",
@@ -5310,17 +4955,17 @@
    "ESL645"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/english-everyday-level-1-certificate-competency/",
-   "title": "English for Every Day – Level 1 - Certificate of Competency | LBCC",
-   "h1": "English for Every Day – Level 1 - Certificate of Competency",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/english-everyday-level-3-certificate-competency/",
+   "title": "English for Every Day – Level 3 - Certificate of Competency | LBCC",
+   "h1": "English for Every Day – Level 3 - Certificate of Competency",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 4036
+  "text_chars": 2707
  },
  {
   "control_number": "36430",
@@ -5387,17 +5032,17 @@
    "CS21"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/cloud-computing-as/",
-   "title": "Cloud Computing - Associate in Science | LBCC",
-   "h1": "Cloud Computing - Associate in Science",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-security-networking/computer-security-networking-as/",
+   "title": "Computer Security and Networking - Associate in Science | LBCC",
+   "h1": "Computer Security and Networking - Associate in Science",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 21,
-  "text_chars": 15380
+  "text_chars": 3871
  },
  {
   "control_number": "36433",
@@ -5405,31 +5050,26 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.5,
   "codes_found": [
-   "BCOM15",
-   "BCOM222",
-   "BCOM260",
-   "BCOM263",
    "COSA2",
    "COSA5",
    "COSA50",
-   "COSK200",
    "COSN10",
    "COSN5"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-science/computer-science-as/",
-   "title": "Computer Science - Associate in Science | LBCC",
-   "h1": "Computer Science - Associate in Science",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/computer-technology/",
+   "title": "Computer Technology | LBCC",
+   "h1": "Computer Technology",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 1,
+    "award": 0,
     "title": 0.333
    }
   },
   "listed": 10,
-  "text_chars": 13655
+  "text_chars": 16000
  },
  {
   "control_number": "36845",
@@ -5444,17 +5084,17 @@
    "COSA622"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/microsoft-power-point/",
-   "title": "Microsoft PowerPoint - Certificate of Completion | LBCC",
-   "h1": "Microsoft PowerPoint - Certificate of Completion",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business-information-worker/office-technologies--microsoft-powerpoint-certificate-completion/",
+   "title": "Office Technologies – Microsoft PowerPoint - Certificate of Completion | LBCC",
+   "h1": "Office Technologies – Microsoft PowerPoint - Certificate of Completion",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 3,
-  "text_chars": 4096
+  "text_chars": 2889
  },
  {
   "control_number": "36846",
@@ -5469,17 +5109,17 @@
    "COSA630"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/microsoft-outlook/",
-   "title": "Microsoft Outlook - Certificate of Completion   | LBCC",
-   "h1": "Microsoft Outlook - Certificate of Completion  ",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business-information-worker/office-technologies--microsoft-outlook-certificate-completion/",
+   "title": "Office Technologies – Microsoft Outlook - Certificate of Completion | LBCC",
+   "h1": "Office Technologies – Microsoft Outlook - Certificate of Completion",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 3,
-  "text_chars": 4090
+  "text_chars": 2877
  },
  {
   "control_number": "36967",
@@ -5802,235 +5442,12 @@
   "title": "IGETC",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.995,
-  "codes_found": [
-   "ANAT1",
-   "ANAT41",
-   "ANTHC1001",
-   "ANTHC1001H",
-   "ANTHC1001L",
-   "ANTHR10",
-   "ANTHR11",
-   "ANTHR2",
-   "ANTHR2H",
-   "ANTHR3",
-   "ANTHR3H",
-   "ART10",
-   "ART11",
-   "ART3",
-   "ART4",
-   "ART5",
-   "ARTHC1100",
-   "ARTHC1100H",
-   "ARTHC1200",
-   "ARTHC1200H",
-   "ASTRC1001",
-   "ASTRC1001H",
-   "ASTRC1001L",
-   "BIO1A",
-   "BIO1B",
-   "BIO2",
-   "BIO20",
-   "BIO20H",
-   "BIO30",
-   "BIO60",
-   "BIO60L",
-   "BIO61",
-   "BIOLC1001",
-   "BIOLC1001L",
-   "CHEM1A",
-   "CHEM1B",
-   "CHEM2",
-   "CHEM3",
-   "CHEM4",
-   "COMM25",
-   "COMM30",
-   "COMM60",
-   "COMMC1000",
-   "COMMC1000H",
-   "DANCE1",
-   "DANCE19",
-   "ECON3",
-   "ECON4",
-   "ECON5",
-   "ECONC2001",
-   "ECONC2001H",
-   "ECONC2002",
-   "ECONC2002H",
-   "ENGL32",
-   "ENGL33",
-   "ENGL33H",
-   "ENGL35",
-   "ENGL36",
-   "ENGL37",
-   "ENGL38",
-   "ENGL39",
-   "ENGL41",
-   "ENGL42",
-   "ENGL43A",
-   "ENGL43B",
-   "ENGL44",
-   "ENGL44H",
-   "ENGL45",
-   "ENGL45H",
-   "ENGL46",
-   "ENGL47",
-   "ENGL48",
-   "ENGL48H",
-   "ENGL49",
-   "ENGL49H",
-   "ENGLC1000",
-   "ENGLC1000H",
-   "ENGLC1001",
-   "ENGLC1001H",
-   "ENGLC1003",
-   "ENGLC1003H",
-   "FILM1",
-   "FILM10",
-   "FILM2A",
-   "FILM2B",
-   "FREN2",
-   "FREN25A",
-   "FREN3",
-   "FREN4",
-   "GEOG2",
-   "GEOG40",
-   "GEOG5",
-   "GEOL1",
-   "GEOL18",
-   "GEOL1H",
-   "GEOL2",
-   "GEOL2L",
-   "GEOL3",
-   "GEOL3H",
-   "GEOL5",
-   "GER2",
-   "HIST18",
-   "HIST1A",
-   "HIST1AH",
-   "HIST1B",
-   "HIST1BH",
-   "HIST25",
-   "HIST27A",
-   "HIST27B",
-   "HIST2B",
-   "HIST2C",
-   "HIST2CH",
-   "HIST33",
-   "HIST8A",
-   "HIST8AH",
-   "HIST8B",
-   "HIST8BH",
-   "HIST9A",
-   "HIST9B",
-   "HIST9C",
-   "HISTC1001",
-   "HISTC1001H",
-   "HISTC1002",
-   "HISTC1002H",
-   "HUMAN1",
-   "HUMAN1H",
-   "HUMAN7",
-   "ITAL2",
-   "JAPAN2",
-   "JAPAN3",
-   "JAPAN4",
-   "KHMER10",
-   "KHMER9",
-   "LING1",
-   "LING3",
-   "MATH37",
-   "MATH45",
-   "MATH47",
-   "MATH50",
-   "MATH80",
-   "MATH84",
-   "MATHC2210",
-   "MATHC2210H",
-   "MATHC2220",
-   "MATHC2220H",
-   "MUSIC32",
-   "MUSIC33B",
-   "MUSIC35",
-   "MUSIC40",
-   "MUSIC40H",
-   "MUSIC89",
-   "PGEOG1",
-   "PGEOG1L",
-   "PGEOG2",
-   "PHIL10",
-   "PHIL14",
-   "PHIL15",
-   "PHIL16",
-   "PHIL3",
-   "PHIL4",
-   "PHIL5",
-   "PHIL6",
-   "PHIL6H",
-   "PHIL7",
-   "PHIL7H",
-   "PHIL8",
-   "PHIL9",
-   "PHOT10",
-   "PHYS2A",
-   "PHYS2B",
-   "PHYS3A",
-   "PHYS3B",
-   "PHYS3C",
-   "PHYS4",
-   "PHYSI1",
-   "POLSC10",
-   "POLSC1000",
-   "POLSC1000H",
-   "POLSC11",
-   "POLSC2",
-   "POLSC2H",
-   "POLSC3",
-   "POLSC4",
-   "POLSC4H",
-   "POLSC9",
-   "PSYCC1000",
-   "PSYCC1000H",
-   "PSYCH11",
-   "PSYCH14",
-   "SOCIC1000",
-   "SOCIC1000H",
-   "SOCIO11",
-   "SOCIO13",
-   "SOCIO2",
-   "SOCIO40",
-   "SOCSC1",
-   "SOCSC1H",
-   "SOCSC7",
-   "SPAN10",
-   "SPAN10H",
-   "SPAN2",
-   "SPAN25A",
-   "SPAN25B",
-   "SPAN25C",
-   "SPAN25D",
-   "SPAN3",
-   "SPAN4",
-   "SPAN9",
-   "SPAN9H",
-   "STATC1000",
-   "STATC1000H",
-   "TART25",
-   "TART30"
-  ],
-  "source": {
-   "url": "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-patterns/",
-   "title": "General Education Patterns | LBCC",
-   "h1": "General Education Patterns",
-   "text_from": "textContent",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 214,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "37222",
@@ -6095,17 +5512,17 @@
    "ESL673"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/workplace-language-skills-esl-level-1-certificate-competency/",
-   "title": "Workplace Language Skills for ESL – Level 1 - Certificate of Competency | LBCC",
-   "h1": "Workplace Language Skills for ESL – Level 1 - Certificate of Competency",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/workplace-language-skills-esl-level-2-certificate-competency/",
+   "title": "Workplace Language Skills for ESL – Level 2 - Certificate of Competency | LBCC",
+   "h1": "Workplace Language Skills for ESL – Level 2 - Certificate of Competency",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 4051
+  "text_chars": 2611
  },
  {
   "control_number": "37268",
@@ -6119,17 +5536,17 @@
    "ESL675"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/workplace-language-skills-esl-level-1-certificate-competency/",
-   "title": "Workplace Language Skills for ESL – Level 1 - Certificate of Competency | LBCC",
-   "h1": "Workplace Language Skills for ESL – Level 1 - Certificate of Competency",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/english-second-language/workplace-language-skills-esl-level-3-certificate-competency/",
+   "title": "Workplace Language Skills for ESL – Level 3 - Certificate of Competency | LBCC",
+   "h1": "Workplace Language Skills for ESL – Level 3 - Certificate of Competency",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 4051
+  "text_chars": 2611
  },
  {
   "control_number": "37269",
@@ -6250,17 +5667,17 @@
    "WELD50"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/metal-fabrication-technology/robotic-welding-automation-certificate-achievement/",
-   "title": "Robotic Welding Automation - Certificate of Achievement | LBCC",
-   "h1": "Robotic Welding Automation - Certificate of Achievement",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/welding-technology/welding-technology-certificate-achievement/",
+   "title": "Welding Technology - Certificate of Achievement | LBCC",
+   "h1": "Welding Technology - Certificate of Achievement",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 16000
+  "text_chars": 2932
  },
  {
   "control_number": "37301",
@@ -6282,17 +5699,17 @@
    "AUTO219"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/automotive-technology/automotive-engine-performance-service-certificate-achievement/",
-   "title": "Automotive Engine Performance Service - Certificate of Achievement | LBCC",
-   "h1": "Automotive Engine Performance Service - Certificate of Achievement",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/automotive-technology/automotive-technology-certificate-achievement/",
+   "title": "Automotive Technology - Certificate of Achievement | LBCC",
+   "h1": "Automotive Technology - Certificate of Achievement",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 4501
+  "text_chars": 2918
  },
  {
   "control_number": "37302",
@@ -6539,17 +5956,17 @@
    "ELECT253"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/construction-technology/adu-remodeling-certificate-achievement/",
-   "title": "ADU Remodeling - Certificate of Achievement | LBCC",
-   "h1": "ADU Remodeling - Certificate of Achievement",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/construction-technology/construction-technology-certificate-achievement/",
+   "title": "Construction Technology - Certificate of Achievement | LBCC",
+   "h1": "Construction Technology - Certificate of Achievement",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 16000
+  "text_chars": 2961
  },
  {
   "control_number": "37343",
@@ -6608,17 +6025,17 @@
    "CONST70"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/construction-technology/construction-management-as/",
-   "title": "Construction Management - Associate in Science | LBCC",
-   "h1": "Construction Management - Associate in Science",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/construction-technology/construction-technology-as/",
+   "title": "Construction Technology - Associate in Science | LBCC",
+   "h1": "Construction Technology - Associate in Science",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 5491
+  "text_chars": 3770
  },
  {
   "control_number": "37345",
@@ -6652,7 +6069,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.9,
   "codes_found": [
    "CAD1",
    "CAD2",
@@ -6661,22 +6078,21 @@
    "ETEC10",
    "ETEC60",
    "MATHC2210",
-   "MATHC2210H",
    "PHYS2A",
    "PHYS2B"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/engineering-technology/engineering-automation-technology-certificate-achievement/",
-   "title": "Engineering Automation Technology - Certificate of Achievement | LBCC",
-   "h1": "Engineering Automation Technology - Certificate of Achievement",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/engineering-technology/engineering-technology-advanced-certificate-achievement/",
+   "title": "Engineering Technology Advanced - Certificate of Achievement | LBCC",
+   "h1": "Engineering Technology Advanced - Certificate of Achievement",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 16000
+  "text_chars": 3169
  },
  {
   "control_number": "37347",
@@ -6890,17 +6306,17 @@
    "WELD50"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/advanced-manufacturing/advanced-manufacturing-design-technology-certificate-achievement/",
-   "title": "Advanced Manufacturing and Design Technology - Certificate of Achievement | LBCC",
-   "h1": "Advanced Manufacturing and Design Technology - Certificate of Achievement",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/advanced-manufacturing/advanced-manufacturing-technology-certificate-achievement/",
+   "title": "Advanced Manufacturing Technology - Certificate of Achievement | LBCC",
+   "h1": "Advanced Manufacturing Technology - Certificate of Achievement",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 16000
+  "text_chars": 3101
  },
  {
   "control_number": "37449",
@@ -7027,17 +6443,17 @@
    "ELECT435A"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-cisco-certified-network-installation-associate/cisco-certified-network-installation-associate-certificate-achievement/",
-   "title": "CISCO Certified Network Installation Associate - Certificate of Achievement | LBCC",
-   "h1": "CISCO Certified Network Installation Associate - Certificate of Achievement",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-cisco-certified-network-installation-associate/electrical-technology-cisco-certified-network-installation-associate-certificate-achievement/",
+   "title": "Electrical Technology, CISCO Certified Network Installation Associate - Certificate of Achievement | LBCC",
+   "h1": "Electrical Technology, CISCO Certified Network Installation Associate - Certificate of Achievement",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 13,
-  "text_chars": 16000
+  "text_chars": 3234
  },
  {
   "control_number": "37496",
@@ -7176,17 +6592,17 @@
    "COSA627"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/microsoft-access-windows/",
-   "title": "Microsoft Access for Windows - Certificate of Completion | LBCC",
-   "h1": "Microsoft Access for Windows - Certificate of Completion",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business-information-worker/office-technologies-microsoft-access-certificate-completion/",
+   "title": "Office Technologies – Microsoft Access - Certificate of Completion | LBCC",
+   "h1": "Office Technologies – Microsoft Access - Certificate of Completion",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 3,
-  "text_chars": 4088
+  "text_chars": 2639
  },
  {
   "control_number": "37563",
@@ -7201,17 +6617,17 @@
    "COSA617"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/microsoft-excel/",
-   "title": "Microsoft Excel - Certificate of Completion | LBCC",
-   "h1": "Microsoft Excel - Certificate of Completion",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business-information-worker/office-technologies--microsoft-excel-certificate-completion/",
+   "title": "Office Technologies – Microsoft Excel - Certificate of Completion | LBCC",
+   "h1": "Office Technologies – Microsoft Excel - Certificate of Completion",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 3,
-  "text_chars": 4086
+  "text_chars": 2636
  },
  {
   "control_number": "37564",
@@ -7226,17 +6642,17 @@
    "COSA612"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-office-technologies/microsoft-word-windows/",
-   "title": "Microsoft Word for Windows - Certificate of Completion  | LBCC",
-   "h1": "Microsoft Word for Windows - Certificate of Completion ",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business-information-worker/office-technologies--microsoft-word-certificate-completion/",
+   "title": "Office Technologies – Microsoft Word - Certificate of Completion | LBCC",
+   "h1": "Office Technologies – Microsoft Word - Certificate of Completion",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 3,
-  "text_chars": 4084
+  "text_chars": 2633
  },
  {
   "control_number": "37655",
@@ -7479,17 +6895,17 @@
    "ELECT435B"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-automation-technician/automation-technician-certificate-achievement/",
-   "title": "Automation Technician - Certificate of Achievement | LBCC",
-   "h1": "Automation Technician - Certificate of Achievement",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/electrical-technology-automation-technician/electrical-technology-automation-technician-certificate-achievement/",
+   "title": "Electrical Technology, Automation Technician - Certificate of Achievement | LBCC",
+   "h1": "Electrical Technology, Automation Technician - Certificate of Achievement",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 15,
-  "text_chars": 5539
+  "text_chars": 3343
  },
  {
   "control_number": "37729",
@@ -7828,21 +7244,17 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.8,
   "codes_found": [
    "ART11",
    "HIST18",
    "HIST8A",
-   "HIST8AH",
    "HIST8B",
-   "HIST8BH",
    "HUMAN1",
-   "HUMAN1H",
    "LING1",
    "LING3",
    "SPAN1",
    "SPAN10",
-   "SPAN10H",
    "SPAN2",
    "SPAN200",
    "SPAN201",
@@ -7853,21 +7265,20 @@
    "SPAN3",
    "SPAN4",
    "SPAN8",
-   "SPAN9",
-   "SPAN9H"
+   "SPAN9"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/world-languages/spanish-medical-professionals-certificate-accomplishment/",
-   "title": "Spanish for Medical Professionals - Certificate of Accomplishment | LBCC",
-   "h1": "Spanish for Medical Professionals - Certificate of Accomplishment",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/world-languages/spanish-certificate-achievement/",
+   "title": "Spanish - Certificate of Achievement | LBCC",
+   "h1": "Spanish - Certificate of Achievement",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 25,
-  "text_chars": 16000
+  "text_chars": 3529
  },
  {
   "control_number": "38456",
@@ -7973,17 +7384,17 @@
    "WELD221"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/welding-technology/introduction-shielded-metal-arc-welding-smaw-certificate-achievement/",
-   "title": "Introduction to Shielded Metal Arc Welding (SMAW) - Certificate of Achievement | LBCC",
-   "h1": "Introduction to Shielded Metal Arc Welding (SMAW) - Certificate of Achievement",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/welding-technology/shielded-metal-arc-welding-smaw-certificate-achievement/",
+   "title": "Shielded Metal Arc Welding (SMAW) - Certificate of Achievement | LBCC",
+   "h1": "Shielded Metal Arc Welding (SMAW) - Certificate of Achievement",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 3,
-  "text_chars": 16000
+  "text_chars": 2801
  },
  {
   "control_number": "38541",
@@ -8016,24 +7427,12 @@
   "title": "Advanced Arc Welding (SMAW and FCAW)",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "MTFAB260",
-   "WELD221"
-  ],
-  "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/welding-technology/shielded-metal-arc-welding-smaw-certificate-achievement/",
-   "title": "Shielded Metal Arc Welding (SMAW) - Certificate of Achievement | LBCC",
-   "h1": "Shielded Metal Arc Welding (SMAW) - Certificate of Achievement",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 1,
-    "title": 0.6
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 2801
+  "text_chars": 0
  },
  {
   "control_number": "38558",
@@ -8077,17 +7476,17 @@
    "LIB651"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/library-technician/foundations-academic-research-certificate-competency/",
-   "title": "Foundations in Academic Research - Certificate of Competency | LBCC",
-   "h1": "Foundations in Academic Research - Certificate of Competency",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/library-technician/library-technician-certificate-completion/",
+   "title": "Library Technician - Certificate of Completion | LBCC",
+   "h1": "Library Technician - Certificate of Completion",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 4374
+  "text_chars": 2921
  },
  {
   "control_number": "38560",
@@ -8216,7 +7615,7 @@
   "title": "Security Guard Training",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "sitemap_page",
+  "method": "link_search",
   "coverage": 1.0,
   "codes_found": [
    "ADJUS600",
@@ -8227,14 +7626,11 @@
    "ADJUS605"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/design-introduction-certificate-completion/",
-   "title": "Design Introduction - Certificate of Completion | LBCC",
-   "h1": "Design Introduction - Certificate of Completion",
+   "url": "https://lbcc-public.courseleaf.com/",
+   "title": "2026-2027 Catalog | LBCC",
+   "h1": "ACADEMIC CATALOG",
    "text_from": "textContent",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
+   "label": null
   },
   "listed": 6,
   "text_chars": 4251
@@ -8674,31 +8070,29 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.8,
   "codes_found": [
    "ACCTG1A",
    "ACCTG1B",
    "ECON4",
    "ECON5",
    "ECONC2001",
-   "ECONC2001H",
    "ECONC2002",
-   "ECONC2002H",
    "LAW18",
    "LAW19"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/business-business-economics-certificate-accomplishment/",
-   "title": "Business: Business Economics - Certificate of Accomplishment | LBCC",
-   "h1": "Business: Business Economics - Certificate of Accomplishment",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/business/economics-certificate-achievement/",
+   "title": "Economics - Certificate of Achievement | LBCC",
+   "h1": "Economics - Certificate of Achievement",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 16000
+  "text_chars": 2823
  },
  {
   "control_number": "39955",
@@ -10177,7 +9571,7 @@
   "title": "Criminal Forensics",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "link_search",
   "coverage": 1.0,
   "codes_found": [
    "ADJUS10",
@@ -10190,14 +9584,11 @@
    "ADJUS8"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-patterns/",
-   "title": "General Education Patterns | LBCC",
-   "h1": "General Education Patterns",
+   "url": "https://lbcc-public.courseleaf.com/",
+   "title": "2026-2027 Catalog | LBCC",
+   "h1": "ACADEMIC CATALOG",
    "text_from": "textContent",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
+   "label": null
   },
   "listed": 8,
   "text_chars": 5004
@@ -10447,17 +9838,17 @@
    "COSN5"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-customer-support/administrative-assistant-customer-relations-specialist-certificate-achievement/",
-   "title": "Administrative Assistant, Customer Relations Specialist - Certificate of Achievement | LBCC",
-   "h1": "Administrative Assistant, Customer Relations Specialist - Certificate of Achievement",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/administrative-assistant-customer-support/administrative-assistant-customer-support-certificate-achievement/",
+   "title": "Administrative Assistant, Customer Support - Certificate of Achievement | LBCC",
+   "h1": "Administrative Assistant, Customer Support - Certificate of Achievement",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 13655
+  "text_chars": 2925
  },
  {
   "control_number": "43009",
@@ -11577,27 +10968,28 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 0.778,
   "codes_found": [
    "PSYCC1000",
    "PSYCC1000H",
    "PSYCH11",
    "PSYCH11H",
    "PSYCH14",
-   "PSYCH4"
+   "PSYCH4",
+   "PSYCH41"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/trauma-studies/trauma-studies-certificate-achievement/",
-   "title": "Trauma Studies - Certificate of Achievement | LBCC",
-   "h1": "Trauma Studies - Certificate of Achievement",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/trauma-studies/",
+   "title": "Trauma Studies | LBCC",
+   "h1": "Trauma Studies",
+   "text_from": "innerText+tabs",
    "label": {
-    "award": 1,
+    "award": 0,
     "title": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 14503
+  "text_chars": 8696
  },
  {
   "control_number": "43837",
@@ -12527,17 +11919,17 @@
    "KINPP5"
   ],
   "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/kinesiology/athletic-coaching-certificate-accomplishment/",
-   "title": "Athletic Coaching - Certificate of Accomplishment | LBCC",
-   "h1": "Athletic Coaching - Certificate of Accomplishment",
-   "text_from": "textContent",
+   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/kinesiology/athletic-coaching-certificate-achievement/",
+   "title": "Athletic Coaching - Certificate of Achievement | LBCC",
+   "h1": "Athletic Coaching - Certificate of Achievement",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
     "title": 1.0
    }
   },
   "listed": 23,
-  "text_chars": 6783
+  "text_chars": 3238
  },
  {
   "control_number": "45949",
@@ -12878,26 +12270,11 @@
   "title": "Trauma Studies",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.5,
-  "codes_found": [
-   "PSYCC1000",
-   "PSYCC1000H",
-   "PSYCH11",
-   "PSYCH14",
-   "PSYCH4"
-  ],
-  "source": {
-   "url": "https://lbcc-public.courseleaf.com//degrees-certificates/trauma-studies/trauma-studies-as/",
-   "title": "Trauma Studies - Associate in Science | LBCC",
-   "h1": "Trauma Studies - Associate in Science",
-   "text_from": "textContent",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 10,
-  "text_chars": 14980
+  "text_chars": 0
  }
 ]
