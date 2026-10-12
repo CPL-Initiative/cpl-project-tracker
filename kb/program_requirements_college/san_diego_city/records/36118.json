@@ -1,0 +1,309 @@
+{
+ "college": "San Diego City College",
+ "control_number": "36118",
+ "shape": "adt",
+ "title": "Economics",
+ "award": "A.A- T Degree",
+ "source_url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15640",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10683,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10683,
+    "output_tokens": 2508,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2508,
+  "output_tokens_details": {
+   "thinking_tokens": 840
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09289,
+ "ms": 19844,
+ "seconds": 21.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 16,
+   "share": 0.875,
+   "missing": [
+    "ECON120",
+    "ECON121"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    16.0,
+    22.0
+   ],
+   "stated": [
+    18.0,
+    23.0
+   ],
+   "why": [
+    "the blocks sum to 16.0-22.0; the catalog states 18.0-23.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Economics - Associate in Arts for Transfer Degree: City",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Define scarcity, and show how it relates to the concepts of choice and cost.",
+    "Explain the role of prices in allocating goods, services and factors of production.",
+    "Outline the role of comparative advantage in exchange.",
+    "Utilize the demand and supply model and use the model to critically analyze real world examples.",
+    "Analyze the impacts of economics on social values and policy."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select one course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "MATH 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 150",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one course or course sequence from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "STAT C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSE 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLI 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 258",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 259",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SELECT TWO OF THE FOLLOWING COURSES (6-8 units):",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "ACCT 116A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 116B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSE 119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 181",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 151",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 120",
+    "why": "not in the text; catalog lists ECON C2002 (Principles of Macroeconomics) in its place"
+   },
+   {
+    "code": "ECON 121",
+    "why": "not in the text; catalog lists ECON C2001 (Principles of Microeconomics) in its place"
+   }
+  ],
+  "notes": [
+   "The 'Semester Units: 12.0- 15.0' total is printed under 'COURSES REQUIRED FOR THE MAJOR' and appears to cover the ECON courses plus the two nested 'Select one' choices (math and statistics), not just the two ECON courses recorded in that block.",
+   "In the statistics block, PSYC 258 and PSYC 259 are printed joined by 'AND' as a single course sequence option (4 units); the student picks one of STAT C1000, BUSE 115, POLI 201, or the PSYC 258 + PSYC 259 sequence. They are recorded as two entries in one block because the schema cannot express a sequence as a single choice.",
+   "STAT C1000 is printed with a space; treated as matching closed-list STATC1000.",
+   "ECON C2001 and ECON C2002 are common-course-numbered replacements for closed-list ECON 121 and ECON 120 (their descriptions note they are not open to students with credit for ECON 121/ECON 120).",
+   "Learning outcomes are printed for 'the Economics Program' as a whole; this AA-T shares them.",
+   "Total Units 18.0-23.0 is the major total; the 60-unit degree total and Cal-GETC requirement come from the Award Notes."
+  ]
+ },
+ "extracted_run": "38252422845"
+}

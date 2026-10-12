@@ -1,0 +1,271 @@
+{
+ "college": "San Diego City College",
+ "control_number": "37623",
+ "shape": "certificate",
+ "title": "Advanced HVAC/R Mechanical Systems Installation and Repair",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15705",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10757,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10757,
+    "output_tokens": 2111,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2111,
+  "output_tokens_details": {
+   "thinking_tokens": 894
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08525,
+ "ms": 18421,
+ "seconds": 18.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 7,
+   "share": 0.571,
+   "missing": [
+    "AIRE60",
+    "AIRE94",
+    "EGEE50"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 10,
+   "codes": [
+    "AIRE100",
+    "AIRE103",
+    "AIRE122",
+    "AIRE123",
+    "AIRE126",
+    "AIRE127",
+    "ELCT111",
+    "ELCT111L",
+    "ELCT121",
+    "ELCT121L"
+   ],
+   "flagged": [
+    "AIRE100",
+    "AIRE103",
+    "AIRE122",
+    "AIRE123",
+    "AIRE126",
+    "AIRE127",
+    "ELCT111",
+    "ELCT111L",
+    "ELCT121",
+    "ELCT121L"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    35.0,
+    35.0
+   ],
+   "stated": [
+    35.0,
+    35.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Requirements — COURSES REQUIRED FOR THE MAJOR",
+   "measure": "units",
+   "total_units": {
+    "min": 35,
+    "max": 35
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 35,
+     "max": 35
+    },
+    "courses": [
+     {
+      "code": "ELCT 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELCT 111L",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELCT 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELCT 121L",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AIRE 100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AIRE 103",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AIRE 122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AIRE 123",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AIRE 124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIRE 125",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIRE 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AIRE 127",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AIRE 132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIRE 133",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AIRE 60",
+    "why": "not in the text"
+   },
+   {
+    "code": "AIRE 94",
+    "why": "not in the text"
+   },
+   {
+    "code": "EGEE 50",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog text prints no program title heading; it begins mid-sentence in apprenticeship boilerplate (Apprenticeship admission, Completion Requirements) and then a single 'COURSES REQUIRED FOR THE MAJOR' list of 35 units. This may be the requirements of a different (apprenticeship) program rather than the Advanced HVAC/R Mechanical Systems Installation and Repair certificate; a reviewer should verify the page matches this award.",
+   "The stated total of 35 semester units exceeds the award's range (16 to fewer than 30 units), further suggesting a mismatch between the text and the named award.",
+   "Only 4 of the 7 closed-list courses (AIRE 124, 125, 132, 133) appear in the text; AIRE 60, AIRE 94 and EGEE 50 are absent, while 10 courses in the text are not on the closed list.",
+   "Apprenticeship completion also requires the prescribed number of on-the-job training hours approved by the apprenticeship committee; these are not recorded as units.",
+   "No program learning outcomes or careers are printed in the supplied text; the text is cut off in the course descriptions (AIRE 126)."
+  ]
+ },
+ "extracted_run": "38252422845"
+}

@@ -1,0 +1,261 @@
+{
+ "college": "San Diego City College",
+ "control_number": "22360",
+ "shape": "certificate",
+ "title": "Photography",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15667",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10745,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10745,
+    "output_tokens": 2216,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2216,
+  "output_tokens_details": {
+   "thinking_tokens": 644
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0873,
+ "ms": 17675,
+ "seconds": 18.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 15,
+   "share": 0.8,
+   "missing": [
+    "PHOT100",
+    "PHOT135",
+    "PHOT235"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 10,
+   "courses": 0,
+   "count": 10,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Digital Photography - Certificate of Achievement: City",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate competent use of reciprocal exposures utilizing shutter speeds and apertures.",
+    "Utilize compositional elements in the creation of original photographs in various formats.",
+    "Develop black and white film and make gelatin silver prints in a traditional darkroom.",
+    "Utilize Adobe Lightroom and Photoshop in digital color correction and image manipulation.",
+    "Demonstrate an understanding of the history of photography and the role of photographs in today’s society.",
+    "Illustrate abilities in various professional presentation techniques utilizing archival mounting and matting materials.",
+    "pply theories and principles of photographic light and lighting control for both film and digital capture.",
+    "Create a marketing plan and business materials such as letterhead and business cards.",
+    "roduce professional quality, colorcorrected photographs utilizing archival pigment and chromogenic materials.",
+    "Produce professional portfolios suitable for sharing with potential clients or gradschool entrance."
+   ],
+   "careers": [
+    "photography"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "PHOT 143",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 181",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 144",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select three courses (9 units) from the following:",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "PHOT 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 245",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 255",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 268",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "PHOT 100",
+    "why": "not in the requirements; named only as a prerequisite/advisory in course descriptions"
+   },
+   {
+    "code": "PHOT 135",
+    "why": "not in the requirements; named only as an advisory in the PHOT 170 description"
+   },
+   {
+    "code": "PHOT 235",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog section is titled 'Digital Photography - Certificate of Achievement' and totals 18 units, while the state award is 'Photography' Certificate of Achievement requiring 30 to fewer than 60 units; the page may be a different (revised) certificate than the state record. Reviewer should verify.",
+   "Closed list code 'PHOT215' (no space, units not stored) was matched to the catalog's PHOT 215 Photojournalism and Documentary Photography; recorded as not a catalog addition.",
+   "Catalog titles differ from the closed list for PHOT 181 (Photo Editing: Lightroom and Photoshop), PHOT 220 (Portrait and Fashion Photography) and PHOT 230 (Advertising and Product Photography); codes match.",
+   "Outcomes copied exactly as printed, including apparent typos 'pply', 'roduce', 'colorcorrected' and 'gradschool'. The outcomes are printed for 'the Digital Photography Program'.",
+   "The career entry 'photography' comes from the summary's 'enter the field of photography as a professional'; career mentions in course descriptions were not used.",
+   "The catalog text is cut off in the course descriptions after PHOT 255; the requirements section itself appears complete (Total Units: 18.0)."
+  ]
+ },
+ "extracted_run": "38252422845"
+}

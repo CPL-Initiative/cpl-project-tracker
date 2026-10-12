@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 203,
  "with_closed_list": 191,
- "started": "2026-10-12T11:21:22Z",
+ "started": "2026-10-12T12:59:06Z",
  "curriqunet": {
   "catalog": 69,
   "view_prefix": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/",
@@ -23,7 +23,7 @@
  },
  "pages_read": 228,
  "loads": 1175,
- "seconds": 5463.8,
+ "seconds": 5588.9,
  "found": 168,
  "by_method": {
   "no_closed_list": 12,
@@ -1888,5 +1888,5 @@
    }
   ]
  },
- "run": "38242006192"
+ "run": "38252422845"
 }
