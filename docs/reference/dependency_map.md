@@ -443,6 +443,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_build_remint_blast_radius.py` | workflows: `cred-rename-apply.yml`, `daily-dashboard.yml`, `js-tests.yml` | — |
 | `kb/_cer_decision_apply.py` | workflows: `cer-decision-apply.yml` | — |
 | `kb/_college_page_read.py` | workflows: `college-page-read.yml` | — |
+| `kb/_course_outline_index.py` | workflows: `course-outline-index.yml` | — |
 | `kb/_course_title_cleanup_apply.py` | workflows: `course-title-cleanup-apply.yml` | — |
 | `kb/_cred_rename_apply.py` | workflows: `cred-rename-apply.yml` | — |
 | `kb/_cred_rename_apply_supabase.py` | workflows: `cred-rename-apply.yml` | — |
@@ -506,6 +507,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/cos_match_out` | none found | committed by: `cos-authority-sync.yml` |
 | `kb/cos_matches.json` | tabs: `credential-reference` · scripts: `kb/_match_cos_authority.py` | committed by: `cos-authority-sync.yml` |
 | `kb/course_crosswalk.json` | scripts: `kb/_curation_01.py`, `kb/_esl_package_dryrun.py`, `kb/_zband_retire_dryrun.py` | scripts: `kb/_seed_cx_common_courses.py` |
+| `kb/course_outline_index` | none found | committed by: `course-outline-index.yml` |
 | `kb/cr_reference_worklist.json` | tabs: `cr-reference` · scripts: `kb/_build_cr_reference.py`, `kb/_jev_adjudicate.py`, `kb/_typesafe_cr_trial.py` | scripts: `kb/_build_cr_reference.py` · committed by: `daily-dashboard.yml` |
 | `kb/cred_rename_dryrun` | none found | committed by: `cred-rename-apply.yml` |
 | `kb/cred_rename_dryrun/alias_map.json` | workflows: `cred-rename-apply.yml` | committed by: `daily-dashboard.yml` |
@@ -790,6 +792,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/college_briefing_publish_suppression_test.py` | workflows: `college-briefing-publish.yml`, `js-tests.yml` | — |
 | `tests/college_page_read_test.py` | workflows: `js-tests.yml` | — |
 | `tests/context_budget_test.py` | workflows: `js-tests.yml` | — |
+| `tests/course_outline_index_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_title_cleanup_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_title_mojibake_test.py` | workflows: `js-tests.yml` | — |
 | `tests/csr_trail_rules_test.py` | workflows: `js-tests.yml` | — |
@@ -964,7 +967,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `raw.githubusercontent.com` | modules: `kb-portal/config.js` |
 | `raw.githubusercontent.com/CPL-Initiative/cpl-project-tracker` | `edgefn:cpl-chat` |
 | `raw.githubusercontent.com/{CPL_KB_REPO}/{CPL_KB_BRANCH}` | scripts: `excel_to_dashboard.py` |
-| `rccd.curriqunet.com` | scripts: `kb/_program_requirements_college.py` |
+| `rccd.curriqunet.com` | scripts: `kb/_course_outline_index.py`, `kb/_program_requirements_college.py` |
 | `scc.losrios.edu` | tabs: `map-queue`, `map-users` |
 | `schemas.openxmlformats.org` | scripts: `kb/_build_55050_redline_docx.py` |
 | `sdcce.edu` | tabs: `map-queue`, `map-users` |
@@ -1075,5 +1078,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 97 Supabase tables · 36 RPCs · 7 edge functions · 630 file
-datasets · 167 external services · 429 consumers · 48 workflows · 39 tabs.
+Coverage: 97 Supabase tables · 36 RPCs · 7 edge functions · 633 file
+datasets · 167 external services · 431 consumers · 49 workflows · 39 tabs.

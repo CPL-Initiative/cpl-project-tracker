@@ -4,10 +4,10 @@
   "supabase_tables": 97,
   "rpcs": 36,
   "edge_functions": 7,
-  "file_datasets": 630,
+  "file_datasets": 633,
   "external_services": 167,
-  "consumers": 429,
-  "workflows": 48,
+  "consumers": 431,
+  "workflows": 49,
   "data_js_files": 69,
   "tabs": 39
  },
@@ -1956,6 +1956,13 @@
   },
   "external:rccd.curriqunet.com": {
    "consumers": [
+    {
+     "id": "script:kb/_course_outline_index.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 25
+    },
     {
      "id": "script:kb/_program_requirements_college.py",
      "kind": "script",
@@ -7307,6 +7314,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_course_outline_index.py": {
+   "consumers": [
+    {
+     "id": "workflow:course-outline-index.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_course_title_cleanup_apply.py": {
    "consumers": [
     {
@@ -10208,6 +10228,17 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/course_outline_index": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:course-outline-index.yml",
+     "how": "commit"
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/cr_reference_worklist.json": {
@@ -16851,6 +16882,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/course_outline_index_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/course_title_cleanup_apply_test.py": {
    "consumers": [
     {
@@ -22591,6 +22635,20 @@
    "chain": [],
    "urls": []
   },
+  "course-outline-index.yml": {
+   "name": "Course outline index",
+   "crons": [],
+   "scripts": [
+    "kb/_course_outline_index.py"
+   ],
+   "adds": [
+    "kb/course_outline_index/"
+   ],
+   "push": "triggering branch",
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
   "course-title-cleanup-apply.yml": {
    "name": "Course title cleanup apply",
    "crons": [],
@@ -23035,7 +23093,8 @@
     "veteran-sprint-map/build_selfcontained.py",
     "tests/stop_hook_git_check_test.py",
     "tests/video_context_test.py",
-    "tests/kpi_history_no_gaps_test.py"
+    "tests/kpi_history_no_gaps_test.py",
+    "tests/course_outline_index_test.py"
    ],
    "adds": [],
    "push": null,

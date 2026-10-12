@@ -1,0 +1,57 @@
+name: Course outline index
+# From a course code to its public course outline, host by host (Sam, Open Asks
+# Sheet 70 card 3, 2026-10-12: "Every course in the loaded records"; then "start
+# the Riverside course index"). kb/_course_outline_index.py reads pages only and
+# writes no table; it files kb/course_outline_index/<step>_<run>.json, which this
+# job commits back to the branch that ran it. Runs when a claude/** push changes
+# kb/course_outline_index/.run, never on a merge commit (a merge of main carries
+# that file's change too).
+on:
+  push:
+    branches: ['claude/**']
+    paths:
+      - 'kb/course_outline_index/.run'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: course-outline-index-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  index:
+    if: github.actor != 'github-actions[bot]' && !startsWith(github.event.head_commit.message, 'Merge')
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Install Playwright + Chromium
+        run: |
+          pip install --quiet playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Index
+        env:
+          CENSUS_DELAY_MS: '3000'
+        run: |
+          args=()
+          discover=$(sed -n 's/^discover=//p' kb/course_outline_index/.run)
+          slugs=$(sed -n 's/^slugs=//p' kb/course_outline_index/.run)
+          [ -n "$discover" ] && args+=(--discover "$discover")
+          [ -n "$slugs" ] && args+=(--slugs "$slugs")
+          python3 kb/_course_outline_index.py "${args[@]}"
+
+      - name: Commit the result to this branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kb/course_outline_index/
+          if git diff --cached --quiet; then echo "Nothing new."; exit 0; fi
+          git commit -m "Course outline index (run ${{ github.run_id }})"
+          git push origin HEAD:${{ github.ref_name }}
