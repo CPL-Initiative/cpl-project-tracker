@@ -1,0 +1,460 @@
+{
+ "run": "38289193564",
+ "at": "2026-10-12T18:15:25Z",
+ "loads": 30,
+ "summary": {
+  "colleges": 12,
+  "by_system": {
+   "curriqunet": 3,
+   "elumen": 3,
+   "none_found": 6
+  },
+  "by_access": {
+   "not_found": 6,
+   "public": 5,
+   "sign_in": 1
+  },
+  "prints_slos": 0
+ },
+ "rows": [
+  {
+   "college": "Allan Hancock College",
+   "cor_system": "curriqunet",
+   "cor_url": "https://hancockcollege.curriqunet.com/catalog/iq/28553",
+   "cor_access": "public",
+   "cor_prints_slos": false,
+   "slo_pages": [],
+   "hosts": [
+    {
+     "system": "curriqunet",
+     "url": "https://hancockcollege.curriqunet.com/catalog/iq/28553",
+     "from": "registry",
+     "host": "hancockcollege.curriqunet.com",
+     "status": 200,
+     "final_url": "https://hancockcollege.curriqunet.com/catalog/iq/28553",
+     "title": "View - CurriQunet META",
+     "access": "public",
+     "outline_words": false,
+     "slos": false
+    }
+   ],
+   "evidence": [
+    {
+     "why": "homepage",
+     "url": "https://www.hancockcollege.edu/",
+     "final_url": "https://www.hancockcollege.edu/",
+     "status": 200,
+     "title": "Allan Hancock College | Community College on the Central Coast of California"
+    },
+    {
+     "why": "catalog",
+     "url": "https://hancockcollege.curriqunet.com/catalog/iq/28553",
+     "final_url": "https://hancockcollege.curriqunet.com/catalog/iq/28553",
+     "status": 200,
+     "title": "View - CurriQunet META"
+    },
+    {
+     "why": "system: curriqunet",
+     "url": "https://hancockcollege.curriqunet.com/catalog/iq/28553",
+     "final_url": "https://hancockcollege.curriqunet.com/catalog/iq/28553",
+     "status": 200,
+     "title": "View - CurriQunet META"
+    }
+   ]
+  },
+  {
+   "college": "American River College",
+   "cor_system": "none_found",
+   "cor_url": null,
+   "cor_access": "not_found",
+   "cor_prints_slos": false,
+   "slo_pages": [],
+   "hosts": [],
+   "evidence": [
+    {
+     "why": "homepage",
+     "url": "https://arc.losrios.edu/",
+     "final_url": "https://arc.losrios.edu/",
+     "status": 404,
+     "title": "404 Not Found"
+    },
+    {
+     "why": "catalog",
+     "url": "https://arc.losrios.edu/2026-2027-official-catalog",
+     "final_url": "https://arc.losrios.edu/2026-2027-official-catalog",
+     "status": 404,
+     "title": "404 Not Found"
+    }
+   ]
+  },
+  {
+   "college": "Antelope Valley College",
+   "cor_system": "elumen",
+   "cor_url": "https://avc.elumenapp.com/catalog/2026-27/welcome",
+   "cor_access": "public",
+   "cor_prints_slos": false,
+   "slo_pages": [],
+   "hosts": [
+    {
+     "system": "elumen",
+     "url": "https://avc.elumenapp.com/catalog/2026-27/welcome",
+     "from": "registry",
+     "host": "avc.elumenapp.com",
+     "status": 200,
+     "final_url": "https://avc.elumenapp.com/catalog/2026-27/welcome",
+     "title": "Welcome to AVC",
+     "access": "public",
+     "outline_words": false,
+     "slos": false
+    }
+   ],
+   "evidence": [
+    {
+     "why": "homepage",
+     "url": "https://www.avc.edu/",
+     "final_url": "https://www.avc.edu/",
+     "status": 200,
+     "title": "AVC Home | Antelope Valley College"
+    },
+    {
+     "why": "catalog",
+     "url": "https://avc.elumenapp.com/catalog/2026-27/welcome",
+     "final_url": "https://avc.elumenapp.com/catalog/2026-27/welcome",
+     "status": 200,
+     "title": "Welcome to AVC"
+    },
+    {
+     "why": "system: elumen",
+     "url": "https://avc.elumenapp.com/catalog/2026-27/welcome",
+     "final_url": "https://avc.elumenapp.com/catalog/2026-27/welcome",
+     "status": 200,
+     "title": "Welcome to AVC"
+    }
+   ]
+  },
+  {
+   "college": "Bakersfield College",
+   "cor_system": "elumen",
+   "cor_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc",
+   "cor_access": "public",
+   "cor_prints_slos": false,
+   "slo_pages": [],
+   "hosts": [
+    {
+     "system": "elumen",
+     "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc",
+     "from": "registry",
+     "host": "bakersfield.elumenapp.com",
+     "status": 200,
+     "final_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc",
+     "title": "About BC",
+     "access": "public",
+     "outline_words": false,
+     "slos": false
+    }
+   ],
+   "evidence": [
+    {
+     "why": "homepage",
+     "url": "https://www.bakersfieldcollege.edu/",
+     "final_url": "https://www.bakersfieldcollege.edu/",
+     "status": 200,
+     "title": "Bakersfield College"
+    },
+    {
+     "why": "catalog",
+     "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc",
+     "final_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc",
+     "status": 200,
+     "title": "About BC"
+    },
+    {
+     "why": "system: elumen",
+     "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc",
+     "final_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc",
+     "status": 200,
+     "title": "About BC"
+    }
+   ]
+  },
+  {
+   "college": "Barstow Community College",
+   "cor_system": "none_found",
+   "cor_url": null,
+   "cor_access": "not_found",
+   "cor_prints_slos": false,
+   "slo_pages": [],
+   "hosts": [],
+   "evidence": [
+    {
+     "why": "homepage",
+     "url": "https://www.barstow.edu/",
+     "final_url": "https://www.barstow.edu/",
+     "status": 200,
+     "title": "Home | Barstow Community College"
+    },
+    {
+     "why": "catalog",
+     "url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf",
+     "final_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf",
+     "status": 200,
+     "title": ""
+    }
+   ]
+  },
+  {
+   "college": "Berkeley City College",
+   "cor_system": "curriqunet",
+   "cor_url": "https://bcc.curriqunet.com/catalog/view//iq/40258",
+   "cor_access": "sign_in",
+   "cor_prints_slos": false,
+   "slo_pages": [],
+   "hosts": [
+    {
+     "system": "curriqunet",
+     "url": "https://bcc.curriqunet.com/catalog/view/",
+     "from": "registry",
+     "host": "bcc.curriqunet.com",
+     "status": 200,
+     "final_url": "https://bcc.curriqunet.com/catalog/view//iq/40258",
+     "title": "View - CurriQunet META",
+     "access": "sign_in",
+     "outline_words": false,
+     "slos": false
+    }
+   ],
+   "evidence": [
+    {
+     "why": "homepage",
+     "url": "https://www.berkeleycitycollege.edu/",
+     "final_url": "https://www.berkeleycitycollege.edu/",
+     "status": 200,
+     "title": "Berkeley City College Homepage"
+    },
+    {
+     "why": "catalog",
+     "url": "https://bcc.curriqunet.com/catalog/view/",
+     "final_url": "https://bcc.curriqunet.com/catalog/view//iq/40258",
+     "status": 200,
+     "title": "View - CurriQunet META"
+    },
+    {
+     "why": "system: curriqunet",
+     "url": "https://bcc.curriqunet.com/catalog/view/",
+     "final_url": "https://bcc.curriqunet.com/catalog/view//iq/40258",
+     "status": 200,
+     "title": "View - CurriQunet META"
+    }
+   ]
+  },
+  {
+   "college": "Butte College",
+   "cor_system": "curriqunet",
+   "cor_url": "https://butte.curriqunet.com/Catalog//iq/25371",
+   "cor_access": "public",
+   "cor_prints_slos": false,
+   "slo_pages": [],
+   "hosts": [
+    {
+     "system": "curriqunet",
+     "url": "https://butte.curriqunet.com/Catalog/",
+     "from": "registry",
+     "host": "butte.curriqunet.com",
+     "status": 200,
+     "final_url": "https://butte.curriqunet.com/Catalog//iq/25371",
+     "title": "View - CurriQunet META",
+     "access": "public",
+     "outline_words": false,
+     "slos": false
+    }
+   ],
+   "evidence": [
+    {
+     "why": "homepage",
+     "url": "https://www.butte.edu/",
+     "final_url": "https://www.butte.edu/",
+     "status": 200,
+     "title": "Butte College"
+    },
+    {
+     "why": "catalog",
+     "url": "https://butte.curriqunet.com/Catalog/",
+     "final_url": "https://butte.curriqunet.com/Catalog//iq/25371",
+     "status": 200,
+     "title": "View - CurriQunet META"
+    },
+    {
+     "why": "system: curriqunet",
+     "url": "https://butte.curriqunet.com/Catalog/",
+     "final_url": "https://butte.curriqunet.com/Catalog//iq/25371",
+     "status": 200,
+     "title": "View - CurriQunet META"
+    }
+   ]
+  },
+  {
+   "college": "Cabrillo College",
+   "cor_system": "elumen",
+   "cor_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "cor_access": "public",
+   "cor_prints_slos": false,
+   "slo_pages": [],
+   "hosts": [
+    {
+     "system": "elumen",
+     "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+     "from": "registry",
+     "host": "cabrillo.elumenapp.com",
+     "status": 200,
+     "final_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+     "title": "Introduction to Cabrillo College",
+     "access": "public",
+     "outline_words": false,
+     "slos": false
+    },
+    {
+     "system": "coursedog",
+     "url": "https://app.coursedog.com/#/login/cabrillo_colleague_ethos",
+     "from": "registry",
+     "host": "app.coursedog.com",
+     "status": 200,
+     "final_url": "https://app.coursedog.com/#/login/cabrillo_colleague_ethos",
+     "title": "Academic Operations Platform | Coursedog",
+     "access": "sign_in",
+     "outline_words": false,
+     "slos": false
+    }
+   ],
+   "evidence": [
+    {
+     "why": "homepage",
+     "url": "https://www.cabrillo.edu/",
+     "final_url": "https://www.cabrillo.edu/",
+     "status": 200,
+     "title": "Cabrillo Community College - Breakthroughs Happen Here"
+    },
+    {
+     "why": "catalog",
+     "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+     "final_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+     "status": 200,
+     "title": "Introduction to Cabrillo College"
+    },
+    {
+     "why": "system: elumen",
+     "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+     "final_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+     "status": 200,
+     "title": "Introduction to Cabrillo College"
+    },
+    {
+     "why": "system: coursedog",
+     "url": "https://app.coursedog.com/#/login/cabrillo_colleague_ethos",
+     "final_url": "https://app.coursedog.com/#/login/cabrillo_colleague_ethos",
+     "status": 200,
+     "title": "Academic Operations Platform | Coursedog"
+    }
+   ]
+  },
+  {
+   "college": "Calbright College Credit",
+   "cor_system": "none_found",
+   "cor_url": null,
+   "cor_access": "not_found",
+   "cor_prints_slos": false,
+   "slo_pages": [],
+   "hosts": [],
+   "evidence": [
+    {
+     "why": "homepage",
+     "url": "https://www.calbright.org/",
+     "final_url": "https://www.calbright.edu//",
+     "status": 200,
+     "title": "Calbright College: Free Online Certificate Programs in California"
+    },
+    {
+     "why": "catalog",
+     "url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf",
+     "final_url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf",
+     "status": 200,
+     "title": ""
+    }
+   ]
+  },
+  {
+   "college": "Ca\u00f1ada College",
+   "cor_system": "none_found",
+   "cor_url": null,
+   "cor_access": "not_found",
+   "cor_prints_slos": false,
+   "slo_pages": [],
+   "hosts": [],
+   "evidence": [
+    {
+     "why": "homepage",
+     "url": "https://canadacollege.edu/",
+     "final_url": "https://canadacollege.edu/",
+     "status": 200,
+     "title": "Ca\u00f1ada College"
+    },
+    {
+     "why": "catalog",
+     "url": "https://canadacollege.edu/catalogschedule/",
+     "final_url": "https://canadacollege.edu/catalogschedule/",
+     "status": 200,
+     "title": "Overview | Schedule and Catalog | Ca\u00f1ada College"
+    }
+   ]
+  },
+  {
+   "college": "Cerritos College",
+   "cor_system": "none_found",
+   "cor_url": null,
+   "cor_access": "not_found",
+   "cor_prints_slos": false,
+   "slo_pages": [],
+   "hosts": [],
+   "evidence": [
+    {
+     "why": "homepage",
+     "url": "https://www.cerritos.edu/",
+     "final_url": "https://www.cerritos.edu/",
+     "status": 200,
+     "title": "Cerritos College - Apply today for fall semester classes!"
+    },
+    {
+     "why": "catalog",
+     "url": "https://cerritos-public.courseleaf.com/",
+     "final_url": "https://cerritos-public.courseleaf.com/",
+     "status": 200,
+     "title": "Cerritos College Academic Catalog"
+    }
+   ]
+  },
+  {
+   "college": "Cerro Coso Community College",
+   "cor_system": "none_found",
+   "cor_url": null,
+   "cor_access": "not_found",
+   "cor_prints_slos": false,
+   "slo_pages": [],
+   "hosts": [],
+   "evidence": [
+    {
+     "why": "homepage",
+     "url": "https://www.cerrocoso.edu/",
+     "final_url": "https://www.cerrocoso.edu/",
+     "status": 200,
+     "title": "Cerro Coso Community College"
+    },
+    {
+     "why": "catalog",
+     "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf",
+     "final_url": null,
+     "status": null,
+     "title": ""
+    }
+   ]
+  }
+ ]
+}
