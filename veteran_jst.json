@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-12T19:05:22.368187+00:00",
+  "scraped_at": "2026-10-12T21:20:55.882026+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 29021,
+    "jst": 29020,
     "star_colleges": 60
   },
   "computed_star_colleges": 60,
@@ -535,9 +535,9 @@
       "jst": 1,
       "star": false
     },
-    "College of the Siskiyous": {
-      "vets": 77,
-      "jst": 2,
+    "Grossmont College": {
+      "vets": 415,
+      "jst": 1,
       "star": false
     },
     "College of Marin": {
@@ -545,8 +545,8 @@
       "jst": 1,
       "star": false
     },
-    "Grossmont College": {
-      "vets": 415,
+    "College of the Siskiyous": {
+      "vets": 77,
       "jst": 1,
       "star": false
     },
@@ -562,6 +562,11 @@
     },
     "California State University Los Angeles": {
       "vets": 0,
+      "jst": 0,
+      "star": false
+    },
+    "Palomar College": {
+      "vets": 1019,
       "jst": 0,
       "star": false
     },
@@ -582,11 +587,6 @@
     },
     "Folsom Lake College": {
       "vets": 65,
-      "jst": 0,
-      "star": false
-    },
-    "Palomar College": {
-      "vets": 1019,
       "jst": 0,
       "star": false
     }

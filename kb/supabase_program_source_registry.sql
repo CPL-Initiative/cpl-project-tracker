@@ -494,3 +494,74 @@ begin
   return old;
 end
 $$;
+
+-- ── Where a college's course outlines of record open (S373, 2026-10-12) ─────
+-- Sam, 2026-10-12 ~18:00Z in chat to S372: capture each college's course outline
+-- of record system link, so the harvest reads course SLOs for the industry
+-- credential skills match and for faculty assessment of CPL. Open Asks Sheet 70
+-- (20:40-20:42Z): card 1 "Apply as a migration" (these fields, filled from a
+-- pages-only pass over every college); card 2 "Record and move on" (a sign-in
+-- system is recorded, no request goes to the college), with his note "And look
+-- for other repositories for the outcomes data and record the link and data in
+-- prog reqs"; card 3 "Every course in the loaded records".
+--   cor_system          the course outline system the census met
+--   cor_url             where a course's outline opens (curriQunet: the dashboard
+--                       at the host's root, which lists the public outline reports)
+--   cor_access          public | sign_in | refused | unreached | not_found
+--   cor_proof_url       one course outline that opened, as proof
+--   cor_prints_slos     whether that outline (or the SLO source) prints the course's
+--                       student learning outcomes
+--   cor_slo_source_url  where the course SLOs print when the outline system is closed
+--                       or prints none (a catalog course page, a department page):
+--                       Sam's "other repositories for the outcomes data"
+--   cor_note            plain words for a person, the tab and Sierra
+--   cor_checked_run     the course outline census run that measured it
+-- Filled from kb/_course_outline_census.py's census_<run>.json by a session, with
+-- a receipt in kb/receipts/. program_source_census_apply() names its columns, so
+-- the weekly census never writes these. Applied as migration
+-- program_source_registry_course_outline_2026_10_12 (S373). The history trigger
+-- names cor_checked_run when it changes.
+alter table public.program_source_registry
+  add column if not exists cor_system         text
+    check (cor_system in ('curriqunet', 'curricunet', 'elumen', 'coursedog', 'courseleaf_cim',
+                          'kuali', 'webcms', 'other', 'none_found')),
+  add column if not exists cor_url            text,
+  add column if not exists cor_access         text
+    check (cor_access in ('public', 'sign_in', 'refused', 'unreached', 'not_found')),
+  add column if not exists cor_proof_url      text,
+  add column if not exists cor_prints_slos    boolean,
+  add column if not exists cor_slo_source_url text,
+  add column if not exists cor_note           text,
+  add column if not exists cor_checked_run    text;
+
+create or replace function public.program_source_registry_keep_history()
+returns trigger
+language plpgsql
+set search_path = public
+as $$
+begin
+  insert into public.program_source_registry_history (college, changed_by, op, old_row)
+  values (
+    old.college,
+    case when tg_op = 'UPDATE'
+         then coalesce(
+                case when new.corrected_at is distinct from old.corrected_at
+                     then new.corrected_by end,
+                case when new.procedure_at is distinct from old.procedure_at
+                     then new.procedure_by end,
+                case when new.sequence_checked_run is distinct from old.sequence_checked_run
+                     then new.sequence_checked_run end,
+                case when new.cor_checked_run is distinct from old.cor_checked_run
+                     then new.cor_checked_run end,
+                new.census_run_id)
+    end,
+    tg_op,
+    to_jsonb(old));
+  if tg_op = 'UPDATE' then
+    new.updated_at := now();
+    return new;
+  end if;
+  return old;
+end
+$$;
+revoke all on function public.program_source_registry_keep_history() from public, anon, authenticated;

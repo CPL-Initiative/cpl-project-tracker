@@ -8,22 +8,22 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 46859,
-  "pa": 42771,
+  "pe": 46863,
+  "pa": 42776,
   "ppa": 119,
-  "p2": 3570,
-  "p3": 16741,
+  "p2": 3574,
+  "p3": 16746,
   "pp": 6,
   "ppe": 129,
   "pac": 5256,
-  "ptc": 4608,
-  "pe_u": 1463217.2,
-  "pa_u": 238574.4,
+  "ptc": 4609,
+  "pe_u": 1463223.2,
+  "pa_u": 238651.4,
   "ppa_u": 721.5,
   "ppe_u": 6825.5,
   "pac_u": 37495.45,
-  "ptc_u": 31135.0,
-  "p3_u": 83465.7,
+  "ptc_u": 31151.5,
+  "p3_u": 83547.2,
   "pp_u": 63.5
  },
  "colleges": {
@@ -1294,16 +1294,16 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Moreno Valley": {
-   "pe": 2516,
-   "pe_u": 54313.0,
-   "pa": 2187,
-   "pa_u": 13141.0,
+   "pe": 2520,
+   "pe_u": 54378.0,
+   "pa": 2191,
+   "pa_u": 13206.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 53.5,
-   "p2": 488,
-   "p3": 2123,
-   "p3_u": 12580.5,
+   "p2": 491,
+   "p3": 2127,
+   "p3_u": 12645.5,
    "pp": null,
    "pp_suppressed": true,
    "pp_u": 38.5,
@@ -1356,10 +1356,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Napa": {
-   "pe": 296,
-   "pe_u": 3418.5,
-   "pa": 260,
-   "pa_u": 1207.5,
+   "pe": 297,
+   "pe_u": 3421.5,
+   "pa": 261,
+   "pa_u": 1210.5,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 62,
@@ -1640,7 +1640,7 @@ window.CPL_FUNDING_PERF = {
    "pe": 316,
    "pe_u": 9530.0,
    "pa": 311,
-   "pa_u": 2644.0,
+   "pa_u": 2653.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 59,
@@ -1894,9 +1894,9 @@ window.CPL_FUNDING_PERF = {
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 7.0,
-   "p2": 208,
-   "p3": 262,
-   "p3_u": 3378.5,
+   "p2": 209,
+   "p3": 263,
+   "p3_u": 3395.0,
    "pp": 0,
    "pp_u": 0.0,
    "ppe": null,
@@ -1904,8 +1904,8 @@ window.CPL_FUNDING_PERF = {
    "ppe_u": 31.0,
    "pac": 267,
    "pac_u": 3457.0,
-   "ptc": 262,
-   "ptc_u": 3378.5
+   "ptc": 263,
+   "ptc_u": 3395.0
   },
   "Sequoias": {
    "pe": 174,
@@ -1969,7 +1969,7 @@ window.CPL_FUNDING_PERF = {
   "Siskiyous": {
    "pe": null,
    "pe_suppressed": true,
-   "pe_u": 76.0,
+   "pe_u": 14.0,
    "pa": 0,
    "pa_u": 0.0,
    "ppa": 0,
@@ -3171,9 +3171,9 @@ window.CPL_FUNDING_PERF = {
     "p3": 974
    },
    "Standardized Assessment": {
-    "pe": 253,
-    "pa": 253,
-    "p3": 253
+    "pe": 257,
+    "pa": 257,
+    "p3": 257
    }
   },
   "Mt San Antonio": {
@@ -3224,8 +3224,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 49,
-    "pa": 16,
+    "pe": 50,
+    "pa": 17,
     "p3": null,
     "p3_suppressed": true
    },
@@ -3957,7 +3957,7 @@ window.CPL_FUNDING_PERF = {
   "Industry Certification": {
    "pe": 1413,
    "pa": 1390,
-   "p3": 1171
+   "p3": 1172
   },
   "Industry Certification | Military": {
    "pe": 56,
@@ -4003,7 +4003,7 @@ window.CPL_FUNDING_PERF = {
   },
   "Military": {
    "pe": 28433,
-   "pa": 26126,
+   "pa": 26127,
    "p3": 2592
   },
   "Military | Other": {
@@ -4049,9 +4049,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Standardized Assessment": {
-   "pe": 4695,
-   "pa": 3340,
-   "p3": 2036
+   "pe": 4699,
+   "pa": 3344,
+   "p3": 2040
   }
  },
  "cpl_types_note": "Distinct-student counts per college per `CPL Type Description`, for the funnel rungs pe/pa/p3. COUNTS ONLY — no unit sums, because each source row carries the student's TOTAL credits rather than that type's portion, so a per-type unit sum would attribute the whole total to every type a student carries. A student holding two types counts once under each, so the types do NOT sum to the college's undifferentiated count. Batch Cx/AP/IB uploads arrive already-transcribed by construction (students already in the college SIS, surfaced in MAP), so read p3 by type before treating a transcribed figure as lifecycle work.",
@@ -4059,14 +4059,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1463217.2,
-   "pa_u": 238574.4,
-   "p3_u": 83465.7
+   "pe_u": 1463223.2,
+   "pa_u": 238651.4,
+   "p3_u": 83547.2
   },
   "map": {
-   "pe_u": 1470042.7,
-   "pa_u": 239295.9,
-   "p3_u": 83529.2
+   "pe_u": 1470048.7,
+   "pa_u": 239372.9,
+   "p3_u": 83610.7
   },
   "ratio": {
    "pe_u": 1.0047,
@@ -4180,16 +4180,16 @@ window.CPL_FUNDING_PERF = {
   "Feather River": true,
   "Imperial": false,
   "Contra Costa": false,
-  "Siskiyous": false,
-  "Marin": false,
   "Grossmont": false,
+  "Marin": false,
+  "Siskiyous": false,
   "Yuba": false,
   "Orange Coast": false,
+  "Palomar": false,
   "Lake Tahoe": false,
   "LA Swest": false,
   "Cosumnes River": false,
-  "Folsom Lake": false,
-  "Palomar": false
+  "Folsom Lake": false
  },
  "vet_star_as_of": "2026-10-12",
  "vet_star_threshold": 0.75,
@@ -4719,8 +4719,8 @@ window.CPL_FUNDING_PERF = {
    "jst": null,
    "jst_suppressed": true
   },
-  "Siskiyous": {
-   "vets": 77,
+  "Grossmont": {
+   "vets": 415,
    "jst": null,
    "jst_suppressed": true
   },
@@ -4729,8 +4729,8 @@ window.CPL_FUNDING_PERF = {
    "jst": null,
    "jst_suppressed": true
   },
-  "Grossmont": {
-   "vets": 415,
+  "Siskiyous": {
+   "vets": 77,
    "jst": null,
    "jst_suppressed": true
   },
@@ -4743,6 +4743,11 @@ window.CPL_FUNDING_PERF = {
    "vets": 396,
    "jst": null,
    "jst_suppressed": true
+  },
+  "Palomar": {
+   "vets": 1019,
+   "jst": 0,
+   "pct": 0.0
   },
   "Lake Tahoe": {
    "vets": 92,
@@ -4761,11 +4766,6 @@ window.CPL_FUNDING_PERF = {
   },
   "Folsom Lake": {
    "vets": 65,
-   "jst": 0,
-   "pct": 0.0
-  },
-  "Palomar": {
-   "vets": 1019,
    "jst": 0,
    "pct": 0.0
   }
