@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 543 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
-| Lessons docs | 86 | [`catalog/lessons.md`](catalog/lessons.md) |
+| KB notes | 544 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| Lessons docs | 87 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
-| Reference (pull-side) | 55 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 345 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1115** | |
+| Reference (pull-side) | 56 | [`catalog/reference.md`](catalog/reference.md) |
+| Session handoffs | 346 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1119** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-12 SkyLedger (parallel session; its receipts say s372): new lane `workplan-annual-goals`, `workplan_annual_goals_lessons.md`, KB note `methodology-an-option-list-read-from-the-page-dies-with-the-renderer`; handoff 375.
 - 2026-10-12 S373 SkyCypress: San Diego Mesa read, loaded and displayed (#2044, 166 records, build da4f44a160ca); Sheet 70 answered: the registry's course outline fields (#2045) filled on 118 rows (#2047); the course outline census merged (#2042, run 5: 32 outlines, 18 with SLOs); the RCCD course index (#2046, 1,605 of 1,648 courses with a public outline); KB note methodology-a-sign-in-form-is-no-proof-of-a-closed-system.
 - 2026-10-12 S372 SkyRedwood: Miramar displayed (#2041), Mesa's row applied (#2037), Sierra v91 7c precedent (#2040), the painting gallery (#2038), the course outline census (#2042 draft, Sheet 70); KB note methodology-a-course-title-reads-as-its-level.
 - **2026-10-12 (S371 SkyMaple)**: San Diego City displayed (#2034); College Identity UI pass (#2035); MAP Users sign-in wording (#2036); Mesa registry receipt (#2037, held) and the painting gallery (#2038, step 1); new KB note `methodology-same-context-size-means-the-model-varied`; handoff 372 (SkyRedwood).

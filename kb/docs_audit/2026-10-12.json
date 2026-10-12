@@ -10,61 +10,61 @@
     "other": 150000
   },
   "summary": {
-    "files": 1128,
-    "bytes": 11686812,
-    "over_budget": 7,
-    "handoff_max": 374,
+    "files": 1132,
+    "bytes": 11703893,
+    "over_budget": 8,
+    "handoff_max": 375,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59998,
+    "always_loaded_bytes": 60304,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59998,
-        "over": 0
+        "bytes": 60304,
+        "over": 1
       },
       "other": {
         "files": 119,
-        "bytes": 3474235,
+        "bytes": 3475353,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 9810,
+        "bytes": 10039,
         "over": 0
       },
       "lessons": {
-        "files": 81,
-        "bytes": 2336793,
+        "files": 82,
+        "bytes": 2340118,
         "over": 3
       },
       "kb_note": {
-        "files": 545,
-        "bytes": 2706727,
+        "files": 546,
+        "bytes": 2708681,
         "over": 0
       },
       "roadmap_lane": {
-        "files": 36,
-        "bytes": 334897,
+        "files": 37,
+        "bytes": 339900,
         "over": 1
       },
       "handoff": {
-        "files": 345,
-        "bytes": 2764352,
+        "files": 346,
+        "bytes": 2769498,
         "over": 0
       }
     },
     "by_rule": {
+      "oversized_doc": 8,
       "house_voice": 23,
-      "oversized_doc": 7,
       "vault_heavy_path": 61
     },
     "vault": {
-      "files": 6767,
-      "bytes": 2051548095,
-      "heavy_bytes": 1028887775,
-      "heavy_share": 0.502,
+      "files": 6779,
+      "bytes": 2052191668,
+      "heavy_bytes": 1028907919,
+      "heavy_share": 0.501,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/regional_cpl_out",
@@ -131,6 +131,19 @@
     }
   },
   "findings": [
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 60304,
+        "limit": 60000,
+        "lane": "always_loaded",
+        "over_by": 304,
+        "ratio": 1.01
+      },
+      "message": "60,304 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "path": "CLAUDE.md"
+    },
     {
       "rule": "house_voice",
       "fixable": false,
@@ -503,10 +516,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 193834133,
+        "bytes": 193854277,
         "kind": "dir"
       },
-      "message": "directory totals 193,834,133 B inside the vault"
+      "message": "directory totals 193,854,277 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

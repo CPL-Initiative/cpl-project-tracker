@@ -15,11 +15,12 @@ related:
 
 Workstream scratchpads. A dated section is appended at every checkpoint.
 
-86 document(s).
+87 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
 | [Admin tab + the side menu as data — lessons](../admin_tab_lessons.md) | `admin_tab_lessons.md` | 2026-08-14 | 2026-08-14 |
+| [Annual Workplan Goals — lessons](../workplan_annual_goals_lessons.md) | `workplan_annual_goals_lessons.md` | 2026-10-12 |  |
 | [Annual Workplan tab as the authoritative source — lessons](../annual_workplan_authoritative_lessons.md) | `annual_workplan_authoritative_lessons.md` | 2026-06-30 |  |
 | [Auth model and repository posture — lessons](../auth_and_repo_posture_lessons.md) | `auth_and_repo_posture_lessons.md` | 2026-08-19 |  |
 | [CCR Atlas — lessons & state](../ccr_atlas_lessons.md) | `ccr_atlas_lessons.md` | 2026-08-24 |  |
