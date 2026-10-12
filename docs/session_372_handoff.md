@@ -40,6 +40,8 @@ checkpointed at the context warning (about 109k left).
 
 **Emergency amendment (S371, ~16:40Z, context line):** the gallery page commit (2adf1d9) is on branch `claude/s371-gallery-page`, not yet on `claude/s371-painting-gallery`: once `first-light-art.yml` has committed the re-sourced pool there, cherry-pick 2adf1d9 onto it. The preview A/B (run 38272978495) deleted `cpl-chat-preview` (confirmed), but its compare step failed: read which mode differs before anything else on Sierra. The decision sheet was not built.
 
+**Sam answered Open Asks Sheet 69 (https://claude.ai/artifact/UVT389V1HEN68MmASVjua1):** item 1 apply Mesa's registry row as a migration (it timed out twice at 16:4xZ and did NOT apply; read the row back, then apply once Miramar's read is done, and dispatch Mesa's read); item 2 the map_colleges spelling (APPLIED, 2 rows read back); item 3 tune Sierra's 7c precedent line so it names the LVN program the course belongs to, A/B before any deploy. Sheet 69's source is not yet in the vault (`decision-sheets/`).
+
 ## Next in the queue
 
 1. **Decision sheet.** Three calls wait on Sam (`kb/queue_status.json` `calls`): Mesa's registry write, the
