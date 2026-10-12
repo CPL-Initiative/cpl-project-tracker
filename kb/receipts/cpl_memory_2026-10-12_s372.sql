@@ -1,0 +1,12 @@
+-- S372 SkyRedwood, 2026-10-12. Rule 8 ingest, applied through execute_sql: INSERT-only, idempotent on slug,
+-- each row logged to cpl_memory_log (actor SkyRedwoodS372).
+-- Rollback: delete from public.cpl_memory where author = 'SkyRedwoodS372' and event_date = '2026-10-12';
+--   and restore mesa-registry-custom-html-is-curriqunet-2026-10-12 to status 'proposed', superseded_by null.
+-- Rows (slug, kind, status):
+--   sam-capture-cor-system-link-2026-10-12          decision    verified (Sam, in chat ~18:00Z, verbatim in detail)
+--   sierra-7c-course-title-read-as-cna-level-2026-10-12  pitfall proposed
+--   mesa-registry-applied-curriqunet-2026-10-12     fact        proposed (supersedes mesa-registry-custom-html-is-curriqunet-2026-10-12)
+--   miramar-loaded-displayed-2026-10-12             milestone   proposed
+--   artifact-version-holds-511-files-2026-10-12     pitfall     proposed
+--   cor-census-sample-found-catalog-hosts-2026-10-12 fact       proposed
+select slug, kind, status from public.cpl_memory where author = 'SkyRedwoodS372' order by created_at;

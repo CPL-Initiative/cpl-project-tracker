@@ -396,3 +396,11 @@ this lessons doc plus the Sierra page lane now carry it.
 The almanac reviews; it cannot drop or add. The gallery (#2038) does both: 41 new Commons categories for California
 plein air painters, a runner that fetches 240-pixel thumbnails (an artifact cannot load an image from Commons, and the
 session cannot reach it), and a page whose marks save to its own store for a session to apply.
+
+## S372 SkyRedwood (2026-10-12): the painting gallery is published
+
+- **The gallery:** https://claude.ai/artifact/21o45k6MbPKsPMgNQk69hn, on the `db` capability; Sam's marks go to collection `picks`. 521 thumbnails (89 selected, 7 on Sierra, 432 California candidates) from `first-light-gallery-thumbs.yml` run 38279770124, none failed.
+- **An artifact version holds at most 511 files.** The page, `index.json` and 507 thumbnails fill it; the publish of the last 14 was refused (`manifest exceeds 512 entries`). They ride inline as data URIs in `thumbs-more.json`, and the page prefers an inline thumbnail. A gallery past about 500 paintings needs bundles, not one file per image.
+- **One write at a time per document.** Two quick clicks on one painting would overlap writes; `save()` now queues each painting's writes.
+- **A local preview without a charset garbles a middle dot** ("Â·"); the published skeleton declares UTF-8, and the tag line now joins with a comma.
+- **First Light's current set includes Ansel Adams's photograph** "The Tetons and the Snake River"; Sam may drop it in the gallery.

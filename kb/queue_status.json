@@ -1,19 +1,12 @@
 {
   "schema": 1,
-  "written_at": "2026-10-12T16:29:51Z",
-  "session": 371,
-  "moniker": "SkyMaple",
+  "written_at": "2026-10-12T18:27:34Z",
+  "session": 372,
+  "moniker": "SkyRedwood",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_372_handoff.md",
+  "handoff": "docs/session_373_handoff.md",
   "unchecked": [
-    {
-      "college": "Cerritos College",
-      "program": "Natural Sciences - General",
-      "award": "A.S.",
-      "control_number": "02202",
-      "loaded": "2026-10-09"
-    },
     {
       "college": "Cerritos College",
       "program": "Botany",
@@ -13159,24 +13152,766 @@
       "award": "A.A. Degree",
       "control_number": "45721",
       "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Business Management",
+      "award": "A.S. Degree",
+      "control_number": "05072",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Computer Programming",
+      "award": "A.S. Degree",
+      "control_number": "05075",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Child Development",
+      "award": "A.S. Degree",
+      "control_number": "05087",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Paralegal",
+      "award": "A.S. Degree",
+      "control_number": "05088",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Law Enforcement",
+      "award": "A.S. Degree",
+      "control_number": "05095",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Administration of Justice Correctional Technologies",
+      "award": "A.S. Degree",
+      "control_number": "05096",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Law Enforcement Technologies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "05098",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Biology for Allied Health",
+      "award": "A.S. Degree",
+      "control_number": "09710",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Biotechnology",
+      "award": "A.S. Degree",
+      "control_number": "09711",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Financial Services",
+      "award": "A.S. Degree",
+      "control_number": "09712",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Heavy Equipment Technology (HET) (Day Program)",
+      "award": "A.S. Degree",
+      "control_number": "09718",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Automotive Technology",
+      "award": "A.S. Degree",
+      "control_number": "09720",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Automotive Electrical",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "09721",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Automotive Engine Performance",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "09722",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Automotive Transmissions",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "09723",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Automotive Chassis",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "09724",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Combined Drawing/Painting",
+      "award": "A.A. Degree",
+      "control_number": "09732",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Administration of Justice Investigations Specialization",
+      "award": "A.S. Degree",
+      "control_number": "11261",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Contemporary Police Technologies",
+      "award": "A.S. Degree",
+      "control_number": "11263",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Child Development Teacher",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "12104",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Child Development Master Teacher",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "12105",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Equipment Mechanic Apprenticeship",
+      "award": "A.S. Degree",
+      "control_number": "12648",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Business Administration",
+      "award": "A.S. Degree",
+      "control_number": "16566",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Studio Arts",
+      "award": "A.A. Degree",
+      "control_number": "16593",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Craft Skills",
+      "award": "A.A. Degree",
+      "control_number": "16594",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Child Development Site Supervisor",
+      "award": "A.S. Degree",
+      "control_number": "16629",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Technical Achievement for Field Training Officers",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "16665",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Fire Prevention",
+      "award": "A.S. Degree",
+      "control_number": "16668",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Company Officer Certification",
+      "award": "A.S. Degree",
+      "control_number": "16669",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Law Enforcement Supervision",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "16739",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Advanced Traffic Accident Investigation",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "16743",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Open Water Lifeguard",
+      "award": "A.S. Degree",
+      "control_number": "16746",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Personal Training",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "17037",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Art Visual Studies",
+      "award": "A.A. Degree",
+      "control_number": "18172",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Biology Studies",
+      "award": "A.S. Degree",
+      "control_number": "18173",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Earth Science Studies",
+      "award": "A.S. Degree",
+      "control_number": "18176",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "English/Literature Studies",
+      "award": "A.A. Degree",
+      "control_number": "18178",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Exercise and Nutritional Sciences",
+      "award": "A.S. Degree",
+      "control_number": "18179",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Human Development Studies",
+      "award": "A.A. Degree",
+      "control_number": "18180",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Mathematics Studies",
+      "award": "A.A. Degree",
+      "control_number": "18182",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Music Studies",
+      "award": "A.A. Degree",
+      "control_number": "18183",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Occupational/Technical Studies",
+      "award": "A.S. Degree",
+      "control_number": "18184",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Social and Behavioral Sciences",
+      "award": "A.A. Degree",
+      "control_number": "18188",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Fire Prevention",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "18208",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Company Officer Certification",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "18209",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "World Language Studies",
+      "award": "A.A. Degree",
+      "control_number": "18232",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "San Diego Transit General Mechanic Apprenticeship",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "19252",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "San Diego Transit General Mechanic Apprenticeship",
+      "award": "A.S. Degree",
+      "control_number": "19253",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Administrative Assistant",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "20764",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Business Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22266",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Computer Programming",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22268",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Financial Services",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22269",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Business Administration",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "22272",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Open Water Lifeguard",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22275",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Administration of Justice Investigations Specialization",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "22276",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Administration of Justice Correctional Technologies",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "22277",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Law Enforcement",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "22278",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Contemporary Police Technologies",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22279",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Paralegal",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22280",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Equipment Mechanic Apprenticeship",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22286",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Heavy Equipment Technology (HET) (Day Program)",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22288",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Medical Laboratory Technology",
+      "award": "A.S. Degree",
+      "control_number": "30051",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Medical Laboratory Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "30052",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "30599",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Accountancy",
+      "award": "A.S. Degree",
+      "control_number": "31263",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Accountancy",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "31276",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "31605",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "31653",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "31925",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "31926",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Business Administration",
+      "award": "A.S. T Degree",
+      "control_number": "32568",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Art History",
+      "award": "A.A- T Degree",
+      "control_number": "32663",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "32664",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "32665",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Philosophy",
+      "award": "A.A- T Degree",
+      "control_number": "32666",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "32683",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Spanish",
+      "award": "A.A- T Degree",
+      "control_number": "32709",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Biotechnology",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "32836",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "33374",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "33878",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Child Development Assistant Teacher",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "33898",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Entrepreneurship",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "35017",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Audio Production and Engineering",
+      "award": "A.S. Degree",
+      "control_number": "35204",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Audio Production and Engineering",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35288",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Nutrition and Dietetics",
+      "award": "A.S. T Degree",
+      "control_number": "35571",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Geology",
+      "award": "A.S. T Degree",
+      "control_number": "35573",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Administrative Assistant",
+      "award": "A.S. Degree",
+      "control_number": "36487",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "37418",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Public Safety Management",
+      "award": "A.S. Degree",
+      "control_number": "37455",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Public Safety Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37456",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Law, Public Policy, and Society",
+      "award": "A.A- T Degree",
+      "control_number": "37626",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Computer Science",
+      "award": "A.S. T Degree",
+      "control_number": "37726",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "300-Hour Registered Yoga Teacher",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "39433",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Honors Global Competencies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40608",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Hybrid/Electric Vehicles",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40765",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Sustainability",
+      "award": "A.A. Degree",
+      "control_number": "42671",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Hawthorne Technician Apprenticeship (HTAP)",
+      "award": "A.S. Degree",
+      "control_number": "43052",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Early Education Entrepreneurship",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43118",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Early Education Entrepreneurship",
+      "award": "A.S. Degree",
+      "control_number": "43120",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Hawthorne Technician Apprenticeship (HTAP)",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "43221",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "43654",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Public Safety Management",
+      "award": "Baccalaureate of Science (B.S.) Degree.",
+      "control_number": "44515",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "200-Hour Registered Yoga Teacher",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "45023",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Modern Policing",
+      "award": "A.S. Degree",
+      "control_number": "45980",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Fire Fighter 1 Academy",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46180",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Government/Nonprofit Accounting",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46222",
+      "loaded": "2026-10-12"
     }
   ],
   "next_step": {
-    "title": "Load and display San Diego Miramar",
-    "text": "Miramar's read with extraction runs on claude/s371-miramar-read under Sam's go; when it files, load it unchecked, build and apply the display, read the build back and merge. Mesa follows once its registry row is corrected (PR 2037)."
+    "title": "Load and display San Diego Mesa",
+    "text": "Mesa's read with extraction runs on claude/s372-mesa-read; when it files, load it unchecked, add Mesa to the builder's dated reads, build and apply the display, read the build back and merge. The course outline census reads all 118 colleges on claude/s372-cor-census."
   },
   "calls": [
     {
-      "title": "How Mesa's registry correction is applied",
-      "text": "Mesa's catalog row still reads custom_html; the receipt in PR 2037 points it at the SDCCD curriQunet host, and the database guard holds the write until Sam says how it is applied. No reply: Mesa waits and Miramar proceeds."
+      "title": "Where each college's course outline system is recorded",
+      "text": "Open Asks Sheet 70 card 1: five registry fields by migration. No reply: the census result stays in its file and nothing is written."
     },
     {
-      "title": "How the map_colleges spelling fix is applied",
-      "text": "Two partner rows say organisation on College Identity; the receipt is filed and the guard holds the write. No reply: the spelling stays."
+      "title": "Course outline systems that ask for a sign-in",
+      "text": "Sheet 70 card 2: record them and send no request. No reply: they are recorded as sign-in required and no request goes out."
     },
     {
-      "title": "Sierra 7c: tune the precedent wording or accept an occasional miss",
-      "text": "Sierra misses the Chaffey NURVN 414 precedent now and then with the same context in front of her. No reply: the smoke's 7c precedent check fails on some runs."
+      "title": "Which course SLOs are read first",
+      "text": "Sheet 70 card 3: articulated courses at the nine loaded colleges first. No reply: no SLOs are read."
     }
   ],
   "notes": {
@@ -13188,52 +13923,20 @@
   },
   "changes": [
     {
-      "at": "2026-10-12T16:30Z",
-      "text": "One more record checked by a person (30 in all)"
+      "at": "2026-10-12T17:06Z",
+      "text": "San Diego Mesa's catalog row now points at the district's curriQunet host"
     },
     {
-      "at": "2026-10-12T16:20Z",
-      "text": "San Diego Miramar's read with extraction started, on Sam's go"
+      "at": "2026-10-12T17:37Z",
+      "text": "San Diego Miramar's 106 records loaded, not yet confirmed; its 4 checked records kept"
     },
     {
-      "at": "2026-10-12T15:34Z",
-      "text": "San Diego City's 164 records displayed under build 0f4e4158a2df (1,909 rows)"
+      "at": "2026-10-12T17:56Z",
+      "text": "The page's display build now covers all 2,015 records"
     },
     {
-      "at": "2026-10-12T12:58Z",
-      "text": "San Diego City's read with extraction started (168 of 191 programs found)"
-    },
-    {
-      "at": "2026-10-12T12:49Z",
-      "text": "Display build 496f2a71470a applied to all 1,745 records"
-    },
-    {
-      "at": "2026-10-12T12:39Z",
-      "text": "Chaffey's 191 records loaded, unchecked"
-    },
-    {
-      "at": "2026-10-12T12:32Z",
-      "text": "Long Beach City 38542 removed on Sam's Sheet 68 card 2, under a receipt that holds the row"
-    },
-    {
-      "at": "2026-10-12T11:20Z",
-      "text": "Chaffey's and San Diego City's reads started on the fixed reader; Chaffey's capture before the fix found 193 of its 199 programs."
-    },
-    {
-      "at": "2026-10-12T11:18Z",
-      "text": "Every program record is public: Sam applied the read policy, and the public now reads all 1,555 records, 29 of them checked."
-    },
-    {
-      "at": "2026-10-12T04:31Z",
-      "text": "Long Beach City's 40 new records were displayed; 1,554 of 1,555 records carry the current display build."
-    },
-    {
-      "at": "2026-10-12T03:35Z",
-      "text": "Long Beach City's re-read loaded 40 more records, unchecked: 311 of its 367 records pass the machine checks, up from 274."
-    },
-    {
-      "at": "2026-10-12T03:30Z",
-      "text": "Chaffey's and San Diego City's captures found no program pages; the reader needs a fix for their catalogs before extraction."
+      "at": "2026-10-12T18:10Z",
+      "text": "A census of where each college's course outlines open started"
     }
   ],
   "headline": [
@@ -13264,7 +13967,7 @@
     {
       "day": "2026-10-12",
       "active": 20282,
-      "checked": 30,
+      "checked": 31,
       "colleges": 6
     }
   ],
