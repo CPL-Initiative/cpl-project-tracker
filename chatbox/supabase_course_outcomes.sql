@@ -72,6 +72,9 @@ create policy course_outcomes_read on public.course_outcomes
 
 revoke insert, update, delete, truncate on public.course_outcomes from public, anon, authenticated;
 grant select on public.course_outcomes to anon, authenticated;
+-- The Data API roles lose default grants on new public tables from 2026-10-30
+-- (tests/supabase_table_grants_test.py): the service key's publishers read it too.
+grant select on public.course_outcomes to service_role;
 
 create or replace function public.course_outcomes_load(p_run text, p_rows jsonb)
 returns jsonb
