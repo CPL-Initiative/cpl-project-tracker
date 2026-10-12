@@ -1,0 +1,197 @@
+{
+ "college": "San Diego Miramar College",
+ "control_number": "45023",
+ "shape": "certificate",
+ "title": "200-Hour Registered Yoga Teacher",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20881",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8754,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8754,
+    "output_tokens": 1571,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1571,
+  "output_tokens_details": {
+   "thinking_tokens": 619
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06644,
+ "ms": 13234,
+ "seconds": 13.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    8.0,
+    8.0
+   ],
+   "stated": [
+    8.0,
+    8.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "200-Hour Registered Yoga Teacher - Certificate of Achievement: Miramar",
+   "measure": "units",
+   "total_units": {
+    "min": 8,
+    "max": 8
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Create a safe and effective multi-level class experience. Instruct appropriate progressions and regressions of yoga poses (asanas) to create a safe and effective multi-level class experience.",
+    "Design intelligently structured and sequenced yoga classes. Design intelligently structured and sequenced yoga classes.",
+    "Teaching methodologies and communication skills. Demonstrate appropriate teaching methodologies and effective communication skills while leading a varied group of yoga participants"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "EXSC 292A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EXSC 292B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EXSC 393A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete at least one unit from the following courses:",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "EXSC 145A",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EXSC 145B",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EXSC 145C",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EXSC 145D",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The outcomes are printed run together; each appears to consist of a short title followed by a statement (e.g. 'Create a safe and effective multi-level class experience.' then 'Instruct appropriate progressions...'). Each outcome is recorded as the full title-plus-statement text as printed; the second outcome's title and statement are identical in the source. A reviewer may prefer only the statement portion.",
+   "No careers are named in the program section; the job types listed (yoga teachers, group fitness instructors, personal trainers, etc.) appear only in course descriptions and were not recorded.",
+   "The program description refers to the Yoga Alliance 200-Hour RYT certification, but the award is counted in semester units (Total Units: 8.0)."
+  ]
+ },
+ "extracted_run": "38275241459"
+}
