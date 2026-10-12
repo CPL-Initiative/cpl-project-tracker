@@ -14926,7 +14926,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-10-11"
+     "updated": "2026-10-12"
     },
     {
      "created": "2026-08-28",
@@ -15342,8 +15342,62 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 337,
+   "count": 340,
    "docs": [
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "n": 369,
+     "path": "docs/session_369_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "long-beach-city",
+      "chaffey",
+      "san-diego-city",
+      "cpl-pathways",
+      "ui-pass"
+     ],
+     "title": "load and display Long Beach City, fix the curriQunet reader for Chaffey, the policy paste",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "n": 368,
+     "path": "docs/session_368_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "long-beach-city",
+      "cpl-pathways",
+      "vision-2030",
+      "decision-sheet"
+     ],
+     "title": "load Long Beach City's re-read, Open Asks Sheet 67, CPL Pathways reads the table",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-11",
+     "governs": [],
+     "n": 367,
+     "path": "docs/session_367_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "long-beach-city",
+      "ui-pass",
+      "decision-sheet"
+     ],
+     "title": "Long Beach City's 74 fixed in #2012 (re-read next), Sheet 65 card 2 answered, two UI passes",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-11",
      "governs": [],
@@ -21120,5 +21174,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1104
+ "total": 1107
 }

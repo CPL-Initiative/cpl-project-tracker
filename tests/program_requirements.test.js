@@ -911,10 +911,20 @@ block("(13)", function () {
     !!q.closest('details[data-sec="records:find"][open]') && !!root.querySelector('label[for="prh-rq"]') &&
     root.querySelector(".prh-rfind").getAttribute("role") === "search" &&
     secKeys.indexOf("records:find") >= 0 && secKeys.indexOf("records:find") < secKeys.indexOf("records:Cerritos College"), secKeys.join(","));
-  check("(13) signed out, no Waiting on your reading: the public read holds checked records only",
+  check("(13) signed out, no Waiting on your reading: that filter is the reviewer's",
     !Array.prototype.some.call(show.options, function (o) { return o.value === "waiting"; }));
   check("(13) the count starts at every record", /Showing 3 of 3/.test(root.querySelector(".prh-count").textContent));
   check("(13) the Phase 2 card says how many courses it placed", /12 of 12 placed/.test(root.textContent));
+  // The public reads every record (Sam, Open Asks Sheet 67, 2026-10-12); one no person has
+  // checked says so in Sam's words, and a checked one carries no mark.
+  const stateOf = function (cn) {
+    const a = Array.prototype.filter.call(root.querySelectorAll("article.prh-rec"), function (x) {
+      return x.textContent.indexOf(cn) >= 0; })[0];
+    const st = a && a.querySelector(".prh-state");
+    return st ? st.textContent : "";
+  };
+  check("(13) signed out, an unchecked record says Not yet confirmed", stateOf("02201") === "Not yet confirmed", stateOf("02201"));
+  check("(13) signed out, a checked record carries no mark", stateOf("42158") === "", stateOf("42158"));
   root.querySelector('details[data-sec="records:Cerritos College"]').removeAttribute("open");
   q.value = "32563"; q.dispatchEvent(new m.w.Event("input"));
   const arts = root.querySelectorAll("article.prh-rec");

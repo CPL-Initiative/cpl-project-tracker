@@ -4,6 +4,8 @@ date: 2026-10-11
 session: 363 (SkyCedar)
 tags: [handoff, program-requirements, harvest, phase-2, long-beach-city, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_368_handoff.md
 ---
 
 # You are Session 364

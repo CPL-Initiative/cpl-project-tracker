@@ -23,7 +23,8 @@ artifacts:
 
 ## Context
 
-`program_requirement_records` lets anon read checked records only; a reviewer reads all. CPL Pathways reads the same
+`program_requirement_records` let anon read checked records only, and a reviewer all, until Sam opened its read to
+every row on Open Asks Sheet 67 (2026-10-12), each unchecked record marked on the page. CPL Pathways read the same
 facts from `cpl_pathways_roep_data.js`, which `kb/_build_roep_display.py` writes from every filed record. The lane's
 next step was to widen that file from the pilot's 22 records to all 1,515, split per college. Measured on 2026-10-11
 (S365): 29 of the 1,515 were checked, so the split would have put 1,486 unchecked records on the public site, past the
@@ -52,6 +53,6 @@ back.
   reviewer read all (read 2026-10-11).
 - Measured on display build `344441813b01`: 1,515 records, 29 checked at six colleges, 18.2 MB of compact JSON for all
   of them (lessons, S365).
-- The Program Requirements tab reads the table directly (`program_requirements.js`, `RECORD_SELECT`), so it shows
-  the public checked records only.
+- The Program Requirements tab reads the table directly (`program_requirements.js`, `RECORD_SELECT`), so it
+  showed the public checked records only.
 - The decision went to Sam as Open Asks Sheet 65 card 2.

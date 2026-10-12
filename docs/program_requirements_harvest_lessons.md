@@ -1,7 +1,7 @@
 ---
 title: Program requirements harvest — Decisions & Lessons
 date: 2026-10-03
-prs: [1836, 1838, 1839, 1841, 1844, 1845, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866, 1868, 1874, 1876, 1877, 1878, 1894]
+prs: [2012, 2015, 2016, 1836, 1838, 1839, 1841, 1844, 1845, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866, 1868, 1874, 1876, 1877, 1878, 1894]
 tags: [program-requirements, catalog-harvest, census, supabase, playwright, governance, lessons]
 artifacts:
   - kb/_program_source_census.py
@@ -934,3 +934,62 @@ committed `sources.json` and records (no new read), most of them were never on t
   `lbcc-public.courseleaf.com`. A sitemap-only read on the workflow would list the programs COCI calls Active that the
   catalog does not print, which is the college's to settle (its addendum first, Sam's rule).
 
+
+### S366, later the same day: the second cause, and both fixes (#2012)
+
+- **The own pages hold their requirements in a tab that names under half of COCI's list.** Two page reads with no
+  model call (`kb/college_reads/lbcc_own_pages_placed_none.json`, runs 38183849639 and 38184044746). The first read
+  opened nothing, because the Program Requirements panel sits behind a `role=tab` link in a `<nav>` outside `<main>`;
+  the reader's `expand` now clicks a page's own tabs. The second read printed each panel. Physical Sciences A.S. names
+  about 13 of COCI's 35 courses and describes its math and computer choices in words; Microsoft Excel prints COSA 601
+  and COSA 618 (90 hours) where COCI lists COSA 615-617; CISCO prints CISCO 250-253 (8 units) of COCI's 13; Athletic
+  Coaching prints four KINPP courses on a local Certificate of Accomplishment page against 23. Under the 50% share,
+  `best_text()` took whichever text named more, and on this host that is always the hidden index.
+- **Fixes (#2012).** `best_text()` reads a page with tab panels from its tabs, whatever share they name; only Long
+  Beach City's pages carry tab panels (every other college's 1,219 sources read `innerText`), so no other record
+  moves. `candidates()` takes a hidden-text page only when its heading names the program: half the title's words and
+  60% of the heading's own words, award words set aside, never a different level; on the 74 it keeps the 10 own
+  pages and 6 renamed or sibling pages and turns away 58.
+- **What is left is the college's.** Excel's mismatch (catalog COSA 601, 618; COCI 615-617) is a COCI record the
+  college has not updated, or a catalog change COCI has not caught: addendum first (Sam's rule), then the college.
+- **The sandbox cannot read run artifacts.** The proxy refuses the artifact store's host
+  (`productionresultssa5.blob.core.windows.net`), so a page's full captured text is out of reach here; a page read on
+  the runner was the workaround. Sam can allow the host in the environment's network settings.
+
+## S367 SkyAspen, 2026-10-11/12: CPL Pathways reads the table, its UI pass, and two answers to one card
+
+**Shipped.** #2015: CPL Pathways lists its catalog records from `program_requirement_records` and reads one record, by college and control number, when a reader opens it (Sam's chat answer to Sheet 65 card 2, *Read from the table*). The table's read policy decides who sees what: the public 29 checked records, a signed-in reviewer all 1,515, unchecked marked; the row's own `checked` wins over the display build's copy. The pilot file is the offline tier and a ladder's source. #2016: the tab's UI pass (controls as underlined words, the Student/College toggle gains `aria-pressed`, four decorative emoji out, the provenance line's doubled word, two sweep seeds for the table states). #2012 (S366's fixes for Long Beach City's 74) merged and the re-read was dispatched (run 38185403454).
+
+**Lessons.**
+- **The tab must never wait on the table.** The first build joined the list read before rendering; an existing test that mocks `fetch` and reads the DOM synchronously failed. The shipped shape renders from the file at once and swaps in the table's list when it lands, keeping the reader's pick by identity (`roep:<college>|<control>`), so a slow or failed read costs nothing but the swap.
+- **A pick token must move on every pick, not only on record picks.** A slow record read that resolved after the reader switched to a featured map overwrote it; `show()` now bumps the token for every kind. The guard fails without the bump.
+- **The sweep aborts every off-origin read, so the table's states are never measured unless seeded.** `cpl-pathways-table` and `-dark` hand the tab a list through its own landing path (`_roepIndexLanded`) and open an unchecked record or a record whose read fails.
+- **Reading Long Beach City's records through the table surfaced a label bug the pilot never showed:** the `custom_html` platform label said "college's own catalog pages", so the line read "Long Beach City College's college's ...".
+- **A gate fixture must carry every table a tab reads.** `admin_tab.test.js` classified CPL Pathways as "not checked" once the tab read two tables its fixture lacked; the fix was the tables' live gates (`checked | is_allowed_reviewer()`, `true`), not a code change.
+- **The check-run listing can stay stale for 15 minutes.** `get_check_runs` showed three shards in progress long after they passed; `get_check_run` by id and `list_workflow_jobs` with `filter: latest` read fresh.
+
+**Two answers to one card.** Sheet 65 card 2 was answered in chat at ~23:16Z (*Read from the table*) and on the sheet at 23:46Z (*Every record, marked*, after eight versions, note: "I want every record to show marked not yet confirmed"). The later answer is his deliberate words but contradicts a direct chat answer, so it is asked on Open Asks Sheet 67 before anything is built; #2015 stands meanwhile. Opening the table's public read would reach College Briefing and Program Requirements' public view too (Sierra filters `checked` itself).
+
+## S368 SkyWillow, 2026-10-12: every record public, Long Beach City's re-read, and two curriQunet misses
+
+**Every record is public (Sam, Open Asks Sheet 67 card 1, *Every record, from the table*; "Apply it" in session).** #2021
+marks an unchecked record *Not yet confirmed* on CPL Pathways, Program Requirements and My College (the card's words, his
+Sheet 65 words; CPL Pathways had said *Not yet checked*). Sierra filters `checked` herself, so
+`tests/sierra_program_courses.test.js` now names her filter as the gate. The policy (`using (true)`) did not apply:
+`apply_migration` timed out twice and wrote nothing, so it went to Sam as a paste. The page marks shipped first, so the
+public never sees an unmarked draft.
+
+**Long Beach City's re-read (run 38185403454, #2012's fixes):** 367 of 391 found (was 379), 311 pass the machine checks (was
+274), coverage failures 25 (was 76), none invented (was 2), $19.13. Four have no page: GED/HiSET Preparation 39500, its
+Spanish twin 39497, Barbering 43258 (noncredit, Approved) and 43837 (Active); no addendum on file. Load dispatched as run
+38200167207 (305 rows before it).
+
+**Chaffey and San Diego City: both captures found 0 (Sam: *both, capture now*; then *Chaffee next*).** Chaffey (run
+38197183697): the walk found catalog 718 and the section Degrees and Certificates, read 40 nodes in 80 calls, listed no
+program entry and stopped at its node cap. Its program index nests differently from Riverside City's tablist and linklist.
+San Diego City (run 38197175054): the registry's address is a district alias (`/catalog/alias/city26-27/iq/15489`), and the
+start page's scripts named no catalog id. Both readers need a runner probe of the catalog's own calls before any
+extraction. The capture-first rule saved about $21 of model calls on two reads that would have extracted nothing.
+
+**Pattern:** a capture-only dispatch per college, on its own branch, costs no model calls and answers whether the reader
+reaches the catalog. Make it the first step for every new platform variant, not only every new platform.

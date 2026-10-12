@@ -90,6 +90,10 @@ python3 kb/_glyph_sweep.py --apply    # rewrite the SAFE control class only
 python3 kb/_glyph_sweep.py --check    # exit 1 if any control-class glyph remains
 ```
 
+⚠️ **The sweep reads literal marks only (S368).** An emoji written as a JS escape
+(`"\u{1F4E5} MAP Team Queue"`) passes it unseen. Grep the view's files too:
+`grep -nE '\\u\{1F[0-9A-Fa-f]{3}\}|\\u2[67][0-9A-Fa-f]{2}' <file>.js`.
+
 ⚠️ **A comment line is never a finding.** This repo writes ⚠️ and ⭐ heavily in
 code comments as house style; they render to nobody, and reporting them buries
 the ones that do render.

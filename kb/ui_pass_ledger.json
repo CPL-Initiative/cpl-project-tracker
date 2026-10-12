@@ -134,9 +134,8 @@
    "name": "CPL Pathways",
    "page": "index.html#cpl-pathways",
    "audience": "staff",
-   "last": null,
-   "outcome": null,
-   "hold": "Open Asks Sheet 65 card 2 (S365) decides where its program records come from; the pass follows the ruling. Default state sweeps clean light and dark (2026-10-11)."
+   "last": "2026-10-12",
+   "outcome": "S367, after Sheet 65 card 2 (#2015, the table read): sweeps clean light+dark before and after on the tab, the catalog record (both layouts) and the college select; two new seeds (cpl-pathways-table: an unchecked record read from the table at 320/390/1440; -dark: a record read that failed) paint the table states, and screenshots with the table stubbed read 23 programs, no sideways scroll at 320. Found and fixed: the provenance line read 'Long Beach City College's college's own catalog pages reading procedure' (custom_html label); the record's Lay out and Viewer toggles, Ask Sierra, PDF, Quick Adopt and the ladder's open button were boxed or filled, now underlined words (24px; PDF measured 24px, the open word 30px, both themes), the view in use in weight; the Student/College toggle gained aria-pressed and a labeled group, its fill gone; four decorative emoji left a toggle and two headings. Remainder named: the stage selector and the program pills still fill to mark state (a toggle set colored by stage), and the tab's 30 status and legend marks (the check, the diamond) stay with their legend; wiring: program_requirement_records and program_source_registry are now shared with Program Requirements and College Briefing under one read policy, not compared live (the sandbox cannot reach Supabase)."
   },
   {
    "id": "cobi:nc-learning-partners",
@@ -167,16 +166,16 @@
    "name": "Admin",
    "page": "index.html#admin",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-12",
+   "outcome": "S368: seeded the reviewer view (admin-reviewer, -dark). 112 targets under 24px, a 4.31:1 Save button, 79px sideways scroll at 320 and an unreachable scroller fixed; item names no longer squeezed to one letter (the Admin row's own name vanished at every width); controls as underlined words; mustard warning and phrase chips quieted; the Heading column's caret, the doubled link chip and the stale About glyph removed. Light and dark clean at 320/390/1440."
   },
   {
    "id": "cobi:map-queue",
    "name": "MAP Team Queue",
    "page": "index.html#map-queue",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-12",
+   "outcome": "S368: seeded the phrase-holder view (map-queue-team, -dark). The shell's dashed loading box stayed on the root and centered the whole queue; off now. Full-red badges and ages muted to red words, cleared items no longer green, links cobalt and underlined, the cleared-items toggle 24px, 63px sideways scroll at 320 fixed (a 320px flex basis, then long tokens), the heading's emoji and the Go to arrows removed, counseling spelled American. Light and dark clean at 320/390/1440. Wiring: the governance count reads the same register and owners table as Governance."
   },
   {
    "id": "cobi:college-briefing",

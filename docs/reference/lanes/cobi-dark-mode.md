@@ -213,13 +213,11 @@ redefined dark; `tests/cpl_theme.test.js` guards all three roles.
 ⚠️ **SAY WHICH SWEEP A NUMBER CAME FROM, AND WHETHER THE SCOPE MOVED.** S245's
 120 excluded Implementation Funding (Sam was working that tab); S248's include
 it, so S248's like-for-like start was **128**, measured rather than carried
-over. Without the provenance the next session cannot tell a regression from a
-widened scope. The 401 glyph figure is the same trap: 348 of them belong to
+over. The 401 glyph figure is the same trap: 348 of them belong to
 `excel_to_dashboard.py`, where plain words already stand.
 
 ⚠️ **STEER BY THE FINDING COUNT, NEVER THE ROUTE COUNT** — a route fails on any
-one finding, so 38 fixes can leave it unchanged, and the count is not even
-stable run to run (22 vs 21 on identical code).
+one finding, so 38 fixes can leave it unchanged.
 
 ⚠️ **BUT THE FINDING COUNT IS NOT AN ACCEPTANCE TEST FOR A TOKEN-LAYER FIX**:
 S249's 21-token fix moved dark **66 → 67** with an empty diff in one direction,
@@ -234,9 +232,7 @@ the sweep NAMES rather than what the code says is wrong — moved dark
 lane, one afternoon: the structural scan says how much is left, the sweep says
 what to fix next, and only the second one moves the number.
 
-⚠️ **MEASURE THE LIGHT BASELINE, DO NOT INFER IT.** A `git stash` or a
-`git worktree` at `origin/main`, swept both ways, costs two minutes and turns
-"light held" from an inference into a byte-identical finding list.
+⚠️ **MEASURE THE LIGHT BASELINE:** sweep `origin/main` too.
 
 ⚠️ **SWEEP THE GENERATOR'S INPUT, NOT ONLY THE HTML (S246).** S245 swept the
 four College Activity filter controls in both HTMLs and left `background:#fff`
@@ -251,6 +247,12 @@ emitted template to that list.
 SUFFICIENT** — both Sam's rulings of 2026-09-09; the glyph list and its
 reasoning live verbatim in `CLAUDE.md`'s presentation rules, and restating them
 here is how two copies drift.
+
+⚠️ **THE GLYPH SWEEP READS LITERAL MARKS ONLY (S368).** An emoji written as a JS
+escape (`\u{1F4E5}`) is invisible to `kb/_glyph_sweep.py`; MAP Team Queue's
+heading carried one until its UI pass. 26 escapes remain in shipped JS (2026-10-12;
+`generate_reports.js` 10, `prototype/ccr_atlas_graph.js` 8, four more files). A UI pass
+greps its view's files (`/a11y-pass` step 4).
 
 ## The standing pass (Sam, 2026-09-09)
 

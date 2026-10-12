@@ -161,6 +161,45 @@ async function seedRoepRecord(page, theme, lay) {
   await page.waitForTimeout(200);
 }
 
+// CPL Pathways' catalog records as the table serves them (Sheet 65 card 2, S367). The
+// sweep aborts the table reads, so the seed hands the tab the list it would have read
+// (the pilot's programs, an unchecked record with a long title, and one record no read
+// has fetched) through the tab's own landing path, then opens one of the two:
+//   "unchecked"  the record read from the table, marked Not yet confirmed;
+//   "failed"     a record whose read fails (the sweep aborts it), which says so.
+async function seedRoepTable(page, theme, which) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "cpl-pathways") location.hash = "cpl-pathways"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForFunction(() => {
+    const T = window.CPL_PATHWAYS_TAB;
+    const s = document.querySelector("#cpl-pathways-root select.cplpw-select");
+    return T && T._roepTable && s && s.querySelector('optgroup[label="Catalog records, Beta draft"] option');
+  }, null, { timeout: 60000 });
+  await page.evaluate((which) => {
+    const T = window.CPL_PATHWAYS_TAB, R = T._roepTable;
+    const file = (window.CPL_PATHWAYS_ROEP || {}).programs || [];
+    const base = file.find((p) => /Field Ironworkers/.test(p.title)) || file[0];
+    const lbcc = { college: "Long Beach City College", control_number: "37305",
+      program_title: "Ironworking Technology: Reinforcing and Structural Field Practice", award: "Certificate of Achievement", checked: false };
+    const unread = { college: "Norco College", control_number: "90001", program_title: "A Record No Read Has Fetched", award: "A.S. Degree", checked: false };
+    R.index = [lbcc, unread].concat(file.map((p) => ({ college: p.college, control_number: p.control_number,
+      program_title: p.title, award: p.award, checked: !!(p.display && p.display.checks && p.display.checks.checked) })));
+    const disp = JSON.parse(JSON.stringify(base.display));
+    disp.checks = Object.assign({}, disp.checks, { checked: false });
+    R.records[lbcc.college + "|" + lbcc.control_number] = { key: lbcc.college + "|" + lbcc.control_number, table: true,
+      college: lbcc.college, control_number: lbcc.control_number, title: lbcc.program_title, award: lbcc.award,
+      catalog_year: base.catalog_year, source_url: base.source_url, platform: "custom_html", measure: base.measure,
+      record: base.record, display: disp, checked: false };
+    R.error = null;
+    T._roepIndexLanded();
+    const s = document.querySelector("#cpl-pathways-root select.cplpw-select");
+    const want = which === "failed" ? /A Record No Read Has Fetched/ : /Ironworking Technology: Reinforcing/;
+    const o = Array.from(s.querySelectorAll('optgroup[label="Catalog records, Beta draft"] option')).find((x) => want.test(x.textContent));
+    if (o) { s.value = o.value; s.dispatchEvent(new Event("change", { bubbles: true })); }
+  }, which);
+  await page.waitForTimeout(400);
+}
+
 // Narrows CPL Pathways to one college through its College select (Sam, 2026-10-08).
 async function seedCollegeSelect(page) {
   await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "cpl-pathways") location.hash = "cpl-pathways"; });
@@ -745,6 +784,108 @@ async function seedTeamPhrases(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// Admin as a reviewer sees it (S368 UI pass): the tab is gated, so the signed-out cobi sweep
+// measures the gate. The seed holds a reviewer session and stubs the two reads that need one,
+// cobi_rls_gates() and cobi_live_session. The gate fixture gives each table the tab's surface
+// file names one of the seven gate shapes in turn, so every badge paints. kb/dependency_map.json
+// is a local file and loads for real. `open` names the arrange row left open: "tab" for
+// rename and sites, "vis" for who sees it.
+async function seedAdmin(page, theme, open) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "admin") location.hash = "admin"; });
+  await page.waitForFunction(() => !!window.CPL_ADMIN_TAB, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    try {
+      sessionStorage.setItem("cpl_sb", JSON.stringify({ access_token: "aaaaaaaaaa.bbbbbbbbbbbbbbbbbbbbbbbb.cccccccccccccccccccc", email: "seed@example.org" }));
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const tabs = (window.COBI_ADMIN_SURFACE && window.COBI_ADMIN_SURFACE.tabs) || {};
+    const names = [];
+    Object.keys(tabs).forEach((k) => (tabs[k].reads || []).concat(tabs[k].writes || []).forEach((t) => {
+      if (names.indexOf(t) === -1) names.push(t);
+    }));
+    const SHAPES = [
+      { rls_enabled: true, select_gate: "is_allowed_reviewer()" },
+      { rls_enabled: true, select_gate: "(is_allowed_reviewer() OR team_pass_ok())" },
+      { rls_enabled: true, select_gate: "true" },
+      { rls_enabled: true, select_gate: "(is_allowed_reviewer() OR fin_pass_ok())" },
+      { rls_enabled: true, select_gate: "(gr_pass_ok() OR is_allowed_reviewer())" },
+      { rls_enabled: true, select_gate: null },
+      { rls_enabled: false, select_gate: null },
+    ];
+    const GATES = names.map((t, i) => Object.assign({ tbl: t, kind: "table", policy_count: 2 }, SHAPES[i % SHAPES.length]));
+    const LIVE = [{ active: true, session_url: "https://example.org/live", expires_at: new Date(Date.now() + 3600e3).toISOString(), auto_announce: true }];
+    const real = window.fetch;
+    window.fetch = function (url) {
+      const u = String(url);
+      const body = /\/rpc\/cobi_rls_gates/.test(u) ? GATES : /\/cobi_live_session\?/.test(u) ? LIVE : null;
+      if (body) return Promise.resolve(new Response(JSON.stringify(body), { status: 200, headers: { "Content-Type": "application/json" } }));
+      return real.apply(this, arguments);
+    };
+    window.CPL_ADMIN_TAB._state.loadState = "idle";
+    window.CPL_ADMIN_TAB.activate();
+  });
+  await page.waitForFunction(() => window.CPL_ADMIN_TAB._state.loadState === "ok"
+    && !!document.querySelector("#admin-root .adm-table"), null, { timeout: 20000 });
+  await page.evaluate((open) => {
+    const A = window.CPL_ADMIN_TAB, st = A._state;
+    const first = A._navItems().filter((it) => !it.link)[0];
+    if (first) st.editKey = open + ":" + first.tab;
+    A.render(document.getElementById("admin-root"));
+  }, open);
+  await page.waitForTimeout(400);
+}
+
+// MAP Team Queue as a phrase holder sees it (S368 UI pass): the queue is gated, so the
+// signed-out cobi sweep measures the lock. The seed holds the team phrase and stubs the five
+// table reads with tests/map_team_queue.test.js's fixture shapes, dated back from today so
+// ages run from days to weeks; the two kb/ files and map_users.js load for real. Cleared
+// items are shown so their state paints too.
+async function seedMapQueue(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "map-queue") location.hash = "map-queue"; });
+  await page.waitForFunction(() => !!window.CPL_MAP_QUEUE, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    try {
+      localStorage.setItem("cpl_team_pass", "seed-phrase");
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const ago = (d) => new Date(Date.now() - d * 864e5).toISOString();
+    const GAPS = [
+      { college: "Chaffey College", primary_contact_email: "a@example.edu", synced_at: ago(3) },
+      { college: "Gavilan College", primary_contact_email: null, synced_at: ago(3) },
+      { college: "Mission College", primary_contact_email: null, synced_at: ago(3) },
+      { college: "Seed Valley College", primary_contact_email: null, synced_at: ago(3) },
+      { college: "Seed Coast College", primary_contact_email: null, synced_at: ago(3) },
+    ];
+    const FEEDBACK = [
+      { created_at: ago(38), status: "new", page: "sierra", rating: "down" },
+      { created_at: ago(9), status: "new", page: "sierra", rating: "up" },
+      { created_at: ago(2), status: "addressed", page: "sierra", rating: "down" },
+    ];
+    const OWNERS = [{ register_id: "DR-01", owner: "Seed Owner" }];
+    const LOADS = [{ table_name: "map_student_credit", loaded_at: ago(4) }];
+    const real = window.fetch;
+    window.fetch = function (url) {
+      const u = String(url);
+      const body = /\/map_contact_gaps\?/.test(u) ? GAPS : /\/sierra_feedback\?/.test(u) ? FEEDBACK
+        : /\/governance_owners\?/.test(u) ? OWNERS : /\/map_college_nudges\?/.test(u) ? []
+        : /\/map_data_loads\?/.test(u) ? LOADS : null;
+      if (body) return Promise.resolve(new Response(JSON.stringify(body), { status: 200, headers: { "Content-Type": "application/json" } }));
+      return real.apply(this, arguments);
+    };
+    const st = window.CPL_MAP_QUEUE._state;
+    st.items = null; st.showClear = true;
+    window.CPL_MAP_QUEUE.activate();
+  });
+  await page.waitForFunction(() => !!document.querySelector("#map-queue-root .mtq-item"), null, { timeout: 20000 });
+  await page.waitForTimeout(300);
+}
+
 async function seedMyCollegeReports(page, signin) {
   await page.evaluate(() => new Promise((res) => {
     if (window.CPL_FUNDING_TAB) return res();
@@ -1231,6 +1372,44 @@ module.exports = {
     seed: (page) => seedTeamPhrases(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
+  /* ── Admin, signed in as a reviewer (S368) ─────────────────────────────
+     The arrange list, the inventory, the gate badges, Blast Radius and the
+     live-session control paint only for a reviewer; the cobi sweep is signed out. */
+  "admin-reviewer": {
+    file: "index.html",
+    title: "Admin signed in as a reviewer, one item open for rename and sites",
+    routes: [{ hash: "admin", name: "reviewer" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedAdmin(page, "light", "tab"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "admin-reviewer-dark": {
+    file: "index.html",
+    title: "Admin signed in as a reviewer, one item open for who sees it, dark",
+    routes: [{ hash: "admin", name: "reviewer" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedAdmin(page, "dark", "vis"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── MAP Team Queue, unlocked with the team phrase (S368) ──────────────
+     The items, their ages and badges paint only for a phrase holder; the cobi
+     sweep is signed out. */
+  "map-queue-team": {
+    file: "index.html",
+    title: "MAP Team Queue unlocked with the team phrase, cleared items shown",
+    routes: [{ hash: "map-queue", name: "team" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedMapQueue(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "map-queue-team-dark": {
+    file: "index.html",
+    title: "MAP Team Queue unlocked with the team phrase, cleared items shown, dark",
+    routes: [{ hash: "map-queue", name: "team" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedMapQueue(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
   "contracts": {
     file: "index.html",
     title: "Contracts, a reviewer's view of the V0718 fixture",
@@ -1354,6 +1533,22 @@ module.exports = {
     routes: [{ hash: "cpl-pathways", name: "roep-record-term" }],
     widths: [390, 1440],
     seed: (page) => seedRoepRecord(page, "dark", "term"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "cpl-pathways-table": {
+    file: "index.html",
+    title: "CPL Pathways: an unchecked record read from the table",
+    routes: [{ hash: "cpl-pathways", name: "table-unchecked" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedRoepTable(page, "light", "unchecked"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "cpl-pathways-table-dark": {
+    file: "index.html",
+    title: "CPL Pathways: a record read that failed, dark",
+    routes: [{ hash: "cpl-pathways", name: "table-failed" }],
+    widths: [390, 1440],
+    seed: (page) => seedRoepTable(page, "dark", "failed"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "cpl-pathways-college": {

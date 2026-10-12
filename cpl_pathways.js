@@ -170,8 +170,10 @@
     ".cplpw-stagesel button.on.draft { background: var(--mustard-fill); color: var(--on-mustard); }",
     ".cplpw-stagesel button.on.active { background: var(--hunter, var(--green-progress)); color: var(--surface-opaque); }",
     ".cplpw-stagesel button.on.tabled { background: var(--surface-muted); color: var(--text-strong); }",
-    ".cplpw-pdfbtn { margin-left:auto; background: var(--seal-blue, var(--navy-primary)); color: var(--white); border:none; border-radius:8px; padding:7px 14px; font-weight:600; font-size:.8rem; cursor:pointer; font-family:inherit; }",
-    ".cplpw-pdfbtn:hover { opacity:.92; }",
+    /* Controls are underlined words (Sam, 2026-10-09): no border, no fill, 24px tall. */
+    ".cplpw-pdfbtn { margin-left:auto; font-size:.85rem; border:0; border-radius:2px; background:none; color: var(--cobalt); font-weight:600; padding:2px 0; min-height:24px; cursor:pointer; font-family:inherit; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
+    ".cplpw-pdfbtn:hover { text-decoration-thickness:2px; }",
+    ".cplpw-pdfbtn:focus-visible, .cplpw-qa .go:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
     /* The BIG status banner */
     ".cplpw-stagebanner { display:flex; align-items:center; gap:14px; border-radius:10px; padding:12px 18px; margin: 8px 0 12px; }",
     ".cplpw-stagebanner .big { font-size:1.18rem; font-weight:800; letter-spacing:.16em; }",
@@ -248,8 +250,8 @@
     ".cplpw-adoptopts li { margin:1px 0; }",
     /* ⚡ Quick Adopt intake */
     ".cplpw-qa { margin-top:8px; }",
-    ".cplpw-qa .go { background: var(--seal-blue, var(--navy-primary)); color: var(--white); border:none; border-radius:6px; padding:5px 12px; font-weight:700; font-size:.74rem; cursor:pointer; font-family:inherit; }",
-    ".cplpw-qa .go:hover { opacity:.92; }",
+    ".cplpw-qa .go { font-size:.85rem; border:0; border-radius:2px; background:none; color: var(--cobalt); font-weight:600; padding:2px 0; min-height:24px; cursor:pointer; font-family:inherit; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
+    ".cplpw-qa .go:hover { text-decoration-thickness:2px; }",
     ".cplpw-qa-form { margin-top:8px; display:grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:6px; max-width:640px; }",
     ".cplpw-qa-form input, .cplpw-qa-form textarea { padding:6px 9px; border:1px solid var(--border-strong); border-radius:6px; font-size:.78rem; font-family:inherit; background: var(--surface-opaque); color: var(--text-body); }",
     ".cplpw-qa-form textarea { grid-column: 1 / -1; min-height:44px; }",
@@ -1045,7 +1047,8 @@
     "@media (max-width: 560px) { .cplpw-lpoints li { grid-template-columns:minmax(0, 1fr); } .cplpw-lpoints .cplpw-lchip { justify-self:start; } }",
     ".cplpw-lcpl { margin:12px 0 0; padding:9px 12px; border-radius:10px; background: var(--surface-subtle); color: var(--text-body); }",
     ".cplpw-lcpl strong { color: var(--text-strong); }",
-    ".cplpw-lopen { margin-top:10px; padding:6px 12px; border-radius:8px; border:1px solid var(--cobalt); background:transparent; color: var(--cobalt); font:inherit; font-weight:600; cursor:pointer; }",
+    ".cplpw-lopen { margin-top:10px; font:inherit; border:0; border-radius:2px; background:none; color: var(--cobalt); font-weight:600; padding:2px 0; min-height:24px; cursor:pointer; font-family:inherit; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
+    ".cplpw-lopen:hover { text-decoration-thickness:2px; }",
     ".cplpw-lopen:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
     ".cplpw-lblocks { display:grid; grid-template-columns:minmax(0, 1fr); gap:14px; margin-top:12px; min-width:0; }",
     ".cplpw-lblock { min-width:0; }",
@@ -1370,16 +1373,21 @@
   var ROEP_CSS_ID = "cplpw-roep-css";
   var ROEP_CSS = [
     ".cplpw-roep { display:grid; gap:16px; min-width:0; }",
+    ".cplpw-rloading { margin:12px 0; color: var(--text-muted); }",
     ".cplpw-roep .rlede { margin:0; color: var(--text-body); max-width: var(--cpl-measure, none); }",
     ".cplpw-roep .rdraft { display:inline-block; font-size:.7rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:2px 9px; border-radius:999px; border:1px solid var(--mustard-text); color: var(--mustard-text); }",
     ".cplpw-rcontrols { display:flex; flex-wrap:wrap; gap:10px 18px; align-items:end; }",
     ".cplpw-rseglabel { display:grid; gap:4px; font-size:.8rem; font-weight:600; color: var(--text-muted); }",
-    ".cplpw-rseg { display:inline-flex; flex-wrap:wrap; border:1px solid var(--border-strong); border-radius:8px; overflow:hidden; }",
-    ".cplpw-rseg button { font:inherit; font-weight:600; color: var(--text-body); background: var(--surface-opaque); border:0; border-right:1px solid var(--border-strong); padding:8px 14px; min-height:44px; cursor:pointer; }",
-    ".cplpw-rseg button:last-child { border-right:0; }",
-    ".cplpw-rseg button[aria-pressed='true'] { background: var(--text-strong); color: var(--surface-opaque); }",
+    /* Controls are underlined words (Sam, 2026-10-09): no border, no fill, 24px tall,
+       18px apart. In a toggle set the view in use is the word that is not a link:
+       weight and aria-pressed carry it, never a fill. */
+    ".cplpw-rseg { display:inline-flex; flex-wrap:wrap; column-gap:18px; }",
+    ".cplpw-rseg button { font:inherit; font-weight:600; color: var(--cobalt); background:none; border:0; border-radius:2px; padding:2px 0; min-height:24px; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
+    ".cplpw-rseg button:hover { text-decoration-thickness:2px; }",
+    ".cplpw-rseg button[aria-pressed='true'] { color: var(--text-strong); font-weight:700; text-decoration:none; cursor:default; }",
     ".cplpw-rseg button:focus-visible, .cplpw-rask:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
-    ".cplpw-rask { display:inline-flex; align-items:center; font-weight:700; color: var(--seal-blue-text); text-decoration:none; border:1px solid var(--border-strong); border-radius:8px; padding:8px 14px; min-height:44px; background: var(--surface-opaque); }",
+    ".cplpw-rask { display:inline-flex; align-items:center; font-weight:600; color: var(--cobalt); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; padding:2px 0; min-height:24px; }",
+    ".cplpw-rask:hover { text-decoration-thickness:2px; }",
     /* the program card */
     ".cplpw-rprog { background: var(--surface-opaque); border:1px solid var(--border); border-radius:12px; padding:16px 18px; display:grid; gap:12px; min-width:0; }",
     ".cplpw-rprog .top { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 20px; align-items:baseline; }",
@@ -1482,14 +1490,154 @@
   }
 
   var ROEP_PLATFORM = { courseleaf: "CourseLeaf", curriqunet: "CurriQunet META", elumen: "eLumen", acalog: "Acalog",
-    pdf: "PDF catalog", custom_html: "college's own catalog pages", smartcatalog: "SmartCatalog", coursedog: "Coursedog" };
+    pdf: "PDF catalog", custom_html: "catalog pages", smartcatalog: "SmartCatalog", coursedog: "Coursedog" };
   // One view state for the tab: the layout and the viewer stay as the reader
   // leaves them when another program opens.
   var roepView = { lay: "req", who: "college" };
 
-  function roepPrograms() {
+  // The pilot file (window.CPL_PATHWAYS_ROEP): the offline tier, and the records a
+  // ladder's derived steps read.
+  function roepFilePrograms() {
     var d = window.CPL_PATHWAYS_ROEP;
     return ((d && d.programs) || []).filter(function (p) { return p && p.key && p.record && p.display; });
+  }
+
+  // ── The table read (Sam, Open Asks Sheet 65 card 2, 2026-10-11, in chat: "Read
+  //    from the table") ──────────────────────────────────────────────────────
+  // The selector lists program_requirement_records' programs, and a record is read
+  // from the table when a reader opens it. The table's read policy decides who sees
+  // what: everyone reads every record since Sam's Open Asks Sheet 67 (2026-10-12, "Every
+  // record, from the table"), and an unchecked one says so. No file grows with the harvest.
+  // A failed list read falls back to the pilot file and says so; a failed record read
+  // shows the file's copy where it has one, and otherwise says the read failed.
+  var ROEP_REST = SUPABASE_URL + "/rest/v1";
+  var ROEP_INDEX_SELECT = "college,control_number,program_title,award,checked";
+  var ROEP_RECORD_SELECT = "college,control_number,program_title,award,catalog_year,source_url,measure,record,checked,display";
+  var ROEP_READ_MS = 10000;
+  var roepTable = { index: null, error: null, platforms: {}, reviewer: false, records: {} };
+
+  function roepId(college, control) { return String(college || "") + "|" + String(control || ""); }
+  function roepSession() {
+    var S = window.CPL_SESSION;
+    if (!S || typeof S.get !== "function") return null;
+    var s = S.get();
+    return s && s.email && typeof S.isFresh === "function" && S.isFresh(s) ? s : null;
+  }
+  function roepHeaders() {
+    var S = window.CPL_SESSION;
+    if (roepSession() && S && typeof S.authHeaders === "function") return S.authHeaders();
+    return { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
+  }
+  function roepGet(path) {
+    if (typeof window.fetch !== "function") return Promise.reject(new Error("this page cannot read the table"));
+    var url = ROEP_REST + path;
+    var read = window.fetch(url, { headers: roepHeaders() }).then(function (r) {
+      if (!r.ok) throw new Error(path.split("?")[0].replace(/^\//, "") + " answered " + r.status);
+      return r.json();
+    });
+    return new Promise(function (resolve, reject) {
+      var late = setTimeout(function () { reject(new Error("the table did not answer in " + (ROEP_READ_MS / 1000) + " seconds")); }, ROEP_READ_MS);
+      read.then(function (v) { clearTimeout(late); resolve(v); }, function (e) { clearTimeout(late); reject(e); });
+    });
+  }
+  // The list of programs, and each college's catalog platform for the record's
+  // provenance line. Resolves either way; a failure leaves the index null.
+  function readRoepIndex() {
+    if (typeof window.fetch !== "function") return Promise.resolve();
+    var S = window.CPL_SESSION;
+    var ready = roepSession() && S && typeof S.ensureFresh === "function"
+      ? Promise.resolve(S.ensureFresh()).catch(function () { return null; }) : Promise.resolve(null);
+    return ready.then(function () {
+      var reviewer = !!roepSession();
+      return Promise.all([
+        roepGet("/program_requirement_records?select=" + ROEP_INDEX_SELECT + "&order=college,control_number"),
+        roepGet("/program_source_registry?select=college,catalog_platform").catch(function () { return []; })
+      ]).then(function (got) {
+        var plat = {};
+        (got[1] || []).forEach(function (r) { if (r && r.college) plat[r.college] = r.catalog_platform; });
+        roepTable.index = (got[0] || []).filter(function (r) { return r && r.college && r.control_number; });
+        roepTable.platforms = plat;
+        roepTable.reviewer = reviewer;
+        roepTable.error = null;
+      }, function (e) {
+        roepTable.index = null;
+        roepTable.error = (e && e.message) || "the read failed";
+      });
+    });
+  }
+  // A table row in the shape the renderer reads (the display build's program entry).
+  // The row's own `checked` wins over the build's copy: a record Sam confirms after
+  // the last display build reads as checked at once.
+  function roepFromRow(row) {
+    var disp = {};
+    var src = row.display || {};
+    for (var k in src) if (Object.prototype.hasOwnProperty.call(src, k)) disp[k] = src[k];
+    var checks = {};
+    var sc = src.checks || {};
+    for (var c in sc) if (Object.prototype.hasOwnProperty.call(sc, c)) checks[c] = sc[c];
+    if (row.checked != null) checks.checked = !!row.checked;
+    disp.checks = checks;
+    return {
+      key: roepId(row.college, row.control_number), table: true,
+      college: row.college, control_number: row.control_number,
+      title: row.program_title, award: row.award, catalog_year: row.catalog_year,
+      source_url: row.source_url, platform: roepTable.platforms[row.college] || null,
+      measure: row.measure, record: row.record, display: disp, checked: !!row.checked
+    };
+  }
+  function roepFileFor(prog) {
+    var hit = null;
+    roepFilePrograms().forEach(function (p) {
+      if (!hit && p.college === prog.college && String(p.control_number) === String(prog.control_number)) hit = p;
+    });
+    return hit;
+  }
+  // Whether a program is checked: the table's column when listed from it, else the build's.
+  function roepChecked(p) {
+    if (p && p.checked != null) return !!p.checked;
+    return !!(p && p.display && p.display.checks && p.display.checks.checked);
+  }
+
+  // The selector's catalog records: the table's list when it answered, else the pilot file.
+  function roepPrograms() {
+    if (!roepTable.index) return roepFilePrograms();
+    return roepTable.index.map(function (r) {
+      var id = roepId(r.college, r.control_number);
+      return roepTable.records[id] || {
+        key: id, table: true, college: r.college, control_number: r.control_number,
+        title: r.program_title, award: r.award, checked: !!r.checked
+      };
+    });
+  }
+
+  // Opens one catalog record: from memory or the file entry the selector holds, else
+  // read from the table. `token` lets a later pick win over a slower earlier read.
+  var roepOpening = 0;
+  function openRoepProgram(root, prog) {
+    var token = ++roepOpening;
+    if (prog && prog.record && prog.display) { renderRoepProgram(root, prog); return Promise.resolve(); }
+    var id = roepId(prog && prog.college, prog && prog.control_number);
+    if (roepTable.records[id]) { renderRoepProgram(root, roepTable.records[id]); return Promise.resolve(); }
+    ensureRoepCss();
+    clearNode(root);
+    root.appendChild(el("p", "cplpw-rloading", "Reading " + ((prog && prog.title) || "the program") + "’s record from the table…"));
+    var path = "/program_requirement_records?select=" + ROEP_RECORD_SELECT +
+      "&college=eq." + encodeURIComponent(prog.college) + "&control_number=eq." + encodeURIComponent(prog.control_number);
+    return roepGet(path).then(function (rows) {
+      if (token !== roepOpening) return;
+      var row = (rows || [])[0];
+      if (!row) throw new Error("the table holds no readable record for it");
+      var rec = roepFromRow(row);
+      roepTable.records[id] = rec;
+      renderRoepProgram(root, rec);
+    }).catch(function (e) {
+      if (token !== roepOpening) return;
+      var why = (e && e.message) || "the read failed";
+      var file = roepFileFor(prog);
+      if (file) { renderRoepProgram(root, file, "The table could not be read (" + why + "), so this is the record from the pilot file, display build " + ((file.display && file.display.build) || "") + "."); return; }
+      clearNode(root);
+      root.appendChild(el("div", "cplpw-note", "This program’s record could not be read just now (" + why + "). Choose it again to retry."));
+    });
   }
   function roepAward(rec) { return String(rec.award || "").replace(/ requiring.*$/i, ""); }
   function roepMeasure(rec) { return rec.measure === "hours" ? "hours" : "units"; }
@@ -1857,7 +2005,7 @@
     card.setAttribute("aria-label", rec.title + ", " + roepAward(rec));
     var top = el("div", "top");
     top.appendChild(el("div", null, [el("h2", null, rec.title || ""), el("div", "award", roepAward(rec) + " · " + rec.college)]));
-    top.appendChild(el("span", "cplpw-rstatus" + (checks.checked ? "" : " open"), checks.checked ? "Checked record" : "Not yet checked"));
+    top.appendChild(el("span", "cplpw-rstatus" + (checks.checked ? "" : " open"), checks.checked ? "Checked record" : "Not yet confirmed"));
     card.appendChild(top);
     var proc = el("p", "procline");
     proc.appendChild(document.createTextNode("Read from the "));
@@ -1965,7 +2113,7 @@
     return lab;
   }
 
-  function renderRoepProgram(root, rec) {
+  function renderRoepProgram(root, rec, note) {
     ensureRoepCss();
     var wrap = el("div", "cplpw-roep");
     if (!rec || !rec.display || !rec.record) {
@@ -1974,6 +2122,7 @@
       root.appendChild(wrap);
       return;
     }
+    if (note) wrap.appendChild(el("div", "cplpw-note", note));
     var lede = el("p", "rlede");
     lede.appendChild(el("span", "rdraft", "Beta draft"));
     lede.appendChild(document.createTextNode(" The program's requirements read from the college's own catalog (the ROEP record), with the courses a learner can clear through credit for prior learning."));
@@ -1981,9 +2130,9 @@
 
     var controls = el("div", "cplpw-rcontrols");
     controls.appendChild(roepSeg("Lay out", "lay", [["req", "By requirement"], ["term", "By term"]], roepView.lay,
-      function (v) { roepView.lay = v; renderRoepProgram(root, rec); }));
+      function (v) { roepView.lay = v; renderRoepProgram(root, rec, note); }));
     controls.appendChild(roepSeg("Viewer", "who", [["college", "College"], ["public", "Student or public"]], roepView.who,
-      function (v) { roepView.who = v; renderRoepProgram(root, rec); }));
+      function (v) { roepView.who = v; renderRoepProgram(root, rec, note); }));
     var ask = el("a", "cplpw-rask", "Ask Sierra");
     ask.href = "sierra/?ask=" + encodeURIComponent("What does the " + rec.title + " (" + roepAward(rec) + ") at " + rec.college
       + " require, and which of its courses can a learner clear through credit for prior learning?");
@@ -2031,11 +2180,11 @@
     var s = document.createElement("style");
     s.id = "cplccr-css";
     s.textContent =
-      ".cplccr .ccr-toggle{display:inline-flex;border:1px solid var(--border);border-radius:9px;overflow:hidden;margin:2px 0 12px}" +
-      ".cplccr .ccr-vt{font:inherit;font-size:.8rem;font-weight:600;padding:6px 14px;border:0;background:none;color:var(--text-muted);cursor:pointer}" +
-      ".cplccr .ccr-vt+.ccr-vt{border-left:1px solid var(--border)}" +
-      ".cplccr .ccr-vt.on{background:var(--cpl-green-soft,#e7f2ea);color:var(--cpl-green,#2f6d3a)}" +
-      ".cplccr .ccr-vt:focus-visible{outline:2px solid var(--cpl-green,#2f6d3a);outline-offset:-2px}" +
+      ".cplccr .ccr-toggle{display:inline-flex;flex-wrap:wrap;column-gap:18px;margin:2px 0 12px}" +
+      ".cplccr .ccr-vt{font:inherit;font-size:.85rem;font-weight:600;padding:2px 0;min-height:24px;border:0;border-radius:2px;background:none;color:var(--cobalt);cursor:pointer;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}" +
+      ".cplccr .ccr-vt:hover{text-decoration-thickness:2px}" +
+      ".cplccr .ccr-vt.on{color:var(--text-strong);font-weight:700;text-decoration:none;cursor:default}" +
+      ".cplccr .ccr-vt:focus-visible{outline:3px solid var(--focus-ring, var(--cobalt));outline-offset:2px}" +
       ".cplccr.view-student .col-only{display:none}" +
       ".cplccr .ccr-intro{font-size:.86rem;color:var(--text-muted);line-height:1.55;margin:0 0 6px}" +
       ".cplccr .ccr-intro b{color:var(--text-body)}" +
@@ -2067,23 +2216,31 @@
     var b = document.createElement("button");
     b.type = "button";
     b.className = "ccr-vt" + (on ? " on" : "");
+    b.setAttribute("aria-pressed", on ? "true" : "false");
     b.textContent = label;
     return b;
+  }
+  // A toggle set marks the view in use with weight and aria-pressed, never color alone.
+  function ccrVtPick(on, off) {
+    on.classList.add("on"); on.setAttribute("aria-pressed", "true");
+    off.classList.remove("on"); off.setAttribute("aria-pressed", "false");
   }
   function renderCcrViews(prog, ccr) {
     ensureCcrCss();
     var box = el("div", "cplpw-sec wide cplccr view-student");
     // Student / College toggle
     var tog = el("div", "ccr-toggle");
-    var bS = ccrVtBtn("🎓 Explore CPL — student", true);
-    var bC = ccrVtBtn("🏛️ Curate & validate — college", false);
+    tog.setAttribute("role", "group");
+    tog.setAttribute("aria-label", "View for");
+    var bS = ccrVtBtn("Explore CPL — student", true);
+    var bC = ccrVtBtn("Curate & validate — college", false);
     bS.addEventListener("click", function () {
       box.classList.remove("view-college"); box.classList.add("view-student");
-      bS.classList.add("on"); bC.classList.remove("on");
+      ccrVtPick(bS, bC);
     });
     bC.addEventListener("click", function () {
       box.classList.remove("view-student"); box.classList.add("view-college");
-      bC.classList.add("on"); bS.classList.remove("on");
+      ccrVtPick(bC, bS);
     });
     tog.appendChild(bS); tog.appendChild(bC); box.appendChild(tog);
     // Student-facing CPL intro
@@ -2316,15 +2473,17 @@
     var box = el("div", "cplpw-sec wide cplccr cplmem view-student");
     // Student / College toggle (same affordance as the CCR two-view)
     var tog = el("div", "ccr-toggle");
-    var bS = ccrVtBtn("🎓 Explore CPL — student", true);
-    var bC = ccrVtBtn("🏛️ Curate & validate — college", false);
+    tog.setAttribute("role", "group");
+    tog.setAttribute("aria-label", "View for");
+    var bS = ccrVtBtn("Explore CPL — student", true);
+    var bC = ccrVtBtn("Curate & validate — college", false);
     bS.addEventListener("click", function () {
       box.classList.remove("view-college"); box.classList.add("view-student");
-      bS.classList.add("on"); bC.classList.remove("on");
+      ccrVtPick(bS, bC);
     });
     bC.addEventListener("click", function () {
       box.classList.remove("view-student"); box.classList.add("view-college");
-      bC.classList.add("on"); bS.classList.remove("on");
+      ccrVtPick(bC, bS);
     });
     tog.appendChild(bS); tog.appendChild(bC); box.appendChild(tog);
 
@@ -2335,7 +2494,7 @@
     // ── The bachelor's own course requirements ──
     var bsCpl = (mem.courses || []).filter(function (c) { return c.cpl; }).length;
     var h1 = el("div", "mem-sech");
-    h1.appendChild(el("span", "k", "📘 The bachelor's course requirements"));
+    h1.appendChild(el("span", "k", "The bachelor's course requirements"));
     h1.appendChild(el("span", "c", (mem.n_resolved || (mem.courses || []).length) + " courses" +
       (bsCpl ? " · " + bsCpl + " with course-level CPL" : "")));
     box.appendChild(h1);
@@ -2355,7 +2514,7 @@
         document.createTextNode(" — the lower-division prior-learning credit travels straight into the bachelor's pathway.")]));
       var totCpl = qual.reduce(function (a, q) { return a + (q.n_cpl || 0); }, 0);
       var h2 = el("div", "mem-sech");
-      h2.appendChild(el("span", "k", "🎖️ Where the CPL lives"));
+      h2.appendChild(el("span", "k", "Where the CPL lives"));
       h2.appendChild(el("span", "c", qual.length + " qualifying credential" + (qual.length === 1 ? "" : "s") +
         (totCpl ? " · " + totCpl + " courses with CPL" : "")));
       box.appendChild(h2);
@@ -2678,7 +2837,7 @@
       rg.label = "Catalog records, Beta draft";
       items.forEach(function (it, i) {
         if (it.kind === "roep" && mine(it)) rg.appendChild(option(i, it.prog.college + " — " + it.prog.title + " · " + roepAward(it.prog)
-          + (it.prog.display && it.prog.display.checks && it.prog.display.checks.checked ? "" : " (not yet checked)")));
+          + (roepChecked(it.prog) ? "" : " (not yet confirmed)")));
       });
       if (rg.children.length) sel.appendChild(rg);
       var shown = items.filter(mine);
@@ -2729,7 +2888,15 @@
     return { row: row, select: sel, college: col, show: show };
   }
 
+  // The last render's inputs and the pathway it shows, so a re-read of the table
+  // (a reviewer signing in or out) re-renders with the reader's pick kept.
+  var lastRender = null;
+  var shownIdent = null;
+  function itemIdent(it, i) {
+    return it.kind === "roep" ? "roep:" + roepId(it.prog.college, it.prog.control_number) : it.kind + ":" + i;
+  }
   function render(root, data, live, dir, liveNote) {
+    lastRender = { root: root, data: data, live: live, dir: dir, liveNote: liveNote };
     var featured = (data && data.programs) || [];
     var directory = (window.CPL_BACCALAUREATES && window.CPL_BACCALAUREATES.programs) || [];
     var items = [];
@@ -2756,8 +2923,10 @@
     }
     function show(i) {
       var it = items[i] || items[0];
+      shownIdent = itemIdent(it, items[i] ? i : 0);
+      roepOpening++; // a record read still in flight no longer owns the view
       if (it.kind === "directory") renderDirectory(body, it.prog, dir, directory, dir ? null : liveNote);
-      else if (it.kind === "roep") renderRoepProgram(body, it.prog);
+      else if (it.kind === "roep") openRoepProgram(body, it.prog);
       else if (it.prog.kind === "ladder") renderLadder(body, it.prog, null, openById);
       else renderProgram(body, it.prog, live, liveNote);
     }
@@ -2765,12 +2934,46 @@
       selector = buildSelector(items, directory, dir, function (i) { show(i); });
       container.appendChild(selector.row);
     }
+    var rnote = roepFallbackNote();
+    if (rnote) container.appendChild(rnote);
     container.appendChild(body);
     clearNode(root);
     root.removeAttribute("style");
     root.appendChild(container);
-    if (selector) selector.select.value = "0";
-    show(0);
+    var start = 0;
+    if (shownIdent) items.forEach(function (it, j) { if (itemIdent(it, j) === shownIdent) start = j; });
+    if (selector) selector.show(start);
+    show(start);
+  }
+  // The note a failed list read leaves above the pathway: the catalog records shown
+  // are the pilot file's.
+  function roepFallbackNote() {
+    if (!roepTable.error) return null;
+    return el("div", "cplpw-note cplpw-rnote", roepFilePrograms().length
+      ? "Catalog records come from the pilot file for now: the table could not be read (" + roepTable.error + ")."
+      : "Catalog records could not be read just now (" + roepTable.error + ").");
+  }
+  // When the table's list lands after the first render: re-render with it, keeping the
+  // pathway shown, or, when the read failed, add the note without disturbing the view.
+  function roepIndexLanded() {
+    var L = lastRender;
+    if (!L || !L.root || L.root.isConnected === false) return;
+    if (roepTable.index) { render(L.root, L.data, L.live, L.dir, L.liveNote); return; }
+    var box = L.root.querySelector(".cplpw");
+    var n = box && !box.querySelector(".cplpw-rnote") ? roepFallbackNote() : null;
+    if (n) box.insertBefore(n, box.lastChild);
+  }
+  // A change of session re-reads the list under the new session's policy. Records already
+  // read are dropped too, so none outlives the session that read it.
+  var roepSessionWired = false;
+  function wireRoepSession() {
+    if (roepSessionWired) return;
+    roepSessionWired = true;
+    window.addEventListener("cpl-session-changed", function () {
+      if (!lastRender) return;
+      roepTable.records = {};
+      readRoepIndex().then(roepIndexLanded);
+    });
   }
 
   // ── Boot ──────────────────────────────────────────────────────────────────
@@ -2783,12 +2986,19 @@
 
     var data = window.CPL_PATHWAYS || { programs: [] };
     var college = (data.programs && data.programs[0] && data.programs[0].college) || "Cerritos";
+    // The table's program list is read beside the file loads. The tab never waits on
+    // it: a list that lands before the first render is used by it, and one that lands
+    // after re-renders the tab with the reader's pathway kept (within ROEP_READ_MS).
+    var rendered = false;
+    readRoepIndex().then(function () { if (rendered) roepIndexLanded(); });
+    wireRoepSession();
 
     function done(payload, note) {
       var live = null, dir = null;
       try { live = buildLiveIndexes(payload, college); } catch (e) { live = null; }
       try { dir = buildDirectoryIndex(payload); } catch (e) { dir = null; }
       render(root, data, live, dir, (live || dir) ? null : (note || "Live MAP articulation data unavailable — showing the curated snapshot."));
+      rendered = true;
     }
     function withCer() {
       // Live CER payload (3 MB, lazy — the CER/MAP-Export tabs share the same file).
@@ -2816,10 +3026,10 @@
       if (window.CPL_BACCALAUREATES || !hasLoader()) { withCociKeys(next); return; }
       window.CPL_TABS.loadScript("cpl_baccalaureates_data.js", "CPL_BACCALAUREATES", function () { withCociKeys(next); });
     }
-    // ROEP tier: the display build (window.CPL_PATHWAYS_ROEP, ~0.3 MB) feeds a
-    // ladder's associate degree and the catalog-record group in the selector.
-    // A failed load leaves the ladder's derived steps saying the record is
-    // missing and the selector without its catalog records.
+    // ROEP tier: the pilot's display build (window.CPL_PATHWAYS_ROEP, ~0.5 MB) feeds a
+    // ladder's associate degree, and the catalog-record group in the selector until
+    // the table's list answers (readRoepIndex) or when it cannot. A failed load
+    // leaves the ladder's derived steps saying the record is missing.
     function withRoep(next) {
       if (window.CPL_PATHWAYS_ROEP || !hasLoader()) { next(); return; }
       window.CPL_TABS.loadScript("cpl_pathways_roep_data.js", "CPL_PATHWAYS_ROEP", function () { next(); });
@@ -2846,6 +3056,10 @@
     _renderLadder: renderLadder,
     _renderRoepProgram: renderRoepProgram,
     _roepPrograms: roepPrograms,
+    _openRoepProgram: openRoepProgram,
+    _readRoepIndex: readRoepIndex,
+    _roepTable: roepTable,
+    _roepIndexLanded: roepIndexLanded,
     _roepView: roepView,
     _ladderBlocks: ladderBlocks,
     _certificateFigures: certificateFigures,

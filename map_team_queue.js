@@ -196,7 +196,7 @@
 
         add({ id: "contacts-proposed",
           title: "Proposed primary contacts waiting for the MAP team to accept or reject",
-          detail: "MAP holds no primary contact for these colleges and we have a counselling address to "
+          detail: "MAP holds no primary contact for these colleges and we have a counseling address to "
             + "suggest. Each carries its provenance. Nothing is written to MAP — that is the MAP team's call.",
           count: hasProposal.length, personWaiting: true, since: syncedAt, names: hasProposal,
           why: "map_contact_gaps (primary_contact_email blank) ∩ FALLBACK_CONTACTS entries carrying an email. "
@@ -214,8 +214,8 @@
 
         add({ id: "contacts-search-only",
           title: "Candidate contacts found by search, waiting for someone to open the page",
-          detail: "Each has a page to open and a rule to apply: is this a counselling inbox, a list "
-            + "of counsellors, or a wellness address? Sessions are egress-blocked from college "
+          detail: "Each has a page to open and a rule to apply: is this a counseling inbox, a list "
+            + "of counselors, or a wellness address? Sessions are egress-blocked from college "
             + "domains, so this last step needs a human — but it is seconds each, and the page is "
             + "linked on the MAP Users tab.",
           count: searchOnly.length, personWaiting: true, since: syncedAt, names: searchOnly,
@@ -226,7 +226,7 @@
 
         add({ id: "contacts-never-looked",
           title: "Colleges with no primary contact that have never been looked up",
-          detail: "Nobody has checked whether these colleges publish a reachable CPL or counselling contact. "
+          detail: "Nobody has checked whether these colleges publish a reachable CPL or counseling contact. "
             + "They fell outside the original sweep, which scoped to colleges without a CPL Assistant — but "
             + "having a CPL Assistant does not mean MAP can route a student. Cheapest item on this page: "
             + "each is one lookup.",
@@ -367,10 +367,10 @@
   function ensureCss() {
     if (document.getElementById(CSS_ID)) return;
     var css = [
-      ".mtq { max-width: 1100px; margin: 0 auto; color: var(--text-body); }",
+      ".mtq { max-width: 1100px; margin: 0 auto; color: var(--text-body); overflow-wrap: break-word; }",
       ".mtq h2 { color: var(--navy-primary); margin: 16px 0 4px; }",
       ".mtq h3 { color: var(--navy-primary); margin: 26px 0 6px; font-size: 1.02rem; }",
-      ".mtq-intro { color: var(--text-muted); max-width: 900px; margin: 0 0 14px; font-size: .92rem; }",
+      ".mtq-intro { color: var(--text-muted); max-width: var(--cpl-measure,none); margin: 0 0 14px; font-size: .92rem; }",
       ".mtq-principle { border-left:3px solid var(--seal-blue); padding:8px 12px; margin:0 0 16px;"
         + " background: var(--surface-subtle); font-size:.9rem; }",
       ".mtq-stat { display:flex; flex-wrap:wrap; gap:10px; margin:0 0 14px; }",
@@ -381,28 +381,32 @@
       ".mtq-item { border:1px solid var(--border); border-left:4px solid var(--border-strong);"
         + " border-radius:8px; padding:11px 13px; margin:0 0 9px; background: var(--surface); }",
       ".mtq-item.waiting { border-left-color: var(--seal-blue); }",
-      ".mtq-item.person { border-left-color: var(--danger, #b3261e); }",
-      ".mtq-item.clear { border-left-color: var(--hunter, #2c601a); opacity:.72; }",
-      ".mtq-item.unknown { border-left-color: var(--danger, #b3261e); background: var(--surface-subtle); }",
+      ".mtq-item.person { border-left-color: var(--red-alert); }",
+      ".mtq-item.clear { border-left-color: var(--border-strong); }",
+      ".mtq-item.unknown { border-left-color: var(--red-alert); background: var(--surface-subtle); }",
       ".mtq-head { display:flex; gap:10px; align-items:baseline; flex-wrap:wrap; }",
       ".mtq-n { font-size:1.35rem; font-weight:700; color: var(--navy-primary); font-variant-numeric:tabular-nums; }",
-      ".mtq-n.clear { color: var(--hunter, #2c601a); }",
-      ".mtq-t { font-weight:600; flex:1 1 320px; }",
+      ".mtq-n.clear { color: var(--text-muted); }",
+      ".mtq-t { font-weight:600; flex:1 1 min(320px, 100%); min-width:0; }",
       ".mtq-age { font-size:.72rem; border-radius:10px; padding:1px 9px; white-space:nowrap;"
         + " background: var(--surface-muted); color: var(--text-muted); }",
-      ".mtq-age.old { background: var(--danger, #b3261e); color:var(--on-accent); }",
+      ".mtq-age.old { color: var(--red-alert); font-weight:600; }",
       ".mtq-d { font-size:.85rem; color: var(--text-body); margin:5px 0 0; }",
       ".mtq-why { font-size:.72rem; color: var(--text-muted); margin:6px 0 0; font-style:italic; }",
       ".mtq-names { font-size:.75rem; color: var(--text-muted); margin:5px 0 0; }",
-      ".mtq-go { font-size:.75rem; }",
+      ".mtq-go { font-size:.8rem; }",
+      ".mtq-go a { color: var(--cobalt); font-weight:600; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; display:inline-flex; align-items:center; min-height:24px; }",
+      ".mtq-go a:hover { text-decoration-thickness:2px; }",
+      ".mtq-go a:focus-visible { outline:2px solid var(--seal-blue); outline-offset:2px; }",
       ".mtq-badge { font-size:.66rem; text-transform:uppercase; letter-spacing:.04em; border-radius:3px;"
         + " padding:1px 6px; background: var(--surface-muted); color: var(--text-muted); }",
-      ".mtq-badge.person { background: var(--danger, #b3261e); color:var(--on-accent); }",
+      ".mtq-badge.person { color: var(--red-alert); font-weight:700; background:none; border:1px solid currentColor; }",
       ".mtq-tracked { border-style:dashed; }",
-      ".mtq-stale { color: var(--danger, #b3261e); font-weight:600; }",
+      ".mtq-stale { color: var(--red-alert); font-weight:600; }",
       ".mtq-gate { color: var(--text-muted); padding:18px; border:1px dashed var(--border-strong);"
         + " border-radius:8px; background: var(--surface-subtle); }",
-      ".mtq-note { font-size:.75rem; color: var(--text-muted); margin-top:10px; }"
+      ".mtq-note { font-size:.75rem; color: var(--text-muted); margin-top:10px; }",
+      ".mtq-note label { display:inline-flex; align-items:center; gap:5px; min-height:24px; cursor:pointer; }"
     ].join("\n");
     var el = document.createElement("style");
     el.id = CSS_ID; el.textContent = css;
@@ -502,7 +506,7 @@
     }
     if (it.where && it.where.tab) {
       h += '<p class="mtq-go"><a href="#' + esc(it.where.tab) + '" data-goto="' + esc(it.where.tab)
-        + '">Go to ' + esc(it.where.label) + " →</a></p>";
+        + '">Go to ' + esc(it.where.label) + "</a></p>";
     } else if (it.where && it.where.label) {
       h += '<p class="mtq-go">' + esc(it.where.label) + "</p>";
     }
@@ -513,13 +517,17 @@
   function render(root) {
     if (!root) return;
     ensureCss();
+    // The shell's loading placeholder (a dashed, centered box) is inline on the root; it
+    // stayed under the painted queue and centered every heading and item (S368, as
+    // Governance in S366).
+    root.removeAttribute("style");
 
     if (!signedIn()) {
       // Was: "Sign in on the Team & RACI tab (reviewer link or team phrase) and
       // re-open this tab" — the bounce, still live, and pointing at a reviewer
       // link RACI stopped offering. Four of this tab's tables gate the READ, so
       // the cost of the bounce was the whole page.
-      root.innerHTML = '<div class="mtq"><h2>\u{1F4E5} MAP Team Queue</h2></div>';
+      root.innerHTML = '<div class="mtq"><h2>MAP Team Queue</h2></div>';
       var gate = root.querySelector(".mtq");
       if (window.CPL_TEAM_PHRASE && gate) {
         gate.appendChild(window.CPL_TEAM_PHRASE.lockedBanner({
@@ -537,7 +545,7 @@
       return;
     }
     if (state.loading || !state.items) {
-      root.innerHTML = '<div class="mtq"><h2>\u{1F4E5} MAP Team Queue</h2>'
+      root.innerHTML = '<div class="mtq"><h2>MAP Team Queue</h2>'
         + '<p class="mtq-intro">Measuring…</p></div>';
       return;
     }
@@ -549,7 +557,7 @@
     var oldest = open.reduce(function (m, i) {
       return (i.ageDays != null && (m == null || i.ageDays > m)) ? i.ageDays : m; }, null);
 
-    var h = '<div class="mtq"><h2>\u{1F4E5} MAP Team Queue</h2>'
+    var h = '<div class="mtq"><h2>MAP Team Queue</h2>'
       + '<p class="mtq-intro">What is waiting on the MAP team, oldest first. The college-facing half of this '
       + 'engine answers the opposite question — <i>what should I do next</i> — and leads with opportunity. '
       + 'This half leads with <b>age</b>, because the cost of an item here is how long someone has been '

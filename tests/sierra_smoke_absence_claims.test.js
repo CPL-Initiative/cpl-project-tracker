@@ -71,7 +71,23 @@ const SGV_ARTIC_ADJ = "A couple of honest caveats: none of the three San Gabriel
 const SGV_ARTIC_EXHIBIT = "No San Gabriel Valley college has an exhibit specifically articulating CNA-to-LVN credit yet, "
   + "so this would be a request you're initiating, not one already on file — which is exactly how new articulations get built.";
 
+// Recorded, the re-run of run 38196534876 (2026-10-12, S368's #2021; fixed S369): a
+// pronoun for the articulation the same sentence names. The answer had already led
+// with Rio Hondo VN 61, Pasadena NURS 102 and Citrus VNRS 150.
+const SGV_ARTIC_PRONOUN = "**Precedent:** The only CNA-type articulation on record is at **Lemoore College** (outside your area), "
+  + "which awarded 6 hours in Nurse Assistant Training (HS 061) and 3 hours in Lifelong Learning and Self Development "
+  + "(LACCD GE 7) for CNA credentials — proof that colleges do credit CNA training, even though no San Gabriel Valley "
+  + "college has set this up yet for LVN specifically.";
+
 if (RE_7C && RE_7S && fn) {
+  check("7s: a pronoun for the articulation the same sentence names passes (\"has set this up yet for LVN\")",
+    !fails(SGV_ARTIC_PRONOUN, RE_7S));
+  check("7s: …the pronoun is set aside only after an articulation in its own sentence",
+    fails("No San Gabriel Valley college has set this up yet for LVN specifically.", RE_7S));
+  check("7s: …\"has set up an LVN program\" is a program claim and still fails",
+    fails("Articulations are rare, and no San Gabriel Valley college has set up an LVN program.", RE_7S));
+  check("7s: …and the pronoun sentence does not excuse a bare program claim beside it",
+    fails(SGV_ARTIC_PRONOUN + " No San Gabriel Valley college offers an LVN entry program.", RE_7S));
   check("7s: an articulation absence with \"an exhibit ... articulating\" passes", !fails(SGV_ARTIC_EXHIBIT, RE_7S));
   check("7s: \"has no exhibit for LVN\" passes as an articulation absence",
     !fails("No San Gabriel Valley college has an existing LVN exhibit yet.", RE_7S));

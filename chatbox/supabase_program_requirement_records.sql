@@ -28,8 +28,8 @@
 -- (chatbox/supabase_program_record_verdicts.sql). Reviewers also read the
 -- unchecked rows (policy program_requirement_records_reviewer_read).
 --
--- PRIVILEGES: row-level security with one SELECT policy (checked rows), so the
--- public roles write nothing. The default-privilege close rides the next paste
+-- PRIVILEGES: row-level security with SELECT policies only, so the public roles
+-- write nothing. The public reads every row since Sam's Open Asks Sheet 67 (READ below). The default-privilege close rides the next paste
 -- receipt (the Supabase connector holds any statement naming a privilege removal
 -- for a confirmation a remote session cannot answer).
 
@@ -55,8 +55,17 @@ create table if not exists public.program_requirement_records (
 
 alter table public.program_requirement_records enable row level security;
 
+-- READ (Sam, Open Asks Sheet 67, 2026-10-12, "Every record, from the table", and his go
+-- in session the same day; on Sheet 65 he wrote "I want every record to show marked not
+-- yet confirmed"): the public reads every record. CPL Pathways, Program Requirements and
+-- My College mark one no person has checked as Not yet confirmed; Sierra reads checked rows
+-- only (cpl-chat filters `checked` itself). Public catalog data with no student detail;
+-- checked_by names the staff member who confirmed a record, as it already did on the
+-- checked rows. Applied as migration program_requirement_records_read_every_row_2026_10_12.
+-- Rollback: recreate the policy with `using (checked)`.
+drop policy if exists program_requirement_records_read on public.program_requirement_records;
 create policy program_requirement_records_read on public.program_requirement_records
-  for select to anon, authenticated using (checked);
+  for select to anon, authenticated using (true);
 
 grant select on public.program_requirement_records to anon, authenticated;
 grant select, insert, update on public.program_requirement_records to service_role;

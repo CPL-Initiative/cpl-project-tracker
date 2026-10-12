@@ -71,7 +71,7 @@ function click(w, root, value) {
     progs.every((p) => opts.some((o) => o.textContent.startsWith(p.college + " — " + p.title))));
   const unchecked = progs.filter((p) => !p.display.checks.checked).map((p) => p.key);
   check("(a) an unchecked record says so in the list",
-    opts.filter((o) => /not yet checked/.test(o.textContent)).length === unchecked.length, unchecked.join(","));
+    opts.filter((o) => /not yet confirmed/.test(o.textContent)).length === unchecked.length, unchecked.join(","));
   check("(a) the caption counts the catalog records", /\+ \d+ catalog records/.test(root.textContent));
   const target = opts.find((o) => o.textContent.startsWith("Cerritos College — Apprenticeship: Field Ironworkers"));
   if (target) { sel.value = target.value; sel.dispatchEvent(new w.Event("change", { bubbles: true })); }

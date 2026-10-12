@@ -4636,6 +4636,7 @@ Moved out of `docs/INDEX.md` to keep that file's history list at ~8 bullets (it 
 - **2026-08-13 (late)** — SkyBridge: **military vs non-military CR bucketing** recorded from Sam. A JST lands a few to *scores* of ACE-reviewed CRs per service member (the whole transcript arrives at once); a non-military exhibit lands 1–2. Same lifecycle, so an undifferentiated "awaiting action" total is **98.8% military** — measured: military 432,693 CRs / 1,040,447 units at 17.4 per student, non-military 3,305 / 10,698 at 3.8. "A million units awaiting action" describes a college's veteran population rather than its workload, and **hides the tractable 10,698-unit non-military backlog entirely**. ⚠️ Bucketing is **not** discounting, and raw inert volume never means "behind". ⚠️ Two classifier traps found: `military_credits` is an applied AMOUNT (zero on 84% of rows), and `Credit for Basic Military Service` rows carry no ACE exhibit code. 1 new KB note.
 
 ## Archived INDEX update history
+- 2026-10-10 (S356 SkyThicket): Sam's three rulings (apply display build 5be53871ebf4; read Approved programs; a standing go for each display build after a college load); the college workflow's display job applies a receipt from the runner, verified by one combined hash (5be53871ebf4 on 292, 153ead0ce992 on 605); Mt. San Antonio read and loaded (313 records); the Approved programs loaded at both colleges (+33, +70) and `ee814befc65d` on 700; Team & RACI's first UI pass (#1957); KB note `methodology-a-receipt-too-large-for-the-connector-applies-from-the-runner`; handoff 357.
 
 - 2026-10-07 (S340 SkyLedger): Santa Monica Barbering A.S. 43767's record (extraction 37548804006) in `records_maps/`; CPL Pathways places each course in its read map's term (display build 9f60f746ea49); `plan()` counts a course once; both dated reads cover seven colleges; open-asks sheet 46 (#1894; vault #264); KB note `methodology-a-postgres-md5-proves-a-transcribed-jsonb-copy` gains the per-row refresh
 - 2026-10-06 (S339 SkyReel): the Noncredit Summit film v2 (#1891: Sarah Explains, unnamed; Sam's greeting; $7 million ongoing; four grants with Calbright; 30,795; Nadia an industry certificate; brighter portraits; MP4s to Drive, never the repo; vault #262); the harvest capture follows a procedure's catalog step, and Santa Monica's first procedure record reads Barbering A.S. from its full-catalog PDF (#1892); handoff 340 (SkyLedger).
@@ -5917,3 +5918,9 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 ## INDEX update history moved 2026-10-11 (S365)
 
 - 2026-10-09 (S354 SkyFurrow): Cerritos loaded unchecked through `program_requirement_records_college_load()` (#1941, 270 records, receipt per load); reads gated on `[read]`/`[extract]`; the Activities UI pass (#1945); Program records gains Find a record and the scorer's course counts (#1946); a Progress call answers its records on its card (#1947), all for Sam reading on his phone.
+
+### INDEX update history, moved 2026-10-12 (S367)
+
+- 2026-10-10 S357 SkyCanopy: curriQunet catalogs read as data (KB note `methodology-a-javascript-catalog-is-data-read-what-it-fetches`); district catalogs scoped; Open Asks Sheets 58 and 59; handoff 358.
+
+- 2026-10-11 (S359 SkyMoss): RCCD's Liberal Arts emphasis read (#1965-#1967), Sheet 60's eight rows removed (#1968), Sam's Mt. San Antonio reading rules; KB note `methodology-a-missing-course-may-be-a-retired-version`; handoff 360.
