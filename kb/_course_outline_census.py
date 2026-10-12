@@ -25,6 +25,7 @@ Sheet 70 card 1. It uses the program source census's polite Reader (robots first
 delay before every load).
 
 Usage (runner): python3 kb/_course_outline_census.py [--limit N] [--only TEXT]
+       python3 kb/_course_outline_census.py --probe [--only TEXT]   (probe_<run>.json)
 """
 from __future__ import annotations
 
@@ -237,6 +238,133 @@ def cor_one(reader, reg: dict) -> dict:
     return row_for(college, hosts, slo_pages, evidence)
 
 
+# ── the probe (S373) ────────────────────────────────────────────────────────────
+# Run 2 (38290631928) recorded a course outline host at 59 colleges, 47 public, but
+# the host it recorded is most often the college's catalog (curriQunet's catalog/iq,
+# an eLumen catalog), and its SLO flag matched a menu item or "Cal Poly SLO". A
+# catalog host is no proof that a course's outline opens. The probe takes a few
+# colleges on each system, opens the system's own front door (curriQunet's
+# dashboard at the host's root, eLumen's /public/ view, a college's outline page),
+# follows the links that name a course, an outline or a report, and records whether
+# a page it reaches prints an outline's fields and a learning outcomes heading with
+# text after it. One question per system: does one course's outline open to the
+# public, and does it print SLOs? Pages only; no model call, no table write.
+PROBE = [
+    # (college, system, start address, why this one)
+    ("Riverside City College", "curriqunet", "https://rccd.curriqunet.com/",
+     "loaded; RCCD's host serves three loaded colleges"),
+    ("San Diego Mesa College", "curriqunet", "https://sdccd.curriqunet.com/",
+     "loaded; SDCCD's host serves three loaded colleges"),
+    ("Chaffey College", "curriqunet", "https://chaffey.curriqunet.com/", "loaded"),
+    ("Cuesta College", "curriqunet", "https://cuesta.curriqunet.com/",
+     "run 2 read a course list with Reports beside each course on its dashboard"),
+    ("Solano Community College", "elumen", "https://solano.elumenapp.com/public/", "eLumen's public view"),
+    ("West Valley College", "elumen", "https://westvalley.elumenapp.com/public/", "eLumen's public view"),
+    ("Los Medanos College", "elumen", "https://lmc.elumenapp.com/catalog/26-27/art",
+     "run 2: a catalog page naming outcomes"),
+    ("San Jose City College", "curricunet",
+     "https://sjcc.edu/students/academic-programs/curriculum-course-and-program-outlines.aspx",
+     "the college's outline page links CurricUNET"),
+    ("Hartnell College", "coursedog", "https://hartnell.catalog.prod.coursedog.com/", "Coursedog's public catalog"),
+]
+OUTLINE_LINK = re.compile(
+    r"course outline|outline of record|\bCORs?\b|\breports?\b|/DynamicReports/|entityType=Course|"
+    r"/public/(course|search)|/courses?/|course_outline|courses?_?id=", re.I)
+STRONG_LINK = re.compile(r"/DynamicReports/|entityType=Course|course_outline|courses?_?id=|/public/course|"
+                         r"/courses?/[^/?#]+", re.I)
+SLO_HEADING = re.compile(
+    r"(student|course) learning outcomes?|upon (successful )?completion of (this|the) course", re.I)
+OUTLINE_FIELDS = [re.compile(x, re.I) for x in (
+    r"\bunits?\b", r"lecture hours|hours lecture|contact hours", r"prerequisite|advisory|corequisite",
+    r"course content|content outline|course outline", r"methods? of (instruction|evaluation)",
+    r"objectives", r"textbook|representative texts?|instructional materials", r"catalog description")]
+PROBE_FOLLOW = 3
+
+
+def outline_links(page: dict, start_host: str) -> list[dict]:
+    """Links on the start's host or a known system host that name a course, an
+    outline or a report; a link shaped like one course's page or report first."""
+    here = (page.get("final_url") or page.get("url") or "").split("#")[0]
+    out = {}
+    for a in page.get("links") or []:
+        href, text = (a.get("href") or "").split("#")[0], (a.get("text") or "").strip()
+        if not href.startswith("http") or href == here:
+            continue
+        host = urllib.parse.urlparse(href).netloc.lower()
+        if host != start_host and not system_of(href):
+            continue
+        p = urllib.parse.urlparse(href)
+        if SIGN_IN_URL.search(p.path + "?" + p.query):
+            continue
+        if OUTLINE_LINK.search(text) or OUTLINE_LINK.search(p.path + "?" + p.query):
+            out.setdefault(href, {"href": href, "text": text[:80], "strong": bool(STRONG_LINK.search(href))})
+    return sorted(out.values(), key=lambda x: (not x["strong"], len(x["href"])))
+
+
+def slo_snippet(body: str) -> str | None:
+    """A learning outcomes heading with at least 60 characters of text after it, as
+    printed; a menu item or a heading with nothing under it is no SLO."""
+    for m in SLO_HEADING.finditer(body or ""):
+        after = (body[m.end(): m.end() + 400]).strip()
+        words = re.sub(r"\s+", " ", after)
+        if len(words) >= 60 and not re.match(r"(assessment|coordinator|committee|only)\b", words, re.I):
+            return re.sub(r"\s+", " ", body[max(0, m.start() - 40): m.end() + 300]).strip()
+    return None
+
+
+def outline_fields(body: str) -> int:
+    return sum(1 for pat in OUTLINE_FIELDS if pat.search(body or ""))
+
+
+def probe_page(page: dict) -> dict:
+    body = page.get("body") or ""
+    return {"url": page.get("url"), "final_url": page.get("final_url"), "status": page.get("status"),
+            "access": access_of(page), "title": (page.get("title") or "")[:120],
+            "outline_fields": outline_fields(body), "slo": slo_snippet(body)}
+
+
+def probe_verdict(start: dict, pages: list[dict]) -> str:
+    """outline_with_slos, outline (fields, no SLO heading), list_only, sign_in,
+    refused or unreached: the best a college's pages reached."""
+    seen = [start] + pages
+    if any(p["outline_fields"] >= 3 and p["slo"] and p["access"] == "public" for p in seen):
+        return "outline_with_slos"
+    if any(p["outline_fields"] >= 3 and p["access"] == "public" for p in seen):
+        return "outline"
+    if any(p["access"] == "public" for p in seen):
+        return "list_only"
+    for acc in ("sign_in", "refused"):
+        if any(p["access"] == acc for p in seen):
+            return acc
+    return "unreached"
+
+
+def probe_one(reader, college: str, system: str, start_url: str, why: str) -> dict:
+    start_host = urllib.parse.urlparse(start_url).netloc.lower()
+    first = reader.load(start_url)
+    start = probe_page(first)
+    links = outline_links(first, start_host)
+    pages, done = [], {start_url}
+    for cand in links[:PROBE_FOLLOW]:
+        if cand["href"] in done:
+            continue
+        done.add(cand["href"])
+        page = reader.load(cand["href"])
+        got = probe_page(page)
+        got["via"] = cand["text"]
+        pages.append(got)
+        if got["outline_fields"] < 3 and got["access"] == "public":
+            # a list or a search: one step further, to its first course or report
+            for nxt in outline_links(page, start_host)[:1]:
+                if nxt["href"] not in done:
+                    done.add(nxt["href"])
+                    deeper = probe_page(reader.load(nxt["href"]))
+                    deeper["via"] = nxt["text"]
+                    pages.append(deeper)
+    return {"college": college, "system": system, "why": why, "start": start,
+            "links": links[:12], "pages": pages, "verdict": probe_verdict(start, pages)}
+
+
 def load_registry() -> list[dict]:
     url = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co")
     key = os.environ.get("SUPABASE_SERVICE_KEY") or os.environ.get("SUPABASE_ANON_KEY")
@@ -256,12 +384,50 @@ def summarize(rows: list[dict]) -> dict:
             "prints_slos": sum(1 for r in rows if r["cor_prints_slos"])}
 
 
+def probe_main(a) -> int:
+    from playwright.sync_api import sync_playwright  # runner only
+    rows = []
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        probe = browser.new_page()
+        ua = probe.evaluate("navigator.userAgent").replace("HeadlessChrome", "Chrome")
+        probe.close()
+        ctx = browser.new_context(user_agent=ua + " " + census.UA_SUFFIX, accept_downloads=False)
+        reader = census.Reader(ctx.new_page(), ctx.request, a.delay)
+        for college, system, start, why in PROBE:
+            if a.only and a.only.lower() not in college.lower():
+                continue
+            try:
+                row = probe_one(reader, college, system, start, why)
+            except Exception as exc:  # one college's failure never stops the probe
+                row = {"college": college, "system": system, "why": why, "verdict": "unreached",
+                       "error": str(exc).splitlines()[0][:300]}
+            rows.append(row)
+            print("%-28s %-11s %-18s %s" % (college[:28], system, row["verdict"],
+                  next((x.get("final_url") for x in row.get("pages") or [] if x.get("slo")), "-")), flush=True)
+        browser.close()
+    run = os.environ.get("GITHUB_RUN_ID", "local")
+    os.makedirs(OUT_DIR, exist_ok=True)
+    out = {"run": run, "at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "loads": reader.loads,
+           "verdicts": {v: sum(1 for r in rows if r["verdict"] == v) for v in sorted({r["verdict"] for r in rows})},
+           "rows": rows}
+    path = os.path.join(OUT_DIR, "probe_%s.json" % run)
+    with open(path, "w") as f:
+        json.dump(out, f, indent=1)
+    print(json.dumps(out["verdicts"], indent=1))
+    print("wrote", os.path.relpath(path, os.path.dirname(HERE)))
+    return 0
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--only", default="")
     ap.add_argument("--delay", type=int, default=int(os.environ.get("CENSUS_DELAY_MS", "3000")))
+    ap.add_argument("--probe", action="store_true", help="open one course's outline per system (PROBE)")
     a = ap.parse_args(argv)
+    if a.probe:
+        return probe_main(a)
     regs = load_registry()
     if a.only:
         regs = [r for r in regs if a.only.lower() in r["college"].lower()]

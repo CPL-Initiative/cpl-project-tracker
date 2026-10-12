@@ -507,7 +507,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/cos_match_out` | none found | committed by: `cos-authority-sync.yml` |
 | `kb/cos_matches.json` | tabs: `credential-reference` · scripts: `kb/_match_cos_authority.py` | committed by: `cos-authority-sync.yml` |
 | `kb/course_crosswalk.json` | scripts: `kb/_curation_01.py`, `kb/_esl_package_dryrun.py`, `kb/_zband_retire_dryrun.py` | scripts: `kb/_seed_cx_common_courses.py` |
-| `kb/course_outline_census/census_*.json` | none found | committed by: `course-outline-census.yml` |
+| `kb/course_outline_census` | none found | committed by: `course-outline-census.yml` |
 | `kb/cr_reference_worklist.json` | tabs: `cr-reference` · scripts: `kb/_build_cr_reference.py`, `kb/_jev_adjudicate.py`, `kb/_typesafe_cr_trial.py` | scripts: `kb/_build_cr_reference.py` · committed by: `daily-dashboard.yml` |
 | `kb/cred_rename_dryrun` | none found | committed by: `cred-rename-apply.yml` |
 | `kb/cred_rename_dryrun/alias_map.json` | workflows: `cred-rename-apply.yml` | committed by: `daily-dashboard.yml` |
@@ -910,6 +910,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `catalog.example` | modules: `a11y.config.js` |
 | `cdn.jsdelivr.net` | tabs: `pipeline` |
 | `cdnjs.cloudflare.com` | scripts: `prototype/globe/build_globe.py` |
+| `chaffey.curriqunet.com` | scripts: `kb/_course_outline_census.py` |
 | `claude.ai` | tabs: `admin` · scripts: `kb/_build_claude_md_audit_decision_sheet.py`, `kb/_build_esl_followup_decision_sheet.py`, `kb/_build_esl_merging_decision_sheet.py`, `kb/_esl_monthly_pass.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_esl_sheet_apply_build.py`, `scripts/announce_session_hint.py` · workflows: `cpl-chat-health.yml`, `map-users-sync.yml` |
 | `code.claude.com` | scripts: `scripts/install_prompt_guards.py` |
 | `commons.wikimedia.org` | pages: `CPL_Dashboard.html` · scripts: `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py`, `tools/source_first_light_art.mjs` |
@@ -919,6 +920,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `cpldashboardcccco.azurewebsites.net` | tabs: `college-briefing`, `cpl-pathways` · scripts: `chatbox/scrape_landing_pages.py`, `fetch_veteran_jst.py`, `kb/_build_futuro_hth_crosswalk.py` · `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `crc.losrios.edu` | tabs: `map-queue`, `map-users` |
 | `creditforbeingyou.org` | `edgefn:cpl-chat` |
+| `cuesta.curriqunet.com` | scripts: `kb/_course_outline_census.py` |
 | `customreportingmodule.azurewebsites.net` | scripts: `kb/_probe_new_custom_reports.py` |
 | `datamart.cccco.edu` | scripts: `kb/_fetch_program_course_files.py` |
 | `datastudio.google.com` | tabs: `cip-crosswalk` |
@@ -938,10 +940,12 @@ collapse to one `<date>` family so writer and reader edges join.
 | `github.com/CPL-Initiative/cpl-project-tracker` | tabs: `governance`, `program-requirements`, `unified-courses` · scripts: `prototype/ironworker_video/build.py`, `prototype/noncredit_video/build.py` |
 | `github.com/CPL-Initiative/cpl-project-tracker;` | scripts: `tools/source_first_light_art.mjs` |
 | `github.com/cpl-initiative/cpl-project-tracker` | tabs: `unified-courses` |
+| `hartnell.catalog.prod.coursedog.com` | scripts: `kb/_course_outline_census.py` |
 | `huggingface.co` | scripts: `prototype/funding_video/cues.py`, `prototype/funding_video/narrate.py`, `prototype/noncredit_video/cues.py` |
 | `icangotocollege.com` | tabs: `cpl-pathways` |
 | `laney.edu` | tabs: `map-queue`, `map-users` |
 | `launchapprenticeship.org` | tabs: `map-queue`, `map-users` |
+| `lmc.elumenapp.com` | scripts: `kb/_course_outline_census.py` |
 | `localhost` | `edgefn:cpl-chat`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `localhost:` | scripts: `prototype/mockup_harness/capture_fact_sheet.mjs` |
 | `localhost:3000` | `edgefn:cpl-chat` |
@@ -967,17 +971,21 @@ collapse to one `<date>` family so writer and reader edges join.
 | `raw.githubusercontent.com` | modules: `kb-portal/config.js` |
 | `raw.githubusercontent.com/CPL-Initiative/cpl-project-tracker` | `edgefn:cpl-chat` |
 | `raw.githubusercontent.com/{CPL_KB_REPO}/{CPL_KB_BRANCH}` | scripts: `excel_to_dashboard.py` |
-| `rccd.curriqunet.com` | scripts: `kb/_program_requirements_college.py` |
+| `rccd.curriqunet.com` | scripts: `kb/_course_outline_census.py`, `kb/_program_requirements_college.py` |
 | `scc.losrios.edu` | tabs: `map-queue`, `map-users` |
 | `schemas.openxmlformats.org` | scripts: `kb/_build_55050_redline_docx.py` |
+| `sdccd.curriqunet.com` | scripts: `kb/_course_outline_census.py` |
 | `sdcce.edu` | tabs: `map-queue`, `map-users` |
 | `sdmiramar.edu` | scripts: `kb/_program_sequence_ppm.py` |
 | `sdmiramar.programmapper.ws` | scripts: `kb/_program_requirements_pilot.py` |
+| `sjcc.edu` | scripts: `kb/_course_outline_census.py` |
 | `skylinecollege.edu` | tabs: `map-queue`, `map-users` |
 | `solano.edu` | tabs: `map-queue`, `map-users` |
+| `solano.elumenapp.com` | scripts: `kb/_course_outline_census.py` |
 | `ss.marin.edu` | tabs: `map-queue`, `map-users` |
 | `studentrcc.sharepoint.com` | tabs: `library` · pages: `CPL_Dashboard.html` |
 | `westhillscollege.com` | tabs: `map-queue`, `map-users` |
+| `westvalley.elumenapp.com` | scripts: `kb/_course_outline_census.py` |
 | `www.apprenticeship4you.com` | modules: `unified_courses_details.js` |
 | `www.asccc.org` | tabs: `college-briefing`, `map-queue`, `map-users` |
 | `www.avc.edu` | tabs: `map-queue`, `map-users` |
@@ -1079,4 +1087,4 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 
 Coverage: 97 Supabase tables · 36 RPCs · 7 edge functions · 633 file
-datasets · 167 external services · 431 consumers · 49 workflows · 39 tabs.
+datasets · 175 external services · 431 consumers · 49 workflows · 39 tabs.

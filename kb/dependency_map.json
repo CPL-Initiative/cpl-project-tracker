@@ -5,7 +5,7 @@
   "rpcs": 36,
   "edge_functions": 7,
   "file_datasets": 633,
-  "external_services": 167,
+  "external_services": 175,
   "consumers": 431,
   "workflows": 49,
   "data_js_files": 69,
@@ -590,6 +590,18 @@
    ],
    "main_committers": []
   },
+  "external:chaffey.curriqunet.com": {
+   "consumers": [
+    {
+     "id": "script:kb/_course_outline_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 258
+    }
+   ],
+   "main_committers": []
+  },
   "external:claude.ai": {
    "consumers": [
     {
@@ -1038,6 +1050,18 @@
    ],
    "main_committers": []
   },
+  "external:cuesta.curriqunet.com": {
+   "consumers": [
+    {
+     "id": "script:kb/_course_outline_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 259
+    }
+   ],
+   "main_committers": []
+  },
   "external:customreportingmodule.azurewebsites.net": {
    "consumers": [
     {
@@ -1414,6 +1438,18 @@
    ],
    "main_committers": []
   },
+  "external:hartnell.catalog.prod.coursedog.com": {
+   "consumers": [
+    {
+     "id": "script:kb/_course_outline_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 268
+    }
+   ],
+   "main_committers": []
+  },
   "external:huggingface.co": {
    "consumers": [
     {
@@ -1483,6 +1519,18 @@
       "map-queue",
       "map-users"
      ]
+    }
+   ],
+   "main_committers": []
+  },
+  "external:lmc.elumenapp.com": {
+   "consumers": [
+    {
+     "id": "script:kb/_course_outline_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 263
     }
    ],
    "main_committers": []
@@ -1957,6 +2005,13 @@
   "external:rccd.curriqunet.com": {
    "consumers": [
     {
+     "id": "script:kb/_course_outline_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 254
+    },
+    {
      "id": "script:kb/_program_requirements_college.py",
      "kind": "script",
      "direction": "read",
@@ -1990,6 +2045,18 @@
      "direction": "read",
      "how": "url",
      "line": 338
+    }
+   ],
+   "main_committers": []
+  },
+  "external:sdccd.curriqunet.com": {
+   "consumers": [
+    {
+     "id": "script:kb/_course_outline_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 256
     }
    ],
    "main_committers": []
@@ -2034,6 +2101,18 @@
    ],
    "main_committers": []
   },
+  "external:sjcc.edu": {
+   "consumers": [
+    {
+     "id": "script:kb/_course_outline_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 266
+    }
+   ],
+   "main_committers": []
+  },
   "external:skylinecollege.edu": {
    "consumers": [
     {
@@ -2062,6 +2141,18 @@
       "map-queue",
       "map-users"
      ]
+    }
+   ],
+   "main_committers": []
+  },
+  "external:solano.elumenapp.com": {
+   "consumers": [
+    {
+     "id": "script:kb/_course_outline_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 261
     }
    ],
    "main_committers": []
@@ -2119,6 +2210,18 @@
       "map-queue",
       "map-users"
      ]
+    }
+   ],
+   "main_committers": []
+  },
+  "external:westvalley.elumenapp.com": {
+   "consumers": [
+    {
+     "id": "script:kb/_course_outline_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 262
     }
    ],
    "main_committers": []
@@ -10223,7 +10326,7 @@
    "served": true,
    "main_committers": []
   },
-  "file:kb/course_outline_census/census_*.json": {
+  "file:kb/course_outline_census": {
    "consumers": [],
    "producers": [
     {
@@ -21831,7 +21934,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 246
+     "line": 374
     },
     {
      "id": "script:kb/_program_requirements_pilot.py",
@@ -22642,7 +22745,7 @@
     "kb/_course_outline_census.py"
    ],
    "adds": [
-    "kb/course_outline_census/census_*.json"
+    "kb/course_outline_census/"
    ],
    "push": "triggering branch",
    "deploys": [],

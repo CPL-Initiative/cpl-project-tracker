@@ -91,6 +91,38 @@ picked = cor.row_for("Y College", hosts, [], [])
 check("4 the row carries the chosen system, its access and every host met",
       picked["cor_system"] == "curriqunet" and picked["cor_access"] == "public" and len(picked["hosts"]) == 3)
 
+# 6. The probe (S373): one course's outline per system, not the catalog host.
+dash = {"url": "https://cuesta.curriqunet.com/", "final_url": "https://cuesta.curriqunet.com/", "status": 200,
+        "links": [{"href": "https://cuesta.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1234?entityType=Course&reportId=94",
+                   "text": "Reports"},
+                  {"href": "https://cuesta.curriqunet.com/Search/PublicSearch", "text": "Course Outline Search"},
+                  {"href": "https://www.cuesta.edu/about/annual-report.html", "text": "Annual Report"},
+                  {"href": "https://cuesta.curriqunet.com/Account/Login", "text": "Course reports (staff)"},
+                  {"href": "https://cuesta.curriqunet.com/", "text": "Reports home"}]}
+ol = cor.outline_links(dash, "cuesta.curriqunet.com")
+check("6 a course's report link on the system host comes first; another site, a sign-in and the page itself are left out",
+      [x["href"] for x in ol] == ["https://cuesta.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1234?entityType=Course&reportId=94",
+                                  "https://cuesta.curriqunet.com/Search/PublicSearch"], ol)
+check("6 a menu item or a proposal type naming SLOs is no SLO; a heading with outcomes under it is",
+      cor.slo_snippet("Home | Student Learning Outcomes | Contact") is None
+      and cor.slo_snippet("ABOD 252 WORK EXPERIENCE Student Learning Outcomes only Active Reports ABOD 570") is None
+      and cor.slo_snippet("Student Learning Outcomes Upon completion of the course the student will be able to "
+                          "diagnose and repair collision damage to unibody vehicles.") is not None)
+outline_body = ("Course Outline of Record. Units: 3. Lecture hours 54. Prerequisite: none. Course Content: ... "
+                "Methods of Evaluation: exams. Student Learning Outcomes: Upon completion students will be able to "
+                "analyze the structure of a short story and write a thesis-driven essay.")
+pg = cor.probe_page({"url": "u", "final_url": "u", "status": 200, "title": "COR", "body": outline_body, "html": ""})
+check("6 an outline's fields and its SLOs are read from the page", pg["outline_fields"] >= 3 and pg["slo"])
+lst = {"outline_fields": 1, "slo": None, "access": "public"}
+check("6 the verdict is the best a college's pages reached",
+      cor.probe_verdict(lst, [pg]) == "outline_with_slos"
+      and cor.probe_verdict(lst, [dict(pg, slo=None)]) == "outline"
+      and cor.probe_verdict(lst, []) == "list_only"
+      and cor.probe_verdict({"outline_fields": 0, "slo": None, "access": "sign_in"}, []) == "sign_in"
+      and cor.probe_verdict({"outline_fields": 0, "slo": None, "access": "unreached"}, []) == "unreached")
+check("6 the probe names at least one college on each public system run 2 met",
+      {s for _, s, _, _ in cor.PROBE} >= {"curriqunet", "elumen", "curricunet", "coursedog"})
+
 # 5. Nothing writes.
 src = open(os.path.join(ROOT, "kb", "_course_outline_census.py")).read()
 check("5 the pass reads the registry and writes no table (no POST, PATCH or rpc)",
