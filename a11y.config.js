@@ -838,6 +838,54 @@ async function seedAdmin(page, theme, open) {
   await page.waitForTimeout(400);
 }
 
+// MAP Team Queue as a phrase holder sees it (S368 UI pass): the queue is gated, so the
+// signed-out cobi sweep measures the lock. The seed holds the team phrase and stubs the five
+// table reads with tests/map_team_queue.test.js's fixture shapes, dated back from today so
+// ages run from days to weeks; the two kb/ files and map_users.js load for real. Cleared
+// items are shown so their state paints too.
+async function seedMapQueue(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "map-queue") location.hash = "map-queue"; });
+  await page.waitForFunction(() => !!window.CPL_MAP_QUEUE, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    try {
+      localStorage.setItem("cpl_team_pass", "seed-phrase");
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const ago = (d) => new Date(Date.now() - d * 864e5).toISOString();
+    const GAPS = [
+      { college: "Chaffey College", primary_contact_email: "a@example.edu", synced_at: ago(3) },
+      { college: "Gavilan College", primary_contact_email: null, synced_at: ago(3) },
+      { college: "Mission College", primary_contact_email: null, synced_at: ago(3) },
+      { college: "Seed Valley College", primary_contact_email: null, synced_at: ago(3) },
+      { college: "Seed Coast College", primary_contact_email: null, synced_at: ago(3) },
+    ];
+    const FEEDBACK = [
+      { created_at: ago(38), status: "new", page: "sierra", rating: "down" },
+      { created_at: ago(9), status: "new", page: "sierra", rating: "up" },
+      { created_at: ago(2), status: "addressed", page: "sierra", rating: "down" },
+    ];
+    const OWNERS = [{ register_id: "DR-01", owner: "Seed Owner" }];
+    const LOADS = [{ table_name: "map_student_credit", loaded_at: ago(4) }];
+    const real = window.fetch;
+    window.fetch = function (url) {
+      const u = String(url);
+      const body = /\/map_contact_gaps\?/.test(u) ? GAPS : /\/sierra_feedback\?/.test(u) ? FEEDBACK
+        : /\/governance_owners\?/.test(u) ? OWNERS : /\/map_college_nudges\?/.test(u) ? []
+        : /\/map_data_loads\?/.test(u) ? LOADS : null;
+      if (body) return Promise.resolve(new Response(JSON.stringify(body), { status: 200, headers: { "Content-Type": "application/json" } }));
+      return real.apply(this, arguments);
+    };
+    const st = window.CPL_MAP_QUEUE._state;
+    st.items = null; st.showClear = true;
+    window.CPL_MAP_QUEUE.activate();
+  });
+  await page.waitForFunction(() => !!document.querySelector("#map-queue-root .mtq-item"), null, { timeout: 20000 });
+  await page.waitForTimeout(300);
+}
+
 async function seedMyCollegeReports(page, signin) {
   await page.evaluate(() => new Promise((res) => {
     if (window.CPL_FUNDING_TAB) return res();
@@ -1341,6 +1389,25 @@ module.exports = {
     routes: [{ hash: "admin", name: "reviewer" }],
     widths: [320, 390, 1440],
     seed: (page) => seedAdmin(page, "dark", "vis"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── MAP Team Queue, unlocked with the team phrase (S368) ──────────────
+     The items, their ages and badges paint only for a phrase holder; the cobi
+     sweep is signed out. */
+  "map-queue-team": {
+    file: "index.html",
+    title: "MAP Team Queue unlocked with the team phrase, cleared items shown",
+    routes: [{ hash: "map-queue", name: "team" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedMapQueue(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "map-queue-team-dark": {
+    file: "index.html",
+    title: "MAP Team Queue unlocked with the team phrase, cleared items shown, dark",
+    routes: [{ hash: "map-queue", name: "team" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedMapQueue(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "contracts": {

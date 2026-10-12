@@ -5023,7 +5023,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 844
+     "line": 892
     },
     {
      "id": "module:college_briefing.js",
@@ -14797,7 +14797,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 463,
+     "line": 467,
      "tabs": [
       "map-queue"
      ]
@@ -20284,7 +20284,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 437,
+     "line": 441,
      "tabs": [
       "map-queue"
      ]
@@ -21161,7 +21161,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 438,
+     "line": 442,
      "tabs": [
       "map-queue"
      ]
@@ -21292,7 +21292,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 431,
+     "line": 435,
      "tabs": [
       "map-queue"
      ]
@@ -21382,7 +21382,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 439,
+     "line": 443,
      "tabs": [
       "map-queue"
      ]
@@ -21839,7 +21839,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 435,
+     "line": 439,
      "tabs": [
       "map-queue"
      ]

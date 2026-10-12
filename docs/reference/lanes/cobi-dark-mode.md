@@ -252,6 +252,14 @@ SUFFICIENT** — both Sam's rulings of 2026-09-09; the glyph list and its
 reasoning live verbatim in `CLAUDE.md`'s presentation rules, and restating them
 here is how two copies drift.
 
+⚠️ **THE GLYPH SWEEP READS LITERAL MARKS ONLY (S368).** An emoji written as a JS
+escape (`\u{1F4E5}`) is invisible to `kb/_glyph_sweep.py`; MAP Team Queue's
+heading carried one through every sweep until its UI pass. Escapes still in
+shipped JS on 2026-10-12, some of them perhaps among the ruled 26:
+`generate_reports.js` 10, `prototype/ccr_atlas_graph.js` 8, `unified_courses.js` 3,
+`prototype/ccr_universe.js` 3, `tabs.js` 1, `governance.js` 1. A UI pass greps its
+view's files for them (`/a11y-pass` step 4).
+
 ## The standing pass (Sam, 2026-09-09)
 
 *"I want a procedure that checks and remediates each COBI surface for AA and

@@ -174,8 +174,8 @@
    "name": "MAP Team Queue",
    "page": "index.html#map-queue",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-12",
+   "outcome": "S368: seeded the phrase-holder view (map-queue-team, -dark). The shell's dashed loading box stayed on the root and centered the whole queue; off now. Full-red badges and ages muted to red words, cleared items no longer green, links cobalt and underlined, the cleared-items toggle 24px, 63px sideways scroll at 320 fixed (a 320px flex basis, then long tokens), the heading's emoji and the Go to arrows removed, counseling spelled American. Light and dark clean at 320/390/1440. Wiring: the governance count reads the same register and owners table as Governance."
   },
   {
    "id": "cobi:college-briefing",
