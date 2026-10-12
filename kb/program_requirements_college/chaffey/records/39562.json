@@ -1,0 +1,209 @@
+{
+ "college": "Chaffey College",
+ "control_number": "39562",
+ "shape": "adt",
+ "title": "UCTP: Physics",
+ "award": "A.S. T Degree",
+ "source_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19204",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6031,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6031,
+    "output_tokens": 1127,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1127,
+  "output_tokens_details": {
+   "thinking_tokens": 136
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04666,
+ "ms": 9354,
+ "seconds": 9.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    46.0,
+    46.0
+   ],
+   "stated": [
+    46.0,
+    46.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Physics University of California Transfer Pathway - AS-T Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 46,
+    "max": 46
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Apply concepts in physics, physics symbolism and language, and mathematical skills to solve problems in physics.",
+    "Demonstrate skill in scientific communication (both written and oral) and apply these skills to physical concepts, describing results of laboratory experiments, and providing technical information in a clear and concise manner.",
+    "Use experimental techniques in the laboratory environment to obtain accurate and precise data, to evaluate and validate scientific instruments, and use proper laboratory etiquette.",
+    "Be prepared for advanced studies within the field of physics.",
+    "Be prepared for seamless transfer to a UC as a Physics (or related field) major."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 46,
+     "max": 46
+    },
+    "courses": [
+     {
+      "code": "CHEM 24A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 24B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 65A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 65B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 75",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 81",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 85",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 45",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 46",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 47",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "total_units records the Required Core total of 46.00 units (the major); the catalog's printed Total of 68.00 includes 22.00 units of CalGETC general education.",
+   "CalGETC GE areas (including ENGL-1A for Area 1A) are listed in the requirements table but are general education and not placed in a block.",
+   "The description states 22-28 units of Cal-GETC GE, while the table prints 22.00; one course each in Cal-GETC Area 3 and Area 4 is to be completed after transfer.",
+   "Program Learning Outcomes are printed for the program as a whole; this degree is the only award in the section."
+  ]
+ },
+ "extracted_run": "38242003226"
+}

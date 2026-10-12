@@ -1,0 +1,6436 @@
+[
+ {
+  "control_number": "04755",
+  "title": "Biological Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL40",
+   "BIOL42",
+   "BIOL42L",
+   "BIOL44",
+   "CHEM24A",
+   "CHEM24B",
+   "CHEM75A",
+   "MATH65A",
+   "MATH65B"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18952",
+   "title": "Biological Sciences - A.S. Degree",
+   "h1": "Biological Sciences - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2634
+ },
+ {
+  "control_number": "04756",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTG1B",
+   "ACCTGFS453",
+   "BUSL28A",
+   "BUSTEC63",
+   "ITIS10",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18868",
+   "title": "Accounting - A.S. Degree",
+   "h1": "Accounting - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1946
+ },
+ {
+  "control_number": "04757",
+  "title": "Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTGFS442",
+   "ACCTGFS465",
+   "BUS10",
+   "BUS60",
+   "BUS61",
+   "BUS88",
+   "BUSL28A",
+   "BUSL28B",
+   "BUSMGT11",
+   "BUSMGT40",
+   "BUSMGT42",
+   "BUSMGT436",
+   "BUSMGT44",
+   "BUSMGT441",
+   "BUSMGT466",
+   "BUSMKT13",
+   "BUSMKT40",
+   "BUSMKT410",
+   "BUSMKT420",
+   "BUSMKT55"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19052",
+   "title": "Business - A.S. Degree",
+   "h1": "Business - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3883
+ },
+ {
+  "control_number": "04758",
+  "title": "Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.95,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTG1B",
+   "ACCTGFS465",
+   "BUS10",
+   "BUS60",
+   "BUS61",
+   "BUS88",
+   "BUSL28A",
+   "BUSL28B",
+   "BUSMGT11",
+   "BUSMGT40",
+   "BUSMGT42",
+   "BUSMGT436",
+   "BUSMGT44",
+   "BUSMGT441",
+   "BUSMGT45",
+   "BUSMGT48",
+   "BUSMGT480",
+   "BUSMKT40"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20347",
+   "title": "Management - A.S. Degree",
+   "h1": "Management - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 2923
+ },
+ {
+  "control_number": "04759",
+  "title": "Retail Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTGFS465",
+   "BUS88",
+   "BUSMGT11",
+   "BUSMGT40",
+   "BUSMGT42",
+   "BUSMGT44",
+   "BUSMKT40",
+   "ITIS10"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19178",
+   "title": "Retail Management - A.S. Degree",
+   "h1": "Retail Management - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2065
+ },
+ {
+  "control_number": "04761",
+  "title": "Professional Administrative Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "BUS88",
+   "BUSTEC400",
+   "BUSTEC40B",
+   "BUSTEC410",
+   "BUSTEC452",
+   "BUSTEC455",
+   "BUSTEC460",
+   "BUSTEC470",
+   "BUSTEC471",
+   "BUSTEC50",
+   "BUSTEC60A",
+   "BUSTEC60B",
+   "BUSTEC61",
+   "BUSTEC62",
+   "BUSTEC63",
+   "BUSTEC64"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19158",
+   "title": "Professional Administrative Management - A.S. Degree",
+   "h1": "Professional Administrative Management - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2687
+ },
+ {
+  "control_number": "04763",
+  "title": "Journalism",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BRDCAST3",
+   "COMSTD12",
+   "ENGL35",
+   "ENGL7E",
+   "ENGLC1000",
+   "JOUR10",
+   "JOUR11",
+   "JOUR30",
+   "JOUR31",
+   "PHOTO10",
+   "PHOTO20",
+   "PHOTO7"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19092",
+   "title": "Journalism - Certificate of Achievement",
+   "h1": "Journalism - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2173
+ },
+ {
+  "control_number": "04764",
+  "title": "Broadcasting and Cinema",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BRDCAST3",
+   "BRDCAST55",
+   "BRDCAST60",
+   "BRDCAST62",
+   "BRDCAST67",
+   "BRDCAST70",
+   "BRDCAST74",
+   "CINEMA20",
+   "CINEMA22",
+   "CINEMA25",
+   "CINEMA26",
+   "CINEMA30",
+   "CINEMA80",
+   "CINEMA96"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18956",
+   "title": "Broadcasting and Cinema - A.S. Degree",
+   "h1": "Broadcasting and Cinema - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2550
+ },
+ {
+  "control_number": "04765",
+  "title": "Information Technology and Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMPSCI1",
+   "COMPSCI10",
+   "COMPSCI5",
+   "ITIS10",
+   "ITIS14",
+   "ITIS16",
+   "ITIS30",
+   "ITIS40",
+   "ITIS50",
+   "ITIS51",
+   "ITIS55",
+   "ITIS60",
+   "ITIS70",
+   "ITIS80",
+   "ITIS82"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20597",
+   "title": "Information Technology and Information Systems - A.S. Degree",
+   "h1": "Information Technology and Information Systems - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2944
+ },
+ {
+  "control_number": "04768",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM24A",
+   "ENGIN11",
+   "ENGIN26",
+   "ENGIN30",
+   "ENGIN50",
+   "ENGIN52",
+   "ENGIN60",
+   "ENGIN71",
+   "MATH65A",
+   "MATH65B",
+   "PHYS45",
+   "PHYS46"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19026",
+   "title": "Engineering - A.S. Degree",
+   "h1": "Engineering - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2655
+ },
+ {
+  "control_number": "04770",
+  "title": "Master Automotive Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOTEC10",
+   "AUTOTEC15",
+   "AUTOTEC416",
+   "AUTOTEC417",
+   "AUTOTEC418",
+   "AUTOTEC422",
+   "AUTOTEC427",
+   "AUTOTEC429",
+   "AUTOTEC432",
+   "AUTOTEC450",
+   "AUTOTEC455"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19102",
+   "title": "Master Automotive Technician - A.S. Degree",
+   "h1": "Master Automotive Technician - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2906
+ },
+ {
+  "control_number": "04772",
+  "title": "Airframe and Powerplant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AMT15A",
+   "AMT15C",
+   "AMT29A",
+   "AMT29B",
+   "AMT39A",
+   "AMT39B"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18950",
+   "title": "Airframe and Powerplant - A.S. Degree",
+   "h1": "Airframe and Powerplant - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2362
+ },
+ {
+  "control_number": "04774",
+  "title": "CAD Drafting Technician: Architectural",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAFT20",
+   "DRAFT21",
+   "DRAFT50",
+   "DRAFT51",
+   "EGTECH10",
+   "EGTECH30",
+   "PHYS5",
+   "PHYS6"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19018",
+   "title": "CAD Drafting Technician: Architectural - A.S. Degree",
+   "h1": "CAD Drafting Technician: Architectural - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3313
+ },
+ {
+  "control_number": "04779",
+  "title": "Commercial Music",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.583,
+  "codes_found": [
+   "MUSIC15",
+   "MUSIC18",
+   "MUSIC19",
+   "MUSIC22",
+   "MUSIC23",
+   "MUSIC5",
+   "MUSIC6"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/musind",
+   "title": "Music Industry Studies for Transfer - AA-T Degree",
+   "h1": "Music Industry Studies for Transfer - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.5
+   }
+  },
+  "listed": 12,
+  "text_chars": 3333
+ },
+ {
+  "control_number": "04780",
+  "title": "Theatre: Acting Emphasis",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.556,
+  "codes_found": [
+   "THEATRE10",
+   "THEATRE12",
+   "THEATRE18",
+   "THEATRE35",
+   "THEATRE8"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20437",
+   "title": "Theatre: Acting Emphasis - A.A. Degree",
+   "h1": "Theatre: Acting Emphasis - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2052
+ },
+ {
+  "control_number": "04783",
+  "title": "Photography",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "ART10",
+   "ART14",
+   "ARTGD63",
+   "ARTH19",
+   "PHOTO1",
+   "PHOTO10",
+   "PHOTO12",
+   "PHOTO13",
+   "PHOTO20",
+   "PHOTO50",
+   "PHOTO7",
+   "PHOTO9"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19146",
+   "title": "Photography - A.A. Degree",
+   "h1": "Photography - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2260
+ },
+ {
+  "control_number": "04788",
+  "title": "Nursing: ADN",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURADN15",
+   "NURADN28",
+   "NURADN29",
+   "NURADN35",
+   "NURADN39",
+   "NURADN47",
+   "NURADN49",
+   "NURADN6"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19126",
+   "title": "Nursing: ADN - A.S. Degree",
+   "h1": "Nursing: ADN - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3064
+ },
+ {
+  "control_number": "04789",
+  "title": "Nursing: Vocational",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL424",
+   "NURVN403",
+   "NURVN403L",
+   "NURVN405",
+   "NURVN405L",
+   "NURVN407A",
+   "NURVN407B",
+   "NURVN407C",
+   "NURVN409",
+   "NURVN409L",
+   "NURVN411",
+   "NURVN411L",
+   "NURVN413",
+   "NURVN413L",
+   "NURVN415A",
+   "NURVN415B",
+   "NURVN417A",
+   "NURVN417B",
+   "NURVN421",
+   "NURVN421L"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19130",
+   "title": "Nursing: Vocational - A.S. Degree",
+   "h1": "Nursing: Vocational - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 4081
+ },
+ {
+  "control_number": "04792",
+  "title": "Radiologic Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RADTEC10",
+   "RADTEC10L",
+   "RADTEC16",
+   "RADTEC16L",
+   "RADTEC20",
+   "RADTEC20L",
+   "RADTEC25",
+   "RADTEC25L",
+   "RADTEC31",
+   "RADTEC34",
+   "RADTEC34L",
+   "RADTEC41",
+   "RADTEC472",
+   "RADTEC472L",
+   "RADTEC51",
+   "RADTEC55",
+   "RADTEC61",
+   "RADTEC67",
+   "RADTEC67L",
+   "RADTEC71",
+   "RADTEC77",
+   "RADTEC82",
+   "RADTEC85"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19168",
+   "title": "Radiologic Technology - A.S. Degree",
+   "h1": "Radiologic Technology - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 4257
+ },
+ {
+  "control_number": "04794",
+  "title": "Interior Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "ID10",
+   "ID11",
+   "ID12",
+   "ID14",
+   "ID15",
+   "ID16",
+   "ID17",
+   "ID21",
+   "ID22",
+   "ID30",
+   "ID426",
+   "ID45"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19084",
+   "title": "Interior Design - A.S. Degree",
+   "h1": "Interior Design - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2684
+ },
+ {
+  "control_number": "04795",
+  "title": "Fashion Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FASHD20",
+   "FASHD28",
+   "FASHD40",
+   "FASHD42",
+   "FASHD442",
+   "FASHD45",
+   "FASHD470",
+   "FASHD61",
+   "FASHD62",
+   "FASHD65",
+   "FASHD72",
+   "FASHD89",
+   "FASHM10",
+   "FASHM20",
+   "FASHM60"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19034",
+   "title": "Fashion Design - A.S. Degree",
+   "h1": "Fashion Design - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2546
+ },
+ {
+  "control_number": "04797",
+  "title": "Child Development",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDE2",
+   "CDE23",
+   "CDE27",
+   "CDE4",
+   "CDE415",
+   "CDE416",
+   "CDE430A",
+   "CDE50",
+   "CDE7",
+   "CDE8"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18972",
+   "title": "Child Development - A.S. Degree",
+   "h1": "Child Development - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2985
+ },
+ {
+  "control_number": "04798",
+  "title": "Gerontology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GERO11",
+   "GERO18",
+   "GERO22",
+   "GERO23",
+   "GERO400",
+   "PH10"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/geron",
+   "title": "Gerontology - A.S. Degree",
+   "h1": "Gerontology - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2261
+ },
+ {
+  "control_number": "04799",
+  "title": "Hospitality Management: Food Service",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL15",
+   "CUL17",
+   "CUL22",
+   "HOTFS10",
+   "HOTFS14",
+   "HOTFS21",
+   "HOTFS32",
+   "HOTFS428",
+   "HOTFS431",
+   "HOTFS482"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19066",
+   "title": "Hospitality Management: Food Service - A.S. Degree",
+   "h1": "Hospitality Management: Food Service - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2317
+ },
+ {
+  "control_number": "04811",
+  "title": "Correctional Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CJ1",
+   "CJ10",
+   "CJ3",
+   "CJ51",
+   "CJ53",
+   "CJ55",
+   "CJ56",
+   "CJ57",
+   "CJ58",
+   "CJ6",
+   "SOC17"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18996",
+   "title": "Correctional Science - A.S. Degree",
+   "h1": "Correctional Science - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2085
+ },
+ {
+  "control_number": "04815",
+  "title": "Political Economics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "ACCTG1A",
+   "JOUR10",
+   "MATH25",
+   "MATH60",
+   "MATH61",
+   "PS10",
+   "PS21",
+   "PS7",
+   "SOC10",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19152",
+   "title": "Political Economics - A.A. Degree",
+   "h1": "Political Economics - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3061
+ },
+ {
+  "control_number": "04822",
+  "title": "Fashion Merchandising",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSTEC63",
+   "FASHD20",
+   "FASHD28",
+   "FASHD40",
+   "FASHD45",
+   "FASHD89",
+   "FASHM10",
+   "FASHM11",
+   "FASHM12",
+   "FASHM20",
+   "FASHM21",
+   "FASHM60",
+   "PHOTO7"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19038",
+   "title": "Fashion Merchandising - A.S. Degree",
+   "h1": "Fashion Merchandising - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2393
+ },
+ {
+  "control_number": "07371",
+  "title": "Small Business Entrepreneur",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTG435",
+   "ACCTG460",
+   "ACCTGFS442",
+   "ACCTGFS465",
+   "BUS10",
+   "BUS60",
+   "BUS61",
+   "BUS88",
+   "BUSL28A",
+   "BUSL28B",
+   "BUSMGT11",
+   "BUSMGT42",
+   "BUSMGT436",
+   "BUSMGT441",
+   "BUSMGT45",
+   "BUSMGT48",
+   "BUSMKT13",
+   "BUSMKT410",
+   "BUSMKT420",
+   "BUSMKT55",
+   "BUSTEC63"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19184",
+   "title": "Small Business Entrepreneur - A.S. Degree",
+   "h1": "Small Business Entrepreneur - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 3326
+ },
+ {
+  "control_number": "07378",
+  "title": "Industrial Electrical Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "IET400",
+   "IET401A",
+   "IET401B",
+   "IET403A",
+   "IET403B",
+   "IET405",
+   "IET407",
+   "IET411",
+   "IET413",
+   "IET414",
+   "IET415",
+   "IET417",
+   "IET418",
+   "IET420",
+   "IET422",
+   "IET460"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19072",
+   "title": "Industrial Electrical Technology - A.S. Degree",
+   "h1": "Industrial Electrical Technology - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3777
+ },
+ {
+  "control_number": "07382",
+  "title": "CAD Drafting Technician: Mechanical",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAFT20",
+   "DRAFT21",
+   "DRAFT41",
+   "DRAFT43",
+   "DRAFT78",
+   "EGTECH10",
+   "EGTECH30",
+   "PHYS5",
+   "PHYS6"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18964",
+   "title": "CAD Drafting Technician: Mechanical - A.S. Degree",
+   "h1": "CAD Drafting Technician: Mechanical - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2668
+ },
+ {
+  "control_number": "07384",
+  "title": "Nursing VN to RN",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURADN35",
+   "NURADN47",
+   "NURADN49"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19122",
+   "title": "Nursing VN to RN - A.S. Degree",
+   "h1": "Nursing VN to RN - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2833
+ },
+ {
+  "control_number": "07389",
+  "title": "Dietetic Service Supervisor (DSS)/Certified Dietary Manager (CDM)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL15",
+   "CUL17",
+   "HOTFS14",
+   "NF11",
+   "NF15",
+   "NF19",
+   "NF471",
+   "NF471L",
+   "NF472",
+   "NF472L"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19016",
+   "title": "Dietetic Service Supervisor (DSS)/Certified Dietary Manager (CDM) - Certificate of Achievement",
+   "h1": "Dietetic Service Supervisor (DSS)/Certified Dietary Manager (CDM) - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3004
+ },
+ {
+  "control_number": "07398",
+  "title": "Culinary Arts",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL15",
+   "CUL17",
+   "CUL22",
+   "CUL438",
+   "CUL440",
+   "CUL442",
+   "CUL444",
+   "CUL447",
+   "HOTFS10",
+   "HOTFS21",
+   "HOTFS482"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19002",
+   "title": "Culinary Arts - Certificate of Achievement",
+   "h1": "Culinary Arts - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2466
+ },
+ {
+  "control_number": "12211",
+  "title": "Graphic Design for Digital Media",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART10",
+   "ART14",
+   "ARTGD13",
+   "ARTGD63",
+   "ARTGD73",
+   "ARTGD74",
+   "ARTGD82",
+   "ARTGD83",
+   "ARTGD84",
+   "ARTH19",
+   "PHOTO7"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18876",
+   "title": "Graphic Design for Digital Media - A.A. Degree",
+   "h1": "Graphic Design for Digital Media - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1994
+ },
+ {
+  "control_number": "14400",
+  "title": "Real Estate",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1A",
+   "BUSL28A",
+   "BUSL50",
+   "RE410",
+   "RE415",
+   "RE460",
+   "RE470",
+   "RE472",
+   "RE475",
+   "RE486"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19170",
+   "title": "Real Estate - A.S. Degree",
+   "h1": "Real Estate - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2534
+ },
+ {
+  "control_number": "14401",
+  "title": "Supervision",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTGFS465",
+   "BUS10",
+   "BUS60",
+   "BUS61",
+   "BUS88",
+   "BUSL28A",
+   "BUSL28B",
+   "BUSMGT11",
+   "BUSMGT40",
+   "BUSMGT42",
+   "BUSMGT44",
+   "BUSMGT441",
+   "BUSMGT48",
+   "BUSMGT480"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19192",
+   "title": "Supervision - A.S. Degree",
+   "h1": "Supervision - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2479
+ },
+ {
+  "control_number": "15317",
+  "title": "Industrial Electrical Technology Level II",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "IET401A",
+   "IET401B",
+   "IET403A",
+   "IET403B",
+   "IET405",
+   "IET407",
+   "IET411",
+   "IET413",
+   "IET417",
+   "IET420",
+   "IET422",
+   "IET460"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19076",
+   "title": "Industrial Electrical Technology Level II - Certificate of Achievement",
+   "h1": "Industrial Electrical Technology Level II - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2728
+ },
+ {
+  "control_number": "15318",
+  "title": "Microsoft Office",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSTEC400",
+   "BUSTEC40B",
+   "BUSTEC410",
+   "BUSTEC455",
+   "BUSTEC60B",
+   "BUSTEC61",
+   "BUSTEC62",
+   "BUSTEC63",
+   "BUSTEC64"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19112",
+   "title": "Microsoft Office - Certificate of Achievement",
+   "h1": "Microsoft Office - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2017
+ },
+ {
+  "control_number": "15528",
+  "title": "General Automotive Service Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOTEC10",
+   "AUTOTEC15",
+   "AUTOTEC416",
+   "AUTOTEC417",
+   "AUTOTEC418",
+   "AUTOTEC422",
+   "AUTOTEC450",
+   "AUTOTEC455"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19048",
+   "title": "General Automotive Service Technician - Certificate of Achievement",
+   "h1": "General Automotive Service Technician - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2176
+ },
+ {
+  "control_number": "15535",
+  "title": "Network Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15674",
+  "title": "Fire Technology: Professional Firefighter",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMT11",
+   "EMT405",
+   "FIRETEC1",
+   "FIRETEC10",
+   "FIRETEC11",
+   "FIRETEC12",
+   "FIRETEC2",
+   "FIRETEC3",
+   "FIRETEC4",
+   "FIRETEC5",
+   "FIRETEC6",
+   "FIRETEC7",
+   "FIRETEC9"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19046",
+   "title": "Fire Technology: Professional Firefighter - A.S. Degree",
+   "h1": "Fire Technology: Professional Firefighter - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2463
+ },
+ {
+  "control_number": "16802",
+  "title": "Supply Chain Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS10",
+   "BUSMGT13",
+   "BUSMGT14",
+   "BUSMGT436",
+   "BUSMGT48",
+   "BUSMGT480",
+   "BUSMKT402"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19194",
+   "title": "Supply Chain Management - A.S. Degree",
+   "h1": "Supply Chain Management - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2615
+ },
+ {
+  "control_number": "17631",
+  "title": "Paralegal Studies",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "BUSL10",
+   "BUSL28A",
+   "BUSL28B",
+   "BUSL400",
+   "BUSL401",
+   "BUSL402",
+   "BUSL403",
+   "BUSL405",
+   "BUSL406",
+   "BUSL407",
+   "BUSL408",
+   "BUSL409",
+   "BUSL410",
+   "BUSL411",
+   "BUSL412",
+   "BUSL413",
+   "BUSL435",
+   "BUSL50"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19138",
+   "title": "Paralegal Studies - Certificate of Achievement",
+   "h1": "Paralegal Studies - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3776
+ },
+ {
+  "control_number": "18435",
+  "title": "Physical Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.846,
+  "codes_found": [
+   "ASTRON26",
+   "ASTRON35",
+   "CHEM24A",
+   "CHEM24B",
+   "ESC1",
+   "ESC1L",
+   "ESC5",
+   "ESC5L",
+   "GEOG4",
+   "GEOG4L",
+   "GEOL1",
+   "GEOL2",
+   "MATH61",
+   "MATH65A",
+   "MATH65B",
+   "MATH75",
+   "PHYS20A",
+   "PHYS20B",
+   "PHYS44",
+   "PHYS45",
+   "PHYS46",
+   "PHYS47"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/calgetcca",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+   "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 15071
+ },
+ {
+  "control_number": "20675",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTG1B",
+   "ACCTG435",
+   "ACCTG460",
+   "ACCTGFS453",
+   "BUSL28A",
+   "BUSTEC63",
+   "ITIS10",
+   "ITIS16",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18870",
+   "title": "Accounting - Certificate of Achievement",
+   "h1": "Accounting - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2139
+ },
+ {
+  "control_number": "20677",
+  "title": "Business",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTGFS442",
+   "ACCTGFS465",
+   "BUS10",
+   "BUS61",
+   "BUSL28A",
+   "BUSL28B",
+   "BUSMGT11",
+   "BUSMGT40",
+   "BUSMGT42",
+   "BUSMGT436",
+   "BUSMGT44",
+   "BUSMGT441",
+   "BUSMGT466",
+   "BUSMKT40",
+   "BUSMKT410",
+   "BUSMKT420",
+   "BUSMKT55"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20351",
+   "title": "Business - Certificate of Achievement",
+   "h1": "Business - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 2128
+ },
+ {
+  "control_number": "20678",
+  "title": "Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS60",
+   "BUS61",
+   "BUSL28A",
+   "BUSL28B",
+   "BUSMGT11",
+   "BUSMGT40",
+   "BUSMGT42",
+   "BUSMGT436",
+   "BUSMGT44",
+   "BUSMGT441",
+   "BUSMGT45",
+   "BUSMGT48",
+   "BUSMGT480",
+   "BUSMKT40",
+   "BUSMKT420"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19094",
+   "title": "Management - Certificate of Achievement",
+   "h1": "Management - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 1998
+ },
+ {
+  "control_number": "20681",
+  "title": "Small Business Entrepreneur",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTG435",
+   "ACCTG460",
+   "ACCTGFS442",
+   "ACCTGFS465",
+   "BUS61",
+   "BUSL28A",
+   "BUSL28B",
+   "BUSMGT11",
+   "BUSMGT42",
+   "BUSMGT436",
+   "BUSMGT441",
+   "BUSMGT45",
+   "BUSMGT48",
+   "BUSMKT13",
+   "BUSMKT410",
+   "BUSMKT420",
+   "BUSMKT55",
+   "BUSTEC455",
+   "BUSTEC63"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19186",
+   "title": "Small Business Entrepreneur - Certificate of Achievement",
+   "h1": "Small Business Entrepreneur - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 2537
+ },
+ {
+  "control_number": "20682",
+  "title": "Retail Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTGFS465",
+   "BUS88",
+   "BUSMGT11",
+   "BUSMGT40",
+   "BUSMGT42",
+   "BUSMGT44",
+   "BUSMKT40",
+   "ENGLC1000",
+   "ITIS10"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19180",
+   "title": "Retail Management - Certificate of Achievement",
+   "h1": "Retail Management - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2439
+ },
+ {
+  "control_number": "20683",
+  "title": "Supply Chain Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS10",
+   "BUSMGT13",
+   "BUSMGT14",
+   "BUSMGT436",
+   "BUSMGT48",
+   "BUSMGT480",
+   "BUSMKT402"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19196",
+   "title": "Supply Chain Management - Certificate of Achievement",
+   "h1": "Supply Chain Management - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1880
+ },
+ {
+  "control_number": "20684",
+  "title": "Real Estate",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1A",
+   "BUSL28A",
+   "BUSL50",
+   "RE410",
+   "RE415",
+   "RE460",
+   "RE470",
+   "RE472",
+   "RE475",
+   "RE486"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19172",
+   "title": "Real Estate - Certificate of Achievement",
+   "h1": "Real Estate - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2577
+ },
+ {
+  "control_number": "20690",
+  "title": "Professional Administrative Management",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "BUS88",
+   "BUSTEC400",
+   "BUSTEC40B",
+   "BUSTEC410",
+   "BUSTEC452",
+   "BUSTEC455",
+   "BUSTEC460",
+   "BUSTEC470",
+   "BUSTEC471",
+   "BUSTEC50",
+   "BUSTEC60A",
+   "BUSTEC60B",
+   "BUSTEC61",
+   "BUSTEC62",
+   "BUSTEC63",
+   "BUSTEC64"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19156",
+   "title": "Professional Administrative Management - Certificate of Achievement",
+   "h1": "Professional Administrative Management - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2577
+ },
+ {
+  "control_number": "20691",
+  "title": "Graphic Design for Digital Media",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTGD13",
+   "ARTGD63",
+   "ARTGD73",
+   "ARTGD74",
+   "ARTGD82",
+   "ARTGD83",
+   "ARTGD84"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18878",
+   "title": "Graphic Design for Digital Media - Certificate of Achievement",
+   "h1": "Graphic Design for Digital Media - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1502
+ },
+ {
+  "control_number": "20697",
+  "title": "Computer Information Systems",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 38,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20700",
+  "title": "Industrial Electrical Technology Level III",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "IET400",
+   "IET401A",
+   "IET401B",
+   "IET403A",
+   "IET403B",
+   "IET405",
+   "IET407",
+   "IET411",
+   "IET413",
+   "IET414",
+   "IET415",
+   "IET417",
+   "IET418",
+   "IET420",
+   "IET422",
+   "IET460"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19078",
+   "title": "Industrial Electrical Technology Level III - Certificate of Achievement",
+   "h1": "Industrial Electrical Technology Level III - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3161
+ },
+ {
+  "control_number": "20708",
+  "title": "Master Automotive Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOTEC10",
+   "AUTOTEC15",
+   "AUTOTEC416",
+   "AUTOTEC417",
+   "AUTOTEC418",
+   "AUTOTEC422",
+   "AUTOTEC427",
+   "AUTOTEC429",
+   "AUTOTEC432",
+   "AUTOTEC450",
+   "AUTOTEC455"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19100",
+   "title": "Master Automotive Technician - Certificate of Achievement",
+   "h1": "Master Automotive Technician - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2827
+ },
+ {
+  "control_number": "20711",
+  "title": "Airframe",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AMT15A",
+   "AMT15C",
+   "AMT39A",
+   "AMT39B"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18948",
+   "title": "Airframe - Certificate of Achievement",
+   "h1": "Airframe - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2139
+ },
+ {
+  "control_number": "20714",
+  "title": "CAD Drafting Technician: Architectural",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAFT20",
+   "DRAFT21",
+   "DRAFT50",
+   "DRAFT51",
+   "EGTECH10"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18962",
+   "title": "CAD Drafting Technician: Architectural - Certificate of Achievement",
+   "h1": "CAD Drafting Technician: Architectural - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2306
+ },
+ {
+  "control_number": "20715",
+  "title": "CAD Drafting Technician: Mechanical",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAFT20",
+   "DRAFT21",
+   "DRAFT41",
+   "DRAFT43",
+   "DRAFT78",
+   "EGTECH10",
+   "EGTECH30"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18966",
+   "title": "CAD Drafting Technician: Mechanical - Certificate of Achievement",
+   "h1": "CAD Drafting Technician: Mechanical - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2812
+ },
+ {
+  "control_number": "20716",
+  "title": "Photography",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHOTO1",
+   "PHOTO10",
+   "PHOTO12",
+   "PHOTO13",
+   "PHOTO20",
+   "PHOTO429",
+   "PHOTO430",
+   "PHOTO436",
+   "PHOTO438",
+   "PHOTO439",
+   "PHOTO50",
+   "PHOTO7",
+   "PHOTO9"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20705",
+   "title": "Photography - Certificate of Achievement",
+   "h1": "Photography - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2182
+ },
+ {
+  "control_number": "20722",
+  "title": "Nursing: Vocational",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL424",
+   "NURVN403",
+   "NURVN403L",
+   "NURVN405",
+   "NURVN405L",
+   "NURVN407A",
+   "NURVN407B",
+   "NURVN407C",
+   "NURVN409",
+   "NURVN409L",
+   "NURVN411",
+   "NURVN411L",
+   "NURVN413",
+   "NURVN413L",
+   "NURVN415A",
+   "NURVN415B",
+   "NURVN417A",
+   "NURVN417B",
+   "NURVN421",
+   "NURVN421L"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19128",
+   "title": "Nursing: Vocational - Certificate of Achievement",
+   "h1": "Nursing: Vocational - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 4096
+ },
+ {
+  "control_number": "20726",
+  "title": "Interior Design",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "ID10",
+   "ID11",
+   "ID12",
+   "ID14",
+   "ID15",
+   "ID16",
+   "ID17",
+   "ID21",
+   "ID22",
+   "ID30",
+   "ID426",
+   "ID45"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19082",
+   "title": "Interior Design - Certificate of Achievement",
+   "h1": "Interior Design - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3132
+ },
+ {
+  "control_number": "20729",
+  "title": "Fashion Design",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FASHD20",
+   "FASHD28",
+   "FASHD40",
+   "FASHD42",
+   "FASHD442",
+   "FASHD45",
+   "FASHD470",
+   "FASHD61",
+   "FASHD62",
+   "FASHD65",
+   "FASHD72",
+   "FASHD89",
+   "FASHM10",
+   "FASHM20",
+   "FASHM60"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19036",
+   "title": "Fashion Design - Certificate of Achievement",
+   "h1": "Fashion Design - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2333
+ },
+ {
+  "control_number": "20730",
+  "title": "Fashion Merchandising",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSTEC63",
+   "FASHD20",
+   "FASHD28",
+   "FASHD40",
+   "FASHD45",
+   "FASHD89",
+   "FASHM10",
+   "FASHM11",
+   "FASHM12",
+   "FASHM20",
+   "FASHM21",
+   "FASHM60",
+   "PHOTO7"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19040",
+   "title": "Fashion Merchandising - Certificate of Achievement",
+   "h1": "Fashion Merchandising - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2012
+ },
+ {
+  "control_number": "20732",
+  "title": "Nutrition and Food",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMSTD8",
+   "CUL15",
+   "KINLEC16",
+   "NF15",
+   "NF22",
+   "NF27"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19132",
+   "title": "Nutrition and Food - Certificate of Achievement",
+   "h1": "Nutrition and Food - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1696
+ },
+ {
+  "control_number": "20733",
+  "title": "Hospitality Management: Food Service",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL15",
+   "CUL17",
+   "CUL22",
+   "HOTFS10",
+   "HOTFS14",
+   "HOTFS21",
+   "HOTFS32",
+   "HOTFS428",
+   "HOTFS431",
+   "HOTFS482"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19064",
+   "title": "Hospitality Management: Food Service - Certificate of Achievement",
+   "h1": "Hospitality Management: Food Service - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2512
+ },
+ {
+  "control_number": "20735",
+  "title": "Hospitality Management: Hotel Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL15",
+   "HOTFS10",
+   "HOTFS14",
+   "HOTFS21",
+   "HOTFS32",
+   "HOTFS42",
+   "HOTFS428",
+   "HOTFS431",
+   "HOTFS482"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19070",
+   "title": "Hospitality Management: Hotel Management - Certificate of Achievement",
+   "h1": "Hospitality Management: Hotel Management - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2148
+ },
+ {
+  "control_number": "20736",
+  "title": "Gerontology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "GERO18",
+   "GERO22",
+   "GERO24"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19056",
+   "title": "Gerontology - Certificate of Achievement",
+   "h1": "Gerontology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1899
+ },
+ {
+  "control_number": "20737",
+  "title": "Criminal Justice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CJ1",
+   "CJ2",
+   "CJ4",
+   "CJ5",
+   "CJ51",
+   "CJ55",
+   "CJ6",
+   "CJ7",
+   "CJ9",
+   "SOC17"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18998",
+   "title": "Criminal Justice - Certificate of Achievement",
+   "h1": "Criminal Justice - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2647
+ },
+ {
+  "control_number": "20738",
+  "title": "Correctional Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CJ1",
+   "CJ10",
+   "CJ3",
+   "CJ51",
+   "CJ53",
+   "CJ55",
+   "CJ56",
+   "CJ57",
+   "CJ58",
+   "CJ6",
+   "SOC17"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18994",
+   "title": "Correctional Science - Certificate of Achievement",
+   "h1": "Correctional Science - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2123
+ },
+ {
+  "control_number": "20739",
+  "title": "Fire Technology: Professional Firefighter",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMT11",
+   "EMT405",
+   "FIRETEC1",
+   "FIRETEC10",
+   "FIRETEC11",
+   "FIRETEC12",
+   "FIRETEC2",
+   "FIRETEC3",
+   "FIRETEC4",
+   "FIRETEC5",
+   "FIRETEC6",
+   "FIRETEC7",
+   "FIRETEC9"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19044",
+   "title": "Fire Technology: Professional Firefighter - Certificate of Achievement",
+   "h1": "Fire Technology: Professional Firefighter - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2219
+ },
+ {
+  "control_number": "30502",
+  "title": "IGETC: UC or CSU",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30503",
+  "title": "CSU-GE",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30544",
+  "title": "American Sign Language Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO1",
+   "ASL1",
+   "ASL18",
+   "ASL2",
+   "ASL21",
+   "ASL22",
+   "ASL3",
+   "ASL4",
+   "COMSTD14",
+   "COMSTD74",
+   "ED10",
+   "ED10W",
+   "PHIL72",
+   "PHIL76",
+   "PSYCH65",
+   "SOC10"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20422",
+   "title": "American Sign Language Studies - A.A. Degree",
+   "h1": "American Sign Language Studies - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2498
+ },
+ {
+  "control_number": "30658",
+  "title": "General Automotive Service Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOTEC10",
+   "AUTOTEC15",
+   "AUTOTEC416",
+   "AUTOTEC417",
+   "AUTOTEC418",
+   "AUTOTEC422",
+   "AUTOTEC450",
+   "AUTOTEC455"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19050",
+   "title": "General Automotive Service Technician - A.S. Degree",
+   "h1": "General Automotive Service Technician - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2336
+ },
+ {
+  "control_number": "30702",
+  "title": "Communication Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO3",
+   "COMMC1000",
+   "COMSTD12",
+   "COMSTD14",
+   "COMSTD4",
+   "COMSTD6",
+   "COMSTD72",
+   "COMSTD74",
+   "COMSTD76",
+   "COMSTD78",
+   "COMSTD8",
+   "JOUR10",
+   "JOUR30",
+   "PHOTO10",
+   "PSYCC1000",
+   "SOC10"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18882",
+   "title": "Communication Studies 2.0 for Transfer - AA-T Degree",
+   "h1": "Communication Studies 2.0 for Transfer - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3703
+ },
+ {
+  "control_number": "30717",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH65A",
+   "MATH65B",
+   "MATH75",
+   "MATH81",
+   "MATH85"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/math",
+   "title": "Mathematics 2.0 for Transfer - AS-T Degree",
+   "h1": "Mathematics 2.0 for Transfer - AS-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2685
+ },
+ {
+  "control_number": "30941",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM24A",
+   "CHEM24B",
+   "GEOL1",
+   "GEOL2",
+   "MATH65A",
+   "MATH65B"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18928",
+   "title": "Geology for Transfer - AS-T Degree",
+   "h1": "Geology for Transfer - AS-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2992
+ },
+ {
+  "control_number": "31115",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYCC1000",
+   "PSYCH20",
+   "PSYCH25",
+   "PSYCH41",
+   "PSYCH5",
+   "PSYCH55",
+   "PSYCH65",
+   "PSYCH80"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18904",
+   "title": "Psychology for Transfer - AA-T Degree",
+   "h1": "Psychology for Transfer - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2981
+ },
+ {
+  "control_number": "31204",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO3",
+   "PSYCH65",
+   "SOC10",
+   "SOC14",
+   "SOC15",
+   "SOC16",
+   "SOC17",
+   "SOC18",
+   "SOC30",
+   "SOC32",
+   "SOC33",
+   "SOC70",
+   "SOC80",
+   "STATC1000",
+   "SWHS13"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18908",
+   "title": "Sociology for Transfer - AA-T Degree",
+   "h1": "Sociology for Transfer - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3841
+ },
+ {
+  "control_number": "31248",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CJ1",
+   "CJ2",
+   "CJ3",
+   "CJ4",
+   "CJ5",
+   "CJ51",
+   "CJ6",
+   "CJ7",
+   "CJ9",
+   "PSYCC1000",
+   "SOC10",
+   "SOC17",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18916",
+   "title": "Administration of Justice for Transfer - AS-T Degree",
+   "h1": "Administration of Justice for Transfer - AS-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3548
+ },
+ {
+  "control_number": "31337",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.556,
+  "codes_found": [
+   "THEATRE1",
+   "THEATRE10",
+   "THEATRE12",
+   "THEATRE30",
+   "THEATRE31",
+   "THEATRE32",
+   "THEATRE4",
+   "THEATRE40",
+   "THEATRE42",
+   "THEATRE7"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18914",
+   "title": "Theatre Arts for Transfer - AA-T Degree",
+   "h1": "Theatre Arts for Transfer - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3388
+ },
+ {
+  "control_number": "31657",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.96,
+  "codes_found": [
+   "COMSTD14",
+   "ENGL20",
+   "ENGL32",
+   "ENGL33",
+   "ENGL35",
+   "ENGL68",
+   "ENGL70A",
+   "ENGL70B",
+   "ENGL73",
+   "ENGL74",
+   "ENGL75A",
+   "ENGL75B",
+   "ENGL76",
+   "ENGL77",
+   "ENGL79",
+   "ENGL7A",
+   "ENGL7B",
+   "ENGL7D",
+   "ENGL7E",
+   "ENGL80A",
+   "ENGL80B",
+   "ENGL81",
+   "ENGLC1001",
+   "JOUR10"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18888",
+   "title": "English for Transfer - AA-T Degree",
+   "h1": "English for Transfer - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4118
+ },
+ {
+  "control_number": "31873",
+  "title": "Engineering Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM10",
+   "CHEM24A",
+   "DRAFT20",
+   "DRAFT21",
+   "DRAFT41",
+   "DRAFT43",
+   "DRAFT78",
+   "EGTECH10",
+   "EGTECH12",
+   "EGTECH14",
+   "EGTECH30",
+   "PHYS20A",
+   "PHYS5",
+   "PHYS6"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19030",
+   "title": "Engineering Technology - Certificate of Achievement",
+   "h1": "Engineering Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3644
+ },
+ {
+  "control_number": "31876",
+  "title": "Engineering Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM24A",
+   "DRAFT20",
+   "DRAFT21",
+   "DRAFT41",
+   "DRAFT43",
+   "DRAFT78",
+   "EGTECH10",
+   "EGTECH12",
+   "EGTECH14",
+   "EGTECH30",
+   "PHYS20A"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19028",
+   "title": "Engineering Technology - A.S. Degree",
+   "h1": "Engineering Technology - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3553
+ },
+ {
+  "control_number": "31877",
+  "title": "Chinese Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTH11",
+   "CHIN1",
+   "CHIN18",
+   "CHIN2",
+   "CHIN3",
+   "CHIN4",
+   "ENGL74",
+   "HIST10"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18974",
+   "title": "Chinese Studies - A.A. Degree",
+   "h1": "Chinese Studies - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2081
+ },
+ {
+  "control_number": "31891",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "HIST1",
+   "HIST10",
+   "HIST12",
+   "HIST16",
+   "HIST19",
+   "HIST2",
+   "HIST20",
+   "HIST21",
+   "HIST25",
+   "HIST37",
+   "HIST4",
+   "HIST40",
+   "HIST5",
+   "HIST6",
+   "HIST7",
+   "HIST9",
+   "HUMAN5",
+   "HUMAN6"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18892",
+   "title": "History for Transfer - AA-T Degree",
+   "h1": "History for Transfer - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 4241
+ },
+ {
+  "control_number": "31999",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDE1",
+   "CDE2",
+   "CDE27",
+   "CDE28",
+   "CDE28W",
+   "CDE3",
+   "CDE4",
+   "CDE5",
+   "CDE6"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18922",
+   "title": "Early Childhood Education for Transfer - AS-T Degree",
+   "h1": "Early Childhood Education for Transfer - AS-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2927
+ },
+ {
+  "control_number": "32073",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.55,
+  "codes_found": [
+   "ANTHRO3",
+   "GEOG1",
+   "GEOG11",
+   "GEOG12",
+   "GEOG2",
+   "GEOG3",
+   "GEOG4",
+   "GEOG4L",
+   "GEOG55",
+   "GEOG6",
+   "GEOL1"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18890",
+   "title": "Geography for Transfer - AA-T Degree",
+   "h1": "Geography for Transfer - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3621
+ },
+ {
+  "control_number": "32166",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "ANTHRO1",
+   "ANTHRO1L",
+   "ANTHRO2",
+   "ANTHRO3",
+   "ANTHRO5",
+   "BIOL20",
+   "COMSTD74",
+   "ESC1",
+   "ESC1L",
+   "GEOG1",
+   "GEOG11",
+   "GEOL1",
+   "HIST1",
+   "PHIL80",
+   "SOC10",
+   "SOC15",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20313",
+   "title": "Anthropology for Transfer - AA-T Degree",
+   "h1": "Anthropology for Transfer - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3867
+ },
+ {
+  "control_number": "32183",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HIST5",
+   "HIST6",
+   "PHIL70",
+   "PHIL71",
+   "PHIL72",
+   "PHIL73",
+   "PHIL75",
+   "PHIL76",
+   "PHIL77",
+   "PHIL78",
+   "PHIL79",
+   "PHIL80",
+   "PHIL81",
+   "PHIL82"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18900",
+   "title": "Philosophy for Transfer - AA-T Degree",
+   "h1": "Philosophy for Transfer - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3655
+ },
+ {
+  "control_number": "32344",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.867,
+  "codes_found": [
+   "ART10",
+   "ART12",
+   "ART14",
+   "ART16",
+   "ART18",
+   "ART20",
+   "ART30",
+   "ARTH11",
+   "ARTH19",
+   "ARTH7",
+   "ARTH9",
+   "PHOTO10",
+   "PHOTO7"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18880",
+   "title": "Art History for Transfer - AA-T Degree",
+   "h1": "Art History for Transfer - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3743
+ },
+ {
+  "control_number": "32347",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH65A",
+   "MATH65B",
+   "MATH75",
+   "PHYS45",
+   "PHYS46",
+   "PHYS47"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/physics",
+   "title": "Physics 2.0 for Transfer - AS-T Degree",
+   "h1": "Physics 2.0 for Transfer - AS-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3081
+ },
+ {
+  "control_number": "32504",
+  "title": "Journalism",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.867,
+  "codes_found": [
+   "COMSTD12",
+   "COMSTD72",
+   "COMSTD8",
+   "ENGLC1001",
+   "JOUR10",
+   "JOUR11",
+   "JOUR30",
+   "JOUR31",
+   "PHIL75",
+   "PHOTO10",
+   "POLSC1000",
+   "PS10",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18894",
+   "title": "Journalism for Transfer - AA-T Degree",
+   "h1": "Journalism for Transfer - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3104
+ },
+ {
+  "control_number": "32748",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "COMPSCI1",
+   "COMPSCI2",
+   "COMPSCI3",
+   "COMPSCI4",
+   "COMPSCI6",
+   "MATH65A",
+   "MATH65B",
+   "PHYS45",
+   "PHYS46"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18920",
+   "title": "Computer Science for Transfer - AS-T Degree",
+   "h1": "Computer Science for Transfer - AS-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3137
+ },
+ {
+  "control_number": "32996",
+  "title": "Airframe and Powerplant Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AMT15A",
+   "AMT15C",
+   "AMT29A",
+   "AMT29B",
+   "AMT39A",
+   "AMT39B"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18946",
+   "title": "Airframe and Powerplant Technician - Certificate of Achievement",
+   "h1": "Airframe and Powerplant Technician - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2712
+ },
+ {
+  "control_number": "33193",
+  "title": "Television and Video Picture Production",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BRDCAST3",
+   "BRDCAST60",
+   "BRDCAST62",
+   "BRDCAST74",
+   "CINEMA20",
+   "CINEMA80",
+   "CINEMA96"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19200",
+   "title": "Television and Video Production - Certificate of Achievement",
+   "h1": "Television and Video Production - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 7,
+  "text_chars": 2157
+ },
+ {
+  "control_number": "33194",
+  "title": "Post Production Editing",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BRDCAST60",
+   "BRDCAST70",
+   "BRDCAST74",
+   "CINEMA22",
+   "CINEMA25",
+   "CINEMA26",
+   "CINEMA30",
+   "CINEMA96"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19154",
+   "title": "Post Production Editing - Certificate of Achievement",
+   "h1": "Post Production Editing - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2071
+ },
+ {
+  "control_number": "33195",
+  "title": "Motion Picture Production",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BRDCAST70",
+   "BRDCAST74",
+   "CINEMA20",
+   "CINEMA26",
+   "CINEMA30",
+   "CINEMA80",
+   "CINEMA96"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19116",
+   "title": "Motion Picture Production - Certificate of Achievement",
+   "h1": "Motion Picture Production - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2267
+ },
+ {
+  "control_number": "33201",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTG1B",
+   "BUS88",
+   "ECON1",
+   "ECON8",
+   "ITIS10",
+   "MATH60",
+   "MATH65A",
+   "MATH65B",
+   "MATH75",
+   "MATH81",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18884",
+   "title": "Economics for Transfer - AA-T Degree",
+   "h1": "Economics for Transfer - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3528
+ },
+ {
+  "control_number": "33226",
+  "title": "Screenwriting",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA20",
+   "CINEMA22",
+   "CINEMA25",
+   "CINEMA26",
+   "CINEMA30",
+   "CINEMA96"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19182",
+   "title": "Screenwriting - Certificate of Achievement",
+   "h1": "Screenwriting - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2066
+ },
+ {
+  "control_number": "33227",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL77",
+   "SPAN1",
+   "SPAN13",
+   "SPAN14",
+   "SPAN2",
+   "SPAN3",
+   "SPAN3SS",
+   "SPAN4",
+   "SPAN4SS",
+   "SPAN9"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18910",
+   "title": "Spanish for Transfer - AA-T Degree",
+   "h1": "Spanish for Transfer - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3085
+ },
+ {
+  "control_number": "33231",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL20",
+   "BIOL22",
+   "CHEM24A",
+   "KINACT1",
+   "KINACT20",
+   "KINACT22",
+   "KINACT24",
+   "KINACT25",
+   "KINACT26",
+   "KINACT28A",
+   "KINACT29A",
+   "KINACT31",
+   "KINACT32A",
+   "KINACT35",
+   "KINACT3A",
+   "KINACT5A",
+   "KINACT6",
+   "KINACT9",
+   "KINLEC16",
+   "KINLEC18",
+   "PHYS20A",
+   "PHYS45",
+   "SCSCI10",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18896",
+   "title": "Kinesiology for Transfer - AA-T Degree",
+   "h1": "Kinesiology for Transfer - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 4121
+ },
+ {
+  "control_number": "33233",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC35",
+   "MUSIC36",
+   "MUSIC37",
+   "MUSIC5",
+   "MUSIC58",
+   "MUSIC6",
+   "MUSIC7",
+   "MUSIC75",
+   "MUSIC76",
+   "MUSIC77",
+   "MUSIC78",
+   "MUSIC9"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/music",
+   "title": "Music for Transfer - AA-T Degree",
+   "h1": "Music for Transfer - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3798
+ },
+ {
+  "control_number": "33239",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.905,
+  "codes_found": [
+   "ART10",
+   "ART12",
+   "ART14",
+   "ART15",
+   "ART16",
+   "ART18",
+   "ART20",
+   "ART30",
+   "ART32",
+   "ART34",
+   "ART35",
+   "ART50",
+   "ARTGD63",
+   "ARTGD73",
+   "ARTH11",
+   "ARTH7",
+   "ARTH9",
+   "PHOTO10",
+   "PHOTO7"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18912",
+   "title": "Studio Arts for Transfer - AA-T Degree",
+   "h1": "Studio Arts for Transfer - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3790
+ },
+ {
+  "control_number": "33737",
+  "title": "On-Air Radio Production",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BRDCAST3",
+   "BRDCAST55",
+   "CINEMA80",
+   "CINEMA96"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19134",
+   "title": "On-Air Radio Production - Certificate of Achievement",
+   "h1": "On-Air Radio Production - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2033
+ },
+ {
+  "control_number": "35060",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL40",
+   "BIOL42",
+   "BIOL42L",
+   "BIOL44",
+   "CHEM24A",
+   "CHEM24B",
+   "MATH65A",
+   "PHYS20A",
+   "PHYS20B",
+   "PHYS35",
+   "PHYS36"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20327",
+   "title": "Biology for Transfer - AS-T Degree",
+   "h1": "Biology for Transfer - AS-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2591
+ },
+ {
+  "control_number": "35069",
+  "title": "Professional Office Skills",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSTEC40A",
+   "BUSTEC455",
+   "BUSTEC63",
+   "COMSTD74",
+   "GUID3"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19164",
+   "title": "Professional Office Skills - Certificate of Achievement",
+   "h1": "Professional Office Skills - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1763
+ },
+ {
+  "control_number": "35466",
+  "title": "Emergency Medical Provider",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL424",
+   "BIOL424L",
+   "EMT11",
+   "EMT405",
+   "FIRETEC12",
+   "HS30"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19022",
+   "title": "Emergency Medical Provider - Certificate of Achievement",
+   "h1": "Emergency Medical Provider - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2009
+ },
+ {
+  "control_number": "35467",
+  "title": "Business Information Worker (BIW) Stage One",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSMGT44",
+   "BUSTEC40A",
+   "BUSTEC455",
+   "BUSTEC470",
+   "BUSTEC63",
+   "ITIS10",
+   "ITIS14"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18958",
+   "title": "Business Information Worker (BIW) Stage One - Certificate of Achievement",
+   "h1": "Business Information Worker (BIW) Stage One - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2162
+ },
+ {
+  "control_number": "35468",
+  "title": "Fire Prevention Inspector",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRETEC12",
+   "FIRETEC2",
+   "FIRETEC3",
+   "FIRETEC4",
+   "FIRETEC420",
+   "FIRETEC421",
+   "FIRETEC422",
+   "FIRETEC423"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19042",
+   "title": "Fire Prevention Inspector - Certificate of Achievement",
+   "h1": "Fire Prevention Inspector - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2807
+ },
+ {
+  "control_number": "35760",
+  "title": "Microsoft Excel",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1A",
+   "BUSTEC400",
+   "BUSTEC40B",
+   "BUSTEC452",
+   "BUSTEC50",
+   "BUSTEC60A",
+   "BUSTEC61",
+   "BUSTEC63",
+   "BUSTEC64"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19110",
+   "title": "Microsoft Excel - Certificate of Achievement",
+   "h1": "Microsoft Excel - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1739
+ },
+ {
+  "control_number": "35762",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL20",
+   "BIOL22",
+   "BIOL23",
+   "BIOL23L",
+   "CHEM24A",
+   "CHEM75A",
+   "CUL17",
+   "NF15",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/nutr",
+   "title": "Nutrition and Dietetics for Transfer - AS-T Degree",
+   "h1": "Nutrition and Dietetics for Transfer - AS-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3166
+ },
+ {
+  "control_number": "35816",
+  "title": "Business Information Worker (BIW) Stage Two",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG460",
+   "BUSTEC40B",
+   "BUSTEC471",
+   "BUSTEC50",
+   "BUSTEC60B",
+   "BUSTEC61",
+   "BUSTEC64"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18960",
+   "title": "Business Information Worker (BIW) Stage Two - Certificate of Achievement",
+   "h1": "Business Information Worker (BIW) Stage Two - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2429
+ },
+ {
+  "control_number": "35819",
+  "title": "Global Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTGFS465",
+   "BUS10",
+   "BUS60",
+   "BUS61",
+   "BUS88",
+   "BUSL28A",
+   "BUSL410",
+   "BUSMGT436",
+   "BUSMGT45",
+   "BUSMKT405",
+   "BUSMKT410",
+   "BUSMKT55"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19088",
+   "title": "Global Business - A.S. Degree",
+   "h1": "Global Business - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2468
+ },
+ {
+  "control_number": "35827",
+  "title": "Social Justice Studies, General",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "ENGL73",
+   "ENGL74",
+   "ENGL76",
+   "ENGL77",
+   "ENGL79",
+   "HIST12",
+   "HIST19",
+   "SOC15",
+   "SOC30",
+   "SOC32",
+   "SOC33",
+   "SOC80",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18906",
+   "title": "Social Justice Studies for Transfer - AA-T Degree",
+   "h1": "Social Justice Studies for Transfer - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 14,
+  "text_chars": 5078
+ },
+ {
+  "control_number": "35949",
+  "title": "Pathway to Law School",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.867,
+  "codes_found": [
+   "BUSL10",
+   "COMSTD72",
+   "ENGLC1000",
+   "ENGLC1001",
+   "HIST12",
+   "HIST16",
+   "HIST19",
+   "HIST20",
+   "HIST21",
+   "HIST25",
+   "PHIL76",
+   "POLSC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19140",
+   "title": "Pathway to Law School - Certificate of Achievement",
+   "h1": "Pathway to Law School - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3979
+ },
+ {
+  "control_number": "35999",
+  "title": "Programming Foundations",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMPSCI5",
+   "ITIS10",
+   "ITIS30",
+   "ITIS82",
+   "ITIS84"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19166",
+   "title": "Programming Foundations - Certificate of Achievement",
+   "h1": "Programming Foundations - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1582
+ },
+ {
+  "control_number": "36000",
+  "title": "Facilities Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTGFS465",
+   "BUS10",
+   "BUS60",
+   "BUS88",
+   "BUSL28A",
+   "BUSMGT40",
+   "BUSMGT44",
+   "BUSMGT466",
+   "BUSMGT470"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19032",
+   "title": "Facilities Management - A.S. Degree",
+   "h1": "Facilities Management - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2357
+ },
+ {
+  "control_number": "36090",
+  "title": "Global Business",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS61",
+   "BUSL410",
+   "BUSMGT436",
+   "BUSMGT45",
+   "BUSMKT402",
+   "BUSMKT405",
+   "BUSMKT410",
+   "BUSMKT55"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20343",
+   "title": "Global Business - Certificate of Achievement",
+   "h1": "Global Business - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1803
+ },
+ {
+  "control_number": "36201",
+  "title": "Film, Television and Electronic Media",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "BRDCAST3",
+   "BRDCAST55",
+   "BRDCAST60",
+   "BRDCAST62",
+   "BRDCAST67",
+   "BRDCAST70",
+   "BRDCAST74",
+   "CINEMA22",
+   "CINEMA25",
+   "CINEMA26",
+   "CINEMA30",
+   "CINEMA96",
+   "COMSTD12"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18926",
+   "title": "Film, Television and Electronic Media for Transfer - AS-T Degree",
+   "h1": "Film, Television and Electronic Media for Transfer - AS-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3871
+ },
+ {
+  "control_number": "36238",
+  "title": "Paralegal Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "BUSL10",
+   "BUSL28A",
+   "BUSL28B",
+   "BUSL400",
+   "BUSL401",
+   "BUSL402",
+   "BUSL403",
+   "BUSL405",
+   "BUSL406",
+   "BUSL407",
+   "BUSL408",
+   "BUSL409",
+   "BUSL410",
+   "BUSL411",
+   "BUSL412",
+   "BUSL413",
+   "BUSL435",
+   "BUSL50"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19136",
+   "title": "Paralegal Studies - A.S. Degree",
+   "h1": "Paralegal Studies - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3761
+ },
+ {
+  "control_number": "36239",
+  "title": "Hospitality Management: Hotel Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL15",
+   "HOTFS10",
+   "HOTFS14",
+   "HOTFS21",
+   "HOTFS32",
+   "HOTFS42",
+   "HOTFS428",
+   "HOTFS431",
+   "HOTFS482"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19068",
+   "title": "Hospitality Management: Hotel Management - A.S. Degree",
+   "h1": "Hospitality Management: Hotel Management - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2334
+ },
+ {
+  "control_number": "36339",
+  "title": "Computer Game Development",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISGAME2",
+   "CISGAME403",
+   "CISGAME420",
+   "ITIS10"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18986",
+   "title": "Computer Game Development - Certificate of Achievement",
+   "h1": "Computer Game Development - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1281
+ },
+ {
+  "control_number": "36340",
+  "title": "Professional Baking and Patisserie",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL15",
+   "CUL17",
+   "CUL22",
+   "CUL440",
+   "CUL441",
+   "CUL443",
+   "CUL445",
+   "CUL446",
+   "CUL447",
+   "HOTFS10"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19162",
+   "title": "Professional Baking and Patisserie - Certificate of Achievement",
+   "h1": "Professional Baking and Patisserie - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3107
+ },
+ {
+  "control_number": "36354",
+  "title": "Culinary Arts",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL17",
+   "CUL22",
+   "CUL438",
+   "CUL440",
+   "CUL444",
+   "CUL447",
+   "HOTFS10",
+   "HOTFS21"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19000",
+   "title": "Culinary Arts - A.S. Degree",
+   "h1": "Culinary Arts - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2390
+ },
+ {
+  "control_number": "36474",
+  "title": "Facilities Management",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTGFS465",
+   "BUS10",
+   "BUS88",
+   "BUSL28A",
+   "BUSMGT40",
+   "BUSMGT44",
+   "BUSMGT466",
+   "BUSMGT470",
+   "ENGLC1000"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20339",
+   "title": "Facilities Management - Certificate of Achievement",
+   "h1": "Facilities Management - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2137
+ },
+ {
+  "control_number": "36475",
+  "title": "Community Caregiver",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "GERO11",
+   "GERO22",
+   "GERO400",
+   "GERO455"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18980",
+   "title": "Community Caregiver - Certificate of Achievement",
+   "h1": "Community Caregiver - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1840
+ },
+ {
+  "control_number": "36493",
+  "title": "Microsoft Word",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSTEC40B",
+   "BUSTEC455"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19114",
+   "title": "Microsoft Word - Certificate of Achievement",
+   "h1": "Microsoft Word - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1670
+ },
+ {
+  "control_number": "36531",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "POLSC1000",
+   "PS10",
+   "PS2",
+   "PS21",
+   "PS3",
+   "PS32",
+   "PS4",
+   "PS7",
+   "PSYCH80",
+   "SOC80",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18902",
+   "title": "Political Science for Transfer - AA-T Degree",
+   "h1": "Political Science for Transfer - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3494
+ },
+ {
+  "control_number": "36629",
+  "title": "Physical Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 136,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36678",
+  "title": "Heating, Ventilation, Air Conditioning and Refrigeration Level 1",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HVACR600",
+   "HVACR601",
+   "HVACR602",
+   "HVACR604",
+   "HVACR605",
+   "HVACR606",
+   "HVACR612"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19058",
+   "title": "Heating, Ventilation, Air Conditioning and Refrigeration Level I - Noncredit Certificate of Completion",
+   "h1": "Heating, Ventilation, Air Conditioning and Refrigeration Level I - Noncredit Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1813
+ },
+ {
+  "control_number": "36771",
+  "title": "Computer Support Technician (A+ Certification Preparation)",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36856",
+  "title": "Social Media Support Specialist",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36885",
+  "title": "Aircraft Electrical and Avionics Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AMT15A",
+   "AMT15C",
+   "AMT39A",
+   "AMT39B",
+   "AMT400"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18874",
+   "title": "Aircraft Electrical and Avionics Technician - Certificate of Achievement",
+   "h1": "Aircraft Electrical and Avionics Technician - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2239
+ },
+ {
+  "control_number": "36903",
+  "title": "Technical Theatre",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.556,
+  "codes_found": [
+   "THEATRE30",
+   "THEATRE31",
+   "THEATRE32",
+   "THEATRE40",
+   "THEATRE42"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19198",
+   "title": "Technical Theatre - Certificate of Achievement",
+   "h1": "Technical Theatre - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1803
+ },
+ {
+  "control_number": "37118",
+  "title": "Dental Assisting",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DENTAL405",
+   "DENTAL415",
+   "DENTAL415L",
+   "DENTAL425",
+   "DENTAL425L",
+   "DENTAL435",
+   "DENTAL435L",
+   "DENTAL445",
+   "DENTAL445L",
+   "DENTAL455",
+   "DENTAL455L",
+   "DENTAL460",
+   "DENTAL465",
+   "DENTAL465L",
+   "DENTAL475",
+   "DENTAL475L",
+   "DENTAL480",
+   "DENTAL480L",
+   "DENTAL490",
+   "DENTAL490L"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19014",
+   "title": "Dental Assisting - Certificate of Achievement",
+   "h1": "Dental Assisting - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3768
+ },
+ {
+  "control_number": "37119",
+  "title": "Dental Assisting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DENTAL405",
+   "DENTAL415",
+   "DENTAL415L",
+   "DENTAL425",
+   "DENTAL425L",
+   "DENTAL435",
+   "DENTAL435L",
+   "DENTAL445",
+   "DENTAL445L",
+   "DENTAL455",
+   "DENTAL455L",
+   "DENTAL460",
+   "DENTAL465",
+   "DENTAL465L",
+   "DENTAL475",
+   "DENTAL475L",
+   "DENTAL480",
+   "DENTAL480L",
+   "DENTAL490",
+   "DENTAL490L"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19012",
+   "title": "Dental Assisting - A.S. Degree",
+   "h1": "Dental Assisting - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3753
+ },
+ {
+  "control_number": "37201",
+  "title": "Mechatronics Level I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IET400",
+   "IET401A",
+   "IET401B",
+   "IET407",
+   "IET422",
+   "IETELMT430",
+   "IETELMT432",
+   "IETMECH400"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19106",
+   "title": "Mechatronics Level I - Certificate of Achievement",
+   "h1": "Mechatronics Level I - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2505
+ },
+ {
+  "control_number": "37203",
+  "title": "Mechatronics Level II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IET411",
+   "IETELMT436",
+   "IETELMT438",
+   "IETMECH401",
+   "IETMECH402",
+   "IETMECH403"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19108",
+   "title": "Mechatronics Level II - Certificate of Achievement",
+   "h1": "Mechatronics Level II - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2295
+ },
+ {
+  "control_number": "37216",
+  "title": "Mechatronics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IET400",
+   "IET401A",
+   "IET401B",
+   "IET407",
+   "IET411",
+   "IET422",
+   "IETELMT430",
+   "IETELMT432",
+   "IETELMT436",
+   "IETELMT438",
+   "IETMECH400",
+   "IETMECH401",
+   "IETMECH402",
+   "IETMECH403"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19104",
+   "title": "Mechatronics - A.S. Degree",
+   "h1": "Mechatronics - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2595
+ },
+ {
+  "control_number": "37263",
+  "title": "Heating, Ventilation, Air Conditioning and Refrigeration Level 2",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HVACR603",
+   "HVACR607",
+   "HVACR608",
+   "HVACR609",
+   "HVACR610",
+   "HVACR611"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19060",
+   "title": "Heating, Ventilation, Air Conditioning and Refrigeration Level II - Noncredit Certificate of Completion",
+   "h1": "Heating, Ventilation, Air Conditioning and Refrigeration Level II - Noncredit Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1806
+ },
+ {
+  "control_number": "37426",
+  "title": "Industrial Electrical Technology Level I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.636,
+  "codes_found": [
+   "IET400",
+   "IET401A",
+   "IET401B",
+   "IET405",
+   "IET407",
+   "IET422",
+   "IET460"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19074",
+   "title": "Industrial Electrical Technology Level I - Certificate of Achievement",
+   "h1": "Industrial Electrical Technology Level I - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2402
+ },
+ {
+  "control_number": "37427",
+  "title": "Athletic Trainer Aide",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL1",
+   "BIOL20",
+   "BIOL22",
+   "KINLEC19",
+   "KINLEC2",
+   "KINLEC21",
+   "KINLEC22"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18942",
+   "title": "Athletic Trainer Aide - Certificate of Achievement",
+   "h1": "Athletic Trainer Aide - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2044
+ },
+ {
+  "control_number": "37436",
+  "title": "Recording Arts Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMSTD8",
+   "MUSIC16",
+   "MUSIC17",
+   "MUSIC18",
+   "MUSIC19",
+   "MUSIC5"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19176",
+   "title": "Recording Arts Technician - Certificate of Achievement",
+   "h1": "Recording Arts Technician - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1814
+ },
+ {
+  "control_number": "37518",
+  "title": "Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM24A",
+   "CHEM24B",
+   "CHEM75A",
+   "CHEM75B",
+   "MATH65A",
+   "MATH65B",
+   "PHYS35",
+   "PHYS36"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18918",
+   "title": "Chemistry for Transfer - AS-T Degree",
+   "h1": "Chemistry for Transfer - AS-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3102
+ },
+ {
+  "control_number": "37640",
+  "title": "Cybersecurity Defender",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "COMPSCI1",
+   "ITIS10",
+   "ITIS14",
+   "ITIS30",
+   "ITIS40",
+   "ITIS45",
+   "ITIS50",
+   "ITIS51",
+   "ITIS55",
+   "ITIS60",
+   "ITIS61",
+   "ITIS64",
+   "ITIS65",
+   "ITIS70"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19008",
+   "title": "Cybersecurity Defender - Certificate of Achievement",
+   "h1": "Cybersecurity Defender - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3196
+ },
+ {
+  "control_number": "37641",
+  "title": "Cybersecurity Analyst",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITIS10",
+   "ITIS14",
+   "ITIS40",
+   "ITIS50",
+   "ITIS51",
+   "ITIS55",
+   "ITIS60",
+   "ITIS65"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19006",
+   "title": "Cybersecurity Analyst - Certificate of Achievement",
+   "h1": "Cybersecurity Analyst - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2151
+ },
+ {
+  "control_number": "37643",
+  "title": "Cybersecurity Professional",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMPSCI1",
+   "COMPSCI4",
+   "COMPSCI5",
+   "ITIS10",
+   "ITIS14",
+   "ITIS30",
+   "ITIS40",
+   "ITIS45",
+   "ITIS468",
+   "ITIS50",
+   "ITIS51",
+   "ITIS55",
+   "ITIS60",
+   "ITIS61",
+   "ITIS64",
+   "ITIS65",
+   "ITIS70",
+   "MATH60",
+   "MATH65A"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19010",
+   "title": "Cybersecurity Professional - A.S. Degree",
+   "h1": "Cybersecurity Professional - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3490
+ },
+ {
+  "control_number": "37647",
+  "title": "Interior Design Visual Communication",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.556,
+  "codes_found": [
+   "ID14",
+   "ID15",
+   "ID16",
+   "ID17",
+   "ID45"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19086",
+   "title": "Interior Design Visual Communication - Certificate of Achievement",
+   "h1": "Interior Design Visual Communication - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2567
+ },
+ {
+  "control_number": "37985",
+  "title": "Caregiving Essentials",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GERO600",
+   "GERO655"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18970",
+   "title": "Caregiving Essentials - Noncredit Certificate of Completion",
+   "h1": "Caregiving Essentials - Noncredit Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1866
+ },
+ {
+  "control_number": "38434",
+  "title": "Real Estate Salesperson",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1A",
+   "BUSL28A",
+   "BUSL50",
+   "RE410",
+   "RE415",
+   "RE460",
+   "RE470",
+   "RE475",
+   "RE486"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19174",
+   "title": "Real Estate Salesperson - Certificate of Achievement",
+   "h1": "Real Estate Salesperson - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1948
+ },
+ {
+  "control_number": "38854",
+  "title": "Hospitality Management",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1A",
+   "BUSL28A",
+   "CUL15",
+   "CUL17",
+   "ECON4",
+   "HOTFS10",
+   "HOTFS14",
+   "HOTFS21",
+   "HOTFS32",
+   "HOTFS42"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18930",
+   "title": "Hospitality Management for Transfer - AS-T Degree",
+   "h1": "Hospitality Management for Transfer - AS-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3480
+ },
+ {
+  "control_number": "39317",
+  "title": "UCTP: Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM24A",
+   "CHEM24B",
+   "CHEM75A",
+   "CHEM75B",
+   "MATH65A",
+   "MATH65B",
+   "MATH75",
+   "MATH85",
+   "PHYS35",
+   "PHYS36"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19202",
+   "title": "Chemistry University of California Transfer Pathway - AS-T Degree",
+   "h1": "Chemistry University of California Transfer Pathway - AS-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 10,
+  "text_chars": 3688
+ },
+ {
+  "control_number": "39410",
+  "title": "Professional Baking and Patisserie",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL15",
+   "CUL17",
+   "CUL22",
+   "CUL440",
+   "CUL441",
+   "CUL443",
+   "CUL445",
+   "CUL446",
+   "CUL447",
+   "HOTFS10"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19160",
+   "title": "Professional Baking and Patisserie - A.S. Degree",
+   "h1": "Professional Baking and Patisserie - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2733
+ },
+ {
+  "control_number": "39562",
+  "title": "UCTP: Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM24A",
+   "CHEM24B",
+   "MATH65A",
+   "MATH65B",
+   "MATH75",
+   "MATH81",
+   "MATH85",
+   "PHYS45",
+   "PHYS46",
+   "PHYS47"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19204",
+   "title": "Physics University of California Transfer Pathway - AS-T Degree",
+   "h1": "Physics University of California Transfer Pathway - AS-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 10,
+  "text_chars": 3419
+ },
+ {
+  "control_number": "39855",
+  "title": "Environmental Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "BIOL2",
+   "BIOL40",
+   "CHEM24A",
+   "CHEM24B",
+   "GEOG4",
+   "GEOG4L",
+   "GEOL1",
+   "MATH65A",
+   "PHYS20A",
+   "PHYS20B",
+   "PHYS35",
+   "PHYS36",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18924",
+   "title": "Environmental Science for Transfer - AS-T Degree",
+   "h1": "Environmental Science for Transfer - AS-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3635
+ },
+ {
+  "control_number": "40107",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.793,
+  "codes_found": [
+   "ANTHRO3",
+   "BUSL10",
+   "BUSL28A",
+   "CJ1",
+   "CJ4",
+   "COMSTD72",
+   "COMSTD74",
+   "ENGLC1000",
+   "ENGLC1001",
+   "GEOG11",
+   "GUID3",
+   "PHIL72",
+   "PHIL76",
+   "POLSC1000",
+   "PS10",
+   "PS2",
+   "PS32",
+   "PS4",
+   "PS7",
+   "SOC14",
+   "SOC15",
+   "SOC70",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/lpps",
+   "title": "Law, Public Policy, and Society for Transfer - AA-T Degree",
+   "h1": "Law, Public Policy, and Society for Transfer - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 4422
+ },
+ {
+  "control_number": "40588",
+  "title": "Community Health Worker",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "PH10",
+   "PH11",
+   "PH20",
+   "PH5"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18982",
+   "title": "Community Health Worker  - Certificate of Achievement",
+   "h1": "Community Health Worker  - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2477
+ },
+ {
+  "control_number": "40594",
+  "title": "Marketing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTGFS465",
+   "BUS10",
+   "BUS60",
+   "BUS88",
+   "BUSL28A",
+   "BUSL435",
+   "BUSMKT13",
+   "BUSMKT40",
+   "BUSMKT405",
+   "BUSMKT410",
+   "BUSMKT420",
+   "BUSMKT55"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19096",
+   "title": "Marketing - A.S. Degree",
+   "h1": "Marketing - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2475
+ },
+ {
+  "control_number": "40595",
+  "title": "Marketing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSL435",
+   "BUSMGT436",
+   "BUSMKT13",
+   "BUSMKT40",
+   "BUSMKT405",
+   "BUSMKT410",
+   "BUSMKT420",
+   "BUSMKT55",
+   "BUSTEC63"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19098",
+   "title": "Marketing - Certificate of Achievement",
+   "h1": "Marketing - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1942
+ },
+ {
+  "control_number": "40969",
+  "title": "Nursing Assistant",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURAST600",
+   "NURAST600L",
+   "NURAST605L"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19120",
+   "title": "Nursing Assistant  - Noncredit Certificate of Completion",
+   "h1": "Nursing Assistant  - Noncredit Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2729
+ },
+ {
+  "control_number": "41393",
+  "title": "American Sign Language (ASL)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL1",
+   "ASL18",
+   "ASL2",
+   "ASL21",
+   "ASL22",
+   "ASL3",
+   "ASL4"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19921",
+   "title": "American Sign Language (ASL) - Certificate of Achievement",
+   "h1": "American Sign Language (ASL) - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1538
+ },
+ {
+  "control_number": "41434",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTG1B",
+   "BUS10",
+   "BUS88",
+   "BUSL28A",
+   "MATH25",
+   "MATH60",
+   "MATH61",
+   "MATH65A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20331",
+   "title": "Business Administration 2.0 for Transfer - AS-T Degree",
+   "h1": "Business Administration 2.0 for Transfer - AS-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4124
+ },
+ {
+  "control_number": "41467",
+  "title": "English as a Second Language",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL607",
+   "ESL608",
+   "ESL632",
+   "ESL632A",
+   "ESL632B",
+   "ESL642",
+   "ESL652"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19922",
+   "title": "English as a Second Language - Noncredit Certificate of Competency",
+   "h1": "English as a Second Language - Noncredit Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2699
+ },
+ {
+  "control_number": "42084",
+  "title": "Bookkeeping",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG435",
+   "ACCTG460",
+   "ACCTG485",
+   "ACCTGFS453",
+   "BUSTEC455",
+   "BUSTEC63"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/bookkeeping",
+   "title": "Bookkeeping - Certificate of Achievement",
+   "h1": "Bookkeeping - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1649
+ },
+ {
+  "control_number": "42180",
+  "title": "CAD/CAM Operator",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAFT20",
+   "DRAFT21",
+   "DRAFT43",
+   "EGTECH10"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/cadcam",
+   "title": "CAD/CAM Operator - Certificate of Achievement",
+   "h1": "CAD/CAM Operator - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1752
+ },
+ {
+  "control_number": "42181",
+  "title": "Accounting for Government and Not-For-Profit Organizations",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTG430",
+   "ACCTG435",
+   "ACCTG460"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/accounting",
+   "title": "Accounting for Government and Not-For-Profit Organizations - Certificate of Achievement",
+   "h1": "Accounting for Government and Not-For-Profit Organizations - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1676
+ },
+ {
+  "control_number": "42183",
+  "title": "Electromechanical Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IET400",
+   "IET401A",
+   "IET401B",
+   "IET407",
+   "IET411",
+   "IET422",
+   "IETMECH400"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/electromechanical",
+   "title": "Electromechanical Technology - Certificate of Achievement",
+   "h1": "Electromechanical Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1998
+ },
+ {
+  "control_number": "42185",
+  "title": "Payroll and Income Tax Preparer",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTG435",
+   "ACCTG460",
+   "ACCTGFS453"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/payroll",
+   "title": "Payroll and Income Tax Preparer - Certificate of Achievement",
+   "h1": "Payroll and Income Tax Preparer - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1885
+ },
+ {
+  "control_number": "42623",
+  "title": "Real Estate Property Management",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG485",
+   "BUSL50",
+   "BUSMGT42",
+   "BUSMGT470",
+   "BUSMKT40",
+   "BUSMKT420",
+   "BUSTEC455",
+   "RE410",
+   "RE415",
+   "RE486"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/recert",
+   "title": "Real Estate Property Management - Certificate of Achievement",
+   "h1": "Real Estate Property Management - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1753
+ },
+ {
+  "control_number": "42630",
+  "title": "Real Estate Property Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG485",
+   "BUSL50",
+   "BUSMGT42",
+   "BUSMGT470",
+   "BUSMKT40",
+   "BUSMKT420",
+   "BUSTEC455",
+   "RE410",
+   "RE415",
+   "RE486"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/redegree",
+   "title": "Real Estate Property Management - A.S. Degree",
+   "h1": "Real Estate Property Management - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1765
+ },
+ {
+  "control_number": "42684",
+  "title": "Cloud Solutions Architecting",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITIS10",
+   "ITIS14",
+   "ITIS16",
+   "ITIS30",
+   "ITIS40",
+   "ITIS42",
+   "ITIS45",
+   "ITIS471",
+   "ITIS474",
+   "ITIS50",
+   "ITIS51",
+   "ITIS55",
+   "ITIS60",
+   "ITIS61",
+   "ITIS70",
+   "ITIS74",
+   "ITIS80"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20581",
+   "title": "Cloud Solutions Architecting - Certificate of Achievement",
+   "h1": "Cloud Solutions Architecting - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2773
+ },
+ {
+  "control_number": "42942",
+  "title": "Automotive Electrical Systems",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOTEC10",
+   "AUTOTEC15",
+   "AUTOTEC416",
+   "AUTOTEC429",
+   "AUTOTEC450",
+   "AUTOTEC455"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18944",
+   "title": "Automotive Electrical Systems - Certificate of Achievement",
+   "h1": "Automotive Electrical Systems - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1859
+ },
+ {
+  "control_number": "42987",
+  "title": "Physical Therapist Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL20",
+   "BIOL22",
+   "ENGLC1000",
+   "KINLEC24",
+   "NURADN403",
+   "PSYCH25",
+   "PTA1",
+   "PTA11",
+   "PTA12",
+   "PTA13",
+   "PTA14",
+   "PTA21",
+   "PTA22",
+   "PTA23",
+   "PTA24",
+   "PTA31",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/pta",
+   "title": "Physical Therapist Assistant - A.S. Degree",
+   "h1": "Physical Therapist Assistant - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3854
+ },
+ {
+  "control_number": "43062",
+  "title": "Phlebotomy Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHLEB600",
+   "PHLEB600L",
+   "PHLEB605"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20404",
+   "title": "Phlebotomy Technician - Noncredit Certificate of Completion",
+   "h1": "Phlebotomy Technician - Noncredit Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2853
+ },
+ {
+  "control_number": "44104",
+  "title": "Supervision",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS61",
+   "BUS88",
+   "BUSL28B",
+   "BUSMGT11",
+   "BUSMGT40",
+   "BUSMGT42",
+   "BUSMGT44",
+   "BUSMGT441",
+   "BUSMGT48",
+   "BUSMGT480"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/supervision",
+   "title": "Supervision - Certificate of Achievement",
+   "h1": "Supervision - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1913
+ },
+ {
+  "control_number": "44105",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO3",
+   "COMMC1000",
+   "COMSTD12",
+   "COMSTD14",
+   "COMSTD4",
+   "COMSTD6",
+   "COMSTD72",
+   "COMSTD74",
+   "COMSTD76",
+   "COMSTD78",
+   "COMSTD8",
+   "JOUR10",
+   "JOUR30",
+   "PHOTO10",
+   "PSYCC1000",
+   "SOC10"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18882",
+   "title": "Communication Studies 2.0 for Transfer - AA-T Degree",
+   "h1": "Communication Studies 2.0 for Transfer - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3703
+ },
+ {
+  "control_number": "44353",
+  "title": "Cloud Solutions Architecting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITIS10",
+   "ITIS14",
+   "ITIS16",
+   "ITIS30",
+   "ITIS40",
+   "ITIS42",
+   "ITIS45",
+   "ITIS471",
+   "ITIS474",
+   "ITIS50",
+   "ITIS51",
+   "ITIS55",
+   "ITIS60",
+   "ITIS61",
+   "ITIS70",
+   "ITIS74",
+   "ITIS80"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/csa",
+   "title": "Cloud Solutions Architecting - A.S. Degree",
+   "h1": "Cloud Solutions Architecting - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2849
+ },
+ {
+  "control_number": "45032",
+  "title": "California General Education Transfer Curriculum (Cal-GETC)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45398",
+  "title": "Hospitality Management: Food and Beverage Fundamentals",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL15",
+   "HOTFS10",
+   "HOTFS14",
+   "HOTFS21"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20670",
+   "title": "Hospitality Management: Food and Beverage Fundamentals - Certificate of Achievement",
+   "h1": "Hospitality Management: Food and Beverage Fundamentals - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1909
+ },
+ {
+  "control_number": "45400",
+  "title": "Hospitality Management: Hotel Fundamentals",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HOTFS10",
+   "HOTFS14",
+   "HOTFS42",
+   "HOTFS428"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20678",
+   "title": "Hospitality Management: Hotel Fundamentals - Certificate of Achievement",
+   "h1": "Hospitality Management: Hotel Fundamentals - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1854
+ },
+ {
+  "control_number": "46063",
+  "title": "Information Technology and Information Systems Core",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITIS10",
+   "ITIS14",
+   "ITIS16",
+   "ITIS40",
+   "ITIS50",
+   "ITIS51"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20598",
+   "title": "Information Technology and Information Systems Core - Certificate of Achievement",
+   "h1": "Information Technology and Information Systems Core - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1848
+ },
+ {
+  "control_number": "46090",
+  "title": "Earth Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM10",
+   "ESC5",
+   "ESC5L",
+   "GEOG4",
+   "GEOL1",
+   "GEOL2",
+   "MATH61"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20654",
+   "title": "Earth Science - A.S. Degree",
+   "h1": "Earth Science - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1890
+ },
+ {
+  "control_number": "46091",
+  "title": "Geological Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL1",
+   "CHEM24A",
+   "CHEM24B",
+   "GEOL1",
+   "GEOL2",
+   "MATH65A",
+   "PHYS35"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20662",
+   "title": "Geological Sciences - A.S. Degree",
+   "h1": "Geological Sciences - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2403
+ },
+ {
+  "control_number": "46142",
+  "title": "Data Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMPSCI10",
+   "COMPSCI20",
+   "COMPSCI4",
+   "ITIS10",
+   "ITIS42",
+   "ITIS80",
+   "MATH65A",
+   "MATH65B",
+   "MATH75",
+   "MATH81",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20615",
+   "title": "Data Science - A.S. Degree",
+   "h1": "Data Science - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2270
+ },
+ {
+  "control_number": "46143",
+  "title": "Development Operations",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMPSCI10",
+   "COMPSCI5",
+   "ITIS10",
+   "ITIS14",
+   "ITIS16",
+   "ITIS30",
+   "ITIS40",
+   "ITIS50",
+   "ITIS51",
+   "ITIS55",
+   "ITIS56",
+   "ITIS60",
+   "ITIS70",
+   "ITIS74",
+   "ITIS80",
+   "ITIS82",
+   "ITIS84"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20638",
+   "title": "Development Operations - A.S. Degree",
+   "h1": "Development Operations - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3184
+ },
+ {
+  "control_number": "46144",
+  "title": "Development Operations",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMPSCI10",
+   "COMPSCI5",
+   "ITIS10",
+   "ITIS14",
+   "ITIS16",
+   "ITIS30",
+   "ITIS40",
+   "ITIS50",
+   "ITIS51",
+   "ITIS55",
+   "ITIS56",
+   "ITIS60",
+   "ITIS70",
+   "ITIS74",
+   "ITIS80",
+   "ITIS82",
+   "ITIS84"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20639",
+   "title": "Development Operations - Certificate of Achievement",
+   "h1": "Development Operations - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3255
+ },
+ {
+  "control_number": "46151",
+  "title": "Data Analytics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMPSCI10",
+   "COMPSCI5",
+   "ITIS10",
+   "ITIS12",
+   "ITIS80",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20614",
+   "title": "Data Analytics - Certificate of Achievement",
+   "h1": "Data Analytics - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1690
+ },
+ {
+  "control_number": "46152",
+  "title": "Networking Specialist (CCNA)",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITIS10",
+   "ITIS14",
+   "ITIS16",
+   "ITIS40",
+   "ITIS51",
+   "ITIS52",
+   "ITIS53",
+   "ITIS55",
+   "ITIS56",
+   "ITIS60",
+   "ITIS61",
+   "ITIS65",
+   "ITIS70",
+   "ITIS74"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20689",
+   "title": "Networking Specialist (CCNA) - A.S. Degree",
+   "h1": "Networking Specialist (CCNA) - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2582
+ },
+ {
+  "control_number": "46153",
+  "title": "Networking Specialist (CCNA)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITIS10",
+   "ITIS14",
+   "ITIS16",
+   "ITIS40",
+   "ITIS51",
+   "ITIS52",
+   "ITIS53",
+   "ITIS55",
+   "ITIS56",
+   "ITIS60",
+   "ITIS61",
+   "ITIS65",
+   "ITIS70",
+   "ITIS74"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20690",
+   "title": "Networking Specialist (CCNA) - Certificate of Achievement",
+   "h1": "Networking Specialist (CCNA) - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2610
+ },
+ {
+  "control_number": "46154",
+  "title": "Web Development and Social Media",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AI1",
+   "ARTGD82",
+   "BUSMKT55",
+   "COMPSCI10",
+   "ITIS10",
+   "ITIS14",
+   "ITIS16",
+   "ITIS30",
+   "ITIS40",
+   "ITIS425",
+   "ITIS50",
+   "ITIS51",
+   "ITIS80",
+   "ITIS82",
+   "ITIS84"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20746",
+   "title": "Web Development and Social Media - Certificate of Achievement",
+   "h1": "Web Development and Social Media - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2958
+ },
+ {
+  "control_number": "46155",
+  "title": "Web Development and Social Media",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AI1",
+   "ARTGD82",
+   "BUSMKT55",
+   "COMPSCI10",
+   "ITIS10",
+   "ITIS14",
+   "ITIS16",
+   "ITIS30",
+   "ITIS40",
+   "ITIS425",
+   "ITIS50",
+   "ITIS51",
+   "ITIS80",
+   "ITIS82",
+   "ITIS84"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20745",
+   "title": "Web Development and Social Media - A.S. Degree",
+   "h1": "Web Development and Social Media - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2934
+ },
+ {
+  "control_number": "46156",
+  "title": "Technology and Innovation",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AI1",
+   "COMPSCI401",
+   "ITIS10",
+   "ITIS14",
+   "ITIS16",
+   "ITIS30",
+   "ITIS40",
+   "ITIS425",
+   "ITIS50",
+   "ITIS51",
+   "ITIS55",
+   "ITIS60",
+   "ITIS70",
+   "ITIS82"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20730",
+   "title": "Technology and Innovation - Certificate of Achievement",
+   "h1": "Technology and Innovation - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2966
+ },
+ {
+  "control_number": "46157",
+  "title": "Artificial Intelligence",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AI1",
+   "AI2",
+   "AI3",
+   "AI4",
+   "AI5",
+   "AI6",
+   "AI7",
+   "AI8",
+   "AI9",
+   "COMPSCI10",
+   "COMPSCI11",
+   "COMPSCI20",
+   "COMPSCI4",
+   "COMPSCI5",
+   "ITIS40",
+   "ITIS80"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20564",
+   "title": "Artificial Intelligence - A.S. Degree",
+   "h1": "Artificial Intelligence - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2845
+ },
+ {
+  "control_number": "46158",
+  "title": "Computer Game Development",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTGD63",
+   "ARTGD82",
+   "ARTGD84",
+   "CISGAME1",
+   "CISGAME2",
+   "CISGAME403",
+   "CISGAME420",
+   "COMPSCI1",
+   "COMPSCI10",
+   "COMPSCI2",
+   "COMPSCI4",
+   "COMPSCI401",
+   "ENGL7A",
+   "ENGL7B",
+   "ITIS10",
+   "ITIS45",
+   "MUSIC16",
+   "MUSIC17",
+   "MUSIC18",
+   "MUSIC19",
+   "PHYS5",
+   "THEATRE1",
+   "THEATRE10",
+   "THEATRE31",
+   "THEATRE7"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20589",
+   "title": "Computer Game Development - A.S. Degree",
+   "h1": "Computer Game Development - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 3145
+ },
+ {
+  "control_number": "46159",
+  "title": "Technology and Innovation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "AI1",
+   "COMPSCI401",
+   "ITIS10",
+   "ITIS14",
+   "ITIS16",
+   "ITIS30",
+   "ITIS40",
+   "ITIS425",
+   "ITIS50",
+   "ITIS51",
+   "ITIS55",
+   "ITIS60",
+   "ITIS70"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20729",
+   "title": "Technology and Innovation - A.S. Degree",
+   "h1": "Technology and Innovation - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2962
+ },
+ {
+  "control_number": "46160",
+  "title": "Programmer",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMPSCI1",
+   "COMPSCI10",
+   "COMPSCI2",
+   "COMPSCI5",
+   "COMPSCI6",
+   "ITIS10",
+   "ITIS14",
+   "ITIS16",
+   "ITIS30",
+   "ITIS40",
+   "ITIS42",
+   "ITIS45",
+   "ITIS50",
+   "ITIS51",
+   "ITIS80",
+   "ITIS82",
+   "ITIS84"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20714",
+   "title": "Programmer - Certificate of Achievement",
+   "h1": "Programmer - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2965
+ },
+ {
+  "control_number": "46161",
+  "title": "Programmer",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMPSCI1",
+   "COMPSCI10",
+   "COMPSCI2",
+   "COMPSCI5",
+   "COMPSCI6",
+   "ITIS10",
+   "ITIS14",
+   "ITIS16",
+   "ITIS30",
+   "ITIS40",
+   "ITIS42",
+   "ITIS45",
+   "ITIS50",
+   "ITIS51",
+   "ITIS80",
+   "ITIS82",
+   "ITIS84"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20713",
+   "title": "Programmer - A.S. Degree",
+   "h1": "Programmer - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2952
+ },
+ {
+  "control_number": "46283",
+  "title": "Orthodontic Assisting Permit",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DENTAL690",
+   "DENTAL691",
+   "DENTAL692"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20770",
+   "title": "Orthodontic Assisting Permit - Noncredit Certificate of Completion",
+   "h1": "Orthodontic Assisting Permit - Noncredit Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2575
+ },
+ {
+  "control_number": "46299",
+  "title": "Personal Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "KINLEC601",
+   "KINLEC602",
+   "KINLEC603"
+  ],
+  "source": {
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20778",
+   "title": "Personal Training - Noncredit Certificate of Completion",
+   "h1": "Personal Training - Noncredit Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2145
+ },
+ {
+  "control_number": "46302",
+  "title": "Electric Vehicle and Alternative Propulsion Technician",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ }
+]

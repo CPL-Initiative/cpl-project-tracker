@@ -1,8 +1,8 @@
 {
- "_what": "MAP's credit recommendations per course at the harvest's ten colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco and Long Beach City): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
+ "_what": "MAP's credit recommendations per course at the harvest's twelve colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey and San Diego City): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
  "_source": "public.map_college_cr_unit (reviewer-gated) joined to map_colleges by college_id; exhibit titles from map_ace_exhibit_titles, else chatbox_exhibits. A college_course string naming several courses ('ADJ-13 ...(3.0), ADJ-19 ...(3.0)') counts toward each course it names. Course code = the SUBJ-NUM token with the hyphen read as a space.",
- "_read_at": "2026-10-11",
- "_read_by": "SkyCedar (S363) through the Supabase MCP: Long Beach City added (33 course codes; the per-course fingerprint over code, recs, exhibits, untitled exhibits and titles reads 5c7d3a90393e710daa4f686a2f56c917 in SQL and over the filed rows). Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
+ "_read_at": "2026-10-12",
+ "_read_by": "SkyLaurel (S369) through the Supabase MCP: Chaffey (94 course codes) and San Diego City (33) added; per-college md5 over code|recs|exhibits|untitled reads 115340c8a405300f47c2bd0223964f68 and 249410c6592148fbf3beb7b68b7f1cd0 in SQL and over the filed rows. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added (33 course codes; the per-course fingerprint over code, recs, exhibits, untitled exhibits and titles reads 5c7d3a90393e710daa4f686a2f56c917 in SQL and over the filed rows). Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
  "_refresh": "By hand, the way kb/ccr_cpl_funnel.json is refreshed: run kb/program_requirements_pilot/map_cr_by_course.sql through the Supabase MCP when the funnel reloads (map-custom-report-load.yml) or the harvest adds a college, and file the rows here.",
  "colleges": {
   "Cerritos College": {
@@ -50,6 +50,2418 @@
     },
     "titles": null,
     "untitled_exhibits": 1
+   }
+  },
+  "Chaffey College": {
+   "ART 12": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Studio Art - 3D",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ART 14": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Studio Art - Drawing",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ARTH 3": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Art History (ARTH-3)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTOTEC 15": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Services Excellence 6 (A6) Certificate",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTOTEC 416": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Services Excellence 7 (A7) Certificate",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTOTEC 417": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Services Excellence 5 (A5) Certificate",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTOTEC 418": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Services Excellence 4 (A4) Certificate",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTOTEC 422": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Services Excellence 8 (A8) Certificate",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTOTEC 423": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Services Excellence L1 Certificate",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTOTEC 427": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Services Excellence 1 (A1) Certificate",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTOTEC 429": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Services Excellence 6 (A6) Certificate",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AUTOTEC 432": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Services Excellence 2 (A2) Certificate",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "BIOL 1": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Biology",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "BIOL 2": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Environmental Science",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "BIOL 424": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Hospitalman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Practical Nurse",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "BUSMGT 480": {
+    "recs": 5,
+    "exhibits": 57,
+    "exhibits_by_source": {
+     "ACE": 57
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Aircraft Intermediate Level Hydraulic/Pneumatic Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Allied Trades Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electrician's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electronics Technician (AT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electronics Technician (AT) (4/21-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Machinist's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Maintenance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman (AO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Structural Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Support Equipment Technician (AS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cannon Crewmember",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cavalry Scout",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cavalry Scout Advanced Leader (ALC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Chemical, Biological, Radiological, and Nuclear Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Medic Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Construction Electrician (CE)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician (Collection)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician, Technical",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Culinary Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Distributed Leader I",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician (Navigation)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Equipment Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Explosive Ordnance Disposal (EOD)Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Financial Management Technician Advanced Leaders",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fixed-Wing Aircraft Airframe Mechanic-Trainee",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fixed-Wing Aircraft Airframe Mechanic, AV-8/TAV-8",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fixed-Wing Aircraft Airframe Mechanic, F/A-18",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Flight Equipment Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Gunner's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Gunner's Mate (GM)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Indirect Fire Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Indirect Fire Infantryman Advanced Leader (ALC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Squad Leader (East)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman Advanced Leader (ALC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician (3/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Logistics Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mates, Nuclear Power",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Maintenance Management Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master Training Specialist (MTS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Naval Aircrewman (Operator) (AWO) (4/21-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Physical Therapy Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruiting and Retention NCO (Army National Guard)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD) I",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Supply Administration and Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warehouse Clerk",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CHEM 24A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Chemistry",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CHIN 1": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Chinese Language and Culture",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CHIN 2": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Chinese Language and Culture",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 50": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CompTIA Network+ Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CISCYBR 1": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CompTIA Security+ Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CISHDSP 40": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CompTIA A+ Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CJ 1": {
+    "recs": 4,
+    "exhibits": 5,
+    "exhibits_by_source": {
+     "ACE": 3,
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Juvenile Corrections Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Maritime Enforcement Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Maritime Enforcement Specialist 'A' School (ME 'A')",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police Basic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CJ 2": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Master-At-Arms",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CJ 3": {
+    "recs": 2,
+    "exhibits": 4,
+    "exhibits_by_source": {
+     "ACE": 2,
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Navy Security Forces Law Enforcement Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "State of California - Basic Correctional Officer Academy",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CJ 4": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CJ 5": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CJ 51": {
+    "recs": 3,
+    "exhibits": 9,
+    "exhibits_by_source": {
+     "ACE": 6,
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Correctional Officers: Standards and Training for Corrections (STC) and BOP",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Corrections by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Corrections Supervisor by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Internment/Resettlement Specialist Advanced Individual Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Internment/Resettlement Specialist MOS Training Course (TATS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Juvenile Corrections Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "TATS Internment/Resettlement Specialist Reclassification (ADT)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CJ 53": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Correctional Officers: Standards and Training for Corrections (STC) and BOP",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CJ 56": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Correctional Officers: Standards and Training for Corrections (STC) and BOP",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Juvenile Corrections Training",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CJ 6": {
+    "recs": 2,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Juvenile Corrections Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "State of California - Basic Correctional Officer Academy",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CJ 7": {
+    "recs": 1,
+    "exhibits": 4,
+    "exhibits_by_source": {
+     "ACE": 3,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master-at-Arms 'A' School",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COMM C1000": {
+    "recs": 1,
+    "exhibits": 5,
+    "exhibits_by_source": {
+     "ACE": 5
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cavalry Scout",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Indirect Fire Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Corps Recruiter",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruiter",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COMPSCI 1": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Computer Science A",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COMPSCI 3": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Joint Cyber Analysis (JCAC)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COMSTD 4": {
+    "recs": 1,
+    "exhibits": 4,
+    "exhibits_by_source": {
+     "ACE": 4
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Air Traffic Controller",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Classification Interviewer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Instructional Delivery Continuum (IDC) - Journeyman Instructor Training (JIT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruiter Canvasser",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "COMSTD 74": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Combat Advisor Training",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DENTAL 445": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Dental Specialist",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ECON 2": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Macroeconomics",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ECON 4": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Microeconomics",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "EMT 11": {
+    "recs": 2,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Emergency Medical Technician (EMT)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "EMT Card/Certification - EMT 405 EMT Preparation and EMT 11 Emergency Medical Technician",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Inland Counties Emergency Medical Agency",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "EMT 405": {
+    "recs": 1,
+    "exhibits": 4,
+    "exhibits_by_source": {
+     "MAP": 4
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Emergency Care and Safety Institute",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "EMT Card/Certification - EMT 405 EMT Preparation and EMT 11 Emergency Medical Technician",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "EMT-405 Kaiser High School",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Inland Counties Emergency Medical Agency",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ENGL 1C": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP English - Literature and Composition",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ENGL C1000": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP English - Language and Composition",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP English - Literature and Composition",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIRETEC 1": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Baldy View Regional Occupational Program Firefighting Technology",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Engineering Professional Apprenticeship Career Tract (EPACT)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIRETEC 12": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Baldy View Regional Occupational Program Firefighting Technology",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Calif First Responder Awareness Cert of Completion",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIRETEC 3": {
+    "recs": 3,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Damage Controlman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Damage Controlman A School",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIRETEC 420": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Calif State Fire Marshal: Fire Inspector 1A: Duties & Administration Course",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIRETEC 421": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Calif State Fire Marshal: Fire Inspector 1B: Fire & Life Safety Course",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIRETEC 422": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Calif State Fire Marshal Fire Inspector 1C: Field Inspection Course",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIRETEC 423": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Calif State Fire Marshal Fire Inspector-Calif Specific Course",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIRETEC 9": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Baldy View Regional Occupational Program Firefighting Technology",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FR 1": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP French Language and Culture",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FR 2": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP French Language and Culture",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "GE 2": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CLEP College Algebra",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "GE 3 A": {
+    "recs": 2,
+    "exhibits": 11,
+    "exhibits_by_source": {
+     "MAP": 11
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP European History (Area 3)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP German Language and Culture",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Japanese Language and Culture",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Studio Art - 2D",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP World History: Modern (Area 3)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "CLEP Spanish Level II",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "IB Language A: Language and Literature (any language, except English) HL",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "IB Language A: Language and Literature (any language) HL",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "IB Language A: Literature (any language) HL",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "IB Language B (any language) HL",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "IB Theatre HL",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "GE 4": {
+    "recs": 1,
+    "exhibits": 4,
+    "exhibits_by_source": {
+     "MAP": 4
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Comparative Government and Politics",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "CLEP Human Growth and Development",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "CLEP Introductory Psychology",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "IB History (any region) HL",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "GE 5": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "IB Biology HL",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "GEOG 11": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Human Geography",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "HIST 17": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP U.S. History",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "HIST 18": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP U.S. History",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "IET 400": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "IET-400 Inland Empire Electrical Training Center (Workplace Safety)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "IET 401A": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Baldwin Park & Community Education-Electrician Certificate of Proficiency",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Electronics",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "IET 411": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "SIC Solution Summit Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "IET 422": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Baldwin Park & Community Education-Electrician Certificate of Proficiency",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "OSHA Outreach for General Industry-30 hour",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ITIS 10": {
+    "recs": 16,
+    "exhibits": 44,
+    "exhibits_by_source": {
+     "ACE": 43,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "TATS Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "ACNT BL 7.2A Pipeline",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electronics Technician (AT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Maintenance Administration, Class A1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Maintenance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman (AO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Support Equipment Technician (AS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Avionic Mechanic (UH-60M) (Net) (Trans)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cannon Crewmember",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Engineer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Medic Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "CompTIA Network+",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Construction Electrician (CE)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician Maintenance, Class A",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electrician's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Equipment Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Financial Management Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Geospatial Engineer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospitalman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "HospitalMan",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Operator-Analyst",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician Block 0",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Intelligence Specialist 'A' School",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Joint Cyber Analysis (JCAC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Logistics Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1A1 Tank Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mates, Nuclear Power",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Air-Ground Task Force Intelligence Specialist Entry",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Multichannel Transmission System Operator-Maintainer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Naval Modular Automated Communications System AN/SYQ-7 (V) 2 (NAVMACS) Maintenance",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Petroleum Supply Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruiter",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Religious Program Specialist (RP)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Retail Services Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "UH-60 Helicopter Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warehouse Clerk",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Yeoman",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ITIS 14": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "System Administration Block 1",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ITIS 16": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cisco Certified Network Associate",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ITIS 30": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Joint Cyber Analysis (JCAC)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ITIS 40": {
+    "recs": 3,
+    "exhibits": 6,
+    "exhibits_by_source": {
+     "ACE": 5,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Biomedical Equipment Maintenance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "CompTIA Network+",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Maintenance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Operator-Analyst",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "TATS Signal Support Systems Specialist",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ITIS 50": {
+    "recs": 8,
+    "exhibits": 25,
+    "exhibits_by_source": {
+     "ACE": 24,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 3,
+      "title": "Nodal Network Systems Operator-Maintainer",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Information Systems Technician (3/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "TATS Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "ACNT BL 7.2A Pipeline",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Automated Digital Network System (ADNS) Kilo (V) 2",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Automated Logistical Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cannon Crewmember",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "CompTIA Network+",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Consolidated Afloat Networks and Enterprise Services (CANES) SW3/SW4 Administrator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Consolidation Afloat Networks and Enterprise Services (CANES) Core",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Installation Methods, Practices and Procedures (CRIMP)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician (Collection)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician Maintenance, Class A",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician, Maintenance (3/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician, (Nuclear) (1/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Maintenance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Operator-Analyst",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Joint Cyber Analysis (JCAC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Journeyman Communications (JCC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Network Administrator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Special Electronic Devices Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "System Administration Block 0",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tactical Computer Network Operator (TCNO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Unit Supply Specialist",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ITIS 51": {
+    "recs": 2,
+    "exhibits": 6,
+    "exhibits_by_source": {
+     "ACE": 5,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ACNT BL 7.2A Pipeline",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cisco Certified Network Associate",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Installation Methods, Practices and Procedures (CRIMP)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Maintenance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician (3/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "System Administration Block 0",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ITIS 52": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cisco Certified Network Associate",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ITIS 53": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cisco Certified Network Associate",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ITIS 55": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ACNT BL 7.2A Pipeline",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ITIS 56": {
+    "recs": 3,
+    "exhibits": 7,
+    "exhibits_by_source": {
+     "ACE": 7
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician, Technical",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Data Systems Administrator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Maintenance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Operator-Analyst",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Nodal Network Systems Operator-Maintainer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "System Administration Block 1",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ITIS 60": {
+    "recs": 5,
+    "exhibits": 5,
+    "exhibits_by_source": {
+     "ACE": 4,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Joint Cyber Analysis (JCAC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "CompTIA Network+",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician, Technical",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Operator-Analyst",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician System Administration",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ITIS 65": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Joint Cyber Analysis (JCAC)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ITIS 80": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Ammunition Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Geospatial Engineer",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MATH 65A": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Calculus AB or AB Subscore",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AP Calculus BC",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MATH 65B": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Calculus BC",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MUSIC 5": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Music Theory",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "NURADN 47": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Licensed Practical Nurse",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "PH 97C": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Resume",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "PHYS 45": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Physics C - Mechanics",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "PHYS 46": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Physics C - Electricity/ Magnetism",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "PHYS 5": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Physics B",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "PHYS 6": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Physics B",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "POLS C1000": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP U.S. Government and Politics",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "PSYC C1000": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Psychology",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "SPAN 1": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Spanish Language and Culture",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "SPAN 2": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Spanish Language and Culture",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "SPAN 3": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Spanish Literature and Culture",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "STAT C1000": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Statistics",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
    }
   },
   "Irvine Valley College": {
@@ -9777,6 +12189,620 @@
      {
       "recs": 1,
       "title": "First Tuesday Real Estate School",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   }
+  },
+  "San Diego City College": {
+   "AIRE 100": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Refrigeration and AC Theory",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AIRE 103": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Refrigeration and AC Lab",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ARTG 125": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit By Exam San Diego City College",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Digital Media",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "BUSE 119": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Machinist's Mate",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CBTE 140": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Beginning Microsoft Excel",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Credit By Exam San Diego City College",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CHIL 160": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Observation and Assessment",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CHIL 161": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Observation and Issues in Child Development",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CHIL 176": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Principles of Infant Toddler Caregiver",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CHIL 291A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Child Development Center Practicum",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CHIL 291C": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Child Development Center Practicum",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DRAM 123": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Beginning Stagecraft",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Credit By Exam San Diego City College",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ELDT 123": {
+    "recs": 2,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Nuclear Field 'A' School (Electronics Technician)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ELDT 123L": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Nuclear Field 'A' School (Electronics Technician)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ELDT 124": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic DC Electronics",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Credit By Exam San Diego City College",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ELDT 124L": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Basic DC Laboratory",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Credit By Exam San Diego City College",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ELDT 143": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Semiconductor Devices",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ELDT 143L": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Semiconductor Devices Lab",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ENGN 130": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit By Exam San Diego City College",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Intro to Engineering Design",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "INWT 100": {
+    "recs": 2,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CompTIA A+ Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "CompTIA Network+ Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Credit By Exam San Diego City College",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "INWT 120": {
+    "recs": 4,
+    "exhibits": 6,
+    "exhibits_by_source": {
+     "ACE": 2,
+     "MAP": 4
+    },
+    "titles": [
+     {
+      "recs": 3,
+      "title": "CompTIA Network+ Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Credit By Exam San Diego City College",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician, (Nuclear) (1/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Joint Cyber Analysis (JCAC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Network Fund. (Network+)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "INWT 125": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AWS Certified Cloud Practitioner Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "INWT 140": {
+    "recs": 3,
+    "exhibits": 4,
+    "exhibits_by_source": {
+     "MAP": 4
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "CompTIA Network+ Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "CompTIA Security+ Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Credit By Exam San Diego City College",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Security Fund. (Security+)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "INWT 145": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CompTIA Linux+ Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "INWT 200": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CompTIA PenTest+ Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MACT 140": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Principles/Machine Tech",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Credit By Exam San Diego City College",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MATH 116": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "College and Matrix Algebra",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Nuclear Field 'A' School (Electronics Technician)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MFET 101": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit By Exam San Diego City College",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Intro to Manufac Engineer Tech",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "PHOT 143": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit By Exam San Diego City College",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Intro. to Digital Photography",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "PHOT 180": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Photo Editing: Lightroom",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "PHOT 243": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Advanced Digital Photography",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Credit By Exam San Diego City College",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "RTVF 124": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit By Exam San Diego City College",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Single Camera Production",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "RTVF 146": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit By Exam San Diego City College",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "The TV News Field Report",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "RTVF 153": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Credit By Exam San Diego City College",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Intro to Nonlinear Editing",
       "source": "MAP"
      }
     ],

@@ -282,6 +282,15 @@
    * gate, and the page SAYS SO rather than rendering a row of blanks: an
    * unexplained gap reads as a college with no staff. */
   var PUBLIC_CONTACT_ROLES = ["cpl_coordinator", "cpl_counselor"];
+  /* The address the contact strategy measures ("Ensure a CPL Coordinator and/or Counselor is listed
+   * and responsive"). A signed-in reader reads MAP's primary contact, where a student's request is
+   * routed. The public row carries no primary contact, so a public reader reads the two roles it does
+   * carry, the ones the strategy names. Until S370 the public page read the absent column and told
+   * every college "No contact listed in MAP" beside a contacts table listing its coordinator. */
+  function measuredContactEmail(r, pub) {
+    if (!r) return null;
+    return (pub ? (r.cpl_coordinator_email || r.cpl_counselor_email) : r.primary_contact_email) || null;
+  }
 
   function sources() {
     var pub = !signedIn();
@@ -627,11 +636,11 @@
       ".cb-flag{display:inline-block;font-size:.68rem;padding:1px 7px;border-radius:10px;border:1px solid var(--border-strong);color:var(--text-muted);margin-left:6px;vertical-align:middle;}",
       ".cb-bfrac{height:5px;border-radius:3px;background:var(--border);margin-top:6px;overflow:hidden;max-width:320px;}",
       ".cb-bfrac>i{display:block;height:100%;background:var(--brand,var(--cobalt));}",
-      ".cb-warn{border:1px solid var(--warn,#b45309);border-radius:8px;padding:12px 14px;margin:14px 0;font-size:.83rem;}",
+      ".cb-warn{border:1px solid var(--mustard-text);border-radius:8px;padding:12px 14px;margin:14px 0;font-size:.83rem;}",
       ".cb-note{font-size:.78rem;color:var(--text-muted);margin-top:18px;line-height:1.5;}",
       // ── Rework 2026-08-11: steps first, then data, advice last ──
       ".cb-h{margin:26px 0 10px;font-size:1.02rem;color:var(--text-strong);}",
-      ".cb-stand{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;}",
+      ".cb-stand{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:12px;}",
       ".cb-box{border:1px solid var(--border);border-radius:9px;padding:14px 15px;background:var(--surface);display:flex;flex-direction:column;gap:7px;}",
       ".cb-box.lead{border-color:var(--mustard-fill,#E3B341);border-width:1.5px;}",
       ".cb-big{font-size:1.45rem;font-weight:700;color:var(--text-strong);line-height:1.1;}",
@@ -640,7 +649,7 @@
       ".cb-box .cb-bar{height:6px;border-radius:3px;background:var(--surface-muted,#ECE9E2);overflow:hidden;padding:0;border:0;min-width:0;}",
       ".cb-box .cb-bar i{display:block;height:100%;background:var(--mustard-fill,#E3B341);border-radius:3px;}",
       ".cb-floor{margin-top:0;margin-bottom:12px;border-left:3px solid var(--crimson,#920000);padding-left:10px;}",
-      ".cb-types{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;}",
+      ".cb-types{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:12px;}",
       ".cb-type{border:1px solid var(--border);border-radius:9px;padding:14px 15px;background:var(--surface);display:flex;flex-direction:column;gap:9px;}",
       ".cb-type header{display:flex;justify-content:space-between;align-items:baseline;gap:8px;}",
       ".cb-type h4{margin:0;font-size:.94rem;color:var(--text-strong);}",
@@ -683,16 +692,16 @@
       ".cb-next li{margin-bottom:5px;}",
       ".cb-next li:last-child{margin-bottom:0;}",
       // Resources — mirrors the public CPL fact sheet's §resources.
-      ".cb-res{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;}",
+      ".cb-res{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:10px;}",
       ".cb-resi{border:1px solid var(--border);border-radius:8px;padding:11px 13px;background:var(--surface);}",
       // 24px tall (WCAG 2.2 SC 2.5.8): each link stands alone in its card, so
       // the inline-text exception does not cover it (the S308 sweep of My
       // College's seeded view measured them at 15px).
-      ".cb-resi a{display:inline-block;min-height:24px;padding:4px 0;box-sizing:border-box;font-size:.86rem;font-weight:600;color:var(--link,#0b5cad);text-decoration:none;}",
+      ".cb-resi a{display:inline-block;min-height:24px;padding:4px 0;box-sizing:border-box;font-size:.86rem;font-weight:600;color:var(--accent-link,var(--cobalt));text-decoration:underline;text-underline-offset:2px;}",
       ".cb-resi a:hover{text-decoration:underline;}",
       ".cb-resi div{font-size:.76rem;color:var(--text-muted);margin-top:3px;line-height:1.45;}",
       // ── Funding, district roster, Sierra asks (2026-08-11) ──
-      ".cb-fund{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;}",
+      ".cb-fund{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:12px;}",
       ".cb-fbox{border:1px solid var(--border);border-radius:9px;padding:14px 15px;background:var(--surface);}",
       ".cb-fbox header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:8px;}",
       // The block also renders on the funding explainer (fundingPanel, 2026-09-30),
@@ -733,8 +742,11 @@
       ".cb-rep tbody th{text-align:left;font-size:.85rem;font-weight:400;color:var(--text-body);padding:7px 8px;border-bottom:1px solid var(--border);white-space:normal;}",
       ".cb-rep .cb-rep-tot th,.cb-rep .cb-rep-tot td{font-weight:700;color:var(--text-strong);border-bottom:1px solid var(--border-strong);}",
       ".cb-reports-signin{margin:8px 0 4px;}",
-      ".cb-pick{background:none;border:0;padding:0;font:inherit;color:var(--link,#0b5cad);cursor:pointer;text-align:left;}",
-      ".cb-pick:hover{text-decoration:underline;}",
+      ".cb-pick{background:none;border:0;padding:2px 0;min-height:24px;box-sizing:border-box;font:inherit;color:var(--accent-link,var(--cobalt));text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;cursor:pointer;text-align:left;}",
+      ".cb-pick:hover{text-decoration-thickness:2px;}",
+      // The landing page link sits in a sentence; the 24px floor (2.5.8) and a long address
+      // that wraps rather than pushing a phone page sideways (S370 UI pass).
+      ".cb-land{display:inline-block;min-height:24px;padding:3px 0;box-sizing:border-box;overflow-wrap:anywhere;color:var(--accent-link,var(--cobalt));}",
       ".cb-roster tr.lead td{font-weight:600;color:var(--text-strong);}",
       // Sierra AI box — first on the tab, holds the pickers and the embedded chat.
       ".cb-assist{border:1px solid var(--border-strong);border-radius:11px;background:var(--surface);padding:16px 18px;margin-bottom:20px;}",
@@ -744,9 +756,9 @@
       ".cb-assist .cb-bar{margin-bottom:0;padding-bottom:12px;border-bottom:1px solid var(--border);}",
       ".cb-assist .cb-asks{margin-top:12px;}",
       ".cb-assist-mount{margin-top:12px;}",
-      ".cb-asks{display:flex;flex-wrap:wrap;gap:8px;}",
-      ".cb-ask{font:inherit;font-size:.82rem;text-align:left;padding:9px 12px;border:1px solid var(--border-strong);border-radius:999px;background:var(--surface);color:var(--text,var(--text-strong));cursor:pointer;}",
-      ".cb-ask:hover{border-color:var(--brand,var(--cobalt));color:var(--brand,var(--cobalt));}",
+      ".cb-asks{display:flex;flex-wrap:wrap;gap:8px 18px;}",
+      ".cb-ask{font:inherit;font-size:.82rem;text-align:left;padding:2px 0;min-height:24px;box-sizing:border-box;border:0;background:none;color:var(--cobalt);cursor:pointer;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}",
+      ".cb-ask:hover{text-decoration-thickness:2px;}",
       // ── Sierra AI leads the tab (Sam, 2026-08-12) ──────────────────────
       // The team's read was that she is the useful part, so she gets the
       // weight: a heavier frame, real breathing room, and a stated purpose.
@@ -782,42 +794,46 @@
       ".cb-scope-again{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:0 0 16px;"
         + "padding-bottom:14px;border-bottom:1px solid var(--border,#d8dde6);}",
       ".cb-scope-again-l{font-size:.78rem;color:var(--text-muted);}",
-      ".cb-scope-opts{display:flex;flex-direction:column;gap:8px;}",
+      /* Controls are underlined words (Sam, 2026-10-09; S370 UI pass): no border, no fill, 24px tall. */
+      ".cb-scope-opts{display:flex;flex-direction:column;gap:10px;}",
       ".cb-scope-b{display:flex;align-items:baseline;justify-content:space-between;gap:12px;width:100%;"
-        + "text-align:left;padding:13px 16px;border:1px solid var(--border,#d8dde6);border-radius:10px;"
-        + "background:var(--surface-opaque,#fff);color:inherit;font:inherit;cursor:pointer;}",
-      ".cb-scope-b:hover:not([disabled]){border-color:var(--cobalt,#0047AB);background:var(--surface-subtle,#eef3fa);}",
+        + "text-align:left;padding:2px 0;min-height:24px;box-sizing:border-box;border:0;background:none;"
+        + "color:var(--cobalt);font:inherit;cursor:pointer;}",
+      ".cb-scope-b:not([disabled]) .cb-scope-l{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}",
+      ".cb-scope-b:hover:not([disabled]) .cb-scope-l{text-decoration-thickness:2px;}",
       ".cb-scope-b:focus-visible{outline:2px solid var(--focus-ring,var(--brand,var(--cobalt)));outline-offset:2px;}",
       /* A disabled option stays READABLE. Greying it to the point of being hard
          to read hides the one thing it is there to say — that it exists and why
          it is off — so only the affordance is dimmed, not the sentence. */
-      ".cb-scope-b[disabled]{cursor:not-allowed;background:var(--surface-subtle,#f6f8fb);border-style:dashed;}",
+      ".cb-scope-b[disabled]{cursor:not-allowed;color:var(--text-muted);}",
       ".cb-scope-b[disabled] .cb-scope-l{color:var(--text-muted);}",
       ".cb-scope-l{font-size:1rem;font-weight:600;}",
       ".cb-scope-soon{font-size:.76rem;color:var(--text-muted);white-space:nowrap;}",
       ".cb-scope-note{margin:14px 0 0;font-size:.8rem;color:var(--text-muted);line-height:1.5;}",
-      ".cb-back{background:none;border:0;padding:0 0 10px;font:inherit;font-size:.82rem;"
-        + "color:var(--accent-link,var(--brand,var(--cobalt)));cursor:pointer;}",
-      ".cb-back:hover{text-decoration:underline;}",
-      ".cb-ent{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px;}",
-      ".cb-ent-b{display:flex;flex-direction:column;gap:2px;text-align:left;padding:11px 14px;"
-        + "border:1px solid var(--border,#d8dde6);border-radius:10px;background:var(--surface-opaque,#fff);"
-        + "color:inherit;font:inherit;cursor:pointer;}",
-      ".cb-ent-b:hover{border-color:var(--cobalt,#0047AB);background:var(--surface-subtle,#eef3fa);}",
-      ".cb-ent-n{font-size:.76rem;color:var(--text-muted);}",
+      ".cb-back{background:none;border:0;padding:2px 0;margin:0 0 8px;min-height:24px;box-sizing:border-box;"
+        + "font:inherit;font-size:.82rem;font-weight:600;color:var(--accent-link,var(--cobalt));cursor:pointer;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}",
+      ".cb-back:hover{text-decoration-thickness:2px;}",
+      ".cb-welcome-acts .cb-back{margin:0;}",
+      ".cb-ent{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(230px,100%),1fr));gap:10px 18px;}",
+      ".cb-ent-b{display:flex;flex-direction:column;gap:2px;text-align:left;padding:2px 0;min-height:24px;"
+        + "box-sizing:border-box;border:0;background:none;color:var(--cobalt);font:inherit;font-weight:600;cursor:pointer;}",
+      ".cb-ent-l{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}",
+      ".cb-ent-b:hover .cb-ent-l{text-decoration-thickness:2px;}",
+      ".cb-ent-n{font-size:.76rem;font-weight:400;color:var(--text-muted);}",
 
       /* ── The welcome header, which only exists after a choice ───────────── */
       ".cb-welcome{margin:2px 0 14px;}",
       ".cb-welcome-row{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;}",
       ".cb-welcome-t{margin:0;font-size:1.45rem;letter-spacing:-.015em;color:var(--text-strong);font-weight:650;}",
-      ".cb-welcome-acts{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}",
-      ".cb-act{padding:6px 13px;border:1px solid var(--border,#d8dde6);border-radius:999px;"
-        + "background:var(--surface-opaque,#fff);color:inherit;font:inherit;font-size:.8rem;cursor:pointer;"
-        + "white-space:nowrap;}",
-      ".cb-act:hover{border-color:var(--cobalt,#0047AB);background:var(--surface-subtle,#eef3fa);}",
+      ".cb-welcome-acts{display:flex;align-items:center;gap:8px 18px;flex-wrap:wrap;}",
+      ".cb-act{padding:2px 0;min-height:24px;box-sizing:border-box;border:0;background:none;color:var(--cobalt);"
+        + "font:inherit;font-size:.82rem;font-weight:600;cursor:pointer;white-space:nowrap;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}",
+      ".cb-act:hover{text-decoration-thickness:2px;}",
+      ".cb-act:focus-visible,.cb-back:focus-visible,.cb-ent-b:focus-visible,.cb-pick:focus-visible,.cb-ask:focus-visible"
+        + "{outline:2px solid var(--focus-ring,var(--cobalt));outline-offset:2px;border-radius:3px;}",
       ".cb-pdfrow{display:flex;justify-content:flex-end;margin:0 0 8px;}",
-      ".cb-act-q{font-size:.76rem;padding:4px 11px;}",
-      ".cb-allctl{display:flex;gap:8px;margin:12px 0 0;}",
+      ".cb-act-q{font-size:.78rem;}",
+      ".cb-allctl{display:flex;gap:18px;margin:12px 0 0;}",
 
       /* Sierra is a section now, but she is the PRIMARY one — the summary reads
          at heading scale rather than at the muted scale the others use. */
@@ -866,7 +882,7 @@
       ".cb-sum::-webkit-details-marker{display:none;}",
       ".cb-sum:hover .cb-sum-t{color:var(--brand,var(--cobalt));}",
       ".cb-sum:focus-visible{outline:2px solid var(--focus-ring,var(--brand,var(--cobalt)));outline-offset:-2px;}",
-      ".cb-sum-t{font-size:.97rem;font-weight:600;color:var(--text-strong);display:flex;align-items:baseline;gap:8px;}",
+      ".cb-sum-t{margin:0;font-size:.97rem;font-weight:600;color:var(--text-strong);display:flex;align-items:baseline;gap:8px;}",
       ".cb-sum-t::before{content:'▸';font-size:.8em;color:var(--text-muted);transition:transform .12s ease;display:inline-block;}",
       ".cb-sec[open] .cb-sum-t::before{transform:rotate(90deg);}",
       ".cb-sum-v{font-size:.82rem;color:var(--text-muted);text-align:right;font-variant-numeric:tabular-nums;}",
@@ -933,7 +949,7 @@
       ".cb-opp-t.p1{background:var(--brand,var(--cobalt));color:var(--on-accent,#fff);border-color:transparent;}",
       ".cb-opp-fit{font-size:.72rem;padding:2px 8px;border-radius:4px;white-space:nowrap;border:1px solid var(--border-strong);color:var(--text-body);}",
       ".cb-opp-soc{font-size:.72rem;color:var(--text-muted);white-space:nowrap;}",
-      ".cb-opp-b{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px 18px;}",
+      ".cb-opp-b{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr));gap:12px 18px;}",
       ".cb-opp-b .lbl{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin:0 0 5px;}",
       ".cb-opp-b .lbl:not(:first-child){margin-top:11px;}",
       ".cb-chip{display:inline-block;font-size:.76rem;padding:2px 8px;margin:0 4px 4px 0;border-radius:4px;background:var(--surface-subtle);border:1px solid var(--border);color:var(--text-body);}",
@@ -1468,7 +1484,7 @@
         + '<div class="cb-ent">'
         + districts.map(function (d) {
             return '<button type="button" class="cb-ent-b" data-district="' + esc(d) + '">'
-              + esc(d.replace(/ Community College District$/, " CCD"))
+              + '<span class="cb-ent-l">' + esc(d.replace(/ Community College District$/, " CCD")) + "</span>"
               + '<span class="cb-ent-n">' + dIdx[d].length + " colleges</span></button>";
           }).join("")
         + "</div></div>";
@@ -1492,7 +1508,7 @@
         + '<div class="cb-ent">'
         + codes.map(function (c) {
             return '<button type="button" class="cb-ent-b" data-swp="' + esc(c) + '">'
-              + esc(R[c].name)
+              + '<span class="cb-ent-l">' + esc(R[c].name) + "</span>"
               + '<span class="cb-ent-n">' + R[c].colleges.length + " colleges</span></button>";
           }).join("")
         + "</div></div>";
@@ -1613,7 +1629,7 @@
   function sec(id, title, summary, body) {
     if (!body) return "";
     return '<details class="cb-sec" data-sec="' + esc(id) + '"' + (state.open[id] ? " open" : "") + ">"
-      + '<summary class="cb-sum"><span class="cb-sum-t">' + esc(title) + "</span>"
+      + '<summary class="cb-sum"><h3 class="cb-sum-t">' + esc(title) + "</h3>"
       + (summary ? '<span class="cb-sum-v">' + summary + "</span>" : "")
       + "</summary>"
       + '<div class="cb-sec-b">' + body + "</div></details>";
@@ -3277,7 +3293,7 @@
           + "should reach, and leaves the rest to staff who sign in.</div>";
       }
       if (roster.landing) {
-        contactBody += '<div class="cb-note">Your CPL landing page: <a href="' + esc(roster.landing)
+        contactBody += '<div class="cb-note">Your CPL landing page: <a class="cb-land" href="' + esc(roster.landing)
           + '" target="_blank" rel="noopener">' + esc(roster.landing) + "</a></div>";
       }
       var nFilled = roster.filled.length, nAll = nFilled + roster.blank.length;
@@ -4555,7 +4571,7 @@
       summary.forEach(function (r) { summaryById[r.college_id] = r; });
       var contactByName = {}, contactRowByName = {};
       contacts.forEach(function (r) {
-        contactByName[r.college] = r.primary_contact_email || null;
+        contactByName[r.college] = measuredContactEmail(r, SRC.pub);
         contactRowByName[r.college] = r;
         /* ⭐ AND UNDER EVERY VARIANT OF THAT NAME.
          *
@@ -4575,7 +4591,7 @@
          * trailing-space spellings are IN it, verified). */
         var canon = variantToCanon[r.college];
         if (canon && canon !== r.college) {
-          if (!(canon in contactByName)) contactByName[canon] = r.primary_contact_email || null;
+          if (!(canon in contactByName)) contactByName[canon] = measuredContactEmail(r, SRC.pub);
           if (!(canon in contactRowByName)) contactRowByName[canon] = r;
         }
       });
@@ -4705,6 +4721,7 @@
     _standing: standing,
     _standSection: standSection,
     _measureFor: measureFor,
+    _measuredContactEmail: measuredContactEmail,
     // Funding / district / Sierra — pure, and the join is the risky one: it
     // decides which college's money is shown, so it is tested against the
     // real rosters rather than a fixture.

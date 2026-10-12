@@ -755,7 +755,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> ([RfzQ8djEptLeC1aWARD1eN](https://claude.ai/artifact/RfzQ8djEptLeC1aWARD1eN), sheet 67). Answering
+> ([NYWeDqDAVgTNEc4Ds5SHSy](https://claude.ai/artifact/NYWeDqDAVgTNEc4Ds5SHSy), sheet 68). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |
@@ -795,7 +795,7 @@ stays here.
 | **Title 5 §55050 → Ed. Code Article 9** | A regulation that does not implement the statute it operates under — and the amendment package that fixes it. | ✅ live · open work — [lane state](docs/reference/lanes/t5-55050-article-9.md) |
 | **COBI dark mode / the one theme control** | One header control setting the theme for every tab and window, and the token layer under it. Carries the a11y remediation pass. | ✅ live · open work — [lane state](docs/reference/lanes/cobi-dark-mode.md) |
 | **Memory tab / Autogenerate + the Briefing** | Drafting a memory row from a typed topic, reading the entries back, and curating them. | ✅ live · open work — [lane state](docs/reference/lanes/memory-tab.md) |
-| **Program requirements harvest** | Each program's required, list-choice and elective courses at 115 colleges, so CPL units saved can be shown. | 🔨 in progress · Phase 2: six colleges loaded — [lane state](docs/reference/lanes/program-requirements-harvest.md) |
+| **Program requirements harvest** | Each program's required, list-choice and elective courses at 115 colleges, so CPL units saved can be shown. | 🔨 in progress · Phase 2: seven colleges loaded — [lane state](docs/reference/lanes/program-requirements-harvest.md) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
 | 5 | CTE classifier (TOP code → COCI CTE field) | parked (unlocks CIDx lane) |

@@ -1,0 +1,231 @@
+{
+ "college": "Chaffey College",
+ "control_number": "32347",
+ "shape": "adt",
+ "title": "Physics",
+ "award": "A.S. T Degree",
+ "source_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/physics",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5792,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5792,
+    "output_tokens": 1453,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1453,
+  "output_tokens_details": {
+   "thinking_tokens": 344
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05223,
+ "ms": 13023,
+ "seconds": 13.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "COMPSCI1",
+    "COMPSCI5",
+    "MATH81",
+    "MATH85"
+   ],
+   "flagged": [
+    "COMPSCI1",
+    "COMPSCI5",
+    "MATH81",
+    "MATH85"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    39.0,
+    39.0
+   ],
+   "stated": [
+    39.0,
+    39.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Physics 2.0 for Transfer - AS-T Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 39,
+    "max": 39
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Apply concepts in physics, physics symbolism and language, and mathematical skills to solve problems in physics.",
+    "Demonstrate skill in scientific communication (both written and oral) and apply these skills to physical concepts, describing results of laboratory experiments, and providing technical information in a clear and concise manner.",
+    "Use experimental techniques in the laboratory environment to obtain accurate and precise data, to evaluate and validate scientific data, to correctly use scientific instruments, and use proper laboratory etiquette."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 39,
+     "max": 39
+    },
+    "courses": [
+     {
+      "code": "MATH 65A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 65B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 75",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 81",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 85",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 45",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 46",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 47",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "COMPSCI 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMPSCI 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'Required Core: Units: 39.00' figure appears to include the nested 'Choose one' (3 units); the listed required courses alone sum to 36 units. The 39 is recorded as printed on the Required Core block.",
+   "The 'Choose one' choice (COMPSCI 1 or COMPSCI 5) is printed inside the Required Core and recorded as its own block.",
+   "A web-interface line 'Toggle the visibility of the item detail panel' appears between the second and third outcomes and was omitted as page noise.",
+   "The program learning outcomes are printed for the program as a whole in this AS-T section; the award shares them.",
+   "Catalog text states a minimum of 18 semester units of major requirements generally for ADTs; the program total printed is 39.00.",
+   "MATH 81, MATH 85, COMPSCI 1 and COMPSCI 5 are not in the closed list and are recorded as catalog additions."
+  ]
+ },
+ "extracted_run": "38242003226"
+}

@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Fashion Design",
  "award": "A.A. Degree",
- "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/photography-aa/",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-design/",
  "record_shape": 4,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7978,
+  "input_tokens": 10910,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7978,
-    "output_tokens": 1306,
+    "input_tokens": 10910,
+    "output_tokens": 1237,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 1306,
+  "output_tokens": 1237,
   "output_tokens_details": {
-   "thinking_tokens": 152
+   "thinking_tokens": 354
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.05803,
- "ms": 10401,
- "seconds": 11.0,
+ "cost_usd": 0.06838,
+ "ms": 10910,
+ "seconds": 12.0,
  "parts": null,
  "error": null,
  "score": {
@@ -106,7 +106,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -114,7 +114,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Fashion Design",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -123,94 +123,95 @@
    "open_elective_units": null,
    "ge_pattern": null,
    "outcomes": [],
-   "careers": []
+   "careers": [
+    "design related occupations within the fashion industry"
+   ]
   },
   "blocks": [],
   "course_outcomes": [],
   "missing_explained": [
    {
     "code": "FASH 10",
-    "why": "appears only in a course index list; no Fashion Design A.A. requirements in text"
+    "why": "only in course descriptions; degree requirements not in text"
    },
    {
     "code": "FASH 20",
-    "why": "appears only in a course index list; no Fashion Design A.A. requirements in text"
+    "why": "only in course descriptions; degree requirements not in text"
    },
    {
     "code": "FASH 200",
-    "why": "appears only in a course index list; no Fashion Design A.A. requirements in text"
+    "why": "only in course descriptions; degree requirements not in text"
    },
    {
     "code": "FASH 21",
-    "why": "appears only in a course index list; no Fashion Design A.A. requirements in text"
+    "why": "only in course descriptions; degree requirements not in text"
    },
    {
     "code": "FASH 215",
-    "why": "appears only in a course index list; no Fashion Design A.A. requirements in text"
+    "why": "only in course descriptions; degree requirements not in text"
    },
    {
     "code": "FASH 216",
-    "why": "appears only in a course index list; no Fashion Design A.A. requirements in text"
+    "why": "only in course descriptions; degree requirements not in text"
    },
    {
     "code": "FASH 24",
-    "why": "appears only in a course index list; no Fashion Design A.A. requirements in text"
+    "why": "only in course descriptions; degree requirements not in text"
    },
    {
     "code": "FASH 25",
-    "why": "appears only in a course index list; no Fashion Design A.A. requirements in text"
+    "why": "only in course descriptions; degree requirements not in text"
    },
    {
     "code": "FASH 26",
-    "why": "appears only in a course index list; no Fashion Design A.A. requirements in text"
+    "why": "only in course descriptions; degree requirements not in text"
    },
    {
     "code": "FASH 27",
-    "why": "appears only in a course index list; no Fashion Design A.A. requirements in text"
+    "why": "only in course descriptions; degree requirements not in text"
    },
    {
     "code": "FASH 3",
-    "why": "appears only in a course index list; no Fashion Design A.A. requirements in text"
+    "why": "only in course descriptions; degree requirements not in text"
    },
    {
     "code": "FASH 32",
-    "why": "appears only in a course index list; no Fashion Design A.A. requirements in text"
+    "why": "only in course descriptions; degree requirements not in text"
    },
    {
     "code": "FASH 36",
-    "why": "appears only in a course index list; no Fashion Design A.A. requirements in text"
+    "why": "only in course descriptions; degree requirements not in text"
    },
    {
     "code": "FASH 37",
-    "why": "appears only in a course index list; no Fashion Design A.A. requirements in text"
+    "why": "only in course descriptions; degree requirements not in text"
    },
    {
     "code": "FASH 45",
-    "why": "appears only in a course index list; no Fashion Design A.A. requirements in text"
+    "why": "only in course descriptions; degree requirements not in text"
    },
    {
     "code": "FASH 5",
-    "why": "appears only in a course index list; no Fashion Design A.A. requirements in text"
+    "why": "only in course descriptions; degree requirements not in text"
    },
    {
     "code": "FASH 50",
-    "why": "appears only in a course index list; no Fashion Design A.A. requirements in text"
+    "why": "only in course descriptions; degree requirements not in text"
    },
    {
     "code": "FASH 51",
-    "why": "appears only in a course index list; no Fashion Design A.A. requirements in text"
+    "why": "only in course descriptions; degree requirements not in text"
    },
    {
     "code": "FASH 9",
-    "why": "appears only in a course index list; no Fashion Design A.A. requirements in text"
+    "why": "only in course descriptions; degree requirements not in text"
    }
   ],
   "notes": [
-   "The catalog text does not contain the Fashion Design A.A. Degree section. It is an alphabetical course index (ESL through FLO) truncated mid-entry, with no requirements, unit totals, outcomes or careers.",
-   "The source URL points to the Photography A.A. page (digital-media-arts/photography-aa), not Fashion Design; the wrong page appears to have been fetched.",
-   "No blocks were recorded and no section heading could be named; a reviewer should retrieve the correct Fashion Design A.A. page for 2026-2027.",
-   "The course index also lists FASH courses not in the closed list (e.g., FASH 210, 213, 23, 230, 240, 244, 258, 271WE, 39, 41, 46, 47, 52 and the 600-level noncredit versions), but these were not recorded because no requirement section places them."
+   "The supplied text contains only the Fashion Design overview paragraph and the Courses tab; the Programs tab with the A.A. Degree requirements is not included, so no blocks, total units, or outcomes could be recorded. A reviewer should fetch the Programs tab.",
+   "The career entry is taken from the overview sentence describing employment in design related occupations within the fashion industry.",
+   "Course descriptions print FASH 3 at 1 unit, while the state file stores 2 units."
   ]
  },
- "extracted_run": "38152016534"
+ "extracted_run": "38185403454"
 }

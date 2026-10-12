@@ -153,11 +153,17 @@ is First Light formatted."* Checkpoint step 9 runs this loop on the one view
   differs between two views of one dataset is a finding, whichever view is right.
 - **First Light.** Tokens only (no raw hex in the view's CSS or its injected
   CSS), the theme's type, and the same view in dark. A missing role is a token in
-  both HTMLs (Rule 4), never a hand-picked color. **Controls are underlined
+  both HTMLs (Rule 4), never a hand-picked color. A fallback hex is safe only behind a
+  token the theme defines: check each `var(--x,` the view writes against `index.html`
+  (S370: My College's undefined `--link` painted #0B5CAD on the dark ground, 2.47:1).
+  **Controls are underlined
   words** (Sam, 2026-10-09): convert the view's boxed and filled buttons to the
   word form in `reference-ui-design-system`, "Controls", and re-measure targets.
 
-Measure at 390 px as well as desktop. Then
+Measure at 390 px as well as desktop. A view that opens on a question or a gate
+measures only that first screen: give it a seeded target that reaches the page a reader
+uses, through the view's own controls but never the mouse (a pointer click turns
+`:focus-visible` off for the sweep's focus check). Then
 `python3 scripts/ui_pass.py --record <id> "<what it found and fixed>"`. A fix too
 large for a small PR becomes a lane item or a sheet card, and the outcome says so.
 

@@ -225,6 +225,19 @@ answer_must_not_match_unnegated() { # [-i] regex label
 # after a deploy, wrote "No San Gabriel Valley college has an exhibit specifically
 # articulating CNA-to-LVN credit yet" beside three LVN colleges named by course.
 # An exhibit is an articulation, and "articulating" is the -ing form.
+# And a pronoun for one (2026-10-12, S369): the re-run of run 38196534876 wrote
+# "The only CNA-type articulation on record is at Lemoore College ... even though
+# no San Gabriel Valley college has set this up yet for LVN specifically", after
+# leading with Rio Hondo VN 61, Pasadena NURS 102 and Citrus VNRS 150. "This" is
+# the articulation the same sentence names, so the absence is set aside only when
+# an articulation comes earlier in that sentence; "has set up an LVN program"
+# still fails.
+# And a verb before it (2026-10-12, S370): run 38251043198 wrote "No college in the San
+# Gabriel Valley (or statewide) has yet set up a formal CPL articulation specifically
+# matching a CNA into LVN coursework", after Pasadena NURS 102, Rio Hondo VN 61 and Citrus
+# VNRS 150. Set up, established, created, built, put in place, approved or adopted, then
+# an articulation or exhibit within a few words; "has yet set up a formal LVN program"
+# still fails.
 answer_must_not_claim_absence() { # [-i] regex label
   local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
   local re="$1" label="$2" stripped
@@ -235,7 +248,9 @@ answer_must_not_claim_absence() { # [-i] regex label
     -e "s/[*]//g" \
     -e "s/\\b(catalog( data)?|the data|our data|the records?) (lists|shows|holds|carries) (no|none)\\b/\\1 \\3 zero/Ig" \
     -e "s/\\b(no|none)\\b([^.]{0,80}) (has|have|had) (yet |not yet |ever |so far )?articulated/zero\\2 \\3 \\4articulated/Ig" \
-    -e "s/\\b(no|none)\\b([^.]{0,80}) (has|have|had|shows?) (yet |not yet |ever |so far )?(an? |any )?(existing |current )?(([[:alnum:]-]+ ){0,3}articulat(ions?|ed|ing)|([[:alnum:]-]+ ){0,2}exhibits?)\\b/zero\\2 \\3 an articulation/Ig")"
+    -e "s/\\b(no|none)\\b([^.]{0,80}) (has|have|had|shows?) (yet |not yet |ever |so far )?(an? |any )?(existing |current )?(([[:alnum:]-]+ ){0,3}articulat(ions?|ed|ing)|([[:alnum:]-]+ ){0,2}exhibits?)\\b/zero\\2 \\3 an articulation/Ig" \
+    -e "s/(articulat[^.]*)\\b(no|none)\\b([^.]{0,80}) (has|have|had) (yet |not yet |ever |so far )?(set (this|that|it|one) up|done (this|that|so|the same))\\b/\\1zero\\3 \\4 \\5\\6/Ig" \
+    -e "s/\\b(no|none)\\b([^.]{0,80}) (has|have|had) (yet |not yet |ever |so far )?(set up|established|created|built|put in place|approved|adopted) (an? |any )?(([[:alnum:]-]+ ){0,4}articulat(ions?|ed|ing)|([[:alnum:]-]+ ){0,3}exhibits?)\\b/zero\\2 \\3 \\4\\5 an articulation/Ig")"
   if printf '%s' "$stripped" | grep -E $flag -q -- "$re"; then
     echo "::error::$label: answer should NOT match /$re/ (regression)"; fail=1
   else

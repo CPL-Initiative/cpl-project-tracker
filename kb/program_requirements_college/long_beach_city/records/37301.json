@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Automotive Technology",
  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
- "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/automotive-technology/automotive-engine-performance-service-certificate-achievement/",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/automotive-technology/automotive-technology-certificate-achievement/",
  "record_shape": 4,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7344,
+  "input_tokens": 6007,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7344,
-    "output_tokens": 596,
+    "input_tokens": 6007,
+    "output_tokens": 941,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,39 +30,28 @@
     "model": null
    }
   ],
-  "output_tokens": 596,
+  "output_tokens": 941,
   "output_tokens_details": {
-   "thinking_tokens": 112
+   "thinking_tokens": 180
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.0413,
- "ms": 7056,
- "seconds": 7.6,
+ "cost_usd": 0.04285,
+ "ms": 7512,
+ "seconds": 7.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 10,
    "listed": 10,
-   "share": 0.0,
-   "missing": [
-    "AUTO200",
-    "AUTO211",
-    "AUTO212",
-    "AUTO213",
-    "AUTO214",
-    "AUTO215",
-    "AUTO216",
-    "AUTO217",
-    "AUTO218",
-    "AUTO219"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -71,96 +60,147 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    30.0,
+    30.0
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Not found in the supplied text",
+   "section_heading": "Automotive Technology - Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 30,
+    "max": 30
    },
    "open_elective_units": null,
    "ge_pattern": null,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Evaluate and identify faults in automotive performance components and perform service to factory specifications."
+   ],
+   "careers": [
+    "entry-level automotive positions"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "AUTO 200",
-    "why": "appears only in a site-wide course index, not in a program requirements section"
-   },
-   {
-    "code": "AUTO 211",
-    "why": "appears only in a site-wide course index, not in a program requirements section"
-   },
-   {
-    "code": "AUTO 212",
-    "why": "appears only in a site-wide course index, not in a program requirements section"
-   },
-   {
-    "code": "AUTO 213",
-    "why": "appears only in a site-wide course index, not in a program requirements section"
-   },
-   {
-    "code": "AUTO 214",
-    "why": "appears only in a site-wide course index, not in a program requirements section"
-   },
-   {
-    "code": "AUTO 215",
-    "why": "appears only in a site-wide course index, not in a program requirements section"
-   },
-   {
-    "code": "AUTO 216",
-    "why": "appears only in a site-wide course index, not in a program requirements section"
-   },
-   {
-    "code": "AUTO 217",
-    "why": "appears only in a site-wide course index, not in a program requirements section"
-   },
-   {
-    "code": "AUTO 218",
-    "why": "appears only in a site-wide course index, not in a program requirements section"
-   },
-   {
-    "code": "AUTO 219",
-    "why": "appears only in a site-wide course index, not in a program requirements section"
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AUTO 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 211",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 212",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 213",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 214",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 216",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 217",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 218",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 219",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints Total Units 30 for the certificate; the REQUIRED COURSES block prints no separate subtotal.",
+   "Career entry 'entry-level automotive positions' is taken from the program description ('students are ready for entry-level automotive positions'); reviewer may judge whether this counts as a named career.",
+   "The description also mentions preparation for ASE certification tests, recorded neither as a career nor as an outcome."
+  ]
  },
- "extracted_run": "38152016534"
+ "extracted_run": "38185403454"
 }

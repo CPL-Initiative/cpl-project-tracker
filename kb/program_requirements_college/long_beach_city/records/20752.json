@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Architectural Design",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/building-information-modeling-certificate-achievement/",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/architectural-design/architectural-design-certificate-achievement/",
  "record_shape": 4,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13864,
+  "input_tokens": 6122,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13864,
-    "output_tokens": 799,
+    "input_tokens": 6122,
+    "output_tokens": 753,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,28 @@
     "model": null
    }
   ],
-  "output_tokens": 799,
+  "output_tokens": 753,
   "output_tokens_details": {
-   "thinking_tokens": 114
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.07144,
- "ms": 8634,
- "seconds": 9.0,
+ "cost_usd": 0.03955,
+ "ms": 6006,
+ "seconds": 6.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 11,
    "listed": 11,
-   "share": 0.0,
-   "missing": [
-    "ARCHT20",
-    "ARCHT36",
-    "ARCHT61",
-    "ARCHT62",
-    "ARCHT80",
-    "ARCHT81",
-    "COMM60",
-    "ENGLC1001",
-    "ENGLC1001H",
-    "MATH40",
-    "PHYS2A"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -72,28 +60,29 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    34.5,
+    34.5
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    34.5,
+    34.5
+   ],
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -102,74 +91,119 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Architectural Design - Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 34.5,
+    "max": 34.5
    },
    "open_elective_units": null,
    "ge_pattern": null,
-   "outcomes": [],
+   "outcomes": [
+    "Determine transfer and professional requirements for architectural design or an allied field."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ARCHT 20",
-    "why": "appears only in the site's course index list; no requirements section in the text"
-   },
-   {
-    "code": "ARCHT 36",
-    "why": "appears only in the site's course index list; no requirements section in the text"
-   },
-   {
-    "code": "ARCHT 61",
-    "why": "appears only in the site's course index list; no requirements section in the text"
-   },
-   {
-    "code": "ARCHT 62",
-    "why": "appears only in the site's course index list; no requirements section in the text"
-   },
-   {
-    "code": "ARCHT 80",
-    "why": "appears only in the site's course index list; no requirements section in the text"
-   },
-   {
-    "code": "ARCHT 81",
-    "why": "appears only in the site's course index list; no requirements section in the text"
-   },
-   {
-    "code": "COMM 60",
-    "why": "appears only in the site's course index list; no requirements section in the text"
-   },
-   {
-    "code": "ENGL C1001",
-    "why": "not in the text"
-   },
-   {
-    "code": "ENGL C1001H",
-    "why": "not in the text"
-   },
-   {
-    "code": "MATH 40",
-    "why": "not in the text"
-   },
-   {
-    "code": "PHYS 2A",
-    "why": "not in the text"
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARCHT 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCHT 36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCHT 61",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCHT 62",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCHT 80",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCHT 81",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1001H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 2A",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied catalog text contains only an alphabetical course index (site navigation, ADMT through CONST, cut off mid-entry at 'CONST 285 - Co'); it contains no program section, heading, requirements, total units, outcomes or careers for the Architectural Design Certificate of Achievement.",
-   "The source URL points to a 'Building Information Modeling' certificate page, while the program named is Architectural Design; the closed list (design studios, history, ENGL, MATH, PHYS) looks like a transfer-oriented Architectural Design award. A reviewer should confirm the correct page and re-extract.",
-   "No blocks recorded because no requirement rules are printed; section_heading left empty because no section heading for this award appears in the text."
+   "Catalog prints 'ENGL C1001/C1001H' as one row; recorded ENGL C1001 with honors twin ENGL C1001H as alternative, each 4 units.",
+   "The description mentions preparation for 'an entry-level position in a variety of design profession settings' but names no specific career, so careers is empty."
   ]
  },
- "extracted_run": "38152016534"
+ "extracted_run": "38185403454"
 }

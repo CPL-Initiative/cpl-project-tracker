@@ -1,8 +1,8 @@
 {
- "_what": "The harvest registry's catalog and map columns for the harvest's ten colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco and Long Beach City), as the ROEP display builder reads them (kb/_build_roep_display.py). program_source_registry is public-read; this file is a dated copy so the builder runs offline and its output is reproducible.",
+ "_what": "The harvest registry's catalog and map columns for the harvest's twelve colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey and San Diego City), as the ROEP display builder reads them (kb/_build_roep_display.py). program_source_registry is public-read; this file is a dated copy so the builder runs offline and its output is reproducible.",
  "_source": "public.program_source_registry (census columns written by the weekly census; the four sequence_* columns written by S326's receipts)",
- "_read_at": "2026-10-11",
- "_read_by": "SkyCedar (S363) through the Supabase MCP: Long Beach City added. Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley and Norco added; Riverside City re-read, unchanged. Earlier: SkyLedger (S340) through the Supabase MCP: all seven rows read; the pilot's five unchanged since 2026-10-04, Santa Monica and Irvine Valley added",
+ "_read_at": "2026-10-12",
+ "_read_by": "SkyLaurel (S369) through the Supabase MCP: Chaffey and San Diego City added. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added. Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley and Norco added; Riverside City re-read, unchanged. Earlier: SkyLedger (S340) through the Supabase MCP: all seven rows read; the pilot's five unchanged since 2026-10-04, Santa Monica and Irvine Valley added",
  "_refresh": "Reread when the census applies or a sequence receipt lands: select the columns below for the harvest's colleges and file them here.",
  "colleges": {
   "Cerritos College": {
@@ -10,6 +10,18 @@
    "catalog_year": "2026-2027",
    "catalog_url": "https://cerritos-public.courseleaf.com/",
    "census_run_id": "census-20261004T152831Z-s3of4",
+   "sequence_source": "none_found",
+   "sequence_access": null,
+   "sequence_host": null,
+   "sequence_url": null,
+   "sequence_note": null,
+   "sequence_checked_run": null
+  },
+  "Chaffey College": {
+   "catalog_platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://chaffey.curriqunet.com/catalog/iq/18783",
+   "census_run_id": "census-20261011T162433Z-s2of4",
    "sequence_source": "none_found",
    "sequence_access": null,
    "sequence_host": null,
@@ -82,6 +94,18 @@
    "catalog_year": "2026-2027",
    "catalog_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5842/6111",
    "census_run_id": "census-20261004T152832Z-s4of4",
+   "sequence_source": "none_found",
+   "sequence_access": null,
+   "sequence_host": null,
+   "sequence_url": null,
+   "sequence_note": null,
+   "sequence_checked_run": null
+  },
+  "San Diego City College": {
+   "catalog_platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15489",
+   "census_run_id": "census-20261011T162433Z-s4of4",
    "sequence_source": "none_found",
    "sequence_access": null,
    "sequence_host": null,

@@ -14926,7 +14926,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-10-11"
+     "updated": "2026-10-12"
     },
     {
      "created": "2026-08-28",
@@ -15342,8 +15342,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 340,
+   "count": 341,
    "docs": [
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "n": 370,
+     "path": "docs/session_370_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "chaffey",
+      "san-diego-city",
+      "long-beach-city",
+      "decision-sheet"
+     ],
+     "title": "load and display Chaffey, read San Diego City, Sheet 68 card 2, the My College UI pass",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-12",
      "governs": [],
@@ -21174,5 +21192,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1107
+ "total": 1108
 }

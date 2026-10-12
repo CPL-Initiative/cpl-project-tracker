@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Social Work",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/social-work/aides-assistants-caregivers-certificate-achievement/",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/social-work/social-work-certificate-achievement/",
  "record_shape": 4,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13619,
+  "input_tokens": 6090,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13619,
-    "output_tokens": 523,
+    "input_tokens": 6090,
+    "output_tokens": 911,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,41 +30,28 @@
     "model": null
    }
   ],
-  "output_tokens": 523,
+  "output_tokens": 911,
   "output_tokens_details": {
-   "thinking_tokens": 112
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.06494,
- "ms": 5743,
- "seconds": 6.2,
+ "cost_usd": 0.04258,
+ "ms": 7406,
+ "seconds": 7.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 12,
    "listed": 12,
-   "share": 0.0,
-   "missing": [
-    "ETHST1",
-    "ETHST1H",
-    "SOCIO11",
-    "SOCIO11H",
-    "SW1",
-    "SW15",
-    "SW207",
-    "SW242",
-    "SW26",
-    "SW260",
-    "SW45",
-    "SW7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -73,104 +60,161 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    27.0,
+    27.0
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    27.0,
+    27.0
+   ],
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Not present in the supplied text (the text is a site-wide course index, ESL 602B through LIB 650)",
+   "section_heading": "Social Work - Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 27,
+    "max": 27
    },
    "open_elective_units": null,
    "ge_pattern": null,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Demonstrate an ability to work with a diverse population to resolve chronic and crisis issues that are likely to have a detrimental impact on the health and well-being of families and the community.",
+    "Demonstrate an understanding of the knowledge and skills required of a Social Work professional."
+   ],
+   "careers": [
+    "human services/social work field",
+    "case management",
+    "caregiver",
+    "advocate",
+    "activities coordinator"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ETHST 1",
-    "why": "appears only in the site-wide course index, not in a program requirements section"
-   },
-   {
-    "code": "ETHST 1H",
-    "why": "appears only in the site-wide course index, not in a program requirements section"
-   },
-   {
-    "code": "SOCIO 11",
-    "why": "not in the text"
-   },
-   {
-    "code": "SOCIO 11H",
-    "why": "not in the text"
-   },
-   {
-    "code": "SW 1",
-    "why": "not in the text"
-   },
-   {
-    "code": "SW 15",
-    "why": "not in the text"
-   },
-   {
-    "code": "SW 207",
-    "why": "not in the text"
-   },
-   {
-    "code": "SW 242",
-    "why": "not in the text"
-   },
-   {
-    "code": "SW 26",
-    "why": "not in the text"
-   },
-   {
-    "code": "SW 260",
-    "why": "not in the text"
-   },
-   {
-    "code": "SW 45",
-    "why": "not in the text"
-   },
-   {
-    "code": "SW 7",
-    "why": "not in the text"
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SW 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SW 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SW 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SW 26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SW 45",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SW 207",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SW 242",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SW 260",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHST 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHST 1H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCIO 11",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCIO 11H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The alternatives ETHST 1H, SOCIO 11 and SOCIO 11H have no units printed beside them in the catalog, so their units are recorded as null; the state file lists each at 3 units.",
+   "The page heading reads \"Program Student Learning Outcomes\"; the two outcomes are printed on this certificate's own page.",
+   "Careers are taken from the program description: \"human services/social work field\" and the jobs listed (\"case management, caregiver, advocate, and activities coordinator\"). \"Case management\" is printed as a job, although it reads as a function rather than a title."
+  ]
  },
- "extracted_run": "38152016534"
+ "extracted_run": "38185403454"
 }

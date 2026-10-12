@@ -1,0 +1,213 @@
+{
+ "college": "Chaffey College",
+ "control_number": "04799",
+ "shape": "degree",
+ "title": "Hospitality Management: Food Service",
+ "award": "A.S. Degree",
+ "source_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19066",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5640,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5640,
+    "output_tokens": 1295,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1295,
+  "output_tokens_details": {
+   "thinking_tokens": 273
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04846,
+ "ms": 10694,
+ "seconds": 11.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    28.0
+   ],
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Hospitality Management: Food Service - A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate the ability to work effectively as a member of a team.",
+    "Manage the professional preparation, presentation, and service of quality food",
+    "Communicate accurately and effectively, both verbally and in writing.",
+    "Demonstrate the ability to develop, examine, question, and explore perspectives or alternatives to problems in hospitality operation",
+    "Engage with people in ways that affirm diversity, demonstrate an awareness of identity and impact, and consider diverse perspectives when performing tasks related to managing food services."
+   ],
+   "careers": [
+    "entry-level management",
+    "trainee management"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "CUL 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOTFS 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOTFS 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOTFS 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOTFS 32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOTFS 428",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOTFS 431",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOTFS 482",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Careers recorded from the description phrase 'entry-level management and trainee management opportunities in the rapidly expanding food service industry'; the listed employers/settings (hotels, restaurants, resorts, cruise lines, schools, prisons, the military, hospitals, etc.) were treated as workplaces, not careers. Reviewer may wish to confirm.",
+   "Catalog prints CUL 22 as 'Bistro, Restaurant, and Catering Operations' and HOTFS 428 as 'Human Resources Management in Hospitality'; titles differ slightly from the state file but codes match.",
+   "Footnote: HOTFS 10 is an introductory course for all the hospitality management courses.",
+   "Two outcomes are printed without terminal periods; copied as printed.",
+   "No general education pattern is named in the text."
+  ]
+ },
+ "extracted_run": "38242003226"
+}

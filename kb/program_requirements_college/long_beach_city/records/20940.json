@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Nursing: Vocational/Practical",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/nursing-vocational-practical/home-health-aide-certificate-accomplishment/",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/nursing-vocational-practical/nursing-vocationalpractical-certificate-achievement/",
  "record_shape": 4,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13648,
+  "input_tokens": 6595,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13648,
-    "output_tokens": 825,
+    "input_tokens": 6595,
+    "output_tokens": 1960,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,63 +30,64 @@
     "model": null
    }
   ],
-  "output_tokens": 825,
+  "output_tokens": 1960,
   "output_tokens_details": {
-   "thinking_tokens": 165
+   "thinking_tokens": 509
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.07109,
- "ms": 7428,
- "seconds": 7.7,
+ "cost_usd": 0.06558,
+ "ms": 15333,
+ "seconds": 15.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 16,
    "listed": 17,
-   "share": 0.0,
+   "share": 0.941,
    "missing": [
-    "BIO60",
-    "VN215",
-    "VN220",
-    "VN225",
-    "VN230",
-    "VN230L",
-    "VN235",
-    "VN235L",
-    "VN240",
-    "VN245",
-    "VN245L",
-    "VN250",
-    "VN250L",
-    "VN255L",
-    "VN260",
-    "VN265",
-    "VN265L"
+    "VN215"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 6,
+   "codes": [
+    "ADN225",
+    "ADN810",
+    "AH225",
+    "AH60",
+    "VN222",
+    "VN255"
+   ],
+   "flagged": [
+    "ADN225",
+    "ADN810",
+    "AH225",
+    "AH60",
+    "VN222",
+    "VN255"
+   ],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    0.0,
-    0.0
+    47.0,
+    47.0
    ],
-   "stated": null,
+   "stated": [
+    47.0,
+    53.0
+   ],
    "why": [
-    "the record names no total"
+    "the blocks sum to 47.0-47.0; the catalog states 47.0-53.0"
    ]
   },
   "repeated": {
@@ -94,17 +95,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
@@ -112,94 +113,227 @@
  },
  "record": {
   "program": {
-   "section_heading": "Not found in text",
+   "section_heading": "Nursing: Vocational/Practical - Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 47,
+    "max": 53
    },
    "open_elective_units": null,
    "ge_pattern": null,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Synthesize theories and principles necessary for licensure as a vocational nurse."
+   ],
+   "careers": [
+    "Licensed Vocational Nurse",
+    "Practical Nurse"
+   ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Prerequisite Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "BIO 60",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ADN 225",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 40,
+     "max": 40
+    },
+    "courses": [
+     {
+      "code": "VN 220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 230L",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 235L",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 245",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 245L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 250",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 250L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 255",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VN 255L",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 260",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 265",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 265L",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "RECOMMENDED, but not required courses",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ADN 810",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AH 60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AH 225",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VN 222",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "BIO 60",
-    "why": "appears only in the site's course menu list, not in any program requirements section"
-   },
-   {
     "code": "VN 215",
-    "why": "not in the text"
-   },
-   {
-    "code": "VN 220",
-    "why": "not in the text"
-   },
-   {
-    "code": "VN 225",
-    "why": "not in the text"
-   },
-   {
-    "code": "VN 230",
-    "why": "not in the text"
-   },
-   {
-    "code": "VN 230L",
-    "why": "not in the text"
-   },
-   {
-    "code": "VN 235",
-    "why": "not in the text"
-   },
-   {
-    "code": "VN 235L",
-    "why": "not in the text"
-   },
-   {
-    "code": "VN 240",
-    "why": "not in the text"
-   },
-   {
-    "code": "VN 245",
-    "why": "not in the text"
-   },
-   {
-    "code": "VN 245L",
-    "why": "not in the text"
-   },
-   {
-    "code": "VN 250",
-    "why": "not in the text"
-   },
-   {
-    "code": "VN 250L",
-    "why": "not in the text"
-   },
-   {
-    "code": "VN 255L",
-    "why": "not in the text"
-   },
-   {
-    "code": "VN 260",
-    "why": "not in the text"
-   },
-   {
-    "code": "VN 265",
-    "why": "not in the text"
-   },
-   {
-    "code": "VN 265L",
     "why": "not in the text"
    }
   ],
   "notes": [
-   "The catalog text contains only a fragment of the site's course navigation menu (AUTO through DMI courses); it holds no program section, requirements, total, outcomes or careers for the Nursing: Vocational/Practical Certificate of Achievement.",
-   "The source URL points to a Home Health Aide Certificate of Accomplishment page, a different award from the one requested; the correct Vocational Nursing Certificate of Achievement page should be retrieved.",
-   "The text is cut off at both ends (begins mid-word 'hnology', ends at 'DMI 31 - Positioning for Cranial Ra'), so no VN courses appear in it."
+   "Total stated as 'Total Units (including prerequisites) 47-53'; the printed subtotals (7 + 40) sum to 47, and the source of the 53 upper bound is not explained in the text.",
+   "The prerequisite list also requires a State of California Certified Nursing Assistant (CNA) certificate, which is not a course and is not recorded in a block.",
+   "ADN 225 is printed as an alternative to VN 225 without units beside it.",
+   "VN 255 (Common Health Deviations 3, 3 units) is required in the catalog but absent from the closed list; recorded as a catalog addition.",
+   "Prerequisite and required courses must be completed with a grade of C or better."
   ]
  },
- "extracted_run": "38152016534"
+ "extracted_run": "38185403454"
 }
