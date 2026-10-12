@@ -840,6 +840,11 @@ jobs:
       # Reads pages only and writes no table. Pure-stdlib python.
       - name: Course outline index (course codes, the loaded records)
         run: python3 tests/course_outline_index_test.py
+      # The course outcomes read (S374; Sam, Open Asks Sheet 70 card 3): each
+      # course's SLOs as printed, every wanted course in one slice, no table write.
+      # Pure-stdlib python.
+      - name: Course outcomes read (outcomes as printed, slices, pages only)
+        run: python3 tests/course_outcomes_read_test.py
 
   test:
     # The one check the merge doctrine polls (CLAUDE.md branch policy). It

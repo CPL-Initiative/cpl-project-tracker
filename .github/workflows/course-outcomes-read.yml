@@ -1,0 +1,86 @@
+name: Course outcomes read
+# Each course's SLOs, exactly as printed, from its public course outline (Sam, Open
+# Asks Sheet 70 card 3, 2026-10-12: "Every course in the loaded records").
+# kb/_course_outcomes_read.py reads pages only and writes no table; it files
+# kb/course_outcomes/..., which this job commits back to the branch that ran it.
+# Runs when a claude/** push changes kb/course_outcomes/.run, never on a merge
+# commit (a merge of main carries that file's change too). The slices run one at a
+# time, so one reader is on the college's host at once.
+on:
+  push:
+    branches: ['claude/**']
+    paths:
+      - 'kb/course_outcomes/.run'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: course-outcomes-read-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    if: github.actor != 'github-actions[bot]' && !startsWith(github.event.head_commit.message, 'Merge')
+    runs-on: ubuntu-latest
+    outputs:
+      mode: ${{ steps.p.outputs.mode }}
+      parts: ${{ steps.p.outputs.parts }}
+    steps:
+      - uses: actions/checkout@v7
+      - id: p
+        run: |
+          trial=$(sed -n 's/^trial=//p' kb/course_outcomes/.run)
+          parts=$(sed -n 's/^parts=//p' kb/course_outcomes/.run)
+          if [ -n "$trial" ]; then echo "mode=trial" >> "$GITHUB_OUTPUT"; echo "parts=[1]" >> "$GITHUB_OUTPUT"
+          else n=${parts:-1}; echo "mode=read" >> "$GITHUB_OUTPUT"
+               echo "parts=$(python3 -c "import json;print(json.dumps(list(range(1,$n+1))))")" >> "$GITHUB_OUTPUT"; fi
+
+  read:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    strategy:
+      max-parallel: 1
+      fail-fast: false
+      matrix:
+        part: ${{ fromJSON(needs.plan.outputs.parts) }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Install Playwright + Chromium
+        run: |
+          pip install --quiet playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Read
+        env:
+          CENSUS_DELAY_MS: '3000'
+        run: |
+          index=$(sed -n 's/^index=//p' kb/course_outcomes/.run)
+          slugs=$(sed -n 's/^slugs=//p' kb/course_outcomes/.run)
+          trial=$(sed -n 's/^trial=//p' kb/course_outcomes/.run)
+          parts=$(sed -n 's/^parts=//p' kb/course_outcomes/.run)
+          args=(--index "$index")
+          [ -n "$slugs" ] && args+=(--slugs "$slugs")
+          if [ "${{ needs.plan.outputs.mode }}" = trial ]; then args+=(--trial "$trial")
+          else args+=(--part "${{ matrix.part }}" --of "${parts:-1}"); fi
+          python3 kb/_course_outcomes_read.py "${args[@]}"
+
+      - name: Commit the result to this branch
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kb/course_outcomes/
+          if git diff --cached --quiet; then echo "Nothing new."; exit 0; fi
+          git commit -m "Course outcomes read (run ${{ github.run_id }}, part ${{ matrix.part }})"
+          for i in 1 2 3 4; do
+            git pull --rebase origin ${{ github.ref_name }} && git push origin HEAD:${{ github.ref_name }} && exit 0
+            sleep $((i * 5))
+          done
+          exit 1

@@ -4,10 +4,10 @@
   "supabase_tables": 97,
   "rpcs": 36,
   "edge_functions": 7,
-  "file_datasets": 636,
+  "file_datasets": 640,
   "external_services": 175,
-  "consumers": 433,
-  "workflows": 50,
+  "consumers": 435,
+  "workflows": 51,
   "data_js_files": 69,
   "tabs": 39
  },
@@ -7417,6 +7417,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_course_outcomes_read.py": {
+   "consumers": [
+    {
+     "id": "workflow:course-outcomes-read.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_course_outline_census.py": {
    "consumers": [
     {
@@ -10346,6 +10359,17 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/course_outcomes": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:course-outcomes-read.yml",
+     "how": "commit"
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/course_outline_census": {
    "consumers": [],
    "producers": [
@@ -10363,6 +10387,19 @@
     {
      "by": "workflow:course-outline-index.yml",
      "how": "commit"
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/course_outline_index/index_<run>.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_course_outcomes_read.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 165
     }
    ],
    "served": false,
@@ -17009,6 +17046,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/course_outcomes_read_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/course_outline_census_test.py": {
    "consumers": [
     {
@@ -22782,6 +22832,20 @@
    "chain": [],
    "urls": []
   },
+  "course-outcomes-read.yml": {
+   "name": "Course outcomes read",
+   "crons": [],
+   "scripts": [
+    "kb/_course_outcomes_read.py"
+   ],
+   "adds": [
+    "kb/course_outcomes/"
+   ],
+   "push": "triggering branch",
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
   "course-outline-census.yml": {
    "name": "Course outline census",
    "crons": [],
@@ -23256,7 +23320,8 @@
     "tests/stop_hook_git_check_test.py",
     "tests/video_context_test.py",
     "tests/kpi_history_no_gaps_test.py",
-    "tests/course_outline_index_test.py"
+    "tests/course_outline_index_test.py",
+    "tests/course_outcomes_read_test.py"
    ],
    "adds": [],
    "push": null,
