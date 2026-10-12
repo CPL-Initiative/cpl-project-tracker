@@ -364,7 +364,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/*.md` | scripts: `kb/_build_docs_index.py` | — |
 | `docs/*_lessons.md` | scripts: `kb/_build_docs_index.py` | — |
 | `docs/INDEX.md` | scripts: `kb/_build_docs_index.py`, `kb/_docs_audit.py`, `kb/doctrine.py` | — |
-| `docs/catalog/index.json` | tabs: `governance` · scripts: `kb/_build_docs_index.py` | scripts: `scripts/fetch_gallery_thumbs.py` |
+| `docs/catalog/index.json` | tabs: `governance` | — |
 | `docs/common_cr_reference_scope.md` | scripts: `kb/_build_cr_reference.py` | — |
 | `docs/reference/library_filer.md` | scripts: `scripts/library_file.py` | — |
 | `docs/reference/mid_lifecycle.md` | scripts: `kb/_doctrine_scenarios.py` | — |
@@ -412,6 +412,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `governance.js` | pages: `CPL_Dashboard.html` | — |
 | `gr_priorities.js` | pages: `CPL_Dashboard.html` | — |
 | `index.html` | scripts: `excel_to_dashboard.py`, `kb/_glyph_sweep.py`, `nudges/build_nudges.py`, `prototype/check_contrast.py`, `raci/_seed_team_members.py`, `scripts/ui_pass.py` | committed by: `daily-dashboard.yml` |
+| `index.json` | pages: `tools/first_light_gallery/gallery.html` | — |
 | `jev_ccr_title_rung_calibration_<date>_s282.json` | scripts: `kb/_jev_next_steps.py` | — |
 | `kb-portal/app.js` | pages: `kb-portal/index.html` | — |
 | `kb-portal/composer_util.js` | pages: `kb-portal/index.html` | — |
@@ -856,6 +857,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/video_context_test.py` | workflows: `js-tests.yml` | — |
 | `tests/vision_2030_first_light_test.py` | workflows: `js-tests.yml` | — |
 | `tests/zband_retire_apply_test.py` | workflows: `js-tests.yml` | — |
+| `thumbs-more.json` | pages: `tools/first_light_gallery/gallery.html` | — |
 | `tmc/tmc_or_groups.json` | scripts: `tmc/_parse_tmc_pdfs.py` | — |
 | `tmc_builder.js` | pages: `CPL_Dashboard.html` | — |
 | `tools/first_light_candidates.json` | scripts: `scripts/fetch_gallery_thumbs.py` | committed by: `first-light-art.yml` |
@@ -1073,5 +1075,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 97 Supabase tables · 36 RPCs · 7 edge functions · 628 file
-datasets · 167 external services · 428 consumers · 48 workflows · 39 tabs.
+Coverage: 97 Supabase tables · 36 RPCs · 7 edge functions · 630 file
+datasets · 167 external services · 429 consumers · 48 workflows · 39 tabs.
