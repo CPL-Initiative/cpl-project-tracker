@@ -38,6 +38,8 @@ checkpointed at the context warning (about 109k left).
    `tools/first_light_selection.json` (rebuild with `tools/build_first_light_manifest.mjs`) and `sierra/art/manifest.json`
    (runs `sierra-art-fetch.yml`), each new entry with our own blurb and alt text.
 
+**Emergency amendment (S371, ~16:40Z, context line):** the gallery page commit (2adf1d9) is on branch `claude/s371-gallery-page`, not yet on `claude/s371-painting-gallery`: once `first-light-art.yml` has committed the re-sourced pool there, cherry-pick 2adf1d9 onto it. The preview A/B (run 38272978495) deleted `cpl-chat-preview` (confirmed), but its compare step failed: read which mode differs before anything else on Sierra. The decision sheet was not built.
+
 ## Next in the queue
 
 1. **Decision sheet.** Three calls wait on Sam (`kb/queue_status.json` `calls`): Mesa's registry write, the
