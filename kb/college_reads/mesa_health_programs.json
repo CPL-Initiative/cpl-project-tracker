@@ -1,5 +1,5 @@
 {
- "_readme": "S374 SkyJuniper, 2026-10-12. San Diego Mesa's read (run 38282023973, S373) walked one section of catalog 70, Degree Curricula and Certificate Programs (199 entries), because cq_index takes only top sections whose names say degree, certificate, program, major or award. Nine programs were not found, all health sciences: Veterinary Technology 05301, Dental Assisting: RDA, CDA 05344 and 22314, Physical Therapist Assistant 05347, Health Information Technology 05348, Radiologic Technology 05349 and 22313, Neurodiagnostic Technology 38642 and 38643. This read loads catalog 70's top navigation as JSON to find the section that lists them, before a re-read (handoff 374 item 3). No model call; one data load. Read 2 (S374): read 1 (run 38318250175) found 21 top sections and no health section; programs sit only under Degree Curricula and Certificate Programs (17540). This read loads 17540's page and child navigation and the Addendum (19973), printing every line that names one of the nine, to learn whether they are hidden entries, deeper than the reader walks, or listed only in the Addendum. Read 3 (S374): read 2 (run 38318710491) found 17540 holds one tab list, 18643, and the Addendum links the Health Information Management B.S. (17625) under 17540, so the health programs sit in the tab list; this read loads 18643's page and child navigation. Read 4 (S374): read 3 (run 38318888797) found 18643 holds one tab, All Programs (18644), the index the reader walked. cq_is_program keeps an entry only when its title has ' - ' and an award word; the Addendum writes 'Health Information Management, Bachelor of Science Degree'. This read loads 18644's page, its child navigation, and its web view with the data its scripts fetch, printing the lines that name the nine.",
+ "_readme": "S374 SkyJuniper, 2026-10-12. San Diego Mesa's read (run 38282023973, S373) walked one section of catalog 70, Degree Curricula and Certificate Programs (199 entries), because cq_index takes only top sections whose names say degree, certificate, program, major or award. Nine programs were not found, all health sciences: Veterinary Technology 05301, Dental Assisting: RDA, CDA 05344 and 22314, Physical Therapist Assistant 05347, Health Information Technology 05348, Radiologic Technology 05349 and 22313, Neurodiagnostic Technology 38642 and 38643. This read loads catalog 70's top navigation as JSON to find the section that lists them, before a re-read (handoff 374 item 3). No model call; one data load. Read 2 (S374): read 1 (run 38318250175) found 21 top sections and no health section; programs sit only under Degree Curricula and Certificate Programs (17540). This read loads 17540's page and child navigation and the Addendum (19973), printing every line that names one of the nine, to learn whether they are hidden entries, deeper than the reader walks, or listed only in the Addendum. Read 3 (S374): read 2 (run 38318710491) found 17540 holds one tab list, 18643, and the Addendum links the Health Information Management B.S. (17625) under 17540, so the health programs sit in the tab list; this read loads 18643's page and child navigation. Read 4 (S374): read 3 (run 38318888797) found 18643 holds one tab, All Programs (18644), the index the reader walked. cq_is_program keeps an entry only when its title has ' - ' and an award word; the Addendum writes 'Health Information Management, Bachelor of Science Degree'. This read loads 18644's page, its child navigation, and its web view with the data its scripts fetch, printing the lines that name the nine. Read 5 (S374): read 4 (run 38319292643) found All Programs shows one link list, 17541, of 200 entries (the reader kept 199). This read loads 17541's entries and prints the lines that name the nine.",
  "college": "San Diego Mesa College",
  "questions": {
   "sections": "Catalog 70's top sections, their ids, and which one holds the health sciences programs."
@@ -17,20 +17,7 @@
    "answers": [
     "sections"
    ],
-   "url": "https://sdccd.curriqunet.com/Catalog/_getPage?catalogId=70&id=18644"
-  },
-  {
-   "answers": [
-    "sections"
-   ],
-   "url": "https://sdccd.curriqunet.com/Catalog/_getNavigation?id=70&parentId=18644"
-  },
-  {
-   "answers": [
-    "sections"
-   ],
-   "url": "https://sdccd.curriqunet.com/catalog/iq/18644",
-   "network": true
+   "url": "https://sdccd.curriqunet.com/Catalog/_getNavigation?id=70&parentId=17541"
   }
  ]
 }
