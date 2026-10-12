@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-12T23:27:06Z",
+  "written_at": "2026-10-12T23:45:38Z",
   "session": 374,
   "moniker": "SkyJuniper",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_375_handoff.md",
+  "handoff": "docs/session_376_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",

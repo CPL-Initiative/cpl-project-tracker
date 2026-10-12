@@ -10,59 +10,59 @@
     "other": 150000
   },
   "summary": {
-    "files": 1130,
-    "bytes": 11701207,
-    "over_budget": 7,
-    "handoff_max": 375,
+    "files": 1134,
+    "bytes": 11718389,
+    "over_budget": 8,
+    "handoff_max": 376,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59998,
+    "always_loaded_bytes": 60304,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59998,
-        "over": 0
+        "bytes": 60304,
+        "over": 1
       },
       "other": {
         "files": 119,
-        "bytes": 3475490,
+        "bytes": 3476471,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 9756,
+        "bytes": 9714,
         "over": 0
       },
       "lessons": {
-        "files": 81,
-        "bytes": 2341133,
+        "files": 82,
+        "bytes": 2344470,
         "over": 3
       },
       "kb_note": {
-        "files": 546,
-        "bytes": 2710275,
+        "files": 547,
+        "bytes": 2712229,
         "over": 0
       },
       "roadmap_lane": {
-        "files": 36,
-        "bytes": 334942,
+        "files": 37,
+        "bytes": 339945,
         "over": 1
       },
       "handoff": {
-        "files": 346,
-        "bytes": 2769613,
+        "files": 347,
+        "bytes": 2775256,
         "over": 0
       }
     },
     "by_rule": {
+      "oversized_doc": 8,
       "house_voice": 23,
-      "oversized_doc": 7,
       "vault_heavy_path": 61
     },
     "vault": {
-      "files": 6778,
-      "bytes": 2052196187,
+      "files": 6783,
+      "bytes": 2052219653,
       "heavy_bytes": 1028915032,
       "heavy_share": 0.501,
       "ignore_filters": [
@@ -131,6 +131,19 @@
     }
   },
   "findings": [
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 60304,
+        "limit": 60000,
+        "lane": "always_loaded",
+        "over_by": 304,
+        "ratio": 1.01
+      },
+      "message": "60,304 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "path": "CLAUDE.md"
+    },
     {
       "rule": "house_voice",
       "fixable": false,
@@ -429,13 +442,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 714741,
+        "bytes": 715186,
         "limit": 150000,
         "lane": "other",
-        "over_by": 564741,
-        "ratio": 4.76
+        "over_by": 565186,
+        "ratio": 4.77
       },
-      "message": "714,741 B is 4.8× the other budget (150,000 B) — candidate for compaction",
+      "message": "715,186 B is 4.8× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {

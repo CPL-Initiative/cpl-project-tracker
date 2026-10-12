@@ -1,80 +1,48 @@
 ---
-title: Session 375 handoff — load the course outcomes, then re-read Mesa
+title: "Session 375 handoff — Annual Goals: land PR A, then B, C, D"
 date: 2026-10-12
-session: 374 (SkyJuniper)
-tags: [handoff, program-requirements, course-outlines, course-outcomes, san-diego-mesa]
-status: current
+tags: [handoff, workplan, annual-goals, activities, fifty-percent-law]
 ---
 
-# You are Session 375
+# Session 375 handoff (from SkyLedger, the parallel session of 2026-10-12)
 
-Your moniker is **SkyLinden**. Session 374 (**SkyJuniper**, `session_01AHDZvwJgxnDZhHCH4FJP9T`) ran with Sam present.
-Sam had another session on the Annual Goals and Activities tabs at the same time; it touches none of this.
+You are **SkyTally (Session 375)**. Two queues are live: **`docs/session_374_handoff.md`** (S373 SkyCypress → SkyJuniper: program requirements and the rest of the main queue) and **this one** (the Annual Workplan Goals work). If Sam opened you with this file, work this queue; read 374's priorities too and agree one writer with any session still holding wakes (`list_sessions`). In this run's receipt and memory names, "s372" means SkyLedger, distinct from S372 SkyRedwood.
 
-## First, in this order
+## What shipped this run
+- **50% Law research for CPL spending** (Sam's ask). Finding: the definitions of instruction leave no room (coordinator, counseling, transcript evaluation, faculty stipends are noninstructional), but **restricted funds sit outside the calculation** (Ed. Code §84362(c); 5 CCR §59204(b)(6); BAM: CEE = Unrestricted General Fund; CDAM §421). ESS 25-82 never says "restricted." Draft FSAU/ESS fiscal advisory + one-page CBO guide: `CPLBrain/04-projects/cpl-initiative/20261012_CPL_Funds_Fifty_Percent_Law_Advisory_and_Guide_Draft_1.html` (private, pre-decisional; Sam sends it to Fiscal Standards with the cover note). Public KB note (research only, Sam's pick): `cpl-knowledge-base/policy-and-funding/fifty-percent-law-and-cpl-funds.md` (#26 merged), portal header now says CPL Initiative (#27 merged), vault #321 merged.
+- **Annual Goals PR A — [CPL-Initiative/cpl-project-tracker#2051](https://github.com/CPL-Initiative/cpl-project-tracker/pull/2051), draft, WIP.** One add flow (fixes Sam's failed 3.9 add), Set targets on ladderless rows, counting notes (`kpi_unit` + new `count_note`, migration applied), wired to the Activities cards and the three report builders. **Its jsdom test never ran locally (no jsdom in the sandbox).**
 
-0. **One writer.** `list_sessions`; Sam's routine fires 05:12Z (`trig_01L8K64ZKYb5eALdT4HW6NAV`). Merge this checkpoint
-   PR (`claude/s374-checkpoint`) and the vault note PR on `test` if S374 has not.
-1. **Rule 8:** `cpl_memory` tags `course-outlines`, `program-requirements-harvest`, `san-diego-mesa`; read
-   `apply-migration-timeouts-2026-10-12` before any migration.
-2. **The course outcomes read (#2049, branch `claude/s374-course-outcomes-read`).** Run 38318152644 reads the SLOs of
-   the 1,605 RCCD courses the loaded records name, four slices in turn. Slice 1 landed (402 outlines, 1,367 SLOs, all
-   parsed from the HTML); slices 2 to 4 land on the branch as `kb/course_outcomes/rccd/read_38318152644_p<i>of4.json`
-   (if a slice's push failed, its artifact `course-outcomes-38318152644-part<i>` holds it). Check each the way slice 1
-   was checked: every row 200, `parsed_from` html, heading *Student Learning Outcomes*.
-   - **The table is not created.** `chatbox/supabase_course_outcomes.sql` (table `course_outcomes`, public read,
-     insert-only `course_outcomes_load()` on the service role) timed out in `apply_migration` six times with nothing
-     reaching the database. First read Sam's reply on [Open Asks Sheet 71](https://claude.ai/artifact/6QK18kTxtsbbX51CPvzdSQ)
-     (`ArtifactData list replies`; card 1 *I'll paste it* or *Wait for the tool*) and `to_regclass('public.course_outcomes')`.
-     If not, try `apply_migration` once, then read back. Never DDL through `execute_sql` (the guard's rule).
-   - **Then the load:** write `host=rccd` to `kb/course_outcomes/.load` and push; `course-outcomes-load.yml` posts
-     the rows and commits `kb/receipts/course_outcomes_rccd_<run>.json` (every id and its delete). Read it back:
-     `select college, count(*) from course_outcomes group by 1`.
-   - Then merge #2049 on `test`; then SDCCD (`DynamicReports/AllFieldsReportByEntity/<id>?entityType=Course`) and
-     Chaffey (outlines with no SLO heading: look for another public source, `cor_slo_source_url`).
-3. **Mesa's nine (#2050, merged).** They are in catalog 70's index; each shows six tabs with Requirements fifth,
-   and the reader read four. #2050 reads a Requirements tab first. **The re-read is running:** run 38322747831 on
-   `claude/s374-mesa-reread` (dispatch: San Diego Mesa College, `extract: 1`, Sam's standing go for Mesa extraction).
-   Extraction keeps every record filed from an unchanged page, so it should send about nine programs to the model.
-   When it files: check `capture.json` (`not_found` should lose the nine), dispatch `step: load` then
-   `step: display` on the same branch, read both back, open the PR and merge on `test`. Then check Miramar's four
-   not found (16779, 30512, 30532, 36254) and San Diego City's place-none records for the same tab layout.
-4. **The gallery picks** when Sam says he has marked them: `ArtifactData list picks` on
-   https://claude.ai/artifact/21o45k6MbPKsPMgNQk69hn.
+## Docs to read, in order
+1. `docs/reference/lanes/workplan-annual-goals.md` — state, the four NEXT items, the invariants.
+2. `docs/workplan_annual_goals_lessons.md` — why the add flow failed (two faults) and what "grayed" meant (four causes).
+3. `docs/kb-notes/reference-workplan-activity-project-linking-model.md` — home field vs association table.
+4. `cpl_memory` rows tagged `workplan`, `fifty-percent-law`.
 
-## What shipped (S374)
+## Priority, in order
+1. **Drive #2051 to green.** Read `get_check_runs`; fix the add-flow test or the code until `test` passes; mark ready; squash-merge (auto-merge authorization). Then `project_add.js`: retire it or point it at `window.CPL_WORKPLAN_ADD`.
+2. **The data paste.** Ask Sam whether he ran the SQL (3.9 add + 1.1.2 → 4.2.1). Verify with a read: projects 3.9 = 1, goal rows 3.9 = 2, projects 4.2.1 = 1, projects 1.1.2 = 0, links 4.2.1 = 2 (Activity 4 primary). Then dispatch `daily-dashboard.yml`. If not run, hand him the paste again from the receipt (`kb/receipts/workplan_2026-10-12_s372_add_3_9_move_1_1_2.sql`) — the repo guard blocks session data writes.
+3. **PR B — the Annual Goals UI audit fixes** (list in the lane file; keyboard reachability first, it is a Level A failure). Seeds exist: `workplan-goals-editor`, `workplan-goals-add` in `a11y.config.js`; add a phone-card check.
+4. **PR C — Move control** (SECURITY DEFINER re-key function + guard test + governance map).
+5. **PR D — Refresh summaries** (approve before post; Activities tab; remove the activity-level Update link).
 
-S373's #2046 (RCCD course index), #2047 (registry fill) and #2048 (its checkpoint) merged. **#2049** the course
-outcomes read (draft: reader, load, table SQL, governance entries, two workflows, tests 7 and 4 checks). **#2050** the
-curriQunet Requirements-tab fix (merged; 109 checks, the two new ones fail without it). KB note
-`methodology-a-lead-in-sentence-is-not-a-section-heading`. Five `cpl_memory` rows (receipt
-`kb/receipts/cpl_memory_2026-10-12_s374.sql`).
-
-## Decisions Sam made this run
-
-None on a sheet. In chat: *"keep rolling. Note, I have another session working on Annual Goals and Activities
-tabs--shouldn't collide with you"* (about 23:07Z).
+## Sam's rulings this run (also in `cpl_memory`)
+- Add 3.9 now; move 1.1.2 → 4.2.1 now, keeping the Activity 1 link; Refresh summaries: **draft, then he approves**; no mockups, just build.
+- Counting notes per sub-activity: "define what the numbers will be counting"; and "I will want this all wired to the Activities tab and Report generator."
+- Public KB: research only, folder Policy and Funding; HTML, not Word, for the advisory and guide.
 
 ## Patterns that worked
+- Rendering the tab (signed out and with `cpl_team_pass`) before advising: "grayed" turned out to be four things.
+- Counting every row keyed to an id before a re-key (five rows for 1.1.2).
+- A receipt with before-values and a rollback before any data write.
 
-- **File a trial's pages and test against them.** The trial of twelve filed each page's text and HTML; that is how
-  the objectives-for-SLOs error showed, and the files are the test's fixtures.
-- **Walk the tree before guessing where a thing is listed.** Seven small JSON reads found Mesa's nine in the index the
-  reader already walked; the coverage number (0.0) said the page, not the index, was the problem.
+## Safety patterns to honor
+- The tree is the id: a move re-keys every id-keyed table in one transaction (#872).
+- Session data writes go to Sam as a paste (guard); DDL through `apply_migration` with a receipt.
+- Renderer changes need the cron (code-only PRs); a reload does not show a new row.
+- `kpi_unit` is curator-editable now: escape it everywhere it renders.
 
-## Safety patterns
+## Skipped this checkpoint (and why)
+- Pipeline view (7): the pipeline did not move. UI pass (9): no room for a fix PR; the ledger keeps the next view due (Annual Goals was audited in session; its fixes are PR B). `kb/queue_status.json` (12): owned by the concurrent Program Requirements session. `--apply` handoff stamping: not run, so 374 is not marked superseded while it is still live.
 
-- A timeout in `apply_migration` is no proof of failure: read `to_regclass` and the migrations ledger before retrying.
-- A runner that commits back after the branch merged main: land on the tip one commit deep, never `pull --rebase`.
-- The dependency map reads a workflow's push target: keep it unquoted.
-- The lints job's `supabase_table_grants_test` wants every new table to grant select to `service_role`.
-
-## Not refreshed this checkpoint
-
-UI pass (two PRs and a running read in flight; the due view is `cobi:annual-report`); Pipeline tab (the
-M-ID pipeline did not move); `kb/README.md` (the new scripts are on #2049, not main); `README.md`. Watches: #2049,
-#2052 and CPLBrain#324 subscribed (#2050 merged). S374 drops these at sign-off.
-
-## Sign-off line for Sam
-
-Greetings, you are SkyLinden (Session 375), see SkyJuniper's handoff — `docs/session_375_handoff.md` — let's keep rolling with our queue.
+## Subscriptions and check-ins
+Watching #2051 (draft). No check-ins armed. KB #26, #27 and vault #321 merged; their subscriptions ended.

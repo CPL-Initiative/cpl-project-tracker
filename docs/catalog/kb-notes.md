@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-544 document(s).
+545 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -276,6 +276,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [An inside term leaks through the context, never through the prose rules](../kb-notes/methodology-an-inside-term-leaks-through-the-context-not-the-prose.md) | methodology | published | 2026-09-18 | 2026-09-18 |
 | [An instruction that names another surface is a dependency nothing enforces](../kb-notes/methodology-an-instruction-naming-another-surface-is-an-unenforced-dependency.md) | methodology | published | 2026-08-14 | 2026-08-14 |
 | [An opportunity figure must be what peers ACHIEVED, not what the record allows](../kb-notes/methodology-an-opportunity-figure-must-be-what-peers-achieved.md) | methodology | published | 2026-08-17 | 2026-08-17 |
+| [An option list read from the page dies with the renderer that printed it](../kb-notes/methodology-an-option-list-read-from-the-page-dies-with-the-renderer.md) | methodology | published | 2026-10-12 | 2026-10-12 |
 | [An RLS-filtered read is not an error — it is an empty answer](../kb-notes/methodology-an-rls-filtered-read-is-not-an-error.md) | methodology | published | 2026-08-17 | 2026-08-17 |
 | [An unadopted item is a shelf, not an absence — and it needs its own band](../kb-notes/methodology-an-unadopted-item-is-a-shelf-not-an-absence.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [An undefined CSS custom property fails to an invisible state, and no jsdom test can see it](../kb-notes/methodology-an-undefined-css-token-fails-to-an-invisible-state.md) | methodology | published | 2026-09-06 | 2026-10-09 |
