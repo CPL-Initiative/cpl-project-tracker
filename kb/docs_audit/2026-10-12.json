@@ -10,14 +10,14 @@
     "other": 150000
   },
   "summary": {
-    "files": 1119,
-    "bytes": 11609988,
-    "over_budget": 7,
-    "handoff_max": 368,
+    "files": 1120,
+    "bytes": 11618275,
+    "over_budget": 6,
+    "handoff_max": 369,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59998,
-    "superseded_files": 8,
-    "superseded_bytes": 44892,
+    "superseded_files": 0,
+    "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
@@ -26,45 +26,43 @@
       },
       "other": {
         "files": 119,
-        "bytes": 3411721,
+        "bytes": 3412258,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 10291,
+        "bytes": 10487,
         "over": 0
       },
       "lessons": {
         "files": 81,
-        "bytes": 2364101,
+        "bytes": 2366160,
         "over": 2
       },
       "kb_note": {
         "files": 542,
-        "bytes": 2698878,
+        "bytes": 2698994,
         "over": 0
       },
       "roadmap_lane": {
         "files": 36,
-        "bytes": 333336,
-        "over": 2
+        "bytes": 332891,
+        "over": 1
       },
       "handoff": {
-        "files": 339,
-        "bytes": 2731663,
+        "files": 340,
+        "bytes": 2737487,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 23,
-      "oversized_doc": 7,
-      "superseded_handoff": 8,
-      "american_spelling": 1,
+      "oversized_doc": 6,
       "vault_heavy_path": 61
     },
     "vault": {
-      "files": 5551,
-      "bytes": 1936530095,
+      "files": 5552,
+      "bytes": 1936564170,
       "heavy_bytes": 926140472,
       "heavy_share": 0.478,
       "ignore_filters": [
@@ -403,19 +401,6 @@
       "path": "docs/reference/lanes/common-cr-reference.md"
     },
     {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 20464,
-        "limit": 20000,
-        "lane": "roadmap_lane",
-        "over_by": 464,
-        "ratio": 1.02
-      },
-      "message": "20,464 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/program-requirements-harvest.md"
-    },
-    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -431,13 +416,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 711724,
+        "bytes": 711957,
         "limit": 150000,
         "lane": "other",
-        "over_by": 561724,
-        "ratio": 4.74
+        "over_by": 561957,
+        "ratio": 4.75
       },
-      "message": "711,724 B is 4.7× the other budget (150,000 B) — candidate for compaction",
+      "message": "711,957 B is 4.7× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -451,109 +436,6 @@
       },
       "message": "7 business-register terms — leverage x7 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/roadmap_archive.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 360,
-        "authoritative": 368,
-        "has_frontmatter": true
-      },
-      "message": "handoff 360 is below the authoritative 368 but is not stamped `superseded: true`",
-      "path": "docs/session_360_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 361,
-        "authoritative": 368,
-        "has_frontmatter": true
-      },
-      "message": "handoff 361 is below the authoritative 368 but is not stamped `superseded: true`",
-      "path": "docs/session_361_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 362,
-        "authoritative": 368,
-        "has_frontmatter": true
-      },
-      "message": "handoff 362 is below the authoritative 368 but is not stamped `superseded: true`",
-      "path": "docs/session_362_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 363,
-        "authoritative": 368,
-        "has_frontmatter": true
-      },
-      "message": "handoff 363 is below the authoritative 368 but is not stamped `superseded: true`",
-      "path": "docs/session_363_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 364,
-        "authoritative": 368,
-        "has_frontmatter": true
-      },
-      "message": "handoff 364 is below the authoritative 368 but is not stamped `superseded: true`",
-      "path": "docs/session_364_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 365,
-        "authoritative": 368,
-        "has_frontmatter": true
-      },
-      "message": "handoff 365 is below the authoritative 368 but is not stamped `superseded: true`",
-      "path": "docs/session_365_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 366,
-        "authoritative": 368,
-        "has_frontmatter": true
-      },
-      "message": "handoff 366 is below the authoritative 368 but is not stamped `superseded: true`",
-      "path": "docs/session_366_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 367,
-        "authoritative": 368,
-        "has_frontmatter": true
-      },
-      "message": "handoff 367 is below the authoritative 368 but is not stamped `superseded: true`",
-      "path": "docs/session_367_handoff.md"
-    },
-    {
-      "rule": "american_spelling",
-      "fixable": false,
-      "detail": {
-        "total": 1,
-        "forms": {
-          "cancelled": {
-            "n": 1,
-            "prefer": "canceled"
-          }
-        }
-      },
-      "message": "1 British form — cancelled→canceled",
-      "path": "docs/session_368_handoff.md"
     },
     {
       "rule": "house_voice",
