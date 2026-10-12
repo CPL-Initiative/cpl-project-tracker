@@ -71,16 +71,32 @@ jobs:
           else args+=(--part "${{ matrix.part }}" --of "${parts:-1}"); fi
           python3 kb/_course_outcomes_read.py "${args[@]}"
 
+      - name: Keep the slice's files as an artifact
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: course-outcomes-${{ github.run_id }}-part${{ matrix.part }}
+          path: kb/course_outcomes/
+          retention-days: 30
+
       - name: Commit the result to this branch
         if: always()
+        # Lands the slice's new files on the branch's current tip without its
+        # history: the checkout is one commit deep, and a pull --rebase across a
+        # merge of main fetched main's whole history (S374, slice 1: five minutes).
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add kb/course_outcomes/
-          if git diff --cached --quiet; then echo "Nothing new."; exit 0; fi
-          git commit -m "Course outcomes read (run ${{ github.run_id }}, part ${{ matrix.part }})"
+          changed=$(git ls-files --others --modified --exclude-standard kb/course_outcomes/)
+          if [ -z "$changed" ]; then echo "Nothing new."; exit 0; fi
+          tar -czf "$RUNNER_TEMP/slice.tgz" $changed
           for i in 1 2 3 4; do
-            git pull --rebase origin ${{ github.ref_name }} && git push origin HEAD:${{ github.ref_name }} && exit 0
+            git fetch -q --depth=1 origin "${{ github.ref_name }}" &&
+            git checkout -q -f -B land FETCH_HEAD &&
+            tar -xzf "$RUNNER_TEMP/slice.tgz" &&
+            git add kb/course_outcomes/ &&
+            { git diff --cached --quiet || git commit -q -m "Course outcomes read (run ${{ github.run_id }}, part ${{ matrix.part }})"; } &&
+            git push origin HEAD:"${{ github.ref_name }}" && exit 0
             sleep $((i * 5))
           done
           exit 1
