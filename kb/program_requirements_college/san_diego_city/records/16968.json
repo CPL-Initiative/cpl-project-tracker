@@ -1,0 +1,223 @@
+{
+ "college": "San Diego City College",
+ "control_number": "16968",
+ "shape": "certificate",
+ "title": "Fabrication Manufacturing",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15662",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10495,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10495,
+    "output_tokens": 2247,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2247,
+  "output_tokens_details": {
+   "thinking_tokens": 961
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08692,
+ "ms": 19274,
+ "seconds": 19.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.0,
+    32.0
+   ],
+   "stated": [
+    32.0,
+    32.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 11,
+   "courses": 0,
+   "count": 11,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fabrication Manufacturing - Certificate of Achievement: City",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Utilize and operate various test equipment, and use measurement results to support product development;",
+    "Demonstrate the knowledge of design tools used in industry for product development;",
+    "Identify and apply quality control tools used in manufacturing industries;",
+    "Explain and apply the fundamentals of manufacturing applications and theory; and",
+    "Describe different types of materials, process flows, equipment and techniques used to manufacture products.",
+    "Demonstrate a basic knowledge of Manufacturing and Manufacturing Engineering Technology at the 2-year college level.",
+    "Identify and utilize CAD/CAM applications in various manufacturing processes, e.g. MasterCAM.",
+    "Explain product design to optimize manufacturing efficiency.",
+    "Identify and apply quality control tools and instruments used in a manufacturing environment.",
+    "Demonstrate proficiency in programming and operation of NC/CNC equipment.",
+    "Describe different types of materials, process flows, equipment and techniques used in manufacturing."
+   ],
+   "careers": [
+    "entry-level technician positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 32,
+     "max": 32
+    },
+    "courses": [
+     {
+      "code": "MFET 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFET 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFET 110",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFET 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFET 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFET 120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFET 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFET 230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MFET 240",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACT 150",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACT 160M",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Outcomes recorded: the five-item 'are prepared to' list in the Summary (explicitly for this certificate), the single 'Learning Outcome(s)' statement for the Fabrication Manufacturing Program, and the 'MFET Option 2: Fabrication Manufacturing' outcomes list. The 'MFET Option 1: Electronics Manufacturing' outcomes were excluded as belonging to a different option; reviewer should confirm which outcome lists apply to this award.",
+   "A stray '3.0' is printed after MFET 150 and before the MFET 230 OR MFET 240 pair; it appears to be the unit total for that either/or choice. Units sum to 32 with MFET 230/240 counted once, matching the printed Total Units: 32.0.",
+   "MFET 230 and MFET 240 are recorded as one choice (MFET 240 as alternative) per the printed 'OR'.",
+   "Career entry taken from the Summary: 'entry-level technician positions in the manufacturing or industrial technology fields with particular focus on fabrication'."
+  ]
+ },
+ "extracted_run": "38252422845"
+}

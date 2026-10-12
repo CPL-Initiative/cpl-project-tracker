@@ -1,0 +1,255 @@
+{
+ "college": "San Diego City College",
+ "control_number": "33761",
+ "shape": "certificate",
+ "title": "Multimedia Journalism",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15623",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10664,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10664,
+    "output_tokens": 1614,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1614,
+  "output_tokens_details": {
+   "thinking_tokens": 407
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07494,
+ "ms": 13423,
+ "seconds": 13.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 15,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Multimedia Journalism - Certificate of Achievement: City",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Apply tools and technologies appropriate for the media professions in which they work.",
+    "Write in forms and styles appropriate for media professions, audiences, and purposes they serve.",
+    "Conduct research and evaluate information by methods appropriate to the media professions in which they work.",
+    "Apply principles of diversity, equity, and media law and ethics."
+   ],
+   "careers": [
+    "multimedia journalist",
+    "digital content producer",
+    "production assistant",
+    "news producer",
+    "on-air talent",
+    "news reporter",
+    "news writer",
+    "public information officer",
+    "communications director",
+    "social media producer",
+    "operations engineer",
+    "news photographer",
+    "audio engineer",
+    "studio camera operator",
+    "sound technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "FJMP 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FJMP 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FJMP 132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FJMP 133",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "FJMP 143",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FJMP 144",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete six (6) units from the following:",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "FJMP 134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FJMP 142",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FJMP 232A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FJMP 232B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FJMP 233A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FJMP 233B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Learning outcomes are printed for 'the Multimedia Journalism Program' as a whole; recorded here as shared by this certificate. The first outcome shares a line with the lead-in, which was removed.",
+   "The required list prints FJMP 132 OR FJMP 133 and FJMP 143 OR FJMP 144 as paired 'or' rows (with an extra '3.0' before each pair); recorded as single entries with alternatives in the 12-unit required block.",
+   "PHOT 215 is titled 'Photojournalism and Documentary Photography' in the catalog versus 'Photo Journalism and Documentary Photography' in the closed list; same code.",
+   "The course descriptions section is cut off mid-text (during FJMP 232B); the requirements list itself appears complete with Total Units: 18.0."
+  ]
+ },
+ "extracted_run": "38252422845"
+}

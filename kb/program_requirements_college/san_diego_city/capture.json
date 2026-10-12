@@ -1,0 +1,1892 @@
+{
+ "college": "San Diego City College",
+ "catalog_url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15489",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 203,
+ "with_closed_list": 191,
+ "started": "2026-10-12T12:59:06Z",
+ "curriqunet": {
+  "catalog": 69,
+  "view_prefix": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/",
+  "errors": [],
+  "catalog_from": "_getCatalogs",
+  "sections": [
+   "Degree Curricula and Certificate Programs"
+  ],
+  "nodes_read": 3,
+  "calls": 7,
+  "entries": 228,
+  "stopped_at_cap": false,
+  "same_title_entries": 0,
+  "entries_read": 228
+ },
+ "pages_read": 228,
+ "loads": 1175,
+ "seconds": 5588.9,
+ "found": 168,
+ "by_method": {
+  "no_closed_list": 12,
+  "not_found": 19,
+  "page_claimed": 4,
+  "sitemap_page": 168
+ },
+ "shared_pages": {
+  "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15638": [
+   "05224",
+   "32691",
+   "41495"
+  ],
+  "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15607": [
+   "05285",
+   "32735"
+  ],
+  "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15705": [
+   "09462",
+   "37623"
+  ],
+  "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15667": [
+   "22360",
+   "38668"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "05263",
+   "title": "German",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18127",
+   "title": "Liberal Arts and Sciences: Elementary Multiple Subject Teaching Preparation",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "19266",
+   "title": "Real Estate Broker",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"
+  },
+  {
+   "control_number": "19710",
+   "title": "Real Estate",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "31168",
+   "title": "Licensed Vocational Nurse to Registered Nurse",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "31169",
+   "title": "Registered Nurse: Generic",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "33180",
+   "title": "Business Information Worker",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "33649",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "36567",
+   "title": "Business Information Worker II",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "36568",
+   "title": "Business Information Worker",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "37387",
+   "title": "Special Effects (FX) Makeup",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "38733",
+   "title": "Green Building Energy Professional",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "38735",
+   "title": "Green Building Energy Professional",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "39358",
+   "title": "C++",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "39387",
+   "title": "Energy Analysis and Consultation",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "39388",
+   "title": "Energy Analysis and Consultation",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "42744",
+   "title": "General Atomics CNC Machine Technician Apprenticeship",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "42746",
+   "title": "General Atomics HVAC-R Technician Apprenticeship",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "43523",
+   "title": "Cyber Defense and Analysis",
+   "award": "Baccalaureate of Science (B.S.) Degree."
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "15405",
+   "title": "Communications Technician Apprenticeship",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15727",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15729",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15647",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15649",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15728",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15730",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15648",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15650",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15651"
+   ]
+  },
+  {
+   "control_number": "15818",
+   "title": "Honeywell Tool and Die Apprenticeship",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15740",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15820",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15741",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15908",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15662",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15811",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17368",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15821"
+   ]
+  },
+  {
+   "control_number": "30706",
+   "title": "Communication Studies",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15809"
+   ]
+  },
+  {
+   "control_number": "42745",
+   "title": "General Atomics Electrical Specialist Apprenticeship",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15642"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 8,
+  "0.8-1.0": 6,
+  "1.0": 154
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 168,
+  "list": [
+   {
+    "control_number": "05223",
+    "title": "General Biology Track",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15671",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05224",
+    "title": "Business Administration",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15638",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05225",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15606",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05227",
+    "title": "Small Business Management",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15735",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05236",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15656",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05248",
+    "title": "Drafting Option",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15908",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05251",
+    "title": "Computer Aided Manufacturing (CAM) Option",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15778",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05255",
+    "title": "Two-Dimensional Art",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15753",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05257",
+    "title": "Theatre",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15750",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05260",
+    "title": "Photography",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15710",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05262",
+    "title": "French",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15669",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05264",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15743",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05268",
+    "title": "Early Care and Education",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15639",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05271",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15658",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05272",
+    "title": "Communication Studies",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15767",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05273",
+    "title": "Mathematics",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15689",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05275",
+    "title": "Physics",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15713",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05276",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15761",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05277",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15718",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05285",
+    "title": "Anthropology",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15607",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05288",
+    "title": "Geography",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15673",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05289",
+    "title": "Political Science",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15715",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05290",
+    "title": "Sociology",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15739",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05293",
+    "title": "Cosmetology",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15787",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07072",
+    "title": "Personal Trainer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15707",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09442",
+    "title": "Allied Health Track",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15629",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09449",
+    "title": "Radio and Podcast",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15720",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09450",
+    "title": "Media Production",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15756",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09451",
+    "title": "Journalism",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15622",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09455",
+    "title": "Electronic Communication Systems",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15647",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09456",
+    "title": "Electronic Microprocessor/Microcontroller Design",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15649",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09457",
+    "title": "San Diego Gas and Electric Company Lineman Apprenticeship",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15725",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09459",
+    "title": "Electricity",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15644",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09460",
+    "title": "Electrical Control Systems Option",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15642",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09461",
+    "title": "San Diego Trolley Inc Wayside Lineman Apprenticeship",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15733",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09462",
+    "title": "Heating, Ventilation, and Air Conditioning Systems Design",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15705",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09468",
+    "title": "Computer Numerical Control (CNC) Technology Option",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15781",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09469",
+    "title": "Solar Turbines, Incorporated Apprenticeship",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15740",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09470",
+    "title": "Three-Dimensional Art",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15752",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09471",
+    "title": "Musical Theatre",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15700",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09473",
+    "title": "Philosophy",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15709",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09474",
+    "title": "Applied Mathematics",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15609",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09475",
+    "title": "Astronomy",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15614",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09486",
+    "title": "Alcohol and Other Drug Studies",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15475",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09487",
+    "title": "Graphic Design",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15677",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09488",
+    "title": "Italian",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15803",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09493",
+    "title": "Chicana and Chicano Studies",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15762",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12091",
+    "title": "Child Development: Associate Teacher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15763",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12092",
+    "title": "Child Development: Teacher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15765",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12093",
+    "title": "Child Development: Master Teacher",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15764",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16748",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15822",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16967",
+    "title": "Electronics Manufacturing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15652",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16968",
+    "title": "Fabrication Manufacturing",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15662",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17972",
+    "title": "Manufacturing Engineering Technology - Option: Electronics",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15819",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17976",
+    "title": "Manufacturing Engineering Technology - Option: Fabrication",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15820",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18099",
+    "title": "Liberal Arts and Sciences: Visual and Performing Arts",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15813",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18100",
+    "title": "Liberal Arts and Sciences: Language Arts and Humanities",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15809",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18101",
+    "title": "Liberal Arts and Sciences: Scientific Studies in Biological Science",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15810",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18102",
+    "title": "Liberal Arts and Sciences: Scientific Studies Mathematics and Pre-Engineering",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15811",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18103",
+    "title": "Liberal Arts and Sciences: Scientific Studies Physical and Earth Sciences Specialization",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15972",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18107",
+    "title": "Liberal Arts and Sciences: Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15812",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19254",
+    "title": "San Diego Transit Electronic Technician Apprenticeship",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15728",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19255",
+    "title": "San Diego Transit Electronic Technician Apprenticeship",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15727",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19403",
+    "title": "HVAC/R Maintenance and Construction",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15626",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22324",
+    "title": "Small Business Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15736",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22326",
+    "title": "Labor Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15806",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22328",
+    "title": "Electronic Microprocessor/Microcontroller Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15650",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22329",
+    "title": "Electronic Communication Systems",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15648",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22331",
+    "title": "Electricity",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15645",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22332",
+    "title": "Lineman",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15816",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22333",
+    "title": "Communications Technician Apprenticeship",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15651",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22334",
+    "title": "San Diego Gas and Electric Company Lineman Apprenticeship",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15726",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22337",
+    "title": "San Diego Trolley Inc Wayside Lineman Apprenticeship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15734",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22352",
+    "title": "Honeywell Tool and Die Apprenticeship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15821",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22353",
+    "title": "Computer Aided Manufacturing (CAM) Option",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15779",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22358",
+    "title": "Solar Turbines, Incorporated Apprenticeship",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15741",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22360",
+    "title": "Photography",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15667",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22361",
+    "title": "Graphic Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15678",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22365",
+    "title": "Alcohol and Other Drug Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15628",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22367",
+    "title": "Cosmetology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15788",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30213",
+    "title": "Esthetician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15660",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30657",
+    "title": "Urban Gardening",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15755",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30694",
+    "title": "Sustainable Urban Agriculture",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15748",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30704",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15717",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31309",
+    "title": "Information Technology Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15797",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31310",
+    "title": "Information Technology Management",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15796",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31506",
+    "title": "Mental Health Work",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15695",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31606",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/math2-adt",
+    "coverage": 0.615,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31615",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/phys2-adt",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31652",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15684",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31680",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15751",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31690",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15714",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31972",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15805",
+    "coverage": 0.99,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32577",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15738",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32684",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15657",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32685",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15742",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32686",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15611",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32691",
+    "title": "Business Administration",
+    "award": "A.S. T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15638",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32711",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15745",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32734",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15672",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32735",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15607",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33094",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15804",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33160",
+    "title": "Radio and Podcast",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15721",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33250",
+    "title": "Media Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15757",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33312",
+    "title": "Urban Farming Professional",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15754",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33313",
+    "title": "Conflict Resolution and Mediation",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15785",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33511",
+    "title": "Film Production",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15663",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33591",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15674",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33592",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15708",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33645",
+    "title": "Music Production Technology",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15699",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33677",
+    "title": "Audio Production Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15615",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33678",
+    "title": "Film Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15664",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33761",
+    "title": "Multimedia Journalism",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15623",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33825",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15618",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35521",
+    "title": "Gerontology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15676",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35589",
+    "title": "Desktop Support Technician II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15826",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35976",
+    "title": "Agriculture Plant Science",
+    "award": "A.S. T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15625",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35977",
+    "title": "Film, Television, and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15666",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36118",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15640",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36754",
+    "title": "Cybersecurity",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15795",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36915",
+    "title": "Cybersecurity",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15794",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36933",
+    "title": "Social Work",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15737",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36934",
+    "title": "Sustainability",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15747",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37032",
+    "title": "Esthetician Business Administration",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15661",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37036",
+    "title": "Community Health Work",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15775",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37605",
+    "title": "Technical Theatre",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15749",
+    "coverage": 0.545,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37617",
+    "title": "HVAC/R Systems Design and Control",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15693",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37618",
+    "title": "HVAC/R Systems Design and Control",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15694",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37619",
+    "title": "HVAC/R Service and Direct Digital Control",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15691",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37620",
+    "title": "HVAC/R Service and Direct Digital Control",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15692",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37621",
+    "title": "HVAC/R Mechanical Systems Installation and Repair",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15704",
+    "coverage": 0.571,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37622",
+    "title": "HVAC/R Installation and Repair",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15616",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37623",
+    "title": "Advanced HVAC/R Mechanical Systems Installation and Repair",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15705",
+    "coverage": 0.571,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37624",
+    "title": "Public Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15719",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37679",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15807",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38198",
+    "title": "Lineman",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15817",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38311",
+    "title": "San Diego Trolley Inc Light Rail Vehicle Lineman Apprenticeship",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15730",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38313",
+    "title": "San Diego Trolley Inc Light Rail Vehicle Lineman Apprenticeship",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15729",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38367",
+    "title": "San Diego Trolley Inc Revenue Maintainer Apprenticeship",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15732",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38369",
+    "title": "San Diego Trolley Inc Revenue Maintainer Apprenticeship",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15731",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38511",
+    "title": "Dance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15823",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38629",
+    "title": "Interaction Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15799",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38638",
+    "title": "Interaction Design",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15798",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38668",
+    "title": "Digital Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15667",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38732",
+    "title": "Certified Public Accountant (CPA) Preparatory Program",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15760",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39165",
+    "title": "Archaeology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15610",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40495",
+    "title": "Graphic Design Fundamentals",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15679",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40589",
+    "title": "Computer Programming",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15784",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40620",
+    "title": "Computer Programming",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15783",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40714",
+    "title": "Network Security II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15703",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41293",
+    "title": "Studio Arts Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15746",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41495",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15638",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42598",
+    "title": "American Sign Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15631",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42599",
+    "title": "American Sign Language",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15630",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43041",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15769",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43656",
+    "title": "Economics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15641",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43748",
+    "title": "Social Work",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17388",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43806",
+    "title": "Accounting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17224",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43836",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17327",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44062",
+    "title": "Manufacturing Fundamentals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17368",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44068",
+    "title": "Sustainability",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17436",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44385",
+    "title": "Office Administrative Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17307",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44867",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17451",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45539",
+    "title": "Exercise and Nutritional Sciences",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/22217",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45542",
+    "title": "Ceramics",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/22212",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45664",
+    "title": "Sustainable Mining Practices",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/22237",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45665",
+    "title": "Sustainable Mining Practices",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/22236",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45721",
+    "title": "Native American and Indigenous Studies",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/22280",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38252422845"
+}

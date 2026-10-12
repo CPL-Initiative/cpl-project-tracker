@@ -4,7 +4,7 @@
   "supabase_tables": 97,
   "rpcs": 36,
   "edge_functions": 7,
-  "file_datasets": 622,
+  "file_datasets": 623,
   "external_services": 167,
   "consumers": 426,
   "workflows": 47,
@@ -12064,6 +12064,19 @@
     }
    ],
    "served": false,
+   "main_committers": []
+  },
+  "file:kb/program_requirements_college/chaffey/capture_preview.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 1073
+    }
+   ],
+   "served": true,
    "main_committers": []
   },
   "file:kb/program_requirements_maps_sample.json": {

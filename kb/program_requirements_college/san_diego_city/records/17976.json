@@ -1,0 +1,237 @@
+{
+ "college": "San Diego City College",
+ "control_number": "17976",
+ "shape": "degree",
+ "title": "Manufacturing Engineering Technology - Option: Fabrication",
+ "award": "A.S. Degree",
+ "source_url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15820",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10880,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10880,
+    "output_tokens": 2111,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2111,
+  "output_tokens_details": {
+   "thinking_tokens": 854
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08574,
+ "ms": 17527,
+ "seconds": 18.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    33.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "why": [
+    "the blocks sum to 33.0-36.0; the catalog states 36.0-36.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Manufacturing Engineering Technology - Option: Fabrication - Associate of Science Degree: City",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate a basic knowledge of Manufacturing and Manufacturing Engineering Technology at the 2-year college level.",
+    "Identify and utilize CAD/CAM applications in various manufacturing processes, e.g. MasterCAM.",
+    "Explain product design to optimize manufacturing efficiency.",
+    "Identify and apply quality control tools and instruments used in a manufacturing environment.",
+    "Demonstrate proficiency in programming and operation of NC/CNC equipment.",
+    "Describe different types of materials, process flows, equipment and techniques used in manufacturing."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 36
+    },
+    "courses": [
+     {
+      "code": "MFET 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFET 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFET 110",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFET 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFET 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFET 120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFET 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFET 230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MFET 240",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACT 150",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACT 160M",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 100",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 100L",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "PHYS 100 (4) OR CHEM 100 (3) AND CHEM 100L (1): the alternative to PHYS 100 is the pair CHEM 100 plus CHEM 100L taken together, not either CHEM course alone.",
+   "Stray unit lines ('3.0' before MFET 230 OR MFET 240, '4.0' before PHYS 100 OR CHEM 100/100L) appear to be the unit totals of those or-groups.",
+   "The page prints a general outcome followed by outcomes for 'MFET Option 1: Electronics Manufacturing' and 'MFET Option 2: Fabrication Manufacturing'; recorded the general outcome (printed in the lead-in line) and the Option 2 Fabrication outcomes only, since this award is the Fabrication option. Option 1 outcomes omitted.",
+   "No careers named in the program description; career mentions in course descriptions not used.",
+   "Course description text is cut off at PHYS 100; no CHEM course descriptions shown, but requirements list is complete with Total Units: 36.0."
+  ]
+ },
+ "extracted_run": "38252422845"
+}
