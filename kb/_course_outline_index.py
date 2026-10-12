@@ -22,7 +22,21 @@ The course codes to index come from the program records loaded for the host's
 colleges (kb/program_requirements_college/<slug>/records/), one code per course
 (norm_code: "ACC 1A" and "ACC-1A" are one course).
 
+Step 2, --index URL (curriQunet): discovery run 38312406074 showed the dashboard is a
+public search backed by JSON. The page posts /Search/NewSearch (25 rows a page; RCCD
+reports TotalRows 14,292, every proposal in every status), and each row names its
+CourseId, SubjectCode, CourseNumber, Title, StatusTitle, ProposalTypeTitle and
+MetaReports; a course's outline is /Report/Course/GetReport/<CourseId>?reportId=<id>
+("Course Outline", 97 at RCCD), an integrated outline naming the colleges that offer
+it. A Cloudflare check runs on the page, so the index loads the dashboard, captures
+the page's own NewSearch request, and replays it from inside the page with a larger
+page size, the census's delay between pages, robots read first. It keeps Active rows
+that are not a distance education addendum (ACC-1ADE), keyed by norm_code, and
+measures how many of the loaded records' courses have an active outline report.
+Output: kb/course_outline_index/index_<run>.json.
+
 Usage (runner): python3 kb/_course_outline_index.py --discover https://rccd.curriqunet.com/
+                python3 kb/_course_outline_index.py --index https://rccd.curriqunet.com/
 """
 from __future__ import annotations
 
@@ -161,14 +175,137 @@ def discover(reader, url: str) -> dict:
     return out
 
 
+SEARCH_PAGE_SIZE = 200
+MAX_SEARCH_PAGES = 150
+FETCH_JS = """async ([url, body, headers]) => {
+  const r = await fetch(url, {method: 'POST', headers, body, credentials: 'same-origin'});
+  return {status: r.status, text: await r.text()};
+}"""
+DROP_HEADERS = {"cookie", "user-agent", "host", "content-length", "origin", "referer", "connection",
+                "accept-encoding"}
+
+
+def with_page(post: str, size: int, page: int) -> str:
+    """The captured NewSearch body with this page's size and number."""
+    parts = []
+    for kv in (post or "").split("&"):
+        k = kv.split("=", 1)[0]
+        if k in ("options%5Bpagesize%5D", "options[pagesize]"):
+            kv = "%s=%d" % (k, size)
+        elif k in ("options%5Bpage%5D", "options[page]"):
+            kv = "%s=%d" % (k, page)
+        parts.append(kv)
+    return "&".join(parts)
+
+
+def keep_row(row: dict) -> bool:
+    """An active course outline: Active status, not a distance education addendum."""
+    if (row.get("StatusTitle") or "") != "Active":
+        return False
+    if re.search(r"distance education", row.get("ProposalTypeTitle") or "", re.I):
+        return False
+    return True
+
+
+def outline_reports(row: dict, base: str) -> list[str]:
+    """The row's outline report addresses (a MetaReport titled for the outline)."""
+    out = []
+    for rep in row.get("MetaReports") or []:
+        if re.search(r"outline", rep.get("Title") or "", re.I):
+            out.append("%sReport/Course/GetReport/%s?reportId=%s" % (base, row.get("CourseId"), rep.get("Id")))
+    return out
+
+
+def build_index(rows: list[dict], base: str) -> dict:
+    """norm_code -> the active outline rows for it."""
+    index = {}
+    for row in rows:
+        if not keep_row(row):
+            continue
+        code = norm_code("%s %s" % (row.get("SubjectCode") or "", row.get("CourseNumber") or ""))
+        if not code:
+            continue
+        index.setdefault(code, []).append({
+            "course_id": row.get("CourseId"), "title": row.get("Title"),
+            "proposal_type": row.get("ProposalTypeTitle"), "reports": outline_reports(row, base)})
+    return index
+
+
+def search_all(reader, url: str, delay_ms: int) -> dict:
+    """Load the dashboard, capture its NewSearch request, page through every row."""
+    captured = {}
+
+    def on_request(req):
+        if "/Search/NewSearch" in req.url and req.method == "POST" and "url" not in captured:
+            captured.update(url=req.url, post=req.post_data or "", headers=dict(req.headers))
+
+    reader.page.on("request", on_request)
+    page = reader.load(url)
+    reader.page.wait_for_timeout(3000)
+    reader.page.remove_listener("request", on_request)
+    out = {"url": url, "status": page.get("status"), "title": page.get("title")}
+    if not captured:
+        out["error"] = "the page made no NewSearch request"
+        return out
+    if not census.robots_allows(reader._robots_for(captured["url"]), captured["url"]):
+        out["error"] = "robots.txt disallows the search address"
+        return out
+    headers = {k: v for k, v in captured["headers"].items()
+               if k.lower() not in DROP_HEADERS and not k.lower().startswith("sec-")}
+    rows, total, pages = [], None, 0
+    for n in range(MAX_SEARCH_PAGES):
+        if n:
+            reader.page.wait_for_timeout(delay_ms)
+        got = reader.page.evaluate(FETCH_JS, [captured["url"], with_page(captured["post"], SEARCH_PAGE_SIZE, n), headers])
+        pages += 1
+        if got.get("status") != 200:
+            out["error"] = "page %d answered %s" % (n, got.get("status"))
+            break
+        data = json.loads(got.get("text") or "{}")
+        total = data.get("TotalRows", total)
+        batch = data.get("results") or []
+        rows += batch
+        if not batch or (total is not None and len(rows) >= total):
+            break
+    out.update(total_rows=total, rows_read=len(rows), search_pages=pages,
+               page_size=SEARCH_PAGE_SIZE, rows=rows)
+    return out
+
+
+def write_index(url: str, searched: dict, wanted: dict, loads: int) -> int:
+    base = url if url.endswith("/") else url + "/"
+    rows = searched.pop("rows", [])
+    index = build_index(rows, base)
+    union = set().union(*wanted.values()) if wanted else set()
+    with_report = {c for c, v in index.items() if any(x["reports"] for x in v)}
+    coverage = {slug: {"courses": len(codes), "with_outline": sum(1 for c in codes if c in with_report)}
+                for slug, codes in wanted.items()}
+    run = os.environ.get("GITHUB_RUN_ID", "local")
+    out = {"run": run, "at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "url": url,
+           "search": searched, "loads": loads,
+           "active_codes": len(index), "active_with_report": len(with_report),
+           "wanted_union": len(union), "wanted_with_outline": len(union & with_report),
+           "coverage": coverage, "missing": sorted(union - with_report), "index": index}
+    os.makedirs(OUT_DIR, exist_ok=True)
+    path = os.path.join(OUT_DIR, "index_%s.json" % run)
+    with open(path, "w") as f:
+        json.dump(out, f, indent=1)
+    print(json.dumps({k: out[k] for k in ("active_codes", "active_with_report", "wanted_union",
+                                          "wanted_with_outline", "coverage")}, indent=1))
+    print("search:", {k: v for k, v in searched.items()})
+    print("wrote", os.path.relpath(path, os.path.dirname(HERE)))
+    return 0
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--discover", default="")
+    ap.add_argument("--index", default="")
     ap.add_argument("--slugs", default="riverside_city,moreno_valley,norco")
     ap.add_argument("--delay", type=int, default=int(os.environ.get("CENSUS_DELAY_MS", "3000")))
     a = ap.parse_args(argv)
-    if not a.discover:
-        ap.error("--discover URL is the only step so far")
+    if not (a.discover or a.index):
+        ap.error("--discover URL or --index URL")
     wanted = record_codes([s for s in a.slugs.split(",") if s])
 
     from playwright.sync_api import sync_playwright  # runner only
@@ -179,8 +316,14 @@ def main(argv=None) -> int:
         probe.close()
         ctx = browser.new_context(user_agent=ua + " " + census.UA_SUFFIX, accept_downloads=False)
         reader = census.Reader(ctx.new_page(), ctx.request, a.delay)
-        found = discover(reader, a.discover)
+        if a.index:
+            searched = search_all(reader, a.index, a.delay)
+        else:
+            found = discover(reader, a.discover)
         browser.close()
+
+    if a.index:
+        return write_index(a.index, searched, wanted, reader.loads)
 
     run = os.environ.get("GITHUB_RUN_ID", "local")
     listed = {norm_code(r["row"]) for r in (found.get("rows_at_load") or {}).get("rows", [])} - {None}

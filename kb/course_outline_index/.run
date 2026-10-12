@@ -1,3 +1,4 @@
-run=1
-discover=https://rccd.curriqunet.com/
+run=2
+discover=
+index=https://rccd.curriqunet.com/
 slugs=riverside_city,moreno_valley,norco

@@ -40,9 +40,34 @@ check("2 the loaded RCCD records name over a thousand courses, each read to one 
       and all(idx.norm_code(c) == c for c in union), {k: len(v) for k, v in wanted.items()})
 check("2 'ACC 1A' and 'ACC-1A' in the records are one course", "ACC 1A" in union and "ACC-1A" not in union)
 
+# 4. The curriQunet index (discovery run 38312406074): the page's own search, replayed.
+post = ("options%5Bpagesize%5D=25&options%5Bpage%5D=0&options%5BtitleFilter%5D=&options%5BentityTypeId%5D=1")
+check("4 the captured search body takes this page's size and number, the rest kept",
+      idx.with_page(post, 200, 3) == "options%5Bpagesize%5D=200&options%5Bpage%5D=3&options%5BtitleFilter%5D=&options%5BentityTypeId%5D=1"
+      and idx.with_page("options[pagesize]=25&options[page]=0", 50, 1) == "options[pagesize]=50&options[page]=1")
+rows = [
+    {"CourseId": 1, "SubjectCode": "ACC", "CourseNumber": "1A", "Title": "Principles of Accounting I",
+     "StatusTitle": "Historical", "ProposalTypeTitle": "New Course", "MetaReports": [{"Id": 97, "Title": "Course Outline"}]},
+    {"CourseId": 3794, "SubjectCode": "ACC", "CourseNumber": "1A", "Title": "Principles of Accounting I",
+     "StatusTitle": "Active", "ProposalTypeTitle": "Course Minor Modification",
+     "MetaReports": [{"Id": 97, "Title": "Course Outline"}, {"Id": 12, "Title": "Impact Report"}]},
+    {"CourseId": 3800, "SubjectCode": "ACC", "CourseNumber": "1ADE", "Title": "Principles of Accounting I",
+     "StatusTitle": "Active", "ProposalTypeTitle": "Distance Education Proposal", "MetaReports": [{"Id": 97, "Title": "Course Outline"}]},
+    {"CourseId": 9001, "SubjectCode": "KIN", "CourseNumber": "A11", "Title": "Yoga", "StatusTitle": "Active",
+     "ProposalTypeTitle": "New Course", "MetaReports": []},
+]
+ix = idx.build_index(rows, "https://rccd.curriqunet.com/")
+check("4 the index keeps active outlines only: a historical proposal and a distance education addendum are left out",
+      list(ix) == ["ACC 1A", "KIN A11"] and [x["course_id"] for x in ix["ACC 1A"]] == [3794], ix)
+check("4 a course's outline address is its CourseId with the report titled for the outline",
+      ix["ACC 1A"][0]["reports"] == ["https://rccd.curriqunet.com/Report/Course/GetReport/3794?reportId=97"]
+      and ix["KIN A11"][0]["reports"] == [])
+
 src = open(os.path.join(ROOT, "kb", "_course_outline_index.py")).read()
-check("3 the index reads pages only: no table write (no POST, PATCH or rpc)",
-      "method=" not in src and "/rpc/" not in src and "PATCH" not in src and '"POST"' not in src)
+check("3 the index reads public pages only and never addresses the database (no Supabase address, REST path, "
+      "rpc or PATCH); its one POST is the college's own search, replayed from the page",
+      "supabase" not in src.lower() and "/rest/v1" not in src and "/rpc/" not in src and "PATCH" not in src
+      and src.count("method: 'POST'") == 1)
 
 passed = sum(1 for _, ok, _ in results if ok)
 for name, ok, why in results:

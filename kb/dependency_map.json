@@ -1961,7 +1961,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 25
+     "line": 38
     },
     {
      "id": "script:kb/_program_requirements_college.py",

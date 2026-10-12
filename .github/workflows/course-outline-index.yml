@@ -43,7 +43,9 @@ jobs:
           args=()
           discover=$(sed -n 's/^discover=//p' kb/course_outline_index/.run)
           slugs=$(sed -n 's/^slugs=//p' kb/course_outline_index/.run)
+          index=$(sed -n 's/^index=//p' kb/course_outline_index/.run)
           [ -n "$discover" ] && args+=(--discover "$discover")
+          [ -n "$index" ] && args+=(--index "$index")
           [ -n "$slugs" ] && args+=(--slugs "$slugs")
           python3 kb/_course_outline_index.py "${args[@]}"
 
