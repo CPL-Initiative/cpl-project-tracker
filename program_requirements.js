@@ -50,8 +50,8 @@
  * reviewer signed in with the magic link. That is this tab's one write:
  * rpc/program_record_verdict_add (chatbox/supabase_program_record_verdicts.sql), gated to
  * an allowed reviewer on the server, holding the fingerprint of the requirements the page
- * showed. A signed-in reviewer also reads the unchecked records, which the public read
- * never shows.
+ * showed. Since Sam's Open Asks Sheet 67 (2026-10-12, "Every record, from the table") the public
+ * reads every record too, and a record no person has checked says Not yet checked.
  *
  * A FAILED READ SAYS SO; it never renders as zero colleges or zero records.
  * Tests: tests/program_requirements.test.js
@@ -79,9 +79,9 @@
   var RECORD_SELECT = "college,control_number,program_title,award,catalog_year,source_url," +
     "measure,total_min,total_max,record,checks,checked,checked_by,checked_at,display";
   /* Written by every checkpoint (.claude/commands/checkpoint.md, scripts/queue_status.py):
-     what no browser read can know. anon reads checked records only and has no grant on
-     program_source_registry_history, so the unchecked records and the day's changes come
-     from here, never from a widened policy. */
+     what no browser read can know. anon reads every record (Sam, Open Asks Sheet 67) but has
+     no grant on program_source_registry_history, so the day's changes, and the unchecked list
+     the Progress view counts, come from here. */
   var QUEUE_URL = "kb/queue_status.json";
   /* Which catalog hosts let another site frame their pages, measured from COBI's origin by
      scripts/catalog_framing.py on a runner (the session container cannot reach college sites)
@@ -1304,9 +1304,9 @@
     /* Who is reading: a lede beside the first one, so the view keeps only sections below it. */
     box.appendChild(el("div", { cls: "prh-lede prh-review-note" }, [
       Rv && Rv.error ? el("p", { cls: "prh-small prh-caution", role: "status",
-        text: "Your sign-in could not read the records (" + Rv.error + "), so these are the checked records the public sees, without Confirm and Needs a fix. Reload the tab to try again." })
+        text: "Your sign-in could not read the records (" + Rv.error + "), so these are the records the public sees, without Confirm and Needs a fix. Reload the tab to try again." })
       : Rv ? el("p", { cls: "prh-small prh-quiet",
-        text: "Signed in as " + Rv.email + ". Each record ends with Confirm and Needs a fix, and the records waiting on a person's reading show here too." })
+        text: "Signed in as " + Rv.email + ". Each record ends with Confirm and Needs a fix." })
       : signInBox()]));
     if (!P.length) {
       box.appendChild(el("div", { cls: "prh-empty", text: "No program record has been loaded yet." }));
@@ -1444,7 +1444,10 @@
     var F = flagsFor(p);
     var reviewing = !!(state.review && state.review.records && p.requirements_fp);
     var sl = reviewing ? stateLine(p) : null;
-    var line = sl ? el("span", { cls: "prh-state" + (sl.waiting ? " prh-state-waiting" : ""), text: sl.text }) : null;
+    /* The public reads every record (Sam, Open Asks Sheet 67), and one no person has checked
+       says so, in CPL Pathways' words. */
+    var line = sl ? el("span", { cls: "prh-state" + (sl.waiting ? " prh-state-waiting" : ""), text: sl.text })
+      : !p.checked ? el("span", { cls: "prh-state prh-state-open", text: "Not yet checked" }) : null;
     var bodyId = "prh-body-" + String(key).replace(/[^A-Za-z0-9]+/g, "-");
     var isOpen = !!opts.split || !!state.open[key];
     var btn = el("button", { cls: "prh-toggle", type: "button", "aria-expanded": isOpen ? "true" : "false",

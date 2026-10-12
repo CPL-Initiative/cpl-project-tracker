@@ -1506,8 +1506,8 @@
   //    from the table") ──────────────────────────────────────────────────────
   // The selector lists program_requirement_records' programs, and a record is read
   // from the table when a reader opens it. The table's read policy decides who sees
-  // what: the public reads checked records, a reviewer signed in with the magic link
-  // reads every record, and an unchecked one says so. No file grows with the harvest.
+  // what: everyone reads every record since Sam's Open Asks Sheet 67 (2026-10-12, "Every
+  // record, from the table"), and an unchecked one says so. No file grows with the harvest.
   // A failed list read falls back to the pilot file and says so; a failed record read
   // shows the file's copy where it has one, and otherwise says the read failed.
   var ROEP_REST = SUPABASE_URL + "/rest/v1";
@@ -2963,8 +2963,8 @@
     var n = box && !box.querySelector(".cplpw-rnote") ? roepFallbackNote() : null;
     if (n) box.insertBefore(n, box.lastChild);
   }
-  // A reviewer signing in reads every record; signing out drops back to the checked
-  // ones. Records already read are dropped too, so none outlives the session that read it.
+  // A change of session re-reads the list under the new session's policy. Records already
+  // read are dropped too, so none outlives the session that read it.
   var roepSessionWired = false;
   function wireRoepSession() {
     if (roepSessionWired) return;

@@ -26,7 +26,7 @@ w.document.body.appendChild(s);
 const B = w.CPL_COLLEGE_BRIEFING;
 
 const records = [
-  { program_title: "Entrepreneurship", control_number: "35030", award: "A.S. Degree", catalog_year: "2026-2027",
+  { program_title: "Entrepreneurship", control_number: "35030", award: "A.S. Degree", catalog_year: "2026-2027", checked: true,
     display: { gaps: [
       { owner: "college", kind: "MAP names a second course",
         text: "MAP lists AUTO 156G Engine and Related Systems on the EMT Certification articulation beside EMGM 106." },
@@ -65,6 +65,12 @@ check("(2) it is marked Beta draft, as the harvest is (Sam, 2026-10-04)", sec &&
 check("(2) the text is escaped", sec && /Business &lt;Administration&gt; 2\.0/.test(sec.body) && !/<Administration>/.test(sec.body));
 check("(2) each program names its award, control number and catalog year",
   sec && /\(A\.S\. Degree, control number 35030, 2026-2027 catalog\)/.test(sec.body));
+// Every record is public since Sam's Open Asks Sheet 67 (2026-10-12): one no person has
+// checked says so, in CPL Pathways' words, and a checked one carries no mark.
+check("(2) an unchecked record says not yet checked", sec && /control number 41496, 2026-2027 catalog, not yet checked\)/.test(sec.body));
+check("(2) a checked record carries no mark", sec && !/control number 35030[^)]*not yet checked/.test(sec.body));
+check("(2) the read selects checked, so the mark can be drawn",
+  /program_requirement_records\?college=eq\.[^;]*select=[^"]*\bchecked\b/.test(fs.readFileSync("college_briefing.js", "utf8")));
 check("(2) no emoji or symbol stands in for a word (the glyph rule)",
   sec && !/[←-⇿☀-➿\u{1F300}-\u{1FAFF}]/u.test(sec.body));
 check("(2) the program is the CPL Initiative, never the MAP Initiative", sec && !/MAP Initiative/.test(sec.body));
@@ -77,7 +83,7 @@ check("(3) the registry turns the college_id into the harvest's name",
   /program_source_registry\?college_id=eq\." \+ id \+ "&select=college"/.test(src));
 check("(3) the records are read by that name, with their display facts",
   /program_requirement_records\?college=eq\." \+ encodeURIComponent\(rows\[0\]\.college\)/.test(src)
-  && /select=program_title,control_number,award,catalog_year,display/.test(src));
+  && /select=program_title,control_number,award,catalog_year,checked,display/.test(src));
 const iStart = src.indexOf('sec("start"'), iDrafts = src.indexOf('sec("drafts"'), iOpps = src.indexOf('sec("opps"');
 check("(3) the section sits right after Start here, before the opportunities",
   iStart > 0 && iDrafts > iStart && iOpps > iDrafts);

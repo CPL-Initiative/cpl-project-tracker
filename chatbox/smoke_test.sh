@@ -837,8 +837,8 @@ answer_must_not_match -i "rather than (as )?(substitutes|alternatives)|(are|as) 
 # ── MODE 7q: catalog requirements only where a record is checked (S326) ───────
 # Sam, open-asks sheet 29 card 4 (2026-10-04, "yes"): where a program's record
 # passed all four checks, Sierra may say required and give the total the
-# catalog prints; every other program keeps "lists". The public read shows
-# checked rows only (chatbox/supabase_program_requirement_records.sql), so the
+# catalog prints; every other program keeps "lists". The public reads every row
+# (Sam, Open Asks Sheet 67) and cpl-chat reads checked rows only, so the
 # retrieval assert is the anon key reading Mt. SAC's LVN-to-RN record, and the
 # answer assert is the old negative on a college that holds no record at all.
 echo "===================================================================="

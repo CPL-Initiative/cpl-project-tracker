@@ -1782,7 +1782,7 @@
         if (!rows) return null;
         if (!rows.length) return [];
         return jget(REST + "/program_requirement_records?college=eq." + encodeURIComponent(rows[0].college)
-          + "&select=program_title,control_number,award,catalog_year,display&order=control_number");
+          + "&select=program_title,control_number,award,catalog_year,checked,display&order=control_number");
       })
     ]).then(function (r) {
       state.detail = { rollup: r[0] || [], adopted: r[1] || [], potential: r[2] || [],
@@ -1813,7 +1813,7 @@
       });
       if (!items.length) return;
       out.push({ program: p.program_title || "", award: p.award || "", control_number: p.control_number || "",
-                 catalog_year: p.catalog_year || "",
+                 catalog_year: p.catalog_year || "", checked: !!p.checked,
                  items: items.map(function (g) { return { kind: g.kind || "", text: g.text }; }) });
     });
     return out;
@@ -1830,8 +1830,11 @@
       + "different courses. Your curriculum office and articulation officer keep these records, and the MAP "
       + "team will follow up with you on each one.</p>";
     drafts.forEach(function (d) {
+      // Every record is public since Sam's Open Asks Sheet 67 (2026-10-12); one no person
+      // has checked says so, in CPL Pathways' words.
       var meta = [d.award, d.control_number ? "control number " + d.control_number : "",
-                  d.catalog_year ? d.catalog_year + " catalog" : ""].filter(Boolean).join(", ");
+                  d.catalog_year ? d.catalog_year + " catalog" : "",
+                  d.checked ? "" : "not yet checked"].filter(Boolean).join(", ");
       body += '<h4 class="cb-dr-h">' + esc(d.program) + (meta ? ' <span class="cb-dr-m">(' + esc(meta) + ")</span>" : "") + "</h4>"
         + '<ul class="cb-dr">' + d.items.map(function (i) {
           return "<li>" + (i.kind ? esc(i.kind) + ": " : "") + esc(i.text) + "</li>";
