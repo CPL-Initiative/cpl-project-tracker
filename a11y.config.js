@@ -913,6 +913,112 @@ async function seedMyCollegeReports(page, signin) {
   await page.waitForTimeout(400);
 }
 
+// My College on one college's page (S370 UI pass). The cobi sweep opens the tab on its scope
+// question, so the page a college reads, its figures, strategies, credentials and drafts, was
+// never measured. The sweep aborts every read off the origin, so this stands in each Supabase
+// read with the table's own shape (columns from information_schema, 2026-10-12) and invented
+// figures: the tracker is public, so no real contact or student count is written here. Then it
+// picks the college through the page's own scope and college controls, as a reader does, and
+// opens every section.
+async function seedMyCollegePage(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "college-briefing") location.hash = "college-briefing"; });
+  await page.waitForFunction(() => !!window.CPL_COLLEGE_BRIEFING, null, { timeout: 20000 });
+  // The tab's own first load (every read aborted) must finish before the stand-ins go in, or
+  // it lands after them and empties the college list (the motion check seeds 400 ms after load).
+  await page.waitForFunction(() => {
+    const st = window.CPL_COLLEGE_BRIEFING._state;
+    return !st.loading && (st.data || st.error);
+  }, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const C = "Chaffey College", ID = 9;
+    const CONFIG = { projects: {
+      "cpl-implementation": { label: "CPL Implementation Funding", published: "Scenario 1",
+        scenarios: { "Scenario 1": { yearPriorities: { "1": {
+          "0": { share: 0.5, title: "Access", description: "Increase access.", metric: "Applied CPL Units measured in FTES",
+                 strategies: ["Act on all JST credit recommendations in MAP", "Adopt or Adapt possible statewide credit recommendations"] },
+          "1": { share: 0.3, title: "Institutionalize", description: "Institutionalize.", metric: "Transcribed CPL Units",
+                 strategies: ["Complete Transcribe step in MAP for each student record with CPL"] },
+          "2": { share: 0.2, title: "Outreach", description: "Reach students.",
+                 strategies: ["Ensure a CPL Coordinator and/or Counselor is listed and responsive"] } } } } } } } };
+    const COLLEGES = [{ college_id: ID, college_name: C, variants: ["Chaffey"] },
+      { college_id: 12, college_name: "Cerritos College", variants: [] },
+      { college_id: 81, college_name: "Mt. San Antonio College", variants: ["Mt. SAC"] }];
+    const SUMMARY = [{ college_id: ID, students: 1200, suppressed: false, dormant_credits: 6000, articulated_waiting: 900,
+      applied_credits: 15000, transcribed_credits: 450, built_at: "2026-10-01T00:00:00Z" }];
+    const CONTACTS = [{ college: C, cpl_coordinator: "Pat Lee", cpl_coordinator_email: "coordinator@example.edu",
+      cpl_counselor: "Jordan Cruz", cpl_counselor_email: "counselor@example.edu", landing_page_url: "https://example.edu/cpl" }];
+    const roll = (t, types, s, pot, app, tr, ap, na) => ({ unified_title: t, cpl_types: types, students: s, students_suppressed: s == null,
+      potential_units: pot, applied_units: app, transcribed_units: tr, apprenticeship_units: ap, rows_needs_action: na });
+    const ROLLUP = [roll("AP U.S. History", ["Standardized Assessment"], 300, 1800, 1790, 6, 0, 0),
+      roll("Army Basic Combat Training", ["Military Training"], 40, 320, 120, 0, 0, 12),
+      roll("Electrician Apprenticeship (State of California)", ["Apprenticeship"], null, 96, 0, 0, 96, 3),
+      roll("CompTIA Security+", ["Industry Certification"], 18, 54, 27, 0, 0, 2)];
+    const ADOPTED = [{ unified_title: "AP U.S. History", cpl_types: ["Standardized Assessment"], statewide: true },
+      { unified_title: "CompTIA Security+", cpl_types: ["Industry Certification"], statewide: false }];
+    const POTENTIAL = [{ unified_title: "AP 2-D Art and Design", cpl_types: ["Credit By Exam", "Standardized Assessment"], statewide: false,
+      ccc_rec: null, adopter_colleges: ["Cerritos College", "Mt. San Antonio College", "Norco College"] },
+      { unified_title: "Emergency Medical Technician (EMT)", cpl_types: ["Industry Certification"], statewide: true,
+        ccc_rec: "3 units EMS", adopter_colleges: ["Cerritos College"] }];
+    const GOAL2 = [{ dest: "AREA", rows_n: 700, students: 650, suppressed: false, reason: null },
+      { dest: "COURSE", rows_n: 5000, students: 1100, suppressed: false, reason: null }];
+    const WAITING = [{ credit_rec: "3 semester units in Military Science", college_course: "MIL 1", course_type: "Course",
+      sum_articulated_credits: 240, distinct_students: 80, withheld_recommendations: 0 },
+      { credit_rec: "1 semester unit in Physical Education", college_course: "KIN 10", course_type: "Course",
+        sum_articulated_credits: 60, distinct_students: null, withheld_recommendations: 2 }];
+    const gap = (t) => ({ kind: "Catalog and state file differ", text: t, owner: "college",
+      where: "Chaffey College's program record in the state's curriculum inventory" });
+    const RECORDS = [
+      { program_title: "Welding Technology", control_number: "04755", award: "A.S. Degree", catalog_year: "2026-2027", checked: false,
+        display: { gaps: [gap("The catalog prints WELD 410 and WELD 413 for this program; the state's Program Course File does not list them.")] } },
+      { program_title: "Emergency Medical Technician", control_number: "20675", award: "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+        catalog_year: "2026-2027", checked: true,
+        display: { gaps: [gap("The state's Program Course File lists EMS 10, which the catalog does not print for this program.")] } }];
+    const json = (b) => Promise.resolve(new Response(JSON.stringify(b), { status: 200, headers: { "Content-Type": "application/json" } }));
+    const real = window.fetch;
+    window.fetch = function (url) {
+      const u = String(url);
+      if (/\/cpl_funding_config\?/.test(u)) return json([{ config: CONFIG }]);
+      if (/\/map_colleges\?/.test(u)) return json(COLLEGES);
+      if (/\/map_college_credit_summary(_pub)?\?/.test(u)) return json(SUMMARY);
+      if (/\/map_college_contacts(_pub)?\?/.test(u)) return json(CONTACTS);
+      if (/\/map_credential_student_rollup\?/.test(u)) return json(ROLLUP);
+      if (/\/chatbox_credentials\?adopter_colleges/.test(u)) return json(ADOPTED);
+      if (/\/chatbox_credentials\?potential_colleges/.test(u)) return json(POTENTIAL);
+      if (/\/map_college_goal2(_pub)?\?/.test(u)) return json(GOAL2);
+      if (/\/map_college_cr_waiting_pub\?|\/map_college_cr_unit\?/.test(u)) return json(WAITING);
+      if (/\/program_source_registry\?/.test(u)) return json([{ college: C }]);
+      if (/\/program_requirement_records\?/.test(u)) return json(RECORDS);
+      return real.apply(this, arguments);
+    };
+    const M = window.CPL_COLLEGE_BRIEFING, root = document.getElementById("college-briefing-root");
+    M._state.data = null; M._state.error = null; M._state.scope = null; M._state.college = null;
+    M.activate();
+  });
+  // Through the page's own controls, but not with the mouse: a pointer click turns off
+  // :focus-visible for the focus the sweep moves later, and every ring reads as missing.
+  await page.waitForSelector('#college-briefing-root [data-scope="college"]', { timeout: 20000 });
+  await page.evaluate(() => document.querySelector('#college-briefing-root [data-scope="college"]').click());
+  await page.waitForFunction(() => {
+    const s = document.querySelector("#cb-college");
+    return s && Array.from(s.options).some((o) => o.value === "Chaffey College");
+  }, null, { timeout: 20000 });
+  await page.evaluate(() => {
+    const s = document.querySelector("#cb-college");
+    s.value = "Chaffey College";
+    s.dispatchEvent(new Event("change", { bubbles: true }));
+  });
+  await page.waitForTimeout(1200);
+  // Every section open, so the sweep measures what a reader can expand.
+  await page.evaluate(() => {
+    document.querySelectorAll("#college-briefing-root details").forEach((d) => { d.open = true; });
+  });
+  await page.waitForTimeout(300);
+}
+
 /* ── The veteran map (S350: First Light, one builder, three targets) ─────────
    The pin exemption and the keyboard checks are shared by the page as a reader
    opens it, the same page dark, and the embedded layout COBI's Military
@@ -1512,6 +1618,25 @@ module.exports = {
     routes: [{ hash: "college-briefing", name: "reports-table" }],
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedMyCollegeReports(page, false),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── My College: a college's page, every section open (S370 UI pass) ───────
+     The cobi target stops at the scope question. These pick a college through
+     the page's own controls with each read stood in (seedMyCollegePage). */
+  "my-college-page": {
+    file: "index.html",
+    title: "My College: one college's page, every section open",
+    routes: [{ hash: "college-briefing", name: "college-page" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedMyCollegePage(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "my-college-page-dark": {
+    file: "index.html",
+    title: "My College: one college's page, every section open, dark",
+    routes: [{ hash: "college-briefing", name: "college-page" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedMyCollegePage(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── CPL Pathways: a harvested catalog record (S334) ──────────────────────
