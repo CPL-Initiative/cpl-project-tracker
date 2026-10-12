@@ -1370,6 +1370,7 @@
   var ROEP_CSS_ID = "cplpw-roep-css";
   var ROEP_CSS = [
     ".cplpw-roep { display:grid; gap:16px; min-width:0; }",
+    ".cplpw-rloading { margin:12px 0; color: var(--text-muted); }",
     ".cplpw-roep .rlede { margin:0; color: var(--text-body); max-width: var(--cpl-measure, none); }",
     ".cplpw-roep .rdraft { display:inline-block; font-size:.7rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:2px 9px; border-radius:999px; border:1px solid var(--mustard-text); color: var(--mustard-text); }",
     ".cplpw-rcontrols { display:flex; flex-wrap:wrap; gap:10px 18px; align-items:end; }",
@@ -1487,9 +1488,149 @@
   // leaves them when another program opens.
   var roepView = { lay: "req", who: "college" };
 
-  function roepPrograms() {
+  // The pilot file (window.CPL_PATHWAYS_ROEP): the offline tier, and the records a
+  // ladder's derived steps read.
+  function roepFilePrograms() {
     var d = window.CPL_PATHWAYS_ROEP;
     return ((d && d.programs) || []).filter(function (p) { return p && p.key && p.record && p.display; });
+  }
+
+  // ── The table read (Sam, Open Asks Sheet 65 card 2, 2026-10-11, in chat: "Read
+  //    from the table") ──────────────────────────────────────────────────────
+  // The selector lists program_requirement_records' programs, and a record is read
+  // from the table when a reader opens it. The table's read policy decides who sees
+  // what: the public reads checked records, a reviewer signed in with the magic link
+  // reads every record, and an unchecked one says so. No file grows with the harvest.
+  // A failed list read falls back to the pilot file and says so; a failed record read
+  // shows the file's copy where it has one, and otherwise says the read failed.
+  var ROEP_REST = SUPABASE_URL + "/rest/v1";
+  var ROEP_INDEX_SELECT = "college,control_number,program_title,award,checked";
+  var ROEP_RECORD_SELECT = "college,control_number,program_title,award,catalog_year,source_url,measure,record,checked,display";
+  var ROEP_READ_MS = 10000;
+  var roepTable = { index: null, error: null, platforms: {}, reviewer: false, records: {} };
+
+  function roepId(college, control) { return String(college || "") + "|" + String(control || ""); }
+  function roepSession() {
+    var S = window.CPL_SESSION;
+    if (!S || typeof S.get !== "function") return null;
+    var s = S.get();
+    return s && s.email && typeof S.isFresh === "function" && S.isFresh(s) ? s : null;
+  }
+  function roepHeaders() {
+    var S = window.CPL_SESSION;
+    if (roepSession() && S && typeof S.authHeaders === "function") return S.authHeaders();
+    return { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
+  }
+  function roepGet(path) {
+    if (typeof window.fetch !== "function") return Promise.reject(new Error("this page cannot read the table"));
+    var url = ROEP_REST + path;
+    var read = window.fetch(url, { headers: roepHeaders() }).then(function (r) {
+      if (!r.ok) throw new Error(path.split("?")[0].replace(/^\//, "") + " answered " + r.status);
+      return r.json();
+    });
+    return new Promise(function (resolve, reject) {
+      var late = setTimeout(function () { reject(new Error("the table did not answer in " + (ROEP_READ_MS / 1000) + " seconds")); }, ROEP_READ_MS);
+      read.then(function (v) { clearTimeout(late); resolve(v); }, function (e) { clearTimeout(late); reject(e); });
+    });
+  }
+  // The list of programs, and each college's catalog platform for the record's
+  // provenance line. Resolves either way; a failure leaves the index null.
+  function readRoepIndex() {
+    if (typeof window.fetch !== "function") return Promise.resolve();
+    var S = window.CPL_SESSION;
+    var ready = roepSession() && S && typeof S.ensureFresh === "function"
+      ? Promise.resolve(S.ensureFresh()).catch(function () { return null; }) : Promise.resolve(null);
+    return ready.then(function () {
+      var reviewer = !!roepSession();
+      return Promise.all([
+        roepGet("/program_requirement_records?select=" + ROEP_INDEX_SELECT + "&order=college,control_number"),
+        roepGet("/program_source_registry?select=college,catalog_platform").catch(function () { return []; })
+      ]).then(function (got) {
+        var plat = {};
+        (got[1] || []).forEach(function (r) { if (r && r.college) plat[r.college] = r.catalog_platform; });
+        roepTable.index = (got[0] || []).filter(function (r) { return r && r.college && r.control_number; });
+        roepTable.platforms = plat;
+        roepTable.reviewer = reviewer;
+        roepTable.error = null;
+      }, function (e) {
+        roepTable.index = null;
+        roepTable.error = (e && e.message) || "the read failed";
+      });
+    });
+  }
+  // A table row in the shape the renderer reads (the display build's program entry).
+  // The row's own `checked` wins over the build's copy: a record Sam confirms after
+  // the last display build reads as checked at once.
+  function roepFromRow(row) {
+    var disp = {};
+    var src = row.display || {};
+    for (var k in src) if (Object.prototype.hasOwnProperty.call(src, k)) disp[k] = src[k];
+    var checks = {};
+    var sc = src.checks || {};
+    for (var c in sc) if (Object.prototype.hasOwnProperty.call(sc, c)) checks[c] = sc[c];
+    if (row.checked != null) checks.checked = !!row.checked;
+    disp.checks = checks;
+    return {
+      key: roepId(row.college, row.control_number), table: true,
+      college: row.college, control_number: row.control_number,
+      title: row.program_title, award: row.award, catalog_year: row.catalog_year,
+      source_url: row.source_url, platform: roepTable.platforms[row.college] || null,
+      measure: row.measure, record: row.record, display: disp, checked: !!row.checked
+    };
+  }
+  function roepFileFor(prog) {
+    var hit = null;
+    roepFilePrograms().forEach(function (p) {
+      if (!hit && p.college === prog.college && String(p.control_number) === String(prog.control_number)) hit = p;
+    });
+    return hit;
+  }
+  // Whether a program is checked: the table's column when listed from it, else the build's.
+  function roepChecked(p) {
+    if (p && p.checked != null) return !!p.checked;
+    return !!(p && p.display && p.display.checks && p.display.checks.checked);
+  }
+
+  // The selector's catalog records: the table's list when it answered, else the pilot file.
+  function roepPrograms() {
+    if (!roepTable.index) return roepFilePrograms();
+    return roepTable.index.map(function (r) {
+      var id = roepId(r.college, r.control_number);
+      return roepTable.records[id] || {
+        key: id, table: true, college: r.college, control_number: r.control_number,
+        title: r.program_title, award: r.award, checked: !!r.checked
+      };
+    });
+  }
+
+  // Opens one catalog record: from memory or the file entry the selector holds, else
+  // read from the table. `token` lets a later pick win over a slower earlier read.
+  var roepOpening = 0;
+  function openRoepProgram(root, prog) {
+    var token = ++roepOpening;
+    if (prog && prog.record && prog.display) { renderRoepProgram(root, prog); return Promise.resolve(); }
+    var id = roepId(prog && prog.college, prog && prog.control_number);
+    if (roepTable.records[id]) { renderRoepProgram(root, roepTable.records[id]); return Promise.resolve(); }
+    ensureRoepCss();
+    clearNode(root);
+    root.appendChild(el("p", "cplpw-rloading", "Reading " + ((prog && prog.title) || "the program") + "’s record from the table…"));
+    var path = "/program_requirement_records?select=" + ROEP_RECORD_SELECT +
+      "&college=eq." + encodeURIComponent(prog.college) + "&control_number=eq." + encodeURIComponent(prog.control_number);
+    return roepGet(path).then(function (rows) {
+      if (token !== roepOpening) return;
+      var row = (rows || [])[0];
+      if (!row) throw new Error("the table holds no readable record for it");
+      var rec = roepFromRow(row);
+      roepTable.records[id] = rec;
+      renderRoepProgram(root, rec);
+    }).catch(function (e) {
+      if (token !== roepOpening) return;
+      var why = (e && e.message) || "the read failed";
+      var file = roepFileFor(prog);
+      if (file) { renderRoepProgram(root, file, "The table could not be read (" + why + "), so this is the record from the pilot file, display build " + ((file.display && file.display.build) || "") + "."); return; }
+      clearNode(root);
+      root.appendChild(el("div", "cplpw-note", "This program’s record could not be read just now (" + why + "). Choose it again to retry."));
+    });
   }
   function roepAward(rec) { return String(rec.award || "").replace(/ requiring.*$/i, ""); }
   function roepMeasure(rec) { return rec.measure === "hours" ? "hours" : "units"; }
@@ -1965,7 +2106,7 @@
     return lab;
   }
 
-  function renderRoepProgram(root, rec) {
+  function renderRoepProgram(root, rec, note) {
     ensureRoepCss();
     var wrap = el("div", "cplpw-roep");
     if (!rec || !rec.display || !rec.record) {
@@ -1974,6 +2115,7 @@
       root.appendChild(wrap);
       return;
     }
+    if (note) wrap.appendChild(el("div", "cplpw-note", note));
     var lede = el("p", "rlede");
     lede.appendChild(el("span", "rdraft", "Beta draft"));
     lede.appendChild(document.createTextNode(" The program's requirements read from the college's own catalog (the ROEP record), with the courses a learner can clear through credit for prior learning."));
@@ -1981,9 +2123,9 @@
 
     var controls = el("div", "cplpw-rcontrols");
     controls.appendChild(roepSeg("Lay out", "lay", [["req", "By requirement"], ["term", "By term"]], roepView.lay,
-      function (v) { roepView.lay = v; renderRoepProgram(root, rec); }));
+      function (v) { roepView.lay = v; renderRoepProgram(root, rec, note); }));
     controls.appendChild(roepSeg("Viewer", "who", [["college", "College"], ["public", "Student or public"]], roepView.who,
-      function (v) { roepView.who = v; renderRoepProgram(root, rec); }));
+      function (v) { roepView.who = v; renderRoepProgram(root, rec, note); }));
     var ask = el("a", "cplpw-rask", "Ask Sierra");
     ask.href = "sierra/?ask=" + encodeURIComponent("What does the " + rec.title + " (" + roepAward(rec) + ") at " + rec.college
       + " require, and which of its courses can a learner clear through credit for prior learning?");
@@ -2678,7 +2820,7 @@
       rg.label = "Catalog records, Beta draft";
       items.forEach(function (it, i) {
         if (it.kind === "roep" && mine(it)) rg.appendChild(option(i, it.prog.college + " — " + it.prog.title + " · " + roepAward(it.prog)
-          + (it.prog.display && it.prog.display.checks && it.prog.display.checks.checked ? "" : " (not yet checked)")));
+          + (roepChecked(it.prog) ? "" : " (not yet checked)")));
       });
       if (rg.children.length) sel.appendChild(rg);
       var shown = items.filter(mine);
@@ -2729,7 +2871,15 @@
     return { row: row, select: sel, college: col, show: show };
   }
 
+  // The last render's inputs and the pathway it shows, so a re-read of the table
+  // (a reviewer signing in or out) re-renders with the reader's pick kept.
+  var lastRender = null;
+  var shownIdent = null;
+  function itemIdent(it, i) {
+    return it.kind === "roep" ? "roep:" + roepId(it.prog.college, it.prog.control_number) : it.kind + ":" + i;
+  }
   function render(root, data, live, dir, liveNote) {
+    lastRender = { root: root, data: data, live: live, dir: dir, liveNote: liveNote };
     var featured = (data && data.programs) || [];
     var directory = (window.CPL_BACCALAUREATES && window.CPL_BACCALAUREATES.programs) || [];
     var items = [];
@@ -2756,8 +2906,10 @@
     }
     function show(i) {
       var it = items[i] || items[0];
+      shownIdent = itemIdent(it, items[i] ? i : 0);
+      roepOpening++; // a record read still in flight no longer owns the view
       if (it.kind === "directory") renderDirectory(body, it.prog, dir, directory, dir ? null : liveNote);
-      else if (it.kind === "roep") renderRoepProgram(body, it.prog);
+      else if (it.kind === "roep") openRoepProgram(body, it.prog);
       else if (it.prog.kind === "ladder") renderLadder(body, it.prog, null, openById);
       else renderProgram(body, it.prog, live, liveNote);
     }
@@ -2765,12 +2917,46 @@
       selector = buildSelector(items, directory, dir, function (i) { show(i); });
       container.appendChild(selector.row);
     }
+    var rnote = roepFallbackNote();
+    if (rnote) container.appendChild(rnote);
     container.appendChild(body);
     clearNode(root);
     root.removeAttribute("style");
     root.appendChild(container);
-    if (selector) selector.select.value = "0";
-    show(0);
+    var start = 0;
+    if (shownIdent) items.forEach(function (it, j) { if (itemIdent(it, j) === shownIdent) start = j; });
+    if (selector) selector.show(start);
+    show(start);
+  }
+  // The note a failed list read leaves above the pathway: the catalog records shown
+  // are the pilot file's.
+  function roepFallbackNote() {
+    if (!roepTable.error) return null;
+    return el("div", "cplpw-note cplpw-rnote", roepFilePrograms().length
+      ? "Catalog records come from the pilot file for now: the table could not be read (" + roepTable.error + ")."
+      : "Catalog records could not be read just now (" + roepTable.error + ").");
+  }
+  // When the table's list lands after the first render: re-render with it, keeping the
+  // pathway shown, or, when the read failed, add the note without disturbing the view.
+  function roepIndexLanded() {
+    var L = lastRender;
+    if (!L || !L.root || L.root.isConnected === false) return;
+    if (roepTable.index) { render(L.root, L.data, L.live, L.dir, L.liveNote); return; }
+    var box = L.root.querySelector(".cplpw");
+    var n = box && !box.querySelector(".cplpw-rnote") ? roepFallbackNote() : null;
+    if (n) box.insertBefore(n, box.lastChild);
+  }
+  // A reviewer signing in reads every record; signing out drops back to the checked
+  // ones. Records already read are dropped too, so none outlives the session that read it.
+  var roepSessionWired = false;
+  function wireRoepSession() {
+    if (roepSessionWired) return;
+    roepSessionWired = true;
+    window.addEventListener("cpl-session-changed", function () {
+      if (!lastRender) return;
+      roepTable.records = {};
+      readRoepIndex().then(roepIndexLanded);
+    });
   }
 
   // ── Boot ──────────────────────────────────────────────────────────────────
@@ -2783,12 +2969,19 @@
 
     var data = window.CPL_PATHWAYS || { programs: [] };
     var college = (data.programs && data.programs[0] && data.programs[0].college) || "Cerritos";
+    // The table's program list is read beside the file loads. The tab never waits on
+    // it: a list that lands before the first render is used by it, and one that lands
+    // after re-renders the tab with the reader's pathway kept (within ROEP_READ_MS).
+    var rendered = false;
+    readRoepIndex().then(function () { if (rendered) roepIndexLanded(); });
+    wireRoepSession();
 
     function done(payload, note) {
       var live = null, dir = null;
       try { live = buildLiveIndexes(payload, college); } catch (e) { live = null; }
       try { dir = buildDirectoryIndex(payload); } catch (e) { dir = null; }
       render(root, data, live, dir, (live || dir) ? null : (note || "Live MAP articulation data unavailable — showing the curated snapshot."));
+      rendered = true;
     }
     function withCer() {
       // Live CER payload (3 MB, lazy — the CER/MAP-Export tabs share the same file).
@@ -2816,10 +3009,10 @@
       if (window.CPL_BACCALAUREATES || !hasLoader()) { withCociKeys(next); return; }
       window.CPL_TABS.loadScript("cpl_baccalaureates_data.js", "CPL_BACCALAUREATES", function () { withCociKeys(next); });
     }
-    // ROEP tier: the display build (window.CPL_PATHWAYS_ROEP, ~0.3 MB) feeds a
-    // ladder's associate degree and the catalog-record group in the selector.
-    // A failed load leaves the ladder's derived steps saying the record is
-    // missing and the selector without its catalog records.
+    // ROEP tier: the pilot's display build (window.CPL_PATHWAYS_ROEP, ~0.5 MB) feeds a
+    // ladder's associate degree, and the catalog-record group in the selector until
+    // the table's list answers (readRoepIndex) or when it cannot. A failed load
+    // leaves the ladder's derived steps saying the record is missing.
     function withRoep(next) {
       if (window.CPL_PATHWAYS_ROEP || !hasLoader()) { next(); return; }
       window.CPL_TABS.loadScript("cpl_pathways_roep_data.js", "CPL_PATHWAYS_ROEP", function () { next(); });
@@ -2846,6 +3039,9 @@
     _renderLadder: renderLadder,
     _renderRoepProgram: renderRoepProgram,
     _roepPrograms: roepPrograms,
+    _openRoepProgram: openRoepProgram,
+    _readRoepIndex: readRoepIndex,
+    _roepTable: roepTable,
     _roepView: roepView,
     _ladderBlocks: ladderBlocks,
     _certificateFigures: certificateFigures,

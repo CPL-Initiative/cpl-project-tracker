@@ -198,6 +198,9 @@ const DEFAULT_GATES = [
   { tbl: "chatbox_credentials", rls_enabled: true, select_gate: "true", policy_count: 1 },
   { tbl: "cpl_contracts", rls_enabled: true, select_gate: "(is_allowed_reviewer() OR fin_pass_ok())", policy_count: 4 },
   { tbl: "gr_content", rls_enabled: true, select_gate: "(gr_pass_ok() OR is_allowed_reviewer())", policy_count: 3 },
+  // CPL Pathways reads both since Sheet 65 card 2 (S367); live gates read 2026-10-11.
+  { tbl: "program_requirement_records", rls_enabled: true, select_gate: "checked | is_allowed_reviewer()", policy_count: 3 },
+  { tbl: "program_source_registry", rls_enabled: true, select_gate: "true", policy_count: 3 },
   { tbl: "legacy_open", kind: "table", rls_enabled: false, select_gate: null, policy_count: 0 },
   { tbl: "map_contact_gaps", kind: "view", rls_enabled: false, select_gate: null, policy_count: 0 },
   { tbl: "map_credential_student_rollup", kind: "matview", rls_enabled: false, select_gate: null, policy_count: 0 },

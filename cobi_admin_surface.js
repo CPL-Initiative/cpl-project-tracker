@@ -152,7 +152,10 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_pathways_data.js",
         "cpl_pathways_membership_data.js"
       ],
-      "reads": [],
+      "reads": [
+        "program_requirement_records",
+        "program_source_registry"
+      ],
       "writes": [
         "cpl_adoption_interest"
       ],
