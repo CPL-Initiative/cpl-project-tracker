@@ -840,6 +840,11 @@ jobs:
       # outline census, guarded and reversible. Pure-stdlib python.
       - name: Course outline registry fill (receipt, guard, rollback)
         run: python3 tests/course_outline_registry_fill_test.py
+      # The course outline index (S373; Sam, Open Asks Sheet 70 card 3): one
+      # spelling per course code, and the courses the loaded records name.
+      # Reads pages only and writes no table. Pure-stdlib python.
+      - name: Course outline index (course codes, the loaded records)
+        run: python3 tests/course_outline_index_test.py
 
   test:
     # The one check the merge doctrine polls (CLAUDE.md branch policy). It
