@@ -4,10 +4,10 @@
   "supabase_tables": 97,
   "rpcs": 37,
   "edge_functions": 7,
-  "file_datasets": 642,
+  "file_datasets": 644,
   "external_services": 175,
-  "consumers": 436,
-  "workflows": 51,
+  "consumers": 437,
+  "workflows": 52,
   "data_js_files": 69,
   "tabs": 39
  },
@@ -7417,6 +7417,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_course_outcomes_load.py": {
+   "consumers": [
+    {
+     "id": "workflow:course-outcomes-load.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_course_outcomes_read.py": {
    "consumers": [
     {
@@ -12666,6 +12679,10 @@
    "consumers": [],
    "producers": [
     {
+     "by": "workflow:course-outcomes-load.yml",
+     "how": "commit"
+    },
+    {
      "by": "workflow:program-requirements-college.yml",
      "how": "commit"
     }
@@ -17060,6 +17077,19 @@
    "main_committers": []
   },
   "file:tests/context_budget_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/course_outcomes_load_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -22870,6 +22900,20 @@
    "chain": [],
    "urls": []
   },
+  "course-outcomes-load.yml": {
+   "name": "Course outcomes load",
+   "crons": [],
+   "scripts": [
+    "kb/_course_outcomes_load.py"
+   ],
+   "adds": [
+    "kb/receipts"
+   ],
+   "push": "triggering branch",
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
   "course-outcomes-read.yml": {
    "name": "Course outcomes read",
    "crons": [],
@@ -23359,7 +23403,8 @@
     "tests/video_context_test.py",
     "tests/kpi_history_no_gaps_test.py",
     "tests/course_outline_index_test.py",
-    "tests/course_outcomes_read_test.py"
+    "tests/course_outcomes_read_test.py",
+    "tests/course_outcomes_load_test.py"
    ],
    "adds": [],
    "push": null,

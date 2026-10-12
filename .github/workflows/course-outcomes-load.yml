@@ -1,0 +1,54 @@
+name: Course outcomes load
+# The filed course outcomes read into course_outcomes (Sam, Open Asks Sheet 70 card
+# 3, 2026-10-12: "Every course in the loaded records"). kb/_course_outcomes_load.py
+# posts each college's rows to course_outcomes_load() with the service key: it
+# inserts a block the table does not hold and touches nothing already there. The
+# receipt (kb/receipts/course_outcomes_<host>_<run>.json) names every inserted id
+# and the delete that rolls them back; this job commits it to the branch that ran.
+# Runs when a claude/** push changes kb/course_outcomes/.load (host=<folder>),
+# never on a merge commit.
+on:
+  push:
+    branches: ['claude/**']
+    paths:
+      - 'kb/course_outcomes/.load'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: course-outcomes-load-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  load:
+    if: github.actor != 'github-actions[bot]' && !startsWith(github.event.head_commit.message, 'Merge')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Load the filed read, insert-only
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          host=$(sed -n 's/^host=//p' kb/course_outcomes/.load)
+          python3 kb/_course_outcomes_load.py --host "$host"
+
+      - name: Commit the receipt to this branch
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kb/receipts
+          if git diff --cached --quiet; then echo "No receipt."; exit 0; fi
+          git commit -m "Receipt: course outcomes load (run ${{ github.run_id }})"
+          for i in 1 2 3 4; do
+            git pull --rebase origin ${{ github.ref_name }} && git push origin HEAD:${{ github.ref_name }} && exit 0
+            sleep $((i * 5))
+          done
+          exit 1

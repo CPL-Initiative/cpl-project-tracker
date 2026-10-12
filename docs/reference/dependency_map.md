@@ -444,6 +444,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_build_remint_blast_radius.py` | workflows: `cred-rename-apply.yml`, `daily-dashboard.yml`, `js-tests.yml` | — |
 | `kb/_cer_decision_apply.py` | workflows: `cer-decision-apply.yml` | — |
 | `kb/_college_page_read.py` | workflows: `college-page-read.yml` | — |
+| `kb/_course_outcomes_load.py` | workflows: `course-outcomes-load.yml` | — |
 | `kb/_course_outcomes_read.py` | workflows: `course-outcomes-read.yml` | — |
 | `kb/_course_outline_census.py` | workflows: `course-outline-census.yml` | — |
 | `kb/_course_outline_index.py` | workflows: `course-outline-index.yml` | — |
@@ -612,7 +613,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/projects_validation.md` | none found | scripts: `kb/_validate_projects.py` · committed by: `projects-seed-apply.yml` |
 | `kb/promotions.json` | scripts: `excel_to_dashboard.py`, `kb/_analyze_official_fold_evidence.py`, `kb/_analyze_witness_kinship.py`, `kb/_build_remint_blast_radius.py`, `kb/_desc_consolidation_dryrun.py`, `kb/_esl_package_dryrun.py`, `kb/_rekey_promotions.py`, `kb/_remint_apply.py`, `kb/_seed_authority_codes.py`, `kb/_title_consolidation_dryrun.py`, `kb/_uc_cur_zscheme_dryrun.py` | scripts: `kb/_rekey_promotions.py` |
 | `kb/queue_status.json` | tabs: `program-requirements` · scripts: `scripts/queue_status.py` | — |
-| `kb/receipts` | none found | committed by: `program-requirements-college.yml` |
+| `kb/receipts` | none found | committed by: `course-outcomes-load.yml`, `program-requirements-college.yml` |
 | `kb/receipts/cr_reference_decisions_<date>_s280.json` | scripts: `kb/_build_decision_sheet_demo.py` | — |
 | `kb/receipts/jev_ccr_title_rung_<date>_s282.json` | scripts: `kb/_build_ccr_title_rung_sheet.py` | — |
 | `kb/reference/CIPCode2020.csv` | scripts: `excel_to_dashboard.py`, `kb/_build_cip_crosswalk.py`, `kb/_build_it_ai_credential_catalog.py` | — |
@@ -800,6 +801,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/college_briefing_publish_suppression_test.py` | workflows: `college-briefing-publish.yml`, `js-tests.yml` | — |
 | `tests/college_page_read_test.py` | workflows: `js-tests.yml` | — |
 | `tests/context_budget_test.py` | workflows: `js-tests.yml` | — |
+| `tests/course_outcomes_load_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_outcomes_read_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_outline_census_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_outline_index_test.py` | workflows: `js-tests.yml` | — |
@@ -1096,5 +1098,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 97 Supabase tables · 37 RPCs · 7 edge functions · 642 file
-datasets · 175 external services · 436 consumers · 51 workflows · 39 tabs.
+Coverage: 97 Supabase tables · 37 RPCs · 7 edge functions · 644 file
+datasets · 175 external services · 437 consumers · 52 workflows · 39 tabs.
