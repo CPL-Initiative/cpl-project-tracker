@@ -4,6 +4,8 @@ date: 2026-10-11
 session: 361 (SkyBirch)
 tags: [handoff, program-requirements, harvest, phase-2, long-beach-city, extraction, two-call-split, ui-pass]
 status: current
+superseded: true
+superseded_by: session_368_handoff.md
 ---
 
 # You are Session 362

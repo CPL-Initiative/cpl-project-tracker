@@ -5918,3 +5918,7 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 ## INDEX update history moved 2026-10-11 (S365)
 
 - 2026-10-09 (S354 SkyFurrow): Cerritos loaded unchecked through `program_requirement_records_college_load()` (#1941, 270 records, receipt per load); reads gated on `[read]`/`[extract]`; the Activities UI pass (#1945); Program records gains Find a record and the scorer's course counts (#1946); a Progress call answers its records on its card (#1947), all for Sam reading on his phone.
+
+### INDEX update history, moved 2026-10-12 (S367)
+
+- 2026-10-10 S357 SkyCanopy: curriQunet catalogs read as data (KB note `methodology-a-javascript-catalog-is-data-read-what-it-fetches`); district catalogs scoped; Open Asks Sheets 58 and 59; handoff 358.

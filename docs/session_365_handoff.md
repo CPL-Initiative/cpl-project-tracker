@@ -4,6 +4,8 @@ date: 2026-10-11
 session: 364 (SkyJuniper)
 tags: [handoff, ui-pass, first-light, accessibility, program-requirements, long-beach-city, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_368_handoff.md
 ---
 
 # You are Session 365

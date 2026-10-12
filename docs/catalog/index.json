@@ -15342,8 +15342,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 338,
+   "count": 339,
    "docs": [
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "n": 368,
+     "path": "docs/session_368_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "long-beach-city",
+      "cpl-pathways",
+      "vision-2030",
+      "decision-sheet"
+     ],
+     "title": "load Long Beach City's re-read, Open Asks Sheet 67, CPL Pathways reads the table",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-11",
      "governs": [],
@@ -21137,5 +21155,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1105
+ "total": 1106
 }

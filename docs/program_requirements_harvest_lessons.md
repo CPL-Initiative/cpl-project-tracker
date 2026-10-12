@@ -1,7 +1,7 @@
 ---
 title: Program requirements harvest — Decisions & Lessons
 date: 2026-10-03
-prs: [1836, 1838, 1839, 1841, 1844, 1845, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866, 1868, 1874, 1876, 1877, 1878, 1894]
+prs: [2012, 2015, 2016, 1836, 1838, 1839, 1841, 1844, 1845, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866, 1868, 1874, 1876, 1877, 1878, 1894]
 tags: [program-requirements, catalog-harvest, census, supabase, playwright, governance, lessons]
 artifacts:
   - kb/_program_source_census.py
@@ -955,3 +955,17 @@ committed `sources.json` and records (no new read), most of them were never on t
 - **The sandbox cannot read run artifacts.** The proxy refuses the artifact store's host
   (`productionresultssa5.blob.core.windows.net`), so a page's full captured text is out of reach here; a page read on
   the runner was the workaround. Sam can allow the host in the environment's network settings.
+
+## S367 SkyAspen, 2026-10-11/12: CPL Pathways reads the table, its UI pass, and two answers to one card
+
+**Shipped.** #2015: CPL Pathways lists its catalog records from `program_requirement_records` and reads one record, by college and control number, when a reader opens it (Sam's chat answer to Sheet 65 card 2, *Read from the table*). The table's read policy decides who sees what: the public 29 checked records, a signed-in reviewer all 1,515, unchecked marked; the row's own `checked` wins over the display build's copy. The pilot file is the offline tier and a ladder's source. #2016: the tab's UI pass (controls as underlined words, the Student/College toggle gains `aria-pressed`, four decorative emoji out, the provenance line's doubled word, two sweep seeds for the table states). #2012 (S366's fixes for Long Beach City's 74) merged and the re-read was dispatched (run 38185403454).
+
+**Lessons.**
+- **The tab must never wait on the table.** The first build joined the list read before rendering; an existing test that mocks `fetch` and reads the DOM synchronously failed. The shipped shape renders from the file at once and swaps in the table's list when it lands, keeping the reader's pick by identity (`roep:<college>|<control>`), so a slow or failed read costs nothing but the swap.
+- **A pick token must move on every pick, not only on record picks.** A slow record read that resolved after the reader switched to a featured map overwrote it; `show()` now bumps the token for every kind. The guard fails without the bump.
+- **The sweep aborts every off-origin read, so the table's states are never measured unless seeded.** `cpl-pathways-table` and `-dark` hand the tab a list through its own landing path (`_roepIndexLanded`) and open an unchecked record or a record whose read fails.
+- **Reading Long Beach City's records through the table surfaced a label bug the pilot never showed:** the `custom_html` platform label said "college's own catalog pages", so the line read "Long Beach City College's college's ...".
+- **A gate fixture must carry every table a tab reads.** `admin_tab.test.js` classified CPL Pathways as "not checked" once the tab read two tables its fixture lacked; the fix was the tables' live gates (`checked | is_allowed_reviewer()`, `true`), not a code change.
+- **The check-run listing can stay stale for 15 minutes.** `get_check_runs` showed three shards in progress long after they passed; `get_check_run` by id and `list_workflow_jobs` with `filter: latest` read fresh.
+
+**Two answers to one card.** Sheet 65 card 2 was answered in chat at ~23:16Z (*Read from the table*) and on the sheet at 23:46Z (*Every record, marked*, after eight versions, note: "I want every record to show marked not yet confirmed"). The later answer is his deliberate words but contradicts a direct chat answer, so it is asked on Open Asks Sheet 67 before anything is built; #2015 stands meanwhile. Opening the table's public read would reach College Briefing and Program Requirements' public view too (Sierra filters `checked` itself).
