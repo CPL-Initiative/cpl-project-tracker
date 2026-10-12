@@ -1257,8 +1257,9 @@ def read_config_overrides():
       BASE_MIL, BASE_WF, BASE_APP         — workplan chart 2024 baselines
       ACTUAL_2025_MIL, ACTUAL_2025_WF,     — workplan chart 2025 actuals
       ACTUAL_2025_APP, ACTUAL_2025_TOTAL
-      V2030_G1_PROGRESS, V2030_G2_PROGRESS, V2030_G3_PROGRESS  — Vision 2030 %
-      V2030_G2_CURRENT, V2030_G3_CURRENT   — Vision 2030 status text
+      V2030_G2_PROGRESS, V2030_G3_PROGRESS — Vision 2030 % (Goal 1 is measured:
+                                            students over 250,000); TBA until set
+      V2030_G2_CURRENT, V2030_G3_CURRENT   — Vision 2030 status text; none until set
       SAVINGS_DEFAULT                       — estimated savings fallback
     """
     raw = load_dashboard_config().get("config_overrides", {})
@@ -1283,7 +1284,58 @@ def _bar_width(pct):
     return f"{max(0.0, min(float(pct), 100.0)):.1f}"
 
 
-def render_vision_2030_html(kpis):
+V2030_STUDENT_TARGET = 250000
+
+
+def vision_2030_goals(kpis, config_overrides=None):
+    """The three CPL goals' figures, once, for the Vision 2030 tab and the annual
+    report (CPL_DATA.vision2030).
+
+    Sam, Open Asks Sheet 66 card 1, 2026-10-11 23:44Z, his own call: "One set, as
+    proposed". Until then the tab divided MAP's credit recommendations by the
+    workplan's 1,000 workgroup recommendations (a full bar labeled 1419.5%) and
+    painted Goal 3 at a fixed 65%, while the report measured students and stated
+    the generator's 55% and 60% for Goals 2 and 3. Now:
+      * Goal 1 measures students against 250,000; the credit recommendation count
+        is named without a percent of the workgroup target;
+      * Goals 2 and 3 show the figure and line set in kb/dashboard_config.json
+        (V2030_G2_PROGRESS, V2030_G2_CURRENT, V2030_G3_PROGRESS,
+        V2030_G3_CURRENT), and TBA until they are set; no default stands in;
+      * Goal 2 keeps its line for active colleges.
+    `progress` is a whole percent, or None for TBA."""
+    co = config_overrides or {}
+    students = _kpi_int(kpis, "cumulative_students", "42620")
+    recs = _kpi_int(kpis, "credit_recommendations", "576")
+    colleges = _kpi_int(kpis, "active_colleges", "84")
+
+    def set_pct(key):
+        v = co.get(key)
+        if v is None or str(v).strip() == "":
+            return None
+        try:
+            return int(round(max(0.0, min(float(v), 100.0))))
+        except (TypeError, ValueError):
+            return None
+
+    def set_line(key):
+        v = co.get(key)
+        line = str(v).strip() if v is not None else ""
+        return line or None
+
+    g1 = int(round(min(students / V2030_STUDENT_TARGET * 100, 100)))
+    return [
+        {"id": "Goal 1", "progress": g1,
+         "lines": [f"Students: {fmt_number(students)} of 250,000",
+                   f"Credit recommendations in MAP: {fmt_number(recs)}"]},
+        {"id": "Goal 2", "progress": set_pct("V2030_G2_PROGRESS"),
+         "lines": [x for x in (set_line("V2030_G2_CURRENT"),
+                               f"Active colleges: {colleges} of 116") if x]},
+        {"id": "Goal 3", "progress": set_pct("V2030_G3_PROGRESS"),
+         "lines": [x for x in (set_line("V2030_G3_CURRENT"),) if x]},
+    ]
+
+
+def render_vision_2030_html(kpis, config_overrides=None):
     """The Vision 2030 tab's section, from its start marker through its end marker.
 
     S365's UI pass moved this out of main() so it can be rendered and tested on
@@ -1298,15 +1350,19 @@ def render_vision_2030_html(kpis):
         <style>, where the 390px layout fix lives too.
     """
     esc = html_escape
-    recs_val = _kpi_int(kpis, "credit_recommendations", "576")
-    students_val = _kpi_int(kpis, "cumulative_students", "42620")
-    colleges_val = _kpi_int(kpis, "active_colleges", "84")
-    recs_pct = round(recs_val / 1000 * 100, 1)
-    students_pct = round(students_val / 250000 * 100, 1)
 
-    def goal_card(goal_key, width, label):
-        g = CPL_GOALS[goal_key]
+    def goal_card(f):
+        """A goal measured shows its bar and percent; one not yet measured shows
+        no bar and says TBA (an empty bar would read as 0%)."""
+        g = CPL_GOALS[f["id"]]
         bullets = "".join(f'\n                        <li>{esc(b)}</li>' for b in g["bullets"])
+        pct = f["progress"]
+        bar = ('' if pct is None else
+               '\n                        <div class="goal-progress-bar" aria-hidden="true">'
+               f'\n                            <div class="goal-progress-fill" style="width:{_bar_width(pct)}%;"></div>'
+               '\n                        </div>')
+        label = " &nbsp;|&nbsp; ".join(
+            [f"Progress: {pct}%" if pct is not None else "Progress: TBA"] + [esc(x) for x in f["lines"]])
         return (
             '\n                <div class="vision-card">'
             f'\n                    <h3 class="goal-title">{esc(g["title"])}</h3>'
@@ -1314,9 +1370,7 @@ def render_vision_2030_html(kpis):
             f'\n                    <ul class="goal-bullets">{bullets}'
             '\n                    </ul>'
             '\n                    <div class="goal-progress">'
-            '\n                        <div class="goal-progress-bar" aria-hidden="true">'
-            f'\n                            <div class="goal-progress-fill" style="width:{_bar_width(width)}%;"></div>'
-            '\n                        </div>'
+            + bar +
             f'\n                        <span class="goal-progress-label">{label}</span>'
             '\n                    </div>'
             '\n                </div>\n'
@@ -1335,13 +1389,7 @@ def render_vision_2030_html(kpis):
            '\n'
            '\n            <div class="vision-grid">'
            + actions
-           + goal_card("Goal 1", recs_pct,
-                       f'Credit Recs: {recs_pct}% ({fmt_number(recs_val)}/1,000) &nbsp;|&nbsp; '
-                       f'Students: {students_pct}% ({fmt_number(students_val)}/250,000)')
-           + goal_card("Goal 2", colleges_val / 116 * 100,
-                       f'Active Colleges: {colleges_val} of 116 ({colleges_val / 116 * 100:.0f}%)')
-           + goal_card("Goal 3", 65,
-                       '1,000+ trained; $5M ongoing secured; Title 5 updates advancing')
+           + "".join(goal_card(f) for f in vision_2030_goals(kpis, config_overrides))
            + '            </div>'
            '\n        </div>')
     return out + '\n        <!-- End Vision 2030 Section -->\n        '
@@ -12479,21 +12527,10 @@ def main():
         veteran_jst=veteran_jst,
     )
 
-    # ── Vision 2030 progress — derive from live data + config overrides ──
-    # Goal 1: compute from cumulative students / 250,000 target
-    try:
-        _students_raw = str(kpis['cumulative_students']['value']).replace(",", "")
-        _v2030_g1_progress = min(100, round(int(_students_raw) / 250000 * 100))
-    except (ValueError, TypeError, KeyError):
-        _v2030_g1_progress = 17  # safe fallback
-    # Goals 2 & 3: read from config overrides (no live data source)
-    _v2030_g2_progress = int(config_overrides.get("V2030_G2_PROGRESS", 55))
-    _v2030_g3_progress = int(config_overrides.get("V2030_G3_PROGRESS", 60))
-    # Status text: read from config overrides or use defaults
-    _v2030_g2_current = str(config_overrides.get("V2030_G2_CURRENT",
-        "MAP at 116 colleges; Dashboard live; Portal launching"))
-    _v2030_g3_current = str(config_overrides.get("V2030_G3_CURRENT",
-        "AB 123 chaptered; $20M allocated; 1,000+ trained"))
+    # ── Vision 2030 progress: the tab's figures, once (vision_2030_goals) ──
+    # Sam, Open Asks Sheet 66 card 1: one set for both views; TBA (progress
+    # None, current "TBA") until kb/dashboard_config.json sets Goals 2 and 3.
+    _v2030 = {g["id"]: g for g in vision_2030_goals(kpis, config_overrides)}
 
     data = {
         "last_updated": now,
@@ -12515,22 +12552,22 @@ def main():
                     "id": "Goal 1",
                     "name": "Expand Equitable Access & Boost Student Success",
                     "target": "250,000 Californians by 2030",
-                    "progress": _v2030_g1_progress,
-                    "current": f"{kpis['cumulative_students']['value']} cumulative students",
+                    "progress": _v2030["Goal 1"]["progress"],
+                    "current": "; ".join(_v2030["Goal 1"]["lines"]),
                 },
                 {
                     "id": "Goal 2",
                     "name": "Build Unified, Interoperable, Student-Centered System",
                     "target": "CPL embedded in outreach, onboarding, advising",
-                    "progress": _v2030_g2_progress,
-                    "current": _v2030_g2_current,
+                    "progress": _v2030["Goal 2"]["progress"],
+                    "current": "; ".join(_v2030["Goal 2"]["lines"]),
                 },
                 {
                     "id": "Goal 3",
                     "name": "Sustainable Policies, Resources & Professional Learning",
                     "target": "Faculty-driven policies; ongoing PD; scalable tools",
-                    "progress": _v2030_g3_progress,
-                    "current": _v2030_g3_current,
+                    "progress": _v2030["Goal 3"]["progress"],
+                    "current": "; ".join(_v2030["Goal 3"]["lines"]) or "TBA",
                 },
             ],
         },
@@ -13319,7 +13356,7 @@ def main():
             data_start_marker = v2030_end  # back-compat var name kept for the next block
             if v2030_start != -1 and v2030_end != -1:
                 # Live KPI data drives the progress figures (render_vision_2030_html).
-                html = html[:v2030_start] + render_vision_2030_html(kpis) + html[v2030_end_consumes:]
+                html = html[:v2030_start] + render_vision_2030_html(kpis, config_overrides) + html[v2030_end_consumes:]
                 print("  Rebuilt Vision 2030 section with updated CPL Goal data")
 
             # ── Remove the old standalone applyFilters script block if present ──
