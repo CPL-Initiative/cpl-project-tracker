@@ -1,0 +1,219 @@
+{
+ "college": "San Diego Miramar College",
+ "control_number": "17037",
+ "shape": "certificate",
+ "title": "Personal Training",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20095",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9450,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9450,
+    "output_tokens": 1429,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1429,
+  "output_tokens_details": {
+   "thinking_tokens": 558
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06638,
+ "ms": 11760,
+ "seconds": 12.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    11.0,
+    15.0
+   ],
+   "stated": [
+    11.0,
+    15.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Personal Training - Certificate of Achievement: Miramar",
+   "measure": "units",
+   "total_units": {
+    "min": 11,
+    "max": 15
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Instruct safe and effective exercise sessions for both individuals and small groups.",
+    "Apply appropriate exercise science and kinesiology-related principles to design safe and effective exercise sessions.",
+    "Demonstrate effective communication skills and teaching strategies when working one-on-one with clients."
+   ],
+   "careers": [
+    "Personal trainers",
+    "health and fitness"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "EXSC 281",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 230",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "EXSC 282",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EXSC 283",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EXSC 284",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "NUTR 170",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "EXSC 270",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following elective courses:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "EXSC 241B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EXSC 251",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EXSC 286",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "EXSC 270 is printed as 1.0 unit in the requirements list, though its course description states 1-4 units (54-216 hours); recorded as 1 unit per the requirements list.",
+   "The 'Personal trainers' career entry is taken from the program summary, which describes the occupation; 'health and fitness' is the field named for entry-level positions.",
+   "Award note states the program is not eligible for federal financial aid."
+  ]
+ },
+ "extracted_run": "38275241459"
+}
