@@ -68,12 +68,49 @@ check("3 no system found: none_found, not_found, prints_slos unknown (null)",
       f["cor_system"] == "none_found" and f["cor_access"] == "not_found" and f["cor_prints_slos"] is None, f)
 
 sql = fill.receipt({"run": "1", "rows": [cq, none, {**signin, "college": "O'Neill College"}]}, 373, "2026-10-12")
-updates = sql.count("update public.program_source_registry set\n")
-check("4 one UPDATE a college, each guarded on cor_checked_run is null, quotes doubled",
-      updates == 3 and sql.count("and cor_checked_run is null;") == 3 and "'O''Neill College'" in sql)
+check("4 one UPDATE over a row a college, guarded on cor_checked_run is null, quotes doubled",
+      sql.count("update public.program_source_registry r set") == 1 and sql.count("and r.cor_checked_run is null;") == 1
+      and all(("(%s," % fill.sql_lit(c)) in sql for c in ("Riverside City College", "X College", "O'Neill College"))
+      and "'O''Neill College'" in sql)
 check("4 the rollback empties only this run's rows and stays commented out",
       "-- where cor_checked_run = 'course-outline-census run 1';" in sql
       and "\nupdate public.program_source_registry set cor_system = null" not in sql)
+
+# 5. The receipt's SQL derives the same eight values as fields(): run it in SQLite
+# (no alias in UPDATE, no column list on a VALUES alias, so both are rewritten for
+# SQLite only) and compare, then apply it twice.
+import sqlite3
+rows = [cq, outline_only, signin, elumen, none, dict(cq, college="Copper Mountain College", cor_outline="refused",
+                                                      cor_access="refused", cor_outline_url=None)]
+sql = fill.receipt({"run": "9", "rows": rows}, 373, "2026-10-12")
+upd = sql[sql.index("update public.program_source_registry r set"):sql.index("and r.cor_checked_run is null;") + 30]
+upd = (upd.replace("update public.program_source_registry r set", "update public.program_source_registry set")
+          .replace("r.college", "program_source_registry.college")
+          .replace("r.cor_checked_run", "program_source_registry.cor_checked_run")
+          .replace("from (values\n", "from (select column1 as college, column2 as system, column3 as url, column4 as access, "
+                                     "column5 as k, column6 as proof from (values\n")
+          .replace(") as v(college, system, url, access, k, proof)", "\n)) as v"))
+cols = ["cor_system", "cor_url", "cor_access", "cor_proof_url", "cor_prints_slos", "cor_slo_source_url", "cor_note",
+        "cor_checked_run"]
+db = sqlite3.connect(":memory:")
+db.execute("attach ':memory:' as public")
+db.execute("create table public.program_source_registry (college text primary key, %s)" % ", ".join(cols))
+for r in rows:
+    db.execute("insert into public.program_source_registry (college) values (?)", (r["college"],))
+before = db.total_changes
+db.execute(upd)
+first = db.total_changes - before
+db.execute(upd)
+second = db.total_changes - before - first
+diffs = []
+for r in rows:
+    got = dict(zip(cols, db.execute("select %s from public.program_source_registry where college = ?" % ", ".join(cols),
+                                     (r["college"],)).fetchone()))
+    got["cor_prints_slos"] = None if got["cor_prints_slos"] is None else bool(got["cor_prints_slos"])
+    if got != fill.fields(r, "9"):
+        diffs.append(r["college"])
+check("5 the receipt's SQL writes what fields() says for every row, and a second apply changes nothing",
+      not diffs and first == len(rows) and second == 0, (diffs, first, second))
 
 passed = sum(1 for _, ok, _ in results if ok)
 for name, ok, why in results:

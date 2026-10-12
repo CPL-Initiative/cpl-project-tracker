@@ -9,7 +9,7 @@ kb/course_outline_census/census_<run>.json and writes the receipt that fills the
 
   kb/receipts/program_source_registry_course_outline_<date>_s<N>.sql
 
-One guarded UPDATE a college, applied only where cor_checked_run is still null,
+One UPDATE over a VALUES list (a row a college), applied only where cor_checked_run is still null,
 so a second apply changes nothing and a row a person filled is kept. The columns
 were empty before the first fill, so the rollback sets them back to null where
 cor_checked_run is this run (the receipt's last statement, commented out). The
@@ -19,6 +19,10 @@ Card 2 ("Record and move on", with "look for other repositories for the outcomes
 data and record the link"): a sign-in system is recorded as sign_in with no
 request to the college, and the page whose SLOs were read, an outline or a
 catalog course page, goes in cor_slo_source_url.
+
+The repo's Supabase guard routes an UPDATE to a shared table through
+apply_migration, so a session applies the receipt's UPDATE as a migration and
+appends the read-back to the receipt (S373: 118 rows, md5 equal to fields()).
 
 Usage: python3 kb/_course_outline_registry_fill.py kb/course_outline_census/census_<run>.json --session 373
 """
@@ -37,6 +41,28 @@ ACCESS = {"public", "sign_in", "refused", "unreached", "not_found"}
 OPENED = {"outline_with_slos", "slos", "outline"}
 NAMES = {"curriqunet": "CurriQunet", "curricunet": "CurricUNET", "elumen": "eLumen", "coursedog": "Coursedog",
          "courseleaf_cim": "CourseLeaf's curriculum module", "kuali": "Kuali", "webcms": "WebCMS"}
+
+
+# What the census found, in plain words for a person, the tab and Sierra; {name}
+# is the system's name. The receipt derives the same note in SQL from the key.
+NOTES = {
+    "none": "The course outline census found no course outline system linked from the college's homepage, catalog or curriculum pages.",
+    "outline_with_slos": "{name} opens course outlines to the public, and the outline read prints the course's student learning outcomes.",
+    "slos": "A public {name} course page prints the course's student learning outcomes.",
+    "outline": "{name} opens course outlines to the public; the outline read prints no student learning outcomes heading.",
+    "list_only": "{name} answers in public, but the census reached no course's outline from it.",
+    "sign_in": "{name} asks for a sign-in. Recorded with no request to the college (Open Asks Sheet 70 card 2).",
+    "refused": "{name} refused the census's visit (robots or 401/403). Recorded with no request to the college.",
+    "unreached": "{name} did not answer the census.",
+}
+
+
+def note_key(system: str, verdict: str, access: str) -> str:
+    if system == "none_found":
+        return "none"
+    if verdict in ("outline_with_slos", "slos", "outline", "list_only"):
+        return verdict
+    return access if access in ("sign_in", "refused") else "unreached"
 
 
 def picked_host(row: dict) -> dict:
@@ -65,23 +91,8 @@ def fields(row: dict, run: str) -> dict:
         access = verdict
     else:
         access = row.get("cor_access") if row.get("cor_access") in ACCESS else "not_found"
-    name = NAMES.get(system, system)
-    if system == "none_found":
-        note = "The course outline census found no course outline system linked from the college's homepage, catalog or curriculum pages."
-    elif verdict == "outline_with_slos":
-        note = "%s opens course outlines to the public, and the outline read prints the course's student learning outcomes." % name
-    elif verdict == "slos":
-        note = "A public %s course page prints the course's student learning outcomes." % name
-    elif verdict == "outline":
-        note = "%s opens course outlines to the public; the outline read prints no student learning outcomes heading." % name
-    elif verdict == "list_only":
-        note = "%s answers in public, but the census reached no course's outline from it." % name
-    elif access == "sign_in":
-        note = "%s asks for a sign-in. Recorded with no request to the college (Open Asks Sheet 70 card 2)." % name
-    elif access == "refused":
-        note = "%s refused the census's visit (robots or 401/403). Recorded with no request to the college." % name
-    else:
-        note = "%s did not answer the census." % name
+    key = note_key(system, verdict, access)
+    note = NOTES[key].replace("{name}", NAMES.get(system, system))
     return {
         "cor_system": system,
         "cor_url": outline.get("start") or row.get("cor_url"),
@@ -115,16 +126,33 @@ def receipt(census: dict, session: int, today: str) -> str:
         "-- Counts by cor_system: %s." % json.dumps(_count(rows, run, "cor_system"), sort_keys=True),
         "-- Printing SLOs: %d." % sum(1 for r in rows if fields(r, run)["cor_prints_slos"]),
         "--",
-        "-- Each UPDATE applies only where cor_checked_run is null, so a second apply changes nothing.",
+        "-- The UPDATE applies only where cor_checked_run is null, so a second apply changes nothing.",
         "-- Rollback (Rule 10 a2): the columns were empty before this fill; the statement at the end, uncommented,",
         "-- empties them again, and program_source_registry_history holds every prior row under the run.",
         "",
     ]
-    for r in rows:
+    def row_sql(r):
         f = fields(r, run)
-        sets = ",\n".join("  %-18s = %s" % (k, sql_lit(v)) for k, v in f.items())
-        lines.append("update public.program_source_registry set\n%s\nwhere college = %s\n  and cor_checked_run is null;\n"
-                     % (sets, sql_lit(r["college"])))
+        key = note_key(f["cor_system"], r.get("cor_outline") or "not_probed", f["cor_access"])
+        return "  (%s)" % ", ".join(sql_lit(x) for x in (r["college"], f["cor_system"], f["cor_url"],
+                                                         f["cor_access"], key, f["cor_proof_url"]))
+    name = "case v.system %s else v.system end" % " ".join(
+        "when %s then %s" % (sql_lit(k), sql_lit(n)) for k, n in sorted(NAMES.items()))
+    note = "case v.k %s end" % " ".join(
+        "when %s then replace(%s, '{name}', %s)" % (sql_lit(k), sql_lit(t), name) for k, t in NOTES.items())
+    lines.append(
+        "update public.program_source_registry r set\n"
+        "  cor_system         = v.system,\n"
+        "  cor_url            = v.url,\n"
+        "  cor_access         = v.access,\n"
+        "  cor_proof_url      = v.proof,\n"
+        "  cor_prints_slos    = case when v.k in ('outline_with_slos', 'slos') then true when v.k = 'outline' then false end,\n"
+        "  cor_slo_source_url = case when v.k in ('outline_with_slos', 'slos') then v.proof end,\n"
+        "  cor_note           = %s,\n"
+        "  cor_checked_run    = %s\n"
+        "from (values\n%s\n) as v(college, system, url, access, k, proof)\n"
+        "where r.college = v.college\n  and r.cor_checked_run is null;\n"
+        % (note, sql_lit("course-outline-census run %s" % run), ",\n".join(row_sql(r) for r in rows)))
     lines += [
         "select cor_access, count(*) from public.program_source_registry",
         "where cor_checked_run = %s group by 1 order by 1;" % sql_lit("course-outline-census run %s" % run),
