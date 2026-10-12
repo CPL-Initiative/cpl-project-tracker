@@ -10,6 +10,10 @@ status: archive
 
 # Roadmap Archive — Completed Work & Session Narratives
 
+## INDEX update-history entries rotated out (2026-10-12)
+
+- 2026-10-11 (S366 SkyHazel): UI passes on Governance (#2007; the shell placeholder left on the root, a Docs panel blank after a repaint, #2011 its load race) and Team Phrases (#2010); the three `sierra_feedback` readers filter CI rows on the server (#2008); Long Beach City's 74 reframed (#2009) and both causes fixed (#2012: the hidden index chose pages and text); Sam answered Sheet 65 card 2 in chat (read from the table); handoff 367.
+
 ## INDEX update-history entries rotated out (2026-10-09)
 
 - **2026-10-08 (S345 SkyLantern):** map sources read at sixteen colleges, every Program Mapper refused and Mt. San Antonio's own Guided Pathways pages publish a sequence per program; 19 of 118 colleges hold a procedure; the Progress view links each of Sam's calls to its sheet card (#1908); Open Asks Sheet 50 answered, its card 5 built (settled maps). Handoff 346.

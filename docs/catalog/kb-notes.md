@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-543 document(s).
+544 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -130,6 +130,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A lane file is a summary of a measurement, not the measurement](../kb-notes/methodology-a-lane-file-is-a-summary-of-a-measurement.md) | methodology | published | 2026-09-13 | 2026-09-13 |
 | [A lapsed custom name is not a refusal](../kb-notes/methodology-a-lapsed-name-is-not-a-refusal.md) | methodology | published | 2026-10-08 | 2026-10-08 |
 | [A layout that cannot shrink does not wrap — it overflows and paints over its neighbour](../kb-notes/methodology-a-grid-item-sized-to-its-content-overflows-its-track.md) | methodology | published | 2026-09-04 | 2026-09-04 |
+| [A lead-in sentence is not a section heading](../kb-notes/methodology-a-lead-in-sentence-is-not-a-section-heading.md) | methodology | published | 2026-10-12 | 2026-10-12 |
 | [A limit nobody can see eats work, and a limit enforced twice drifts](../kb-notes/methodology-a-silent-cap-eats-work-and-a-paired-cap-drifts.md) | methodology | published | 2026-08-12 | 2026-08-12 |
 | [A limit that bounds one side of a union lets the other side drown it](../kb-notes/methodology-bound-both-sides-of-a-union.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A live rename must be order-proof, because the database and the deploy cannot be simultaneous](../kb-notes/methodology-a-live-rename-must-be-order-proof.md) | methodology | published | 2026-08-15 | 2026-08-15 |

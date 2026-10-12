@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-345 document(s).
+346 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 375 | [load the course outcomes, then re-read Mesa](../session_375_handoff.md) | 2026-10-12 |
 | 374 | [the SLO read on RCCD's outlines, after the course outline fields and the index](../session_374_handoff.md) | 2026-10-12 |
 | 373 | [Mesa's load, the course outline census, the gallery picks](../session_373_handoff.md) | 2026-10-12 |
 | 372 | [load Miramar, finish the painting gallery, Mesa's registry row](../session_372_handoff.md) | 2026-10-12 |

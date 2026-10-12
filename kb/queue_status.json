@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-12T22:08:45Z",
-  "session": 373,
-  "moniker": "SkyCypress",
+  "written_at": "2026-10-12T23:27:06Z",
+  "session": 374,
+  "moniker": "SkyJuniper",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_374_handoff.md",
+  "handoff": "docs/session_375_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -15059,10 +15059,14 @@
     }
   ],
   "next_step": {
-    "title": "Read the course SLOs on Riverside's outlines",
-    "text": "The course index found a public outline for 1,605 of the 1,648 courses in the Riverside City, Moreno Valley and Norco records. Next comes a table that keeps each course's outcomes by college and course, then the read of every outline, then San Diego and Chaffey."
+    "title": "Load the course outcomes, and re-read Mesa",
+    "text": "The read of 1,605 Riverside, Moreno Valley and Norco course outlines keeps each course's outcomes as printed; the table that holds them waits to be created, then the load. San Diego Mesa's nine health programs were on a fifth tab the reader skipped; a fix reads that tab first, then Mesa is read again."
   },
   "calls": [
+    {
+      "title": "Create the course outcomes table",
+      "text": "The database tool timed out six times tonight. Pasting the table's SQL in the database editor creates it now. No reply: the next session tries the tool again, and the outcomes load waits for it."
+    },
     {
       "title": "The gallery picks",
       "text": "Mark the paintings to keep, drop or add on the gallery page. No reply: the gallery stays as it is and nothing changes on the site."
@@ -15095,6 +15099,22 @@
     {
       "at": "2026-10-12T22:00Z",
       "text": "Riverside's course index: a public outline for 1,605 of the 1,648 courses in its three colleges' records"
+    },
+    {
+      "at": "2026-10-12T22:25Z",
+      "text": "Riverside's course index, the course outline fields and the last checkpoint merged"
+    },
+    {
+      "at": "2026-10-12T22:42Z",
+      "text": "The read of every Riverside, Moreno Valley and Norco course outline began, four parts in turn"
+    },
+    {
+      "at": "2026-10-12T23:14Z",
+      "text": "The first part of the outline read landed: 402 courses and 1,367 learning outcomes"
+    },
+    {
+      "at": "2026-10-12T23:19Z",
+      "text": "The reason nine San Diego Mesa health programs were missed was found, and a fix opened"
     }
   ],
   "headline": [
