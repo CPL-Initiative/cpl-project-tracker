@@ -1,5 +1,5 @@
 {
- "_readme": "S374 SkyJuniper, 2026-10-12. San Diego Mesa's read (run 38282023973, S373) walked one section of catalog 70, Degree Curricula and Certificate Programs (199 entries), because cq_index takes only top sections whose names say degree, certificate, program, major or award. Nine programs were not found, all health sciences: Veterinary Technology 05301, Dental Assisting: RDA, CDA 05344 and 22314, Physical Therapist Assistant 05347, Health Information Technology 05348, Radiologic Technology 05349 and 22313, Neurodiagnostic Technology 38642 and 38643. This read loads catalog 70's top navigation as JSON to find the section that lists them, before a re-read (handoff 374 item 3). No model call; one data load.",
+ "_readme": "S374 SkyJuniper, 2026-10-12. San Diego Mesa's read (run 38282023973, S373) walked one section of catalog 70, Degree Curricula and Certificate Programs (199 entries), because cq_index takes only top sections whose names say degree, certificate, program, major or award. Nine programs were not found, all health sciences: Veterinary Technology 05301, Dental Assisting: RDA, CDA 05344 and 22314, Physical Therapist Assistant 05347, Health Information Technology 05348, Radiologic Technology 05349 and 22313, Neurodiagnostic Technology 38642 and 38643. This read loads catalog 70's top navigation as JSON to find the section that lists them, before a re-read (handoff 374 item 3). No model call; one data load. Read 2 (S374): read 1 (run 38318250175) found 21 top sections and no health section; programs sit only under Degree Curricula and Certificate Programs (17540). This read loads 17540's page and child navigation and the Addendum (19973), printing every line that names one of the nine, to learn whether they are hidden entries, deeper than the reader walks, or listed only in the Addendum.",
  "college": "San Diego Mesa College",
  "questions": {
   "sections": "Catalog 70's top sections, their ids, and which one holds the health sciences programs."
@@ -13,15 +13,28 @@
   "[Nn]eurodiagnostic",
   "[Pp]hysical [Tt]herap",
   "[Ss]pecial [Aa]dmission",
-  "[Dd]egree",
-  "[Cc]ertificate"
+  "Neurodiagnostic",
+  "Health Information",
+  "\"haschildbodynavs\":true"
  ],
  "pages": [
   {
    "answers": [
     "sections"
    ],
-   "url": "https://sdccd.curriqunet.com/Catalog/_getNavigation?id=70&navigationtypeId=1"
+   "url": "https://sdccd.curriqunet.com/Catalog/_getPage?catalogId=70&id=17540"
+  },
+  {
+   "answers": [
+    "sections"
+   ],
+   "url": "https://sdccd.curriqunet.com/Catalog/_getNavigation?id=70&parentId=17540"
+  },
+  {
+   "answers": [
+    "sections"
+   ],
+   "url": "https://sdccd.curriqunet.com/Catalog/_getPage?catalogId=70&id=19973"
   }
  ]
 }
