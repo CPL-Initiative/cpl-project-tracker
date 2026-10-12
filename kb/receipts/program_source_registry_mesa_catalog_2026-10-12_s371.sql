@@ -1,7 +1,10 @@
 -- S371 (SkyMaple), 2026-10-12: San Diego Mesa College's catalog, on the district's curriQunet host.
 --
--- STATUS: NOT APPLIED. The execute_sql guard held this data write (2026-10-12); it waits on Sam's go
--- for how it is applied. Until then Mesa's row still reads custom_html and its read would stop.
+-- STATUS: APPLIED 2026-10-12 17:06:02Z by S372 (SkyRedwood) as migration
+-- program_source_registry_mesa_catalog_s371, on Sam's Open Asks Sheet 69 item 1: "Apply as a migration".
+-- Two earlier attempts (S371, 16:4xZ) timed out in the tool call and did not apply; S372 read the row
+-- back unchanged and found no lock on the table before applying. Read back at 17:06Z: one row,
+-- curriqunet, mesa26-27, corrected; program_source_registry_history holds the prior row.
 --
 -- Why: Sam, 2026-10-12, in chat: "go ahead with Miramar and Mesa extraction". The census (checked
 -- 2026-10-11 16:34Z) stopped at Mesa's page ABOUT its catalog and filed it as custom_html, so the
