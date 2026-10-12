@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-12T12:02:08Z",
-  "session": 369,
-  "moniker": "SkyLaurel",
+  "written_at": "2026-10-12T14:46:55Z",
+  "session": 370,
+  "moniker": "SkyHolly",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_370_handoff.md",
+  "handoff": "docs/session_371_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -2052,6 +2052,1343 @@
       "loaded": "2026-10-10"
     },
     {
+      "college": "Chaffey College",
+      "program": "Biological Sciences",
+      "award": "A.S.",
+      "control_number": "04755",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Accounting",
+      "award": "A.S.",
+      "control_number": "04756",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Business",
+      "award": "A.S.",
+      "control_number": "04757",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Management",
+      "award": "A.S.",
+      "control_number": "04758",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Retail Management",
+      "award": "A.S.",
+      "control_number": "04759",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Professional Administrative Management",
+      "award": "A.S.",
+      "control_number": "04761",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Journalism",
+      "award": "Certificate of Achievement",
+      "control_number": "04763",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Broadcasting and Cinema",
+      "award": "A.S.",
+      "control_number": "04764",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Information Technology and Information Systems",
+      "award": "A.S.",
+      "control_number": "04765",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Engineering",
+      "award": "A.S.",
+      "control_number": "04768",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Master Automotive Technician",
+      "award": "A.S.",
+      "control_number": "04770",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Airframe and Powerplant",
+      "award": "A.S.",
+      "control_number": "04772",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "CAD Drafting Technician: Architectural",
+      "award": "A.S.",
+      "control_number": "04774",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Theatre: Acting Emphasis",
+      "award": "A.A.",
+      "control_number": "04780",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Photography",
+      "award": "A.A.",
+      "control_number": "04783",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Nursing: ADN",
+      "award": "A.S.",
+      "control_number": "04788",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Nursing: Vocational",
+      "award": "A.S.",
+      "control_number": "04789",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Radiologic Technology",
+      "award": "A.S.",
+      "control_number": "04792",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Interior Design",
+      "award": "A.S.",
+      "control_number": "04794",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Fashion Design",
+      "award": "A.S.",
+      "control_number": "04795",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Child Development",
+      "award": "A.S.",
+      "control_number": "04797",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Gerontology",
+      "award": "A.S.",
+      "control_number": "04798",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Hospitality Management: Food Service",
+      "award": "A.S.",
+      "control_number": "04799",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Correctional Science",
+      "award": "A.S.",
+      "control_number": "04811",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Political Economics",
+      "award": "A.A.",
+      "control_number": "04815",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Fashion Merchandising",
+      "award": "A.S.",
+      "control_number": "04822",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Small Business Entrepreneur",
+      "award": "A.S.",
+      "control_number": "07371",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Industrial Electrical Technology",
+      "award": "A.S.",
+      "control_number": "07378",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "CAD Drafting Technician: Mechanical",
+      "award": "A.S.",
+      "control_number": "07382",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Nursing VN to RN",
+      "award": "A.S.",
+      "control_number": "07384",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Dietetic Service Supervisor (DSS)/Certified Dietary Manager (CDM)",
+      "award": "Certificate of Achievement",
+      "control_number": "07389",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Culinary Arts",
+      "award": "Certificate of Achievement",
+      "control_number": "07398",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Graphic Design for Digital Media",
+      "award": "A.A.",
+      "control_number": "12211",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Real Estate",
+      "award": "A.S.",
+      "control_number": "14400",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Supervision",
+      "award": "A.S.",
+      "control_number": "14401",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Industrial Electrical Technology Level II",
+      "award": "Certificate of Achievement",
+      "control_number": "15317",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Microsoft Office",
+      "award": "Certificate of Achievement",
+      "control_number": "15318",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "General Automotive Service Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "15528",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Fire Technology: Professional Firefighter",
+      "award": "A.S.",
+      "control_number": "15674",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Supply Chain Management",
+      "award": "A.S.",
+      "control_number": "16802",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Paralegal Studies",
+      "award": "Certificate of Achievement",
+      "control_number": "17631",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Accounting",
+      "award": "Certificate of Achievement",
+      "control_number": "20675",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Business",
+      "award": "Certificate of Achievement",
+      "control_number": "20677",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Management",
+      "award": "Certificate of Achievement",
+      "control_number": "20678",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Small Business Entrepreneur",
+      "award": "Certificate of Achievement",
+      "control_number": "20681",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Retail Management",
+      "award": "Certificate of Achievement",
+      "control_number": "20682",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Supply Chain Management",
+      "award": "Certificate of Achievement",
+      "control_number": "20683",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Real Estate",
+      "award": "Certificate of Achievement",
+      "control_number": "20684",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Professional Administrative Management",
+      "award": "Certificate of Achievement",
+      "control_number": "20690",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Graphic Design for Digital Media",
+      "award": "Certificate of Achievement",
+      "control_number": "20691",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Industrial Electrical Technology Level III",
+      "award": "Certificate of Achievement",
+      "control_number": "20700",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Master Automotive Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "20708",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Airframe",
+      "award": "Certificate of Achievement",
+      "control_number": "20711",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "CAD Drafting Technician: Architectural",
+      "award": "Certificate of Achievement",
+      "control_number": "20714",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "CAD Drafting Technician: Mechanical",
+      "award": "Certificate of Achievement",
+      "control_number": "20715",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Photography",
+      "award": "Certificate of Achievement",
+      "control_number": "20716",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Nursing: Vocational",
+      "award": "Certificate of Achievement",
+      "control_number": "20722",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Interior Design",
+      "award": "Certificate of Achievement",
+      "control_number": "20726",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Fashion Design",
+      "award": "Certificate of Achievement",
+      "control_number": "20729",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Fashion Merchandising",
+      "award": "Certificate of Achievement",
+      "control_number": "20730",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Nutrition and Food",
+      "award": "Certificate of Achievement",
+      "control_number": "20732",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Hospitality Management: Food Service",
+      "award": "Certificate of Achievement",
+      "control_number": "20733",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Hospitality Management: Hotel Management",
+      "award": "Certificate of Achievement",
+      "control_number": "20735",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Gerontology",
+      "award": "Certificate of Achievement",
+      "control_number": "20736",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Criminal Justice",
+      "award": "Certificate of Achievement",
+      "control_number": "20737",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Correctional Science",
+      "award": "Certificate of Achievement",
+      "control_number": "20738",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Fire Technology: Professional Firefighter",
+      "award": "Certificate of Achievement",
+      "control_number": "20739",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "American Sign Language Studies",
+      "award": "A.A.",
+      "control_number": "30544",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "General Automotive Service Technician",
+      "award": "A.S.",
+      "control_number": "30658",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Communication Studies",
+      "award": "A.A.-T",
+      "control_number": "30702",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Mathematics",
+      "award": "A.S.-T",
+      "control_number": "30717",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Geology",
+      "award": "A.S.-T",
+      "control_number": "30941",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Psychology",
+      "award": "A.A.-T",
+      "control_number": "31115",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Sociology",
+      "award": "A.A.-T",
+      "control_number": "31204",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Administration of Justice",
+      "award": "A.S.-T",
+      "control_number": "31248",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Theatre Arts",
+      "award": "A.A.-T",
+      "control_number": "31337",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "English",
+      "award": "A.A.-T",
+      "control_number": "31657",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Engineering Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "31873",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Engineering Technology",
+      "award": "A.S.",
+      "control_number": "31876",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Chinese Studies",
+      "award": "A.A.",
+      "control_number": "31877",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "History",
+      "award": "A.A.-T",
+      "control_number": "31891",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Early Childhood Education",
+      "award": "A.S.-T",
+      "control_number": "31999",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Geography",
+      "award": "A.A.-T",
+      "control_number": "32073",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Anthropology",
+      "award": "A.A.-T",
+      "control_number": "32166",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Philosophy",
+      "award": "A.A.-T",
+      "control_number": "32183",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Art History",
+      "award": "A.A.-T",
+      "control_number": "32344",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Physics",
+      "award": "A.S.-T",
+      "control_number": "32347",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Journalism",
+      "award": "A.A.-T",
+      "control_number": "32504",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Computer Science",
+      "award": "A.S.-T",
+      "control_number": "32748",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Airframe and Powerplant Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "32996",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Television and Video Picture Production",
+      "award": "Certificate of Achievement",
+      "control_number": "33193",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Post Production Editing",
+      "award": "Certificate of Achievement",
+      "control_number": "33194",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Motion Picture Production",
+      "award": "Certificate of Achievement",
+      "control_number": "33195",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Economics",
+      "award": "A.A.-T",
+      "control_number": "33201",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Screenwriting",
+      "award": "Certificate of Achievement",
+      "control_number": "33226",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Spanish",
+      "award": "A.A.-T",
+      "control_number": "33227",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Kinesiology",
+      "award": "A.A.-T",
+      "control_number": "33231",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Music",
+      "award": "A.A.-T",
+      "control_number": "33233",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Studio Arts",
+      "award": "A.A.-T",
+      "control_number": "33239",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "On-Air Radio Production",
+      "award": "Certificate of Achievement",
+      "control_number": "33737",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Biology",
+      "award": "A.S.-T",
+      "control_number": "35060",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Professional Office Skills",
+      "award": "Certificate of Achievement",
+      "control_number": "35069",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Emergency Medical Provider",
+      "award": "Certificate of Achievement",
+      "control_number": "35466",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Business Information Worker (BIW) Stage One",
+      "award": "Certificate of Achievement",
+      "control_number": "35467",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Fire Prevention Inspector",
+      "award": "Certificate of Achievement",
+      "control_number": "35468",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Microsoft Excel",
+      "award": "Certificate of Achievement",
+      "control_number": "35760",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Nutrition and Dietetics",
+      "award": "A.S.-T",
+      "control_number": "35762",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Business Information Worker (BIW) Stage Two",
+      "award": "Certificate of Achievement",
+      "control_number": "35816",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Global Business",
+      "award": "A.S.",
+      "control_number": "35819",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Social Justice Studies, General",
+      "award": "A.A.-T",
+      "control_number": "35827",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Pathway to Law School",
+      "award": "Certificate of Achievement",
+      "control_number": "35949",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Programming Foundations",
+      "award": "Certificate of Achievement",
+      "control_number": "35999",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Facilities Management",
+      "award": "A.S.",
+      "control_number": "36000",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Global Business",
+      "award": "Certificate of Achievement",
+      "control_number": "36090",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Film, Television and Electronic Media",
+      "award": "A.S.-T",
+      "control_number": "36201",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Paralegal Studies",
+      "award": "A.S.",
+      "control_number": "36238",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Hospitality Management: Hotel Management",
+      "award": "A.S.",
+      "control_number": "36239",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Computer Game Development",
+      "award": "Certificate of Achievement",
+      "control_number": "36339",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Professional Baking and Patisserie",
+      "award": "Certificate of Achievement",
+      "control_number": "36340",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Culinary Arts",
+      "award": "A.S.",
+      "control_number": "36354",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Facilities Management",
+      "award": "Certificate of Achievement",
+      "control_number": "36474",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Community Caregiver",
+      "award": "Certificate of Achievement",
+      "control_number": "36475",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Microsoft Word",
+      "award": "Certificate of Achievement",
+      "control_number": "36493",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Political Science",
+      "award": "A.A.-T",
+      "control_number": "36531",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Heating, Ventilation, Air Conditioning and Refrigeration Level 1",
+      "award": "Noncredit",
+      "control_number": "36678",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Aircraft Electrical and Avionics Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "36885",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Technical Theatre",
+      "award": "Certificate of Achievement",
+      "control_number": "36903",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Dental Assisting",
+      "award": "Certificate of Achievement",
+      "control_number": "37118",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Dental Assisting",
+      "award": "A.S.",
+      "control_number": "37119",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Mechatronics Level I",
+      "award": "Certificate of Achievement",
+      "control_number": "37201",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Mechatronics Level II",
+      "award": "Certificate of Achievement",
+      "control_number": "37203",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Mechatronics",
+      "award": "A.S.",
+      "control_number": "37216",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Heating, Ventilation, Air Conditioning and Refrigeration Level 2",
+      "award": "Noncredit",
+      "control_number": "37263",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Industrial Electrical Technology Level I",
+      "award": "Certificate of Achievement",
+      "control_number": "37426",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Athletic Trainer Aide",
+      "award": "Certificate of Achievement",
+      "control_number": "37427",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Recording Arts Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "37436",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Chemistry",
+      "award": "A.S.-T",
+      "control_number": "37518",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Cybersecurity Defender",
+      "award": "Certificate of Achievement",
+      "control_number": "37640",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Cybersecurity Analyst",
+      "award": "Certificate of Achievement",
+      "control_number": "37641",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Cybersecurity Professional",
+      "award": "A.S.",
+      "control_number": "37643",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Interior Design Visual Communication",
+      "award": "Certificate of Achievement",
+      "control_number": "37647",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Caregiving Essentials",
+      "award": "Noncredit",
+      "control_number": "37985",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Real Estate Salesperson",
+      "award": "Certificate of Achievement",
+      "control_number": "38434",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Hospitality Management",
+      "award": "A.S.-T",
+      "control_number": "38854",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "UCTP: Chemistry",
+      "award": "A.S.-T",
+      "control_number": "39317",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Professional Baking and Patisserie",
+      "award": "A.S.",
+      "control_number": "39410",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "UCTP: Physics",
+      "award": "A.S.-T",
+      "control_number": "39562",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Environmental Science",
+      "award": "A.S.-T",
+      "control_number": "39855",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Law, Public Policy, and Society",
+      "award": "A.A.-T",
+      "control_number": "40107",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Community Health Worker",
+      "award": "Certificate of Achievement",
+      "control_number": "40588",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Marketing",
+      "award": "A.S.",
+      "control_number": "40594",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Marketing",
+      "award": "Certificate of Achievement",
+      "control_number": "40595",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Nursing Assistant",
+      "award": "Noncredit",
+      "control_number": "40969",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "American Sign Language (ASL)",
+      "award": "Certificate of Achievement",
+      "control_number": "41393",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Business Administration 2.0",
+      "award": "A.S.-T",
+      "control_number": "41434",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "English as a Second Language",
+      "award": "Noncredit",
+      "control_number": "41467",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Bookkeeping",
+      "award": "Certificate of Achievement",
+      "control_number": "42084",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "CAD/CAM Operator",
+      "award": "Certificate of Achievement",
+      "control_number": "42180",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Accounting for Government and Not-For-Profit Organizations",
+      "award": "Certificate of Achievement",
+      "control_number": "42181",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Electromechanical Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "42183",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Payroll and Income Tax Preparer",
+      "award": "Certificate of Achievement",
+      "control_number": "42185",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Real Estate Property Management",
+      "award": "Certificate of Achievement",
+      "control_number": "42623",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Real Estate Property Management",
+      "award": "A.S.",
+      "control_number": "42630",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Cloud Solutions Architecting",
+      "award": "Certificate of Achievement",
+      "control_number": "42684",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Automotive Electrical Systems",
+      "award": "Certificate of Achievement",
+      "control_number": "42942",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Physical Therapist Assistant",
+      "award": "A.S.",
+      "control_number": "42987",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Phlebotomy Technician",
+      "award": "Noncredit",
+      "control_number": "43062",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Supervision",
+      "award": "Certificate of Achievement",
+      "control_number": "44104",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A.-T",
+      "control_number": "44105",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Cloud Solutions Architecting",
+      "award": "A.S.",
+      "control_number": "44353",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Hospitality Management: Food and Beverage Fundamentals",
+      "award": "Certificate of Achievement",
+      "control_number": "45398",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Hospitality Management: Hotel Fundamentals",
+      "award": "Certificate of Achievement",
+      "control_number": "45400",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Information Technology and Information Systems Core",
+      "award": "Certificate of Achievement",
+      "control_number": "46063",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Earth Science",
+      "award": "A.S.",
+      "control_number": "46090",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Geological Sciences",
+      "award": "A.S.",
+      "control_number": "46091",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Data Science",
+      "award": "A.S.",
+      "control_number": "46142",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Development Operations",
+      "award": "A.S.",
+      "control_number": "46143",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Development Operations",
+      "award": "Certificate of Achievement",
+      "control_number": "46144",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Data Analytics",
+      "award": "Certificate of Achievement",
+      "control_number": "46151",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Networking Specialist (CCNA)",
+      "award": "A.S.",
+      "control_number": "46152",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Networking Specialist (CCNA)",
+      "award": "Certificate of Achievement",
+      "control_number": "46153",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Web Development and Social Media",
+      "award": "Certificate of Achievement",
+      "control_number": "46154",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Web Development and Social Media",
+      "award": "A.S.",
+      "control_number": "46155",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Technology and Innovation",
+      "award": "Certificate of Achievement",
+      "control_number": "46156",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Artificial Intelligence",
+      "award": "A.S.",
+      "control_number": "46157",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Computer Game Development",
+      "award": "A.S.",
+      "control_number": "46158",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Technology and Innovation",
+      "award": "A.S.",
+      "control_number": "46159",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Programmer",
+      "award": "Certificate of Achievement",
+      "control_number": "46160",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Programmer",
+      "award": "A.S.",
+      "control_number": "46161",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Orthodontic Assisting Permit",
+      "award": "Noncredit",
+      "control_number": "46283",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Chaffey College",
+      "program": "Personal Training",
+      "award": "Noncredit",
+      "control_number": "46299",
+      "loaded": "2026-10-12"
+    },
+    {
       "college": "Long Beach City College",
       "program": "Horticulture",
       "award": "A.S.",
@@ -2127,6 +3464,13 @@
       "award": "A.A.",
       "control_number": "02636",
       "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Engineering",
+      "award": "A.S.",
+      "control_number": "02638",
+      "loaded": "2026-10-12"
     },
     {
       "college": "Long Beach City College",
@@ -2256,6 +3600,20 @@
     },
     {
       "college": "Long Beach City College",
+      "program": "Computer Science",
+      "award": "A.S.",
+      "control_number": "08808",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Electrical Technology",
+      "award": "A.S.",
+      "control_number": "08810",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
       "program": "Art",
       "award": "A.A.",
       "control_number": "08818",
@@ -2361,6 +3719,13 @@
     },
     {
       "college": "Long Beach City College",
+      "program": "Architectural Design",
+      "award": "Certificate of Achievement",
+      "control_number": "20752",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
       "program": "Business - General Business Concentration",
       "award": "Certificate of Achievement",
       "control_number": "20753",
@@ -2417,10 +3782,24 @@
     },
     {
       "college": "Long Beach City College",
+      "program": "Computer Security and Networking",
+      "award": "Certificate of Achievement",
+      "control_number": "20892",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
       "program": "Child Development Special Education Assistant",
       "award": "Certificate of Achievement",
       "control_number": "20895",
       "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Electrical Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "20897",
+      "loaded": "2026-10-12"
     },
     {
       "college": "Long Beach City College",
@@ -2445,6 +3824,13 @@
     },
     {
       "college": "Long Beach City College",
+      "program": "Nursing: Vocational/Practical",
+      "award": "Certificate of Achievement",
+      "control_number": "20940",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
       "program": "Fashion Design",
       "award": "Certificate of Achievement",
       "control_number": "20944",
@@ -2466,6 +3852,13 @@
     },
     {
       "college": "Long Beach City College",
+      "program": "Child Development Early Childhood Education",
+      "award": "Certificate of Achievement",
+      "control_number": "21010",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
       "program": "Dietetic Service Supervisor",
       "award": "Certificate of Achievement",
       "control_number": "21013",
@@ -2484,6 +3877,27 @@
       "award": "Certificate of Achievement",
       "control_number": "21017",
       "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Library Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "21024",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Social Work",
+      "award": "Certificate of Achievement",
+      "control_number": "21025",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Addiction Treatment Counseling and Mental Health Studies",
+      "award": "Certificate of Achievement",
+      "control_number": "21027",
+      "loaded": "2026-10-12"
     },
     {
       "college": "Long Beach City College",
@@ -2557,10 +3971,24 @@
     },
     {
       "college": "Long Beach City College",
+      "program": "History",
+      "award": "A.A.-T",
+      "control_number": "31888",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
       "program": "MUSIC",
       "award": "A.A.-T",
       "control_number": "32634",
       "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Computer Technology",
+      "award": "A.S.",
+      "control_number": "32907",
+      "loaded": "2026-10-12"
     },
     {
       "college": "Long Beach City College",
@@ -2592,6 +4020,13 @@
     },
     {
       "college": "Long Beach City College",
+      "program": "Philosophy",
+      "award": "A.A.-T",
+      "control_number": "33390",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
       "program": "Web Development-Full Stack",
       "award": "Certificate of Achievement",
       "control_number": "33600",
@@ -2617,6 +4052,20 @@
       "award": "A.A.-T",
       "control_number": "33671",
       "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Computer Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "33849",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Computer Science",
+      "award": "Certificate of Achievement",
+      "control_number": "33850",
+      "loaded": "2026-10-12"
     },
     {
       "college": "Long Beach City College",
@@ -2690,6 +4139,13 @@
     },
     {
       "college": "Long Beach City College",
+      "program": "English for Everyday-Level 2",
+      "award": "Noncredit",
+      "control_number": "36104",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
       "program": "English for Everyday-Level 1",
       "award": "Noncredit",
       "control_number": "36105",
@@ -2697,10 +4153,38 @@
     },
     {
       "college": "Long Beach City College",
+      "program": "English for Everyday-Level 3",
+      "award": "Noncredit",
+      "control_number": "36106",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
       "program": "Business – Management Concentration",
       "award": "A.A.",
       "control_number": "36430",
       "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Computer Security and Networking",
+      "award": "A.S.",
+      "control_number": "36432",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Office Technologies-Microsoft PowerPoint",
+      "award": "Noncredit",
+      "control_number": "36845",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Office Technologies- Microsoft Outlook",
+      "award": "Noncredit",
+      "control_number": "36846",
+      "loaded": "2026-10-12"
     },
     {
       "college": "Long Beach City College",
@@ -2746,6 +4230,20 @@
     },
     {
       "college": "Long Beach City College",
+      "program": "Workplace Language Skills for ESL Level 2",
+      "award": "Noncredit",
+      "control_number": "37267",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Workplace Language Skills for ESL Level 3",
+      "award": "Noncredit",
+      "control_number": "37268",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
       "program": "Intermediate Oral Skills",
       "award": "Noncredit",
       "control_number": "37269",
@@ -2771,6 +4269,20 @@
       "award": "A.A.",
       "control_number": "37284",
       "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Welding Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "37293",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Automotive Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "37301",
+      "loaded": "2026-10-12"
     },
     {
       "college": "Long Beach City College",
@@ -2830,6 +4342,13 @@
     },
     {
       "college": "Long Beach City College",
+      "program": "Construction Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "37341",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
       "program": "Cloud Computing",
       "award": "Certificate of Achievement",
       "control_number": "37343",
@@ -2837,10 +4356,24 @@
     },
     {
       "college": "Long Beach City College",
+      "program": "Construction Technology",
+      "award": "A.S.",
+      "control_number": "37344",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
       "program": "Home Remodeling",
       "award": "Certificate of Achievement",
       "control_number": "37345",
       "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Engineering Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "37346",
+      "loaded": "2026-10-12"
     },
     {
       "college": "Long Beach City College",
@@ -2886,6 +4419,13 @@
     },
     {
       "college": "Long Beach City College",
+      "program": "Advanced Manufacturing Technology",
+      "award": "Certificate of Achievement",
+      "control_number": "37402",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
       "program": "Automotive Quick Service",
       "award": "Noncredit",
       "control_number": "37449",
@@ -2914,6 +4454,13 @@
     },
     {
       "college": "Long Beach City College",
+      "program": "Electrical Technology, CISCO Certified Network Installation Associate",
+      "award": "Certificate of Achievement",
+      "control_number": "37495",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
       "program": "Electrical Technology, General Industrial Electrician",
       "award": "Certificate of Achievement",
       "control_number": "37496",
@@ -2939,6 +4486,27 @@
       "award": "Noncredit",
       "control_number": "37509",
       "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Office Technologies-Microsoft Access",
+      "award": "Noncredit",
+      "control_number": "37562",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Office Technologies-Microsoft Excel",
+      "award": "Noncredit",
+      "control_number": "37563",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Office Technologies-Microsoft Word",
+      "award": "Noncredit",
+      "control_number": "37564",
+      "loaded": "2026-10-12"
     },
     {
       "college": "Long Beach City College",
@@ -2981,6 +4549,13 @@
       "award": "A.S.",
       "control_number": "37661",
       "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Electrical Technology, Automation Technician",
+      "award": "Certificate of Achievement",
+      "control_number": "37663",
+      "loaded": "2026-10-12"
     },
     {
       "college": "Long Beach City College",
@@ -3061,6 +4636,13 @@
     },
     {
       "college": "Long Beach City College",
+      "program": "Spanish",
+      "award": "Certificate of Achievement",
+      "control_number": "38455",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "Long Beach City College",
       "program": "French",
       "award": "Certificate of Achievement",
       "control_number": "38456",
@@ -3082,16 +4664,16 @@
     },
     {
       "college": "Long Beach City College",
-      "program": "Gas Tungsten Arc Welding (GTAW)",
+      "program": "Shielded Metal Arc Welding (SMAW)",
       "award": "Certificate of Achievement",
-      "control_number": "38541",
-      "loaded": "2026-10-11"
+      "control_number": "38540",
+      "loaded": "2026-10-12"
     },
     {
       "college": "Long Beach City College",
-      "program": "Advanced Arc Welding (SMAW and FCAW)",
+      "program": "Gas Tungsten Arc Welding (GTAW)",
       "award": "Certificate of Achievement",
-      "control_number": "38542",
+      "control_number": "38541",
       "loaded": "2026-10-11"
     },
     {
@@ -3100,6 +4682,13 @@
       "award": "Noncredit",
       "control_number": "38558",
       "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Library Technician",
+      "award": "Noncredit",
+      "control_number": "38559",
+      "loaded": "2026-10-12"
     },
     {
       "college": "Long Beach City College",
@@ -3247,6 +4836,13 @@
       "award": "A.S.-T",
       "control_number": "39570",
       "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Economics",
+      "award": "Certificate of Achievement",
+      "control_number": "39922",
+      "loaded": "2026-10-12"
     },
     {
       "college": "Long Beach City College",
@@ -3653,6 +5249,13 @@
       "award": "Certificate of Achievement",
       "control_number": "42995",
       "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Administrative Assistant, Customer Support",
+      "award": "Certificate of Achievement",
+      "control_number": "43008",
+      "loaded": "2026-10-12"
     },
     {
       "college": "Long Beach City College",
@@ -4108,6 +5711,13 @@
       "award": "Certificate of Achievement",
       "control_number": "45851",
       "loaded": "2026-10-11"
+    },
+    {
+      "college": "Long Beach City College",
+      "program": "Athletic Coaching",
+      "award": "Certificate of Achievement",
+      "control_number": "45899",
+      "loaded": "2026-10-12"
     },
     {
       "college": "Long Beach City College",
@@ -10408,307 +12018,37 @@
       "award": "A.S.",
       "control_number": "43767",
       "loaded": "2026-10-07"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Engineering",
-      "award": "",
-      "control_number": "02638",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Computer Science",
-      "award": "",
-      "control_number": "08808",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Electrical Technology",
-      "award": "",
-      "control_number": "08810",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Architectural Design",
-      "award": "",
-      "control_number": "20752",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Computer Security and Networking",
-      "award": "",
-      "control_number": "20892",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Electrical Technology",
-      "award": "",
-      "control_number": "20897",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Nursing: Vocational/Practical",
-      "award": "",
-      "control_number": "20940",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Child Development Early Childhood Education",
-      "award": "",
-      "control_number": "21010",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Library Technician",
-      "award": "",
-      "control_number": "21024",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Social Work",
-      "award": "",
-      "control_number": "21025",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Addiction Treatment Counseling and Mental Health Studies",
-      "award": "",
-      "control_number": "21027",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "History",
-      "award": "",
-      "control_number": "31888",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Computer Technology",
-      "award": "",
-      "control_number": "32907",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Philosophy",
-      "award": "",
-      "control_number": "33390",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Computer Technology",
-      "award": "",
-      "control_number": "33849",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Computer Science",
-      "award": "",
-      "control_number": "33850",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "English for Everyday-Level 2",
-      "award": "",
-      "control_number": "36104",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "English for Everyday-Level 3",
-      "award": "",
-      "control_number": "36106",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Computer Security and Networking",
-      "award": "",
-      "control_number": "36432",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Office Technologies-Microsoft PowerPoint",
-      "award": "",
-      "control_number": "36845",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Office Technologies- Microsoft Outlook",
-      "award": "",
-      "control_number": "36846",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Workplace Language Skills for ESL Level 2",
-      "award": "",
-      "control_number": "37267",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Workplace Language Skills for ESL Level 3",
-      "award": "",
-      "control_number": "37268",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Welding Technology",
-      "award": "",
-      "control_number": "37293",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Automotive Technology",
-      "award": "",
-      "control_number": "37301",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Construction Technology",
-      "award": "",
-      "control_number": "37341",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Construction Technology",
-      "award": "",
-      "control_number": "37344",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Engineering Technology",
-      "award": "",
-      "control_number": "37346",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Advanced Manufacturing Technology",
-      "award": "",
-      "control_number": "37402",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Electrical Technology, CISCO Certified Network Installation Associate",
-      "award": "",
-      "control_number": "37495",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Office Technologies-Microsoft Access",
-      "award": "",
-      "control_number": "37562",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Office Technologies-Microsoft Excel",
-      "award": "",
-      "control_number": "37563",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Office Technologies-Microsoft Word",
-      "award": "",
-      "control_number": "37564",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Electrical Technology, Automation Technician",
-      "award": "",
-      "control_number": "37663",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Spanish",
-      "award": "",
-      "control_number": "38455",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Shielded Metal Arc Welding (SMAW)",
-      "award": "",
-      "control_number": "38540",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Library Technician",
-      "award": "",
-      "control_number": "38559",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Economics",
-      "award": "",
-      "control_number": "39922",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Administrative Assistant, Customer Support",
-      "award": "",
-      "control_number": "43008",
-      "loaded": "2026-10-12"
-    },
-    {
-      "college": "Long Beach City College",
-      "program": "Athletic Coaching",
-      "award": "",
-      "control_number": "45899",
-      "loaded": "2026-10-12"
     }
   ],
   "next_step": {
-    "title": "Load and display Chaffey, then San Diego City",
-    "text": "Chaffey's read with extraction is running on the fixed reader; its records load unchecked and then the display build follows. San Diego City's capture runs on the same fix, and its extraction follows once the capture looks right."
+    "title": "Load and display San Diego City",
+    "text": "Its read with extraction (run 38252422845) files 168 of 191 programs; load them unchecked, rebuild the display and apply it, then merge the branch."
   },
-  "calls": [
-    {
-      "title": "Remove Long Beach City's Advanced Arc Welding record?",
-      "text": "Record 38542 shows the Shielded Metal Arc Welding certificate's requirements, read from that program's page. Open Asks Sheet 68 card 2 proposes removing it under a receipt.",
-      "if_no_reply": "The record stays, unchecked and marked Not yet confirmed, and keeps its older display build."
-    }
-  ],
+  "calls": [],
   "notes": {
     "addenda": "The reading agent starts after the Oct 11 census apply; until then a mismatch is read against the college's addendum by hand.",
     "procedures": "34 colleges have one since Oct 8: the 28 whose map host refuses or never reaches the reader each name the routes tried.",
     "sierra": "The funding explainer's text is editable on the Implementation Funding tab since Oct 9, and its controls are underlined words, the First Light rule from that day.",
     "maps": "All 32 published maps are settled since Oct 8; Palo Verde's map columns were written that evening.",
-    "reading": "Cerritos read on Oct 9 and Mt. San Antonio on Oct 10. RCCD's three colleges were read on Oct 10 and their Liberal Arts emphasis programs recovered on Oct 11. 18 records that read another program's page were removed on Oct 11. Long Beach City was read and loaded the same evening: 305 records, unchecked, for 1,515 in all. Its 74 left out mostly read another program's page; the fixes wait on #2012."
+    "reading": "Cerritos read on Oct 9 and Mt. San Antonio on Oct 10. RCCD's three colleges were read on Oct 10 and their Liberal Arts emphasis programs recovered on Oct 11. 18 records that read another program's page were removed on Oct 11. Long Beach City was read on Oct 11 and re-read on Oct 12: 344 records, unchecked. Chaffey was read and loaded on Oct 12: 191 records, unchecked, for 1,745 in all."
   },
   "changes": [
+    {
+      "at": "2026-10-12T12:58Z",
+      "text": "San Diego City's read with extraction started (168 of 191 programs found)"
+    },
+    {
+      "at": "2026-10-12T12:49Z",
+      "text": "Display build 496f2a71470a applied to all 1,745 records"
+    },
+    {
+      "at": "2026-10-12T12:39Z",
+      "text": "Chaffey's 191 records loaded, unchecked"
+    },
+    {
+      "at": "2026-10-12T12:32Z",
+      "text": "Long Beach City 38542 removed on Sam's Sheet 68 card 2, under a receipt that holds the row"
+    },
     {
       "at": "2026-10-12T11:20Z",
       "text": "Chaffey's and San Diego City's reads started on the fixed reader; Chaffey's capture before the fix found 193 of its 199 programs."

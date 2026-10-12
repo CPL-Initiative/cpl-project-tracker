@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-341 document(s).
+342 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 371 | [deploy the Sierra 7c fix, load and display San Diego City, College Identity's UI pass](../session_371_handoff.md) | 2026-10-12 |
 | 370 | [load and display Chaffey, read San Diego City, Sheet 68 card 2, the My College UI pass](../session_370_handoff.md) | 2026-10-12 |
 | 369 | [load and display Long Beach City, fix the curriQunet reader for Chaffey, the policy paste](../session_369_handoff.md) | 2026-10-12 |
 | 368 | [load Long Beach City's re-read, Open Asks Sheet 67, CPL Pathways reads the table](../session_368_handoff.md) | 2026-10-12 |

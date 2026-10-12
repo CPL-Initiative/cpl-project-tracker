@@ -249,7 +249,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A word in a request may have no referent yet](../kb-notes/methodology-a-word-in-a-request-may-have-no-referent-yet.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A write key must name exactly one thing, and you have to check](../kb-notes/methodology-a-write-key-must-name-exactly-one-thing.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A written backlog decays silently — measure it instead](../kb-notes/methodology-a-written-backlog-decays-silently.md) | methodology | published | 2026-08-09 | 2026-08-09 |
-| [A wrong column is worse than a missing one](../kb-notes/methodology-a-wrong-column-is-worse-than-a-missing-one.md) | methodology | published | 2026-08-07 | 2026-08-07 |
+| [A wrong column is worse than a missing one](../kb-notes/methodology-a-wrong-column-is-worse-than-a-missing-one.md) | methodology | published | 2026-08-07 | 2026-10-12 |
 | [Achievement-based funding — the cap-and-earn model](../kb-notes/methodology-achievement-based-funding-cap-and-earn.md) | methodology | published | 2026-07-24 |  |
 | [Adding a curation surface with a synthesized kb_curation namespace (zero schema migration)](../kb-notes/methodology-kb-curation-synthesized-namespace.md) | methodology | published | 2026-06-02 | 2026-06-02 |
 | [Adversarially verify an id crosswalk before a live PK renumber](../kb-notes/methodology-adversarial-verify-crosswalk-before-live-rekey.md) | methodology | published | 2026-07-21 | 2026-07-21 |

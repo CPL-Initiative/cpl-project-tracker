@@ -1,7 +1,7 @@
 ---
 title: A wrong column is worse than a missing one
 created: 2026-08-07
-updated: 2026-08-07
+updated: 2026-10-12
 tags: [methodology, data-quality, ingestion, metrics, privacy]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -146,3 +146,14 @@ Loose matching is still right. The alternative — pinning exact headers — fai
 on the next export and fails silently in the other direction, reporting zero
 rows as though the data were empty. The lesson is not "match strictly"; it is
 "match loosely, then prove you matched the thing you meant."
+
+## A column one reader's source lacks reads as "none" (2026-10-12, S370)
+
+My College serves two sources: a signed-in reader reads `map_college_contacts`, a public reader
+the published mirror `map_college_contacts_pub`, which carries the CPL coordinator, counselor and
+landing page but no `primary_contact_email`. The contact measure read that column for both, so
+every public reader was told "No contact listed in MAP ... has nowhere to land", in high emphasis,
+beside a contacts table on the same page naming the coordinator. A missing column raised no error:
+`undefined || null` is a valid "none". When a page switches sources by audience, check every measure
+against each source's columns, and guard it on the load for each audience
+(`tests/my_college_public_contact.test.js`). Story: `docs/college_action_page_lessons.md`.
