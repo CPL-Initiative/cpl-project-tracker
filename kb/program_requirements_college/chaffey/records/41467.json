@@ -1,0 +1,234 @@
+{
+ "college": "Chaffey College",
+ "control_number": "41467",
+ "shape": "noncredit",
+ "title": "English as a Second Language",
+ "award": "Noncredit program",
+ "source_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19922",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5638,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5638,
+    "output_tokens": 1470,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1470,
+  "output_tokens_details": {
+   "thinking_tokens": 250
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05195,
+ "ms": 11234,
+ "seconds": 11.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    240.0,
+    270.0
+   ],
+   "stated": [
+    240.0,
+    270.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 12,
+   "courses": 0,
+   "count": 12,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "English as a Second Language - Noncredit Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": 240,
+    "max": 270
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Improve overall fluency and competency in English, with the goal of exiting the program at an advanced level of English.",
+    "Demonstrate listening comprehension of topics and a variety of material in the course.",
+    "Demonstrate strategies that are consistent with being active and independent learners.",
+    "Demonstrate ability to read appropriate level readings out loud.",
+    "Recognize and use grammatical structures in English appropriate for the level of the course.",
+    "Students will demonstrate an understanding of American geography, culture, norms, and democracy",
+    "Engage in conversation in English appropriate to the course level.",
+    "Use stress, rhythm, intonation and sounds of Standard American English to express themselves clearly.",
+    "Use a variety of oral skills when interacting with an audience or small group.",
+    "Write for a variety of personal, workplace, and academic purposes in which English is the primary language.",
+    "Demonstrate comprehension of reading passages in which English is the primary language.",
+    "Apply strategies to build vocabulary from reading contexts and use vocabulary expansion skills."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Group 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Core",
+    "stated": {
+     "min": 192,
+     "max": 216
+    },
+    "courses": [
+     {
+      "code": "ESL 632",
+      "units": 64,
+      "units_max": 72,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 642",
+      "units": 64,
+      "units_max": 72,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 652",
+      "units": 64,
+      "units_max": 72,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Group 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Core",
+    "stated": {
+     "min": 192,
+     "max": 216
+    },
+    "courses": [
+     {
+      "code": "ESL 632A",
+      "units": 32,
+      "units_max": 36,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 632B",
+      "units": 32,
+      "units_max": 36,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 642",
+      "units": 64,
+      "units_max": 72,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 652",
+      "units": 64,
+      "units_max": 72,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 48,
+     "max": 54
+    },
+    "courses": [
+     {
+      "code": "ESL 607",
+      "units": 48,
+      "units_max": 54,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 608",
+      "units": 48,
+      "units_max": 54,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog counts this award in hours; all units fields hold hours as printed (ranges shown as units/units_max).",
+   "Required Core - Choose one group (192.00-216.00 hours): Group 1 and Group 2 are recorded as separate blocks in option_group 'Required Core'. ESL 642 and ESL 652 appear in both groups; Group 2 replaces ESL 632 with ESL 632A and ESL 632B.",
+   "The sixth outcome is printed without a terminal period and begins 'Students will demonstrate...'; copied as printed.",
+   "The outcomes are printed under the program's Program Learning Outcomes heading for this Certificate of Competency.",
+   "Award is printed as 'Noncredit Certificate of Competency (NCCC)'."
+  ]
+ },
+ "extracted_run": "38242003226"
+}

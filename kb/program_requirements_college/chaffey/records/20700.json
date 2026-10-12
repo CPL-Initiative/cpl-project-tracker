@@ -1,0 +1,312 @@
+{
+ "college": "Chaffey College",
+ "control_number": "20700",
+ "shape": "certificate",
+ "title": "Industrial Electrical Technology Level III",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19078",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6185,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6185,
+    "output_tokens": 2319,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2319,
+  "output_tokens_details": {
+   "thinking_tokens": 823
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07112,
+ "ms": 19263,
+ "seconds": 19.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 20,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    42.0,
+    42.0
+   ],
+   "stated": [
+    42.0,
+    42.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Industrial Electrical Technology Level III - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 42,
+    "max": 42
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Troubleshoot and synthesize the knowledge, skills and abilities in order to obtain gainful employment in the field of industrial electricity, including compliance with OSHA standards.",
+    "Demonstrate critical thinking and problem solving appropriate within the field of industrial electricity as it relates to light and heavy industry, construction, and utility companies.",
+    "Communicate professionally regarding industrial electricity as it relates to programmable logic controllers (PLC)."
+   ],
+   "careers": [
+    "electrical trades",
+    "manufacturing",
+    "construction",
+    "industry",
+    "utility companies"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Industrial Electrical Technology Level I courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "IET 400",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "IET 422",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "IET 401A",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IET 401B",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IET 405",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IET 407",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IET 460",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Industrial Electrical Technology Level II courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "IET 403A",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IET 403B",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IET 411",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IET 413",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IET 417",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IET 420",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Industrial Electrical Technology Level III courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "IET 414",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IET 415",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IET 418",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended (Optional)",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "IET 484A",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "IET 484B",
+        "units": 2,
+        "catalog_addition": false
+       },
+       {
+        "code": "IET 484C",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "IET 484D",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Level I block prints 'Choose one: IET 400 OR IET 422' inside the required list; recorded as IET 400 with IET 422 as an alternative rather than a separate block.",
+   "The catalog prints the work experience course as 'IET 484ABCD' with 1.00 - 4.00 units; expanded to IET 484A (units 1, max 4 as printed) with IET 484B, 484C, 484D as alternatives. Alternative units (2, 3, 4) are taken from the state file, not printed beside each variant.",
+   "Total 42.00 equals the sum of the three required blocks (16 + 18 + 8); the recommended work experience units are excluded."
+  ]
+ },
+ "extracted_run": "38242003226"
+}

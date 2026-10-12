@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 202,
  "with_closed_list": 199,
- "started": "2026-10-12T04:20:51Z",
+ "started": "2026-10-12T11:21:28Z",
  "curriqunet": {
   "catalog": 718,
   "view_prefix": "https://chaffey.curriqunet.com/catalog/iq/",
@@ -18,11 +18,12 @@
   "calls": 19,
   "entries": 401,
   "stopped_at_cap": false,
-  "entries_read": 401
+  "same_title_entries": 197,
+  "entries_read": 204
  },
- "pages_read": 401,
- "loads": 1226,
- "seconds": 5469.8,
+ "pages_read": 204,
+ "loads": 633,
+ "seconds": 2804.7,
  "found": 193,
  "by_method": {
   "no_closed_list": 3,
@@ -2010,5 +2011,5 @@
    }
   ]
  },
- "run": "38203335820"
+ "run": "38242003226"
 }

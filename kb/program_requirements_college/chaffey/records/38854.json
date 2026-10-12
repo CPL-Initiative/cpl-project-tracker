@@ -1,0 +1,238 @@
+{
+ "college": "Chaffey College",
+ "control_number": "38854",
+ "shape": "adt",
+ "title": "Hospitality Management",
+ "award": "A.S. T Degree",
+ "source_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18930",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6016,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6016,
+    "output_tokens": 1373,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1373,
+  "output_tokens_details": {
+   "thinking_tokens": 219
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05152,
+ "ms": 16114,
+ "seconds": 16.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "why": [
+    "the blocks sum to 19.0-19.0; the catalog states 18.0-19.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Hospitality Management for Transfer - AS-T Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Examine and identify challenges in the operations of lodging properties, and develop alternate solutions.",
+    "Communicate effectively and accurately, both verbally and in writing with a variety of departments at lodging properties.",
+    "Use critical thinking and problem-solving techniques common in the role of a training manager for lodging properties.",
+    "Supervise, lead and motivate workers in a variety of departments and job descriptions in lodging properties.",
+    "Train workers to provide consistent, quality guest services, with special attention given to legal and ethical business practices.",
+    "Describe the benefits of transferring to a four-year college and obtaining a bachelor’s degree in Hospitality Management.",
+    "Engage with people in ways that affirm diversity, demonstrate an awareness of identity and impact, and consider diverse perspectives when performing tasks related to hospitality management."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HOTFS 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A - Any three courses",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CUL 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOTFS 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOTFS 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOTFS 32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOTFS 42",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B - Any two courses from the following, or any courses not taken from List A",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "ACCTG 1A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSL 28A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "List B also accepts any List A courses not already used for List A; those courses are recorded only once, in List A.",
+   "Every course in the requirements table is labeled '( Historical )' in the catalog; reviewer may wish to confirm the courses are still active for 2026-2027.",
+   "ECON 4 is printed with a common course number (CCN: ECON C2001).",
+   "The description also states a minimum of 18 semester units of major requirements; the table total is 18.00-19.00, which is recorded.",
+   "No careers are named in the text."
+  ]
+ },
+ "extracted_run": "38242003226"
+}

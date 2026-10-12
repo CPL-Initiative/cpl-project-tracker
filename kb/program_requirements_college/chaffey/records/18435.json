@@ -1,0 +1,252 @@
+{
+ "college": "Chaffey College",
+ "control_number": "18435",
+ "shape": "degree",
+ "title": "Physical Science",
+ "award": "A.S. Degree",
+ "source_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/calgetcca",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12317,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12317,
+    "output_tokens": 1858,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1858,
+  "output_tokens_details": {
+   "thinking_tokens": 496
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08643,
+ "ms": 14969,
+ "seconds": 15.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 26,
+   "share": 0.0,
+   "missing": [
+    "ASTRON26",
+    "ASTRON35",
+    "CHEM24A",
+    "CHEM24B",
+    "COMPSCI1",
+    "ESC1",
+    "ESC1L",
+    "ESC5",
+    "ESC5L",
+    "GEOG4",
+    "GEOG4L",
+    "GEOL1",
+    "GEOL2",
+    "MATH31",
+    "MATH61",
+    "MATH65A",
+    "MATH65B",
+    "MATH75",
+    "PHYS20A",
+    "PHYS20B",
+    "PHYS30A",
+    "PHYS30B",
+    "PHYS44",
+    "PHYS45",
+    "PHYS46",
+    "PHYS47"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ASTRON 26",
+    "why": "appears only in a Cal-GETC GE area list (Area 5A), not a Physical Science major requirement"
+   },
+   {
+    "code": "ASTRON 35",
+    "why": "appears only in a Cal-GETC GE area list (Area 5A)"
+   },
+   {
+    "code": "CHEM 24A",
+    "why": "appears only in a Cal-GETC GE area list (Area 5A)"
+   },
+   {
+    "code": "CHEM 24B",
+    "why": "appears only in a Cal-GETC GE area list (Area 5A)"
+   },
+   {
+    "code": "COMPSCI 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "ESC 1",
+    "why": "appears only in a Cal-GETC GE area list (Area 5A)"
+   },
+   {
+    "code": "ESC 1L",
+    "why": "appears only in a Cal-GETC GE area list (Area 5A)"
+   },
+   {
+    "code": "ESC 5",
+    "why": "appears only in a Cal-GETC GE area list (Area 5A)"
+   },
+   {
+    "code": "ESC 5L",
+    "why": "appears only in a Cal-GETC GE area list (Area 5A)"
+   },
+   {
+    "code": "GEOG 4",
+    "why": "appears only in a Cal-GETC GE area list (Area 5A)"
+   },
+   {
+    "code": "GEOG 4L",
+    "why": "appears only in a Cal-GETC GE area list (Area 5A)"
+   },
+   {
+    "code": "GEOL 1",
+    "why": "appears only in a Cal-GETC GE area list (Area 5A)"
+   },
+   {
+    "code": "GEOL 2",
+    "why": "appears only in a Cal-GETC GE area list (Area 5A)"
+   },
+   {
+    "code": "MATH 31",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 61",
+    "why": "appears only in a Cal-GETC GE area list (Area 2)"
+   },
+   {
+    "code": "MATH 65A",
+    "why": "appears only in a Cal-GETC GE area list (Area 2)"
+   },
+   {
+    "code": "MATH 65B",
+    "why": "appears only in a Cal-GETC GE area list (Area 2)"
+   },
+   {
+    "code": "MATH 75",
+    "why": "appears only in a Cal-GETC GE area list (Area 2)"
+   },
+   {
+    "code": "PHYS 20A",
+    "why": "appears only in a Cal-GETC GE area list (Area 5A)"
+   },
+   {
+    "code": "PHYS 20B",
+    "why": "appears only in a Cal-GETC GE area list (Area 5A)"
+   },
+   {
+    "code": "PHYS 30A",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 30B",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 44",
+    "why": "appears only in a Cal-GETC GE area list (Area 5A)"
+   },
+   {
+    "code": "PHYS 45",
+    "why": "appears only in a Cal-GETC GE area list (Area 5A)"
+   },
+   {
+    "code": "PHYS 46",
+    "why": "appears only in a Cal-GETC GE area list (Area 5A)"
+   },
+   {
+    "code": "PHYS 47",
+    "why": "appears only in a Cal-GETC GE area list (Area 5A)"
+   }
+  ],
+  "notes": [
+   "The supplied text (source URL ending 'calgetcca') is the Cal-GETC general education pattern page, not the Physical Science A.S. Degree section. Its 'Program Requirements' list Cal-GETC Areas 1-6, which are general education and are not recorded as blocks.",
+   "No Physical Science A.S. major requirements, total units, outcomes or careers appear in the text; the correct catalog page for the Physical Science A.S. should be retrieved and reviewed.",
+   "The outcomes printed at the top of the text (truncated at the start) belong to the Cal-GETC/institutional page, not to this award, so they were not recorded.",
+   "ge_pattern left null because the text does not show which GE pattern the Physical Science A.S. degree names.",
+   "The text is cut off mid-entry in Area 6 (ETHN 3 '( Draf')."
+  ]
+ },
+ "extracted_run": "38242003226"
+}
