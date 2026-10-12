@@ -801,6 +801,7 @@ async function generateMiniReport(p) {
     ["Lead", p.lead || "N/A", "333333"],
     ["Budget", `${p.budget || "N/A"} (${p.budget_source || ""})`, "333333"],
     ["KPI Current", p.kpi_metric ? `${p.kpi_metric} ${p.kpi_unit || ""}` : "N/A", NAVY],
+    ...(p.count_note ? [["How it is counted", p.count_note, "333333"]] : []),
     ["2030 Goal", p.kpi_goal_2930 || p.kpi_target_2030 || "N/A", NAVY],
     ["2030 Stretch", p.kpi_stretch_2829 || "N/A", GOLD],
     ["25-26", `${p.kpi_metric || "\u2014"}/${p.kpi_goal_2526 || p.kpi_target_2026 || "\u2014"}`, "333333"],

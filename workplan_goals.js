@@ -195,6 +195,20 @@
   }
 
   /**
+   * What the numbers count (projects.kpi_unit, the short label the Activities
+   * cards print beside the number) and how they are counted (projects.count_note,
+   * Sam 2026-10-12). `patch` is { kpi_unit } or { count_note }.
+   */
+  function saveProjectField(pid, patch, sess) {
+    return fetch(SUPABASE_URL + "/rest/v1/projects?id=eq."
+        + encodeURIComponent(pid), {
+      method: "PATCH",
+      headers: authHeaders(sess, "return=representation"),
+      body: JSON.stringify(patch)
+    });
+  }
+
+  /**
    * Top-level Activity field editor. The 4 Activities are kind='activity' rows
    * in workplan_goals with TWO row_types (GOAL+STRETCH) that share the same
    * name + description, so we PATCH by (activity_id, kind='activity') to keep
@@ -332,10 +346,69 @@
     // they're never selected here (read-only by construction).
     var cells = document.querySelectorAll(
       '[data-editable="1"], [data-current-edit="1"], [data-title-edit="1"], '
-      + '[data-desc-edit="1"], [data-activity-title-edit="1"], [data-activity-desc-edit="1"]');
+      + '[data-desc-edit="1"], [data-activity-title-edit="1"], [data-activity-desc-edit="1"], '
+      + '[data-unit-edit="1"], [data-note-edit="1"]');
     cells.forEach(function (c) {
       if (state.sess) c.classList.add("wpg-editable");
       else c.classList.remove("wpg-editable");
+    });
+    paintCountLines(state);
+    paintSetTargets(state);
+    paintActivityAddLinks(state);
+  }
+
+  // The "Counts:" and "How it is counted:" lines stay hidden for a reader when
+  // empty; an editor sees them with an "Add" prompt in place of the value.
+  function paintCountLines(state) {
+    document.querySelectorAll(".wpg-unit-cell, .wpg-note-cell").forEach(function (c) {
+      if (c.classList.contains("wpg-editing")) return;
+      var line = c.parentNode;
+      var empty = !(c.getAttribute("data-val") || "").trim();
+      if (!empty) { if (line) line.hidden = false; c.classList.remove("wpg-empty"); return; }
+      if (state.sess) {
+        if (line) line.hidden = false;
+        c.textContent = "Add";
+        c.classList.add("wpg-empty");
+      } else {
+        c.textContent = "";
+        c.classList.remove("wpg-empty");
+        if (line) line.hidden = true;
+      }
+    });
+  }
+
+  // A sub-activity with no goal ladder (the generator marks its name cell
+  // data-no-ladder) gets "Set targets", which creates its GOAL + STRETCH rows.
+  function paintSetTargets(state) {
+    document.querySelectorAll('[data-no-ladder="1"]').forEach(function (cell) {
+      var btn = cell.querySelector(".wpg-set-targets");
+      if (!state.sess) { if (btn) btn.remove(); return; }
+      if (btn) return;
+      btn = el("button", { "class": "wpg-btn wpg-set-targets", "type": "button" }, ["Set targets"]);
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        openAddModal(state, { targetsFor: {
+          pid: cell.getAttribute("data-pid"), name: cell.getAttribute("data-name") || "" } });
+      });
+      var wrap = el("div", { "class": "wpg-set-targets-row" }, [btn]);
+      cell.appendChild(wrap);
+    });
+  }
+
+  // The Activities tab's activity headers get "Add sub-activity" for an editor,
+  // opening the same dialog with that Activity preselected as the parent.
+  function paintActivityAddLinks(state) {
+    document.querySelectorAll(".activity-group-header").forEach(function (hdr) {
+      var raci = hdr.querySelector('.act-raci-link[data-raci-key^="activity:"]');
+      if (!raci) return;
+      var act = raci.getAttribute("data-raci-key").split(":")[1];
+      var btn = hdr.querySelector(".wpg-add-sub");
+      if (!state.sess) { if (btn) btn.remove(); return; }
+      if (btn) return;
+      btn = el("button", { "class": "wpg-btn wpg-add-sub", "type": "button", "data-parent": act },
+        ["Add sub-activity"]);
+      btn.addEventListener("click", function () { openAddModal(state, { parent: act }); });
+      raci.parentNode.appendChild(btn);
     });
   }
 
@@ -661,7 +734,8 @@
       done = true;
       cell.classList.remove("wpg-editing");
       cell.classList.add("wpg-saving");
-      cell.textContent = val || "—";
+      cell.textContent = val || (opts.emptyText != null ? opts.emptyText : "—");
+      if (!val && opts.emptyText) cell.classList.add("wpg-empty"); else cell.classList.remove("wpg-empty");
       cell.setAttribute("data-val", val);
       opts.save(val, state.sess).then(writeResult).then(function (r) {
         cell.classList.remove("wpg-saving");
@@ -728,6 +802,27 @@
     });
   }
 
+  // What the numbers count → projects.kpi_unit (single line).
+  function startUnitEdit(cell, state) {
+    var pid = cell.getAttribute("data-pid");
+    if (!pid) return;
+    inlineTextEditor(cell, state, {
+      emptyText: "Add",
+      save: function (v, sess) { return saveProjectField(pid, { kpi_unit: v || null }, sess); }
+    });
+  }
+
+  // How the numbers are counted → projects.count_note (multi-line).
+  function startNoteEdit(cell, state) {
+    var pid = cell.getAttribute("data-pid");
+    if (!pid) return;
+    inlineTextEditor(cell, state, {
+      multiline: true,
+      emptyText: "Add",
+      save: function (v, sess) { return saveProjectField(pid, { count_note: v || null }, sess); }
+    });
+  }
+
   function attachClickHandler(state) {
     // Use event delegation on the body — works for both tab tables.
     document.body.addEventListener("click", function (e) {
@@ -751,6 +846,12 @@
           }
           if (target.getAttribute("data-activity-desc-edit") === "1") {
             startActivityDescEdit(target, state); return;
+          }
+          if (target.getAttribute("data-unit-edit") === "1") {
+            startUnitEdit(target, state); return;
+          }
+          if (target.getAttribute("data-note-edit") === "1") {
+            startNoteEdit(target, state); return;
           }
         }
         target = target.parentNode;
@@ -800,7 +901,14 @@
       + '.wpg-live-badge { display:inline-block;margin-left:0.35rem;padding:0.02rem 0.34rem;background:var(--cobalt,#2A6FB0);color:var(--on-accent);border-radius:8px;font-size:0.6rem;font-weight:700;letter-spacing:0.02em;vertical-align:middle;white-space:nowrap; }'
       + '.wpg-manual-hint { color:var(--text-muted);font-size:0.72rem; }'
       + '.wpg-editable.wpg-manual-hint, .wpg-editable .wpg-manual-hint { color:var(--cobalt); }'
-      + '.wpg-title-cell { border-radius:3px; }';
+      + '.wpg-title-cell { border-radius:3px; }'
+      + '.wpg-count-label { font-weight:600; }'
+      + '.wpg-empty { font-style:italic; }'
+      + '.wpg-set-targets-row { margin-top:0.3rem; }'
+      + '.wpg-add-sub { font-size:0.72rem; }'
+      + '.wpg-modal-card select, .wpg-modal-card textarea { width:100%;padding:0.4rem 0.55rem;border:1px solid var(--border-strong);border-radius:5px;font:inherit;font-size:0.85rem;box-sizing:border-box;background:var(--surface-opaque);color:var(--text-strong); }'
+      + '.wpg-modal-card textarea { min-height:4.2em;resize:vertical; }'
+      + '.wpg-modal-card .wpg-fixed { font-size:0.95rem;font-weight:600;margin:0.4rem 0 0.2rem 0; }';
     var style = document.createElement("style");
     style.id = "wpg-editor-styles";
     style.textContent = css;
@@ -814,18 +922,72 @@
    * "Contributes to" multi-select.
    */
   function collectExistingIds() {
-    var actIds = {};
-    var projIds = {};
+    var acts = {}, projs = {};
+    // The Activity header rows of the Annual table carry data-activity-title-edit;
+    // an older layout marked ladder cells data-kind="activity". Reading only the
+    // second left the list empty once the Annual table won the injection, so the
+    // dialog refused every sub-activity (Sam, 2026-10-12, adding 3.9).
+    document.querySelectorAll('[data-activity-title-edit="1"][data-aid]').forEach(function (c) {
+      acts[c.getAttribute("data-aid")] = (c.getAttribute("data-val") || c.textContent || "").trim();
+    });
     document.querySelectorAll('[data-aid][data-kind="activity"]').forEach(function (c) {
-      actIds[c.getAttribute("data-aid")] = 1;
+      var a = c.getAttribute("data-aid");
+      if (!(a in acts)) acts[a] = "";
+    });
+    // Every sub-activity row, with or without a ladder (its title cell), plus
+    // the ladder cells themselves.
+    document.querySelectorAll('[data-title-edit="1"][data-pid]').forEach(function (c) {
+      projs[c.getAttribute("data-pid")] = (c.textContent || "").trim();
     });
     document.querySelectorAll('[data-aid][data-kind="project"]').forEach(function (c) {
-      projIds[c.getAttribute("data-aid")] = 1;
+      var pid = c.getAttribute("data-aid");
+      if (!(pid in projs)) projs[pid] = "";
     });
     return {
-      activities: Object.keys(actIds).sort(),
-      projects: Object.keys(projIds).sort()
+      activities: Object.keys(acts).sort(byNatural),
+      activityNames: acts,
+      projects: Object.keys(projs).sort(byNatural),
+      projectNames: projs
     };
+  }
+
+  function byNatural(a, b) {
+    var pa = String(a).split("."), pb = String(b).split(".");
+    for (var k = 0; k < Math.max(pa.length, pb.length); k++) {
+      var x = parseInt(pa[k] === undefined ? "-1" : pa[k], 10);
+      var y = parseInt(pb[k] === undefined ? "-1" : pb[k], 10);
+      if (x !== y) return x - y;
+    }
+    return 0;
+  }
+
+  // The next free child number under a parent, numeric not lexical:
+  // "3" -> "3.10" after 3.9; "4.2" -> "4.2.2" after 4.2.1; none yet -> ".1".
+  function suggestChildId(existing, parent) {
+    if (!parent) return "";
+    var re = new RegExp("^" + String(parent).replace(/\./g, "\\.") + "\\.(\\d+)$");
+    var max = 0;
+    (existing || []).forEach(function (id) {
+      var m = String(id).match(re);
+      if (m) max = Math.max(max, parseInt(m[1], 10));
+    });
+    return parent + "." + (max + 1);
+  }
+
+  // A sub-activity's home Activity is its first number (3.9 -> 3, 4.2.1 -> 4).
+  function homeActivityOf(id) {
+    var m = String(id || "").match(/^(\d+)\./);
+    return m ? m[1] : "";
+  }
+
+  // Tabled projects are absent from the page, so the dialog reads the live id
+  // list (public read) before it accepts a new id; the primary key refuses a
+  // duplicate anyway, this just says so before the save.
+  function fetchProjectIds() {
+    return fetch(SUPABASE_URL + "/rest/v1/projects?select=id", { headers: { "apikey": SUPABASE_ANON } })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (rows) { return (rows || []).map(function (r) { return String(r.id); }); })
+      .catch(function () { return []; });
   }
 
   // Tracks the active Esc listener so closeAddModal can detach it. Without
@@ -842,66 +1004,121 @@
     }
   }
 
-  function openAddModal(state) {
+  /**
+   * The one add dialog (Sam, 2026-10-12: one flow, reachable from both tabs).
+   *   opts.parent     preselects the parent ("3" or "4.2") — the Activities tab
+   *   opts.targetsFor { pid, name }: an existing sub-activity with no ladder;
+   *                   the dialog only creates its GOAL + STRETCH rows.
+   * A new sub-activity writes three tables in order: projects (the row the
+   * Annual table and the Activities tab render), workplan_goals (its ladder)
+   * and workplan_activity_associations (its home link plus any others).
+   */
+  function openAddModal(state, opts) {
+    opts = opts || {};
     closeAddModal();
     var ids = collectExistingIds();
+    var targets = opts.targetsFor && opts.targetsFor.pid ? opts.targetsFor : null;
+    var liveIds = [];
+    var idTouched = false;
 
     var overlay = el("div", { "class": "wpg-modal-overlay" }, []);
-    var card = el("div", { "class": "wpg-modal-card" }, []);
+    var card = el("div", { "class": "wpg-modal-card", "role": "dialog", "aria-modal": "true",
+      "aria-labelledby": "wpg-add-title" }, []);
     overlay.appendChild(card);
 
-    card.appendChild(el("h3", {}, ["Add new row to Workplan Goals"]));
-    card.appendChild(el("div", { "class": "wpg-sub" }, [
-      "Inserts a new GOAL + STRETCH pair into Supabase. Year cells default to 0; you can fill them here or click-edit afterwards."
-    ]));
+    card.appendChild(el("h3", { "id": "wpg-add-title" },
+      [targets ? "Set targets" : "Add to the workplan"]));
+    card.appendChild(el("div", { "class": "wpg-sub" }, [targets
+      ? "Creates the Goal and Stretch rows for this sub-activity. Each year starts at 0; fill in what you know."
+      : "Adds a sub-activity with its goals, or a new top-level Activity. It appears on both tabs after tonight's rebuild."]));
 
-    // ── Kind radio ────────────────────────────────────────────────
-    card.appendChild(el("label", {}, ["Row type"]));
-    var radioRow = el("div", { "class": "wpg-radio-row" }, []);
-    var kindActLabel = el("label", {}, []);
+    // ── Kind radio (not shown when setting targets) ──────────────
     var kindAct = el("input", { "type": "radio", "name": "wpg-kind", "value": "activity" }, []);
-    kindActLabel.appendChild(kindAct);
-    kindActLabel.appendChild(document.createTextNode(" Activity (top-level)"));
-    var kindProjLabel = el("label", {}, []);
     var kindProj = el("input", { "type": "radio", "name": "wpg-kind", "value": "project", "checked": "checked" }, []);
-    kindProjLabel.appendChild(kindProj);
-    kindProjLabel.appendChild(document.createTextNode(" Project (sub-activity)"));
-    radioRow.appendChild(kindActLabel);
-    radioRow.appendChild(kindProjLabel);
-    card.appendChild(radioRow);
-
-    // ── ID + Name ─────────────────────────────────────────────────
-    card.appendChild(el("label", {}, ["ID"]));
-    var idHint = el("div", { "class": "wpg-sub", "style": "margin:-0.15rem 0 0.3rem 0;font-size:0.72rem;" }, [
-      "Project IDs: N.x where N is an existing Activity (e.g. 3.7, 4.1.5). Activity IDs: single digit."
-    ]);
-    var idInput = el("input", { "type": "text", "placeholder": "e.g. 3.7", "autocomplete": "off" }, []);
-    card.appendChild(idInput);
-    card.appendChild(idHint);
-
-    card.appendChild(el("label", {}, ["Name"]));
+    var parentSel = el("select", {}, []);
+    var idInput = el("input", { "type": "text", "placeholder": "e.g. 3.9", "autocomplete": "off" }, []);
     var nameInput = el("input", { "type": "text", "placeholder": "Descriptive name", "autocomplete": "off" }, []);
-    card.appendChild(nameInput);
-
-    // ── Project-only: associations multi-select ──────────────────
-    var assocSection = el("div", {}, []);
-    assocSection.appendChild(el("label", {}, ["Contributes to (one or more)"]));
-    var assocBox = el("div", { "class": "wpg-assoc-checkboxes" }, []);
+    var unitInput = el("input", { "type": "text", "autocomplete": "off",
+      "placeholder": "e.g. Cumulative MAP features released" }, []);
+    var noteInput = el("textarea", {
+      "placeholder": "e.g. A feature counts once it is released to production and listed in the release notes." }, []);
+    var projectOnly = el("div", {}, []);
     var assocBoxes = {};
-    ids.activities.forEach(function (aid) {
-      var lbl = el("label", {}, []);
-      var cb = el("input", { "type": "checkbox", "value": aid }, []);
-      assocBoxes[aid] = cb;
-      lbl.appendChild(cb);
-      lbl.appendChild(document.createTextNode(" Activity " + aid));
-      assocBox.appendChild(lbl);
-    });
-    if (!ids.activities.length) {
-      assocBox.appendChild(el("span", { "style": "color:var(--text-muted);font-size:0.78rem;" },
-        ["(no Activities exist yet — add an Activity first, then return here)"]));
+
+    if (targets) {
+      card.appendChild(el("div", { "class": "wpg-fixed" }, [targets.pid + " " + targets.name]));
+    } else {
+      card.appendChild(el("label", {}, ["Row type"]));
+      var radioRow = el("div", { "class": "wpg-radio-row" }, []);
+      var kindProjLabel = el("label", {}, []);
+      kindProjLabel.appendChild(kindProj);
+      kindProjLabel.appendChild(document.createTextNode(" Sub-activity"));
+      var kindActLabel = el("label", {}, []);
+      kindActLabel.appendChild(kindAct);
+      kindActLabel.appendChild(document.createTextNode(" Activity (top level)"));
+      radioRow.appendChild(kindProjLabel);
+      radioRow.appendChild(kindActLabel);
+      card.appendChild(radioRow);
+
+      // ── Parent picker → suggested id (sub-activity) ────────────
+      var parentWrap = el("div", {}, []);
+      parentWrap.appendChild(el("label", { "for": "wpg-add-parent" }, ["Under"]));
+      parentSel.id = "wpg-add-parent";
+      ids.activities.forEach(function (aid) {
+        parentSel.appendChild(el("option", { "value": aid },
+          ["Activity " + aid + (ids.activityNames[aid] ? ": " + ids.activityNames[aid] : "")]));
+      });
+      ids.projects.forEach(function (pid) {
+        var depth = pid.split(".").length - 1;
+        parentSel.appendChild(el("option", { "value": pid },
+          [new Array(depth + 1).join("\u00a0\u00a0\u00a0\u00a0") + pid + " " + (ids.projectNames[pid] || "")]));
+      });
+      parentWrap.appendChild(parentSel);
+      projectOnly.appendChild(parentWrap);
+      card.appendChild(projectOnly);
+
+      card.appendChild(el("label", { "for": "wpg-add-id" }, ["ID"]));
+      idInput.id = "wpg-add-id";
+      card.appendChild(idInput);
+      card.appendChild(el("div", { "class": "wpg-sub", "style": "margin:0.2rem 0 0 0;font-size:0.72rem;" },
+        ["Suggested from the parent. A sub-activity number starts with its Activity (3.9, 4.2.1); an Activity is a single number."]));
+
+      card.appendChild(el("label", { "for": "wpg-add-name" }, ["Name"]));
+      nameInput.id = "wpg-add-name";
+      card.appendChild(nameInput);
     }
-    assocSection.appendChild(assocBox);
-    card.appendChild(assocSection);
+
+    // ── What the numbers count (sub-activity) ──────────────────────
+    var countWrap = el("div", {}, []);
+    if (!targets) {
+      countWrap.appendChild(el("label", { "for": "wpg-add-unit" }, ["What it counts"]));
+      unitInput.id = "wpg-add-unit";
+      countWrap.appendChild(unitInput);
+      countWrap.appendChild(el("label", { "for": "wpg-add-note" }, ["How it is counted"]));
+      noteInput.id = "wpg-add-note";
+      countWrap.appendChild(noteInput);
+      card.appendChild(countWrap);
+    }
+
+    // ── Contributes to (sub-activity; the home Activity always links) ──
+    var assocSection = el("div", {}, []);
+    var assocLabels = {};
+    if (!targets) {
+      assocSection.appendChild(el("label", {}, ["Contributes to"]));
+      var assocBox = el("div", { "class": "wpg-assoc-checkboxes" }, []);
+      ids.activities.forEach(function (aid) {
+        var lbl = el("label", {}, []);
+        var cb = el("input", { "type": "checkbox", "value": aid }, []);
+        assocBoxes[aid] = cb;
+        lbl.appendChild(cb);
+        var txt = el("span", {}, [" Activity " + aid]);
+        assocLabels[aid] = txt;
+        lbl.appendChild(txt);
+        assocBox.appendChild(lbl);
+      });
+      assocSection.appendChild(assocBox);
+      card.appendChild(assocSection);
+    }
 
     // ── Ladder fields (GOAL + STRETCH × 5 years) ─────────────────
     var YEARS = [
@@ -918,39 +1135,74 @@
       var grid = el("div", { "class": "wpg-grid-years" }, []);
       YEARS.forEach(function (y) {
         var box = el("div", {}, []);
-        box.appendChild(el("div", { "style": "font-size:0.7rem;color:var(--text-muted);margin-bottom:0.15rem;" }, [y.lbl]));
-        var input = el("input", { "type": "number", "step": "any", "value": "0", "placeholder": "0" }, []);
+        var yid = "wpg-add-" + title.split(" ")[0].toLowerCase() + "-" + y.key;
+        box.appendChild(el("label", { "for": yid,
+          "style": "font-size:0.7rem;color:var(--text-muted);margin:0 0 0.15rem 0;font-weight:400;" }, [y.lbl]));
+        var input = el("input", { "type": "number", "step": "any", "value": "0", "placeholder": "0", "id": yid }, []);
         store[y.key] = input;
         box.appendChild(input);
         grid.appendChild(box);
       });
       card.appendChild(grid);
     }
-    buildLadder("GOAL ladder", goalInputs);
-    buildLadder("STRETCH ladder", stretchInputs);
+    buildLadder("Goal by year", goalInputs);
+    buildLadder("Stretch by year", stretchInputs);
 
     // ── Status + Actions ─────────────────────────────────────────
-    var status = el("div", { "class": "wpg-status" }, []);
+    var status = el("div", { "class": "wpg-status", "role": "status", "aria-live": "polite" }, []);
     card.appendChild(status);
 
     var actions = el("div", { "class": "wpg-modal-actions" }, []);
     var btnCancel = el("button", { "class": "wpg-btn-cancel", "type": "button" }, ["Cancel"]);
-    var btnSubmit = el("button", { "class": "wpg-btn-submit", "type": "button" }, ["Add row"]);
+    var btnSubmit = el("button", { "class": "wpg-btn-submit", "type": "button" }, [targets ? "Save targets" : "Add row"]);
     actions.appendChild(btnSubmit);   // the lead word first: no fill marks it (S364)
     actions.appendChild(btnCancel);
     card.appendChild(actions);
 
-    function syncKindUI() {
-      // Read from the bound refs directly instead of querySelector — safer
-      // if keyboard navigation briefly puts neither radio in the :checked
-      // state during a transition.
-      var k = kindAct.checked ? "activity" : "project";
-      assocSection.style.display = (k === "project") ? "" : "none";
-      idInput.placeholder = (k === "activity") ? "e.g. 6" : "e.g. 3.7";
+    function syncParent() {
+      if (targets) return;
+      var parent = parentSel.value;
+      idInput.value = suggestChildId(ids.projects.concat(liveIds), parent);
+      var home = homeActivityOf(idInput.value);
+      Object.keys(assocBoxes).forEach(function (aid) {
+        var isHome = aid === home;
+        if (isHome) assocBoxes[aid].checked = true;
+        assocLabels[aid].textContent = " Activity " + aid + (isHome ? " (home)" : "");
+      });
     }
-    kindAct.addEventListener("change", syncKindUI);
-    kindProj.addEventListener("change", syncKindUI);
-    syncKindUI();
+    function syncKindUI() {
+      if (targets) return;
+      var k = kindAct.checked ? "activity" : "project";
+      projectOnly.style.display = (k === "project") ? "" : "none";
+      countWrap.style.display = (k === "project") ? "" : "none";
+      assocSection.style.display = (k === "project") ? "" : "none";
+      idInput.placeholder = (k === "activity") ? "e.g. 5" : "e.g. 3.9";
+      if (k === "activity") {
+        var next = 1;
+        ids.activities.forEach(function (a) { next = Math.max(next, parseInt(a, 10) + 1); });
+        idInput.value = String(next);
+      } else {
+        syncParent();
+      }
+    }
+    if (!targets) {
+      if (opts.parent) parentSel.value = String(opts.parent);
+      parentSel.addEventListener("change", function () { idTouched = false; syncParent(); });
+      idInput.addEventListener("input", function () {
+        idTouched = true;
+        var home = homeActivityOf(idInput.value);
+        Object.keys(assocLabels).forEach(function (aid) {
+          assocLabels[aid].textContent = " Activity " + aid + (aid === home ? " (home)" : "");
+        });
+      });
+      kindAct.addEventListener("change", syncKindUI);
+      kindProj.addEventListener("change", syncKindUI);
+      syncKindUI();
+    }
+    fetchProjectIds().then(function (list) {
+      liveIds = list;
+      if (!targets && !idTouched && kindProj.checked) syncParent();
+    });
 
     // Cancel / overlay click outside the card / Esc all close
     btnCancel.addEventListener("click", closeAddModal);
@@ -966,10 +1218,14 @@
       submitAdd({
         state: state,
         ids: ids,
+        liveIds: function () { return liveIds; },
+        targets: targets,
         kindAct: kindAct,
         kindProj: kindProj,
         idInput: idInput,
         nameInput: nameInput,
+        unitInput: unitInput,
+        noteInput: noteInput,
         assocBoxes: assocBoxes,
         goalInputs: goalInputs,
         stretchInputs: stretchInputs,
@@ -979,7 +1235,7 @@
     });
 
     document.body.appendChild(overlay);
-    idInput.focus();
+    (targets ? goalInputs.yr_2025_26 : nameInput).focus();
   }
 
   /**
@@ -988,50 +1244,48 @@
    */
   function validateAdd(ctx) {
     var errors = [];
-    var kind = ctx.kindAct.checked ? "activity" : "project";
-    var rawId = (ctx.idInput.value || "").trim();
-    var name = (ctx.nameInput.value || "").trim();
+    var targets = ctx.targets || null;
+    var kind = targets ? "project" : (ctx.kindAct.checked ? "activity" : "project");
+    var rawId = targets ? String(targets.pid) : (ctx.idInput.value || "").trim();
+    var name = targets ? String(targets.name || rawId) : (ctx.nameInput.value || "").trim();
+    var home = homeActivityOf(rawId);
+    var live = (ctx.liveIds && ctx.liveIds()) || [];
+    var known = ctx.ids.projects.concat(live);
 
     if (!rawId) errors.push("ID is required.");
     if (!name) errors.push("Name is required.");
 
-    // ID format
-    if (rawId) {
+    if (rawId && !targets) {
       if (kind === "activity") {
         if (!/^[0-9]+$/.test(rawId)) {
-          errors.push("Activity ID must be a single number (e.g. 6).");
+          errors.push("An Activity ID is a single number (e.g. 5).");
         }
         if (ctx.ids.activities.indexOf(rawId) !== -1) {
-          errors.push("Activity ID '" + rawId + "' already exists.");
+          errors.push("Activity " + rawId + " already exists.");
         }
       } else {
-        // Project: must start with N. where N is an existing Activity id
-        var prefixMatch = rawId.match(/^([0-9]+)\.[A-Za-z0-9.]+$/);
-        if (!prefixMatch) {
-          errors.push("Project ID must be N.x where N is an existing Activity (e.g. 3.7).");
-        } else if (ctx.ids.activities.indexOf(prefixMatch[1]) === -1) {
-          errors.push("Project prefix '" + prefixMatch[1] + "' is not an existing Activity ID.");
+        if (!/^[0-9]+(\.[0-9A-Za-z]+)+$/.test(rawId)) {
+          errors.push("A sub-activity ID is numbers joined by dots under its parent (e.g. 3.9 or 4.2.1).");
+        } else if (ctx.ids.activities.indexOf(home) === -1) {
+          errors.push("Activity " + home + " does not exist. Pick the parent from Under.");
         }
-        if (ctx.ids.projects.indexOf(rawId) !== -1) {
-          errors.push("Project ID '" + rawId + "' already exists.");
+        if (known.indexOf(rawId) !== -1) {
+          errors.push(rawId + " is already in use. Pick the parent again for the next free number.");
         }
       }
     }
 
-    // Gather selected associations (Project only)
+    // Associations: the home Activity always links; others as checked.
     var assocIds = [];
-    if (kind === "project") {
-      Object.keys(ctx.assocBoxes).forEach(function (aid) {
+    if (kind === "project" && !targets) {
+      Object.keys(ctx.assocBoxes || {}).forEach(function (aid) {
         if (ctx.assocBoxes[aid].checked) assocIds.push(aid);
       });
-      if (!assocIds.length) {
-        errors.push("Select at least one Activity that this Project contributes to.");
-      }
+      if (home && assocIds.indexOf(home) === -1) assocIds.unshift(home);
     }
 
     if (errors.length) return { ok: false, errors: errors, payload: null };
 
-    // Compose payload
     function valOf(input) {
       var n = parseFloat(input.value);
       return Number.isFinite(n) ? n : 0;
@@ -1053,17 +1307,36 @@
       );
     }
 
+    var projectRow = null;
+    if (kind === "project" && !targets) {
+      var unit = ((ctx.unitInput && ctx.unitInput.value) || "").trim();
+      var note = ((ctx.noteInput && ctx.noteInput.value) || "").trim();
+      projectRow = {
+        id: rawId,
+        name: name,
+        // Grouping reads only the number; the name part matches the header.
+        workplan_activity: "Activity " + home + (ctx.ids.activityNames && ctx.ids.activityNames[home]
+          ? ": " + ctx.ids.activityNames[home] : ""),
+        status: "Not Started",
+        percent_complete: 0,
+        kpi_unit: unit || null,
+        count_note: note || null
+      };
+    }
+
     return {
       ok: true,
       errors: [],
       payload: {
         kind: kind,
+        targets: !!targets,
+        projectRow: projectRow,
         wpgRows: [
           buildRow("GOAL", goal, goalTotal),
           buildRow("STRETCH", stretch, stretchTotal)
         ],
         assocRows: assocIds.map(function (aid) {
-          return { project_id: rawId, activity_id: aid };
+          return { project_id: rawId, activity_id: aid, is_primary: aid === home };
         })
       }
     };
@@ -1074,55 +1347,59 @@
     ctx.status.className = "wpg-status";
     if (!v.ok) {
       ctx.status.className = "wpg-status err";
-      ctx.status.innerHTML = v.errors.map(function (e) {
-        return "• " + e;
-      }).join("<br>");
+      ctx.status.innerHTML = "";
+      v.errors.forEach(function (e) { ctx.status.appendChild(el("div", {}, [e])); });
       return;
     }
 
     ctx.btnSubmit.disabled = true;
     ctx.status.className = "wpg-status";
-    ctx.status.textContent = "Inserting…";
+    ctx.status.textContent = "Saving…";
 
     var sess = ctx.state.sess;
     var headers = authHeaders(sess, "return=representation");
+    var projectAdded = false;
 
-    fetch(SUPABASE_URL + "/rest/v1/workplan_goals", {
-      method: "POST",
-      headers: headers,
-      body: JSON.stringify(v.payload.wpgRows)
-    }).then(function (r) {
-      if (!r.ok) {
-        return r.text().then(function (t) {
-          var err = new Error("workplan_goals insert failed (HTTP " + r.status + "): " + t.slice(0, 200));
-          err.status = r.status;
-          throw err;
-        });
-      }
-      // Project: also insert associations
-      if (v.payload.kind === "project" && v.payload.assocRows.length) {
-        return fetch(SUPABASE_URL + "/rest/v1/workplan_activity_associations", {
-          method: "POST",
-          headers: headers,
-          body: JSON.stringify(v.payload.assocRows)
-        }).then(function (r2) {
-          if (!r2.ok) {
-            return r2.text().then(function (t) {
-              var err = new Error("associations insert failed (HTTP " + r2.status + "): " + t.slice(0, 200));
-              err.status = r2.status;
-              throw err;
-            });
-          }
-        });
-      }
-    }).then(function () {
+    function post(table, body) {
+      return fetch(SUPABASE_URL + "/rest/v1/" + table, {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(body)
+      }).then(function (r) {
+        if (!r.ok) {
+          return r.text().then(function (t) {
+            var err = new Error(table + " insert failed (HTTP " + r.status + "): " + t.slice(0, 200));
+            err.status = r.status;
+            throw err;
+          });
+        }
+      });
+    }
+
+    var chain = Promise.resolve();
+    if (v.payload.projectRow) {
+      chain = chain.then(function () { return post("projects", v.payload.projectRow); })
+                   .then(function () { projectAdded = true; });
+    }
+    chain = chain.then(function () { return post("workplan_goals", v.payload.wpgRows); });
+    if (v.payload.kind === "project" && v.payload.assocRows.length) {
+      chain = chain.then(function () {
+        return post("workplan_activity_associations", v.payload.assocRows);
+      });
+    }
+    chain.then(function () {
       ctx.status.className = "wpg-status ok";
-      ctx.status.textContent = "Inserted. Reloading the page…";
-      setTimeout(function () { window.location.reload(); }, 800);
+      ctx.status.textContent = v.payload.targets
+        ? "Saved. The targets appear in the table after tonight's rebuild."
+        : "Added. It appears on Annual Workplan Goals and the Activities tab after tonight's rebuild.";
+      ctx.btnSubmit.textContent = "Done";
+      ctx.btnSubmit.disabled = false;
+      ctx.btnSubmit.onclick = closeAddModal;
     }).catch(function (e) {
       ctx.btnSubmit.disabled = false;
       ctx.status.className = "wpg-status err";
-      ctx.status.textContent = e.message || "Insert failed.";
+      ctx.status.textContent = (e.message || "Save failed.")
+        + (projectAdded ? " The sub-activity itself was saved; use Set targets on its row after the rebuild to finish." : "");
       console.error("[workplan_goals] add failed:", e);
       // Real HTTP status threaded onto the error — never regex the message
       // (the response-body slice could contain "401" as data and spuriously
@@ -1151,6 +1428,26 @@
       paintEditability(state);
       paintAssocEditability();
     });
+    // An unlock anywhere (the Activities tab included) lights the editors.
+    window.addEventListener("cpl-team-pass-unlocked", function () {
+      state.sess = fullSession();
+      mountAuthWidget(state);
+      paintEditability(state);
+      paintAssocEditability();
+    });
+    // The one add dialog, for the Activities tab and tests.
+    window.CPL_WORKPLAN_ADD = {
+      open: function (o) {
+        state.sess = fullSession();
+        if (!state.sess) return false;
+        openAddModal(state, o);
+        return true;
+      },
+      suggestChildId: suggestChildId,
+      homeActivityOf: homeActivityOf,
+      collectExistingIds: collectExistingIds,
+      validateAdd: validateAdd
+    };
     // A write under a rotated phrase dropped it — re-render lock state.
     window.addEventListener("cpl-team-pass-dropped", function () {
       state.sess = fullSession();
