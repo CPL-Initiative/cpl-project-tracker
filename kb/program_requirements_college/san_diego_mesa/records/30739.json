@@ -1,0 +1,257 @@
+{
+ "college": "San Diego Mesa College",
+ "control_number": "30739",
+ "shape": "adt",
+ "title": "Sociology",
+ "award": "A.A- T Degree",
+ "source_url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17716",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10780,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10780,
+    "output_tokens": 2120,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2120,
+  "output_tokens_details": {
+   "thinking_tokens": 539
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08552,
+ "ms": 17716,
+ "seconds": 18.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Think critically in reading, writing, and/or speaking about topics in Sociology, with a focus on collective, as opposed to individualistic, explanations of human behavior, and an emphasis on the roles of social structure, culture, and social interaction in shaping behavior, both historically and cross-culturally, thereby identifying problems, theses, arguments, evidence and conclusions.",
+    "Write or speak about topics in Sociology, with a focus on collective, as opposed to individualistic, explanations of human behavior, and an emphasis on the roles of social structure, culture, and social interaction in shaping behavior, both historically and cross-culturally, thereby addressing problems, formulating theses, making arguments, analyzing and weighing evidence, and deriving conclusions.",
+    "Demonstrate an ability to understand one’s role in society, explain how the theoretical underpinnings of sociology explicitly challenge currently dominant ideologies like individualism and radical subjectivism, and make ethical decisions in complex situations.",
+    "Articulate similarities and contrasts among cultures and global political and economic systems, and demonstrate an understanding of cultural pluralism."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "SOCO 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCO 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 258",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 200",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "POLI 201",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Category A: Select 6 units (2 courses) from the following:",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "SOCO 220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 255",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCO 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCO 207",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Category B: Select 3 units (1 course) from the following:",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "SOCO 145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCO 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCO 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCO 223",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text begins mid-description; the program's own title heading is cut off, so section_heading uses the 'Requirements' heading that precedes the major's course list.",
+   "The outcomes are printed for 'the Sociology Program' as a whole (lead-in: 'Students who complete the Sociology Program will be able to:'); recorded here as the A.A-T shares that list.",
+   "STAT C1000 is printed with a space; matched to closed-list code STATC1000, so not marked as a catalog addition.",
+   "Stray '3.0' lines appear before the PSYC 258 'OR' group and before the SOCO 220/PSYC 255 'OR' pair; read as the units for each or-group.",
+   "Career fields appear only in individual course descriptions (e.g., SOCO 101, SOCO 110), not in the program description, so careers is left empty.",
+   "Award Notes require Cal-GETC certification, 60 CSU-transferable units, 2.0 GPA and grade of C or P in major courses; these are degree rules, not major blocks.",
+   "The text is cut off at the end in the course descriptions (SOCO 207); requirements list itself appears complete with Total Units: 18.0."
+  ]
+ },
+ "extracted_run": "38282023973"
+}

@@ -1,0 +1,165 @@
+{
+ "college": "San Diego Mesa College",
+ "control_number": "44430",
+ "shape": "certificate",
+ "title": "Beer - Brewing and Cellaring",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/19742",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6950,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6950,
+    "output_tokens": 940,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 940,
+  "output_tokens_details": {
+   "thinking_tokens": 254
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0466,
+ "ms": 7793,
+ "seconds": 8.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    10.0,
+    10.0
+   ],
+   "stated": [
+    10.0,
+    10.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Beer - Brewing and Cellaring - Certificate of Achievement: Mesa",
+   "measure": "units",
+   "total_units": {
+    "min": 10,
+    "max": 10
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Develop an understanding of business and the business environment, locally and globally, with an awareness of markets, finance and feasibility.",
+    "Analyze business problems, including uses of technology, issues of sustainability, and ethics, while comparing costs and benefits.",
+    "Communicate effectively in business with text and images utilizing traditional, digital, and developing media.",
+    "Network with peers and mentors on campus and in local businesses."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Courses Required for the Major",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "FERM 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FERM 130",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FERM 140",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 270",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "HOSP 270 is printed as 1.0 unit in the requirements list, but its course description gives 1-4 units (54-216 hours); recorded as 1 unit as printed in the requirements, consistent with the 10.0 total.",
+   "Course codes named only in advisories/corequisites of course descriptions (BUSE 115, MATH C1000, MATH 116, CHEM 111, CHEM 111L, CHEM 152, CHEM 152L) are not program requirements and were not recorded.",
+   "The learning outcomes are business-oriented and seem generic relative to a fermentation certificate; they are printed under this award's section and copied as printed."
+  ]
+ },
+ "extracted_run": "38282023973"
+}
