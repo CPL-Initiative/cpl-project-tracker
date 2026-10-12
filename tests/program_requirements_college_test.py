@@ -280,7 +280,7 @@ check("<" not in txt and "&nbsp;" not in txt, "no tag or entity survives into th
 ENTRY = {"id": 5878, "text": ttl, "aliaspath": "5852/6117/Acting", "haschildbodynavs": False}
 check(C.cq_is_program(ENTRY) and not C.cq_is_program({"text": "Degrees and Certificates Explained"})
       and not C.cq_is_program({"text": "Degrees and Certificates Index", "haschildbodynavs": True}),
-      "a program entry is a leaf naming an award after a dash")
+      "a program entry names an award after a dash")
 NAV = {
     "top": {"navs": [{"id": 5842, "text": "Introduction to Riverside City College"},
                      {"id": 5852, "text": "Degrees and Certificates"},
@@ -417,6 +417,89 @@ check(C.unchanged(prev, {"source": {"url": "u"}, "coverage": 1.0, "codes_found":
 check(not C.unchanged({"source": {"url": "u", "text_from": "textContent"}, "coverage": 1.0, "codes_found": ["A1"]},
                       {"source": {"url": "u", "text_from": "innerText"}, "coverage": 1.0, "codes_found": ["A1"]}),
       "a source read from the visible text never keeps a record filed from the hidden text (Long Beach City, S362)")
+
+# ── curriQunet, Chaffey's shape (S369) ──────────────────────────────────────
+# Reads 38202133197 and 38202752228: Degrees and Certificates (19210) shows a tab
+# list of an index and six schools; an entry is titled "... - AS-T Degree" with no
+# local codes and holds a Requirements child, where the curriculum is; a blank
+# sibling is kept out of the web view. The first capture (run 38197183697) walked
+# every program as a section, ran out of calls and listed none.
+check(C.cq_is_program({"text": "Business Administration 2.0 for Transfer - AS-T Degree", "haschildbodynavs": True})
+      and C.cq_is_program({"text": "Physical Therapist Assistant - A.S. Degree"})
+      and C.cq_is_program({"text": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement"})
+      and C.cq_is_program({"text": "Spanish - AA-T"})
+      and not C.cq_is_program({"text": "Requirements"}) and not C.cq_is_program({"text": "Business, Technology & Hospitality"}),
+      "Chaffey's entries name their award as AS-T Degree, A.S. Degree or a certificate, and hold children")
+HIDE = json.dumps({"nodeConfig": {"excludeFromWebView": True}})
+check(C.cq_hidden({"text": " ", "config": HIDE}) and C.cq_hidden({"text": "Notes", "config": HIDE})
+      and not C.cq_hidden({"text": "Requirements", "config": json.dumps({"nodeConfig": {"excludeFromWebView": False}})})
+      and not C.cq_hidden({"text": "Requirements", "config": "not json"}),
+      "a node the catalog keeps out of its web view, or a blank one, is not read")
+BUS = {"id": 19915, "text": "Business Administration 2.0 for Transfer - AS-T Degree", "aliaspath": "19210/bth/busadmin2",
+       "haschildbodynavs": True}
+ACC = {"id": 19950, "text": "Accounting", "aliaspath": "19210/program_index/accounting", "haschildbodynavs": True}
+ACC_AS = {"id": 19951, "text": "Accounting - A.S. Degree", "aliaspath": "19210/program_index/accounting/19951",
+          "haschildbodynavs": True}
+REQ_HTML = ('<div class="program-summary-wrapper"><h3>Required Courses</h3><table><tr><td>ACCTG-1A</td>'
+            '<td>Financial Accounting</td><td>4</td></tr><tr><td>BUS-10</td><td>Introduction to Business</td><td>3</td>'
+            '</tr></table><p>Total Units: 27</p></div>')
+CH = {
+    "top": {"navs": [{"id": 19224, "text": "Student Classifications and Programs", "haschildbodynavs": True},
+                     {"id": 19210, "text": "Degrees and Certificates", "haschildbodynavs": True},
+                     {"id": 19209, "text": "Courses", "haschildbodynavs": True}]},
+    "page:19210": {"page": {"id": 19210, "text": "Degrees and Certificates"}, "body": [{"navlist": [{"id": 20265}]}]},
+    "nav:20265": {"navs": [{"id": 20266, "text": "Program Index", "haschildbodynavs": True},
+                           {"id": 20268, "text": "Business, Technology & Hospitality", "haschildbodynavs": True}]},
+    "page:20266": {"body": [{"navlist": [{"id": 20300}]}]},
+    "nav:20300": {"navs": [ACC]},
+    "page:19950": {"body": [{"navlist": [{"id": 20310}]}]},
+    "nav:20310": {"navs": [ACC_AS]},
+    "page:20268": {"body": [{"navlist": [{"id": 20301}]}]},
+    "nav:20301": {"navs": [BUS]},
+    "page:19224": {"body": [{"navlist": [{"id": 20400}]}]},
+    "nav:20400": {"navs": [{"id": 20401, "text": "Honors Program"}]},
+    "page:19915": {"page": {"id": 19915, "text": BUS["text"]}, "body": [{"navlist": [{"id": 20080}]}]},
+    "nav:20080": {"navs": [{"id": 19916, "text": "Requirements", "config": json.dumps({"nodeConfig": {"excludeFromWebView": False}})},
+                           {"id": 19917, "text": " ", "config": HIDE},
+                           {"id": 19999, "text": "Business Administration - Certificate of Achievement"}]},
+    "page:19916": {"page": {"id": 19916, "text": "Requirements"},
+                   "body": [{"catalogblockheader": None, "text": REQ_HTML}]},
+}
+ch_asked = []
+
+
+def chaffey_get(url):
+    ch_asked.append(url)
+    q = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
+    if "navigationtypeId" in q:
+        return CH["top"]
+    if "parentId" in q:
+        return CH.get("nav:" + q["parentId"][0])
+    return CH.get("page:" + q["id"][0])
+
+
+cents, cacct = C.cq_index(chaffey_get, 718, "https://chaffey.curriqunet.com")
+check(sorted(e["id"] for e in cents) == [19915, 19951] and cacct["sections"][0] == "Degrees and Certificates"
+      and cacct["entries"] == 2 and not cacct["stopped_at_cap"],
+      "Chaffey's walk reads Degrees and Certificates first and finds the entries under the index and the schools: %r"
+      % [e["id"] for e in cents])
+first_19224 = next(i for i, a in enumerate(ch_asked) if "id=19224" in a)
+check(all(i < first_19224 for i, a in enumerate(ch_asked) if "id=19210" in a or "parentId=20265" in a),
+      "Degrees and Certificates and its tab list are read before Student Classifications and Programs")
+check(not any("id=19915" in a or "id=19951" in a for a in ch_asked),
+      "the walk takes an entry with children as an entry and never reads it as a section")
+ch_asked.clear()
+bus_page = chaffey_get("https://chaffey.curriqunet.com/Catalog/_getPage?catalogId=718&id=19915")
+own, more = C.cq_children(chaffey_get, 718, "https://chaffey.curriqunet.com", bus_page)
+check([p["page"]["id"] for p in own] == [19916] and [m["id"] for m in more] == [19999]
+      and not any("id=19917" in a for a in ch_asked),
+      "an entry's visible child is read as its own page, a child program is an entry, the hidden sibling is never read")
+PCH = C.cq_page(BUS, bus_page, "https://chaffey.curriqunet.com/catalog/iq/", own)
+check(PCH["url"] == "https://chaffey.curriqunet.com/catalog/iq/19210/bth/busadmin2"
+      and PCH["title"] == BUS["text"] and {"ACCTG1A", "BUS10"} <= PCH["codes"] and "Total Units: 27" in PCH["body"],
+      "the entry's page carries the courses its Requirements child prints, under the entry's own address and title")
+check(C.cq_page(BUS, bus_page, "x")["codes"] == set(),
+      "without its Requirements child the entry's page names no course (the first capture's 0)")
 
 # ── the source a full college files keeps the pilot's shape ─────────────────
 reg = {"catalog_url": start, "catalog_year": "2026-2027", "catalog_platform": "courseleaf", "catalog_format": "html_per_program"}
