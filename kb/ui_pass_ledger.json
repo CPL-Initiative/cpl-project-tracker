@@ -182,8 +182,8 @@
    "name": "My College",
    "page": "index.html#college-briefing",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-12",
+   "outcome": "First pass on a college's page (new seeded targets my-college-page and -dark; the cobi sweep stops at the scope question): public readers saw No contact listed in MAP beside a contacts table listing the coordinator (the public row has no primary contact; it now measures the coordinator or counselor); 29px sideways at 320px (grid floors clamped); undefined --link and --warn painted raw hex, 2.47:1 in dark; section titles are h3; controls are underlined words. Clean light and dark at 320, 390, 1440."
   },
   {
    "id": "cobi:college-identity",

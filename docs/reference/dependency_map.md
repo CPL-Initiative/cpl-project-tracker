@@ -914,6 +914,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs.google.com` | tabs: `nc-learning-partners` |
 | `drive.google.com` | scripts: `scripts/library_file.py` |
 | `esm.sh` | pages: `kb-portal/index.html` |
+| `example.edu` | modules: `a11y.config.js` |
 | `example.org` | modules: `a11y.config.js` |
 | `fhweb.foothill.edu` | tabs: `map-queue`, `map-users` |
 | `flc.losrios.edu` | tabs: `map-queue`, `map-users` |
@@ -1067,4 +1068,4 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 
 Coverage: 97 Supabase tables · 36 RPCs · 7 edge functions · 622 file
-datasets · 166 external services · 426 consumers · 47 workflows · 39 tabs.
+datasets · 167 external services · 426 consumers · 47 workflows · 39 tabs.
