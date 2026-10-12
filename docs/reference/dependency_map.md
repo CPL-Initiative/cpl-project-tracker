@@ -627,6 +627,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/eacr_cip_title_rules.json` | scripts: `excel_to_dashboard.py` | — |
 | `kb/reference/esl_level_sets.json` | scripts: `kb/_esl_ladder_relevel_dryrun.py` | — |
 | `kb/reference/handout_logos.json` | scripts: `kb/_build_regional_cpl_opportunity.py` | — |
+| `kb/reference/industry_credential_skills.json` | scripts: `kb/_build_it_ai_credential_catalog.py` | — |
 | `kb/reference/industry_credential_watch.json` | scripts: `kb/_build_it_ai_credential_catalog.py`, `kb/_diff_credential_watch.py` | — |
 | `kb/reference/map_college_roster_rules.json` | scripts: `excel_to_dashboard.py`, `kb/_audit_control_number_claims.py` | — |
 | `kb/reference/mis_district_college_codes.json` | scripts: `kb/_build_college_identity_crosswalk.py` | — |
@@ -1066,5 +1067,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 97 Supabase tables · 36 RPCs · 7 edge functions · 622 file
+Coverage: 97 Supabase tables · 36 RPCs · 7 edge functions · 623 file
 datasets · 166 external services · 426 consumers · 47 workflows · 39 tabs.
