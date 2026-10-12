@@ -943,7 +943,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2372,
+     "line": 2375,
      "tabs": [
       "college-briefing"
      ]
@@ -1329,7 +1329,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1605,
+     "line": 1608,
      "tabs": [
       "program-requirements"
      ]
@@ -1580,7 +1580,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2364,
+     "line": 2367,
      "tabs": [
       "college-briefing"
      ]
@@ -2116,7 +2116,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2390,
+     "line": 2393,
      "tabs": [
       "college-briefing"
      ]
@@ -3263,7 +3263,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2392,
+     "line": 2395,
      "tabs": [
       "college-briefing"
      ]
@@ -5030,7 +5030,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3981,
+     "line": 3984,
      "tabs": [
       "college-briefing"
      ]
@@ -5060,7 +5060,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3826,
+     "line": 3829,
      "tabs": [
       "college-briefing"
      ]
@@ -5138,7 +5138,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2748,
+     "line": 2751,
      "tabs": [
       "college-briefing"
      ]
@@ -6242,7 +6242,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3529,
+     "line": 3532,
      "tabs": [
       "college-briefing"
      ]
@@ -14658,7 +14658,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3867,
+     "line": 3870,
      "tabs": [
       "college-briefing"
      ]
@@ -16405,7 +16405,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3838,
+     "line": 3841,
      "tabs": [
       "college-briefing"
      ]
@@ -18846,7 +18846,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 4311,
+     "line": 4314,
      "tabs": [
       "college-briefing"
      ]
@@ -19886,7 +19886,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4467,
+     "line": 4470,
      "tabs": [
       "college-briefing"
      ]
@@ -21221,7 +21221,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4488,
+     "line": 4491,
      "tabs": [
       "college-briefing"
      ]

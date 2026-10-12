@@ -45,7 +45,7 @@ something the person never saw.
 `requirements_md5()` hashes the parts a person reads (the program's figures and every block) and leaves out
 the parts a machine checks. `reviewed_readings.json` stores that hash for each verdict, and the loader counts
 the verdict only while the record still carries it. The guard costs one comparison and makes the failure
-loud: a rerun that moves a block drops the record to "not yet checked" until someone reads it again.
+loud: a rerun that moves a block drops the record to "not yet confirmed" until someone reads it again.
 
 ### And let the rerun add, not replace
 

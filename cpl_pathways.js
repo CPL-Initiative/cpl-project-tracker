@@ -1506,8 +1506,8 @@
   //    from the table") ──────────────────────────────────────────────────────
   // The selector lists program_requirement_records' programs, and a record is read
   // from the table when a reader opens it. The table's read policy decides who sees
-  // what: the public reads checked records, a reviewer signed in with the magic link
-  // reads every record, and an unchecked one says so. No file grows with the harvest.
+  // what: everyone reads every record since Sam's Open Asks Sheet 67 (2026-10-12, "Every
+  // record, from the table"), and an unchecked one says so. No file grows with the harvest.
   // A failed list read falls back to the pilot file and says so; a failed record read
   // shows the file's copy where it has one, and otherwise says the read failed.
   var ROEP_REST = SUPABASE_URL + "/rest/v1";
@@ -2005,7 +2005,7 @@
     card.setAttribute("aria-label", rec.title + ", " + roepAward(rec));
     var top = el("div", "top");
     top.appendChild(el("div", null, [el("h2", null, rec.title || ""), el("div", "award", roepAward(rec) + " · " + rec.college)]));
-    top.appendChild(el("span", "cplpw-rstatus" + (checks.checked ? "" : " open"), checks.checked ? "Checked record" : "Not yet checked"));
+    top.appendChild(el("span", "cplpw-rstatus" + (checks.checked ? "" : " open"), checks.checked ? "Checked record" : "Not yet confirmed"));
     card.appendChild(top);
     var proc = el("p", "procline");
     proc.appendChild(document.createTextNode("Read from the "));
@@ -2837,7 +2837,7 @@
       rg.label = "Catalog records, Beta draft";
       items.forEach(function (it, i) {
         if (it.kind === "roep" && mine(it)) rg.appendChild(option(i, it.prog.college + " — " + it.prog.title + " · " + roepAward(it.prog)
-          + (roepChecked(it.prog) ? "" : " (not yet checked)")));
+          + (roepChecked(it.prog) ? "" : " (not yet confirmed)")));
       });
       if (rg.children.length) sel.appendChild(rg);
       var shown = items.filter(mine);
@@ -2963,8 +2963,8 @@
     var n = box && !box.querySelector(".cplpw-rnote") ? roepFallbackNote() : null;
     if (n) box.insertBefore(n, box.lastChild);
   }
-  // A reviewer signing in reads every record; signing out drops back to the checked
-  // ones. Records already read are dropped too, so none outlives the session that read it.
+  // A change of session re-reads the list under the new session's policy. Records already
+  // read are dropped too, so none outlives the session that read it.
   var roepSessionWired = false;
   function wireRoepSession() {
     if (roepSessionWired) return;

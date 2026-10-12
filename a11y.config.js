@@ -165,7 +165,7 @@ async function seedRoepRecord(page, theme, lay) {
 // sweep aborts the table reads, so the seed hands the tab the list it would have read
 // (the pilot's programs, an unchecked record with a long title, and one record no read
 // has fetched) through the tab's own landing path, then opens one of the two:
-//   "unchecked"  the record read from the table, marked Not yet checked;
+//   "unchecked"  the record read from the table, marked Not yet confirmed;
 //   "failed"     a record whose read fails (the sweep aborts it), which says so.
 async function seedRoepTable(page, theme, which) {
   await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "cpl-pathways") location.hash = "cpl-pathways"; });
