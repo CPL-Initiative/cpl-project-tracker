@@ -197,6 +197,11 @@ jobs:
       # a thousand rows. Pure-stdlib python; same non-required check.
       - name: Program requirements, one college (sitemap, matching, shards)
         run: python3 tests/program_requirements_college_test.py
+      # The course outline census (S372, Sam 2026-10-12): which system each
+      # college's course outlines open in, public or sign-in, and whether they
+      # print SLOs. Reads pages only and writes no table. Pure-stdlib python.
+      - name: Course outline census (systems, sign-in, curriculum links)
+        run: python3 tests/course_outline_census_test.py
       # The display apply (S356): the college workflow's display job writes a
       # display build's receipt from a runner, exactly as reviewed, and files
       # each row's prior build as the rollback. Pure-stdlib python.

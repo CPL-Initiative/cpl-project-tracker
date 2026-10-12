@@ -1,0 +1,625 @@
+{
+ "run": "38303973743",
+ "at": "2026-10-12T20:27:53Z",
+ "loads": 24,
+ "verdicts": {
+  "list_only": 4,
+  "outline": 1,
+  "outline_with_slos": 4
+ },
+ "rows": [
+  {
+   "college": "Riverside City College",
+   "system": "curriqunet",
+   "why": "loaded; RCCD's host serves three loaded colleges",
+   "start": {
+    "url": "https://rccd.curriqunet.com/",
+    "final_url": "https://rccd.curriqunet.com/",
+    "status": 200,
+    "access": "public",
+    "title": "Dashboard",
+    "outline_fields": 1,
+    "slo": null
+   },
+   "links": [
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/1?reportId=97",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/2?reportId=97",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/4?reportId=97",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/3794?reportId=97",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/5132?reportId=97",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/6392?reportId=97",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/8246?reportId=97",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/8248?reportId=97",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/5778?reportId=97",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/5133?reportId=97",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/3795?reportId=97",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/14774?reportId=97",
+     "text": "Course Outline",
+     "strong": true
+    }
+   ],
+   "pages": [
+    {
+     "url": "https://rccd.curriqunet.com/Report/Course/GetReport/1?reportId=97",
+     "final_url": "https://rccd.curriqunet.com/Report/Course/GetReport/1?reportId=97",
+     "status": 200,
+     "access": "public",
+     "title": "Course Outline: Riverside Community College District",
+     "outline_fields": 5,
+     "slo": "ent, marketing and computer operations. Student Learning Outcomes: Upon successful completion of the course, students should be able to demonstrate the following skills: Analyze, explain, solve problems and apply the principles offinancial accounting to varied economic units within a businessentity. Identify relevant economic data used in manual and computerized",
+     "via": "Course Outline"
+    },
+    {
+     "url": "https://rccd.curriqunet.com/Report/Course/GetReport/2?reportId=97",
+     "final_url": "https://rccd.curriqunet.com/Report/Course/GetReport/2?reportId=97",
+     "status": 200,
+     "access": "public",
+     "title": "Course Outline: Riverside Community College District",
+     "outline_fields": 5,
+     "slo": "n any field of business administration. Student Learning Outcomes: Upon successful completion of the course, students should be able to demonstrate the following skills: 1. Analyze, explain, solve problems and apply managerial accounting principles to manufacturing and service enterprises within a business entity. 2. Interpret relevant accounting data in manual",
+     "via": "Course Outline"
+    },
+    {
+     "url": "https://rccd.curriqunet.com/Report/Course/GetReport/4?reportId=97",
+     "final_url": "https://rccd.curriqunet.com/Report/Course/GetReport/4?reportId=97",
+     "status": 200,
+     "access": "public",
+     "title": "Course Outline: Riverside Community College District",
+     "outline_fields": 5,
+     "slo": "n any field of business administration. Student Learning Outcomes: Upon successful completion of the course, students should be able to demonstrate the following skills: Identify relevant accounting data used internally by managers in directing the affairs of business and non-business organizations. Apply managerial skills to a wide variety of organizational pro",
+     "via": "Course Outline"
+    }
+   ],
+   "verdict": "outline_with_slos"
+  },
+  {
+   "college": "San Diego Mesa College",
+   "system": "curriqunet",
+   "why": "loaded; SDCCD's host serves three loaded colleges",
+   "start": {
+    "url": "https://sdccd.curriqunet.com/",
+    "final_url": "https://sdccd.curriqunet.com/",
+    "status": 200,
+    "access": "public",
+    "title": "Dashboard",
+    "outline_fields": 3,
+    "slo": null
+   },
+   "links": [
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18607?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "strong": true
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/20839?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "strong": true
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/17450?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "strong": true
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18587?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "strong": true
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/17564?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "strong": true
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18086?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "strong": true
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18088?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "strong": true
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18089?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "strong": true
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18090?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "strong": true
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18091?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "strong": true
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18092?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "strong": true
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18093?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "strong": true
+    }
+   ],
+   "pages": [
+    {
+     "url": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18607?entityType=Course&reportId=4",
+     "final_url": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18607?entityType=Course&reportId=4",
+     "status": 200,
+     "access": "public",
+     "title": "All Fields",
+     "outline_fields": 8,
+     "slo": "ode CB09: SAM Code E - Non-Occupational Student Learning Outcomes Learning Outcomes Group Title Mesa Outcome Text Critical Thinking: Think critically in reading, writing, and/or speaking about topics relating to the historical and contemporary experiences of Pacific Islanders, both at home in Oceania (Polynesia, Melanesia, and Micronesia) and in the diaspora, the",
+     "via": "All Fields"
+    },
+    {
+     "url": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/20839?entityType=Course&reportId=4",
+     "final_url": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/20839?entityType=Course&reportId=4",
+     "status": 200,
+     "access": "public",
+     "title": "All Fields",
+     "outline_fields": 8,
+     "slo": "ode CB09: SAM Code E - Non-Occupational Student Learning Outcomes Learning Outcomes Student Learning Objectives Upon successful completion of the course the student will be able to: Objective Text Evaluate the impact of student and community activism on the creation of Ethnic Studies and Asian American studies. Objective Text Analyze and articulate common Ethnic",
+     "via": "All Fields"
+    },
+    {
+     "url": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/17450?entityType=Course&reportId=4",
+     "final_url": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/17450?entityType=Course&reportId=4",
+     "status": 200,
+     "access": "public",
+     "title": "All Fields",
+     "outline_fields": 8,
+     "slo": "ode CB09: SAM Code E - Non-Occupational Student Learning Outcomes Learning Outcomes Group Title Mesa Outcome Text Critical Thinking: Think critically in reading, writing, and/or speaking about topics relating to how various aspects of identity such as race, class, gender, sexuality, and immigration status shape Asian Americans and Pacific Islanders experiences an",
+     "via": "All Fields"
+    }
+   ],
+   "verdict": "outline_with_slos"
+  },
+  {
+   "college": "Chaffey College",
+   "system": "curriqunet",
+   "why": "loaded",
+   "start": {
+    "url": "https://chaffey.curriqunet.com/",
+    "final_url": "https://chaffey.curriqunet.com/",
+    "status": 200,
+    "access": "public",
+    "title": "Dashboard",
+    "outline_fields": 1,
+    "slo": null
+   },
+   "links": [
+    {
+     "href": "https://chaffey.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1?entityType=Course&reportId=225",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://chaffey.curriqunet.com/DynamicReports/AllFieldsReportByEntity/2?entityType=Course&reportId=225",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://chaffey.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1?entityType=Course&reportId=1225",
+     "text": "Course Outline - PDF",
+     "strong": true
+    },
+    {
+     "href": "https://chaffey.curriqunet.com/DynamicReports/AllFieldsReportByEntity/2?entityType=Course&reportId=1225",
+     "text": "Course Outline - PDF",
+     "strong": true
+    },
+    {
+     "href": "https://chaffey.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11?entityType=Course&reportId=225",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://chaffey.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11?entityType=Course&reportId=1225",
+     "text": "Course Outline - PDF",
+     "strong": true
+    },
+    {
+     "href": "https://chaffey.curriqunet.com/DynamicReports/AllFieldsReportByEntity/2368?entityType=Course&reportId=225",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://chaffey.curriqunet.com/DynamicReports/AllFieldsReportByEntity/3448?entityType=Course&reportId=225",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://chaffey.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4350?entityType=Course&reportId=225",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://chaffey.curriqunet.com/DynamicReports/AllFieldsReportByEntity/5640?entityType=Course&reportId=225",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://chaffey.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7320?entityType=Course&reportId=225",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://chaffey.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8249?entityType=Course&reportId=225",
+     "text": "Course Outline",
+     "strong": true
+    }
+   ],
+   "pages": [
+    {
+     "url": "https://chaffey.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1?entityType=Course&reportId=225",
+     "final_url": "https://chaffey.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1?entityType=Course&reportId=225",
+     "status": 200,
+     "access": "public",
+     "title": "Course Outline",
+     "outline_fields": 7,
+     "slo": null,
+     "via": "Course Outline"
+    },
+    {
+     "url": "https://chaffey.curriqunet.com/DynamicReports/AllFieldsReportByEntity/2?entityType=Course&reportId=225",
+     "final_url": "https://chaffey.curriqunet.com/DynamicReports/AllFieldsReportByEntity/2?entityType=Course&reportId=225",
+     "status": 200,
+     "access": "public",
+     "title": "Course Outline",
+     "outline_fields": 7,
+     "slo": null,
+     "via": "Course Outline"
+    },
+    {
+     "url": "https://chaffey.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1?entityType=Course&reportId=1225",
+     "final_url": "https://chaffey.curriqunet.com/DynamicReports/AllFieldsReportByEntity/1?entityType=Course&reportId=1225",
+     "status": 200,
+     "access": "public",
+     "title": "",
+     "outline_fields": 0,
+     "slo": null,
+     "via": "Course Outline - PDF"
+    }
+   ],
+   "verdict": "outline"
+  },
+  {
+   "college": "Cuesta College",
+   "system": "curriqunet",
+   "why": "run 2 read a course list with Reports beside each course on its dashboard",
+   "start": {
+    "url": "https://cuesta.curriqunet.com/",
+    "final_url": "https://cuesta.curriqunet.com/",
+    "status": 200,
+    "access": "public",
+    "title": "Dashboard",
+    "outline_fields": 1,
+    "slo": null
+   },
+   "links": [
+    {
+     "href": "https://cuesta.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7810?entityType=Course&reportId=441",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://cuesta.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7810?entityType=Course&reportId=462",
+     "text": "DE Report",
+     "strong": true
+    },
+    {
+     "href": "https://cuesta.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7811?entityType=Course&reportId=441",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://cuesta.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7811?entityType=Course&reportId=462",
+     "text": "DE Report",
+     "strong": true
+    },
+    {
+     "href": "https://cuesta.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7819?entityType=Course&reportId=441",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://cuesta.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7819?entityType=Course&reportId=462",
+     "text": "DE Report",
+     "strong": true
+    },
+    {
+     "href": "https://cuesta.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7813?entityType=Course&reportId=441",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://cuesta.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7813?entityType=Course&reportId=462",
+     "text": "DE Report",
+     "strong": true
+    },
+    {
+     "href": "https://cuesta.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7814?entityType=Course&reportId=441",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://cuesta.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7814?entityType=Course&reportId=462",
+     "text": "DE Report",
+     "strong": true
+    },
+    {
+     "href": "https://cuesta.curriqunet.com/DynamicReports/AllFieldsReportByEntity/9224?entityType=Course&reportId=441",
+     "text": "Course Outline",
+     "strong": true
+    },
+    {
+     "href": "https://cuesta.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7815?entityType=Course&reportId=441",
+     "text": "Course Outline",
+     "strong": true
+    }
+   ],
+   "pages": [
+    {
+     "url": "https://cuesta.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7810?entityType=Course&reportId=441",
+     "final_url": "https://cuesta.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7810?entityType=Course&reportId=441",
+     "status": 200,
+     "access": "public",
+     "title": "Course Outline",
+     "outline_fields": 7,
+     "slo": "odality Limit: 21 DE Modality Limit: 21 Student Learning Outcomes Analyze, diagnose and apply safe and efficient methods for repairing auto body collision damage Demonstrate knowledge of characteristics of automotive body repair and apply methods of metalworking procedures as well as those used with automotive plastics and other automotive materials. Identify dif",
+     "via": "Course Outline"
+    },
+    {
+     "url": "https://cuesta.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7810?entityType=Course&reportId=462",
+     "final_url": "https://cuesta.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7810?entityType=Course&reportId=462",
+     "status": 200,
+     "access": "public",
+     "title": "DE Report",
+     "outline_fields": 2,
+     "slo": null,
+     "via": "DE Report"
+    },
+    {
+     "url": "https://cuesta.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7811?entityType=Course&reportId=441",
+     "final_url": "https://cuesta.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7811?entityType=Course&reportId=441",
+     "status": 200,
+     "access": "public",
+     "title": "Course Outline",
+     "outline_fields": 8,
+     "slo": "odality Limit: 21 DE Modality Limit: 21 Student Learning Outcomes Select and justify proper use of personal protection equipment (PPE), storage and handling of materials associated within the Auto Collision Industry. Analyze, diagnose, and exhibit safe and efficient methods for repairing collision damage, vehicle renovation, and preparation processes towards refi",
+     "via": "Course Outline"
+    }
+   ],
+   "verdict": "outline_with_slos"
+  },
+  {
+   "college": "Solano Community College",
+   "system": "elumen",
+   "why": "eLumen's public view",
+   "start": {
+    "url": "https://solano.elumenapp.com/public/",
+    "final_url": "https://solano.elumenapp.com/public/",
+    "status": 200,
+    "access": "public",
+    "title": "Solano Curriculum Public View",
+    "outline_fields": 0,
+    "slo": null
+   },
+   "links": [],
+   "pages": [],
+   "verdict": "list_only"
+  },
+  {
+   "college": "West Valley College",
+   "system": "elumen",
+   "why": "eLumen's public view",
+   "start": {
+    "url": "https://westvalley.elumenapp.com/public/",
+    "final_url": "https://westvalley.elumenapp.com/public/",
+    "status": 200,
+    "access": "public",
+    "title": "West Valley College Curriculum Public View",
+    "outline_fields": 0,
+    "slo": null
+   },
+   "links": [],
+   "pages": [],
+   "verdict": "list_only"
+  },
+  {
+   "college": "Los Medanos College",
+   "system": "elumen",
+   "why": "run 2: a catalog page naming outcomes",
+   "start": {
+    "url": "https://lmc.elumenapp.com/catalog/26-27/art",
+    "final_url": "https://lmc.elumenapp.com/catalog/26-27/art",
+    "status": 200,
+    "access": "public",
+    "title": "Art",
+    "outline_fields": 0,
+    "slo": null
+   },
+   "links": [
+    {
+     "href": "https://lmc.elumenapp.com/catalog/26-27/course/art003",
+     "text": "ART 003 - Art Studio Practice",
+     "strong": true
+    },
+    {
+     "href": "https://lmc.elumenapp.com/catalog/26-27/course/art004",
+     "text": "ART 004 - Art and Design History and Concepts",
+     "strong": true
+    },
+    {
+     "href": "https://lmc.elumenapp.com/catalog/26-27/course/art005",
+     "text": "ART 005 - The Visual Arts",
+     "strong": true
+    },
+    {
+     "href": "https://lmc.elumenapp.com/catalog/26-27/course/art006",
+     "text": "ART 006 - Survey of Western Art from Prehistory through the Middle Ages",
+     "strong": true
+    },
+    {
+     "href": "https://lmc.elumenapp.com/catalog/26-27/course/art008",
+     "text": "ART 008 - Survey of Western Art from Renaissance to Contemporary",
+     "strong": true
+    },
+    {
+     "href": "https://lmc.elumenapp.com/catalog/26-27/course/art009",
+     "text": "ART 009 - Late Modern and Contemporary Art History (1920 CE-Present)",
+     "strong": true
+    },
+    {
+     "href": "https://lmc.elumenapp.com/catalog/26-27/course/art010",
+     "text": "ART 010 - Introduction to Two-Dimensional Concepts",
+     "strong": true
+    },
+    {
+     "href": "https://lmc.elumenapp.com/catalog/26-27/course/art011",
+     "text": "ART 011 - Three-Dimensional Design Concepts",
+     "strong": true
+    },
+    {
+     "href": "https://lmc.elumenapp.com/catalog/26-27/course/art012",
+     "text": "ART 012 - Design Drawing",
+     "strong": true
+    },
+    {
+     "href": "https://lmc.elumenapp.com/catalog/26-27/course/art014",
+     "text": "ART 014 - Typography: Aesthetics, Application, and History",
+     "strong": true
+    },
+    {
+     "href": "https://lmc.elumenapp.com/catalog/26-27/course/art015",
+     "text": "ART 015 - Graphic Design",
+     "strong": true
+    },
+    {
+     "href": "https://lmc.elumenapp.com/catalog/26-27/course/art016",
+     "text": "ART 016 - Asian Art History",
+     "strong": true
+    }
+   ],
+   "pages": [
+    {
+     "url": "https://lmc.elumenapp.com/catalog/26-27/course/art003",
+     "final_url": "https://lmc.elumenapp.com/catalog/26-27/course/art003",
+     "status": 200,
+     "access": "public",
+     "title": "ART 003 - Art Studio Practice",
+     "outline_fields": 2,
+     "slo": "n: Not approved for General Education Student Learning Outcomes: 1. Demonstrate appropriate and safe practices in beginning level processes of two and three dimensional media such as clay, plaster, and mixed media. (PSLO 1) 2. Present, explain and justify their strategies for solving beginning two-and-three-dimensional media problems, and constructively critiq",
+     "via": "ART 003 - Art Studio Practice"
+    },
+    {
+     "url": "https://lmc.elumenapp.com/catalog/26-27/course/art005",
+     "final_url": "https://lmc.elumenapp.com/catalog/26-27/course/art005",
+     "status": 200,
+     "access": "public",
+     "title": "ART 005 - The Visual Arts",
+     "outline_fields": 3,
+     "slo": "ioral Sciences Cal-GETC: Area 3A- Arts Student Learning Outcomes: CSLO 1: At the completion of the course a student will be able to communicate and collaborate effectively as a speaker and visual communicator about Visual Art in general and individual artists in particular, describing works by those artists using the elements and principles of design. GESLO 1 C",
+     "via": "ART005 - The Visual Arts"
+    },
+    {
+     "url": "https://lmc.elumenapp.com/catalog/26-27/course/art004",
+     "final_url": "https://lmc.elumenapp.com/catalog/26-27/course/art004",
+     "status": 200,
+     "access": "public",
+     "title": "ART 004 - Art and Design History and Concepts",
+     "outline_fields": 2,
+     "slo": "ents-2025: Area 3: Arts and Humanities Student Learning Outcomes: 1.CSLO (GESLO) : Human Communication At the completion of the course, a student will be able to communicate and collaborate effectively as a speaker, visual communicator, and/or performer about Art- Design Thinking 2. CSLO (GESLO) : Ethical Insight At the completion of the course, a student will",
+     "via": "ART 004 - Art and Design History and Concepts"
+    }
+   ],
+   "verdict": "outline_with_slos"
+  },
+  {
+   "college": "San Jose City College",
+   "system": "curricunet",
+   "why": "the college's outline page links CurricUNET",
+   "start": {
+    "url": "https://sjcc.edu/students/academic-programs/curriculum-course-and-program-outlines.aspx",
+    "final_url": "https://sjcc.edu/students/academic-programs/curriculum-course-and-program-outlines.aspx",
+    "status": 200,
+    "access": "public",
+    "title": "San Jos\u00e9 City College | Curriculum-Course and Program Outlines",
+    "outline_fields": 1,
+    "slo": null
+   },
+   "links": [],
+   "pages": [],
+   "verdict": "list_only"
+  },
+  {
+   "college": "Hartnell College",
+   "system": "coursedog",
+   "why": "Coursedog's public catalog",
+   "start": {
+    "url": "https://hartnell.catalog.prod.coursedog.com/",
+    "final_url": "https://hartnell.catalog.prod.coursedog.com/",
+    "status": 200,
+    "access": "public",
+    "title": "Hartnell College Catalog",
+    "outline_fields": 0,
+    "slo": null
+   },
+   "links": [],
+   "pages": [],
+   "verdict": "list_only"
+  }
+ ]
+}
