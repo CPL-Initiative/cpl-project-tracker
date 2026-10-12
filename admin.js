@@ -237,13 +237,16 @@
     Array.prototype.forEach.call(btns, function (b, i) {
       var group = b.closest ? b.closest(".cpl-nav-group") : null;
       var head = group ? group.querySelector(".cpl-nav-group-head") : null;
+      // The heading's words sit in their own span beside the caret (nav_groups.js
+      // paints &#9660;, which the old strip of ▾▸ missed: "Workplan▼", S368).
+      var headText = head ? (head.querySelector("span:not(.cpl-nav-caret)") || head) : null;
       var label = (b.textContent || "").trim();
       var link = !b.getAttribute("data-tab");
       out.push({
         tab: b.getAttribute("data-tab") || b.getAttribute("data-nav-link"),
         label: label,
         order: i,
-        group: head ? (head.textContent || "").replace(/[▾▸]/g, "").trim() : "",
+        group: headText ? (headText.textContent || "").replace(/[▾▸▼]/g, "").trim() : "",
         hiddenNow: b.getAttribute("data-org-hidden") === "1",
         // An anchor to a page of our own that is NOT a pane here. It has no
         // Supabase surface of its own to measure, and saying "not checked"
@@ -748,27 +751,27 @@
       ".adm { max-width: 1150px; margin: 0 auto; color: var(--text-body); }",
       ".adm h2 { color: var(--navy-primary); margin: 16px 0 4px; }",
       ".adm h3 { color: var(--navy-primary); margin: 22px 0 8px; font-size: 1.02rem; }",
-      ".adm-intro { color: var(--text-muted); max-width: 900px; margin: 0 0 12px; font-size: .92rem; }",
+      ".adm-intro { color: var(--text-muted); max-width: var(--cpl-measure,none); margin: 0 0 12px; font-size: .92rem; }",
       // ── the live-session banner control (DR-26) ──
       ".adm-live { border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px;",
-      "margin: 22px 0; background: var(--surface-subtle, #F7F5F1); max-width: 720px; }",
+      "margin: 22px 0; background: var(--surface-subtle); max-width: 720px; }",
       ".adm-live h3 { margin-top: 0; }",
       ".adm-live-note { color: var(--text-muted); font-size: .88rem; margin: 4px 0 10px; }",
       ".adm-live-state { margin: 0 0 12px; font-size: .92rem; }",
       ".adm-live-lbl { display: block; font-size: .82rem; font-weight: 700;",
-      "color: var(--text-strong, #1C1C1A); margin: 10px 0 3px; }",
+      "color: var(--text-strong); margin: 10px 0 3px; }",
       ".adm-live-url { width: 100%; max-width: 520px; padding: 6px 9px; font: inherit;",
-      "font-size: .9rem; border: 1px solid var(--border-strong, rgba(28,28,26,.30)); border-radius: 5px; }",
+      "font-size: .9rem; border: 1px solid var(--border-strong); border-radius: 5px; }",
       ".adm-live-hours { padding: 6px 9px; font: inherit; font-size: .9rem;",
-      "border: 1px solid var(--border-strong, rgba(28,28,26,.30)); border-radius: 5px; }",
+      "border: 1px solid var(--border-strong); border-radius: 5px; }",
       ".adm-live-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }",
-      ".adm-live-auto { display: flex; align-items: center; gap: 8px; margin: 14px 0 4px; font-size: .92rem; cursor: pointer; }",
+      ".adm-live-auto { display: flex; align-items: center; gap: 8px; margin: 14px 0 4px; font-size: .92rem; cursor: pointer; min-height: 24px; }",
       ".adm-live-auto input { width: 16px; height: 16px; cursor: pointer; }",
       ".adm-live-autonote { margin: 0 0 2px 24px; }",
       ".adm-live-msg { margin: 10px 0 0; font-size: .88rem; color: var(--text-body); min-height: 1.2em; }",
       "@media (max-width: 560px) { .adm-live-url { max-width: 100%; } }",
-      ".adm-chip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--on-mustard); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
-      ".adm-warn { font-size:.85rem; color: var(--on-mustard); background: var(--mustard-fill, #f2dca0); border-radius:8px; padding:10px 13px; max-width:900px; margin:0 0 14px; }",
+      ".adm-chip { display:inline-block; margin-left:8px; background: var(--surface-muted); color: var(--text-muted); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
+      ".adm-warn { font-size:.85rem; color: var(--text-strong); background: var(--surface-subtle); border-left:3px solid var(--mustard-fill); border-radius:0 8px 8px 0; padding:10px 13px; max-width:var(--cpl-measure,none); margin:0 0 14px; }",
       ".adm-empty { border:1px dashed var(--border-strong); border-radius:8px; background: var(--surface-subtle); color: var(--text-muted); padding:26px; text-align:center; }",
       // The shared reviewer sign-in mounts here. Left-aligned and narrowed so
       // the form reads as a form inside the centred explanatory block.
@@ -778,14 +781,15 @@
       ".adm-stat .box .n { font-size:1.4rem; font-weight:700; color: var(--navy-primary); }",
       ".adm-stat .box .l { font-size:.7rem; color: var(--text-muted); text-transform:uppercase; letter-spacing:.05em; }",
       ".adm-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 10px; }",
-      ".adm-input { padding:6px 10px; border:1px solid var(--border-strong); border-radius:6px; font-size:.82rem; background: var(--surface-opaque); color: var(--text-body); min-width:220px; }",
-      ".adm-check { font-size:.82rem; color: var(--text-body); display:flex; align-items:center; gap:5px; }",
+      ".adm-input { padding:6px 10px; border:1px solid var(--border-strong); border-radius:6px; font-size:.82rem; background: var(--surface-opaque); color: var(--text-body); min-width:min(220px, 100%); }",
+      ".adm-check { font-size:.82rem; color: var(--text-body); display:flex; align-items:center; gap:5px; min-height:24px; }",
       ".adm-count { font-size:.8rem; color: var(--text-muted); margin-left:auto; }",
       // ── Blast Radius (item 19) — the impact-map pane ──
       ".adm-blast-bar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 10px; }",
-      ".adm-blast-kinds { display:flex; flex-wrap:wrap; gap:5px; }",
-      ".adm-blast-kind { border:1px solid var(--border-strong); background: var(--surface-opaque); color: var(--text-body); border-radius:10px; padding:3px 10px; font-size:.76rem; font-weight:600; cursor:pointer; }",
-      ".adm-blast-kind[aria-pressed=\"true\"] { background: var(--navy-primary); border-color: var(--navy-primary); color: var(--on-accent); }",
+      ".adm-blast-kinds { display:flex; flex-wrap:wrap; gap:4px 18px; }",
+      ".adm-blast-kind { border:0; background:none; color: var(--cobalt); padding:2px 0; min-height:24px; min-width:24px; font:inherit; font-size:.8rem; font-weight:500; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
+      ".adm-blast-kind:hover { text-decoration-thickness:2px; }",
+      ".adm-blast-kind[aria-pressed=\"true\"] { color: var(--text-strong); font-weight:700; text-decoration-thickness:2px; }",
       ".adm-blast-panes { display:grid; grid-template-columns:minmax(230px,300px) 1fr; gap:12px; align-items:start; }",
       "@media (max-width:700px) { .adm-blast-panes { grid-template-columns:1fr; } }",
       ".adm-blast-list { background: var(--surface-opaque); border:1px solid var(--border); border-radius:10px; max-height:60vh; overflow-y:auto; padding:4px; }",
@@ -798,25 +802,27 @@
       ".adm-blast-card { background: var(--surface-opaque); border:1px solid var(--border); border-radius:10px; padding:14px 16px 16px; }",
       ".adm-blast-chips { display:flex; flex-wrap:wrap; gap:5px; margin:0 0 6px; }",
       ".adm-blast-chip { border-radius:10px; font-size:.68rem; font-weight:600; padding:2px 8px; background: var(--surface-muted); color: var(--text-body); border:1px solid var(--border); }",
-      ".adm-blast-chip.public { color: var(--green-progress, #2C601A); }",
+      ".adm-blast-chip.public { color: var(--text-strong); font-weight:700; }",
       ".adm-blast-name { color: var(--navy-primary); font-size:1.15rem; margin:0 0 4px; overflow-wrap:anywhere; }",
       ".adm-blast-sum { margin:0 0 10px; font-size:.9rem; }",
       // Red is an act-on state and stays muted: a border and a bold lead-in,
       // never a filled box (the glyph/color doctrine).
-      ".adm-blast-strip { border:1px solid var(--border); border-left:3px solid var(--red-alert, #920000); background: var(--surface-subtle); border-radius:8px; padding:7px 11px; margin:0 0 8px; font-size:.85rem; }",
-      ".adm-blast-strip b { color: var(--red-alert, #920000); }",
+      ".adm-blast-strip { border:1px solid var(--border); border-left:3px solid var(--red-alert); background: var(--surface-subtle); border-radius:8px; padding:7px 11px; margin:0 0 8px; font-size:.85rem; }",
+      ".adm-blast-strip b { color: var(--red-alert); }",
       ".adm-blast-strip.caution { border-left-color: var(--border-strong); }",
       ".adm-blast-strip.caution b { color: var(--text-strong); }",
       ".adm-blast-sec { font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color: var(--text-muted); margin:12px 0 4px; }",
       ".adm-blast-cons { display:flex; flex-wrap:wrap; gap:5px; margin:0; padding:0; list-style:none; }",
       ".adm-blast-cons li { border:1px solid var(--border); background: var(--surface-subtle); border-radius:10px; padding:3px 9px; font-size:.8rem; color: var(--text-body); overflow-wrap:anywhere; }",
-      ".adm-blast-cons li .w { font-weight:700; color: var(--red-alert, #920000); }",
+      ".adm-blast-cons li .w { font-weight:700; color: var(--red-alert); }",
       ".adm-blast-how { color: var(--text-muted); font-size:.74rem; }",
       ".adm-blast-empty { color: var(--text-muted); font-size:.85rem; }",
-      ".adm-blast-foot { color: var(--text-muted); font-size:.8rem; margin:10px 0 0; max-width:900px; }",
+      ".adm-blast-foot { color: var(--text-muted); font-size:.8rem; margin:10px 0 0; max-width:var(--cpl-measure,none); }",
       // table-layout:fixed + an explicit colgroup — auto layout has silently
       // parked columns past the wrapper's right edge here before (the CCR).
       ".adm-tablewrap { overflow-x:auto; border:1px solid var(--border); border-radius:8px; }",
+      ".adm-tablewrap:focus-visible { outline:2px solid var(--seal-blue); outline-offset:2px; }",
+      ".adm .sub { font-size:.78rem; color: var(--text-muted); }",
       ".adm-table { width:100%; table-layout:fixed; border-collapse:collapse; font-size:.82rem; }",
       ".adm-table th { text-align:left; background: var(--surface-subtle); color: var(--text-muted); font-size:.68rem; text-transform:uppercase; letter-spacing:.05em; padding:7px 9px; border-bottom:1px solid var(--border); }",
       ".adm-table td { padding:6px 9px; border-bottom:1px solid var(--border); vertical-align:top; }",
@@ -826,17 +832,16 @@
       ".adm-trunc { display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }",
       // The security column is the point of the table; it must not read as one
       // more attribute among the display ones.
-      ".adm-table .gatecol { border-left:3px solid var(--navy-secondary, #1c3d5a); }",
+      ".adm-table .gatecol { border-left:3px solid var(--navy-secondary); }",
       ".adm-g { font-size:.7rem; border-radius:10px; padding:1px 8px; white-space:nowrap; cursor:help; background: var(--surface-muted); color: var(--text-muted); }",
-      ".adm-g-open, .adm-g-public { color: var(--brick, #8c2f22); background: rgba(140,47,34,.10); font-weight:700; }",
-      ".adm-g-team, .adm-g-gr, .adm-g-fin { color: var(--on-mustard); background: var(--mustard-fill, #f2dca0); }",
-      ".adm-g-reviewer, .adm-g-server { color: var(--hunter, #2c601a); background: rgba(44,96,26,.10); font-weight:700; }",
-      // Neither a pass nor a fail: two states that are not findings about a tab.
+      ".adm-g-open, .adm-g-public { color: var(--brick); font-weight:700; }",
+      ".adm-g-team, .adm-g-gr, .adm-g-fin, .adm-g-reviewer, .adm-g-server { color: var(--text-body); }",
+            // Neither a pass nor a fail: two states that are not findings about a tab.
       ".adm-g-nodata, .adm-g-unread, .adm-g-unknown, .adm-g-link { color: var(--text-muted); background: var(--surface-muted); }",
       ".adm-vis { white-space:nowrap; }",
       ".adm-visrow { flex-direction:column; align-items:stretch; gap:4px; }",
       ".adm-vistitle { font-size:.82rem; color: var(--text-strong); margin-bottom:2px; }",
-      ".adm-visopt { display:block; padding:5px 8px; border:1px solid var(--border-soft, #d8d8d8); border-radius:6px; cursor:pointer; }",
+      ".adm-visopt { display:block; padding:5px 8px; border:1px solid var(--border-soft); border-radius:6px; cursor:pointer; }",
       ".adm-visopt.on { border-color: var(--navy-primary); background: var(--surface-muted); }",
       ".adm-visname { font-size:.82rem; font-weight:600; color: var(--text-strong); }",
       ".adm-visnote { display:block; font-size:.74rem; color: var(--text-muted); margin-left:1.35rem; }",
@@ -846,54 +851,54 @@
       ".adm-soon b { color: var(--navy-primary); }",
       // ── Arrange (drag and drop) ──
       ".adm-arrange { display:flex; flex-wrap:wrap; gap:12px; align-items:flex-start; }",
-      ".adm-col { flex:1 1 320px; min-width:280px; border:1px solid var(--border); border-radius:8px; background: var(--surface-opaque); }",
-      ".adm-col-head { display:flex; align-items:center; gap:8px; padding:7px 10px; border-bottom:1px solid var(--border); background: var(--surface-subtle); border-radius:8px 8px 0 0; }",
-      ".adm-col-head .t { font-size:.8rem; font-weight:700; color: var(--navy-primary); flex:1; }",
+      ".adm-col { flex:1 1 420px; min-width:min(280px, 100%); border:1px solid var(--border); border-radius:8px; background: var(--surface-opaque); }",
+      ".adm-col-head { display:flex; flex-wrap:wrap; align-items:center; gap:4px 18px; padding:7px 10px; border-bottom:1px solid var(--border); background: var(--surface-subtle); border-radius:8px 8px 0 0; }",
+      ".adm-col-head .t { font-size:.8rem; font-weight:700; color: var(--navy-primary); flex:1 1 auto; }",
+      ".adm-col-head .sub { font-size:.72rem; }",
       ".adm-col-body { padding:6px; min-height:44px; }",
       // The drop target has to be obvious while a drag is in flight, or the
       // whole interaction is guesswork.
-      ".adm-col.over { border-color: var(--seal-blue); box-shadow: 0 0 0 2px var(--brand-soft, rgba(29,78,216,.12)); }",
-      ".adm-item { display:flex; align-items:center; gap:8px; padding:5px 8px; margin:0 0 4px; border:1px solid var(--border); border-radius:6px; background: var(--surface-subtle); font-size:.8rem; cursor:grab; }",
+      ".adm-col.over { border-color: var(--seal-blue); box-shadow: 0 0 0 2px var(--brand-soft); }",
+      ".adm-item { display:flex; flex-wrap:wrap; align-items:center; gap:2px 18px; padding:4px 8px; margin:0 0 4px; border:1px solid var(--border); border-radius:6px; background: var(--surface-subtle); font-size:.8rem; cursor:grab; }",
       ".adm-item:last-child { margin-bottom:0; }",
       ".adm-item.dragging { opacity:.45; }",
       ".adm-item .grip { color: var(--text-muted); font-size:.8rem; cursor:grab; user-select:none; }",
-      ".adm-item .nm { flex:1; color: var(--text-strong); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }",
+      ".adm-item .adm-acts { display:inline-flex; gap:18px; margin-left:auto; }",
+      ".adm-item .nm { flex:1 1 10em; min-width:0; color: var(--text-strong); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }",
       /* Text chips, not glyphs. Sam, 2026-08-14 + again 2026-08-15: "I dislike
        * the standard cheesy glyphs … prefer either simple text chips or muted
        * monocolor glyphs." A word also survives being read aloud, which a
        * pictogram does not — every one of these controls used to be an emoji
        * whose meaning a new curator had to guess or hover for. */
-      ".adm-col-head .mini, .adm-item .mini { border:1px solid transparent; background:none; cursor:pointer; color: var(--text-muted); font-size:.7rem; padding:1px 6px; border-radius:10px; white-space:nowrap; font-family:inherit; }",
-      ".adm-col-head .mini:hover, .adm-item .mini:hover { background: var(--surface-muted); color: var(--text-strong); border-color: var(--border); }",
+      "/* Controls are underlined words (Sam, 2026-10-09): no border, no fill, 24px tall. */",
+      ".adm-col-head .mini, .adm-item .mini { border:0; background:none; cursor:pointer; color: var(--cobalt); font:inherit; font-size:.76rem; font-weight:600; padding:2px 0; min-height:24px; white-space:nowrap; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
+      ".adm-col-head .mini:hover, .adm-item .mini:hover { text-decoration-thickness:2px; }",
+      ".adm .mini:focus-visible, .adm .adm-btn:focus-visible, .adm-blast-kind:focus-visible { outline:2px solid var(--seal-blue); outline-offset:2px; }",
       // Not a button: the action exists but cannot be taken right now, so it must
       // not look pressable. Same word, no hover, no pointer.
-      ".adm-item .mini.adm-locked, .adm-col-head .mini.adm-locked { cursor:help; opacity:.6; }",
-      ".adm-item .mini.adm-locked:hover, .adm-col-head .mini.adm-locked:hover { background:none; color: var(--text-muted); border-color:transparent; }",
-      ".adm-item .adm-vis { border-color: var(--border); color: var(--text-body); }",
-      ".adm-item.hid { opacity:.55; }",
+      ".adm-item .mini.adm-locked, .adm-col-head .mini.adm-locked { cursor:help; color: var(--text-muted); text-decoration:none; display:inline-flex; align-items:center; }",
+                  ".adm-item.hid { opacity:.55; }",
       ".adm-item.hid .nm { text-decoration: line-through; }",
-      ".adm-item.prot { border-left:3px solid var(--mustard, #d9a800); }",
+      ".adm-item.prot { border-left:3px solid var(--mustard); }",
       ".adm-drop { height:6px; margin:-2px 0 2px; border-radius:3px; }",
       ".adm-drop.on { background: var(--seal-blue); }",
       ".adm-editrow { display:flex; flex-wrap:wrap; gap:6px; align-items:center; padding:6px 8px; margin:0 0 4px; border:1px solid var(--seal-blue); border-radius:6px; background: var(--surface-opaque); }",
       ".adm-editrow input[type=text] { flex:1 1 150px; padding:4px 8px; border:1px solid var(--border-strong); border-radius:5px; font-size:.8rem; background: var(--surface-opaque); color: var(--text-body); }",
       ".adm-sitepick { display:flex; flex-wrap:wrap; gap:4px; }",
-      ".adm-sitepick label { font-size:.72rem; display:inline-flex; align-items:center; gap:3px; border:1px solid var(--border); border-radius:10px; padding:1px 7px; cursor:pointer; }",
+      ".adm-sitepick label { font-size:.72rem; display:inline-flex; align-items:center; gap:3px; border:1px solid var(--border); border-radius:10px; padding:1px 7px; min-height:24px; box-sizing:border-box; cursor:pointer; }",
       ".adm-sitepick label.on { background: var(--surface-muted); border-color: var(--seal-blue); color: var(--text-strong); }",
-      ".adm-btnrow { display:flex; gap:6px; flex-wrap:wrap; margin:10px 0 0; align-items:center; }",
-      ".adm-btn { background: var(--surface-subtle); border:1px solid var(--border-strong); border-radius:5px; padding:4px 11px; cursor:pointer; color: var(--text-body); font-size:.78rem; }",
-      ".adm-btn:hover { background: var(--surface-muted); }",
-      ".adm-btn[disabled] { opacity:.5; cursor:default; }",
-      ".adm-btn-primary { background: var(--seal-blue); color:#fff; border-color: var(--seal-blue); font-weight:600; }",
-      ".adm-btn-primary:hover { background: var(--navy-secondary, #1c3d5a); }",
-      ".adm-dirty { font-size:.78rem; color: var(--brick, #8c2f22); font-weight:600; }",
+      ".adm-btnrow { display:flex; gap:6px 20px; flex-wrap:wrap; margin:10px 0 0; align-items:center; }",
+      ".adm-btn { border:0; background:none; padding:2px 0; min-height:24px; cursor:pointer; color: var(--cobalt); font:inherit; font-size:.82rem; font-weight:600; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
+      ".adm-btn:hover { text-decoration-thickness:2px; }",
+      ".adm-btn[disabled] { color: var(--text-muted); text-decoration:none; cursor:default; }",
+                  ".adm-dirty { font-size:.78rem; color: var(--brick); font-weight:600; }",
       ".adm-g-aud { color: var(--navy-primary); background: var(--surface-muted); font-weight:600; }",
       ".adm-audnote { flex:1 1 100%; font-size:.75rem; color: var(--text-muted); margin-top:2px; }",
-      ".adm-audwarn { flex:1 1 100%; font-size:.75rem; color: var(--on-mustard); background: var(--mustard-fill, #f2dca0); border-radius:6px; padding:5px 9px; margin-top:2px; }",
+      ".adm-audwarn { flex:1 1 100%; font-size:.75rem; color: var(--text-strong); background: var(--surface-subtle); border-left:3px solid var(--mustard-fill); border-radius:0 6px 6px 0; padding:5px 9px; margin-top:2px; }",
       ".adm-select { padding:3px 7px; border:1px solid var(--border-strong); border-radius:5px; font-size:.76rem; background: var(--surface-opaque); color: var(--text-body); }",
-      ".adm-saved { font-size:.78rem; color: var(--hunter, #2c601a); font-weight:600; }",
-      ".adm-addcat { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:10px 0 4px; }",
-      ".adm-addcat input { padding:5px 9px; border:1px solid var(--border-strong); border-radius:6px; font-size:.82rem; background: var(--surface-opaque); color: var(--text-body); min-width:190px; }",
+      ".adm-saved { font-size:.78rem; color: var(--text-strong); font-weight:600; }",
+      ".adm-addcat { display:flex; align-items:center; gap:8px 18px; flex-wrap:wrap; margin:10px 0 4px; }",
+      ".adm-addcat input { padding:5px 9px; border:1px solid var(--border-strong); border-radius:6px; font-size:.82rem; background: var(--surface-opaque); color: var(--text-body); min-width:min(190px, 100%); }",
     ].join("\n");
     document.head.appendChild(el);
   }
@@ -912,13 +917,13 @@
       + '<span class="grip" title="Drag to move it up or down, or into another heading.">⠿</span>'
       + '<span class="nm" title="' + esc(t.tab) + '">' + esc(name) + "</span>";
     // A launcher looks like every other row until you try to reason about it, so
-    // it says what it is. Its Rename box changes the MENU wording only — the
-    // page it opens is not ours to retitle from here.
-    if (nav && nav.link) {
-      h += '<span class="adm-g" title="Opens its own page in a new window rather than a page inside COBI'
-        + (nav.href ? " (" + esc(nav.href) + ")" : "") + ". Renaming it changes what the menu says, not "
-        + 'that page.">link</span>';
-    }
+    // it says what it is: its gate chip below reads "A link". Its Rename box
+    // changes the MENU wording only — the page it opens is not ours to retitle
+    // from here. (It carried a second "link" chip until S368: "link A link".)
+    var linkNote = (nav && nav.link)
+      ? " Opens its own page in a new window rather than a page inside COBI"
+        + (nav.href ? " (" + nav.href + ")" : "") + ". Renaming it changes what the menu says, not that page."
+      : "";
     if (t.orgs && t.orgs.length) {
       h += '<span class="adm-g" title="Only these sites show it: ' + esc(t.orgs.join(", ")) + '">'
         + t.orgs.length + " site" + (t.orgs.length === 1 ? "" : "s") + "</span>";
@@ -934,9 +939,10 @@
      * are not the same. */
     var rg = rowGate(t.tab);
     h += '<span class="adm-g adm-g-' + rg.id + '" title="Who can read the data behind this page: '
-      + esc(rg.hint) + ' Changing who sees the menu item does not change this.">'
+      + esc(rg.hint) + " Changing who sees the menu item does not change this." + esc(linkNote) + '">'
       + esc(rg.short || rg.label) + "</span>";
-    h += '<button class="mini" data-edit="tab:' + esc(t.tab)
+    // The two controls wrap as one group, under the name when the row is narrow.
+    h += '<span class="adm-acts"><button class="mini" data-edit="tab:' + esc(t.tab)
       + '" title="Change its name, or pick which sites show it.">Rename</button>';
 
     // ONE control for who sees it — see the RUNGS note. It states the current
@@ -952,7 +958,7 @@
         + esc(rung.label) + ". " + esc(rung.note) + ' Click to change.">Seen by: '
         + esc(rung.short) + "</button>";
     }
-    return h + "</div>";
+    return h + "</span></div>";
   }
 
   /* The visibility ladder, opened from the row rather than buried in ✏️ — the
@@ -1503,7 +1509,7 @@
       h += '<div class="adm-empty"><b>Admin needs a personal sign-in.</b><br>The shared '
         + "team phrase does not open Admin — someone who could re-scope what other phrase holders see would be "
         + "a wider power than the phrase is meant to carry. Sign in below, or from "
-        + "<b>ℹ About</b> in the header.<div class=\"adm-signin\"></div></div></div>";
+        + "<b>About</b> in the header.<div class=\"adm-signin\"></div></div></div>";
       root.innerHTML = h;
       // Mount the SHARED control (reviewer_signin.js) rather than re-implementing
       // a second sign-in box that could drift from it.
@@ -1600,22 +1606,23 @@
       return true;
     });
     h += '<div class="adm-toolbar">'
-      + '<input class="adm-input" data-q placeholder="Search by name or heading" value="' + esc(state.q) + '">'
+      + '<input class="adm-input" data-q placeholder="Search by name or heading" aria-label="Search the menu items" value="' + esc(state.q) + '">'
       + '<label class="adm-check" title="Also list the pages that do not use any stored information — plain '
       + 'pages and built-in reports. They are left out by default because there is nothing to protect.">'
       + '<input type="checkbox" data-showall' + (state.showAll ? " checked" : "") + "> show pages with no stored information</label>"
       + '<span class="adm-count">' + rows.length + " of " + items.length + "</span>"
       + "</div>";
 
-    h += '<div class="adm-tablewrap"><table class="adm-table">'
+    h += '<div class="adm-tablewrap" role="region" tabindex="0" aria-label="Every menu item, and who can read it">'
+      + '<table class="adm-table">'
       + "<colgroup><col style=\"width:24%\"><col style=\"width:17%\"><col style=\"width:22%\">"
       + "<col style=\"width:16%\"><col style=\"width:21%\"></colgroup>"
       + "<thead><tr>"
-      + '<th title="What it is called in the side menu right now.">Menu item</th>'
-      + '<th title="The heading it sits under. Blank means it sits at the top of the menu.">Heading</th>'
-      + '<th title="Which sites show it. This decides what people see, nothing more.">Shown on</th>'
-      + '<th title="How many tables of stored information this page uses.">Uses</th>'
-      + '<th class="gatecol" title="Who can read that information, checked live in the database just now. '
+      + '<th scope="col" title="What it is called in the side menu right now.">Menu item</th>'
+      + '<th scope="col" title="The heading it sits under, or Top level above the headings.">Heading</th>'
+      + '<th scope="col" title="Which sites show it. This decides what people see, nothing more.">Shown on</th>'
+      + '<th scope="col" title="How many tables of stored information this page uses.">Uses</th>'
+      + '<th scope="col" class="gatecol" title="Who can read that information, checked live in the database just now. '
       + 'This is the only column here that actually stops anyone.">Who can read it</th>'
       + "</tr></thead><tbody>";
 
@@ -1663,7 +1670,7 @@
         + '<td><span class="nm adm-trunc" title="' + esc(it.label) + '">' + esc(it.label) + "</span>"
         + '<span class="sub adm-trunc">' + esc(it.tab) + "</span></td>"
         + '<td><span class="adm-trunc sub" title="' + esc(it.group || "Top level") + '">'
-        + esc(it.group || "— top level —") + "</span></td>"
+        + esc(it.group || "Top level") + "</span></td>"
         + '<td><span class="adm-trunc" title="' + esc(siteTitle) + '">' + esc(siteTxt) + "</span></td>"
         + '<td><span class="sub">' + (it.link ? "—" : g.measured
             ? (g.tables.length
@@ -1685,9 +1692,11 @@
 
     // ── Section 3: what the gates mean ──
     h += "<h3>What each of these means</h3>";
-    h += '<div class="adm-tablewrap"><table class="adm-table">'
+    h += '<div class="adm-tablewrap" role="region" tabindex="0" aria-label="What each answer means">'
+      + '<table class="adm-table">'
       + "<colgroup><col style=\"width:20%\"><col style=\"width:12%\"><col style=\"width:68%\"></colgroup>"
-      + "<thead><tr><th>Who can read it</th><th>Tables</th><th>What that means</th></tr></thead><tbody>";
+      + '<thead><tr><th scope="col">Who can read it</th><th scope="col">Tables</th>'
+      + '<th scope="col">What that means</th></tr></thead><tbody>';
     var seen = {};
     GATES.forEach(function (gt) {
       if (gt.id === "unknown" || seen[gt.label + gt.id]) return;
