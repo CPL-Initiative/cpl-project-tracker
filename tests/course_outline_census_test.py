@@ -108,8 +108,37 @@ check("6 a menu item or a proposal type naming SLOs is no SLO; a heading with ou
       and cor.slo_snippet("ABOD 252 WORK EXPERIENCE Student Learning Outcomes only Active Reports ABOD 570") is None
       and cor.slo_snippet("Student Learning Outcomes Upon completion of the course the student will be able to "
                           "diagnose and repair collision damage to unibody vehicles.") is not None)
-outline_body = ("Course Outline of Record. Units: 3. Lecture hours 54. Prerequisite: none. Course Content: ... "
-                "Methods of Evaluation: exams. Student Learning Outcomes: Upon completion students will be able to "
+check("6 an SLO heading starts its own line: a catalog menu item and a sentence about evaluation are not one (probe 38302465625)",
+      cor.slo_snippet("Laws\nProgram Requirements, Courses, and Student Learning Outcomes\nAcademic Policies and Standards "
+                      "Graduation & Transfer Requirements Appendices Navigation Close Dialog Search") is None
+      and cor.slo_snippet("Students will be evaluated for progress in and/or mastery of student learning outcomes using "
+                          "methods of evaluation which may include the following activities: term projects.") is None
+      and cor.slo_snippet("DE Modality Limit: 21\nStudent Learning Outcomes\nAnalyze, diagnose and apply safe and "
+                          "efficient methods for repairing auto body collision damage.") is not None)
+dash_pw = dict(dash, title="Dashboard", body="Log in to continue. Course Outline Reports",
+               html='<input type="password" name="p">')
+check("6 a curriQunet dashboard with a sign-in form beside public outline reports reads public; one without them, sign_in",
+      cor.access_of(dash_pw) == "public"
+      and cor.access_of(dict(dash_pw, links=[{"href": "https://cuesta.curriqunet.com/Account/Login", "text": "Log in"}])) == "sign_in")
+
+
+class _Page:
+    def evaluate(self, js):
+        return "x" * 7000 + "\nStudent Learning Outcomes\nApply the principles of financial accounting to varied business settings."
+
+
+class _Reader:
+    page = _Page()
+
+    def load(self, url):
+        return {"url": url, "status": 200, "content_type": "text/html", "body": "x" * 6000}
+
+
+full = cor.load_full(_Reader(), "https://rccd.curriqunet.com/Report/Course/GetReport/1?reportId=97")
+check("6 the probe reads a page's whole text, past the Reader's 6,000 characters, where an outline's outcomes sit",
+      len(full["body"]) > 6000 and cor.slo_snippet(full["body"]) is not None)
+outline_body = ("Course Outline of Record\nUnits: 3\nLecture hours 54\nPrerequisite: none\nCourse Content: ...\n"
+                "Methods of Evaluation: exams\nStudent Learning Outcomes:\nUpon completion students will be able to "
                 "analyze the structure of a short story and write a thesis-driven essay.")
 pg = cor.probe_page({"url": "u", "final_url": "u", "status": 200, "title": "COR", "body": outline_body, "html": ""})
 check("6 an outline's fields and its SLOs are read from the page", pg["outline_fields"] >= 3 and pg["slo"])

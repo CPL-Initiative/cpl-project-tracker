@@ -115,7 +115,10 @@ def access_of(page: dict) -> str:
         return "unreached"
     if status in (401, 403):
         return "refused"
-    if is_sign_in(page):
+    if is_sign_in(page) and not any(STRONG_LINK.search(a.get("href") or "") for a in page.get("links") or []):
+        # curriQunet's dashboard carries a sign-in form beside a public list of course
+        # outline reports (probe run 38302465625: RCCD, SDCCD, Chaffey, Cuesta), so a
+        # page that links one course's outline or report is public.
         return "sign_in"
     if status >= 400:
         return "unreached"
@@ -272,8 +275,16 @@ OUTLINE_LINK = re.compile(
     r"/public/(course|search)|/courses?/|course_outline|courses?_?id=", re.I)
 STRONG_LINK = re.compile(r"/DynamicReports/|entityType=Course|course_outline|courses?_?id=|/public/course|"
                          r"/courses?/[^/?#]+", re.I)
+# A heading starts its own line in the page's text; a nav item or a sentence that
+# names SLOs in passing ("Courses, and Student Learning Outcomes", "mastery of
+# student learning outcomes using methods of evaluation") does not (probe run
+# 38302465625: Los Medanos's menu, Chaffey's evaluation methods).
 SLO_HEADING = re.compile(
-    r"(student|course) learning outcomes?|upon (successful )?completion of (this|the) course", re.I)
+    r"^[ \t]*((student|course) learning outcomes?|upon (successful )?completion of (this|the) course)",
+    re.I | re.M)
+# The Reader keeps 6,000 characters of a page; an outline's outcomes often sit past
+# that, so the probe reads the whole text of a page it opens.
+FULL_BODY_JS = """() => (document.body ? document.body.innerText : '').slice(0, 80000)"""
 OUTLINE_FIELDS = [re.compile(x, re.I) for x in (
     r"\bunits?\b", r"lecture hours|hours lecture|contact hours", r"prerequisite|advisory|corequisite",
     r"course content|content outline|course outline", r"methods? of (instruction|evaluation)",
@@ -312,6 +323,17 @@ def slo_snippet(body: str) -> str | None:
     return None
 
 
+def load_full(reader, url: str) -> dict:
+    """reader.load, then the page's whole text while the browser is still on it."""
+    page = reader.load(url)
+    if page.get("status") and "application/pdf" not in (page.get("content_type") or ""):
+        try:
+            page["body"] = reader.page.evaluate(FULL_BODY_JS) or page.get("body") or ""
+        except Exception:
+            pass
+    return page
+
+
 def outline_fields(body: str) -> int:
     return sum(1 for pat in OUTLINE_FIELDS if pat.search(body or ""))
 
@@ -341,7 +363,7 @@ def probe_verdict(start: dict, pages: list[dict]) -> str:
 
 def probe_one(reader, college: str, system: str, start_url: str, why: str) -> dict:
     start_host = urllib.parse.urlparse(start_url).netloc.lower()
-    first = reader.load(start_url)
+    first = load_full(reader, start_url)
     start = probe_page(first)
     links = outline_links(first, start_host)
     pages, done = [], {start_url}
@@ -349,7 +371,7 @@ def probe_one(reader, college: str, system: str, start_url: str, why: str) -> di
         if cand["href"] in done:
             continue
         done.add(cand["href"])
-        page = reader.load(cand["href"])
+        page = load_full(reader, cand["href"])
         got = probe_page(page)
         got["via"] = cand["text"]
         pages.append(got)
@@ -358,7 +380,7 @@ def probe_one(reader, college: str, system: str, start_url: str, why: str) -> di
             for nxt in outline_links(page, start_host)[:1]:
                 if nxt["href"] not in done:
                     done.add(nxt["href"])
-                    deeper = probe_page(reader.load(nxt["href"]))
+                    deeper = probe_page(load_full(reader, nxt["href"]))
                     deeper["via"] = nxt["text"]
                     pages.append(deeper)
     return {"college": college, "system": system, "why": why, "start": start,
