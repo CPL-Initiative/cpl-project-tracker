@@ -364,7 +364,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/*.md` | scripts: `kb/_build_docs_index.py` | — |
 | `docs/*_lessons.md` | scripts: `kb/_build_docs_index.py` | — |
 | `docs/INDEX.md` | scripts: `kb/_build_docs_index.py`, `kb/_docs_audit.py`, `kb/doctrine.py` | — |
-| `docs/catalog/index.json` | tabs: `governance` · scripts: `kb/_build_docs_index.py` | — |
+| `docs/catalog/index.json` | tabs: `governance` | — |
 | `docs/common_cr_reference_scope.md` | scripts: `kb/_build_cr_reference.py` | — |
 | `docs/reference/library_filer.md` | scripts: `scripts/library_file.py` | — |
 | `docs/reference/mid_lifecycle.md` | scripts: `kb/_doctrine_scenarios.py` | — |
@@ -412,6 +412,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `governance.js` | pages: `CPL_Dashboard.html` | — |
 | `gr_priorities.js` | pages: `CPL_Dashboard.html` | — |
 | `index.html` | scripts: `excel_to_dashboard.py`, `kb/_glyph_sweep.py`, `nudges/build_nudges.py`, `prototype/check_contrast.py`, `raci/_seed_team_members.py`, `scripts/ui_pass.py` | committed by: `daily-dashboard.yml` |
+| `index.json` | pages: `tools/first_light_gallery/gallery.html` | — |
 | `jev_ccr_title_rung_calibration_<date>_s282.json` | scripts: `kb/_jev_next_steps.py` | — |
 | `kb-portal/app.js` | pages: `kb-portal/index.html` | — |
 | `kb-portal/composer_util.js` | pages: `kb-portal/index.html` | — |
@@ -750,6 +751,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `review_<date>.json` | scripts: `kb/_program_requirements_load.py` | — |
 | `reviewer_signin.js` | pages: `CPL_Dashboard.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
 | `scripts/catalog_framing.py` | workflows: `catalog-framing.yml` | — |
+| `scripts/fetch_gallery_thumbs.py` | workflows: `first-light-gallery-thumbs.yml` | — |
 | `scripts/fetch_sierra_art.py` | workflows: `sierra-art-fetch.yml` | — |
 | `scripts/publish_skyview_desc_shards.sh` | workflows: `daily-dashboard.yml`, `skyview-desc-shards.yml` | — |
 | `scripts/stamp_asset_versions.py` | workflows: `pages.yml` | — |
@@ -855,9 +857,14 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/video_context_test.py` | workflows: `js-tests.yml` | — |
 | `tests/vision_2030_first_light_test.py` | workflows: `js-tests.yml` | — |
 | `tests/zband_retire_apply_test.py` | workflows: `js-tests.yml` | — |
+| `thumbs-more.json` | pages: `tools/first_light_gallery/gallery.html` | — |
 | `tmc/tmc_or_groups.json` | scripts: `tmc/_parse_tmc_pdfs.py` | — |
 | `tmc_builder.js` | pages: `CPL_Dashboard.html` | — |
-| `tools/first_light_candidates.json` | none found | committed by: `first-light-art.yml` |
+| `tools/first_light_candidates.json` | scripts: `scripts/fetch_gallery_thumbs.py` | committed by: `first-light-art.yml` |
+| `tools/first_light_gallery/california.json` | scripts: `scripts/fetch_gallery_thumbs.py` | — |
+| `tools/first_light_gallery/index.json` | none found | committed by: `first-light-gallery-thumbs.yml` |
+| `tools/first_light_gallery/thumbs` | none found | committed by: `first-light-gallery-thumbs.yml` |
+| `tools/first_light_selection.json` | scripts: `scripts/fetch_gallery_thumbs.py` | — |
 | `tools/first_light_verify.json` | none found | committed by: `first-light-art.yml` |
 | `tools/source_cpl_stories.mjs` | workflows: `cpl-stories.yml` | — |
 | `tools/source_first_light_art.mjs` | workflows: `first-light-art.yml` | — |
@@ -902,9 +909,9 @@ collapse to one `<date>` family so writer and reader edges join.
 | `cdnjs.cloudflare.com` | scripts: `prototype/globe/build_globe.py` |
 | `claude.ai` | tabs: `admin` · scripts: `kb/_build_claude_md_audit_decision_sheet.py`, `kb/_build_esl_followup_decision_sheet.py`, `kb/_build_esl_merging_decision_sheet.py`, `kb/_esl_monthly_pass.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_esl_sheet_apply_build.py`, `scripts/announce_session_hint.py` · workflows: `cpl-chat-health.yml`, `map-users-sync.yml` |
 | `code.claude.com` | scripts: `scripts/install_prompt_guards.py` |
-| `commons.wikimedia.org` | pages: `CPL_Dashboard.html` · scripts: `scripts/fetch_sierra_art.py`, `tools/source_first_light_art.mjs` |
+| `commons.wikimedia.org` | pages: `CPL_Dashboard.html` · scripts: `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py`, `tools/source_first_light_art.mjs` |
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
-| `cpl-initiative.github.io` | tabs: `college-briefing`, `implementation-funding`, `map-queue`, `map-users` · scripts: `chatbox/health_check.sh`, `kb/_build_partner_crosswalk.py`, `kb/_program_source_census.py`, `prototype/funding_video/build.py`, `prototype/ironworker_video/build.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/noncredit_video/build.py`, `scripts/catalog_framing.py`, `scripts/fetch_sierra_art.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
+| `cpl-initiative.github.io` | tabs: `college-briefing`, `implementation-funding`, `map-queue`, `map-users` · scripts: `chatbox/health_check.sh`, `kb/_build_partner_crosswalk.py`, `kb/_program_source_census.py`, `prototype/funding_video/build.py`, `prototype/ironworker_video/build.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/noncredit_video/build.py`, `scripts/catalog_framing.py`, `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `cpl-proxy.slee-548.workers.dev` | tabs: `annual-report`, `credential-reference`, `raci` · modules: `kb-portal/config.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` · workflows: `daily-dashboard.yml` |
 | `cpldashboardcccco.azurewebsites.net` | tabs: `college-briefing`, `cpl-pathways` · scripts: `chatbox/scrape_landing_pages.py`, `fetch_veteran_jst.py`, `kb/_build_futuro_hth_crosswalk.py` · `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `crc.losrios.edu` | tabs: `map-queue`, `map-users` |
@@ -1068,5 +1075,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 97 Supabase tables · 36 RPCs · 7 edge functions · 623 file
-datasets · 167 external services · 426 consumers · 47 workflows · 39 tabs.
+Coverage: 97 Supabase tables · 36 RPCs · 7 edge functions · 630 file
+datasets · 167 external services · 429 consumers · 48 workflows · 39 tabs.

@@ -1,0 +1,42 @@
+name: First Light gallery thumbnails
+# Thumbnails for the painting gallery (Sam, 2026-10-12: "build the painting gallery").
+# An artifact cannot load an image from Wikimedia Commons, so the gallery ships its own
+# copies; the session container cannot reach Commons, the runner can. Runs when a
+# claude/** push changes tools/first_light_gallery/.thumbs-run, and commits the WebP
+# thumbnails and index.json back to that branch. The commit touches only
+# tools/first_light_gallery/thumbs/ and index.json, so it never re-triggers.
+on:
+  push:
+    branches: ['claude/**']
+    paths:
+      - 'tools/first_light_gallery/.thumbs-run'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: first-light-gallery-thumbs-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  thumbs:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Install Pillow
+        run: pip install --quiet pillow
+      - name: Fetch thumbnails
+        run: python3 scripts/fetch_gallery_thumbs.py
+      - name: Commit the thumbnails to this branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tools/first_light_gallery/thumbs tools/first_light_gallery/index.json
+          if git diff --cached --quiet; then echo "Nothing new."; exit 0; fi
+          git commit -m "First Light gallery: thumbnails from Wikimedia Commons (run ${{ github.run_id }})"
+          git push origin HEAD:${{ github.ref_name }}
