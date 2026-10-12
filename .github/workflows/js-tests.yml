@@ -830,6 +830,11 @@ jobs:
       # failure mode #1541 was itself written about. Pure-stdlib python.
       - name: KPI history has no date gaps (Rule 3)
         run: python3 tests/kpi_history_no_gaps_test.py
+      # The registry's course outline fields (S373; Sam, Open Asks Sheet 70): the
+      # receipt that fills program_source_registry's cor_* columns from a course
+      # outline census, guarded and reversible. Pure-stdlib python.
+      - name: Course outline registry fill (receipt, guard, rollback)
+        run: python3 tests/course_outline_registry_fill_test.py
 
   test:
     # The one check the merge doctrine polls (CLAUDE.md branch policy). It
