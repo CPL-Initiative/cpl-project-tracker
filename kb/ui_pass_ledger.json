@@ -166,8 +166,8 @@
    "name": "Admin",
    "page": "index.html#admin",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-12",
+   "outcome": "S368: seeded the reviewer view (admin-reviewer, -dark). 112 targets under 24px, a 4.31:1 Save button, 79px sideways scroll at 320 and an unreachable scroller fixed; item names no longer squeezed to one letter (the Admin row's own name vanished at every width); controls as underlined words; mustard warning and phrase chips quieted; the Heading column's caret, the doubled link chip and the stale About glyph removed. Light and dark clean at 320/390/1440."
   },
   {
    "id": "cobi:map-queue",

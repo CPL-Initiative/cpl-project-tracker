@@ -597,7 +597,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1382,
+     "line": 1388,
      "tabs": [
       "admin"
      ]
@@ -4307,6 +4307,13 @@
   "file:cobi_admin_surface.js": {
    "consumers": [
     {
+     "id": "module:a11y.config.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "global",
+     "line": 804
+    },
+    {
      "id": "module:admin.js",
      "kind": "module",
      "direction": "read",
@@ -5016,7 +5023,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 838
+     "line": 892
     },
     {
      "id": "module:college_briefing.js",
@@ -10605,7 +10612,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1181,
+     "line": 1187,
      "tabs": [
       "admin"
      ]
@@ -18781,7 +18788,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 299,
+     "line": 302,
      "tabs": [
       "admin"
      ]
@@ -19630,7 +19637,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1361,
+     "line": 1367,
      "tabs": [
       "admin"
      ]
@@ -19655,7 +19662,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 676,
+     "line": 679,
      "tabs": [
       "admin"
      ]

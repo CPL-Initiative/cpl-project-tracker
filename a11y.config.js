@@ -784,6 +784,60 @@ async function seedTeamPhrases(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// Admin as a reviewer sees it (S368 UI pass): the tab is gated, so the signed-out cobi sweep
+// measures the gate. The seed holds a reviewer session and stubs the two reads that need one,
+// cobi_rls_gates() and cobi_live_session. The gate fixture gives each table the tab's surface
+// file names one of the seven gate shapes in turn, so every badge paints. kb/dependency_map.json
+// is a local file and loads for real. `open` names the arrange row left open: "tab" for
+// rename and sites, "vis" for who sees it.
+async function seedAdmin(page, theme, open) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "admin") location.hash = "admin"; });
+  await page.waitForFunction(() => !!window.CPL_ADMIN_TAB, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    try {
+      sessionStorage.setItem("cpl_sb", JSON.stringify({ access_token: "aaaaaaaaaa.bbbbbbbbbbbbbbbbbbbbbbbb.cccccccccccccccccccc", email: "seed@example.org" }));
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const tabs = (window.COBI_ADMIN_SURFACE && window.COBI_ADMIN_SURFACE.tabs) || {};
+    const names = [];
+    Object.keys(tabs).forEach((k) => (tabs[k].reads || []).concat(tabs[k].writes || []).forEach((t) => {
+      if (names.indexOf(t) === -1) names.push(t);
+    }));
+    const SHAPES = [
+      { rls_enabled: true, select_gate: "is_allowed_reviewer()" },
+      { rls_enabled: true, select_gate: "(is_allowed_reviewer() OR team_pass_ok())" },
+      { rls_enabled: true, select_gate: "true" },
+      { rls_enabled: true, select_gate: "(is_allowed_reviewer() OR fin_pass_ok())" },
+      { rls_enabled: true, select_gate: "(gr_pass_ok() OR is_allowed_reviewer())" },
+      { rls_enabled: true, select_gate: null },
+      { rls_enabled: false, select_gate: null },
+    ];
+    const GATES = names.map((t, i) => Object.assign({ tbl: t, kind: "table", policy_count: 2 }, SHAPES[i % SHAPES.length]));
+    const LIVE = [{ active: true, session_url: "https://example.org/live", expires_at: new Date(Date.now() + 3600e3).toISOString(), auto_announce: true }];
+    const real = window.fetch;
+    window.fetch = function (url) {
+      const u = String(url);
+      const body = /\/rpc\/cobi_rls_gates/.test(u) ? GATES : /\/cobi_live_session\?/.test(u) ? LIVE : null;
+      if (body) return Promise.resolve(new Response(JSON.stringify(body), { status: 200, headers: { "Content-Type": "application/json" } }));
+      return real.apply(this, arguments);
+    };
+    window.CPL_ADMIN_TAB._state.loadState = "idle";
+    window.CPL_ADMIN_TAB.activate();
+  });
+  await page.waitForFunction(() => window.CPL_ADMIN_TAB._state.loadState === "ok"
+    && !!document.querySelector("#admin-root .adm-table"), null, { timeout: 20000 });
+  await page.evaluate((open) => {
+    const A = window.CPL_ADMIN_TAB, st = A._state;
+    const first = A._navItems().filter((it) => !it.link)[0];
+    if (first) st.editKey = open + ":" + first.tab;
+    A.render(document.getElementById("admin-root"));
+  }, open);
+  await page.waitForTimeout(400);
+}
+
 // MAP Team Queue as a phrase holder sees it (S368 UI pass): the queue is gated, so the
 // signed-out cobi sweep measures the lock. The seed holds the team phrase and stubs the five
 // table reads with tests/map_team_queue.test.js's fixture shapes, dated back from today so
@@ -1316,6 +1370,25 @@ module.exports = {
     routes: [{ hash: "team-phrases", name: "reviewer" }],
     widths: [320, 390, 1440],
     seed: (page) => seedTeamPhrases(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── Admin, signed in as a reviewer (S368) ─────────────────────────────
+     The arrange list, the inventory, the gate badges, Blast Radius and the
+     live-session control paint only for a reviewer; the cobi sweep is signed out. */
+  "admin-reviewer": {
+    file: "index.html",
+    title: "Admin signed in as a reviewer, one item open for rename and sites",
+    routes: [{ hash: "admin", name: "reviewer" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedAdmin(page, "light", "tab"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "admin-reviewer-dark": {
+    file: "index.html",
+    title: "Admin signed in as a reviewer, one item open for who sees it, dark",
+    routes: [{ hash: "admin", name: "reviewer" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedAdmin(page, "dark", "vis"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── MAP Team Queue, unlocked with the team phrase (S368) ──────────────
