@@ -4,6 +4,8 @@ date: 2026-10-11
 session: 365 (SkyRowan)
 tags: [handoff, ui-pass, first-light, accessibility, vision-2030, decision-sheet, program-requirements]
 status: current
+superseded: true
+superseded_by: session_368_handoff.md
 ---
 
 # You are Session 366

@@ -4,6 +4,8 @@ date: 2026-10-11
 session: 362 (SkyAlder)
 tags: [handoff, program-requirements, harvest, phase-2, long-beach-city, noncredit, equivalent-units, sheet-62]
 status: current
+superseded: true
+superseded_by: session_368_handoff.md
 ---
 
 # You are Session 363

@@ -4,6 +4,8 @@ date: 2026-10-11
 session: 360 (SkyLichen)
 tags: [handoff, program-requirements, harvest, phase-2, long-beach-city, coci-status, record-shape-4, emergency-checkpoint]
 status: current
+superseded: true
+superseded_by: session_368_handoff.md
 ---
 
 # You are Session 361

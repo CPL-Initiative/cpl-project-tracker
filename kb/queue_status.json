@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-11T23:31:02Z",
-  "session": 366,
-  "moniker": "SkyHazel",
+  "written_at": "2026-10-12T00:52:41Z",
+  "session": 367,
+  "moniker": "SkyAspen",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_367_handoff.md",
+  "handoff": "docs/session_368_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -10411,10 +10411,16 @@
     }
   ],
   "next_step": {
-    "title": "Read Long Beach City again with the two fixes",
-    "text": "Once #2012 merges, the college is read again: a page whose courses sit only in hidden text must now name the program in its heading, and a page with tabs is read from its tabs. Programs left with no page go to the college as a list, since the state shows them active and the catalog does not print them."
+    "title": "Load Long Beach City's re-read, then rebuild the display",
+    "text": "The re-read with both fixes is running (run 38185403454). When it files, list the programs left with no page, with the state's status, for the college; load the rest unchecked and rebuild the display."
   },
-  "calls": [],
+  "calls": [
+    {
+      "title": "CPL Pathways: show every program record, marked not yet confirmed?",
+      "text": "Sam answered this card twice: in chat, checked records only for the public, which is built; on the sheet, every record marked not yet confirmed. Open Asks Sheet 67 asks which stands and how to show every record.",
+      "if_no_reply": "CPL Pathways keeps showing the public the checked records only, with a reviewer seeing all."
+    }
+  ],
   "notes": {
     "addenda": "The reading agent starts after the Oct 11 census apply; until then a mismatch is read against the college's addendum by hand.",
     "procedures": "34 colleges have one since Oct 8: the 28 whose map host refuses or never reaches the reader each name the routes tried.",
@@ -10423,6 +10429,22 @@
     "reading": "Cerritos read on Oct 9 and Mt. San Antonio on Oct 10. RCCD's three colleges were read on Oct 10 and their Liberal Arts emphasis programs recovered on Oct 11. 18 records that read another program's page were removed on Oct 11. Long Beach City was read and loaded the same evening: 305 records, unchecked, for 1,515 in all. Its 74 left out mostly read another program's page; the fixes wait on #2012."
   },
   "changes": [
+    {
+      "at": "2026-10-12T00:50Z",
+      "text": "Vision 2030 shows one set of goal figures in the tab and the annual report: Goal 1 measures students against 250,000, and Goals 2 and 3 read TBA until Sam sets them (Open Asks Sheet 66, his call)."
+    },
+    {
+      "at": "2026-10-12T00:31Z",
+      "text": "CPL Pathways' tab passed its review: its controls are underlined words, and two new checks paint the records read from the table."
+    },
+    {
+      "at": "2026-10-12T00:11Z",
+      "text": "CPL Pathways now lists its catalog records from the records table and reads each one when opened: anyone sees the 29 checked records, and a reviewer sees all 1,515 with unchecked ones marked."
+    },
+    {
+      "at": "2026-10-11T23:44Z",
+      "text": "Long Beach City is being read again with both fixes."
+    },
     {
       "at": "2026-10-11T23:16Z",
       "text": "Sam chose CPL Pathways' records: it will read each record from the table when opened, so anyone sees checked records and a reviewer sees all, with unchecked ones marked."
@@ -10462,22 +10484,6 @@
     {
       "at": "2026-10-11T18:09Z",
       "text": "The Budget editor's cells read in dark while a value saves, and a failed save shows as a red outline beside the error."
-    },
-    {
-      "at": "2026-10-11T17:53Z",
-      "text": "The Implementation Funding tab passes AA for a signed-in curator too, and its controls are underlined words."
-    },
-    {
-      "at": "2026-10-11T17:22Z",
-      "text": "Sam kept hours divided by 16 for noncredit equivalent units, so the pages stay as built."
-    },
-    {
-      "at": "2026-10-11T16:40Z",
-      "text": "The Budget tab passes AA in light and dark at desktop and phone widths: its bar labels read on each fill, its tables scroll by keyboard, and its controls are underlined words."
-    },
-    {
-      "at": "2026-10-11T16:05Z",
-      "text": "Long Beach City's pages keep the requirements in a tab the reader skipped; it now opens that tab, and the second trial read 11 of 12 programs from it."
     }
   ],
   "headline": [
@@ -10501,6 +10507,12 @@
     },
     {
       "day": "2026-10-11",
+      "active": 20282,
+      "checked": 29,
+      "colleges": 6
+    },
+    {
+      "day": "2026-10-12",
       "active": 20282,
       "checked": 29,
       "colleges": 6

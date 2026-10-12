@@ -4,6 +4,8 @@ date: 2026-10-11
 session: 359 (SkyMoss)
 tags: [handoff, program-requirements, harvest, phase-2, rccd, records-view, coci-status, checkpoint]
 status: current
+superseded: true
+superseded_by: session_368_handoff.md
 ---
 
 # You are Session 360
