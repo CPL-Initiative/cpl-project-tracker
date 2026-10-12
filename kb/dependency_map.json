@@ -1112,7 +1112,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 953
+     "line": 1012
     }
    ],
    "main_committers": []
@@ -5035,7 +5035,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 892
+     "line": 951
     },
     {
      "id": "module:college_briefing.js",
@@ -20885,7 +20885,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 501,
+     "line": 525,
      "tabs": [
       "college-identity"
      ]
@@ -21256,7 +21256,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 498,
+     "line": 522,
      "tabs": [
       "college-identity"
      ]

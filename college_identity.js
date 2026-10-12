@@ -207,7 +207,23 @@
       ".cid-t td.n { font-variant-numeric:tabular-nums; }",
       ".cid-var { font-size:.76rem; color:var(--text-muted, #5a6478); }",
       ".cid-search { width:100%; max-width:340px; padding:6px 10px; font-size:.85rem; border:1px solid var(--border-strong, #cdd6e3); border-radius:8px; margin:0 0 10px; }",
-      "@media (max-width:560px) { .cid-stat { flex:1 1 100%; } }",
+      /* A path in a note is one unbroken word; at 320px it ran 49px past the
+       * viewport and the page scrolled sideways (S371 UI pass). */
+      ".cid-flag code, .cid-note code { overflow-wrap:anywhere; }",
+      /* ⚠ SIX COLUMNS DO NOT FIT A PHONE (S371 UI pass). At 390px the ID ran
+       * into Kind ("119continuing education") and variants wrapped a word a
+       * line. Below 560px each entity is a block of labeled lines, the
+       * program_requirements.js pattern; the header row stays for a screen
+       * reader, out of sight. */
+      "@media (max-width:560px) { .cid-stat { flex:1 1 100%; }"
+        + " .cid-t thead { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }"
+        + " .cid-t, .cid-t tbody, .cid-t tr { display:block; width:100%; }"
+        + " .cid-t tbody tr { border-bottom:1px solid var(--border, #d8dde6); padding:4px 0; }"
+        + " .cid-t tbody td { display:grid; grid-template-columns:5.5rem minmax(0,1fr); gap:8px; border:0; padding:2px 7px; }"
+        + " .cid-t tbody td::before { content:attr(data-label); font-size:.74rem; text-transform:uppercase; letter-spacing:.03em; color:var(--text-muted, #5a6478); }"
+        + " .cid-t tbody tr:has(+ tr > td.cid-why) { border-bottom:0; }"
+        + " .cid-t tbody td.cid-why { display:block; }"
+        + " .cid-t tbody td.cid-why::before { content:none; } }",
     ].join("\n");
     var el = document.createElement("style");
     el.id = "cid-css"; el.textContent = css;
@@ -370,7 +386,7 @@
     findings.forEach(function (f) {
       fh += '<div class="cid-find"><span class="cid-tag ' + esc(f.cls) + '">' + esc(String(f.cls).replace(/_/g, " ")) + "</span>"
         + '<span class="nm">' + esc(JSON.stringify(f.name)) + "</span>"
-        + (f.resolves_to ? ' <span class="cid-var">&rarr; ' + esc(f.resolves_to) + "</span>" : "")
+        + (f.resolves_to ? ' <span class="cid-var">resolves to ' + esc(f.resolves_to) + "</span>" : "")
         + (f.sibling ? ' <span class="cid-var">sibling of ' + esc(f.sibling) + "</span>" : "")
         + (f.live ? ' <span class="cid-var">(live)</span>' : "")
         + '<div class="cid-why">' + esc(f.why || "")
@@ -429,16 +445,17 @@
          * flagged row instead of a row that half the pipeline hides. */
         var suppressed = String(c.entity_kind || "") === "test" || c.is_test === true;
         var split = (String(c.entity_kind || "") === "test") !== (c.is_test === true);
-        h += "<tr" + (suppressed ? ' class="cid-supp"' : "") + "><td>" + esc(c.college_name)
+        // One span, so the stacked layout's grid keeps the chip beside the name.
+        h += "<tr" + (suppressed ? ' class="cid-supp"' : "") + '><td data-label="Name"><span>' + esc(c.college_name)
           + (suppressed
               ? ' <span class="cid-tag suppressed">suppressed</span>'
               : "")
-          + "</td>"
-          + '<td class="n">' + esc(c.college_id) + "</td>"
-          + "<td>" + esc(String(c.entity_kind || "college").replace(/_/g, " ")) + "</td>"
-          + "<td>" + esc(c.district || "—") + "</td>"
-          + '<td class="n">' + esc(mis) + "</td>"
-          + '<td class="cid-var">' + (vs.length ? esc(vs.join(" · ")) : "none") + "</td></tr>";
+          + "</span></td>"
+          + '<td class="n" data-label="ID">' + esc(c.college_id) + "</td>"
+          + '<td data-label="Kind">' + esc(String(c.entity_kind || "college").replace(/_/g, " ")) + "</td>"
+          + '<td data-label="District">' + esc(c.district || "—") + "</td>"
+          + '<td class="n" data-label="MIS">' + esc(mis) + "</td>"
+          + '<td class="cid-var" data-label="Variants">' + (vs.length ? esc(vs.join(" · ")) : "none") + "</td></tr>";
         if (suppressed) {
           h += '<tr><td colspan="6" class="cid-why">'
             + "Suppressed everywhere — a MAP sandbox organization, not a real institution. "
@@ -450,8 +467,15 @@
                 : "")
             + "</td></tr>";
         }
+        /* ⚠ A ROW WITH A CODE AND A REASON HOLDS A PLACEHOLDER (S371). Calbright
+         * (X00 / X02) and Madera (570 / X01) carry Sam's 2026-08-12 placeholders,
+         * non-numeric by design, and the line under them read "No MIS code"
+         * beside the code. Say which the code is. */
         if (c.mis_absent_why) {
-          h += '<tr><td colspan="6" class="cid-why">No MIS code — ' + esc(c.mis_absent_why) + "</td></tr>";
+          var placeholder = !!(c.mis_district_code || c.mis_college_code);
+          h += '<tr><td colspan="6" class="cid-why">'
+            + (placeholder ? "Placeholder code, not an MIS code — " : "No MIS code — ")
+            + esc(c.mis_absent_why) + "</td></tr>";
         }
       });
       h += "</tbody></table></div></div>";
