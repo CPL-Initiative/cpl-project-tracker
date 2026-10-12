@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 541,
+   "count": 542,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1112,6 +1112,24 @@
      "title": "A course missing from a program's state list may be on it in a retired version",
      "type": "methodology",
      "updated": "2026-10-11"
+    },
+    {
+     "created": "2026-10-12",
+     "governs": [
+      "chatbox/supabase/functions/cpl-chat/index.ts",
+      "tests/sierra_prospective_credit.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-course-title-reads-as-its-level.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "sierra",
+      "prompt-context",
+      "articulation"
+     ],
+     "title": "A course title reads as its level, so name the course's program beside it",
+     "type": "methodology",
+     "updated": "2026-10-12"
     },
     {
      "created": "2026-09-07",
@@ -15360,8 +15378,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 343,
+   "count": 344,
    "docs": [
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "n": 373,
+     "path": "docs/session_373_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "san-diego-mesa",
+      "course-outlines",
+      "first-light",
+      "sierra"
+     ],
+     "title": "Mesa's load, the course outline census, the gallery picks",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-12",
      "governs": [],
@@ -21246,5 +21282,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1111
+ "total": 1113
 }
