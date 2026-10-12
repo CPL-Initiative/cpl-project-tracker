@@ -1,0 +1,298 @@
+{
+ "college": "San Diego Mesa College",
+ "control_number": "41338",
+ "shape": "certificate",
+ "title": "Pathway to Law School",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17694",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11028,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11028,
+    "output_tokens": 1937,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1937,
+  "output_tokens_details": {
+   "thinking_tokens": 603
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08285,
+ "ms": 16158,
+ "seconds": 16.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 22,
+   "listed": 24,
+   "share": 0.917,
+   "missing": [
+    "HIST109",
+    "HIST110"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "HISTC1001",
+    "HISTC1002"
+   ],
+   "flagged": [
+    "HISTC1001",
+    "HISTC1002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    21.0
+   ],
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Pathway to Law School - Certificate of Achievement: Mesa",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Understand the various opportunities for careers in the law",
+    "Demonstrate skills that will help prepare for a career in the legal profession",
+    "Assess the steps that are necessary to move forward on a path to a career in the legal profession"
+   ],
+   "careers": [
+    "legal profession"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "PADM 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUSE 140",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL 105",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 205",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1001",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLI 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 258",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1002",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "HIST 123",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 141",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 142",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 150",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 151",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "CHIC 141A",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "CHIC 141B",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "BLAS 140A",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "BLAS 140B",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLI 121",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HIST 109",
+    "why": "not in the text; catalog lists HIST C1001 in the history choice instead"
+   },
+   {
+    "code": "HIST 110",
+    "why": "not in the text; catalog lists HIST C1002 in the history choice instead"
+   }
+  ],
+  "notes": [
+   "Each 3.0-unit group of 'OR' courses is recorded as one required entry with alternatives in a single 'all' block; the catalog prints 3.0 units per group and 21.0 total for seven groups.",
+   "Closed-list codes COMMC1000, POLSC1000 and STATC1000 are matched to the catalog's COMM C1000, POLS C1000 and STAT C1000 (spacing differs only).",
+   "HIST C1001 and HIST C1002 are not in the closed list and are marked as catalog additions; they appear to replace HIST 109 and HIST 110.",
+   "The career entry 'legal profession' is taken from the summary phrase 'a career in the legal profession'.",
+   "The course descriptions section of the text is cut off mid-description at PSYC 258; requirements list itself appears complete."
+  ]
+ },
+ "extracted_run": "38282023973"
+}

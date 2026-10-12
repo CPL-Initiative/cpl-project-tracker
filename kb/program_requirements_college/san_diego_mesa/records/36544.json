@@ -1,0 +1,305 @@
+{
+ "college": "San Diego Mesa College",
+ "control_number": "36544",
+ "shape": "degree",
+ "title": "Humanities and Religious Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17633",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11122,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11122,
+    "output_tokens": 2232,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2232,
+  "output_tokens_details": {
+   "thinking_tokens": 615
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08913,
+ "ms": 17787,
+ "seconds": 18.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "HUMA118",
+    "HUMA119",
+    "HUMA210"
+   ],
+   "flagged": [
+    "HUMA118",
+    "HUMA119",
+    "HUMA210"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Humanities and Religious Studies - Associate of Arts Degree: Mesa",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Develop an awareness of the essential ideas and arts of the world, past and present.",
+    "Think critically about the elements of human cultures and civilizations."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR: HUMA 101 and HUMA 102",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Humanities sequence",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HUMA 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMA 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR: HUMA 118 and HUMA 119",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Humanities sequence",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HUMA 118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUMA 119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR: HUMA 103 and HUMA 104",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Religious Studies sequence",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HUMA 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMA 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR: HUMA 106 and HUMA 201",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Religious Studies sequence",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HUMA 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMA 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select six units from the following:",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HUMA 205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMA 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 221",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH C1100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH C1200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 154",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "'COURSES REQUIRED FOR THE MAJOR' prints Semester Units 12.0 overall, made of two 6.0-unit choices: (HUMA 101 AND HUMA 102) OR (HUMA 118 AND HUMA 119), and (HUMA 103 AND HUMA 104) OR (HUMA 106 AND HUMA 201). Each pair is recorded as its own block in two option groups; block names are descriptive since the catalog prints no names for the pairs.",
+   "Closed list stores ARTHC1100 and ARTHC1200; catalog prints ARTH C1100 and ARTH C1200 - treated as the same courses.",
+   "HUMA 118, HUMA 119 and HUMA 210 appear in the catalog requirements but not in the closed list (catalog additions).",
+   "Outcomes are printed for the Humanities and Religious Studies Program as a whole under 'Learning Outcome(s)'; the A.A. degree is the only award in this section.",
+   "Catalog text is cut off in the course description list at ARTH C1200; the requirements list itself appears complete (Total Units: 18.0)."
+  ]
+ },
+ "extracted_run": "38282023973"
+}

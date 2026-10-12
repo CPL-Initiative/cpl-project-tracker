@@ -1,0 +1,268 @@
+{
+ "college": "San Diego Mesa College",
+ "control_number": "30639",
+ "shape": "degree",
+ "title": "Fine Art: Photography and New Genres",
+ "award": "A.A. Degree",
+ "source_url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17612",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11043,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11043,
+    "output_tokens": 2005,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2005,
+  "output_tokens_details": {
+   "thinking_tokens": 567
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08427,
+ "ms": 15813,
+ "seconds": 16.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ARTF109"
+   ],
+   "flagged": [
+    "ARTF109"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    37.0,
+    37.0
+   ],
+   "stated": [
+    37.0,
+    37.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fine Art: Photography and New Genres - Associate of Arts Degree: Mesa",
+   "measure": "units",
+   "total_units": {
+    "min": 37,
+    "max": 37
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Expand the vision of the role of art in the greater culture.",
+    "Develop an awareness of cultural diversity (and its use/effect on art-making).",
+    "Engage visual art as defined in a progression of change.",
+    "Apply critical thinking in visual terms.",
+    "Employ art concepts and terminology effectively.",
+    "Understand the creative process of art-making.",
+    "Understand materials, methods and techniques both historical and contemporary and the contexts in which they are employed.",
+    "Be assessed through a combination of performance evaluations, written assignments, and written tests and quizzes."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "ARTF 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTF 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTF 109",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH C1100",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH C1200",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTF 150A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTF 151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTF 155A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTF 231",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete the Requirements for the Photography Emphasis:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "ARTF 188",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTF 190A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTF 191",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTF 194",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTF 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTF 233",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTF 280F",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "A second '3.0' is printed after ARTF 107's units, apparently the group total for the following OR group (ARTF 106 OR ARTF 109 OR ARTH C1100 OR ARTH C1200); recorded that group as one entry with alternatives.",
+   "ARTH C1100 and ARTH C1200 are printed with a space; they match closed-list codes ARTHC1100 and ARTHC1200, so catalog_addition is false.",
+   "ARTF 109 Modern Art is not in the closed list; recorded as a catalog addition.",
+   "The last printed learning outcome ('Be assessed through a combination of performance evaluations...') reads as an assessment statement rather than a learning outcome, but it is printed in the outcomes list and is copied as printed.",
+   "The text names baccalaureate fields of study (Art, Fine Art Photography, Design/Media, Film Studies and Television, Digital Media, Museum Administration and Curation), not careers; careers left empty.",
+   "The degree requires 60 units total; no GE pattern is named in the text.",
+   "The catalog text is cut off in the course descriptions (ARTF 191); the requirements section appears complete, totaling 37 units."
+  ]
+ },
+ "extracted_run": "38282023973"
+}

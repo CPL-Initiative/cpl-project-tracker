@@ -1,0 +1,298 @@
+{
+ "college": "San Diego Mesa College",
+ "control_number": "37548",
+ "shape": "degree",
+ "title": "Fermentation Management",
+ "award": "A.S. Degree",
+ "source_url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17605",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10770,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10770,
+    "output_tokens": 2803,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2803,
+  "output_tokens_details": {
+   "thinking_tokens": 963
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09914,
+ "ms": 23430,
+ "seconds": 23.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    37.0,
+    37.0
+   ],
+   "stated": [
+    37.0,
+    37.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fermentation Management - Associate of Science Degree: Mesa",
+   "measure": "units",
+   "total_units": {
+    "min": 37,
+    "max": 37
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Emphasize a broad foundation in fermentation management and practice.",
+    "Prepare students for all stages of fermentation management and how it relates to production, operations, finance, hiring, retail, sales, marketing, laws, and regulations.",
+    "Provide students with an understanding of the fermentation process, timeline, and ideal environment for the process to take place.",
+    "Produce quality fermented beverages safely utilizing equipment comparable to beverage manufacturing operations. (Fermentation Management AS only)"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 30,
+     "max": 30
+    },
+    "courses": [
+     {
+      "code": "FERM 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FERM 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FERM 120",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FERM 130",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FERM 140",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 116A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select four (4) units from the following combination of courses: CHEM 111 AND CHEM 111L",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Chemistry",
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CHEM 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 111L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select four (4) units from the following combination of courses: CHEM 152 AND CHEM 152L",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Chemistry",
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CHEM 152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 152L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select three (3) units from one of the following courses:",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUSE 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The chemistry requirement ('Select four (4) units from the following combination of courses', block total 4.0) offers two pairs joined by OR: CHEM 111 AND CHEM 111L, or CHEM 152 AND CHEM 152L; recorded as two option blocks in option_group 'Chemistry', each printed with 4.0.",
+   "Catalog footnote: CHEM 152 and CHEM 152L are recommended for students who may want to transfer to a similar university program; they remain one of the required chemistry options, not a separate recommended block.",
+   "Catalog footnote: MATH 121 is recommended for students who may want to transfer to a similar university program; it remains one of the choices in the statistics/math block.",
+   "HOSP 270 is printed with 3.0 units in the requirements list, while its course description shows 1-4 units and the state file stores 1 unit; recorded as 3 as printed in the requirements.",
+   "Catalog prints 'STAT C1000'; the closed list stores it as 'STATC1000' (same course, spacing difference), so it is not treated as a catalog addition.",
+   "Learning outcomes are printed for the Fermentation Management Program as a whole (lead-in refers to the Program); the fourth outcome is marked '(Fermentation Management AS only)'. All four recorded for the A.S.",
+   "No careers or job titles are named; the description lists industries studied (brewing, distilling, wine making, coffee roasting) but not as careers, so careers is left empty.",
+   "The 60-unit figure in the Award Note is the degree total, not the major total; major total recorded as the printed 'Total Units: 37.0'.",
+   "Course descriptions text is cut off at the end (CHEM 111 description truncated); this does not affect the requirements list."
+  ]
+ },
+ "extracted_run": "38282023973"
+}
