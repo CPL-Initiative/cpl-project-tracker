@@ -1,0 +1,446 @@
+Discipline: Manufacturing Technology
+RIVERSIDE COMMUNITY COLLEGE DISTRICT
+INTEGRATED COURSE OUTLINE OF RECORD
+MANUFACTURING TECHNOLOGY 10
+MAN-10 : Manufacturing Basic Operations	
+College: 
+NOR
+Lecture Hours: 54.000
+Lecture Units: 3.000
+Activity Hours: 0.000
+Lab Hours: 54.000
+Lab Units: 1.000
+Outside-of-Class Hours: 108.000
+Total Student Learning Hours: 216.000
+Total Units: 4.00
+Grading Methods: Letter Grade
+
+Course Description
+Prerequisite: None
+Course Credit Recommendation: Degree Credit
+
+
+A basic operations course to prepare individuals for modern production environments that use industry 4.0 controls, automation, and process. Appropriate for individuals working in any occupation in advanced manufacturing.
+Entrance Skills:
+Before entering the course, students should be able to demonstrate the following skills:
+
+Course Objectives:
+Upon successful completion of the course, students should be able to demonstrate the following activities:
+
+Describe the Concepts and terminology of Smart Manufacturing
+Understand the machine operation safety guidelines.
+Describe basic types of tools and fasteners.
+Define dimensional measurement and explain its importance. Perform measurement conversion.
+Describe the types of Engineering drawings used in Manufacturing.
+Describe basic electrical control, pneumatic, robot operations and sensor system operations.
+Monitor machinery using Human Machine Interface, Internet, and Ethernet
+Student Learning Outcomes:
+Upon successful completion of the course, students should be able to demonstrate the following skills:
+
+Describe an employer's PPE responsibilities.
+Describe how to interpret a third angle projection multiview drawing.
+Define electrical power and give its units of measurement
+Describe how to run a robot program.
+Explain the advantages and disadvantages of electronic sensors.
+Course Content:
+
+This course covers a wide range of advanced manufacturing topics including safety, basic hand tools, measurement, print reading, and the fundamentals of mechanical, fluid power, electrical, and automation.
+
+Introduction to Advanced Manufacturing
+Types of Manufactured Products
+Advanced Manufacturing
+Role of Product Design in Advanced Manufacturing
+Technology and Advanced Manufacturing
+Impact of Computers on Advanced Manufacturing
+Benefits of Factory Automation
+Function of a CNC Machines and PLCs
+Types of Robots
+Uses of Software in Advanced Manufacturing
+Uses of New Technologies in Advanced Manufacturing
+Industrial Internet of Things
+Benefits of Industry 4.0
+Industrial Internet of Things (IIoT)
+History
+Industry sector applications
+Applications of Manufacturing and logistic
+Safety Responsibilities
+Importance of: 
+Workplace Health and Safety
+Safety Policies
+Results of Unsafe Behavior
+Purpose of:
+Occupational Safety and Health Administration
+Environmental Protection Agency
+NIOSH, EPCRA, and State Safety Agencies
+Safety Responsibilities, regulations and policies within a Company
+Machine Safety
+Clothing Safety Guidelines for Machine Operators
+Machine Operation Safety Guidelines
+Types of Machine Guards
+Operation of:
+Machine Interlocks
+Emergency Stop Controls
+Pneumatic lockout/tagout
+Lockout/tagout systems
+Practicing Safety in the Workplace
+Culture of Safety in the Workplace
+Identify Common Types of injuries and accidents
+Personal Protective Equipment
+Hazards in the Workplace
+Emergency and Accident Response
+Categories of Emergencies
+Elements of an Emergency Action Plan
+Respond to an Emergency/accident
+Use an Eyewash Station
+Report a Workplace Accident
+Hazardous Materials Standards
+Three Categories of Hazardous Materials and Give Examples of Each
+GHS and HCS Communication Standards
+Interpret the HazCom Labeling System
+Safety Data Sheet and Explain Its Use
+NFPA and HMIS Hazardous Material Identification Systems
+Hazardous Material Handling and Storage
+Handling, disposal and storage of Hazardous Materials
+DOT Hazardous Material Identification System
+Guidelines for Shipping Hazardous Materials
+Fire and Electrical Safety
+Elements and types of a Fire
+Combustible and Flammable Fire Prevention Guidelines
+Select and use a Fire Extinguisher for a Fire Type
+Electrical Safety Guidelines
+Maintain Fire Safety Equipment and Facilities
+Work Area Safety
+Elements and maintenance of a Safe Work Station
+Walking and working surfaces
+Ergonomics
+Lifting objects
+Types of PPE
+Equipment Safety: Hand Tools and Power Tools safety guidelines
+Hand Tool Safety Guidelines
+Portable power tool
+Compressed gas safety
+Material Handling Safety
+Types of Manual Material Handling Equipment
+Basic Safety Rules for Hoist, Crane and forklift usage
+Fasteners
+Types
+How Parts Are Assembled Using Threaded Fasteners
+Dimensional Measurement
+Two Systems of Dimensional Measurement Used in Manufacturing: US Customary and SI
+SI Machinist's Rule
+Measurement Accuracy and Precision
+Use a US Customary Machinist Rule
+Measurement Conversion
+Decimal US Customary Units to SI Units
+SI Units to US Customary Units
+Convert Measurements Made in Common Fractions to Decimal Inches
+Introduction to Print Reading
+Engineering Drawing and blueprints
+Four Types of Engineering Drawings Used in Manufacturing
+Methods of Creating an Engineering Drawing
+Main Sections of an Engineering Drawing
+Multiview Drawings and Isometric Drawings
+Organizations that Set Drawing Standards
+Alphabet of Lines
+Three Drawing Line Types: Object, Hidden, and Center
+Function of Line Precedence
+Multiview Drawings
+Third Angle Projection
+Views
+Sectional Views
+Auxiliary Views
+First Angle Projection
+First or Third Angle Projection
+Blueprint Dimensions and Notes: Engineering Drawing Dimension
+Linear Features
+Circular Features
+Arcs
+Hole Features
+Angular Features
+Multiview Drawings
+Tolerancing
+Importance of tolerancing
+Tolerance Notes
+Baseline Dimensioning
+Maximum and Minimum Material Conditions
+Clearance and Allowance
+Three Types of Fits
+Geometric Dimensioning and Tolerancing
+Five Types of Geometric Features
+Datum features
+Feature Control Frame
+Manufacturing Drawings and Scales
+Common Drawing Sizes
+Drawing Scales
+Information on an Engineering Drawing
+Print Notes
+Title Block
+Change Block
+Materials Block
+Tolerance Block
+Surface Finish Symbol
+Process Drawing
+Assembly Drawing
+Caliper Measurement
+Precision Measurement Tool
+Dial Caliper usage and calibration
+Typical Accuracy of a Dial Caliper Measurement
+Operation of a Digital Caliper
+Micrometer Measurement
+Operation of a Micrometer
+SI Units
+Calibration
+Outside Micrometer with SI Units
+Inside Micrometer
+Micrometer's Accuracy
+Mechanical Power
+Units of Measurement
+Weight and Mass
+Mechanical Energy
+Hooke's Law and Explain Its Importance
+Introduction to Fluid Power
+Fluid power applications
+Basic Components of a Hydraulic System and Pneumatic systems
+Advantages of Hydraulic and Pneumatic Systems
+Pressure and Give Its Units of Measurement
+How to Read a Pressure Gauge
+Pneumatic Power
+Pneumatic Safety Rules
+Basic Operation of a Pressure Regulator Valve
+Basic Operation of a Pneumatic Filter
+Air Hose with a Quick-Connect Fitting
+Tee and Cross Fittings
+Basic Cylinder Circuits
+Double-Acting Pneumatic Cylinder
+5-Port, 3-Position Directional Control Valve
+Schematic Symbols of Basic Pneumatic Components
+Read and Interpret a Basic Pneumatic Schematic
+Fluid Power System maintenance
+Basic Electrical Circuits
+Types of Electrical Current
+Operation of Two Types of Power Supplies
+Schematics
+Three Types of Manual Switches
+Basic Operation of:
+Pushbutton Switch
+Selector Switch
+Knife Switch
+Five Types of Electrical Output Devices
+Electrical Voltage and Current Measurement
+Voltage and Units of Measurement
+Current and Give Its Units of Measurement
+Kirchhoff's Circuit Laws
+Characteristics of Series and Parallel Circuits
+Function of a Voltmeter and Give Its Schematic Symbol
+Voltmeter to Measure Voltage and current
+Digital Multimeter to Measure Voltage
+Ammeters and Give Their Schematic Symbol
+Electrical Resistance Measurement
+Resistance and Its Units of Measurement
+Two Types of Ohmmeters and Give Their Schematic Symbol
+DMM to Measure Resistance
+Resistance Characteristics in Series and Parallel Circuits
+Ohm's Law and Give an Application
+Continuity and Explain Its Importance
+DMM to Measure Continuity
+Power in Electrical Circuits
+Electrical Power and Units Measurement
+Power in a Simple Circuit
+Two Types of Circuit Protection and Application of Each
+Fuses and its Schematic Symbol
+Circuit Breaker and Give Its Schematic Symbols
+Size Circuit Protection
+Basic Operation of Three-Phase Power
+Control Logic Circuits
+Function of Relay Logic Control Circuits
+Six Elements of Control Logic
+Logic applications:
+AND
+OR
+NOT
+NOR
+NAND
+MEMORY
+Electrical Control Diagrams
+Function of a Ladder Diagram
+Symbols of Basic Ladder Diagram Components
+Function of a Solenoid-Operated Output Device
+Interpret a Power Diagram
+Relay Control Circuits
+Electromechanical Relays
+Ladder Diagram Detached Symbology
+Relay Used to Energize a Fluid Power Valve Solenoid
+Operations of:
+Relay Performing Control Logic
+Seal in circuit
+Basic Robot Operation
+Four Types of Robot Classifications
+Five Types of Servo Robots
+Basic Operation of a Servo Robot
+Axes of an Articulated Arm Robot
+Seven Types of Robot Safety Devices
+Robot Safety Rules
+Power Up and Power Down a Servo Robot
+Teach Pendant to Jog a Servo Robot
+How to Home a Servo Robot
+Basic Robot Programming
+Types of Robot End Effectors
+Types of Robot Grippers
+Teach Robot Points
+Enter and Edit Robot Program Files
+Transfer Robot Program Files between a PC and Robot Controller
+Run a Robot Program
+Operation of the Robot Command:
+Pmove
+Grasp and release
+label and branch
+Introduction to Electronic Sensors
+Advantages of Electronic Sensors and Two Disadvantages
+Five Types of Electronic Sensors
+Function of the Two Parts of an Electronic Sensor
+Electronic Sensors
+Operation of an Inductive Proximity Sensor
+Characteristics That Affect Inductive Proximity Sensor Operation
+Operation of a Capacitive Proximity Sensor and Give an Application
+Five Characteristics That Affect Capacitive Proximity Sensor Operation
+Lean Production Concepts
+Lean Manufacturing
+Value-Added and Non-Value-Added Activities
+Eight Deadly Wastes
+Core Elements of Lean Manufacturing
+Lean Production (Just-In-Time)
+5S Program
+Additional Laboratory Content
+
+Industrial Internet of Things: Internet-Based Production Visualization System
+Machine Safety
+Pre-Startup Safety Inspection
+Machine Guard with an Interlock Switch
+Electrical Lockout/Tagout Procedure
+Pneumatic Lockout/Tagout Procedure
+Hazardous Materials Standards
+Safety Data Sheets
+Labeling on Containers
+Hand Tools 1
+Types of Threaded Fasteners
+Combination Wrench
+Socket Wrench
+Combination Wrench as a Backup Wrench
+Hex Key Wrench
+Straight Slotted Screwdriver
+Phillips Screwdriver
+Dimensional Measurement
+Metric Rule to Measure an Outside Length of a Part
+US Customary Machinist Rule to Measure a Length
+17 Measurement Conversion
+US Customary Units and SI Metric Units
+Common Fraction Inches and Decimals
+Caliper Measurement
+Measurements Using a Dial Caliper
+Measurements Using a Digital Caliper
+Micrometer Measurement
+Perform Measurements Using an Outside Micrometer
+Mechanical Power
+Use a Spring Scale to Measure Forces and Weights
+Pneumatic Power
+Pressure Regulator
+Pneumatic Filter
+Pneumatic Hose That Uses Quick-Connect Fittings
+Tee and Cross Fittings
+Basic Cylinder Circuits
+Double-Acting Cylinder
+Double-Acting Pneumatic Cylinder Using a 3-Position, Manually-Operated DCV
+Design a Multiple Cylinder Pneumatic Circuit
+Basic Electrical Circuits
+Power Supply
+Circuit Using Three Types of Manual Switches
+Connect and Operate Four Types of Electrical Output Devices
+Electrical Voltage and Current Measurement
+Measure the Voltage at a Point Referenced to Ground
+DMM to Measure Voltage Drops in Series and Parallel Circuits
+DMM to Measure Current in Series and Parallel Circuits
+Electrical Resistance Measurement
+DMM to Measure the Resistance of a Component
+Resistance in Series and Parallel Circuits
+Ohm's Law to Analyze a Circuit
+Continuity of Wires Using a DMM
+Power in Electrical Circuits
+Circuit that Uses a Fuse
+Circuit That Uses a Circuit Breaker
+Control Logic Circuits
+AND Logic Control Circuit
+OR Logic Control Circuit
+NOT Logic Control Circuit
+NOR Logic Control Circuit
+NAND Logic Control Circuit
+Electrical Control Diagrams
+Circuit Using a Solenoid Valve Given a Ladder Diagram
+Design a Control Circuit in a Ladder Diagram Format to Operate a Solenoid Valve
+Relay Control Circuits
+Relay
+Relay to Energize a Fluid Power Solenoid
+Design a Logic Circuit That Uses a Relay
+Relay to Perform a Seal-In Function to Control a Motor
+Basic Robot Operation
+Jog a Servo Robot
+Home a Servo Robot
+Basic Robot Programming
+Teach Robot Position Points
+Enter and Edit a Basic Robot Program
+Run a Servo Robot Program
+Pmove Command
+Grasp and Release Commands
+Label and Branch Commands
+Introduction to Electronic Sensors
+Inductive Proximity Sensor
+Measure and Analyze the Performance of an Inductive Proximity Sensor
+Capacitive Proximity Sensor
+Measure and Analyze the Performance of a Capacitive Proximity Sensor
+Methods of Instruction:
+Methods of instruction used to achieve student learning outcomes may include, but are not limited to, the following activities:
+
+Facilitated discussions regarding Mechanical power transmission, material handling, sensors and other automation tools/systems and technologies.
+Create and present lectures, demonstrations, video presentations, and lab exercises to explain and demonstrate industrial automation systems such as programmable logic control systems, motor controls, Ethernet Communications, and Human Machine interface technologies.
+Present basic electrical, pneumatic and robotic operations, providing students with the opportunity to use concepts learned in class and lab to analyze real industrial automation scenarios.
+Demonstrate the use of tools and technology to maintain and manage industrial automation
+Guided Practice: provide step-by-step instructions on how to use PLCs, and event sequencing, sensors.
+Lab Activities on how to start a machine.
+Problem-based learning such as how to use force equations for fluid power systems.
+Methods of Evaluation:
+Students will be evaluated for progress in and/or mastery of student learning outcomes using methods of evaluation which may include, but are not limited to, the following activities:
+
+Examination designed to provide objective evidence that students have attained the level of understanding expected in areas detailed in the student learning objectives such as industry 4.0 controls, automation and processes.
+Individual, small group, or paired activities designed to allow students to demonstrate understanding of basic industrial automation concepts and tools.
+Quizzes and in-class participation demonstrating proficiency in the subject matter.
+A mid-term and final examination designed to assess student mastery of concepts, safety for industry, measurement and types of power systems commonly used in industrial automation technology.
+Lab exercises designed to assess student capability to use technical tools, systems and resources to manage industrial automation tasks, documentation and safety requirements.
+Sample Assignments:
+Outside-of-Class Reading Assignments
+
+Each of the objectives listed in the course content related to reading assignments from the textbook. For example, we will have the students read about manufacturing and the role of product design in advanced manufacturing.
+Read about different safety requirements in manufacturing as it relates to automated manufacturing. 
+At an introductory level, students will read about fluid power as it is used in automation.
+Outside-of-Class Writing Assignments
+
+Each of the Skill PDFs require the students to document many different aspects of Industry. For example:
+Hazardous Materials Standards
+Identify and document many different aspects of safety data sheets
+Operate a machine in single step and automatic modes write down the steps that are observed.
+Document caliper and micrometer measurements
+Document electrical voltage and current measurements
+Document gauge readings in the fluid power section of the course.
+Other Outside-of-Class Assignments
+
+Locate different aspects of the elements located on a Safety Data Sheet such as type of material listed on the SDS, safe handling of the material, and safe working conditions for the chemical.
+Course Materials:
+All materials used in this course will be periodically reviewed to ensure that they are appropriate for college level instruction. Possible texts include the following:
+
+Amatrol Learning Management System. C-101 Certified Industry 4.0 Associate I course. 2024 updated often Amatrol Inc., 2024.
+Green, D., Gosse, J.. Industrial Maintenance and Troubleshooting. 4th American Technical Publishers, 2019.
+Shawn A. Ballee and Gary R. Shearer. Industrial Maintenance and Mechatronics, 2nd Edition. 2nd Goodheart Wilcox publisher, 2024.
+Codes/Dates:
+CB03 TOP Code: 0956.00* - Manufacturing and Industrial Technology
+
+Board of Trustees Approval Date: 12/10/2024
+COR Rev Date: 12/10/2024
+Generated on: 10/12/2026 3:37:37 PM
