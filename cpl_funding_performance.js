@@ -8,22 +8,22 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 46849,
-  "pa": 42765,
+  "pe": 46859,
+  "pa": 42771,
   "ppa": 119,
-  "p2": 3567,
-  "p3": 16737,
+  "p2": 3570,
+  "p3": 16741,
   "pp": 6,
   "ppe": 129,
   "pac": 5256,
   "ptc": 4608,
-  "pe_u": 1462767.2,
-  "pa_u": 238461.4,
+  "pe_u": 1463217.2,
+  "pa_u": 238574.4,
   "ppa_u": 721.5,
   "ppe_u": 6825.5,
   "pac_u": 37495.45,
   "ptc_u": 31135.0,
-  "p3_u": 83386.7,
+  "p3_u": 83465.7,
   "pp_u": 63.5
  },
  "colleges": {
@@ -108,10 +108,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Bakersfield": {
-   "pe": 618,
-   "pe_u": 26798.0,
-   "pa": 610,
-   "pa_u": 8897.0,
+   "pe": 619,
+   "pe_u": 26819.0,
+   "pa": 611,
+   "pa_u": 8918.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 72.0,
@@ -307,10 +307,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Chaffey": {
-   "pe": 1549,
-   "pe_u": 34218.0,
-   "pa": 1545,
-   "pa_u": 19635.5,
+   "pe": 1550,
+   "pe_u": 34248.0,
+   "pa": 1546,
+   "pa_u": 19648.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 12.0,
@@ -1273,8 +1273,8 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Moorpark": {
-   "pe": 229,
-   "pe_u": 9669.0,
+   "pe": 232,
+   "pe_u": 9805.0,
    "pa": null,
    "pa_suppressed": true,
    "pa_u": 14.0,
@@ -1294,16 +1294,16 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Moreno Valley": {
-   "pe": 2512,
-   "pe_u": 54087.0,
-   "pa": 2183,
-   "pa_u": 13062.0,
+   "pe": 2516,
+   "pe_u": 54313.0,
+   "pa": 2187,
+   "pa_u": 13141.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 53.5,
-   "p2": 485,
-   "p3": 2119,
-   "p3_u": 12501.5,
+   "p2": 488,
+   "p3": 2123,
+   "p3_u": 12580.5,
    "pp": null,
    "pp_suppressed": true,
    "pp_u": 38.5,
@@ -1596,8 +1596,8 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Sacramento City": {
-   "pe": 76,
-   "pe_u": 2926.0,
+   "pe": 77,
+   "pe_u": 2963.0,
    "pa": 0,
    "pa_u": 0.0,
    "ppa": 0,
@@ -2257,8 +2257,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Bakersfield": {
    "Industry Certification": {
-    "pe": 37,
-    "pa": 34,
+    "pe": 38,
+    "pa": 35,
     "p3": null,
     "p3_suppressed": true
    },
@@ -2429,8 +2429,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 369,
-    "pa": 367,
+    "pe": 370,
+    "pa": 368,
     "p3": 17
    },
    "Other": {
@@ -3103,7 +3103,7 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 226,
+    "pe": 229,
     "pa": null,
     "pa_suppressed": true,
     "p3": 0
@@ -3166,14 +3166,14 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 1024,
-    "pa": 1024,
-    "p3": 971
+    "pe": 1027,
+    "pa": 1027,
+    "p3": 974
    },
    "Standardized Assessment": {
-    "pe": 252,
-    "pa": 252,
-    "p3": 252
+    "pe": 253,
+    "pa": 253,
+    "p3": 253
    }
   },
   "Mt San Antonio": {
@@ -3400,7 +3400,7 @@ window.CPL_FUNDING_PERF = {
   },
   "Sacramento City": {
    "Military": {
-    "pe": 76,
+    "pe": 77,
     "pa": 0,
     "p3": 0
    }
@@ -3955,8 +3955,8 @@ window.CPL_FUNDING_PERF = {
    "p3": 40
   },
   "Industry Certification": {
-   "pe": 1412,
-   "pa": 1389,
+   "pe": 1413,
+   "pa": 1390,
    "p3": 1171
   },
   "Industry Certification | Military": {
@@ -4002,9 +4002,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 28425,
-   "pa": 26122,
-   "p3": 2589
+   "pe": 28433,
+   "pa": 26126,
+   "p3": 2592
   },
   "Military | Other": {
    "pe": null,
@@ -4049,9 +4049,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Standardized Assessment": {
-   "pe": 4694,
-   "pa": 3339,
-   "p3": 2035
+   "pe": 4695,
+   "pa": 3340,
+   "p3": 2036
   }
  },
  "cpl_types_note": "Distinct-student counts per college per `CPL Type Description`, for the funnel rungs pe/pa/p3. COUNTS ONLY — no unit sums, because each source row carries the student's TOTAL credits rather than that type's portion, so a per-type unit sum would attribute the whole total to every type a student carries. A student holding two types counts once under each, so the types do NOT sum to the college's undifferentiated count. Batch Cx/AP/IB uploads arrive already-transcribed by construction (students already in the college SIS, surfaced in MAP), so read p3 by type before treating a transcribed figure as lifecycle work.",
@@ -4059,14 +4059,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1462767.2,
-   "pa_u": 238461.4,
-   "p3_u": 83386.7
+   "pe_u": 1463217.2,
+   "pa_u": 238574.4,
+   "p3_u": 83465.7
   },
   "map": {
-   "pe_u": 1469592.7,
-   "pa_u": 239182.9,
-   "p3_u": 83450.2
+   "pe_u": 1470042.7,
+   "pa_u": 239295.9,
+   "p3_u": 83529.2
   },
   "ratio": {
    "pe_u": 1.0047,
@@ -4202,8 +4202,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Chaffey": {
    "vets": 182,
-   "jst": 374,
-   "pct": 2.0549
+   "jst": 375,
+   "pct": 2.0604
   },
   "San Francisco": {
    "vets": 1197,
@@ -4227,8 +4227,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Moreno Valley": {
    "vets": 916,
-   "jst": 1044,
-   "pct": 1.1397
+   "jst": 1047,
+   "pct": 1.143
   },
   "Bakersfield": {
    "vets": 416,
@@ -4647,8 +4647,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Moorpark": {
    "vets": 179,
-   "jst": 229,
-   "pct": 1.2793
+   "jst": 232,
+   "pct": 1.2961
   },
   "Monterey": {
    "vets": 696,
@@ -4672,8 +4672,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Sacramento City": {
    "vets": 203,
-   "jst": 115,
-   "pct": 0.5665
+   "jst": 116,
+   "pct": 0.5714
   },
   "Butte": {
    "vets": 290,
