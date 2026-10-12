@@ -64,8 +64,13 @@ def title_of(c):
     t = (c.get("object") or c.get("desc") or "").strip().strip('"')
     if not t:
         t = os.path.splitext(c["file"])[0]
-    # "Brittany Boats, by Edgar Alwin Payne" reads as the title plus its byline.
-    t = re.sub(r",?\s+by\s+%s\s*$" % re.escape(c.get("artist") or "~"), "", t, flags=re.I)
+    # "Brittany Boats, by Edgar Alwin Payne" reads as the title plus its byline: drop a
+    # trailing "by ..." that names the painter's surname, then the quotes around the title.
+    surname = ((c.get("artist") or "").split() or ["~"])[-1]
+    m = re.search(r",?\s+by\s+([^,]+)$", t, flags=re.I)
+    if m and surname.lower() in m.group(1).lower():
+        t = t[:m.start()]
+    t = t.strip().strip("'\"\u2018\u2019\u201c\u201d").strip()
     return t[:120]
 
 
