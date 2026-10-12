@@ -161,6 +161,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `college_adoption_opportunities` | `edgefn:cpl-chat` | — |
 | `college_geo_replace` | scripts: `chatbox/sync_coci_offerings.py` | — |
 | `college_program_courses` | scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
+| `course_outcomes_load` | scripts: `kb/_course_outcomes_load.py` | — |
 | `cpl_funding_my_reports` | tabs: `college-briefing` | — |
 | `cpl_funding_optin_review` | tabs: `college-briefing`, `implementation-funding` | — |
 | `credential_alignment_for_college` | `edgefn:cpl-chat` | — |
@@ -510,6 +511,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/cos_matches.json` | tabs: `credential-reference` · scripts: `kb/_match_cos_authority.py` | committed by: `cos-authority-sync.yml` |
 | `kb/course_crosswalk.json` | scripts: `kb/_curation_01.py`, `kb/_esl_package_dryrun.py`, `kb/_zband_retire_dryrun.py` | scripts: `kb/_seed_cx_common_courses.py` |
 | `kb/course_outcomes` | none found | committed by: `course-outcomes-read.yml` |
+| `kb/course_outcomes/trial_38317539422/read.json` | scripts: `kb/_course_outcomes_read.py` | — |
 | `kb/course_outline_census` | none found | committed by: `course-outline-census.yml` |
 | `kb/course_outline_index` | none found | committed by: `course-outline-index.yml` |
 | `kb/course_outline_index/index_<run>.json` | scripts: `kb/_course_outcomes_read.py` | — |
@@ -748,6 +750,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `prototype/skyview.html` | scripts: `prototype/build_ccr_atlas.py`, `scripts/ui_pass.py` | scripts: `prototype/build_ccr_atlas.py` · committed by: `daily-dashboard.yml` |
 | `quickstart.js` | pages: `CPL_Dashboard.html` | — |
 | `raci.js` | pages: `CPL_Dashboard.html` | — |
+| `read_*_p*of*.json` | scripts: `kb/_course_outcomes_load.py` | — |
 | `reflections/build_reflections_summary.py` | workflows: `weekly-reflections-summary.yml` | — |
 | `reflections/summary.json` | scripts: `reflections/build_reflections_summary.py` | committed by: `weekly-reflections-summary.yml` |
 | `remint_series_readings_rulings_<date>.json` | scripts: `kb/_authority_recode_apply.py` | — |
@@ -1093,5 +1096,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 97 Supabase tables · 36 RPCs · 7 edge functions · 640 file
-datasets · 175 external services · 435 consumers · 51 workflows · 39 tabs.
+Coverage: 97 Supabase tables · 37 RPCs · 7 edge functions · 642 file
+datasets · 175 external services · 436 consumers · 51 workflows · 39 tabs.

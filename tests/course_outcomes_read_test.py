@@ -47,6 +47,52 @@ def _():
         "Identify relevant economic data used in manual and computerized systems."], got
 
 
+TRIAL = os.path.join(ROOT, "kb", "course_outcomes", "trial_38317539422")
+
+
+def trial_pages():
+    import glob
+    import gzip
+    for path in sorted(glob.glob(os.path.join(TRIAL, "*.html.gz"))):
+        yield (os.path.basename(path)[:-8], gzip.open(path, "rt").read(),
+               open(path[:-8] + ".txt").read())
+
+
+@check("on RCCD's outlines the SLOs are read, never the Course Objectives printed before them under the same lead-in")
+def _():
+    pages = list(trial_pages())
+    assert len(pages) == 12, len(pages)
+    for name, page_html, text in pages:
+        got = reader.outcomes_from_html(page_html)
+        assert got and got["shape"] == "list" and got["heading"] == "Student Learning Outcomes", (name, got)
+        assert got["lead"].endswith("the following skills:"), (name, got["lead"])
+        obj = text[text.index("Course Objectives:"):text.index("Student Learning Outcomes:")]
+        for item in got["outcomes"]:
+            assert item not in obj, (name, "an objective read as an SLO", item[:80])
+        assert reader.outcomes_of(text)["outcomes"][0] == got["outcomes"][0], name
+    acc = reader.outcomes_from_html(dict((n, h) for n, h, _ in pages)["ACC_19"])
+    assert acc["outcomes"][0] == ("Demonstrate knowledge and ability in preparing income tax returns, "
+                                  "through analysis and preparation of financial documents."), acc["outcomes"][0]
+
+
+@check("an institutional outcome RCCD prints under an SLO is kept as maps_to, not as an SLO")
+def _():
+    pages = {n: h for n, h, _ in trial_pages()}
+    cis = reader.outcomes_from_html(pages["CIS_11"])
+    assert len(cis["outcomes"]) == 2 and "Critical Thinking" not in cis["outcomes"], cis
+    assert cis["maps_to"] == [[], ["Critical Thinking"]], cis["maps_to"]
+    tags = {"Critical Thinking", "Communication Skills", "Information Competency & Technology Literacy"}
+    for name, page_html in pages.items():
+        assert not tags & set(reader.outcomes_from_html(page_html)["outcomes"]), name
+
+
+@check("the colleges an integrated outline names as offering the course are read from its College line")
+def _():
+    texts = {n: t for n, _, t in trial_pages()}
+    assert reader.offered_at(texts["ACC_19"]) == ["RIV", "NOR"], reader.offered_at(texts["ACC_19"])
+    assert reader.offered_at(texts["CIS_11"]) == ["RIV", "MOV", "NOR"]
+
+
 @check("a page with no learning outcomes heading at a line start reads none, not a menu item")
 def _():
     got = reader.outcomes_of("Home\nCourses, and Student Learning Outcomes are listed below\nCourse Content:\nx")

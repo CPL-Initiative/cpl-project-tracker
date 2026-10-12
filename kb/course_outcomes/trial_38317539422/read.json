@@ -15,7 +15,7 @@
    "list": 12
   },
   "status_not_200": 0,
-  "outcomes": 63
+  "outcomes": 38
  },
  "rows": [
   {
@@ -33,13 +33,20 @@
    "title_printed": "Course Outline: Riverside Community College District",
    "chars": 6146,
    "shape": "list",
-   "heading": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
-   "lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon successful completion of the course, students should be able to demonstrate the following skills:",
    "outcomes": [
-    "Prepare State income tax returns for individuals and families with limited income.",
-    "Prepare Federal income tax returns for individuals and families with limited income."
+    "Demonstrate knowledge and ability in preparing income tax returns, through analysis and preparation of financial documents.",
+    "Interpret and analyze financial information for internal controls and re-evaluation of returns.",
+    "Demonstrate high ethical and legal standards by recognizing and preventing inaccurate entries of false information gathering when interviewing clients."
    ],
-   "fingerprint": "959170d33378ac3eedd82eef6abddb55"
+   "fingerprint": "b1ccb7b990b0858069ca99f2c56a89a6",
+   "maps_to": null,
+   "parsed_from": "html",
+   "offered_at": [
+    "RIV",
+    "NOR"
+   ]
   },
   {
    "code": "ARA 1",
@@ -57,20 +64,31 @@
    "title_printed": "Course Outline: Riverside Community College District",
    "chars": 18746,
    "shape": "list",
-   "heading": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
-   "lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon successful completion of the course, students should be able to demonstrate the following skills:",
    "outcomes": [
-    "Comprehend standard spoken Arabic related to the individual and his/her surroundings, likes and dislikes, daily routine, leisure activities and past experiences with a recognition vocabulary of 1000 words.",
-    "Apply reading strategies in order to understand and analyze 150- to 200-word short articles, dialogues, stories and other authentic literary and factual texts related to the self, family and surroundings, written in Arabic alphabet.",
-    "Use acquired elementary vocabulary and grammar to communicate orally about emotional and mental states; the individual; school and work; origin and family; plans and needs; sports and cultural events with an active vocabulary of approximately 500 words.",
-    "Use targeted beginning-level grammar and vocabulary to compose 100- to 150-word paragraphs of connected discourse on personal, familiar and cultural topics, using Arabic alphabet.",
-    "Identify and use the indicative mood of regular, irregular, and stem-changing verbs in the simple present, present progressive, near future and preterite when engaged in receptive and communicative activities.",
-    "Recognize and apply gender and number agreement rules with definite and indefinite articles; descriptive, possessive and demonstrative adjectives; subject, reflexive, direct and indirect object, double object, and relative pronouns when using both receptive and expressive skills.",
-    "Understand and use imperative, declarative, negative and interrogative simple and compound sentences in oral and written activities.",
-    "Identify verbal and non-verbal differences between Arabic-speaking cultures and their own as related to greetings, leave-taking, and levels of formality.",
-    "Identify verbal and non-verbal differences between Arabic-speaking cultures and their own as related to education, family, daily life, traditions, holidays, and artistic expression."
+    "Demonstrate reading and listening comprehension of basic everyday materials related to oneself, family and immediate surroundings within a cultural context. These may include, but are not limited to, advertisements, time tables, short personal letters, dialogues, readings, conversations, and video and audio recordings.",
+    "Communicate, both orally and in writing, about familiar topics and activities requiring a simple and direct exchange of information within a cultural context. This communication may include, but is not limited to, simple verbal and written exchanges such as dialogues and paragraphs related to oneself, family and immediate surroundings.",
+    "Reflect on and evaluate similarities and differences in specific cultural practices and perspectives as related, but not limited to, greetings, education, family traditions, sports, leisure activities, cultural events and artistic expressions."
    ],
-   "fingerprint": "4b7a06de9e361d43d7b1067c45970732"
+   "fingerprint": "6f1d59776873f4c54d3122b2c9dcb468",
+   "maps_to": [
+    [
+     "Communication Skills"
+    ],
+    [
+     "Communication Skills"
+    ],
+    [
+     "Critical Thinking",
+     "Communication Skills"
+    ]
+   ],
+   "parsed_from": "html",
+   "offered_at": [
+    "RIV",
+    "NOR"
+   ]
   },
   {
    "code": "AUT 13A",
@@ -86,19 +104,20 @@
    "title_printed": "Course Outline: Riverside Community College District",
    "chars": 7531,
    "shape": "list",
-   "heading": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
-   "lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon successful completion of the course, students should be able to demonstrate the following skills:",
    "outcomes": [
-    "Describe safe practices when working around high voltage.",
-    "Demonstrate how to safely inspect high voltage gloves prior to use.",
-    "Describe the process to safely power down high voltage systems found in hybrid and electric vehicles.",
-    "Identify components used in hybrid and electric vehicle systems.",
-    "Describe different types of battery technology used in hybrid and electric vehicles.",
-    "Discuss different types of traction motors used in hybrid and electric vehicles.",
-    "Perform basic maintenance on hybrid and electric vehicle systems.",
-    "Demonstrate ability to safely remove and replace high voltage battery packs."
+    "Demonstrate personal and shop safety procedures needed to safely work with high voltage systems.",
+    "Demonstrate knowledge of hybrid and electric vehicle component operation.",
+    "Describe basic maintenance procedures related to hybrid and electric vehicles.",
+    "Identify proper diagnostic and repair procedures as the relate to basic hybrid or electric vehicle faults."
    ],
-   "fingerprint": "b9ef4175aacb1b14dbc979a646aa3ad9"
+   "fingerprint": "0596fb15ec59d81a1483d8d9ad70a75f",
+   "maps_to": null,
+   "parsed_from": "html",
+   "offered_at": [
+    "RIV"
+   ]
   },
   {
    "code": "CIS 11",
@@ -116,13 +135,25 @@
    "title_printed": "Course Outline: Riverside Community College District",
    "chars": 10712,
    "shape": "list",
-   "heading": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
-   "lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon successful completion of the course, students should be able to demonstrate the following skills:",
    "outcomes": [
-    "Write a range of assembly language programs, ranging from simple code segments, to medium size application programs.",
-    "Demonstrate the implementation of fundamental high-level programming constructs such as decision statements, looping statements, and functions at the machine-language level."
+    "Analyze and interpret assembly language code and hexadecimal format. Demonstrate how fundamental high-level programming constructs are implemented at the machine-language level.",
+    "Write and execute programs in assembly language (utilizing application programming interfaces) illustrating typical mathematic and business applications."
    ],
-   "fingerprint": "35883a2db844310e3863e3433f38a253"
+   "fingerprint": "ae1b2d58fa6380b43544a973f0786369",
+   "maps_to": [
+    [],
+    [
+     "Critical Thinking"
+    ]
+   ],
+   "parsed_from": "html",
+   "offered_at": [
+    "RIV",
+    "MOV",
+    "NOR"
+   ]
   },
   {
    "code": "CUL 20",
@@ -138,20 +169,19 @@
    "title_printed": "Course Outline: Riverside Community College District",
    "chars": 4936,
    "shape": "list",
-   "heading": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
-   "lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon successful completion of the course, students should be able to demonstrate the following skills:",
    "outcomes": [
-    "List the properties for each baking ingredient.",
-    "Calculate formulas for all types of dough, batters, icings, and fillings.",
-    "Identify, utilize and care for equipment and tools through experience and supervision.",
-    "Demonstrate the ability to use weights and measures.",
-    "Identify standards of quality for baked goods.",
-    "Demonstrate mixing and baking procedures and operational procedures.",
-    "Produce all types of yeast and sweet goods.",
-    "Prepare baking and pastry items in a time-restricted, quality-minded setting.",
-    "Prevent food poisoning and food-borne diseases by exercising proper hygiene, food handling and storage habits."
+    "Define basic ingredients and formulas in preparing baking products.",
+    "Apply skills in correcting baking failures, develop recognition of high-quality baked products and evaluate errors made in baking mixtures and products.",
+    "Develop manipulative skills necessary for employment in bake shops, school cafeterias, convalescent hospitals, community feeding programs, and commercial foods services."
    ],
-   "fingerprint": "9941b7d5a22728bb941193b5d9c3c3fa"
+   "fingerprint": "73101b6a2707025e839150e72c06b255",
+   "maps_to": null,
+   "parsed_from": "html",
+   "offered_at": [
+    "RIV"
+   ]
   },
   {
    "code": "ELC 11",
@@ -167,15 +197,25 @@
    "title_printed": "Course Outline: Riverside Community College District",
    "chars": 7834,
    "shape": "list",
-   "heading": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
-   "lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon successful completion of the course, students should be able to demonstrate the following skills:",
    "outcomes": [
-    "Apply Ohm's Law, Kirchhoff's Voltage and Current Laws, and other foundational electrical principles in the analysis of circuits.",
-    "Master the fundamentals of voltage, current, resistance, and power in DC circuits.",
-    "Utilize network theorems like Thevenin’s and Norton’s for simplifying and solving circuits.",
-    "Conduct experiments and interpret results with standard electrical measurement tools to verify theoretical predictions."
+    "Solve basic, direct current, electronic problems involving resistance, current, voltage, and power, as applied to both simple and complex combinations of series and/or parallel circuit components, comprised of resistors, capacitors and coils, in a given network configuration.",
+    "Diagram and discuss the relationship between electricity and magnetism as related to a DC permanent magnet motor, a solenoid or an electromechanical relay.",
+    "Describe and contrast the construction, operation, and purpose of resistors, potentiometers, switches, fuses, relays, and batteries."
    ],
-   "fingerprint": "2217c972f338849dfd0a48385e1f7ac1"
+   "fingerprint": "eee6ec4ebe6538d71e3fcc20cbdea1fb",
+   "maps_to": [
+    [
+     "Critical Thinking"
+    ],
+    [],
+    []
+   ],
+   "parsed_from": "html",
+   "offered_at": [
+    "NOR"
+   ]
   },
   {
    "code": "EST 22",
@@ -191,16 +231,18 @@
    "title_printed": "Course Outline: Riverside Community College District",
    "chars": 4784,
    "shape": "list",
-   "heading": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
-   "lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon successful completion of the course, students should be able to demonstrate the following skills:",
    "outcomes": [
-    "Apply the mechanical code in construction, regulation, and design.",
-    "Achieve professional certification by passing applicable examinations",
-    "Achieve skills for employment in private or public construction fields, or become inspector or plans examiners.",
-    "Apply codes in construction designs.",
-    "Interpret and apply appropriate knowledge of combustion and air circulation in gas systems as per mechanical code."
+    "Cite code sections and apply provisions with relation to mechanical codes in construction, regulation and design.",
+    "Interpret and apply appropriate knowledge of combustion and air circulation in a gas systems as per mechanical code."
    ],
-   "fingerprint": "00b49e48b952a09a58d01363a57f2c12"
+   "fingerprint": "85a756965de09ff14123cfc9740d0a2c",
+   "maps_to": null,
+   "parsed_from": "html",
+   "offered_at": [
+    "RIV"
+   ]
   },
   {
    "code": "GEG 1",
@@ -218,14 +260,35 @@
    "title_printed": "Course Outline: Riverside Community College District",
    "chars": 9537,
    "shape": "list",
-   "heading": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
-   "lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon successful completion of the course, students should be able to demonstrate the following skills:",
    "outcomes": [
-    "Use critical thinking to provide examples of and explain relationships between the atmosphere, biosphere, hydrosphere and lithosphere.",
-    "Interpret geographic tools such as maps, graphs, data and images to enhance understanding of geographic landscapes and processes.",
-    "Describe geographic processes as they occur in the four spheres."
+    "Identify and explain basic facts, rules, principles, and mechanisms of the atmosphere, lithosphere, hydrosphere, and biosphere and how spheres interact with each other to explain spatial issues.",
+    "Assess the impact of location on the elements of air, water, land, and the biosphere.",
+    "Communicate geographic and scientific information, including multiple perspectives on physical processes.",
+    "Utilize geographic tools such as maps, graphs, data, and images to think critically about and solve spatial issues."
    ],
-   "fingerprint": "55baa5f4b922e085f3e06c314b8b15de"
+   "fingerprint": "75ff594078c7e6a744c40e98afdee980",
+   "maps_to": [
+    [
+     "Communication Skills"
+    ],
+    [
+     "Critical Thinking"
+    ],
+    [
+     "Communication Skills"
+    ],
+    [
+     "Information Competency & Technology Literacy"
+    ]
+   ],
+   "parsed_from": "html",
+   "offered_at": [
+    "RIV",
+    "MOV",
+    "NOR"
+   ]
   },
   {
    "code": "HUM 10",
@@ -243,18 +306,32 @@
    "title_printed": "Course Outline: Riverside Community College District",
    "chars": 10783,
    "shape": "list",
-   "heading": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
-   "lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon successful completion of the course, students should be able to demonstrate the following skills:",
    "outcomes": [
-    "Explain how the category of religion and its associated terminology are variously defined and also how those definitions may be contested.",
-    "Evaluate the various methodological approaches to religion, such as anthropological, sociological, historical, psychological, and philosophical.",
-    "Describe historical and contemporary varieties of religious experience, belief, and practice in at least 8 world religions across 3 world religious traditions.",
-    "Examine the relationship between historical and contemporary varieties of religious experience and the cultures in which they are found.",
-    "Discuss the role of primary religious texts in their religious traditions through their respective interpretive frameworks.",
-    "Examine the relationship between religious traditions and political and social issues that arise in their respective cultures.",
-    "Recognize the influence of Christian European colonization on the development of religious studies as an academic field."
+    "Explain the relationship between the cultural phenomenon of religion and the development of the category \"religion\" as variously defined in religious studies.",
+    "Compare and evaluate how religious traditions develop in particular contexts and cultures using the methods and tools presented in the course.",
+    "Demonstrate the ability to interpret primary and secondary sources and to know what role each plays in the development of an argument that uses them for support."
    ],
-   "fingerprint": "bdb42cd4f9febe0868d374e7f77dff6c"
+   "fingerprint": "5efb7897a9faa7e35add8372000b4c76",
+   "maps_to": [
+    [
+     "Critical Thinking"
+    ],
+    [
+     "Critical Thinking",
+     "Self-Development & Global Awareness"
+    ],
+    [
+     "Critical Thinking"
+    ]
+   ],
+   "parsed_from": "html",
+   "offered_at": [
+    "RIV",
+    "MOV",
+    "NOR"
+   ]
   },
   {
    "code": "MAN 10",
@@ -270,18 +347,21 @@
    "title_printed": "Course Outline: Riverside Community College District",
    "chars": 17059,
    "shape": "list",
-   "heading": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
-   "lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon successful completion of the course, students should be able to demonstrate the following skills:",
    "outcomes": [
-    "Describe the Concepts and terminology of Smart Manufacturing",
-    "Understand the machine operation safety guidelines.",
-    "Describe basic types of tools and fasteners.",
-    "Define dimensional measurement and explain its importance. Perform measurement conversion.",
-    "Describe the types of Engineering drawings used in Manufacturing.",
-    "Describe basic electrical control, pneumatic, robot operations and sensor system operations.",
-    "Monitor machinery using Human Machine Interface, Internet, and Ethernet"
+    "Describe an employer's PPE responsibilities.",
+    "Describe how to interpret a third angle projection multiview drawing.",
+    "Define electrical power and give its units of measurement",
+    "Describe how to run a robot program.",
+    "Explain the advantages and disadvantages of electronic sensors."
    ],
-   "fingerprint": "d8bedc0a20569cb24ea1efd4703cdfae"
+   "fingerprint": "9a8e144adebf53a25f170fd6a15cc06a",
+   "maps_to": null,
+   "parsed_from": "html",
+   "offered_at": [
+    "NOR"
+   ]
   },
   {
    "code": "NNA 79",
@@ -297,16 +377,19 @@
    "title_printed": "Course Outline: Riverside Community College District",
    "chars": 10035,
    "shape": "list",
-   "heading": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
-   "lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon successful completion of the course, students should be able to demonstrate the following skills:",
    "outcomes": [
-    "Define the meaning of medical terminology word roots, suffixes and prefixes used in a variety of healthcare professions.",
-    "Recognize and understand basic medical terms used by healthcare professionals.",
-    "Correctly spell basic medical terminology.",
-    "Analyze unfamiliar terms using the knowledge of medical terminology word roots, suffixes and prefixes.",
-    "Apply medical terms to healthcare scenarios and case studies."
+    "Understand and apply medical terms used by a variety of healthcare professionals in the provision of quality, safe, patient-centered care.",
+    "Participate in collaborative relationships through the understanding and application of a common language used by healthcare professionals in a variety of settings.",
+    "Incorporate critical thinking principles into apply the use of medical terms in various healthcare scenarios."
    ],
-   "fingerprint": "bf5dce17ebf9dd922823f569489c88cc"
+   "fingerprint": "d9f54a3cd7ff7da5734a15d95d792e86",
+   "maps_to": null,
+   "parsed_from": "html",
+   "offered_at": [
+    "RIV"
+   ]
   },
   {
    "code": "PHO 11",
@@ -322,13 +405,21 @@
    "title_printed": "Course Outline: Riverside Community College District",
    "chars": 5979,
    "shape": "list",
-   "heading": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
-   "lead": "Upon successful completion of the course, students should be able to demonstrate the following activities:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon successful completion of the course, students should be able to demonstrate the following skills:",
    "outcomes": [
-    "Produce professional quality large format inkjet prints.",
-    "Produce a body of professional quality photographic images."
+    "Photograph images that demonstrate an advanced understanding of composition and design.",
+    "Exercise observation skills and judgement to create professional quality photographs.",
+    "Demonstrate an advanced understanding of how to use Adobe Lightroom and Adobe Photoshop to post-process photographs."
    ],
-   "fingerprint": "c71777463b8bebe7ec7d19d345d70c6a"
+   "fingerprint": "5388e5371aaf8b512f7743fb9f808b66",
+   "maps_to": null,
+   "parsed_from": "html",
+   "offered_at": [
+    "RIV"
+   ]
   }
- ]
+ ],
+ "reparsed_at": "2026-10-12T22:40:03Z",
+ "reparsed_note": "The run's own parser read the Course Objectives RCCD prints before the SLOs under the same lead-in; these rows are the filed pages parsed again by outcomes_from_html."
 }

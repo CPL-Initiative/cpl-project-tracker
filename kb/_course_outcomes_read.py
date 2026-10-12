@@ -30,6 +30,7 @@ from __future__ import annotations
 import argparse
 import gzip
 import hashlib
+import html.parser
 import importlib.util
 import json
 import os
@@ -69,32 +70,147 @@ STOP = re.compile(
     r"advisor(y|ies)|entrance skills|distance education|repeatability|grading|units|hours|"
     r"discipline|minimum qualifications|library|approvals?|effective|course outline)\b[^\n]{0,60}:?[ \t]*$",
     re.I | re.M)
+# The SLO heading proper. RCCD prints Course Objectives first, under the same
+# lead-in ("Upon successful completion of the course, students should be able to
+# demonstrate the following activities:"), so the lead-in alone is no SLO heading
+# (S374 trial 38317539422 read the objectives that way on all twelve pages).
+SLO_TITLE = re.compile(r"^[ \t]*(student|course) learning outcomes?\b", re.I | re.M)
 # A list marker the outline prints before an outcome: 1. 1) a. a) • - – *
-MARKER = re.compile(r"^[ \t]*(?:\(?\d{1,2}[.)]|\(?[a-zA-Z][.)]|[•●▪·\-–*])[ \t]+")
+MARKER = re.compile(r"^[ \t]*(?:\(?\d{1,2}[.)]|\(?[a-zA-Z][.)]|[\u2022\u25cf\u25aa\u00b7\-\u2013*])[ \t]+")
 # The lead-in a college prints between the heading and the list.
 LEAD = re.compile(r"(upon (successful )?completion|students? (will|should) be able|by the end of)[^\n]*",
                   re.I)
+# The colleges an RCCD integrated outline names as offering the course.
+OFFERED = re.compile(r"^College:[ \t]*\n((?:[ \t]*[A-Z]{3}[ \t]*\n)+)", re.M)
+
+
+def _ws(text: str) -> str:
+    """Rendered text: whitespace runs (and no-break spaces) print as one space."""
+    return re.sub(r"\s+", " ", (text or "").replace("\xa0", " ")).strip()
+
+
+class _Node:
+    def __init__(self, tag, attrs, parent):
+        self.tag, self.attrs, self.parent, self.kids = tag, dict(attrs), parent, []
+
+    def text(self, skip=()) -> str:
+        out = []
+        for k in self.kids:
+            if isinstance(k, str):
+                out.append(k)
+            elif k.tag not in skip:
+                out.append(" " if k.tag == "br" else "")
+                out.append(k.text(skip))
+        return "".join(out)
+
+    def find(self, pred):
+        for k in self.kids:
+            if not isinstance(k, str):
+                if pred(k):
+                    yield k
+                yield from k.find(pred)
+
+
+VOID = {"br", "img", "hr", "meta", "link", "input", "col", "area", "base", "source", "wbr"}
+
+
+class _Tree(html.parser.HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.root = _Node("#root", [], None)
+        self.cur = self.root
+
+    def handle_starttag(self, tag, attrs):
+        node = _Node(tag, attrs, self.cur)
+        self.cur.kids.append(node)
+        if tag not in VOID:
+            self.cur = node
+
+    def handle_startendtag(self, tag, attrs):
+        self.cur.kids.append(_Node(tag, attrs, self.cur))
+
+    def handle_endtag(self, tag):
+        n = self.cur
+        while n is not self.root and n.tag != tag:
+            n = n.parent
+        if n is not self.root:
+            self.cur = n.parent
+
+    def handle_data(self, data):
+        self.cur.kids.append(data)
+
+
+def outcomes_from_html(page_html: str) -> dict | None:
+    """The SLO block of a curriQunet integrated outline (RCCD's report 97): the area
+    whose sub-title reads Student (or Course) Learning Outcomes; the lead-in printed
+    before its list; each top-level item's own text as printed; and the institutional
+    outcomes an item maps to (the nested list RCCD prints under it) as maps_to.
+    None when the page has no such area, so the text reader takes over."""
+    tree = _Tree()
+    tree.feed(page_html or "")
+    for title in tree.root.find(lambda n: "subTitle" in (n.attrs.get("class") or "")):
+        heading = _ws(title.text())
+        if not SLO_TITLE.match(heading):
+            continue
+        area = title.parent
+        lead_parts, lists = [], []
+        seen_title = False
+        for k in area.kids:
+            if k is title:
+                seen_title = True
+                continue
+            if not seen_title:
+                continue
+            if isinstance(k, str):
+                if not lists:
+                    lead_parts.append(k)
+            elif k.tag in ("ol", "ul"):
+                lists.append(k)
+            elif not lists and k.tag not in ("br",):
+                lead_parts.append(k.text())
+        items, maps = [], []
+        for lst in lists[:1]:
+            for li in [k for k in lst.kids if not isinstance(k, str) and k.tag == "li"]:
+                own = _ws(li.text(skip=("ol", "ul")))
+                if not own:
+                    continue
+                items.append(MARKER.sub("", own, count=1).strip())
+                nested = [_ws(x.text()) for x in li.find(lambda n: n.tag == "li")]
+                maps.append([x for x in nested if x])
+        lead = _ws(" ".join(lead_parts)) or None
+        if not items and lead and not LEAD.match(lead):
+            items, lead = [lead], None
+        shape = "list" if len(items) > 1 else ("paragraph" if items else "none")
+        return {"shape": shape, "heading": heading.rstrip(":").strip(), "lead": lead, "outcomes": items,
+                "maps_to": maps if any(maps) else None, "parsed_from": "html"}
+    return None
 
 
 def outcomes_of(text: str) -> dict:
-    """The outcomes block as printed: the heading line, the lead-in, and each outcome
-    with only its list marker removed. shape is list, paragraph or none."""
-    m = cor.SLO_HEADING.search(text or "")
+    """The outcomes block as printed in the page's text, when the HTML reader finds
+    no SLO area: the SLO heading proper first, the lead-in alone only on a page with
+    no SLO heading and no objectives section before it."""
+    m = SLO_TITLE.search(text or "")
     if not m:
-        return {"shape": "none", "heading": None, "lead": None, "outcomes": []}
+        m = cor.SLO_HEADING.search(text or "")
+        before = (text or "")[:m.start()] if m else ""
+        last = [ln.strip() for ln in before.split("\n") if ln.strip()][-1:] if m else []
+        if not m or (last and re.match(r"(course )?objectives|entrance skills", last[0], re.I)):
+            return {"shape": "none", "heading": None, "lead": None, "outcomes": [], "maps_to": None,
+                    "parsed_from": "text"}
     start = text.rfind("\n", 0, m.start()) + 1
     lines = text[start:].split("\n")
     heading = lines[0].strip()
-    lead, items, rest = None, [], lines[1:]
+    lead, items = None, []
     lm = LEAD.search(heading)
     if lm:
         lead = heading[lm.start():].strip()
         heading = heading[:lm.start()].strip(" :") or heading
-    for line in rest[:200]:
+    for line in lines[1:200]:
         s = line.strip()
         if not s:
             continue
-        if STOP.match(s) or cor.SLO_HEADING.match(s) and items:
+        if STOP.match(s) or (SLO_TITLE.match(s) and items):
             break
         if lead is None and not items and LEAD.match(s):
             lead = s
@@ -102,7 +218,14 @@ def outcomes_of(text: str) -> dict:
         items.append(MARKER.sub("", s, count=1).strip())
     items = [x for x in items if x]
     shape = "list" if len(items) > 1 else ("paragraph" if items else "none")
-    return {"shape": shape, "heading": heading, "lead": lead, "outcomes": items}
+    return {"shape": shape, "heading": heading.rstrip(":").strip(), "lead": lead, "outcomes": items,
+            "maps_to": None, "parsed_from": "text"}
+
+
+def offered_at(text: str) -> list[str] | None:
+    """The college codes an integrated outline prints under College: (RIV, MOV, NOR)."""
+    m = OFFERED.search(text or "")
+    return [x.strip() for x in m.group(1).split("\n") if x.strip()] if m else None
 
 
 def fingerprint(outcomes: list[str]) -> str:
@@ -133,10 +256,11 @@ def wanted_courses(index: dict, slugs: list[str]) -> list[dict]:
 def read_one(reader, course: dict) -> dict:
     page = cor.load_full(reader, course["report"])
     body = page.get("body") or ""
-    got = outcomes_of(body)
+    got = outcomes_from_html(page.get("html") or "") or outcomes_of(body)
     return {**course, "status": page.get("status"), "final_url": page.get("final_url"),
             "access": cor.access_of(page), "title_printed": (page.get("title") or "")[:160],
-            "chars": len(body), **got, "fingerprint": fingerprint(got["outcomes"]) if got["outcomes"] else None}
+            "chars": len(body), "offered_at": offered_at(body), **got,
+            "fingerprint": fingerprint(got["outcomes"]) if got["outcomes"] else None}
 
 
 def spread(items: list, n: int) -> list:
@@ -160,15 +284,43 @@ def summarize(rows: list[dict]) -> dict:
             "outcomes": sum(len(r.get("outcomes") or []) for r in rows)}
 
 
+def reparse(folder: str) -> int:
+    """A trial's rows parsed again from the pages it filed, with no load: the parser
+    is checked against what the host printed, and the filed rows say which parser
+    read them."""
+    path = os.path.join(folder, "read.json")
+    d = json.load(open(path))
+    for row in d["rows"]:
+        stem = re.sub(r"[^A-Za-z0-9]+", "_", row["code"])
+        page_html = gzip.open(os.path.join(folder, stem + ".html.gz"), "rt").read()
+        text = open(os.path.join(folder, stem + ".txt")).read()
+        got = outcomes_from_html(page_html) or outcomes_of(text)
+        row.update(got, offered_at=offered_at(text),
+                   fingerprint=fingerprint(got["outcomes"]) if got["outcomes"] else None)
+    d["summary"] = summarize(d["rows"])
+    d["reparsed_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    d["reparsed_note"] = ("The run's own parser read the Course Objectives RCCD prints before the SLOs under "
+                          "the same lead-in; these rows are the filed pages parsed again by outcomes_from_html.")
+    with open(path, "w") as f:
+        json.dump(d, f, indent=1, ensure_ascii=False)
+    print(json.dumps(d["summary"], indent=1))
+    return 0
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--index", required=True, help="kb/course_outline_index/index_<run>.json")
+    ap.add_argument("--index", default="", help="kb/course_outline_index/index_<run>.json")
     ap.add_argument("--slugs", default="riverside_city,moreno_valley,norco")
     ap.add_argument("--trial", type=int, default=0)
     ap.add_argument("--part", type=int, default=1)
     ap.add_argument("--of", type=int, default=1)
     ap.add_argument("--delay", type=int, default=int(os.environ.get("CENSUS_DELAY_MS", "3000")))
+    ap.add_argument("--reparse", default="", help="a trial folder: parse its filed pages again, no load")
     a = ap.parse_args(argv)
+    if a.reparse:
+        return reparse(a.reparse)
+    if not a.index:
+        ap.error("--index FILE (or --reparse FOLDER)")
     index = json.load(open(a.index))
     courses = wanted_courses(index, [s for s in a.slugs.split(",") if s])
     if a.trial:
@@ -183,6 +335,7 @@ def main(argv=None) -> int:
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, "read.json" if a.trial else "read_%s_p%dof%d.json" % (run, a.part, a.of))
     head = {"run": run, "index": os.path.relpath(a.index, os.path.dirname(HERE)), "host": index["url"],
+            "system": cor.system_of(index["url"]) or "other",
             "slugs": a.slugs, "part": a.part, "of": a.of, "wanted": len(courses), "slice": len(todo)}
     rows: list[dict] = []
 
