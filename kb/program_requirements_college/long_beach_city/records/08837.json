@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Fashion Merchandising",
  "award": "A.A. Degree",
- "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/photography-aa/",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/fashion-merchandising/",
  "record_shape": 4,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7780,
+  "input_tokens": 10740,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7780,
-    "output_tokens": 775,
+    "input_tokens": 10740,
+    "output_tokens": 744,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 775,
+  "output_tokens": 744,
   "output_tokens_details": {
-   "thinking_tokens": 199
+   "thinking_tokens": 280
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.04662,
- "ms": 7241,
- "seconds": 7.7,
+ "cost_usd": 0.05784,
+ "ms": 6966,
+ "seconds": 7.3,
  "parts": null,
  "error": null,
  "score": {
@@ -96,7 +96,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -104,7 +104,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "(none: the text is an alphabetical course index, not a program section)",
+   "section_heading": "Fashion Merchandising",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -113,53 +113,51 @@
    "open_elective_units": null,
    "ge_pattern": null,
    "outcomes": [],
-   "careers": []
+   "careers": [
+    "fashion merchandising"
+   ]
   },
   "blocks": [],
   "course_outcomes": [],
   "missing_explained": [
    {
     "code": "FASH 10",
-    "why": "named only in the course index list, not in any program requirements"
+    "why": "A.A. requirements not in the text; course appears only in course descriptions"
    },
    {
     "code": "FASH 20",
-    "why": "named only in the course index list, not in any program requirements"
+    "why": "A.A. requirements not in the text; course appears only in course descriptions"
    },
    {
     "code": "FASH 200",
-    "why": "named only in the course index list, not in any program requirements"
+    "why": "A.A. requirements not in the text; course appears only in course descriptions"
    },
    {
     "code": "FASH 3",
-    "why": "named only in the course index list, not in any program requirements"
+    "why": "A.A. requirements not in the text; course appears only in course descriptions"
    },
    {
     "code": "FASH 32",
-    "why": "named only in the course index list, not in any program requirements"
+    "why": "A.A. requirements not in the text; course appears only in course descriptions"
    },
    {
     "code": "FASH 45",
-    "why": "named only in the course index list, not in any program requirements"
+    "why": "A.A. requirements not in the text; course appears only in course descriptions"
    },
    {
     "code": "FASH 46",
-    "why": "named only in the course index list, not in any program requirements"
+    "why": "A.A. requirements not in the text; course appears only in course descriptions"
    },
    {
     "code": "FASH 5",
-    "why": "named only in the course index list, not in any program requirements"
+    "why": "A.A. requirements not in the text; course appears only in course descriptions"
    },
    {
     "code": "FASH 9",
-    "why": "named only in the course index list, not in any program requirements"
+    "why": "A.A. requirements not in the text; course appears only in course descriptions"
    }
   ],
-  "notes": [
-   "The source URL points to the Photography A.A. page (digital-media-arts/photography-aa), not Fashion Merchandising.",
-   "The catalog text holds only an alphabetical course index (ESL through FLO), cut off mid-entry at 'FLO 290 - Floral Creati'. It contains no Fashion Merchandising A.A. section, requirements, unit totals, outcomes or careers.",
-   "No blocks were recorded. A reviewer should obtain the correct Fashion Merchandising A.A. page for 2026-2027."
-  ]
+  "notes": []
  },
- "extracted_run": "38152016534"
+ "extracted_run": "38185403454"
 }

@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Spanish",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/world-languages/spanish-medical-professionals-certificate-accomplishment/",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/world-languages/spanish-certificate-achievement/",
  "record_shape": 4,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 14057,
+  "input_tokens": 6669,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 14057,
-    "output_tokens": 1023,
+    "input_tokens": 6669,
+    "output_tokens": 2144,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,84 +30,67 @@
     "model": null
    }
   ],
-  "output_tokens": 1023,
+  "output_tokens": 2144,
   "output_tokens_details": {
-   "thinking_tokens": 148
+   "thinking_tokens": 396
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.07669,
- "ms": 9905,
- "seconds": 10.2,
+ "cost_usd": 0.06956,
+ "ms": 15761,
+ "seconds": 16.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 25,
    "listed": 25,
-   "share": 0.0,
-   "missing": [
-    "ART11",
-    "HIST18",
-    "HIST8A",
-    "HIST8AH",
-    "HIST8B",
-    "HIST8BH",
-    "HUMAN1",
-    "HUMAN1H",
-    "LING1",
-    "LING3",
-    "SPAN1",
-    "SPAN10",
-    "SPAN10H",
-    "SPAN2",
-    "SPAN200",
-    "SPAN201",
-    "SPAN25A",
-    "SPAN25B",
-    "SPAN25C",
-    "SPAN25D",
-    "SPAN3",
-    "SPAN4",
-    "SPAN8",
-    "SPAN9",
-    "SPAN9H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 3,
+   "codes": [
+    "LING1H",
+    "SPAN1H",
+    "SPAN2H"
+   ],
+   "flagged": [
+    "LING1H",
+    "SPAN1H",
+    "SPAN2H"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    19.0
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -116,130 +99,261 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Spanish - Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 19
    },
    "open_elective_units": null,
    "ge_pattern": null,
-   "outcomes": [],
+   "outcomes": [
+    "Demonstrate effective skills in the four major areas of Spanish language study (reading, writing, speaking, listening comprehension) in order to perform elementary everyday communicative functions.",
+    "Organize thinking and writing by using facts, ideas and events to ask questions, assemble evidence, and evaluate conclusions with clarity and coherence.",
+    "Demonstrate understanding of the interrelationship between culture-specific behaviors."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ART 11",
-    "why": "appears only in the site's course index list, not in any program requirements"
+    "name": "REQUIRED COURSES",
+    "rule": "choose_units",
+    "minimum": 15,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "SPAN 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPAN 1H",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPAN 2H",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 4",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 9",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPAN 9H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 10",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPAN 10H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 25A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 25B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 25C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 25D",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "HIST 18",
-    "why": "not in the text"
-   },
-   {
-    "code": "HIST 8A",
-    "why": "not in the text"
-   },
-   {
-    "code": "HIST 8AH",
-    "why": "not in the text"
-   },
-   {
-    "code": "HIST 8B",
-    "why": "not in the text"
-   },
-   {
-    "code": "HIST 8BH",
-    "why": "not in the text"
-   },
-   {
-    "code": "HUMAN 1",
-    "why": "not in the text"
-   },
-   {
-    "code": "HUMAN 1H",
-    "why": "not in the text"
-   },
-   {
-    "code": "LING 1",
-    "why": "not in the text"
-   },
-   {
-    "code": "LING 3",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN 1",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN 10",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN 10H",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN 2",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN 200",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN 201",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN 25A",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN 25B",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN 25C",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN 25D",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN 3",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN 4",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN 8",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN 9",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN 9H",
-    "why": "not in the text"
+    "name": "IN ADDITION, complete THREE (3) units from the following, if not already completed above",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ART 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 8A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 8AH",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 8B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 8BH",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMAN 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUMAN 1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "LING 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "LING 1H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "LING 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The catalog text contains only an alphabetical course index from the site navigation (AI through COSA, cut off mid-list at 'COSA 613 - Microsoft Word'); no program section, requirements, totals, outcomes or careers for Spanish appear, so section_heading is empty and no blocks are recorded.",
-   "The source URL points to the 'Spanish for Medical Professionals Certificate of Accomplishment' page, while the award requested is a Certificate of Achievement (16-30 units) in Spanish; the page may not correspond to this award. A reviewer should locate the correct Spanish Certificate of Achievement page.",
-   "The extracted text appears truncated before reaching any SPAN courses or program content."
+   "SPAN 200 and SPAN 201 appear in both blocks; the second block says to complete 3 units 'if not already completed above', so a course cannot count twice.",
+   "SPAN 1H, SPAN 2H and LING 1H are printed as slash alternatives (SPAN 1/1H, SPAN 2/2H, LING 1/1H) but are not in the closed list; recorded as catalog additions. Units for honors twins taken from the single unit value printed for the slash pair.",
+   "Catalog prints SPAN 25A title as 'Advanced Spanish: Culture in Literature' (state file: 'Advanced Spanish- Culture in Literature').",
+   "No careers named in the program section; 'Careers' appears only in site footer menu."
   ]
  },
- "extracted_run": "38152016534"
+ "extracted_run": "38185403454"
 }

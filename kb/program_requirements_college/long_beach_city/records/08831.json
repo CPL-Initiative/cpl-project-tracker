@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Film",
  "award": "A.A. Degree",
- "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/digital-media-arts/photography-aa/",
+ "source_url": "https://lbcc-public.courseleaf.com//degrees-certificates/film-television-electronic-media/",
  "record_shape": 4,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13510,
+  "input_tokens": 10404,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13510,
-    "output_tokens": 582,
+    "input_tokens": 10404,
+    "output_tokens": 878,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 582,
+  "output_tokens": 878,
   "output_tokens_details": {
-   "thinking_tokens": 158
+   "thinking_tokens": 182
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.06568,
- "ms": 6779,
- "seconds": 7.3,
+ "cost_usd": 0.05918,
+ "ms": 7513,
+ "seconds": 7.8,
  "parts": null,
  "error": null,
  "score": {
@@ -106,7 +106,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Film, Television & Electronic Media",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -122,50 +122,54 @@
   "missing_explained": [
    {
     "code": "FILM 1",
-    "why": "only in alphabetical course index; no requirements text"
+    "why": "not in the text as a requirement; only its course description is printed"
    },
    {
     "code": "FILM 10",
-    "why": "only in alphabetical course index; no requirements text"
+    "why": "not in the text as a requirement; only its course description is printed"
    },
    {
     "code": "FILM 11",
-    "why": "only in alphabetical course index; no requirements text"
+    "why": "not in the text as a requirement; only its course description is printed"
    },
    {
     "code": "FILM 20",
-    "why": "only in alphabetical course index; no requirements text"
+    "why": "not in the text as a requirement; only its course description is printed"
    },
    {
     "code": "FILM 21",
-    "why": "only in alphabetical course index; no requirements text"
+    "why": "not in the text as a requirement; only its course description is printed"
    },
    {
     "code": "FILM 25",
-    "why": "only in alphabetical course index; no requirements text"
+    "why": "not in the text as a requirement; only its course description is printed"
    },
    {
     "code": "FILM 2A",
-    "why": "only in alphabetical course index; no requirements text"
+    "why": "not in the text as a requirement; only its course description is printed"
    },
    {
     "code": "FILM 2B",
-    "why": "only in alphabetical course index; no requirements text"
+    "why": "not in the text as a requirement; only its course description is printed"
    },
    {
     "code": "FILM 40",
-    "why": "only in alphabetical course index; no requirements text"
+    "why": "not in the text as a requirement; only its course description is printed"
    },
    {
     "code": "TV 12",
-    "why": "not in the text"
+    "why": "not in the text as a requirement; only its course description is printed"
    },
    {
     "code": "TV 16",
-    "why": "not in the text"
+    "why": "not in the text as a requirement; only its course description is printed"
    }
   ],
-  "notes": []
+  "notes": [
+   "The supplied text contains no section for the Film A.A. Degree. The page 'Film, Television & Electronic Media' lists only 'Film, Television, and Electronic Media - Associate in Science Transfer Degree' under Programs, plus a Courses tab with course descriptions (text cut off at TV 30).",
+   "No requirements, total units, outcomes, or careers for the Film A.A. could be recorded; the A.A. may be on a separate catalog page or no longer offered in 2026-2027. Reviewer should locate the correct page.",
+   "Course descriptions show TV 16 titled 'Video and Film Editing' (closed list: 'Video & Film Editing')."
+  ]
  },
- "extracted_run": "38152016534"
+ "extracted_run": "38185403454"
 }

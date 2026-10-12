@@ -2,19 +2,19 @@
  "college": "Long Beach City College",
  "programs": 391,
  "with_closed_list": 385,
- "found": 379,
- "extracted": 379,
+ "found": 367,
+ "extracted": 367,
  "errors": 0,
- "passed_machine_checks": 274,
+ "passed_machine_checks": 311,
  "failed": {
-  "coverage": 76,
-  "invented": 2,
-  "arithmetic": 92,
+  "coverage": 25,
+  "invented": 0,
+  "arithmetic": 55,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 20.64,
- "cost_per_program": 0.0545,
+ "cost_usd": 19.13,
+ "cost_per_program": 0.0521,
  "not_found": [
   {
    "control_number": "39497",
@@ -37,5 +37,5 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
   }
  ],
- "run": "38152016534"
+ "run": "38185403454"
 }
