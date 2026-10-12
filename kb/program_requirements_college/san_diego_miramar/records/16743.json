@@ -1,0 +1,180 @@
+{
+ "college": "San Diego Miramar College",
+ "control_number": "16743",
+ "shape": "certificate",
+ "title": "Advanced Traffic Accident Investigation",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20947",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8154,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8154,
+    "output_tokens": 1240,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1240,
+  "output_tokens_details": {
+   "thinking_tokens": 373
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05742,
+ "ms": 10198,
+ "seconds": 10.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    27.7,
+    27.7
+   ],
+   "stated": [
+    27.7,
+    27.7
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Advanced Traffic Accident Investigation - Certificate of Achievement: Miramar",
+   "measure": "units",
+   "total_units": {
+    "min": 27.7,
+    "max": 27.7
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Understand the three components of the criminal justice system and how they interrelate.",
+    "Demonstrate knowledge of the California Penal Code, the California Commission on Peace Officer Standards and Training regulations and appropriate department policies and procedures.",
+    "Relate knowledge from several employment areas such as pre-employment testing, physical requirements, psychological evaluations and social factors.",
+    "Use information of crime scene management and investigation, forensics analysis and information technology to conduct rudimentary criminal investigations.",
+    "Analyze and evaluate the role of criminal sanctions in recidivism rates and the rehabilitation process of offenders."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 27.7,
+     "max": 27.7
+    },
+    "courses": [
+     {
+      "code": "ADJU 260",
+      "units": 24,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJU 322A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJU 304A",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJU 305A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJU 332A",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJU 366",
+      "units": 0.2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The first outcome is printed on the same line as the lead-in 'Students who complete the Advanced Traffic Accident Investigation Program will be able to:'; the lead-in was omitted.",
+   "The summary is the general Administration of Justice program description; it names training areas (Law Enforcement, Investigations, Contemporary Police Technologies, Correctional Technologies) rather than careers, so careers were left empty. 'Peace officers' appears only in a course description and was not recorded.",
+   "Total 'Semester Units: 27.7' and 'Total Units: 27.7' agree with the sum of the listed courses."
+  ]
+ },
+ "extracted_run": "38275241459"
+}

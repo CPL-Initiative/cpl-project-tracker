@@ -1,0 +1,328 @@
+{
+ "college": "San Diego Miramar College",
+ "control_number": "12105",
+ "shape": "certificate",
+ "title": "Child Development Master Teacher",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20081",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10896,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10896,
+    "output_tokens": 2573,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2573,
+  "output_tokens_details": {
+   "thinking_tokens": 868
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09504,
+ "ms": 21694,
+ "seconds": 21.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 18,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    35.0
+   ],
+   "stated": [
+    31.0,
+    35.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Child Development Master Teacher - Certificate of Achievement: Miramar",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 35
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Communicate effectively with children, families, staff, and the community.",
+    "Plan and implement developmentally appropriate curriculum for children.",
+    "Apply human development growth theories and principles to early childhood settings."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "CHIL 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIL 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIL 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIL 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIL 141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIL 151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIL 180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIL 215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIL 270",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "CHIL 275",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Guiding Young Children",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialization",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHIL 160",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIL 161",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIL 162",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Special Needs",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialization",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHIL 165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIL 166",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Infant/Toddler",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialization",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHIL 175",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIL 176",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Family Life",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Specialization",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHIL 160",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIL 161",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIL 188",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Total Units printed as 31.0-35.0; the required-major list prints Semester Units 25.0-28.0 and the specialization choice prints 6.0-7.0 ('Select one of the following specializations for a total of 6-7 units').",
+   "Each specialization sub-heading prints 'Semester Units: 0.0', which appears to be a placeholder; stated left null for those blocks. Reviewer should check.",
+   "CHIL 270 printed as 1.0-4.0 units with OR CHIL 275 printed as 1.0-3.0 units; recorded CHIL 275 as an alternative with units 1 (alternatives cannot hold a range).",
+   "Specialization courses read as all required within each option: printed units (7, 6, 6, 7) match the stated 6-7 total.",
+   "CHIL 161 is marked '(Historical)' in the catalog while still listed in Guiding Young Children and Family Life specializations.",
+   "CHIL 176 is printed with the title 'Infant and Toddler Care and Curriculum', differing from the state file title 'Principles of Infant-Toddler Caregiving'.",
+   "No explicit career list; the summary mentions preparing the Master Teacher role but names no careers in a list, so careers left empty.",
+   "Course descriptions text cut off at CHIL 162."
+  ]
+ },
+ "extracted_run": "38275241459"
+}

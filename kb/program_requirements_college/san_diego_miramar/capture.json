@@ -1,0 +1,1267 @@
+{
+ "college": "San Diego Miramar College",
+ "catalog_url": "https://sdccd.curriqunet.com/catalog/alias/miramar26-27",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 146,
+ "with_closed_list": 124,
+ "started": "2026-10-12T16:10:19Z",
+ "curriqunet": {
+  "catalog": 71,
+  "view_prefix": "https://sdccd.curriqunet.com/catalog/iq/",
+  "errors": [],
+  "catalog_from": "_getCatalogs",
+  "sections": [
+   "Degree Curricula and Certificate Programs"
+  ],
+  "nodes_read": 4,
+  "calls": 9,
+  "entries": 171,
+  "stopped_at_cap": false,
+  "same_title_entries": 0,
+  "entries_read": 171
+ },
+ "pages_read": 171,
+ "loads": 896,
+ "seconds": 4460.5,
+ "found": 110,
+ "by_method": {
+  "no_closed_list": 22,
+  "not_found": 4,
+  "page_claimed": 10,
+  "sitemap_page": 110
+ },
+ "shared_pages": {
+  "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20081": [
+   "12104",
+   "12105"
+  ],
+  "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20004": [
+   "32568",
+   "41496"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "16779",
+   "title": "Professional Aeronautics",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "30512",
+   "title": "Graphics",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"
+  },
+  {
+   "control_number": "30532",
+   "title": "Graphics",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "36254",
+   "title": "Accountancy for Enrolled Agents",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "09725",
+   "title": "Aviation Maintenance Technology: Airframe",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20089"
+   ]
+  },
+  {
+   "control_number": "11728",
+   "title": "Aviation Business Administration",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20089",
+    "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20041",
+    "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20042",
+    "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20066"
+   ]
+  },
+  {
+   "control_number": "16731",
+   "title": "Aviation General Studies",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20089"
+   ]
+  },
+  {
+   "control_number": "16973",
+   "title": "Pilot Studies",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20089"
+   ]
+  },
+  {
+   "control_number": "22274",
+   "title": "Aviation Operations Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20066",
+    "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20042",
+    "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20089",
+    "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20041"
+   ]
+  },
+  {
+   "control_number": "22282",
+   "title": "Aviation Maintenance Technology: Airframe",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20089"
+   ]
+  },
+  {
+   "control_number": "22283",
+   "title": "Pilot Studies",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20089"
+   ]
+  },
+  {
+   "control_number": "22284",
+   "title": "Aviation General Studies",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20089"
+   ]
+  },
+  {
+   "control_number": "22285",
+   "title": "Aviation Maintenance Technology: Airframe & Powerplant",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20089"
+   ]
+  },
+  {
+   "control_number": "30637",
+   "title": "Communication Studies",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20066"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 3,
+  "0.8-1.0": 0,
+  "1.0": 107
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 110,
+  "list": [
+   {
+    "control_number": "05072",
+    "title": "Business Management",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20005",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05075",
+    "title": "Computer Programming",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20016",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05087",
+    "title": "Child Development",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20008",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05088",
+    "title": "Paralegal",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20093",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05095",
+    "title": "Law Enforcement",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20075",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05096",
+    "title": "Administration of Justice Correctional Technologies",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05098",
+    "title": "Law Enforcement Technologies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20078",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05100",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20043",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09710",
+    "title": "Biology for Allied Health",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19998",
+    "coverage": 0.688,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09711",
+    "title": "Biotechnology",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20000",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09712",
+    "title": "Financial Services",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20049",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09718",
+    "title": "Heavy Equipment Technology (HET) (Day Program)",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20061",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09720",
+    "title": "Automotive Technology",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19985",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09721",
+    "title": "Automotive Electrical",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19983",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09722",
+    "title": "Automotive Engine Performance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19984",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09723",
+    "title": "Automotive Transmissions",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19986",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09724",
+    "title": "Automotive Chassis",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19982",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09732",
+    "title": "Combined Drawing/Painting",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20011",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11261",
+    "title": "Administration of Justice Investigations Specialization",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20072",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11263",
+    "title": "Contemporary Police Technologies",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12104",
+    "title": "Child Development Teacher",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20081",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12105",
+    "title": "Child Development Master Teacher",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20081",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12648",
+    "title": "Equipment Mechanic Apprenticeship",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20045",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16566",
+    "title": "Business Administration",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20002",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16593",
+    "title": "Studio Arts",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20117",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16594",
+    "title": "Craft Skills",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16629",
+    "title": "Child Development Site Supervisor",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20112",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16665",
+    "title": "Technical Achievement for Field Training Officers",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20122",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16668",
+    "title": "Fire Prevention",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20051",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16669",
+    "title": "Company Officer Certification",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20014",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16739",
+    "title": "Law Enforcement Supervision",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20077",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16743",
+    "title": "Advanced Traffic Accident Investigation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20947",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16746",
+    "title": "Open Water Lifeguard",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20090",
+    "coverage": 0.696,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17037",
+    "title": "Personal Training",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20095",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18172",
+    "title": "Art Visual Studies",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19977",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18173",
+    "title": "Biology Studies",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19999",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18176",
+    "title": "Earth Science Studies",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20030",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18178",
+    "title": "English/Literature Studies",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20040",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18179",
+    "title": "Exercise and Nutritional Sciences",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20047",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18180",
+    "title": "Human Development Studies",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20067",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18182",
+    "title": "Mathematics Studies",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20083",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18183",
+    "title": "Music Studies",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20087",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18184",
+    "title": "Occupational/Technical Studies",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20089",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18188",
+    "title": "Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20113",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18207",
+    "title": "Fire Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20044",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18208",
+    "title": "Fire Prevention",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20052",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18209",
+    "title": "Company Officer Certification",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20015",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18232",
+    "title": "World Language Studies",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20129",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19252",
+    "title": "San Diego Transit General Mechanic Apprenticeship",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20110",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19253",
+    "title": "San Diego Transit General Mechanic Apprenticeship",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20109",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20764",
+    "title": "Administrative Assistant",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20943",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22266",
+    "title": "Business Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20006",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22268",
+    "title": "Computer Programming",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20017",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22269",
+    "title": "Financial Services",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20050",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22272",
+    "title": "Business Administration",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20003",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22275",
+    "title": "Open Water Lifeguard",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20091",
+    "coverage": 0.696,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22276",
+    "title": "Administration of Justice Investigations Specialization",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20073",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22277",
+    "title": "Administration of Justice Correctional Technologies",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22278",
+    "title": "Law Enforcement",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20076",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22279",
+    "title": "Contemporary Police Technologies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22280",
+    "title": "Paralegal",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20094",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22286",
+    "title": "Equipment Mechanic Apprenticeship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20046",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22288",
+    "title": "Heavy Equipment Technology (HET) (Day Program)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20062",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30051",
+    "title": "Medical Laboratory Technology",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20084",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30052",
+    "title": "Medical Laboratory Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20085",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30599",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20114",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31263",
+    "title": "Accountancy",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20883",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31276",
+    "title": "Accountancy",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20884",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31605",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/AdministrationofJusticeADT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31653",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20065",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31925",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19974",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31926",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20074",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32568",
+    "title": "Business Administration",
+    "award": "A.S. T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20004",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32663",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19976",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32664",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20039",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32665",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20118",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32666",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20096",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32683",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20100",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32709",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20115",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32836",
+    "title": "Biotechnology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20001",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33374",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20031",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33878",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19997",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33898",
+    "title": "Child Development Assistant Teacher",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19978",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35017",
+    "title": "Entrepreneurship",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20042",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35030",
+    "title": "Entrepreneurship",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20041",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35204",
+    "title": "Audio Production and Engineering",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19979",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35288",
+    "title": "Audio Production and Engineering",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19980",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35571",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20088",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35573",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20054",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36487",
+    "title": "Administrative Assistant",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20942",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37418",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20105",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37455",
+    "title": "Public Safety Management",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20106",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37456",
+    "title": "Public Safety Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20107",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37626",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20079",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37726",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39433",
+    "title": "300-Hour Registered Yoga Teacher",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20882",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40608",
+    "title": "Honors Global Competencies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20066",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40765",
+    "title": "Hybrid/Electric Vehicles",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20069",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41496",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20004",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42671",
+    "title": "Sustainability",
+    "award": "A.A. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20119",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43052",
+    "title": "Hawthorne Technician Apprenticeship (HTAP)",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20056",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43118",
+    "title": "Early Education Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20029",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43120",
+    "title": "Early Education Entrepreneurship",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20028",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43221",
+    "title": "Hawthorne Technician Apprenticeship (HTAP)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20055",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43654",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20013",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44515",
+    "title": "Public Safety Management",
+    "award": "Baccalaureate of Science (B.S.) Degree.",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/21070",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45023",
+    "title": "200-Hour Registered Yoga Teacher",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20881",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45980",
+    "title": "Modern Policing",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/22285",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46180",
+    "title": "Fire Fighter 1 Academy",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/22305",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46222",
+    "title": "Government/Nonprofit Accounting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/22299",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38275241459"
+}

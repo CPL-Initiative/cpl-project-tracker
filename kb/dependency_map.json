@@ -4,10 +4,10 @@
   "supabase_tables": 97,
   "rpcs": 36,
   "edge_functions": 7,
-  "file_datasets": 623,
+  "file_datasets": 630,
   "external_services": 167,
-  "consumers": 426,
-  "workflows": 47,
+  "consumers": 429,
+  "workflows": 48,
   "data_js_files": 69,
   "tabs": 39
  },
@@ -313,7 +313,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 6356
+     "line": 6442
     },
     {
      "id": "edgefn:cpl-news-harvest",
@@ -693,6 +693,13 @@
      ]
     },
     {
+     "id": "script:scripts/fetch_gallery_thumbs.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 46
+    },
+    {
      "id": "script:scripts/fetch_sierra_art.py",
      "kind": "script",
      "direction": "read",
@@ -818,6 +825,13 @@
      "direction": "read",
      "how": "url",
      "line": 13
+    },
+    {
+     "id": "script:scripts/fetch_gallery_thumbs.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 37
     },
     {
      "id": "script:scripts/fetch_sierra_art.py",
@@ -1019,7 +1033,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 4819
+     "line": 4902
     }
    ],
    "main_committers": []
@@ -1923,7 +1937,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 5681
+     "line": 5764
     }
    ],
    "main_committers": []
@@ -5828,13 +5842,6 @@
      "tabs": [
       "governance"
      ]
-    },
-    {
-     "id": "script:kb/_build_docs_index.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 382
     }
    ],
    "served": false,
@@ -6826,6 +6833,19 @@
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
+  },
+  "file:index.json": {
+   "consumers": [
+    {
+     "id": "page:tools/first_light_gallery/gallery.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "inline",
+     "line": 173
+    }
+   ],
+   "served": false,
+   "main_committers": []
   },
   "file:jev_ccr_title_rung_calibration_<date>_s282.json": {
    "consumers": [
@@ -16007,6 +16027,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:scripts/fetch_gallery_thumbs.py": {
+   "consumers": [
+    {
+     "id": "workflow:first-light-gallery-thumbs.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:scripts/fetch_sierra_art.py": {
    "consumers": [
     {
@@ -17696,6 +17729,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:thumbs-more.json": {
+   "consumers": [
+    {
+     "id": "page:tools/first_light_gallery/gallery.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "inline",
+     "line": 179
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tmc/tmc_or_groups.json": {
    "consumers": [
     {
@@ -17875,11 +17921,67 @@
    "main_committers": []
   },
   "file:tools/first_light_candidates.json": {
-   "consumers": [],
+   "consumers": [
+    {
+     "id": "script:scripts/fetch_gallery_thumbs.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 115
+    }
+   ],
    "producers": [
     {
      "by": "workflow:first-light-art.yml",
      "how": "commit"
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tools/first_light_gallery/california.json": {
+   "consumers": [
+    {
+     "id": "script:scripts/fetch_gallery_thumbs.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 116
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tools/first_light_gallery/index.json": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:first-light-gallery-thumbs.yml",
+     "how": "commit"
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tools/first_light_gallery/thumbs": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:first-light-gallery-thumbs.yml",
+     "how": "commit"
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tools/first_light_selection.json": {
+   "consumers": [
+    {
+     "id": "script:scripts/fetch_gallery_thumbs.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 113
     }
    ],
    "served": true,
@@ -18970,7 +19072,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5449
+     "line": 5532
     }
    ],
    "main_committers": []
@@ -19062,7 +19164,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5987
+     "line": 6070
     }
    ],
    "main_committers": []
@@ -19140,7 +19242,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 4145
+     "line": 4225
     },
     {
      "id": "script:chatbox/smoke_test.sh",
@@ -19316,7 +19418,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5453
+     "line": 5536
     },
     {
      "id": "module:kb-portal/composer_util.js",
@@ -19518,7 +19620,7 @@
      "kind": "edgefn",
      "direction": "write",
      "how": "literal",
-     "line": 6605
+     "line": 6691
     },
     {
      "id": "module:sierra_training.js",
@@ -19712,7 +19814,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 4158
+     "line": 4238
     }
    ],
    "main_committers": []
@@ -20868,7 +20970,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 4465
+     "line": 4548
     },
     {
      "id": "module:college_briefing.js",
@@ -21896,7 +21998,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 5752
+     "line": 5835
     },
     {
      "id": "module:sierra_training.js",
@@ -21928,7 +22030,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 5140
+     "line": 5223
     },
     {
      "id": "module:sierra_training.js",
@@ -22804,6 +22906,21 @@
    "adds": [
     "tools/first_light_candidates.json",
     "tools/first_light_verify.json"
+   ],
+   "push": "triggering branch",
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
+  "first-light-gallery-thumbs.yml": {
+   "name": "First Light gallery thumbnails",
+   "crons": [],
+   "scripts": [
+    "scripts/fetch_gallery_thumbs.py"
+   ],
+   "adds": [
+    "tools/first_light_gallery/thumbs",
+    "tools/first_light_gallery/index.json"
    ],
    "push": "triggering branch",
    "deploys": [],

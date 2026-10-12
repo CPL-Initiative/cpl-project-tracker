@@ -1,0 +1,348 @@
+{
+ "college": "San Diego Miramar College",
+ "control_number": "32683",
+ "shape": "adt",
+ "title": "Political Science",
+ "award": "A.A- T Degree",
+ "source_url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20100",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10753,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10753,
+    "output_tokens": 2681,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2681,
+  "output_tokens_details": {
+   "thinking_tokens": 726
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09663,
+ "ms": 19721,
+ "seconds": 20.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 22,
+   "share": 0.818,
+   "missing": [
+    "ECON120",
+    "ECON121",
+    "HIST109",
+    "HIST110"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "BUSE140",
+    "ECONC2001",
+    "ECONC2002",
+    "HISTC1001",
+    "HISTC1002"
+   ],
+   "flagged": [
+    "BUSE140",
+    "ECONC2001",
+    "ECONC2002",
+    "HISTC1001",
+    "HISTC1002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Comprehend information from a variety of sources.",
+    "Integrate logical thinking, including informed fact and assessment, based upon theories and practices in the field, tying together classical and contemporary ideas of political theory and practice, including international relations, local and national government, interest groups and other modalities of the political landscape.",
+    "Organize the comprehension of the fields of Political Science as expressed through written and oral sources.",
+    "Apply appropriate learning and analysis theories within the field, explain these through writing and oral methodologies.",
+    "Develop skills in problem solving, communication, critical thinking within the interrelationship of Political Science to other fields of the social sciences."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "POLI 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLI 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 258",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select two courses (six units minimum) from the following",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "POLI 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 116A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSE 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMS 135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 142",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 120",
+    "why": "not in the text; catalog lists ECON C2002 Principles of Macroeconomics instead"
+   },
+   {
+    "code": "ECON 121",
+    "why": "not in the text; catalog lists ECON C2001 Principles of Microeconomics instead"
+   },
+   {
+    "code": "HIST 109",
+    "why": "not in the text; catalog lists HIST C1001 United States History to 1877 instead"
+   },
+   {
+    "code": "HIST 110",
+    "why": "not in the text; catalog lists HIST C1002 United States History since 1865 instead"
+   }
+  ],
+  "notes": [
+   "The catalog text begins mid-description and has no program heading; section_heading uses the 'Requirements' heading printed above the course lists.",
+   "Learning outcomes are printed for 'the Political Science Program' as a whole; this A.A-T shares that list. The lead-in 'Students who complete the Political Science Program will be able to:' was left out.",
+   "POLS C1000 and STAT C1000 are printed with a space; they match closed-list POLSC1000 and STATC1000.",
+   "A stray '3.0' after POLI 103 appears to be the subtotal for the STAT C1000 or PSYC 258 choice; recorded as one entry with PSYC 258 as the alternative.",
+   "ECON C2002, ECON C2001, HIST C1001 and HIST C1002 appear to be Common Course Numbering replacements for closed-list ECON 120, ECON 121, HIST 109 and HIST 110; reviewer should confirm. BUSE 140 is not in the closed list.",
+   "The note '(It is recommended that students select courses that meet lower division major preparation requirements for their transfer university)' is advice, not a recommended-course list.",
+   "The catalog text is cut off mid-way through the COMS 135 course description; requirement lists and total (18.0-19.0) appear complete."
+  ]
+ },
+ "extracted_run": "38275241459"
+}

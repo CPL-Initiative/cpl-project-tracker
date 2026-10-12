@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 540 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 542 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 86 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 55 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 342 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1109** | |
+| Session handoffs | 344 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1113** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,8 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-12 S372 SkyRedwood: Miramar displayed (#2041), Mesa's row applied (#2037), Sierra v91 7c precedent (#2040), the painting gallery (#2038), the course outline census (#2042 draft, Sheet 70); KB note methodology-a-course-title-reads-as-its-level.
+- **2026-10-12 (S371 SkyMaple)**: San Diego City displayed (#2034); College Identity UI pass (#2035); MAP Users sign-in wording (#2036); Mesa registry receipt (#2037, held) and the painting gallery (#2038, step 1); new KB note `methodology-same-context-size-means-the-model-varied`; handoff 372 (SkyRedwood).
 - 2026-10-12 S370 SkyHolly: Long Beach City 38542 removed (Sheet 68 card 2, #2028); Chaffey read, loaded and displayed (#2027, build 496f2a71470a, 1,745 rows); San Diego City extracting; My College UI pass and the public contact measure (#2030); smoke 7s verb shape (#2031); Sierra 7c opening fix (#2032, A/B then deploy); handoff 371 (SkyMaple).
 - 2026-10-12 S369 SkyLaurel: Long Beach City displayed (05811159eeee), the read policy live, curriQunet reader fixes for Chaffey and San Diego City, smoke 7s; handoff 370 (SkyHolly).
 - 2026-10-12 (S368 SkyWillow): UI passes on Admin (#2019) and MAP Team Queue (#2020), each with a seeded sweep of the gated view; every program record public, each unchecked one marked Not yet confirmed (#2021, Sam's Sheet 67 card 1; the policy waits on his paste); Long Beach City's re-read filed (311 pass) and its load dispatched; Chaffey and San Diego City captured, both 0 (the curriQunet reader misses them); handoff 369.
@@ -129,6 +131,3 @@ Authoritative external sources we've cached:
 - 2026-10-11 (S366 SkyHazel): UI passes on Governance (#2007; the shell placeholder left on the root, a Docs panel blank after a repaint, #2011 its load race) and Team Phrases (#2010); the three `sierra_feedback` readers filter CI rows on the server (#2008); Long Beach City's 74 reframed (#2009) and both causes fixed (#2012: the hidden index chose pages and text); Sam answered Sheet 65 card 2 in chat (read from the table); handoff 367.
 - 2026-10-11 (S365 SkyRowan): UI passes on Vision 2030 (#2001; the actions now the CPL Workplan's words), Military Partnerships (#2004) and Noncredit & Learning Partners (#2005), and Team & RACI's two leftovers (#2003); Open Asks Sheet 65 (the Vision 2030 goal figures; which records CPL Pathways shows, measured at 18.2 MB and past the checked gate); KB note `methodology-a-published-file-carries-past-the-tables-read-gate`; handoff 366.
 - 2026-10-11 (S364, second session): Long Beach City read, loaded and displayed, 305 of 379 (#1999; display build `344441813b01`, 1,515 rows); Program records builds on first open (#1993); Sam's retired-version ruling (#1995); the read job may run 360 minutes; handoff 365 and queue status corrected (#2000).
-- 2026-10-11 (S364 SkyJuniper): Sam kept hours / 16 on Open Asks Sheet 63 (#1990); the Implementation Funding and Contracts UI passes with seeded sweeps (#1991, #1997); Budget's and Annual Workplan Goals' editors read mid-save in both themes, controls as words (#1992, #1994); a second S364 session ran Long Beach City and the Program Requirements speed fix (#1993); KB notes `methodology-a-sweep-sees-only-the-states-its-seed-reaches` and `methodology-a-fill-that-does-not-flip-needs-ink-that-does-not-either` gained sections; handoff 365.
-- 2026-10-11 (S363 SkyCedar): Long Beach City's Requirements tab sits inside `<nav id="tabs">`, found by a runner probe; the reader counts a tab bar's own tabs (#1986); trial 2 read 11 of 12 from the tab and the full read runs; Long Beach City in the display builder's dated reads; Open Asks Sheet 63 (where a half unit starts); the Budget tab's UI pass (#1988); KB note `methodology-test-a-reader-fix-on-the-page-it-failed-on`; handoff 364 (SkyJuniper).
-- 2026-10-11 (S361 SkyBirch): rules 4 and 5 merged and deployed with Sierra (#1974), COCI status chips (#1972), Riverside City 39120 removed by Sam's own paste, Long Beach City's read started, the extraction push guard (#1976), the Workplan Goals UI pass (#1977), the two-call extraction built (#1978); S360's lessons section and S327-S333 moved to the archive; KB note `methodology-a-path-filter-compares-pushes-not-branches`; handoff 362 (SkyAlder).

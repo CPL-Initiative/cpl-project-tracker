@@ -1,0 +1,331 @@
+<title>First Light Gallery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: a curator's light table. A sticky band holds the three views, the
+   filters and the running tally; below it, a wrapping grid of painting cards,
+   each with its thumbnail, label and the words that mark it.
+   Tokens are First Light's (prototype/first_light_theme_v1.html v1.6), and
+   the dark values are COBI's dark :root. */
+:root {
+  --paper: #F4F2ED;
+  --text-strong: #1C1C1A;
+  --text-body: #3A3A36;
+  --text-muted: #5C5C55;
+  --surface-opaque: #FFFFFF;
+  --surface-subtle: #F7F5F1;
+  --surface-muted: #ECE9E2;
+  --border: rgba(28,28,26,.14);
+  --border-strong: rgba(28,28,26,.30);
+  --cobalt: #0047AB;
+  --crimson: #920000;
+  --hunter: #2C601A;
+  --mustard-text: #8B6800;
+  --mat: #E6E2D8;
+  --display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --body: 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+  --radius: 10px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #151514; --text-strong: #ECE9E2; --text-body: #D6D6D0; --text-muted: #ABABA3;
+    --surface-opaque: #1E1E1C; --surface-subtle: #262624; --surface-muted: #30302E;
+    --border: rgba(255,255,255,.14); --border-strong: rgba(255,255,255,.32);
+    --cobalt: #7DA1D4; --crimson: #CF8F8F; --hunter: #89A67F; --mustard-text: #E3B341;
+    --mat: #2A2A27; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #151514; --text-strong: #ECE9E2; --text-body: #D6D6D0; --text-muted: #ABABA3;
+  --surface-opaque: #1E1E1C; --surface-subtle: #262624; --surface-muted: #30302E;
+  --border: rgba(255,255,255,.14); --border-strong: rgba(255,255,255,.32);
+  --cobalt: #7DA1D4; --crimson: #CF8F8F; --hunter: #89A67F; --mustard-text: #E3B341;
+  --mat: #2A2A27; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--text-body); font-family: var(--body); font-size: 1rem; line-height: 1.45; }
+.wrap { padding-inline: clamp(16px, 4vw, 40px); padding-block: 28px 64px; max-width: 1480px; margin: 0 auto; }
+h1 { font-family: var(--display); font-weight: 700; color: var(--text-strong); font-size: clamp(1.7rem, 3.4vw, 2.4rem); margin: 0; text-wrap: balance; }
+.lede { margin: 6px 0 0; color: var(--text-muted); max-width: 70ch; }
+.lede b { color: var(--text-body); font-weight: 600; }
+
+.band { grid-template-columns: minmax(0, 1fr); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper); border-bottom: 1px solid var(--border); margin-top: 18px; padding-block: 10px; display: grid; gap: 8px; }
+.views { display: flex; flex-wrap: wrap; gap: 4px 18px; }
+.word { appearance: none; background: none; border: 0; padding: 0; min-height: 24px; font: inherit; color: var(--cobalt); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; cursor: pointer; }
+.word:hover { text-decoration-thickness: 2px; }
+.word:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 2px; border-radius: 3px; }
+.views .word[aria-pressed="true"] { color: var(--text-strong); font-weight: 700; text-decoration: none; }
+.filters { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; font-size: .92rem; min-width: 0; }
+.filters > span { display: inline-flex; align-items: center; gap: 6px; min-width: 0; max-width: 100%; }
+#painter { width: 16rem; min-width: 0; }
+.filters label { color: var(--text-muted); }
+select, input[type="search"], input[type="text"] { font: inherit; font-size: .92rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 4px 8px; min-height: 30px; max-width: 100%; }
+input[type="search"] { width: 15rem; }
+.tally { font-size: .9rem; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.tally b { color: var(--text-strong); font-weight: 600; }
+.status { font-size: .86rem; color: var(--text-muted); }
+.status.warn { color: var(--mustard-text); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 22px 18px; margin-top: 18px; }
+.card { display: grid; grid-template-rows: auto 1fr auto; gap: 8px; min-width: 0; }
+.frame { background: var(--mat); border-radius: 4px; aspect-ratio: 4 / 3; display: grid; place-items: center; overflow: hidden; }
+.frame img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.frame .none { font-size: .82rem; color: var(--text-muted); padding: 12px; text-align: center; }
+.label { min-width: 0; }
+.title { font-family: var(--display); font-weight: 500; color: var(--text-strong); font-size: 1.02rem; line-height: 1.25; margin: 0; overflow-wrap: anywhere; }
+.meta { font-size: .86rem; color: var(--text-muted); margin: 2px 0 0; overflow-wrap: anywhere; }
+.tags { font-size: .8rem; color: var(--text-muted); margin: 2px 0 0; letter-spacing: .02em; }
+.marks { display: grid; gap: 4px; padding-top: 6px; border-top: 1px solid var(--border); }
+.choice { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 14px; font-size: .92rem; }
+.choice .word[aria-pressed="true"] { color: var(--text-strong); font-weight: 700; text-decoration: none; }
+.said { font-size: .82rem; color: var(--text-muted); }
+.note { width: 100%; font-size: .86rem; }
+.foot { font-size: .82rem; }
+.foot a { color: var(--cobalt); }
+.empty { margin-top: 28px; color: var(--text-muted); }
+.more { margin-top: 24px; text-align: center; }
+@media (max-width: 560px) {
+  .band { position: static; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 12px; }
+  input[type="search"] { width: 100%; }
+  .filters > span { flex: 1 1 100%; }
+  #painter, #show { flex: 1 1 auto; width: auto; }
+}
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>First Light Gallery</h1>
+    <p class="lede" id="lede">Every painting First Light can show, with the California plein air works that could join it. Mark each one: <b>Keep</b> or <b>Drop</b> for the current set, <b>Add</b> or <b>Skip</b> for a candidate, and <b>On Sierra</b> for the paintings Sierra's landing should cycle. Each mark saves as you make it.</p>
+  </header>
+
+  <div class="band" role="region" aria-label="Views, filters and tally">
+    <div class="views" role="group" aria-label="View">
+      <button class="word" type="button" data-view="current" aria-pressed="true">In First Light</button>
+      <button class="word" type="button" data-view="candidates" aria-pressed="false">California candidates</button>
+      <button class="word" type="button" data-view="sierra" aria-pressed="false">On Sierra</button>
+      <button class="word" type="button" data-view="marked" aria-pressed="false">Marked</button>
+    </div>
+    <div class="filters">
+      <span><label for="painter">Painter</label> <select id="painter"><option value="">All painters</option></select></span>
+      <span><label for="q">Search</label> <input id="q" type="search" placeholder="Title, painter or place"></span>
+      <span><label for="show">Show</label> <select id="show"><option value="all">All</option><option value="open">Not yet marked</option><option value="done">Marked</option></select></span>
+    </div>
+    <div class="tally" id="tally" aria-live="polite"></div>
+    <div class="status" id="status">Loading the paintings.</div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+  <p class="empty" id="empty" hidden></p>
+  <div class="more" id="more" hidden><button class="word" type="button" id="moreBtn">Show more</button></div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var PAGE = 120;
+  var state = { rows: [], picks: {}, view: "current", painter: "", q: "", show: "all", limit: PAGE, db: null, saving: {}, queue: {}, inline: {} };
+  var $ = function (id) { return document.getElementById(id); };
+
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function plural(n, one, many) { return n.toLocaleString("en-US") + " " + (n === 1 ? one : many); }
+
+  // A painter's display name: Commons writes some long ("Edgar Alwin Payne").
+  function painterOf(r) { return (r.artist || "Unknown painter").trim(); }
+
+  function pickOf(r) { return state.picks[r.key] || {}; }
+  function isMarked(r) { var p = pickOf(r); return !!(p.v || p.sierra != null || p.note); }
+  function onSierraNow(r) { var p = pickOf(r); return p.sierra != null ? !!p.sierra : !!r.on_sierra; }
+
+  function visible() {
+    var q = state.q.toLowerCase();
+    return state.rows.filter(function (r) {
+      if (state.view === "current" && !r.in_first_light) return false;
+      if (state.view === "candidates" && r.in_first_light) return false;
+      if (state.view === "sierra" && !onSierraNow(r)) return false;
+      if (state.view === "marked" && !isMarked(r)) return false;
+      if (state.painter && painterOf(r) !== state.painter) return false;
+      if (state.show === "open" && isMarked(r)) return false;
+      if (state.show === "done" && !isMarked(r)) return false;
+      if (q) {
+        var hay = (r.title + " " + painterOf(r) + " " + (r.museum || "") + " " + (r.year || "")).toLowerCase();
+        if (hay.indexOf(q) < 0) return false;
+      }
+      return true;
+    });
+  }
+
+  function tally() {
+    var n = { keep: 0, drop: 0, add: 0, skip: 0, sierra: 0 };
+    state.rows.forEach(function (r) {
+      var p = pickOf(r);
+      if (p.v && n[p.v] != null) n[p.v]++;
+      if (onSierraNow(r)) n.sierra++;
+    });
+    var cur = state.rows.filter(function (r) { return r.in_first_light; }).length;
+    var cand = state.rows.length - cur;
+    $("tally").innerHTML = "<b>" + cur + "</b> in First Light, <b>" + cand.toLocaleString("en-US") + "</b> California candidates. Marked so far: "
+      + "<b>" + n.keep + "</b> keep, <b>" + n.drop + "</b> drop, <b>" + n.add + "</b> add, <b>" + n.skip + "</b> skip; <b>" + n.sierra + "</b> on Sierra.";
+    document.querySelectorAll(".views .word").forEach(function (b) {
+      var v = b.getAttribute("data-view");
+      var count = state.rows.filter(function (r) {
+        return v === "current" ? r.in_first_light : v === "candidates" ? !r.in_first_light : v === "sierra" ? onSierraNow(r) : isMarked(r);
+      }).length;
+      b.textContent = { current: "In First Light", candidates: "California candidates", sierra: "On Sierra", marked: "Marked" }[v] + " (" + count.toLocaleString("en-US") + ")";
+    });
+  }
+
+  function cardHtml(r) {
+    var p = pickOf(r);
+    var cur = r.in_first_light;
+    var yes = cur ? "keep" : "add", no = cur ? "drop" : "skip";
+    var yesLabel = cur ? "Keep" : "Add", noLabel = cur ? "Drop" : "Skip";
+    var sierra = onSierraNow(r);
+    // An artifact version holds at most 511 files, so thumbnails past the cap
+    // ride inline in thumbs-more.json (state.inline) instead of thumbs/<key>.webp.
+    var src = state.inline[r.key] || ("thumbs/" + r.key + ".webp");
+    var img = r.thumb
+      ? '<img src="' + esc(src) + '" width="' + r.thumb.w + '" height="' + r.thumb.h + '" loading="lazy" decoding="async" alt="' + esc(r.title + ", " + painterOf(r)) + '">'
+      : '<span class="none">No thumbnail. Open it on Commons below.</span>';
+    var tags = [cur ? "In First Light" : "Candidate"];
+    if (r.on_sierra) tags.push("on Sierra now");
+    var said = p.v ? (p.v === yes ? yesLabel : noLabel) : "Not yet marked";
+    return '<article class="card" data-key="' + esc(r.key) + '">'
+      + '<div class="frame">' + img + '</div>'
+      + '<div class="label"><h3 class="title">' + esc(r.title || "Untitled") + '</h3>'
+      + '<p class="meta">' + esc(painterOf(r)) + (r.year ? ", " + esc(r.year) : "") + '</p>'
+      + (r.museum ? '<p class="meta">' + esc(r.museum) + '</p>' : "")
+      + '<p class="tags">' + esc(tags.join(", ")) + '</p></div>'
+      + '<div class="marks">'
+      + '<div class="choice" role="group" aria-label="Mark ' + esc(r.title || "this painting") + '">'
+      + '<button class="word ' + yes + '" type="button" data-act="v" data-val="' + yes + '" aria-pressed="' + (p.v === yes) + '">' + yesLabel + '</button>'
+      + '<button class="word ' + no + '" type="button" data-act="v" data-val="' + no + '" aria-pressed="' + (p.v === no) + '">' + noLabel + '</button>'
+      + '<button class="word" type="button" data-act="sierra" aria-pressed="' + sierra + '">' + (sierra ? "On Sierra" : "Not on Sierra") + '</button>'
+      + '</div>'
+      + '<span class="said">' + esc(said) + (state.saving[r.key] ? ", saving" : "") + '</span>'
+      + '<label class="said" for="n-' + esc(r.key) + '">Note</label>'
+      + '<input class="note" id="n-' + esc(r.key) + '" type="text" maxlength="400" value="' + esc(p.note || "") + '" placeholder="Why, or where it belongs">'
+      + '<p class="foot"><a href="' + esc(r.page) + '" target="_blank" rel="noopener">Open on Wikimedia Commons</a></p>'
+      + '</div></article>';
+  }
+
+  function render() {
+    var rows = visible();
+    var shown = rows.slice(0, state.limit);
+    $("grid").innerHTML = shown.map(cardHtml).join("");
+    $("empty").hidden = rows.length > 0;
+    $("empty").textContent = state.view === "marked" ? "Nothing is marked yet. Choose Keep, Drop, Add or Skip on any painting." : "No painting matches these filters.";
+    $("more").hidden = rows.length <= shown.length;
+    $("moreBtn").textContent = "Show more (" + (rows.length - shown.length).toLocaleString("en-US") + " left)";
+    tally();
+  }
+
+  function painters() {
+    var seen = {};
+    state.rows.forEach(function (r) { var a = painterOf(r); seen[a] = (seen[a] || 0) + 1; });
+    var sel = $("painter");
+    Object.keys(seen).sort().forEach(function (a) {
+      var o = document.createElement("option");
+      o.value = a; o.textContent = a + " (" + seen[a] + ")";
+      sel.appendChild(o);
+    });
+  }
+
+  function setStatus(text, warn) { var s = $("status"); s.textContent = text; s.className = "status" + (warn ? " warn" : ""); }
+
+  function save(key, patch) {
+    var prev = state.picks[key] || {};
+    var next = Object.assign({}, prev, patch, { t: new Date().toISOString() });
+    state.picks[key] = next;
+    if (!state.db) { render(); return; }
+    state.saving[key] = true;
+    render();
+    // One write at a time per painting: a second click waits for the first.
+    var ref = state.db.collection("picks").doc(key);
+    var turn = (state.queue[key] || Promise.resolve()).then(function () { return ref.set(next); });
+    state.queue[key] = turn.catch(function () {});
+    turn.then(function () {
+      if (state.picks[key] !== next) return;
+      delete state.saving[key]; setStatus("Saved. Your marks are kept with this page.");
+      refreshCard(key);
+    }).catch(function (e) {
+      if (state.picks[key] !== next) return;
+      delete state.saving[key];
+      state.picks[key] = prev;
+      setStatus("That mark did not save (" + ((e && e.code) || "error") + "). Try it again in a moment.", true);
+      render();
+    });
+  }
+
+  function refreshCard(key) {
+    var el = document.querySelector('.card[data-key="' + key + '"]');
+    var r = state.rows.filter(function (x) { return x.key === key; })[0];
+    if (el && r) { var t = document.createElement("div"); t.innerHTML = cardHtml(r); el.replaceWith(t.firstChild); }
+    tally();
+  }
+
+  $("grid").addEventListener("click", function (e) {
+    var b = e.target.closest("button[data-act]"); if (!b) return;
+    var card = b.closest(".card"); var key = card.getAttribute("data-key");
+    var r = state.rows.filter(function (x) { return x.key === key; })[0]; if (!r) return;
+    if (b.getAttribute("data-act") === "v") {
+      var val = b.getAttribute("data-val");
+      save(key, { v: pickOf(r).v === val ? null : val });
+    } else {
+      save(key, { sierra: !onSierraNow(r) });
+    }
+  });
+  $("grid").addEventListener("change", function (e) {
+    if (!e.target.classList.contains("note")) return;
+    var key = e.target.closest(".card").getAttribute("data-key");
+    save(key, { note: e.target.value.trim() });
+  });
+  document.querySelectorAll(".views .word").forEach(function (b) {
+    b.addEventListener("click", function () {
+      state.view = b.getAttribute("data-view"); state.limit = PAGE;
+      document.querySelectorAll(".views .word").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+      render();
+    });
+  });
+  $("painter").addEventListener("change", function () { state.painter = this.value; state.limit = PAGE; render(); });
+  $("show").addEventListener("change", function () { state.show = this.value; state.limit = PAGE; render(); });
+  var qt; $("q").addEventListener("input", function () { var v = this.value; clearTimeout(qt); qt = setTimeout(function () { state.q = v.trim(); state.limit = PAGE; render(); }, 160); });
+  $("moreBtn").addEventListener("click", function () { state.limit += PAGE; render(); });
+
+  fetch("index.json").then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (data) {
+    state.rows = (data.paintings || []).filter(function (r) { return r && r.key; });
+    painters();
+    setStatus("Connecting to the saved marks.");
+    render();
+    connect();
+    fetch("thumbs-more.json").then(function (r) { return r.ok ? r.json() : null; }).then(function (more) {
+      if (more && more.thumbs) { state.inline = more.thumbs; render(); }
+    }).catch(function () {});
+  }).catch(function () {
+    setStatus("The painting list did not load. Reload the page to try again.", true);
+  });
+
+  function connect() {
+    if (!window.claude || !window.claude.use) { setStatus("Marks can't be saved in this view: open the page on claude.ai to keep them.", true); return; }
+    window.claude.use("db").then(function (db) {
+      if (!db) { setStatus("Marks can't be saved in this view: sign in on claude.ai to keep them.", true); return; }
+      state.db = db;
+      db.collection("picks").onSnapshot(function (snap) {
+        var next = {};
+        snap.docs.forEach(function (d) { if (d.exists) next[d.id] = d.data(); });
+        Object.keys(state.saving).forEach(function (k) { if (state.picks[k]) next[k] = state.picks[k]; });
+        state.picks = next;
+        setStatus("Your marks are kept with this page.");
+        var active = document.activeElement;
+        if (active && active.classList && active.classList.contains("note")) { tally(); return; }
+        render();
+      }, function (e) {
+        setStatus("Saved marks are not reaching this view (" + ((e && e.code) || "error") + "). Reload the page.", true);
+      });
+    });
+  }
+})();
+</script>

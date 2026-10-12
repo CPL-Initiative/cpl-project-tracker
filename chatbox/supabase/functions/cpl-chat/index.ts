@@ -4055,9 +4055,36 @@ function buildQuickList(typical: Map<string, any>, programs: Array<any>): string
 // alignment rule's "never pair a specific college to a specific course" holds
 // otherwise). A null record means it was not read this turn — say nothing
 // rather than "none"; an empty held list means the visitor named no credential.
-function buildPrecedentLines(heldTitles: Array<string>, recs: Map<string, any> | null, adopters: Map<string, any> | null): string {
+//
+// THE PAIRED COURSE NAMES ITS PROGRAM (2026-10-12, S372; Sam, Open Asks Sheet 69
+// item 3, "Tune it"). With the same context in front of her, Sierra now and then
+// said the CNA-to-LVN request "would be a first" beside the Chaffey line (smoke
+// 7c; `methodology-same-context-size-means-the-model-varied`): the line read
+// "against 6 hours in Acute Care Nursing Assistant: Vocational Nursing
+// Foundations (NURVN 414)" and named no program. `courseInfo` (one read,
+// fetchPrecedentCourses) gives the paired course's catalog line, so the line
+// says which program's field the course sits in; `targets` (the sections the
+// visitor wants to enter) marks the line as the precedent for this request.
+// The field comes from the course's TOP, so the mark needs a second signal
+// (TOP is a last-in-line corroborator, never the sole one): the course's title
+// shares a word with the program's title.
+const PRECEDENT_CODE = /^\s*([A-Za-z][A-Za-z&]*)\s*[- ]?\s*([0-9][0-9A-Za-z.]*)\s*$/;
+function precedentCourseKey(college: string, code: string): string {
+  const m = PRECEDENT_CODE.exec(String(code || ""));
+  return `${college}||${m ? `${m[1]} ${m[2]}` : String(code || "").trim()}`.toUpperCase();
+}
+const PRECEDENT_TITLE_STOP = new Set(["course", "courses", "program", "programs", "general", "studies", "introduction", "other"]);
+function titleWordsShared(a: string, b: string): boolean {
+  const words = (s: string) => new Set(String(s || "").toLowerCase().split(/[^a-z]+/).filter((w) => w.length >= 5 && !PRECEDENT_TITLE_STOP.has(w)));
+  const wa = words(a);
+  for (const w of words(b)) if (wa.has(w)) return true;
+  return false;
+}
+function buildPrecedentLines(heldTitles: Array<string>, recs: Map<string, any> | null, adopters: Map<string, any> | null,
+  courseInfo: Map<string, any> | null = null, targets: Array<any> | null = null): string {
   if (!recs || !heldTitles || heldTitles.length === 0) return "";
   const lines: Array<string> = [];
+  let inTarget = false;
   for (const t of heldTitles) {
     const rec = recs.get(t);
     if (!rec || !Array.isArray(rec.recs) || rec.recs.length === 0) continue;
@@ -4067,14 +4094,67 @@ function buildPrecedentLines(heldTitles: Array<string>, recs: Map<string, any> |
       if (!credit) continue;
       const course = line.example_course ? ` (${line.example_course})` : "";
       const n = Number(line.colleges) || Number(rec.n_adopter_colleges) || 0;
-      if (n === 1 && names.length === 1) lines.push(`  - ${names[0]} articulated ${t} against ${credit}${course}`);
-      else lines.push(`  - ${n || "some"} college(s) articulated ${t} as ${credit}${course}${names.length ? ` — adopters on record: ${names.slice(0, 5).join(", ")}` : ""}`);
+      if (n === 1 && names.length === 1) {
+        let s = `  - ${names[0]} articulated ${t} against ${credit}${course}`;
+        const info = line.example_course && courseInfo ? courseInfo.get(precedentCourseKey(names[0], line.example_course)) : null;
+        if (info && info.top_title) {
+          const units = Number(info.units) > 0 ? ` (${Number(info.units)} units)` : "";
+          s += ` — ${line.example_course} is a ${info.top_title} course at ${names[0]}${units}`;
+          const target = (targets || []).find((x: any) => x && x.top === info.top_code
+            && titleWordsShared(info.course_title || "", x.title || info.top_title));
+          if (target) {
+            s += `, the program the visitor wants to enter: this is the precedent for this request`;
+            inTarget = true;
+          }
+        }
+        lines.push(s);
+      } else lines.push(`  - ${n || "some"} college(s) articulated ${t} as ${credit}${course}${names.length ? ` — adopters on record: ${names.slice(0, 5).join(", ")}` : ""}`);
     }
   }
   if (lines.length === 0) {
     return `\nPRECEDENT ON RECORD for the credential held: none — the credential record holds no college that has articulated it against a named course yet. Say so in words and say the request would be a first; never invent one.\n`;
   }
-  return `\nPRECEDENT ON RECORD for the credential held (from the credential record — cite the college, the course and the units as the evidence that the match has been made before; a general-education award is a precedent for credit, not for a program course):\n${lines.join("\n")}\n`;
+  const cite = inTarget
+    ? ` A line that names the program the visitor wants to enter is the precedent for this request: cite its college, course and units after the courses, and never say the request would be a first.`
+    : ``;
+  return `\nPRECEDENT ON RECORD for the credential held (from the credential record — cite the college, the course and the units as the evidence that the match has been made before; a general-education award is a precedent for credit, not for a program course):${cite}\n${lines.join("\n")}\n`;
+}
+
+// The catalog line of each course a precedent pairs with its single adopter, so
+// the line can name the course's program (buildPrecedentLines). One PostgREST
+// read; fails safe to null, and the line then renders as before.
+async function fetchPrecedentCourses(heldTitles: Array<string>, recs: Map<string, any> | null, adopters: Map<string, any> | null, sb: any): Promise<Map<string, any> | null> {
+  if (!recs || !heldTitles || heldTitles.length === 0) return null;
+  const want = new Map<string, { college: string; subject: string; number: string }>();
+  for (const t of heldTitles) {
+    const rec = recs.get(t);
+    const names: Array<string> = (adopters && adopters.get(t) ? adopters.get(t) : []).map((a: any) => a && a.name).filter(Boolean);
+    if (!rec || !Array.isArray(rec.recs) || names.length !== 1) continue;
+    for (const line of rec.recs) {
+      const n = Number(line.colleges) || Number(rec.n_adopter_colleges) || 0;
+      const m = PRECEDENT_CODE.exec(String(line.example_course || ""));
+      if (n !== 1 || !m) continue;
+      want.set(precedentCourseKey(names[0], `${m[1]} ${m[2]}`), { college: names[0], subject: m[1].toUpperCase(), number: m[2].toUpperCase() });
+    }
+  }
+  if (want.size === 0) return null;
+  const vals = [...want.values()];
+  const { data, error } = await sb.from("chatbox_college_courses")
+    .select("college, subject, course_number, course_title, units, top_code, top_title")
+    .in("college", [...new Set(vals.map((v) => v.college))])
+    .in("subject", [...new Set(vals.map((v) => v.subject))])
+    .in("course_number", [...new Set(vals.map((v) => v.number))])
+    .limit(50);
+  if (error) {
+    console.error("precedent course lines unavailable:", error.message);
+    return null;
+  }
+  const out = new Map<string, any>();
+  for (const r of data || []) {
+    const k = precedentCourseKey(r.college, `${r.subject} ${r.course_number}`);
+    if (want.has(k) && !out.has(k)) out.set(k, r);
+  }
+  return out.size > 0 ? out : null;
 }
 
 // The FLYER: other programs the held credential commonly counts toward — the
@@ -4179,7 +4259,7 @@ function buildProspectiveContext(
   askedGeo: any | null,
   heldPhrases: Array<string> = [],
   heldTerms: Array<string> = [],
-  // v72: { typical (foldTypicalRows), teachers, recs, adopters, geoMap } — each
+  // v72: { typical (foldTypicalRows), teachers, recs, adopters, geoMap; v91 precedentCourses } — each
   // optional, each fail-safe; a null extras renders the v71 block plus the
   // college on every course line.
   extras: any = null,
@@ -4267,7 +4347,10 @@ function buildProspectiveContext(
   // matched title and an LVN award would read as the CNA holder's precedent).
   const typical: Map<string, any> = extras && extras.typical instanceof Map ? extras.typical : new Map<string, any>();
   out += buildQuickList(typical, ordered.map((x) => ({ top_code: x.top, background: marked ? x.background : null })));
-  if (extras && extras.recs && (heldPhrases || []).length > 0) out += buildPrecedentLines(credentials, extras.recs, extras.adopters || null);
+  if (extras && extras.recs && (heldPhrases || []).length > 0) {
+    out += buildPrecedentLines(credentials, extras.recs, extras.adopters || null, extras.precedentCourses || null,
+      marked ? targets.map((x) => ({ top: x.top, title: x.title })) : null);
+  }
   const heldTops = heldProgramTops(pairs, heldPhrases || [], heldTerms || [], credentials || []);
   out += buildRelatedPrograms(heldTops, relatedProgramTops(heldTops), extras ? extras.teachers || null : null, typical,
     askedCollege, askedGeo, extras ? extras.geoMap || null : null, ordered.map((x) => x.top));
@@ -6305,13 +6388,16 @@ Deno.serve(async (req: Request) => {
           const sectionTops: Array<string> = [...new Set(pairs.map((p: any) => String(p.top_code)))];
           const related = relatedProgramTops(heldTops).filter((t: any) => !sectionTops.includes(t.top));
           const typicalTops = [...new Set([...sectionTops, ...related.map((t: any) => String(t.top))])];
-          const [courseRows, typicalRows, teacherRows] = await Promise.all([
+          // v91 (S372): a fourth read, the precedent's own course line, so the
+          // line names the program it sits in (buildPrecedentLines).
+          const [courseRows, typicalRows, teacherRows, precedentCourses] = await Promise.all([
             fetchProgramCourses(pairs, sb),
             fetchTypicalCourses(typicalTops, sb),
             fetchProgramTeachers(related.map((t: any) => String(t.top)), sb),
+            heldPhrases.length > 0 ? fetchPrecedentCourses(heldTitles, recs, adopters, sb).catch(() => null) : Promise.resolve(null),
           ]);
           prospectiveContext = buildProspectiveContext(pairs, courseRows, heldTitles, college, askedGeo, heldPhrases, heldTerms,
-            { typical: foldTypicalRows(typicalRows), teachers: teacherRows, recs, adopters, geoMap });
+            { typical: foldTypicalRows(typicalRows), teachers: teacherRows, recs, adopters, geoMap, precedentCourses });
         }
       }
     } catch (e) {

@@ -601,3 +601,37 @@ reaches the catalog. Make it the first step for every new platform variant, not 
 - **A display apply makes the live smoke time out.** The cpl-chat smoke that ran while run 38251047970 wrote 1,745 display rows failed 7l four times on statement timeouts (57014) in `college_program_courses`; the next smoke, with no write beside it, passed 7l. Same family as S276's loader window: read a smoke against what the database was doing.
 - **Merge the tracker PR before the vault PR that depends on its lane markers.** Vault #317 (both Sheet 68 cards out of the builder) ran its coverage check against tracker main while #2028 (the lane's marker dropped) was still open, and failed; after #2028 merged, the vault's main run passed. I merged #317 without reading its checks first. The order is tracker merge, then vault push.
 - **An insert into `cpl_memory` that times out four times lands when it is short.** The receipt's long form (title, summary, detail) timed out through `execute_sql` and `apply_migration` alike, with nothing in `pg_stat_activity`; a shorter title and summary with no detail landed at once. Two statements, then the log row (`action` takes `create`, not `insert`).
+
+## S371 SkyMaple, 2026-10-12: San Diego City displayed, and the SDCCD host holds two more Leading colleges
+
+**San Diego City is live (#2034).** Display run 38266706124 applied build `0f4e4158a2df`; S371 read back all 1,909 rows on
+that build, San Diego City's 164 among them, each placing at least one course (2,515 courses). The page file carries only
+the pilot's records (22), by design: CPL Pathways reads the table.
+
+**A registry row can hide a readable college.** The lane said San Diego City and Chaffey were the last Leading colleges on a
+platform the read handles. The registry says San Diego Miramar is on `sdccd.curriqunet.com`, and S369's own read of the
+host's `_getCatalogs` lists Mesa as catalog 70 while Mesa's row reads `custom_html` (the census filed its page about the
+catalog). Measure the remaining colleges from the registry and the host's own list before declaring a platform exhausted.
+Sam gave the go for both (*"go ahead with Miramar and Mesa extraction"*); Mesa waits on its registry correction (#2037),
+which the `execute_sql` guard holds for Sam.
+
+**A capture-only pass is a check, not a step, once the reader is proven on the host.** S371 canceled Miramar's
+capture-only run for a read with extraction: the reader had just read San Diego City on the same host and page shape.
+
+## Moved from the lane (S372)
+
+The outcomes paragraph's run detail, verbatim:
+
+**Outcomes (Sam, 2026-10-04 18:03Z):** grab published course and program outcomes, and compare harvested credential skills with course outcomes. ✅ **Record shape 3 is built (S334, sheet 33 card 4 as proposed):** the extraction function (version 4) keeps each outcome exactly as printed in `program.outcomes` and `course_outcomes`; the scorer's `outcomes` check fails a reworded or empty one. Run 37345734457 (20 of 20 passed, $1.31) and, for Mt. San Antonio, 37350789203 after the capture learned to open a hidden Outcomes tab (#1871): **19 of 20 carry outcomes**, 1 to 11 each. Miramar prints *Learning Outcome(s):*, which S327's count missed; Mt. San Antonio's ECE transfer degree links to an outcomes page instead. `kb/_program_requirements_file.py` files a run: a record a person read keeps its requirements and takes only the outcomes (six of the 20 came back with relabeled blocks), and `reviewed_readings.json` holds each verdict to the requirements it read. The skills comparison waits for the skills file (`kb/reference/industry_credential_skills.json`, not started).
+
+The pilot paragraph, verbatim:
+
+**The pilot (Phase 1): all 20 records pass all four checks.** Five colleges by four shapes (`kb/program_requirements_pilot_sample.json`): an ADT, an A.S./A.A. with a choose block, a certificate with an electives block, a noncredit certificate; each college's use case fills one slot (Cerritos Ironworker A.S. 42158, Mt. San Antonio LVN-to-RN A.S. 08086, Riverside City Culinary Arts 22804, West LA Real Estate Salesperson 37839, Miramar Fire Technology A.S. 05100). **Capture** (`kb/_program_requirements_pilot.py`): accepts a page naming half the courses the Program Course File lists; curriQunet program views fall back to their own PDF export; sources filed under `kb/program_requirements_pilot/sources/`. **Extraction** (the `program-requirements-extract` Edge Function, version 2, structured output, record shape version 2); records under `.../records/`, about $0.05 a program. **Scorer** (`kb/_program_requirements_score.py`): coverage, no unflagged invented course, unit arithmetic (`equal`, `unequal`, `incomplete`, `unstated`). **Sam's reading (10:22Z):** 18 match; both fixes went into the procedure and rerun 37195340082 passed them. Guard `tests/program_requirements_pilot_test.py`. Run-level history: the lessons doc, S323-S324.
+
+## S372 SkyRedwood (2026-10-12): Miramar displayed, Mesa's row applied, the course outline census
+
+- **Miramar** read 38275241459: 146 programs, 124 with a closed list, 110 found and extracted, 105 pass, $9.00 (curriQunet catalog 71 on the SDCCD host, capture 74 minutes). Load 38285338937 inserted 106 and kept the 4 checked pilot records. Display build `427f93eaf03d` read back on all 2,015 rows (31 checked). Not found: 16779, 30512, 30532, 36254.
+- **A display job applies in batches.** A read-back 7 minutes in showed 1,911 rows on the new build and 104 Miramar rows with none; the job was still running. Read the build back after the job's own applied-record commit lands.
+- **Mesa's registry row** applied 17:06Z as migration `program_source_registry_mesa_catalog_s371` (Sam, Sheet 69 item 1). S371's two attempts had timed out in the tool call; S372 found no lock on the table, read the row back unchanged, and the third apply took. A timeout in the tool call is not proof of a lock: read `pg_locks` before waiting on another job.
+- **The course outline census sample** (run 38289193564, 12 colleges, 30 loads) found the catalog hosts it already knew (curriQunet and eLumen catalogs) and one outline system, Cabrillo's Coursedog, behind a sign-in. Six colleges found nothing: homepages seldom link the curriculum committee. The pass now reads each college's sitemap for curriculum pages. A catalog host is not proof of a public outline: a course's outline and its SLOs need a per-platform reader next.
+- **A merge of main carries every path-filtered trigger file that changed on main.** Merging main into `claude/s371-miramar-read` re-ran the gallery thumbnail job there (its `.thumbs-run` arrived in the merge's diff). The course outline census workflow skips merge commits for that reason.

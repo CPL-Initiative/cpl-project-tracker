@@ -1,0 +1,153 @@
+{
+ "college": "San Diego Miramar College",
+ "control_number": "16665",
+ "shape": "certificate",
+ "title": "Technical Achievement for Field Training Officers",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20122",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6213,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6213,
+    "output_tokens": 975,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 975,
+  "output_tokens_details": {
+   "thinking_tokens": 268
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04435,
+ "ms": 8115,
+ "seconds": 8.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.5,
+    24.5
+   ],
+   "stated": [
+    24.5,
+    24.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Technical Achievement for Field Training Officers - Certificate of Achievement: Miramar",
+   "measure": "units",
+   "total_units": {
+    "min": 24.5,
+    "max": 24.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Understand the three components of the criminal justice system and how they interrelate.",
+    "Demonstrate knowledge of the California Penal Code, the California Commission on Peace Officer Standards and Training regulations and appropriate department policies and procedures",
+    "Relate knowledge from several employment areas such as pre-employment testing, physical requirements, psychological evaluations and social factors.",
+    "Use information of crime scene management and investigation, forensics analysis and information technology to conduct rudimentary criminal investigations.",
+    "Analyze and evaluate the role of criminal sanctions in recidivism rates and the rehabilitation process of offenders."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24.5,
+     "max": 24.5
+    },
+    "courses": [
+     {
+      "code": "ADJU 260",
+      "units": 24,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJU 330A",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The first outcome follows the lead-in 'Students who complete the Technical Achievement for Field Training Officers Program will be able to:' on the same line; the lead-in was omitted.",
+   "The outcomes resemble general Administration of Justice program outcomes but are printed under this award's heading.",
+   "No careers recorded: the summary names training areas (Law Enforcement, Investigations, Contemporary Police Technologies, Correctional Technologies) rather than careers; 'peace officers' appears only in the ADJU 260 course description.",
+   "Course hours (e.g., 32-40 hours lab) are printed alongside units; the award is counted in units (24.5 semester units)."
+  ]
+ },
+ "extracted_run": "38275241459"
+}
