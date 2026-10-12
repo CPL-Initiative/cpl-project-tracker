@@ -714,20 +714,36 @@ def cq_distinct(entries: list[dict]) -> tuple[list[dict], int]:
     return out, len(entries) - len(out)
 
 
+# San Diego Mesa's special-admission programs (S374, reads 38320823942 and
+# 38321027873) show six tabs: Summary, Accreditation, Directed Clinical Practice
+# Requirement, Admission Criteria, Requirements, Courses. Read in order under the
+# cap of four, the Requirements tab was never read and nine programs (Radiologic
+# Technology, Dental Assisting and the rest) scored no course at all. A tab titled
+# Requirements is read first.
+CQ_REQ_TAB = re.compile(r"^\s*(?:program\s+)?requirements\s*$", re.I)
+
+
 def cq_children(get, catalog: int, root: str, page: dict) -> tuple[list[dict], list[dict]]:
     """(the entry's own child pages, the program entries among its children):
     the visible nodes the entry's page lists, read once each, up to
-    CQ_MAX_CHILDREN. `get(url)` returns the JSON at url, or None."""
+    CQ_MAX_CHILDREN, a Requirements tab first. `get(url)` returns the JSON at
+    url, or None."""
     own, more = [], []
     for nl in cq_lists(page):
         kids = get("%s/Catalog/_getNavigation?id=%d&parentId=%s" % (root, catalog, nl.get("id"))) or {}
+        visible = []
         for k in kids.get("navs") or []:
             if cq_is_program(k):
                 more.append(k)
-            elif not cq_hidden(k) and len(own) < CQ_MAX_CHILDREN:
-                child = get("%s/Catalog/_getPage?catalogId=%d&id=%s" % (root, catalog, k.get("id")))
-                if child:
-                    own.append(child)
+            elif not cq_hidden(k):
+                visible.append(k)
+        visible.sort(key=lambda k: not CQ_REQ_TAB.match(k.get("text") or ""))
+        for k in visible:
+            if len(own) >= CQ_MAX_CHILDREN:
+                break
+            child = get("%s/Catalog/_getPage?catalogId=%d&id=%s" % (root, catalog, k.get("id")))
+            if child:
+                own.append(child)
     return own, more
 
 

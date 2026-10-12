@@ -501,6 +501,35 @@ check(PCH["url"] == "https://chaffey.curriqunet.com/catalog/iq/19210/bth/busadmi
 check(C.cq_page(BUS, bus_page, "x")["codes"] == set(),
       "without its Requirements child the entry's page names no course (the first capture's 0)")
 
+# San Diego Mesa's special-admission programs (S374): six tabs, Requirements fifth.
+RAD_TABS = [{"id": 18092, "text": "Summary"}, {"id": 19711, "text": "Accreditation"},
+            {"id": 19671, "text": "Directed Clinical Practice Requirement"}, {"id": 19670, "text": "Admission Criteria"},
+            {"id": 18284, "text": "Requirements"}, {"id": 18476, "text": "Courses"}]
+RAD = {"page:17708": {"page": {"id": 17708, "text": "Radiologic Technology - Associate of Science Degree: Mesa"},
+                      "body": [{"navlist": [{"id": 17900}]}]},
+       "nav:17900": {"navs": RAD_TABS}}
+for t in RAD_TABS:
+    RAD["page:%d" % t["id"]] = {"page": {"id": t["id"], "text": t["text"]},
+                                "body": [{"text": "<p>RADT 100 RADT 110</p>" if t["id"] == 18284 else "<p>%s</p>" % t["text"]}]}
+rad_asked = []
+
+
+def mesa_get(url):
+    rad_asked.append(url)
+    q = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
+    if "parentId" in q:
+        return RAD.get("nav:" + q["parentId"][0])
+    return RAD.get("page:" + q["id"][0])
+
+
+rad_own, rad_more = C.cq_children(mesa_get, 70, "https://sdccd.curriqunet.com", RAD["page:17708"])
+check(len(rad_own) == C.CQ_MAX_CHILDREN and rad_own[0]["page"]["id"] == 18284 and not rad_more
+      and not any("id=18476" in a for a in rad_asked),
+      "a Requirements tab is read first, under the cap, when it is the fifth of six tabs (Mesa's Radiologic Technology)")
+RAD_PAGE = C.cq_page({"id": 17708, "text": RAD["page:17708"]["page"]["text"], "aliaspath": "17540/programs/17708"},
+                     RAD["page:17708"], "x/", rad_own)
+check({"RADT100", "RADT110"} <= RAD_PAGE["codes"], "the entry's page carries the courses its Requirements tab prints")
+
 # ── curriQunet: San Diego City's catalog from the host's list, and each program once (S369) ──
 # Reads 38203841691 and 38204183571: the alias start page draws an empty "Active
 # Catalogs" shell and fetches nothing; _getCatalogs names City 2026-2027 as 69.
