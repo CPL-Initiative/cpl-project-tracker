@@ -835,6 +835,11 @@ jobs:
       # failure mode #1541 was itself written about. Pure-stdlib python.
       - name: KPI history has no date gaps (Rule 3)
         run: python3 tests/kpi_history_no_gaps_test.py
+      # The course outline index (S373; Sam, Open Asks Sheet 70 card 3): one
+      # spelling per course code, and the courses the loaded records name.
+      # Reads pages only and writes no table. Pure-stdlib python.
+      - name: Course outline index (course codes, the loaded records)
+        run: python3 tests/course_outline_index_test.py
 
   test:
     # The one check the merge doctrine polls (CLAUDE.md branch policy). It
