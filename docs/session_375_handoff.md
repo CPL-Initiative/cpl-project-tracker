@@ -32,11 +32,13 @@ Sam had another session on the Annual Goals and Activities tabs at the same time
      `select college, count(*) from course_outcomes group by 1`.
    - Then merge #2049 on `test`; then SDCCD (`DynamicReports/AllFieldsReportByEntity/<id>?entityType=Course`) and
      Chaffey (outlines with no SLO heading: look for another public source, `cor_slo_source_url`).
-3. **Mesa's nine (#2050, branch `claude/s374-mesa-health-programs`).** They are in catalog 70's index; each shows six
-   tabs with Requirements fifth, and the reader read four. #2050 reads a Requirements tab first. Merge it on `test`,
-   then re-read Mesa (`program-requirements-college.yml`, college San Diego Mesa College, `extract: 1`; Sam's standing go
-   for Mesa extraction), load the new records and build the display. Then check Miramar's four not found (16779, 30512,
-   30532, 36254) and San Diego City's place-none records for the same tab layout.
+3. **Mesa's nine (#2050, merged).** They are in catalog 70's index; each shows six tabs with Requirements fifth,
+   and the reader read four. #2050 reads a Requirements tab first. **The re-read is running:** run 38322747831 on
+   `claude/s374-mesa-reread` (dispatch: San Diego Mesa College, `extract: 1`, Sam's standing go for Mesa extraction).
+   Extraction keeps every record filed from an unchanged page, so it should send about nine programs to the model.
+   When it files: check `capture.json` (`not_found` should lose the nine), dispatch `step: load` then
+   `step: display` on the same branch, read both back, open the PR and merge on `test`. Then check Miramar's four
+   not found (16779, 30512, 30532, 36254) and San Diego City's place-none records for the same tab layout.
 4. **The gallery picks** when Sam says he has marked them: `ArtifactData list picks` on
    https://claude.ai/artifact/21o45k6MbPKsPMgNQk69hn.
 
@@ -44,7 +46,7 @@ Sam had another session on the Annual Goals and Activities tabs at the same time
 
 S373's #2046 (RCCD course index), #2047 (registry fill) and #2048 (its checkpoint) merged. **#2049** the course
 outcomes read (draft: reader, load, table SQL, governance entries, two workflows, tests 7 and 4 checks). **#2050** the
-curriQunet Requirements-tab fix (draft; 109 checks, the two new ones fail without it). KB note
+curriQunet Requirements-tab fix (merged; 109 checks, the two new ones fail without it). KB note
 `methodology-a-lead-in-sentence-is-not-a-section-heading`. Five `cpl_memory` rows (receipt
 `kb/receipts/cpl_memory_2026-10-12_s374.sql`).
 
@@ -70,8 +72,8 @@ tabs--shouldn't collide with you"* (about 23:07Z).
 ## Not refreshed this checkpoint
 
 UI pass (two PRs and a running read in flight; the due view is `cobi:annual-report`); Pipeline tab (the
-M-ID pipeline did not move); `kb/README.md` (the new scripts are on #2049, not main); `README.md`. Watches: #2049 and
-#2050 subscribed. S374 drops these at sign-off.
+M-ID pipeline did not move); `kb/README.md` (the new scripts are on #2049, not main); `README.md`. Watches: #2049,
+#2052 and CPLBrain#324 subscribed (#2050 merged). S374 drops these at sign-off.
 
 ## Sign-off line for Sam
 
