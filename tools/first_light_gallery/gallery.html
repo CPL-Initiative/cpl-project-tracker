@@ -127,7 +127,7 @@ input[type="search"] { width: 15rem; }
 (function () {
   "use strict";
   var PAGE = 120;
-  var state = { rows: [], picks: {}, view: "current", painter: "", q: "", show: "all", limit: PAGE, db: null, saving: {} };
+  var state = { rows: [], picks: {}, view: "current", painter: "", q: "", show: "all", limit: PAGE, db: null, saving: {}, queue: {}, inline: {} };
   var $ = function (id) { return document.getElementById(id); };
 
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
@@ -184,8 +184,11 @@ input[type="search"] { width: 15rem; }
     var yes = cur ? "keep" : "add", no = cur ? "drop" : "skip";
     var yesLabel = cur ? "Keep" : "Add", noLabel = cur ? "Drop" : "Skip";
     var sierra = onSierraNow(r);
+    // An artifact version holds at most 511 files, so thumbnails past the cap
+    // ride inline in thumbs-more.json (state.inline) instead of thumbs/<key>.webp.
+    var src = state.inline[r.key] || ("thumbs/" + r.key + ".webp");
     var img = r.thumb
-      ? '<img src="thumbs/' + esc(r.key) + '.webp" width="' + r.thumb.w + '" height="' + r.thumb.h + '" loading="lazy" decoding="async" alt="' + esc(r.title + ", " + painterOf(r)) + '">'
+      ? '<img src="' + esc(src) + '" width="' + r.thumb.w + '" height="' + r.thumb.h + '" loading="lazy" decoding="async" alt="' + esc(r.title + ", " + painterOf(r)) + '">'
       : '<span class="none">No thumbnail. Open it on Commons below.</span>';
     var tags = [cur ? "In First Light" : "Candidate"];
     if (r.on_sierra) tags.push("on Sierra now");
@@ -195,7 +198,7 @@ input[type="search"] { width: 15rem; }
       + '<div class="label"><h3 class="title">' + esc(r.title || "Untitled") + '</h3>'
       + '<p class="meta">' + esc(painterOf(r)) + (r.year ? ", " + esc(r.year) : "") + '</p>'
       + (r.museum ? '<p class="meta">' + esc(r.museum) + '</p>' : "")
-      + '<p class="tags">' + esc(tags.join(" · ")) + '</p></div>'
+      + '<p class="tags">' + esc(tags.join(", ")) + '</p></div>'
       + '<div class="marks">'
       + '<div class="choice" role="group" aria-label="Mark ' + esc(r.title || "this painting") + '">'
       + '<button class="word ' + yes + '" type="button" data-act="v" data-val="' + yes + '" aria-pressed="' + (p.v === yes) + '">' + yesLabel + '</button>'
@@ -240,10 +243,16 @@ input[type="search"] { width: 15rem; }
     if (!state.db) { render(); return; }
     state.saving[key] = true;
     render();
-    state.db.collection("picks").doc(key).set(next).then(function () {
+    // One write at a time per painting: a second click waits for the first.
+    var ref = state.db.collection("picks").doc(key);
+    var turn = (state.queue[key] || Promise.resolve()).then(function () { return ref.set(next); });
+    state.queue[key] = turn.catch(function () {});
+    turn.then(function () {
+      if (state.picks[key] !== next) return;
       delete state.saving[key]; setStatus("Saved. Your marks are kept with this page.");
       refreshCard(key);
     }).catch(function (e) {
+      if (state.picks[key] !== next) return;
       delete state.saving[key];
       state.picks[key] = prev;
       setStatus("That mark did not save (" + ((e && e.code) || "error") + "). Try it again in a moment.", true);
@@ -292,6 +301,9 @@ input[type="search"] { width: 15rem; }
     setStatus("Connecting to the saved marks.");
     render();
     connect();
+    fetch("thumbs-more.json").then(function (r) { return r.ok ? r.json() : null; }).then(function (more) {
+      if (more && more.thumbs) { state.inline = more.thumbs; render(); }
+    }).catch(function () {});
   }).catch(function () {
     setStatus("The painting list did not load. Reload the page to try again.", true);
   });
