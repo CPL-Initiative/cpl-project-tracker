@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-12T18:27:34Z",
-  "session": 372,
-  "moniker": "SkyRedwood",
+  "written_at": "2026-10-12T22:08:45Z",
+  "session": 373,
+  "moniker": "SkyCypress",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_373_handoff.md",
+  "handoff": "docs/session_374_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -13894,24 +13894,1178 @@
       "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
       "control_number": "46222",
       "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Architecture Technician",
+      "award": "A.S. Degree",
+      "control_number": "05302",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Biology",
+      "award": "A.S. Degree",
+      "control_number": "05303",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Business Administration",
+      "award": "A.S. Degree",
+      "control_number": "05304",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Accounting",
+      "award": "A.S. Degree",
+      "control_number": "05305",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Business Management",
+      "award": "A.S. Degree",
+      "control_number": "05306",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Marketing",
+      "award": "A.S. Degree",
+      "control_number": "05308",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Real Estate",
+      "award": "A.S. Degree",
+      "control_number": "05309",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Computer & Information Sciences",
+      "award": "A.S. Degree",
+      "control_number": "05313",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "ASL-English Interpretation",
+      "award": "A.A. Degree",
+      "control_number": "05314",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Kinesiology",
+      "award": "A.S. Degree",
+      "control_number": "05315",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Construction Management",
+      "award": "A.S. Degree",
+      "control_number": "05327",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Fine Art: Art History",
+      "award": "A.A. Degree",
+      "control_number": "05331",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Music  Performance",
+      "award": "A.A. Degree",
+      "control_number": "05332",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Dramatic Arts",
+      "award": "A.A. Degree",
+      "control_number": "05333",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Spanish",
+      "award": "A.A. Degree",
+      "control_number": "05338",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Medical Assisting",
+      "award": "A.S. Degree",
+      "control_number": "05343",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Interior Design",
+      "award": "A.S. Degree",
+      "control_number": "05350",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Child Development",
+      "award": "A.S. Degree",
+      "control_number": "05352",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "English",
+      "award": "A.A. Degree",
+      "control_number": "05354",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Communication Studies",
+      "award": "A.A. Degree",
+      "control_number": "05355",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Mathematics",
+      "award": "A.A. Degree",
+      "control_number": "05356",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Physical Sciences",
+      "award": "A.S. Degree",
+      "control_number": "05357",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Physics",
+      "award": "A.S. Degree",
+      "control_number": "05358",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Chemistry",
+      "award": "A.S. Degree",
+      "control_number": "05359",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Psychology",
+      "award": "A.A. Degree",
+      "control_number": "05360",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Social Sciences (General)",
+      "award": "A.A. Degree",
+      "control_number": "05365",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Anthropology",
+      "award": "A.A. Degree",
+      "control_number": "05366",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Sociology",
+      "award": "A.A. Degree",
+      "control_number": "05368",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Personal Trainer",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "07071",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Architecture Design",
+      "award": "A.S. Degree",
+      "control_number": "09382",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Engineering",
+      "award": "A.S. Degree",
+      "control_number": "09394",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Construction Management",
+      "award": "A.S. Degree",
+      "control_number": "09401",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Fine Art: Museum Studies",
+      "award": "A.A. Degree",
+      "control_number": "09405",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Fine Art: Two-Dimensional",
+      "award": "A.A. Degree",
+      "control_number": "09409",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Fine Art: Three-Dimensional",
+      "award": "A.A. Degree",
+      "control_number": "09410",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Fine Art: Ceramics",
+      "award": "A.A. Degree",
+      "control_number": "09411",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Fashion and Costume Design",
+      "award": "A.S. Degree",
+      "control_number": "09414",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Fashion Merchandising",
+      "award": "A.S. Degree",
+      "control_number": "09415",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Nutrition",
+      "award": "A.S. Degree",
+      "control_number": "09416",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Nutrition & Fitness",
+      "award": "A.S. Degree",
+      "control_number": "09418",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Applied Mathematics",
+      "award": "A.A. Degree",
+      "control_number": "09419",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Philosophy",
+      "award": "A.A. Degree",
+      "control_number": "09420",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Chicana and Chicano Studies",
+      "award": "A.A. Degree",
+      "control_number": "09421",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "History",
+      "award": "A.A. Degree",
+      "control_number": "09422",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Geography",
+      "award": "A.A. Degree",
+      "control_number": "09423",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Political Science",
+      "award": "A.A. Degree",
+      "control_number": "09424",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Interactive Media Production",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "10652",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "3D Modeling and Animation",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "10653",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Visual Communication",
+      "award": "A.S. Degree",
+      "control_number": "10656",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Allied Health Track",
+      "award": "A.S. Degree",
+      "control_number": "11370",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Child Development Associate Teacher",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "12097",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Child Development Teacher",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "12098",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Child Development Master Teacher",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "12099",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Geographic Information Systems",
+      "award": "A.S. Degree",
+      "control_number": "12200",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Culinary Arts/Culinary Management",
+      "award": "A.S. Degree",
+      "control_number": "16872",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Hospitality Management",
+      "award": "A.S. Degree",
+      "control_number": "16873",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Liberal Studies: Elementary Education Preparation",
+      "award": "A.A. Degree",
+      "control_number": "18031",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Liberal Arts & Sciences: Art Studies - Art",
+      "award": "A.A. Degree",
+      "control_number": "18250",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Liberal Arts & Sciences - Business Studies",
+      "award": "A.A. Degree",
+      "control_number": "18254",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Liberal Arts and Sciences: Language Arts and Humanities - Chinese",
+      "award": "A.A. Degree",
+      "control_number": "18255",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Liberal Arts and Sciences: Language Arts and Humanities - French",
+      "award": "A.A. Degree",
+      "control_number": "18258",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Liberal Arts and Sciences: Language Arts and Humanities - German",
+      "award": "A.A. Degree",
+      "control_number": "18259",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Liberal Arts and Sciences: Language Arts and Humanities - Italian",
+      "award": "A.A. Degree",
+      "control_number": "18260",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Liberal Arts and Sciences: Language Arts and Humanities - Japanese",
+      "award": "A.A. Degree",
+      "control_number": "18261",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Liberal Arts and Sciences: Language Arts and Humanities - Russian",
+      "award": "A.A. Degree",
+      "control_number": "18264",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Liberal Arts and Sciences: Language Arts and Humanities - Spanish",
+      "award": "A.A. Degree",
+      "control_number": "18265",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Liberal Arts and Sciences: Language Arts and Humanities - Vietnamese",
+      "award": "A.A. Degree",
+      "control_number": "18267",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Liberal Arts & Sciences: Science Studies-Pre-Nursing",
+      "award": "A.A. Degree",
+      "control_number": "18275",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Liberal Arts & Sciences: Science Studies-Kinesiology & Nutrition",
+      "award": "A.A. Degree",
+      "control_number": "18276",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Liberal Arts & Sciences: Soc & Beh Sciences-Anthropology",
+      "award": "A.A. Degree",
+      "control_number": "18278",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Liberal Arts & Sciences: Soc & Beh Sciences-Child Developmen",
+      "award": "A.A. Degree",
+      "control_number": "18279",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Liberal Arts & Sciences - Soc & Beh Sciences-Economics",
+      "award": "A.A. Degree",
+      "control_number": "18280",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Liberal Arts & Sciences: Soc & Beh Sciences-History",
+      "award": "A.A. Degree",
+      "control_number": "18282",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Liberal Arts & Sciences: Social and Behavioral-Women's Studies",
+      "award": "A.A. Degree",
+      "control_number": "18287",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Fashion Technology: Design",
+      "award": "A.S. Degree",
+      "control_number": "19626",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Fashion Technology: Design",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19627",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Fashion Merchandising - Visual Merchandising/Styling/Event Production",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19628",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Fashion and Costume Design",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19629",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Interior Design",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19630",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Fashion Technology: Merchandising",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19632",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Business Administration",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "22296",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Business Management",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "22297",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Marketing",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "22298",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Computer & Information Sciences",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22306",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "ASL-English Interpretation",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22307",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Engineering",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22308",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Building Inspection and Construction Management",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22311",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Medical Assisting",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22312",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Nutrition",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "22316",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Nutrition & Fitness",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "22317",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Culinary Arts/Culinary Management",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22318",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Hospitality Management",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22319",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Physics",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22321",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Web Development",
+      "award": "A.S. Degree",
+      "control_number": "23059",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Web Development",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "23060",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Fine Art: Photography and New Genres",
+      "award": "A.A. Degree",
+      "control_number": "30639",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "American Sign Language Studies",
+      "award": "A.A. Degree",
+      "control_number": "30685",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "American Sign Language Studies",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "30686",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Fine Art: Digital Art",
+      "award": "A.A. Degree",
+      "control_number": "30688",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "30738",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "30739",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Journalism",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "31157",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Journalism",
+      "award": "A.A. Degree",
+      "control_number": "31160",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "31696",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "31698",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Theatre Arts",
+      "award": "A.A- T Degree",
+      "control_number": "31699",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "31711",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Art History",
+      "award": "A.A- T Degree",
+      "control_number": "31712",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Journalism",
+      "award": "A.A- T Degree",
+      "control_number": "31797",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Geography",
+      "award": "A.A- T Degree",
+      "control_number": "31803",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "31843",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "31851",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Honors Global Competencies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "32149",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "32901",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "32993",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Geology",
+      "award": "A.S. T Degree",
+      "control_number": "33296",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Spanish",
+      "award": "A.A- T Degree",
+      "control_number": "33304",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Philosophy",
+      "award": "A.A- T Degree",
+      "control_number": "33570",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "33617",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Nutrition and Dietetics",
+      "award": "A.S. T Degree",
+      "control_number": "35656",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Commercial Dance",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35947",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Choreography",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35954",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Dance",
+      "award": "A.A. Degree",
+      "control_number": "36048",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Retail Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "36310",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Small Business Management and Entrepreneurship",
+      "award": "A.S. Degree",
+      "control_number": "36324",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Small Business Management and Entrepreneurship",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "36325",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Dramatic Arts: Acting",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "36495",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Humanities and Religious Studies",
+      "award": "A.A. Degree",
+      "control_number": "36544",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Sustainability",
+      "award": "A.A. Degree",
+      "control_number": "36546",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Geographic Information Systems Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "36565",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Creative Writing",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "36699",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Video Game Design and Development",
+      "award": "A.S. Degree",
+      "control_number": "37395",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Video Game Design and Development",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "37397",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Fermentation Management",
+      "award": "A.S. Degree",
+      "control_number": "37548",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Coding Specialist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37568",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Fermentation Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38011",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Computer Science",
+      "award": "A.S. T Degree",
+      "control_number": "38490",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "38658",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Music Composition",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38960",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Music Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38961",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Music Theory",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38962",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Sustainability",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39060",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Music Technology",
+      "award": "A.A. Degree",
+      "control_number": "39331",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Music Studies",
+      "award": "A.A. Degree",
+      "control_number": "39332",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Health and Wellness Coaching",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39468",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Spanish for Spanish Speakers",
+      "award": "A.A. Degree",
+      "control_number": "40230",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Foundations of Web Development",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40267",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Aquatics",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40268",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Dental Office Administration",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "40839",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Baking and Pastry",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "40928",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Pathway to Law School",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41338",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Music",
+      "award": "A.A- T Degree",
+      "control_number": "41406",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "41477",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Patient Care Coordinator",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41971",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Meat and Seafood Processing",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42102",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Software Engineering Foundation",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42167",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Foundations of Fashion Merchandising",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42676",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Digital Storytelling",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43263",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Visual Communication",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "43346",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "43742",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "SELF-ADVOCACY AND SOCIAL AWARENESS",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44063",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Beer - Brewing and Cellaring",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44430",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Instructional Design",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44967",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Liberal Arts and Sciences: World Languages and Humanities Studies",
+      "award": "A.A. Degree",
+      "control_number": "45451",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Liberal Arts and Sciences: Mathematics, Pre-Engineering and Computer Science",
+      "award": "A.A. Degree",
+      "control_number": "45553",
+      "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Computer Programming",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "45835",
+      "loaded": "2026-10-12"
     }
   ],
   "next_step": {
-    "title": "Load and display San Diego Mesa",
-    "text": "Mesa's read with extraction runs on claude/s372-mesa-read; when it files, load it unchecked, add Mesa to the builder's dated reads, build and apply the display, read the build back and merge. The course outline census reads all 118 colleges on claude/s372-cor-census."
+    "title": "Read the course SLOs on Riverside's outlines",
+    "text": "The course index found a public outline for 1,605 of the 1,648 courses in the Riverside City, Moreno Valley and Norco records. Next comes a table that keeps each course's outcomes by college and course, then the read of every outline, then San Diego and Chaffey."
   },
   "calls": [
     {
-      "title": "Where each college's course outline system is recorded",
-      "text": "Open Asks Sheet 70 card 1: five registry fields by migration. No reply: the census result stays in its file and nothing is written."
-    },
-    {
-      "title": "Course outline systems that ask for a sign-in",
-      "text": "Sheet 70 card 2: record them and send no request. No reply: they are recorded as sign-in required and no request goes out."
-    },
-    {
-      "title": "Which course SLOs are read first",
-      "text": "Sheet 70 card 3: articulated courses at the nine loaded colleges first. No reply: no SLOs are read."
+      "title": "The gallery picks",
+      "text": "Mark the paintings to keep, drop or add on the gallery page. No reply: the gallery stays as it is and nothing changes on the site."
     }
   ],
   "notes": {
@@ -13923,20 +15077,24 @@
   },
   "changes": [
     {
-      "at": "2026-10-12T17:06Z",
-      "text": "San Diego Mesa's catalog row now points at the district's curriQunet host"
+      "at": "2026-10-12T20:05Z",
+      "text": "San Diego Mesa's 166 records loaded, not yet confirmed, and the page's display build covers all 2,181 records"
     },
     {
-      "at": "2026-10-12T17:37Z",
-      "text": "San Diego Miramar's 106 records loaded, not yet confirmed; its 4 checked records kept"
+      "at": "2026-10-12T20:47Z",
+      "text": "Each college's registry row gained course outline fields (Open Asks Sheet 70 card 1)"
     },
     {
-      "at": "2026-10-12T17:56Z",
-      "text": "The page's display build now covers all 2,015 records"
+      "at": "2026-10-12T21:43Z",
+      "text": "The course outline census read all 118 colleges: a public course outline at 32, with outcomes printed at 18"
     },
     {
-      "at": "2026-10-12T18:10Z",
-      "text": "A census of where each college's course outlines open started"
+      "at": "2026-10-12T22:05Z",
+      "text": "The course outline fields filled for all 118 colleges"
+    },
+    {
+      "at": "2026-10-12T22:00Z",
+      "text": "Riverside's course index: a public outline for 1,605 of the 1,648 courses in its three colleges' records"
     }
   ],
   "headline": [
