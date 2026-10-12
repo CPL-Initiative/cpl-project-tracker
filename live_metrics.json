@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-10-11T21:15:31.643Z",
+  "scraped_at": "2026-10-12T15:34:06.056Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -787,6 +787,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Merritt College",
+          "students": 57,
+          "units": 318,
+          "avgUnits": 5.578947368421052,
+          "transcriptionRate": 1.9,
+          "avgTranscribed": 0.10526315789473684,
+          "criteriaMetCount": 1,
+          "militaryStudents": 54,
+          "nonMilitaryStudents": 3,
+          "apprenticeStudents": 0,
+          "savings": 545550,
+          "yearImpact": 1921308,
+          "transcribedUnits": 6
+        },
+        {
           "college": "West Valley College",
           "students": 56,
           "units": 336,
@@ -1462,21 +1477,6 @@
           "transcribedUnits": 0
         },
         {
-          "college": "Merritt College",
-          "students": 18,
-          "units": 84,
-          "avgUnits": 4.666666666666667,
-          "transcriptionRate": 7.1,
-          "avgTranscribed": 0.3333333333333333,
-          "criteriaMetCount": 0,
-          "militaryStudents": 15,
-          "nonMilitaryStudents": 3,
-          "apprenticeStudents": 0,
-          "savings": 140730,
-          "yearImpact": 501630,
-          "transcribedUnits": 6
-        },
-        {
           "college": "Taft College",
           "students": 12,
           "units": 0,
@@ -1772,11 +1772,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "54,964",
+      "value": "55,003",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "28,974"
+          "value": "29,013"
         },
         {
           "label": "Workforce/Other",
@@ -1828,7 +1828,7 @@
     },
     {
       "title": "SAVINGS",
-      "value": "$354M",
+      "value": "$355M",
       "breakdowns": [
         {
           "label": "Military",
@@ -1850,7 +1850,7 @@
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$797M"
+          "value": "$798M"
         },
         {
           "label": "Workforce/Other",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 54964,
-    "Units": 238948.90000000002,
+    "Students": 55003,
+    "Units": 239182.90000000002,
     "TranscribedUnits": 83450.2,
-    "Savings": 354226476.5,
-    "YearImpact": 1411295563.8999999,
-    "MilitaryStudents": 28974,
+    "Savings": 354631296.5,
+    "YearImpact": 1412715241.8999999,
+    "MilitaryStudents": 29013,
     "NonMilitaryStudents": 26084,
     "AprenticeStudents": 949,
-    "AverageUnits": 4.347371006476967,
-    "TranscribedAverage": 1.518270140455571
+    "AverageUnits": 4.3485428067559955,
+    "TranscribedAverage": 1.5171936076214023
   }
 }
