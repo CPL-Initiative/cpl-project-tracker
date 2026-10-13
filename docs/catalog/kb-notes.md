@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-546 document(s).
+547 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -520,6 +520,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Ship a new table before its privilege close, when the database tool holds the close](../kb-notes/playbook-ship-a-table-before-its-privilege-close.md) | playbook | published | 2026-10-04 | 2026-10-04 |
 | [Soft-delete a daily-generated entity via an overlay table + collapsed section](../kb-notes/playbook-soft-delete-generated-entity-via-overlay.md) | playbook | published | 2026-06-29 | 2026-06-29 |
 | [Test a database function locally with PGlite before it goes live](../kb-notes/playbook-test-a-database-function-locally-with-pglite.md) | playbook | published | 2026-10-13 | 2026-10-13 |
+| [When apply_migration times out, read the migrations table before retrying](../kb-notes/playbook-when-apply-migration-times-out-read-the-migrations-table.md) | playbook | published | 2026-10-13 | 2026-10-13 |
 | [A System One model earns its place where a hit is cheap to verify — Jev, use case by use case, against this repo's lanes](../kb-notes/reference-system-one-model-fit-by-lane.md) | reference | internal | 2026-09-20 | 2026-09-20 |
 | [ADT acceptance & course-substitution rules (ASCCC C-ID guidance + STAR Act)](../kb-notes/reference-adt-acceptance-rules.md) | reference | published | 2026-06-20 |  |
 | [Authority-anchored credential naming — CareerOneStop / O*NET / COOL / Credential Engine for the CER](../kb-notes/reference-authority-anchored-credential-naming.md) | reference | published | 2026-07-07 | 2026-07-07 |

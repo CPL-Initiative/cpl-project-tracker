@@ -4201,8 +4201,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Chaffey": {
    "vets": 182,
-   "jst": 375,
-   "pct": 2.0604
+   "jst": 374,
+   "pct": 2.0549
   },
   "San Francisco": {
    "vets": 1197,

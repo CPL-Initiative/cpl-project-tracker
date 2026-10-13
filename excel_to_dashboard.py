@@ -2220,13 +2220,14 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
         html += f'            <div class="activity-group">\n'
         html += (f'            <div class="activity-group-header">\n'
                  f'                <h3><span style="color:var(--text-muted);font-weight:600;">{act_id}:</span> {html_escape(act_name)}</h3>\n'
-                 f'                <span style="display:inline-flex;gap:0.8rem;align-items:center;white-space:nowrap;">\n'
+                 # The row wraps (each link keeps nowrap): with Add sub-activity it ran
+                 # 71px past a 390px screen (measured S377).
+                 f'                <span style="display:inline-flex;flex-wrap:wrap;gap:0.3rem 0.8rem;align-items:center;">\n'
                  f'                <a href="#raci" class="act-raci-link" data-raci-key="activity:{act_num}" title="Who\'s Responsible / Accountable / Consulted / Informed for this Activity — hover for the roster, click to open Team &amp; RACI" '
                  f'onclick="try{{sessionStorage.setItem(\'cpl_raci_focus\',\'activity:{act_num}\')}}catch(e){{}}" '
                  f'style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">RACI</a>\n'
-                 f'                <a href="#raci" class="act-update-link" title="Braindump a quick status update for this Activity — CC writes it up and saves it" '
-                 f'onclick="try{{sessionStorage.setItem(\'cpl_update_focus\',\'activity:{act_num}\')}}catch(e){{}}" '
-                 f'style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">Update</a>\n'
+                 # No Update link here (S377): an Activity's summary is drafted by
+                 # Refresh summaries (activity_summaries.js) and posted by a reviewer.
                  f'                <a href="#raci" class="act-nudge-link" title="Nudge this Activity\'s Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)" '
                  f'onclick="try{{sessionStorage.setItem(\'cpl_nudge_focus\',\'activity:{act_num}\')}}catch(e){{}}" '
                  f'style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">Nudge</a>\n'
