@@ -1,0 +1,531 @@
+All Fields
+DRAM 100A - Fundamentals of Performance and Production I
+Cover
+Course Number
+100A
+Subject
+DRAM
+Course Title
+Fundamentals of Performance and Production I
+Short Title
+Fundamentals of Perf/Prod I
+Effective Semester
+2023 Fall
+CB04: Credit Status
+D - Credit - Degree Applicable
+CB05: Transfer Status
+A - Transferable to both UC and CSU.
+CB08: Basic Skills
+N - Not Basic Skills
+Main
+CB11 Classification
+CB22 Non-Credit Category
+Grading Method
+Grade Options Letter Grade Only
+Catalog Description
+This hands-on course focuses on beginning acting skills, scenic design and construction techniques, and theatrical production. Students participate in all aspects of theatrical production through a college theatre company. This course is designed for first-year dramatic arts majors.
+Short Desc (100 Characters or Less)
+Provides experience in scenic design and construction, acting and theatrical production.
+Originating Campus MESA - Mesa
+Colleges
+Mesa
+CCC Missions
+Transfer
+Course Equivalency No
+Equivalency Text
+Repeatability
+This course is repeatable No
+Number of Repeats Allowed
+Justification for Repeatability
+Proposal Information
+Reason For Proposed Action
+Remove ENGL advisories - ENGL 47A/48/49 being deactivated at Mesa.
+Costs
+None
+Field Trips May be required
+Active Participatory Course (family required)
+This is an active participatory course related in content: applies to exercise science, visual arts, and performing arts courses. Yes
+Family FUND-PRODUCTION (Fundamentals of Production-DRAM)
+This is a CTE Course No
+Codes
+CB03: TOP Code 100700 - Dramatic Arts
+CIP Code
+CB09: SAM Code E - Non-Occupational
+Student Learning Outcomes
+Learning Outcomes
+Group Title
+Mesa
+Outcome Text
+Understand the importance of successful collaboration in the creative process.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Outcome Text
+Outline the process and method by which the script goes from page to stage.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Student Learning Objectives
+Upon successful completion of the course the student will be able to:
+Objective Text
+Describe the principles of the company concept in the study of dramatic art.
+Objective Text
+Identify and define the purpose of significant physical plant areas used in the Dramatic Arts Program.
+Objective Text
+Execute safe practices as related to the physical plant through practical application and testing.
+Objective Text
+Demonstrate knowledge of basic acting concepts and techniques through in-class performances, projects and assignments.
+Objective Text
+Demonstrate mastery of basic technical skills in stage scenery assignments.
+Objective Text
+Demonstrate a basic proficiency in selected phases of play production and use of production terminology.
+Objective Text
+Locate and safely use machinery and equipment necessary to the dramatic art program.
+Objective Text
+Apply basic scenery construction techniques as related to production.
+Disciplines
+Minimum Qualification
+Minimum Qualification Drama/Theater Arts (Masters Required)
+Additional Required Qualifications
+Condition
+Hours/Units
+Override No
+Variable Units No
+Lecture
+Min Lecture Units 0.000
+Max Lecture Units 0.000
+Min Lecture Hours - Override 0.000
+Max Lecture Hours - Override 0.000
+Min Lecture Hours: 0.000
+Max Lecture Hours: 0.000
+Lab
+Min Lab Units 4.000
+Max Lab Units 0.000
+Min Lab Hours - Override 0.000
+Max Lab Hours - Override 0.000
+Min Lab Hours: 192.000
+Max Lab Hours: 216.000
+Other
+Min Other Units 0.000
+Max Other Units 0.000
+Min Other Hours - Override 0.000
+Max Other Hours - Override 0.000
+Min Other Hours: 0
+Max Other Hours: 0
+Total Units
+Min Units 4.000
+Max Units 0.000
+Total Hours
+Min Contact Hours: 192
+Max Contact Hours: 216
+Min Outside-of-Class Hours: 0
+Max Outside-of-Class Hours: 0
+Min Total Student Learning Hours: 192
+Max Total Student Learning Hours: 216
+FTEF
+Total FTEF Min: 0.8
+Additional Information
+Content
+Course Lecture Content (Use outline format)
+Introduction to the concept of a theatre company
+Areas of assigned production responsibilities
+The concept of collaboration
+Trust and rapport between company members
+Professional theatre etiquette
+Orientation to the physical plant
+The proscenium and black box stages
+The scenery lab
+The costuming lab
+The lighting and audio control booths
+Basic safety practices for the various labs and the theatre areas as well as audience safety during production
+Fundamentals of acting
+Scene selection
+Character analysis and development
+Character relationships
+Defining a character’s objective and demonstrating it through performance choices
+Demonstrating proper rehearsal process
+Preparation for productions--basic principles of stage scenery 
+Tool usage
+Methods of execution, including flat and platform construction, alternative materials, stage hardware and rigging
+Practicing shop safety
+Understanding the fundamental requirements of the play
+Design concept
+Technical feasibility
+Reading of simple architectural drawings.
+Color theory
+Basic production requirements and terminology
+Job descriptions and responsibilities
+Production deadlines and schedules
+Chain of command
+Basic theatre production construction practices
+Tool usage (saws, sewing machines, lighting control boards, etc.)
+Construction technique (scenery, costumes, props, etc.)
+Lab and theatre safety
+Course Lab/Activity Content
+Assignments
+Reading Assignments
+Optional Text
+Assignments
+Assigned textbook related to production fundamentals.
+Company handbook.
+A variety of play scripts.
+Handouts dealing with technical theatre and design.
+Writing Assignments
+Optional Text
+Assignments
+Image concept.
+Character analysis.
+Reviews of theatrical productions.
+Appropriate Outside Assignments
+Optional Text
+Assignments
+Scenic design research.
+Reading assignments.
+Character research.
+Line memorization.
+Scene study.
+Appropriate Assignments that Demonstrate Critical Thinking
+Optional Text
+Assignments
+Solve problems related to theatre production.
+Assess and refine stage design.
+Assess and refine acting technique.
+Methods of Evaluation
+Evaluation Method
+Other
+If you selected "Other", please provide details.
+Terminology quizzes. Scenic design projects. Written assignments. Acting/scene work. Production assignments. Class participation.
+Methods of Instruction
+Check all that apply:
+Laboratory
+Computer Assisted Instruction
+Audio-Visual
+Collaborative Learning
+Other
+If you selected "Other", please provide details.
+Peer Coaching Guest Lectures
+Credit for Prior Learning
+Eligible for Credit by Examination:
+Yes No
+Offered at:
+Industry Certification:
+Other Industry Certification:
+Standardized Exams:
+Credit by Portfolio Review:
+Yes No
+Portfolio Review Offered at:
+Military Training:
+Yes No
+I have completed this page.
+Distance Ed
+Does this course have a DE component? Yes
+Colleges
+Campus Mesa
+Delivery Methods
+Partially Online
+Other Methods
+Techniques used to ensure quality
+DRAM 100A will integrate the use of synchronous zoom conferencing for performance and production instruction paired with canvas modules, online assignments, Canvas discussions, guest visits from working professionals, and a final group performance project which will be executed online.  
+
+Online instruction includes regular student-to-student and instructor-to-student communication. Telephone calls between students and the instructor may be used to discuss questions and concerns throughout the course. E-mail may be used for asynchronous instructor-to-student and student-to-student communication. Chat rooms may be used for synchronous interaction between students and between the instructor and students. Threaded discussions may be used for instructor-to-student and student-to-student asynchronous group communication. Live-classroom may be used for synchronous online lectures, meetings and office hour meetings as appropriate. Video, audio, learning objects and archived live-classroom lectures may be included for students to interact with asynchronously where appropriate. Assignments and tests that will be used in the Distance Education course will be exactly the same as those in the traditional course. Students will submit all course work (tests and assignments) electronically to the instructor for grading.
+Evaluation Method
+The evaluation methods will mirror the on-campus course as specified in the course outline. The feedback on assignments and tests will be submitted electronically to the student.
+Additional Resources
+SDCCD and DSPS personnel will provide all needed accommodations. DSPS will provide a student in an online classroom with the same level of support as an on-campus student.
+Contact Types
+Announcements
+Frequency
+As needed
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Discussion Board
+Frequency
+Weekly
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Email/Message System
+Frequency
+As needed
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Synchronous or Asynchronous Video
+Frequency
+Weekly
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Telephone Contact
+Frequency
+As needed
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Textbooks/Resources
+Is there a Zero Textbook Cost listed for this course?
+Please explain why a Zero Cost textbook option is not included in the resource list
+Does your department have a commitment to using free, or low cost resources in all offerings of this course?
+Describe any additional strategies the department is using to lower the cost of resources students need when they enroll in this course.
+Zero Cost Textbook(s)/Open Educational Resource(s)
+Textbooks
+Text\Supplemental
+Author(s) Barton, Robert
+Title Acting Onstage and Off
+Edition 7th
+Publisher Cengage Learning
+Year 2015
+Is this a classic textbook? No
+ISBN # 9780495566045
+Additional Textbook Information
+Text\Supplemental
+Author(s) Schrutleff, Michael
+Title Audition
+Edition
+Publisher Bantam
+Year 1980
+Is this a classic textbook? No
+ISBN # 9780553272956
+Additional Textbook Information
+Text\Supplemental
+Author(s) Burder, Melissa, et al
+Title A Practical Handbook for the Actor, Vintage
+Edition
+Publisher Vintage
+Year 1986
+Is this a classic textbook? No
+ISBN # 9780394744124
+Additional Textbook Information
+Text\Supplemental
+Author(s) Kincman, Laurie
+Title The Stage Managers Toolkit
+Edition 2nd
+Publisher Routledge
+Year 2016
+Is this a classic textbook? No
+ISBN # 9781138183773
+Additional Textbook Information
+Text\Supplemental
+Author(s) Gillette, Michael
+Title Theatrical Production and Design
+Edition 8th
+Publisher McGraw Hill
+Year 2019
+Is this a classic textbook? No
+ISBN # 9781260687460
+Additional Textbook Information
+Text\Supplemental
+Author(s) Cohen, Robert
+Title Acting One
+Edition 5th
+Publisher McGraw Hill
+Year 2007
+Is this a classic textbook? No
+ISBN # 9780073514161
+Additional Textbook Information
+Text\Supplemental
+Author(s) Parker, W. Oren, et al
+Title Scene Design and Stage Lighting
+Edition 10th
+Publisher Cengage Learning
+Year 2013
+Is this a classic textbook? No
+ISBN # 9780495501909
+Additional Textbook Information
+Text\Supplemental
+Author(s) Stillson, Kenneth, et al
+Title Acting is Believing
+Edition 12th
+Publisher Cengage Learning
+Year 2014
+Is this a classic textbook? No
+ISBN # 9781285465050
+Additional Textbook Information
+Text\Supplemental
+Author(s) Carter, Paul and George Chiang
+Title Backstage Handbook
+Edition 3rd
+Publisher Broadway Press
+Year 1997
+Is this a classic textbook? No
+ISBN # 9780911747294
+Additional Textbook Information
+Periodicals
+Manual
+Software
+Other Learning Materials
+I have entered at least one resource
+Supplies (Instructional Materials)
+Enrollment Conditions
+Course has additional instructional materials fees Yes
+Explanation
+Supplies (Instructional Materials)
+Description
+Scripts.
+Description
+Copying of scene texts.
+Description
+Misc. art supplies.
+Description
+Stage Make-up.
+Description
+Costumes and props for scenework.
+Requisites
+Course Requisites
+Requisite Type Corequisite
+Subject DRAM - Dramatic Arts
+Course # and Title DRAM 104A - Theatre Company Performance I (Active)
+Purpose of Pre/Corequisite Closely related Lecture/Lab paired within the same discipline
+Required Statute
+Same pre/corequisite
+Comment
+Enrollment Limitation
+Requirement Type Course
+Requisite Type Limitation on Enrollment
+Subject
+Course # and Title
+Purpose of Pre/Corequisite
+Required Statute
+Same pre/corequisite
+Comment
+DRAM 101
+Enrollment Limitation This course is not open to students with previous credit for
+Requirement Type Other
+Conditions of Enrollment Catalog View
+Use Legacy V2 Course Requisites in COR No
+Legacy V2 Course Requisites
+Corequisite:
+DRAM 104A
+Limitation on Enrollment:
+This course is not open to students with previous credit for DRAM 101
+Content Review
+Is there a Course Requisite?
+Content Review
+Entry Skills
+Opt Heading
+Entry Skill
+Working knowledge of theatre performance aspects.
+Course Objectives
+Requisite Course Objective
+Demonstrate professionalism as an actor in a small supporting role, as a technician on a running crew, and/or as part of the front of house support staff.
+Requisite Course Objective
+Analyze the audience at each performance and interact with its members appropriately.
+Requisite Course Objective
+Collaborate with all company members throughout the performance process.
+Library
+Description
+No new resources required
+General Education/Transfer (Proposed)
+District General Education No
+District Multicultural Requirements No
+Exercise Science Activity Requirement No
+Health Education Requirement No
+American Institutions/California Government Requirement No
+CSU General Education No
+Cal-GETC No
+IGETC No
+UC Transfer Course Yes
+General Education/Transfer (Approved)
+District General Education No
+District Multicultural Requirements No
+Exercise Science Activity Requirement No
+Health Education Requirement No
+American Institutions/California Government Requirement No
+CSU General Education No
+Cal-GETC No
+IGETC No
+UC Transfer Course No
+Attachments
+Attached File
+Tech Review
+Please review for
+Compliance with District policy/procedures and state regulations,
+Course and/or Program alignment,
+Duplication of content,
+Feasibility (resources are adequate, e.g., classrooms, labs, equipment, and faculty load),
+Scheduling impact, and
+Impact on other disciplines and/or Programs.
+Similar Learning Objectives
+CB10: Work Experience
+CB11: Course Classification Status
+CB13: Special Class Status
+Course Prior to College Level (CB21) Y - Not applicable
+Funding Agency Category (CB23) Y - Not Applicable (funding not used to develop course)
+Course Program Status (CB24)
+Mesa
+CB24: Program Status 1 - Program Applicable
+Course Gen Education Status (CB25)
+Not Applicable
+Course Support Course Status (CB26) N - Course is not a support course
+CB27: Upper Division Status
+Major Restriction Code
+NONE -
+Lecture Hours
+Min: 0.000
+Max: 0.000
+Lab Hours
+Min: 192.000
+Max: 216.000
+Units
+Min: 4.000
+Max: 0.000
+FTEF
+Total FTEF Min: 0.800
+Comments
+ASSIST
+Queue for Assist No
+Last Request From Queue
+Last Direct Request
+ASSIST Preview
+Prefix DRAM
+Course Number 100A
+Content The following topics are included in the framework of the course but are not intended as limits on content. The order of presentation and relative emphasis will vary with each instructor.
+Introduction to the concept of a theatre company
+Areas of assigned production responsibilities
+The concept of collaboration
+Trust and rapport between company members
+Professional theatre etiquette
+Orientation to the physical plant
+The proscenium and black box stages
+The scenery lab
+The costuming lab
+The lighting and audio control booths
+Basic safety practices for the various labs and the theatre areas as well as audience safety during production
+Fundamentals of acting
+Scene selection
+Character analysis and development
+Character relationships
+Defining a character’s objective and demonstrating it through performance choices
+Demonstrating proper rehearsal process
+Preparation for productions--basic principles of stage scenery 
+Tool usage
+Methods of execution, including flat and platform construction, alternative materials, stage hardware and rigging
+Practicing shop safety
+Understanding the fundamental requirements of the play
+Design concept
+Technical feasibility
+Reading of simple architectural drawings.
+Color theory
+Basic production requirements and terminology
+Job descriptions and responsibilities
+Production deadlines and schedules
+Chain of command
+Basic theatre production construction practices
+Tool usage (saws, sewing machines, lighting control boards, etc.)
+Construction technique (scenery, costumes, props, etc.)
+Lab and theatre safety
+Lab Content
+Course Description
+This hands-on course focuses on beginning acting skills, scenic design and construction techniques, and theatrical production. Students participate in all aspects of theatrical production through a college theatre company. This course is designed for first-year dramatic arts majors.
+Is Honors
+Lecture Hours
+Lab Hours
+Outline Approval Date
+Outline Effective Date
+Prerequisites
+Corequisites
+Advisories
+Enrollment Limitations
+Objectives
+Instruction Methods
+Evaluation Methods
+Other Texts
+Assignments
+Other Information

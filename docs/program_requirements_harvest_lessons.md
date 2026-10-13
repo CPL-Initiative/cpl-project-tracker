@@ -701,3 +701,55 @@ The outcomes paragraph's settled parts, verbatim:
 - **Chaffey's course outcomes are on section syllabi** (its outcomes site); program outcomes are in the
   catalog and CurriQunet. No public course SLO list turned up from a web search.
 - **`apply_migration` timed out a seventh time** (04:31Z) with nothing landing; Sam chose to paste the table.
+
+## Moved from the lane (S380 compaction)
+
+The outcomes paragraph's settled parts:
+
+- **RCCD (#2049, S374):** the reader takes the outline's *Student Learning Outcomes* area from the HTML, never the
+  Course Objectives RCCD prints first under the same lead-in (trial 38317539422); a nested institutional outcome
+  (*Critical Thinking*) is `maps_to`; the *College:* line names RIV, MOV, NOR. Run 38318152644 read all 1,605 in four
+  slices: every page 200, all parsed from the HTML. Load run 38392934576 inserted 2,665 rows (one per college the
+  outline names), none kept or skipped.
+- **SDCCD (#2065, #2066, S376):** the index learns each host's link form from its own dashboard and reads the report
+  its `.run` names. SDCCD's *Course Outline Report* (493) prints Student Learning *Objectives* only (trial
+  38350133448); its *All Fields* report (4) prints each college's SLOs under its own *Group Title* (trial
+  38350787486), so the index reads All Fields: 1,641 of the 1,660 courses City, Mesa and Miramar's records name. A
+  comparison report is never read. Read 38351637385 (four slices, checked S380): every page 200, all parsed from the
+  HTML, 1,506 courses with outcomes, groups City, Mesa, Miramar only. Load run 38397577646 wrote one row per group:
+  2,229 inserted, 135 courses skipped (none printed). The read filed 2,230 groups: one course printed the same
+  college's block twice, and the load's key (college, course, report, fingerprint) kept it once.
+- **Chaffey (#2073, S380):** its outcomes FAQ (chaffey.edu/outcomes/faq.php) says current course learning outcomes
+  are kept in META CurriQunet and printed on each course's syllabus. Its dashboard links two public reports per
+  course, *Course Outline* (225) and *Course Outline - PDF* (1225), and no All Fields report (discovery
+  38392162605); the PDF prints Course Objectives and no outcomes (read 38394075773). The registry note
+  (`kb/receipts/program_source_registry_chaffey_cor_note_2026-10-13_s380.sql`) keeps `cor_slo_source_url` null.
+- **The table:** `apply_migration` timed out eight times on `chatbox/supabase_course_outcomes.sql` (S374 to S380)
+  with nothing landing; Sam pasted it (Open Asks Sheet 72 card 1). A paste card is the route while the connector is
+  down.
+
+## S380 SkyAlder (2026-10-13): course outcomes loaded at six colleges, the eLumen read, and two CourseLeaf misses
+
+- **The table landed by paste.** `apply_migration` timed out an eighth and a ninth time with nothing landing (no
+  migration since 23:19Z on 2026-10-12); Sam pasted `chatbox/supabase_course_outcomes.sql`. RCCD loaded (#2049,
+  2,665 rows) and SDCCD by college group (#2066, 2,229 rows): 4,894 rows, 16,626 SLOs. Sam asked how to stop
+  pasting; the runner-applied migration path (an access token secret, optional approval tap) waits on his answer.
+- **Merging main brought a guard the branch predated.** #2049's two outcomes workflows failed #2069's trigger-file
+  check after the merge; the gate was ported from #2066. A stacked PR's newer files win an add/add conflict once the
+  base's own commits never touched them (check `git log <fork>..<base> -- <files>` first).
+- **Chaffey's course outcomes are not public** (#2073): two dashboard reports (225, 1225), both objectives only; the
+  FAQ keeps CLOs in META CurriQunet and on syllabi. The registry note waits as a paste.
+- **eLumen is a single-page app read through its own calls.** Every view loads one ~4.5 MB publish call (styles, the
+  whole side menu, the page) and then settles; the rendered capture ran past 2.5 hours and was canceled. The menu's
+  own links load a page through `publish/content/<catalog>,<path>?tenant=<host>`, ~2 KB of HTML with the program's
+  heading, learning outcomes and requirements (reads 38392014238, 38413232841, 38413852584). Bakersfield prints
+  `AGRIB5`; `code_pattern` already matches the state's `AGRI B5`. Course pages print SLOs where the college shows
+  them (Palo Verde yes, Bakersfield no).
+- **Coastline found 29 of 159 programs, for two reasons that apply to every CourseLeaf college.** Its program pages
+  are addressed `.../business-as/index.html`, and `NOT_PROGRAM_PATH` dropped every `/index.html`, so only subject
+  pages were read (their Courses tab lists the subject's courses); and the link-search fallback accepted course
+  listings (`course-descriptions/credit-courses/re/`) at coverage 1.0. `dir_form()` and `link_page_ok()` fix both
+  (#2074). Earlier CourseLeaf colleges (Cerritos, Mt. San Antonio, Long Beach City) passed through the same link
+  search: their link-search records are worth one check for a course-listing source.
+- **Next college by tier:** no Leading college is left on a platform the reader handles except eLumen; among
+  Advancing CourseLeaf/curriQunet colleges Coastline (984 CPL students) leads, then Southwestern, Fresno City, Cypress.

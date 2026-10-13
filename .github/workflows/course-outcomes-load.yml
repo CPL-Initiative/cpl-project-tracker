@@ -1,0 +1,76 @@
+name: Course outcomes load
+# The filed course outcomes read into course_outcomes (Sam, Open Asks Sheet 70 card
+# 3, 2026-10-12: "Every course in the loaded records"). kb/_course_outcomes_load.py
+# posts each college's rows to course_outcomes_load() with the service key: it
+# inserts a block the table does not hold and touches nothing already there. The
+# receipt (kb/receipts/course_outcomes_<host>_<run>.json) names every inserted id
+# and the delete that rolls them back; this job commits it to the branch that ran.
+# Runs when a claude/** push changes kb/course_outcomes/.load (host=<folder>) to
+# something main does not hold (the gate job), never on a merge commit.
+on:
+  push:
+    branches: ['claude/**']
+    paths:
+      - 'kb/course_outcomes/.load'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: course-outcomes-load-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    # Runs the work only when the pushed trigger file differs from main's. A merge of
+    # main carries every trigger file main holds, and a push after it (not only the
+    # merge commit) starts this workflow (S376: a display push on a branch that had
+    # merged main re-ran the SDCCD index; here it would re-run a read of hours, or a
+    # load). To run the same file again, change a line in it.
+    if: github.actor != 'github-actions[bot]' && !startsWith(github.event.head_commit.message, 'Merge')
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.diff.outputs.go }}
+    steps:
+      - uses: actions/checkout@v7
+      - id: diff
+        run: |
+          git fetch -q --depth=1 origin main
+          if git diff --quiet FETCH_HEAD -- kb/course_outcomes/.load; then
+            echo "go=0" >> "$GITHUB_OUTPUT"; echo "kb/course_outcomes/.load matches main's: nothing to run."
+          else
+            echo "go=1" >> "$GITHUB_OUTPUT"
+          fi
+
+  load:
+    needs: gate
+    if: needs.gate.outputs.go == '1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Load the filed read, insert-only
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          host=$(sed -n 's/^host=//p' kb/course_outcomes/.load)
+          python3 kb/_course_outcomes_load.py --host "$host"
+
+      - name: Commit the receipt to this branch
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kb/receipts
+          if git diff --cached --quiet; then echo "No receipt."; exit 0; fi
+          git commit -m "Receipt: course outcomes load (run ${{ github.run_id }})"
+          for i in 1 2 3 4; do
+            git pull --rebase origin ${{ github.ref_name }} && git push origin HEAD:${{ github.ref_name }} && exit 0
+            sleep $((i * 5))
+          done
+          exit 1

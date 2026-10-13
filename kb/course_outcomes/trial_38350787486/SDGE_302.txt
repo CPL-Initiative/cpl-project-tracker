@@ -1,0 +1,464 @@
+All Fields
+SDGE 302 - Electric Lineman IA
+Cover
+Course Number
+302
+Subject
+SDGE
+Course Title
+Electric Lineman IA
+Short Title
+Electric Lineman IA
+Effective Semester
+2025 Fall
+CB04: Credit Status
+D - Credit - Degree Applicable
+CB05: Transfer Status
+C - Not transferable
+CB08: Basic Skills
+N - Not Basic Skills
+Main
+CB11 Classification Y - Credit Course
+CB22 Non-Credit Category Y - Not Applicable, Credit course
+Grading Method
+Grade Options Letter Grade Only
+Catalog Description
+This course provides an orientation in the power distribution and line construction industry. Basic electrical principles and safety on the job are emphasized. Topics include basic mathematical computations, including trigonometry fundamentals, electron theory, and the fundamentals of magnetism. Students combine electrical theory with laboratory and practical applications in the course of study. This course is designed for students interested in the electric power trade and those pursuing
+careers in the field, including utility, military, and commercial areas.
+Short Desc (100 Characters or Less)
+Provides an orientation in the power distribution and line construction industry.
+Originating Campus CITY - City
+Colleges
+City
+CCC Missions
+Vocational/Occupational
+Course Equivalency Yes
+Equivalency Text
+ELCT 190
+SDGE 90
+
+Repeatability
+This course is repeatable No
+Number of Repeats Allowed
+Justification for Repeatability
+Proposal Information
+Reason For Proposed Action
+Add course equivalency for SDGE 90 and ELCT 190.
+Update textbooks.
+Costs
+N/A - off campus program.
+Field Trips May be required
+Active Participatory Course (family required)
+This is an active participatory course related in content: applies to exercise science, visual arts, and performing arts courses. No
+Family
+This is a CTE Course Yes
+Codes
+CB03: TOP Code 093440 - Electrical Systems and Power Transmission
+CIP Code 47.0101 - Electrical/Electronics Equipment Installation and Repair Technology/Technician, General
+CB09: SAM Code A - Apprenticeship
+Student Learning Outcomes
+Learning Outcomes
+Student Learning Objectives
+Upon successful completion of the course the student will be able to:
+Objective Text
+Demonstrate ability to manipulate mathematical computation using fractions, decimals, percent, algebra, and fundamentals of trigonometry.
+Objective Text
+Demonstrate the knowledge in using fundamental mechanics: weight, pressure, torque, power, and vectors.
+Objective Text
+Demonstrate the knowledge of electron theory as it applies to conductors, electrical potential, current, impedance, and simple circuits.
+Objective Text
+Describe the fundamentals of electricity.
+Objective Text
+Demonstrate the knowledge in applying the fundamentals of magnetism as it pertains to permanent and electromagnets, magnetic flux, and reluctance.
+Disciplines
+Minimum Qualification
+Minimum Qualification Electricity
+Additional Required Qualifications
+Condition
+Hours/Units
+Override No
+Variable Units No
+Lecture
+Min Lecture Units 5.000
+Max Lecture Units 0.000
+Min Lecture Hours - Override 0.000
+Max Lecture Hours - Override 0.000
+Min Lecture Hours: 80.000
+Max Lecture Hours: 90.000
+Lab
+Min Lab Units 0.000
+Max Lab Units 0.000
+Min Lab Hours - Override 0.000
+Max Lab Hours - Override 0.000
+Min Lab Hours: 0.000
+Max Lab Hours: 0.000
+Other
+Min Other Units 0.000
+Max Other Units 0.000
+Min Other Hours - Override 0.000
+Max Other Hours - Override 0.000
+Min Other Hours: 0
+Max Other Hours: 0
+Total Units
+Min Units 5.000
+Max Units 0.000
+Total Hours
+Min Contact Hours: 80
+Max Contact Hours: 90
+Min Outside-of-Class Hours: 160
+Max Outside-of-Class Hours: 180
+Min Total Student Learning Hours: 240
+Max Total Student Learning Hours: 270
+FTEF
+Total FTEF Min: 0.333
+Additional Information
+Content
+Course Lecture Content (Use outline format)
+Mathematics
+Addition and subtraction
+Multiplication and division
+Common fractions and cancellation
+Decimal fractions and percent
+Square root and cube root
+Useful terms and symbols
+Positive and negative numbers
+Real and imaginary numbers
+Fundamental mechanics
+Weight, pressure, and force
+Work and energy
+Torque
+Power
+Efficiency
+Vectors
+Electron theory
+Molecular structure of matter
+The atom
+The electron
+Ions and ionization
+Fundamentals of electricity
+Conductors and insulators
+Electrical potential
+Electric current
+Electrical impedance
+The electric circuit
+Fundamentals of magnetism/electromagnetism
+Permanent magnets and electromagnets
+Magnetomotive force
+Magnetic flux
+Magnetic reluctance
+The magnetic circuit
+Course Lab/Activity Content
+Assignments
+Reading Assignments
+Optional Text
+Assignments
+Assigned textbooks.
+SDG&E Construction Standards.
+SDG&E Electric Standard Practices.
+Power delivery industry articles from internet sites, such as www.lineworker.com and www.tdworld.com.
+Internet journals, such as www.linemantrainer.com.
+State of California General Orders 95 & 128.
+Writing Assignments
+Optional Text
+Assignments
+Complete assigned reports.
+Summarize the electron theory and the molecular structure of matter.
+Perform arithmetic calculations as assigned.
+Written short essays on fundamental mechanics.
+Appropriate Outside Assignments
+Optional Text
+Assignments
+Research web sites, such as www.lineworker.com and linmenonline.com.
+Prepare research reports on the magnetic circuit.
+Research articles on electric current.
+Tour potential work sites.
+Appropriate Assignments that Demonstrate Critical Thinking
+Optional Text
+Assignments
+Analyze Ohm's Law and how it relates to the electron theory.
+Compare and contrast permanent magnets and electromagnets.
+Identify and describe the molecular structure of matter, explaining ionization.
+Analyze how weight, pressure, and force affect work output and energy.
+Methods of Evaluation
+Text box for Common Course Numbering (CCN) only.
+Evaluation Method
+Other
+If you selected "Other", please provide details.
+Written or oral examinations Outside assignments including writing assignments Class discussion Class participation Attendance per current apprenticeship policies
+Methods of Instruction
+Check all that apply:
+Other
+If you selected "Other", please provide details.
+1) Lecture with, or without, various audio-visual aids 2) Group problem solving, discussion, debate, and/or critique 3) Demonstration 4) Computer-assisted or other self-paced instruction 5) Field trips or field assignments
+Credit for Prior Learning
+Eligible for Credit by Examination:
+Yes No
+Offered at:
+Industry Certification:
+Other Industry Certification:
+Standardized Exams:
+Credit by Portfolio Review:
+Yes No
+Portfolio Review Offered at:
+Military Training:
+Yes No
+I have completed this page. Yes
+Distance Ed
+Does this course have a DE component? Yes
+Colleges
+Campus City
+Delivery Methods
+Online – Emergency Only
+Other Methods
+Techniques used to ensure quality
+Students engage in regular and effective interaction with each other and the instructor in ways that mirror the traditional classroom; only the delivery system is altered. These methods include one-on-one communication with the instructor and with other students via e-mail, the announcement system, the discussion board, or other tools. Students also demonstrate an understanding and integration of course concepts via research assignments, problem sets, group projects, asynchronous class discussion, and/or other assignments.
+If possible, students have access to apprenticeship facility and equipment at specified locations. If access is not possible, the assignments are modified so that equipment are not required to complete.
+Evaluation Method
+Multiple measures are used to assess student learning objectives. These include performance on objective examinations administered via the assessment tool, writing assignments, and/or group or individual projects posted to the discussion board or other online collaboration tool.
+When access to the facility and equipment is not possible, assignments are modified to ensure equitable access to all students. Alternative assignments requiring minimal tools may include, but are not limited to, writing assignment modifications and options for web-based (as opposed to app-based) training.
+Additional Resources
+Materials posted online are consistent with those required for campus based class. SDCCD and DSPS personnel provide all needed accommodations. DSPS provide a student in an online classroom with the same level of support as an on-campus student.
+Contact Types
+Announcements
+Frequency
+weekly
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Collaborative Web Documents
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Conferencing
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Discussion Board
+Frequency
+at least five times during the term
+Participant/s
+Faculty to Student/s No
+Among Students Yes
+Email/Message System
+Frequency
+as needed
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Field Trips
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Group Meetings
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Individual Meetings
+Frequency
+as needed
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Individualized Assignment Feedback
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Synchronous or Asynchronous Video
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Telephone Contact
+Frequency
+as needed
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Textbooks/Resources
+Is there a Zero Textbook Cost listed for this course? No
+Please explain why a Zero Cost textbook option is not included in the resource list
+Will include in next review.
+Does your department have a commitment to using free, or low cost resources in all offerings of this course? Yes
+Describe any additional strategies the department is using to lower the cost of resources students need when they enroll in this course.
+Zero Cost Textbook(s)/Open Educational Resource(s)
+Textbooks
+Text\Supplemental
+Author(s) Singer, Bertrand and Sharon Ferrett
+Title Basic Mathematics for Electricity and Electronics
+Edition 8th
+Publisher McGraw Hill
+Year 2000
+Is this a classic textbook? Yes
+ISBN # 9780028050232
+Additional Textbook Information
+Periodicals
+Manual
+Author(s) Shoemaker, Thomas and James Mack
+Title Lineman and Cablemans Field Manual
+Edition 2nd
+ISBN-13 9780071621212
+Publisher McGraw-Hill
+Year 2009
+Rationale for older manual
+Most updated version.
+Or Equivalent No
+Author(s) Van Soelen, Wayne
+Title The Guidebook for Linemen and Cablemen
+Edition 2nd
+ISBN-13 9781111035013
+Publisher Cengage
+Year 2011
+Rationale for older manual
+Most updated version.
+Or Equivalent No
+Software
+Other Learning Materials
+I have entered at least one resource Yes
+Supplies (Instructional Materials)
+Enrollment Conditions
+Course has additional instructional materials fees No
+Explanation
+Supplies (Instructional Materials)
+Requisites
+Course Requisites
+Requisite Type Limitation on Enrollment
+Subject
+Course # and Title
+Purpose of Pre/Corequisite
+Required Statute
+Same pre/corequisite
+Comment
+Enrollment Limitation Apprenticeship - Student must be a state registered apprentice in this trade.
+Requirement Type
+Requisite Type Limitation on Enrollment
+Subject
+Course # and Title
+Purpose of Pre/Corequisite
+Required Statute
+Same pre/corequisite
+Comment
+ELCT 190 or SDGE 90
+Enrollment Limitation This course is not open to students with previous credit for
+Requirement Type
+Conditions of Enrollment Catalog View
+ 
+Content Review
+Is there a Course Requisite? No
+Content Review
+Library
+Description
+General Education/Transfer (Proposed)
+District General Education No
+District Multicultural Requirements No
+Exercise Science Activity Requirement No
+Health Education Requirement No
+American Institutions/California Government Requirement No
+CSU General Education No
+Cal-GETC No
+IGETC No
+UC Transfer Course No
+General Education/Transfer (Approved)
+District General Education No
+District Multicultural Requirements No
+Exercise Science Activity Requirement No
+Health Education Requirement No
+American Institutions/California Government Requirement No
+CSU General Education No
+Cal-GETC No
+IGETC No
+UC Transfer Course No
+Attachments
+Attached File
+Tech Review
+Please review for
+Compliance with District policy/procedures and state regulations,
+Course and/or Program alignment,
+Duplication of content,
+Feasibility (resources are adequate, e.g., classrooms, labs, equipment, and faculty load),
+Scheduling impact, and
+Impact on other disciplines and/or Programs.
+Similar Learning Objectives
+CB10: Work Experience N - Is not part of a cooperative work experience education program.
+CB13: Special Class Status N - Course is not a special class.
+Course Prior to College Level (CB21) Y - Not applicable
+Funding Agency Category (CB23) A - This course was primarily developed using Economic Development funds
+Course Program Status (CB24)
+City
+CB24: Program Status 1 - Program Applicable
+Course Gen Education Status (CB25)
+Not Applicable
+Course Support Course Status (CB26) N - Course is not a support course
+CB27: Upper Division Status N - Course is not an upper division course
+Major Restriction Code
+NONE -
+Comments
+ASSIST
+Queue for Assist No
+Last Request From Queue
+Last Direct Request
+ASSIST Preview
+Prefix SDGE
+Course Number 302
+Content The following topics are included in the framework of the course but are not intended as limits on content. The order of presentation and relative emphasis will vary with each instructor.
+Mathematics
+Addition and subtraction
+Multiplication and division
+Common fractions and cancellation
+Decimal fractions and percent
+Square root and cube root
+Useful terms and symbols
+Positive and negative numbers
+Real and imaginary numbers
+Fundamental mechanics
+Weight, pressure, and force
+Work and energy
+Torque
+Power
+Efficiency
+Vectors
+Electron theory
+Molecular structure of matter
+The atom
+The electron
+Ions and ionization
+Fundamentals of electricity
+Conductors and insulators
+Electrical potential
+Electric current
+Electrical impedance
+The electric circuit
+Fundamentals of magnetism/electromagnetism
+Permanent magnets and electromagnets
+Magnetomotive force
+Magnetic flux
+Magnetic reluctance
+The magnetic circuit
+Lab Content
+Course Description
+This course provides an orientation in the power distribution and line construction industry. Basic electrical principles and safety on the job are emphasized. Topics include basic mathematical computations, including trigonometry fundamentals, electron theory, and the fundamentals of magnetism. Students combine electrical theory with laboratory and practical applications in the course of study. This course is designed for students interested in the electric power trade and those pursuing careers in the field, including utility, military, and commercial areas.
+Is Honors
+Lecture Hours
+Lab Hours
+Outline Approval Date
+Outline Effective Date
+Prerequisites
+Corequisites
+Advisories
+Enrollment Limitations
+Objectives
+Instruction Methods
+Evaluation Methods
+Other Texts
+Assignments
+Other Information
