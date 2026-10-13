@@ -15,10 +15,12 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-346 document(s).
+348 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 377 | [Annual Goals: read Sheet 72, land the Move control, then Refresh summaries](../session_377_handoff.md) | 2026-10-13 |
+| 376 | [load the course outcomes, then re-read Mesa](../session_376_handoff.md) | 2026-10-12 |
 | 375 | [Annual Goals: land PR A, then B, C, D](../session_375_handoff.md) | 2026-10-12 |
 | 374 | [the SLO read on RCCD's outlines, after the course outline fields and the index](../session_374_handoff.md) | 2026-10-12 |
 | 373 | [Mesa's load, the course outline census, the gallery picks](../session_373_handoff.md) | 2026-10-12 |

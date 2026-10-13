@@ -138,7 +138,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `program_source_addenda` | tabs: `program-requirements` | — |
 | `program_source_registry` | tabs: `college-briefing`, `cpl-pathways`, `program-requirements` · scripts: `kb/_course_outline_census.py`, `kb/_program_requirements_pilot.py`, `kb/_program_source_census.py`, `scripts/catalog_framing.py` | — |
 | `project_lifecycle` | tabs: `raci` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py` | pages: `CPL_Dashboard.html` |
-| `projects` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py`, `kb/_seed_projects.py`, `kb/_seed_projects_apply.py`, `kb/_validate_projects.py` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `kb/_seed_projects_apply.py` |
+| `projects` | tabs: `workplan-goals` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py`, `kb/_seed_projects.py`, `kb/_seed_projects_apply.py`, `kb/_validate_projects.py` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `kb/_seed_projects_apply.py` |
 | `sierra_feedback` | tabs: `governance`, `map-queue`, `sierra-training` · scripts: `chatbox/smoke_test.sh` | — |
 | `sierra_guidance` | tabs: `sierra-training` · `edgefn:cpl-chat` | tabs: `sierra-training` |
 | `sierra_rules` | tabs: `sierra-training` · `edgefn:cpl-chat` | tabs: `sierra-training` |
@@ -709,7 +709,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `pipeline.js` | pages: `CPL_Dashboard.html` | — |
 | `privacy.html` | scripts: `scripts/ui_pass.py` | — |
 | `program_requirements.js` | pages: `CPL_Dashboard.html` · scripts: `scripts/queue_status.py` | — |
-| `project_add.js` | pages: `CPL_Dashboard.html` | — |
 | `project_lifecycle.js` | pages: `CPL_Dashboard.html` | — |
 | `projects_editor.js` | pages: `CPL_Dashboard.html` | — |
 | `prototype/build_ccr_atlas.py` | workflows: `daily-dashboard.yml` | — |
@@ -1092,5 +1091,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 97 Supabase tables · 37 RPCs · 7 edge functions · 638 file
-datasets · 175 external services · 434 consumers · 50 workflows · 39 tabs.
+Coverage: 97 Supabase tables · 37 RPCs · 7 edge functions · 637 file
+datasets · 175 external services · 433 consumers · 50 workflows · 39 tabs.

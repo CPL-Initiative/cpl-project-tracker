@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-544 document(s).
+546 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -130,6 +130,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A lane file is a summary of a measurement, not the measurement](../kb-notes/methodology-a-lane-file-is-a-summary-of-a-measurement.md) | methodology | published | 2026-09-13 | 2026-09-13 |
 | [A lapsed custom name is not a refusal](../kb-notes/methodology-a-lapsed-name-is-not-a-refusal.md) | methodology | published | 2026-10-08 | 2026-10-08 |
 | [A layout that cannot shrink does not wrap — it overflows and paints over its neighbour](../kb-notes/methodology-a-grid-item-sized-to-its-content-overflows-its-track.md) | methodology | published | 2026-09-04 | 2026-09-04 |
+| [A lead-in sentence is not a section heading](../kb-notes/methodology-a-lead-in-sentence-is-not-a-section-heading.md) | methodology | published | 2026-10-12 | 2026-10-12 |
 | [A limit nobody can see eats work, and a limit enforced twice drifts](../kb-notes/methodology-a-silent-cap-eats-work-and-a-paired-cap-drifts.md) | methodology | published | 2026-08-12 | 2026-08-12 |
 | [A limit that bounds one side of a union lets the other side drown it](../kb-notes/methodology-bound-both-sides-of-a-union.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A live rename must be order-proof, because the database and the deploy cannot be simultaneous](../kb-notes/methodology-a-live-rename-must-be-order-proof.md) | methodology | published | 2026-08-15 | 2026-08-15 |
@@ -518,6 +519,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Runner-as-proxy for an external API the agent sandbox can't reach](../kb-notes/playbook-runner-as-external-api-proxy.md) | playbook | published | 2026-06-19 | 2026-06-28 |
 | [Ship a new table before its privilege close, when the database tool holds the close](../kb-notes/playbook-ship-a-table-before-its-privilege-close.md) | playbook | published | 2026-10-04 | 2026-10-04 |
 | [Soft-delete a daily-generated entity via an overlay table + collapsed section](../kb-notes/playbook-soft-delete-generated-entity-via-overlay.md) | playbook | published | 2026-06-29 | 2026-06-29 |
+| [Test a database function locally with PGlite before it goes live](../kb-notes/playbook-test-a-database-function-locally-with-pglite.md) | playbook | published | 2026-10-13 | 2026-10-13 |
 | [A System One model earns its place where a hit is cheap to verify — Jev, use case by use case, against this repo's lanes](../kb-notes/reference-system-one-model-fit-by-lane.md) | reference | internal | 2026-09-20 | 2026-09-20 |
 | [ADT acceptance & course-substitution rules (ASCCC C-ID guidance + STAR Act)](../kb-notes/reference-adt-acceptance-rules.md) | reference | published | 2026-06-20 |  |
 | [Authority-anchored credential naming — CareerOneStop / O*NET / COOL / Credential Engine for the CER](../kb-notes/reference-authority-anchored-credential-naming.md) | reference | published | 2026-07-07 | 2026-07-07 |

@@ -1068,7 +1068,9 @@
       + '.wpg-modal-card .wpg-radio-row label { display:flex;align-items:center;gap:0.4rem;font-weight:500;color:var(--text-strong);margin:0;font-size:0.9rem;cursor:pointer;min-height:24px; }'
       + '.wpg-modal-card .wpg-grid-years { display:grid;grid-template-columns:repeat(5,1fr);gap:0.4rem; }'
       + '.wpg-modal-card .wpg-assoc-checkboxes { display:flex;flex-wrap:wrap;gap:0.6rem;padding:0.5rem 0.6rem;background:var(--surface-subtle);border-radius:5px; }'
-      + '.wpg-modal-card .wpg-assoc-checkboxes label { display:flex;align-items:center;gap:0.3rem;font-size:0.78rem;font-weight:500;margin:0;color:var(--text-strong);cursor:pointer; }'
+      // Each checkbox's label is its target, so it meets the 24px minimum (WCAG 2.5.8;
+      // measured 19.9px tall on the published dialog, S375).
+      + '.wpg-modal-card .wpg-assoc-checkboxes label { display:flex;align-items:center;gap:0.3rem;font-size:0.78rem;font-weight:500;margin:0;color:var(--text-strong);cursor:pointer;min-height:24px; }'
       + '.wpg-modal-card .wpg-status { margin-top:0.75rem;font-size:0.82rem;min-height:1.2em; }'
       + '.wpg-modal-card .wpg-status.ok { color:var(--green-progress); }'
       + '.wpg-modal-card .wpg-status.err { color:var(--red-alert); }'
@@ -1243,8 +1245,8 @@
     var actions = el("div", { "class": "wpg-modal-actions" }, []);
     var btnCancel = el("button", { "class": "wpg-btn-cancel", "type": "button" }, ["Cancel"]);
     var btnSubmit = el("button", { "class": "wpg-btn-submit", "type": "button" }, ["Move"]);
+    actions.appendChild(btnSubmit);   // the lead word first, as in the Add dialog (S364)
     actions.appendChild(btnCancel);
-    actions.appendChild(btnSubmit);
     card.appendChild(actions);
 
     function allIds() { return ids.projects.concat(liveIds); }
