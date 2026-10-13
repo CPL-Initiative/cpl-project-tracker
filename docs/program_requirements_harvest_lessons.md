@@ -829,3 +829,40 @@ The outcomes paragraph's settled parts:
   are an Active program's. Anon reads checked records only; the checkpoint stamps the block.
 - **A `| tail` hides a check's exit code.** `check_generated.sh ... | tail -1 && git commit` committed a stale
   dependency map; read the last line, then commit.
+
+## S384 SkyPoplar (2026-10-13): the 1,000-row cap, the 34 MB read, and loading by college
+
+- **A one-shot PostgREST read stops at 1,000 rows, silently.** The Records view and CPL Pathways' index read
+  `program_requirement_records` in one request; with 2,840 rows the response carried `Content-Range: 0-999/*`, so the
+  colleges after record 1,000 (ordered by college, control number) never reached either page. Paginate any read that
+  can pass 1,000 rows (`docs/kb-notes/methodology-paginate-postgrest-reads.md`, updated this run).
+- **The 500 Sam saw was the anon role's 3 s statement_timeout** (`pg_roles.rolconfig`: anon 3 s, authenticated 8 s).
+  `postgres_logs` named it: "canceling statement due to statement timeout". The cost was the body, not the query:
+  1,000 records are 11.3 MB of JSON (125 ms of DB time as anon, warm), all 2,840 are 34 MB, and a signed-in page read
+  everything twice (public read plus reviewer read). Six 3 MB statements at once still timed out after paging.
+- **Fix in three steps:** #2088 pages (250 a page, `Prefer: count=exact` on the first, the rest in parallel; a failed
+  page fails the read, naming the table); #2089 one read when signed in (the reviewer read is a superset) and one
+  retry of a 5xx page; #2090 a light index for every college (about 0.6 MB) and full records by college pick or by
+  key (Sam: *"we don't have to load all the colleges and programs at once if we add a multi-select college/district
+  drop down filter"*, provided the attention links work without it; his default: open empty, remember the pick).
+  Edge logs show each request's `response.headers.content_range`, `response.origin_time` and role: read them after a
+  deploy that changes a read.
+- **A test that writes into the tree races the suite.** `college_identity_lint_guard.test.js` rebuilt the crosswalk
+  into `kb/college_identity/<today>/`, the newest dated directory, which `funding/_build_funding_performance.py`
+  reads; `cpl_funding_applied.test.js` read it half-written (JSONDecodeError at char 0) on #2084 twice and #2081 once.
+  #2087 sends the rebuild to a temp dir and checks no dated directory appears.
+- **Modesto and Palo Verde (capture-only, #2085):** Modesto 189 of 199 found, 163 full coverage; Palo Verde 54 of
+  69, 32 full, five noncredit programs at 0 coverage. Extraction waits on Sam (Sheet 77 card 5).
+- **The catalog and state file boxes, re-measured for Sheet 77 card 3:** 3,341 boxes on 942 of 2,840 records
+  (median 2 a record, 194 records with five or more, one with 97). 1,808 name a course the state file lists and the
+  catalog does not print (168 of them a local number beside the course's common course number, e.g. Bakersfield's
+  HISTB17A beside HIST C1001); 972 a printed course the file carries under another status; 561 printed courses the
+  file does not list. Procedure flags: 214 check not met, 148 no printed total, 76 possible misread.
+
+### Moved from the lane (S384 compaction, verbatim)
+
+✅ **Coastline (#2074, merged S383):** its courses sit in a hidden Requirements tab, numbered with a C; `page_net()`
+reads the tab and `SUBJECT_TOKEN` takes the C (154 of 159, 124 pass, $8.52); 140 loaded; procedure v1. ✅ **Cabrillo
+(#2078, merged S383):** its menu lists departments, `el_department_slugs()` follows them (271 of 281, 183 pass,
+$18.17); 268 loaded; procedure v1 (md5 442d35fb). 88 fail arithmetic, 58 with no stated major total: the page prints
+a degree total, a core and electives (lessons S382).

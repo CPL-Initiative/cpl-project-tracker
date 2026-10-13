@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1146,
-    "bytes": 11814619,
+    "files": 1147,
+    "bytes": 11827517,
     "over_budget": 8,
-    "handoff_max": 384,
+    "handoff_max": 385,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60440,
     "superseded_files": 0,
@@ -26,32 +26,32 @@
       },
       "other": {
         "files": 119,
-        "bytes": 3482008,
+        "bytes": 3482096,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 10917,
+        "bytes": 11243,
         "over": 0
       },
       "lessons": {
         "files": 82,
-        "bytes": 2373518,
+        "bytes": 2377001,
         "over": 3
       },
       "kb_note": {
         "files": 551,
-        "bytes": 2723535,
+        "bytes": 2724913,
         "over": 0
       },
       "roadmap_lane": {
         "files": 37,
-        "bytes": 345854,
+        "bytes": 347888,
         "over": 1
       },
       "handoff": {
-        "files": 355,
-        "bytes": 2818347,
+        "files": 356,
+        "bytes": 2823936,
         "over": 0
       }
     },
@@ -62,9 +62,9 @@
       "vault_heavy_path": 61
     },
     "vault": {
-      "files": 7640,
-      "bytes": 2205884770,
-      "heavy_bytes": 1163651482,
+      "files": 7645,
+      "bytes": 2206054226,
+      "heavy_bytes": 1163746345,
       "heavy_share": 0.528,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -578,10 +578,10 @@
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 21100456,
+        "bytes": 21195319,
         "kind": "dir"
       },
-      "message": "directory totals 21,100,456 B inside the vault"
+      "message": "directory totals 21,195,319 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
