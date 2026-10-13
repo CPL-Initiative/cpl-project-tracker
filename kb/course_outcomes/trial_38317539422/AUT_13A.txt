@@ -1,0 +1,146 @@
+Discipline: Automotive Technology
+RIVERSIDE COMMUNITY COLLEGE DISTRICT
+INTEGRATED COURSE OUTLINE OF RECORD
+AUTOMOTIVE TECHNOLOGY 13A
+AUT-13A : Hybrid and Electric Vehicle Technology 1	
+College: 
+RIV
+Lecture Hours: 45.000
+Lecture Units: 2.500
+Lab Hours: 81.000
+Lab Units: 1.500
+Outside-of-Class Hours: 90.000
+Total Student Learning Hours: 216.000
+Total Units: 4.00
+Grading Methods: Letter Grade
+
+Course Description
+Prerequisite: AUT-50 and AUT-6A
+Advisory: AUT-8A
+Course Credit Recommendation: Degree Credit
+
+
+Prepares students to inspect, service, diagnose, and repair hybrid and electric vehicle systems. Topics include: high voltage safety, hybrid and electric vehicle propulsion systems, battery technology, and peripheral systems used on hybrid and electric vehicles. Emphasis placed on safely working around and repairing high voltage systems.
+Entrance Skills:
+Before entering the course, students should be able to demonstrate the following skills:
+
+Identify the components of major automotive systems and explain the functions of each.
+AUT-50 - Identify the components of major automotive systems and explain the functions of each.
+Properly use a variety of electrical system test equipment.
+AUT-6A - Properly use a variety of electrical system test equipment.
+Read and interpret electrical wiring diagrams.
+AUT-6A - Read and interpret electrical wiring diagrams.
+Diagnose and repair electrical and electronic circuits.
+AUT-6A - Diagnose and repair electrical and electronic circuits.
+Test and diagnose engine performance related components.
+AUT-8A - Test and diagnose engine performance related components.
+Course Objectives:
+Upon successful completion of the course, students should be able to demonstrate the following activities:
+
+Describe safe practices when working around high voltage.
+Demonstrate how to safely inspect high voltage gloves prior to use.
+Describe the process to safely power down high voltage systems found in hybrid and electric vehicles.
+Identify components used in hybrid and electric vehicle systems.
+Describe different types of battery technology used in hybrid and electric vehicles.
+Discuss different types of traction motors used in hybrid and electric vehicles.
+Perform basic maintenance on hybrid and electric vehicle systems.
+Demonstrate ability to safely remove and replace high voltage battery packs.
+Student Learning Outcomes:
+Upon successful completion of the course, students should be able to demonstrate the following skills:
+
+Demonstrate personal and shop safety procedures needed to safely work with high voltage systems.
+Demonstrate knowledge of hybrid and electric vehicle component operation.
+Describe basic maintenance procedures related to hybrid and electric vehicles.
+Identify proper diagnostic and repair procedures as the relate to basic hybrid or electric vehicle faults.
+Course Content:
+Hybrid and Electric Vehicle Safety
+Working around high voltage
+Battery disconnect procedures
+Servicing hybrid/electric vehicles
+ASE electrified vehicle safety standards
+High Voltage Electricity
+Meter selection
+Using DMM’s on high voltage circuits
+basic insulation testing
+High Voltage Batteries
+Types
+Construction and operation
+Battery chemistry advancements
+Maintenance and servicing procedures
+Basic troubleshooting and diagnosis procedures
+Hybrid/Electric Vehicle Drive Systems
+Electric motor design and operation
+Internal combustion engines and their use in hybrid applications
+Inverters and converters 
+Maintenance and servicing procedures
+Basic troubleshooting and diagnosis procedures
+Hybrid Cooling System(s)
+Components and operation
+Thermal management loops
+Maintenance and servicing procedures
+Basic troubleshooting and diagnosis procedures
+Peripheral Systems
+Air conditioning systems
+Power steering systems
+Braking systems
+Additional Laboratory Content
+
+Hybrid and Electric Vehicle Safety
+Battery disconnect
+Servicing hybrid/electric vehicles
+High Voltage Electricity
+Using DMM’s on high voltage circuits
+High voltage safety
+High Voltage Batteries
+Maintenance and servicing
+Basic high voltage battery testing
+Basic troubleshooting and diagnosis
+Hybrid/Electric Vehicle Drive Systems
+Maintenance and Servicing
+Types of vehicle drive systems
+Basic troubleshooting and diagnosis
+Hybrid Cooling System(s)
+Identification of thermal management loops
+Maintenance and servicing
+Basic troubleshooting and diagnosis
+Methods of Instruction:
+Methods of instruction used to achieve student learning outcomes may include, but are not limited to, the following activities:
+
+Presenting lectures and demonstrations by instructor or guests on hybrid/EV automobile maintenance and repair procedures.
+Utilizing multi-media presentations to demonstrate and simulate complex concepts and procedures as they relate to hybrid/electric vehicle systems.
+Assigning small group and individual class exercises that enable students to work cooperatively as a team to analyze and repair basic hybrid/EV electrical problems under the supervision and guidance of the instructor.
+Reading assignments related to various hybrid/EV systems.
+Assigning special projects outside of class that expose students to environments, tools and methods not available in class.  The projects may include field trips or research projects related to the hybrid/EV service and repair industry.
+Assigning reading outside of textbook material; these may include industry publications, trade magazines, product specifications or equipment manuals related to hybrid/electric vehicles.
+Methods of Evaluation:
+Students will be evaluated for progress in and/or mastery of student learning outcomes using methods of evaluation which may include, but are not limited to, the following activities:
+
+Hands-on problem-solving exercises that demonstrate students’ ability to assess hybrid/EV maintenance and service requirements.
+Practical exercises and laboratory assignments to demonstrate students’ comprehension and application of procedures and techniques related to the maintenance and repair of hybrid and electric vehicle systems.
+Tests and quizzes that regularly assess students’ comprehension of concepts related to hybrid and electric vehicle systems.
+Group projects/presentations relating to the hybrid and electric vehicle technologies.
+Participation in classroom discussion/projects.
+Sample Assignments:
+Outside-of-Class Reading Assignments
+
+Students are assigned textbook reading assignments: Read chapter on high voltage batteries.
+Refer to vehicle specifications and maintenance information found in sources such as Mitchell1 - Prodemand, AllDataPro, and Chief LazerLock.
+Outside-of-Class Writing Assignments
+
+Complete chapter review exercises, study guides, and/or research papers relating to electric motor operation.
+Other Outside-of-Class Assignments
+
+Students may be required to visit and automotive facility to gain insight regarding career opportunities and report the findings in class.
+Course Materials:
+All materials used in this course will be periodically reviewed to ensure that they are appropriate for college level instruction. Possible texts include the following:
+
+Mark Quarto and Nicholas Goodnight. Light Duty Hybrid and Electric Vehicles. Jones and Bertlett, 2022.
+Codes/Dates:
+CB03 TOP Code: 0948.00* - Automotive Technology
+CB05 MOV Transfer Status: N/A (not in college inventory) (D)
+CB05 NOR Transfer Status: N/A (not in college inventory) (D)
+CB05 RIV Transfer Status: Non-Transferable (C)
+
+Board of Trustees Approval Date: 11/18/2025
+COR Rev Date: 11/18/2025
+Generated on: 10/12/2026 3:37:11 PM

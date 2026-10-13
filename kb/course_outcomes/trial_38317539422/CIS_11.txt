@@ -1,0 +1,141 @@
+Discipline: Computer Information Systems
+Cross-listed Discipline: Computer Science
+RIVERSIDE COMMUNITY COLLEGE DISTRICT
+INTEGRATED COURSE OUTLINE OF RECORD
+COMPUTER INFORMATION SYSTEMS 11
+CIS-11 : Computer Architecture and Organization: Assembly	
+College: 
+RIV
+MOV
+NOR
+Lecture Hours: 45.000
+Lecture Units: 2.500
+Lab Hours: 27.000
+Lab Units: 0.500
+TBA Option: Yes
+Outside-of-Class Hours: 90.000
+Total Student Learning Hours: 162.000
+Total Units: 3.00
+Grading Methods: Letter Grade
+
+Course Description
+Prerequisite: None
+Advisory: CSC-5 or CIS-5
+Course Credit Recommendation: Degree Credit
+
+
+An introduction to microprocessor architecture and assembly language programming. The relationship between hardware and software will be examined in order to understand the interaction between a program and the total system. Mapping of statements and constructs in a high-level language onto sequences of machine instructions is studied as well as the internal representation of simple data types and structures. Numerical computation is performed, noting the various data representation errors and potential procedural errors.
+Entrance Skills:
+Before entering the course, students should be able to demonstrate the following skills:
+
+Create computer programs in C++ using the principles of structured programming.
+CIS-5 - Create computer programs using the principles of structured programming and demonstrate the use of an IDE with appropriate libraries. Design, implement, test, and debug programs that use fundamental programming constructs: basic computation, simple I/O, standard conditional and iterative structures, and functions.
+CIS-5 - Create computer programs using the principles of structured programming and demonstrate the use of an IDE with appropriate libraries. Design, implement, test, and debug programs that use fundamental programming constructs: basic computation, simple I/O, standard conditional and iterative structures, and functions.
+CSC-5 - Create computer programs using the principles of structured programming and demonstrate the use of an IDE with appropriate libraries. Design, implement, test, and debug programs that use fundamental programming constructs: basic computation, simple I/O, standard conditional and iterative structures, and functions.
+Apply the principles of logical and programming concepts to develop specific solutions for business, scientific and mathematics problems.
+CIS-5 - Apply the principles of logical and programming concepts to develop solutions for gaming, business, scientific and mathematical problems.
+CSC-5 - Apply the principles of logical and programming concepts to develop solutions for gaming, business, scientific and mathematical problems.
+Identify the information input requirements, synthesize the algorithmic steps needed to transform the data input into the required output information, and organize the output format to facilitate user communication.
+CIS-5 - Use pseudocode, flowcharts, and a programming language to implement, test, and debug algorithms for solving problems. Identify the information requirements, synthesize the algorithmic steps needed to transform the data input into the required output information, and organize the output format to facilitate user communication.
+CSC-5 - Use pseudocode, flowcharts, and a programming language to implement, test, and debug algorithms for solving problems. Identify the information requirements, synthesize the algorithmic steps needed to transform the data input into the required output information, and organize the output format to facilitate user communication.
+Demonstrate the use of the C++ IDE and libraries.
+CIS-5 - Create computer programs using the principles of structured programming and demonstrate the use of an IDE with appropriate libraries. Design, implement, test, and debug programs that use fundamental programming constructs: basic computation, simple I/O, standard conditional and iterative structures, and functions.
+CIS-5 - Create computer programs using the principles of structured programming and demonstrate the use of an IDE with appropriate libraries. Design, implement, test, and debug programs that use fundamental programming constructs: basic computation, simple I/O, standard conditional and iterative structures, and functions.
+CSC-5 - Create computer programs using the principles of structured programming and demonstrate the use of an IDE with appropriate libraries. Design, implement, test, and debug programs that use fundamental programming constructs: basic computation, simple I/O, standard conditional and iterative structures, and functions.
+Course Objectives:
+Upon successful completion of the course, students should be able to demonstrate the following activities:
+
+Write a range of assembly language programs, ranging from simple code segments, to medium size application programs.
+Demonstrate the implementation of fundamental high-level programming constructs such as decision statements, looping statements, and functions at the machine-language level.
+Student Learning Outcomes:
+Upon successful completion of the course, students should be able to demonstrate the following skills:
+
+Analyze and interpret assembly language code and hexadecimal format. Demonstrate how fundamental high-level programming constructs are implemented at the machine-language level.
+Write and execute programs in assembly language (utilizing application programming interfaces) illustrating typical mathematic and business applications.
+Critical Thinking
+Course Content:
+Introduction to microprocessors
+Basics of the Von Neumann machine
+Control unit; instruction fetch, decode and execution
+Code, registers, and addressing
+Assembly language format
+Instruction formats
+Bits, bytes, and words
+Numeric data representation and number bases
+Fixed and floating-point systems
+Signed and twos-complement representations
+Non-numeric data such as character codes and graphical data
+Assembly/machine language programming
+Assembling, linking, and executing
+Applications
+Instruction sets and types (data manipulation, control, I/O)
+Arithmetic instructions
+Data movement instructions
+Logical/Bitwise instructions
+Branching instructions
+Data definition, structures, modularization
+Flags
+Addressing modes
+Control structures
+Records and Arrays
+Additional Laboratory Content
+
+Demonstrate general knowledge of Von Neumann architecture
+Understanding stored program concept
+Understanding machine code
+Fetch, Decode, Execute, and Write Back stages of instruction execution
+Demonstrate knowledge how to convert between decimal, binary, and hexadecimal number systems
+Writing Assembly Language programs that demonstrate knowledge in:
+General data manipulation techniques
+General input/output to terminal, files, and other devices
+General control of program execution with loops and decision making
+General control of hardware and software
+Demonstrate knowledge of the relationship between high level C/C++ program code and low level Assembly Language.
+Methods of Instruction:
+Methods of instruction used to achieve student learning outcomes may include, but are not limited to, the following activities:
+
+Class lectures/discussions/demonstrations in order to define the microprocessor‘s architecture, so that students will be able to understand assembly code.
+Pair and small group activities/discussion to facilitate proper program design and coding.  This will include demonstrations of language formatting, compiling, linking and executing the written code.
+Class exercises that will help define data structures, how to modularize assembly code, flags and various applications
+Handouts to assist the student in learning the intricacies of assembly code.
+Cooperative learning tasks to define and use the various applications that are written in assembly code.
+Methods of Evaluation:
+Students will be evaluated for progress in and/or mastery of student learning outcomes using methods of evaluation which may include, but are not limited to, the following activities:
+
+Written programming assignments that incorporate machine architecture, proper code modularization and proper compiling, linking and executing of written code.
+Quizzes/examinations to assess student’s ability to critically analyze presented problems that they will have to turn into assembly language solutions.
+Final examination designed to assess students’ mastery of essential concepts of assembly language coding.
+Sample Assignments:
+Outside-of-Class Reading Assignments
+
+The primary assignments for this course involve the creation of programs using assembly language. To support that, students will be assigned textbook reading and/or other resource reading that covers programming concepts and demonstrates usage of assembly language.
+Outside-of-Class Writing Assignments
+
+Students will also be asked to document their work with written explanations that clarify their programming code.
+Other Outside-of-Class Assignments
+
+The primary assignments for this course involve the creation of programs using assembly language.
+Course Materials:
+All materials used in this course will be periodically reviewed to ensure that they are appropriate for college level instruction. Possible texts include the following:
+
+Larry Pyeatt, William Ughetta. ARM 64-Bit Assembly Language. Elsevier, 2019.
+Bruce Smith. Raspberry Pi Operating System Assembly Language: Hands On Guide . Fourth BSB, 2021.
+Hohl, W., Hinds, C. . ARM Assembly Language – Fundamentals and Techniques. 2nd CRC Press, 2015.
+Irvine, Kip. Assembly Language for x86 Processors. 7th Prentice Hall, 2014.
+Patterson, D., Hennessey, J.. Computer Organization and Design. 5th Morgan Kauffman, 2014.
+Randall Hyde. The Art of ARM Assembly, Volume 1: 64-Bit ARM Machine Organization and Programming. No Starch Press, 2025.
+Randell Hyde. The Art of Assembly Language. 3rd No Starch Press, 2011.
+Smith, B. . Raspberry Pi Assembly Language – Raspbian Beginners. Smashwords, 2015.
+Zhu, Y.. Embedded Systems with ARM Cortex-M Microcontrollers in Assembly Language and C. 3rd E-Man Press LLC, 2017.
+Codes/Dates:
+CB03 TOP Code: 0707.10* - Computer Programming
+CB05 MOV Transfer Status: Transfers to Both UC/CSU (A)
+CB05 NOR Transfer Status: Transfers to Both UC/CSU (A)
+CB05 RIV Transfer Status: Transfers to Both UC/CSU (A)
+C-ID#: COMP 142
+
+Board of Trustees Approval Date: 12/09/2025
+COR Rev Date: 12/09/2025
+GE Learning Outcomes:
+Critical Thinking Students will be able to demonstrate higher order thinking skills about issues, explanations, and problems for which multiple solutions exist, and, where possible, solve them. Students will be able to construct sound arguments and develop, test, and evaluate rival hypotheses.
+Generated on: 10/12/2026 3:37:15 PM

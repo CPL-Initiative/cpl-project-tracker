@@ -1,0 +1,166 @@
+Discipline: Geography
+RIVERSIDE COMMUNITY COLLEGE DISTRICT
+INTEGRATED COURSE OUTLINE OF RECORD
+GEOGRAPHY 1
+GEG-1 : Physical Geography	
+College: 
+RIV
+MOV
+NOR
+Lecture Hours: 54.000
+Lecture Units: 3.000
+Outside-of-Class Hours: 108.000
+Total Student Learning Hours: 162.000
+Total Units: 3.00
+Grading Methods: Letter Grade
+
+Course Description
+Prerequisite: None
+Course Credit Recommendation: Degree Credit
+
+
+The interacting physical processes of air, water, land, and life that impact Earth’s surface. Topics include weather and climate, the water cycle, landforms and plate tectonics, and the characteristics of plant and animal life. Emphasis is on interrelationships among systems and processes and their resulting patterns and distributions. There is a heavy emphasis on maps as descriptive and analytical tools. Students may not receive credit for both GEG-1 and GEG-1H.
+Entrance Skills:
+Before entering the course, students should be able to demonstrate the following skills:
+
+Course Objectives:
+Upon successful completion of the course, students should be able to demonstrate the following activities:
+
+Use critical thinking to provide examples of and explain relationships between the atmosphere, biosphere, hydrosphere and lithosphere.
+Interpret geographic tools such as maps, graphs, data and images to enhance understanding of geographic landscapes and processes.
+Describe geographic processes as they occur in the four spheres.
+Student Learning Outcomes:
+Upon successful completion of the course, students should be able to demonstrate the following skills:
+
+Identify and explain basic facts, rules, principles, and mechanisms of the atmosphere, lithosphere, hydrosphere, and biosphere and how spheres interact with each other to explain spatial issues.
+Communication Skills
+Assess the impact of location on the elements of air, water, land, and the biosphere.
+Critical Thinking
+Communicate geographic and scientific information, including multiple perspectives on physical processes.
+Communication Skills
+Utilize geographic tools such as maps, graphs, data, and images to think critically about and solve spatial issues.
+Information Competency & Technology Literacy
+Course Content:
+Shape and motions of Earth
+Maps
+Latitude and longitude
+Scale and projections
+GPS and GIS
+Rotation and revolution
+Time
+Global energy
+Radiation
+Composition of the atmosphere
+Seasons
+Ozone depletion
+Temperature
+Temperature scales
+Daily and annual cycles
+Temperature controls
+Greenhouse effect
+Atmospheric moisture
+Hydrologic cycle
+Humidity
+Adiabatic processes
+Clouds
+Precipitation
+Pollution
+Atmospheric circulation
+Air pressure & wind
+Global wind and pressure patterns
+Ocean currents
+Weather systems and storms
+Air masses
+Cyclones
+Anticyclones
+Severe weather
+Climate
+Controls of climate
+Classification
+Distribution
+Climate change
+Vegetation
+Ecosystems
+Global biomes
+Soil
+Properties of soil
+Soil water budget
+Soil development
+Soil orders
+Earth materials
+Igneous rocks
+Sedimentary rocks
+Metamorphic rocks
+Plate tectonics
+Earth structure
+Plate boundaries
+Plate motions
+Volcanoes and earthquakes
+Weathering
+Mechanical
+Chemical
+Mass wasting
+Ground water
+Water table
+Aquifers
+Pollution
+Surface water
+River dynamics
+Floodplains   
+Landform processes
+Coastal
+Wind
+Ice
+Methods of Instruction:
+Methods of instruction used to achieve student learning outcomes may include, but are not limited to, the following activities:
+
+Discussions and demonstrations in order to develop in-depth familiarity with terminology and complex understanding of facts, rules, principles, and mechanisms of the atmosphere, lithosphere, hydrosphere, and biosphere;
+Discussions based on the reading of college-level primary texts that apply geographically based analyses and evaluations on elements of air, water, land and life;
+Reading assignments involving both primary and secondary sources that discuss the scientific and social nexus of specific spheres and of the interrelationships between spheres, including current events;
+Student presentations that highlight the spatial patterns of processes, as well as the underlying reasons and the future implications of patterns;
+In-class and homework assignments in which students are directed to properly utilize geographic tools, such as maps, graphs, data, and images and are also directed to present information in ways that demonstrate to critical thinking and problem solving skills;
+Field trips as a method to illustrate geographic processes and interactions between spheres;
+Screening of DVDs or video clips that present scientific insights into physical processes and that offer multiple perspectives on contemporary issues;
+Conferences in order to provide personal assessments of individual students’ strengths and weaknesses in oral presentations and of writing skills;
+Guest lecturers in order to provide expert and personal insights into Earth processes.
+Methods of Evaluation:
+Students will be evaluated for progress in and/or mastery of student learning outcomes using methods of evaluation which may include, but are not limited to, the following activities:
+
+Written in-class quizzes, tests, and examinations designed to demonstrate understanding of basic facts, rules, principles, and mechanisms of the atmosphere, lithosphere, hydrosphere, and biosphere.
+Class discussions of course content which gauge individual student’s ability to utilize geographic tools appropriately, such as maps, graphs, data, and images.
+Individual and group oral presentations which demonstrate understanding of basic physical processes and insights into the interrelationships between the four spheres.
+Writing assignments in which students demonstrate geographic methods to analyze, evaluate, and explain spatial issues and problems.
+Sample Assignments:
+Outside-of-Class Reading Assignments
+
+Read a current event article from a newspaper on a topic in Physical Geography.  Topics could include recent volcanic eruptions, earthquakes, hurricanes or climate change.  Write a critique of the article in which the article is summarized and an analysis of the geographic issue is presented in essay format.
+Complete a multi-step group research project in which students create an annotated bibliography and in-class presentation on a contemporary or historic topic in Geography.  Examples of topics could include desertification, deforestation, urban heat islands and climate change.
+Create a diagram of atmospheric circulation based on the textbook and class notes.  Diagram should include location and movement of global wind and pressure belts.
+Outside-of-Class Writing Assignments
+
+Write a 2 page description and analysis of Southern California’s seasonal precipitation pattern. What are the major atmospheric conditions controlling Southern California’s weather and climate? What role does the topography of Southern California play in the weather we experience? Discuss the positive and negative dimensions of Southern California’s seasonal precipitation patterns for people living in the area.
+Other Outside-of-Class Assignments
+
+Analyze your preparedness for a major earthquake that destroys sections of major highways and causes loss of electricity to most people in Southern California. Begin with general information about your household including pets. Take an inventory of food, water, medicine, medical supplies, and pet food. How many days could your family survive with your existing stock of supplies? What could you do in the future to be better prepared for an actual event?
+Course Materials:
+All materials used in this course will be periodically reviewed to ensure that they are appropriate for college level instruction. Possible texts include the following:
+
+Arbogast, Alan F. . Discovering Physical Geography. 4 Wiley, 2017.
+Christopherson, Robert W.. Geosystems. 10 Pearson, 2017.
+McKnight, Tom L. and Darrel Hess. Physical Geography. 13 Prentice-Hall, 2022.
+Strahler, Alan, and Arthur Strahler. Introducing Physical Geography. 6 Wiley, 2013.
+The Physical Environment: an Introduction to Physical Geography. Author: Ritter, Michael E. (This online OER textbook is also known as: The Physical Environment: An OER Geography Textbook) (https://www.thephysicalenvironment.com)
+Codes/Dates:
+CB03 TOP Code: 2206.00 - Geography
+CB05 MOV Transfer Status: Transfers to Both UC/CSU (A)
+CB05 NOR Transfer Status: Transfers to Both UC/CSU (A)
+CB05 RIV Transfer Status: Transfers to Both UC/CSU (A)
+C-ID#: GEOG 110
+
+Board of Trustees Approval Date: 11/21/2023
+COR Rev Date: 11/21/2023
+GE Learning Outcomes:
+Communication Skills Students will be able to communicate effectively in diverse situations. They will be able to create, express, and interpret meaning in oral, visual, and written forms. They will also be able to demonstrate quantitative literacy and the ability to use graphical, symbolic, and numerical methods to analyze, organize, and interpret data.
+Critical Thinking Students will be able to demonstrate higher order thinking skills about issues, explanations, and problems for which multiple solutions exist, and, where possible, solve them. Students will be able to construct sound arguments and develop, test, and evaluate rival hypotheses.
+Information Competency & Technology Literacy Students will be able to use technology to locate, organize, and evaluate information. They will be able to locate relevant information, judge the reliability of sources, and evaluate the evidence contained in those sources as they construct arguments, make decisions, and solve problems.
+Generated on: 10/12/2026 3:37:30 PM
