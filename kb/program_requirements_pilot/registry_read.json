@@ -1,8 +1,8 @@
 {
- "_what": "The harvest registry's catalog and map columns for the harvest's sixteen colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline and Cabrillo), as the ROEP display builder reads them (kb/_build_roep_display.py). program_source_registry is public-read; this file is a dated copy so the builder runs offline and its output is reproducible.",
+ "_what": "The harvest registry's catalog and map columns for the harvest's eighteen colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline, Cabrillo, Modesto Junior and Palo Verde), as the ROEP display builder reads them (kb/_build_roep_display.py). program_source_registry is public-read; this file is a dated copy so the builder runs offline and its output is reproducible.",
  "_source": "public.program_source_registry (census columns written by the weekly census; the four sequence_* columns written by S326's receipts)",
  "_read_at": "2026-10-13",
- "_read_by": "SkySpruce (S383) through the Supabase MCP: Cabrillo added; Bakersfield and Coastline re-read, unchanged. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield and Coastline added; San Diego Mesa re-read, unchanged. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey and San Diego City added. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added. Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley and Norco added; Riverside City re-read, unchanged. Earlier: SkyLedger (S340) through the Supabase MCP: all seven rows read; the pilot's five unchanged since 2026-10-04, Santa Monica and Irvine Valley added",
+ "_read_by": "SkyHazel (S385) through the Supabase MCP: Modesto Junior and Palo Verde added. Earlier: SkySpruce (S383) through the Supabase MCP: Cabrillo added; Bakersfield and Coastline re-read, unchanged. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield and Coastline added; San Diego Mesa re-read, unchanged. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey and San Diego City added. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added. Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley and Norco added; Riverside City re-read, unchanged. Earlier: SkyLedger (S340) through the Supabase MCP: all seven rows read; the pilot's five unchanged since 2026-10-04, Santa Monica and Irvine Valley added",
  "_refresh": "Reread when the census applies or a sequence receipt lands: select the columns below for the harvest's colleges and file them here.",
  "colleges": {
   "Bakersfield College": {
@@ -89,6 +89,18 @@
    "sequence_note": null,
    "sequence_checked_run": null
   },
+  "Modesto Junior College": {
+   "catalog_platform": "elumen",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://mjc.elumenapp.com/catalog/2026-2027/mjc-ge",
+   "census_run_id": "census-20261011T162433Z-s2of4",
+   "sequence_source": "none_found",
+   "sequence_access": null,
+   "sequence_host": null,
+   "sequence_url": null,
+   "sequence_note": null,
+   "sequence_checked_run": null
+  },
   "Moreno Valley College": {
    "catalog_platform": "curriqunet",
    "catalog_year": "2026-2027",
@@ -124,6 +136,18 @@
    "sequence_url": null,
    "sequence_note": null,
    "sequence_checked_run": null
+  },
+  "Palo Verde College": {
+   "catalog_platform": "elumen",
+   "catalog_year": "2025-2026",
+   "catalog_url": "https://pvc.elumenapp.com/catalog/2025-2026/presidents-welcome",
+   "census_run_id": "census-20261011T162433Z-s2of4",
+   "sequence_source": "program_map_page",
+   "sequence_access": "open",
+   "sequence_host": "paloverde.libguides.com",
+   "sequence_url": "https://www.paloverde.edu/#",
+   "sequence_note": "The college's Guided Pathways guide, PVC Pirates Pathways, prints a two-year semester map for some programs on its LibGuides site (paloverde.libguides.com/pathways). Its custom name, guides.paloverde.edu, no longer resolves; a search restricted to libguides.com found the guide at this address (2026-10-08). The Computer Information Systems A.S. and Building Construction Technology A.S. pages each print four semesters (college page read run 37835928900). The guide was last updated Oct 25, 2023, before the 2025-26 catalog the census reads, so a map is checked against the catalog's requirements before it places a course.",
+   "sequence_checked_run": "college-page-read run 37835928900"
   },
   "Riverside City College": {
    "catalog_platform": "curriqunet",
