@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 87 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 56 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 353 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1131** | |
+| Session handoffs | 354 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1132** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-13 S382 SkyLarch: Coastline read (hidden Requirements tab), loaded and displayed; Cabrillo loaded; #2076 migrate runner and #2080 Annual Goals Under list merged; handoff 383.
 - 2026-10-13 S381 SkyRowan: Bakersfield loaded and displayed (eLumen), the Progress view's counts open their lists, Coastline's near misses and Cabrillo's department menu; handoff 382 (SkyLarch).
 - 2026-10-13 S380 SkyAlder: course_outcomes live (Sam's paste) and loaded at RCCD (#2049) and SDCCD (#2066), 4,894 rows; Chaffey's outcomes not public (#2073); the eLumen reader (#2072, fast publish/content read) and Coastline's CourseLeaf fixes (#2074, index.html pages, no course listings), both colleges extracting; KB note methodology-read-a-catalog-through-its-own-content-call; handoff 381.
 - 2026-10-13 S376 SkyLinden: the Requirements-tab re-reads loaded and displayed (Mesa #2064, San Diego City #2068, Miramar #2070; build `98becf9fafc7`, 2,203 rows); SDCCD's outline index (#2065) and SLOs by college group (#2066, draft, on #2049); the trigger-file gate (#2069); KB note `methodology-a-trigger-file-must-differ-from-main`; handoff 380 (SkyAlder).

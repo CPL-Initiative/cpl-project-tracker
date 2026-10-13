@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-353 document(s).
+354 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 383 | [Cabrillo's display, #2074's merge, the eLumen hub reader, and Sam's Annual Goals asks](../session_383_handoff.md) | 2026-10-13 |
 | 382 | [Coastline's near misses, Cabrillo's capture and extraction go, then the next college](../session_382_handoff.md) | 2026-10-13 |
 | 381 | [load Bakersfield and Coastline, merge the eLumen and Coastline readers, then the next college](../session_381_handoff.md) | 2026-10-13 |
 | 380 | [load the course outcomes, finish SDCCD's SLO read, then the next college](../session_380_handoff.md) | 2026-10-13 |
