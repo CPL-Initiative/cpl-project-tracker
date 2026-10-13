@@ -1,0 +1,27 @@
+{
+ "_readme": "S381 SkyRowan, 2026-10-13. Read 38433649784: Cabrillo's menu publish call links departments (2026-2027/department/<slug>, loaded through publish/content/2026-2027,department,<slug>), not programs, so the eLumen fast read found no program. This read loads one department's content call (Accounting) and its rendered view, to see whether a department page links each program's page or prints the requirements itself. Two loads, no model call.",
+ "college": "Cabrillo College",
+ "questions": {
+  "department_shape": "What a department's content call holds: links to program pages (and their path), or each program's requirements inline.",
+  "program_path": "The address a program page uses at Cabrillo, if it has one."
+ },
+ "keywords": [
+  "href=\\\\?\"[^\"]*program[^\"]*\"",
+  "2026-2027/program/",
+  "[Aa]ssociate (?:in|of) (?:Arts|Science)",
+  "[Cc]ertificate of (?:Achievement|Accomplishment)",
+  "ACCTG ?\\d+",
+  "rule-name|rule-credits|Program Requirements|Required Courses"
+ ],
+ "pages": [
+  {
+   "answers": ["department_shape"],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,department,accounting?tenant=cabrillo.elumenapp.com"
+  },
+  {
+   "answers": ["program_path"],
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/department/accounting",
+   "links": "program|degree|certificate|associate"
+  }
+ ]
+}
