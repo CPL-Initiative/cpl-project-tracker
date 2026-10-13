@@ -11,7 +11,7 @@
 --     custom reports, and the Annual Workplan Goals table) and renders it
 --     instead in a collapsed "Tabled & Archived" section with the reason + date.
 --   • project_lifecycle.js — applies the same overlay live (hide a just-tabled
---     card before the next daily regen) and provides the reviewer/team-phrase
+--     card before the next daily regen) and provides the reviewer's
 --     Table / Archive / Restore affordance.
 --   • kb/_load_projects.py:load_project_lifecycle() — folds it into the
 --     committed kb/project_lifecycle.json ledger each daily run (the "noted in
@@ -35,17 +35,20 @@ alter table public.project_lifecycle enable row level security;
 drop policy if exists plc_select on public.project_lifecycle;
 create policy plc_select on public.project_lifecycle for select using (true);
 
--- Write gated to a magic-link reviewer OR the shared team phrase (the newest
--- RACI / Mission Control gate — is_allowed_reviewer() OR team_pass_ok()). The
--- public anon key alone can't write; team-phrase writes send the x-team-pass
--- header which team_pass_ok() validates server-side.
+-- Write gated to a signed-in reviewer alone (is_allowed_reviewer()). Sam, Open
+-- Asks Sheet 77 card 2, "Reviewer only on both tabs", 2026-10-13 22:25Z: taking a
+-- sub-activity off the workplan is a reviewer's action on the Activities tab as on
+-- Annual Goals (Sheet 75 card 3). From Session 84 until then the shared team phrase
+-- (team_pass_ok(), the x-team-pass header) could write here too. Re-applying this
+-- file is idempotent; the S385 apply went through supabase-migrate.yml, and its
+-- rollback is the same three policies with "or team_pass_ok()" restored.
 drop policy if exists plc_insert on public.project_lifecycle;
 create policy plc_insert on public.project_lifecycle for insert
-  with check (is_allowed_reviewer() or team_pass_ok());
+  with check (is_allowed_reviewer());
 drop policy if exists plc_update on public.project_lifecycle;
 create policy plc_update on public.project_lifecycle for update
-  using (is_allowed_reviewer() or team_pass_ok())
-  with check (is_allowed_reviewer() or team_pass_ok());
+  using (is_allowed_reviewer())
+  with check (is_allowed_reviewer());
 drop policy if exists plc_delete on public.project_lifecycle;
 create policy plc_delete on public.project_lifecycle for delete
-  using (is_allowed_reviewer() or team_pass_ok());
+  using (is_allowed_reviewer());
