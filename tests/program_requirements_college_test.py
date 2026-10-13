@@ -756,6 +756,53 @@ check(C.dir_form(CLP + "business-as/index.html#req") == CLP + "business-as/" and
 check(C.link_page_ok(CLP + "business-as/index.html", "/coastline/"),
       "the link search may take an index.html program page too")
 
+# ── a subject page's own program pages are read (S381) ──────────────────────
+# Coastline run 38412902035 (after the index.html fix) still found 24 of 159: its
+# sitemap lists the subject pages and few of the program pages each one links, so
+# Information Technology A.S. turned up only through the capped link search.
+SUBJ = CLP   # pathways/business-operations-management/business/
+links = [{"href": SUBJ + "business-as/index.html"}, {"href": SUBJ + "marketing-applied-as/"},
+         {"href": SUBJ + "business-as/#requirementstext"},
+         {"href": CL + "pathways/business-operations-management/accounting/"},     # a sibling, not beneath
+         {"href": CL + "pathways/computer-cyber-sciences/"},                         # the menu
+         {"href": CL + "course-descriptions/credit-courses/bus/index.html"},
+         {"href": "https://catalog.cccd.edu/golden-west/pathways/business/business-as/"},
+         {"href": SUBJ}]
+check(C.child_pages(SUBJ, links, CL, "/coastline/") == [SUBJ + "business-as/", SUBJ + "marketing-applied-as/"],
+      "a page's children are the program pages beneath its own address, once each, in directory form")
+check(C.child_pages(SUBJ + "index.html", links, CL, "/coastline/") == [SUBJ + "business-as/", SUBJ + "marketing-applied-as/"]
+      and C.child_pages(SUBJ + "page.html", links, CL, "/coastline/") == [],
+      "an index.html page reads as its directory; a page that is a file has no children")
+
+# Coastline spells some awards out in the address (the page read 38411214415's links).
+check([C.slug_award(SUBJ + slug + "/") for slug in
+       ("marketing-associate-science-degree", "business-administration-2.0-associate-science-degree-transfer",
+        "economics-associate-arts-degree-transfer", "english-associate-arts-degree",
+        "project-management-essentials-certificate-specialization", "marketing-certificate-achievement")]
+      == ["as", "adt", "adt", "aa", "other", "coa"],
+      "an address that spells its award out names it, the transfer form before the plain one")
+adt_page = {"url": SUBJ + "business-administration-2.0-associate-science-degree-transfer/",
+            "h1": "", "title": "Business Administration 2.0, Associate in Science Degree for Transfer < Coastline College"}
+check(C.label_score(adt_page, {"award": "A.S. Degree", "title": "Business"})[0] == 0
+      and C.label_score(adt_page, {"award": "A.S.- T Degree", "title": "Business Administration 2.0"})[0] == 1,
+      "an A.S. does not read an A.S.-T page as its own because both say 'Associate in Science'")
+
+# Every Coastline page's h1 is the catalog's banner, so the heading rule read
+# "ACADEMIC CATALOGS" and turned every hidden-text page away.
+ban = [{"url": SUBJ + "p%d/" % i, "h1": "ACADEMIC CATALOGS", "title": "P%d < Coastline College" % i} for i in range(12)]
+aging = {"url": CL + "pathways/behavior-culture-society/aging-studies/aging-studies-aa/", "h1": "ACADEMIC CATALOGS",
+         "title": "Aging Studies, Associate of Arts Degree < Coastline College"}
+check(not C.heading_names_program(aging, {"title": "Aging Studies"}),
+      "the banner as a heading names no program (the failure)")
+check(C.drop_banner_h1(ban + [aging]) == "ACADEMIC CATALOGS" and aging["h1"] == ""
+      and C.heading_names_program(aging, {"title": "Aging Studies"})
+      and not C.heading_names_program(aging, {"title": "Gerontology Nursing"}),
+      "an h1 on every page is the banner: the heading is read from the title, before its ' < ' site name")
+few = [{"h1": "ACADEMIC CATALOGS"} for _ in range(4)] + [{"h1": "Art, A.A."}]
+own_heads = [{"h1": "X%d, A.A." % i} for i in range(20)]
+check(C.drop_banner_h1(few) is None and few[0]["h1"] == "ACADEMIC CATALOGS" and C.drop_banner_h1(own_heads) is None,
+      "an h1 on a handful of pages, or a heading of each page's own, stays")
+
 sql = open(os.path.join(ROOT, "chatbox", "supabase_program_requirement_records_college_load.sql")).read()
 body = sql.split("as $$")[1].split("$$;")[0]
 check("on conflict (college, control_number) do nothing" in body and "update" not in body.lower()
