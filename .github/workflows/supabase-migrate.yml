@@ -1,0 +1,79 @@
+name: Supabase migrate
+# Applies one committed SQL file to the live database (Sam, 2026-10-13: "Build the
+# runner with or without my approvals"). The session's apply_migration connector
+# timed out on every try from 23:19Z on 2026-10-12, so each structure change went
+# to Sam as a paste. scripts/supabase_migrate.py posts the file to the Supabase
+# Management API with SUPABASE_ACCESS_TOKEN (the personal access token the chat
+# deploy already uses), records it in supabase_migrations.schema_migrations, and
+# writes a receipt this job commits to the branch that ran.
+#
+# Runs when a claude/** push changes kb/migrations/.apply (file=..., name=...) to
+# something main does not hold (the gate job), never on a merge commit.
+#
+# APPROVAL: the apply job runs in the GitHub environment "database". Add Sam as a
+# required reviewer there (Settings > Environments > database) and every apply waits
+# for his tap; with no protection rule it runs at once.
+on:
+  push:
+    branches: ['claude/**']
+    paths:
+      - 'kb/migrations/.apply'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: supabase-migrate
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    # Runs the work only when the pushed trigger file differs from main's: a merge
+    # of main carries every trigger file main holds (S376). To apply the same file
+    # again, change a line in the trigger.
+    if: github.actor != 'github-actions[bot]' && !startsWith(github.event.head_commit.message, 'Merge')
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.diff.outputs.go }}
+    steps:
+      - uses: actions/checkout@v7
+      - id: diff
+        run: |
+          git fetch -q --depth=1 origin main
+          if git diff --quiet FETCH_HEAD -- kb/migrations/.apply; then
+            echo "go=0" >> "$GITHUB_OUTPUT"; echo "kb/migrations/.apply matches main's: nothing to run."
+          else
+            echo "go=1" >> "$GITHUB_OUTPUT"
+          fi
+
+  apply:
+    needs: gate
+    if: needs.gate.outputs.go == '1'
+    runs-on: ubuntu-latest
+    environment: database
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Apply the committed file
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: python3 scripts/supabase_migrate.py --trigger kb/migrations/.apply
+
+      - name: Commit the receipt to this branch
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kb/receipts
+          if git diff --cached --quiet; then echo "No receipt."; exit 0; fi
+          git commit -m "Receipt: supabase migrate (run ${{ github.run_id }})"
+          for i in 1 2 3 4; do
+            git pull --rebase origin ${{ github.ref_name }} && git push origin HEAD:${{ github.ref_name }} && exit 0
+            sleep $((i * 5))
+          done
+          exit 1
