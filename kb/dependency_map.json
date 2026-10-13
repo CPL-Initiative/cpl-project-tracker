@@ -22050,7 +22050,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1144,
+     "line": 1146,
      "tabs": [
       "workplan-goals"
      ]
@@ -22421,7 +22421,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1547,
+     "line": 1549,
      "tabs": [
       "workplan-goals"
      ]
