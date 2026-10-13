@@ -15219,15 +15219,21 @@
   "calls": [
     {
       "title": "Chaffey's course outline note",
-      "text": "A one-row note on Chaffey's registry row says its course outcomes are not public. It waits as a paste because the database tool is down. No reply: the finding stays in the repository and the lane."
+      "text": "A one-row note on Chaffey's registry row says its course outcomes are not public. It waits as a paste because the database tool is down. No reply: the finding stays in the repository and the lane.",
+      "link": "https://claude.ai/artifact/3Rmt4evVLC4xo8ChjQZCon",
+      "link_text": "Answer on Open Asks Sheet 74, card 1"
     },
     {
       "title": "Stop pasting database changes",
-      "text": "Approve a runner that applies committed database changes with an access token, with or without your one-tap approval. No reply: database changes keep arriving as pastes while the tool is down."
+      "text": "Approve a runner that applies committed database changes with an access token, with or without your one-tap approval. No reply: database changes keep arriving as pastes while the tool is down.",
+      "link": "https://claude.ai/artifact/3Rmt4evVLC4xo8ChjQZCon",
+      "link_text": "Answer on Open Asks Sheet 74, card 2"
     },
     {
       "title": "The gallery picks",
-      "text": "Mark the paintings to keep, drop or add on the gallery page. No reply: the gallery stays as it is and nothing changes on the site."
+      "text": "Mark the paintings to keep, drop or add on the gallery page. No reply: the gallery stays as it is and nothing changes on the site.",
+      "link": "https://claude.ai/artifact/21o45k6MbPKsPMgNQk69hn",
+      "link_text": "Mark them on the First Light Gallery"
     }
   ],
   "notes": {

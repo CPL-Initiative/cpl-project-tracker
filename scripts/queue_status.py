@@ -132,6 +132,15 @@ def faults(q, root=ROOT, parts=None):
                  and (v["href"].startswith("https://") or re.match(r"^#[A-Za-z0-9_.~-]+$", v["href"])),
                  w + ".view.href must be an https address or a COBI tab's bare hash (#cpl-pathways)")
             text((v or {}).get("text") if isinstance(v, dict) else None, w + ".view.text")
+        # Where Sam answers it (Sam, 2026-10-13, on his phone: "if there are open questions I
+        # can address for any, add a link on those card to where I can answer those"). S380's
+        # three calls carried none, so the cards named a question with nowhere to tap.
+        need(bool(c.get("link") or c.get("view") or c.get("records")),
+             w + " needs a place to answer it: a link (the sheet card), a view, or the records it names")
+        # The part whose card carries the call's answer link, beside the side column's card.
+        if c.get("part") is not None:
+            known_parts = parts if parts is not None else part_ids()
+            need(c.get("part") in known_parts, w + ".part names no part (the view's parts: " + ", ".join(known_parts) + ")")
         # A call that names records (S354): the Progress card lists each with Confirm and
         # Needs a fix, so each needs the key the verdict RPC takes.
         recs = c.get("records")
