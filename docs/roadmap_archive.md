@@ -10,6 +10,11 @@ status: archive
 
 # Roadmap Archive — Completed Work & Session Narratives
 
+## INDEX update-history entries rotated out (2026-10-12)
+- 2026-10-12 (S368 SkyWillow): UI passes on Admin (#2019) and MAP Team Queue (#2020), each with a seeded sweep of the gated view; every program record public, each unchecked one marked Not yet confirmed (#2021, Sam's Sheet 67 card 1; the policy waits on his paste); Long Beach City's re-read filed (311 pass) and its load dispatched; Chaffey and San Diego City captured, both 0 (the curriQunet reader misses them); handoff 369.
+- 2026-10-12 (S367 SkyAspen): CPL Pathways reads its catalog records from `program_requirement_records` (#2015) and its UI pass (#2016); Vision 2030 shows one set of goal figures in the tab and the annual report, TBA until set (#2017, Sheet 66 card 1); Long Beach City's re-read dispatched (run 38185403454); Sam's Sheet 65 card 2 sheet answer (every record, marked) differs from his chat answer and is asked on Open Asks Sheet 67; handoff 368.
+- 2026-10-11 (S366 SkyHazel): UI passes on Governance (#2007; the shell placeholder left on the root, a Docs panel blank after a repaint, #2011 its load race) and Team Phrases (#2010); the three `sierra_feedback` readers filter CI rows on the server (#2008); Long Beach City's 74 reframed (#2009) and both causes fixed (#2012: the hidden index chose pages and text); Sam answered Sheet 65 card 2 in chat (read from the table); handoff 367.
+
 ## INDEX update-history entries rotated out (2026-10-09)
 
 - **2026-10-08 (S345 SkyLantern):** map sources read at sixteen colleges, every Program Mapper refused and Mt. San Antonio's own Guided Pathways pages publish a sequence per program; 19 of 118 colleges hold a procedure; the Progress view links each of Sam's calls to its sheet card (#1908); Open Asks Sheet 50 answered, its card 5 built (settled maps). Handoff 346.
@@ -5935,3 +5940,7 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 
 - 2026-10-11 (S365 SkyRowan): UI passes on Vision 2030 (#2001; the actions now the CPL Workplan's words), Military Partnerships (#2004) and Noncredit & Learning Partners (#2005), and Team & RACI's two leftovers (#2003); Open Asks Sheet 65 (the Vision 2030 goal figures; which records CPL Pathways shows, measured at 18.2 MB and past the checked gate); KB note `methodology-a-published-file-carries-past-the-tables-read-gate`; handoff 366.
 - 2026-10-11 (S364, second session): Long Beach City read, loaded and displayed, 305 of 379 (#1999; display build `344441813b01`, 1,515 rows); Program records builds on first open (#1993); Sam's retired-version ruling (#1995); the read job may run 360 minutes; handoff 365 and queue status corrected (#2000).
+
+### INDEX update history moved 2026-10-13 (S377)
+
+- 2026-10-12 S369 SkyLaurel: Long Beach City displayed (05811159eeee), the read policy live, curriQunet reader fixes for Chaffey and San Diego City, smoke 7s; handoff 370 (SkyHolly).

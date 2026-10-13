@@ -851,7 +851,7 @@
    }
   },
   "listed": 4,
-  "text_chars": 8220
+  "text_chars": 9166
  },
  {
   "control_number": "05295",
@@ -1158,7 +1158,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 9934
+  "text_chars": 11274
  },
  {
   "control_number": "09459",
@@ -3019,7 +3019,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 9934
+  "text_chars": 11181
  },
  {
   "control_number": "22337",
@@ -3282,7 +3282,7 @@
    }
   },
   "listed": 4,
-  "text_chars": 8220
+  "text_chars": 8758
  },
  {
   "control_number": "22951",
@@ -3320,7 +3320,7 @@
    }
   },
   "listed": 4,
-  "text_chars": 7836
+  "text_chars": 8920
  },
  {
   "control_number": "30657",
@@ -3431,24 +3431,78 @@
   "title": "Licensed Vocational Nurse to Registered Nurse",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "ANTH103",
+   "BIOL205",
+   "BIOL230",
+   "BIOL235",
+   "COMMC1000",
+   "COMS135",
+   "ENGLC1000",
+   "NRSE235",
+   "NRSE240",
+   "NRSE242",
+   "NRSE244",
+   "NRSE246",
+   "PSYCC1000",
+   "SOCO101",
+   "SOCO110"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15814",
+   "title": "Licensed Vocational Nurse to Registered Nurse (Advanced Placement) - Associate of Science Degree: City",
+   "h1": "Licensed Vocational Nurse to Registered Nurse (Advanced Placement) - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 20,
-  "text_chars": 0
+  "text_chars": 2419
  },
  {
   "control_number": "31169",
   "title": "Registered Nurse: Generic",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.679,
+  "codes_found": [
+   "ANTH103",
+   "BIOL205",
+   "BIOL230",
+   "BIOL235",
+   "COMMC1000",
+   "COMS135",
+   "ENGLC1000",
+   "NRSE140",
+   "NRSE141",
+   "NRSE142",
+   "NRSE144",
+   "NRSE146",
+   "NRSE240",
+   "NRSE242",
+   "NRSE244",
+   "NRSE246",
+   "PSYCC1000",
+   "SOCO101",
+   "SOCO110"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15613",
+   "title": "Registered Nurse: Generic - Associate of Science Degree: City",
+   "h1": "Registered Nurse: Generic - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 28,
-  "text_chars": 0
+  "text_chars": 2578
  },
  {
   "control_number": "31309",
@@ -3659,7 +3713,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 11442
+  "text_chars": 11590
  },
  {
   "control_number": "31690",
@@ -3873,7 +3927,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 15025
+  "text_chars": 15119
  },
  {
   "control_number": "32685",
@@ -4410,7 +4464,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 9691
+  "text_chars": 10468
  },
  {
   "control_number": "33678",
@@ -4608,7 +4662,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 13114
+  "text_chars": 13145
  },
  {
   "control_number": "35977",
@@ -4869,7 +4923,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 13295
+  "text_chars": 14468
  },
  {
   "control_number": "37036",
@@ -5997,12 +6051,40 @@
   "title": "Cyber Defense and Analysis",
   "award": "Baccalaureate of Science (B.S.) Degree.",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSE440",
+   "CISC450",
+   "CYDA400",
+   "CYDA410",
+   "CYDA420",
+   "CYDA430",
+   "CYDA440",
+   "CYDA450",
+   "CYDA460",
+   "CYDA500",
+   "CYDA510",
+   "CYDA520",
+   "CYDA530",
+   "CYDA540",
+   "CYDA550",
+   "CYDA560",
+   "CYDA570",
+   "ENGL402"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15792",
+   "title": "Cyber Defense and Analysis - Bachelor of Science Degree: City",
+   "h1": "Cyber Defense and Analysis - Bachelor of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 3686
  },
  {
   "control_number": "43656",
@@ -6285,7 +6367,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 13504
+  "text_chars": 13693
  },
  {
   "control_number": "45539",

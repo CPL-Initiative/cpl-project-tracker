@@ -159,6 +159,10 @@
 
     var mapWrap = document.createElement("div");
     mapWrap.id = "uc-map-pane";
+    var mapH1 = document.createElement("h1");
+    mapH1.className = "uc-map-h1";
+    mapH1.textContent = "Common Course Reference: SkyView";
+    mapWrap.appendChild(mapH1);
     host.insertBefore(mapWrap, listWrap);
 
     ensureCcrShellCss();
@@ -174,12 +178,21 @@
     st.id = "uc-viewseg-css";
     st.textContent =
       "#tab-unified-courses .uc-viewseg{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 14px;}" +
-      "#tab-unified-courses .uc-vbtn{font:inherit;font-size:.88rem;font-weight:700;cursor:pointer;" +
-      "padding:8px 15px;border-radius:8px;border:1px solid var(--border-strong,rgba(28,28,26,.30));" +
-      "background:var(--surface-opaque);color:var(--seal-blue,#0b3d61);}" +
-      "#tab-unified-courses .uc-vbtn[aria-pressed=\"true\"]{background:var(--seal-blue,#0b3d61);" +
-      "color:#fff;border-color:var(--seal-blue,#0b3d61);}" +
-      "#tab-unified-courses .uc-vbtn:focus-visible{outline:2px solid var(--cobalt,#0047AB);outline-offset:2px;}" +
+      /* Underlined words (Sam, 2026-10-09); the view on screen carries weight and
+         aria-pressed, never color alone. */
+      "#tab-unified-courses .uc-vbtn{font:inherit;font-size:.92rem;font-weight:600;cursor:pointer;" +
+      "padding:2px 0;min-height:24px;border:0;background:none;color:var(--cobalt);" +
+      "text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}" +
+      "#tab-unified-courses .uc-vbtn:hover{text-decoration-thickness:2px;}" +
+      "#tab-unified-courses .uc-vbtn[aria-pressed=\"true\"]{color:var(--text-strong);font-weight:700;" +
+      "text-decoration-thickness:2px;}" +
+      "#tab-unified-courses .uc-vbtn:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px;}" +
+      "#tab-unified-courses .uc-viewseg{column-gap:18px;}" +
+      /* With the map full window, COBI's header (and its h1) is not painted: the
+         page's heading is this one, for a screen reader only. */
+      "#tab-unified-courses .uc-map-h1{display:none;}" +
+      "body.cpl-skyview-solo #tab-unified-courses .uc-map-h1{display:block;position:absolute;width:1px;height:1px;" +
+      "margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;}" +
       "#tab-unified-courses .uc-vnote{font-size:.82rem;color:var(--text-muted);}" +
       "#tab-unified-courses #uc-map-pane{margin:0;}" +
       "#tab-unified-courses .uc-map-frame{display:block;width:100%;height:calc(100vh - 80px);min-height:480px;" +
@@ -1475,7 +1488,7 @@
         // Top Search box (Sam, S72 #5) — the one search box that guides candidate
         // surfacing for this course (the editor's own keyword box was removed).
         // Comma = OR (S72 #7). A keystroke re-surfaces via editorApi.refreshCandidates.
-        var perRowSearch = el("input", { type: "search", placeholder: "🔍 Search title or ID to add more — comma separates terms (e.g. digital, imag)", style: "width:100%;padding:5px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;font-size:.85rem;margin:0 0 8px;" });
+        var perRowSearch = el("input", { type: "search", placeholder: "Search title or ID to add more — comma separates terms (e.g. digital, imag)", style: "width:100%;padding:5px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;font-size:.85rem;margin:0 0 8px;" });
         var perRowSt; perRowSearch.oninput = function () { clearTimeout(perRowSt); perRowSt = setTimeout(function () { if (editorApi) editorApi.refreshCandidates(); }, 220); };
         shell.appendChild(perRowSearch);
         // Band filter row — the one piece of worklist chrome that's meaningful
@@ -2773,7 +2786,7 @@
         var sugQuery = (state.q || "").trim().toLowerCase();
         var searchRow = el("div", { style: "margin:-2px 0 10px;" });
         var sugSearch = el("input", { type: "search", value: state.q || "",
-          placeholder: "🔍 Search title or ID — comma separates terms (e.g. digital, imag)",
+          placeholder: "Search title or ID — comma separates terms (e.g. digital, imag)",
           style: "width:100%;padding:5px 8px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box;font-size:.85rem;" });
         var sugSt; sugSearch.oninput = function () {
           clearTimeout(sugSt); var v = this.value;
@@ -3378,32 +3391,32 @@
       "Orphan merge target (dangling pointer)": function (c) { return c.tags.indexOf("merge_into_orphan") >= 0; },
       "Unified issues":                       function (c) { return c.tags.some(function (t) { return t.indexOf("cluster_") === 0 || t === "uc_cur_ripe_for_promotion"; }); },
     };
-    var search = el("input", { id: "uc-search", type: "search", placeholder: "🔍 Search title, subject, or ID…", class: "uc-filter", style: "flex:0 0 auto;width:300px;max-width:46vw;" });
+    var search = el("input", { id: "uc-search", type: "search", placeholder: "Search title, subject, or ID…", class: "uc-filter", style: "flex:0 0 auto;width:300px;max-width:46vw;" });
     var flagged = el("label", { class: "uc-flag-toggle" }, []);
     var flaggedCb = el("input", { type: "checkbox", id: "uc-flagged" });
     flagged.appendChild(flaggedCb); flagged.appendChild(document.createTextNode(" Flagged only"));
     var blanksBtn = el("label", { class: "uc-flag-toggle" }, []);
     var blanksCb = el("input", { type: "checkbox", id: "uc-blanks" });
     blanksBtn.appendChild(blanksCb); blanksBtn.appendChild(document.createTextNode(" Blank discipline only"));
-    var exportBtn = el("a", { class: "uc-export", href: data.export_path || "exports/unified_courses.xlsx",
-      title: "Download the full set (incl. stand-alone courses) as Excel" }, ["↓ Export all to .xlsx"]);
+    var exportBtn = el("a", { class: "uc-word uc-export", href: data.export_path || "exports/unified_courses.xlsx",
+      title: "Download the full set (incl. stand-alone courses) as Excel" }, ["Export all to .xlsx"]);
     var auth = el("span", { id: "uc-auth", class: "uc-auth" });
     var syncBadge = el("span", { id: "uc-sync" });
     // Trust-Card auditor status — populated by renderAuditStatusBadge() once
     // loadAudit() resolves. Empty until then, so layout doesn't jiggle.
     var auditStatus = el("span", { id: "uc-audit-status", class: "uc-audit-status",
-      style: "color:#9a6700;font-size:0.85em;margin-left:8px;" });
+      style: "color:var(--mustard-text);font-size:0.85em;margin-left:8px;" });
     // Batch-verify the currently-filtered Generated rows (shown only when signed
     // in and there's something to verify; label/visibility updated in render()).
-    var verifyAllBtn = el("button", { id: "uc-verify-all", class: "uc-filter",
-      style: "display:none;cursor:pointer;background:#dafbe1;border:1px solid #2da44e;color:#116329;font-weight:600;border-radius:6px;" },
-      ["✓ Verify filtered"]);
+    var verifyAllBtn = el("button", { id: "uc-verify-all", type: "button", class: "uc-word",
+      style: "display:none;" },
+      ["Verify filtered"]);
     verifyAllBtn.onclick = function () { batchVerify(); };
     // Suggested-merge worklist (signed-in only; lazy-loads the precomputed groups).
-    var suggestBtn = el("button", { id: "uc-suggest", class: "uc-filter",
-      style: "display:none;cursor:pointer;background:#fff7ed;border:1px solid #fb923c;color:#9a3412;font-weight:600;border-radius:6px;",
+    var suggestBtn = el("button", { id: "uc-suggest", type: "button", class: "uc-word",
+      style: "display:none;",
       title: "Review precomputed same-course merge suggestions one at a time: merge into an existing identity, or mint a new unified course from single-college matches — one-click confirm, never auto-applied." },
-      ["✨ Suggested merges"]);
+      ["Suggested merges"]);
     suggestBtn.onclick = function () { openSuggestions(); };
 
     // Cleanup-impact preset (login-free): one click ranks the cleanup queue by
@@ -3411,10 +3424,9 @@
     // impact, sorted by eligible-units desc. Re-click to clear. (Sam 2026-06-09:
     // "where's the greatest cleanup impact" → eligible-units/students, not just
     // the auditor's structural members×(1−trust) leverage.)
-    var impactBtn = el("button", { id: "uc-impact", class: "uc-filter",
-      style: "cursor:pointer;background:#eff6ff;border:1px solid #3b82f6;color:#1e40af;font-weight:600;border-radius:6px;",
+    var impactBtn = el("button", { id: "uc-impact", type: "button", class: "uc-word", "aria-pressed": "false",
       title: "Rank the cleanup queue by student-credit impact: show only auditor-flagged rows that carry eligible CPL units, sorted by eligible units (desc). Click again to clear." },
-      ["🎯 Cleanup impact"]);
+      ["Cleanup impact"]);
     impactBtn.onclick = function () {
       var on = !state.impactOnly;
       state.impactOnly = on;
@@ -3422,8 +3434,7 @@
       if (fTriage) fTriage.value = state.triage;
       if (on) { state.sort = "eu"; state.dir = -1; }
       else if (state.sort === "eu") { state.sort = "subj"; state.dir = 1; }
-      impactBtn.style.background = on ? "#dbeafe" : "#eff6ff";
-      impactBtn.style.outline = on ? "2px solid #3b82f6" : "none";
+      impactBtn.setAttribute("aria-pressed", on ? "true" : "false");
       loadAudit().then(render);
     };
 
@@ -3557,7 +3568,7 @@
         box.appendChild(head);
         // Search bar — filter the ~200 groups by course title or id.
         var search = el("input", { id: "uc-pm-search", type: "search",
-          placeholder: "🔍 Filter by course title or ID (e.g. weld, ANTH, a course id)…",
+          placeholder: "Filter by course title or ID (e.g. weld, ANTH, a course id)…",
           style: "width:100%;box-sizing:border-box;padding:7px 10px;margin:0 0 10px;border:1px solid #cbd5e1;border-radius:6px;font-size:.85rem;" });
         search.value = filterQ;
         search.oninput = function () { filterQ = this.value.trim().toLowerCase(); renderList(); };
@@ -3880,11 +3891,10 @@
       if (mt.cid_conflict) out.appendChild(el("span", { class: "uc-badge warn", title: "Members carry different official CIDs (" + mt.cid_conflict.join(", ") + ") — likely over-merged; do not auto-promote. Review it in the ✨ worklist's evidence lane." + mtEv }, ["CID conflict"]));
       if (statusOf(r) === "Verified") {
         out.appendChild(el("span", {
-          class: "uc-badge",
-          style: "background:#dafbe1;border:1px solid #2da44e;color:#116329;font-weight:600;",
+          class: "uc-badge ok",
           title: "human-verified" + (r.reviewed_by ? " by " + r.reviewed_by : "") +
             (r.reviewed_at ? " on " + r.reviewed_at : "") + (r.locked ? " (curated anchor)" : "")
-        }, ["✔ Verified"]));
+        }, ["Verified"]));
       } else {
         b(true, "Generated", "muted", "machine-generated — not yet human-verified");
         if (r.dsrc) {
@@ -4453,7 +4463,8 @@
       var table = el("table", { class: "uc-table" });
       // Explicit column proportions for table-layout:fixed (ensureUcFixCss #3)
       // — without a colgroup, fixed layout would split all 15 columns evenly.
-      var COL_W = { kind: 5.5, id: 9, title: 14, subj: 5.5, disc: 10, credit: 6,
+      // kind and id widened for the 24px caret and info targets (S378 UI pass); title wraps.
+      var COL_W = { kind: 7, id: 10, title: 12.5, subj: 5.5, disc: 10, credit: 6,
                     units: 4.5, top: 9.5, members: 4.5, adopted: 4.5, potential: 5,
                     eu: 5, st: 4.5, conf: 3.5, flags: 10.5 };
       var cgroup = el("colgroup", {});

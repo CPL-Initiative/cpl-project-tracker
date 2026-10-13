@@ -4,6 +4,8 @@ date: 2026-10-12
 session: 369 (SkyLaurel)
 tags: [handoff, program-requirements, chaffey, san-diego-city, long-beach-city, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_380_handoff.md
 ---
 
 # You are Session 370

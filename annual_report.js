@@ -283,6 +283,8 @@
         return;
       }
       closeList();
+      // A whole line in _underscores_ is the italic note the Word export prints (the data date).
+      if (/^_.*_$/.test(line)) { html.push("<p><em>" + mdInline(line.replace(/^_|_$/g, "")) + "</em></p>"); return; }
       html.push("<p>" + mdInline(line) + "</p>");
     });
     closeList();
@@ -376,9 +378,10 @@
   }
 
   // ─── Render ────────────────────────────────────────────────────────────────
-  function setStatus(holder, msg, color) {
+  // A failure the reader must act on reads in --danger-text; everything else is muted.
+  function setStatus(holder, msg, isError) {
     var s = holder.querySelector(".car-status");
-    if (s) { s.textContent = msg || ""; s.style.color = color || "var(--text-faint,#777)"; }
+    if (s) { s.textContent = msg || ""; s.classList.toggle("car-status-err", !!isError); }
   }
   function syncPreview(holder) {
     var pv = holder.querySelector(".car-preview");
@@ -399,12 +402,13 @@
     var wrap = el("div", { "class": "car-wrap" }, []);
 
     // Toolbar
-    var rebuild = el("button", { "class": "car-btn", title: "Re-assemble the draft from the latest live data (discards edits)" }, ["↻ Rebuild from data"]);
-    var ai = el("button", { "class": "car-btn car-btn-go", title: PROXY_URL ? "Polish the draft into a cohesive narrative with AI" : "AI proxy not configured" }, ["✨ AI polish"]);
+    // Controls are underlined words (Sam, 2026-10-09; UI pass S377): no glyph, no box.
+    var rebuild = el("button", { "class": "car-btn", type: "button", title: "Re-assemble the draft from the latest live data (discards edits)" }, ["Rebuild from data"]);
+    var ai = el("button", { "class": "car-btn", type: "button", title: PROXY_URL ? "Polish the draft into a cohesive narrative with AI" : "AI proxy not configured" }, ["AI polish"]);
     if (!PROXY_URL) ai.disabled = true;
-    var word = el("button", { "class": "car-btn", title: "Download as a Word document" }, ["⬇ Word"]);
-    var print = el("button", { "class": "car-btn", title: "Print or save as PDF" }, ["🖨 Print"]);
-    var status = el("span", { "class": "car-status" }, []);
+    var word = el("button", { "class": "car-btn", type: "button", title: "Download as a Word document" }, ["Word"]);
+    var print = el("button", { "class": "car-btn", type: "button", title: "Print or save as PDF" }, ["Print"]);
+    var status = el("span", { "class": "car-status", role: "status", "aria-live": "polite" }, []);
     wrap.appendChild(el("div", { "class": "car-toolbar" }, [rebuild, ai, word, print, status]));
 
     wrap.appendChild(el("div", { "class": "car-sub" }, [
@@ -412,32 +416,33 @@
       "Word / Print render the current text."]));
 
     // Editor + live preview (two columns; stacks on narrow screens).
-    var ta = el("textarea", { "class": "car-edit", spellcheck: "false" }, []);
+    var ta = el("textarea", { "class": "car-edit", id: "car-edit", spellcheck: "false" }, []);
     ta.value = state.md;
     ta.addEventListener("input", function () { state.userEdited = true; state.md = ta.value; syncPreview(wrap); });
-    var preview = el("div", { "class": "car-preview", html: mdToHtml(state.md) }, []);
+    var preview = el("div", { "class": "car-preview", html: mdToHtml(state.md),
+      tabindex: "0", role: "region", "aria-labelledby": "car-preview-h" }, []);
     wrap.appendChild(el("div", { "class": "car-cols" }, [
-      el("div", { "class": "car-col-edit" }, [el("div", { "class": "car-col-h" }, ["Edit"]), ta]),
-      el("div", { "class": "car-col-prev" }, [el("div", { "class": "car-col-h" }, ["Preview"]), preview])
+      el("div", { "class": "car-col-edit" }, [el("label", { "class": "car-col-h", "for": "car-edit" }, ["Edit"]), ta]),
+      el("div", { "class": "car-col-prev" }, [el("div", { "class": "car-col-h", id: "car-preview-h" }, ["Preview"]), preview])
     ]));
 
     rebuild.addEventListener("click", function () {
       if (!confirm("Rebuild the draft from live data? This discards your edits.")) return;
       state.md = assembleMarkdown(window.CPL_DATA);
-      ta.value = state.md; syncPreview(wrap); setStatus(wrap, "Rebuilt from live data.", "var(--ok,#2e7d32)");
+      ta.value = state.md; syncPreview(wrap); setStatus(wrap, "Rebuilt from live data.");
     });
     ai.addEventListener("click", function () {
       if (state.busy || !PROXY_URL) return;
-      state.busy = true; ai.disabled = true; setStatus(wrap, "Polishing with AI — 15–30s…", "var(--accent-link,#1c5d99)");
+      state.busy = true; ai.disabled = true; setStatus(wrap, "Polishing with AI — 15–30s…");
       callClaude(aiPolishPrompt(state.md)).then(function (txt) {
         state.md = txt.trim(); ta.value = state.md; syncPreview(wrap);
-        setStatus(wrap, "AI polish complete — review before exporting.", "var(--ok,#2e7d32)");
+        setStatus(wrap, "AI polish complete — review before exporting.");
       }).catch(function (e) {
-        setStatus(wrap, e.message, "#A33");
+        setStatus(wrap, e.message, true);
       }).then(function () { state.busy = false; ai.disabled = false; });
     });
     word.addEventListener("click", function () {
-      setStatus(wrap, "Building Word document…", "var(--accent-link,#1c5d99)");
+      setStatus(wrap, "Building Word document…");
       ensureDocx(function () {
         try {
           window.docx.Packer.toBlob(buildDocx(state.md)).then(function (blob) {
@@ -446,14 +451,14 @@
             a.download = "CPL_Annual_Report_" + reportYearLabel().replace(/[^0-9A-Za-z]+/g, "-") + ".docx";
             document.body.appendChild(a); a.click(); document.body.removeChild(a);
             setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
-            setStatus(wrap, "Word document downloaded.", "var(--ok,#2e7d32)");
+            setStatus(wrap, "Word document downloaded.");
           });
-        } catch (e) { setStatus(wrap, "Word export failed: " + e.message, "#A33"); }
+        } catch (e) { setStatus(wrap, "Word export failed: " + e.message, true); }
       });
     });
     print.addEventListener("click", function () {
       var w = window.open("", "_blank");
-      if (!w) { setStatus(wrap, "Pop-up blocked — allow pop-ups to print.", "#A33"); return; }
+      if (!w) { setStatus(wrap, "Pop-up blocked — allow pop-ups to print.", true); return; }
       w.document.write('<!doctype html><html><head><meta charset="utf-8"><title>CPL Annual Report ' +
         esc(reportYearLabel()) + '</title><style>' +
         'body{font-family:Cambria,Georgia,serif;max-width:7.5in;margin:0.6in auto;color:#222;line-height:1.5;}' +
@@ -471,26 +476,26 @@
   function ensureCss() {
     if (document.getElementById("car-css")) return;
     var css =
-      ".car-wrap{font-size:.92rem;color:var(--text-strong,#222);}" +
-      ".car-toolbar{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.6rem;}" +
-      ".car-btn{font-size:.82rem;font-weight:600;color:var(--navy-secondary,#1c3d5a);background:var(--surface-2,#eef3f9);border:1px solid var(--border,#d4dde7);border-radius:6px;padding:.4rem .7rem;cursor:pointer;}" +
-      ".car-btn:hover{background:var(--gold-soft,#fbf3d9);border-color:var(--gold-accent,#B8860B);}" +
-      ".car-btn:disabled{opacity:.5;cursor:not-allowed;}" +
-      ".car-btn-go{background:var(--navy-primary,#0A2240);color:var(--on-accent);border-color:var(--navy-primary,#0A2240);}" +
-      ".car-btn-go:hover{background:var(--navy-secondary,#1c3d5a);}" +
-      ".car-status{font-size:.8rem;color:var(--text-faint,#777);margin-left:.3rem;}" +
-      ".car-sub{color:var(--text-muted,#777);font-size:.8rem;margin-bottom:.7rem;}" +
+      ".car-wrap{font-size:.92rem;color:var(--text-strong);text-align:left;}" +
+      ".car-toolbar{display:flex;flex-wrap:wrap;gap:.3rem 1.2rem;align-items:center;margin-bottom:.6rem;}" +
+      ".car-btn{border:0;background:none;color:var(--cobalt);font:inherit;font-size:.85rem;font-weight:600;padding:2px 0;min-height:24px;" +
+        "cursor:pointer;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;border-radius:2px;}" +
+      ".car-btn:focus-visible,.car-preview:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px;}" +
+      ".car-btn:disabled{color:var(--text-muted);text-decoration:none;cursor:not-allowed;}" +
+      ".car-status{font-size:.8rem;color:var(--text-muted);}" +
+      ".car-status-err{color:var(--danger-text);}" +
+      ".car-sub{color:var(--text-muted);font-size:.8rem;margin-bottom:.7rem;}" +
       ".car-cols{display:flex;gap:1rem;align-items:stretch;}" +
       ".car-col-edit,.car-col-prev{flex:1 1 0;min-width:0;display:flex;flex-direction:column;}" +
-      ".car-col-h{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--text-muted,#888);margin-bottom:.3rem;}" +
-      ".car-edit{width:100%;box-sizing:border-box;min-height:62vh;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.5;border:1px solid var(--border,#d4dde7);border-radius:8px;padding:.8rem;resize:vertical;color:var(--text-strong,#222);background:var(--surface-opaque);}" +
-      ".car-preview{min-height:62vh;border:1px solid var(--border,#e3e9f0);border-radius:8px;padding:.8rem 1.1rem;overflow:auto;background:var(--surface-opaque);}" +
-      ".car-preview h1{color:var(--navy-primary,#0A2240);font-size:1.5rem;margin:.2rem 0 .6rem;}" +
-      ".car-preview h2{color:var(--navy-primary,#0A2240);font-size:1.12rem;border-bottom:2px solid var(--gold-accent,#B8860B);padding-bottom:3px;margin:1.1rem 0 .5rem;}" +
-      ".car-preview h3{color:var(--navy-secondary,#163A5F);font-size:.98rem;margin:.8rem 0 .3rem;}" +
+      ".car-col-h{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--text-muted);margin-bottom:.3rem;}" +
+      ".car-edit{width:100%;box-sizing:border-box;min-height:62vh;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.5;border:1px solid var(--border);border-radius:8px;padding:.8rem;resize:vertical;color:var(--text-strong);background:var(--surface-opaque);}" +
+      ".car-preview{min-height:62vh;border:1px solid var(--border);border-radius:8px;padding:.8rem 1.1rem;overflow:auto;background:var(--surface-opaque);}" +
+      ".car-preview h1{color:var(--navy-primary);font-size:1.5rem;margin:.2rem 0 .6rem;}" +
+      ".car-preview h2{color:var(--navy-primary);font-size:1.12rem;border-bottom:2px solid var(--gold-accent);padding-bottom:3px;margin:1.1rem 0 .5rem;}" +
+      ".car-preview h3{color:var(--navy-secondary);font-size:.98rem;margin:.8rem 0 .3rem;}" +
       ".car-preview ul{margin:.3rem 0 .7rem;padding-left:1.2rem;}.car-preview li{margin:.15rem 0;}" +
-      ".car-preview p{margin:.45rem 0;line-height:1.55;}.car-preview strong{color:var(--navy-primary,#0A2240);}" +
-      ".car-empty{color:var(--text-faint,#888);padding:1rem;}" +
+      ".car-preview p{margin:.45rem 0;line-height:1.55;}.car-preview strong{color:var(--navy-primary);}" +
+      ".car-empty{color:var(--text-muted);padding:1rem;}" +
       "@media (max-width:900px){.car-cols{flex-direction:column;}.car-edit,.car-preview{min-height:40vh;}}";
     document.head.appendChild(el("style", { id: "car-css", html: css }));
   }
@@ -499,7 +504,7 @@
   function boot() {
     var root = document.getElementById("annual-report-root");
     if (root && !root.querySelector(".car-wrap")) {
-      root.innerHTML = '<p style="color:#888;padding:1rem;">Building the Annual Report draft…</p>';
+      root.innerHTML = '<p class="car-empty">Building the Annual Report draft…</p>';
     }
     // First paint is synchronous (creation-era). Once the live item_updates land,
     // re-assemble with them folded in — unless the curator has started editing.

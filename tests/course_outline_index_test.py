@@ -63,6 +63,68 @@ check("4 a course's outline address is its CourseId with the report titled for t
       ix["ACC 1A"][0]["reports"] == ["https://rccd.curriqunet.com/Report/Course/GetReport/3794?reportId=97"]
       and ix["KIN A11"][0]["reports"] == [])
 
+# 5. The address form is the host's own (discovery run 38347883491, SDCCD).
+sd = "https://sdccd.curriqunet.com/"
+sd_rows = [{"CourseId": 18607, "SubjectCode": "AAPI", "CourseNumber": "103", "Title": "Introduction to Pacific Islander Studies",
+            "StatusTitle": "Active", "ProposalTypeTitle": "New Credit Course",
+            "MetaReports": [{"Id": 4, "Title": "All Fields"}, {"Id": 493, "Title": "Course Outline Report"}]}]
+sd_links = [sd + "#", sd + "DynamicReports/AllFieldsReportByEntity/18607?entityType=Course&reportId=4",
+            sd + "DynamicReports/AllFieldsReportByEntity/18607?entityType=Course&reportId=493"]
+form = idx.report_form(sd_links, sd_rows, sd)
+check("5 SDCCD's own outline link gives its address form, the course and report ids as slots",
+      form == "DynamicReports/AllFieldsReportByEntity/{course_id}?entityType=Course&reportId={report_id}", form)
+sd_ix = idx.build_index(sd_rows, sd, form)
+check("5 an SDCCD outline address is the dynamic report, the All Fields report left out",
+      sd_ix["AAPI 103"][0]["reports"] == [sd + "DynamicReports/AllFieldsReportByEntity/18607?entityType=Course&reportId=493"],
+      sd_ix)
+rev = dict(sd_rows[0], CourseId=20839, SubjectCode="AAPI", CourseNumber="124", MetaReports=[
+    {"Id": 43, "Title": "Course Outline Comparison Report",
+     "Url": '<a class="dropdown-item comparison-report-link" data-report-id="43" href="#">'},
+    {"Id": 1, "Title": "All Fields Comparison Report"}, {"Id": 4, "Title": "All Fields"},
+    {"Id": 493, "Title": "Course Outline Report"}])
+check("5 a comparison report is no outline: a revision reads its Course Outline Report only",
+      idx.outline_reports(rev, sd, form) == [sd + "DynamicReports/AllFieldsReportByEntity/20839?entityType=Course&reportId=493"]
+      and idx.outline_reports(dict(rev, MetaReports=[{"Id": 43, "Title": "Outline", "Url": 'class="comparison-report-link"'}]),
+                              sd, form) == [])
+titles = {(t["id"], t["read"]) for t in idx.report_titles(sd_rows + [rev])}
+check("5 the run lists every report by id and title, and which one it reads",
+      (493, True) in titles and (43, False) in titles and (4, False) in titles, titles)
+af = idx.build_index([rev], sd, form, r"^All Fields$")
+check("5 a host whose outline prints objectives only reads the report its .run names (SDCCD: All Fields, 4)",
+      af["AAPI 124"][0]["reports"] == [sd + "DynamicReports/AllFieldsReportByEntity/20839?entityType=Course&reportId=4"]
+      and idx.REPORT_TITLE == "outline", af)
+check("5 RCCD's own link gives RCCD's form, so its index is unchanged",
+      idx.report_form(["https://rccd.curriqunet.com/Report/Course/GetReport/3794?reportId=97"], rows,
+                      "https://rccd.curriqunet.com/") == idx.LEGACY_FORM)
+check("5 a link counts only on this host and for a CourseId the search returned; none leaves RCCD's form",
+      idx.report_form([sd + "DynamicReports/AllFieldsReportByEntity/99?entityType=Course&reportId=493",
+                       "https://other.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18607?entityType=Course&reportId=493"],
+                      sd_rows, sd) is None and idx.report_form([], sd_rows, sd) is None)
+
+# 6. A trigger file main already holds starts nothing (S376): a branch that merged main
+# carried #2065's .run, and its next push re-ran the SDCCD index. Every workflow a
+# kb/ dot-file starts must gate its work on that file differing from main's.
+import glob
+import re as _re
+gated = {}
+for wf in sorted(glob.glob(os.path.join(ROOT, ".github", "workflows", "*.yml"))):
+    text = open(wf).read()
+    m = _re.search(r"push:.*?paths:\s*\n\s*- '(kb/[^']*/\.[a-z_-]+)'", text, _re.S)
+    if not m:
+        continue
+    trigger = m.group(1)
+    jobs = text.split("\njobs:\n", 1)[1]
+    names = _re.findall(r"^  ([a-z_-]+):\s*$", jobs, _re.M)
+    others = [n for n in names if n != "gate"]
+    gated[os.path.basename(wf)] = (
+        "gate" in names
+        and "git fetch -q --depth=1 origin main" in jobs
+        and ("git diff --quiet FETCH_HEAD -- %s" % trigger) in jobs
+        and all(_re.search(r"^  %s:\s*\n(?:    .*\n)*?    needs: \[?[^\n]*\bgate\b" % n, jobs, _re.M) for n in others)
+        and jobs.count("needs.gate.outputs.go == '1'") >= 1)
+check("6 every workflow a kb/ trigger file starts runs only when the pushed file differs from main's",
+      {"course-outline-census.yml", "course-outline-index.yml"} <= set(gated) and all(gated.values()), gated)
+
 src = open(os.path.join(ROOT, "kb", "_course_outline_index.py")).read()
 check("3 the index reads public pages only and never addresses the database (no Supabase address, REST path, "
       "rpc or PATCH); its one POST is the college's own search, replayed from the page",

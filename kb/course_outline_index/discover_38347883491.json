@@ -1,0 +1,792 @@
+{
+ "run": "38347883491",
+ "at": "2026-10-13T04:45:30Z",
+ "loads": 2,
+ "wanted": {
+  "san_diego_city": 840,
+  "san_diego_mesa": 1059,
+  "san_diego_miramar": 601
+ },
+ "wanted_union": 1660,
+ "sample_rows_with_code": 0,
+ "discover": {
+  "url": "https://sdccd.curriqunet.com/",
+  "final_url": "https://sdccd.curriqunet.com/",
+  "status": 200,
+  "title": "Dashboard",
+  "access": "ok",
+  "rows_at_load": {
+   "count": 78,
+   "rows": [
+    {
+     "href": "https://sdccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18607?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "row": "All Fields"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18607?entityType=Course&reportId=493",
+     "text": "Course Outline Report",
+     "row": "Course Outline Report"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/20839?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "row": "All Fields"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/20839?entityType=Course&reportId=493",
+     "text": "Course Outline Report",
+     "row": "Course Outline Report"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/17450?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "row": "All Fields"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/17450?entityType=Course&reportId=493",
+     "text": "Course Outline Report",
+     "row": "Course Outline Report"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18587?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "row": "All Fields"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18587?entityType=Course&reportId=493",
+     "text": "Course Outline Report",
+     "row": "Course Outline Report"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/17564?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "row": "All Fields"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/17564?entityType=Course&reportId=493",
+     "text": "Course Outline Report",
+     "row": "Course Outline Report"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18086?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "row": "All Fields"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18086?entityType=Course&reportId=493",
+     "text": "Course Outline Report",
+     "row": "Course Outline Report"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18088?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "row": "All Fields"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18088?entityType=Course&reportId=493",
+     "text": "Course Outline Report",
+     "row": "Course Outline Report"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18089?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "row": "All Fields"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18089?entityType=Course&reportId=493",
+     "text": "Course Outline Report",
+     "row": "Course Outline Report"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18090?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "row": "All Fields"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18090?entityType=Course&reportId=493",
+     "text": "Course Outline Report",
+     "row": "Course Outline Report"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18091?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "row": "All Fields"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18091?entityType=Course&reportId=493",
+     "text": "Course Outline Report",
+     "row": "Course Outline Report"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18092?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "row": "All Fields"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18092?entityType=Course&reportId=493",
+     "text": "Course Outline Report",
+     "row": "Course Outline Report"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18093?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "row": "All Fields"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18093?entityType=Course&reportId=493",
+     "text": "Course Outline Report",
+     "row": "Course Outline Report"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/20005?entityType=Course&reportId=4",
+     "text": "All Fields",
+     "row": "All Fields"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/20005?entityType=Course&reportId=493",
+     "text": "Course Outline Report",
+     "row": "Course Outline Report"
+    },
+    {
+     "href": "https://sdccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    }
+   ]
+  },
+  "structure": {
+   "headers": [],
+   "tables": [
+    {
+     "rows": 0,
+     "id": "table",
+     "cls": ""
+    }
+   ],
+   "controls": [
+    {
+     "tag": "SPAN",
+     "text": "1",
+     "cls": "badge ms-2 bg-primary",
+     "href": null
+    },
+    {
+     "tag": "SPAN",
+     "text": "1",
+     "cls": "badge sort-badge bg-primary",
+     "href": null
+    },
+    {
+     "tag": "SPAN",
+     "text": "10",
+     "cls": "badge bg-primary ms-2",
+     "href": null
+    },
+    {
+     "tag": "SPAN",
+     "text": "2",
+     "cls": "badge bg-primary ms-2",
+     "href": null
+    },
+    {
+     "tag": "SPAN",
+     "text": "1",
+     "cls": "badge bg-primary ms-2",
+     "href": null
+    },
+    {
+     "tag": "SPAN",
+     "text": "4",
+     "cls": "badge bg-primary ms-2",
+     "href": null
+    },
+    {
+     "tag": "SPAN",
+     "text": "3",
+     "cls": "badge bg-primary ms-2",
+     "href": null
+    },
+    {
+     "tag": "LI",
+     "text": "",
+     "cls": "page-item",
+     "href": null
+    },
+    {
+     "tag": "A",
+     "text": "Previous",
+     "cls": "page-link disabled",
+     "href": "https://sdccd.curriqunet.com/#"
+    },
+    {
+     "tag": "LI",
+     "text": "1",
+     "cls": "page-item active",
+     "href": null
+    },
+    {
+     "tag": "A",
+     "text": "1",
+     "cls": "page-link",
+     "href": "https://sdccd.curriqunet.com/#"
+    },
+    {
+     "tag": "LI",
+     "text": "2",
+     "cls": "page-item",
+     "href": null
+    },
+    {
+     "tag": "A",
+     "text": "2",
+     "cls": "page-link",
+     "href": "https://sdccd.curriqunet.com/#"
+    },
+    {
+     "tag": "LI",
+     "text": "3",
+     "cls": "page-item",
+     "href": null
+    },
+    {
+     "tag": "A",
+     "text": "3",
+     "cls": "page-link",
+     "href": "https://sdccd.curriqunet.com/#"
+    },
+    {
+     "tag": "LI",
+     "text": "4",
+     "cls": "page-item",
+     "href": null
+    },
+    {
+     "tag": "A",
+     "text": "4",
+     "cls": "page-link",
+     "href": "https://sdccd.curriqunet.com/#"
+    },
+    {
+     "tag": "LI",
+     "text": "5",
+     "cls": "page-item",
+     "href": null
+    },
+    {
+     "tag": "A",
+     "text": "5",
+     "cls": "page-link",
+     "href": "https://sdccd.curriqunet.com/#"
+    },
+    {
+     "tag": "LI",
+     "text": "",
+     "cls": "page-item",
+     "href": null
+    },
+    {
+     "tag": "A",
+     "text": "Next",
+     "cls": "page-link",
+     "href": "https://sdccd.curriqunet.com/#"
+    },
+    {
+     "tag": "LI",
+     "text": "Course Content Page (Outine of Topics)",
+     "cls": "",
+     "href": null
+    },
+    {
+     "tag": "A",
+     "text": "Course Content Page (Outine of Topics)",
+     "cls": "",
+     "href": "https://scribehow.com/viewer/Course_Content_Form_Section__nFSTuUEcTgmb1oewhCqyAA"
+    },
+    {
+     "tag": "LI",
+     "text": "Tech Review Page",
+     "cls": "",
+     "href": null
+    },
+    {
+     "tag": "SPAN",
+     "text": "Tech Review Page",
+     "cls": "",
+     "href": null
+    },
+    {
+     "tag": "SPAN",
+     "text": "Tech Review Page",
+     "cls": "",
+     "href": null
+    },
+    {
+     "tag": "A",
+     "text": "Tech Review Page",
+     "cls": "",
+     "href": "https://scribehow.com/page/Tech_Review_Page__P1_LDrP5SB-u7QCBP9eBrg"
+    }
+   ],
+   "inputs": [
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "iq-search-client-item-1",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "iq-search-campus-item-1",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "iq-search-campus-item-2",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "iq-search-campus-item-3",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "iq-search-campus-item-4",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "search",
+     "name": null,
+     "id": null,
+     "placeholder": "Keyword Search",
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-0",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-1",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-2",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-3",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-4",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-5",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-6",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-7",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-8",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-9",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-10",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-11",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-12",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-13",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-14",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-15",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-16",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-17",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-18",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-19",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-20",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-21",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-22",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-23",
+     "placeholder": null,
+     "options": null
+    }
+   ],
+   "forms": [
+    {
+     "action": "https://sdccd.curriqunet.com/",
+     "method": "get",
+     "id": ""
+    },
+    {
+     "action": "https://sdccd.curriqunet.com/Account/Logon",
+     "method": "post",
+     "id": "form-login"
+    },
+    {
+     "action": "https://sdccd.curriqunet.com/Account/RequestAccess",
+     "method": "post",
+     "id": "form-request-access"
+    },
+    {
+     "action": "https://sdccd.curriqunet.com/Account/RequestToResetPassword",
+     "method": "post",
+     "id": "form-requestToResetPassword"
+    },
+    {
+     "action": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsComparisonReportByEntity",
+     "method": "get",
+     "id": "ref: <Node>"
+    }
+   ],
+   "scripts": [
+    "https://challenges.cloudflare.com/turnstile/v0/api.js",
+    "https://sdccd.curriqunet.com/bundles/modernizr?v=2twPtszsTL39hTiKwvPlVlNga_BJ8EIzShIX0ej7LAo1",
+    "https://cdnjs.cloudflare.com/ajax/libs/bowser/2.11.0/bundled.js",
+    "https://code.jquery.com/jquery-3.6.0.js",
+    "https://code.jquery.com/ui/1.13.1/jquery-ui.js",
+    "https://kit.fontawesome.com/bc028f3168.js",
+    "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js",
+    "https://sdccd.curriqunet.com/bundles/ckeditor?v=_InKorEytW7MN9wJB38-ckDLe_tF_xsnkHqlwPQ_J-Q1",
+    "https://cdnjs.cloudflare.com/ajax/libs/dot/1.1.3/doT.min.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/jquery-extendext/1.0.0/jquery-extendext.js",
+    "https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js",
+    "https://unpkg.com/bootstrap-table@1.21.2/dist/bootstrap-table.min.js",
+    "https://sdccd.curriqunet.com/bundles/curriqunet?v=M34Y_YMxwNQ2F2AXZ50jWh8FdbG5_-DB1cmVmxiMzsM1",
+    "https://sdccd.curriqunet.com/bundles/dashboard?v=k1ozuum88wLlyv7BteWhIUbc-hlC0jidR-2jgv77GQg1"
+   ]
+  },
+  "rows_after_scroll": 78,
+  "calls_at_load": [
+   {
+    "method": "GET",
+    "url": "https://ka-p.fontawesome.com/releases/v6.7.2/css/pro.min.css?token=bc028f3168",
+    "status": 200,
+    "content_type": "text/css",
+    "post": "",
+    "head": "/*!\n * Font Awesome Pro 6.7.2 by @fontawesome - https://fontawesome.com\n * License - https://fontawesome.com/license (Commercial License)\n * Copyright 2024 Fonticons, Inc.\n */.fa{font-family:var(--fa-style-family,\"Font Awesome 6 Pro\");font-weight:var(--fa-style,900)}.fa,.fa-brands,.fa-classic,.fa-duotone,.fa-light,.fa-regular,.fa-sharp,.fa-sharp-duotone,.fa-solid,.fa-thin,.fab,.fad,.fadl,.fadr,.fadt,.fal,.far,.fas,.fasdl,.fasdr,.fasds,.fasdt,.fasl,.fasr,.fass,.fast,.fat{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:var(--fa-display,inline-block);font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}.fa-brands:before,.fa-classic:before,.fa-duotone:before,.fa-light:before,.fa-regular:before,.fa-sharp-duotone:before,.fa-sharp:before,.fa-solid:before,.fa-thin:before,.fa:before,.fab:before,.fad:before,.fadl:before,.fadr:before,.fadt:before,.fal:before,.far:before,.fas:before,.fasdl:before,.fasdr:before,.fasds:before,.fasdt:before,.fasl:before,.fasr:before,.fass:before,.fast:before,.fat:before{content:var(--fa)}.fa-duotone.fa-light:after,.fa-duotone.fa-regular:after,.fa-duotone.fa-solid:after,.fa-duotone.fa-thin:after,.fa-duotone:after,.fa-sharp-duotone.fa-light:after,.fa-sharp-duotone.fa-regular:after,.fa-sharp-duotone.fa-solid:after,.fa-sharp-duotone.fa-thin:after,.fa-sharp-duotone:after,.fad:after,.fadl:after,.fadr:after,.fadt:after,.fasdl:after,.fasdr:after,.fasds:after,.fasdt:after{content:var(--fa--fa)}.fa-classic.fa-duotone{fo"
+   },
+   {
+    "method": "GET",
+    "url": "https://ka-p.fontawesome.com/releases/v6.7.2/css/pro-v4-font-face.min.css?token=bc028f3168",
+    "status": 200,
+    "content_type": "text/css",
+    "post": "",
+    "head": "/*!\n * Font Awesome Pro 6.7.2 by @fontawesome - https://fontawesome.com\n * License - https://fontawesome.com/license (Commercial License)\n * Copyright 2024 Fonticons, Inc.\n */@font-face{font-family:\"FontAwesome\";font-display:block;src:url(../webfonts/pro-fa-solid-900-0.woff2) format(\"woff2\"),url(../webfonts/pro-fa-solid-900-0.ttf) format(\"truetype\");unicode-range:u+f001,u+f004-f005,u+f007-f008,u+f00c,u+f011-f012,u+f015,u+f018-f019,u+f01c,u+f023-f025,u+f02a,u+f02c-f031,u+f03a,u+f03d,u+f04a-f04e,u+f05b,u+f060-f064,u+f067-f068,u+f06b-f06d,u+f072,u+f075,u+f077-f078,u+f07b,u+f084,u+f086,u+f091,u+f093,u+f095,u+f09c,u+f0a3,u+f0ad,u+f0b0-f0b1,u+f0c0-f0c2,u+f0c6,u+f0c8,u+f128,u+f12a,u+f155,u+f283,u+f292,u+f295}@font-face{font-family:\"FontAwesome\";font-display:block;src:url(../webfonts/pro-fa-solid-900-1.woff2) format(\"woff2\"),url(../webfonts/pro-fa-solid-900-1.ttf) format(\"truetype\");unicode-range:u+f040,u+f0c9,u+f0cc,u+f0ce,u+f0d1,u+f0d7,u+f0dc,u+f0e0,u+f0e7-f0e8,u+f0f3,u+f106,u+f108-f109,u+f10e,u+f110-f112,u+f11e,u+f121,u+f126,u+f129,u+f12c-f12e,u+f130-f132,u+f135,u+f13d,u+f140,u+f145,u+f15b,u+f164,u+f188,u+f1ab,u+f1ad-f1ae,u+f1b2,u+f1b8,u+f1bb,u+f1c0,u+f1ce,u+f1d8,u+f1dc,u+f1e4-f1e6,u+f1eb-f1ec,u+f205,u+f217,u+f21a-f21d,u+f22d,u+f233-f234,u+f238,u+f246,u+f251,u+f275,u+f29e,u+f2a0,u+f2a7,u+f2bb,u+f2cc-f2cd,u+f2db}@font-face{font-family:\"FontAwesome\";font-display:block;src:url(../webfonts/pro-fa-solid-900-3.woff2) format(\"woff2\"),url(../webfonts/pro-fa-solid-900-3.ttf) format(\"truety"
+   },
+   {
+    "method": "GET",
+    "url": "https://ka-p.fontawesome.com/releases/v6.7.2/css/pro-v5-font-face.min.css?token=bc028f3168",
+    "status": 200,
+    "content_type": "text/css",
+    "post": "",
+    "head": "/*!\n * Font Awesome Pro 6.7.2 by @fontawesome - https://fontawesome.com\n * License - https://fontawesome.com/license (Commercial License)\n * Copyright 2024 Fonticons, Inc.\n */@font-face{font-family:\"Font Awesome 5 Brands\";font-display:block;font-weight:400;src:url(../webfonts/pro-fa-brands-400-0.woff2) format(\"woff2\"),url(../webfonts/pro-fa-brands-400-0.ttf) format(\"truetype\");unicode-range:u+e007,u+e013,u+e01a,u+e01e,u+e049,u+e052,u+e055-e057,u+e077-e084,u+e087-e088,u+f081-f082,u+f08c,u+f092,u+f099-f09b,u+f0d2-f0d5,u+f0e1,u+f113,u+f136,u+f13b-f13c,u+f15a,u+f167-f169,u+f16b-f16e,u+f170-f171,u+f173-f174,u+f179-f17e,u+f180-f181,u+f184,u+f189-f18d,u+f194,u+f198,u+f19a-f19b,u+f19e,u+f1a0-f1a4,u+f1b4,u+f1bc,u+f1be,u+f1e8,u+f1ed,u+f1f0-f1f1,u+f20e,u+f210,u+f213-f214,u+f232,u+f23a,u+f26b,u+f270,u+f288,u+f299,u+f2a6,u+f2b0,u+f2c5-f2c6,u+f2e0,u+f368,u+f379,u+f392-f393,u+f39f,u+f3a9,u+f3ab-f3ac,u+f3c0,u+f3c7,u+f3ca,u+f3e2,u+f3eb-f3ec,u+f3ef,u+f3f8,u+f3fe,u+f419,u+f41b,u+f4d5,u+f4e4,u+f4f8-f4f9,u+f514,u+f5b5,u+f6c9,u+f731,u+f77b,u+f7af,u+f7e1,u+f83b}@font-face{font-family:\"Font Awesome 5 Brands\";font-display:block;font-weight:400;src:url(../webfonts/pro-fa-brands-400-1.woff2) format(\"woff2\"),url(../webfonts/pro-fa-brands-400-1.ttf) format(\"truetype\");unicode-range:u+f1a5-f1aa,u+f1b5-f1b7,u+f1bd,u+f1ca-f1cc,u+f1d0-f1d7,u+f1e7,u+f1e9,u+f1ee,u+f1f2-f1f5,u+f202-f203,u+f208-f209,u+f20d,u+f211-f212,u+f215-f216,u+f231,u+f237,u+f23b-f23e,u+f24b-f24c,u+f25e,u+f260-f261,u+f263-f26a,u+f26d-f26e,u+"
+   },
+   {
+    "method": "GET",
+    "url": "https://ka-p.fontawesome.com/releases/v6.7.2/css/pro-v4-shims.min.css?token=bc028f3168",
+    "status": 200,
+    "content_type": "text/css",
+    "post": "",
+    "head": "/*!\n * Font Awesome Pro 6.7.2 by @fontawesome - https://fontawesome.com\n * License - https://fontawesome.com/license (Commercial License)\n * Copyright 2024 Fonticons, Inc.\n */.fa.fa-glass{--fa:\"\\f000\"}.fa.fa-envelope-o{--fa:\"\\f0e0\"}.fa.fa-envelope-o,.fa.fa-star-o{font-family:\"Font Awesome 6 Pro\";font-weight:400}.fa.fa-star-o{--fa:\"\\f005\"}.fa.fa-close,.fa.fa-remove{--fa:\"\\f00d\"}.fa.fa-gear{--fa:\"\\f013\"}.fa.fa-trash-o{font-family:\"Font Awesome 6 Pro\";font-weight:400;--fa:\"\\f2ed\"}.fa.fa-home{--fa:\"\\f015\"}.fa.fa-file-o{--fa:\"\\f15b\"}.fa.fa-clock-o,.fa.fa-file-o{font-family:\"Font Awesome 6 Pro\";font-weight:400}.fa.fa-clock-o{--fa:\"\\f017\"}.fa.fa-arrow-circle-o-down{--fa:\"\\f358\"}.fa.fa-arrow-circle-o-down,.fa.fa-arrow-circle-o-up{font-family:\"Font Awesome 6 Pro\";font-weight:400}.fa.fa-arrow-circle-o-up{--fa:\"\\f35b\"}.fa.fa-play-circle-o{font-family:\"Font Awesome 6 Pro\";font-weight:400;--fa:\"\\f144\"}.fa.fa-repeat,.fa.fa-rotate-right{--fa:\"\\f01e\"}.fa.fa-refresh{--fa:\"\\f021\"}.fa.fa-list-alt{font-family:\"Font Awesome 6 Pro\";font-weight:400;--fa:\"\\f022\"}.fa.fa-dedent{--fa:\"\\f03b\"}.fa.fa-video-camera{--fa:\"\\f03d\"}.fa.fa-picture-o{--fa:\"\\f03e\"}.fa.fa-photo,.fa.fa-picture-o{font-family:\"Font Awesome 6 Pro\";font-weight:400}.fa.fa-photo{--fa:\"\\f03e\"}.fa.fa-image{font-family:\"Font Awesome 6 Pro\";font-weight:400;--fa:\"\\f03e\"}.fa.fa-map-marker{--fa:\"\\f3c5\"}.fa.fa-pencil-square-o{--fa:\"\\f044\"}.fa.fa-edit,.fa.fa-pencil-square-o{font-family:\"Font Awesome 6 Pro\";font-weight:400}.fa.fa-edit{--fa:\"\\f044\""
+   },
+   {
+    "method": "GET",
+    "url": "https://ka-p.fontawesome.com/assets/bc028f3168/83253378/custom-icons.css?token=bc028f3168",
+    "status": 200,
+    "content_type": "text/css",
+    "post": "",
+    "head": "@charset \"utf-8\";.fak.fa-regular-ballot-check-gear:before,.fa-kit.fa-regular-ballot-check-gear:before{content:\"\u00ee\u20ac\u009d\"}.fak.fa-regular-circle-slash:before,.fa-kit.fa-regular-circle-slash:before{content:\"\u00ee\u20ac\u2039\"}.fak.fa-regular-list-tree-circle-arrow-down:before,.fa-kit.fa-regular-list-tree-circle-arrow-down:before{content:\"\u00ee\u20ac\u0090\"}.fak.fa-regular-list-tree-circle-arrow-up:before,.fa-kit.fa-regular-list-tree-circle-arrow-up:before{content:\"\u00ee\u20ac\u2018\"}.fak.fa-regular-sliders-magnifying-glass:before,.fa-kit.fa-regular-sliders-magnifying-glass:before{content:\"\u00ee\u20ac\u201c\"}.fak.fa-regular-table-list-pen:before,.fa-kit.fa-regular-table-list-pen:before{content:\"\u00ee\u20ac\u0178\"}.fak.fa-regular-user-headset-at:before,.fa-kit.fa-regular-user-headset-at:before{content:\"\u00ee\u20ac\u201d\"}.fak.fa-sharp-light-diagram-cells-circle-arrow-down:before,.fa-kit.fa-sharp-light-diagram-cells-circle-arrow-down:before{content:\"\u00ee\u20ac\u017d\"}.fak.fa-sharp-light-window-maximize-circle-arrow-up:before,.fa-kit.fa-sharp-light-window-maximize-circle-arrow-up:before{content:\"\u00ee\u20ac\u008f\"}.fak.fa-solid-arrow-right-to-arc-lock:before,.fa-kit.fa-solid-arrow-right-to-arc-lock:before{content:\"\u00ee\u20ac\u0161\"}.fak.fa-solid-bell-exclamation-user:before,.fa-kit.fa-solid-bell-exclamation-user:before{content:\"\u00ee\u20ac\u2013\"}.fak.fa-solid-bread-slice-circle-exclamation:before,.fa-kit.fa-solid-bread-slice-circle-exclamation:before{content:\"\u00ee\u20ac\u0192\"}.fak.fa-solid-copy-pen:before,.fa-kit.fa-solid-copy-pen:before{content:\"\u00ee\u20ac\u2019\"}.fak.fa-solid-file-circle-plus:before,.fa-kit.fa-solid-file-circle-plus:before{con"
+   },
+   {
+    "method": "POST",
+    "url": "https://sdccd.curriqunet.com/Search/_getSearchModel",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "post": "",
+    "head": "{\"EntityType\":0,\"PageTitle\":null,\"ClientEntityTypeName\":null,\"IsDistrict\":false,\"ClientEntityTypeId\":0,\"ClientList\":[{\"Id\":1,\"Title\":\"San Diego Community College District\",\"Address1\":null,\"Address2\":null,\"City\":null,\"State\":null,\"Zip\":null,\"ContactTitle\":null,\"ContactPhone\":null,\"ContactFax\":null,\"ContactEmail\":null,\"Active\":false,\"Code\":null,\"MetadataCached\":null,\"ClientSetting\":null,\"CacheIdentifier\":\"00000000-0000-0000-0000-000000000000\",\"DistrictId\":0,\"TimeZone\":null,\"IsDistrictClient\":false,\"IsInDistrict\":false,\"IsCurrentSite\":false,\"AaCodes\":[],\"Agreements\":[],\"ArticulationTypes\":[],\"AssessmentMethods\":[],\"AssignmentTypes\":[],\"AwardTypes\":[],\"BasicSkills\":[],\"CaClassCodes\":[],\"CanCodes\":[],\"CompairableTypes\":[],\"ContactTypes\":[],\"ContentReviewTypes\":[],\"ContractEdCodes\":[],\"CoopEdCodes\":[],\"CsuCodes\":[],\"DeliveryMethods\":[],\"EvaluationMethods\":[],\"FaCodes\":[],\"IgetcCodes\":[],\"InstructionTypes\":[],\"MajorRestrictionCodes\":[],\"MaterialTypes\":[],\"MatricAdviseCodes\":[],\"MatricPlacementCodes\":[],\"MatricSvcsCodes\":[],\"NonCreditCodes\":[],\"ObjectiveTypes\":[],\"OesCodes\":[],\"OfferCodes\":[],\"PreCoRequisiteTypes\":[],\"PripCodes\":[],\"ProgramCodes\":[],\"ProgramOesCodes\":[],\"ProgramRequisiteTypes\":[],\"ProgramTypes\":[],\"ReportTypes\":[],\"RequirementTypes\":[],\"RequisiteTypes\":[],\"RevisionTypes\":[],\"SamCodes\":[],\"SpecialClassCodes\":[],\"StudentAssessCodes\":[],\"WorkBasedCodes\":[],\"MetaSelectedSections\":[],\"Courses\":[],\"InstitutionPrograms\":[],\"InstitutionUsers\":[],\"InstutionCourseLinkers\":[],\""
+   },
+   {
+    "method": "POST",
+    "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/2664776934:1791864314:PGQoWcVpLSOwRujrEIr9RhrpoldvKcLF4n8yMsKI_m0/a49bb176e8e7b901/S3iwyKOICz9IGc3eCCDAEnmWy1n_OurJtg7zftlI5bw-1791866709-1.2.1.1-LUmZaUwgQSS5Wn6LCyMmw0XZOuZN31dIhy3OBKHcWPX03SUlQEg7MdCQT87wXc2h",
+    "status": 200,
+    "content_type": "text/plain; charset=UTF-8",
+    "post": "hko$-0RL8bIkl7We823e0XEhdqq$sPj181DdlvooXcFBSnc7wS273p6m6yoAaaKIB3aI-evZhT+Pi4VrZnKF3ERxks5iKf7z3$vQyp5GWpQLoIerZrQuBaj9NlT3e6mBT7n5mWLujhCC7EGQdnohb9lU1+zEXM9fXkJNWn5qRLvo5mzV0uo0jPSrJpvX4hF3uj4jiAKLCmiWB9upjI0605qKSM-q3si4oorNw7I0ysGDd0FVbCzHunM2n4FjEtG-p0GLe22RCDlQshV7+HSEgBc$z9HGlAl2EcVDU9597I8NCNo-hGlrFu4UUzgLqJFYQRDzmSc$lh0N4FRjf6-ThdP6A71zYcaoNemSqtNxt+Qe++$2hSe1En8TDdTLN1cbvotRt-yXCk$s2dQw9o090eKj8Lk+BzEdoDA1NhA+Djisj7r6gG+6Iqiv0iNX2iDkBha2y2zwUwINJ+00vS-B1HFavFRbtLNsB9G0TTH5hwvIeiNg3Ugb",
+    "head": "qpC7kICBr7jBtcGXlp6IusKfg76dy87Jrq661sqysM2w2Zy8vOC64Nbkx7Opu8XlyMS5q9Hf8N+z68zV6em16PT48/Te8/3hzwAE1/zVxvr5wuLM0fXPDhXj+cwZ8RXsG+sLBADkFfje4BQH/OkXAg0pBxsjAQPyAy3v8QjyLgcONi8DJQ4yMSdABzgWRk5HTR0yC1M/LkhTVEdQRSYoKBscQlJRUh84NEBiO1RrPkBqZ2JnXUpyTGZrWVRybl46VoI5QluGQlBgR0GCXUaMWEeLhZNjdnBJcJFSdn1Tj1qUn2uLoo9zgaSIk3aqbXiYmKeDc56Nr4yFh3Rxpq6Qn3Kzv3WxnsePkZeinsKmgMyYnqvCkI6QttexpKjL2tLf2tuxosLGot/b1uaq1uDnys3c4OatwcbT1PW0x7j+uNMA1fa/1tHlBfq/+uHi/dr93w8RFczq9fIV+hXn5eXe6N4YExX4+d355/QLBR4KJeX8BP4GJyE07fH4CSQT7zA4Ljc+MwA0RQQIHjc2BUIwB0I/TFVGTVNBTTFUSS8XORw9WUJWTWQ8XjFeWVpdJiw7SkBeQEJ3KVZiWDkyPXpzX3Y9TlBwZHZXhINLVoxNfGRmgmyPZHSRblCGaHhTa1lWfo9beJtdf5alqnSlZmClp4GrkXFzl3CVpJCUqpiQf5qfqqSfoX+RhZfGp76Nn8a7nsirz8bC16ut0quX0K7d09DXw7Ow5ODA0erhvNq66/C70MTlwcn40OKztsn52cnA7+LVA+3C9tPT89fe5wEJ8QAOCtQN/u0XExPbCf0LFRjZGvzg8wfkARjlCvgd5Awt7y/v7C0s8igqGygRLjU9/Q0eIPw0QTg8IzZFNwYPRTEJDSUzJFUhIxlcEiVKSz4gMlQwPB1BYDRYbCIpJUZqTVEwLkF0bzJGSDFZSVyAVE1QbjxhYkRAO3eAfndGb0d5Sl5/U4Ntl1ViaXSRj5WTbJBZj3ZxfV6AmH5/fqCFoX6Qa6Vucad4jXaukKZ2jZyTvI6khZR9pZGozKCfqceJu5HOx6yvrtCx1cPMsdmdq9XVxNXdwZ6oubSku6bLxca/zOa/1NCp5MHtssi08sjq/NrO+dsI7/7k3Q0EC9v+zsPoDu/p7OvS7hkO/OXb0Rwa6w/vIxHdEQTlKwvrK/n5Dioc7TQUNCT0JisdBvcyDff8AjpFBRkaOSY0DAouJzIKIksULkJHSzQnSjdbKzBLMDs5HFNlH0NdR2UtN3AoZkRHLWhlLjczajNYam15N0uAU3JXXWGBgFpdS2RYS4Zbb3JTh0yAbniIWFOJXleRX16jlZCZZpySaJ6UhmaYeH2esICPb4ihdYq0hrafebJ4uqCBlp6AurGApsaLp4q+qtPRj8aW14q2lZjQstrcnrHXvpuftb/hxKfcyue7ye3twNTL1rT31cHX1M7Rt97owdMBz8L58gf6/v3g9+r58enfBu0O7skJFfDU2gfw0fQNCyTcGygk"
+   },
+   {
+    "method": "GET",
+    "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/pat/a49bb176e8e7b901/1791866710029/8723a1f259266ab21624f32c35a496b9c221ee754d2418d2508458e17b2a5b3b/y37KStJtLK_g_bdWAYp3Ln0vhk8jIpawZ8G7HydZBxY-1791866710-1.3.1.1-oX27jWC17HV3R8No1jmdo52hK7sgLABideBJBZ5Z1xrT1d1FZhs7oHq5QhNnFbT7AZAiQG7aQQVFXiCiPOTG.9hLN1OLP.OQvsTCKoANXnDLiiwfXPvFpVhVD7UiVQdPoOAANdR0AlFIONhgV7cNop88Fxv3IeVhvT7hSYecnbE58qB38iqkfkPhDqqhgbanAYVkK9OZfpBixwrqUUsO5FOzZc4G6zWM4lK3qqO6NNACbdlOS2DXXlZG7r7HN9Xq27QBPHbS0tceoYtzHXsTh5RtFqKRJ_IIYMQB9V8_y_5ixs06dLeDtpyJl0AmpQPggUs4ZmjoRXK6TjemAp5_nBsi2GWsCrT2IGEUTP1.SO3ZO2IffzXJNfBowhC0flunRIGyBs70DzZLh5mnRzhRpEb03e75moIvmINzIXqOXRmTlAxgT8aDqpHvN4VnBCJUjvjgNtaEneDp.3Ts8tp0NMi1MTjAptv8dAoWBRaK_kAP.t41L3r3MWJFFM.6DgBC_YK4DPkeNDIEEFarTa6nYkyLXUNKZpDROlXxy2DuYBgYa4DeiXo7pbZK1QP8wTxCCcsnA9jdiCQ73EusjuBP_7R91gssaEq.E.uPGcHPct2l8Vy7peFnNJHkX3ulnzERA41y.4TVKemdyutfQ1s7524VOIiJfdtMu826qo9.NYnEPYEkW1L5IM0cihjFCJrc.X46vvI55OlzMNzeJ7HzOftNXQ9ltrdjqWRPy.Mgfl5ihfetqvXYl0SKjTePT2OP4DMEk58uNylYdRNptz68zgpaa5wGkL4szfxthiAE5J_u5ylctgWd3sN.nKciRs44",
+    "status": 401,
+    "content_type": "text/plain; charset=utf-8",
+    "post": "",
+    "head": ""
+   },
+   {
+    "method": "POST",
+    "url": "https://sdccd.curriqunet.com/Search/GetPublicSavedSearch",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "post": "clientIds%5B%5D=1&entityTypeId=1&clientEntityTypeId=1",
+    "head": "[{\"Id\":0,\"SearchName\":null,\"SearchConfig\":\"{\\\"rules\\\":{\\\"condition\\\":\\\"OR\\\",\\\"rules\\\":[{\\\"id\\\":\\\"field-status-1\\\",\\\"field\\\":\\\"field-status-1\\\",\\\"type\\\":\\\"integer\\\",\\\"input\\\":\\\"select\\\",\\\"operator\\\":\\\"equal\\\",\\\"value\\\":1},{\\\"id\\\":\\\"field-status-1\\\",\\\"field\\\":\\\"field-status-1\\\",\\\"type\\\":\\\"integer\\\",\\\"input\\\":\\\"select\\\",\\\"operator\\\":\\\"equal\\\",\\\"value\\\":2},{\\\"id\\\":\\\"field-status-1\\\",\\\"field\\\":\\\"field-status-1\\\",\\\"type\\\":\\\"integer\\\",\\\"input\\\":\\\"select\\\",\\\"operator\\\":\\\"equal\\\",\\\"value\\\":3},{\\\"id\\\":\\\"field-status-1\\\",\\\"field\\\":\\\"field-status-1\\\",\\\"type\\\":\\\"integer\\\",\\\"input\\\":\\\"select\\\",\\\"operator\\\":\\\"equal\\\",\\\"value\\\":7},{\\\"id\\\":\\\"field-status-1\\\",\\\"field\\\":\\\"field-status-1\\\",\\\"type\\\":\\\"integer\\\",\\\"input\\\":\\\"select\\\",\\\"operator\\\":\\\"equal\\\",\\\"value\\\":11}],\\\"valid\\\":true},\\\"displayColumns\\\":[{\\\"id\\\":\\\"field-check-field-2945-728\\\",\\\"location\\\":\\\"1\\\"},{\\\"id\\\":\\\"field-check-field-3293-4094\\\",\\\"location\\\":\\\"1\\\"},{\\\"id\\\":\\\"field-check-field-888-525\\\",\\\"location\\\":\\\"1\\\"},{\\\"id\\\":\\\"field-check-field-873-521\\\",\\\"location\\\":\\\"1\\\"},{\\\"id\\\":\\\"field-check-field-872-520\\\",\\\"location\\\":\\\"1\\\"},{\\\"id\\\":\\\"field-check-field-ProposalType-1\\\",\\\"location\\\":\\\"1\\\"},{\\\"id\\\":\\\"field-check-field-status-1\\\",\\\"location\\\":\\\"1\\\"},{\\\"id\\\":\\\"field-check-field-586-504\\\",\\\"location\\\":\\\"1\\\"},{\\\"id\\\":\\\"field-check-field-Campus-1\\\",\\\"location\\\":\\\"1\\\"},{\\\"id\\\":\\\"field-check-field-797-517\\\",\\\"location\\\":\\\"2\\\"},{\\\"id\\\":\\\"field-check-field-1392-556\\\",\\\"location\\\":\\\"2\\\"}],\\\"filterByUser\\\":false,\\\"keyword\\\":\\\"\\\",\\\"searchName\\"
+   },
+   {
+    "method": "POST",
+    "url": "https://sdccd.curriqunet.com/Search/GetSearchFields",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "post": "cetId=1&entityTypeId=1&clientIds%5B%5D=1&filterScope=0",
+    "head": "{\"fields\":[{\"id\":\"field-1392-556\",\"tabname\":\"Codes and Dates\",\"tabId\":230,\"label\":\"Originator\",\"precision\":\"10\",\"scale\":\"0\",\"datatype\":\"int\",\"canfilter\":1,\"EntityTypeId\":\"1\",\"IsSubject\":false,\"IsCourseNumber\":false,\"IsCourseTitle\":false,\"IsProposalType\":false,\"IsStatus\":false,\"IsAwardType\":false,\"IsProgramTitle\":false,\"IsDepartment\":false,\"IsApprovalSubject\":false,\"IsApprovalDepartment\":false,\"IsApprovalProposalType\":false,\"IsApprovalPosition\":false,\"IsCourseSemester\":false,\"IsProgramSemester\":false,\"IsPackageTitle\":false,\"IsModuleTitle\":false,\"IsModuleSemester\":false,\"IsModuleSubject\":false,\"IsDivision\":false,\"IsTier3\":false,\"ClientEntityTypeId\":null,\"IsPackageSubject\":false,\"clientId\":1,\"RootMultiLevelDetailSectionId\":0,\"RootMultiLevelDetailSection\":null,\"RootMultiLevelDetailSectionMBSId\":0,\"IsMultiLevelDetail\":false,\"HardCodedLongLookupList\":false},{\"id\":\"field-2945-728\",\"tabname\":\"Main\",\"tabId\":217,\"label\":\"Originating Campus\",\"precision\":\"10\",\"scale\":\"0\",\"datatype\":\"int\",\"canfilter\":1,\"EntityTypeId\":\"1\",\"IsSubject\":false,\"IsCourseNumber\":false,\"IsCourseTitle\":false,\"IsProposalType\":false,\"IsStatus\":false,\"IsAwardType\":false,\"IsProgramTitle\":false,\"IsDepartment\":false,\"IsApprovalSubject\":false,\"IsApprovalDepartment\":false,\"IsApprovalProposalType\":false,\"IsApprovalPosition\":false,\"IsCourseSemester\":false,\"IsProgramSemester\":false,\"IsPackageTitle\":false,\"IsModuleTitle\":false,\"IsModuleSemester\":false,\"IsModuleSubject\":false,\"IsDivision\":false,\"IsTier3\":false,\"ClientEntityTyp"
+   },
+   {
+    "method": "POST",
+    "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/2664776934:1791864314:PGQoWcVpLSOwRujrEIr9RhrpoldvKcLF4n8yMsKI_m0/a49bb176e8e7b901/S3iwyKOICz9IGc3eCCDAEnmWy1n_OurJtg7zftlI5bw-1791866709-1.2.1.1-LUmZaUwgQSS5Wn6LCyMmw0XZOuZN31dIhy3OBKHcWPX03SUlQEg7MdCQT87wXc2h",
+    "status": 200,
+    "content_type": "text/plain; charset=UTF-8",
+    "post": "hko$-0RL8bIkl7We823e0XEhdqq$sPj181DdlvooXcFBSnc7wS273p6m6yoAaaKIB3aI-evZhT+Pi4VrZnKF3ERxks5iKf7z3$vQyp5GWpQLoIerZrQuBaj9NlT3e6mBT7n5mWLujhCC7EGQdnohb9lU1+zEXM9fXkJNWn5qRLvL4fMC7F-iIU6P15tjAYstiMs2aUzb2M0jWMJQcnxBVCzq1+FIheg4u2H-FrPBaQGo4DPt+u9r7mX7NA175jwSovyW+R+-aA8wNuz8Ul5W9HG3aAl82aEbMh6kRrDaBnrnLy-I7aa+pCeSS6zG0dP--i$azlzgmu7wPx-y$q17f3jx42ZixgU5HNq9GzgkEH+Pg0NnqBxWdL7i4KoyExWKWoMf4MDsDT4jqyHEQW2qATljXbzx3XZdSGRcz0-4Ujix0bdb1yf0$4u6rnLRonFuNeEk35HXuWawKqcjTU34liFpfMo9Epcw132soGJGA2Q964xncNU4",
+    "head": "qpC7kICBr7jBtcGXlp6IusKgn5KdtdLKv8ilmZfQmrSnyLyg2sG6pZmh4NXW3sq8qqnxw7HCy7Lo5vXY1NDFt93d7u702fjlwf32CQEFAAHqC+7kEhUC9wnh0gcH+dv1+PUY2/oeJwYC2grnKiwGJCcrLS/sEgYACToGESXyFiv2+Q0hHkQxMz1ACR1JH0YOKUIxIFMfLBAQWkZZMDFQGVZQHFI8Tlg/Gl9ZZDRbYm9gQ1NtL1NyP0V0SGxRbmw9V1yAOVt3VEdaY3WFPopkaGVqS2+Rh2iSdFKHVk5uVWd+m3FsgXiZYKZogYOehmqgn2t+hbWffrisuLuJkY2smq+vlq3CjZ+5koaWuMXLl6uwvb3OjJSyn8e5w5fW1rGoztag5J+2xaXlt7m6ouippe/Iq+6msuPy98/ku/3R2dD82/HQwsHdwvn6Afrc19nO5NHt8Mz+CwHh4fLy1+kH1xUj7fjuHwEB9gscCgP39y/9Mygd6vU0AS0rODL5M/r9IS4TGBszEhc+HyxAOB4JDRANED1JEkg0KysUMFk7MT1bYx5CWCZZImImJklCYEhlSjtdKmhqL3QvMGRzcDoxSIBRYHpeRG8+YYR4W45gfFBIgUuNYJFlgGZVZ2SLZ4BfYYxumXV5oZaRaqikf4iBaK2ubJ+olZKqmYa7uZmxs7Sdepiyw4WhssS3pbSsqo2eu7zOxtOP2Mytr8ewrr7AmargoractOHgs7nqv+fc4uDR8LCzrMS39MG47fr63s3K+9AA5N0F+wjT/APexcni+Oj68QYQ6NQW+A/qFNoKEPwO+xj6GPb99Rn6GeQBK+0tHO8V5gYXLAgrCzQQ7y32+BcjHxU9IycxBCA5LgckJVEvQk4dLlQsD1gqUVBbKTBgLSMwXVQiPB8cVjcrOzwibHFHRmp1UHUxU0h2fkdIdWxfUFqAc3xERUF+gniAimhLfpNefmB2UpNrkVludlp3W3x7paKnYnKpqox3o62Mq5Fyr4SykY2ZlIh7lbCIuIh6mZzBfZ6UwsqUvYnIw6ajsq2Kr5LIqrbPy67I25rWvsGf1aS8wLuexODdqt7d4ei9x8TL6+/I48LPzOrc0dvIvQT9vf3SCMfG8wvs+cQBCt0U3gbqGALo8RTx+hIHDgD53d/73hQmIwcn6RscDAIPLS0BHisjBxkaAxE0BxbxD/0CMEUgIhQCRyEpTTodSDEPRx4hNyNHKSYtSiomX1IsTTIgX1BXOl9oN01lKmVJRTFxT1BLMnNWSTZlUVpvfmJ3QDt9Q2FShlWJiHVWgmh7SYpQaWtphJRpmId9UFGKl1ybgZ6Te2ahnJaKq3d+q29ubGyWp22Yhqd0p3mTkbJ7rqK9s39+pXuJgridmrmPp6KJr5SorqDUtcTVj96wl6DW4ZzdnZneoeO0yOas3ue50OGqw9bE1NPr0O+2uNftytv64+/WwwDU2djb2/wJ6gYT6esMEPIUFtPmDR4gFA8e7+LiFBgE"
+   },
+   {
+    "method": "POST",
+    "url": "https://sdccd.curriqunet.com/Search/NewSearch",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "post": "options%5Bpagesize%5D=25&options%5Bpage%5D=0&options%5BtitleFilter%5D=&options%5BentityTypeId%5D=1&options%5BfilterScope%5D=0&options%5BsortDirection%5D=1&options%5BclientEntityTypeId%5D=1&options%5BclientEntitySubTypeId%5D=&options%5Bfilters%5D%5Bsql%5D=field-status-1+%3D+1&options%5BDisplayColumns%5D%5B0%5D%5Bid%5D=field-check-field-2945-728&options%5BDisplayColumns%5D%5B0%5D%5Blocation%5D=1&options%5BDisplayColumns%5D%5B1%5D%5Bid%5D=field-check-field-3293-4094&options%5BDisplayColumns%5D%5B1%",
+    "head": "{\"TotalRows\":2750,\"Rows\":25,\"results\":[{\"RowNumber\":1,\"TotalRows\":2750,\"CourseId\":18607,\"BaseId\":5606,\"MetaTemplateId\":18,\"ClientId\":1,\"StatusAliasId\":1,\"StatusBaseId\":1,\"StatusTitle\":\"Active\",\"Editable\":1,\"ProposalTitle\":\"AAPI 103 - Introduction to Pacific Islander Studies\",\"SubjectCode\":\"AAPI\",\"CourseNumber\":\"103\",\"Title\":\"Introduction to Pacific Islander Studies\",\"PublicEntityTitle\":null,\"CreatedOn\":\"\\/Date(1713769173910)\\/\",\"LaunchDate\":\"\\/Date(1713797122280)\\/\",\"ImplementDate\":\"\\/Date(1742191200000)\\/\",\"LastModified\":null,\"Active\":true,\"ProposalId\":15580,\"MetaTemplateTypeId\":10,\"ProcessActionTypeId\":1,\"ClientEntityTypeId\":1,\"ClientEntitySubTypeId\":null,\"EntityTypeId\":1,\"ProposalTypeId\":1,\"ProposalTypeTitle\":\"New Credit Course\",\"AllowNonAdminReactivation\":false,\"AllowReactivation\":false,\"IsOriginator\":0,\"IsCoContributor\":0,\"ClientTitle\":\"San Diego Community College District\",\"Code\":\"SDCCD\",\"CloneSourceImplementDate\":null,\"HasDraftInFamily\":0,\"HasReviewInFamily\":0,\"HasApprovedInFamily\":0,\"HeadOfFamily\":18607,\"CanOriginate\":false,\"FamilyHeadByStatusEntityId\":18607,\"FamilyHeadIsDeactivation\":false,\"ClientAllowMultipleApproved\":true,\"PTAllowMultipleApproved\":false,\"CrossListingNonSource\":true,\"LastUpdated\":\"\\/Date(1782937419007)\\/\",\"HasModifyProposalTypes\":false,\"HasDeactivateProposalTypes\":false,\"1392-556\":1558,\"2945-728\":2,\"3293-4094\":\"05/09/2024\",\"586-504\":1472,\"872-520\":\"Introduction to Pacific Islander Studies\",\"873-521\":192,\"888-525\":\"103\",\"Campus-1\":\"Mesa\",\"ProposalTyp"
+   }
+  ],
+  "calls_after_scroll": [],
+  "body_head": "Login\nSearch\nSearch\nColleges\nCourses\nSearch\nReset\nSubject \nStatus 1\nOutput Fields 10\nAdvanced Filters\nOriginating Campus\nCIC Approval\nCourse Number\nSubject\nCourse Title\nProposal Type\nStatus\nEffective Semester\nCollege\nMESA - Mesa\n05/09/2024\n103\nAAPI\nIntroduction to Pacific Islander Studies\nNew Credit Course\nActive\n2025 Fall\nMesa\nReports\nMIRA - Miramar\n09/11/2025\n124\nAAPI\nIntroduction to Asian American and Pacific Islander Studies\nCredit Course Revision (May Include Activation)\nActive\n2026 Spring\nCity, Mesa, Miramar\nReports\nMESA - Mesa\n04/27/2023\n125\nAAPI\nAsian American and Pacific Islander Identities and Cultures\nNew Credit Course\nActive\n2024 Fall\nMesa\nReports\nMESA - Mesa\n05/09/2024\n127\nAAPI\nAsian Americans and American Ideals, Institutions, and Politics\nNew Credit Course\nActive\n2025 Fall\nMesa\nReports\nMESA - Mesa\n05/11/2023\n130\nAAPI\nAsian American and Pacific Islander Women\nNew Credit Course\nActive\n2024 Fall\nMesa\nReports\nNo Data Entered\n414\nABED\nARITHMETIC REVIEW\nNew Non-Credit Course\nActive\n1986 Fall\nContinuing Education\nReports\nNo Data Entered\n420\nABED\nCOLLEGE PREPARATORY ENGLISH\nNew Non-Credit Course\nActive\n1985 Fall\nContinuing Education\nReports\nNo Data Entered\n425\nABED\nENGLISH REVIEW FOR THE CBEST\nNew Non-Credit Course\nActive\n1986 Fall\nContinuing Education\nReports\nNo Data Entered\n426\nABED\nMATH REVIEW FOR THE CBEST\nNew Non-Credit Course\nActive\n1986 Fall\nContinuing Education\nReports\nNo Data Entered\n430\nABED\nPRE-VOCATIONAL ABE\nNew Non-Credit Course\nActive\n2007 Fall\nContinuing Education\nReports\nNo Data Entered\n441\nABED\nBASIC EDUCATION, LANGUAGE ARTS, BEGINNING LEVEL\nNew Non-Credit Course\nActive\n2021 Fall\nContinuing Education\nReports\nNo Data Entered\n443\nABED\nBASIC EDUCATION, MATH, BEGINNING LEVEL\nNew Non-Credit Course\nActive\n2010 Fall\nContinuing Education\nReports\nNo Data Entered\n03/13/2025\n445A\nABED\nSupervised Tutoring: Communication\nNew Non-Credit Course\nActive\n2026 Fall\nContinuing Education\nReports\nCCED - Continuing Education\n03/13/2025\n445B\nABED\nSupervised Tutoring: Literacy\nNew Non-Credit Course\nActive\n2026 Fall\nContinuing Education\nReports\nCCED - Continuing Education\n03/13/2025\n445C\nABED\nSupervised Tutoring: Quantitative Reasoning\nNew Non-Credit Course\nActive\n2026 Fall\nContinuing Education\nReports\nCCED - Continuing Education\n03/13/2025\n445D\nABED\nSupervised Tutoring: Critical Thinking\nNew Non-Credit Course\nActive\n2026 Fall\nContinuing Education\nReports\nCCED - Continuing Education\n03/13/2025\n445T\nABED\nTutor Training\nNew Non-Credit Course\nActive\n2026 Fall\nContinuing Education\nReports\nMIRA - Miramar\n04/08/2021\n102\nACCT\nBasic Accounting\nCredit Course Revision (May Include Activation)\nActive\n2022 Fall\nCity, Miramar\nReports\nMESA - Mesa\n05/12/2022\n116A\nACCT\nFinancial Accounting\nCredit Course Revision (May Include Activation)\nActive\n2023 Fall\nCity, Mesa, Miramar\nReports\nMESA - Mesa\n05/12/2022\n116B\nACCT\nManagerial Accounting\nCredit Course Revision (May Include Activation)\nActive\n2025 Fall\nCity, Mesa, Miramar\nReports\nCITY - City\n01/25/2024\n119\nACCT\nAccounting Ethics\nCredit Course Revision (May Include Activation)\nActive\n2025 Fall\nCity\nReports\nMIRA - Miramar\n09/23/2021\n120\nACCT\nFederal Income Tax\nCredit Course Revision (May Include Activation)\nActive\n2022 Fall\nCity, Mesa, Miramar\nReports\nMIRA - Miramar\n09/23/2021\n121\nACCT\nCalifornia Income Tax\nCredit Course Revision (May Include Activation)\nActive\n2022 Fall\nCity, Mesa, Miramar\nReports\nMIRA - Miramar\n05/08/2025\n125\nACCT\nGovernment & Not-for-Profit Accounting\nCredit Course Revision (May Include Activation)\nActive\n2026 Fall\nCity, Mesa, Miramar\nReports\nCITY - City\n05/14/2020\n128A\nACCT\nRecordkeeping\nCredit Course Revision (May Include Activation)\nActive\n2021 Fall\nCity\nReports\n1\n2\n3\n4\n5\n1-25 of 2750\nRecent News\n\nFall Semester 2026\u00a0\n\nWelcome to the fall\u00a0semester! The approval process is now functioning as normal with no default days occurring on the weekend or district and local holidays.\u00a0\u00a0\n\nOpen Labs\u00a0\nTo familiarize yourself with Meta/Acadea\u00a0and its features, we offer open labs every Friday f",
+  "report_sample": {
+   "url": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18607?entityType=Course&reportId=4",
+   "status": 200,
+   "title": "All Fields",
+   "head": "All Fields\nAAPI 103 - Introduction to Pacific Islander Studies\nCover\nCourse Number\n103\nSubject\nAAPI\nCourse Title\nIntroduction to Pacific Islander Studies\nShort Title\nIntro Pacific Islander Studies\nEffective Semester\n2025 Fall\nCB04: Credit Status\nD - Credit - Degree Applicable\nCB05: Transfer Status\nA - Transferable to both UC and CSU.\nCB08: Basic Skills\nN - Not Basic Skills\nMain\nCB11 Classification Y - Credit Course\nCB22 Non-Credit Category Y - Not Applicable, Credit course\nGrading Method\nGrade Options Letter Grade or Pass/No Pass\nCatalog Description\nThis introductory course critically examines the historical and contemporary experiences of Pacific Islanders, both at home in Oceania (Polynesia, Melanesia, and Micronesia) and in the diaspora. The course emphasizes Pacific Islander perspectives, exploring the histories of Oceania and the effects of colonialism, imperialism, militarism, racism, capitalism and globalization on Pacific Island communities, cultures, migration, identity, and politics. The course is intended for all students interested in Asian American and Pacific Islander Studies and Ethnic Studies.\nShort Desc (100 Characters or Less)\nIntroduction to the historical and contemporary experiences of Pacific Islanders.\nOriginating Campus MESA - Mesa\nColleges\nMesa\nCCC Missions\nTransfer\nCourse Equivalency No\nEquivalency Text\nRepeatability\nThis course is repeatable No\nNumber of Repeats Allowed\nJustification for Repeatability\nProposal Information\nReason For Proposed Action\nNew Course in AAPI including DE - Fully Online. Submitting for:\nDistrict GE Areas D (Social Behavioral Sciences) and Ethnic Studies and Multicultural requirements. \nCSU GE Areas D (Social Behavioral Sciences)  \nIGETC GE Areas 4 (Social Behavioral Sciences) \nCalGETC Areas 4 (Social Behavioral Sciences) \nUC Transfer List\nCosts\nNone\nField Trips May be required\nActive Participatory Course (family required)\nThis is an active participatory course related in content: applies to exercise science, visual arts, and performing arts courses. No\nFamily\nThis is a CTE Course No\nCodes\nCB03: TOP Code 220300 - Ethnic Studies\nCIP Code\nCB09: SAM Code E - Non-Occupational\nStudent Learning Outcomes\nLearning Outcomes\nGroup Title\nMesa\nOutcome Text\nCritical Thinking: Think critically in reading, writing, and/or speaking about topics relating to the historical and contemporary experiences of Pacific Islanders, both at home in Oceania (Polynesia, Melanesia, and Micronesia) and in the diaspora, thereby identifyin",
+   "code": "AAPI 103"
+  }
+ }
+}

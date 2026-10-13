@@ -1,7 +1,7 @@
 ---
 title: Program requirements harvest — Decisions & Lessons
 date: 2026-10-03
-prs: [2012, 2015, 2016, 1836, 1838, 1839, 1841, 1844, 1845, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866, 1868, 1874, 1876, 1877, 1878, 1894]
+prs: [2049, 2050, 2012, 2015, 2016, 1836, 1838, 1839, 1841, 1844, 1845, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866, 1868, 1874, 1876, 1877, 1878, 1894]
 tags: [program-requirements, catalog-harvest, census, supabase, playwright, governance, lessons]
 artifacts:
   - kb/_program_source_census.py
@@ -647,3 +647,57 @@ The pilot paragraph, verbatim:
 - **The registry fill (#2047):** `kb/_course_outline_registry_fill.py` writes one UPDATE over a VALUES row a college, guarded on `cor_checked_run is null`, with the note, the SLO flag and the SLO source derived in SQL from the same templates as `fields()`. The repo's Supabase guard refuses an UPDATE through `execute_sql`; the receipt went in through `apply_migration` (the path Sam named on card 1), and an md5 over the eight stored fields equaled the script's. A 33 KB receipt is too large to paste reliably: derive repeated text in SQL and keep each row to its facts. SQLite can test the receipt once the alias and the VALUES column list are rewritten for it (the guard test does this).
 - **The RCCD course index (#2046):** discovery run 38312406074 found the dashboard is a public search backed by JSON (`POST /Search/NewSearch`, 25 rows a page, every proposal in every status; a Cloudflare check on the page). The index replays the page's own request from inside the page, 200 rows a page: run 38313849383 read 14,292 rows in 72 pages, kept 2,160 active outlines (no historical proposal, no distance education addendum), and found an outline for 1,605 of the 1,648 courses the three colleges' records name. The 43 without one are mostly codes the district retired (HIS, ECO). A course code needs one spelling before any match: "ADJ B1B" read twice as "ADJ B 1B" until the two-word subject group went, and the guard test caught it.
 
+
+## S374 SkyJuniper (2026-10-12): the SLO read at RCCD, and why Mesa lost nine programs
+
+- **An outline prints objectives and SLOs under one lead-in.** RCCD's integrated outline (report 97) prints *Course Objectives: Upon successful completion of the course, students should be able to demonstrate the following activities:* and then *Student Learning Outcomes: Upon successful completion of the course, students should be able to demonstrate the following skills:*. The census's line-start rule (`SLO_HEADING`) accepts the lead-in as a heading, so the first text parser read the objectives on all twelve pages of trial 38317539422. `kb/_course_outcomes_read.py` now reads the HTML: the area whose `subTitle` reads Student (or Course) Learning Outcomes, each top-level `<li>` as printed. The text parser stays as the fallback for a host with no such area and takes the SLO heading proper before the lead-in. Test against filed pages, not a fixture you wrote: the trial filed each page's text and HTML (`kb/course_outcomes/trial_38317539422/`), `--reparse` reads them again, and the guard test runs on them.
+- **RCCD nests institutional outcomes under an SLO** (*Critical Thinking*, *Communication Skills*, *Information Competency & Technology Literacy*) as a list inside the `<li>`. They are kept as `maps_to`, one list per SLO; the text reader cannot tell them from an SLO.
+- **The outline names who offers the course:** *College:* then RIV, MOV, NOR one to a line. The load keeps a row for each college the outline names, and falls back to the colleges whose records name the course.
+- **Slice 1 of run 38318152644:** 402 outlines, all 200, all parsed from the HTML, 1,367 SLOs (one to ten a course, median three; 28 courses print one). The longest are the ethnic studies outcomes (ETS 1, ETS 2); the shortest are CAT 844's *Build tables.* and *Create forms.*
+- **A merge of main makes a runner's pull slow.** The read workflow's commit step ran `git pull --rebase` on a one-commit checkout; after the branch took a merge of main, the pull fetched main's history and the step ran five minutes. The step now fetches the tip one commit deep, lays the slice's new files on it and pushes, and an artifact keeps the slice if every push fails. The dependency map reads a workflow's push target: write it unquoted (`HEAD:${{ github.ref_name }}`) or the map loses the edge and CI calls it stale.
+- **A new table carries its own grants.** `supabase_table_grants_test` failed `course_outcomes` until its SQL granted select to `service_role` (new public tables lose the default grants on 2026-10-30).
+- **`apply_migration` timed out six times** (22:45Z to 23:17Z) with nothing reaching the database: no table, no ledger row, no lock, no open transaction, the project healthy, `execute_sql` answering. The DDL waits in `chatbox/supabase_course_outcomes.sql`; the guard refuses DDL through `execute_sql`, so there is no second path from a session.
+- **Mesa's nine (#2050).** Seven page reads (`kb/college_reads/mesa_health_programs.json`, runs 38318250175 to 38321027873) walked catalog 70 from the top: 21 sections, programs only under 17540, one tab (All Programs, 18644), one link list (17541) of 200 entries, and all nine in it (17589, 17590, 17626, 17687, 17688, 17700, 17708, 17709, 17727). Each special-admission entry shows six tabs (Summary, Accreditation, Directed Clinical Practice Requirement, Admission Criteria, Requirements, Courses); `cq_children` read the first four visible ones, so the Requirements tab, fifth, was never read and each program scored 0.0. A tab titled Requirements is now read first. The S373 guess (another catalog section) was wrong: walk the tree before assuming where a thing is listed, and read the coverage number a record was filed with (0.0 says no page named a course, which points at the page, not the index).
+- **Moved from the lane (S374 compaction):** **Reading** (#1946-#1952): Program records finds a record and Side by side opens it beside its catalog page (`kb/catalog_framing.json`). Sam confirmed the Cerritos sample, 12 of 12. ④ CPL Pathways' UI pass done (#2016). Sheets 38, 39 and 42's rulings (writes, the OSHA issuer name, the outcomes on the 20 live rows) are under *Moved from the lane (S336 compaction)*. The Progress view: every section of the tab collapses (Expand all, Collapse all).
+
+## Moved from the lane (S376 compaction)
+
+The outcomes paragraph's settled parts, verbatim:
+
+✅ **Record shape 3 (S334):** extraction v4 keeps each outcome exactly as printed in `program.outcomes` and `course_outcomes`; the scorer fails a reworded or empty one; 19 of the 20 pilot records carry them. `kb/_program_requirements_file.py` keeps a read record's requirements and takes only outcomes; `reviewed_readings.json` holds each verdict to the requirements it read.
+
+**Sam's Open Asks Sheet 70 (20:40-20:42Z, `sam-sheet-70-rulings-2026-10-12`):** card 1 *Apply as a migration*; card 2 *Record and move on*, note *"And look for other repositories for the outcomes data and record the link and data in prog reqs"*; card 3 *Every course in the loaded records*.
+
+✅ **The registry fields (S373):** migration `program_source_registry_course_outline_2026_10_12` added the eight `cor_*` columns (`cor_slo_source_url` is Sam's other repositories); the weekly census never writes them. Filled on all 118 rows from census run 5 (#2047): public 49, sign_in 6, refused 3, unreached 1, not_found 59; 18 print SLOs.
+
+**The census** (#2042) opens one outline per host; curriQunet dashboards list public outline reports. ✅ **The course index (#2046):** RCCD's dashboard is a public JSON search; 1,605 of the 1,648 courses the RCCD records name have an outline.
+
+## S376 SkyLinden (2026-10-13): three re-reads, SDCCD's SLOs by college, and a trigger file a merge carries
+
+- **The Requirements-tab fix (#2050) paid at all three SDCCD colleges.** Mesa found its nine health programs
+  (`not_found` empty), San Diego City three of its 19 (the two nursing degrees, Cyber Defense B.S.), Miramar
+  ten aviation programs (Airframe, Powerplant, Pilot Studies and the rest; only 16779 had been counted as not
+  found, the other nine were page-claimed). Each loaded unchecked and displayed: build `98becf9fafc7` on
+  2,203 rows.
+- **A re-read can move a good record to a wrong page.** Miramar 39433 (300-Hour Registered Yoga Teacher) went
+  from page 20882 (14 of 14 placed) to 20070 (none). `git diff --name-status` between the base and the
+  filing showed one `M` among ten `A`s; the filed record went back before the load and the build. Read the
+  diff of every re-read's records, not only its summary.
+- **The report titled for the outline is not always the one that prints SLOs.** SDCCD's Course Outline
+  Report (493) prints Student Learning Objectives only; its All Fields report (4) prints a Student Learning
+  Outcomes section with one entry per college (Group Title City, Mesa, Miramar), each with its own Outcome
+  Text list. A college may reuse an objective's words as an SLO (Miramar's HUMA 101), so where a sentence
+  prints decides, not its wording. The index reads the report a `.run` names; the reader keeps one block per
+  group; the load writes one row per group for the college its title names.
+- **A comparison report is titled for the outline too.** SDCCD's Course Outline Comparison Report (43) sat
+  ahead of 493 on 1,978 revision rows; the dashboard's own links named only 493. The index lists every
+  report by id and title, so the next host's choice is visible in its run.
+- **Learn the link form from the host's own page.** SDCCD links reports as
+  `DynamicReports/AllFieldsReportByEntity/<CourseId>`, RCCD as `Report/Course/GetReport/<CourseId>`.
+- **A merge of main carries trigger files.** Merging main into the San Diego City branch carried #2065's
+  index `.run`; the display push after it re-ran the SDCCD index there. The merge-commit check only covers a
+  merge at the head. The census, index, outcomes read and load now run only when the pushed trigger file
+  differs from main's (#2069, #2066). KB note `methodology-a-trigger-file-must-differ-from-main`.
+- **Chaffey's course outcomes are on section syllabi** (its outcomes site); program outcomes are in the
+  catalog and CurriQunet. No public course SLO list turned up from a web search.
+- **`apply_migration` timed out a seventh time** (04:31Z) with nothing landing; Sam chose to paste the table.

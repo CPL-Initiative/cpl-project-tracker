@@ -1,4 +1,5 @@
-run=2
+run=6
 discover=
-index=https://rccd.curriqunet.com/
-slugs=riverside_city,moreno_valley,norco
+index=https://sdccd.curriqunet.com/
+slugs=san_diego_city,san_diego_mesa,san_diego_miramar
+report=^All Fields$

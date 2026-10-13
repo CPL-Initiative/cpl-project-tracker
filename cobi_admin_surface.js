@@ -72,7 +72,9 @@ window.COBI_ADMIN_SURFACE = {
         "workplan_activity_associations",
         "workplan_goals"
       ],
-      "rpcs": [],
+      "rpcs": [
+        "workplan_move_sub_activity"
+      ],
       "measured": true
     },
     "budget": {

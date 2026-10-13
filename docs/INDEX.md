@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-10-12
+updated: 2026-10-13
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 543 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
-| Lessons docs | 86 | [`catalog/lessons.md`](catalog/lessons.md) |
+| KB notes | 548 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| Lessons docs | 87 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
-| Reference (pull-side) | 55 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 345 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1115** | |
+| Reference (pull-side) | 56 | [`catalog/reference.md`](catalog/reference.md) |
+| Session handoffs | 351 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1128** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,11 +122,13 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-13 S376 SkyLinden: the Requirements-tab re-reads loaded and displayed (Mesa #2064, San Diego City #2068, Miramar #2070; build `98becf9fafc7`, 2,203 rows); SDCCD's outline index (#2065) and SLOs by college group (#2066, draft, on #2049); the trigger-file gate (#2069); KB note `methodology-a-trigger-file-must-differ-from-main`; handoff 380 (SkyAlder).
+- 2026-10-13 S378 SkyHemlock (scheduled): #2063 already merged and run 586 green; Move to the team phrase held by the permission check (Open Asks Sheet 73); the Common Course Reference UI pass (list view measured by new a11y targets ccr-list and ccr-list-dark, 0 findings in both themes); handoff 379.
+- 2026-10-13 S377 SkySequoia: S375's checkpoint (#2058) and vault note (#327) merged; Refresh summaries shipped (#2059, `activity_summaries.js`, published by run 583; the activity header's Update link retired, its link row wraps at 390px); the Move control (#2056) green after its dialog led with Cancel, still held for its function; apply_migration down (nothing newer than 23:19Z in schema_migrations); KB note playbook-when-apply-migration-times-out-read-the-migrations-table; handoff 378.
+- 2026-10-13 S375 SkyTally: Annual Goals PR A merged (#2051, the add flow's hidden insert made literal), the UI pass (#2054, published by run 582), `project_add.js` retired (#2055), the Add dialog's checkbox targets (#2057), the Move control built and held for its function (#2056; apply_migration down); S374's stranded checkpoint #2052 brought up to main; KB note playbook-test-a-database-function-locally-with-pglite; Open Asks Sheet 72; handoff 377.
+- 2026-10-12 SkyLedger (parallel session; its receipts say s372): new lane `workplan-annual-goals`, `workplan_annual_goals_lessons.md`, KB note `methodology-an-option-list-read-from-the-page-dies-with-the-renderer`; handoff 375.
+- 2026-10-12 S374 SkyJuniper: S373's #2046, #2047 and #2048 merged; the SLO read at RCCD (#2049: the outline's SLO area, not the objectives before it; run 38318152644 reading 1,605 outlines; `course_outcomes` written, not applied: apply_migration timed out); Mesa's nine health programs traced to a four-tab cap (#2050); KB note methodology-a-lead-in-sentence-is-not-a-section-heading.
 - 2026-10-12 S373 SkyCypress: San Diego Mesa read, loaded and displayed (#2044, 166 records, build da4f44a160ca); Sheet 70 answered: the registry's course outline fields (#2045) filled on 118 rows (#2047); the course outline census merged (#2042, run 5: 32 outlines, 18 with SLOs); the RCCD course index (#2046, 1,605 of 1,648 courses with a public outline); KB note methodology-a-sign-in-form-is-no-proof-of-a-closed-system.
 - 2026-10-12 S372 SkyRedwood: Miramar displayed (#2041), Mesa's row applied (#2037), Sierra v91 7c precedent (#2040), the painting gallery (#2038), the course outline census (#2042 draft, Sheet 70); KB note methodology-a-course-title-reads-as-its-level.
 - **2026-10-12 (S371 SkyMaple)**: San Diego City displayed (#2034); College Identity UI pass (#2035); MAP Users sign-in wording (#2036); Mesa registry receipt (#2037, held) and the painting gallery (#2038, step 1); new KB note `methodology-same-context-size-means-the-model-varied`; handoff 372 (SkyRedwood).
 - 2026-10-12 S370 SkyHolly: Long Beach City 38542 removed (Sheet 68 card 2, #2028); Chaffey read, loaded and displayed (#2027, build 496f2a71470a, 1,745 rows); San Diego City extracting; My College UI pass and the public contact measure (#2030); smoke 7s verb shape (#2031); Sierra 7c opening fix (#2032, A/B then deploy); handoff 371 (SkyMaple).
-- 2026-10-12 S369 SkyLaurel: Long Beach City displayed (05811159eeee), the read policy live, curriQunet reader fixes for Chaffey and San Diego City, smoke 7s; handoff 370 (SkyHolly).
-- 2026-10-12 (S368 SkyWillow): UI passes on Admin (#2019) and MAP Team Queue (#2020), each with a seeded sweep of the gated view; every program record public, each unchecked one marked Not yet confirmed (#2021, Sam's Sheet 67 card 1; the policy waits on his paste); Long Beach City's re-read filed (311 pass) and its load dispatched; Chaffey and San Diego City captured, both 0 (the curriQunet reader misses them); handoff 369.
-- 2026-10-12 (S367 SkyAspen): CPL Pathways reads its catalog records from `program_requirement_records` (#2015) and its UI pass (#2016); Vision 2030 shows one set of goal figures in the tab and the annual report, TBA until set (#2017, Sheet 66 card 1); Long Beach City's re-read dispatched (run 38185403454); Sam's Sheet 65 card 2 sheet answer (every record, marked) differs from his chat answer and is asked on Open Asks Sheet 67; handoff 368.
-- 2026-10-11 (S366 SkyHazel): UI passes on Governance (#2007; the shell placeholder left on the root, a Docs panel blank after a repaint, #2011 its load race) and Team Phrases (#2010); the three `sierra_feedback` readers filter CI rows on the server (#2008); Long Beach City's 74 reframed (#2009) and both causes fixed (#2012: the hidden index chose pages and text); Sam answered Sheet 65 card 2 in chat (read from the table); handoff 367.
