@@ -1,0 +1,747 @@
+All Fields
+GEOG 101 - Physical Geography
+Cover
+Course Number
+101
+Subject
+GEOG
+Course Title
+Physical Geography
+Short Title
+Physical Geography
+Effective Semester
+2023 Fall
+CB04: Credit Status
+D - Credit - Degree Applicable
+CB05: Transfer Status
+A - Transferable to both UC and CSU.
+CB08: Basic Skills
+N - Not Basic Skills
+Main
+CB11 Classification
+CB22 Non-Credit Category
+Grading Method
+Grade Options Letter Grade or Pass/No Pass
+Catalog Description
+This course is a spatial study of the Earth’s dynamic physical systems and processes. Topics include the natural environment and nature-society interactions with an emphasis on scientific literacy and critical thinking. The course covers classification and analysis of spatial patterns of weather, climate, climate change and the enhanced greenhouse effect, the water cycle, landforms, and the distribution of living organisms. This course also addresses environmental issues in geography and sustainability. The course develops students’ spatial analysis skills using maps, Geographic Information Systems (GIS), the Global Positioning System (GPS), and remote sensing imagery. This course is intended for social science majors, sustainability majors, or anyone seeking an understanding of Earth’s physical systems and human impacts on the natural environment.
+Short Desc (100 Characters or Less)
+Examines the major world patterns of the physical environment and nature-society interactions.
+Originating Campus MESA - Mesa
+Colleges
+City
+Mesa
+Miramar
+CCC Missions
+Transfer
+Course Equivalency No
+Equivalency Text
+Repeatability
+This course is repeatable No
+Number of Repeats Allowed
+Justification for Repeatability
+Proposal Information
+Reason For Proposed Action
+Six yr review including revisions to
+description, objectives, outline of topics, assignments and methods of eval. It also includes review, update and addition of texts for currency.
+Costs
+None
+Field Trips May be required
+Active Participatory Course (family required)
+This is an active participatory course related in content: applies to exercise science, visual arts, and performing arts courses. No
+Family
+This is a CTE Course No
+Codes
+CB03: TOP Code 220600 - Geography
+CIP Code
+CB09: SAM Code E - Non-Occupational
+Student Learning Outcomes
+Learning Outcomes
+Group Title
+Mesa
+Outcome Text
+Write or speak about topics in Physical Geography, thereby addressing problems, formulating theses, making arguments, analyzing and weighing evidence, and deriving conclusions.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Outcome Text
+Think critically in reading, writing, and/or speaking about topics in Physical Geography, thereby identifying problems, theses, arguments, evidence and conclusions.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Outcome Text
+Articulate similarities and contrasts among cultures, times, and environments, demonstrating an understanding of cultural pluralism.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Outcome Text
+Demonstrate an ability to understand one's role in society, take responsibility for one's own actions, and make ethical decisions in complex situations.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Group Title
+City
+Outcome Text
+ The student put critical thinking into practice in the context of physical geography.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Outcome Text
+ The student put critical thinking into practice in the context of physical geography.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Outcome Text
+Students will understand and be able to communicate earth-sun relationship and why earth has seasons. Students will understand why Global Climate Change does not change the fact that we have Seasons.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Outcome Text
+Demonstrate an ability to understand one's role in society, take responsibility for one's own actions, and make ethical decisions in complex situations.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Outcome Text
+Distinguish between landforms shaped by Aeolian, glacial and coastal processes
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Group Title
+Miramar
+Outcome Text
+Compare and Contrast Climate Change: Students will be able to use scientific data to compare and contrast climate change issues for two different cities in terms of dynamic atmospheric, hydrosphere, lithosphere and biosphere processes.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Outcome Text
+Earth & Sun Relationship: Students will be able to distinguish between Earth and Sun relationship topics, such as: mass of the Sun, plane of the ecliptic, tilt of the Earth, polarity, parallelism, circle of illumination, the tropics, arctic circles, seasonality, solar zenith angle and the elliptical orbital pattern of the planet.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Outcome Text
+Geography & the Environment: Students will be able to explain why physical geographic topics are relevant to understanding environmental issues in society with the assistance of maps or geospatial technology illustrations.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Outcome Text
+Spatial Patterns: Students will be able to analyze and interpret spatial patterns associated with plate tectonics including interaction with humans and the physical environment
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Student Learning Objectives
+Upon successful completion of the course the student will be able to:
+Objective Text
+Synthesize knowledge of the Earth’s seasons to predict how this will affect environmental patterns and processes.
+
+
+Objective Text
+Synthesize spatial data and information by utilizing scientific inquiry and spatial analysis methods and tools.
+Objective Text
+Analyze and interpret spatial patterns of atmospheric, climatic, geomorphological, and biotic processes on Earth’s surface.
+Objective Text
+Analyze and evaluate the ways nature-society interactions, including the enhanced greenhouse effect and pollution, cause changes in the physical environment.
+Objective Text
+Apply spatial thinking skills to engage with local communities on climate change adaptation and mitigation, environmental justice, and sustainability.
+Disciplines
+Minimum Qualification
+Minimum Qualification Geography (Masters Required)
+Additional Required Qualifications
+Condition
+Hours/Units
+Override No
+Variable Units No
+Lecture
+Min Lecture Units 3.000
+Max Lecture Units 0.000
+Min Lecture Hours - Override 0.000
+Max Lecture Hours - Override 0.000
+Min Lecture Hours: 48.000
+Max Lecture Hours: 54.000
+Lab
+Min Lab Units 0.000
+Max Lab Units 0.000
+Min Lab Hours - Override 0.000
+Max Lab Hours - Override 0.000
+Min Lab Hours: 0.000
+Max Lab Hours: 0.000
+Other
+Min Other Units 0.000
+Max Other Units 0.000
+Min Other Hours - Override 0.000
+Max Other Hours - Override 0.000
+Min Other Hours: 0
+Max Other Hours: 0
+Total Units
+Min Units 3.000
+Max Units 0.000
+Total Hours
+Min Contact Hours: 48
+Max Contact Hours: 54
+Min Outside-of-Class Hours: 96
+Max Outside-of-Class Hours: 108
+Min Total Student Learning Hours: 144
+Max Total Student Learning Hours: 162
+FTEF
+Total FTEF Min: 0.2
+Additional Information
+Content
+Course Lecture Content (Use outline format)
+Foundations of geography
+Science of geography
+History of geography
+Earth systems concepts
+Earth's four spheres
+Spherical planet
+Location and time
+Latitude
+Longitude
+Great and small circles
+Prime Meridian and standard time
+Maps, scales, and projections
+Energy-atmosphere system
+Solar energy, seasons, and atmosphere
+Solar system, Sun, and Earth
+Solar energy
+Seasons
+Atmospheric composition, temperature, and function
+Variable atmospheric components
+The greenhouse effect
+The ozone hole
+Atmospheric energy and global temperatures
+Energy essentials
+Earth's energy budget
+Energy at the Earth's surface
+Temperature concepts and controls
+Earth's temperature patterns
+Atmospheric and oceanic circulation
+Wind essentials
+Forces within the atmosphere
+Atmospheric motion
+Ocean currents
+El Niño–Southern Oscillation
+Ocean pollution issues
+Air pollution and acid rain
+Water, weather, and climate systems
+Atmospheric water and weather
+Location and properties of water on the Earth
+Humidity
+Atmospheric stability
+Clouds and fog
+Air masses
+Atmospheric lifting mechanisms
+Fronts
+Midlatitude cyclones and anticyclones
+Atmospheric rivers
+Extreme weather
+Water resources
+Hydrologic cycle
+Soil-water budget
+Groundwater resources
+Water pollution and environmental justice
+Global climate systems
+Earth's climate system and its classification
+World climate distribution
+Earth history and global climate change
+The enhanced greenhouse effect
+General circulation models 
+Impacts and future scenarios of anthropogenic climate change
+Climate justice
+Earth's changing landscape
+The dynamic planet
+Earth's structure and internal energy
+Geologic cycle
+Plate tectonics
+Geologic hazards and environmental justice
+Tectonics, earthquakes, and volcanoes
+Earth's surface relief features
+Crustal formation processes
+Crustal deformation processes
+Orogenesis
+Earthquakes
+Volcanism
+Weathering, mass movements, and karst topography
+Weathering processes
+Mass movement processes
+Karst topography and landscapes
+River systems and landforms
+Fluvial processes and landscapes
+Streamflow characteristics
+Floods and river management
+Wind processes and desert landscapes
+Eolian processes
+Desert landscapes
+Oceans, coastal processes, and landforms
+Global oceans and seas
+Coastal system components
+Waves and tides
+Coastal landforms
+Sea level rise and its impacts
+Glacial and periglacial landscapes
+Types of glaciers
+Glacial processes
+Glacial landforms
+Periglacial landscapes
+Pleistocene Ice Ages
+Paleoclimatology
+Biogeography systems
+Geography of soils
+Characteristics
+Properties
+Formation
+Classification
+Ecosystems and biomes
+Earth's terrestrial and aquatic biomes
+Ecosystem components and the biogeochemical cycles
+Limiting factors
+Ecosystem changes
+Ecosystem services
+Species loss and migration pattern changes from climate change and pollution
+Sustainable solutions to biodiversity, habitat, and soil degradation and loss
+Spatial analysis tools to evaluate biogeographic patterns
+Environmental justice and sustainability
+Environmental justice
+Race, class, and environmental inequality
+Case studies of environmental justice
+Sustainability
+Ecological footprints
+Community well-being, economic viability, and environmental stewardship
+Energy transition from fossil fuel-based production and consumption
+Course Lab/Activity Content
+Assignments
+Reading Assignments
+Optional Text
+Assignments
+Professional geographic periodicals, such as The Journal of Geography and The Annals of the Association of American Geographers.
+Credible media and information sources, including internet resources, which arise during the duration of the course.
+Writing Assignments
+Optional Text
+Assignments
+Term paper on a specific geographical topic such as global climate change.
+Brief reports on articles published in various journals and periodicals.
+Reviews of television programs or internet videos relating to geographic topics.
+Reflections of human environmental impacts.
+Create and maintain a blog or website related to topics in physical geography.
+Appropriate Outside Assignments
+Optional Text
+Assignments
+Instructor-led or self-guided field trips to specific areas physical geographic interest in San Diego County of physical geographic interest, or to local weather stations or other professional settings.
+Participation in campus or community events related to topics in physical geography.
+Appropriate Assignments that Demonstrate Critical Thinking
+Optional Text
+Assignments
+Relate the application of geographic methods to the solution of geographic problems.
+Compare and contrast the major physical components of one geographic region to those of other regions.
+Develop and assess hypotheses about the distribution of various physical geographic phenomena.
+Evaluate and discuss current periodicals and books in geography as to their relevance to course lectures.
+Methods of Evaluation
+Evaluation Method
+Other
+If you selected "Other", please provide details.
+Objective tests, which evaluate a student's ability to identify main geographical concepts and to solve problems associated with spatial analysis. Essay exams. Map identification quizzes. Reports and/or papers. Alternative projects, including: Oral presentations Multi-media projects Participation in field trips and/or outside lectures. Infographics
+Methods of Instruction
+Check all that apply:
+Lecture
+Lecture Discussion
+Audio-Visual
+Other
+If you selected "Other", please provide details.
+Visual Aids (slides, film strips, maps, charts, globes, GPS, CD's, DVD's, websites) Review of Tests and Quizzes Guest Lecturers
+Credit for Prior Learning
+Eligible for Credit by Examination:
+Yes No
+Offered at:
+Industry Certification:
+Other Industry Certification:
+Standardized Exams:
+Credit by Portfolio Review:
+Yes No
+Portfolio Review Offered at:
+Military Training:
+Yes No
+I have completed this page.
+Distance Ed
+Does this course have a DE component? Yes
+Colleges
+Campus Miramar
+Delivery Methods
+Fully Online
+Other Methods
+Techniques used to ensure quality
+The official course outline of record will be adhered to and rigor will be maintained.
+Evaluation Method
+Multiple measures of evaluation will be used, including the traditional multiple choice quizzes, essays, projects, and presentations.
+Additional Resources
+A 24 hour online help desk will be available. The use of WebCt/Vista requires the inclusion of ADA criteria in the development of the course.
+Contact Types
+Campus Mesa
+Delivery Methods
+Fully Online
+Other Methods
+Techniques used to ensure quality
+Online instruction includes regular student-to-student and instructor-to-student communication. Class participation through chats and threaded discussions. Written assignments analyzing a variety of topics related to Physical Geography.
+Evaluation Method
+Performance on timed-online quizzes and tests. Performance on class participation through threaded discussions. Performance on written assignments.
+Additional Resources
+SDCCD and DSPS personnel will provide all needed accommodations. DSPS will provide a student in an online classroom with the same level of support as an on-campus student. Provide text alternatives for any non-text content; Make it easier for users to see and hear content including separating foreground from background; Make text content readable and understandable.
+Contact Types
+Announcements
+Frequency
+as needed
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Discussion Board
+Frequency
+at least weekly
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Email/Message System
+Frequency
+as needed
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Field Trips
+Frequency
+may be required
+Participant/s
+Faculty to Student/s No
+Among Students No
+Individual Meetings
+Frequency
+online or on campus, as needed
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Synchronous or Asynchronous Video
+Frequency
+frequent
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Campus City
+Delivery Methods
+Fully Online
+Other Methods
+Techniques used to ensure quality
+Timed on-line quizzes and tests. Class participation through chats and threaded discussions. Written assignments analyzing a variety of topics related to Physical Geography.
+Evaluation Method
+Performance on timed-online quizzes and tests. Performance on class participation through threaded discussions. Performance on written assignments.
+Additional Resources
+Provide text alternatives for any non-text content; make it easier for users to see and hear content including separating foreground from background; make text content readable and understandable. SDCCD and DSPS personnel will provide all needed accommodations. DSPS will provide a student in an online classroom with the same level of support as an on-campus student.
+Contact Types
+Chat Rooms
+Frequency
+once per week
+Participant/s
+Faculty to Student/s No
+Among Students No
+Field Trips
+Frequency
+may be required
+Participant/s
+Faculty to Student/s No
+Among Students No
+Individual Meetings
+Frequency
+online or on campus, as needed
+Participant/s
+Faculty to Student/s No
+Among Students No
+Textbooks/Resources
+Is there a Zero Textbook Cost listed for this course?
+Please explain why a Zero Cost textbook option is not included in the resource list
+Does your department have a commitment to using free, or low cost resources in all offerings of this course?
+Describe any additional strategies the department is using to lower the cost of resources students need when they enroll in this course.
+Zero Cost Textbook(s)/Open Educational Resource(s)
+Textbooks
+Text\Supplemental
+Author(s) Christopherson, Robert and Ginger H. Birkeland
+Title Elemental Geosystems
+Edition 9th
+Publisher Pearson-Prentice Hall
+Year 2019
+Is this a classic textbook? No
+ISBN # 9780134817446
+Additional Textbook Information
+Text\Supplemental
+Author(s) Christopherson, Robert and Ginger H. Birkeland
+Title Geosystems
+Edition 10th
+Publisher Pearson-Prentice Hall
+Year 2018
+Is this a classic textbook? No
+ISBN # 9780134597119
+Additional Textbook Information
+Text\Supplemental
+Author(s) Hess, Darrel and Dennis G. Tasa
+Title McKnight's Physical Geography: A Landscape Appreciation
+Edition 13th
+Publisher Pearson-Prentice Hall
+Year 2022
+Is this a classic textbook? No
+ISBN # 9780135827147
+Additional Textbook Information
+Text\Supplemental
+Author(s) Arbogast, Alan F
+Title Discovering Physical Geography
+Edition 4th
+Publisher Wiley
+Year 2017
+Is this a classic textbook? No
+ISBN # 9781119321248
+Additional Textbook Information
+Text\Supplemental
+Author(s) Peterson, James F., et. al
+Title Physical Geography
+Edition 11th
+Publisher Cengage
+Year 2017
+Is this a classic textbook? No
+ISBN # 9781305652644
+Additional Textbook Information
+Text\Supplemental
+Author(s) Oxford University Press
+Title Essential World Atlas
+Edition 8th
+Publisher Oxford University Press, USA
+Year 2021
+Is this a classic textbook? No
+ISBN # 9780197551738
+Additional Textbook Information
+Text\Supplemental
+Author(s) Reynolds, Stephen, et. al
+Title Expoloring Physical Geography
+Edition 3rd
+Publisher McGraw Hill Education
+Year 2021
+Is this a classic textbook? No
+ISBN # 9781260364996
+Additional Textbook Information
+Text\Supplemental
+Author(s) Ritter, Michael
+Title The Physical Environment: An Introduction to Physical Geography
+Edition
+Publisher Creative Commons Attribution-ShareAlike 4.0 International License, www.thephysicalenvironment.com
+Year 2020
+Is this a classic textbook? No
+ISBN # 0000000000000
+Additional Textbook Information
+Text\Supplemental
+Author(s) Patrich, Jeremy
+Title Physical Geography: An Open Educational Resources Publication by College of the Canyons
+Edition
+Publisher , Creative Commons Attribution 4.0 International License, https://drive.google.com/drive/folders/1pr
+Year 2020
+Is this a classic textbook? No
+ISBN # 0000000000000
+Additional Textbook Information
+Periodicals
+Manual
+Software
+Other Learning Materials
+I have entered at least one resource
+Supplies (Instructional Materials)
+Enrollment Conditions
+Course has additional instructional materials fees No
+Explanation
+Supplies (Instructional Materials)
+Requisites
+Course Requisites
+Conditions of Enrollment Catalog View
+Use Legacy V2 Course Requisites in COR No
+Legacy V2 Course Requisites
+Content Review
+Is there a Course Requisite?
+Content Review
+Entry Skills
+Library
+Description
+Refer to "Method of Instruction"
+General Education/Transfer (Proposed)
+District General Education Yes
+District Multicultural Requirements No
+Exercise Science Activity Requirement No
+Health Education Requirement No
+American Institutions/California Government Requirement No
+CSU General Education Yes
+Cal-GETC Yes
+IGETC Yes
+UC Transfer Course Yes
+5 Natural Sciences
+B1 Area B. Scientific Inquiry and Quantitative Reasoning - Physical Science
+5A: Physical Science
+Area 5. Physical and Biological Sciences - 5A: Physical Science
+General Education/Transfer (Approved)
+District General Education Yes
+District Multicultural Requirements No
+Exercise Science Activity Requirement No
+Health Education Requirement No
+American Institutions/California Government Requirement No
+CSU General Education No
+Cal-GETC Yes
+IGETC No
+UC Transfer Course No
+5 Natural Sciences
+5A: Physical Science
+Attachments
+Attached File
+Tech Review
+Please review for
+Compliance with District policy/procedures and state regulations,
+Course and/or Program alignment,
+Duplication of content,
+Feasibility (resources are adequate, e.g., classrooms, labs, equipment, and faculty load),
+Scheduling impact, and
+Impact on other disciplines and/or Programs.
+Similar Learning Objectives
+CB10: Work Experience
+CB11: Course Classification Status
+CB13: Special Class Status
+Course Prior to College Level (CB21) Y - Not applicable
+Funding Agency Category (CB23) Y - Not Applicable (funding not used to develop course)
+Course Program Status (CB24)
+City
+CB24: Program Status 1 - Program Applicable
+Mesa
+CB24: Program Status 1 - Program Applicable
+Miramar
+CB24: Program Status 1 - Program Applicable
+Course Gen Education Status (CB25)
+Not Applicable
+Course Support Course Status (CB26) N - Course is not a support course
+CB27: Upper Division Status
+Major Restriction Code
+NONE -
+Lecture Hours
+Min: 48.000
+Max: 54.000
+Lab Hours
+Min: 0.000
+Max: 0.000
+Units
+Min: 3.000
+Max: 0.000
+FTEF
+Total FTEF Min: 0.200
+Comments
+ASSIST
+Queue for Assist No
+Last Request From Queue
+Last Direct Request
+ASSIST Preview
+Prefix GEOG
+Course Number 101
+Content The following topics are included in the framework of the course but are not intended as limits on content. The order of presentation and relative emphasis will vary with each instructor.
+Foundations of geography
+Science of geography
+History of geography
+Earth systems concepts
+Earth's four spheres
+Spherical planet
+Location and time
+Latitude
+Longitude
+Great and small circles
+Prime Meridian and standard time
+Maps, scales, and projections
+Energy-atmosphere system
+Solar energy, seasons, and atmosphere
+Solar system, Sun, and Earth
+Solar energy
+Seasons
+Atmospheric composition, temperature, and function
+Variable atmospheric components
+The greenhouse effect
+The ozone hole
+Atmospheric energy and global temperatures
+Energy essentials
+Earth's energy budget
+Energy at the Earth's surface
+Temperature concepts and controls
+Earth's temperature patterns
+Atmospheric and oceanic circulation
+Wind essentials
+Forces within the atmosphere
+Atmospheric motion
+Ocean currents
+El Niño–Southern Oscillation
+Ocean pollution issues
+Air pollution and acid rain
+Water, weather, and climate systems
+Atmospheric water and weather
+Location and properties of water on the Earth
+Humidity
+Atmospheric stability
+Clouds and fog
+Air masses
+Atmospheric lifting mechanisms
+Fronts
+Midlatitude cyclones and anticyclones
+Atmospheric rivers
+Extreme weather
+Water resources
+Hydrologic cycle
+Soil-water budget
+Groundwater resources
+Water pollution and environmental justice
+Global climate systems
+Earth's climate system and its classification
+World climate distribution
+Earth history and global climate change
+The enhanced greenhouse effect
+General circulation models 
+Impacts and future scenarios of anthropogenic climate change
+Climate justice
+Earth's changing landscape
+The dynamic planet
+Earth's structure and internal energy
+Geologic cycle
+Plate tectonics
+Geologic hazards and environmental justice
+Tectonics, earthquakes, and volcanoes
+Earth's surface relief features
+Crustal formation processes
+Crustal deformation processes
+Orogenesis
+Earthquakes
+Volcanism
+Weathering, mass movements, and karst topography
+Weathering processes
+Mass movement processes
+Karst topography and landscapes
+River systems and landforms
+Fluvial processes and landscapes
+Streamflow characteristics
+Floods and river management
+Wind processes and desert landscapes
+Eolian processes
+Desert landscapes
+Oceans, coastal processes, and landforms
+Global oceans and seas
+Coastal system components
+Waves and tides
+Coastal landforms
+Sea level rise and its impacts
+Glacial and periglacial landscapes
+Types of glaciers
+Glacial processes
+Glacial landforms
+Periglacial landscapes
+Pleistocene Ice Ages
+Paleoclimatology
+Biogeography systems
+Geography of soils
+Characteristics
+Properties
+Formation
+Classification
+Ecosystems and biomes
+Earth's terrestrial and aquatic biomes
+Ecosystem components and the biogeochemical cycles
+Limiting factors
+Ecosystem changes
+Ecosystem services
+Species loss and migration pattern changes from climate change and pollution
+Sustainable solutions to biodiversity, habitat, and soil degradation and loss
+Spatial analysis tools to evaluate biogeographic patterns
+Environmental justice and sustainability
+Environmental justice
+Race, class, and environmental inequality
+Case studies of environmental justice
+Sustainability
+Ecological footprints
+Community well-being, economic viability, and environmental stewardship
+Energy transition from fossil fuel-based production and consumption
+Lab Content
+Course Description
+This course is a spatial study of the Earth’s dynamic physical systems and processes. Topics include the natural environment and nature-society interactions with an emphasis on scientific literacy and critical thinking. The course covers classification and analysis of spatial patterns of weather, climate, climate change and the enhanced greenhouse effect, the water cycle, landforms, and the distribution of living organisms. This course also addresses environmental issues in geography and sustainability. The course develops students’ spatial analysis skills using maps, Geographic Information Systems (GIS), the Global Positioning System (GPS), and remote sensing imagery. This course is intended for social science majors, sustainability majors, or anyone seeking an understanding of Earth’s physical systems and human impacts on the natural environment.
+Is Honors
+Lecture Hours
+Lab Hours
+Outline Approval Date
+Outline Effective Date
+Prerequisites
+Corequisites
+Advisories
+Enrollment Limitations
+Objectives
+Instruction Methods
+Evaluation Methods
+Other Texts
+Assignments
+Other Information

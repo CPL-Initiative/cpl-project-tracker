@@ -1,0 +1,252 @@
+CIC Approval: 09/25/2025
+BOT Approval:
+State Approval:
+Effective Term: Fall 2026
+SAN DIEGO COMMUNITY COLLEGE DISTRICT
+
+MESA COLLEGE
+COURSE OUTLINE
+Section I
+SUBJECT AREA AND COURSE NUMBER:
+Computer and Information Sciences 106
+COURSE TITLE:
+Units:
+Introduction to Computer Science and Artificial Intelligence
+4
+Letter Grade Only
+CATALOG COURSE DESCRIPTION:
+This course is a hands-on study in creative problem-solving using fundamental concepts of computer science and artificial intelligence. The course introduces three major programming paradigms: Object-Oriented programming, Functional programming and Logic programming; and how to solve problems using each of 
+them. Topics include logic, designed and learning algorithms, data types & data structures, functions & lambdas, classes & objects, neural networks, abstraction, recursion, input/output (I/O), and graphical user interfaces. This course is designed for students majoring in computer science, artificial intelligence, game or web development, and for anyone interested in software development or artificial intelligence in general.
+REQUISITES:
+Advisory: CISC 150 with a Grade of "C" or better, or equivalent or CISC 181 with a Grade of "C" or better, or equivalent
+FIELD TRIP REQUIREMENTS:
+Not required
+Credit Status
+D - Credit - Degree Applicable
+Transfer Status
+A - Transferable to both UC and CSU.
+General Education Areas
+C-ID:
+Instructional Component	Units	Min/Max Contact Hours	Min/Max outside-of-class Hours	Min/Max Total Student Learning Hours
+Lecture	2	32-36	64-72	96-108
+Laboratory	2	96-108	0	96-108
+Other	0	0	0	0
+Total	4	128-144	64-72	192-216
+STUDENT LEARNING OBJECTIVES:
+Upon successful completion of the course the student will be able to:
+Upon successful completion of the course the student will be able to:
+Describe computers and artificial intelligence in a historical, socio-economic, or societal context.
+Explain the evolution of computer science through the increasing use of abstraction.
+Explain the evolution of artificial intelligence from logic and expert systems, and neural networks to large language models (LLMs).
+Distinguish between functional, logical and object- oriented approaches to programming.
+Define and employ atomic data types, such as booleans and numbers, and compound data types, such as lists, arrays, and user-defined compound data structures.
+Differentiate between code versus data modalities.
+Formulate functions that capture key abstractions, prevent duplication of code or data, and transform parameters and return values.
+Employ object oriented programming methodology to define classes using data encapsulation, and create and manipulate objects.
+Create code that accepts input from the user and produces output to the user.
+Use conditional logic to determine program outcomes.
+Practice the display of data through parameterization.
+Describe and recognize how a problem can be decomposed into self-similar subproblems as a means of developing a recursive algorithm.
+Explain how computer programs can be created systematically.
+Use logical constructs and recursion to operate upon data structures.
+Explain how a programming language can be extended to create a vocabulary that is proximal to the problem domain.
+Create animations and implement an interactive graphic game.
+Systematically design and implement introductory-level programs from given specifications, such as problem descriptions, user stories, design criteria, input/output scenarios, functional or unit tests, pseudo code, modeling language specifications or diagrams.
+Articulate the purpose and working of introductory-level programs, and their language constructs and data structures, such as through diagrams (for instance, flowcharts, Unified Modelling Language (UML) diagrams or entity-relationship (ER) diagrams), code comments, screencast videos, interactive computing notebooks (for instance, Jupyter notebooks), or other written or oral communication.
+Document external interfaces of introductory-level functions or methods (the application programming interface (API)), and the inner working of introductory-level functions, or methods in-code comments.
+Systematically test and debug introductory-level programs by interactively entering arguments, utilizing functional or unit tests, running programs in a test environment, or using a debug environment (for instance, a debugger in an integrated development environment (IDE)).
+Develop introductory-level programs using industry recognized tools, such as code editors, command lines (Read, execute, print loop, REPL), emulators, or integrated development environments (IDE).
+Create a fully functional, interactive introductory-level program incorporating a substantial set of topics from the course.
+Use declarative constructs, including functions, in a programming language from the Lisp family to understand a problem and to create a solution.
+Express a problem as a set of logic clauses in the programming language Prolog and use them to solve a problem.
+Create, train and use an artificial intelligence algorithm to classify data.
+Section II
+1. COURSE OUTLINE AND SCOPE:
+A. Course Content:
+The following topics are included in the framework of the course but are not intended as limits on content. The order of presentation and relative emphasis will vary with each instructor.
+Course Lecture Content
+History of Computer Science and Artificial Intelligence
+Machine code/Assembly languages
+Higher level programming languages
+Abstraction
+Functional, logic and object-oriented programming
+Place computer science and artificial intelligence in a chronological development, socio-economic or societal context
+Introduction to Lisp
+Atoms: Numbers, booleans, characters, strings, and functions
+Compound data structures, including lists, arrays, hash tables, trees, graphs, structs, classes
+Functions, including recursive functions, lambdas, higher-order functions 
+Program execution: the substitution model of computation
+Code vs. Data
+Variables and Parameters
+Memory allocation
+Identifiers
+Scope
+Functions
+Abstraction as a methodology to conquer complexity
+Arguments and parameters
+Return values
+Avoidance of duplication/reuse
+Objects
+Data and associated functions
+Classes as object factories
+The object life cycle
+User Interaction
+Basic interactive graphical user interface (GUI)
+Compound Data Types
+Lists
+Arrays
+Hash Tables
+User-defined data structures
+Nested collections
+Parametized Data Display
+Recursion
+Problem decomposition into self-similar sub-problems
+Base and recursive case analysis
+Designed Algorithms
+Program logic
+Iteration
+Data structures
+Program Design and Implementation
+Systematic creation
+Concept
+Specification
+Pseudo-code
+Quality assurance, including testing
+Artificial Intelligence: Logic programming
+Expressing a problem as set of facts and logic constraints, rules and relations
+Querying for solutions to a problem
+Artificial Intelligence: Learning algorithms
+Understanding the different types of artifical intelligence including logic programming and learning algorithms such as neural networks and LLMs
+Understanding the different phases of employing a learning algorithm
+Implementing a learning algorithm
+Training a learning algorithm
+Understanding when and how learning algorithms fail
+Course Lab/Activity Content
+History of Computer Science and Artificial Intelligence
+Place computer science and artificial intelligence in a chronological development, socio-economic or societal context
+Introduction to Lisp
+Atoms: Numbers, booleans, characters, strings, and functions
+Compound data structures, including lists, arrays, hash tables, trees, graphs, structs, classes
+Functions, including recursive functions, lambdas, higher-order functions 
+Program execution: the substitution model of computation
+Code vs. Data
+Variables and Parameters
+Memory allocation
+Identifiers
+Scope
+Functions
+Abstraction as a methodology to conquer complexity
+Arguments and parameters
+Return values
+Avoidance of duplication/reuse
+Objects
+Data and associated functions
+Classes as object factories
+User Interaction
+Basic keyboard input
+Basic console output
+Basic interactive graphical user interface (GUI)
+Compound Data Types
+Lists
+Arrays
+Hash Tables
+User-defined data structures
+Nested collections
+Parametized Data Display
+Recursion
+Base and recursive case analysis
+Designed Algorithms
+Program logic
+Iteration
+Data structures
+Program design and implementation
+Systematic creation
+Specification
+Pseudo-code
+Code implementation
+Quality assurance, including testing
+Artificial Intelligence: Logic Programming
+Expressing a problem as set of facts and logic constraints, rules and relations
+Querying for solutions to a problem
+Artificial Itelligence: Learning algorithms
+Implementing a learning algorithm
+Training a learning algorithm
+Understanding when and how learning algorithms fail
+B. Reading Assignments:
+Reading assignments are required and may include, but are not limited to, the following:
+Assigned textbook related to functional programming.
+Assigned textbook related to logic programming.
+Assigned textbook related to object-oriented programming.
+Assigned textbook related to artificial intelligence and learning algorithms.
+C. Writing Assignments:
+Writing assignments are required and may include, but are not limited to, the following:
+Essays on the history and societal impacts of computer science and artificial intelligence.
+Essays to establish thesis and understanding of a specific class topic.
+Basic programs that exercise the key syntax and semantic components of a programming language.
+
+ 
+
+D. Appropriate Outside Assignments:
+Outside assignments may include, but are not limited to, the following:
+Basic program development projects.
+Field visits.
+Attending presentations from visiting scholars.
+Attending or contributing to conference posters, submissions, and talks.
+E. Appropriate Assignments that Demonstrate Critical Thinking:
+Critical thinking assignments are required and may include, but are not limited to, the following:
+Create an interactive application.
+Solve the appropriate programming paradigm and programming language features for a given solution.   
+Articulate the purpose and workings of introductory-level programs, and their language constructs and data structures, such as through diagrams (for instance, flowcharts, Unified Modelling Language (UML) diagrams or entity-relationship (ER) diagrams), code comments, screencast videos, interactive computing notebooks (for instance, Jupyter notebooks), or other written or oral communication.
+Systematically test and debug introductory-level programs by interactively entering arguments, utilizing functional or unit tests, running programs in a test environment, or using a debug environment (for instance, a debugger in an integrated development environment (IDE)).
+2. METHODS OF EVALUATION:
+A student's grade will be based on multiple measures of performance unless the course requires no grade. Multiple measures may include, but are not limited to, the following:
+
+
+Exams
+Participation
+Quizzes
+Other:
+
+Writing assignments including essays and programming.
+
+Presentations and videos, including screen casts.
+
+Program development projects.
+
+Final project. 
+
+3. METHODS OF INSTRUCTION:
+Methods of instruction may include, but are not limited to, the following:
+
+
+Lecture Discussion
+Discussion Seminar
+Learning Modules
+Audio-Visual
+Collaborative Learning
+Distance Education (Fully Online)
+4. REQUIRED TEXTS AND SUPPLIES:
+Textbooks may include, but are not limited to:
+ZERO COST TEXTBOOK(S)/OPEN EDUCATIONAL RESOURCE(S):
+Bloch, S. , Picturing programs: An introduction to computer programming, College Publications, 2010, ISBN:9781848900158
+Abelson, Harold and Gerald J. Sussman, Structure and Interpretation of Computer Programs, 2016 Online Edition, MIT Press, 2016, ISBN:9780262510875
+Felleisen, M., et al, How to design programs: An introduction to programming and computing, 2024 (Online ed), MIT Press, 2024, ISBN:9780262534802
+TEXTBOOKS:
+Barski, Conrad, M.D, Land of Lisp: Learn to program in LISP, one game at a time!, 1st, No Starch Press, 2010, ISBN:9781593272814
+Bloch, Stephen, Picturing Programs. An Introduction To Computer Programming, 1st, College Publications, 2010, ISBN:9781848900158
+Abelson, Harold and Gerald J. Sussman, Structure and Interpretation of Computer Programs, 2nd, The MIT Press, 1996, ISBN:9780262510875
+Felleisen, Matthias, et al, How to Design Programs: An introduction to programming and computing. , 2nd, MIT Press, 2018, ISBN:9780262534802
+Morazan, M.T., Animated problem solving: An introduction to program design using video game development, Springer Nature, 2022, ISBN:9783030850937
+Skanski, S. , Introduction to deep learning: From logical calculus to artificial intelligence, Springer, 2018, ISBN:9783319730042
+Ertel, W. , Introduction to artificial intelligence, Springer Nature, 2024, ISBN:978365843120
+PERIODICALS:
+MANUAL:
+SOFTWARE:
+OTHER LEARNING MATERIALS:
+SUPPLIES:
+5. ORIGINATION DATA
+ORIGINATOR:
+Allan Schougaard
+CO-CONTRIBUTOR(S):
+ORIGINATION DATE:
+08/23/2025

@@ -1,0 +1,136 @@
+CIC Approval: 09/26/2024
+BOT Approval:
+State Approval:
+Effective Term: Fall 2025
+SAN DIEGO COMMUNITY COLLEGE DISTRICT
+
+CITY COLLEGE
+COURSE OUTLINE
+Section I
+SUBJECT AREA AND COURSE NUMBER:
+San Diego Gas and Electric 302
+COURSE TITLE:
+Units:
+Electric Lineman IA
+5
+Letter Grade Only
+CATALOG COURSE DESCRIPTION:
+This course provides an orientation in the power distribution and line construction industry. Basic electrical principles and safety on the job are emphasized. Topics include basic mathematical computations, including trigonometry fundamentals, electron theory, and the fundamentals of magnetism. Students combine electrical theory with laboratory and practical applications in the course of study. This course is designed for students interested in the electric power trade and those pursuing
+careers in the field, including utility, military, and commercial areas.
+REQUISITES:
+Limitation on Enrollment: Apprenticeship - Student must be a state registered apprentice in this trade.
+This course is not open to students with previous credit for ELCT 190 or SDGE 90
+FIELD TRIP REQUIREMENTS:
+May be required
+Credit Status
+D - Credit - Degree Applicable
+Transfer Status
+C - Not transferable
+General Education Areas
+C-ID:
+Instructional Component	Units	Min/Max Contact Hours	Min/Max outside-of-class Hours	Min/Max Total Student Learning Hours
+Lecture	5	80-90	160-180	240-270
+Laboratory	0	0	0	0
+Other	0	0	0	0
+Total	5	80-90	160-180	240-270
+STUDENT LEARNING OBJECTIVES:
+Upon successful completion of the course the student will be able to:
+Upon successful completion of the course the student will be able to:
+Demonstrate ability to manipulate mathematical computation using fractions, decimals, percent, algebra, and fundamentals of trigonometry.
+Demonstrate the knowledge in using fundamental mechanics: weight, pressure, torque, power, and vectors.
+Demonstrate the knowledge of electron theory as it applies to conductors, electrical potential, current, impedance, and simple circuits.
+Describe the fundamentals of electricity.
+Demonstrate the knowledge in applying the fundamentals of magnetism as it pertains to permanent and electromagnets, magnetic flux, and reluctance.
+Section II
+1. COURSE OUTLINE AND SCOPE:
+A. Course Content:
+The following topics are included in the framework of the course but are not intended as limits on content. The order of presentation and relative emphasis will vary with each instructor.
+Course Lecture Content
+Mathematics
+Addition and subtraction
+Multiplication and division
+Common fractions and cancellation
+Decimal fractions and percent
+Square root and cube root
+Useful terms and symbols
+Positive and negative numbers
+Real and imaginary numbers
+Fundamental mechanics
+Weight, pressure, and force
+Work and energy
+Torque
+Power
+Efficiency
+Vectors
+Electron theory
+Molecular structure of matter
+The atom
+The electron
+Ions and ionization
+Fundamentals of electricity
+Conductors and insulators
+Electrical potential
+Electric current
+Electrical impedance
+The electric circuit
+Fundamentals of magnetism/electromagnetism
+Permanent magnets and electromagnets
+Magnetomotive force
+Magnetic flux
+Magnetic reluctance
+The magnetic circuit
+B. Reading Assignments:
+Reading assignments are required and may include, but are not limited to, the following:
+Assigned textbooks.
+SDG&E Construction Standards.
+SDG&E Electric Standard Practices.
+Power delivery industry articles from internet sites, such as www.lineworker.com and www.tdworld.com.
+Internet journals, such as www.linemantrainer.com.
+State of California General Orders 95 & 128.
+C. Writing Assignments:
+Writing assignments are required and may include, but are not limited to, the following:
+Complete assigned reports.
+Summarize the electron theory and the molecular structure of matter.
+Perform arithmetic calculations as assigned.
+Written short essays on fundamental mechanics.
+D. Appropriate Outside Assignments:
+Outside assignments may include, but are not limited to, the following:
+Research web sites, such as www.lineworker.com and linmenonline.com.
+Prepare research reports on the magnetic circuit.
+Research articles on electric current.
+Tour potential work sites.
+E. Appropriate Assignments that Demonstrate Critical Thinking:
+Critical thinking assignments are required and may include, but are not limited to, the following:
+Analyze Ohm's Law and how it relates to the electron theory.
+Compare and contrast permanent magnets and electromagnets.
+Identify and describe the molecular structure of matter, explaining ionization.
+Analyze how weight, pressure, and force affect work output and energy.
+2. METHODS OF EVALUATION:
+A student's grade will be based on multiple measures of performance unless the course requires no grade. Multiple measures may include, but are not limited to, the following:
+
+
+Other: Written or oral examinations Outside assignments including writing assignments Class discussion Class participation Attendance per current apprenticeship policies
+3. METHODS OF INSTRUCTION:
+Methods of instruction may include, but are not limited to, the following:
+
+
+Other: 1) Lecture with, or without, various audio-visual aids 2) Group problem solving, discussion, debate, and/or critique 3) Demonstration 4) Computer-assisted or other self-paced instruction 5) Field trips or field assignments
+4. REQUIRED TEXTS AND SUPPLIES:
+Textbooks may include, but are not limited to:
+ZERO COST TEXTBOOK(S)/OPEN EDUCATIONAL RESOURCE(S):
+TEXTBOOKS:
+Singer, Bertrand and Sharon Ferrett, Basic Mathematics for Electricity and Electronics, 8th, McGraw Hill, 2000, ISBN:9780028050232
+PERIODICALS:
+MANUAL:
+Shoemaker, Thomas and James Mack, Lineman and Cablemans Field Manual, 2nd, 9780071621212, McGraw-Hill, 2009
+Van Soelen, Wayne, The Guidebook for Linemen and Cablemen , 2nd, 9781111035013, Cengage, 2011
+SOFTWARE:
+OTHER LEARNING MATERIALS:
+SUPPLIES:
+5. ORIGINATION DATA
+ORIGINATOR:
+Jennifer Boots
+CO-CONTRIBUTOR(S):
+Angela Testado
+ORIGINATION DATE:
+07/02/2024

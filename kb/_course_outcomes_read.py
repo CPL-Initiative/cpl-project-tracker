@@ -186,6 +186,73 @@ def outcomes_from_html(page_html: str) -> dict | None:
     return None
 
 
+def _has_class(node, name: str) -> bool:
+    return name in (node.attrs.get("class") or "").split()
+
+
+def _field_part(field, name: str):
+    return next(iter(field.find(lambda n: _has_class(n, name))), None)
+
+
+def groups_from_html(page_html: str) -> list[dict] | None:
+    """Each college's SLOs in a curriQunet All Fields report (SDCCD's report 4, trial
+    38350787486): the section headed Student Learning Outcomes holds a list whose
+    entries are groups. A group's own panel names it (Group Title: City, Mesa, Miramar)
+    and may carry an Outcome Text of its own; its child entries each hold an Outcome
+    Text and a list of the institutional outcomes it maps to. Each group is kept with
+    its own outcomes as printed, an empty field skipped (PHOT 100 prints one ahead of
+    its title). The Student Learning Objectives printed after the section are never
+    read (SDCCD's Course Outline Report, 493, prints those alone). None when the page
+    has no such section; an empty list when the section holds no group."""
+    tree = _Tree()
+    tree.feed(page_html or "")
+
+    def kids(node, cls):
+        return [k for k in node.kids if not isinstance(k, str) and _has_class(k, cls)]
+
+    def fields(node, label):
+        out = []
+        for f in node.find(lambda n: _has_class(n, "iq-data-field")):
+            lab, val = _field_part(f, "field-label"), _field_part(f, "field-value")
+            if lab and _ws(lab.text()) == label:
+                out.append(_ws(val.text()) if val else "")
+        return out
+
+    def ilos(node):
+        lists = list(node.find(lambda n: _has_class(n, "iq-bridge-list")))
+        return [x for b in lists[:1] for x in (_ws(k.text()) for k in b.kids if not isinstance(k, str)) if x]
+
+    for h3 in tree.root.find(lambda n: n.tag == "h3" and SLO_TITLE.match(_ws(n.text()))):
+        section = h3
+        while section is not None and not _has_class(section, "meta-section"):
+            section = section.parent
+        if section is None:
+            continue
+        top = next(iter(section.find(lambda n: _has_class(n, "iq-data-list"))), None)
+        groups = []
+        for entry in kids(top, "iq-list-entry") if top is not None else []:
+            own = kids(entry, "iq-panel")
+            title = [t for p in own for t in fields(p, "Group Title")]
+            items, maps = [], []
+            for p in own:
+                for text in fields(p, "Outcome Text"):
+                    if text:
+                        items.append(text)
+                        maps.append([])
+            for box in kids(entry, "iq-list-children"):
+                for child in kids(box, "iq-list-entry"):
+                    for text in fields(child, "Outcome Text"):
+                        if text:
+                            items.append(text)
+                            maps.append(ilos(child))
+            groups.append({"group": title[0] if title else None, "heading": "Student Learning Outcomes",
+                           "lead": None, "outcomes": items, "maps_to": maps if any(maps) else None,
+                           "shape": "list" if len(items) > 1 else ("paragraph" if items else "none"),
+                           "fingerprint": fingerprint(items) if items else None})
+        return groups
+    return None
+
+
 def outcomes_of(text: str) -> dict:
     """The outcomes block as printed in the page's text, when the HTML reader finds
     no SLO area: the SLO heading proper first, the lead-in alone only on a page with
@@ -195,7 +262,7 @@ def outcomes_of(text: str) -> dict:
         m = cor.SLO_HEADING.search(text or "")
         before = (text or "")[:m.start()] if m else ""
         last = [ln.strip() for ln in before.split("\n") if ln.strip()][-1:] if m else []
-        if not m or (last and re.match(r"(course )?objectives|entrance skills", last[0], re.I)):
+        if not m or (last and re.match(r"((course|student learning) )?objectives|entrance skills", last[0], re.I)):
             return {"shape": "none", "heading": None, "lead": None, "outcomes": [], "maps_to": None,
                     "parsed_from": "text"}
     start = text.rfind("\n", 0, m.start()) + 1
@@ -253,14 +320,26 @@ def wanted_courses(index: dict, slugs: list[str]) -> list[dict]:
     return out
 
 
+def parse_page(page_html: str, text: str) -> dict:
+    """The outcomes a page prints: each college's group (SDCCD's All Fields report), else
+    the SLO area of an integrated outline (RCCD), else the text reader."""
+    groups = groups_from_html(page_html)
+    if groups is not None:
+        found = [g for g in groups if g["outcomes"]]
+        return {"shape": "groups" if found else "none", "heading": "Student Learning Outcomes", "lead": None,
+                "outcomes": [], "maps_to": None, "groups": groups, "parsed_from": "html",
+                "fingerprint": None}
+    got = outcomes_from_html(page_html) or outcomes_of(text)
+    return {**got, "fingerprint": fingerprint(got["outcomes"]) if got["outcomes"] else None}
+
+
 def read_one(reader, course: dict) -> dict:
     page = cor.load_full(reader, course["report"])
     body = page.get("body") or ""
-    got = outcomes_from_html(page.get("html") or "") or outcomes_of(body)
+    got = parse_page(page.get("html") or "", body)
     return {**course, "status": page.get("status"), "final_url": page.get("final_url"),
             "access": cor.access_of(page), "title_printed": (page.get("title") or "")[:160],
-            "chars": len(body), "offered_at": offered_at(body), **got,
-            "fingerprint": fingerprint(got["outcomes"]) if got["outcomes"] else None}
+            "chars": len(body), "offered_at": offered_at(body), **got}
 
 
 def spread(items: list, n: int) -> list:
@@ -281,7 +360,8 @@ def summarize(rows: list[dict]) -> dict:
         shapes[r.get("shape") or "unread"] = shapes.get(r.get("shape") or "unread", 0) + 1
     return {"read": len(rows), "shapes": shapes,
             "status_not_200": sum(1 for r in rows if r.get("status") != 200),
-            "outcomes": sum(len(r.get("outcomes") or []) for r in rows)}
+            "outcomes": sum(len(r.get("outcomes") or []) for r in rows)
+                        + sum(len(g["outcomes"]) for r in rows for g in r.get("groups") or [])}
 
 
 def reparse(folder: str) -> int:
@@ -294,13 +374,12 @@ def reparse(folder: str) -> int:
         stem = re.sub(r"[^A-Za-z0-9]+", "_", row["code"])
         page_html = gzip.open(os.path.join(folder, stem + ".html.gz"), "rt").read()
         text = open(os.path.join(folder, stem + ".txt")).read()
-        got = outcomes_from_html(page_html) or outcomes_of(text)
-        row.update(got, offered_at=offered_at(text),
-                   fingerprint=fingerprint(got["outcomes"]) if got["outcomes"] else None)
+        row.pop("groups", None)
+        row.update(parse_page(page_html, text), offered_at=offered_at(text))
     d["summary"] = summarize(d["rows"])
     d["reparsed_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    d["reparsed_note"] = ("The run's own parser read the Course Objectives RCCD prints before the SLOs under "
-                          "the same lead-in; these rows are the filed pages parsed again by outcomes_from_html.")
+    d["reparsed_note"] = ("The filed pages parsed again by parse_page, the read's own parser at the time of the "
+                          "reparse (S374: RCCD's objectives read as SLOs; S376: SDCCD's groups by college).")
     with open(path, "w") as f:
         json.dump(d, f, indent=1, ensure_ascii=False)
     print(json.dumps(d["summary"], indent=1))

@@ -4,7 +4,7 @@
   "supabase_tables": 97,
   "rpcs": 38,
   "edge_functions": 7,
-  "file_datasets": 646,
+  "file_datasets": 645,
   "external_services": 175,
   "consumers": 438,
   "workflows": 52,
@@ -10396,19 +10396,6 @@
    "served": false,
    "main_committers": []
   },
-  "file:kb/course_outcomes/trial_38317539422/read.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_course_outcomes_read.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 291
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
   "file:kb/course_outline_census": {
    "consumers": [],
    "producers": [
@@ -10438,7 +10425,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 312
+     "line": 391
     }
    ],
    "served": false,
@@ -16021,7 +16008,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 59
+     "line": 64
     }
    ],
    "served": false,
