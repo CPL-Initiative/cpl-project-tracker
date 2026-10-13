@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 547,
+   "count": 548,
    "docs": [
     {
      "created": "2026-08-14",
@@ -4400,6 +4400,21 @@
      "title": "A total that balances is not a total that is right",
      "type": "methodology",
      "updated": "2026-08-23"
+    },
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md",
+     "status": "published",
+     "tags": [
+      "ci",
+      "github-actions",
+      "workflows",
+      "program-requirements-harvest"
+     ],
+     "title": "A trigger file must differ from main's before its workflow runs",
+     "type": "methodology",
+     "updated": "2026-10-13"
     },
     {
      "created": "2026-09-20",
@@ -15497,8 +15512,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 350,
+   "count": 351,
    "docs": [
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "n": 380,
+     "path": "docs/session_380_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "course-outcomes",
+      "course-outlines",
+      "sdccd",
+      "san-diego-miramar"
+     ],
+     "title": "load the course outcomes, finish SDCCD's SLO read, then the next college",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-13",
      "governs": [],
@@ -21504,5 +21537,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1126
+ "total": 1128
 }

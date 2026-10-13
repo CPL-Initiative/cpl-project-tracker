@@ -4,6 +4,8 @@ date: 2026-10-12
 session: 373 (SkyCypress)
 tags: [handoff, program-requirements, course-outlines, san-diego-mesa, sierra]
 status: current
+superseded: true
+superseded_by: session_380_handoff.md
 ---
 
 # You are Session 374

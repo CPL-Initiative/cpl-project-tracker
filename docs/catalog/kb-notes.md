@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-547 document(s).
+548 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -242,6 +242,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A token with two jobs cannot be themed — count a token's uses by ROLE before you give it a dark value](../kb-notes/methodology-a-token-with-two-jobs-cannot-be-themed.md) | methodology | published | 2026-09-08 | 2026-09-08 |
 | [A tool the sandbox lacks is usually one install away, and a boot test is cheaper than a preview deploy](../kb-notes/methodology-a-missing-tool-is-usually-a-missing-install.md) | methodology | published | 2026-09-17 | 2026-09-17 |
 | [A total that balances is not a total that is right](../kb-notes/methodology-a-total-that-balances-is-not-a-total-that-is-right.md) | methodology | published | 2026-08-23 | 2026-08-23 |
+| [A trigger file must differ from main's before its workflow runs](../kb-notes/methodology-a-trigger-file-must-differ-from-main.md) | methodology | published | 2026-10-13 | 2026-10-13 |
 | [A typed answer is not a boolean, and reading it as one fails silently](../kb-notes/methodology-a-typed-answer-is-not-a-boolean.md) | methodology | published | 2026-09-20 | 2026-09-20 |
 | [A value can exist in the repo and never reach the payload — two minting paths, one inference pipeline](../kb-notes/methodology-a-discipline-can-exist-in-the-repo-and-never-reach-the-payload.md) | methodology | published | 2026-09-08 | 2026-09-08 |
 | [A verdict covers the reading it saw](../kb-notes/methodology-a-verdict-covers-the-reading-it-saw.md) | methodology | published | 2026-10-05 | 2026-10-05 |

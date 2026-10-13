@@ -4,6 +4,8 @@ date: 2026-10-12
 session: 371 (SkyMaple)
 tags: [handoff, program-requirements, san-diego-miramar, san-diego-mesa, first-light, sierra]
 status: current
+superseded: true
+superseded_by: session_380_handoff.md
 ---
 
 # You are Session 372

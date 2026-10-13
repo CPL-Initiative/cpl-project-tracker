@@ -4,6 +4,8 @@ date: 2026-10-12
 session: 370 (SkyHolly)
 tags: [handoff, program-requirements, san-diego-city, sierra, smoke, my-college]
 status: current
+superseded: true
+superseded_by: session_380_handoff.md
 ---
 
 # You are Session 371

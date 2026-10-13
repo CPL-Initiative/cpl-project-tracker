@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1138,
-    "bytes": 11754024,
-    "over_budget": 9,
-    "handoff_max": 378,
+    "files": 1141,
+    "bytes": 11772783,
+    "over_budget": 8,
+    "handoff_max": 380,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60304,
     "superseded_files": 9,
@@ -26,46 +26,47 @@
       },
       "other": {
         "files": 119,
-        "bytes": 3479103,
+        "bytes": 3479560,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 9876,
+        "bytes": 10178,
         "over": 0
       },
       "lessons": {
         "files": 82,
-        "bytes": 2352343,
+        "bytes": 2357913,
         "over": 3
       },
       "kb_note": {
-        "files": 549,
-        "bytes": 2719376,
+        "files": 550,
+        "bytes": 2721271,
         "over": 0
       },
       "roadmap_lane": {
         "files": 37,
-        "bytes": 344859,
-        "over": 2
+        "bytes": 345414,
+        "over": 1
       },
       "handoff": {
-        "files": 349,
-        "bytes": 2788163,
+        "files": 351,
+        "bytes": 2798143,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 9,
+      "oversized_doc": 8,
       "house_voice": 23,
+      "kb_note_dialect": 1,
       "superseded_handoff": 9,
       "vault_heavy_path": 61
     },
     "vault": {
-      "files": 6819,
-      "bytes": 2079720509,
-      "heavy_bytes": 1048843529,
-      "heavy_share": 0.504,
+      "files": 6845,
+      "bytes": 2121989332,
+      "heavy_bytes": 1088325951,
+      "heavy_share": 0.513,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/regional_cpl_out",
@@ -319,6 +320,17 @@
       "path": "docs/kb-notes/methodology-a-frequency-is-not-a-rule.md"
     },
     {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`)",
+      "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
+    },
+    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -428,19 +440,6 @@
       "path": "docs/reference/lanes/common-cr-reference.md"
     },
     {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 20046,
-        "limit": 20000,
-        "lane": "roadmap_lane",
-        "over_by": 46,
-        "ratio": 1.0
-      },
-      "message": "20,046 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/program-requirements-harvest.md"
-    },
-    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -482,10 +481,10 @@
       "fixable": true,
       "detail": {
         "session": 368,
-        "authoritative": 378,
+        "authoritative": 380,
         "has_frontmatter": true
       },
-      "message": "handoff 368 is below the authoritative 378 but is not stamped `superseded: true`",
+      "message": "handoff 368 is below the authoritative 380 but is not stamped `superseded: true`",
       "path": "docs/session_368_handoff.md"
     },
     {
@@ -493,10 +492,10 @@
       "fixable": true,
       "detail": {
         "session": 369,
-        "authoritative": 378,
+        "authoritative": 380,
         "has_frontmatter": true
       },
-      "message": "handoff 369 is below the authoritative 378 but is not stamped `superseded: true`",
+      "message": "handoff 369 is below the authoritative 380 but is not stamped `superseded: true`",
       "path": "docs/session_369_handoff.md"
     },
     {
@@ -504,10 +503,10 @@
       "fixable": true,
       "detail": {
         "session": 370,
-        "authoritative": 378,
+        "authoritative": 380,
         "has_frontmatter": true
       },
-      "message": "handoff 370 is below the authoritative 378 but is not stamped `superseded: true`",
+      "message": "handoff 370 is below the authoritative 380 but is not stamped `superseded: true`",
       "path": "docs/session_370_handoff.md"
     },
     {
@@ -515,10 +514,10 @@
       "fixable": true,
       "detail": {
         "session": 371,
-        "authoritative": 378,
+        "authoritative": 380,
         "has_frontmatter": true
       },
-      "message": "handoff 371 is below the authoritative 378 but is not stamped `superseded: true`",
+      "message": "handoff 371 is below the authoritative 380 but is not stamped `superseded: true`",
       "path": "docs/session_371_handoff.md"
     },
     {
@@ -526,10 +525,10 @@
       "fixable": true,
       "detail": {
         "session": 372,
-        "authoritative": 378,
+        "authoritative": 380,
         "has_frontmatter": true
       },
-      "message": "handoff 372 is below the authoritative 378 but is not stamped `superseded: true`",
+      "message": "handoff 372 is below the authoritative 380 but is not stamped `superseded: true`",
       "path": "docs/session_372_handoff.md"
     },
     {
@@ -537,10 +536,10 @@
       "fixable": true,
       "detail": {
         "session": 373,
-        "authoritative": 378,
+        "authoritative": 380,
         "has_frontmatter": true
       },
-      "message": "handoff 373 is below the authoritative 378 but is not stamped `superseded: true`",
+      "message": "handoff 373 is below the authoritative 380 but is not stamped `superseded: true`",
       "path": "docs/session_373_handoff.md"
     },
     {
@@ -548,10 +547,10 @@
       "fixable": true,
       "detail": {
         "session": 374,
-        "authoritative": 378,
+        "authoritative": 380,
         "has_frontmatter": true
       },
-      "message": "handoff 374 is below the authoritative 378 but is not stamped `superseded: true`",
+      "message": "handoff 374 is below the authoritative 380 but is not stamped `superseded: true`",
       "path": "docs/session_374_handoff.md"
     },
     {
@@ -559,10 +558,10 @@
       "fixable": true,
       "detail": {
         "session": 375,
-        "authoritative": 378,
+        "authoritative": 380,
         "has_frontmatter": true
       },
-      "message": "handoff 375 is below the authoritative 378 but is not stamped `superseded: true`",
+      "message": "handoff 375 is below the authoritative 380 but is not stamped `superseded: true`",
       "path": "docs/session_375_handoff.md"
     },
     {
@@ -570,10 +569,10 @@
       "fixable": true,
       "detail": {
         "session": 376,
-        "authoritative": 378,
+        "authoritative": 380,
         "has_frontmatter": true
       },
-      "message": "handoff 376 is below the authoritative 378 but is not stamped `superseded: true`",
+      "message": "handoff 376 is below the authoritative 380 but is not stamped `superseded: true`",
       "path": "docs/session_376_handoff.md"
     },
     {
@@ -629,10 +628,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 213485753,
+        "bytes": 252946891,
         "kind": "dir"
       },
-      "message": "directory totals 213,485,753 B inside the vault"
+      "message": "directory totals 252,946,891 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -679,10 +678,10 @@
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 16242527,
+        "bytes": 16263714,
         "kind": "dir"
       },
-      "message": "directory totals 16,242,527 B inside the vault"
+      "message": "directory totals 16,263,714 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -849,10 +848,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 12726175,
+        "bytes": 12726252,
         "kind": "file"
       },
-      "message": "12,726,175 B single file inside the vault"
+      "message": "12,726,252 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1189,10 +1188,10 @@
       "fixable": false,
       "path": "kb/cr_reference_worklist.json",
       "detail": {
-        "bytes": 2354271,
+        "bytes": 2354291,
         "kind": "file"
       },
-      "message": "2,354,271 B single file inside the vault"
+      "message": "2,354,291 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

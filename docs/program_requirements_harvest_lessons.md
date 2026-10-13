@@ -671,3 +671,33 @@ The outcomes paragraph's settled parts, verbatim:
 ✅ **The registry fields (S373):** migration `program_source_registry_course_outline_2026_10_12` added the eight `cor_*` columns (`cor_slo_source_url` is Sam's other repositories); the weekly census never writes them. Filled on all 118 rows from census run 5 (#2047): public 49, sign_in 6, refused 3, unreached 1, not_found 59; 18 print SLOs.
 
 **The census** (#2042) opens one outline per host; curriQunet dashboards list public outline reports. ✅ **The course index (#2046):** RCCD's dashboard is a public JSON search; 1,605 of the 1,648 courses the RCCD records name have an outline.
+
+## S376 SkyLinden (2026-10-13): three re-reads, SDCCD's SLOs by college, and a trigger file a merge carries
+
+- **The Requirements-tab fix (#2050) paid at all three SDCCD colleges.** Mesa found its nine health programs
+  (`not_found` empty), San Diego City three of its 19 (the two nursing degrees, Cyber Defense B.S.), Miramar
+  ten aviation programs (Airframe, Powerplant, Pilot Studies and the rest; only 16779 had been counted as not
+  found, the other nine were page-claimed). Each loaded unchecked and displayed: build `98becf9fafc7` on
+  2,203 rows.
+- **A re-read can move a good record to a wrong page.** Miramar 39433 (300-Hour Registered Yoga Teacher) went
+  from page 20882 (14 of 14 placed) to 20070 (none). `git diff --name-status` between the base and the
+  filing showed one `M` among ten `A`s; the filed record went back before the load and the build. Read the
+  diff of every re-read's records, not only its summary.
+- **The report titled for the outline is not always the one that prints SLOs.** SDCCD's Course Outline
+  Report (493) prints Student Learning Objectives only; its All Fields report (4) prints a Student Learning
+  Outcomes section with one entry per college (Group Title City, Mesa, Miramar), each with its own Outcome
+  Text list. A college may reuse an objective's words as an SLO (Miramar's HUMA 101), so where a sentence
+  prints decides, not its wording. The index reads the report a `.run` names; the reader keeps one block per
+  group; the load writes one row per group for the college its title names.
+- **A comparison report is titled for the outline too.** SDCCD's Course Outline Comparison Report (43) sat
+  ahead of 493 on 1,978 revision rows; the dashboard's own links named only 493. The index lists every
+  report by id and title, so the next host's choice is visible in its run.
+- **Learn the link form from the host's own page.** SDCCD links reports as
+  `DynamicReports/AllFieldsReportByEntity/<CourseId>`, RCCD as `Report/Course/GetReport/<CourseId>`.
+- **A merge of main carries trigger files.** Merging main into the San Diego City branch carried #2065's
+  index `.run`; the display push after it re-ran the SDCCD index there. The merge-commit check only covers a
+  merge at the head. The census, index, outcomes read and load now run only when the pushed trigger file
+  differs from main's (#2069, #2066). KB note `methodology-a-trigger-file-must-differ-from-main`.
+- **Chaffey's course outcomes are on section syllabi** (its outcomes site); program outcomes are in the
+  catalog and CurriQunet. No public course SLO list turned up from a web search.
+- **`apply_migration` timed out a seventh time** (04:31Z) with nothing landing; Sam chose to paste the table.

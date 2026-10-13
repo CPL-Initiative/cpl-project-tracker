@@ -2,6 +2,8 @@
 title: "Session 375 handoff — Annual Goals: land PR A, then B, C, D"
 date: 2026-10-12
 tags: [handoff, workplan, annual-goals, activities, fifty-percent-law]
+superseded: true
+superseded_by: session_380_handoff.md
 ---
 
 # Session 375 handoff (from SkyLedger, the parallel session of 2026-10-12)
