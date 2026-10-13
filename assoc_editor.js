@@ -196,13 +196,20 @@
   // ─── Popover lifecycle ───────────────────────────────────────────────────
   var _assocPop = null;
   var _assocPopCleanup = null;
+  // A popover opened from the keyboard hands focus back to its chip line when it
+  // closes (S375 UI pass), so a keyboard editor keeps its place in the table.
+  var _assocReturnTo = null;
   function closeAssocPop() {
+    var hadFocus = _assocPop && _assocPop.contains(document.activeElement);
     if (_assocPop && _assocPop.parentNode) _assocPop.parentNode.removeChild(_assocPop);
     _assocPop = null;
     if (_assocPopCleanup) { _assocPopCleanup(); _assocPopCleanup = null; }
+    var back = _assocReturnTo;
+    _assocReturnTo = null;
+    if (back && back.focus && (hadFocus || document.activeElement === document.body)) back.focus();
   }
 
-  function openAssocPop(cell) {
+  function openAssocPop(cell, opts) {
     var sess = fullSession();
     if (!sess) return; // anonymous: chips are read-only
     closeAssocPop();
@@ -305,6 +312,13 @@
     document.body.appendChild(pop);
     _assocPop = pop;
     positionPop(pop, cell);
+    // Opened from the keyboard: the popover sits at the end of the page, so move
+    // focus into it, and back to the chip line when it closes.
+    if (opts && opts.fromKeyboard) {
+      _assocReturnTo = cell;
+      var first = pop.querySelector("input, button");
+      if (first && first.focus) first.focus();
+    }
 
     // Probe the is_primary column once; reveal the primary radios if present.
     detectPrimaryColumn().then(function (has) {
@@ -476,9 +490,18 @@
   function paintEditability() {
     var signed = !!fullSession();
     var cells = document.querySelectorAll('[data-assoc-edit="1"]');
+    // An editor reaches each chip line by Tab and opens it with Enter or Space
+    // (S375 UI pass: a mouse-only control fails WCAG 2.1.1, Level A).
     Array.prototype.forEach.call(cells, function (c) {
-      if (signed) c.classList.add("wpg-assoc-on");
-      else c.classList.remove("wpg-assoc-on");
+      if (signed) {
+        c.classList.add("wpg-assoc-on");
+        c.setAttribute("tabindex", "0");
+        c.setAttribute("role", "button");
+      } else {
+        c.classList.remove("wpg-assoc-on");
+        c.removeAttribute("tabindex");
+        c.removeAttribute("role");
+      }
     });
     if (!signed) closeAssocPop();
   }
@@ -499,6 +522,14 @@
         }
         target = target.parentNode;
       }
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Enter" && e.key !== " " && e.key !== "Spacebar") return;
+      var t = e.target;
+      if (!t || !t.getAttribute || t.getAttribute("data-assoc-edit") !== "1") return;
+      if (!fullSession()) return;
+      e.preventDefault();
+      openAssocPop(t, { fromKeyboard: true });
     });
     if (window.CPL_ASSOC_EDITOR) window.CPL_ASSOC_EDITOR._hasListener = true;
   }

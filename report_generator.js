@@ -465,6 +465,7 @@
                 + '  Status: ' + p.status + ' | ' + p.pct + '% complete\n'
                 + '  Description: ' + p.desc + '\n'
                 + '  KPI: ' + (p.kpi_metric || 'N/A') + ' ' + (p.kpi_unit || '') + '\n'
+                + (p.count_note ? '  How it is counted: ' + p.count_note + '\n' : '')
                 + '  Goal 25-26: ' + (p.kpi_goal_2526 || 'N/A') + ' | Stretch: ' + (p.kpi_stretch_2526 || 'N/A') + '\n'
                 + '  Latest Update: ' + (p.update || 'N/A') + (p.update && p.update_date ? ' (' + p.update_date + ')' : '') + '\n'
                 + '  Milestones: ' + (p.milestones || 'N/A') + '\n'

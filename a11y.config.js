@@ -549,6 +549,52 @@ async function seedWorkplanGoalsEditor(page, theme, modal) {
   await page.waitForTimeout(300);
 }
 
+// Annual Workplan Goals, keyboard and phone (S375 UI pass): an editor reaches a value
+// by Tab and opens it with Enter, Escape hands focus back, and below 560px each
+// sub-activity is a card that fits the screen. Behavior, not shape: jsdom proves the
+// attributes (tests/annual_goals_ui_pass.test.js); this proves the browser obeys them.
+async function workplanGoalsKeyboardChecks(page) {
+  const out = [];
+  // The keyboard page opens without the route's hash (as seedContracts notes): open the tab.
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "workplan-goals") location.hash = "workplan-goals"; });
+  await page.waitForTimeout(400);
+  out.push(await page.evaluate(() => {
+    const c = document.querySelector('#tab-workplan-goals td.wpg-editable[data-editable="1"]');
+    if (!c) return { name: "a goal value takes focus", ok: false, detail: "no editable value (not signed in?)" };
+    c.focus();
+    return { name: "a goal value takes focus", ok: document.activeElement === c && c.getAttribute("tabindex") === "0",
+      detail: (c.getAttribute("data-aid") || "") + " " + (c.getAttribute("data-yr") || "") };
+  }));
+  await page.keyboard.press("Enter");
+  await page.waitForTimeout(150);
+  out.push(await page.evaluate(() => {
+    const i = document.activeElement;
+    return { name: "Enter opens a named field", ok: !!i && i.tagName === "INPUT" && !!i.getAttribute("aria-label"),
+      detail: i ? (i.getAttribute("aria-label") || "(unnamed " + i.tagName + ")") : "nothing focused" };
+  }));
+  await page.keyboard.press("Escape");
+  await page.waitForTimeout(150);
+  out.push(await page.evaluate(() => {
+    const a = document.activeElement;
+    return { name: "Escape returns focus to the value", ok: !!a && a.tagName === "TD" && a.classList.contains("wpg-editable"),
+      detail: a ? a.tagName + "." + a.className : "nothing focused" };
+  }));
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.waitForTimeout(250);
+  out.push(await page.evaluate(() => {
+    const t = document.querySelector("#tab-workplan-goals .wpg-annual-table");
+    if (!t) return { name: "below 560px each sub-activity is a card", ok: false,
+      detail: "no .wpg-annual-table: the page predates the S375 renderer (the next cron run rebuilds it)" };
+    const r = t.querySelector(".wpg-r");
+    const sc = t.closest(".wpg-annual-scroll");
+    const grid = r && getComputedStyle(r).display === "grid";
+    const fits = sc && sc.scrollWidth <= sc.clientWidth + 1;
+    return { name: "below 560px each sub-activity is a card", ok: !!(grid && fits),
+      detail: "row display " + (r ? getComputedStyle(r).display : "?") + ", scroller " + (sc ? sc.scrollWidth + "/" + sc.clientWidth : "?") };
+  }));
+  return out;
+}
+
 // Contracts as a reviewer sees it (S364 UI pass): the register is gated, so the signed-out
 // cobi sweep measures the gate. The seed stubs the tab's four reads with the V0718 fixture
 // from tests/contracts.test.js (matched by table, the narrowest point), holds a reviewer
@@ -1600,6 +1646,7 @@ module.exports = {
     routes: [{ hash: "workplan-goals", name: "editor" }],
     widths: [390, 1440],
     seed: (page) => seedWorkplanGoalsEditor(page, "light", false),
+    keyboard: async (page) => workplanGoalsKeyboardChecks(page),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "workplan-goals-editor-dark": {

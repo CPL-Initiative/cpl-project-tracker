@@ -30,4 +30,14 @@ Sam asked for four things on Annual Goals (move AI Apprenticeship CPL Tools unde
 - **`projects.kpi_unit` already is "what it counts"** (the cards print it beside the number); the longer definition had no home, so `count_note` was added. Making `kpi_unit` editable exposed an unescaped interpolation on the card.
 - **The repo guard blocks every session data write except cpl_memory** (`scripts/supabase_sql_guard.py`); a reviewed write goes to Sam as a paste for the SQL editor. `apply_migration` stays the DDL path.
 
-**State:** PR A #2051 (draft, WIP, CI is the first test run); data SQL waiting on Sam; PR B (audit fixes), C (Move), D (Refresh summaries, approve-before-post) queued in the lane file.
+**State at the time:** PR A #2051 (draft, WIP, CI is the first test run); data SQL waiting on Sam; PR B (audit fixes), C (Move), D (Refresh summaries, approve-before-post) queued in the lane file.
+
+## 2026-10-12/13 — SkyTally (S375): PR A merged, PR B (the UI audit) built
+
+**What we learned**
+- **A scanner sees only a literal.** PR A's add wrote three tables through `post(table)`, which built `"/rest/v1/" + table`. The static scan behind the Admin tab's surface map and the dependency map could not see the association insert, and the rebuilt map listed it as a read. Shard 1 caught it only because `cobi_admin_surface.js` was stale. The fix names each table beside its `method: "POST"`; a helper may check the response, never build the URL.
+- **jsdom passed a keyboard path that Chrome failed.** Removing a focused field fires its `blur` in Chrome, and the cell editors commit on blur, so Escape restored the cell twice and threw ("the node to be removed is no longer a child") before focus could return. The old code threw on every save and every Escape; the save itself still went out once. A `done` guard (the shared text editor already had one) closes each field once; the return of focus is deferred one tick. `npm run a11y`'s functional keyboard check found it; jsdom never fires that blur.
+- **Making a word keyboard-reachable brings it under the 24x24 target rule.** The editable names and "Add" prompts were never measured as targets while they were mouse-only spans; with `role="button"` and `tabindex` they are, and 126 failed. They now grow to 24px.
+- **`--on-accent` is not white in dark.** It turns near-black there while `--seal-blue` stays the navy, so the header text read 1.43:1. Text on `--seal-blue` takes `--white` (as the statewide tabs already do).
+- **The gray page band is the First Light background** (`#cplfl-bg`, fixed, 100vh). It scrolls with the reader; only a full-page capture shows it stopping. Not this tab's fault, and not a defect a reader meets.
+- **A preview needs no cron.** The committed `kb/workplan_goals_snapshot.json` plus `CPL_Data.js` feed `build_workplan_goals_from_supabase`, and the rendered table spliced into a scratch copy of `index.html` lets the a11y tool measure a renderer change before the cron publishes it.
