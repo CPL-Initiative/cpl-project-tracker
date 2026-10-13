@@ -240,13 +240,37 @@ def report_form(hrefs: list[str], rows: list[dict], base: str) -> str | None:
     return None
 
 
+def is_comparison(rep: dict) -> bool:
+    """A comparison report opens a dialog to pick a second proposal; it is no outline of
+    this course. SDCCD lists one on its revisions (index run 38349485923: reportId 43 on
+    1,978 of 2,750 rows, ahead of the Course Outline Report, 493, which the page links)."""
+    return bool(re.search(r"comparison", rep.get("Title") or "", re.I)
+                or "comparison-report-link" in (rep.get("Url") or ""))
+
+
 def outline_reports(row: dict, base: str, form: str = LEGACY_FORM) -> list[str]:
     """The row's outline report addresses (a MetaReport titled for the outline)."""
     out = []
     for rep in row.get("MetaReports") or []:
-        if re.search(r"outline", rep.get("Title") or "", re.I):
+        if re.search(r"outline", rep.get("Title") or "", re.I) and not is_comparison(rep):
             out.append(base + form.format(course_id=row.get("CourseId"), report_id=rep.get("Id")))
     return out
+
+
+def report_titles(rows: list[dict]) -> list[dict]:
+    """Every MetaReport the search returned, by id and title, with how many rows carry it
+    and whether the index reads it, so a run shows which report it chose and why."""
+    seen = {}
+    for row in rows:
+        for rep in row.get("MetaReports") or []:
+            key = (rep.get("Id"), rep.get("Title"))
+            if key not in seen:
+                seen[key] = {"id": rep.get("Id"), "title": rep.get("Title"), "rows": 0,
+                             "comparison": is_comparison(rep),
+                             "read": bool(re.search(r"outline", rep.get("Title") or "", re.I))
+                                     and not is_comparison(rep)}
+            seen[key]["rows"] += 1
+    return sorted(seen.values(), key=lambda x: -x["rows"])
 
 
 def build_index(rows: list[dict], base: str, form: str = LEGACY_FORM) -> dict:
@@ -323,6 +347,7 @@ def write_index(url: str, searched: dict, wanted: dict, loads: int) -> int:
     out = {"run": run, "at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "url": url,
            "search": searched, "loads": loads,
            "report_form": form, "report_form_from": "the page's own outline links" if learned else "RCCD's default",
+           "report_titles": report_titles(rows),
            "sample_row": {k: (rows[0] if rows else {}).get(k) for k in
                           ("CourseId", "SubjectCode", "CourseNumber", "StatusTitle", "ProposalTypeTitle", "MetaReports")},
            "active_codes": len(index), "active_with_report": len(with_report),
@@ -333,7 +358,7 @@ def write_index(url: str, searched: dict, wanted: dict, loads: int) -> int:
     with open(path, "w") as f:
         json.dump(out, f, indent=1)
     print(json.dumps({k: out[k] for k in ("active_codes", "active_with_report", "wanted_union",
-                                          "wanted_with_outline", "coverage", "report_form")}, indent=1))
+                                          "wanted_with_outline", "coverage", "report_form", "report_titles")}, indent=1))
     print("search:", {k: v for k, v in searched.items()})
     print("wrote", os.path.relpath(path, os.path.dirname(HERE)))
     return 0
