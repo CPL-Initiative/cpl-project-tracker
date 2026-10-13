@@ -1,0 +1,21 @@
+{
+ "_readme": "S382 SkyLarch, 2026-10-13. The next Leading eLumen college after Bakersfield (menu links programs, read 38414480070) and Cabrillo (menu links departments, read 38433649784; el_department_slugs(), #2078). Before a 25-minute capture, this read loads the catalog's menu publish call once to see which shape the menu takes, and which catalog it names. One load, no model call.",
+ "college": "Palo Verde College",
+ "questions": {
+  "menu_links": "Whether the menu's publish call links program pages (<catalog>/program/<slug>), department pages (<catalog>/department/<slug>) or another segment, and which catalog year it names."
+ },
+ "keywords": [
+  "href=\\\\?\"(?:/catalog/)?[A-Za-z0-9-]+/(?:program|department|programs|degrees?|areas?-of-study)/",
+  "20\\d\\d-20\\d\\d",
+  "[Dd]egrees? and [Cc]ertificates?",
+  "[Pp]rograms? of [Ss]tudy"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "menu_links"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/2025-2026,presidents-welcome?tenant=pvc.elumenapp.com&api=https://api-prod.elumenapp.com:443"
+  }
+ ]
+}
