@@ -21,6 +21,8 @@
   "table:projects": "DR-13",
   "table:workplan_goals": "DR-13",
   "table:workplan_activity_associations": "DR-13",
+  "rpc:workplan_move_sub_activity": "DR-13",
+  "tab:workplan-goals": "DR-13",
   "table:project_lifecycle": "DR-13",
   "table:team_access": "DR-14",
   "tab:team-phrases": "DR-14",

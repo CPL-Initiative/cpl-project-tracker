@@ -375,6 +375,7 @@
     paintCountLines(state);
     paintSetTargets(state);
     paintActivityAddLinks(state);
+    paintMoveLinks(state);
   }
 
   // An empty description is hidden from a reader; an editor sees "Add
@@ -450,6 +451,29 @@
         ["Add sub-activity"]);
       btn.addEventListener("click", function () { openAddModal(state, { parent: act }); });
       raci.parentNode.appendChild(btn);
+    });
+  }
+
+  // Each sub-activity name gets "Move" for a signed-in reviewer (PR C): the move
+  // renumbers the sub-activity in every table that stores its id, through one
+  // reviewer-gated function (kb/supabase_workplan_move.sql). The team phrase does
+  // not open it: whether it should is Sam's call on the Open Asks sheet.
+  function canMove(sess) { return !!(sess && !sess.teamPass && sess.access_token); }
+  function paintMoveLinks(state) {
+    document.querySelectorAll('[data-title-edit="1"][data-pid]').forEach(function (title) {
+      var cell = title.closest ? title.closest("th, td") : null;
+      if (!cell) return;
+      var btn = cell.querySelector(".wpg-move");
+      if (!canMove(state.sess)) { if (btn) btn.parentNode.remove(); return; }
+      if (btn) return;
+      var pid = title.getAttribute("data-pid");
+      btn = el("button", { "class": "wpg-btn wpg-move", "type": "button",
+        "aria-label": "Move " + pid + " " + (title.textContent || "").trim() }, ["Move"]);
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        openMoveModal(state, pid, (title.textContent || "").trim());
+      });
+      cell.appendChild(el("div", { "class": "wpg-move-row" }, [btn]));
     });
   }
 
@@ -1062,7 +1086,9 @@
       + '.wpg-title-cell { border-radius:3px; }'
       + '.wpg-count-label { font-weight:600; }'
       + '.wpg-empty { font-style:italic; }'
-      + '.wpg-set-targets-row { margin-top:0.3rem; }'
+      + '.wpg-set-targets-row, .wpg-move-row { margin-top:0.3rem; }'
+      + '.wpg-move { font-size:0.75rem; }'
+      + '.wpg-modal-card .wpg-keep-row { display:flex;align-items:center;gap:0.4rem;font-weight:500;color:var(--text-strong);min-height:24px;margin-top:0.6rem; }'
       + '.wpg-add-sub { font-size:0.72rem; }'
       + '.wpg-modal-card select, .wpg-modal-card textarea { width:100%;padding:0.4rem 0.55rem;border:1px solid var(--border-strong);border-radius:5px;font:inherit;font-size:0.85rem;box-sizing:border-box;background:var(--surface-opaque);color:var(--text-strong); }'
       + '.wpg-modal-card textarea { min-height:4.2em;resize:vertical; }'
@@ -1161,6 +1187,135 @@
       document.removeEventListener("keydown", _activeEscListener);
       _activeEscListener = null;
     }
+  }
+
+  /**
+   * Move a sub-activity under a new parent (PR C). The dialog suggests the next
+   * free number under the chosen parent (reading the live id list, so a tabled
+   * id is never reused), asks whether to keep the link to the old Activity when
+   * the home Activity changes (Sam kept it for 1.1.2), and calls
+   * workplan_move_sub_activity, which re-keys every table in one transaction or
+   * changes nothing. A sub-activity with sub-activities under it is refused here
+   * and in the function: move those first.
+   */
+  function openMoveModal(state, pid, name) {
+    closeAddModal();
+    var ids = collectExistingIds();
+    var liveIds = [];
+    var idTouched = false;
+    var oldHome = homeActivityOf(pid);
+    var children = ids.projects.filter(function (x) { return x.indexOf(pid + ".") === 0; });
+
+    var overlay = el("div", { "class": "wpg-modal-overlay" }, []);
+    var card = el("div", { "class": "wpg-modal-card", "role": "dialog", "aria-modal": "true",
+      "aria-labelledby": "wpg-move-title" }, []);
+    overlay.appendChild(card);
+    card.appendChild(el("h3", { "id": "wpg-move-title" }, ["Move a sub-activity"]));
+    card.appendChild(el("div", { "class": "wpg-fixed" }, [pid + " " + name]));
+    card.appendChild(el("div", { "class": "wpg-sub" }, ["Its goals, links, RACI, updates and history move with it, " +
+      "all at once or not at all. It shows in its new place after tonight's rebuild."]));
+
+    card.appendChild(el("label", { "for": "wpg-move-parent" }, ["Under"]));
+    var parentSel = el("select", { "id": "wpg-move-parent" }, []);
+    ids.activities.forEach(function (aid) {
+      parentSel.appendChild(el("option", { "value": aid },
+        ["Activity " + aid + (ids.activityNames[aid] ? ": " + ids.activityNames[aid] : "")]));
+    });
+    ids.projects.forEach(function (x) {
+      if (x === pid || x.indexOf(pid + ".") === 0) return;  // never under itself
+      var depth = x.split(".").length - 1;
+      parentSel.appendChild(el("option", { "value": x },
+        [new Array(depth + 1).join("\u00a0\u00a0\u00a0\u00a0") + x + " " + (ids.projectNames[x] || "")]));
+    });
+    card.appendChild(parentSel);
+
+    card.appendChild(el("label", { "for": "wpg-move-id" }, ["New ID"]));
+    var idInput = el("input", { "type": "text", "id": "wpg-move-id", "autocomplete": "off" }, []);
+    card.appendChild(idInput);
+
+    var keepBox = el("input", { "type": "checkbox", "id": "wpg-move-keep", "checked": "checked" }, []);
+    var keepLabel = el("label", { "for": "wpg-move-keep", "class": "wpg-keep-row" }, []);
+    keepLabel.appendChild(keepBox);
+    var keepText = document.createTextNode(" Keep its link to Activity " + oldHome);
+    keepLabel.appendChild(keepText);
+    card.appendChild(keepLabel);
+
+    var status = el("div", { "class": "wpg-status", "role": "status", "aria-live": "polite" }, []);
+    card.appendChild(status);
+    var actions = el("div", { "class": "wpg-modal-actions" }, []);
+    var btnCancel = el("button", { "class": "wpg-btn-cancel", "type": "button" }, ["Cancel"]);
+    var btnSubmit = el("button", { "class": "wpg-btn-submit", "type": "button" }, ["Move"]);
+    actions.appendChild(btnSubmit);   // the lead word first, as in the Add dialog (S364)
+    actions.appendChild(btnCancel);
+    card.appendChild(actions);
+
+    function allIds() { return ids.projects.concat(liveIds); }
+    function sync() {
+      if (!idTouched) idInput.value = suggestChildId(allIds(), parentSel.value);
+      var home = homeActivityOf(idInput.value) || parentSel.value.split(".")[0];
+      keepLabel.hidden = home === oldHome;
+    }
+    if (children.length) {
+      status.className = "wpg-status err";
+      status.textContent = pid + " has sub-activities under it (" + children.join(", ") + "). Move those first.";
+      btnSubmit.disabled = true;
+    }
+    parentSel.addEventListener("change", function () { idTouched = false; sync(); });
+    idInput.addEventListener("input", function () { idTouched = true; sync(); });
+    sync();
+    fetchProjectIds().then(function (list) { liveIds = list; sync(); });
+
+    btnCancel.addEventListener("click", closeAddModal);
+    overlay.addEventListener("click", function (e) { if (e.target === overlay) closeAddModal(); });
+    _activeEscListener = function (e) { if (e.key === "Escape") closeAddModal(); };
+    document.addEventListener("keydown", _activeEscListener);
+
+    btnSubmit.addEventListener("click", function () {
+      var newId = (idInput.value || "").trim();
+      status.className = "wpg-status";
+      if (!/^[1-4](\.\d+)+$/.test(newId)) {
+        status.className = "wpg-status err";
+        status.textContent = "A sub-activity ID looks like 3.9 or 4.2.1.";
+        return;
+      }
+      if (newId === pid) { status.className = "wpg-status err"; status.textContent = "That is its current ID."; return; }
+      if (allIds().indexOf(newId) !== -1) {
+        status.className = "wpg-status err";
+        status.textContent = newId + " is already in use (on the page or tabled).";
+        return;
+      }
+      btnSubmit.disabled = true;
+      status.textContent = "Moving…";
+      fetch(SUPABASE_URL + "/rest/v1/rpc/workplan_move_sub_activity", {
+        method: "POST",
+        headers: authHeaders(state.sess),
+        body: JSON.stringify({ p_old_id: pid, p_new_id: newId, p_keep_old_link: keepLabel.hidden ? true : keepBox.checked })
+      }).then(function (r) {
+        return r.text().then(function (t) {
+          var body = null;
+          try { body = t ? JSON.parse(t) : null; } catch (e) { body = null; }
+          if (!r.ok) {
+            var msg = (body && body.message) || ("HTTP " + r.status);
+            throw new Error(msg.replace(/^workplan_move_sub_activity: /, ""));
+          }
+          return body;
+        });
+      }).then(function (res) {
+        status.className = "wpg-status ok";
+        status.textContent = "Moved " + pid + " to " + ((res && res.new_id) || newId) +
+          ". It shows in its new place after tonight's rebuild.";
+        btnSubmit.textContent = "Done";
+        btnSubmit.disabled = false;
+        btnSubmit.onclick = closeAddModal;
+      }).catch(function (e) {
+        btnSubmit.disabled = false;
+        status.className = "wpg-status err";
+        status.textContent = "Not moved: " + (e.message || "the save failed") + ".";
+      });
+    });
+
+    document.body.appendChild(overlay);
+    parentSel.focus();
   }
 
   /**
@@ -1604,6 +1759,12 @@
         state.sess = fullSession();
         if (!state.sess) return false;
         openAddModal(state, o);
+        return true;
+      },
+      move: function (pid, name) {
+        state.sess = fullSession();
+        if (!canMove(state.sess)) return false;
+        openMoveModal(state, pid, name || "");
         return true;
       },
       suggestChildId: suggestChildId,

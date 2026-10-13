@@ -50,8 +50,11 @@ check("(c) the dialog's buttons lose their frames and fill",
     && !/\.wpg-btn-submit \{ ?background:var\(--cobalt\)/.test(code));
 
 // (d)
-const sub = code.indexOf("actions.appendChild(btnSubmit)"), can = code.indexOf("actions.appendChild(btnCancel)");
-check("(d) the dialog's lead word, Add row, comes first", sub > 0 && can > sub);
+// Every dialog (Add, Move): each Cancel follows a lead word appended before it.
+const subs = [], cans = [];
+code.replace(/actions\.appendChild\(btn(Submit|Cancel)\)/g, (m, w, at) => { (w === "Submit" ? subs : cans).push(at); return m; });
+check("(d) every dialog's lead word (Add row, Move) comes before Cancel",
+  subs.length > 0 && subs.length === cans.length && subs.every((s, i) => s < cans[i]));
 
 // (e)
 check("(e) the dialog's radio labels are 24px tall",
