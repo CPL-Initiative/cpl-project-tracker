@@ -164,6 +164,20 @@ def _():
     assert sorted(seen) == sorted(c["code"] for c in courses) and len(seen) == len(set(seen))
 
 
+@check("the read and the load run only when the pushed trigger file differs from main's (a merge of main starts nothing)")
+def _():
+    for name, trigger in (("course-outcomes-read.yml", "kb/course_outcomes/.run"),
+                          ("course-outcomes-load.yml", "kb/course_outcomes/.load")):
+        text = open(os.path.join(ROOT, ".github", "workflows", name)).read()
+        jobs = text.split("\njobs:\n", 1)[1]
+        assert jobs.startswith("  gate:\n"), name
+        assert "git fetch -q --depth=1 origin main" in jobs and ("git diff --quiet FETCH_HEAD -- %s" % trigger) in jobs, name
+        for job in re.findall(r"^  ([a-z_-]+):\s*$", jobs, re.M):
+            if job != "gate":
+                assert re.search(r"needs: \[?[^\n]*\bgate\b", jobs.split("\n  %s:\n" % job, 1)[1]), (name, job)
+        assert "needs.gate.outputs.go == '1'" in jobs, name
+
+
 @check("the read loads pages only and never addresses the database")
 def _():
     src = open(os.path.join(ROOT, "kb", "_course_outcomes_read.py")).read()

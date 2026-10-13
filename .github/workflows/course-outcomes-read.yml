@@ -3,9 +3,10 @@ name: Course outcomes read
 # Asks Sheet 70 card 3, 2026-10-12: "Every course in the loaded records").
 # kb/_course_outcomes_read.py reads pages only and writes no table; it files
 # kb/course_outcomes/..., which this job commits back to the branch that ran it.
-# Runs when a claude/** push changes kb/course_outcomes/.run, never on a merge
-# commit (a merge of main carries that file's change too). The slices run one at a
-# time, so one reader is on the college's host at once.
+# Runs when a claude/** push changes kb/course_outcomes/.run to something main
+# does not hold (the gate job), never on a merge commit (a merge of main carries
+# that file's change too). The slices run one at a time, so one reader is on the
+# college's host at once.
 on:
   push:
     branches: ['claude/**']
@@ -20,8 +21,30 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  plan:
+  gate:
+    # Runs the work only when the pushed trigger file differs from main's. A merge of
+    # main carries every trigger file main holds, and a push after it (not only the
+    # merge commit) starts this workflow (S376: a display push on a branch that had
+    # merged main re-ran the SDCCD index; here it would re-run a read of hours, or a
+    # load). To run the same file again, change a line in it.
     if: github.actor != 'github-actions[bot]' && !startsWith(github.event.head_commit.message, 'Merge')
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.diff.outputs.go }}
+    steps:
+      - uses: actions/checkout@v7
+      - id: diff
+        run: |
+          git fetch -q --depth=1 origin main
+          if git diff --quiet FETCH_HEAD -- kb/course_outcomes/.run; then
+            echo "go=0" >> "$GITHUB_OUTPUT"; echo "kb/course_outcomes/.run matches main's: nothing to run."
+          else
+            echo "go=1" >> "$GITHUB_OUTPUT"
+          fi
+
+  plan:
+    needs: gate
+    if: needs.gate.outputs.go == '1'
     runs-on: ubuntu-latest
     outputs:
       mode: ${{ steps.p.outputs.mode }}
@@ -37,7 +60,7 @@ jobs:
                echo "parts=$(python3 -c "import json;print(json.dumps(list(range(1,$n+1))))")" >> "$GITHUB_OUTPUT"; fi
 
   read:
-    needs: plan
+    needs: [gate, plan]
     runs-on: ubuntu-latest
     timeout-minutes: 240
     strategy:

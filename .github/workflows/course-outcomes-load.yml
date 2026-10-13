@@ -5,8 +5,8 @@ name: Course outcomes load
 # inserts a block the table does not hold and touches nothing already there. The
 # receipt (kb/receipts/course_outcomes_<host>_<run>.json) names every inserted id
 # and the delete that rolls them back; this job commits it to the branch that ran.
-# Runs when a claude/** push changes kb/course_outcomes/.load (host=<folder>),
-# never on a merge commit.
+# Runs when a claude/** push changes kb/course_outcomes/.load (host=<folder>) to
+# something main does not hold (the gate job), never on a merge commit.
 on:
   push:
     branches: ['claude/**']
@@ -21,8 +21,30 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  load:
+  gate:
+    # Runs the work only when the pushed trigger file differs from main's. A merge of
+    # main carries every trigger file main holds, and a push after it (not only the
+    # merge commit) starts this workflow (S376: a display push on a branch that had
+    # merged main re-ran the SDCCD index; here it would re-run a read of hours, or a
+    # load). To run the same file again, change a line in it.
     if: github.actor != 'github-actions[bot]' && !startsWith(github.event.head_commit.message, 'Merge')
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.diff.outputs.go }}
+    steps:
+      - uses: actions/checkout@v7
+      - id: diff
+        run: |
+          git fetch -q --depth=1 origin main
+          if git diff --quiet FETCH_HEAD -- kb/course_outcomes/.load; then
+            echo "go=0" >> "$GITHUB_OUTPUT"; echo "kb/course_outcomes/.load matches main's: nothing to run."
+          else
+            echo "go=1" >> "$GITHUB_OUTPUT"
+          fi
+
+  load:
+    needs: gate
+    if: needs.gate.outputs.go == '1'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
