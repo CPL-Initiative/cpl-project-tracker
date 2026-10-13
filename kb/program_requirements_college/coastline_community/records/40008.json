@@ -1,0 +1,205 @@
+{
+ "college": "Coastline Community College",
+ "control_number": "40008",
+ "shape": "certificate",
+ "title": "Educational Studies: Teach Your Career/Community College Teaching",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/education/education/ed-study-teach-career-comm-college-teaching-certificate-achievement/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5805,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5805,
+    "output_tokens": 1597,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1597,
+  "output_tokens_details": {
+   "thinking_tokens": 594
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05516,
+ "ms": 13157,
+ "seconds": 13.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    17.0
+   ],
+   "stated": [
+    16.0,
+    17.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Educational Studies: Teach Your Career/Community College Teaching",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 17
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Apply knowledge, skills, experience, and feedback to make an informed choice to be employed or to continue study in the field of education",
+    "Upon successful completion of certificate courses, students will be able to document knowledge and skills relevant to effective teaching in a Career Education community college classroom by applying the principles of sound instructional techniques and culturally responsive teaching, evaluating student performance, and demonstrating appropriate teaching styles and modalities for diverse student populations."
+   ],
+   "careers": [
+    "community college Career Education instructors",
+    "teaching job",
+    "tutor",
+    "homework “helper”",
+    "curriculum developer in area of expertise",
+    "camp counselor",
+    "outdoor education specialist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EDUC C202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC C211",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC C103",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC C101",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "COMM C1000",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CMST C100",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC C104",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-description and does not print the section heading; the program title is used as section_heading.",
+   "The catalog prints former codes in parentheses: ENGL C1000 (ENGL C100) and COMM C1000 (COMM C110); recorded under the current codes, which are on the closed list.",
+   "The 3-4 unit range is printed only on the ENGL C1000 row for the ENGL C1000 / COMM C1000 / CMST C100 choice; no units are printed beside the alternatives, so their units are null.",
+   "The careers list is read from 'Possible employment/ illustrative examples' and the description's 'future community college Career Education instructors'; 'other teaching areas where traditional credential requirements are waived for experience' was not recorded as a career entry.",
+   "The second program learning outcome is copied whole, including its opening phrase, because that phrase is part of the printed outcome sentence."
+  ]
+ },
+ "extracted_run": "38445051060"
+}

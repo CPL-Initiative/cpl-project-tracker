@@ -8,22 +8,22 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 46876,
-  "pa": 42788,
+  "pe": 46892,
+  "pa": 42804,
   "ppa": 119,
-  "p2": 3577,
-  "p3": 16752,
+  "p2": 3579,
+  "p3": 16755,
   "pp": 6,
   "ppe": 129,
-  "pac": 5258,
-  "ptc": 4615,
-  "pe_u": 1463790.45,
-  "pa_u": 238911.65,
+  "pac": 5259,
+  "ptc": 4616,
+  "pe_u": 1464416.2,
+  "pa_u": 239007.4,
   "ppa_u": 721.5,
   "ppe_u": 6825.5,
-  "pac_u": 37523.2,
-  "ptc_u": 31243.15,
-  "p3_u": 83638.85,
+  "pac_u": 37541.45,
+  "ptc_u": 31261.4,
+  "p3_u": 83672.1,
   "pp_u": 63.5
  },
  "colleges": {
@@ -940,16 +940,16 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "LA Pierce": {
-   "pe": 405,
-   "pe_u": 7081.0,
-   "pa": 379,
-   "pa_u": 1565.0,
+   "pe": 407,
+   "pe_u": 7108.0,
+   "pa": 381,
+   "pa_u": 1592.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 9.0,
    "p2": 20,
-   "p3": 270,
-   "p3_u": 1029.0,
+   "p3": 271,
+   "p3_u": 1034.0,
    "pp": 0,
    "pp_u": 0.0,
    "ppe": null,
@@ -1294,16 +1294,16 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Moreno Valley": {
-   "pe": 2520,
-   "pe_u": 54378.0,
-   "pa": 2191,
-   "pa_u": 13206.0,
+   "pe": 2521,
+   "pe_u": 54388.0,
+   "pa": 2192,
+   "pa_u": 13216.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 53.5,
-   "p2": 491,
-   "p3": 2127,
-   "p3_u": 12645.5,
+   "p2": 492,
+   "p3": 2128,
+   "p3_u": 12655.5,
    "pp": null,
    "pp_suppressed": true,
    "pp_u": 38.5,
@@ -1455,22 +1455,22 @@ window.CPL_FUNDING_PERF = {
   },
   "Palo Verde": {
    "pe": 22,
-   "pe_u": 724.25,
+   "pe_u": 731.0,
    "pa": 22,
-   "pa_u": 301.25,
+   "pa_u": 308.0,
    "ppa": 0,
    "ppa_u": 0.0,
-   "p2": 11,
-   "p3": 12,
-   "p3_u": 262.75,
+   "p2": 12,
+   "p3": 13,
+   "p3_u": 281.0,
    "pp": 0,
    "pp_u": 0.0,
    "ppe": 0,
    "ppe_u": 0.0,
-   "pac": 12,
-   "pac_u": 262.75,
-   "ptc": 12,
-   "ptc_u": 262.75
+   "pac": 13,
+   "pac_u": 281.0,
+   "ptc": 13,
+   "ptc_u": 281.0
   },
   "Pasadena": {
    "pe": 139,
@@ -1656,10 +1656,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 748.0
   },
   "San Diego City": {
-   "pe": 4360,
-   "pe_u": 99239.5,
-   "pa": 4359,
-   "pa_u": 15362.0,
+   "pe": 4366,
+   "pe_u": 99559.5,
+   "pa": 4365,
+   "pa_u": 15386.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 12.0,
@@ -1698,10 +1698,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "San Diego Miramar": {
-   "pe": 3180,
-   "pe_u": 97992.2,
-   "pa": 3180,
-   "pa_u": 13028.7,
+   "pe": 3187,
+   "pe_u": 98254.2,
+   "pa": 3187,
+   "pa_u": 13056.7,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 8.0,
@@ -2764,9 +2764,9 @@ window.CPL_FUNDING_PERF = {
   },
   "LA Pierce": {
    "Credit By Exam": {
-    "pe": 247,
-    "pa": 247,
-    "p3": 246
+    "pe": 248,
+    "pa": 248,
+    "p3": 247
    },
    "Industry Certification": {
     "pe": null,
@@ -3171,9 +3171,9 @@ window.CPL_FUNDING_PERF = {
     "p3": 974
    },
    "Standardized Assessment": {
-    "pe": 257,
-    "pa": 257,
-    "p3": 257
+    "pe": 258,
+    "pa": 258,
+    "p3": 258
    }
   },
   "Mt San Antonio": {
@@ -3305,7 +3305,7 @@ window.CPL_FUNDING_PERF = {
    "Industry Certification": {
     "pe": null,
     "pa": null,
-    "p3": 12,
+    "p3": 13,
     "pe_suppressed": true,
     "pa_suppressed": true
    },
@@ -3499,8 +3499,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 1513,
-    "pa": 1513,
+    "pe": 1519,
+    "pa": 1519,
     "p3": 0
    },
    "Standardized Assessment": {
@@ -3561,8 +3561,8 @@ window.CPL_FUNDING_PERF = {
     "p3": 29
    },
    "Military": {
-    "pe": 1663,
-    "pa": 1663,
+    "pe": 1670,
+    "pa": 1670,
     "p3": 0
    }
   },
@@ -3887,9 +3887,9 @@ window.CPL_FUNDING_PERF = {
  },
  "cpl_types_statewide": {
   "Credit By Exam": {
-   "pe": 11463,
-   "pa": 11106,
-   "p3": 10670
+   "pe": 11464,
+   "pa": 11107,
+   "p3": 10671
   },
   "Credit By Exam | Industry Certification": {
    "pe": 45,
@@ -3954,9 +3954,9 @@ window.CPL_FUNDING_PERF = {
    "p3": 40
   },
   "Industry Certification": {
-   "pe": 1415,
-   "pa": 1392,
-   "p3": 1177
+   "pe": 1416,
+   "pa": 1393,
+   "p3": 1178
   },
   "Industry Certification | Military": {
    "pe": 56,
@@ -4001,8 +4001,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 28444,
-   "pa": 26137,
+   "pe": 28457,
+   "pa": 26150,
    "p3": 2592
   },
   "Military | Other": {
@@ -4048,9 +4048,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Standardized Assessment": {
-   "pe": 4699,
-   "pa": 3344,
-   "p3": 2040
+   "pe": 4700,
+   "pa": 3345,
+   "p3": 2041
   }
  },
  "cpl_types_note": "Distinct-student counts per college per `CPL Type Description`, for the funnel rungs pe/pa/p3. COUNTS ONLY — no unit sums, because each source row carries the student's TOTAL credits rather than that type's portion, so a per-type unit sum would attribute the whole total to every type a student carries. A student holding two types counts once under each, so the types do NOT sum to the college's undifferentiated count. Batch Cx/AP/IB uploads arrive already-transcribed by construction (students already in the college SIS, surfaced in MAP), so read p3 by type before treating a transcribed figure as lifecycle work.",
@@ -4058,14 +4058,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1463790.45,
-   "pa_u": 238911.65,
-   "p3_u": 83638.85
+   "pe_u": 1464416.2,
+   "pa_u": 239007.4,
+   "p3_u": 83672.1
   },
   "map": {
-   "pe_u": 1470615.95,
-   "pa_u": 239633.15,
-   "p3_u": 83702.35
+   "pe_u": 1471241.7,
+   "pa_u": 239728.9,
+   "p3_u": 83735.6
   },
   "ratio": {
    "pe_u": 1.0047,
@@ -4216,13 +4216,13 @@ window.CPL_FUNDING_PERF = {
   },
   "San Diego City": {
    "vets": 776,
-   "jst": 1530,
-   "pct": 1.9716
+   "jst": 1536,
+   "pct": 1.9794
   },
   "San Diego Miramar": {
    "vets": 1181,
-   "jst": 1673,
-   "pct": 1.4166
+   "jst": 1680,
+   "pct": 1.4225
   },
   "Moreno Valley": {
    "vets": 916,

@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-13T14:37:18Z",
-  "session": 380,
-  "moniker": "SkyAlder",
+  "written_at": "2026-10-13T19:03:21Z",
+  "session": 382,
+  "moniker": "SkyLarch",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_381_handoff.md",
+  "handoff": "docs/session_383_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -15210,24 +15210,4476 @@
       "award": "Certificate of Achievement: 18  or great",
       "control_number": "22285",
       "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Environmental Horticulture",
+      "award": "A.S. Degree",
+      "control_number": "01988",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Architecture/Architectural Drafting",
+      "award": "A.S. Degree",
+      "control_number": "01992",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Accounting",
+      "award": "A.A. Degree",
+      "control_number": "01997",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Administrative Office Assistant",
+      "award": "A.A. Degree",
+      "control_number": "02004",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "American Sign Language",
+      "award": "A.A. Degree",
+      "control_number": "02010",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Engineering",
+      "award": "A.S. Degree",
+      "control_number": "02014",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Industrial Technology: Electronics",
+      "award": "A.S. Degree",
+      "control_number": "02015",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Industrial Technology: Industrial Drawing",
+      "award": "A.S. Degree",
+      "control_number": "02027",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Manufacturing Technology",
+      "award": "A.S. Degree",
+      "control_number": "02029",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Welding",
+      "award": "A.S. Degree",
+      "control_number": "02031",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Registered Nursing",
+      "award": "A.S. Degree",
+      "control_number": "02044",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Vocational Nursing",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "02045",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Radiologic Technology",
+      "award": "A.S. Degree",
+      "control_number": "02048",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Criminal Justice",
+      "award": "A.A. Degree",
+      "control_number": "02068",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Correctional Administration",
+      "award": "A.A. Degree",
+      "control_number": "02069",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Culinary Arts",
+      "award": "A.S. Degree",
+      "control_number": "02081",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Bookkeeping",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "09241",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Engineering Technology",
+      "award": "A.S. Degree",
+      "control_number": "09243",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Woodworking / Cabinetmaking",
+      "award": "A.S. Degree",
+      "control_number": "09244",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Child Development Teacher",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "09258",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Dietetic Services Supervisor Program",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "09259",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Food Service Management",
+      "award": "A.S. Degree",
+      "control_number": "09260",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Fire Technology",
+      "award": "A.A. Degree",
+      "control_number": "09966",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Office Assistant",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "11276",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "LVN to Registered Nursing",
+      "award": "A.S. Degree",
+      "control_number": "11281",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Child Development Master Teacher: Infant Toddler",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "11282",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Wildland Firefighting",
+      "award": "A.S. Degree",
+      "control_number": "16988",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Animal Science",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20235",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Environmental Horticulture",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20238",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Agriculture Business",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20239",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Electronics Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20251",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Construction Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20253",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Woodworking / Cabinetmaking",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20259",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Manufacturing Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20262",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Culinary Arts",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20268",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Fire Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20269",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "30593",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "30628",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "31667",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "32459",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Geology",
+      "award": "A.S. T Degree",
+      "control_number": "32460",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "32461",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "MATH",
+      "award": "A.S. T Degree",
+      "control_number": "32557",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Music",
+      "award": "A.A- T Degree",
+      "control_number": "32724",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Theatre Arts",
+      "award": "A.A- T Degree",
+      "control_number": "32769",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "32781",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "32783",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Journalism",
+      "award": "A.A- T Degree",
+      "control_number": "32786",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "32796",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "32797",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Spanish",
+      "award": "A.A- T Degree",
+      "control_number": "32800",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Computer Science",
+      "award": "A.S. T Degree",
+      "control_number": "32826",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "32897",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "32967",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Elementary Teacher Education",
+      "award": "A.A- T Degree",
+      "control_number": "33173",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Photography",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33247",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Philosophy",
+      "award": "A.A- T Degree",
+      "control_number": "33262",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Fire Fighter I Academy",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33328",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Paramedic Program",
+      "award": "A.S. Degree",
+      "control_number": "33781",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Paramedic",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "33787",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "CompTIA",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33894",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Industrial Automation",
+      "award": "Baccalaureate of Science (B.S.) Degree.",
+      "control_number": "34006",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Executive Chief Fire Officer",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35102",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Media Arts",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35113",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "35302",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Chemistry",
+      "award": "A.S. T Degree",
+      "control_number": "35389",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Automotive Heating and Air Conditioning",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35469",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Automatic Transmissions",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "35471",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Public Health Science",
+      "award": "A.S. T Degree",
+      "control_number": "35480",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Agriculture Plant Science",
+      "award": "A.S. T Degree",
+      "control_number": "35625",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Engine Overhaul and Repair",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35695",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Light Duty Diesel Performance",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35696",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Manual Drive Train and Axles",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "35697",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Brake Systems",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "35725",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Engine Performance",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35726",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Suspension and Steering",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "35727",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Automotive Technology",
+      "award": "A.S. Degree",
+      "control_number": "35728",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Electrical and Electronic Systems",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "35729",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Agriculture Business",
+      "award": "A.S. T Degree",
+      "control_number": "35807",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Agriculture Animal Science",
+      "award": "A.S. T Degree",
+      "control_number": "35826",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Health Information Technology",
+      "award": "A.S. Degree",
+      "control_number": "35984",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Occupational Safety and Risk Management, Agriculture",
+      "award": "A.S. Degree",
+      "control_number": "36024",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Occupational Safety and Risk Management, Industrial Technology",
+      "award": "A.S. Degree",
+      "control_number": "36037",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Industrial Drawing",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "36485",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Occupational Safety and Risk Management, Business",
+      "award": "A.S. Degree",
+      "control_number": "36488",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Occupational Safety and Risk Management, Health Science",
+      "award": "A.S. Degree",
+      "control_number": "36489",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Art History",
+      "award": "A.A- T Degree",
+      "control_number": "36571",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Industrial Automation",
+      "award": "A.S. Degree",
+      "control_number": "36579",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Heavy Equipment Technician",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "36590",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Construction Management",
+      "award": "A.S. Degree",
+      "control_number": "36640",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Manufacturing Metal Fabrication Technology",
+      "award": "A.S. Degree",
+      "control_number": "36772",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Environmental Science",
+      "award": "A.S. T Degree",
+      "control_number": "36773",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Health Navigator",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "36778",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Child Development Master Teacher: Special Education",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "36781",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "HVAC Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37018",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Industrial Automation",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "37055",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Information Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37068",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "HVAC Technology",
+      "award": "A.S. Degree",
+      "control_number": "37147",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Process Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37178",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Process Technology",
+      "award": "A.S. Degree",
+      "control_number": "37319",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Mechanized Agriculture",
+      "award": "A.S. Degree",
+      "control_number": "37368",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Engineering Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37394",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Transitional Kindergarten",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37843",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Web Design and Development",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37903",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Japanese",
+      "award": "A.A. Degree",
+      "control_number": "38523",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Paraprofessional Level I",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "38832",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Paraprofessional Level III",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38841",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Paraprofessional Level II",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38842",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "UCTP Chemistry",
+      "award": "A.S. T Degree",
+      "control_number": "39473",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Human Biology",
+      "award": "A.S. Degree",
+      "control_number": "39516",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "English for Multilingual Students Intermediate",
+      "award": "Noncredit program",
+      "control_number": "39541",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "English for Multilingual Students Listening/Speaking",
+      "award": "Noncredit program",
+      "control_number": "39542",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "English for Multilingual Students Reading",
+      "award": "Noncredit program",
+      "control_number": "39543",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "English for Multilingual Students Writing",
+      "award": "Noncredit program",
+      "control_number": "39544",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Sales Techniques",
+      "award": "Noncredit program",
+      "control_number": "39545",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Food Science and Technology",
+      "award": "A.S. Degree",
+      "control_number": "39547",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Introduction to Early Care and Education",
+      "award": "Noncredit program",
+      "control_number": "39549",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Basic Internet Skills",
+      "award": "Noncredit program",
+      "control_number": "39550",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Basic Office Skills",
+      "award": "Noncredit program",
+      "control_number": "39551",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Basic Office Software Skills",
+      "award": "Noncredit program",
+      "control_number": "39552",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Beginning Computer Skills",
+      "award": "Noncredit program",
+      "control_number": "39553",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Customer Relations",
+      "award": "Noncredit program",
+      "control_number": "39554",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Entrepreneurship",
+      "award": "Noncredit program",
+      "control_number": "39555",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Digital Marketing for Small Business",
+      "award": "Noncredit program",
+      "control_number": "39556",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Powerful Presentation",
+      "award": "Noncredit program",
+      "control_number": "39557",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "QuickBooks Basics for Small Business",
+      "award": "Noncredit program",
+      "control_number": "39558",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "UCTP Physics",
+      "award": "A.S. T Degree",
+      "control_number": "39560",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Occupational Safety and Risk Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39686",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "English for Multilingual Students Advanced",
+      "award": "Noncredit program",
+      "control_number": "39687",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "English for Multilingual Students Introduction",
+      "award": "Noncredit program",
+      "control_number": "39688",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Nutrition and Dietetics",
+      "award": "A.S. T Degree",
+      "control_number": "40073",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Application of Transformational Policing",
+      "award": "Noncredit program",
+      "control_number": "40258",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Online Teaching",
+      "award": "Noncredit program",
+      "control_number": "40259",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Food Science and Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40334",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Electrical Safety",
+      "award": "Noncredit program",
+      "control_number": "40359",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Advanced Electrical Safety and Arc Flash",
+      "award": "Noncredit program",
+      "control_number": "40393",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Paraprofessional Level IV",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "40685",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Online Teaching Level II",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40686",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Education Studies",
+      "award": "A.S. Degree",
+      "control_number": "40749",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Physical Therapist Assistant",
+      "award": "A.S. Degree",
+      "control_number": "40880",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Social Justice Studies",
+      "award": "A.A- T Degree",
+      "control_number": "41001",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Logistics Management",
+      "award": "A.S. Degree",
+      "control_number": "41348",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Logistics Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41349",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Inclusive and Accessible Digital Content",
+      "award": "Noncredit program",
+      "control_number": "41350",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "41351",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Applied Leadership",
+      "award": "Noncredit program",
+      "control_number": "41352",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Public Health for Non Health Professionals",
+      "award": "Noncredit program",
+      "control_number": "41548",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Kitchen Techniques for New Culinarians  (NC)",
+      "award": "Noncredit program",
+      "control_number": "41549",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "School Food Service",
+      "award": "Noncredit program",
+      "control_number": "41550",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Introduction to Welding Processes",
+      "award": "Noncredit program",
+      "control_number": "41574",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Mammography Program",
+      "award": "Noncredit program",
+      "control_number": "41894",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "College and Academic Writing Success",
+      "award": "Noncredit program",
+      "control_number": "42034",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "English for Multilingual Students Basic",
+      "award": "Noncredit program",
+      "control_number": "42035",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Study Skills for College Success",
+      "award": "Noncredit program",
+      "control_number": "42036",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Basic Industrial and Construction Skills",
+      "award": "Noncredit program",
+      "control_number": "42069",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Industrial Safety",
+      "award": "Noncredit program",
+      "control_number": "42070",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Student Success",
+      "award": "Noncredit program",
+      "control_number": "42071",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Teaching and Learning",
+      "award": "Noncredit program",
+      "control_number": "42072",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Warehousing",
+      "award": "Noncredit program",
+      "control_number": "42073",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Modern Energy",
+      "award": "Noncredit program",
+      "control_number": "42074",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Small Business Execution",
+      "award": "Noncredit program",
+      "control_number": "42076",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Small Business Funding",
+      "award": "Noncredit program",
+      "control_number": "42077",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Law, Public Policy, and Society",
+      "award": "A.A- T Degree",
+      "control_number": "42226",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Edible Education Garden",
+      "award": "Noncredit program",
+      "control_number": "42307",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Child and Adolescent Development",
+      "award": "A.A- T Degree",
+      "control_number": "42310",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Natural Resource Management",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "42508",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Research Laboratory Technology",
+      "award": "A.S. Degree",
+      "control_number": "42523",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Natural Resource Management",
+      "award": "A.S. Degree",
+      "control_number": "42536",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Environmental Resource Management",
+      "award": "A.S. Degree",
+      "control_number": "42569",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Environmental Resource Management",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "42570",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Cesar E. Chavez Leadership",
+      "award": "Noncredit program",
+      "control_number": "42766",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Social-Emotional and Cognitive Development",
+      "award": "Noncredit program",
+      "control_number": "42934",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Police Science",
+      "award": "A.S. Degree",
+      "control_number": "43011",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Pest Control Adviser Preparation",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "43012",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Agricultural Engineering Technology",
+      "award": "A.S. Degree",
+      "control_number": "43022",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Mechanical Engineering Technology",
+      "award": "A.S. Degree",
+      "control_number": "43157",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Automotive Detailing",
+      "award": "Noncredit program",
+      "control_number": "43184",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Electronic Systems Engineering Technology",
+      "award": "A.S. Degree",
+      "control_number": "43190",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Diesel Engine Systems",
+      "award": "Noncredit program",
+      "control_number": "43264",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Mobile Equipment Electrical Systems",
+      "award": "Noncredit program",
+      "control_number": "43265",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Mobile Equipment Hydraulic Systems",
+      "award": "Noncredit program",
+      "control_number": "43266",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Equipment Technician Level 1",
+      "award": "Noncredit program",
+      "control_number": "43267",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Academic Research Skills",
+      "award": "Noncredit program",
+      "control_number": "43268",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "College and Math Skill Building Success",
+      "award": "Noncredit program",
+      "control_number": "43269",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Sports Medicine",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43270",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Hospitality Management",
+      "award": "A.S. T Degree",
+      "control_number": "43434",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Research Laboratory Technology",
+      "award": "Baccalaureate of Science (B.S.) Degree.",
+      "control_number": "43499",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Forest Resource Management",
+      "award": "A.S. Degree",
+      "control_number": "43531",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Forest Resource Management",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "43532",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Civil Engineering Technology",
+      "award": "A.S. Degree",
+      "control_number": "43602",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Data Analyst Apprenticeship",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43639",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Help Desk Support Technician Apprenticeship",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43643",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Civil Engineering Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "43829",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "General Engineering",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "43830",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Sustainable Landscape",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43850",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Ornamental Horticulture",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43851",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Ornamental Horticulture",
+      "award": "A.S. Degree",
+      "control_number": "43873",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "43877",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Coaching",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43985",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Emerging Media Literacy",
+      "award": "Noncredit program",
+      "control_number": "44031",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Public Health Informatics II",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44282",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Intercollegiate Athletics",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44284",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Fitness Trainer",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44372",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Graphic Design - Level I",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44380",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Digital Marketer Apprenticeship",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44440",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Plant Science",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44441",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Automotive Management",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44442",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Community Health Worker  II",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44544",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Public Health",
+      "award": "A.S. T Degree",
+      "control_number": "44746",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Building a Canvas Course",
+      "award": "Noncredit program",
+      "control_number": "44836",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Teaching with AI: Today and Tomorrow",
+      "award": "Noncredit program",
+      "control_number": "44837",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Energy Management and Auditing",
+      "award": "Noncredit program",
+      "control_number": "44859",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "44895",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Plant Science",
+      "award": "A.S. Degree",
+      "control_number": "44917",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Recreation, Parks, and Tourism Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44952",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Clinical Medical Assistant",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44953",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Artificial Intelligence (AI) Proficiency for College and Career",
+      "award": "Noncredit program",
+      "control_number": "45086",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Respiratory Therapy",
+      "award": "A.S. Degree",
+      "control_number": "45142",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Logic, Argumentation, and Critical Thinking",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45197",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Graphic Design - Level II",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45404",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Elementary Teacher Education: Integrated Programs",
+      "award": "A.A- T Degree",
+      "control_number": "45618",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Registered Veterinary Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46070",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Medical Coding Specialist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46087",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Adult and Juvenile Correctional and Probation Officer",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46164",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Culinary Fundamentals",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46495",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Food Service Management",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "46496",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Institutional Food Service Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46497",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Health Information Technology Assistant",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46572",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Human Resource Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46573",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Management",
+      "award": "A.S. Degree",
+      "control_number": "03723",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Paralegal Studies",
+      "award": "A.A. Degree",
+      "control_number": "03747",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Aging Studies",
+      "award": "A.A. Degree",
+      "control_number": "07510",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Digital Media Design",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "11378",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Liberal Studies (for Teaching)",
+      "award": "A.A. Degree",
+      "control_number": "18002",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Art",
+      "award": "A.A. Degree",
+      "control_number": "18049",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "American Studies",
+      "award": "A.A. Degree",
+      "control_number": "18051",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Arts & Humanities",
+      "award": "A.A. Degree",
+      "control_number": "18052",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Science and Math",
+      "award": "A.A. Degree",
+      "control_number": "18055",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Social and Behavioral Sciences",
+      "award": "A.A. Degree",
+      "control_number": "18056",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "English",
+      "award": "A.A. Degree",
+      "control_number": "18215",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "History",
+      "award": "A.A. Degree",
+      "control_number": "18219",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Human Services",
+      "award": "A.A. Degree",
+      "control_number": "18220",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Psychology",
+      "award": "A.A. Degree",
+      "control_number": "18222",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Spanish",
+      "award": "A.A. Degree",
+      "control_number": "18223",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Sociology",
+      "award": "A.A. Degree",
+      "control_number": "18224",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Real Estate Studies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19423",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Real Estate Broker",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19424",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Emergency Management Homeland Security",
+      "award": "A.A. Degree",
+      "control_number": "19515",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Entrepreneurship and Small Business Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20352",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20356",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Retail Management",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "20357",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Aging Studies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20365",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Paralegal Studies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20366",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Building Codes Inspector",
+      "award": "A.S. Degree",
+      "control_number": "20372",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Building Codes Inspector",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20373",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Information Technology",
+      "award": "A.S. Degree",
+      "control_number": "20378",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Information Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20379",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Cybersecurity",
+      "award": "A.S. Degree",
+      "control_number": "20382",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Cybersecurity",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20383",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Accounting: Bookkeeping",
+      "award": "A.S. Degree",
+      "control_number": "20388",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Accounting: Bookkeeping",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20389",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Supply Chain Management",
+      "award": "A.S. Degree",
+      "control_number": "22939",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Supply Chain Management II",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22940",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Business",
+      "award": "A.S. Degree",
+      "control_number": "23043",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Business",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "23044",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Human Resources Management",
+      "award": "A.S. Degree",
+      "control_number": "23045",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Human Resources Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "23046",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Marketing",
+      "award": "A.S. Degree",
+      "control_number": "23047",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Marketing",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "23048",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Business Administration",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "23050",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Health Care Management",
+      "award": "A.S. Degree",
+      "control_number": "30255",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Health Care Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "30256",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Emergency Management/Homeland Security: Criminal Justice",
+      "award": "A.A. Degree",
+      "control_number": "30350",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "30879",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "30891",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "31333",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "31453",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Mathematics",
+      "award": "A.S. T Degree",
+      "control_number": "32136",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Communication Studies",
+      "award": "A.A- T Degree",
+      "control_number": "33014",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "33015",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Pre-Medical Studies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33112",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Spanish",
+      "award": "A.A- T Degree",
+      "control_number": "33606",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Horticulture",
+      "award": "Noncredit program",
+      "control_number": "36112",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "English as a Second Language Preparation for Careers",
+      "award": "Noncredit program",
+      "control_number": "36288",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Porter",
+      "award": "Noncredit program",
+      "control_number": "36800",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "37669",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "37925",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Child and Adolescent Development",
+      "award": "A.A- T Degree",
+      "control_number": "38335",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Animal Care",
+      "award": "Noncredit program",
+      "control_number": "38389",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Customer Service Technology Level 1 (Noncredit)",
+      "award": "Noncredit program",
+      "control_number": "38407",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Customer Service Technology Level 2 (Noncredit)",
+      "award": "Noncredit program",
+      "control_number": "38416",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Data Analytics",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38543",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "ESL Intermediate Preparation for Careers",
+      "award": "Noncredit program",
+      "control_number": "38553",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Guest Services",
+      "award": "Noncredit program",
+      "control_number": "38554",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Language Preparation for U.S. Citizenship",
+      "award": "Noncredit program",
+      "control_number": "38555",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Culinary Arts",
+      "award": "Noncredit program",
+      "control_number": "38556",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Geology",
+      "award": "A.S. T Degree",
+      "control_number": "38603",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Data Analytics",
+      "award": "A.S. Degree",
+      "control_number": "39435",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Allied Health Care Careers",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39469",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Wellness Coaching",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39477",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Digital Forensics and Incident Response",
+      "award": "A.S. Degree",
+      "control_number": "39533",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Dietary Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39568",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Drama Basics",
+      "award": "Noncredit program",
+      "control_number": "39764",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Educational Studies: STEM: Math Concentration",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39880",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Educational Studies: ECE Unit Concentration",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39966",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Educational Studies: STEM: Instructional Technology Support Concentration",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39967",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Digital Forensics and Incident Response",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39971",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Educational Studies: General",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39997",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Educational Studies: Teach Your Career/Community College Teaching",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40008",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Educational Studies: STEM: Science concentration",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40011",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Cybersecurity Analyst",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40033",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "English Language Learning Intermediate to Advanced Oral/Aural Skills",
+      "award": "Noncredit program",
+      "control_number": "40124",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "English Language Learning Beginning-Level Skills",
+      "award": "Noncredit program",
+      "control_number": "40125",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Music Basics",
+      "award": "Noncredit program",
+      "control_number": "40477",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Art Basics",
+      "award": "Noncredit program",
+      "control_number": "40844",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Creative Arts Basics",
+      "award": "Noncredit program",
+      "control_number": "40845",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Data Science",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "41082",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Global Business",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41130",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Mathematics for Workforce Developmental Skills",
+      "award": "Noncredit program",
+      "control_number": "41175",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "41337",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Digital Media Design",
+      "award": "A.A. Degree",
+      "control_number": "41525",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Nutrition and Dietetics",
+      "award": "A.S. T Degree",
+      "control_number": "41633",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Chemistry",
+      "award": "A.S. T Degree",
+      "control_number": "41639",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Public Health Science",
+      "award": "A.S. T Degree",
+      "control_number": "41645",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "41677",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "41727",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Health Science",
+      "award": "A.A. Degree",
+      "control_number": "41762",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Philosophy",
+      "award": "A.A- T Degree",
+      "control_number": "41801",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Health and Wellness for Esports",
+      "award": "Noncredit program",
+      "control_number": "41933",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Supplemental Instruction",
+      "award": "Noncredit program",
+      "control_number": "42277",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Online Learning Basics",
+      "award": "Noncredit program",
+      "control_number": "42322",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Successful Online Learning",
+      "award": "Noncredit program",
+      "control_number": "42323",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "IT Foundation",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42527",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Geography",
+      "award": "A.A- T Degree",
+      "control_number": "42600",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "ESL Preparation for College-Level English",
+      "award": "Noncredit program",
+      "control_number": "42635",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "English Language Learning High Beginning Skills",
+      "award": "Noncredit program",
+      "control_number": "42665",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "English as a Second Language Low Beginning Skills",
+      "award": "Noncredit program",
+      "control_number": "42710",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "English Language Learning Low Intermediate Skills",
+      "award": "Noncredit program",
+      "control_number": "42718",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Art History",
+      "award": "A.A- T Degree",
+      "control_number": "43029",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Communication Studies",
+      "award": "A.A. Degree",
+      "control_number": "43030",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "43031",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Environmental Science",
+      "award": "A.S. T Degree",
+      "control_number": "43490",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "English as a Second Language High Intermediate Skills",
+      "award": "Noncredit program",
+      "control_number": "43622",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Computer Information Systems",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43975",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Computer Information Systems",
+      "award": "A.S. Degree",
+      "control_number": "43976",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "ESL Preparation for Digital Learning",
+      "award": "Noncredit program",
+      "control_number": "44017",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Social Work and Human Services",
+      "award": "A.A- T Degree",
+      "control_number": "44102",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Management (Applied)",
+      "award": "A.S. Degree",
+      "control_number": "44204",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "IT Support Specialist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44205",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Information and Computer Sciences",
+      "award": "A.S. Degree",
+      "control_number": "44206",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Information and Computer Sciences",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44207",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Law, Public Policy, and Society",
+      "award": "A.A- T Degree",
+      "control_number": "44223",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Core Professional Skills for Artists",
+      "award": "Noncredit program",
+      "control_number": "45085",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "AI for Cybersecurity",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "45411",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Artificial Intelligence",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "45416",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Artificial Intelligence",
+      "award": "A.S. Degree",
+      "control_number": "45424",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Data Science",
+      "award": "A.S. Degree",
+      "control_number": "45425",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "AI for Cybersecurity",
+      "award": "A.S. Degree",
+      "control_number": "45429",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "45622",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Social Media Strategy",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45695",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Artificial Intelligence (AI) Readiness 2: Ethical and Creative Applications",
+      "award": "Noncredit program",
+      "control_number": "45872",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Artificial Intelligence (AI) Readiness 3: Security, Privacy, and Bias",
+      "award": "Noncredit program",
+      "control_number": "45873",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Visual Design Foundations",
+      "award": "Noncredit program",
+      "control_number": "45874",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Artificial Intelligence (AI) Readiness 1: In the Workplace",
+      "award": "Noncredit program",
+      "control_number": "45879",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Cyber Hygiene and Online Safety",
+      "award": "Noncredit program",
+      "control_number": "46029",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Cyber Hygiene for the Workplace",
+      "award": "Noncredit program",
+      "control_number": "46030",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Public Health",
+      "award": "A.S. T Degree",
+      "control_number": "46077",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Calculus",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46538",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Coastline Community College",
+      "program": "Emergency Management Foundations",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "46539",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Astronomy",
+      "award": "A.S. Degree",
+      "control_number": "06326",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Biology",
+      "award": "A.S. Degree",
+      "control_number": "06328",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "General Business",
+      "award": "A.S. Degree",
+      "control_number": "06329",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Accounting",
+      "award": "A.S. Degree",
+      "control_number": "06330",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Computer Applications/Business Technology",
+      "award": "A.S. Degree",
+      "control_number": "06334",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Health Science",
+      "award": "A.A. Degree",
+      "control_number": "06339",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Engineering",
+      "award": "A.S. Degree",
+      "control_number": "06341",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Engineering Technology",
+      "award": "A.S. Degree",
+      "control_number": "06345",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Art History",
+      "award": "A.A. Degree",
+      "control_number": "06348",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Music",
+      "award": "A.A. Degree",
+      "control_number": "06349",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Theatre Arts/Drama",
+      "award": "A.A. Degree",
+      "control_number": "06350",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Dance",
+      "award": "A.A. Degree",
+      "control_number": "06352",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Art Photography",
+      "award": "A.A. Degree",
+      "control_number": "06353",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Spanish",
+      "award": "A.A. Degree",
+      "control_number": "06358",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Dental Hygiene",
+      "award": "A.S. Degree",
+      "control_number": "06366",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Radiologic Technology",
+      "award": "A.S. Degree",
+      "control_number": "06370",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "English",
+      "award": "A.A. Degree",
+      "control_number": "06372",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Communication Studies",
+      "award": "A.A. Degree",
+      "control_number": "06373",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Philosophy",
+      "award": "A.A. Degree",
+      "control_number": "06374",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Mathematics",
+      "award": "A.S. Degree",
+      "control_number": "06377",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Physics",
+      "award": "A.S. Degree",
+      "control_number": "06378",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Chemistry",
+      "award": "A.S. Degree",
+      "control_number": "06379",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Geology",
+      "award": "A.S. Degree",
+      "control_number": "06380",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Psychology",
+      "award": "A.A. Degree",
+      "control_number": "06381",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Early Childhood Education",
+      "award": "A.S. Degree",
+      "control_number": "06385",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Fire Technology",
+      "award": "A.S. Degree",
+      "control_number": "06389",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Anthropology",
+      "award": "A.A. Degree",
+      "control_number": "06391",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Economics",
+      "award": "A.A. Degree",
+      "control_number": "06393",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "History",
+      "award": "A.A. Degree",
+      "control_number": "06394",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Geography",
+      "award": "A.A. Degree",
+      "control_number": "06395",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Political Science",
+      "award": "A.A. Degree",
+      "control_number": "06396",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Sociology",
+      "award": "A.A. Degree",
+      "control_number": "06397",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Culinary Arts & Hospitality Management",
+      "award": "A.S. Degree",
+      "control_number": "06398",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Construction Management",
+      "award": "A.S. Degree",
+      "control_number": "06402",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Greenhouse and Nursery Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "09590",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Landscape Horticulture",
+      "award": "A.S. Degree",
+      "control_number": "09591",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Landscape Horticulture",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "09592",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Administrative Support",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "09594",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Computer Science",
+      "award": "A.S. Degree",
+      "control_number": "09597",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Building Inspection and Construction Codes",
+      "award": "A.S. Degree",
+      "control_number": "09599",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Medical Assisting",
+      "award": "A.S. Degree",
+      "control_number": "09600",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Women's Studies",
+      "award": "A.A. Degree",
+      "control_number": "09739",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "General Business",
+      "award": "A.A. Degree",
+      "control_number": "10007",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Journalism",
+      "award": "A.A. Degree",
+      "control_number": "10011",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Art Studio",
+      "award": "A.A. Degree",
+      "control_number": "11293",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Human Services",
+      "award": "A.S. Degree",
+      "control_number": "12365",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Early Childhood Education Administration",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "12744",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Infant Toddler Care",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "12745",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Working with Culturally Diverse Families",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "12746",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Anti-Bias Curriculum",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "12747",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Curriculum Planning",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "12748",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Children's Literacy Curriculum",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "12749",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Computer Support",
+      "award": "A.S. Degree",
+      "control_number": "16552",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Computer Programming",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "16553",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Java Programming",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "16555",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "C++ Programming",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "16556",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Bilingual Spanish English Teaching",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "16558",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "General Business",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20403",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Accounting",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20404",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Computer Applications/Business Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20406",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Journalism/Blogging",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20409",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Computer Support",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20413",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Engineering Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20414",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Construction  Management",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20415",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Building Inspection and Construction Codes",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20416",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Medical Assisting",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20417",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Teaching",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20418",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Culinary Arts and Hospitality Management",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20419",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Human Services",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20421",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Mathematics",
+      "award": "A.S. T Degree",
+      "control_number": "30754",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "30756",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "31441",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "31661",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "31689",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "31987",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "32027",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "32067",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Theatre Arts",
+      "award": "A.A- T Degree",
+      "control_number": "32068",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Communication Studies",
+      "award": "A.A- T Degree",
+      "control_number": "32069",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "32200",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Art History",
+      "award": "A.A- T Degree",
+      "control_number": "32201",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Music",
+      "award": "A.A- T Degree",
+      "control_number": "32291",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Spanish",
+      "award": "A.A- T Degree",
+      "control_number": "32352",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Geography",
+      "award": "A.A- T Degree",
+      "control_number": "32498",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Philosophy",
+      "award": "A.A- T Degree",
+      "control_number": "32499",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Energy Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "32524",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Energy Management",
+      "award": "A.S. Degree",
+      "control_number": "32544",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "32566",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "33277",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Geology",
+      "award": "A.S. T Degree",
+      "control_number": "33667",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Elementary Teacher Education",
+      "award": "A.A- T Degree",
+      "control_number": "33673",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Music Technology and Recording Arts",
+      "award": "A.S. Degree",
+      "control_number": "33947",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "35130",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Digital Literacy",
+      "award": "Noncredit program",
+      "control_number": "35219",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Advanced English Fluency",
+      "award": "Noncredit program",
+      "control_number": "35317",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "35570",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Intermediate English Fluency",
+      "award": "Noncredit program",
+      "control_number": "35584",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Business Information Worker",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35590",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Agriculture Plant Science",
+      "award": "A.S. T Degree",
+      "control_number": "35651",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Beginning Technology Skills",
+      "award": "Noncredit program",
+      "control_number": "35910",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Basic Kitchen Skills",
+      "award": "Noncredit program",
+      "control_number": "36833",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Advanced Academic English Language Skills",
+      "award": "Noncredit program",
+      "control_number": "37493",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Intermediate Academic English Language Skills",
+      "award": "Noncredit program",
+      "control_number": "37494",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Biology Laboratory and Research Skills",
+      "award": "Noncredit program",
+      "control_number": "37905",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Environmental Science",
+      "award": "A.S. T Degree",
+      "control_number": "37915",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Communication Studies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37918",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Community Health Worker",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37951",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Honors Scholar",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37984",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Latin American and Latino/a Studies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38360",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Fundamentals of Sports Medicine Athletic Training",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38489",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Technical Theatre",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38568",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Magnetic Resonance Imaging",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38977",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Lifeguard Professional",
+      "award": "Noncredit program",
+      "control_number": "38994",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Personal Trainer",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38995",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Strategic Job Preparation",
+      "award": "Noncredit program",
+      "control_number": "39197",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Professional Workplace Skills",
+      "award": "Noncredit program",
+      "control_number": "39198",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Computed Tomography",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39464",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "English for Careers",
+      "award": "Noncredit program",
+      "control_number": "39750",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Human Relations and Resources",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40395",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Business Information Worker Level II",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "40396",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Entrepreneurship and Small Business",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40397",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Office Software",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40398",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Biotechnology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40404",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Global Citizen",
+      "award": "Noncredit program",
+      "control_number": "40406",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Customer Relationship Management (CRM)",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40496",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Payroll Accounting",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40585",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Musical Theatre",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40612",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Tax Preparation",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40613",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Sustainability",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40745",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Community Health Worker",
+      "award": "Noncredit program",
+      "control_number": "40780",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Computer Lab Support Assistant",
+      "award": "Noncredit program",
+      "control_number": "40835",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Image Use in Professional Settings",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41098",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Video",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41099",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Historical and Alternative Photographic Processes",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41142",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Traditional Black and White Photography",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41143",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "American English Pronunciation",
+      "award": "Noncredit program",
+      "control_number": "41184",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Liberal Arts and Sciences: Emphasis in Kinesiology and Wellness",
+      "award": "A.A. Degree",
+      "control_number": "41186",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "CPA Exam Preparation",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "41188",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Basic Photoshop for Photography",
+      "award": "Noncredit program",
+      "control_number": "41305",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Industry Exam Preparation",
+      "award": "Noncredit program",
+      "control_number": "41306",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "CCNA Exam Preparation",
+      "award": "Noncredit program",
+      "control_number": "41307",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Entry Level Baking",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41341",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Entry Level Cook",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41342",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Entry Level Restaurant Preparation",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41343",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Entry Level Catering",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41345",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "41374",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Liberal Arts and Sciences: Emphasis in Math and Science",
+      "award": "A.A. Degree",
+      "control_number": "41429",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Bookkeeping",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41628",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Drug and Alcohol Studies",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "41741",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "A+ Certification Preparation",
+      "award": "Noncredit program",
+      "control_number": "41958",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Google IT Support",
+      "award": "Noncredit program",
+      "control_number": "41959",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Art and Maker Entrepreneurship Online",
+      "award": "Noncredit program",
+      "control_number": "41967",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Foundations of Teamwork",
+      "award": "Noncredit program",
+      "control_number": "41991",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "De-escalation: Verbal Communication and Self-Defense",
+      "award": "Noncredit program",
+      "control_number": "41997",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Information Technology",
+      "award": "A.S. Degree",
+      "control_number": "42083",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "General Horticulture and Crop Production",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "42215",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Human Services General Practice",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42266",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Building Performance and Energy Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42363",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Entry Level Building Inspection and Construction Codes",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42364",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "User Interface and User Experience (UI/UX)",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42365",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "CyberCamp",
+      "award": "Noncredit program",
+      "control_number": "42430",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Accounting for Payroll",
+      "award": "Noncredit program",
+      "control_number": "42431",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Advanced Photography and Visual Media",
+      "award": "Noncredit program",
+      "control_number": "42432",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Basic Office Skills I",
+      "award": "Noncredit program",
+      "control_number": "42433",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Basic Office Skills II",
+      "award": "Noncredit program",
+      "control_number": "42434",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Medical Assisting Administrative Exam Preparation",
+      "award": "Noncredit program",
+      "control_number": "42435",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Public Safety Career Preparation",
+      "award": "Noncredit program",
+      "control_number": "42436",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Public Safety Reports, Evidence, and Testimony",
+      "award": "Noncredit program",
+      "control_number": "42437",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Mushroom Cultivation",
+      "award": "Noncredit program",
+      "control_number": "42438",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Portrait Photography",
+      "award": "Noncredit program",
+      "control_number": "42440",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Medical Assisting Clinical Exam Preparation",
+      "award": "Noncredit program",
+      "control_number": "42441",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Construction Business Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42452",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Construction Project Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42453",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Podcasting",
+      "award": "Noncredit program",
+      "control_number": "42459",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Construction Plumbing and Mechanical Inspection and Codes",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42476",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Arboriculture",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42477",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Permaculture",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42478",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Web Design",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42479",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Landscape Design",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42482",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Sustainable Construction and Blueprint Reading",
+      "award": "Noncredit program",
+      "control_number": "42494",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Entry Level Construction Skills",
+      "award": "Noncredit program",
+      "control_number": "42505",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Introduction to Infant/Toddler Development",
+      "award": "Noncredit program",
+      "control_number": "42510",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Entry Level Construction and Energy Management Skills",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42532",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Graphic Design",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42537",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Digital Imaging",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42556",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Typography",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42557",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Accounting for Quickbooks",
+      "award": "Noncredit program",
+      "control_number": "42622",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Sustainability and Environmental Studies",
+      "award": "A.S. Degree",
+      "control_number": "42662",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Game Audio Production",
+      "award": "Noncredit program",
+      "control_number": "42714",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Food Presentation and Photography",
+      "award": "Noncredit program",
+      "control_number": "42721",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Cybersecurity Competitions I",
+      "award": "Noncredit program",
+      "control_number": "42730",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Cybersecurity Competitions II",
+      "award": "Noncredit program",
+      "control_number": "42731",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Tutor Preparation",
+      "award": "Noncredit program",
+      "control_number": "42747",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Cybersecurity Competitions III",
+      "award": "Noncredit program",
+      "control_number": "42749",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Jazz Studies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42779",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Voice",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42781",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Digital Music Production",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42841",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Audio Recording and Mixing",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42842",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Game Audio Production",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42866",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Basic Construction",
+      "award": "Noncredit program",
+      "control_number": "42897",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Family Development Worker",
+      "award": "Noncredit program",
+      "control_number": "42898",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Introduction to Child Development",
+      "award": "Noncredit program",
+      "control_number": "42931",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Phlebotomy Technician",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42954",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Small Business",
+      "award": "Noncredit program",
+      "control_number": "42963",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Computer-aided Drafting and Design",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42982",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "STEM Teaching Assistant Preparation",
+      "award": "Noncredit program",
+      "control_number": "42994",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Cinema Arts Studies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43082",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "3D Animation and Rendering",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43083",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Architecture Drafting and Design",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43084",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Wine Studies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43085",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Digital Illustration",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43095",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "43111",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Accessible Design and Creation",
+      "award": "Noncredit program",
+      "control_number": "43153",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Latin American Music",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43171",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Audio Recording and Mixing",
+      "award": "Noncredit program",
+      "control_number": "43247",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Digital Music Production",
+      "award": "Noncredit program",
+      "control_number": "43248",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Creative Careers",
+      "award": "Noncredit program",
+      "control_number": "43325",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Wine Studies",
+      "award": "A.S. Degree",
+      "control_number": "43367",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Black and White Technical Photography",
+      "award": "Noncredit program",
+      "control_number": "43394",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Mexican Mariachi and Banda Ensemble",
+      "award": "Noncredit program",
+      "control_number": "43395",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Piano",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43556",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Introduction to UI/UX Design",
+      "award": "Noncredit program",
+      "control_number": "43582",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Intercollegiate Athletics",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43652",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Global Wines",
+      "award": "Noncredit program",
+      "control_number": "43666",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Marine Science",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43750",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Art Studio Digital Fabrication",
+      "award": "Noncredit program",
+      "control_number": "43799",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Heat-Pump Systems",
+      "award": "Noncredit program",
+      "control_number": "43803",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Basic Technical Photography",
+      "award": "Noncredit program",
+      "control_number": "43804",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Master Tutor",
+      "award": "Noncredit program",
+      "control_number": "43805",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Photography Skills for Marketing and Outreach",
+      "award": "Noncredit program",
+      "control_number": "43820",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Coaching",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43961",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Marketing and Promotion",
+      "award": "Noncredit program",
+      "control_number": "44038",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Early Childhood Education for Elementary Teaching",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44147",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Early Childhood Education for Teaching Transitional Kindergarten",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44173",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Agriculture Business",
+      "award": "A.S. T Degree",
+      "control_number": "44217",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "E-commerce",
+      "award": "Noncredit program",
+      "control_number": "44346",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "WordPress Web Design and Development",
+      "award": "Noncredit program",
+      "control_number": "44498",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Web Design and Development",
+      "award": "Noncredit program",
+      "control_number": "44547",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Motion Graphics",
+      "award": "Noncredit program",
+      "control_number": "44703",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Photography Technician",
+      "award": "Noncredit program",
+      "control_number": "44704",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Video",
+      "award": "Noncredit program",
+      "control_number": "44706",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Wildland Firefighter",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44886",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Firefighter Academy",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44887",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Emergency Medical Technician (EMT)",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44888",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Game and Interactive Media Design",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44889",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Film, Television, and Electronic Media",
+      "award": "A.S. T Degree",
+      "control_number": "44898",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Basic Welding",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44927",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Advanced Sports Medicine and Athletic Training",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44933",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Advanced Welding",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44937",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Information Technology (IT) Institute Pre-apprentice",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44978",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Exercise and Sports Science",
+      "award": "A.A. Degree",
+      "control_number": "44992",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Environmental Science",
+      "award": "A.S. Degree",
+      "control_number": "44997",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Emergency Medical Responder",
+      "award": "Noncredit program",
+      "control_number": "45117",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Public Health",
+      "award": "A.S. T Degree",
+      "control_number": "45185",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Spanish Intermediate Proficiency",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45306",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Networking",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "45380",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Cloud Computing",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45386",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Information Technology (IT) Support Apprentice",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45387",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Computer Information Systems Foundations",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45401",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Information Security",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "45415",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Early Childhood Education Professional Pathways",
+      "award": "Noncredit program",
+      "control_number": "45653",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Operating Systems",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45679",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Video",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46185",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Mathematics 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "46244",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Certified Nursing Assistant",
+      "award": "Noncredit program",
+      "control_number": "46273",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Elementary Teacher Education: Integrated Programs",
+      "award": "A.A- T Degree",
+      "control_number": "46340",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Intercultural Competency and Global Awareness",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46388",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Cabrillo College",
+      "program": "Python Programming",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46519",
+      "loaded": "2026-10-13"
     }
   ],
   "next_step": {
-    "title": "Load Bakersfield and Coastline",
-    "text": "Read the two colleges' filed records, load each one not yet confirmed, then build the display so their programs appear on CPL Pathways and the Program Requirements tab."
+    "title": "Cabrillo's display, then the eLumen hubs",
+    "text": "Merge Coastline's pull request, build and apply Cabrillo's display, then teach the eLumen reader the program hubs Modesto and Palo Verde use."
   },
   "calls": [
     {
-      "title": "Chaffey's course outline note",
-      "text": "A one-row note on Chaffey's registry row says its course outcomes are not public. It waits as a paste because the database tool is down. No reply: the finding stays in the repository and the lane."
-    },
-    {
-      "title": "Stop pasting database changes",
-      "text": "Approve a runner that applies committed database changes with an access token, with or without your one-tap approval. No reply: database changes keep arriving as pastes while the tool is down."
-    },
-    {
-      "title": "The gallery picks",
-      "text": "Mark the paintings to keep, drop or add on the gallery page. No reply: the gallery stays as it is and nothing changes on the site."
+      "title": "Annual Goals: adding and removing rows at once",
+      "text": "Whether a new or removed sub-activity shows as soon as it is saved, and whether an official sub-activity may be removed at all. No reply: rows keep appearing after the nightly rebuild, and removal stays off.",
+      "link": "https://cpl-initiative.github.io/cpl-project-tracker/#workplan-goals"
     }
   ],
   "notes": {
@@ -15239,24 +19691,20 @@
   },
   "changes": [
     {
-      "at": "2026-10-13T11:50Z",
-      "text": "Course outcomes loaded at Riverside City, Norco and Moreno Valley (2,665 courses)"
+      "at": "2026-10-13T18:43:54Z",
+      "text": "Coastline's 140 program records loaded, unchecked"
     },
     {
-      "at": "2026-10-13T12:30Z",
-      "text": "Course outcomes loaded at San Diego City, Mesa and Miramar (2,229 courses)"
+      "at": "2026-10-13T18:51:33Z",
+      "text": "Cabrillo's 268 program records loaded, unchecked"
     },
     {
-      "at": "2026-10-13T12:16Z",
-      "text": "Chaffey's course outcomes found to be kept off its public reports"
+      "at": "2026-10-13T18:59:00Z",
+      "text": "Display build 14e436537733 applied to 2,572 records"
     },
     {
-      "at": "2026-10-13T14:22Z",
-      "text": "Coastline read with two catalog reader fixes, extraction under way"
-    },
-    {
-      "at": "2026-10-13T14:35Z",
-      "text": "Bakersfield read through the eLumen catalog's own page calls, extraction under way"
+      "at": "2026-10-13T19:00:00Z",
+      "text": "Coastline's procedure record written"
     }
   ],
   "headline": [

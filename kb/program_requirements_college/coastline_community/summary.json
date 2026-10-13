@@ -1,0 +1,20 @@
+{
+ "college": "Coastline Community College",
+ "programs": 175,
+ "with_closed_list": 159,
+ "found": 154,
+ "extracted": 154,
+ "errors": 0,
+ "passed_machine_checks": 124,
+ "failed": {
+  "coverage": 14,
+  "invented": 0,
+  "arithmetic": 29,
+  "repeated": 1,
+  "outcomes": 0
+ },
+ "cost_usd": 8.52,
+ "cost_per_program": 0.0553,
+ "not_found": [],
+ "run": "38445051060"
+}

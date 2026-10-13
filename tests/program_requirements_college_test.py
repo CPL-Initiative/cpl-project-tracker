@@ -724,6 +724,85 @@ try:
 finally:
     shutil.rmtree(parent, ignore_errors=True)
 
+# ── the link search never takes a course listing for a program (S380) ───────
+# Coastline run 38406172949: the link search accepted
+# course-descriptions/credit-courses/re/ for Real Estate at coverage 1.0 (a course
+# listing names every course in its subject) and three listings for five programs.
+CL = "https://catalog.cccd.edu/coastline/"
+check(not C.link_page_ok(CL + "course-descriptions/credit-courses/re/index.html", "/coastline/")
+      and not C.link_page_ok(CL + "course-descriptions/credit-courses/emgt/", "/coastline/")
+      and not C.link_page_ok("https://catalog.cccd.edu/golden-west/pathways/business/", "/coastline/")
+      and not C.link_page_ok("", "/coastline/"),
+      "a course listing, another college's path on a district host, or no address is never a program's page")
+check(C.link_page_ok(CL + "pathways/behavior-culture-society/aging-studies/aging-studies-aa/", "/coastline/")
+      and C.link_page_ok("https://catalog.mtsac.edu/programs/accounting/", None),
+      "a program page in the college's own scope, or on a host with no scope, stands")
+
+# ── a CourseLeaf program page listed as <dir>/index.html is read (S380) ──────
+# Coastline's catalog lists each program page as .../business-as/index.html; the
+# old filter dropped every address ending in /index.html, and 109 of 159 programs
+# found no page (run 38406172949). Read in its directory form, once.
+CLP = CL + "pathways/business-operations-management/business/"
+cands = C.program_candidates([CLP + "business-as/index.html", CLP + "business-as/",
+                              CLP + "marketing-certificate-achievement/index.html",
+                              CL + "index.html", CL + "course-descriptions/credit-courses/bus/index.html",
+                              "https://catalog.cccd.edu/golden-west/pathways/business/business-as/index.html"],
+                             CL, "/coastline/")
+check(cands == [CLP + "business-as/", CLP + "marketing-certificate-achievement/"],
+      "an index.html program page is read as its directory, once; the catalog front page, a course listing and "
+      "another college's path are not")
+check(C.dir_form(CLP + "business-as/index.html#req") == CLP + "business-as/" and C.dir_form("") == "",
+      "the directory form drops index.html and any fragment")
+check(C.link_page_ok(CLP + "business-as/index.html", "/coastline/"),
+      "the link search may take an index.html program page too")
+
+# ── a subject page's own program pages are read (S381) ──────────────────────
+# Coastline run 38412902035 (after the index.html fix) still found 24 of 159: its
+# sitemap lists the subject pages and few of the program pages each one links, so
+# Information Technology A.S. turned up only through the capped link search.
+SUBJ = CLP   # pathways/business-operations-management/business/
+links = [{"href": SUBJ + "business-as/index.html"}, {"href": SUBJ + "marketing-applied-as/"},
+         {"href": SUBJ + "business-as/#requirementstext"},
+         {"href": CL + "pathways/business-operations-management/accounting/"},     # a sibling, not beneath
+         {"href": CL + "pathways/computer-cyber-sciences/"},                         # the menu
+         {"href": CL + "course-descriptions/credit-courses/bus/index.html"},
+         {"href": "https://catalog.cccd.edu/golden-west/pathways/business/business-as/"},
+         {"href": SUBJ}]
+check(C.child_pages(SUBJ, links, CL, "/coastline/") == [SUBJ + "business-as/", SUBJ + "marketing-applied-as/"],
+      "a page's children are the program pages beneath its own address, once each, in directory form")
+check(C.child_pages(SUBJ + "index.html", links, CL, "/coastline/") == [SUBJ + "business-as/", SUBJ + "marketing-applied-as/"]
+      and C.child_pages(SUBJ + "page.html", links, CL, "/coastline/") == [],
+      "an index.html page reads as its directory; a page that is a file has no children")
+
+# Coastline spells some awards out in the address (the page read 38411214415's links).
+check([C.slug_award(SUBJ + slug + "/") for slug in
+       ("marketing-associate-science-degree", "business-administration-2.0-associate-science-degree-transfer",
+        "economics-associate-arts-degree-transfer", "english-associate-arts-degree",
+        "project-management-essentials-certificate-specialization", "marketing-certificate-achievement")]
+      == ["as", "adt", "adt", "aa", "other", "coa"],
+      "an address that spells its award out names it, the transfer form before the plain one")
+adt_page = {"url": SUBJ + "business-administration-2.0-associate-science-degree-transfer/",
+            "h1": "", "title": "Business Administration 2.0, Associate in Science Degree for Transfer < Coastline College"}
+check(C.label_score(adt_page, {"award": "A.S. Degree", "title": "Business"})[0] == 0
+      and C.label_score(adt_page, {"award": "A.S.- T Degree", "title": "Business Administration 2.0"})[0] == 1,
+      "an A.S. does not read an A.S.-T page as its own because both say 'Associate in Science'")
+
+# Every Coastline page's h1 is the catalog's banner, so the heading rule read
+# "ACADEMIC CATALOGS" and turned every hidden-text page away.
+ban = [{"url": SUBJ + "p%d/" % i, "h1": "ACADEMIC CATALOGS", "title": "P%d < Coastline College" % i} for i in range(12)]
+aging = {"url": CL + "pathways/behavior-culture-society/aging-studies/aging-studies-aa/", "h1": "ACADEMIC CATALOGS",
+         "title": "Aging Studies, Associate of Arts Degree < Coastline College"}
+check(not C.heading_names_program(aging, {"title": "Aging Studies"}),
+      "the banner as a heading names no program (the failure)")
+check(C.drop_banner_h1(ban + [aging]) == "ACADEMIC CATALOGS" and aging["h1"] == ""
+      and C.heading_names_program(aging, {"title": "Aging Studies"})
+      and not C.heading_names_program(aging, {"title": "Gerontology Nursing"}),
+      "an h1 on every page is the banner: the heading is read from the title, before its ' < ' site name")
+few = [{"h1": "ACADEMIC CATALOGS"} for _ in range(4)] + [{"h1": "Art, A.A."}]
+own_heads = [{"h1": "X%d, A.A." % i} for i in range(20)]
+check(C.drop_banner_h1(few) is None and few[0]["h1"] == "ACADEMIC CATALOGS" and C.drop_banner_h1(own_heads) is None,
+      "an h1 on a handful of pages, or a heading of each page's own, stays")
+
 # ── eLumen: the program index is the catalog's side menu (S380) ─────────────
 # Read 38392014238: Bakersfield's start page links each program at
 # /catalog/2026-2027-Catalog/program/<slug>, beside its services, policies and
@@ -834,6 +913,65 @@ check([g["url"].rsplit("/", 1)[1] for g in got_pages] == ["accounting-as-fall-20
       % ([g["url"] for g in got_pages], rep.get("elumen")))
 check(sum(1 for u in asked if ",department," in u) == 2 and sum(1 for u in asked if ",program," in u) == 3,
       "one call a department and one a program, nothing more")
+
+# ── a program left without a page says why (S381) ──────────────────────────
+# Coastline re-read 38429656959: Information Technology A.S.'s own page was read from the
+# sitemap, refused, and taken by the link search at coverage 1.0; nothing said which gate.
+it = {"control_number": "20378", "title": "Information Technology", "award": "A.S. Degree",
+      "closed_list": [{"code": "CST C%d" % n} for n in range(101, 107)]}
+own_thin = page(CL + "pathways/x/information-technology/information-technology-as/",
+                "Information Technology, Associate of Science Degree", "Information Technology A.S. CST C101")
+nm = C.near_miss(it, [own_thin, page(CL + "pathways/x/art/", "Art", "ART C100")])
+check(nm and nm["url"].endswith("information-technology-as/") and nm["why"].startswith("coarse net") and nm["net"] == 1
+      and nm["listed"] == 6 and nm["label"] == {"award": 1, "title": 1.0},
+      "a program's own page that names too few of its courses is named, with the gate that refused it: %s" % nm)
+# The address names the program (so the label does); the heading names another program.
+other = hidden_page(CL + "pathways/x/information-technology/photography-aa/", "Photography, Associate of Arts", "Photography A.A.")
+other["content"] = other["got"]["content"] = " ".join("CST C%d" % n for n in range(101, 107))
+other["codes"] = C.page_codes(other["content"])
+nm2 = C.near_miss(it, [other])
+check(nm2 and nm2["why"].startswith("hidden text only"), "a page read from hidden text alone, its heading naming another program: %s" % nm2)
+check(C.near_miss(it, [page(CL + "pathways/x/art/", "Art", "ART C100")]) == {"why": "no page read names the program"},
+      "with no page naming the program, it says so")
+check(C.near_miss(dict(it, closed_list=[]), [own_thin]) is None, "a program with no listed course has no near miss")
+
+# ── the coarse net reads a hidden Requirements tab (S382) ───────────────────
+# Capture-only run 38438077425: 98 of Coastline's 106 not-found programs were refused by
+# the coarse net. Page read 38443044852: Building Codes Inspector A.S. shows its Overview
+# alone (1,080 characters); its courses sit in a hidden Requirements tab, and textContent
+# runs each code into the cell before it, so no code token has a word boundary.
+bci = {"control_number": "20372", "title": "Building Codes Inspector", "award": "A.S. Degree",
+       "closed_list": [{"code": "BCI C%d" % n} for n in (100, 101, 102, 103, 104, 105, 106, 107, 108, 111)]}
+bci_req = "Requirements\nCourse\tTitle\tUnits\n" + "\n".join(
+    "BCI C%d\tCode Course %d\t3" % (n, n) for n in (100, 101, 102, 103, 104, 105, 106, 107, 108, 111))
+bci_glued = ("Building Codes Inspector, Associate of Science DegreeOVERVIEWREQUIREMENTSCoastline's Building Codes "
+             "Inspector program (BCI) is a comprehensive building codes program.CourseTitleUnits"
+             + "".join("BCI C%dCode Course %d3" % (n, n) for n in (100, 101, 102, 103, 104, 105, 106, 107, 108, 111)))
+bci_got = {"title": "Building Codes Inspector, Associate of Science Degree < Coastline College",
+           "h1": "Building Codes Inspector, Associate of Science Degree",
+           "body": "Building Codes Inspector, Associate of Science Degree\nOVERVIEW\nREQUIREMENTS\n"
+                   "Coastline's Building Codes Inspector program (BCI) is a comprehensive building codes program.",
+           "content": bci_glued,
+           "tabPanels": [{"label": "REQUIREMENTS", "id": "requirementstextcontainer", "text": bci_req}]}
+bci_page = {"url": CL + "pathways/law-safety/building-codes-inspector/building-codes-inspector-as/",
+            "title": bci_got["title"], "h1": bci_got["h1"], "body": bci_got["body"], "content": bci_got["content"],
+            "got": bci_got}
+check(not ({"BCIC100", "BCIC101"} & C.page_codes(bci_got["body"] + "\n" + bci_got["content"])),
+      "textContent runs each code into the cell before it, so the old net read none of them")
+check(C.page_net(bci_got) >= {P.norm_code(c["code"]) for c in bci["closed_list"]},
+      "the net reads the hidden Requirements tab cell by cell and names all ten listed courses")
+bci_page["codes"] = C.page_net(bci_got)
+bc = C.choose_page(bci, [bci_page])
+check(bc is not None and bc["field"] == "innerText+tabs" and bc["coverage"] == 1.0,
+      "the program's own page is accepted from its visible text and its tab: %s" % ((bc["field"], bc["coverage"]) if bc else None,))
+check(C.near_miss(bci, [dict(bci_page, codes=C.page_codes(bci_got["body"] + "\n" + bci_got["content"]))])["why"]
+      .startswith("coarse net"), "with the old net the same page is refused at the coarse net (the run's near miss)")
+cap_src = open(os.path.join(ROOT, "kb", "_program_requirements_college.py")).read()
+check('"codes": page_net(got)' in cap_src, "the capture loop builds each page's net with page_net()")
+nm3 = C.near_miss(bci, [dict(bci_page, codes=set(), got=dict(bci_got, error="Execution context was destroyed"))])
+check(nm3["error"] == "Execution context was destroyed" and nm3["chars"]["content"] == len(bci_glued)
+      and nm3["chars"]["tabs"] > 0 and nm3["tab_panels"] == [["REQUIREMENTS", len(bci_req)]],
+      "a near miss files what the capture held for the page: its script error, its text sizes, its tab panels")
 
 sql = open(os.path.join(ROOT, "chatbox", "supabase_program_requirement_records_college_load.sql")).read()
 body = sql.split("as $$")[1].split("$$;")[0]

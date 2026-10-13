@@ -168,6 +168,11 @@ jobs:
       # grants. Pure-stdlib python; same non-required check.
       - name: Supabase table-grant lint (new and recreated tables carry grants)
         run: python3 tests/supabase_table_grants_test.py
+      # The runner-applied migration (Sam, Open Asks Sheet 74 card 2, 2026-10-13):
+      # only a committed .sql under chatbox/, kb/ or supabase/, a migration name the
+      # ledger accepts, and a receipt naming the file's sha256. Pure-stdlib python.
+      - name: Supabase migrate runner (committed file, name, receipt)
+        run: python3 tests/supabase_migrate_test.py
       # The Program records view's one write (Sheet 51 card 1, S347): the session's
       # email, the reviewer gate first, the fingerprint refused when stale, an
       # append-only log, and the same machine checks in SQL and in the tab.

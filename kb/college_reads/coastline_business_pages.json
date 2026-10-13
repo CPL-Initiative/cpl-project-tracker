@@ -1,0 +1,30 @@
+{
+ "_readme": "S380 SkyAlder, 2026-10-13. Coastline's capture (run 38406172949) found a page for 29 of its 159 programs with a course list: 109 found none and 21 lost a shared page. Its catalog sets programs at /coastline/pathways/<area>/<subject>/<program>/, and several subject pages (business/, accounting/, cybersecurity/) were claimed by more than one program. Business A.S. 23043, Management A.S. 03723, Supervision A.A. 03724 and Marketing A.S. 23047 found no page. This read loads the Business Operations & Management area page and its business subject page, tabs opened, to see where those programs print their requirements. Two page loads, no model call.",
+ "college": "Coastline Community College",
+ "questions": {
+  "program_pages": "Which pages the area lists for Business, Management, Supervision, Marketing and Human Resources Management, and whether each program has its own page.",
+  "requirements_place": "Where a subject page prints each program's requirements (a tab per award, a block per award), and which course codes they name."
+ },
+ "keywords": [
+  "[Rr]equire",
+  "A\\.S\\.",
+  "A\\.A\\.",
+  "[Cc]ertificate",
+  "BUS C\\d+",
+  "MGMT C\\d+",
+  "MKTG C\\d+"
+ ],
+ "pages": [
+  {
+   "answers": ["program_pages"],
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/",
+   "links": "business|management|supervision|marketing|human|supply|retail|paralegal|accounting"
+  },
+  {
+   "answers": ["requirements_place"],
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/",
+   "expand": true,
+   "links": "business|management|marketing|requirement|degree|certificate"
+  }
+ ]
+}

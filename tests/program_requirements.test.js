@@ -1535,6 +1535,113 @@ block("(22)", function () {
     row && row.querySelector(".prh-coci") && row.querySelector(".prh-coci").textContent);
 });
 
+// ── (23) Every count opens what it totals; what waits on Sam says where to answer ──
+// Sam, 2026-10-13, on his phone: "make the prog reqs status cards open the items they total
+// on click. Also, if there are open questions I can address for any, add a link on those card
+// to where I can answer those." The failures this guards: a card that counts items and opens
+// nothing; a list opened with an earlier filter still set, so it shows other than the count;
+// a question on a card with nowhere to answer it.
+block("(23)", function () {
+  function part(root, title) {
+    return Array.prototype.filter.call(root.querySelectorAll(".prh-pg-grid > li"), function (li) {
+      return li.querySelector("h4").textContent === title; })[0];
+  }
+  let p = progressReady(20);
+  const opens = Array.prototype.map.call(p.root.querySelectorAll(".prh-pg-grid > li"), function (li) {
+    const b = li.querySelector(".prh-pg-open"); return b ? b.textContent : null; });
+  check("(23) each of the eight parts carries the word that opens its list",
+    opens.length === 8 && opens.every(Boolean) && opens[1] === "Open the 22 records" && opens[2] === "Open the 20 checked", opens.join(" | "));
+  check("(23) a card that opens its list is the tap target: the word's ::after covers it, and an answer link rides above",
+    p.root.querySelectorAll(".prh-pg-grid > li.prh-pg-opens").length === 8 &&
+    /\.prh-pg-opens \.prh-pg-open::after \{ content:''; position:absolute; inset:0;/.test(SRC) &&
+    /\.prh-pg-answer \{ position:relative; z-index:1; \}/.test(SRC) && /\.prh-pg-part \{ position:relative;/.test(SRC));
+
+  // A filter left from an earlier visit is cleared, so the list is exactly what the card counted.
+  p.M._state.rq = "Welding"; p.M._state.rcollege = "Cerritos College";
+  part(p.root, "Catalog reading").querySelector(".prh-pg-open").click();
+  check("(23) Catalog reading opens Program records, every record, the earlier search cleared",
+    p.M._state.view === "records" && p.M._state.rshow === "all" && p.M._state.rq === "" && p.M._state.rcollege === "all" &&
+    /Showing 20 of 20/.test(p.root.querySelector(".prh-count").textContent), p.root.querySelector(".prh-count").textContent);
+
+  p = progressReady(20);
+  part(p.root, "The four checks").querySelector(".prh-pg-open").click();
+  check("(23) the four checks open the checked records", p.M._state.view === "records" &&
+    p.root.querySelector("#prh-rshow").value === "checked");
+
+  // What waits on Sam: his reading, answered on Program records, signed in.
+  p = progressReady(20);
+  p.M._state.review = { email: "sam@example.org", records: p.f.recs }; p.M._state.view = "progress"; p.M._render();
+  const ans = part(p.root, "The four checks").querySelector(".prh-pg-answer");
+  check("(23) the four checks say where Sam answers: the records waiting on his reading",
+    !!ans && ans.textContent === "Read the 2 waiting on you" && ans.tagName === "BUTTON", ans && ans.textContent);
+  ans.click();
+  check("(23) and it opens Program records on Waiting on your reading",
+    p.M._state.view === "records" && p.root.querySelector("#prh-rshow").value === "waiting");
+
+  p = progressReady(20);
+  check("(23) a part with nothing waiting carries no answer link",
+    !part(p.root, "Reading procedures").querySelector(".prh-pg-answer") && !part(p.root, "Catalog census").querySelector(".prh-pg-answer"));
+  part(p.root, "Catalog addenda").querySelector(".prh-pg-open").click();
+  const rows = p.root.querySelectorAll('details[data-sec="catalogs:registry"] tbody tr');
+  check("(23) Catalog addenda open the colleges listing a live addendum (a gone one is not live)",
+    p.M._state.view === "catalogs" && p.root.querySelector("#prh-show").value === "addenda" && rows.length === 2 &&
+    /Irvine Valley/.test(rows[0].textContent + rows[1].textContent) && /Cerritos/.test(rows[0].textContent + rows[1].textContent),
+    rows.length);
+  p = progressReady(20);
+  part(p.root, "Reading procedures").querySelector(".prh-pg-open").click();
+  check("(23) Reading procedures open the Procedures view", p.M._state.view === "procedures");
+  p = progressReady(20);
+  part(p.root, "Program maps").querySelector(".prh-pg-open").click();
+  check("(23) Program maps open the Sequences view", p.M._state.view === "sequences");
+  p = progressReady(20);
+  const pw = part(p.root, "Sierra and CPL Pathways").querySelector(".prh-pg-open");
+  check("(23) Sierra and CPL Pathways opens the CPL Pathways tab by its bare hash", !!pw && pw.tagName === "A" && pw.getAttribute("href") === "#cpl-pathways");
+
+  // The milestone's left items are the same counts, so each opens its list.
+  p = progressReady(20);
+  const chips = Array.prototype.slice.call(p.root.querySelectorAll(".prh-pg-left .prh-pg-chipgo"));
+  check("(23) each item left before the next milestone is a word that opens its list",
+    chips.length === 3 && chips.every(function (b) { return b.tagName === "BUTTON"; }), chips.map(function (b) { return b.textContent; }).join(" | "));
+  chips.filter(function (b) { return /new records to check/.test(b.textContent); })[0].click();
+  check("(23) the new records to check open Program records", p.M._state.view === "records");
+
+  p = progressReady(20);
+  const hl = p.root.querySelector(".prh-pg-hlgo");
+  check("(23) the headline's checked count opens the checked records", !!hl && hl.textContent === "Open the 20 checked");
+  hl.click();
+  check("(23) and lands on them", p.M._state.view === "records" && p.root.querySelector("#prh-rshow").value === "checked");
+
+  // A call the status file places on a part puts its answer link on that card.
+  p = progressReady(20);
+  p.M._state.progress.queue.calls = [
+    { title: "Chaffey's note", text: "A paste.", part: "census", link: "https://claude.ai/artifact/sheet74", link_text: "Answer on Sheet 74, card 1" },
+    { title: "Read Art", text: "One record.", part: "checks", records: [{ college: "Irvine Valley College", control_number: "10265" }] }];
+  p.M._render();
+  const onCensus = part(p.root, "Catalog census").querySelector("a.prh-pg-answer");
+  check("(23) a call placed on a part answers from its card, by its sheet link, in a new tab",
+    !!onCensus && onCensus.getAttribute("href") === "https://claude.ai/artifact/sheet74" && onCensus.textContent === "Answer: Chaffey's note" &&
+    onCensus.getAttribute("target") === "_blank", onCensus && onCensus.outerHTML);
+  const onChecks = Array.prototype.filter.call(part(p.root, "The four checks").querySelectorAll(".prh-pg-answer"), function (b) {
+    return /Answer: Read Art/.test(b.textContent); })[0];
+  check("(23) a call with no link opens its own card on the Progress view", !!onChecks);
+  onChecks.click();
+  const callCard = p.root.querySelector('details[data-sec="progress:call:1"]');
+  check("(23) its card is open", !!callCard && callCard.open);
+  check("(23) the side column's card carries the same sheet link",
+    !!p.root.querySelector('details[data-sec="progress:call:0"] a[href="https://claude.ai/artifact/sheet74"]'));
+
+  // A read that failed opens nothing: the card says so instead.
+  p = progressReady(20, { A: "program_source_addenda answered 503" });
+  check("(23) a part whose read failed offers no list", !part(p.root, "Catalog addenda").querySelector(".prh-pg-open"));
+
+  // The filters the counts open, as pure functions.
+  const R = [{ college: "A College", catalog_url: null, procedure: null }, { college: "B College", catalog_url: "https://b/", procedure: { v: 1 } }];
+  check("(23) the three Catalogs filters the counts open",
+    p.M.filterRegistry(R, "", "noaddress").length === 1 && p.M.filterRegistry(R, "", "noprocedure")[0].college === "A College" &&
+    p.M.filterRegistry(R, "", "addenda", "all", {}, { "B College": 2 })[0].college === "B College" &&
+    p.M.filterRegistry(R, "", "addenda", "all", {}, null).length === 0);
+});
+
 Promise.all(pending).then(function () {
   let pass = 0;
   for (const [name, ok, why] of results) {

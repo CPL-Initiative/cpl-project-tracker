@@ -559,7 +559,9 @@ def load(reader, url: str, cache: dict, spa: bool) -> dict:
 
 
 INDEX_SUBJECTS = 40   # a tab panel naming courses in more subjects than this is a course index
-SUBJECT_TOKEN = re.compile(r"\b([A-Z][A-Z&]{1,7})[ \u00a0]?\d{1,4}[A-Z]?\b")
+# The Coast district numbers its courses with a C (Coastline's BCI C100): without the C?
+# its Requirements tab read as naming no course and was dropped (S382).
+SUBJECT_TOKEN = re.compile(r"\b([A-Z][A-Z&]{1,7})[ \u00a0]?C?\d{1,4}[A-Z]?\b")
 
 
 def hidden_tabs_text(got: dict) -> str:

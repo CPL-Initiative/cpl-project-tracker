@@ -2,7 +2,7 @@
   "_about": "Daily-cached snapshot of public.projects. Written by kb/_load_projects.py after a successful Supabase fetch. Falls back to this file on Supabase outage so the dashboard regen continues without manual intervention.",
   "_fetched_at": "2026-10-13",
   "_source_table": "public.projects",
-  "row_count": 33,
+  "row_count": 34,
   "rows": [
     {
       "id": "1.1",
@@ -795,6 +795,30 @@
       "wp_notes": "$50,000 distributed to 114 of 115 credit colleges and 4 noncredit campuses for CPL implementation. $6M one-time fully allocated. 2026 advocacy active for $2M ongoing + $35M one-time appropriation.",
       "kpi_order": null,
       "count_note": null
+    },
+    {
+      "id": "4.7",
+      "name": "EMS Corps",
+      "description": null,
+      "workplan_activity": "Activity 4: Coordinate CPL Sprints, Targeted Projects, Professional Learning, and Strategic Partnerships",
+      "vision_2030_action": null,
+      "cpl_goal": null,
+      "budget_source": null,
+      "budget": null,
+      "lead": null,
+      "team": null,
+      "status": "Not Started",
+      "percent_complete": 0,
+      "start_date": null,
+      "end_date": null,
+      "milestones": null,
+      "latest_update": null,
+      "update_date": null,
+      "kpi_metric": null,
+      "kpi_unit": "CPL Procedures Developed to Support Outreach and Articulation",
+      "wp_notes": null,
+      "kpi_order": null,
+      "count_note": "Self-reported descriptive data on the improvements made"
     }
   ]
 }

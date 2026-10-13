@@ -1,0 +1,209 @@
+{
+ "college": "Coastline Community College",
+ "control_number": "39966",
+ "shape": "certificate",
+ "title": "Educational Studies: ECE Unit Concentration",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/education/education/ed-study-ece-unit-concentration-certificate-achievement/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5700,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5700,
+    "output_tokens": 1712,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1712,
+  "output_tokens_details": {
+   "thinking_tokens": 652
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05704,
+ "ms": 13953,
+ "seconds": 14.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "EDUCC180"
+   ],
+   "flagged": [
+    "EDUCC180"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    16.0
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 18,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Educational Studies: ECE Unit Concentration Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Apply certificate courses towards entry into a teaching credential program and/or to fulfill requirements for a selected child development permit or an employment setting requiring ECE units.",
+    "Upon completion of 16 ECE units, the student will be able to document the acquisition of foundational knowledge and skills (as related to courses selected for the purpose of this certificate), relevant for employment as a teacher assistant or support staff in an early childhood education classroom or related environment."
+   ],
+   "careers": [
+    "teacher assistant",
+    "support staff",
+    "early childhood education teacher assistant/aide",
+    "childcare worker",
+    "paraprofessional in early childhood settings with possible inclusion of special education pre-school settings",
+    "Montessori preschool aide",
+    "floater teacher’s aide",
+    "corporate teacher aide",
+    "early childhood nutrition aide",
+    "early head start teacher’s aide",
+    "infant aide",
+    "after school assistant",
+    "outdoor activities assistant (play area)",
+    "child advocate assistant",
+    "recreation specialist",
+    "nanny",
+    "Lego theme park assistant",
+    "behavior specialist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "choose_units",
+    "minimum": 16,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "EDUC C104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC C210",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC C180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C143",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C116",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C118",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTH C100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text begins mid-sentence ('ermit.'); the start of the program description is cut off, so the exact section heading is inferred from the page URL/program title.",
+   "No units are printed beside individual courses in the requirements table; course units left null.",
+   "EDUC C180 (Family, School, and Community Partnerships) appears in the catalog list but not in the closed list; recorded as a catalog addition.",
+   "Careers taken from the 'Possible employment/ illustrative examples' list and the description's 'teacher assistant or support staff'; employer/setting names (Disney, child care center, daycare, 24 Hour Fitness, YMCA, JCC, court system) were not recorded as careers.",
+   "EDUC C104 is 1 unit in the state file while 'Select 16 units' applies to the whole list; reviewer may verify unit values on the course pages."
+  ]
+ },
+ "extracted_run": "38445051060"
+}

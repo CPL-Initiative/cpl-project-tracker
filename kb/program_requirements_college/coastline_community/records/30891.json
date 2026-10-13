@@ -1,0 +1,271 @@
+{
+ "college": "Coastline Community College",
+ "control_number": "30891",
+ "shape": "adt",
+ "title": "Psychology",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/psychology/psychology-associate-arts-degree-transfer/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5942,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5942,
+    "output_tokens": 2121,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2121,
+  "output_tokens_details": {
+   "thinking_tokens": 778
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06619,
+ "ms": 17987,
+ "seconds": 18.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate Degree for Transfer Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "ge_pattern": "CalGETC (Coastline Option 2 General Education pattern)",
+   "outcomes": [
+    "Characterize the nature of psychology as a science.",
+    "Apply the major theories, principles, and concepts of psychology to everyday life.",
+    "Utilize investigative methods to collect, interpret, and present scientific data on psychological topics."
+   ],
+   "careers": [
+    "social service fields",
+    "counseling",
+    "research psychologist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C280",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL C100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C250",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PSYC C118",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC C100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PSYC C116",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C165",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AGNG C170",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C255",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C260",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints former course numbers in parentheses: STAT C1000 (STAT C160) and PSYC C1000 (PSYC C100); recorded under the current codes only.",
+   "List A: student completes BIOL C100 or PSYC C250; units printed only beside BIOL C100 (3).",
+   "List B: 'Select one of the following or any course from List A not used above' - the List A course not used also satisfies List B.",
+   "List C: 'Select one of the following or any course not selected from List A or B above' - unused List A/B courses also satisfy List C.",
+   "Units are not printed beside individual courses in Lists B and C; the 3 shown is the list total.",
+   "Units Required for Major 20; CalGETC pattern 34; transfer electives (varies) to reach the 60-unit degree total - transfer electives belong to the degree, not the major, so open_elective_units is null.",
+   "Catalog text begins mid-sentence in the program description; earlier description text may be cut off.",
+   "Careers 'counseling' and 'research psychologist' are taken from the sentence noting a Master's degree is required for most counseling or research psychologist positions; reviewer may wish to confirm these should be listed.",
+   "The Program Learning Outcomes appear on the program page; they are recorded for this AA-T award."
+  ]
+ },
+ "extracted_run": "38445051060"
+}

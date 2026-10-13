@@ -258,7 +258,8 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    check `service_role` holds an explicit grant (`has_function_privilege`),
    or the revoke breaks the cron. (c) The
    sandbox cannot reach `*.supabase.co` — all Supabase access goes through the
-   MCP tools. Worked examples:
+   MCP tools; when `apply_migration` times out, a committed file goes through
+   `supabase-migrate.yml` (`kb/migrations/.apply`; Sam, Sheet 74). Worked examples:
    `docs/kb-notes/playbook-trail-crew-method-magic-audit.md`.
 
 ## Naming & terminology (Sam's conventions — honor in all output)
@@ -796,7 +797,7 @@ stays here.
 | **COBI dark mode / the one theme control** | One header control setting the theme for every tab and window, and the token layer under it. Carries the a11y remediation pass. | ✅ live · open work — [lane state](docs/reference/lanes/cobi-dark-mode.md) |
 | **Memory tab / Autogenerate + the Briefing** | Drafting a memory row from a typed topic, reading the entries back, and curating them. | ✅ live · open work — [lane state](docs/reference/lanes/memory-tab.md) |
 | **Annual Workplan Goals / add, move, count** | The one editor of the workplan's structure: add a sub-activity, move it, set targets, say what each number counts — wired to the Activities tab and reports. | 🔨 in progress · open work — [lane state](docs/reference/lanes/workplan-annual-goals.md) |
-| **Program requirements harvest** | Each program's required, list-choice and elective courses at 115 colleges, so CPL units saved can be shown. | 🔨 in progress · Phase 2: ten colleges loaded — [lane state](docs/reference/lanes/program-requirements-harvest.md) |
+| **Program requirements harvest** | Each program's required, list-choice and elective courses at 115 colleges, so CPL units saved can be shown. | 🔨 in progress · Phase 2: thirteen colleges loaded — [lane state](docs/reference/lanes/program-requirements-harvest.md) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
 | 5 | CTE classifier (TOP code → COCI CTE field) | parked (unlocks CIDx lane) |

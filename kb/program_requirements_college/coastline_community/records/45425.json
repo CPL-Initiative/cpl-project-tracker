@@ -1,0 +1,247 @@
+{
+ "college": "Coastline Community College",
+ "control_number": "45425",
+ "shape": "degree",
+ "title": "Data Science",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-computer-sciences/data-science-as/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5942,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5942,
+    "output_tokens": 1482,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1482,
+  "output_tokens_details": {
+   "thinking_tokens": 367
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05341,
+ "ms": 11560,
+ "seconds": 11.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    32.0
+   ],
+   "stated": [
+    31.0,
+    32.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Data Science, Associate of Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Local General Education or CalGETC Pattern",
+   "outcomes": [
+    "Recommend solutions to operational problems by applying data science methods, techniques, and applications.",
+    "Explain data extraction and cleaning techniques applied to a variety of data sources and data types to ensure quality.",
+    "Apply appropriate predictive analytics techniques to common operational scenarios.",
+    "Communicate complex datasets and findings by applying appropriate data visualization techniques."
+   ],
+   "careers": [
+    "Associate Data Scientist",
+    "Junior Data Scientist",
+    "Modeling and Simulation Specialist",
+    "Modeling and Simulation Analyst",
+    "Big Data Analyst",
+    "Senior Data Analyst"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core: Select one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "MATH C140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core: Complete all of the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ICS C123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS C157",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ICS C165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS C240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS C250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS C270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS C280",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ICS C265",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ICS C290",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The math/statistics choice prints no units beside individual courses; only the block total 4-5 is printed, so course units are left null.",
+   "STAT C1000 is printed as 'STAT C1000 (STAT C160)'; STAT C160 appears to be a former/cross-reference number and was not recorded as a separate alternative. Reviewer may verify.",
+   "Major Units printed as 31-32; degree total 60-63 includes GE and electives ('Varies'), so open_elective_units left null."
+  ]
+ },
+ "extracted_run": "38445051060"
+}

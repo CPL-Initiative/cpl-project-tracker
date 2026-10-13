@@ -82,3 +82,21 @@ Sam asked for four things on Annual Goals (move AI Apprenticeship CPL Tools unde
 - **Growing a target can push a fixed-layout column over.** The caret and the info mark at 24px pushed *Course* into the id column; the id was already clipped because `.uc-id` kept `nowrap` against a June fix that meant it to wrap. Look at the screen after a target-size fix: the sweep reported clean while the cells overlapped.
 
 **State:** #2063 merged and run 586 green; no Refresh posted and no Move made yet; Move to the phrase held on Sheet 73.
+
+## S382 SkyLarch (2026-10-13): the Under list, a row added since the rebuild, and the stale home check
+
+- **A list that groups by kind hides the parent beside its children.** Under listed the four Activities first and every
+  sub-activity after them; Sam, adding 4.7 EMS Corps, looked for Activity 4 beside 4.6 and found only sub-activities, whose
+  pick suggests a child (4.6.1). Each Activity now sits above its own sub-activities (#2080, `fillParentOptions`).
+- **A choice list built from the drawn page lags the table by a rebuild.** `collectExistingIds()` reads the rows on the
+  page, which redraw nightly, so a sub-activity saved today could not be a parent until tomorrow. The dialog already read
+  the live ids for the duplicate check; it now offers the live sub-activities too, less tabled, archived and D.* rows
+  (`project_lifecycle` hides those from the table).
+- **An automatic check must be cleared by the same automation.** The dialog checked the default parent's Activity 1 box as
+  home; typing 4.7 moved the home label to Activity 4 and left Activity 1 checked, so 4.7 saved with a second link Sam had
+  not chosen. `setHome()` clears the box it checked unless the editor touched it.
+- **Running the rebuild by hand unblocks the same day** (dashboard run 590, ~7 minutes). Sam asked whether adds and removals
+  could skip the wait; the recommendation (draw rows changed since the build at once, and queue a rebuild on save) and the
+  removal question (his 2026-07-02 immunity ruling) wait on him.
+
+**State:** #2080 merged; 4.7 drawn by run 590; three asks open (the lane's NEEDS SAM).
