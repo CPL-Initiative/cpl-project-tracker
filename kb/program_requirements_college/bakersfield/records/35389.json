@@ -1,0 +1,211 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "35389",
+ "shape": "adt",
+ "title": "Chemistry",
+ "award": "A.S. T Degree",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/chemistry-associate-in-science-for-transfer-summer-2019",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5672,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5672,
+    "output_tokens": 1826,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1826,
+  "output_tokens_details": {
+   "thinking_tokens": 731
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05921,
+ "ms": 17209,
+ "seconds": 17.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CHEMB1A",
+    "CHEMB1B"
+   ],
+   "flagged": [
+    "CHEMB1A",
+    "CHEMB1B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Chemistry Associate in Science for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "ge_pattern": "IGETC or California State University – Breadth Requirements",
+   "outcomes": [
+    "The student shall be able to apply logical quantitative and qualitative reasoning in solving problems.",
+    "The student shall be able to apply the methodologies of chemistry when approaching a problem.",
+    "The student shall demonstrate a knowledge of and recognize the processes that explain natural chemical phenomena."
+   ],
+   "careers": [
+    "laboratory technician",
+    "all chemical industries",
+    "physics",
+    "all other areas of the physical sciences",
+    "engineering",
+    "all areas of the biological and environmental sciences",
+    "allied health fields",
+    "medicine"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM B1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM B30A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM B30B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM B1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH B6A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH B6B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS B4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS B4B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text prints codes without a space between subject and number (e.g., 'CHEMB1A'); they are recorded with a space (e.g., 'CHEM B1A') to match the closed-list format.",
+   "CHEM B1A and CHEM B1B are required by the catalog but absent from the closed list; marked catalog_addition true.",
+   "Outcomes 1 and 2 are each followed by an 'Assessment:' statement ('Assessment shall be done according to the mores of the particular class being taken. Common methods include examinations, laboratory work and reports, and homework.'); this assessment text was treated as a separate field, not part of the outcome, and was left out. Reviewer should confirm.",
+   "The 'Complete all of the following' heading appears twice (nested); recorded as a single all-required block.",
+   "Careers taken from the program description; the 'local industries' examples (agriculture, geo- and petrochemical businesses, analytical services and laboratories) were not recorded as careers because they name industries rather than occupations. 'allied health fields including medicine' was split into 'allied health fields' and 'medicine'.",
+   "The catalog text begins mid-word ('udents interested...'), so the start of the program description is cut off.",
+   "The source URL slug references 'summer-2019' although the catalog is labeled 2026-2027."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

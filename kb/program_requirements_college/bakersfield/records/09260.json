@@ -1,0 +1,280 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "09260",
+ "shape": "degree",
+ "title": "Food Service Management",
+ "award": "A.S. Degree",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/food-service-management-associate-of-science-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6039,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6039,
+    "output_tokens": 1737,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1737,
+  "output_tokens_details": {
+   "thinking_tokens": 261
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0589,
+ "ms": 13803,
+ "seconds": 14.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    38.0,
+    38.0
+   ],
+   "stated": [
+    38.0,
+    38.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 10,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Food Service Management Associate of Science",
+   "measure": "units",
+   "total_units": {
+    "min": 38,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "At the conclusion of this program, the student should be able to demonstrate advanced principles and methods of food preparation using standardized recipes and industry production standards to produce high-quality food products.",
+    "At the conclusion of this program, the student should be able to evaluate dining room and service operations by applying multiple styles of service while assessing quality customer service performance.",
+    "At the conclusion of this program, the student should be able to implement food safety and sanitation principles to ensure compliance with state and national regulatory standards in all phases of food service operations.",
+    "At the conclusion of this program, the student should be able to analyze supervisory roles and responsibilities in managing personnel, workflow, and operations to improve efficiency, communication, and maintain a positive team culture within food service establishments.",
+    "At the conclusion of this program, the student should be able to evaluate food service business operations in purchasing, cost control, inventory management, and budgeting to ensure financial accountability and operational success.",
+    "At the conclusion of this program, the student should be able to create and integrate sustainable food service practices that support waste reduction, resource optimization, and ethical sourcing."
+   ],
+   "careers": [
+    "Food Service Manager",
+    "Food and Beverage Director",
+    "Catering Manager",
+    "Front of House Manager",
+    "Shift Lead",
+    "Head Chef",
+    "Production Manager",
+    "Procurement Manager",
+    "General Manager",
+    "Restaurant Manager"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 32,
+     "max": 32
+    },
+    "courses": [
+     {
+      "code": "CULNB9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSPB10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULNB10",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULNB11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULNB12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULNB20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULNB21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULNB22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULNB23A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULNB30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTRB10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CULNB23B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULNB24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BSADB53A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSPB20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space between subject and number (e.g., CULNB10, HOSPB10); these were matched to the closed-list codes with spaces (CULN B10, HOSP B10, etc.) and are not treated as catalog additions.",
+   "CULNB9 has no units stored in the state file; the catalog prints 3 units.",
+   "The catalog text begins mid-sentence ('ry Fees:'), so part of the program description may be cut off.",
+   "A California Food Manager certificate is required for degree completion per the catalog; this is not a course."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

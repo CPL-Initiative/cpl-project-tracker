@@ -1,0 +1,288 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "40880",
+ "shape": "degree",
+ "title": "Physical Therapist Assistant",
+ "award": "A.S. Degree",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/physical-therapist-assistant-associate-of-science-fall-2025",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7206,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7206,
+    "output_tokens": 2395,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2395,
+  "output_tokens_details": {
+   "thinking_tokens": 485
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07672,
+ "ms": 18809,
+ "seconds": 19.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 19,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    54.0,
+    54.0
+   ],
+   "stated": [
+    54.0,
+    54.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Physical Therapist Assistant Associate of Science",
+   "measure": "units",
+   "total_units": {
+    "min": 54,
+    "max": 54
+   },
+   "open_elective_units": null,
+   "ge_pattern": "local GE (required general education coursework for an Associate of Science Degree)",
+   "outcomes": [
+    "Upon completion of the program, the student will be able to demonstrate a comprehensive evidenced-based knowledge set in foundational sciences and physical therapist assistant education (didactic and clinical), applying critical thinking and reasoning to optimize client outcomes across the lifespan under the Physical Therapist's plan of care.",
+    "Upon completion of the program, the student will be able to demonstrate competency by achieving entry-level status for a Physical Therapist Assistant with implementation of physical therapy interventions, assessments, and data collection to achieve optimal client outcomes across the lifespan within diverse cultures and clinical settings under the PT plan of care.",
+    "Upon completion of the program, the student will be able to implement safe and efficient physical therapy interventions across the lifespan in all clinical settings under the supervision of a Physical Therapist.",
+    "Upon completion of the program, the student will be able to communicate effectively and professionally, both orally and in writing, with diverse populations, clients, families, and the multidisciplinary healthcare team (including the supervising Physical Therapist) across the lifespan, fostering collaborative relationships for optimal patient outcomes.",
+    "Upon completion of the program, the student will be able to demonstrate entry-level professional behaviors, including empathy, cultural sensitivity, skills in inter-professional collaboration, and a commitment to Justice, equality, diversity and inclusion (JEDI) to foster inclusive and equitable practices that address healthcare disparities across the healthcare continuum.",
+    "Upon completion of the program, the student will be able to demonstrate adherence to ethical, moral, and legal regulations outlined in the American Physical Therapy Association (APTA) Standards of Ethical Conduct for the Physical Therapist Assistant (PTA) and the Laws and Regulations by the California Physical Therapy Board."
+   ],
+   "careers": [
+    "physical therapist assistant"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 44,
+     "max": 44
+    },
+    "courses": [
+     {
+      "code": "PHTAB51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTAB52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTAB60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTAB61",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTAB62",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTAB63",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTAB64",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTAB70",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTAB71",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTAB72",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTAB80",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTAB81",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTAB82",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTAB90A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTAB90B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTAB90C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "BIOLB33",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTAB50",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOLB32",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The requirements table prints codes without a space (e.g., PHTAB51, BIOLB32); these are the same courses as the closed list's PHTA B51, BIOL B32, etc., so none is marked as a catalog addition.",
+   "List A (BIOL B32, BIOL B33, PHTA B50) consists of the program's application prerequisites; the description says they must be completed before applying, and the requirements table counts them in the 54-unit total.",
+   "The source URL refers to 'fall-2025' while the requested catalog year is 2026-2027; reviewer may want to confirm the year.",
+   "The career entry 'physical therapist assistant' comes from the description ('perform as an entry-level physical therapist assistant'; 'explore careers in physical therapist assistant').",
+   "The catalog text begins mid-sentence, so part of the program description is cut off at the start."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

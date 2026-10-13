@@ -1,0 +1,259 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "30628",
+ "shape": "adt",
+ "title": "Sociology",
+ "award": "A.A- T Degree",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/sociology-associate-in-arts-for-transfer-fall-2025",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6108,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6108,
+    "output_tokens": 2724,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2724,
+  "output_tokens_details": {
+   "thinking_tokens": 1219
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07891,
+ "ms": 22881,
+ "seconds": 23.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    19.5
+   ],
+   "stated": [
+    19.0,
+    19.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Sociology Associate in Arts for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": "California General Education Transfer Curriculum (CalGETC)",
+   "outcomes": [
+    "Upon successful completion of the program, the student will be able to utilize the perspectives, theories, methods, and core concepts of sociology to examine society and the human experience.",
+    "Upon successful completion of the program, the student will be able to examine the complex interplay between individual, culture, and social structure contributing to the historical development of the discipline of sociology.",
+    "Upon successful completion of the program, the student will be able utilize the sociological perspective to critically analyze the diverse intersections of social categories, including race, ethnicity, class, gender, sexuality, age, religion, and nationality."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10.5
+    },
+    "courses": [
+     {
+      "code": "SOCI B1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI B2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Statistics",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4.5
+    },
+    "courses": [
+     {
+      "code": "PSYC B5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000E",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A - Select 2 courses",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "SOCI B12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI B28",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI B45",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRIM B1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI B20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC B20",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST B",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "SOCI B36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space (e.g., 'SOCIB1', 'STATC1000E'); recorded here with the subject separated as in the closed list (e.g., 'SOCI B1').",
+   "The Core Required Courses total (10-10.5) printed by the catalog includes the nested Statistics group (4-4.5); the Statistics group is recorded as its own block requiring one course (catalog states 'Complete the following number of credits: 4-4.5').",
+   "Under LIST A the catalog nests a 'Social Psychology (Total 0 - 3)' subgroup listing SOCI B20 and PSYC B20 (same title); recorded as one List A choice, SOCI B20 with PSYC B20 as alternative. Reviewer should confirm that this subgroup counts as one of the two List A courses.",
+   "SOCI B45 is printed in the catalog with the title 'Minority Relations', while the closed list names it 'Sociology of Race and Ethnicity'.",
+   "LIST B (3 units) allows 'any course not already used from either Core Required Courses or LIST A' in addition to SOCI B36; those courses are recorded only in their original blocks.",
+   "The text begins mid-sentence and ends with 'PROGRAM MAP / PATHWAY EXPLORATION' headings; no careers are named in the provided text.",
+   "Source URL references 'fall-2025' while the catalog year is 2026-2027; reviewer may want to confirm the year."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

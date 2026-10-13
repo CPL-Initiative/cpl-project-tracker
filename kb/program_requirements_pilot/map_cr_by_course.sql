@@ -8,7 +8,7 @@ with u as (
          (regexp_matches(u.college_course, '(?:^|,\s*)([A-Z][A-Z0-9&/ ]*?)-([0-9A-Z][0-9A-Z.]*)', 'g')) m
   from map_colleges c join map_college_cr_unit u on u.college_id = c.college_id
   where c.college_name in ('Cerritos College','Irvine Valley College','Moreno Valley College','Mt. San Antonio College','Norco College','Riverside City College','San Diego Miramar College','Santa Monica College','West Los Angeles College','Long Beach City College',
-                         'Chaffey College','San Diego City College','San Diego Mesa College')
+                         'Chaffey College','San Diego City College','San Diego Mesa College','Bakersfield College','Coastline Community College')
     and coalesce(u.college_course,'') <> ''
 ), p as (
   select college, m[1] || ' ' || m[2] code, source_code, exhibit_id, credit_rec from u

@@ -1,0 +1,208 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "44440",
+ "shape": "certificate",
+ "title": "Digital Marketer Apprenticeship",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/digital-marketer-apprenticeship-certificate-of-achievement-summer-2024",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5459,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5459,
+    "output_tokens": 1183,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1183,
+  "output_tokens_details": {
+   "thinking_tokens": 224
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0455,
+ "ms": 9632,
+ "seconds": 10.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 7,
+   "share": 0.857,
+   "missing": [
+    "APPRB48F"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "APPRB48G",
+    "APPRB73A"
+   ],
+   "flagged": [
+    "APPRB48G",
+    "APPRB73A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Digital Marketer Apprenticeship Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Upon successful completion of the program, the student will be able to analyze market trends.",
+    "Upon successful completion of the program, the student will be able to apply a digital marketing strategy.",
+    "Upon successful completion of the program, the student will be able to evaluate web analytics and design.",
+    "Upon successful completion of the program, the student will be able to apply marketing tools for Search Engine Optimization improvements.",
+    "Upon successful completion of the program, the student will be able to apply leads via a website, using landing pages, and email automation."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "APPRB73A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "APPRB73B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPRB73C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPRB73D",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPRB73E",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPRB73F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPRB73G",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPRB48G",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "APPR B48F",
+    "why": "not in the text; catalog lists APPRB48G (Work Experience Education/Internship Digital Marketer) instead"
+   }
+  ],
+  "notes": [
+   "The catalog prints codes without a space (e.g., APPRB73B); APPRB73B-APPRB73G are matched to closed-list APPR B73B-APPR B73G.",
+   "APPRB73A (Digital Marketer Apprenticeship 1, 1 unit) is not in the closed list; recorded as a catalog addition.",
+   "APPRB48G (Work Experience Education/Internship Digital Marketer, 4 units) is not in the closed list; the closed list instead has APPR B48F (Software Developer internship), which the text does not name. Reviewer may check whether the state file holds the wrong internship course.",
+   "Source URL slug references summer-2024 while the catalog year is 2026-2027; reviewer may confirm the version."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

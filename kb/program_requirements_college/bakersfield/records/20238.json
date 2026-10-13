@@ -1,0 +1,228 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "20238",
+ "shape": "certificate",
+ "title": "Environmental Horticulture",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/environmental-horticulture-certificate-of-achievement-summer-2019",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5623,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5623,
+    "output_tokens": 1612,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1612,
+  "output_tokens_details": {
+   "thinking_tokens": 579
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05473,
+ "ms": 12910,
+ "seconds": 13.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "AGRIB49",
+    "CRPSB3",
+    "ORNHB3",
+    "ORNHB48WE"
+   ],
+   "flagged": [
+    "AGRIB49",
+    "CRPSB3",
+    "ORNHB3",
+    "ORNHB48WE"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.0,
+    29.0
+   ],
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 10,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Environmental Horticulture Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate managerial and leadership abilities in environmental horticulture classes for employment that will enhance opportunities and success in the horticulture industry in the 21st century.",
+    "Master academic proficiency and demonstrate specific skills within environmental horticulture disciplines needed for employment.",
+    "Be able to identify regional trees and plants and their use in the landscape."
+   ],
+   "careers": [
+    "Arborist",
+    "Floral Designer or Florist",
+    "Greenhouse Grower",
+    "Irrigation Specialist",
+    "Landscape Architect",
+    "Landscape Contractor",
+    "Pest Control Advisor",
+    "Plant Breeder",
+    "Sports Turf Superintendent",
+    "Urban Forester"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 29,
+     "max": 29
+    },
+    "courses": [
+     {
+      "code": "AGRI B49",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CRPS B3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ORNH B1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ORNH B2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ORNH B3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ORNH B4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ORNH B6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ORNH B7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ORNH B8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ORNH B48WE",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space between subject and number (e.g., 'ORNHB1', 'AGRIB49'); recorded here with a space to match the closed-list format (ORNH B1, AGRI B49, CRPS B3, ORNH B48WE).",
+   "The requirement reads 'Complete the following number of credits: 29'; the listed courses sum to exactly 29 units (2 + 9 x 3), so the list was recorded as all required.",
+   "AGRI B49, CRPS B3, ORNH B3 and ORNH B48WE are not in the closed list and are marked as catalog additions.",
+   "The source URL slug references 'summer-2019' although the catalog is labeled 2026-2027; reviewer may wish to confirm the version."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

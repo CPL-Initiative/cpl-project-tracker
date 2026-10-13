@@ -1,0 +1,223 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "02045",
+ "shape": "certificate",
+ "title": "Vocational Nursing",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/vocational-nursing-program-certificate-of-achievement-summer-2019",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6059,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6059,
+    "output_tokens": 1465,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1465,
+  "output_tokens_details": {
+   "thinking_tokens": 345
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05354,
+ "ms": 13056,
+ "seconds": 13.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    45.0,
+    45.0
+   ],
+   "stated": [
+    45.0,
+    45.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Vocational Nursing Program Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 45,
+    "max": 45
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate an understanding of how to use and practice basic assessment (data collection), participate in planning, execute interventions in accordance with the care plan or treatment plan, and contribute to evaluation of individualized intervention related to the care plan or treatment plan.",
+    "Perform direct patient/client care in which the student a. Performs basic nursing services b. Administers medications c. Applies communication skills for the purpose of patient/client care and education; and d. Contributes to the development and implementation of a teaching plan related to self-care for the patient/client."
+   ],
+   "careers": [
+    "Licensed Vocational Nurse"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VNRSB67",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VNRSB68",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VNRSB69",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VNRSB69L",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VNRSB79",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VNRSB79L",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VNRSB83",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VNRSB84",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VNRSB88",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VNRSB88L",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VNRSB89",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VNRSB89L",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space (e.g. 'VNRSB67'); these match closed-list codes 'VNRS B67' etc., so catalog_addition is false.",
+   "Printed units differ from the state file: VNRSB83 printed as 2 units (state file 1.5); VNRSB89 printed as 4 units (state file 3.5). Printed values recorded.",
+   "Each program learning outcome is followed by the annotation 'Assessment:Test', read as assessment metadata and omitted from the outcome text; reviewer should confirm.",
+   "The text is truncated at the start ('xam Policy:'); the printed requirement units sum to the stated total of 45.",
+   "Career entry taken from 'Employment as a Licensed Vocational Nurse can be in a variety of health care settings.' under Career Opportunities."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

@@ -1,0 +1,158 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "40258",
+ "shape": "noncredit",
+ "title": "Application of Transformational Policing",
+ "award": "Noncredit program",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/application-of-transformational-policing-certificate-of-completion-spring-2021",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5095,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5095,
+    "output_tokens": 1190,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1190,
+  "output_tokens_details": {
+   "thinking_tokens": 544
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04418,
+ "ms": 11576,
+ "seconds": 11.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    54.0,
+    54.0
+   ],
+   "stated": [
+    54.0,
+    54.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Application of Transformational Policing Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 54,
+    "max": 54
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Upon successful completion of the program, the student will be able to apply the principles of Transformational Policing to their contacts with communities of color.",
+    "Upon successful completion of the program, the student will be able to apply the principles of Transformational Policing to create and implement strategies to restore trust between public safety and first responder personnel and communities of color."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 54,
+     "max": 54
+    },
+    "courses": [
+     {
+      "code": "ADMJ B61NC",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ B62NC",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ B63NC",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints the codes run together (ADMJB61NC, ADMJB62NC, ADMJB63NC); recorded with the subject separated to match the closed list.",
+   "Credits are stated in hours: 'Credits listed are in hours (54 hours)'; each module prints 18 hours and the program prints 'Total 54'.",
+   "A stray '0' appears under the 'Unit(s)' column heading before the course list; read as a formatting artifact, not a course value.",
+   "The description names public safety officers, first responders, peace officers and public safety personnel as the audience the program instructs, not as careers it prepares for; careers left empty for review.",
+   "Program grants a Certificate of Completion upon completing the required courses with a grade of 'P'."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

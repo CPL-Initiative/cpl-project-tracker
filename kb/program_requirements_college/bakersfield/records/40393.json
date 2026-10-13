@@ -1,0 +1,164 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "40393",
+ "shape": "noncredit",
+ "title": "Advanced Electrical Safety and Arc Flash",
+ "award": "Noncredit program",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/advanced-electrical-safety-and-arc-flash-certificate-of-completion-summer-2021",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5279,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5279,
+    "output_tokens": 1192,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1192,
+  "output_tokens_details": {
+   "thinking_tokens": 362
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04496,
+ "ms": 10852,
+ "seconds": 11.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    27.0,
+    27.0
+   ],
+   "stated": [
+    27.0,
+    27.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Advanced Electrical Safety and Arc Flash Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 27,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Upon successful completion of the program, the student will be able to identify electrical hazards and their effects on the human body.",
+    "Upon successful completion of the program, the student will be able to describe examples and circumstances of work hazards associated with electrical safety.",
+    "Upon successful completion of the program, the student will be able to distinguish safe installation and maintenance practices and describe electrically safe working conditions.",
+    "Upon successful completion of the program, the student will be able to perform a flash hazard analysis and determine the appropriate risk category.",
+    "Upon successful completion of the program, the student will be able to describe the required work practices for working on or near exposed live parts."
+   ],
+   "careers": [
+    "supervisors",
+    "safety personnel"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 27,
+     "max": 27
+    },
+    "courses": [
+     {
+      "code": "OSRMB70NC",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OSRMB63NC",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OSRMB58NC",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog states 'Credits listed are in hours. (27 Hours total)'; all values are recorded in hours. The closed list's 0 units are not the hours.",
+   "The catalog prints the codes without a space (OSRMB70NC, OSRMB63NC, OSRMB58NC); they match closed-list codes OSRM B70NC, OSRM B63NC and OSRM B58NC.",
+   "A stray '0' appears under the 'Unit(s)' header before the course rows; it was read as a units column artifact, not a course value.",
+   "Each outcome begins with the lead-in 'Upon successful completion of the program, the student will be able to'. That phrase is inside every numbered item, so the outcomes are copied whole as printed.",
+   "Careers come from the line 'appropriate for supervisors, safety personnel, and employees'. This names the intended audience. 'employees' was left out as a generic term. A reviewer may want to confirm whether these count as careers."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

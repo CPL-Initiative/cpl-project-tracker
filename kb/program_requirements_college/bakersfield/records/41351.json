@@ -1,0 +1,260 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "41351",
+ "shape": "adt",
+ "title": "Business Administration 2.0",
+ "award": "A.S. T Degree",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/business-administration-2-0-associate-in-science-for-transfer-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5999,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5999,
+    "output_tokens": 2017,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2017,
+  "output_tokens_details": {
+   "thinking_tokens": 524
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06434,
+ "ms": 16382,
+ "seconds": 16.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.0,
+    27.5
+   ],
+   "stated": [
+    26.0,
+    27.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 11,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Administration 2.0 Associate in Science for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 27.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": "California General Education Transfer Curriculum (CalGETC)",
+   "outcomes": [
+    "Upon successful completion of the program, the student will be able to analyze a business scenario and use numerical, graphical, symbolic, and verbal representations to effectively solve problems and communicate those solutions.",
+    "Upon successful completion of the program, the student will be able to analyze a business scenario and correctly prepare financial statements to effectively convey financial information for management decision-making.",
+    "Upon successful completion of the program, the student will be able to analyze a business scenario using the tools of economic theory to communicate economic effects on business decision-making.",
+    "Upon successful completion of the program, the student will be able to analyze a business scenario and appropriately apply business concepts in designing and managing business documents.",
+    "Upon successful completion of the program, the student will be able to analyze a business scenario and effectively explain the social, political, and ethical implications of the law to actual and hypothetical business transactions."
+   ],
+   "careers": [
+    "Accounting",
+    "Administrative Assistants",
+    "Analysts",
+    "Bankers",
+    "Bookkeepers",
+    "Entrepreneurs",
+    "Financial Planners",
+    "Managers",
+    "Marketing",
+    "Office Specialists",
+    "Sales Associates"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 26,
+     "max": 27.5
+    },
+    "courses": [
+     {
+      "code": "BSAD B1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSAD B2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSAD B18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSAD B20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Statistics",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4.5
+    },
+    "courses": [
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000E",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC B5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Mathematics",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MATH B2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH B6A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH B23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text prints codes run together (e.g. 'BSADB1', 'ECONC2001'); they are recorded with a space between subject and number to match the closed list.",
+   "The 'Core courses' heading prints '(Total 26 - 27.5)', which appears to be the program total; the six listed core courses sum to 19 units. Statistics and Mathematics appear as separate sub-blocks; the hierarchy (whether they are nested under Core courses) is unclear in the extracted text. Recorded the stated total as printed.",
+   "Statistics and Mathematics blocks read as 'Complete the following number of credits', interpreted as choose_units with the low end of the printed range as minimum (effectively one course from each list).",
+   "The text begins mid-sentence ('career areas include, but are not limited to: ...'); the program description appears cut off at the start, so careers were taken only from the visible portion.",
+   "Program learning outcomes are printed for the program as a whole on the A.S.-T page; each numbered outcome includes its own 'Upon successful completion...' phrase, copied verbatim."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

@@ -1,0 +1,309 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "35826",
+ "shape": "adt",
+ "title": "Agriculture Animal Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/agriculture-animal-science-associate-in-science-for-transfer-fall-2025",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6325,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6325,
+    "output_tokens": 2771,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2771,
+  "output_tokens_details": {
+   "thinking_tokens": 1079
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08072,
+ "ms": 21890,
+ "seconds": 22.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    23.0,
+    25.5
+   ],
+   "stated": [
+    20.0,
+    22.5
+   ],
+   "why": [
+    "the blocks sum to 23.0-25.5; the catalog states 20.0-22.5"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Agriculture Animal Science Associate in Science for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 22.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": "California General Education Transfer Curriculum (CalGETC)",
+   "outcomes": [
+    "Upon successful completion of the program, the student will be able to demonstrate artificial insemination procedures, proper record-keeping in the field of animal science and skills in day-to-day animal production such as proper care, feeding and reproduction.",
+    "Upon successful completion of the program, the student will be able to practice proper basic principles of animal safety and evaluate performance such as growth and feed conversion.",
+    "Upon successful completion of the program, the student will be able to demonstrate specific skills in animal science such as production, genetics and nutrtion within the animal science discipline needed for employment.",
+    "Upon successful completion of the program, the student will be able to analyze conformation qualities in cattle, sheep, swine and dairy cattle."
+   ],
+   "careers": [
+    "areas of agriculture involving the production, management, and marketing of livestock"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 15.5
+    },
+    "courses": [
+     {
+      "code": "AGBS B2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC B1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Chemistry",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CHEM B1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM B2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Statistics",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4.5
+    },
+    "courses": [
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000E",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC B5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Area 1. Animal Production (3 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANSC B2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC B3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC B4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC B5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC B10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Area 2: Animal Health (3-4 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ANSC B6",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC B7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Select one course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ANSC B11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space between subject and number (e.g., 'AGBSB2', 'STATC1000'); recorded here with the space as in the closed list.",
+   "The 'Core courses' total (14-15.5) printed by the catalog covers the Chemistry and Statistics sub-blocks as well as AGBS B2 and ANSC B1; it was recorded on the Core courses block.",
+   "Chemistry and Statistics are printed as 'Complete the following number of credits' (4-5 and 4-4.5), effectively one course from each list.",
+   "List A ('Select one course from each area') prints a total of 3, which looks inconsistent with its two areas (3 + 3-4 units); reviewer should check.",
+   "List B also allows 'Any List A course not already used' (3-4 units); this is not a specific code and is not recorded as a course, but all List A courses may also satisfy List B.",
+   "Outcome 3 contains the catalog's misspelling 'nutrtion', copied as printed."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

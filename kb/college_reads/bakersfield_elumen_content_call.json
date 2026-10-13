@@ -1,0 +1,19 @@
+{
+ "_readme": "S380 SkyAlder, 2026-10-13. Read 38413232841 showed every eLumen view arrives in one ~4.5 MB publish call (styles, the side menu and the page), and that the menu's own links load a page through a lighter call, publish/content/<catalog>,<path>?tenant=<host>. A program's requirements print as rule-name / rule-credits blocks under Program Requirements. This read loads that content call for the same program, to learn its size and shape before the reader uses it. One load, no model call.",
+ "college": "Bakersfield College",
+ "questions": {
+  "content_shape": "Whether publish/content returns the page body alone (no styles or menu), as JSON or HTML, and how big it is."
+ },
+ "keywords": [
+  "AGRIB\\d+",
+  "rule-name|rule-credits",
+  "Program Requirements",
+  "\"html\"|<style|<nav"
+ ],
+ "pages": [
+  {
+   "answers": ["content_shape"],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,program,agricultural-education-associate-of-science-fall-2026?tenant=bakersfield.elumenapp.com"
+  }
+ ]
+}
