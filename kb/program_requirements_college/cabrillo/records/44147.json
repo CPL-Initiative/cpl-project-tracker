@@ -1,0 +1,207 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "44147",
+ "shape": "certificate",
+ "title": "Early Childhood Education for Elementary Teaching",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/early-childhood-education-for-elementary-teaching-certificate-of-achievement-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7387,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7387,
+    "output_tokens": 1304,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1304,
+  "output_tokens_details": {
+   "thinking_tokens": 306
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05563,
+ "ms": 11209,
+ "seconds": 11.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    25.5,
+    25.5
+   ],
+   "stated": [
+    25.5,
+    25.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Early Childhood Education for Elementary Teaching Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 25.5,
+    "max": 25.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Plan individualized and differentiated instruction based on reflective practice, observations and the developmental needs of young children in grades pre-kindergarten through third grade.",
+    "Satisfy requirements for state Child Development Permit and/or earn a California teaching credential, including academic and examination requirements.",
+    "Develop developmentally appropriate, culturally and linguistically responsive practices that create partnerships with classroom families."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25.5,
+     "max": 25.5
+    },
+    "courses": [
+     {
+      "code": "ECE31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE34",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE53",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE53L",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE54",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC80",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC80L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog counts the award in 'Credits' (25.5 Credits); recorded as units.",
+   "Codes are printed without a space (e.g., ECE31); they match closed-list codes (e.g., ECE 31).",
+   "The description names transfer fields of study (child development, elementary education, special education, other teacher credentialing pathways) and says the certificate prepares students 'to assist in schools and other group educational settings'; these were not recorded as careers since no job title or career is explicitly named.",
+   "Program Map anomalies: Fall Start 'Year 2, Fall' lists ECE34 twice and omits ECE52; 'Fall Start for Dual Enrolled High School Students' lists ECE34 twice (Semester 2 and Semester 6) and omits ECE32; dual-enrolled maps skip semester numbers (5, 6). The Program Requirements list was used as authoritative."
+  ]
+ },
+ "extracted_run": "38442109713"
+}

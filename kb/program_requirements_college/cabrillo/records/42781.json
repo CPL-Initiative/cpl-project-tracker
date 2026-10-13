@@ -1,0 +1,337 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "42781",
+ "shape": "certificate",
+ "title": "Voice",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/voice-certificate-of-achievement-fall-2025",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8619,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8619,
+    "output_tokens": 2341,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2341,
+  "output_tokens_details": {
+   "thinking_tokens": 718
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0813,
+ "ms": 18338,
+ "seconds": 18.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "MUS50",
+    "MUS50LJ"
+   ],
+   "flagged": [
+    "MUS50",
+    "MUS50LJ"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    15.0,
+    15.0
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "why": [
+    "the blocks sum to 15.0-15.0; the catalog states 16.0-16.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Voice Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate the fundamentals of vocal technique including breath control, tone production, diction, and methods of vocal pedagogy.",
+    "Perform vocal music from the standard classical repertoire and from popular musical theater, demonstrating stylistic performance practices unique to each genre."
+   ],
+   "careers": [
+    "vocal performance",
+    "private teaching",
+    "directing vocal ensembles",
+    "vocal instructors",
+    "choral directors",
+    "commercial music performance",
+    "vocalist",
+    "musician who sings",
+    "choral director for religious or secular choirs"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "MUS1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "MUS10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS16",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS17A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS17LD",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "MUS17B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS17C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "MUS33A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS51A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Performance Ensemble Electives",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MUS36",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS38",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS50",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS50LJ",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS61",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS62",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS64",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS75",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Second 'Required' block states 7 credits: MUS10 (3) + MUS16 taken twice (catalog note: 'MUS16 is a 1 unit course that must be taken twice for 2 units total') + MUS17A (1) + MUS17LD (1). Recorded as rule 'all' with MUS16 listed once at its printed 1 unit.",
+   "Performance Ensemble Electives: catalog notes each course is repeatable up to 4 times, so 4 credits may come from repeating one ensemble.",
+   "MUS50 (Jazz Combos) and MUS50LJ (Latin Jazz Ensemble) are not in the closed list; marked catalog_addition.",
+   "Codes recorded as printed without a space (e.g., 'MUS1' for closed-list 'MUS 1').",
+   "Program Map sections (two-year map, fall start) repeat the requirements and were not recorded as separate blocks.",
+   "Careers taken from the program description; 'vocal instructors' and 'choral directors' come from the sentence about piano skills."
+  ]
+ },
+ "extracted_run": "38442109713"
+}

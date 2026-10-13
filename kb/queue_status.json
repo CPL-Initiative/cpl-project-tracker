@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-13T19:03:21Z",
-  "session": 382,
-  "moniker": "SkyLarch",
+  "written_at": "2026-10-13T20:15:35Z",
+  "session": 383,
+  "moniker": "SkySpruce",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_383_handoff.md",
+  "handoff": "docs/session_384_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -19672,14 +19672,30 @@
     }
   ],
   "next_step": {
-    "title": "Cabrillo's display, then the eLumen hubs",
-    "text": "Merge Coastline's pull request, build and apply Cabrillo's display, then teach the eLumen reader the program hubs Modesto and Palo Verde use."
+    "title": "Merge the three open pull requests, then read the eLumen hub captures",
+    "text": "Merge the build queue, the whole-harvest measure and the eLumen hub reader on their tests, then read Modesto's and Palo Verde's capture-only reads and bring the counts to Sam for the extraction go."
   },
   "calls": [
     {
-      "title": "Annual Goals: adding and removing rows at once",
-      "text": "Whether a new or removed sub-activity shows as soon as it is saved, and whether an official sub-activity may be removed at all. No reply: rows keep appearing after the nightly rebuild, and removal stays off.",
-      "link": "https://cpl-initiative.github.io/cpl-project-tracker/#workplan-goals"
+      "title": "Annual Goals: the build queue's GitHub key",
+      "text": "A save on Annual Goals starts the dashboard build through a small server function once its GitHub key is set as the secret WORKPLAN_DISPATCH_TOKEN.",
+      "if_no_reply": "Changes keep showing to everyone after the nightly build; an editor still sees them at once.",
+      "link": "https://claude.ai/artifact/U2MasFDQYkzsqVFFUpCQr9",
+      "link_text": "Open Asks Sheet 76, card 1"
+    },
+    {
+      "title": "Annual Goals: the team phrase and Table on the Activities tab",
+      "text": "Since Session 95 the team phrase can table any sub-activity on the Activities tab; Annual Goals gives Table to a reviewer only.",
+      "if_no_reply": "The phrase keeps Table on the Activities tab.",
+      "link": "https://claude.ai/artifact/U2MasFDQYkzsqVFFUpCQr9",
+      "link_text": "Open Asks Sheet 76, card 2"
+    },
+    {
+      "title": "Annual Goals: remove 4.7's link to Activity 1",
+      "text": "Sam's Sheet 75 answer, a one-row delete the session's guard refuses; the receipt holds the statement and its rollback.",
+      "if_no_reply": "4.7 keeps showing under Activity 1 as a second link.",
+      "link": "https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/kb/receipts/workplan_2026-10-13_s383_drop_4_7_activity_1_link.sql",
+      "link_text": "The statement to run"
     }
   ],
   "notes": {
@@ -19691,6 +19707,18 @@
   },
   "changes": [
     {
+      "at": "2026-10-13T19:41:25Z",
+      "text": "Cabrillo's display build applied to all 2,840 programs"
+    },
+    {
+      "at": "2026-10-13T19:50:00Z",
+      "text": "Cabrillo's reading procedure written"
+    },
+    {
+      "at": "2026-10-13T20:05:00Z",
+      "text": "Cabrillo's pull request merged; the eLumen hub reader opened, with capture-only reads of Modesto and Palo Verde"
+    },
+    {
       "at": "2026-10-13T18:43:54Z",
       "text": "Coastline's 140 program records loaded, unchecked"
     },
@@ -19701,10 +19729,6 @@
     {
       "at": "2026-10-13T18:59:00Z",
       "text": "Display build 14e436537733 applied to 2,572 records"
-    },
-    {
-      "at": "2026-10-13T19:00:00Z",
-      "text": "Coastline's procedure record written"
     }
   ],
   "headline": [

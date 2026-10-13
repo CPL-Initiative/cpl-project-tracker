@@ -62,7 +62,7 @@ const ACT_HEADER =
   '<div id="tab-activities-projects"><div class="activity-group-header"><h3>Activity 3: Build CPL Data Infrastructure</h3>' +
   '<span><a href="#raci" class="act-raci-link" data-raci-key="activity:3">RACI</a></span></div></div>';
 
-function makeDom(signedIn, liveIds, lifecycle) {
+function makeDom(signedIn, liveIds, lifecycle, queueReply) {
   const dom = new JSDOM(
     "<!doctype html><html><head></head><body>" + ACT_HEADER +
       '<div id="tab-workplan-goals">' + TABLE + "</div></body></html>",
@@ -77,6 +77,12 @@ function makeDom(signedIn, liveIds, lifecycle) {
     const isIdList = /\/projects\?select=id(,name)?$/.test(String(url)) && !(opts && opts.method);
     const isLifecycle = /\/project_lifecycle\?select=/.test(String(url)) && !(opts && opts.method);
     const live = (liveIds || []).map(function (r) { return typeof r === "string" ? { id: r, name: "" } : r; });
+    if (/\/functions\/v1\/workplan-rebuild$/.test(String(url))) {
+      // The build-queue function: 503 until its GitHub key is set (the default here).
+      const q = queueReply || { ok: false, status: 503, body: { ok: false, reason: "not_configured" } };
+      return Promise.resolve({ ok: q.ok, status: q.status, json: function () { return Promise.resolve(q.body); },
+        text: function () { return Promise.resolve(JSON.stringify(q.body)); } });
+    }
     return Promise.resolve({ ok: true, status: 200,
       json: function () { return Promise.resolve(isIdList ? live : isLifecycle ? (lifecycle || []) : []); },
       text: function () { return Promise.resolve(""); } });
@@ -88,7 +94,9 @@ function makeDom(signedIn, liveIds, lifecycle) {
 const tick = function () { return new Promise(function (r) { setTimeout(r, 0); }); };
 async function settle() { for (let i = 0; i < 8; i++) await tick(); }
 function click(w, node) { node.dispatchEvent(new w.MouseEvent("click", { bubbles: true })); }
-function posts(dom) { return dom._calls.filter(function (c) { return c.opts.method === "POST"; }); }
+// Table writes only; the build-queue call after a save is checked on its own (Sheet 75 card 2).
+function posts(dom) { return dom._calls.filter(function (c) { return c.opts.method === "POST" && /\/rest\/v1\//.test(c.url); }); }
+function queues(dom) { return dom._calls.filter(function (c) { return /\/functions\/v1\/workplan-rebuild$/.test(c.url); }); }
 function bodyOf(c) { return JSON.parse(c.opts.body); }
 
 (async function () {
@@ -143,6 +151,11 @@ function bodyOf(c) { return JSON.parse(c.opts.body); }
   const links = bodyOf(p[2]);
   check("(d) the home link is primary", links.length === 1 && links[0].activity_id === "3" && links[0].is_primary === true);
   check("(d) the editor is told when it will appear", /tonight's rebuild/.test(card.querySelector(".wpg-status").textContent));
+  const qs = queues(dom);
+  check("(k) after the three inserts, the save queues the build once, as the editor (Sheet 75 card 2)",
+    qs.length === 1 && qs[0].opts.method === "POST" && qs[0].opts.headers.Authorization === "Bearer aaaa.bbbb.cccc"
+      && dom._calls.indexOf(qs[0]) > dom._calls.indexOf(p[2]));
+  check("(k) with no GitHub key set (503) the editor still reads tonight", /after tonight's rebuild/.test(card.querySelector(".wpg-status").textContent));
 
   // A duplicate id is refused before any write.
   w.document.querySelector(".wpg-modal-overlay").remove();

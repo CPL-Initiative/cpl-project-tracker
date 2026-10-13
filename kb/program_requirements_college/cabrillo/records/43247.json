@@ -1,0 +1,154 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "43247",
+ "shape": "noncredit",
+ "title": "Audio Recording and Mixing",
+ "award": "Noncredit program",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/audio-recording-and-mixing-certificate-of-completion-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5248,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5248,
+    "output_tokens": 631,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 631,
+  "output_tokens_details": {
+   "thinking_tokens": 164
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03361,
+ "ms": 10258,
+ "seconds": 10.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    90.0,
+    90.0
+   ],
+   "stated": [
+    90.0,
+    90.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Audio Recording and Mixing Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 90,
+    "max": 90
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Record, edit, and mix audio productions utilizing analog audio equipment and a digital audio workstation.",
+    "Synthesize recording, editing, and mixing techniques, tools, and listening skills to produce music and audio projects."
+   ],
+   "careers": [
+    "audio mixer",
+    "audio engineer",
+    "audio editor",
+    "sound technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 90,
+     "max": 90
+    },
+    "courses": [
+     {
+      "code": "MUS431A",
+      "units": 45,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS431B",
+      "units": 45,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints the codes without a space (MUS431A, MUS431B); they match closed-list MUS 431A and MUS 431B.",
+   "The award is counted in hours (90 Hours); course values are the hours printed beside each course, not the closed list's 0 units.",
+   "The Program Map (Fall and Spring start) repeats the same two required courses and the same 90-hour total."
+  ]
+ },
+ "extracted_run": "38442109713"
+}

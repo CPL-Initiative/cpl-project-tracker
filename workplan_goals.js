@@ -98,6 +98,75 @@
     return h;
   }
 
+  // A save queues the dashboard build (Sam, Open Asks Sheet 75 card 2, "both"), so the
+  // Activities cards, the charts, the counts and the report follow within minutes. The
+  // function (chatbox/supabase/functions/workplan-rebuild) checks the caller as these
+  // writes do and dispatches daily-dashboard.yml, or says a build is already waiting.
+  // Until its GitHub key is set it answers 503, and the page says "tonight" as before.
+  function queueRebuild(sess) {
+    var h = authHeaders(sess);
+    return fetch(SUPABASE_URL + "/functions/v1/workplan-rebuild", { method: "POST", headers: h, body: "{}" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { return j && j.queued ? j : null; })
+      .catch(function () { return null; });
+  }
+  // Rows added or moved since the build show an editor at once (Sheet 75 card 2's first half):
+  // each live sub-activity the table does not show, less a tabled, archived or D.* row,
+  // gets a row under its home Activity naming it until the build draws it in full, and
+  // a drawn row whose id no longer exists (moved away) leaves.
+  function paintNewRows(state) {
+    var host = document.getElementById("tab-workplan-goals");
+    // An editor's own change shows at once; a reader sees it when the queued build lands.
+    if (!host || !state || !state.sess) return Promise.resolve();
+    var h = { headers: { "apikey": SUPABASE_ANON } };
+    function rows(url) {
+      return fetch(url, h).then(function (r) { return r.ok ? r.json() : []; })
+        .then(function (x) { return Array.isArray(x) ? x : []; }).catch(function () { return []; });
+    }
+    return Promise.all([
+      rows(SUPABASE_URL + "/rest/v1/projects?select=id,name"),
+      rows(SUPABASE_URL + "/rest/v1/workplan_activity_associations?select=project_id,activity_id&is_primary=eq.true"),
+      rows(SUPABASE_URL + "/rest/v1/project_lifecycle?select=project_id,state")
+    ]).then(function (got) {
+      var hidden = {}, home = {};
+      got[2].forEach(function (l) { if (l && (l.state === "tabled" || l.state === "archived")) hidden[String(l.project_id)] = true; });
+      got[1].forEach(function (a) { if (a) home[String(a.project_id)] = String(a.activity_id); });
+      // A drawn row whose id no longer exists (moved since the build) leaves at once.
+      var live = {};
+      got[0].forEach(function (p) { live[String(p.id)] = true; });
+      if (got[0].length) host.querySelectorAll('[data-title-edit="1"][data-pid]').forEach(function (t) {
+        if (live[t.getAttribute("data-pid")]) return;
+        var cell = t.closest ? t.closest("th[rowspan], td[rowspan]") : null;
+        var row = cell ? cell.parentNode : null;
+        for (var i = 0, n = cell ? (parseInt(cell.getAttribute("rowspan"), 10) || 1) : 0; i < n && row; i++) {
+          row.hidden = true;
+          row = row.nextElementSibling;
+        }
+      });
+      got[0].forEach(function (p) {
+        var id = String(p.id);
+        if (!/^[0-9]+(\.[0-9]+)+$/.test(id) || hidden[id]) return;
+        var q = (window.CSS && CSS.escape) ? CSS.escape(id) : id;
+        if (host.querySelector('[data-title-edit="1"][data-pid="' + q + '"], .wpg-new-row[data-pid="' + q + '"]')) return;
+        var act = home[id] || id.split(".")[0];
+        var head = host.querySelector('[data-activity-title-edit="1"][data-aid="' + act + '"]');
+        var body = head && head.closest ? head.closest("tbody") : null;
+        var th = head && head.closest ? head.closest("th") : null;
+        if (!body) return;
+        var span = Math.max(1, (parseInt(th && th.getAttribute("colspan"), 10) || 2) - 1);
+        var tr = el("tr", { "class": "wpg-new-row", "data-pid": id }, [
+          el("th", { "scope": "row", "class": "wpg-name" }, [el("span", { "class": "wpg-pid" }, [id]), " " + String(p.name || "")]),
+          el("td", { "colspan": String(span), "class": "wpg-new-note" }, ["Added since the last build. Its goals and current values draw with the next one."])
+        ]);
+        body.appendChild(tr);
+      });
+    });
+  }
+
+  function whenShown(q) {
+    return q ? "within about 10 minutes, when the build it queued finishes" : "after tonight's rebuild";
+  }
+
   // An RLS-filtered PATCH "succeeds": PostgREST returns 200 with an EMPTY
   // return=representation array when the policy's USING clause hides the
   // target rows (rotated phrase / non-reviewer session) — never a 401/403.
@@ -1170,6 +1239,7 @@
       + '.wpg-tabled ul { list-style:none;margin:0;padding:0; }'
       + '.wpg-tabled li { display:flex;flex-wrap:wrap;align-items:center;gap:0.3rem;min-height:24px;padding:0.15rem 0; }'
       + '.wpg-tabled-state, .wpg-tabled-reason, .wpg-tabled-none { color:var(--text-muted);font-size:0.8rem; }'
+      + '.wpg-new-note { color:var(--text-muted);font-style:italic;font-size:0.8rem; }'
       + '.wpg-modal-card .wpg-keep-row { display:flex;align-items:center;gap:0.4rem;font-weight:500;color:var(--text-strong);min-height:24px;margin-top:0.6rem; }'
       + '.wpg-add-sub { font-size:0.72rem; }'
       + '.wpg-modal-card select, .wpg-modal-card textarea { width:100%;padding:0.4rem 0.55rem;border:1px solid var(--border-strong);border-radius:5px;font:inherit;font-size:0.85rem;box-sizing:border-box;background:var(--surface-opaque);color:var(--text-strong); }'
@@ -1455,9 +1525,12 @@
           return body;
         });
       }).then(function (res) {
+        paintNewRows(state);
+        return queueRebuild(state.sess).then(function (q) { return { res: res, q: q }; });
+      }).then(function (got) {
         status.className = "wpg-status ok";
-        status.textContent = "Moved " + pid + " to " + ((res && res.new_id) || newId) +
-          ". It shows in its new place after tonight's rebuild.";
+        status.textContent = "Moved " + pid + " to " + ((got.res && got.res.new_id) || newId) +
+          ". It shows in its new place " + whenShown(got.q) + ".";
         btnSubmit.textContent = "Done";
         btnSubmit.disabled = false;
         btnSubmit.onclick = closeAddModal;
@@ -1498,7 +1571,7 @@
       [targets ? "Set targets" : "Add to the workplan"]));
     card.appendChild(el("div", { "class": "wpg-sub" }, [targets
       ? "Creates the Goal and Stretch rows for this sub-activity. Each year starts at 0; fill in what you know."
-      : "Adds a sub-activity with its goals, or a new top-level Activity. It appears on both tabs after tonight's rebuild."]));
+      : "Adds a sub-activity with its goals, or a new top-level Activity. It appears on both tabs after the next build, which saving queues."]));
 
     // ── Kind radio (not shown when setting targets) ──────────────
     var kindAct = el("input", { "type": "radio", "name": "wpg-kind", "value": "activity" }, []);
@@ -1866,10 +1939,13 @@
       });
     }
     chain.then(function () {
+      paintNewRows(ctx.state);
+      return queueRebuild(sess);
+    }).then(function (q) {
       ctx.status.className = "wpg-status ok";
       ctx.status.textContent = v.payload.targets
-        ? "Saved. The targets appear in the table after tonight's rebuild."
-        : "Added. It appears on Annual Workplan Goals and the Activities tab after tonight's rebuild.";
+        ? "Saved. The targets appear in the table " + whenShown(q) + "."
+        : "Added. It appears on Annual Workplan Goals and the Activities tab " + whenShown(q) + ".";
       ctx.btnSubmit.textContent = "Done";
       ctx.btnSubmit.disabled = false;
       ctx.btnSubmit.onclick = closeAddModal;
@@ -1893,6 +1969,7 @@
     var state = { sess: fullSession() };
     mountAuthWidget(state);
     paintEditability(state);
+    paintNewRows(state);
     // The association popover + its click delegation live in assoc_editor.js
     // (bound once, document-wide). We only re-light its affordance here.
     paintAssocEditability();
@@ -1940,6 +2017,12 @@
       mountAuthWidget(state);
       paintEditability(state);
       paintAssocEditability();
+    });
+    // A row tabled, archived or restored on either tab (project_lifecycle.js) is a
+    // removal or a return: it queues the build too.
+    window.addEventListener("cpl-lifecycle-changed", function () {
+      var sess = fullSession();
+      if (sess) queueRebuild(sess);
     });
   }
 

@@ -1,0 +1,176 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "43325",
+ "shape": "noncredit",
+ "title": "Creative Careers",
+ "award": "Noncredit program",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/creative-careers-certificate-of-completion-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5314,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5314,
+    "output_tokens": 1045,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1045,
+  "output_tokens_details": {
+   "thinking_tokens": 383
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04216,
+ "ms": 9887,
+ "seconds": 10.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "VAPA479"
+   ],
+   "flagged": [
+    "VAPA479"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    99.0,
+    126.0
+   ],
+   "stated": [
+    99.0,
+    126.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Creative Careers Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 99,
+    "max": 126
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Design, develop, and present a project that envisions a creative career pathway.",
+    "Create a marketing plan for a creative project, small business, or nonprofit venture"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 54,
+     "max": 54
+    },
+    "courses": [
+     {
+      "code": "VAPA479",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 45,
+     "max": 72
+    },
+    "courses": [
+     {
+      "code": "BUS488",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DM457",
+      "units": 45,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award counted in hours (noncredit certificate, 99-126 Hours); all units fields hold hours.",
+   "Catalog prints codes without a space (BUS488, DM457); matched to closed-list BUS 488 and DM 457.",
+   "VAPA479 - Thrive in the Arts is required (54 hours) but not in the closed list; recorded as catalog addition.",
+   "Second block: catalog note says 'students may take either BUS488 or DM457', read as choose one course (45-72 hours).",
+   "Second program outcome is printed without a closing period; copied as printed.",
+   "Description mentions 'entrepreneurial pathways in the visual, applied, and performing arts' but names no specific careers or job titles; careers left empty for reviewer to check.",
+   "Program Map Fall Start lists only BUS488 and VAPA479; map is advisory and not used for requirements."
+  ]
+ },
+ "extracted_run": "38442109713"
+}

@@ -39,6 +39,10 @@ name: cpl-chat deploy
 # way, for the same two reasons: the bytes come from git and verify_jwt stays
 # off (its caller check authenticates; header of its index.ts). The choice list
 # is the allowlist; cpl-chat stays the default.
+#
+# AND workplan-rebuild (S383, 2026-10-13): Annual Goals queues the dashboard build
+# after a save (Sam, Open Asks Sheet 75 card 2). verify_jwt off for the same reason:
+# it checks its caller (a reviewer's session or the team phrase) itself.
 
 on:
   workflow_dispatch:
@@ -55,6 +59,7 @@ on:
         options:
           - cpl-chat
           - program-requirements-extract
+          - workplan-rebuild
 
 concurrency:
   group: cpl-chat-deploy

@@ -1,0 +1,194 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "40398",
+ "shape": "certificate",
+ "title": "Office Software",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/office-software-certificate-of-achievement-fall-2021",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5514,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5514,
+    "output_tokens": 980,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 980,
+  "output_tokens_details": {
+   "thinking_tokens": 165
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04166,
+ "ms": 8207,
+ "seconds": 8.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.5,
+    19.5
+   ],
+   "stated": [
+    19.5,
+    19.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Office Software Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 19.5,
+    "max": 19.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Productively work as a team member with people of diverse experiences and backgrounds in a workplace environment.",
+    "Competently communicate in support of a business office, including production and design of complex electronic and paper-based correspondence and documents.",
+    "Use the Internet, a wide variety of current and emerging computer applications and standard business procedures to compute, analyze business performance, and solve problems."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19.5,
+     "max": 19.5
+    },
+    "courses": [
+     {
+      "code": "CABT43",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABT44",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABT105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABT108",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABT121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABT132",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABT133",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABT160",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space (e.g., 'CABT43'); these match the closed-list codes (e.g., 'CABT 43'), so none is marked as a catalog addition.",
+   "The block reads 'Complete the following number of credits: 19.5'. The listed courses sum to exactly 19.5, so it was recorded as all required.",
+   "The catalog counts credits (semester units). The total of 19.5 is stated in both the heading and the requirements.",
+   "The Program Map (Fall Start) repeats the same eight courses split across Year 1 Fall (10.0) and Spring (9.5). It was not recorded as separate blocks.",
+   "The page names no careers."
+  ]
+ },
+ "extracted_run": "38442109713"
+}

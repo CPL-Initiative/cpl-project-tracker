@@ -1,0 +1,151 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "44498",
+ "shape": "noncredit",
+ "title": "WordPress Web Design and Development",
+ "award": "Noncredit program",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/wordpress-web-design-and-development-certificate-of-completion-fall-2025",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5204,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5204,
+    "output_tokens": 692,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 692,
+  "output_tokens_details": {
+   "thinking_tokens": 245
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03466,
+ "ms": 7218,
+ "seconds": 7.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    135.0,
+    135.0
+   ],
+   "stated": [
+    135.0,
+    135.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "WordPress Web Design and Development Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 135,
+    "max": 135
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate creative problem solving using the graphic design process in WordPress.",
+    "Create and publish a website using WordPress."
+   ],
+   "careers": [
+    "entry level WordPress designers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 135,
+     "max": 135
+    },
+    "courses": [
+     {
+      "code": "DM401",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DM456",
+      "units": 45,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints the codes without a space (DM401, DM456). They match closed-list DM 401 and DM 456, so they are not marked as catalog additions.",
+   "This is a noncredit certificate counted in hours. The total of 135 hours is stated in the heading line and under Program Requirements. Course hours come from the requirements list (90 and 45).",
+   "The Program Map (Spring and Fall starts) repeats the same two courses and is not recorded as separate blocks."
+  ]
+ },
+ "extracted_run": "38442109713"
+}

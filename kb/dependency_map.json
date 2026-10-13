@@ -3,10 +3,10 @@
  "stats": {
   "supabase_tables": 97,
   "rpcs": 38,
-  "edge_functions": 7,
+  "edge_functions": 8,
   "file_datasets": 647,
   "external_services": 177,
-  "consumers": 439,
+  "consumers": 440,
   "workflows": 53,
   "data_js_files": 69,
   "tabs": 39
@@ -162,6 +162,27 @@
    "producers": [
     {
      "by": "file:chatbox/supabase/functions/program-requirements-extract/index.ts",
+     "how": "source"
+    }
+   ],
+   "main_committers": []
+  },
+  "edgefn:workplan-rebuild": {
+   "consumers": [
+    {
+     "id": "module:workplan_goals.js",
+     "kind": "module",
+     "direction": "call",
+     "how": "literal",
+     "line": 108,
+     "tabs": [
+      "workplan-goals"
+     ]
+    }
+   ],
+   "producers": [
+    {
+     "by": "file:chatbox/supabase/functions/workplan-rebuild/index.ts",
      "how": "source"
     }
    ],
@@ -414,6 +435,13 @@
   },
   "external:api.github.com/repos/": {
    "consumers": [
+    {
+     "id": "edgefn:workplan-rebuild",
+     "kind": "edgefn",
+     "direction": "read",
+     "how": "url",
+     "line": 82
+    },
     {
      "id": "module:kb-portal/config.js",
      "kind": "module",
@@ -783,6 +811,13 @@
      "direction": "read",
      "how": "url",
      "line": 48
+    },
+    {
+     "id": "edgefn:workplan-rebuild",
+     "kind": "edgefn",
+     "direction": "read",
+     "how": "url",
+     "line": 33
     },
     {
      "id": "module:cpl_funding.js",
@@ -12338,7 +12373,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1433
+     "line": 1454
     }
    ],
    "served": true,
@@ -19575,7 +19610,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 1473
+     "line": 1494
     }
    ],
    "main_committers": []
@@ -19856,7 +19891,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1443,
+     "line": 1513,
      "tabs": [
       "workplan-goals"
      ]
@@ -22261,7 +22296,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 508,
+     "line": 129,
      "tabs": [
       "workplan-goals"
      ]
@@ -22310,7 +22345,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 509,
+     "line": 127,
      "tabs": [
       "workplan-goals"
      ]
@@ -22320,7 +22355,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 175,
+     "line": 244,
      "tabs": [
       "workplan-goals"
      ]
@@ -22679,9 +22714,19 @@
     {
      "id": "module:workplan_goals.js",
      "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 128,
+     "tabs": [
+      "workplan-goals"
+     ]
+    },
+    {
+     "id": "module:workplan_goals.js",
+     "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1864,
+     "line": 1937,
      "tabs": [
       "workplan-goals"
      ]
@@ -22741,7 +22786,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 145,
+     "line": 214,
      "tabs": [
       "workplan-goals"
      ]

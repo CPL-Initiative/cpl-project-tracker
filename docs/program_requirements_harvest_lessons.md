@@ -810,3 +810,22 @@ The outcomes paragraph's settled parts:
   38447593113). Excerpt keywords that match menu years spend all 24 excerpts; ask for links with `links`.
 - **Coastline:** load 38449045399 inserted 140 (14 place none: wrong pages); build `14e436537733`, display run
   38449957832; procedure record v1 (md5 804419067ba6). **Cabrillo:** load 38450067209 inserted 268; display not built.
+
+## S383 SkySpruce (2026-10-13): Cabrillo displayed, the eLumen hubs, and the whole-harvest measure
+
+- **A display build waits for the college before it in the queue.** The builder rewrites every row, so Cabrillo's
+  build had to follow Coastline's merge: built on #2074's records, `dc7d157aff73` covers all 2,840 rows (run
+  38456098516; procedure v1, md5 442d35fb). Merging main into the Cabrillo branch kept both sides' new test blocks.
+- **Hand-filed dated reads are proved twice:** the md5 over `code|recs|exhibits|untitled` (C order) and over each
+  code's titles in the read's own order. A re-sort by the shell's collation gave a false mismatch; the read's order
+  matched (51b48854..., d71fa73b..., 112 codes).
+- **eLumen's fourth menu shape is hubs.** Modesto links Programs A-Z and by Type, Palo Verde its award categories;
+  `el_hub_slugs()` reads single-segment pages whose slug names a program list (#2085, 146 checks). Capture-only reads
+  of both were dispatched on its branch.
+- **The whole harvest, measured (Sam, 2026-10-13; #2084).** Five parts count equally: links 98%, ROEP data 14%
+  (2,568 active programs with figures plus 308 filed gaps), COCI comparison 13%, SLOs and PLOs 9% (course SLOs 4,123
+  of 89,192 courses on active programs), careers 7% (1,518; records read before the careers field lack it, so
+  re-extraction is the lever). About 28%. Records include Approved programs, so the query counts only records that
+  are an Active program's. Anon reads checked records only; the checkpoint stamps the block.
+- **A `| tail` hides a check's exit code.** `check_generated.sh ... | tail -1 && git commit` committed a stale
+  dependency map; read the last line, then commit.

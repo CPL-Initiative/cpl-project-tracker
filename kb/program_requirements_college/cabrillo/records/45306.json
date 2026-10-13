@@ -1,0 +1,388 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "45306",
+ "shape": "certificate",
+ "title": "Spanish Intermediate Proficiency",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/spanish-intermediate-proficiency-certificate-of-achievement-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8393,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8393,
+    "output_tokens": 3413,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3413,
+  "output_tokens_details": {
+   "thinking_tokens": 1291
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10183,
+ "ms": 26318,
+ "seconds": 26.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 27,
+   "listed": 30,
+   "share": 0.9,
+   "missing": [
+    "HIST21BH",
+    "MUS52LA",
+    "SPAN16"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ANTHR6",
+    "SPAN3S"
+   ],
+   "flagged": [
+    "ANTHR6",
+    "SPAN3S"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    14.0,
+    18.0
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "why": [
+    "the blocks sum to 14.0-18.0; the catalog states 16.0-16.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 10,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Spanish Intermediate Proficiency Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Apply intermediate (ACTFL-based) Spanish communication skills, both written and oral, in a variety of real-world settings.",
+    "Understand Spanish texts such as literary pieces, news articles, and informational essays at an intermediate (ACTFL-based) level.",
+    "Demonstrate knowledge of the diversity of cultural, historical, and regional contexts of Spanish-speaking peoples and cultures."
+   ],
+   "careers": [
+    "travel",
+    "law",
+    "business",
+    "civil service",
+    "education",
+    "police",
+    "fire",
+    "health careers",
+    "non-profit organizations",
+    "non-governmental organizations"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "SPAN 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 4",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 3S",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPAN 17",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AH 19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTHR 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTHR 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AP 65",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 6",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 16A",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 17A",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 39",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 101A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 115",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 21A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHN 21AH",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 21A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 21AH",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 21B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHN 21BH",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 21B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 56M",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 10A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WS 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HIST 21BH",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 52LA",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN 16",
+    "why": "not in the text; catalog lists SPAN 3S - Spanish for Spanish Speakers I instead"
+   }
+  ],
+  "notes": [
+   "Catalog prints codes without a space (e.g. 'SPAN1', 'ETHN21AH'); recorded with a space between subject and number to match the closed list.",
+   "Required block reads 'Complete the following number of credits: 13-15' with 'Students must take a minimum of 3 courses in Spanish' and a '4 - 5' line (per-course unit range); recorded as choose 3 courses with stated 13-15.",
+   "SPAN 3S (Spanish for Spanish Speakers I, 4 units) is not in the closed list; it may be a renumbering of SPAN 16 (Elementary Spanish for Spanish Speakers I, 4 units). Reviewer should check.",
+   "Honors twins ETHN 21AH, HIST 21AH and ETHN 21BH are recorded as alternatives of ETHN 21A, HIST 21A and ETHN 21B; catalog prints them as separate rows. Cross-listed ETHN/HIST and ETHN 8/SOC 8 kept as separate entries as printed.",
+   "DANCE 16A and DANCE 17A print 1-3 units in the catalog, while the state file stores 0.5.",
+   "Program Map sections (Spanish 2-Spanish 4 and Spanish 1-Spanish 3 options) are advisory sequences repeating the same courses; not recorded as separate blocks.",
+   "Total printed as '16 Credits' and 'Complete the following number of credits: 16'."
+  ]
+ },
+ "extracted_run": "38442109713"
+}

@@ -1,0 +1,187 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "16555",
+ "shape": "certificate",
+ "title": "Java Programming",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/java-programming-certificate-of-achievement-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5781,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5781,
+    "output_tokens": 1137,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1137,
+  "output_tokens_details": {
+   "thinking_tokens": 361
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04586,
+ "ms": 9630,
+ "seconds": 10.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    16.0
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Java Programming Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate software developments skills implemented in the Java programming language.",
+    "Demonstrate information literacy individually, and as a team member (proper citations, documentation, ethical practices).",
+    "Demonstrate professional conduct by meeting strict project deadlines, participating in self-managed teams, and adopting classroom behavioral norms."
+   ],
+   "careers": [
+    "entry-level programmer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 11,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "CS1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS12J",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS20J",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required",
+    "rule": "choose_units",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "MATH4",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH5A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without spaces (CS20J, MATH4, MATH5A) while the closed list stores 'CS 20J', 'MATH 4', 'MATH 5A'; treated as the same courses, so catalog_addition is false.",
+   "The second 'Required' block says 'Complete the following number of credits: 5' over MATH4 and MATH5A (5 units each); the program map phrases it as 'Take one of the following', so effectively one course.",
+   "Career 'entry-level programmer' is taken from the phrase 'an entry-level programmer working in a technical support capacity'.",
+   "Outcome 1 is copied as printed, including 'software developments skills'.",
+   "Program map section (Fall/Spring start) not recorded as requirements; it matches the Program Requirements."
+  ]
+ },
+ "extracted_run": "38442109713"
+}

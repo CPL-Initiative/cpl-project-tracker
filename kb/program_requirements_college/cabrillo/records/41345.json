@@ -1,0 +1,212 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "41345",
+ "shape": "certificate",
+ "title": "Entry Level Catering",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/entry-level-catering-certificate-of-achievement-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5750,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5750,
+    "output_tokens": 1197,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1197,
+  "output_tokens_details": {
+   "thinking_tokens": 279
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04694,
+ "ms": 10010,
+ "seconds": 10.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    15.5,
+    18.0
+   ],
+   "stated": [
+    15.5,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Entry Level Catering Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 15.5,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate knowledge of fundamental catering theory, sanitation practices, food costing, menu design, and customer relations.",
+    "Demonstrate management skills with co-workers and customers.",
+    "Produce and deliver banquet meals in a timely fashion.",
+    "Demonstrate professionalism as required in the hospitality industry."
+   ],
+   "careers": [
+    "entry level banquet cooks",
+    "banquet servers",
+    "event coordinators",
+    "banquet cook",
+    "party planner",
+    "event coordinator",
+    "banquet server",
+    "bartender",
+    "quantity food production cook"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CAHM50A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAHM50B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAHM50C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAHM50L",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAHM57",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAHM60",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAHM64",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAHM153",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAHM157L",
+      "units": 2.5,
+      "units_max": 5,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints course codes without a space (e.g., CAHM50A); these match closed-list codes such as CAHM 50A.",
+   "Catalog states 15.5-18 credits, while the award category is 16 to fewer than 30 semester units; the low end (15.5) falls below 16.",
+   "CAHM157L is printed as 2.5 - 5 units; the closed list stores 2.5.",
+   "The Program Map repeats the same required courses split over Fall and Spring; it was not recorded as separate blocks.",
+   "Careers include both the description's list (entry level banquet cooks, banquet servers, event coordinators) and the Career Opportunities list, which overlap in wording; recorded as printed."
+  ]
+ },
+ "extracted_run": "38442109713"
+}

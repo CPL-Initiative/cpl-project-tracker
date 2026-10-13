@@ -1,0 +1,367 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "20409",
+ "shape": "certificate",
+ "title": "Journalism/Blogging",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/journalism-blogging-certificate-of-achievement-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7423,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7423,
+    "output_tokens": 3131,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3131,
+  "output_tokens_details": {
+   "thinking_tokens": 1122
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09231,
+ "ms": 23996,
+ "seconds": 24.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 22,
+   "share": 0.955,
+   "missing": [
+    "ENGL1BH"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "AP26A",
+    "AP9A",
+    "COMM10",
+    "DM1",
+    "ENGLC1002H"
+   ],
+   "flagged": [
+    "AP26A",
+    "AP9A",
+    "COMM10",
+    "DM1",
+    "ENGLC1002H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    24.0
+   ],
+   "stated": [
+    18.0,
+    24.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Journalism/Blogging Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Apply principles of journalism in writing news leads and stories based on collections of story facts, including those compiled by the reporter, with potential use of script writing, social media, visual storytelling, and spoken narration for radio.",
+    "Apply design principles (contrast modularity, hierarchy, proximity, size, consistency) to create readable, organized, eye-catching newspaper or blog pages using cameras, software, and hardware technology.",
+    "Analyze the effects of mass media on historical and contemporary society, including interconnected economic, political, cultural, and media systems and active engagement with anti-racist issues, practices, and movements to build a diverse, just, and equitable society beyond the classroom.",
+    "Apply concepts, theories, and methods used to study the social dynamics of race and ethnicity in the U.S to the evaluation of audience interest in order to create comprehensive articles, blog and social media posts, and visual narrative presentations."
+   ],
+   "careers": [
+    "media",
+    "website design and creation",
+    "blog or vlog development and maintenance",
+    "corporate marketing and public relations",
+    "local media"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "JOURN21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOURN23A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOURN54A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AP26A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC3",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "AP9A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AP25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AP35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AP35H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DM1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DM10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLC1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGLC1002H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL1BMC",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOURN2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOURN54B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOURN54C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOURN99",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLSC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLSC1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "English Requirement",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGLC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGLC1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL 1BH",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Catalog prints codes without a space between subject and number (e.g., JOURN21); recorded as printed. These correspond to closed-list codes with a space (JOURN 21, etc.).",
+   "Required block states 13 credits but lists JOURN21, JOURN23A, JOURN54A, AP26A, ETHN3 and SOC3 (16 units if all taken). ETHN3 and SOC3 are cross-listed (same title) and the Program Map says 'Take one of the following' for them, so they are recorded as one entry with SOC3 as the alternative.",
+   "Honors twins (AP35H, ENGLC1002H, POLSC1000H, ENGLC1000H) recorded as alternatives of their non-honors courses.",
+   "Catalog prints JOURN2 at 3 units (state file: 1) and JOURN99 at 4 units (state file: 0.5); these are likely variable-unit courses printed at their maximum. Recorded as printed.",
+   "Program Map elective lists differ slightly from the requirements: DM10 is absent from both semesters' lists, and COMM10 is absent from the spring list.",
+   "The catalog text begins mid-sentence in the program description; the opening appears cut off.",
+   "Program Outcomes are printed for this certificate's page."
+  ]
+ },
+ "extracted_run": "38442109713"
+}

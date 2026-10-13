@@ -1,0 +1,151 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "42963",
+ "shape": "noncredit",
+ "title": "Small Business",
+ "award": "Noncredit program",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/small-business-certificate-of-completion-fall-2023",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5217,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5217,
+    "output_tokens": 631,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 631,
+  "output_tokens_details": {
+   "thinking_tokens": 145
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03349,
+ "ms": 5961,
+ "seconds": 6.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    144.0,
+    144.0
+   ],
+   "stated": [
+    144.0,
+    144.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Small Business Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 144,
+    "max": 144
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Construct a simple business plan including capital needs, demand projections, and financial statements.",
+    "Articulate and justify decisions in planning areas such as marketing plans, competition, location, and legal form of business.",
+    "Compare possible advertising objectives and strategies to justify choices for an ad campaign over a specific time period within a budget."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 144,
+     "max": 144
+    },
+    "courses": [
+     {
+      "code": "BUS450",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS488",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate counted in hours; units fields hold hours (72 hours per course, 144 total).",
+   "The catalog prints codes without a space (BUS450, BUS488); these match closed-list BUS 450 and BUS 488, so they are not marked as catalog additions.",
+   "The Program Map (one-semester and two-semester sequences) only orders the same two required courses and adds no requirements.",
+   "No careers or job titles are named in the program text."
+  ]
+ },
+ "extracted_run": "38442109713"
+}

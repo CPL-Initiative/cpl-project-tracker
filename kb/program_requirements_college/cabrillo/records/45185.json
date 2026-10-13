@@ -1,0 +1,370 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "45185",
+ "shape": "adt",
+ "title": "Public Health",
+ "award": "A.S. T Degree",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/public-health-associate-in-science-for-transfer-a-s-t-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12398,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12398,
+    "output_tokens": 3281,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3281,
+  "output_tokens_details": {
+   "thinking_tokens": 1184
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.11521,
+ "ms": 26069,
+ "seconds": 26.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 24,
+   "listed": 24,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    23.0,
+    26.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Public Health Associate in Science for Transfer (A.S.-T)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Communicate health information and public health strategies in oral and written forms through a variety of media and technology to diverse audiences.",
+    "Analyze qualitative and quantitative data to describe contemporary local and global health challenges and evaluate public health programs and policies.",
+    "Explain the factors that impact the health of individuals and communities and contribute to health inequities.",
+    "Identify strategies for promoting individual and population health.",
+    "Demonstrate cultural awareness and sensitivity when interacting with diverse groups of people."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Major Requirements - Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HS10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HS50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - Core",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BIO11A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO13A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO13AL",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - Core",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "BUS9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH2A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - List A",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "BIO4",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO6",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM3L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - List B",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTHR2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTHR2H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HS23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - List C",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HS12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HS15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HS21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSERV50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog text begins mid-description and the Program Map is cut off at the end; the Program Requirements section appears complete.",
+   "No total for the major is stated; the only total printed is 60 credits for the whole degree (Cal-GETC 34). The text says the degree requires more than 18 units in the major. total_units left null.",
+   "Second Core block: note says students select either BIO11A or BIO13A/13AL (4 units); recorded as choose_units 4, where BIO13A and BIO13AL are taken together.",
+   "Statistics block: 'Complete the following number of credits: 3-5' with note that students may take only one statistics course; recorded as choose_courses 1.",
+   "List A: 'Complete the following number of credits: 4-5'; note says CHEM3 and CHEM3L must be taken together. Program map reads it as 'Take one of the following'. Recorded as choose_units 4.",
+   "ANTHR2H and SOC1H recorded as honors alternatives to ANTHR2 and SOC1 in List B.",
+   "General Electives (0-3 credits of any transferable course) are part of the 60-unit degree, not the major; not recorded as a block and open_elective_units left null.",
+   "Codes are written as printed in the catalog without spaces (e.g., BIO11A for closed-list BIO 11A, STATC1000 for STAT C1000).",
+   "The description names work settings (federal, state, and local health agencies, community health departments, healthcare organizations, hospitals and clinics, research organizations, crisis agencies, educational institutions) rather than careers or job titles; careers left empty for reviewer check.",
+   "Cal-GETC GE courses in the program map were not recorded."
+  ]
+ },
+ "extracted_run": "38442109713"
+}

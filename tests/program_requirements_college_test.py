@@ -874,6 +874,46 @@ check(EPG["url"] == EL_BASE + "program/ag-ed-as-fall-2026"
       "a content call reads as its program's page: its heading, its requirements without styles or scripts, "
       "and the spaceless codes Bakersfield prints (AGRIB5) count as the state's AGRI B5")
 
+# ── eLumen: a menu of departments, each listing its programs (Cabrillo, S381) ──
+# Capture 38432112848 read no program: Cabrillo's menu links departments
+# (href="2026-2027/department/accounting", read 38433649784), and each department's
+# content call links its programs at 2026-2027/program/<slug> (read 38437381277).
+CAB = "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome"
+CAB_MENU = ('<a class="navitem small " href="2026-2027/department/accounting" onclick="x">Accounting</a>'
+            '<a href="2026-2027/department/art">Art</a><a href="2026-2027/department/accounting">again</a>'
+            '<a href="2025-2026/department/old">last year</a>')
+CAB_DEPT = {"accounting": '<h2>Accounting</h2><a href="2026-2027/program/accounting-as-fall-2025">A.S.</a>'
+                          '<a href="2026-2027/program/bookkeeping-coa-fall-2025">Bookkeeping</a>',
+            "art": '<a href="/catalog/2026-2027/program/art-history-aat-fall-2024">AA-T</a>'
+                   '<a href="2026-2027/program/accounting-as-fall-2025">shared</a>'}
+check(C.el_department_slugs(CAB_MENU, "2026-2027") == ["accounting", "art"],
+      "a menu's department links are read once each, in this catalog only")
+asked = []
+
+
+def cab_fetch(reader, url, errors):
+    asked.append(url)
+    if "publish/content/2026-2027,department," in url:
+        return json.dumps({"html": CAB_DEPT[url.split("department,")[1].split("?")[0]]})
+    if "publish/content/2026-2027,program," in url:
+        slug = url.split("program,")[1].split("?")[0]
+        return json.dumps({"html": "<h1>%s</h1><p>Program Requirements ACCT 1A ACCT 1B</p>" % slug})
+    return json.dumps({"html": CAB_MENU})
+
+
+real_fetch, C.el_fetch = C.el_fetch, cab_fetch
+try:
+    rep = {}
+    got_pages = C.el_pages_fast(None, CAB, rep)
+finally:
+    C.el_fetch = real_fetch
+check([g["url"].rsplit("/", 1)[1] for g in got_pages] == ["accounting-as-fall-2025", "bookkeeping-coa-fall-2025", "art-history-aat-fall-2024"]
+      and rep["elumen"]["menu_programs"] == 0 and rep["elumen"]["menu_departments"] == 2 and rep["elumen"]["department_programs"] == 3,
+      "with no program in the menu, each department's content call lists the programs, each read once: %s %s"
+      % ([g["url"] for g in got_pages], rep.get("elumen")))
+check(sum(1 for u in asked if ",department," in u) == 2 and sum(1 for u in asked if ",program," in u) == 3,
+      "one call a department and one a program, nothing more")
+
 # ── a program left without a page says why (S381) ──────────────────────────
 # Coastline re-read 38429656959: Information Technology A.S.'s own page was read from the
 # sitemap, refused, and taken by the link search at coverage 1.0; nothing said which gate.

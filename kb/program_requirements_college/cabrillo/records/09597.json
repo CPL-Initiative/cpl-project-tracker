@@ -1,0 +1,459 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "09597",
+ "shape": "degree",
+ "title": "Computer Science",
+ "award": "A.S. Degree",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/computer-science-associate-in-science-a-s-fall-2025",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6673,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6673,
+    "output_tokens": 3816,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3816,
+  "output_tokens_details": {
+   "thinking_tokens": 1227
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10301,
+ "ms": 30767,
+ "seconds": 31.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 19,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    4.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "why": [
+    "the blocks sum to 4.0-30.0; the catalog states 30.0-30.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Science - Associate in Science (A.S.)",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cabrillo College General Education",
+   "outcomes": [
+    "Demonstrate software development skills necessary to succeed in programming intensive majors at 4-year colleges.",
+    "Demonstrate professional conduct by meeting strict project deadlines, participating in self-managed teams, and adopting classroom behavioral norms.",
+    "Demonstrate the capacity to use computer software to communicate and interact with computer hardware.",
+    "Demonstrate information literacy individually, and as a team member (proper citations, documentation, ethical practices)."
+   ],
+   "careers": [
+    "computer science",
+    "software engineering",
+    "computer engineering"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Recommended Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Major pathway",
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "CS21",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH5A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH5B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Major Requirements",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": "Major pathway",
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CS19",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS20J",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS20P",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Major pathway",
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CS23",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH23",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Major Electives",
+    "rule": "choose_units",
+    "minimum": 8,
+    "option_group": "Major pathway",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "CHEM1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS24",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH5C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS4A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS4B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS4C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO9A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO9B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Computer Engineering Pathway - Recommended Major Requirements",
+    "rule": "choose_units",
+    "minimum": 30,
+    "option_group": "Major pathway",
+    "stated": {
+     "min": 30,
+     "max": 30
+    },
+    "courses": [
+     {
+      "code": "CS19",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS20J",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS20P",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS21",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS23",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH23",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS24",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH5A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH5B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH5C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS4A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS4B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS4C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO9A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO9B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "All major blocks are headed 'Recommended Major Requirements'/'Recommended Major Electives' yet each says 'Complete the following number of credits: N' and the degree requires at least 30 units in the major; they were recorded as required choose/all blocks rather than 'recommended'. Reviewer should confirm.",
+   "Two 30-unit major paths appear: the general computer science path (14 + 4 + 4 + 8 units) and the 'Computer Engineering Pathway' (30 units from a single list). Read as alternatives and given the same option_group 'Major pathway'; the general path is four blocks sharing that group, so a reviewer should note the general path means completing all four of those blocks together.",
+   "Computer Engineering Pathway prints no internal rule beyond 'Complete the following number of credits: 30'; recorded as choose_units 30.",
+   "CS23 and MATH23 (both 'Discrete Mathematics') are printed as a 4-credit choice; recorded as one entry with MATH23 as alternative.",
+   "Catalog prints codes without spaces (e.g., CS20J, MATH5A); these match closed-list codes such as CS 20J and MATH 5A, so catalog_addition is false.",
+   "Degree total is 60 units: Cabrillo College General Education 24 units, major 30 units, and 'General electives: any transferable or degree applicable course' 6 units; the 6 elective units are outside the 30-unit major total so open_elective_units is null.",
+   "Catalog text begins mid-sentence (truncated program description)."
+  ]
+ },
+ "extracted_run": "38442109713"
+}
