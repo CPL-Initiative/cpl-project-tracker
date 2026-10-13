@@ -89,8 +89,19 @@ block("2. the builder refuses to empty itself", () => {
   // would itself commit the bug it is guarding.
   const before = fs.readFileSync("college_identity_data.js");
   const restore = () => fs.writeFileSync("college_identity_data.js", before);
-  const run = (args) => spawnSync("python3", [BUILDER, "--map-json", MAP].concat(args),
-    { encoding: "utf8" });
+  // ⚠️ --out sends the builder's dated side output (crosswalk.json, receipt.md)
+  // to a temp dir. Without it every rebuild wrote kb/college_identity/<today>/,
+  // which sorts newest, so a test running beside this one read it:
+  // cpl_funding_applied.test.js runs funding/_build_funding_performance.py,
+  // whose _partner_stems() opens the newest crosswalk.json, and on 2026-10-13
+  // it opened this test's half-written file and crashed (JSONDecodeError at
+  // char 0; #2084 twice, #2081 once). The suite runs files concurrently.
+  const scratch = fs.mkdtempSync(path.join(os.tmpdir(), "cplidguard-"));
+  const run = (args) => spawnSync("python3",
+    [BUILDER, "--map-json", MAP, "--out", scratch].concat(args), { encoding: "utf8" });
+  const today = new Date().toISOString().slice(0, 10);
+  const spill = "kb/college_identity/" + today;
+  const spilledBefore = fs.existsSync(spill);
 
   try {
     const refused = run([]);
@@ -132,14 +143,15 @@ block("2. the builder refuses to empty itself", () => {
       /"generated":\s*"\d{4}-\d{2}-\d{2}"/.test(String(before)),
       "the exemption above is only safe while the field it forgives exists; if "
       + "the stamp is ever renamed this check fails instead of silently widening");
+    check("(2) ⭐ the rebuilds wrote nothing under kb/college_identity/ (another test reads the newest dated crosswalk there)",
+      spilledBefore || !fs.existsSync(spill),
+      "a dated directory appeared at " + spill + "; the runs must pass --out");
   } finally {
     restore();
-    // The builder also writes kb/college_identity/<today>/ as a side effect.
-    // Left behind, it shows up as untracked work nobody did — and on a new
-    // date it is a fresh directory, which is what trips a git-clean hook.
-    const today = new Date().toISOString().slice(0, 10);
-    const spill = "kb/college_identity/" + today;
-    if (!COMMITTED_RECEIPTS.has(today) && fs.existsSync(spill))
+    fs.rmSync(scratch, { recursive: true, force: true });
+    // Belt and braces: a builder that ever ignores --out must not leave
+    // untracked work nobody did (a fresh dated directory trips a git-clean hook).
+    if (!spilledBefore && !COMMITTED_RECEIPTS.has(today) && fs.existsSync(spill))
       fs.rmSync(spill, { recursive: true, force: true });
   }
 });
