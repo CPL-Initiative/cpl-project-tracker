@@ -512,7 +512,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/cos_matches.json` | tabs: `credential-reference` · scripts: `kb/_match_cos_authority.py` | committed by: `cos-authority-sync.yml` |
 | `kb/course_crosswalk.json` | scripts: `kb/_curation_01.py`, `kb/_esl_package_dryrun.py`, `kb/_zband_retire_dryrun.py` | scripts: `kb/_seed_cx_common_courses.py` |
 | `kb/course_outcomes` | none found | committed by: `course-outcomes-read.yml` |
-| `kb/course_outcomes/trial_38317539422/read.json` | scripts: `kb/_course_outcomes_read.py` | — |
 | `kb/course_outline_census` | none found | committed by: `course-outline-census.yml` |
 | `kb/course_outline_index` | none found | committed by: `course-outline-index.yml` |
 | `kb/course_outline_index/index_<run>.json` | scripts: `kb/_course_outcomes_read.py` | — |
@@ -1099,5 +1098,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 97 Supabase tables · 37 RPCs · 7 edge functions · 645 file
+Coverage: 97 Supabase tables · 37 RPCs · 7 edge functions · 644 file
 datasets · 175 external services · 437 consumers · 52 workflows · 39 tabs.

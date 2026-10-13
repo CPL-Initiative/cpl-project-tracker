@@ -99,6 +99,61 @@ def _():
     assert got["shape"] == "none" and got["outcomes"] == [], got
 
 
+SD_FIELDS = os.path.join(ROOT, "kb", "course_outcomes", "trial_38350787486")   # All Fields (4)
+SD_OUTLINE = os.path.join(ROOT, "kb", "course_outcomes", "trial_38350133448")  # Course Outline Report (493)
+
+
+def pages_in(folder):
+    import glob
+    import gzip
+    return {os.path.basename(p)[:-8]: (gzip.open(p, "rt").read(), open(p[:-8] + ".txt").read())
+            for p in sorted(glob.glob(os.path.join(folder, "*.html.gz")))}
+
+
+@check("on SDCCD's All Fields report each college's SLOs are kept under its own group, as printed")
+def _():
+    pages = pages_in(SD_FIELDS)
+    assert len(pages) == 12, len(pages)
+    geog = reader.groups_from_html(pages["GEOG_101"][0])
+    assert [(g["group"], len(g["outcomes"])) for g in geog] == [("Mesa", 4), ("City", 5), ("Miramar", 4)], geog
+    assert geog[2]["outcomes"][0].startswith("Compare and Contrast Climate Change: Students will be able"), geog[2]
+    libs = reader.groups_from_html(pages["LIBS_101"][0])
+    assert libs[1]["outcomes"][2].startswith("Library catalog accessStudents will use"), "as printed, run together"
+    phot = reader.groups_from_html(pages["PHOT_100"][0])
+    assert [(g["group"], len(g["outcomes"])) for g in phot] == [("City", 5)], "the empty field ahead of the title"
+    for name, (page_html, text) in pages.items():
+        # The outcomes section only: a college may reuse an objective's words as an SLO
+        # (Miramar's HUMA 101), so where a sentence prints decides, not what it says.
+        lines = text.split("\n")
+        start, stop = lines.index("Student Learning Outcomes"), lines.index("Student Learning Objectives")
+        printed = [reader._ws(lines[i + 1]) for i in range(start, stop) if lines[i] == "Outcome Text"
+                   and i + 1 < stop and reader._ws(lines[i + 1]) not in ("", "Group Title", "Outcome Text")]
+        got = [x for g in reader.groups_from_html(page_html) for x in g["outcomes"]]
+        assert got == printed, (name, len(got), len(printed))
+        for g in reader.groups_from_html(page_html):
+            assert g["fingerprint"] == (reader.fingerprint(g["outcomes"]) if g["outcomes"] else None), name
+
+
+@check("an SDCCD page that prints objectives only reads no outcomes: All Fields with no group, and the Course Outline Report")
+def _():
+    fields = pages_in(SD_FIELDS)
+    for name in ("AAPI_124", "SDGE_302"):
+        got = reader.parse_page(*fields[name])
+        assert got["shape"] == "none" and got["groups"] == [] and got["outcomes"] == [], (name, got)
+    for name, (page_html, text) in pages_in(SD_OUTLINE).items():
+        assert "STUDENT LEARNING OBJECTIVES" in text, name
+        got = reader.parse_page(page_html, text)
+        assert got["shape"] == "none" and got["outcomes"] == [], (name, got["outcomes"][:2])
+
+
+@check("RCCD's integrated outline reads as before: no group section, the SLO area")
+def _():
+    for name, page_html, text in trial_pages():
+        got = reader.parse_page(page_html, text)
+        assert "groups" not in got and got == {**reader.outcomes_from_html(page_html),
+                                               "fingerprint": reader.fingerprint(got["outcomes"])}, name
+
+
 @check("the slices cover every wanted course once")
 def _():
     idx = json.load(open(os.path.join(ROOT, "kb", "course_outline_index", "index_38313849383.json")))

@@ -37,6 +37,11 @@ LOAD_RPC = "rpc/course_outcomes_load"
 # for the colleges whose loaded records name it.
 OFFERED_AT = {"rccd": {"RIV": "Riverside City College", "MOV": "Moreno Valley College",
                        "NOR": "Norco College"}}
+# The colleges an All Fields report names as its outcome groups, by host (SDCCD keeps
+# each college's SLOs under its own Group Title; trial 38350787486). A group whose
+# title is not here is skipped with its reason, never guessed.
+GROUPS = {"sdccd": {"City": "San Diego City College", "Mesa": "San Diego Mesa College",
+                    "Miramar": "San Diego Miramar College"}}
 BATCH = 200
 
 
@@ -76,28 +81,48 @@ def colleges_for(host: str, row: dict, names: dict) -> list[str]:
 
 def rows_from(paths: list[str], host: str = "") -> tuple[list[dict], list[dict]]:
     """One row per college and course; a course whose outline printed no outcomes is
-    skipped with its reason."""
+    skipped with its reason. A course read as groups (SDCCD) gives one row per group,
+    for the college its title names."""
     names: dict[str, str] = {}
     rows, skipped, seen = [], [], set()
+
+    def add(college, r, block, d):
+        key = (college, r["code"], r["report"], block["fingerprint"])
+        if key in seen:
+            return
+        seen.add(key)
+        rows.append({"college": college, "course_code": r["code"], "course_title": r.get("title"),
+                     "heading": block.get("heading"), "lead": block.get("lead"), "outcomes": block["outcomes"],
+                     "maps_to": block.get("maps_to"),
+                     "shape": block["shape"], "fingerprint": block["fingerprint"], "source_url": r["report"],
+                     "source_kind": "course_outline", "source_system": d.get("system", "curriqunet"),
+                     "read_run": str(d["run"])})
+
     for path in paths:
         d = json.load(open(path))
         for r in d["rows"]:
+            if r.get("status") == 200 and r.get("shape") == "groups":
+                for g in r.get("groups") or []:
+                    if not g.get("outcomes"):
+                        continue
+                    if g.get("fingerprint") != fingerprint(g["outcomes"]):
+                        raise SystemExit("%s (%s): the filed fingerprint does not match its outcomes"
+                                         % (r.get("code"), g.get("group")))
+                    college = (GROUPS.get(host) or {}).get(g.get("group") or "")
+                    if not college:
+                        skipped.append({"course_code": r.get("code"), "status": r.get("status"),
+                                        "shape": "groups", "group": g.get("group"),
+                                        "why": "the group names no college this host maps"})
+                        continue
+                    add(college, r, g, d)
+                continue
             if r.get("status") != 200 or r.get("shape") not in ("list", "paragraph") or not r.get("outcomes"):
                 skipped.append({"course_code": r.get("code"), "status": r.get("status"), "shape": r.get("shape")})
                 continue
             if r.get("fingerprint") != fingerprint(r["outcomes"]):
                 raise SystemExit("%s: the filed fingerprint does not match its outcomes" % r.get("code"))
             for college in colleges_for(host, r, names):
-                key = (college, r["code"], r["report"], r["fingerprint"])
-                if key in seen:
-                    continue
-                seen.add(key)
-                rows.append({"college": college, "course_code": r["code"], "course_title": r.get("title"),
-                             "heading": r.get("heading"), "lead": r.get("lead"), "outcomes": r["outcomes"],
-                             "maps_to": r.get("maps_to"),
-                             "shape": r["shape"], "fingerprint": r["fingerprint"], "source_url": r["report"],
-                             "source_kind": "course_outline", "source_system": d.get("system", "curriqunet"),
-                             "read_run": str(d["run"])})
+                add(college, r, r, d)
     return rows, skipped
 
 

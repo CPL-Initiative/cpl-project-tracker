@@ -43,6 +43,39 @@ def _():
     assert ("Moreno Valley College", "ACC 19") not in by, "ACC 19's outline names RIV and NOR only"
 
 
+SD_TRIAL = os.path.join(ROOT, "kb", "course_outcomes", "trial_38350787486", "read.json")
+
+
+@check("an SDCCD course becomes one row per college group, each with that college's own outcomes")
+def _():
+    rows, skipped = load.rows_from([SD_TRIAL], "sdccd")
+    trial = json.load(open(SD_TRIAL))["rows"]
+    want = sum(1 for r in trial for g in r.get("groups") or [] if g["outcomes"])
+    assert len(rows) == want == 16, (len(rows), want)
+    by = {(r["college"], r["course_code"]): r for r in rows}
+    geog = [r for r in trial if r["code"] == "GEOG 101"][0]["groups"]
+    assert by[("San Diego City College", "GEOG 101")]["outcomes"] == geog[1]["outcomes"]
+    assert by[("San Diego Miramar College", "GEOG 101")]["outcomes"] == geog[2]["outcomes"]
+    assert ("San Diego City College", "ARCH 100") not in by, "ARCH 100 prints Mesa's outcomes only"
+    assert {s["course_code"] for s in skipped} == {"AAPI 124", "SDGE 302"}, skipped
+    assert all(r["shape"] in ("list", "paragraph") for r in rows)
+
+
+@check("a group whose title names no college the host maps is skipped with its reason, never guessed")
+def _():
+    import tempfile
+    d = json.load(open(SD_TRIAL))
+    d["rows"] = [r for r in d["rows"] if r["code"] == "PHOT 100"]
+    d["rows"][0]["groups"][0]["group"] = "Continuing Education"
+    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
+        json.dump(d, f)
+    try:
+        rows, skipped = load.rows_from([f.name], "sdccd")
+    finally:
+        os.unlink(f.name)
+    assert rows == [] and skipped[0]["group"] == "Continuing Education" and "no college" in skipped[0]["why"], skipped
+
+
 @check("a filed row whose fingerprint does not match its outcomes stops the load")
 def _():
     import tempfile
