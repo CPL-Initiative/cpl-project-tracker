@@ -265,7 +265,10 @@ block("(6b)", function () {
     return Promise.resolve({ ok: true, json: function () { return Promise.resolve(REGISTRY); } });
   } });
   return M._load().then(function () {
-    check("(6b) both tables are read, the Progress view's three reads and the framing file beside them", asked.length === 6 &&
+    // The failed records read is the one request asked twice: a 5xx page gets one retry.
+    check("(6b) the failed records page is retried once, never more",
+      asked.filter(function (u) { return /\/rest\/v1\/program_requirement_records\?select=/.test(u); }).length === 2, asked.join(" "));
+    check("(6b) both tables are read, the Progress view's three reads and the framing file beside them", asked.length === 7 &&
       asked.some(function (u) { return /\/rest\/v1\/program_source_registry\?select=/.test(u); }) &&
       asked.some(function (u) { return /\/rest\/v1\/program_requirement_records\?select=/.test(u); }) &&
       asked.some(function (u) { return /\/rest\/v1\/program_source_addenda\?select=/.test(u); }) &&
@@ -335,6 +338,25 @@ block("(6d3)", function () {
     check("(6d3) a failed page fails the read, naming the table, never a short list",
       /program_requirement_records answered 500/.test(M._state.error || "") && /program_requirement_records answered 500/.test(root.textContent),
       "error " + M._state.error + "; records " + (M._state.records || []).length);
+  });
+});
+
+block("(6d4)", function () {
+  // A page cancelled at the role's time limit passes once the other reads finish: one retry.
+  const t = pagedTable(600);
+  let failedOnce = false;
+  const fetch = function (url, init) {
+    const h = (init && init.headers) || {};
+    if (/program_requirement_records/.test(url) && h.Range === "250-499" && !failedOnce) {
+      failedOnce = true; return Promise.resolve({ ok: false, status: 500 });
+    }
+    return t.fetch(url, init);
+  };
+  const { M } = loadModule({ fetch: fetch });
+  return M._load().then(function () {
+    check("(6d4) a page that answers 500 once is read again, and the read completes",
+      failedOnce && (M._state.records || []).length === 600 && !M._state.error,
+      "records " + (M._state.records || []).length + "; error " + M._state.error);
   });
 });
 
@@ -870,6 +892,10 @@ block("(12)", function () {
     const rev = r.asked.filter(function (a) { return /requirements_fp|program_record_verdicts/.test(a.url); });
     check("(12) signed in: the records and the verdict log are read under the reviewer's token", rev.length === 2 &&
       rev.every(function (a) { return a.opts.headers && a.opts.headers.Authorization === "Bearer tok"; }));
+    // The reviewer read holds every row the public read would, so the public read is skipped.
+    check("(12) signed in: the public record read is skipped, the reviewer read serves the page",
+      r.asked.filter(function (a) { return /program_requirement_records\?select=/.test(a.url) && !/requirements_fp/.test(a.url); }).length === 0 &&
+      (r.M._state.records || []).length === 2, (r.M._state.records || []).length);
     r.M._state.view = "records"; r.M._render();
     const card = r.root.querySelector('article[aria-label="Art, Irvine Valley College"]');
     check("(12) the unchecked record a reviewer may read shows on the Records view", !!card);

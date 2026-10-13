@@ -318,7 +318,7 @@
      reads on until a short page. A failed page fails the whole read, naming the table:
      a short list must never pass for the whole one.
      docs/kb-notes/methodology-paginate-postgrest-reads.md */
-  var RECORD_PAGE = 250, RECORD_PARALLEL = 3;
+  var RECORD_PAGE = 250, RECORD_PARALLEL = 2, RECORD_RETRY_MS = 600;
   function getAllRows(url, hdrs) {
     var name = url.split("?")[0].split("/").pop();
     function page(i) {
@@ -327,7 +327,13 @@
       h["Range-Unit"] = "items";
       h.Range = (i * RECORD_PAGE) + "-" + ((i + 1) * RECORD_PAGE - 1);
       if (i === 0) h.Prefer = "count=exact";
-      return fetch(url, { headers: h }).then(function (r) {
+      /* A statement cancelled at the role's time limit answers 500; it passes once the
+         other reads finish, so a page gets one more try before the read fails. */
+      var once = function () { return fetch(url, { headers: h }); };
+      return once().then(function (r) {
+        if (r.ok || [500, 502, 503, 504].indexOf(r.status) < 0) return r;
+        return new Promise(function (res) { setTimeout(res, RECORD_RETRY_MS); }).then(once);
+      }).then(function (r) {
         if (!r.ok) throw new Error(name + " answered " + r.status);
         var range = r.headers && typeof r.headers.get === "function" ? r.headers.get("Content-Range") : null;
         var m = /\/(\d+)\s*$/.exec(range || "");
@@ -363,16 +369,30 @@
     if (state.loading) return Promise.resolve();
     state.loading = true;
     state.error = null;
+    /* Signed in, the reviewer read (every record and its fingerprint, under the 8 s limit)
+       is the page's read too: the public read returns the same rows without the
+       fingerprint, so reading both doubled 34 MB and set six large reads against each
+       other, and the anon ones still hit the 3 s limit (2026-10-13 21:07Z). The public
+       read runs only when nobody is signed in, or the reviewer read failed. */
+    var signedIn = !!session();
+    function publicRecords() {
+      return getAllRows(REST + "/program_requirement_records?select=" + RECORD_SELECT + "&order=college,control_number", headers());
+    }
     var core = Promise.all([
       getJson(REST + "/program_source_registry?select=" + REGISTRY_SELECT + "&order=college"),
-      getAllRows(REST + "/program_requirement_records?select=" + RECORD_SELECT + "&order=college,control_number", headers())
+      signedIn ? Promise.resolve(null) : publicRecords()
     ]).then(function (got) {
       state.registry = got[0] || [];
-      state.records = got[1] || [];
+      if (!signedIn) state.records = got[1] || [];
     }).catch(function (e) {
       state.error = (e && e.message) || "the read failed";
     });
     return Promise.all([core, loadProgress(), loadReview(), loadFraming()]).then(function () {
+      if (!signedIn || state.error) return;
+      if (state.review && state.review.records) { state.records = state.review.records; return; }
+      return publicRecords().then(function (rows) { state.records = rows || []; },
+        function (e) { state.error = (e && e.message) || "the read failed"; });
+    }).then(function () {
       state.loading = false;
       render();
       if (RECORD_KEY && !state.recordOpened) { state.recordOpened = true; openKey(RECORD_KEY); }
