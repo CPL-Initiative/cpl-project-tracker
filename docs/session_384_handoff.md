@@ -39,7 +39,7 @@ and checkpointed at Rule 9a's warning line. `list_sessions` first and agree one 
 
 ## Priority, in order
 
-1. **Merge #2083, #2084, #2085 on `test`** (each a sibling of main; merge main first if one turns dirty, regenerate
+1. **Merge this checkpoint (#2086), then #2083, #2084, #2085 on `test`** (each a sibling of main; merge main first if one turns dirty, regenerate
    the dependency map, never pick). After #2083: dispatch `cpl-chat-deploy.yml` (`confirm=DEPLOY`,
    `function=workplan-rebuild`) and read the function back.
 2. **Read Modesto's and Palo Verde's captures** on `claude/s383-elumen-hubs` (`capture.json`: `menu_hubs`,
@@ -74,5 +74,5 @@ was skipped because the M-ID pipeline did not move. `CLAUDE.md` is 440 bytes ove
 
 ## Subscriptions and check-ins
 
-S383 drops its subscriptions (#2083, #2084, #2085, CPLBrain #334) at sign-off and holds no check-in. Subscribe
+S383 drops its subscriptions (#2083, #2084, #2085, CPLBrain #334) and its watches on Sheets 75 and 76 at sign-off, and holds no check-in. Subscribe
 when you take them up.
