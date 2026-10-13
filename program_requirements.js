@@ -264,7 +264,7 @@
     if (light) body.push(el("p", { cls: "prh-small prh-quiet", text: state.failed[ref.college]
       ? "The record could not be read (" + state.failed[ref.college] + "). Reload the tab to answer here."
       : "Reading the record…" }));
-    else if (p && p.requirements_fp) body.push(verdictBox(p, flagsFor(p).flags, line));
+    else if (p && p.requirements_fp) body.push(verdictBox(p, flagsFor(p), line));
     var sum = el("summary", {}, [el("span", { cls: "prh-callrec-t" }, [doneMark(), el("b", { text: ref.control_number }), " " + name]), line]);
     /* Opening a record starts the reading side by side (Sam, 2026-10-10: "The side by side view
        should be the default view when I click in to start confirming"). */
@@ -1049,7 +1049,9 @@
       ".prh-flags { display:grid; gap:8px; }",
       ".prh-flag { border:1px solid var(--border-strong); border-radius:8px; padding:10px 12px; display:grid; gap:6px; min-width:0; margin-bottom:8px; }",
       ".prh-flag p { margin:0; max-width:var(--cpl-measure,none); }",
-      ".prh-flag-college { background:var(--college-flag, var(--surface-subtle)); }",
+      ".prh-college-line summary { cursor:pointer; min-height:24px; }",
+      ".prh-college-line ul { margin:6px 0 0; padding-left:1.2em; max-width:var(--cpl-measure,none); }",
+      ".prh-college-line p { margin:6px 0 0; }",
       ".prh-flag-reading { background:var(--reading-flag, var(--surface-subtle)); }",
       ".prh-flag-top { display:flex; flex-wrap:wrap; align-items:baseline; gap:2px 10px; }",
       ".prh-flag-n, .prh-flag-kind { font-weight:700; color:var(--text-strong); }",
@@ -1398,7 +1400,12 @@
      Each gap the display build carries, other than a reader's note, is a flag. It sits on
      the first block that prints a course its text names, and every row printing one of
      those courses carries its number; a flag naming no printed course sits on the whole
-     record. The owner is the gap's: the college, or the reading procedure. */
+     record. The owner is the gap's: the college, or the reading procedure.
+     Numbered boxes are the reading procedure's alone (Sam, Open Asks Sheet 77 card 3, "Build
+     it", 2026-10-13 22:25Z). A gap the college owns (the catalog and the state file differ,
+     MAP names a second course) is the college's to correct, outside the reviewer's confirm:
+     the record shows them on one line that opens to the list (collegeLine), and each
+     college's full list is on My College and the MAP team's queue. */
   function escRe(s) { return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
   function flagsFor(p) {
     var blocks = (p.record && p.record.blocks) || [];
@@ -1410,9 +1417,10 @@
         (c.alternatives || []).forEach(function (a) { a = a && (a.code || a); if (a && codes.indexOf(a) < 0) codes.push(a); });
       });
     });
-    var flags = [], notes = [], byCode = {};
+    var flags = [], notes = [], college = [], byCode = {};
     gaps.forEach(function (g) {
       if (NOTE_KINDS[g.kind]) { notes.push(g); return; }
+      if (g.owner === "college") { college.push({ kind: g.kind, owner: "college", text: g.text }); return; }
       var named = codes.filter(function (c) {
         return new RegExp("(^|[^A-Za-z0-9])" + escRe(c) + "(?![A-Za-z0-9])").test(g.text || "");
       });
@@ -1423,7 +1431,7 @@
           return all.some(function (x) { return named.indexOf(x) >= 0; });
         })) at = i;
       }
-      flags.push({ kind: g.kind, owner: g.owner === "college" ? "college" : "procedure", text: g.text, codes: named, block: at });
+      flags.push({ kind: g.kind, owner: "procedure", text: g.text, codes: named, block: at });
     });
     /* Numbered in the order a reader meets them: the whole record first, then block by block. */
     flags.sort(function (a, b) { return (a.block == null ? -1 : a.block) - (b.block == null ? -1 : b.block); });
@@ -1431,24 +1439,42 @@
       f.n = i + 1;
       f.codes.forEach(function (c) { (byCode[c] = byCode[c] || []).push(f.n); });
     });
-    return { flags: flags, notes: notes, byCode: byCode };
+    return { flags: flags, college: college, notes: notes, byCode: byCode };
   }
   function flagSummary(flags) {
-    var col = flags.filter(function (f) { return f.owner === "college"; }).length, pro = flags.length - col;
     if (!flags.length) return "None";
-    if (!pro) return col + ", all for the college";
-    if (!col) return pro + ", for the reading procedure";
-    return flags.length + ": " + col + " for the college, " + pro + " for the reading procedure";
+    return flags.length + ", for the reading procedure";
   }
   function flagBox(f) {
-    var college = f.owner === "college";
-    return el("div", { cls: "prh-flag " + (college ? "prh-flag-college" : "prh-flag-reading"), "data-flag": String(f.n) }, [
+    return el("div", { cls: "prh-flag prh-flag-reading", "data-flag": String(f.n) }, [
       el("div", { cls: "prh-flag-top" }, [
         el("span", { cls: "prh-flag-n", text: "Flag " + f.n }),
         el("span", { cls: "prh-flag-kind", text: f.kind || "A question" }),
-        el("span", { cls: "prh-flag-owner", text: college ? "For the college" : "For the reading procedure" })]),
-      el("p", { text: f.text }),
-      college ? el("p", { cls: "prh-small prh-quiet", text: "The college's draft carries it, under Drafts for the college above." }) : null]);
+        el("span", { cls: "prh-flag-owner", text: "For the reading procedure" })]),
+      el("p", { text: f.text })]);
+  }
+  /* The college's items as one line: how many, of which kinds; it opens to the list. */
+  var COLLEGE_KIND_WORDS = {
+    "Catalog and state file differ": ["place the catalog and the state file differ", "places the catalog and the state file differ"],
+    "MAP names a second course": ["second course MAP names", "second courses MAP names"]
+  };
+  function collegeCount(items) {
+    var by = {}, order = [];
+    items.forEach(function (i) { if (!by[i.kind]) { by[i.kind] = 0; order.push(i.kind); } by[i.kind]++; });
+    return order.map(function (k) {
+      var w = COLLEGE_KIND_WORDS[k] || [k, k];
+      return by[k] + " " + (by[k] === 1 ? w[0] : w[1]);
+    }).join("; ");
+  }
+  function collegeLine(p, items) {
+    var kinds = {};
+    items.forEach(function (i) { kinds[i.kind] = 1; });
+    var several = Object.keys(kinds).length > 1;
+    return el("details", { cls: "prh-college-line" }, [
+      el("summary", { text: collegeCount(items) }),
+      el("p", { cls: "prh-small prh-quiet", text: "For " + shortCollege(p.college) + " to correct; they do not hold the record back. " +
+        "The college's full list is on My College and in the MAP team's queue." }),
+      el("ul", {}, items.map(function (i) { return el("li", { text: (several && i.kind ? i.kind + ": " : "") + i.text }); }))]);
   }
   /* ── a course's numbers and its CPL (Sam, 2026-10-10) ──
    * "If there is a CID, CCN, MID, show those numbers on the blocks as well with a hover over for
@@ -1688,16 +1714,16 @@
     });
   }
   /* onSaved: the box sits in side by side, which moves to the next record once a verdict saves. */
-  function verdictBox(p, flags, line, onSaved) {
+  function verdictBox(p, F, line, onSaved) {
     var key = p.college + "|" + p.control_number;
     var id = "prh-v-" + String(key).replace(/[^A-Za-z0-9]+/g, "-");
     var fails = machineFails(p);
-    var forCollege = flags.filter(function (f) { return f.owner === "college"; }).length;
+    var forCollege = ((F && F.college) || []).length;
     var lede = "Confirm says the record reads the catalog as printed. " + (fails.length
       ? "The " + fails.join(" and ") + (fails.length === 1 ? " check is" : " checks are") +
         " not met, so the record stays unchecked after you confirm, until its reading procedure takes the fix and a rerun passes. Needs a fix sends your note to that procedure instead."
       : "The record passes the three machine checks, so confirming marks it checked and Sierra may quote it." +
-        (forCollege ? " The " + (forCollege === 1 ? "flag" : forCollege + " flags") + " for the college stay open with " +
+        (forCollege ? " The " + (forCollege === 1 ? "item" : forCollege + " items") + " for the college stay open with " +
           shortCollege(p.college) + "; they concern the catalog itself and do not hold the record back." : ""));
     var said = el("p", { cls: "prh-said", "aria-live": "polite" });
     var confirm = el("button", { cls: "prh-btn prh-primary", type: "button", text: "Confirm" });
@@ -2118,7 +2144,8 @@
       el("dl", { cls: "prh-checks" }, [dd("Courses", placed),
         dd("Off the state list", ck.additions ? ck.additions + ", printed in the catalog" : "None"),
         dd("Units", arith), equivRow(p, disp), dd("Person's reading", reader),
-        F.flags.length ? wide(dd("Flags", flagSummary(F.flags))) : null]),
+        F.flags.length ? wide(dd("Flags", flagSummary(F.flags))) : null,
+        F.college.length ? wide(dd("For the college", collegeLine(p, F.college))) : null]),
       cpl]);
     var body = el("div", { cls: "prh-body", id: bodyId });
     body.hidden = !isOpen;
@@ -2134,7 +2161,7 @@
     }
     if (isOpen) fill();
     var art = el("article", { cls: "prh-rec" + (isOpen ? " prh-open" : ""), "aria-label": p.program_title + ", " + p.college },
-      [head, body, reviewing ? verdictBox(p, F.flags, line, opts.split ? function (saved) { advanceFrom(p, saved); } : null) : null]);
+      [head, body, reviewing ? verdictBox(p, F, line, opts.split ? function (saved) { advanceFrom(p, saved); } : null) : null]);
     btn.addEventListener("click", function () {
       var open = body.hidden;
       if (open) fill();
@@ -3280,7 +3307,7 @@
     INDEX_SELECT: INDEX_SELECT, CHECKED_SELECT: CHECKED_SELECT, DRAFT_SELECT: DRAFT_SELECT, PICK_KEY: PICK_KEY,
     catalogStatus: catalogStatus, filterRegistry: filterRegistry, filterRecords: filterRecords, recordChecks: recordChecks,
     ruleText: ruleText, procedureCounts: procedureCounts, award: award, span: span,
-    collegeDrafts: collegeDrafts, draftText: draftText, flagsFor: flagsFor, flagSummary: flagSummary,
+    collegeDrafts: collegeDrafts, draftText: draftText, flagsFor: flagsFor, flagSummary: flagSummary, collegeLine: collegeLine, collegeCount: collegeCount,
     machineFails: machineFails, verdictError: verdictError, VERDICT_RPC: VERDICT_RPC,
     todoCount: todoCount, goToTodos: goToTodos, openSplit: openSplit, closeSplit: closeSplit, framingOf: framingOf, FRAMING_URL: FRAMING_URL,
     openKey: openKey, nextWaiting: nextWaiting, nextToRead: nextToRead, notice: notice, callAnswered: callAnswered, RECORD_KEY: RECORD_KEY,
