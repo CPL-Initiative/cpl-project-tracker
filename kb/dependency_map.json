@@ -1219,7 +1219,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1065
+     "line": 1068
     }
    ],
    "main_committers": []
@@ -1448,7 +1448,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1701,
+     "line": 2259,
      "tabs": [
       "program-requirements"
      ]
@@ -1704,7 +1704,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 475
+     "line": 478
     }
    ],
    "main_committers": []
@@ -4519,7 +4519,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 857
+     "line": 860
     },
     {
      "id": "module:admin.js",
@@ -5231,7 +5231,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1004
+     "line": 1007
     },
     {
      "id": "module:college_briefing.js",
@@ -8183,7 +8183,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 90,
+     "line": 117,
      "tabs": [
       "program-requirements"
      ]
@@ -12705,7 +12705,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 85,
+     "line": 112,
      "tabs": [
       "program-requirements"
      ]
@@ -20222,7 +20222,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 463,
+     "line": 741,
      "tabs": [
       "program-requirements"
      ]
@@ -21802,6 +21802,16 @@
      ]
     },
     {
+     "id": "module:program_requirements.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 652,
+     "tabs": [
+      "program-requirements"
+     ]
+    },
+    {
      "id": "script:chatbox/smoke_test.sh",
      "kind": "script",
      "direction": "read",
@@ -22094,7 +22104,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 435,
+     "line": 679,
      "tabs": [
       "program-requirements"
      ]
@@ -22136,7 +22146,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 379,
+     "line": 457,
      "tabs": [
       "program-requirements"
      ]
@@ -22165,7 +22175,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 462,
+     "line": 740,
      "tabs": [
       "program-requirements"
      ]
@@ -22200,7 +22210,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 382,
+     "line": 618,
      "tabs": [
       "program-requirements"
      ]
