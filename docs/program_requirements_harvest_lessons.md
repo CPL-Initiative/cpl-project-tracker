@@ -727,3 +727,29 @@ The outcomes paragraph's settled parts:
 - **The table:** `apply_migration` timed out eight times on `chatbox/supabase_course_outcomes.sql` (S374 to S380)
   with nothing landing; Sam pasted it (Open Asks Sheet 72 card 1). A paste card is the route while the connector is
   down.
+
+## S380 SkyAlder (2026-10-13): course outcomes loaded at six colleges, the eLumen read, and two CourseLeaf misses
+
+- **The table landed by paste.** `apply_migration` timed out an eighth and a ninth time with nothing landing (no
+  migration since 23:19Z on 2026-10-12); Sam pasted `chatbox/supabase_course_outcomes.sql`. RCCD loaded (#2049,
+  2,665 rows) and SDCCD by college group (#2066, 2,229 rows): 4,894 rows, 16,626 SLOs. Sam asked how to stop
+  pasting; the runner-applied migration path (an access token secret, optional approval tap) waits on his answer.
+- **Merging main brought a guard the branch predated.** #2049's two outcomes workflows failed #2069's trigger-file
+  check after the merge; the gate was ported from #2066. A stacked PR's newer files win an add/add conflict once the
+  base's own commits never touched them (check `git log <fork>..<base> -- <files>` first).
+- **Chaffey's course outcomes are not public** (#2073): two dashboard reports (225, 1225), both objectives only; the
+  FAQ keeps CLOs in META CurriQunet and on syllabi. The registry note waits as a paste.
+- **eLumen is a single-page app read through its own calls.** Every view loads one ~4.5 MB publish call (styles, the
+  whole side menu, the page) and then settles; the rendered capture ran past 2.5 hours and was canceled. The menu's
+  own links load a page through `publish/content/<catalog>,<path>?tenant=<host>`, ~2 KB of HTML with the program's
+  heading, learning outcomes and requirements (reads 38392014238, 38413232841, 38413852584). Bakersfield prints
+  `AGRIB5`; `code_pattern` already matches the state's `AGRI B5`. Course pages print SLOs where the college shows
+  them (Palo Verde yes, Bakersfield no).
+- **Coastline found 29 of 159 programs, for two reasons that apply to every CourseLeaf college.** Its program pages
+  are addressed `.../business-as/index.html`, and `NOT_PROGRAM_PATH` dropped every `/index.html`, so only subject
+  pages were read (their Courses tab lists the subject's courses); and the link-search fallback accepted course
+  listings (`course-descriptions/credit-courses/re/`) at coverage 1.0. `dir_form()` and `link_page_ok()` fix both
+  (#2074). Earlier CourseLeaf colleges (Cerritos, Mt. San Antonio, Long Beach City) passed through the same link
+  search: their link-search records are worth one check for a course-listing source.
+- **Next college by tier:** no Leading college is left on a platform the reader handles except eLumen; among
+  Advancing CourseLeaf/curriQunet colleges Coastline (984 CPL students) leads, then Southwestern, Fresno City, Cypress.

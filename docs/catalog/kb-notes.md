@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-548 document(s).
+549 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -409,6 +409,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Re-key every id-keyed artifact — a re-mint isn't done until the side manifests move](../kb-notes/methodology-rekey-every-id-keyed-artifact.md) | methodology | published | 2026-06-11 | 2026-07-27 |
 | [Re-mint applies — recompute through the dry-run's own allocator, gate on byte-fidelity to the reviewed plan](../kb-notes/methodology-apply-equals-spec-via-shared-allocator.md) | methodology | published | 2026-06-12 |  |
 | [Re-mint split invariants — id↔SUBJ4, control-number atomicity, dry-run↔apply cross-check](../kb-notes/methodology-remint-split-invariants.md) | methodology | published | 2026-05-29 | 2026-05-29 |
+| [Read a single-page catalog through its own content call, not by rendering](../kb-notes/methodology-read-a-catalog-through-its-own-content-call.md) | methodology | published | 2026-10-13 | 2026-10-13 |
 | [Rebuild a jsonb value from its receipts and check its md5](../kb-notes/methodology-rebuild-a-jsonb-from-receipts-and-check-its-md5.md) | methodology | published | 2026-10-02 | 2026-10-10 |
 | [Recompute a source's own summary statistics from its line items](../kb-notes/methodology-recompute-a-sources-own-summary-statistics.md) | methodology | published | 2026-07-30 |  |
 | [Recover a music bed from a mixed video by subtracting the clean voice stem](../kb-notes/methodology-recover-music-bed-by-voice-stem-subtraction.md) | methodology | published | 2026-07-23 | 2026-07-23 |
