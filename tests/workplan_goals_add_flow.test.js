@@ -17,6 +17,12 @@
 //       (projects.count_note) edit in place, the empty "Add" prompt saving as blank;
 //   (h) the Activities tab's activity headers offer "Add sub-activity" to an editor;
 //   (i) signed out, none of the controls or empty counting lines show.
+//   (j) a sub-activity added since the page was built (Sam, 2026-10-13, 4.7 EMS Corps)
+//       is offered under Under from the live rows, marked new; a tabled one and a
+//       D.* helper row are not.
+//   (k) Under lists each Activity directly above its own sub-activities, and the box the
+//       dialog checked for the old home clears when the home changes (4.7 kept the
+//       default Activity 1 as a second link), unless the editor touched it.
 //
 // Run from repo root: `npm test` (or `node tests/workplan_goals_add_flow.test.js`).
 const fs = require("fs");
@@ -56,7 +62,7 @@ const ACT_HEADER =
   '<div id="tab-activities-projects"><div class="activity-group-header"><h3>Activity 3: Build CPL Data Infrastructure</h3>' +
   '<span><a href="#raci" class="act-raci-link" data-raci-key="activity:3">RACI</a></span></div></div>';
 
-function makeDom(signedIn, liveIds) {
+function makeDom(signedIn, liveIds, lifecycle) {
   const dom = new JSDOM(
     "<!doctype html><html><head></head><body>" + ACT_HEADER +
       '<div id="tab-workplan-goals">' + TABLE + "</div></body></html>",
@@ -68,9 +74,11 @@ function makeDom(signedIn, liveIds) {
   dom._calls = [];
   w.fetch = function (url, opts) {
     dom._calls.push({ url: String(url), opts: opts || {} });
-    const isIdList = /\/projects\?select=id$/.test(String(url)) && !(opts && opts.method);
+    const isIdList = /\/projects\?select=id(,name)?$/.test(String(url)) && !(opts && opts.method);
+    const isLifecycle = /\/project_lifecycle\?select=/.test(String(url)) && !(opts && opts.method);
+    const live = (liveIds || []).map(function (r) { return typeof r === "string" ? { id: r, name: "" } : r; });
     return Promise.resolve({ ok: true, status: 200,
-      json: function () { return Promise.resolve(isIdList ? (liveIds || []).map(function (id) { return { id: id }; }) : []); },
+      json: function () { return Promise.resolve(isIdList ? live : isLifecycle ? (lifecycle || []) : []); },
       text: function () { return Promise.resolve(""); } });
   };
   w.eval(SRC);
@@ -207,6 +215,65 @@ function bodyOf(c) { return JSON.parse(c.opts.body); }
   await settle();
   check("(h) it opens the dialog with that Activity as the parent",
     doc.getElementById("wpg-add-parent").value === "3" && doc.getElementById("wpg-add-id").value === "3.9");
+
+  // ── (j) a sub-activity added since the page was built is offered under Under ──
+  dom = makeDom(true, ["3.8", { id: "4.7", name: "EMS Corps" }, { id: "3.12", name: "Shelved" }, "D.1"],
+    [{ project_id: "3.12", state: "tabled" }]);
+  w = dom.window; doc = w.document;
+  w.CPL_WORKPLAN_ADD.open({ parent: "4" });
+  await settle();
+  let under = doc.getElementById("wpg-add-parent");
+  const opt47 = Array.prototype.find.call(under.options, function (o) { return o.value === "4.7"; });
+  check("(j) 4.7 EMS Corps, saved after the page was built, is offered under Under, marked new",
+    !!opt47 && /4\.7 EMS Corps \(new\)$/.test(opt47.textContent));
+  check("(j) a tabled sub-activity and a D.* helper row are not offered",
+    !Array.prototype.some.call(under.options, function (o) { return o.value === "3.12" || o.value === "D.1"; }));
+  check("(j) the choice made before the live rows arrived stays", under.value === "4");
+  const vals = Array.prototype.map.call(under.options, function (o) { return o.value; });
+  check("(j) the new parent sits in number order", vals.indexOf("3.8") < vals.indexOf("4.7"));
+  under.value = "4.7";
+  under.dispatchEvent(new w.Event("change"));
+  check("(j) picking 4.7 suggests 4.7.1", doc.getElementById("wpg-add-id").value === "4.7.1");
+  doc.getElementById("wpg-add-name").value = "EMS Corps cohort";
+  dom._calls.length = 0;
+  click(w, doc.querySelector(".wpg-modal-card .wpg-btn-submit"));
+  await settle();
+  p = posts(dom);
+  check("(j) 4.7.1 saves with Activity 4 as its home link",
+    p.length === 3 && bodyOf(p[0]).id === "4.7.1" && bodyOf(p[2])[0].activity_id === "4");
+  w.document.querySelector(".wpg-modal-overlay").remove();
+  w.CPL_WORKPLAN_ADD.open({ parent: "4.7" });
+  await settle();
+  check("(j) asked to open under 4.7, the dialog selects it once the live rows arrive",
+    doc.getElementById("wpg-add-parent").value === "4.7" && doc.getElementById("wpg-add-id").value === "4.7.1");
+
+  // ── (k) each Activity sits above its own sub-activities; the auto home check follows the home ──
+  dom = makeDom(true, [{ id: "4.6", name: "Sustainable Funding" }]); w = dom.window; doc = w.document;
+  w.CPL_WORKPLAN_ADD.open({});
+  await settle();
+  under = doc.getElementById("wpg-add-parent");
+  const order = Array.prototype.map.call(under.options, function (o) { return o.value; }).join(",");
+  check("(k) Under reads Activity, then its sub-activities, Activity by Activity: " + order,
+    order === "1,1.1.2,2,3,3.8,4,4.6");
+  card = doc.querySelector(".wpg-modal-card");
+  const box = function (aid) { return card.querySelector('.wpg-assoc-checkboxes input[value="' + aid + '"]'); };
+  check("(k) the default parent, Activity 1, checks its box as home", under.value === "1" && box("1").checked);
+  const idBox = doc.getElementById("wpg-add-id");
+  idBox.value = "4.7";
+  idBox.dispatchEvent(new w.Event("input"));
+  check("(k) typing 4.7 moves the home check to Activity 4 and clears Activity 1",
+    box("4").checked && !box("1").checked && /\(home\)/.test(box("4").parentNode.textContent));
+  box("2").checked = true;
+  box("2").dispatchEvent(new w.Event("change"));
+  under.value = "3";
+  under.dispatchEvent(new w.Event("change"));
+  check("(k) a box the editor checked stays when the home changes again",
+    box("2").checked && box("3").checked && !box("4").checked);
+  box("3").checked = true;
+  box("3").dispatchEvent(new w.Event("change"));
+  idBox.value = "4.7";
+  idBox.dispatchEvent(new w.Event("input"));
+  check("(k) a home box the editor touched is kept as a link", box("3").checked && box("4").checked);
 
   // ── (i) signed out ──
   dom = makeDom(false); w = dom.window; doc = w.document;
