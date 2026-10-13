@@ -26,3 +26,6 @@ returning project_id, activity_id, is_primary, created_at;
 -- insert into public.workplan_activity_associations (project_id, activity_id, is_primary, created_at)
 -- values ('4.7', '1', false, '2026-10-13 18:18:24.081606+00')
 -- on conflict do nothing;
+
+-- APPLIED by Sam in the SQL editor (Open Asks Sheet 77 card 4, "done", 2026-10-13 22:26Z).
+-- Read back by S384 SkyPoplar at 22:27Z: workplan_activity_associations for 4.7 holds only ('4.7','4') is_primary=true.

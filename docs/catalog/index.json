@@ -7423,7 +7423,9 @@
      "created": "2026-07-08",
      "governs": [
       "credential_reference.js",
-      "tests/cer_overlay_pagination.test.js"
+      "tests/cer_overlay_pagination.test.js",
+      "program_requirements.js",
+      "tests/program_requirements.test.js"
      ],
      "path": "docs/kb-notes/methodology-paginate-postgrest-reads.md",
      "status": "published",
@@ -7438,7 +7440,7 @@
      ],
      "title": "Paginate every PostgREST read that can outgrow 1,000 rows",
      "type": "methodology",
-     "updated": ""
+     "updated": "2026-10-13"
     },
     {
      "created": "2026-07-11",
@@ -15528,8 +15530,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 355,
+   "count": 356,
    "docs": [
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "n": 385,
+     "path": "docs/session_385_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "records-view",
+      "postgrest",
+      "annual-goals"
+     ],
+     "title": "the college filter's first live reads, and Sam's Sheet 77",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-13",
      "governs": [],
@@ -21627,5 +21646,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1133
+ "total": 1134
 }
