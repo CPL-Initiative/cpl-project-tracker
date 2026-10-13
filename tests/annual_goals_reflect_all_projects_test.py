@@ -90,8 +90,10 @@ html = gen.render_annual_goals_table_html(annual_goals, activities)
 check("every project id renders as a row",
       all(pid in html for pid, *_ in PROJECTS), True)
 check("nesting marker '↳' appears exactly once per X.Y.Z row (2)", html.count("↳ "), 2)
-check("nesting accent border appears exactly twice (the 2 X.Y.Z rows)",
-      html.count("border-left:3px solid var(--seal-blue);"), 2)
+# S375: the accent border is a class (.wpg-nest, painted by workplan_goals.js)
+# rather than an inline style, so the phone card layout can reach it.
+check("nesting accent class appears exactly twice (the 2 X.Y.Z rows)",
+      html.count(' wpg-nest"'), 2)
 
 # 5. Order nests each subsidiary right after its parent.
 order = [r["id"] for r in annual_goals]
