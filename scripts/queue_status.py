@@ -29,6 +29,13 @@ Usage, from the repo root:
       counts with the SQL in .claude/commands/checkpoint.md step 12; a second stamp the
       same day replaces that day's entry), then validate
 
+  python3 scripts/queue_status.py --harvest-sql
+      print the one query behind the whole-harvest measure (run it through the Supabase MCP)
+  python3 scripts/queue_status.py --harvest '<the query's row as JSON>'
+      set the harvest block (alone or with --stamp; it never moves written_at) (Sam, 2026-10-13: "an overall measure ... how far we are through
+      the whole harvest process"): the five parts' counts, with the gaps the committed capture
+      reports filed added to the programs with ROEP data
+
 The session writes the prose fields; the script owns the clock. Guard:
 tests/queue_status_test.py.
 """
@@ -178,6 +185,8 @@ def faults(q, root=ROOT, parts=None):
         if isinstance(d, str):
             need(d > prev, w + ".day must come after the entry before it (one entry per day, oldest first)")
             prev = d
+    if "harvest" in q:
+        out.extend(harvest_faults(q.get("harvest")))
     ch = q.get("changes")
     need(isinstance(ch, list), "changes must be a list")
     for i, c in enumerate(ch if isinstance(ch, list) else []):
@@ -187,6 +196,97 @@ def faults(q, root=ROOT, parts=None):
             continue
         need(isinstance(c.get("at"), str) and ISO.match(c.get("at") or ""), w + ".at must be an ISO time in UTC")
         text(c.get("text"), w + ".text")
+    return out
+
+
+# The whole harvest's counts, in one read (the Progress view's "The whole harvest" band). Programs
+# and courses are COCI's active ones; a record counts when it is an active program's.
+HARVEST_SQL = """with act as (select college, control_number from coci_college_programs where status = 'Active'),
+rec as (select r.record, r.checks, r.display from program_requirement_records r
+        join act a on a.college = r.college and a.control_number = r.control_number),
+crs as (select distinct pc.college, pc.course_code from coci_program_courses pc
+        join act a on a.college = pc.college and a.control_number = pc.program_control_number)
+select (select count(*) from program_source_registry) colleges,
+  (select count(*) from program_source_registry where catalog_url is not null) catalog_links,
+  (select count(*) from program_source_registry where cor_access is not null) cms_links,
+  (select count(*) from program_source_registry where sequence_source is not null and sequence_source <> 'unknown') ppm_links,
+  (select count(*) from act) active_programs,
+  (select count(*) from rec where display is not null) roep_programs,
+  (select count(*) from rec where checks is not null) coci_compared,
+  (select count(*) from rec where record->'program' ? 'outcomes') plo_read,
+  (select count(*) from rec where record->'program' ? 'careers') careers_read,
+  (select count(*) from crs) program_courses,
+  (select count(*) from crs c where exists (select 1 from course_outcomes o
+      where o.college = c.college and o.course_code = c.course_code)) slo_courses;"""
+HARVEST_KEYS = ("colleges", "catalog_links", "cms_links", "ppm_links", "active_programs", "roep_programs",
+                "coci_compared", "plo_read", "careers_read", "program_courses", "slo_courses")
+WHOLE_PARTS = {"links": ("catalog", "cms", "ppm"), "roep": None, "coci": None,
+               "outcomes": ("slo", "plo"), "careers": None}
+
+
+def filed_gaps(root=ROOT):
+    """Programs a read accounted for without a record: not found, a page another program
+    claimed, or no course list in COCI, as each committed capture report files them."""
+    import glob
+    n = 0
+    for p in glob.glob(os.path.join(root, "kb", "program_requirements_college", "*", "capture.json")):
+        try:
+            with open(p, encoding="utf-8") as f:
+                c = json.load(f)
+        except (OSError, ValueError):
+            continue
+        n += len(c.get("not_found") or []) + len(c.get("page_claimed") or [])
+        n += int((c.get("by_method") or {}).get("no_closed_list") or 0)
+    return n
+
+
+def harvest_block(row, day, gaps):
+    """The status file's harvest block from the query's row: each part a [have, of] pair."""
+    r = {k: int(row[k]) for k in HARVEST_KEYS}
+    act = r["active_programs"]
+    return {
+        "day": day,
+        "gaps": gaps,
+        "parts": {
+            "links": {"catalog": [r["catalog_links"], r["colleges"]], "cms": [r["cms_links"], r["colleges"]],
+                      "ppm": [r["ppm_links"], r["colleges"]]},
+            "roep": [min(r["roep_programs"] + gaps, act), act],
+            "coci": [r["coci_compared"], act],
+            "outcomes": {"slo": [r["slo_courses"], r["program_courses"]], "plo": [r["plo_read"], act]},
+            "careers": [r["careers_read"], act],
+        },
+    }
+
+
+def harvest_faults(h):
+    out = []
+    if not isinstance(h, dict):
+        return ["harvest must be an object"]
+    if not (isinstance(h.get("day"), str) and DAY.match(h.get("day") or "")):
+        out.append("harvest.day must be a date, YYYY-MM-DD")
+    parts = h.get("parts")
+    if not isinstance(parts, dict):
+        return out + ["harvest.parts must be an object"]
+
+    def pair(v, w):
+        if not (isinstance(v, list) and len(v) == 2 and all(isinstance(n, int) and not isinstance(n, bool) and n >= 0 for n in v)):
+            out.append(w + " must be a [have, of] pair of whole numbers")
+        elif v[1] == 0 or v[0] > v[1]:
+            out.append(w + " must have of > 0 and have <= of")
+
+    for k, halves in WHOLE_PARTS.items():
+        v = parts.get(k)
+        if halves:
+            if not isinstance(v, dict):
+                out.append("harvest.parts." + k + " must hold " + ", ".join(halves))
+                continue
+            for hk in halves:
+                pair(v.get(hk), "harvest.parts." + k + "." + hk)
+        else:
+            pair(v, "harvest.parts." + k)
+    extra = set(parts) - set(WHOLE_PARTS)
+    if extra:
+        out.append("harvest.parts names parts the view does not draw: " + ", ".join(sorted(extra)))
     return out
 
 
@@ -208,8 +308,14 @@ def main(argv=None):
     ap.add_argument("--next-run", help="the CPL Queue routine's next firing, ISO UTC (get_trigger's next_run_at)")
     ap.add_argument("--headline", nargs=3, type=int, metavar=("ACTIVE", "CHECKED", "COLLEGES"),
                     help="today's pair: COCI's active programs, the checked records, their colleges")
+    ap.add_argument("--harvest", metavar="ROW_JSON",
+                    help="the whole-harvest query's row (--harvest-sql prints the query), as JSON")
+    ap.add_argument("--harvest-sql", action="store_true", help="print the whole-harvest query and exit")
     ap.add_argument("--path", default=PATH)
     a = ap.parse_args(argv)
+    if a.harvest_sql:
+        print(HARVEST_SQL)
+        return 0
     with open(a.path, encoding="utf-8") as f:
         q = json.load(f)
     if a.stamp:
@@ -220,6 +326,13 @@ def main(argv=None):
             q["next_run"] = nr
         if a.headline:
             q["headline"] = add_headline(q.get("headline"), q["written_at"][:10], *a.headline)
+    if a.harvest:
+        # The harvest's own day; it never moves written_at, which names the last checkpoint.
+        row = json.loads(a.harvest)
+        if isinstance(row, list):
+            row = row[0]
+        q["harvest"] = harvest_block(row, now_iso()[:10], filed_gaps())
+    if a.stamp or a.harvest:
         with open(a.path, "w", encoding="utf-8") as f:
             json.dump(q, f, indent=2, ensure_ascii=False)
             f.write("\n")
