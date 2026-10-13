@@ -835,6 +835,75 @@ def cq_pages(reader, start: str, report: dict) -> list[dict]:
     return pages
 
 
+# ── eLumen: the catalog's side menu ────────────────────────────────────────
+# An eLumen catalog is a single-page app: each view draws its content from one
+# call to api-prod.elumenapp.com/catalog/sites/publish/<catalog>,<path...>
+# ?tenant=<host> (S380, read 38392014238 at Bakersfield and Palo Verde). Every
+# view carries the catalog's side menu, which links each program's page at
+# /catalog/<catalog>/program/<slug>, the slug ending in the term it took effect
+# ("Agricultural Education Associate of Science" -> .../program/agricultural-
+# education-associate-of-science-fall-2026). There is no programs view
+# (/programs answers "Catalog is not Published"). So the program index is the
+# menu's links, from the start page and the "Programs of Study" page it links,
+# and each program page is read rendered, as a CourseLeaf page is.
+EL_PROGRAM_PATH = re.compile(r"^/catalog/([^/]+)/program/[^/]+/?$", re.I)
+EL_MAX_HUBS = 3
+
+
+def el_catalog(start: str) -> str | None:
+    """The catalog's own slug: 2026-2027-Catalog in
+    https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc."""
+    m = re.match(r"^/catalog/([^/]+)", urllib.parse.urlparse(start or "").path or "", re.I)
+    return m.group(1) if m else None
+
+
+def el_program_urls(links: list, start: str) -> list[str]:
+    """The program pages a view's links name, in this catalog only, each once, in
+    the menu's order, with no query or fragment."""
+    want = (el_catalog(start) or "").lower()
+    out, seen = [], set()
+    for ln in links or []:
+        href = (ln.get("href") if isinstance(ln, dict) else ln) or ""
+        u = urllib.parse.urlparse(href.split("#")[0])
+        m = EL_PROGRAM_PATH.match(u.path or "")
+        if not m or not want or m.group(1).lower() != want or not P.same_site(href, start):
+            continue
+        url = "%s://%s%s" % (u.scheme or "https", u.netloc, u.path.rstrip("/"))
+        if url not in seen:
+            seen.add(url)
+            out.append(url)
+    return out
+
+
+def el_hubs(links: list, start: str) -> list[str]:
+    """The program index pages a view links ("Programs of Study"), in this
+    catalog, never a program page itself."""
+    want = "/catalog/%s/" % (el_catalog(start) or "").lower()
+    out = []
+    for ln in links or []:
+        href, text = (ln.get("href") or "").split("#")[0], ln.get("text") or ""
+        path = (urllib.parse.urlparse(href).path or "").lower()
+        if (P.HUB_WORDS.search(text) and not P.NOT_HUB.search(text) and P.same_site(href, start)
+                and path.startswith(want) and not EL_PROGRAM_PATH.match(path) and href not in out):
+            out.append(href)
+    return out[:EL_MAX_HUBS]
+
+
+def el_pages(reader, start: str, cache: dict, report: dict) -> list[str]:
+    """The catalog's program pages: the start page's menu, then each program
+    index page it links, read once, rendered."""
+    front = P.load(reader, start, cache, True)
+    urls = el_program_urls(front.get("links"), start)
+    hubs = el_hubs(front.get("links"), start)
+    for h in hubs:
+        got = P.load(reader, h, cache, True)
+        urls += [u for u in el_program_urls(got.get("links"), start) if u not in urls]
+    report["elumen"] = {"catalog": el_catalog(start), "start_status": front.get("status"),
+                        "from_start": len(el_program_urls(front.get("links"), start)),
+                        "hubs": hubs, "program_pages": len(urls)}
+    return urls[:MAX_PAGES]
+
+
 def capture(college: str, out_dir: str, limit: int = 0) -> int:
     t0 = time.time()
     programs = college_programs(college)
@@ -848,9 +917,9 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
               "started": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
     os.makedirs(os.path.join(out_dir, "sources"), exist_ok=True)
     platform = reg.get("catalog_platform")
-    if not start or platform not in ("courseleaf", "curriqunet"):
-        # Phase 2 opens on CourseLeaf (Cerritos) and curriQunet (S357); another platform names its own enumeration first.
-        report["stopped"] = "this pass enumerates CourseLeaf and curriQunet catalogs; %s reads %s" % (college, platform)
+    if not start or platform not in ("courseleaf", "curriqunet", "elumen"):
+        # Phase 2 opens on CourseLeaf (Cerritos), curriQunet (S357) and eLumen (S380); another platform names its own enumeration first.
+        report["stopped"] = "this pass enumerates CourseLeaf, curriQunet and eLumen catalogs; %s reads %s" % (college, platform)
         _write(os.path.join(out_dir, "capture.json"), report)
         print(report["stopped"])
         return 1
@@ -864,6 +933,11 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             pages = cq_pages(reader, start, report)
             print("%s: %d programs (%d with a course list), %d curriQunet program pages, %.1f s between loads"
                   % (college, len(programs), report["with_closed_list"], len(pages), delay / 1000), flush=True)
+        elif platform == "elumen":
+            urls = el_pages(reader, start, cache, report)
+            pages = []
+            print("%s: %d programs (%d with a course list), %d eLumen program pages, %.1f s between loads"
+                  % (college, len(programs), report["with_closed_list"], len(urls), delay / 1000), flush=True)
         else:
             scope = district_scope(start, host_registry_urls(start))
             report["scope"] = scope
@@ -880,7 +954,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             print("%s: %d programs (%d with a course list), %d candidate pages, %.1f s between loads"
                   % (college, len(programs), report["with_closed_list"], len(urls), delay / 1000), flush=True)
         for i, u in enumerate(urls):
-            got = P.load(reader, u, cache, False)
+            got = P.load(reader, u, cache, platform == "elumen")   # an eLumen view fills in late
             if got.get("access") != "ok":
                 continue
             got["links"] = (got.get("links") or [])[:300]   # a program page's menus need not ride in memory
@@ -909,7 +983,8 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                     print("%-6s page_claimed %s" % (prog["control_number"], g["lost"][0]), flush=True)
                     continue
                 # A curriQunet catalog has no links to search: its index is the whole list.
-                if best is None and fallback < MAX_FALLBACKS and platform != "curriqunet":
+                # An eLumen catalog's menu is the whole list too; its links would find it again.
+                if best is None and fallback < MAX_FALLBACKS and platform not in ("curriqunet", "elumen"):
                     fallback += 1
                     res = P.locate_html(reader, {"title": prog["title"], "award": prog["award"]},
                                         prog["closed_list"], start, cache, False)

@@ -724,6 +724,38 @@ try:
 finally:
     shutil.rmtree(parent, ignore_errors=True)
 
+# ── eLumen: the program index is the catalog's side menu (S380) ─────────────
+# Read 38392014238: Bakersfield's start page links each program at
+# /catalog/2026-2027-Catalog/program/<slug>, beside its services, policies and
+# course pages; /programs is no view. A link to another year's catalog, another
+# host, or a course must never be read as a program page.
+EL_START = "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc"
+EL_BASE = "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/"
+EL_LINKS = [
+    {"text": "Programs of Study", "href": EL_BASE + "programs-of-study"},
+    {"text": "Disabled Student Programs & Services (DSPS)", "href": EL_BASE + "dsps"},
+    {"text": "Advanced Placement (AP) Program", "href": EL_BASE + "advanced-placement-ap-program"},
+    {"text": "Agricultural Education Associate of Science",
+     "href": EL_BASE + "program/agricultural-education-associate-of-science-fall-2026"},
+    {"text": "Agriculture Business Certificate of Achievement",
+     "href": EL_BASE + "program/agriculture-business-certificate-of-achievement-summer-2023#top"},
+    {"text": "Agricultural Education Associate of Science",
+     "href": EL_BASE + "program/agricultural-education-associate-of-science-fall-2026/"},
+    {"text": "ASL B3", "href": EL_BASE + "course/aslb3"},
+    {"text": "Old catalog", "href": "https://bakersfield.elumenapp.com/catalog/2025-2026-Catalog/program/old-aa-fall-2025"},
+    {"text": "Elsewhere", "href": "https://pvc.elumenapp.com/catalog/2026-2027-Catalog/program/acc-aa"},
+]
+check(C.el_catalog(EL_START) == "2026-2027-Catalog" and C.el_catalog("https://x.edu/catalog.html") is None,
+      "an eLumen start page names its catalog in the path after /catalog/")
+check(C.el_program_urls(EL_LINKS, EL_START) == [
+          EL_BASE + "program/agricultural-education-associate-of-science-fall-2026",
+          EL_BASE + "program/agriculture-business-certificate-of-achievement-summer-2023"],
+      "the menu's program pages, each once, in order: never a course, a service page, another year or another host")
+check(C.el_hubs(EL_LINKS, EL_START) == [EL_BASE + "programs-of-study"],
+      "an eLumen catalog's program index is its Programs of Study page, not DSPS or a program page")
+check(C.el_program_urls([], EL_START) == [] and C.el_program_urls(EL_LINKS, "https://bakersfield.elumenapp.com/") == [],
+      "no menu, or a start page that names no catalog, gives no program page")
+
 sql = open(os.path.join(ROOT, "chatbox", "supabase_program_requirement_records_college_load.sql")).read()
 body = sql.split("as $$")[1].split("$$;")[0]
 check("on conflict (college, control_number) do nothing" in body and "update" not in body.lower()
