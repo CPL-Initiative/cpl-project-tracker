@@ -177,6 +177,18 @@ def in_scope(url: str, scope: str | None) -> bool:
     return not scope or (urllib.parse.urlparse(url).path or "/").startswith(scope)
 
 
+INDEX_FILE = re.compile(r"/index\.html?$", re.I)
+
+
+def dir_form(url: str) -> str:
+    """A CourseLeaf page's address as its directory: <dir>/index.html serves the
+    same page as <dir>/. Coastline's catalog (catalog.cccd.edu, the Coast district)
+    lists every program page as .../business-as/index.html, and NOT_PROGRAM_PATH,
+    written to keep catalog index files out, dropped all of them: 109 of 159
+    programs found no page (run 38406172949, S380)."""
+    return INDEX_FILE.sub("/", (url or "").split("#")[0])
+
+
 def link_page_ok(url: str, scope: str | None) -> bool:
     """A page the link search found may stand for a program only where a sitemap
     page could: inside this college's scope, and never a course list, policy,
@@ -184,6 +196,7 @@ def link_page_ok(url: str, scope: str | None) -> bool:
     (course-descriptions/credit-courses/re/) names every RE course, so it read as
     the program's page at coverage 1.0 and would have been extracted as one (run
     38406172949, S380: five programs on three course listings)."""
+    url = dir_form(url)
     path = urllib.parse.urlparse(url or "").path or "/"
     return bool(url) and in_scope(url, scope) and not NOT_PROGRAM_PATH.search(path)
 
@@ -195,7 +208,7 @@ def program_candidates(urls: list[str], start: str, scope: str | None = None) ->
     PDF uses. Deduplicated, in the sitemap's order."""
     out, seen = [], set()
     for u in urls:
-        u = u.split("#")[0]
+        u = dir_form(u)
         if not P.same_site(u, start) or u in seen or not in_scope(u, scope):
             continue
         path = urllib.parse.urlparse(u).path or "/"

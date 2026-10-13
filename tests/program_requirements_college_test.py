@@ -738,6 +738,24 @@ check(C.link_page_ok(CL + "pathways/behavior-culture-society/aging-studies/aging
       and C.link_page_ok("https://catalog.mtsac.edu/programs/accounting/", None),
       "a program page in the college's own scope, or on a host with no scope, stands")
 
+# ── a CourseLeaf program page listed as <dir>/index.html is read (S380) ──────
+# Coastline's catalog lists each program page as .../business-as/index.html; the
+# old filter dropped every address ending in /index.html, and 109 of 159 programs
+# found no page (run 38406172949). Read in its directory form, once.
+CLP = CL + "pathways/business-operations-management/business/"
+cands = C.program_candidates([CLP + "business-as/index.html", CLP + "business-as/",
+                              CLP + "marketing-certificate-achievement/index.html",
+                              CL + "index.html", CL + "course-descriptions/credit-courses/bus/index.html",
+                              "https://catalog.cccd.edu/golden-west/pathways/business/business-as/index.html"],
+                             CL, "/coastline/")
+check(cands == [CLP + "business-as/", CLP + "marketing-certificate-achievement/"],
+      "an index.html program page is read as its directory, once; the catalog front page, a course listing and "
+      "another college's path are not")
+check(C.dir_form(CLP + "business-as/index.html#req") == CLP + "business-as/" and C.dir_form("") == "",
+      "the directory form drops index.html and any fragment")
+check(C.link_page_ok(CLP + "business-as/index.html", "/coastline/"),
+      "the link search may take an index.html program page too")
+
 sql = open(os.path.join(ROOT, "chatbox", "supabase_program_requirement_records_college_load.sql")).read()
 body = sql.split("as $$")[1].split("$$;")[0]
 check("on conflict (college, control_number) do nothing" in body and "update" not in body.lower()
