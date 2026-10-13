@@ -2,10 +2,10 @@
  "college": "San Diego City College",
  "programs": 203,
  "with_closed_list": 191,
- "found": 168,
- "extracted": 168,
+ "found": 171,
+ "extracted": 171,
  "errors": 0,
- "passed_machine_checks": 157,
+ "passed_machine_checks": 160,
  "failed": {
   "coverage": 4,
   "invented": 0,
@@ -13,8 +13,8 @@
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 12.67,
- "cost_per_program": 0.0754,
+ "cost_usd": 12.88,
+ "cost_per_program": 0.0753,
  "not_found": [
   {
    "control_number": "05263",
@@ -34,16 +34,6 @@
   {
    "control_number": "19710",
    "title": "Real Estate",
-   "award": "A.S. Degree"
-  },
-  {
-   "control_number": "31168",
-   "title": "Licensed Vocational Nurse to Registered Nurse",
-   "award": "A.S. Degree"
-  },
-  {
-   "control_number": "31169",
-   "title": "Registered Nurse: Generic",
    "award": "A.S. Degree"
   },
   {
@@ -105,12 +95,7 @@
    "control_number": "42746",
    "title": "General Atomics HVAC-R Technician Apprenticeship",
    "award": "A.S. Degree"
-  },
-  {
-   "control_number": "43523",
-   "title": "Cyber Defense and Analysis",
-   "award": "Baccalaureate of Science (B.S.) Degree."
   }
  ],
- "run": "38252422845"
+ "run": "38347787891"
 }
