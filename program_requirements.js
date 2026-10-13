@@ -1141,6 +1141,14 @@
       ".prh-pg-within b { color:var(--text-strong); font-variant-numeric:tabular-nums; }",
       ".prh-pg-within .prh-quiet { color:var(--text-muted); }",
       ".prh-pg-label { font-size:.75rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted); margin:0; }",
+      ".prh-pg-whole { width:100%; box-sizing:border-box; background:var(--surface-opaque); border:1px solid var(--border); border-radius:12px; padding:18px 20px 14px; display:grid; gap:12px; }",
+      ".prh-pg-whole-n { display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px; }",
+      ".prh-pg-whole-n b { font-family:'Playfair Display', Georgia, serif; font-size:clamp(1.9rem, 5vw, 2.6rem); line-height:1; color:var(--cobalt); font-variant-numeric:tabular-nums; }",
+      ".prh-pg-whole-n span { color:var(--text-body); }",
+      ".prh-pg-whole ul { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px 24px; }",
+      ".prh-pg-whole li { display:grid; gap:4px; min-width:0; font-size:.9375rem; }",
+      ".prh-pg-whole li b { color:var(--text-strong); font-variant-numeric:tabular-nums; }",
+      ".prh-pg-whole li small, .prh-pg-whole p { font-size:.875rem; color:var(--text-muted); margin:0; }",
       ".prh-pg .prh-sec { margin:0; }",
       ".prh-pg-road > .prh-sec-b { padding:30px 16px 16px; }",
       ".prh-pg-steps { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); }",
@@ -2569,6 +2577,81 @@
     return el("section", { cls: "prh-pg-hl", "aria-label": "Every program in the state, and how many the harvest holds" }, kids);
   }
 
+  /* ── the whole harvest, one measure ──
+   * Sam, 2026-10-13, in chat: "Can you add an overall measure on our prog reqs dash to
+   * estimate how far we are through the whole harvest process? Wouldn't need to worry about
+   * the confirm step on the programs as later I will change that step to an optional college
+   * confirm once the procedures look stable and dependable. I'm thinking of the whole ask:
+   * harvesting all links for catalogs and CMSs and PPM maps, all programs and courses with
+   * ROEP data (or gaps), all COCI/program discrepancies, all SLOs and PLOs, all available
+   * career data per program." (cpl_memory sam-whole-harvest-measure-and-optional-college-
+   * confirm-2026-10-13.)
+   * WHOLE is a definition, as PARTS is: the five parts count equally, a part with halves
+   * averages them, and the confirm step (the four checks' human read) is left out. The counts
+   * come from the status file's harvest block, which each checkpoint stamps with one query
+   * (scripts/queue_status.py --harvest; the SQL is in .claude/commands/checkpoint.md step 12),
+   * because anon reads checked records only. Programs and courses are COCI's active ones. */
+  var WHOLE = [
+    { id: "links", title: "Links", note: "Each college's catalog, course outline system and program map, found or settled",
+      halves: [["catalog", "catalogs"], ["cms", "outline systems"], ["ppm", "program maps"]], open: ["Open the colleges", TO.colleges] },
+    { id: "roep", title: "ROEP data", note: "Active programs with ROEP figures, or a gap the read filed", open: ["Open the records", TO.records] },
+    { id: "coci", title: "COCI comparison", note: "Active programs whose catalog list was compared with COCI's", open: ["Open the records", TO.records] },
+    { id: "outcomes", title: "SLOs and PLOs", note: "Course SLOs read, of the courses on active programs; programs read for their PLOs",
+      halves: [["slo", "course SLOs"], ["plo", "program PLOs"]], open: ["Open the records", TO.records] },
+    { id: "careers", title: "Career data", note: "Active programs read for the careers their catalog names", open: ["Open the records", TO.records] }
+  ];
+  function pairOk(v) { return Array.isArray(v) && v.length === 2 && typeof v[0] === "number" && typeof v[1] === "number" && v[1] > 0; }
+  function share(v) { return Math.max(0, Math.min(1, v[0] / v[1])); }
+  function wholeFacts(x) {
+    var H = x.Q && x.Q.harvest && typeof x.Q.harvest === "object" ? x.Q.harvest : null;
+    var parts = H && H.parts && typeof H.parts === "object" ? H.parts : null;
+    if (!parts) return null;
+    var out = [];
+    for (var i = 0; i < WHOLE.length; i++) {
+      var d = WHOLE[i], v = parts[d.id], f = { def: d };
+      if (d.halves) {
+        if (!v || typeof v !== "object") return null;
+        f.halves = d.halves.map(function (h) { return { words: h[1], pair: v[h[0]] }; });
+        if (!f.halves.every(function (h) { return pairOk(h.pair); })) return null;
+        f.share = f.halves.reduce(function (a, h) { return a + share(h.pair); }, 0) / f.halves.length;
+      } else {
+        if (!pairOk(v)) return null;
+        f.pair = v;
+        f.share = share(v);
+      }
+      out.push(f);
+    }
+    return { day: H.day, parts: out, share: out.reduce(function (a, f) { return a + f.share; }, 0) / out.length };
+  }
+  function pctOf(v) { var p = v * 100; return p > 0 && p < 1 ? "under 1%" : Math.round(p) + "%"; }
+  function wholeBand(x) {
+    var w = wholeFacts(x);
+    var kids = [];
+    if (!w) {
+      kids.push(el("p", { text: x.Q ? "The whole harvest: not counted yet; the next checkpoint stamps the counts." : missingText(["Q"], x) }));
+      return el("section", { cls: "prh-pg-whole", "aria-label": "The whole harvest" }, kids);
+    }
+    kids.push(el("div", { cls: "prh-pg-whole-n" }, [el("b", { text: "About " + pctOf(w.share) }), " ",
+      el("span", { text: "of the whole harvest, counted " + (w.day ? dayOf(w.day) : "at the last checkpoint") })]));
+    kids.push(el("div", { cls: "prh-pg-bar", role: "img", "aria-label": "About " + pctOf(w.share) + " of the whole harvest" }, [
+      el("i", { style: "width:" + (Math.round(w.share * 10000) / 100) + "%" })]));
+    var ul = el("ul", { "aria-label": "The five parts" });
+    w.parts.forEach(function (f) {
+      var nums = f.halves
+        ? f.halves.map(function (h) { return fmt(h.pair[0]) + " of " + fmt(h.pair[1]) + " " + h.words; }).join("; ")
+        : fmt(f.pair[0]) + " of " + fmt(f.pair[1]);
+      ul.appendChild(el("li", {}, [
+        el("span", {}, [el("b", { text: f.def.title + " " + pctOf(f.share) })]),
+        el("div", { cls: "prh-pg-bar", role: "img", "aria-label": f.def.title + ", " + pctOf(f.share) }, [
+          el("i", { style: "width:" + (Math.round(f.share * 10000) / 100) + "%" })]),
+        el("small", { text: nums + ". " + f.def.note + "." }),
+        f.def.open ? goControl(f.def.open[0], f.def.open[1], "prh-pg-hlgo") : null]));
+    });
+    kids.push(ul);
+    kids.push(el("p", { text: "The five parts count equally. The confirm step is left out: it becomes an optional college confirm once the reading procedures prove stable." }));
+    return el("section", { cls: "prh-pg-whole", "aria-label": "The whole harvest" }, kids);
+  }
+
   /* Where Sam answers what waits on him on a part: the part's own answer(x), then each open
      call the status file places on it (its sheet link, its view, or its card's records). */
   function partAnswers(p, x, unread) {
@@ -2615,7 +2698,7 @@
       meta.appendChild(el("li", { cls: "prh-caution", text: missingText(["Q"], x) }));
     }
     box.appendChild(el("header", { cls: "prh-pg-head" }, [
-      el("h3", { text: "Catalog ROEP harvest" }), el("span", { cls: "prh-pg-sub", text: "Progress" }), meta, headlineBand(x)]));
+      el("h3", { text: "Catalog ROEP harvest" }), el("span", { cls: "prh-pg-sub", text: "Progress" }), meta, headlineBand(x), wholeBand(x)]));
     box.appendChild(el("p", { cls: "prh-lede prh-pg-lede", text: "Where the harvest stands. The milestones and parts are read live from the harvest's tables on each visit; the next step, the calls and what changed come from the last session's checkpoint." }));
 
     /* the milestone line */
@@ -3202,6 +3285,6 @@
     todoCount: todoCount, goToTodos: goToTodos, openSplit: openSplit, closeSplit: closeSplit, framingOf: framingOf, FRAMING_URL: FRAMING_URL,
     openKey: openKey, nextWaiting: nextWaiting, nextToRead: nextToRead, notice: notice, callAnswered: callAnswered, RECORD_KEY: RECORD_KEY,
     exhibitCount: exhibitCount, openExhibits: openExhibits, closeExhibits: closeExhibits,
-    MILESTONES: MILESTONES, PARTS: PARTS, TO: TO, goTo: goTo, goToCall: goToCall, progressContext: progressContext, headlineFacts: headlineFacts, nextRun: nextRun, nextWeekly: nextWeekly
+    MILESTONES: MILESTONES, PARTS: PARTS, WHOLE: WHOLE, wholeFacts: wholeFacts, TO: TO, goTo: goTo, goToCall: goToCall, progressContext: progressContext, headlineFacts: headlineFacts, nextRun: nextRun, nextWeekly: nextWeekly
   };
 })();

@@ -2225,6 +2225,43 @@ block("(24l)", function () {
   });
 });
 
+// ── (20) the whole harvest, one measure (Sam, 2026-10-13: "an overall measure on our prog reqs
+//        dash to estimate how far we are through the whole harvest process", confirm left out) ──
+block("(20)", function () {
+  const H = { day: "2026-10-13", gaps: 308, parts: {
+    links: { catalog: [118, 118], cms: [118, 118], ppm: [112, 118] },
+    roep: [2876, 20282], coci: [2568, 20282],
+    outcomes: { slo: [4123, 89192], plo: [2568, 20282] }, careers: [1518, 20282] } };
+  const p = progressReady(20);
+  p.M._state.progress.queue = Object.assign({}, p.f.queue, { harvest: H });
+  p.M._render();
+  const band = p.root.querySelector(".prh-pg-head .prh-pg-whole");
+  const txt = band ? band.textContent : "";
+  check("(20) the band sits in the view's head, under the headline", !!band && !!p.root.querySelector(".prh-pg-head .prh-pg-hl"));
+  const w = p.M.wholeFacts(p.M.progressContext(new Date()));
+  const expect = ((236 / 118 + 112 / 118) / 3 + 2876 / 20282 + 2568 / 20282 + (4123 / 89192 + 2568 / 20282) / 2 + 1518 / 20282) / 5;
+  check("(20) five parts count equally, a part with halves averages them", !!w && Math.abs(w.share - expect) < 1e-9, w && w.share);
+  check("(20) the measure reads in words, with its day", /About 28% of the whole harvest, counted Oct 13/.test(txt), txt.slice(0, 120));
+  check("(20) each part names its count and what it counts", /Links 98%/.test(txt) && /118 of 118 catalogs; 118 of 118 outline systems; 112 of 118 program maps/.test(txt) &&
+    /ROEP data 14%/.test(txt) && /2,876 of 20,282/.test(txt) && /COCI comparison 13%/.test(txt) &&
+    /SLOs and PLOs 9%/.test(txt) && /4,123 of 89,192 course SLOs/.test(txt) && /Career data 7%/.test(txt), txt);
+  const bars = band.querySelectorAll('.prh-pg-bar[role="img"]');
+  check("(20) a bar for the whole and one a part, each saying its share", bars.length === 6 &&
+    bars[0].getAttribute("aria-label") === "About 28% of the whole harvest" && bars[1].getAttribute("aria-label") === "Links, 98%");
+  check("(20) each part opens what it totals", band.querySelectorAll(".prh-pg-hlgo").length === 5 && /Open the colleges/.test(txt) && /Open the records/.test(txt));
+  check("(20) it says the confirm step is left out, and why", /The confirm step is left out: it becomes an optional college confirm/.test(txt));
+  // No harvest block yet, or a malformed one: it says so and draws no number.
+  p.M._state.progress.queue = Object.assign({}, p.f.queue);
+  delete p.M._state.progress.queue.harvest;
+  p.M._render();
+  const none = p.root.querySelector(".prh-pg-whole");
+  check("(20) with no counts stamped it says the next checkpoint stamps them, and draws no bar",
+    /The whole harvest: not counted yet/.test(none.textContent) && !none.querySelector(".prh-pg-bar"), none.textContent);
+  p.M._state.progress.queue = Object.assign({}, p.f.queue, { harvest: { day: "2026-10-13", parts: { links: [1, 2] } } });
+  p.M._render();
+  check("(20) a malformed block never draws a number", /not counted yet/.test(p.root.querySelector(".prh-pg-whole").textContent));
+});
+
 Promise.all(pending).then(function () {
   let pass = 0;
   for (const [name, ok, why] of results) {
