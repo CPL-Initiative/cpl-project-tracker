@@ -2,7 +2,7 @@
   "_about": "Daily-cached snapshot of public.workplan_goals + public.workplan_activity_associations. Written by kb/_load_workplan_goals.py after a successful Supabase fetch. Falls back to this file on Supabase outage so the dashboard regen continues without manual intervention.",
   "_fetched_at": "2026-10-13",
   "_source_table": "public.workplan_goals",
-  "row_count": 56,
+  "row_count": 58,
   "rows": [
     {
       "activity_id": "1.1",
@@ -509,6 +509,34 @@
       "total": 380.0
     },
     {
+      "activity_id": "3.9",
+      "name": "Futuro Behavioral Healthcare Project",
+      "description": null,
+      "row_type": "GOAL",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 0,
+      "yr_2026_27": 2,
+      "yr_2027_28": 4,
+      "yr_2028_29": 4,
+      "yr_2029_30": 4,
+      "total": 14
+    },
+    {
+      "activity_id": "3.9",
+      "name": "Futuro Behavioral Healthcare Project",
+      "description": null,
+      "row_type": "STRETCH",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 0,
+      "yr_2026_27": 4,
+      "yr_2027_28": 8,
+      "yr_2028_29": 8,
+      "yr_2029_30": 8,
+      "total": 28
+    },
+    {
       "activity_id": "1",
       "name": "Activity 1: Build AI-Enhanced CPL Infrastructure",
       "description": "AI-enhanced MAP platform with student portal, integrations, and credential registry",
@@ -796,16 +824,6 @@
       "is_primary": true
     },
     {
-      "project_id": "1.1.2",
-      "activity_id": "4",
-      "is_primary": false
-    },
-    {
-      "project_id": "1.1.2",
-      "activity_id": "1",
-      "is_primary": false
-    },
-    {
       "project_id": "1.1.1",
       "activity_id": "3",
       "is_primary": false
@@ -817,6 +835,21 @@
     },
     {
       "project_id": "3.1",
+      "activity_id": "1",
+      "is_primary": false
+    },
+    {
+      "project_id": "3.9",
+      "activity_id": "3",
+      "is_primary": true
+    },
+    {
+      "project_id": "4.2.1",
+      "activity_id": "4",
+      "is_primary": true
+    },
+    {
+      "project_id": "4.2.1",
       "activity_id": "1",
       "is_primary": false
     },
