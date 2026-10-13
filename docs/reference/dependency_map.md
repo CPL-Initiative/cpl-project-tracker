@@ -138,7 +138,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `program_source_addenda` | tabs: `program-requirements` | — |
 | `program_source_registry` | tabs: `college-briefing`, `cpl-pathways`, `program-requirements` · scripts: `kb/_course_outline_census.py`, `kb/_program_requirements_pilot.py`, `kb/_program_source_census.py`, `scripts/catalog_framing.py` | — |
 | `project_lifecycle` | tabs: `raci` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py` | pages: `CPL_Dashboard.html` |
-| `projects` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py`, `kb/_seed_projects.py`, `kb/_seed_projects_apply.py`, `kb/_validate_projects.py` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `kb/_seed_projects_apply.py` |
+| `projects` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py`, `kb/_seed_projects.py`, `kb/_seed_projects_apply.py`, `kb/_validate_projects.py` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `kb/_seed_projects_apply.py` |
 | `sierra_feedback` | tabs: `governance`, `map-queue`, `sierra-training` · scripts: `chatbox/smoke_test.sh` | — |
 | `sierra_guidance` | tabs: `sierra-training` · `edgefn:cpl-chat` | tabs: `sierra-training` |
 | `sierra_rules` | tabs: `sierra-training` · `edgefn:cpl-chat` | tabs: `sierra-training` |

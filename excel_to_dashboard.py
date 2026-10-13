@@ -1050,6 +1050,7 @@ def read_projects(wb):
             "update_date":   fmt_date(cell_val(ws, r, COL_UPDATE_DATE, "")),
             "kpi_metric":    fmt_number(kpi_metric) if kpi_metric is not None else "",
             "kpi_unit":      str(kpi_unit),
+            "count_note":    "",
             "kpi_goal_2526": fmt_number(kpi_g2526) if isinstance(kpi_g2526, (int, float)) else str(kpi_g2526) if kpi_g2526 else "",
             "kpi_stretch_2526": fmt_number(kpi_s2526) if isinstance(kpi_s2526, (int, float)) else str(kpi_s2526) if kpi_s2526 else "",
             "kpi_goal_2627": fmt_number(kpi_g2627) if isinstance(kpi_g2627, (int, float)) else str(kpi_g2627) if kpi_g2627 else "",
@@ -1179,6 +1180,10 @@ def build_projects_from_supabase(supabase_rows):
             "update_date":   fmt_date(row.get("update_date") or ""),
             "kpi_metric":    fmt_number(kpi_metric_raw) if kpi_metric_raw not in (None, "") else "",
             "kpi_unit":      str(row.get("kpi_unit") or ""),
+            # How the annual goal numbers are counted (projects.count_note, Sam
+            # 2026-10-12) — edited on Annual Workplan Goals, shown on the cards
+            # and sent to the report generator.
+            "count_note":    str(row.get("count_note") or ""),
             "workplan_notes": row.get("wp_notes") or "",
             "kpi_order":     int(kpi_order_raw) if isinstance(kpi_order_raw, (int, float)) and kpi_order_raw else None,
             "override":      None,
@@ -1538,6 +1543,32 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                     f'style="font-weight:400;font-size:0.72rem;color:var(--text-muted);margin-top:0.2rem;">'
                     f'{html_escape(proj_desc) if proj_desc else "&mdash;"}</div>'
                 )
+                # What the numbers count + how they are counted (Sam, 2026-10-12:
+                # "Notes for annual goals ... to define what the numbers will be
+                # counting"). kpi_unit and count_note PATCH projects; an empty line
+                # stays hidden for readers and opens as "Add" for an editor.
+                kpi_unit = row.get("kpi_unit") or ""
+                count_note = row.get("count_note") or ""
+                count_line = (
+                    f'<div class="wpg-count-line"{"" if kpi_unit else " hidden"} '
+                    f'style="font-weight:400;font-size:0.72rem;color:var(--text-muted);margin-top:0.2rem;">'
+                    f'<span class="wpg-count-label">Counts:</span> '
+                    f'<span class="wpg-unit-cell" data-unit-edit="1" '
+                    f'data-pid="{html_escape(row["id"], quote=True)}" '
+                    f'data-val="{html_escape(kpi_unit, quote=True)}">{html_escape(kpi_unit)}</span></div>'
+                    f'<div class="wpg-count-line"{"" if count_note else " hidden"} '
+                    f'style="font-weight:400;font-size:0.72rem;color:var(--text-muted);margin-top:0.2rem;">'
+                    f'<span class="wpg-count-label">How it is counted:</span> '
+                    f'<span class="wpg-note-cell" data-note-edit="1" '
+                    f'data-pid="{html_escape(row["id"], quote=True)}" '
+                    f'data-val="{html_escape(count_note, quote=True)}">{html_escape(count_note)}</span></div>'
+                )
+                # A project with no goal ladder (Path A blank row) carries its id +
+                # name so the editor can offer "Set targets", which creates the
+                # missing GOAL + STRETCH rows in place.
+                no_ladder_attrs = ("" if row.get("has_ladder", True) else
+                                   f' data-no-ladder="1" data-pid="{html_escape(row["id"], quote=True)}"'
+                                   f' data-name="{html_escape(row["name"], quote=True)}"')
                 # Hierarchy: a three-level id (X.Y.Z, e.g. 4.1.1 "29 Palms" under
                 # 4.1 "Veteran Sprint") renders as a SUBSIDIARY of its X.Y parent —
                 # indented + an accent left-border + a "↳" marker — while staying
@@ -1550,14 +1581,14 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                                if _depth >= 2 else "")
                 _sub_marker = ('<span style="color:var(--seal-blue-text,#002F6D);" '
                                'aria-hidden="true">↳ </span>' if _depth >= 2 else '')
-                name_cell = (f'<td rowspan="3" style="padding:0.4rem 0.6rem 0.4rem {_pad_left:.2f}rem;'
+                name_cell = (f'<td rowspan="3"{no_ladder_attrs} style="padding:0.4rem 0.6rem 0.4rem {_pad_left:.2f}rem;'
                              f'border:1px solid #ddd;{_nest_style}'
                              f'vertical-align:top;font-weight:600;background:var(--surface-opaque);">'
                              f'{_sub_marker}'
                              f'<span style="color:var(--text-muted);font-size:0.75rem;">{html_escape(row["id"])}</span> '
                              f'<span class="wpg-title-cell" data-title-edit="1" '
                              f'data-pid="{html_escape(row["id"], quote=True)}">'
-                             f'{html_escape(row["name"])}</span>{desc_line}{chip_line}</td>')
+                             f'{html_escape(row["name"])}</span>{desc_line}{count_line}{chip_line}</td>')
 
             html += f'                    <tr style="{style}">\n'
             html += f'                        {name_cell}\n'
@@ -1875,6 +1906,7 @@ def build_activity_kpis(projects, activities=None):
             "goal":          p.get("goal", ""),
             "metric":        p.get("kpi_metric", ""),
             "unit":          p.get("kpi_unit", ""),
+            "count_note":    p.get("count_note", ""),
             "goal_2526":   p.get("kpi_goal_2526", ""),
             "stretch_2526":  p.get("kpi_stretch_2526", ""),
             "goal_2627":   p.get("kpi_goal_2627", ""),
@@ -2305,12 +2337,17 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                 if has_metric:
                     html += (f'                <div class="akpi-metric-row">\n'
                              f'                    <span class="akpi-metric-value">{kpi["metric"]}</span>\n'
-                             f'                    <span class="akpi-metric-unit">{kpi["unit"]}</span>\n'
+                             f'                    <span class="akpi-metric-unit">{html_escape(str(kpi["unit"]))}</span>\n'
                              f'                </div>\n')
                 else:
                     html += (f'                <div class="akpi-metric-row">\n'
-                             f'                    <span class="akpi-metric-unit" style="opacity:0.5;">{kpi["unit"]}</span>\n'
+                             f'                    <span class="akpi-metric-unit" style="opacity:0.5;">{html_escape(str(kpi["unit"]))}</span>\n'
                              f'                </div>\n')
+                # How the numbers are counted (projects.count_note), so a reader of a
+                # tech-development target knows what a "4" means.
+                if kpi.get("count_note"):
+                    html += (f'                <div class="akpi-count-note" style="font-size:0.7rem;color:var(--text-muted);'
+                             f'margin:-0.1rem 0 0.4rem 0;">How it is counted: {html_escape(str(kpi["count_note"]))}</div>\n')
 
                 # Annual cumulative goals — mini table: Year / Goal / Stretch
                 g2526 = kpi.get("goal_2526", "")
@@ -11418,6 +11455,11 @@ def build_workplan_goals_from_supabase(
             # projects.description (the field the retired card editor wrote).
             # Editable on the Annual Workplan Goals tab now.
             "description": (proj_map.get(aid, {}) or {}).get("description") or "",
+            # What the numbers count (projects.kpi_unit, the short label the
+            # Activities cards print beside the number) and how they are counted
+            # (projects.count_note, Sam 2026-10-12). Both editable on this tab.
+            "kpi_unit": (proj_map.get(aid, {}) or {}).get("kpi_unit") or "",
+            "count_note": (proj_map.get(aid, {}) or {}).get("count_note") or "",
             # Path A: does this project have a backing workplan_goals ladder row?
             # A blank-ladder project (reflected here but with no wg row) renders
             # its year/Current cells READ-ONLY — an editable cell would PATCH a
