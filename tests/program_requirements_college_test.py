@@ -973,6 +973,56 @@ check(nm3["error"] == "Execution context was destroyed" and nm3["chars"]["conten
       and nm3["chars"]["tabs"] > 0 and nm3["tab_panels"] == [["REQUIREMENTS", len(bci_req)]],
       "a near miss files what the capture held for the page: its script error, its text sizes, its tab panels")
 
+# ── eLumen: a menu of program and award hubs (Modesto, Palo Verde, S383) ──
+# Reads 38445240921 and 38446053107 (S382): Modesto's menu links no program or department,
+# only Programs A-Z (2026-2027/programs) and Programs by Type (bytype); Palo Verde's links
+# award categories (2025-2026/adt, associate-of-arts-degrees, certificate-of-achievements,
+# non-credit-certificates). Each hub links its programs at <catalog>/program/<slug>.
+MJC = "https://mjc.elumenapp.com/catalog/2026-2027/mjc-ge"
+MJC_MENU = ('<a href="2026-2027/mjc-ge">General Education</a><a href="2026-2027/programs">Programs A-Z</a>'
+            '<a href="2026-2027/bytype">Programs by Type</a><a href="2026-2027/academic-calendar">Calendar</a>'
+            '<a href="2026-2027/programs">again</a><a href="2025-2026/programs">last year</a>')
+MJC_HUB = {"programs": '<a href="2026-2027/program/agriculture-as-fall-2026">Agriculture</a>'
+                       '<a href="2026-2027/program/welding-coa-fall-2026">Welding</a>',
+           "bytype": '<a href="/catalog/2026-2027/program/welding-coa-fall-2026">Welding</a>'
+                     '<a href="2026-2027/program/nursing-adn-fall-2026">Nursing</a>'}
+check(C.el_hub_slugs(MJC_MENU, "2026-2027") == ["programs", "bytype"],
+      "a menu's hub links are read once each, in this catalog only, never an ordinary page")
+check(C.el_hub_slugs('<a href="2025-2026/adt">ADT</a><a href="2025-2026/associate-of-arts-degrees">AA</a>'
+                     '<a href="2025-2026/certificate-of-achievements">CA</a><a href="2025-2026/non-credit-certificates">NC</a>'
+                     '<a href="2025-2026/presidents-welcome">Welcome</a>', "2025-2026")
+      == ["adt", "associate-of-arts-degrees", "certificate-of-achievements", "non-credit-certificates"],
+      "Palo Verde's award categories read as hubs; its welcome page does not")
+check(C.el_hub_slugs(CAB_MENU, "2026-2027") == [] and C.el_hub_slugs(MJC_HUB["programs"], "2026-2027") == [],
+      "a department link or a program link is never taken for a hub")
+asked = []
+
+
+def mjc_fetch(reader, url, errors):
+    asked.append(url)
+    for h in MJC_HUB:
+        if "publish/content/2026-2027,%s?" % h in url:
+            return json.dumps({"html": MJC_HUB[h]})
+    if "publish/content/2026-2027,program," in url:
+        slug = url.split("program,")[1].split("?")[0]
+        return json.dumps({"html": "<h1>%s</h1><p>Program Requirements AG 101 WELD 1</p>" % slug})
+    return json.dumps({"html": MJC_MENU})
+
+
+real_fetch, C.el_fetch = C.el_fetch, mjc_fetch
+try:
+    rep = {}
+    got_pages = C.el_pages_fast(None, MJC, rep)
+finally:
+    C.el_fetch = real_fetch
+check([g["url"].rsplit("/", 1)[1] for g in got_pages] == ["agriculture-as-fall-2026", "welding-coa-fall-2026", "nursing-adn-fall-2026"]
+      and rep["elumen"]["menu_programs"] == 0 and rep["elumen"]["menu_departments"] == 0
+      and rep["elumen"]["menu_hubs"] == ["programs", "bytype"] and rep["elumen"]["hub_programs"] == 3,
+      "with no program or department in the menu, each hub's content call lists the programs, each read once: %s %s"
+      % ([g["url"] for g in got_pages], rep.get("elumen")))
+check(sum(1 for u in asked if ",programs?" in u or ",bytype?" in u) == 2 and sum(1 for u in asked if ",program," in u) == 3,
+      "one call a hub and one a program, nothing more")
+
 sql = open(os.path.join(ROOT, "chatbox", "supabase_program_requirement_records_college_load.sql")).read()
 body = sql.split("as $$")[1].split("$$;")[0]
 check("on conflict (college, control_number) do nothing" in body and "update" not in body.lower()
