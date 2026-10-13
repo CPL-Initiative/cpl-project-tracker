@@ -4,7 +4,7 @@
   "supabase_tables": 97,
   "rpcs": 38,
   "edge_functions": 7,
-  "file_datasets": 644,
+  "file_datasets": 645,
   "external_services": 175,
   "consumers": 438,
   "workflows": 52,
@@ -2033,7 +2033,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 582
+     "line": 636
     }
    ],
    "main_committers": []
@@ -12307,6 +12307,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/program_requirements_college/chaffey/capture_preview.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 1179
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/program_requirements_maps_sample.json": {
    "consumers": [
     {
@@ -19508,7 +19521,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 1153
+     "line": 1219
     }
    ],
    "main_committers": []
