@@ -13,6 +13,8 @@
 //      stamp on the target's kb_curation rows, then shows Verified.
 //
 // Run from repo root: `npm test` (or `node tests/uc_merge_target.test.js`).
+// The Verified chip, by its own text (S378 dropped its check glyph).
+function verifiedChip(row) { return Array.from(row.querySelectorAll(".uc-badge")).some((b) => b.textContent.trim() === "Verified"); }
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
 const src = fs.readFileSync("unified_courses.js", "utf8");
@@ -132,8 +134,8 @@ check("init does not throw", !threw);
   check("merged member row is folded away", !rowFor("KINE M1371"));
   check("merged row keeps the impact Students value (4,823 — max of members)",
     tgtRow && tgtRow.textContent.indexOf("4,823") >= 0);
-  check("merge does NOT auto-verify — no '✔ Verified' on the merged row",
-    tgtRow && tgtRow.textContent.indexOf("✔ Verified") < 0);
+  check("merge does NOT auto-verify — no Verified chip on the merged row",
+    tgtRow && !verifiedChip(tgtRow));
   const verifyLink = tgtRow && Array.from(tgtRow.querySelectorAll("a")).find((a) => /Verify/.test(txt(a)));
   check("merged row offers the Verify affordance", !!verifyLink);
 
@@ -146,7 +148,7 @@ check("init does not throw", !threw);
   check("the PATCH carries validated_at + validated_by (not a discipline write)",
     patch && !!patch.body.validated_at && patch.body.validated_by === "test@rccd.edu");
   const tgtRow2 = rowFor("KINE M1015");
-  check("after Verify the merged row shows Verified", tgtRow2 && tgtRow2.textContent.indexOf("✔ Verified") >= 0);
+  check("after Verify the merged row shows Verified", tgtRow2 && verifiedChip(tgtRow2));
 
   let pass = 0;
   for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
