@@ -8,22 +8,22 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 46866,
-  "pa": 42779,
+  "pe": 46876,
+  "pa": 42788,
   "ppa": 119,
-  "p2": 3576,
-  "p3": 16751,
+  "p2": 3577,
+  "p3": 16752,
   "pp": 6,
   "ppe": 129,
   "pac": 5258,
-  "ptc": 4614,
-  "pe_u": 1463450.95,
-  "pa_u": 238663.15,
+  "ptc": 4615,
+  "pe_u": 1463790.45,
+  "pa_u": 238911.65,
   "ppa_u": 721.5,
   "ppe_u": 6825.5,
   "pac_u": 37523.2,
-  "ptc_u": 31231.15,
-  "p3_u": 83626.85,
+  "ptc_u": 31243.15,
+  "p3_u": 83638.85,
   "pp_u": 63.5
  },
  "colleges": {
@@ -108,10 +108,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Bakersfield": {
-   "pe": 619,
-   "pe_u": 26819.0,
-   "pa": 611,
-   "pa_u": 8918.0,
+   "pe": 620,
+   "pe_u": 26847.0,
+   "pa": 612,
+   "pa_u": 8926.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 72.0,
@@ -307,16 +307,16 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Chaffey": {
-   "pe": 1549,
-   "pe_u": 34233.0,
-   "pa": 1545,
-   "pa_u": 19642.5,
+   "pe": 1555,
+   "pe_u": 34432.0,
+   "pa": 1551,
+   "pa_u": 19868.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 12.0,
-   "p2": 22,
-   "p3": 50,
-   "p3_u": 358.0,
+   "p2": 23,
+   "p3": 51,
+   "p3_u": 370.0,
    "pp": 0,
    "pp_u": 0.0,
    "ppe": null,
@@ -324,8 +324,8 @@ window.CPL_FUNDING_PERF = {
    "ppe_u": 91.0,
    "pac": 36,
    "pac_u": 264.5,
-   "ptc": 32,
-   "ptc_u": 224.5
+   "ptc": 33,
+   "ptc_u": 236.5
   },
   "Citrus": {
    "pe": 214,
@@ -940,10 +940,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "LA Pierce": {
-   "pe": 404,
-   "pe_u": 7048.0,
-   "pa": 378,
-   "pa_u": 1562.0,
+   "pe": 405,
+   "pe_u": 7081.0,
+   "pa": 379,
+   "pa_u": 1565.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 9.0,
@@ -1273,8 +1273,8 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Moorpark": {
-   "pe": 232,
-   "pe_u": 9805.0,
+   "pe": 233,
+   "pe_u": 9873.0,
    "pa": null,
    "pa_suppressed": true,
    "pa_u": 14.0,
@@ -1454,10 +1454,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Palo Verde": {
-   "pe": 21,
-   "pe_u": 712.75,
-   "pa": 21,
-   "pa_u": 289.75,
+   "pe": 22,
+   "pe_u": 724.25,
+   "pa": 22,
+   "pa_u": 301.25,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 11,
@@ -2269,8 +2269,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 568,
-    "pa": 564,
+    "pe": 569,
+    "pa": 565,
     "p3": 39
    }
   },
@@ -2418,7 +2418,7 @@ window.CPL_FUNDING_PERF = {
    "Industry Certification": {
     "pe": 26,
     "pa": 24,
-    "p3": 22
+    "p3": 23
    },
    "Industry Certification | Military": {
     "pe": null,
@@ -2429,8 +2429,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 369,
-    "pa": 367,
+    "pe": 375,
+    "pa": 373,
     "p3": 17
    },
    "Other": {
@@ -3103,7 +3103,7 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 229,
+    "pe": 230,
     "pa": null,
     "pa_suppressed": true,
     "p3": 0
@@ -3954,9 +3954,9 @@ window.CPL_FUNDING_PERF = {
    "p3": 40
   },
   "Industry Certification": {
-   "pe": 1414,
-   "pa": 1391,
-   "p3": 1176
+   "pe": 1415,
+   "pa": 1392,
+   "p3": 1177
   },
   "Industry Certification | Military": {
    "pe": 56,
@@ -4001,8 +4001,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 28435,
-   "pa": 26129,
+   "pe": 28444,
+   "pa": 26137,
    "p3": 2592
   },
   "Military | Other": {
@@ -4058,14 +4058,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1463450.95,
-   "pa_u": 238663.15,
-   "p3_u": 83626.85
+   "pe_u": 1463790.45,
+   "pa_u": 238911.65,
+   "p3_u": 83638.85
   },
   "map": {
-   "pe_u": 1470276.45,
-   "pa_u": 239384.65,
-   "p3_u": 83690.35
+   "pe_u": 1470615.95,
+   "pa_u": 239633.15,
+   "p3_u": 83702.35
   },
   "ratio": {
    "pe_u": 1.0047,
@@ -4201,8 +4201,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Chaffey": {
    "vets": 182,
-   "jst": 374,
-   "pct": 2.0549
+   "jst": 380,
+   "pct": 2.0879
   },
   "San Francisco": {
    "vets": 1197,
@@ -4231,8 +4231,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Bakersfield": {
    "vets": 416,
-   "jst": 585,
-   "pct": 1.4062
+   "jst": 586,
+   "pct": 1.4087
   },
   "Norco College": {
    "vets": 831,
@@ -4366,8 +4366,8 @@ window.CPL_FUNDING_PERF = {
   },
   "LA Pierce": {
    "vets": 296,
-   "jst": 151,
-   "pct": 0.5101
+   "jst": 152,
+   "pct": 0.5135
   },
   "Clovis": {
    "vets": 117,
@@ -4646,8 +4646,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Moorpark": {
    "vets": 179,
-   "jst": 232,
-   "pct": 1.2961
+   "jst": 233,
+   "pct": 1.3017
   },
   "Monterey": {
    "vets": 696,

@@ -5,7 +5,7 @@
   "rpcs": 38,
   "edge_functions": 7,
   "file_datasets": 645,
-  "external_services": 175,
+  "external_services": 177,
   "consumers": 438,
   "workflows": 52,
   "data_js_files": 69,
@@ -306,6 +306,18 @@
    ],
    "main_committers": []
   },
+  "external:api-prod.elumenapp.com": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 1032
+    }
+   ],
+   "main_committers": []
+  },
   "external:api.anthropic.com": {
    "consumers": [
     {
@@ -455,6 +467,18 @@
       "map-queue",
       "map-users"
      ]
+    }
+   ],
+   "main_committers": []
+  },
+  "external:bakersfield.elumenapp.com": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 971
     }
    ],
    "main_committers": []
@@ -2033,7 +2057,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 636
+     "line": 674
     }
    ],
    "main_committers": []
@@ -12314,7 +12338,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1179
+     "line": 1414
     }
    ],
    "served": true,
@@ -19521,7 +19545,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 1219
+     "line": 1454
     }
    ],
    "main_committers": []

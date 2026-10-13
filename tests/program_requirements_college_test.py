@@ -803,6 +803,98 @@ own_heads = [{"h1": "X%d, A.A." % i} for i in range(20)]
 check(C.drop_banner_h1(few) is None and few[0]["h1"] == "ACADEMIC CATALOGS" and C.drop_banner_h1(own_heads) is None,
       "an h1 on a handful of pages, or a heading of each page's own, stays")
 
+# ── eLumen: the program index is the catalog's side menu (S380) ─────────────
+# Read 38392014238: Bakersfield's start page links each program at
+# /catalog/2026-2027-Catalog/program/<slug>, beside its services, policies and
+# course pages; /programs is no view. A link to another year's catalog, another
+# host, or a course must never be read as a program page.
+EL_START = "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc"
+EL_BASE = "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/"
+EL_LINKS = [
+    {"text": "Programs of Study", "href": EL_BASE + "programs-of-study"},
+    {"text": "Disabled Student Programs & Services (DSPS)", "href": EL_BASE + "dsps"},
+    {"text": "Advanced Placement (AP) Program", "href": EL_BASE + "advanced-placement-ap-program"},
+    {"text": "Agricultural Education Associate of Science",
+     "href": EL_BASE + "program/agricultural-education-associate-of-science-fall-2026"},
+    {"text": "Agriculture Business Certificate of Achievement",
+     "href": EL_BASE + "program/agriculture-business-certificate-of-achievement-summer-2023#top"},
+    {"text": "Agricultural Education Associate of Science",
+     "href": EL_BASE + "program/agricultural-education-associate-of-science-fall-2026/"},
+    {"text": "ASL B3", "href": EL_BASE + "course/aslb3"},
+    {"text": "Old catalog", "href": "https://bakersfield.elumenapp.com/catalog/2025-2026-Catalog/program/old-aa-fall-2025"},
+    {"text": "Elsewhere", "href": "https://pvc.elumenapp.com/catalog/2026-2027-Catalog/program/acc-aa"},
+]
+check(C.el_catalog(EL_START) == "2026-2027-Catalog" and C.el_catalog("https://x.edu/catalog.html") is None,
+      "an eLumen start page names its catalog in the path after /catalog/")
+check(C.el_program_urls(EL_LINKS, EL_START) == [
+          EL_BASE + "program/agricultural-education-associate-of-science-fall-2026",
+          EL_BASE + "program/agriculture-business-certificate-of-achievement-summer-2023"],
+      "the menu's program pages, each once, in order: never a course, a service page, another year or another host")
+check(C.el_hubs(EL_LINKS, EL_START) == [EL_BASE + "programs-of-study"],
+      "an eLumen catalog's program index is its Programs of Study page, not DSPS or a program page")
+check(C.el_program_urls([], EL_START) == [] and C.el_program_urls(EL_LINKS, "https://bakersfield.elumenapp.com/") == [],
+      "no menu, or a start page that names no catalog, gives no program page")
+
+# ── eLumen: the fast read from the catalog's own publish calls (S380) ───────
+# Read 38413232841: the full publish call carries styles, the side menu (program
+# links written relative to /catalog/) and the page; the menu loads a page through
+# publish/content. A program's requirements print as rule-name / rule-credits.
+check(C.el_publish_url(EL_START, C.el_start_parts(EL_START)) ==
+      "https://api-prod.elumenapp.com/catalog/sites/publish/2026-2027-Catalog,about-bc"
+      "?tenant=bakersfield.elumenapp.com&api=https://api-prod.elumenapp.com:443"
+      and C.el_publish_url(EL_START, ["program", "ag-ed-as-fall-2026"], content=True) ==
+      "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,program,ag-ed-as-fall-2026"
+      "?tenant=bakersfield.elumenapp.com",
+      "the publish calls are the ones the catalog's own scripts make, full for the menu, content for a page")
+SHELL = ('<style scoped>.a{color:red}</style><nav>'
+         '<a class="navitem" href="2026-2027-Catalog/program/ag-ed-as-fall-2026">Ag Ed AS</a>'
+         '<a class="navitem" href="2026-2027-Catalog/course/agrib5">AGRI B5</a>'
+         '<a href="2026-2027-Catalog/program/ag-ed-as-fall-2026">again</a>'
+         '<a href="2025-2026-Catalog/program/old-as">old year</a>'
+         '<a href="2026-2027-Catalog/program/culinary-coa-fall-2026">Culinary</a></nav>')
+check(C.el_program_slugs(C.el_html(json.dumps({"html": SHELL})), "2026-2027-Catalog") ==
+      ["ag-ed-as-fall-2026", "culinary-coa-fall-2026"]
+      and C.el_program_slugs(SHELL, "2026-2027-Catalog") == ["ag-ed-as-fall-2026", "culinary-coa-fall-2026"]
+      and C.el_html("not json <p>x</p>") == "not json <p>x</p>" and C.el_html(None) == "",
+      "the menu's program slugs come once each, in this catalog only, from JSON or plain HTML")
+CONTENT = ('<style>.x{}</style><script>var a=1;</script><h2>Agricultural Education Associate of Science</h2>'
+           '<h4 class="accordionheader-x-text">Program Requirements</h4><h4>Agriculture Education AS (Total 30)</h4>'
+           '<p>Complete all of the following</p><div class="new-rule"><span class="rule-name"><a href="x">AGRIB5 - '
+           'Leadership in Agriculture</a></span><span class="rule-credits"> 3</span></div>'
+           '<div class="new-rule"><span class="rule-name"><a href="y">ANSCB1 - Introduction to Animal Science</a>'
+           '</span><span class="rule-credits"> 3</span></div>')
+EPG = C.el_page(EL_START, "ag-ed-as-fall-2026", CONTENT)
+check(EPG["url"] == EL_BASE + "program/ag-ed-as-fall-2026"
+      and EPG["title"] == "Agricultural Education Associate of Science"
+      and "var a" not in EPG["body"] and ".x{}" not in EPG["body"]
+      and "Complete all of the following" in EPG["body"]
+      and P.coverage(P.find_codes(EPG["body"], [{"code": "AGRI B5"}, {"code": "ANSC B1"}]),
+                     [{"code": "AGRI B5"}, {"code": "ANSC B1"}]) == 1.0
+      and C.el_page(EL_START, "x", "<style>a{}</style>") is None,
+      "a content call reads as its program's page: its heading, its requirements without styles or scripts, "
+      "and the spaceless codes Bakersfield prints (AGRIB5) count as the state's AGRI B5")
+
+# ── a program left without a page says why (S381) ──────────────────────────
+# Coastline re-read 38429656959: Information Technology A.S.'s own page was read from the
+# sitemap, refused, and taken by the link search at coverage 1.0; nothing said which gate.
+it = {"control_number": "20378", "title": "Information Technology", "award": "A.S. Degree",
+      "closed_list": [{"code": "CST C%d" % n} for n in range(101, 107)]}
+own_thin = page(CL + "pathways/x/information-technology/information-technology-as/",
+                "Information Technology, Associate of Science Degree", "Information Technology A.S. CST C101")
+nm = C.near_miss(it, [own_thin, page(CL + "pathways/x/art/", "Art", "ART C100")])
+check(nm and nm["url"].endswith("information-technology-as/") and nm["why"].startswith("coarse net") and nm["net"] == 1
+      and nm["listed"] == 6 and nm["label"] == {"award": 1, "title": 1.0},
+      "a program's own page that names too few of its courses is named, with the gate that refused it: %s" % nm)
+# The address names the program (so the label does); the heading names another program.
+other = hidden_page(CL + "pathways/x/information-technology/photography-aa/", "Photography, Associate of Arts", "Photography A.A.")
+other["content"] = other["got"]["content"] = " ".join("CST C%d" % n for n in range(101, 107))
+other["codes"] = C.page_codes(other["content"])
+nm2 = C.near_miss(it, [other])
+check(nm2 and nm2["why"].startswith("hidden text only"), "a page read from hidden text alone, its heading naming another program: %s" % nm2)
+check(C.near_miss(it, [page(CL + "pathways/x/art/", "Art", "ART C100")]) == {"why": "no page read names the program"},
+      "with no page naming the program, it says so")
+check(C.near_miss(dict(it, closed_list=[]), [own_thin]) is None, "a program with no listed course has no near miss")
+
 sql = open(os.path.join(ROOT, "chatbox", "supabase_program_requirement_records_college_load.sql")).read()
 body = sql.split("as $$")[1].split("$$;")[0]
 check("on conflict (college, control_number) do nothing" in body and "update" not in body.lower()

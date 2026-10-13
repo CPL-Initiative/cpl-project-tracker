@@ -1,0 +1,425 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "43499",
+ "shape": "degree",
+ "title": "Research Laboratory Technology",
+ "award": "Baccalaureate of Science (B.S.) Degree.",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/research-laboratory-technology-bachelor-of-science-fall-2023",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6625,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6625,
+    "output_tokens": 3335,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3335,
+  "output_tokens_details": {
+   "thinking_tokens": 1043
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0932,
+ "ms": 26025,
+ "seconds": 26.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 36,
+   "share": 0.556,
+   "missing": [
+    "BIOLB16",
+    "BIOLB3A",
+    "CHEMB2A",
+    "FDSTB3",
+    "GEOLB10",
+    "GEOLB10L",
+    "INDAB105",
+    "MATHB1A",
+    "MATHB1AL",
+    "MATHB1B",
+    "PHYSB2A",
+    "PHYSB4A",
+    "RTECB100",
+    "SOILB1",
+    "STATC1000",
+    "STATC1000E"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "BIOLB3B",
+    "INDAB150"
+   ],
+   "flagged": [
+    "BIOLB3B",
+    "INDAB150"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    60.0,
+    61.0
+   ],
+   "stated": [
+    69.0,
+    70.0
+   ],
+   "why": [
+    "the blocks sum to 60.0-61.0; the catalog states 69.0-70.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Research Laboratory Technology Bachelor of Science",
+   "measure": "units",
+   "total_units": {
+    "min": 69,
+    "max": 70
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Upon successful completion of the program, the student will be able to demonstrate the use of common research instruments.",
+    "Upon successful completion of the program, the student will be able to diagnose solutions to maintenance issues of research instruments",
+    "Upon successful completion of the program, the student will be able to design project management systems for effective laboratory support.",
+    "Upon successful completion of the program, the student will be able to interpret laboratory regulations for implementation.",
+    "Upon successful completion of the program, the student will be able to present findings from a research project."
+   ],
+   "careers": [
+    "technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Lower Division Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 27,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "BIOL B3B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM B1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM B1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM B30A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH B6A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Choose one",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BIOL B8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENER B22",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OSRM B12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OSRM B20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Upper Division Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 33,
+     "max": 33
+    },
+    "courses": [
+     {
+      "code": "INDA B132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INDA B140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INDA B150",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RTEC B101",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTEC B102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTEC B103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTEC B110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTEC B140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Choose Three",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "INDA B114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INDA B125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INDA B135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INDA B143",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INDA B144",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOL B16",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL B3A",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHEM B2A",
+    "why": "not in the text"
+   },
+   {
+    "code": "FDST B3",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL B10",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOL B10L",
+    "why": "not in the text"
+   },
+   {
+    "code": "INDA B105",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH B1A",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH B1AL",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH B1B",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS B2A",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS B4A",
+    "why": "not in the text"
+   },
+   {
+    "code": "RTEC B100",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOIL B1",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000E",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog prints codes without a space (e.g., 'BIOLB3B', 'CHEMB1A'); they are recorded with a space between subject and number to match the closed list format.",
+   "Lower Division Requirements stated total (27-28) includes List A (3-4); the required courses listed directly sum to 24. Likewise Upper Division Requirements stated total (33) includes List B (9); its required courses sum to 24.",
+   "The program total of 69-70 as printed includes the 'Upper Division General Education' block (9 units: ENGL B100 Technical Writing 3, PHIL B100 Industry Ethics 3, PSYC B100 Industrial and Organizational Psychology 3). Per instructions these GE courses are not placed in a block; total_units is recorded as printed (69-70) and a reviewer may wish to check whether the major total excluding GE should be 60-61.",
+   "No named GE pattern (CSU GE, IGETC, Cal-GETC) is stated; ge_pattern left null.",
+   "INDA B132 is titled 'Project Management' in the catalog vs 'Project Management for Capstone' in the closed list.",
+   "BIOL B3B (General Biology II) and INDA B150 (Systems Design and Integration (Senior Project)) are not on the closed list and are marked as catalog additions.",
+   "List A is labeled 'Choose one' with 'Complete the following number of credits: 3-4'; recorded as choose 1 course with stated 3-4. List B is labeled 'Choose Three' with 9 credits; recorded as choose 3 courses with stated 9.",
+   "Career entry 'technician' is taken from 'equip them for technician careers'."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

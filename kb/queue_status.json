@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-13T08:00:10Z",
-  "session": 376,
-  "moniker": "SkyLinden",
+  "written_at": "2026-10-13T14:37:18Z",
+  "session": 380,
+  "moniker": "SkyAlder",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_380_handoff.md",
+  "handoff": "docs/session_381_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -15213,13 +15213,17 @@
     }
   ],
   "next_step": {
-    "title": "Load the course outcomes once the table exists",
-    "text": "Riverside, Moreno Valley and Norco's 1,605 course outlines are read, and San Diego City, Mesa and Miramar's are being read by college. The table that holds the outcomes waits on one paste in the database editor; then both loads run."
+    "title": "Load Bakersfield and Coastline",
+    "text": "Read the two colleges' filed records, load each one not yet confirmed, then build the display so their programs appear on CPL Pathways and the Program Requirements tab."
   },
   "calls": [
     {
-      "title": "Create the course outcomes table",
-      "text": "You chose to paste it (Open Asks Sheet 72, card 1). The database tool timed out again this morning. No reply: the outcomes stay filed in the repository and nothing reaches the table."
+      "title": "Chaffey's course outline note",
+      "text": "A one-row note on Chaffey's registry row says its course outcomes are not public. It waits as a paste because the database tool is down. No reply: the finding stays in the repository and the lane."
+    },
+    {
+      "title": "Stop pasting database changes",
+      "text": "Approve a runner that applies committed database changes with an access token, with or without your one-tap approval. No reply: database changes keep arriving as pastes while the tool is down."
     },
     {
       "title": "The gallery picks",
@@ -15235,40 +15239,24 @@
   },
   "changes": [
     {
-      "at": "2026-10-13T04:59Z",
-      "text": "San Diego Mesa's nine health programs loaded, not yet confirmed (175 records)"
+      "at": "2026-10-13T11:50Z",
+      "text": "Course outcomes loaded at Riverside City, Norco and Moreno Valley (2,665 courses)"
     },
     {
-      "at": "2026-10-13T06:30Z",
-      "text": "San Diego City's two nursing degrees and its Cyber Defense degree loaded, not yet confirmed (167 records)"
+      "at": "2026-10-13T12:30Z",
+      "text": "Course outcomes loaded at San Diego City, Mesa and Miramar (2,229 courses)"
     },
     {
-      "at": "2026-10-13T07:45Z",
-      "text": "San Diego Miramar's ten aviation programs loaded, not yet confirmed (120 records); the display build covers all 2,203 records"
+      "at": "2026-10-13T12:16Z",
+      "text": "Chaffey's course outcomes found to be kept off its public reports"
     },
     {
-      "at": "2026-10-12T20:05Z",
-      "text": "San Diego Mesa's 166 records loaded, not yet confirmed, and the page's display build covers all 2,181 records"
+      "at": "2026-10-13T14:22Z",
+      "text": "Coastline read with two catalog reader fixes, extraction under way"
     },
     {
-      "at": "2026-10-12T20:47Z",
-      "text": "Each college's registry row gained course outline fields (Open Asks Sheet 70 card 1)"
-    },
-    {
-      "at": "2026-10-12T21:43Z",
-      "text": "The course outline census read all 118 colleges: a public course outline at 32, with outcomes printed at 18"
-    },
-    {
-      "at": "2026-10-12T22:05Z",
-      "text": "The course outline fields filled for all 118 colleges"
-    },
-    {
-      "at": "2026-10-12T22:00Z",
-      "text": "Riverside's course index: a public outline for 1,605 of the 1,648 courses in its three colleges' records"
-    },
-    {
-      "at": "2026-10-12T22:25Z",
-      "text": "Riverside's course index, the course outline fields and the last checkpoint merged"
+      "at": "2026-10-13T14:35Z",
+      "text": "Bakersfield read through the eLumen catalog's own page calls, extraction under way"
     }
   ],
   "headline": [

@@ -1,0 +1,152 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "42034",
+ "shape": "noncredit",
+ "title": "College and Academic Writing Success",
+ "award": "Noncredit program",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/college-and-academic-writing-success-certificate-of-competency-summer-2022",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5258,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5258,
+    "output_tokens": 1118,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1118,
+  "output_tokens_details": {
+   "thinking_tokens": 374
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04339,
+ "ms": 11290,
+ "seconds": 11.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    27.0,
+    27.0
+   ],
+   "stated": [
+    27.0,
+    27.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "College and Academic Writing Success Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": 27,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Upon successful completion of the program the student will be able to successfully navigate both on-campus and online resources.",
+    "Upon successful completion of the program the student will be able to choose and apply essential tools and strategies necessary to support independent learning to reach their goals of certification, graduation, and/or transfer.",
+    "Upon successful completion of the program, the student will be able to comprehend texts by actively reading, taking notes, and recognizing structural elements (e.g. thesis statements, topic sentences, and supporting details).",
+    "Upon successful completion of the program,the student will recognize and employ an understanding of the writing process, including pre-writing, outlining, and paragraph development."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 27,
+     "max": 27
+    },
+    "courses": [
+     {
+      "code": "ACDVB55NC",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLB99NC",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit program counted in hours: the catalog states 'Core Courses-27 hours (Credits listed are in hours)'; block total printed as '27 - 0' and course hours as '9 - 0' and '18 - 0', read as 27, 9 and 18 hours with the trailing 0 treated as a units column artifact rather than a range.",
+   "Codes are printed without a space (ACDVB55NC, ENGLB99NC); they match closed-list ACDV B55NC and ENGL B99NC.",
+   "The heading names a Certificate of Competency, while the body text says 'Certificate of Completion' and the description calls it the 'Student Success with Academic Reading and Writing Emphasis Certificate'; reviewer may wish to confirm the award type.",
+   "Source URL references 'summer-2022' although the catalog is labeled 2026-2027."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

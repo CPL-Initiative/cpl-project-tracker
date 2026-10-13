@@ -1,0 +1,319 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "02048",
+ "shape": "degree",
+ "title": "Radiologic Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/radiologic-technology-associate-of-science-summer-2019",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5877,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5877,
+    "output_tokens": 2503,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2503,
+  "output_tokens_details": {
+   "thinking_tokens": 852
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07357,
+ "ms": 21411,
+ "seconds": 21.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 14,
+   "codes": [
+    "RADTB10",
+    "RADTB11",
+    "RADTB12",
+    "RADTB13",
+    "RADTB1B",
+    "RADTB2A",
+    "RADTB2B",
+    "RADTB30",
+    "RADTB3A",
+    "RADTB3B",
+    "RADTB4B",
+    "RADTB5",
+    "RADTB6",
+    "RADTB9A"
+   ],
+   "flagged": [
+    "RADTB10",
+    "RADTB11",
+    "RADTB12",
+    "RADTB13",
+    "RADTB1B",
+    "RADTB2A",
+    "RADTB2B",
+    "RADTB30",
+    "RADTB3A",
+    "RADTB3B",
+    "RADTB4B",
+    "RADTB5",
+    "RADTB6",
+    "RADTB9A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    61.5,
+    61.5
+   ],
+   "stated": [
+    61.5,
+    61.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 24,
+   "courses": 0,
+   "count": 24,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Radiologic Technology Associate of Science",
+   "measure": "units",
+   "total_units": {
+    "min": 61.5,
+    "max": 61.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "be clinically competent.",
+    "apply positioning skills.",
+    "select exposure factors.",
+    "utilize radiation protection.",
+    "demonstrate and employ knowledge of equipment operation.",
+    "develop critical thinking skills.",
+    "demonstrate the ability to formulate technical factors.",
+    "adapt standard procedures for non-routine patients.",
+    "demonstrate independent judgment.",
+    "critique images to determine diagnostic quality.",
+    "communicate e ectively.",
+    "demonstratee ectivecommunication.",
+    "use correct pronunciation.",
+    "model professionalism.",
+    "demonstrate knowledge of professional imaging organizations.",
+    "summarize the value of life-long learning.",
+    "demonstrate work ethics.",
+    "the Program will graduate entry-level radiographers.",
+    "Program graduates will pass the ARRT exam on the 1st attempt.",
+    "Graduates seeking employment will obtain employment within 12 months of graduation.",
+    "Students will successfully complete each course.",
+    "Students will successfully complete the program.",
+    "Graduates will be satisfied with their education.",
+    "Employers will be satisfied with graduate performance."
+   ],
+   "careers": [
+    "radiographers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "RADT B1A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT B1B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RADT B4A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT B2A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RADT B3A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RADT B4B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RADT B12",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RADT B2B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RADT B3B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RADT B6",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RADT B7",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT B2C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT B5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RADT B10",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RADT B9A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RADT B11",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RADT B13",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RADT B30",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints course codes run together (e.g. 'RADTB1A'); they are written here with a space between subject and number ('RADT B1A') to match the closed list.",
+   "RADT B7 is printed with 7 units in the catalog, while the state file stores 6.5 units.",
+   "The program total of 61.5 is printed for the whole requirement; the nested 'Complete all of the following' block prints no separate total, so its stated is left null.",
+   "The Program Learning Outcomes are printed as five numbered outcomes, each with bulleted sub-outcomes; each numbered outcome and each bullet is recorded as its own entry in printed order. Two printed lines held two bullets each and were split at the bullet.",
+   "Outcome text keeps the source's apparent ligature loss ('e ectively', 'demonstratee ectivecommunication') exactly as printed; the intended word is likely 'effectively'.",
+   "The source URL slug references 'summer-2019' although the catalog year is 2026-2027; the reviewer may wish to confirm the page reflects the current year. Labor data cited (2015, 2016-2021) is dated.",
+   "The text begins mid-sentence ('cluding prerequisite coursework'), so earlier description content was cut off and may have held additional information."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

@@ -1,0 +1,211 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "01997",
+ "shape": "degree",
+ "title": "Accounting",
+ "award": "A.A. Degree",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/accounting-associate-of-arts-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5557,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5557,
+    "output_tokens": 1369,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1369,
+  "output_tokens_details": {
+   "thinking_tokens": 339
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04961,
+ "ms": 11884,
+ "seconds": 13.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.5,
+    28.5
+   ],
+   "stated": [
+    28.5,
+    28.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Accounting Associate of Arts",
+   "measure": "units",
+   "total_units": {
+    "min": 28.5,
+    "max": 28.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "At the conclusion of this program, the student should be able to analyze the steps to record, classify, summarize, and report a company's business transactions.",
+    "At the conclusion of this program, the student should be able to evaluate financial statements in conformity with United States Generally Accepted Accounting Principles (GAAP).",
+    "At the conclusion of this program, the student should be able to analyze and apply the role of ethics and standards of professional conduct in accounting.",
+    "At the conclusion of this program, the student should be able to apply management functions through budgeting, planning, and decision-making.",
+    "At the conclusion of this program, the student should be able to apply the principles of business, business law, and economics to accounting functions."
+   ],
+   "careers": [
+    "accounting positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28.5,
+     "max": 28.5
+    },
+    "courses": [
+     {
+      "code": "BSADB1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSADB54",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSADB55",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSADB40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSADB51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSADB18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSADB20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSADB5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSADB64",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSADB6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog phrases the Core Courses block as 'Complete the following number of credits: 28.5'; the listed courses sum to exactly 28.5 units, so every course is required and the block is recorded as 'all'.",
+   "The catalog prints codes without a space (e.g. BSADB1); these match the closed list's 'BSAD B1' style codes and are not treated as catalog additions. BSADB40 matches the closed list entry 'BSADB40' (units not stored in the state file; catalog prints 3).",
+   "No general education pattern is named in the text; the degree's 'graduation requirements' are referenced only generally.",
+   "Career entry 'accounting positions' is taken from the description ('seek accounting positions in business, industry, or government')."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

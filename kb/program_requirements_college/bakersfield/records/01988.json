@@ -1,0 +1,253 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "01988",
+ "shape": "degree",
+ "title": "Environmental Horticulture",
+ "award": "A.S. Degree",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/environmental-horticulture-associate-of-science-spring-2019",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5632,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5632,
+    "output_tokens": 1830,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1830,
+  "output_tokens_details": {
+   "thinking_tokens": 750
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05913,
+ "ms": 15116,
+ "seconds": 19.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 3,
+   "share": 0.667,
+   "missing": [
+    "ORNHB2"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 9,
+   "codes": [
+    "CRPSB3",
+    "CRPSB5",
+    "ORNHB12",
+    "ORNHB3",
+    "ORNHB36",
+    "ORNHB4",
+    "ORNHB6",
+    "ORNHB7",
+    "SOILB1"
+   ],
+   "flagged": [
+    "CRPSB3",
+    "CRPSB5",
+    "ORNHB12",
+    "ORNHB3",
+    "ORNHB36",
+    "ORNHB4",
+    "ORNHB6",
+    "ORNHB7",
+    "SOILB1"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.0,
+    33.0
+   ],
+   "stated": [
+    33.0,
+    33.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 10,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Environmental Horticulture Associate of Science",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate managerial and leadership abilities in environmental horticulture classes for employment that will enhance opportunities and success in the horticulture industry in the 21st century",
+    "Master academic proficiency and demonstrate specific skills within environmental horticulture disciplines needed for employment.",
+    "Master skills needed for baccalaureate level education or obtain a certificate."
+   ],
+   "careers": [
+    "Arborist",
+    "Floral Designer or Florist",
+    "Greenhouse Grower",
+    "Irrigation Specialist",
+    "Landscape Architect",
+    "Landscape Contractor",
+    "Pest Control Advisor",
+    "Plant Breeder",
+    "Sports Turf Superintendent",
+    "Urban Forester"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete the following number of credits: 33",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 33,
+     "max": 33
+    },
+    "courses": [
+     {
+      "code": "CRPSB3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CRPSB5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ORNHB1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ORNHB3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ORNHB4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ORNHB6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ORNHB7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ORNHB8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ORNHB12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ORNHB36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOILB1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ORNH B2",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog phrases the block as 'Complete the following number of credits: 33'; the 11 listed courses at 3 units each total exactly 33, so the block is recorded as 'all' (every course required).",
+   "Codes are written as the catalog prints them, without a space (e.g., ORNHB1 = closed-list ORNH B1, ORNHB8 = ORNH B8); these are matched to the closed list and not flagged as additions.",
+   "Outcome 2 is printed with the list number '2' lacking a period; the number was omitted.",
+   "The 'Bachelors of Science Degree Names' list was not treated as careers.",
+   "General education is referenced only as 'graduation requirements'; no GE pattern is named."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

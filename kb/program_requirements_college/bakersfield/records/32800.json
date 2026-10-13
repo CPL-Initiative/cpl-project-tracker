@@ -1,0 +1,279 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "32800",
+ "shape": "adt",
+ "title": "Spanish",
+ "award": "A.A- T Degree",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/spanish-associate-in-arts-for-transfer-fall-2025",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6009,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6009,
+    "output_tokens": 3063,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3063,
+  "output_tokens_details": {
+   "thinking_tokens": 1135
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0853,
+ "ms": 24431,
+ "seconds": 24.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "SPANB1",
+    "SPANB2"
+   ],
+   "flagged": [
+    "SPANB1",
+    "SPANB2"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Spanish Associate in Arts for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Upon successful completion of the program, the student will be able to understand spoken Spanish at the appropriate level of those students who are seeking an AA-T degree in Spanish.",
+    "Comprehension: Students will demonstrate the ability to understand spoken Spanish as evident in responses through prepared dialogs and presentations as well as impromptu conversations with other students and the professor. Students will also demonstrate understanding of spoken Spanish on graded exams and directed interview questions.",
+    "Upon successful completion of the program, the student will be able to write using appropriate grammatical forms as well as vocabulary appropriate to the level of those students who are seeking an AA-T degree in Spanish.",
+    "Writing: Students will demonstrate the ability to write using appropriate grammatical forms as well as vocabulary appropriate to the level of those students who are seeking an AA-T degree in Spanish. They will show this through informal writing and formal writing.",
+    "Upon successful completion of the program, the student will be able to exhibit reading comprehension of informal and formal written texts including informal letters or short essays as well as literature and news articles from various parts of the Spanish-speaking world.",
+    "Reading: Students will exhibit reading comprehension of informal and formal written texts including informal letters or short essays as well as literature and news articles from various parts of the Spanish speaking world.",
+    "Upon successful completion of the program, the student will be able to speak using appropriate grammatical forms as well as vocabulary appropriate to the level of those students who are seeking an AA-T degree in Spanish.",
+    "Upon successful completion of the program, the student will have developed a deeper understanding and appreciation of Hispanic cultures as they create connections between language acquisition and cultural context."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "SPANB1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPANB2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Intermediate Spanish I",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "SPANB3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANB35",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Intermediate Spanish II",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "SPANB4",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANB36",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGLB24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTB30A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTB30B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTB33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCIB36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCIB45",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTB37",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Codes are written as the catalog prints them without a space (e.g., SPANB1 = SPAN B1 in the closed list).",
+   "SPANB1 (Elementary Spanish I) and SPANB2 (Elementary Spanish II) are not in the closed list; recorded as catalog additions.",
+   "The Core Courses total of 16 units printed by the catalog covers SPANB1, SPANB2 plus the two nested 4-unit choices (Intermediate Spanish I and Intermediate Spanish II), which are recorded as separate blocks.",
+   "Catalog prints SOCIB45 with the title 'Minority Relations'; the closed list titles SOCI B45 'Sociology of Race and Ethnicity'. HISTB30A is printed as 'Early Chicano History' without '- pre 1848'.",
+   "List A includes a note: if a student places out of any core course(s) and is not awarded units, additional units are needed to reach at least 18 total units in the major (Title 5).",
+   "Outcomes text begins mid-sentence with a truncated fragment ('ons, impromptu conversations with other students and the professor.'), likely the end of a Speaking outcome; it is omitted because it is incomplete.",
+   "The outcomes list appears to interleave two numbered lists (PLO statements beginning 'Upon successful completion...' and assessment-style statements labeled Comprehension/Writing/Reading), with duplicate numbers; all complete entries are recorded in printed order. Reviewer should check which list is the official PLO set.",
+   "No GE pattern is named in the provided text."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

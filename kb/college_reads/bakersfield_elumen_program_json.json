@@ -1,0 +1,26 @@
+{
+ "_readme": "S380 SkyAlder, 2026-10-13. The first eLumen capture at Bakersfield (run 38393763513) reads each program page rendered and was still reading at 2.5 hours: every view draws its content from one ~4.5 MB call to api-prod.elumenapp.com/catalog/sites/publish/<catalog>,<path>?tenant=<host> and then waits for the page to settle. This read loads one program page two ways: rendered with \"network\": true (does a program page make any call beyond the publish one?), and the publish call itself (does its html carry the program's requirements, and what surrounds them?). Two loads, no model call.",
+ "college": "Bakersfield College",
+ "questions": {
+  "program_calls": "Which calls a program page makes while it loads, beyond the publish call.",
+  "publish_shape": "Whether the publish call's html holds the program's requirements and course codes, and what else it carries (styles, the side menu)."
+ },
+ "keywords": [
+  "AGRI? ?B?\\d+",
+  "[Rr]equire",
+  "[Uu]nits",
+  "[Cc]hoose|[Ss]elect|[Cc]omplete",
+  "<style|</style>|<nav|class=\\\\\"side"
+ ],
+ "pages": [
+  {
+   "answers": ["program_calls"],
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/agricultural-education-associate-of-science-fall-2026",
+   "network": true
+  },
+  {
+   "answers": ["publish_shape"],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/2026-2027-Catalog,program,agricultural-education-associate-of-science-fall-2026?tenant=bakersfield.elumenapp.com&api=https://api-prod.elumenapp.com:443"
+  }
+ ]
+}

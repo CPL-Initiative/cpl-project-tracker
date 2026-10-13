@@ -1,10 +1,22 @@
 {
- "_what": "The harvest registry's catalog and map columns for the harvest's thirteen colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City and San Diego Mesa), as the ROEP display builder reads them (kb/_build_roep_display.py). program_source_registry is public-read; this file is a dated copy so the builder runs offline and its output is reproducible.",
+ "_what": "The harvest registry's catalog and map columns for the harvest's fifteen colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City San Diego Mesa, Bakersfield and Coastline), as the ROEP display builder reads them (kb/_build_roep_display.py). program_source_registry is public-read; this file is a dated copy so the builder runs offline and its output is reproducible.",
  "_source": "public.program_source_registry (census columns written by the weekly census; the four sequence_* columns written by S326's receipts)",
- "_read_at": "2026-10-12",
- "_read_by": "SkyCypress (S373) through the Supabase MCP: San Diego Mesa added. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey and San Diego City added. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added. Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley and Norco added; Riverside City re-read, unchanged. Earlier: SkyLedger (S340) through the Supabase MCP: all seven rows read; the pilot's five unchanged since 2026-10-04, Santa Monica and Irvine Valley added",
+ "_read_at": "2026-10-13",
+ "_read_by": "SkyRowan (S381) through the Supabase MCP: Bakersfield and Coastline added; San Diego Mesa re-read, unchanged. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey and San Diego City added. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added. Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley and Norco added; Riverside City re-read, unchanged. Earlier: SkyLedger (S340) through the Supabase MCP: all seven rows read; the pilot's five unchanged since 2026-10-04, Santa Monica and Irvine Valley added",
  "_refresh": "Reread when the census applies or a sequence receipt lands: select the columns below for the harvest's colleges and file them here.",
  "colleges": {
+  "Bakersfield College": {
+   "catalog_platform": "elumen",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc",
+   "census_run_id": "census-20261011T162433Z-s4of4",
+   "sequence_source": "ppm",
+   "sequence_access": "refused",
+   "sequence_host": "programmap.bakersfieldcollege.edu",
+   "sequence_url": "https://www.bakersfieldcollege.edu/academics/program-mapper.html",
+   "sequence_note": "programmap.bakersfieldcollege.edu answered 403 Forbidden to the CPL Initiative's reader on 2026-10-08 (one load), as every Program Mapper host read so far has: the refusal is the mapper service's. The college's own Program Pathways Mapper page answers and says each program shows a semester-by-semester path. The reader keeps its name and never retries a refusal another way. It looks for the sequence on the college's own pages and in its catalog (Sam, open-asks sheet 29 card 3, 2026-10-04).",
+   "sequence_checked_run": "college-page-read run 37810652946"
+  },
   "Cerritos College": {
    "catalog_platform": "courseleaf",
    "catalog_year": "2026-2027",
@@ -22,6 +34,18 @@
    "catalog_year": "2026-2027",
    "catalog_url": "https://chaffey.curriqunet.com/catalog/iq/18783",
    "census_run_id": "census-20261011T162433Z-s2of4",
+   "sequence_source": "none_found",
+   "sequence_access": null,
+   "sequence_host": null,
+   "sequence_url": null,
+   "sequence_note": null,
+   "sequence_checked_run": null
+  },
+  "Coastline Community College": {
+   "catalog_platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.cccd.edu/coastline/",
+   "census_run_id": "census-20261011T162427Z-s3of4",
    "sequence_source": "none_found",
    "sequence_access": null,
    "sequence_host": null,

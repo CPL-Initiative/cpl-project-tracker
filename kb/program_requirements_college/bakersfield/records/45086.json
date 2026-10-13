@@ -1,0 +1,151 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "45086",
+ "shape": "noncredit",
+ "title": "Artificial Intelligence (AI) Proficiency for College and Career",
+ "award": "Noncredit program",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/artificial-intelligence-ai-proficiency-for-college-and-career-certificate-of-competency-summer-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5203,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5203,
+    "output_tokens": 1127,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1127,
+  "output_tokens_details": {
+   "thinking_tokens": 484
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04335,
+ "ms": 10258,
+ "seconds": 10.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Artificial Intelligence (AI) Proficiency for College and Career Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Upon successful completion of the program, the student will be able to effectively create and evaluate AI-generated content",
+    "Upon successful completion of the program, the student will be able to apply AI tools to support learning and research and properly cite AI-based information sources.",
+    "Upon successful completion of the program, the student will be able to demonstrate the AI literacy necessary to excel in the emerging workforce."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "ACTC B68NC",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIBR B62NC",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Competency counted in hours: the description says '18-hour certificate' and the block reads 'Core Courses-18 hours (Credits listed are in hours)'. The catalog prints totals as '18 - 0' and course values as '9 - 0', which were read as 18 hours and 9 hours each, not as a range.",
+   "The catalog prints the codes without a space ('ACTCB68NC', 'LIBRB62NC'). They were recorded with the closed-list spacing (ACTC B68NC, LIBR B62NC) as the same courses.",
+   "The first program learning outcome is copied as printed, without a final period.",
+   "The description names no specific careers. It refers only generally to 'an emerging workforce' and 'workforce skills', so careers is left empty."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

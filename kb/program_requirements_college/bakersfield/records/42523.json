@@ -1,0 +1,365 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "42523",
+ "shape": "degree",
+ "title": "Research Laboratory Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/research-laboratory-technology-associate-of-science-summer-2025",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6374,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6374,
+    "output_tokens": 3563,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3563,
+  "output_tokens_details": {
+   "thinking_tokens": 1430
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09676,
+ "ms": 28647,
+ "seconds": 29.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 21,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    47.0,
+    48.5
+   ],
+   "stated": [
+    36.0,
+    37.0
+   ],
+   "why": [
+    "the blocks sum to 47.0-48.5; the catalog states 36.0-37.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Research Laboratory Technology Associate of Science",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 37
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Upon successful completion of the program, the student will be able to apply logical quantitative and qualitative reasoning in solving problems.",
+    "Upon successful completion of the program, the student will be able to demonstrate how to use laboratory techniques in biology and general chemistry.",
+    "Upon successful completion of the program, the student will be able to present experimental results and communicate demonstrable quantitative or qualitative limitations of the laboratory experiment.",
+    "Upon successful completion of the program, the student will be able to apply basic principles of laboratory safety and/or regulatory guidance on occupational safety when working in a laboratory environment."
+   ],
+   "careers": [
+    "technician careers in chemical, biological, and environmental testing and compliance",
+    "sustainable energy careers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 27,
+     "max": 27.5
+    },
+    "courses": [
+     {
+      "code": "CHEM B2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM B1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM B1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL B3B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Precalculus I",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4.5
+    },
+    "courses": [
+     {
+      "code": "MATH B1A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH B1AL",
+        "units": 4.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH B1B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9.5
+    },
+    "courses": [
+     {
+      "code": "BIOL B3A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL B8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL B16",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENER B22",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FDST B3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Geology",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "GEOL B10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL B10L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Occupational Health",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "OSRM B12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OSRM B20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Physics",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "PHYS B2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS B4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Statistics",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4.5
+    },
+    "courses": [
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": 4.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOIL B1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space (e.g., CHEMB2A); they are recorded in the closed list's spaced form (CHEM B2A) for matching.",
+   "The eLumen page flattens nested rules, so which sub-rules belong to Core courses (Total 27-27.5) versus List A (Total 9-9.5) is unclear. The four required core courses plus Precalculus I total only 23-23.5, so another 4 units (perhaps Statistics or Physics) may belong to the core. Geology, Occupational Health, Physics and Statistics may instead be options counted toward List A. A reviewer should check the nesting.",
+   "Geology prints 'Complete the following number of rules: 3-4' with a Total of 4. It is recorded as requiring both GEOL B10 and GEOL B10L (4 units), but the rule is ambiguous.",
+   "Precalculus I lists MATH B1A, MATH B1AL and MATH B1B under 'Complete 4-4.5 credits'. MATH B1AL is recorded as the lab-version alternative to MATH B1A, with MATH B1B as a separate choice.",
+   "SOIL B1 (3 units) is printed at the end of the Statistics rule (4-4.5 units), where it seems out of place. It may belong to List A.",
+   "STAT C1000E is recorded as an alternative to STAT C1000, since both are titled 'Introduction to Statistics'.",
+   "The section heading's catalog URL references 'summer-2025' while the requested catalog year is 2026-2027.",
+   "Each printed outcome begins with 'Upon successful completion of the program, the student will be able to'. That phrase is part of each numbered item, so it is kept verbatim.",
+   "No general education pattern is named in the text."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

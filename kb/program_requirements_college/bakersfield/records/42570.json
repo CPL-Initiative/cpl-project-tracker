@@ -1,0 +1,243 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "42570",
+ "shape": "certificate",
+ "title": "Environmental Resource Management",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/environmental-resource-management-certificate-of-achievement-summer-2023",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5625,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5625,
+    "output_tokens": 1811,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1811,
+  "output_tokens_details": {
+   "thinking_tokens": 593
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05872,
+ "ms": 14435,
+ "seconds": 14.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "FOREB11",
+    "FOREB2"
+   ],
+   "flagged": [
+    "FOREB11",
+    "FOREB2"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.5,
+    30.5
+   ],
+   "stated": [
+    30.5,
+    30.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Environmental Resource Management Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 30.5,
+    "max": 30.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Upon successful completion of the program, the student will demonstrate critical-thinking problem-solving skills in conservation, sustainability, and management of the environment.",
+    "Upon successful completion of the program, the student will effectively communicate scientific and technical knowledge in a professional manner.",
+    "Upon successful completion of the program, the student will demonstrate competency in scientific and technical knowledge related to environmental resource management.",
+    "Upon successful completion of the program, the student will demonstrate proficiency in quantitative skills and information management of environmental resources specific to their chosen field.",
+    "Upon successful completion of the program, the student will demonstrate an understanding of their professional and ethical responsibilities as leaders in their chosen field and stewards of the environment."
+   ],
+   "careers": [
+    "forestry",
+    "natural resources",
+    "wildlife",
+    "environmental technician",
+    "parks and outdoor recreation",
+    "fisheries",
+    "rangeland",
+    "watershed technician positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 27.5,
+     "max": 27.5
+    },
+    "courses": [
+     {
+      "code": "AGRIB5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ERSCB10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FOREB6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FOREB7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FOREB11",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOGB1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOLB10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MCAGB5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOILB1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "The Environment",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "FOREB2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FOREB8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints course codes without a space between subject and number (e.g., AGRIB5); these were recorded as printed and matched to the closed list's spaced codes (AGRI B5, etc.).",
+   "FOREB11 (Geographic Information Systems in Natural Resources, 3.5) and FOREB2 (Natural Resources and the Environment, 3) are not in the closed list and are marked as catalog additions.",
+   "The career phrase 'rangeland and watershed technician positions' was split into 'rangeland' and 'watershed technician positions'; a reviewer may prefer to read it as one entry or as rangeland technician and watershed technician.",
+   "The certificate total of 30.5 is stated by the catalog; the Core Courses block states 27.5 and The Environment block states 3."
+  ]
+ },
+ "extracted_run": "38414480070"
+}
