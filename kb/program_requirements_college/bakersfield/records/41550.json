@@ -1,0 +1,160 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "41550",
+ "shape": "noncredit",
+ "title": "School Food Service",
+ "award": "Noncredit program",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/school-food-service-certificate-of-completion-summer-2021",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5196,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5196,
+    "output_tokens": 1022,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1022,
+  "output_tokens_details": {
+   "thinking_tokens": 365
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04122,
+ "ms": 9316,
+ "seconds": 9.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "School Food Service Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Upon successful completion of the program, the student will be able to apply food safety and sanitation practices in a school kitchen.",
+    "Upon successful completion of the program, the student will be able to apply basic kitchen skills in a school kitchen.",
+    "Upon successful completion the program, the student will be able to apply customer service practices, team work, and point of sale system knowledge in a school kitchen."
+   ],
+   "careers": [
+    "lead and management positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses-36 hours (Credits listed are in hours)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 36
+    },
+    "courses": [
+     {
+      "code": "FDSVB71NC",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FDSVB72NC",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FDSVB73NC",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space (FDSVB71NC, FDSVB72NC, FDSVB73NC); these match closed-list FDSV B71NC, FDSV B72NC, FDSV B73NC.",
+   "The catalog labels the total as 'credits' (36), but the block heading states 'Credits listed are in hours', so the award is recorded in hours.",
+   "Outcome 3 is copied as printed, including the missing 'of' in 'Upon successful completion the program'.",
+   "The career entry 'lead and management positions' comes from the description ('advance into lead and management positions'). It is a general reference to positions; a reviewer may judge whether it counts as a named career."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

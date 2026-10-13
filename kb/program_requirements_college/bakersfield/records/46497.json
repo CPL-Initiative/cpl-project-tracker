@@ -1,0 +1,194 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "46497",
+ "shape": "certificate",
+ "title": "Institutional Food Service Management",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/institutional-food-service-management-certificate-of-achievement-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5648,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5648,
+    "output_tokens": 1139,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1139,
+  "output_tokens_details": {
+   "thinking_tokens": 202
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04537,
+ "ms": 11888,
+ "seconds": 12.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    31.0
+   ],
+   "stated": [
+    18.0,
+    31.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Institutional Food Service Management Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 31
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "At the conclusion of this program, the student should be able to apply food safety and sanitation standards to institutional food service operations in compliance with regulatory requirements.",
+    "At the conclusion of this program, the student should be able to design and execute large-scale food production and service using standardized recipes, batch cooking methods, culinary math, and efficient workflow.",
+    "At the conclusion of this program, the student should be able to demonstrate the use of effective communication, teamwork, leadership, training, point-of-sale operations, and professional behavior within institutional kitchen environments."
+   ],
+   "careers": [
+    "Food Service Worker",
+    "Institutional Cook",
+    "Dietary Aide",
+    "Kitchen Supervisor",
+    "Food Service Manager",
+    "Food and Beverage Director",
+    "Program Coordinator"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 31
+    },
+    "courses": [
+     {
+      "code": "CULNB9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULNB10",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULNB11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULNB12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULNB21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULNB48WE",
+      "units": 1,
+      "units_max": 14,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULNB30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space (e.g., CULNB10); these were matched to the closed-list codes with a space (CULN B10, etc.) as the same courses, so none is marked a catalog addition.",
+   "Stated total is 18-31 units, while the award is described as requiring 16S/24Q to fewer than 30S units; the upper end (31) exceeds that range because CULNB48WE is printed as 1-14 units. Reviewer may want to check.",
+   "Closed list stores CULN B48WE as 1 unit; catalog prints 1 - 14.",
+   "The Mandatory Fees paragraph says a California Food Manager certificate is required for 'degree completion' although this section is a Certificate of Achievement; recorded as printed, not as a course requirement."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

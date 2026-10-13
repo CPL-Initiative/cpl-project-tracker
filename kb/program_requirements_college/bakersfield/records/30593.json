@@ -1,0 +1,316 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "30593",
+ "shape": "adt",
+ "title": "Psychology",
+ "award": "A.A- T Degree",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/psychology-associate-in-arts-for-transfer-fall-2025",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6283,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6283,
+    "output_tokens": 3516,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3516,
+  "output_tokens_details": {
+   "thinking_tokens": 1460
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09545,
+ "ms": 29783,
+ "seconds": 30.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    23.0,
+    24.5
+   ],
+   "stated": [
+    20.0,
+    21.5
+   ],
+   "why": [
+    "the blocks sum to 23.0-24.5; the catalog states 20.0-21.5"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Psychology Associate in Arts for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 21.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": "CalGETC",
+   "outcomes": [
+    "Demonstrate an understanding of the major concepts of behavior, theoretical perspectives, empirical findings, and historical trends in psychology. Assessment:Exams, quizzes, papers, research and presentations.",
+    "Upon successful completion of the program, the student will be able to organize and differentiate the major concepts, theoretical perspectives, empirical findings, and historical trends in psychology.",
+    "Demonstrate an understanding of basic research methods and information competency in obtaining relevant information about the science and profession of psychology. Assessment:Exams, quizzes, papers, research and presentations.",
+    "Upon successful completion of the program, the student will be able to select and implement research methods used in psychology, including research design, data analysis, and interpretation.",
+    "Exhibit an awareness of the ethical and professional factors related to the diversity of individuals and groups within the discipline of psychology. Assessment:Exams, quizzes, papers, research and presentations.",
+    "Upon successful completion of the program, the student will be able to articulate and apply psychological principles to individual, interpersonal, group and societal issues.",
+    "Upon successful completion of the program, the student will be able to distinguish between and execute the value of ethical behavior in all aspects of the science and practice of psychology."
+   ],
+   "careers": [
+    "research",
+    "teaching",
+    "counseling",
+    "working in clinical settings"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 11,
+     "max": 11.5
+    },
+    "courses": [
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC B6",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Statistics Requirement",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4.5
+    },
+    "courses": [
+     {
+      "code": "PSYC B5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000E",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "PSYC B1B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL B11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST B",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PSYC B40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC B30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Social Psychology",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PSYC B20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI B20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST C",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PSYC B33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC B3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC B26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC B46",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes without a space (e.g. 'PSYCC1000', 'STATC1000E'); recorded with a space between subject and number to match the closed list.",
+   "The Core Courses stated total (11-11.5) appears to include the nested Statistics Requirement (PSYC C1000 3 + PSYC B6 4 + statistics 4-4.5); the two directly listed core courses total 7 units.",
+   "Stated program total is 20-21.5 units, but the blocks as printed sum to 23-24.5 (core 11-11.5 + List A 3-4 + List B 3 + Social Psychology 3 + List C 3). The flattened page structure likely hides nesting (e.g., Social Psychology may be an option inside LIST B or LIST C). Reviewer should verify which lists are separate requirements.",
+   "The Social Psychology block (PSYC B20 or SOCI B20) may function as a single cross-listed choice; recorded as its own choose-3-units block as printed.",
+   "Program Learning Outcomes section prints two interleaved numbered lists (three 'Demonstrate/Exhibit...' outcomes with 'Assessment:' text, and four 'Upon successful completion...' outcomes); all seven recorded verbatim in printed order, including the appended 'Assessment:' text. Reviewer may wish to confirm whether both sets are current.",
+   "Catalog text begins mid-sentence ('o the foundational knowledge for positions in research and teaching, counseling, and working in clinical settings.'); program description is truncated, so careers were read from this fragment only.",
+   "Source URL refers to a 'fall-2025' program version within the 2026-2027 catalog; reviewer may confirm catalog year alignment."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

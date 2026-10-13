@@ -1,0 +1,38 @@
+{
+ "_readme": "S380 SkyAlder, 2026-10-13. Phase 2's next platform is eLumen: 20 registry colleges keep their catalog there, five of them Leading (Bakersfield, Cabrillo, Modesto, Palo Verde, Santiago Canyon), and the college read enumerates only CourseLeaf and curriQunet. curriQunet's catalog turned out to be data its own scripts fetch (S357, rccd_curriqunet_outline); this read asks the same of eLumen. The catalog front page names Search, Courses and Programs; census run 5 read a course at /course/aslb3. Three page loads with \"network\": true, no model call.",
+ "college": "Bakersfield College",
+ "questions": {
+  "catalog_source": "Which addresses the catalog's scripts fetch its navigation, program list and course list from, and in what shape.",
+  "program_list": "What the Programs view lists: each program's title, award, id or slug, and the address of its page.",
+  "course_source": "Which call delivers one course's outline, and whether it carries outcomes."
+ },
+ "keywords": [
+  "[Cc]ertificate",
+  "A\\.S\\.",
+  "A\\.A\\.",
+  "[Aa]ssociate",
+  "[Dd]egree",
+  "[Pp]rogram",
+  "[Uu]nits?",
+  "[Oo]utcome"
+ ],
+ "pages": [
+  {
+   "answers": ["catalog_source"],
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc",
+   "network": true,
+   "links": "program|course|search"
+  },
+  {
+   "answers": ["catalog_source", "program_list"],
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/programs",
+   "network": true,
+   "links": "program|degree|certificate"
+  },
+  {
+   "answers": ["course_source"],
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/course/aslb3",
+   "network": true
+  }
+ ]
+}

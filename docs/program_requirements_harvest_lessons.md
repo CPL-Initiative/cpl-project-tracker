@@ -727,3 +727,61 @@ The outcomes paragraph's settled parts:
 - **The table:** `apply_migration` timed out eight times on `chatbox/supabase_course_outcomes.sql` (S374 to S380)
   with nothing landing; Sam pasted it (Open Asks Sheet 72 card 1). A paste card is the route while the connector is
   down.
+
+## S380 SkyAlder (2026-10-13): course outcomes loaded at six colleges, the eLumen read, and two CourseLeaf misses
+
+- **The table landed by paste.** `apply_migration` timed out an eighth and a ninth time with nothing landing (no
+  migration since 23:19Z on 2026-10-12); Sam pasted `chatbox/supabase_course_outcomes.sql`. RCCD loaded (#2049,
+  2,665 rows) and SDCCD by college group (#2066, 2,229 rows): 4,894 rows, 16,626 SLOs. Sam asked how to stop
+  pasting; the runner-applied migration path (an access token secret, optional approval tap) waits on his answer.
+- **Merging main brought a guard the branch predated.** #2049's two outcomes workflows failed #2069's trigger-file
+  check after the merge; the gate was ported from #2066. A stacked PR's newer files win an add/add conflict once the
+  base's own commits never touched them (check `git log <fork>..<base> -- <files>` first).
+- **Chaffey's course outcomes are not public** (#2073): two dashboard reports (225, 1225), both objectives only; the
+  FAQ keeps CLOs in META CurriQunet and on syllabi. The registry note waits as a paste.
+- **eLumen is a single-page app read through its own calls.** Every view loads one ~4.5 MB publish call (styles, the
+  whole side menu, the page) and then settles; the rendered capture ran past 2.5 hours and was canceled. The menu's
+  own links load a page through `publish/content/<catalog>,<path>?tenant=<host>`, ~2 KB of HTML with the program's
+  heading, learning outcomes and requirements (reads 38392014238, 38413232841, 38413852584). Bakersfield prints
+  `AGRIB5`; `code_pattern` already matches the state's `AGRI B5`. Course pages print SLOs where the college shows
+  them (Palo Verde yes, Bakersfield no).
+- **Coastline found 29 of 159 programs, for two reasons that apply to every CourseLeaf college.** Its program pages
+  are addressed `.../business-as/index.html`, and `NOT_PROGRAM_PATH` dropped every `/index.html`, so only subject
+  pages were read (their Courses tab lists the subject's courses); and the link-search fallback accepted course
+  listings (`course-descriptions/credit-courses/re/`) at coverage 1.0. `dir_form()` and `link_page_ok()` fix both
+  (#2074). Earlier CourseLeaf colleges (Cerritos, Mt. San Antonio, Long Beach City) passed through the same link
+  search: their link-search records are worth one check for a course-listing source.
+- **Next college by tier:** no Leading college is left on a platform the reader handles except eLumen; among
+  Advancing CourseLeaf/curriQunet colleges Coastline (984 CPL students) leads, then Southwestern, Fresno City, Cypress.
+
+## S381 SkyRowan (2026-10-13): Bakersfield end to end, Coastline's second miss, Cabrillo's department menu, and the Progress cards
+
+- **Bakersfield, the first eLumen college, read to display in one session.** Read 38414480070 (S380): 231 of 241
+  with a list, 207 pass, $13.38. Load 38428412859 inserted 229 (09237 Animal Science A.S. and 09968 Human Services
+  A.A. place none of their courses). The builder's two dated reads gained Bakersfield and Coastline (Coastline ahead
+  of its load, so two branches would not both edit them); the per-college md5 over code|recs|exhibits|untitled
+  matched in SQL and over the filed rows. Display 38430743762 applied build `2121fcc84f86` to all 2,432 rows. Its
+  24 arithmetic failures are mostly transfer degrees whose blocks sum above the stated total (Psychology 30593,
+  Theatre Arts 32769): the mark of a choose-from-a-list block read as required. Filed on its procedure record v3.
+- **A fix that clears the visible failure is not the fix (Coastline).** S380's `dir_form()` left 24 of 159.
+  Every Coastline page's h1 is the banner "ACADEMIC CATALOGS", so the hidden-text heading rule refused every
+  program page whose requirements sit in a hidden tab; `drop_banner_h1()` reads the title instead (an h1 on half
+  the pages read, at least ten). That and `child_pages()` raised it to 32. Read 38437346167 then showed the sitemap
+  does list the program pages: the main pass reads them and still refuses most, while the link search takes the same
+  page at coverage 1.0. **The capture filed nothing about a refused page**, so each guess cost a 27-minute run;
+  `near_miss()` now files, for every not-found program, the page that names it best and the gate that refused it.
+  Read a capture's near misses before writing the next fix.
+- **A page read is the cheapest test of a theory.** Two loads, no model call, about two minutes on a runner: Cabrillo
+  (menu, then one department) and Coastline (the sitemap searched for known program addresses) each answered in one
+  read what a capture could not.
+- **eLumen menus differ.** Bakersfield's menu links programs (`<catalog>/program/<slug>`); Cabrillo's links
+  departments (`2026-2027/department/<slug>`), and each department's content call links its programs at the same
+  `program/<slug>` path. `el_department_slugs()` reads them when the menu names no program (#2078). Report keys
+  are overwritten by the rendered fallback when the fast read finds nothing: read the job log, not only the report.
+- **No course-listing record is live** at the earlier CourseLeaf colleges: Mt. San Antonio's six from
+  `adult-continuing-coursesaz/` were removed by S362 on Sheet 62 (handoff 381 priority 4, answered).
+- **A stash check can unstage a commit's code.** `git stash` then `git stash pop` without `--index` left the reader
+  unstaged, and the commit carried only the dependency map; the run dispatched on it was canceled and the code
+  pushed in a second commit. Pop with `--index`, and read `git show --stat HEAD` before dispatching a run on it.
+- **The Progress view's counts open their lists** (Sam, 2026-10-13, on his phone; #2077). A call with no answer link
+  named a question with nowhere to tap: `scripts/queue_status.py` now refuses one.

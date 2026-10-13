@@ -1,0 +1,2424 @@
+{
+ "college": "Bakersfield College",
+ "catalog_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc",
+ "platform": "elumen",
+ "catalog_year": "2026-2027",
+ "programs": 249,
+ "with_closed_list": 241,
+ "started": "2026-10-13T14:35:10Z",
+ "elumen": {
+  "catalog": "2026-2027-Catalog",
+  "read": "publish/content",
+  "menu_programs": 283,
+  "errors": [],
+  "program_pages": 283
+ },
+ "pages_read": 283,
+ "loads": 284,
+ "seconds": 1182.0,
+ "found": 231,
+ "by_method": {
+  "no_closed_list": 8,
+  "not_found": 8,
+  "page_claimed": 2,
+  "sitemap_page": 231
+ },
+ "shared_pages": {
+  "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/child-development-master-teacher-infant-toddler-certificate-of-achievement-summer-2019": [
+   "09258",
+   "11282"
+  ],
+  "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/elementary-teacher-education-integrated-programs-associate-in-arts-for-transfer-fall-2026": [
+   "33173",
+   "45618"
+  ],
+  "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/advanced-electrical-safety-and-arc-flash-certificate-of-completion-summer-2021": [
+   "40359",
+   "40393"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "02090",
+   "title": "Liberal Arts",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "36716",
+   "title": "California State University General Education Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "36745",
+   "title": "Intersegmental General Education (IGETC) for STEM",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "36746",
+   "title": "Intersegmental General Education (IGETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "43364",
+   "title": "Sheet Metal Apprenticeship",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "43365",
+   "title": "Electrician Apprenticeship",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "45809",
+   "title": "California General Education Transfer Curriculum (Cal-GETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "46263",
+   "title": "Basic First Aid and CPR",
+   "award": "Noncredit program"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "01987",
+   "title": "Plant Science",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/environmental-horticulture-associate-of-science-spring-2019"
+   ]
+  },
+  {
+   "control_number": "30711",
+   "title": "Communication",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/communication-studies-2-0-associate-in-arts-for-transfer-fall-2025",
+    "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/police-science-associate-of-science-fall-2025"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 8,
+  "0.8-1.0": 20,
+  "1.0": 203
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 231,
+  "list": [
+   {
+    "control_number": "01988",
+    "title": "Environmental Horticulture",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/environmental-horticulture-associate-of-science-spring-2019",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01992",
+    "title": "Architecture/Architectural Drafting",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/architecture-architectural-drafting-associate-of-science-summer-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01997",
+    "title": "Accounting",
+    "award": "A.A. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/accounting-associate-of-arts-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02004",
+    "title": "Administrative Office Assistant",
+    "award": "A.A. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/administrative-office-assistant-associate-of-arts-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02010",
+    "title": "American Sign Language",
+    "award": "A.A. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/american-sign-language-associate-of-arts-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02014",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/engineering-associate-of-science-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02015",
+    "title": "Industrial Technology: Electronics",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/electronics-associate-of-science-summer-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02027",
+    "title": "Industrial Technology: Industrial Drawing",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/industrial-drawing-associate-of-science-summer-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02029",
+    "title": "Manufacturing Technology",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/manufacturing-technology-associate-of-science-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02031",
+    "title": "Welding",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/welding-associate-of-science-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02044",
+    "title": "Registered Nursing",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/registered-nursing-associate-of-science-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02045",
+    "title": "Vocational Nursing",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/vocational-nursing-program-certificate-of-achievement-summer-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02048",
+    "title": "Radiologic Technology",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/radiologic-technology-associate-of-science-summer-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02068",
+    "title": "Criminal Justice",
+    "award": "A.A. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/criminal-justice-associate-of-arts-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02069",
+    "title": "Correctional Administration",
+    "award": "A.A. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/correctional-administration-associate-of-arts-fall-2025",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02081",
+    "title": "Culinary Arts",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/culinary-arts-associate-of-science-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09237",
+    "title": "Animal Science",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/registered-veterinary-technicians-job-skills-certificate-summer-2019",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09241",
+    "title": "Bookkeeping",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/bookkeeping-certificate-of-achievement-spring-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09243",
+    "title": "Engineering Technology",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/engineering-technology-associate-of-science-spring-2020",
+    "coverage": 0.861,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09244",
+    "title": "Woodworking / Cabinetmaking",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/woodworking-cabinetmaking-associate-of-science-spring-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09258",
+    "title": "Child Development Teacher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/child-development-master-teacher-infant-toddler-certificate-of-achievement-summer-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09259",
+    "title": "Dietetic Services Supervisor Program",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/dietetic-services-supervisor-program-certificate-of-achievement-spring-2025",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09260",
+    "title": "Food Service Management",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/food-service-management-associate-of-science-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09966",
+    "title": "Fire Technology",
+    "award": "A.A. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/fire-technology-associate-of-arts-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09968",
+    "title": "Human Services",
+    "award": "A.A. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/human-services-associate-of-arts-summer-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11276",
+    "title": "Office Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/office-assistant-certificate-of-achievement-spring-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11281",
+    "title": "LVN to Registered Nursing",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/lvn-to-registered-nursing-associate-of-science-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11282",
+    "title": "Child Development Master Teacher: Infant Toddler",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/child-development-master-teacher-infant-toddler-certificate-of-achievement-summer-2019",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16988",
+    "title": "Wildland Firefighting",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/wildland-firefighting-associate-of-science-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20235",
+    "title": "Animal Science",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/animal-science-certificate-of-achievement-summer-2019",
+    "coverage": 0.562,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20238",
+    "title": "Environmental Horticulture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/environmental-horticulture-certificate-of-achievement-summer-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20239",
+    "title": "Agriculture Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/agriculture-business-certificate-of-achievement-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20251",
+    "title": "Electronics Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/electronics-technology-certificate-of-achievement-summer-2019",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20253",
+    "title": "Construction Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/construction-technology-certificate-of-achievement-summer-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20259",
+    "title": "Woodworking / Cabinetmaking",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/woodworking-cabinetmaking-certificate-of-achievement-summer-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20262",
+    "title": "Manufacturing Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/manufacturing-technology-certificate-of-achievement-summer-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20268",
+    "title": "Culinary Arts",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/culinary-arts-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20269",
+    "title": "Fire Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/fire-technology-certificate-of-achievement-summer-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30593",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/psychology-associate-in-arts-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30628",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/sociology-associate-in-arts-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31667",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/studio-arts-associate-in-arts-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32459",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/anthropology-associate-in-arts-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32460",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/geology-associate-in-science-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32461",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/physics-associate-in-science-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32557",
+    "title": "MATH",
+    "award": "A.S. T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/mathematics-associate-in-science-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32724",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/music-associate-in-arts-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32769",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/theatre-arts-associate-in-arts-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32781",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/history-associate-in-arts-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32783",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/political-science-associate-in-arts-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32786",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/journalism-associate-in-arts-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32796",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-associate-in-art-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32797",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/administration-of-justice-associate-in-science-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32800",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/spanish-associate-in-arts-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32826",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/computer-science-associate-in-science-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32897",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/early-childhood-education-associate-in-science-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32967",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/economics-associate-in-arts-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33173",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/elementary-teacher-education-integrated-programs-associate-in-arts-for-transfer-fall-2026",
+    "coverage": 0.84,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33247",
+    "title": "Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/photography-certificate-of-achievement-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33262",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/philosophy-associate-in-arts-in-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33328",
+    "title": "Fire Fighter I Academy",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/fire-fighter-i-academy-certificate-of-achievement-summer-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33781",
+    "title": "Paramedic Program",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/paramedic-program-associate-of-science-summer-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33787",
+    "title": "Paramedic",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/paramedic-certificate-of-achievement-summer-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33894",
+    "title": "CompTIA",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/comptia-certificate-of-achievement-fall-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "34006",
+    "title": "Industrial Automation",
+    "award": "Baccalaureate of Science (B.S.) Degree.",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/industrial-automation-bachelor-of-science-spring-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35102",
+    "title": "Executive Chief Fire Officer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/executive-chief-fire-officer-certificate-of-achievement-summer-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35113",
+    "title": "Media Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/media-arts-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35302",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/biology-associate-in-science-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35389",
+    "title": "Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/chemistry-associate-in-science-for-transfer-summer-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35469",
+    "title": "Automotive Heating and Air Conditioning",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/automotive-heating-and-air-conditioning-certificate-of-achievement-summer-2018",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35471",
+    "title": "Automatic Transmissions",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/automatic-transmissions-certificate-of-achievement-summer-2018",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35480",
+    "title": "Public Health Science",
+    "award": "A.S. T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/public-health-science-associate-in-science-for-transfer-summer-2021",
+    "coverage": 0.643,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35625",
+    "title": "Agriculture Plant Science",
+    "award": "A.S. T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/agriculture-plant-science-associate-in-science-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35695",
+    "title": "Engine Overhaul and Repair",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/engine-overhaul-and-repair-certificate-of-achievement-summer-2018",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35696",
+    "title": "Light Duty Diesel Performance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/light-duty-diesel-performance-certificate-of-achievement-summer-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35697",
+    "title": "Manual Drive Train and Axles",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/manual-drive-train-and-axles-certificate-of-achievement-summer-2018",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35725",
+    "title": "Brake Systems",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/brake-systems-certificate-of-achievement-summer-2018",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35726",
+    "title": "Engine Performance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/engine-performance-certificate-of-achievement-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35727",
+    "title": "Suspension and Steering",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/suspension-and-steering-certificate-of-achievement-summer-2018",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35728",
+    "title": "Automotive Technology",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/automotive-technology-associate-of-science-fall-2018",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35729",
+    "title": "Electrical and Electronic Systems",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/electrical-and-electronic-systems-certificate-of-achievement-summer-2018",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35807",
+    "title": "Agriculture Business",
+    "award": "A.S. T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/agriculture-business-associate-in-science-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35826",
+    "title": "Agriculture Animal Science",
+    "award": "A.S. T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/agriculture-animal-science-associate-in-science-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35984",
+    "title": "Health Information Technology",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/health-information-technology-associate-of-science-summer-2022",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36024",
+    "title": "Occupational Safety and Risk Management, Agriculture",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/occupational-safety-and-risk-management-agriculture-associate-of-science-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36037",
+    "title": "Occupational Safety and Risk Management, Industrial Technology",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/occupational-safety-and-risk-management-industrial-technology-associate-of-science-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36485",
+    "title": "Industrial Drawing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/industrial-drawing-certificate-of-achievement-fall-2018",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36488",
+    "title": "Occupational Safety and Risk Management, Business",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/occupational-safety-and-risk-management-business-associate-of-science-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36489",
+    "title": "Occupational Safety and Risk Management, Health Science",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/occupational-safety-and-risk-management-health-science-associate-of-science-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36571",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/art-history-associate-in-arts-for-transfer-fall-2025",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36579",
+    "title": "Industrial Automation",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/industrial-automation-associate-of-science-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36590",
+    "title": "Heavy Equipment Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/heavy-equipment-technician-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36640",
+    "title": "Construction Management",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/construction-management-associate-of-science-summer-2018",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36772",
+    "title": "Manufacturing Metal Fabrication Technology",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/manufacturing-metal-fabrication-technology-associate-of-science-summer-2018",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36773",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/environmental-science-associate-in-science-for-transfer-fall-2019",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36778",
+    "title": "Health Navigator",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/health-navigator-certificate-of-achievement-fall-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36781",
+    "title": "Child Development Master Teacher: Special Education",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/child-development-master-teacher-special-education-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37018",
+    "title": "HVAC Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/hvac-technology-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37055",
+    "title": "Industrial Automation",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/industrial-automation-certificate-of-achievement-fall-2018",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37068",
+    "title": "Information Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/information-technology-certificate-of-achievement-spring-2019",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37147",
+    "title": "HVAC Technology",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/hvac-technology-associate-of-science-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37178",
+    "title": "Process Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/process-technology-certificate-of-achievement-summer-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37319",
+    "title": "Process Technology",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/process-technology-associate-of-science-summer-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37368",
+    "title": "Mechanized Agriculture",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/mechanized-agriculture-associate-of-science-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37394",
+    "title": "Engineering Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/engineering-technology-certificate-of-achievement-summer-2019",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37843",
+    "title": "Transitional Kindergarten",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/transitional-kindergarten-certificate-of-achievement-spring-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37903",
+    "title": "Web Design and Development",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/web-design-and-development-certificate-of-achievement-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38523",
+    "title": "Japanese",
+    "award": "A.A. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/japanese-associate-of-arts-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38832",
+    "title": "Paraprofessional Level I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/paraprofessional-level-i-certificate-of-achievement-spring-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38841",
+    "title": "Paraprofessional Level III",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/paraprofessional-level-iii-certificate-of-achievement-summer-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38842",
+    "title": "Paraprofessional Level II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/paraprofessional-level-ii-certificate-of-achievement-summer-2020",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39473",
+    "title": "UCTP Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/uctp-chemistry-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39516",
+    "title": "Human Biology",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/human-biology-associate-of-science-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39541",
+    "title": "English for Multilingual Students Intermediate",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-for-multilingual-students-intermediate-certificate-of-competency-summer-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39542",
+    "title": "English for Multilingual Students Listening/Speaking",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-for-multilingual-students-listening-speaking-certificate-of-competency-summer-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39543",
+    "title": "English for Multilingual Students Reading",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-for-multilingual-students-reading-certificate-of-competency-summer-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39544",
+    "title": "English for Multilingual Students Writing",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-for-multilingual-students-writing-certificate-of-competency-summer-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39545",
+    "title": "Sales Techniques",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/sales-techniques-certificate-of-completion-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39547",
+    "title": "Food Science and Technology",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/food-science-and-technology-associate-of-science-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39549",
+    "title": "Introduction to Early Care and Education",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/introduction-to-early-care-and-education-certificate-of-completion-spring-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39550",
+    "title": "Basic Internet Skills",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/basic-internet-skills-certificate-of-completion-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39551",
+    "title": "Basic Office Skills",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/basic-office-skills-certificate-of-completion-spring-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39552",
+    "title": "Basic Office Software Skills",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/basic-office-software-skills-certificate-of-completion-spring-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39553",
+    "title": "Beginning Computer Skills",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/beginning-computer-skills-certificate-of-completion-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39554",
+    "title": "Customer Relations",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/customer-relations-certificate-of-completion-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39555",
+    "title": "Entrepreneurship",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/entrepreneurship-certificate-of-completion-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39556",
+    "title": "Digital Marketing for Small Business",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/digital-marketing-for-small-business-certificate-of-completion-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39557",
+    "title": "Powerful Presentation",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/powerful-presentation-certificate-of-completion-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39558",
+    "title": "QuickBooks Basics for Small Business",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/quickbooks-basics-for-small-business-certificate-of-completion-spring-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39560",
+    "title": "UCTP Physics",
+    "award": "A.S. T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/physics-2-0-associate-in-science-for-transfer-fall-2026",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39686",
+    "title": "Occupational Safety and Risk Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/occupational-safety-and-risk-management-certificate-of-achievement-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39687",
+    "title": "English for Multilingual Students Advanced",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-for-multilingual-students-advanced-certificate-of-competency-summer-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39688",
+    "title": "English for Multilingual Students Introduction",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-for-multilingual-students-introduction-certificate-of-competency-summer-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40073",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/nutrition-and-dietetics-associate-in-science-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40258",
+    "title": "Application of Transformational Policing",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/application-of-transformational-policing-certificate-of-completion-spring-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40259",
+    "title": "Online Teaching",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/online-teaching-certificate-of-completion-spring-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40334",
+    "title": "Food Science and Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/food-science-and-technology-certificate-of-achievement-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40359",
+    "title": "Electrical Safety",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/advanced-electrical-safety-and-arc-flash-certificate-of-completion-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40393",
+    "title": "Advanced Electrical Safety and Arc Flash",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/advanced-electrical-safety-and-arc-flash-certificate-of-completion-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40685",
+    "title": "Paraprofessional Level IV",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/paraprofessional-level-iv-certificate-of-achievement-fall-2023",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40686",
+    "title": "Online Teaching Level II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/online-teaching-level-ii-certificate-of-achievement-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40749",
+    "title": "Education Studies",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/education-studies-associate-of-science-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40880",
+    "title": "Physical Therapist Assistant",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/physical-therapist-assistant-associate-of-science-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41001",
+    "title": "Social Justice Studies",
+    "award": "A.A- T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/social-justice-studies-associate-in-arts-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41348",
+    "title": "Logistics Management",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/logistics-management-associate-of-science-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41349",
+    "title": "Logistics Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/logistics-management-certificate-of-achievement-fall-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41350",
+    "title": "Inclusive and Accessible Digital Content",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/inclusive-and-accessible-digital-content-certificate-of-completion-fall-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41351",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/business-administration-2-0-associate-in-science-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41352",
+    "title": "Applied Leadership",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/applied-leadership-certificate-of-completion-fall-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41548",
+    "title": "Public Health for Non Health Professionals",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/public-health-for-non-health-professionals-certificate-of-completion-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41549",
+    "title": "Kitchen Techniques for New Culinarians  (NC)",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/kitchen-techniques-for-new-culinarians-certificate-of-completion-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41550",
+    "title": "School Food Service",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/school-food-service-certificate-of-completion-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41574",
+    "title": "Introduction to Welding Processes",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/introduction-to-welding-processes-certificate-of-completion-summer-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41894",
+    "title": "Mammography Program",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/mammography-program-certificate-of-completion-spring-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42034",
+    "title": "College and Academic Writing Success",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/college-and-academic-writing-success-certificate-of-competency-summer-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42035",
+    "title": "English for Multilingual Students Basic",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-for-multilingual-students-basic-certificate-of-competency-summer-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42036",
+    "title": "Study Skills for College Success",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/study-skills-for-college-success-certificate-of-competency-summer-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42069",
+    "title": "Basic Industrial and Construction Skills",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/basic-industrial-and-construction-skills-certificate-of-completion-summer-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42070",
+    "title": "Industrial Safety",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/industrial-safety-certificate-of-completion-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42071",
+    "title": "Student Success",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/student-success-certificate-of-competency-summer-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42072",
+    "title": "Teaching and Learning",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/teaching-and-learning-certificate-of-completion-fall-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42073",
+    "title": "Warehousing",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/warehousing-certificate-of-completion-spring-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42074",
+    "title": "Modern Energy",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/modern-energy-certificate-of-completion-summer-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42076",
+    "title": "Small Business Execution",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/small-business-execution-certificate-of-completion-summer-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42077",
+    "title": "Small Business Funding",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/small-business-funding-certificate-of-completion-summer-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42226",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/law-public-policy-and-society-associate-in-arts-for-transfer-fall-2026",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42307",
+    "title": "Edible Education Garden",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/edible-education-garden-certificate-of-completion-summer-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42310",
+    "title": "Child and Adolescent Development",
+    "award": "A.A- T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/child-and-adolescent-development-associate-in-arts-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42508",
+    "title": "Natural Resource Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/natural-resource-management-certificate-of-achievement-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42523",
+    "title": "Research Laboratory Technology",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/research-laboratory-technology-associate-of-science-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42536",
+    "title": "Natural Resource Management",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/natural-resource-management-associate-of-science-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42569",
+    "title": "Environmental Resource Management",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/environmental-resource-management-associate-of-science-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42570",
+    "title": "Environmental Resource Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/environmental-resource-management-certificate-of-achievement-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42766",
+    "title": "Cesar E. Chavez Leadership",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/cesar-e-chavez-leadership-certificate-of-completion-fall-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42934",
+    "title": "Social-Emotional and Cognitive Development",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/social-emotional-and-cognitive-development-certificate-of-completion-fall-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43011",
+    "title": "Police Science",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/police-science-associate-of-science-fall-2025",
+    "coverage": 0.947,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43012",
+    "title": "Pest Control Adviser Preparation",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/pest-control-adviser-preparation-certificate-of-achievement-spring-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43022",
+    "title": "Agricultural Engineering Technology",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/agricultural-engineering-technology-associate-of-science-fall-2025",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43157",
+    "title": "Mechanical Engineering Technology",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/mechanical-engineering-technology-associate-of-science-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43184",
+    "title": "Automotive Detailing",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/automotive-detailing-certificate-of-completion-fall-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43190",
+    "title": "Electronic Systems Engineering Technology",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/electronic-systems-engineering-technology-associate-of-science-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43264",
+    "title": "Diesel Engine Systems",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/diesel-engine-systems-certificate-of-completion-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43265",
+    "title": "Mobile Equipment Electrical Systems",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/mobile-equipment-electrical-systems-certificate-of-completion-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43266",
+    "title": "Mobile Equipment Hydraulic Systems",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/mobile-equipment-hydraulic-systems-certificate-of-completion-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43267",
+    "title": "Equipment Technician Level 1",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/equipment-technician-level-1-certificate-of-completion-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43268",
+    "title": "Academic Research Skills",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/academic-research-skills-certificate-of-competency-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43269",
+    "title": "College and Math Skill Building Success",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/college-and-math-skill-building-success-certificate-of-competency-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43270",
+    "title": "Sports Medicine",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/sports-medicine-certificate-of-achievement-summer-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43434",
+    "title": "Hospitality Management",
+    "award": "A.S. T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/hospitality-management-associate-in-science-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43499",
+    "title": "Research Laboratory Technology",
+    "award": "Baccalaureate of Science (B.S.) Degree.",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/research-laboratory-technology-bachelor-of-science-fall-2023",
+    "coverage": 0.556,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43531",
+    "title": "Forest Resource Management",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/forest-resource-management-associate-of-science-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43532",
+    "title": "Forest Resource Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/forest-resource-management-certificate-of-achievement-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43602",
+    "title": "Civil Engineering Technology",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/civil-engineering-technology-associate-of-science-fall-2025",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43639",
+    "title": "Data Analyst Apprenticeship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/data-analyst-apprenticeship-certificate-of-achievement-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43643",
+    "title": "Help Desk Support Technician Apprenticeship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/help-desk-support-technician-apprenticeship-certificate-of-achievement-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43829",
+    "title": "Civil Engineering Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/civil-engineering-technology-certificate-of-achievement-summer-2024",
+    "coverage": 0.538,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43830",
+    "title": "General Engineering",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/general-engineering-certificate-of-achievement-summer-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43850",
+    "title": "Sustainable Landscape",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/sustainable-landscape-certificate-of-achievement-summer-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43851",
+    "title": "Ornamental Horticulture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/ornamental-horticulture-certificate-of-achievement-summer-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43873",
+    "title": "Ornamental Horticulture",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/ornamental-horticulture-associate-of-science-spring-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43877",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/communication-studies-2-0-associate-in-arts-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43985",
+    "title": "Coaching",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/coaching-certificate-of-achievement-summer-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44031",
+    "title": "Emerging Media Literacy",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/emerging-media-literacy-certificate-of-competency-summer-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44282",
+    "title": "Public Health Informatics II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/public-health-informatics-ii-certificate-of-achievement-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44284",
+    "title": "Intercollegiate Athletics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/intercollegiate-athletics-certificate-of-achievement-summer-2025",
+    "coverage": 0.969,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44372",
+    "title": "Fitness Trainer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/fitness-trainer-certificate-of-achievement-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44380",
+    "title": "Graphic Design - Level I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/graphic-design-level-i-certificate-of-achievement-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44440",
+    "title": "Digital Marketer Apprenticeship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/digital-marketer-apprenticeship-certificate-of-achievement-summer-2024",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44441",
+    "title": "Plant Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/plant-science-certificate-of-achievement-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44442",
+    "title": "Automotive Management",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/automotive-management-certificate-of-achievement-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44544",
+    "title": "Community Health Worker  II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/community-health-worker-ii-certificate-of-achievement-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44746",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/public-health-associate-in-science-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44836",
+    "title": "Building a Canvas Course",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/building-a-canvas-course-certificate-of-completion-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44837",
+    "title": "Teaching with AI: Today and Tomorrow",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/teaching-with-ai-today-and-tomorrow-certificate-of-completion-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44859",
+    "title": "Energy Management and Auditing",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/energy-management-and-auditing-certificate-of-completion-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44895",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/kinesiology-associate-in-arts-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44917",
+    "title": "Plant Science",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/plant-science-associate-of-science-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44952",
+    "title": "Recreation, Parks, and Tourism Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/recreation-parks-and-tourism-management-certificate-of-achievement-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44953",
+    "title": "Clinical Medical Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/clinical-medical-assistant-certificate-of-achievement-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45086",
+    "title": "Artificial Intelligence (AI) Proficiency for College and Career",
+    "award": "Noncredit program",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/artificial-intelligence-ai-proficiency-for-college-and-career-certificate-of-competency-summer-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45142",
+    "title": "Respiratory Therapy",
+    "award": "A.S. Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/respiratory-therapy-associate-of-science-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45197",
+    "title": "Logic, Argumentation, and Critical Thinking",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/logic-argumentation-and-critical-thinking-certificate-of-achievement-summer-2026",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45404",
+    "title": "Graphic Design - Level II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/graphic-design-level-ii-certificate-of-achievement-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45618",
+    "title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A- T Degree",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/elementary-teacher-education-integrated-programs-associate-in-arts-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46070",
+    "title": "Registered Veterinary Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/registered-veterinary-technician-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46087",
+    "title": "Medical Coding Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/medical-coding-specialist-certificate-of-achievement-fall-2026v2",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46164",
+    "title": "Adult and Juvenile Correctional and Probation Officer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/adult-and-juvenile-correctional-and-probation-officer-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46495",
+    "title": "Culinary Fundamentals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/culinary-fundamentals-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46496",
+    "title": "Food Service Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/food-service-management-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46497",
+    "title": "Institutional Food Service Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/institutional-food-service-management-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46572",
+    "title": "Health Information Technology Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/health-information-technology-assistant-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46573",
+    "title": "Human Resource Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/human-resource-management-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38414480070"
+}

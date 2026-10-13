@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 548 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 549 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 87 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 56 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 351 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1128** | |
+| Session handoffs | 353 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1131** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,8 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-13 S381 SkyRowan: Bakersfield loaded and displayed (eLumen), the Progress view's counts open their lists, Coastline's near misses and Cabrillo's department menu; handoff 382 (SkyLarch).
+- 2026-10-13 S380 SkyAlder: course_outcomes live (Sam's paste) and loaded at RCCD (#2049) and SDCCD (#2066), 4,894 rows; Chaffey's outcomes not public (#2073); the eLumen reader (#2072, fast publish/content read) and Coastline's CourseLeaf fixes (#2074, index.html pages, no course listings), both colleges extracting; KB note methodology-read-a-catalog-through-its-own-content-call; handoff 381.
 - 2026-10-13 S376 SkyLinden: the Requirements-tab re-reads loaded and displayed (Mesa #2064, San Diego City #2068, Miramar #2070; build `98becf9fafc7`, 2,203 rows); SDCCD's outline index (#2065) and SLOs by college group (#2066, draft, on #2049); the trigger-file gate (#2069); KB note `methodology-a-trigger-file-must-differ-from-main`; handoff 380 (SkyAlder).
 - 2026-10-13 S378 SkyHemlock (scheduled): #2063 already merged and run 586 green; Move to the team phrase held by the permission check (Open Asks Sheet 73); the Common Course Reference UI pass (list view measured by new a11y targets ccr-list and ccr-list-dark, 0 findings in both themes); handoff 379.
 - 2026-10-13 S377 SkySequoia: S375's checkpoint (#2058) and vault note (#327) merged; Refresh summaries shipped (#2059, `activity_summaries.js`, published by run 583; the activity header's Update link retired, its link row wraps at 390px); the Move control (#2056) green after its dialog led with Cancel, still held for its function; apply_migration down (nothing newer than 23:19Z in schema_migrations); KB note playbook-when-apply-migration-times-out-read-the-migrations-table; handoff 378.
@@ -129,6 +131,4 @@ Authoritative external sources we've cached:
 - 2026-10-12 SkyLedger (parallel session; its receipts say s372): new lane `workplan-annual-goals`, `workplan_annual_goals_lessons.md`, KB note `methodology-an-option-list-read-from-the-page-dies-with-the-renderer`; handoff 375.
 - 2026-10-12 S374 SkyJuniper: S373's #2046, #2047 and #2048 merged; the SLO read at RCCD (#2049: the outline's SLO area, not the objectives before it; run 38318152644 reading 1,605 outlines; `course_outcomes` written, not applied: apply_migration timed out); Mesa's nine health programs traced to a four-tab cap (#2050); KB note methodology-a-lead-in-sentence-is-not-a-section-heading.
 - 2026-10-12 S373 SkyCypress: San Diego Mesa read, loaded and displayed (#2044, 166 records, build da4f44a160ca); Sheet 70 answered: the registry's course outline fields (#2045) filled on 118 rows (#2047); the course outline census merged (#2042, run 5: 32 outlines, 18 with SLOs); the RCCD course index (#2046, 1,605 of 1,648 courses with a public outline); KB note methodology-a-sign-in-form-is-no-proof-of-a-closed-system.
-- 2026-10-12 S372 SkyRedwood: Miramar displayed (#2041), Mesa's row applied (#2037), Sierra v91 7c precedent (#2040), the painting gallery (#2038), the course outline census (#2042 draft, Sheet 70); KB note methodology-a-course-title-reads-as-its-level.
 - **2026-10-12 (S371 SkyMaple)**: San Diego City displayed (#2034); College Identity UI pass (#2035); MAP Users sign-in wording (#2036); Mesa registry receipt (#2037, held) and the painting gallery (#2038, step 1); new KB note `methodology-same-context-size-means-the-model-varied`; handoff 372 (SkyRedwood).
-- 2026-10-12 S370 SkyHolly: Long Beach City 38542 removed (Sheet 68 card 2, #2028); Chaffey read, loaded and displayed (#2027, build 496f2a71470a, 1,745 rows); San Diego City extracting; My College UI pass and the public contact measure (#2030); smoke 7s verb shape (#2031); Sierra 7c opening fix (#2032, A/B then deploy); handoff 371 (SkyMaple).

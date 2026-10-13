@@ -66,6 +66,10 @@ cases = [
     # which takes the college and the control number, so a record missing either fails.
     ("a call's record with no control number", lambda q: q["calls"].append({"title": "t", "text": "x", "records": [{"college": "Cerritos College"}]}), "records[0].control_number"),
     ("a call naming an empty list of records", lambda q: q["calls"].append({"title": "t", "text": "x", "records": []}), "non-empty"),
+    # Where Sam answers it (Sam, 2026-10-13): S380's three calls carried no link, so on his
+    # phone each card named a question with nowhere to tap.
+    ("a call with nowhere to answer it", lambda q: q["calls"].append({"title": "t", "text": "x"}), "needs a place to answer it"),
+    ("a call placed on a part the view does not have", lambda q: q["calls"].append({"title": "t", "text": "x", "link": "https://claude.ai/artifact/x", "part": "funding"}), "part names no part"),
     # The headline's history (Sam, 2026-10-08): the pair needs a trend, so a checkpoint
     # that drops the list, repeats a day or writes a count as text fails here.
     ("the headline history left out", lambda q: q.pop("headline"), "headline must be a list"),
@@ -80,6 +84,11 @@ check("accepts a call with its sheet link, its words, and a tab to view the item
 q = copy.deepcopy(Q)
 q["calls"].append({"title": "t", "text": "x", "records": [{"college": "Cerritos College", "control_number": "02201", "label": "Architectural Technology A.A."}]})
 check("accepts a call naming the records it asks about", not M.faults(q), M.faults(q))
+q = copy.deepcopy(Q)
+q["calls"].append({"title": "t", "text": "x", "link": "https://claude.ai/artifact/x", "part": "checks"})
+check("accepts a call placed on one of the view's parts", not M.faults(q), M.faults(q))
+check("every call in the committed file says where Sam answers it",
+      all(c.get("link") or c.get("view") or c.get("records") for c in Q.get("calls") or []), Q.get("calls"))
 for name, mut, frag in cases:
     hit, out = faulted(mut, frag)
     check("refuses " + name, hit, out)

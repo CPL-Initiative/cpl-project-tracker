@@ -1,0 +1,20 @@
+{
+ "_readme": "S380 SkyAlder, 2026-10-13. Census run 5 found Palo Verde's eLumen course pages print the course's student learning outcomes (cor_proof_url /course/acc100); Bakersfield's print none. This read loads that course with \"network\": true to see which call carries the outcomes and how they are written, so one eLumen reader can serve both the program read and the SLO read. One page load, no model call.",
+ "college": "Palo Verde College",
+ "questions": {
+  "course_source": "Which call delivers one course's outline and its student learning outcomes, and in what shape."
+ },
+ "keywords": [
+  "[Oo]utcome",
+  "SLO",
+  "[Oo]bjective",
+  "[Uu]pon (successful )?completion"
+ ],
+ "pages": [
+  {
+   "answers": ["course_source"],
+   "url": "https://pvc.elumenapp.com/catalog/2025-2026/course/acc100",
+   "network": true
+  }
+ ]
+}

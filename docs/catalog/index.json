@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 548,
+   "count": 549,
    "docs": [
     {
      "created": "2026-08-14",
@@ -7723,6 +7723,22 @@
      "title": "Re-mint split invariants \u2014 id\u2194SUBJ4, control-number atomicity, dry-run\u2194apply cross-check",
      "type": "methodology",
      "updated": "2026-05-29"
+    },
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-read-a-catalog-through-its-own-content-call.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "program-requirements",
+      "catalogs",
+      "elumen",
+      "curriqunet"
+     ],
+     "title": "Read a single-page catalog through its own content call, not by rendering",
+     "type": "methodology",
+     "updated": "2026-10-13"
     },
     {
      "created": "2026-10-02",
@@ -15512,8 +15528,47 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 351,
+   "count": 353,
    "docs": [
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "n": 382,
+     "path": "docs/session_382_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "elumen",
+      "courseleaf",
+      "coastline",
+      "cabrillo",
+      "bakersfield",
+      "progress-view"
+     ],
+     "title": "Coastline's near misses, Cabrillo's capture and extraction go, then the next college",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "n": 381,
+     "path": "docs/session_381_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "elumen",
+      "courseleaf",
+      "course-outcomes",
+      "coastline",
+      "bakersfield"
+     ],
+     "title": "load Bakersfield and Coastline, merge the eLumen and Coastline readers, then the next college",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-13",
      "governs": [],
@@ -21537,5 +21592,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1128
+ "total": 1131
 }

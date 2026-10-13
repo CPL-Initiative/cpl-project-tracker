@@ -1,0 +1,173 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "33328",
+ "shape": "certificate",
+ "title": "Fire Fighter I Academy",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/fire-fighter-i-academy-certificate-of-achievement-summer-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5573,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5573,
+    "output_tokens": 1727,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1727,
+  "output_tokens_details": {
+   "thinking_tokens": 646
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05683,
+ "ms": 14407,
+ "seconds": 14.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.5,
+    24.0
+   ],
+   "stated": [
+    21.5,
+    24.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fire Fighter I Academy Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 21.5,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Upon successful completion of the program, the student will be able to perform the skills that meet National Fire Protection Association Standard 1001 for Fire Fighter and California State Fire Marshal Standards for Fire Fighter 1.",
+    "Upon successful completion of the program, the student will be able to complete the components of the fire fighter application process which include the written exam, the physical agility, the oral interview, the fire chief's interview, and the background investigation.",
+    "Upon successful completion of the program, the student will be able to analyze fire and emergency incidents and identify components of emergency management and fire fighter safety, including-size-up-report on conditions-Incident Command system-RECEO-10 Standard Firefighting Orders-18 situations that shout \"Watch Out\"-common factors associated with injuries and line of duty deaths.",
+    "Upon successful completion of the program, the student will be able to complete the fire fighter probationary process.",
+    "Upon successful completion of the program, the student will be able to analyze the components of emergency management and fire fighter safety.",
+    "Upon successful completion of the program, the student will be able to create a size-up-report on fire safety conditions which utilizes the Incident Command system and RECEO-10 Standard Firefighting Orders."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses-Select one",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21.5,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "EMTC B50",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Fire Fighter Academy",
+    "rule": "choose_units",
+    "minimum": 12.5,
+    "option_group": null,
+    "stated": {
+     "min": 12.5,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "FIRE B62",
+      "units": 12.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE B64",
+      "units": 16.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints course codes without a space (EMTCB50, FIREB62, FIREB64); recorded in the closed-list form EMTC B50, FIRE B62, FIRE B64.",
+   "The block 'Core Courses-Select one' (21.5-24 credits) contains EMTC B50 (9) plus the nested 'Fire Fighter Academy' group; read as EMTC B50 required plus one academy course, despite the 'Select one' wording.",
+   "The 'Fire Fighter Academy' group states 12.5-15 credits, but FIRE B64 is printed at 16.5 units; the stated range and the program total (21.5-24) do not accommodate EMTC B50 + FIRE B64 (25.5). Reviewer should check whether students choose one of FIRE B62 or FIRE B64.",
+   "The description mentions preparation for the National Registry EMT exam and California State EMT certification; these were read as certifications, not careers, so careers is empty."
+  ]
+ },
+ "extracted_run": "38414480070"
+}
