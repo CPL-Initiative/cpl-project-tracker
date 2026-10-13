@@ -701,3 +701,29 @@ The outcomes paragraph's settled parts, verbatim:
 - **Chaffey's course outcomes are on section syllabi** (its outcomes site); program outcomes are in the
   catalog and CurriQunet. No public course SLO list turned up from a web search.
 - **`apply_migration` timed out a seventh time** (04:31Z) with nothing landing; Sam chose to paste the table.
+
+## Moved from the lane (S380 compaction)
+
+The outcomes paragraph's settled parts:
+
+- **RCCD (#2049, S374):** the reader takes the outline's *Student Learning Outcomes* area from the HTML, never the
+  Course Objectives RCCD prints first under the same lead-in (trial 38317539422); a nested institutional outcome
+  (*Critical Thinking*) is `maps_to`; the *College:* line names RIV, MOV, NOR. Run 38318152644 read all 1,605 in four
+  slices: every page 200, all parsed from the HTML. Load run 38392934576 inserted 2,665 rows (one per college the
+  outline names), none kept or skipped.
+- **SDCCD (#2065, #2066, S376):** the index learns each host's link form from its own dashboard and reads the report
+  its `.run` names. SDCCD's *Course Outline Report* (493) prints Student Learning *Objectives* only (trial
+  38350133448); its *All Fields* report (4) prints each college's SLOs under its own *Group Title* (trial
+  38350787486), so the index reads All Fields: 1,641 of the 1,660 courses City, Mesa and Miramar's records name. A
+  comparison report is never read. Read 38351637385 (four slices, checked S380): every page 200, all parsed from the
+  HTML, 1,506 courses with outcomes, groups City, Mesa, Miramar only. Load run 38397577646 wrote one row per group:
+  2,229 inserted, 135 courses skipped (none printed). The read filed 2,230 groups: one course printed the same
+  college's block twice, and the load's key (college, course, report, fingerprint) kept it once.
+- **Chaffey (#2073, S380):** its outcomes FAQ (chaffey.edu/outcomes/faq.php) says current course learning outcomes
+  are kept in META CurriQunet and printed on each course's syllabus. Its dashboard links two public reports per
+  course, *Course Outline* (225) and *Course Outline - PDF* (1225), and no All Fields report (discovery
+  38392162605); the PDF prints Course Objectives and no outcomes (read 38394075773). The registry note
+  (`kb/receipts/program_source_registry_chaffey_cor_note_2026-10-13_s380.sql`) keeps `cor_slo_source_url` null.
+- **The table:** `apply_migration` timed out eight times on `chatbox/supabase_course_outcomes.sql` (S374 to S380)
+  with nothing landing; Sam pasted it (Open Asks Sheet 72 card 1). A paste card is the route while the connector is
+  down.
