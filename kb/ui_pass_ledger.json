@@ -206,8 +206,8 @@
    "name": "Common Course Reference",
    "page": "index.html#unified-courses",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-13",
+   "outcome": "The list a curator works in was never measured (the tab opens on SkyView): new a11y targets ccr-list and ccr-list-dark. Light 3 contrast + 5 target kinds and dark 5 contrast (toggle 1.29:1, id column 1.76:1) to 0 in both themes, 390 and 1440; the map view's missing h1 now a screen-reader heading. Tokens only in the tab's CSS; the launcher, view toggle, Cleanup impact, Suggested merges, Verify and Export are underlined words; emoji out of the banner, toolbar and search fields; the id column wraps again; caret and info at 24px. Remaining: the Merge, Unify and worklist dialogs' inline hex (about 90 in unified_courses.js) and the squeezed column headers."
   },
   {
    "id": "cobi:canonical-subj4",

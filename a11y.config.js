@@ -445,6 +445,13 @@ async function seedSplit(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// The Common Course Reference list (S378): wait for its table, then set the theme.
+async function seedCcrList(page, theme) {
+  await page.waitForSelector("#tab-unified-courses table.uc-table tbody tr", { timeout: 30000 }).catch(() => {});
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForTimeout(200);
+}
+
 // Seeds MAP Users as a signed-in reviewer sees it (S358 UI pass): the cobi sweep opens
 // the tab signed out with its reads aborted, so it paints only "Could not load". The
 // "all" lens has one roster open and a nudge logged; the "gaps" lens has a curator's
@@ -1948,6 +1955,28 @@ module.exports = {
     routes: [{ hash: "map-users", name: "gaps-dark" }],
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedMapUsers(page, "dark", "gaps"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* The Common Course Reference opens on SkyView, filling the window, so the cobi
+     sweep measures the map and never the list a curator works in (S378 UI pass:
+     the list's dark faults went unseen). #unified-courses/list is the list's own
+     link; the seed waits for its table, a 10 MB data file the tab loads on open. */
+  "ccr-list": {
+    file: "index.html",
+    title: "Common Course Reference, the list view",
+    routes: [{ hash: "unified-courses/list", name: "list" }],
+    widths: [390, 1440],
+    settle: 1500,
+    seed: (page) => seedCcrList(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "ccr-list-dark": {
+    file: "index.html",
+    title: "Common Course Reference, the list view, dark",
+    routes: [{ hash: "unified-courses/list", name: "list-dark" }],
+    widths: [390, 1440],
+    settle: 1500,
+    seed: (page) => seedCcrList(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   },

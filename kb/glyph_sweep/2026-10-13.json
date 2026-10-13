@@ -2,9 +2,9 @@
  "generated": "2026-10-13",
  "files_scanned": 153,
  "counts": {
-  "decoration": 752,
+  "decoration": 739,
   "control": 54,
-  "status": 219
+  "status": 225
  },
  "findings": [
   {
@@ -89,7 +89,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 4576,
+   "line": 4582,
    "glyph": "\u2192",
    "kind": "control",
    "generator_owned": false,
@@ -97,7 +97,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 4636,
+   "line": 4642,
    "glyph": "\u2b50",
    "kind": "control",
    "generator_owned": false,
@@ -105,7 +105,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 4645,
+   "line": 4651,
    "glyph": "\u2b50",
    "kind": "control",
    "generator_owned": false,
@@ -113,7 +113,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 4676,
+   "line": 4682,
    "glyph": "\u21b3",
    "kind": "decoration",
    "generator_owned": false,
@@ -121,7 +121,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 4676,
+   "line": 4682,
    "glyph": "\u21b3",
    "kind": "decoration",
    "generator_owned": false,
@@ -129,7 +129,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 4676,
+   "line": 4682,
    "glyph": "\u21b3",
    "kind": "decoration",
    "generator_owned": false,
@@ -137,7 +137,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 4849,
+   "line": 4855,
    "glyph": "\u2605",
    "kind": "control",
    "generator_owned": false,
@@ -145,7 +145,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 4864,
+   "line": 4870,
    "glyph": "\u2b50",
    "kind": "control",
    "generator_owned": false,
@@ -153,7 +153,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 4933,
+   "line": 4939,
    "glyph": "\u2b50",
    "kind": "control",
    "generator_owned": false,
@@ -161,7 +161,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 5552,
+   "line": 5558,
    "glyph": "\u2192",
    "kind": "control",
    "generator_owned": false,
@@ -169,7 +169,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 5557,
+   "line": 5563,
    "glyph": "\u2192",
    "kind": "control",
    "generator_owned": false,
@@ -177,7 +177,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 5562,
+   "line": 5568,
    "glyph": "\u2192",
    "kind": "control",
    "generator_owned": false,
@@ -185,7 +185,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 5567,
+   "line": 5573,
    "glyph": "\u2192",
    "kind": "control",
    "generator_owned": false,
@@ -193,7 +193,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 6110,
+   "line": 6086,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": true,
@@ -201,7 +201,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 6117,
+   "line": 6093,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": true,
@@ -209,7 +209,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 6812,
+   "line": 6788,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": true,
@@ -217,7 +217,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 7184,
+   "line": 7211,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": true,
@@ -225,7 +225,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 7191,
+   "line": 7218,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": true,
@@ -233,7 +233,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 7421,
+   "line": 7478,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": true,
@@ -241,7 +241,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 7428,
+   "line": 7485,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": true,
@@ -249,7 +249,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 7494,
+   "line": 7551,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": true,
@@ -257,7 +257,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 7703,
+   "line": 7760,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": true,
@@ -265,7 +265,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 7736,
+   "line": 7793,
    "glyph": "\u2705",
    "kind": "status",
    "generator_owned": true,
@@ -273,7 +273,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8280,
+   "line": 8337,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -281,7 +281,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8280,
+   "line": 8337,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -289,7 +289,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8291,
+   "line": 8348,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -297,7 +297,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8308,
+   "line": 8365,
    "glyph": "\u21b3",
    "kind": "status",
    "generator_owned": false,
@@ -305,7 +305,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8308,
+   "line": 8365,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -313,7 +313,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8308,
+   "line": 8365,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -321,23 +321,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8336,
-   "glyph": "\u21b3",
-   "kind": "status",
-   "generator_owned": false,
-   "context": "<th scope=\"row\" rowspan=\"3\" class=\"wpg-name wpg-nest\" style=\"--wpg-indent:1.25rem\" data-no-ladder=\"1\" data-pid=\"1.1.2\" data-name=\"AI Apprenticeship CPL Tools\"><"
-  },
-  {
-   "file": "CPL_Dashboard.html",
-   "line": 8336,
-   "glyph": "\u270e",
-   "kind": "status",
-   "generator_owned": false,
-   "context": "<th scope=\"row\" rowspan=\"3\" class=\"wpg-name wpg-nest\" style=\"--wpg-indent:1.25rem\" data-no-ladder=\"1\" data-pid=\"1.1.2\" data-name=\"AI Apprenticeship CPL Tools\"><"
-  },
-  {
-   "file": "CPL_Dashboard.html",
-   "line": 8364,
+   "line": 8393,
    "glyph": "\u21b3",
    "kind": "status",
    "generator_owned": false,
@@ -345,7 +329,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8364,
+   "line": 8393,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -353,7 +337,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8364,
+   "line": 8393,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -361,7 +345,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8392,
+   "line": 8421,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -369,7 +353,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8392,
+   "line": 8421,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -377,7 +361,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8403,
+   "line": 8432,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -385,7 +369,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8420,
+   "line": 8449,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -393,7 +377,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8420,
+   "line": 8449,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -401,7 +385,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8431,
+   "line": 8460,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -409,7 +393,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8448,
+   "line": 8477,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -417,7 +401,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8448,
+   "line": 8477,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -425,7 +409,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8459,
+   "line": 8488,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -433,7 +417,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8481,
+   "line": 8510,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -441,7 +425,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8481,
+   "line": 8510,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -449,7 +433,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8509,
+   "line": 8538,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -457,7 +441,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8509,
+   "line": 8538,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -465,7 +449,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8520,
+   "line": 8549,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -473,7 +457,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8537,
+   "line": 8566,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -481,7 +465,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8537,
+   "line": 8566,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -489,7 +473,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8548,
+   "line": 8577,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -497,7 +481,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8565,
+   "line": 8594,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -505,7 +489,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8565,
+   "line": 8594,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -513,7 +497,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8576,
+   "line": 8605,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -521,7 +505,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8598,
+   "line": 8627,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -529,7 +513,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8598,
+   "line": 8627,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -537,7 +521,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8626,
+   "line": 8655,
    "glyph": "\u21b3",
    "kind": "status",
    "generator_owned": false,
@@ -545,7 +529,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8626,
+   "line": 8655,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -553,7 +537,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8626,
+   "line": 8655,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -561,7 +545,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8654,
+   "line": 8683,
    "glyph": "\u21b3",
    "kind": "status",
    "generator_owned": false,
@@ -569,7 +553,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8654,
+   "line": 8683,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -577,7 +561,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8654,
+   "line": 8683,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -585,7 +569,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8682,
+   "line": 8711,
    "glyph": "\u21b3",
    "kind": "status",
    "generator_owned": false,
@@ -593,7 +577,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8682,
+   "line": 8711,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -601,7 +585,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8682,
+   "line": 8711,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -609,7 +593,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8710,
+   "line": 8739,
    "glyph": "\u21b3",
    "kind": "status",
    "generator_owned": false,
@@ -617,7 +601,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8710,
+   "line": 8739,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -625,7 +609,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8710,
+   "line": 8739,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -633,7 +617,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8738,
+   "line": 8767,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -641,7 +625,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8738,
+   "line": 8767,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -649,7 +633,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8766,
+   "line": 8795,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -657,7 +641,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8766,
+   "line": 8795,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -665,7 +649,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8794,
+   "line": 8823,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -673,7 +657,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8794,
+   "line": 8823,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -681,7 +665,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8805,
+   "line": 8834,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -689,7 +673,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8822,
+   "line": 8851,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -697,7 +681,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8822,
+   "line": 8851,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -705,7 +689,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8833,
+   "line": 8862,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -713,7 +697,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8850,
+   "line": 8879,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -721,7 +705,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8850,
+   "line": 8879,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -729,7 +713,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8861,
+   "line": 8890,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -737,7 +721,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8878,
+   "line": 8907,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -745,7 +729,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8878,
+   "line": 8907,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -753,7 +737,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8906,
+   "line": 8935,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -761,7 +745,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8906,
+   "line": 8935,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -769,7 +753,31 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8939,
+   "line": 8963,
+   "glyph": "\u2605",
+   "kind": "status",
+   "generator_owned": false,
+   "context": "<th scope=\"row\" rowspan=\"3\" class=\"wpg-name\"><span class=\"wpg-pid\">3.9</span> <span class=\"wpg-title-cell\" data-title-edit=\"1\" data-pid=\"3.9\">Futuro Behavioral "
+  },
+  {
+   "file": "CPL_Dashboard.html",
+   "line": 8963,
+   "glyph": "\u270e",
+   "kind": "status",
+   "generator_owned": false,
+   "context": "<th scope=\"row\" rowspan=\"3\" class=\"wpg-name\"><span class=\"wpg-pid\">3.9</span> <span class=\"wpg-title-cell\" data-title-edit=\"1\" data-pid=\"3.9\">Futuro Behavioral "
+  },
+  {
+   "file": "CPL_Dashboard.html",
+   "line": 8974,
+   "glyph": "\u270e",
+   "kind": "status",
+   "generator_owned": false,
+   "context": "<td class=\"wpg-val\" data-label=\"25-26\" data-current-edit=\"1\" data-aid=\"3.9\" data-val=\"0\"> <span class=\"wpg-manual-hint\" aria-hidden=\"true\">\u270e</span></td>"
+  },
+  {
+   "file": "CPL_Dashboard.html",
+   "line": 8996,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -777,7 +785,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8939,
+   "line": 8996,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -785,7 +793,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8967,
+   "line": 9024,
    "glyph": "\u21b3",
    "kind": "status",
    "generator_owned": false,
@@ -793,7 +801,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8967,
+   "line": 9024,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -801,7 +809,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8967,
+   "line": 9024,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -809,7 +817,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8978,
+   "line": 9035,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -817,7 +825,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8995,
+   "line": 9052,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -825,7 +833,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 8995,
+   "line": 9052,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -833,7 +841,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9006,
+   "line": 9063,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -841,7 +849,31 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9023,
+   "line": 9080,
+   "glyph": "\u21b3",
+   "kind": "status",
+   "generator_owned": false,
+   "context": "<th scope=\"row\" rowspan=\"3\" class=\"wpg-name wpg-nest\" style=\"--wpg-indent:1.25rem\" data-no-ladder=\"1\" data-pid=\"4.2.1\" data-name=\"AI Apprenticeship CPL Tools\"><"
+  },
+  {
+   "file": "CPL_Dashboard.html",
+   "line": 9080,
+   "glyph": "\u2605",
+   "kind": "status",
+   "generator_owned": false,
+   "context": "<th scope=\"row\" rowspan=\"3\" class=\"wpg-name wpg-nest\" style=\"--wpg-indent:1.25rem\" data-no-ladder=\"1\" data-pid=\"4.2.1\" data-name=\"AI Apprenticeship CPL Tools\"><"
+  },
+  {
+   "file": "CPL_Dashboard.html",
+   "line": 9080,
+   "glyph": "\u270e",
+   "kind": "status",
+   "generator_owned": false,
+   "context": "<th scope=\"row\" rowspan=\"3\" class=\"wpg-name wpg-nest\" style=\"--wpg-indent:1.25rem\" data-no-ladder=\"1\" data-pid=\"4.2.1\" data-name=\"AI Apprenticeship CPL Tools\"><"
+  },
+  {
+   "file": "CPL_Dashboard.html",
+   "line": 9108,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -849,7 +881,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9023,
+   "line": 9108,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -857,7 +889,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9034,
+   "line": 9119,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -865,7 +897,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9051,
+   "line": 9136,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -873,7 +905,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9051,
+   "line": 9136,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -881,7 +913,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9062,
+   "line": 9147,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -889,7 +921,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9079,
+   "line": 9164,
    "glyph": "\u21b3",
    "kind": "status",
    "generator_owned": false,
@@ -897,7 +929,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9079,
+   "line": 9164,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -905,7 +937,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9079,
+   "line": 9164,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -913,7 +945,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9107,
+   "line": 9192,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -921,7 +953,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9107,
+   "line": 9192,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -929,7 +961,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9118,
+   "line": 9203,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -937,7 +969,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9135,
+   "line": 9220,
    "glyph": "\u21b3",
    "kind": "status",
    "generator_owned": false,
@@ -945,7 +977,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9135,
+   "line": 9220,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -953,7 +985,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9135,
+   "line": 9220,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -961,7 +993,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9163,
+   "line": 9248,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -969,7 +1001,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9163,
+   "line": 9248,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -977,7 +1009,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9174,
+   "line": 9259,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -985,31 +1017,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9372,
-   "glyph": "\u26a0\ufe0f",
-   "kind": "decoration",
-   "generator_owned": false,
-   "context": "<div class=\"uc-beta-banner\">\u26a0\ufe0f <strong>Beta / draft</strong> \u2014 AI-assisted course unification, pending human review. Per-row quality flags (over-merge, mixed-at"
-  },
-  {
-   "file": "CPL_Dashboard.html",
-   "line": 9377,
-   "glyph": "\u2726",
-   "kind": "decoration",
-   "generator_owned": false,
-   "context": "<span aria-hidden=\"true\">\u2726</span>"
-  },
-  {
-   "file": "CPL_Dashboard.html",
-   "line": 9381,
-   "glyph": "\u2687",
-   "kind": "status",
-   "generator_owned": false,
-   "context": "<p class=\"uc-intro\">Consolidated course identities (M-IDs) and variant clusters with discipline, credit status, units, TOP code, and cross-college articulation "
-  },
-  {
-   "file": "CPL_Dashboard.html",
-   "line": 9795,
+   "line": 9882,
    "glyph": "\u2192",
    "kind": "status",
    "generator_owned": false,
@@ -1017,7 +1025,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9795,
+   "line": 9882,
    "glyph": "\u2192",
    "kind": "status",
    "generator_owned": false,
@@ -1025,7 +1033,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9800,
+   "line": 9887,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -1033,7 +1041,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 9948,
+   "line": 10035,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": false,
@@ -1041,7 +1049,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 10102,
+   "line": 10189,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -1049,7 +1057,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 10135,
+   "line": 10222,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -1057,7 +1065,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 10135,
+   "line": 10222,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -1065,7 +1073,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 10151,
+   "line": 10238,
    "glyph": "\ud83e\udde0",
    "kind": "decoration",
    "generator_owned": false,
@@ -1073,7 +1081,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 10165,
+   "line": 10252,
    "glyph": "\ud83e\ude7a",
    "kind": "decoration",
    "generator_owned": false,
@@ -1081,7 +1089,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 10170,
+   "line": 10257,
    "glyph": "\ud83e\uddf9",
    "kind": "decoration",
    "generator_owned": false,
@@ -1089,7 +1097,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 12399,
+   "line": 12511,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -1097,7 +1105,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 12728,
+   "line": 12840,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -1105,7 +1113,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 13485,
+   "line": 13597,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -1113,7 +1121,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 16144,
+   "line": 16331,
    "glyph": "\u2194",
    "kind": "decoration",
    "generator_owned": false,
@@ -1121,7 +1129,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 16171,
+   "line": 16358,
    "glyph": "\ud83d\udc65",
    "kind": "decoration",
    "generator_owned": false,
@@ -1129,7 +1137,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 16173,
+   "line": 16360,
    "glyph": "\ud83d\udcdd",
    "kind": "decoration",
    "generator_owned": false,
@@ -1137,7 +1145,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 16173,
+   "line": 16360,
    "glyph": "\ud83d\udce3",
    "kind": "decoration",
    "generator_owned": false,
@@ -1145,7 +1153,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 16499,
+   "line": 16686,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": false,
@@ -1153,7 +1161,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 16603,
+   "line": 16790,
    "glyph": "\ud83e\udde0",
    "kind": "decoration",
    "generator_owned": false,
@@ -1161,7 +1169,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 16623,
+   "line": 16810,
    "glyph": "\ud83e\ude7a",
    "kind": "decoration",
    "generator_owned": false,
@@ -1169,7 +1177,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 16746,
+   "line": 16933,
    "glyph": "&#128214;",
    "kind": "decoration",
    "generator_owned": false,
@@ -1177,7 +1185,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 16760,
+   "line": 16947,
    "glyph": "&#128274;",
    "kind": "decoration",
    "generator_owned": false,
@@ -1185,7 +1193,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 16763,
+   "line": 16950,
    "glyph": "&#128073;",
    "kind": "decoration",
    "generator_owned": false,
@@ -1193,7 +1201,7 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 16768,
+   "line": 16955,
    "glyph": "&#128161;",
    "kind": "decoration",
    "generator_owned": false,
@@ -1281,7 +1289,7 @@
   },
   {
    "file": "index.html",
-   "line": 4576,
+   "line": 4582,
    "glyph": "\u2192",
    "kind": "control",
    "generator_owned": false,
@@ -1289,7 +1297,7 @@
   },
   {
    "file": "index.html",
-   "line": 4636,
+   "line": 4642,
    "glyph": "\u2b50",
    "kind": "control",
    "generator_owned": false,
@@ -1297,7 +1305,7 @@
   },
   {
    "file": "index.html",
-   "line": 4645,
+   "line": 4651,
    "glyph": "\u2b50",
    "kind": "control",
    "generator_owned": false,
@@ -1305,7 +1313,7 @@
   },
   {
    "file": "index.html",
-   "line": 4676,
+   "line": 4682,
    "glyph": "\u21b3",
    "kind": "decoration",
    "generator_owned": false,
@@ -1313,7 +1321,7 @@
   },
   {
    "file": "index.html",
-   "line": 4676,
+   "line": 4682,
    "glyph": "\u21b3",
    "kind": "decoration",
    "generator_owned": false,
@@ -1321,7 +1329,7 @@
   },
   {
    "file": "index.html",
-   "line": 4676,
+   "line": 4682,
    "glyph": "\u21b3",
    "kind": "decoration",
    "generator_owned": false,
@@ -1329,7 +1337,7 @@
   },
   {
    "file": "index.html",
-   "line": 4849,
+   "line": 4855,
    "glyph": "\u2605",
    "kind": "control",
    "generator_owned": false,
@@ -1337,7 +1345,7 @@
   },
   {
    "file": "index.html",
-   "line": 4864,
+   "line": 4870,
    "glyph": "\u2b50",
    "kind": "control",
    "generator_owned": false,
@@ -1345,7 +1353,7 @@
   },
   {
    "file": "index.html",
-   "line": 4933,
+   "line": 4939,
    "glyph": "\u2b50",
    "kind": "control",
    "generator_owned": false,
@@ -1353,7 +1361,7 @@
   },
   {
    "file": "index.html",
-   "line": 5552,
+   "line": 5558,
    "glyph": "\u2192",
    "kind": "control",
    "generator_owned": false,
@@ -1361,7 +1369,7 @@
   },
   {
    "file": "index.html",
-   "line": 5557,
+   "line": 5563,
    "glyph": "\u2192",
    "kind": "control",
    "generator_owned": false,
@@ -1369,7 +1377,7 @@
   },
   {
    "file": "index.html",
-   "line": 5562,
+   "line": 5568,
    "glyph": "\u2192",
    "kind": "control",
    "generator_owned": false,
@@ -1377,7 +1385,7 @@
   },
   {
    "file": "index.html",
-   "line": 5567,
+   "line": 5573,
    "glyph": "\u2192",
    "kind": "control",
    "generator_owned": false,
@@ -1385,7 +1393,7 @@
   },
   {
    "file": "index.html",
-   "line": 6110,
+   "line": 6086,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": true,
@@ -1393,7 +1401,7 @@
   },
   {
    "file": "index.html",
-   "line": 6117,
+   "line": 6093,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": true,
@@ -1401,7 +1409,7 @@
   },
   {
    "file": "index.html",
-   "line": 6812,
+   "line": 6788,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": true,
@@ -1409,7 +1417,7 @@
   },
   {
    "file": "index.html",
-   "line": 7184,
+   "line": 7211,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": true,
@@ -1417,7 +1425,7 @@
   },
   {
    "file": "index.html",
-   "line": 7191,
+   "line": 7218,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": true,
@@ -1425,7 +1433,7 @@
   },
   {
    "file": "index.html",
-   "line": 7421,
+   "line": 7478,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": true,
@@ -1433,7 +1441,7 @@
   },
   {
    "file": "index.html",
-   "line": 7428,
+   "line": 7485,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": true,
@@ -1441,7 +1449,7 @@
   },
   {
    "file": "index.html",
-   "line": 7494,
+   "line": 7551,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": true,
@@ -1449,7 +1457,7 @@
   },
   {
    "file": "index.html",
-   "line": 7703,
+   "line": 7760,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": true,
@@ -1457,7 +1465,7 @@
   },
   {
    "file": "index.html",
-   "line": 7736,
+   "line": 7793,
    "glyph": "\u2705",
    "kind": "status",
    "generator_owned": true,
@@ -1465,7 +1473,7 @@
   },
   {
    "file": "index.html",
-   "line": 8280,
+   "line": 8337,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1473,7 +1481,7 @@
   },
   {
    "file": "index.html",
-   "line": 8280,
+   "line": 8337,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1481,7 +1489,7 @@
   },
   {
    "file": "index.html",
-   "line": 8291,
+   "line": 8348,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1489,7 +1497,7 @@
   },
   {
    "file": "index.html",
-   "line": 8308,
+   "line": 8365,
    "glyph": "\u21b3",
    "kind": "status",
    "generator_owned": false,
@@ -1497,7 +1505,7 @@
   },
   {
    "file": "index.html",
-   "line": 8308,
+   "line": 8365,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1505,7 +1513,7 @@
   },
   {
    "file": "index.html",
-   "line": 8308,
+   "line": 8365,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1513,23 +1521,7 @@
   },
   {
    "file": "index.html",
-   "line": 8336,
-   "glyph": "\u21b3",
-   "kind": "status",
-   "generator_owned": false,
-   "context": "<th scope=\"row\" rowspan=\"3\" class=\"wpg-name wpg-nest\" style=\"--wpg-indent:1.25rem\" data-no-ladder=\"1\" data-pid=\"1.1.2\" data-name=\"AI Apprenticeship CPL Tools\"><"
-  },
-  {
-   "file": "index.html",
-   "line": 8336,
-   "glyph": "\u270e",
-   "kind": "status",
-   "generator_owned": false,
-   "context": "<th scope=\"row\" rowspan=\"3\" class=\"wpg-name wpg-nest\" style=\"--wpg-indent:1.25rem\" data-no-ladder=\"1\" data-pid=\"1.1.2\" data-name=\"AI Apprenticeship CPL Tools\"><"
-  },
-  {
-   "file": "index.html",
-   "line": 8364,
+   "line": 8393,
    "glyph": "\u21b3",
    "kind": "status",
    "generator_owned": false,
@@ -1537,7 +1529,7 @@
   },
   {
    "file": "index.html",
-   "line": 8364,
+   "line": 8393,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1545,7 +1537,7 @@
   },
   {
    "file": "index.html",
-   "line": 8364,
+   "line": 8393,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1553,7 +1545,7 @@
   },
   {
    "file": "index.html",
-   "line": 8392,
+   "line": 8421,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1561,7 +1553,7 @@
   },
   {
    "file": "index.html",
-   "line": 8392,
+   "line": 8421,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1569,7 +1561,7 @@
   },
   {
    "file": "index.html",
-   "line": 8403,
+   "line": 8432,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1577,7 +1569,7 @@
   },
   {
    "file": "index.html",
-   "line": 8420,
+   "line": 8449,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1585,7 +1577,7 @@
   },
   {
    "file": "index.html",
-   "line": 8420,
+   "line": 8449,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1593,7 +1585,7 @@
   },
   {
    "file": "index.html",
-   "line": 8431,
+   "line": 8460,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1601,7 +1593,7 @@
   },
   {
    "file": "index.html",
-   "line": 8448,
+   "line": 8477,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1609,7 +1601,7 @@
   },
   {
    "file": "index.html",
-   "line": 8448,
+   "line": 8477,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1617,7 +1609,7 @@
   },
   {
    "file": "index.html",
-   "line": 8459,
+   "line": 8488,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1625,7 +1617,7 @@
   },
   {
    "file": "index.html",
-   "line": 8481,
+   "line": 8510,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1633,7 +1625,7 @@
   },
   {
    "file": "index.html",
-   "line": 8481,
+   "line": 8510,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1641,7 +1633,7 @@
   },
   {
    "file": "index.html",
-   "line": 8509,
+   "line": 8538,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1649,7 +1641,7 @@
   },
   {
    "file": "index.html",
-   "line": 8509,
+   "line": 8538,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1657,7 +1649,7 @@
   },
   {
    "file": "index.html",
-   "line": 8520,
+   "line": 8549,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1665,7 +1657,7 @@
   },
   {
    "file": "index.html",
-   "line": 8537,
+   "line": 8566,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1673,7 +1665,7 @@
   },
   {
    "file": "index.html",
-   "line": 8537,
+   "line": 8566,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1681,7 +1673,7 @@
   },
   {
    "file": "index.html",
-   "line": 8548,
+   "line": 8577,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1689,7 +1681,7 @@
   },
   {
    "file": "index.html",
-   "line": 8565,
+   "line": 8594,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1697,7 +1689,7 @@
   },
   {
    "file": "index.html",
-   "line": 8565,
+   "line": 8594,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1705,7 +1697,7 @@
   },
   {
    "file": "index.html",
-   "line": 8576,
+   "line": 8605,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1713,7 +1705,7 @@
   },
   {
    "file": "index.html",
-   "line": 8598,
+   "line": 8627,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1721,7 +1713,7 @@
   },
   {
    "file": "index.html",
-   "line": 8598,
+   "line": 8627,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1729,7 +1721,7 @@
   },
   {
    "file": "index.html",
-   "line": 8626,
+   "line": 8655,
    "glyph": "\u21b3",
    "kind": "status",
    "generator_owned": false,
@@ -1737,7 +1729,7 @@
   },
   {
    "file": "index.html",
-   "line": 8626,
+   "line": 8655,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1745,7 +1737,7 @@
   },
   {
    "file": "index.html",
-   "line": 8626,
+   "line": 8655,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1753,7 +1745,7 @@
   },
   {
    "file": "index.html",
-   "line": 8654,
+   "line": 8683,
    "glyph": "\u21b3",
    "kind": "status",
    "generator_owned": false,
@@ -1761,7 +1753,7 @@
   },
   {
    "file": "index.html",
-   "line": 8654,
+   "line": 8683,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1769,7 +1761,7 @@
   },
   {
    "file": "index.html",
-   "line": 8654,
+   "line": 8683,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1777,7 +1769,7 @@
   },
   {
    "file": "index.html",
-   "line": 8682,
+   "line": 8711,
    "glyph": "\u21b3",
    "kind": "status",
    "generator_owned": false,
@@ -1785,7 +1777,7 @@
   },
   {
    "file": "index.html",
-   "line": 8682,
+   "line": 8711,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1793,7 +1785,7 @@
   },
   {
    "file": "index.html",
-   "line": 8682,
+   "line": 8711,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1801,7 +1793,7 @@
   },
   {
    "file": "index.html",
-   "line": 8710,
+   "line": 8739,
    "glyph": "\u21b3",
    "kind": "status",
    "generator_owned": false,
@@ -1809,7 +1801,7 @@
   },
   {
    "file": "index.html",
-   "line": 8710,
+   "line": 8739,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1817,7 +1809,7 @@
   },
   {
    "file": "index.html",
-   "line": 8710,
+   "line": 8739,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1825,7 +1817,7 @@
   },
   {
    "file": "index.html",
-   "line": 8738,
+   "line": 8767,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1833,7 +1825,7 @@
   },
   {
    "file": "index.html",
-   "line": 8738,
+   "line": 8767,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1841,7 +1833,7 @@
   },
   {
    "file": "index.html",
-   "line": 8766,
+   "line": 8795,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1849,7 +1841,7 @@
   },
   {
    "file": "index.html",
-   "line": 8766,
+   "line": 8795,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1857,7 +1849,7 @@
   },
   {
    "file": "index.html",
-   "line": 8794,
+   "line": 8823,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1865,7 +1857,7 @@
   },
   {
    "file": "index.html",
-   "line": 8794,
+   "line": 8823,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1873,7 +1865,7 @@
   },
   {
    "file": "index.html",
-   "line": 8805,
+   "line": 8834,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1881,7 +1873,7 @@
   },
   {
    "file": "index.html",
-   "line": 8822,
+   "line": 8851,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1889,7 +1881,7 @@
   },
   {
    "file": "index.html",
-   "line": 8822,
+   "line": 8851,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1897,7 +1889,7 @@
   },
   {
    "file": "index.html",
-   "line": 8833,
+   "line": 8862,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1905,7 +1897,7 @@
   },
   {
    "file": "index.html",
-   "line": 8850,
+   "line": 8879,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1913,7 +1905,7 @@
   },
   {
    "file": "index.html",
-   "line": 8850,
+   "line": 8879,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1921,7 +1913,7 @@
   },
   {
    "file": "index.html",
-   "line": 8861,
+   "line": 8890,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1929,7 +1921,7 @@
   },
   {
    "file": "index.html",
-   "line": 8878,
+   "line": 8907,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1937,7 +1929,7 @@
   },
   {
    "file": "index.html",
-   "line": 8878,
+   "line": 8907,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1945,7 +1937,7 @@
   },
   {
    "file": "index.html",
-   "line": 8906,
+   "line": 8935,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1953,7 +1945,7 @@
   },
   {
    "file": "index.html",
-   "line": 8906,
+   "line": 8935,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1961,7 +1953,31 @@
   },
   {
    "file": "index.html",
-   "line": 8939,
+   "line": 8963,
+   "glyph": "\u2605",
+   "kind": "status",
+   "generator_owned": false,
+   "context": "<th scope=\"row\" rowspan=\"3\" class=\"wpg-name\"><span class=\"wpg-pid\">3.9</span> <span class=\"wpg-title-cell\" data-title-edit=\"1\" data-pid=\"3.9\">Futuro Behavioral "
+  },
+  {
+   "file": "index.html",
+   "line": 8963,
+   "glyph": "\u270e",
+   "kind": "status",
+   "generator_owned": false,
+   "context": "<th scope=\"row\" rowspan=\"3\" class=\"wpg-name\"><span class=\"wpg-pid\">3.9</span> <span class=\"wpg-title-cell\" data-title-edit=\"1\" data-pid=\"3.9\">Futuro Behavioral "
+  },
+  {
+   "file": "index.html",
+   "line": 8974,
+   "glyph": "\u270e",
+   "kind": "status",
+   "generator_owned": false,
+   "context": "<td class=\"wpg-val\" data-label=\"25-26\" data-current-edit=\"1\" data-aid=\"3.9\" data-val=\"0\"> <span class=\"wpg-manual-hint\" aria-hidden=\"true\">\u270e</span></td>"
+  },
+  {
+   "file": "index.html",
+   "line": 8996,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1969,7 +1985,7 @@
   },
   {
    "file": "index.html",
-   "line": 8939,
+   "line": 8996,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -1977,7 +1993,7 @@
   },
   {
    "file": "index.html",
-   "line": 8967,
+   "line": 9024,
    "glyph": "\u21b3",
    "kind": "status",
    "generator_owned": false,
@@ -1985,7 +2001,7 @@
   },
   {
    "file": "index.html",
-   "line": 8967,
+   "line": 9024,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -1993,7 +2009,7 @@
   },
   {
    "file": "index.html",
-   "line": 8967,
+   "line": 9024,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -2001,7 +2017,7 @@
   },
   {
    "file": "index.html",
-   "line": 8978,
+   "line": 9035,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -2009,7 +2025,7 @@
   },
   {
    "file": "index.html",
-   "line": 8995,
+   "line": 9052,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -2017,7 +2033,7 @@
   },
   {
    "file": "index.html",
-   "line": 8995,
+   "line": 9052,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -2025,7 +2041,7 @@
   },
   {
    "file": "index.html",
-   "line": 9006,
+   "line": 9063,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -2033,7 +2049,31 @@
   },
   {
    "file": "index.html",
-   "line": 9023,
+   "line": 9080,
+   "glyph": "\u21b3",
+   "kind": "status",
+   "generator_owned": false,
+   "context": "<th scope=\"row\" rowspan=\"3\" class=\"wpg-name wpg-nest\" style=\"--wpg-indent:1.25rem\" data-no-ladder=\"1\" data-pid=\"4.2.1\" data-name=\"AI Apprenticeship CPL Tools\"><"
+  },
+  {
+   "file": "index.html",
+   "line": 9080,
+   "glyph": "\u2605",
+   "kind": "status",
+   "generator_owned": false,
+   "context": "<th scope=\"row\" rowspan=\"3\" class=\"wpg-name wpg-nest\" style=\"--wpg-indent:1.25rem\" data-no-ladder=\"1\" data-pid=\"4.2.1\" data-name=\"AI Apprenticeship CPL Tools\"><"
+  },
+  {
+   "file": "index.html",
+   "line": 9080,
+   "glyph": "\u270e",
+   "kind": "status",
+   "generator_owned": false,
+   "context": "<th scope=\"row\" rowspan=\"3\" class=\"wpg-name wpg-nest\" style=\"--wpg-indent:1.25rem\" data-no-ladder=\"1\" data-pid=\"4.2.1\" data-name=\"AI Apprenticeship CPL Tools\"><"
+  },
+  {
+   "file": "index.html",
+   "line": 9108,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -2041,7 +2081,7 @@
   },
   {
    "file": "index.html",
-   "line": 9023,
+   "line": 9108,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -2049,7 +2089,7 @@
   },
   {
    "file": "index.html",
-   "line": 9034,
+   "line": 9119,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -2057,7 +2097,7 @@
   },
   {
    "file": "index.html",
-   "line": 9051,
+   "line": 9136,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -2065,7 +2105,7 @@
   },
   {
    "file": "index.html",
-   "line": 9051,
+   "line": 9136,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -2073,7 +2113,7 @@
   },
   {
    "file": "index.html",
-   "line": 9062,
+   "line": 9147,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -2081,7 +2121,7 @@
   },
   {
    "file": "index.html",
-   "line": 9079,
+   "line": 9164,
    "glyph": "\u21b3",
    "kind": "status",
    "generator_owned": false,
@@ -2089,7 +2129,7 @@
   },
   {
    "file": "index.html",
-   "line": 9079,
+   "line": 9164,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -2097,7 +2137,7 @@
   },
   {
    "file": "index.html",
-   "line": 9079,
+   "line": 9164,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -2105,7 +2145,7 @@
   },
   {
    "file": "index.html",
-   "line": 9107,
+   "line": 9192,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -2113,7 +2153,7 @@
   },
   {
    "file": "index.html",
-   "line": 9107,
+   "line": 9192,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -2121,7 +2161,7 @@
   },
   {
    "file": "index.html",
-   "line": 9118,
+   "line": 9203,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -2129,7 +2169,7 @@
   },
   {
    "file": "index.html",
-   "line": 9135,
+   "line": 9220,
    "glyph": "\u21b3",
    "kind": "status",
    "generator_owned": false,
@@ -2137,7 +2177,7 @@
   },
   {
    "file": "index.html",
-   "line": 9135,
+   "line": 9220,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -2145,7 +2185,7 @@
   },
   {
    "file": "index.html",
-   "line": 9135,
+   "line": 9220,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -2153,7 +2193,7 @@
   },
   {
    "file": "index.html",
-   "line": 9163,
+   "line": 9248,
    "glyph": "\u2605",
    "kind": "status",
    "generator_owned": false,
@@ -2161,7 +2201,7 @@
   },
   {
    "file": "index.html",
-   "line": 9163,
+   "line": 9248,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -2169,7 +2209,7 @@
   },
   {
    "file": "index.html",
-   "line": 9174,
+   "line": 9259,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
@@ -2177,31 +2217,7 @@
   },
   {
    "file": "index.html",
-   "line": 9372,
-   "glyph": "\u26a0\ufe0f",
-   "kind": "decoration",
-   "generator_owned": false,
-   "context": "<div class=\"uc-beta-banner\">\u26a0\ufe0f <strong>Beta / draft</strong> \u2014 AI-assisted course unification, pending human review. Per-row quality flags (over-merge, mixed-at"
-  },
-  {
-   "file": "index.html",
-   "line": 9377,
-   "glyph": "\u2726",
-   "kind": "decoration",
-   "generator_owned": false,
-   "context": "<span aria-hidden=\"true\">\u2726</span>"
-  },
-  {
-   "file": "index.html",
-   "line": 9381,
-   "glyph": "\u2687",
-   "kind": "status",
-   "generator_owned": false,
-   "context": "<p class=\"uc-intro\">Consolidated course identities (M-IDs) and variant clusters with discipline, credit status, units, TOP code, and cross-college articulation "
-  },
-  {
-   "file": "index.html",
-   "line": 9795,
+   "line": 9882,
    "glyph": "\u2192",
    "kind": "status",
    "generator_owned": false,
@@ -2209,7 +2225,7 @@
   },
   {
    "file": "index.html",
-   "line": 9795,
+   "line": 9882,
    "glyph": "\u2192",
    "kind": "status",
    "generator_owned": false,
@@ -2217,7 +2233,7 @@
   },
   {
    "file": "index.html",
-   "line": 9800,
+   "line": 9887,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -2225,7 +2241,7 @@
   },
   {
    "file": "index.html",
-   "line": 9948,
+   "line": 10035,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": false,
@@ -2233,7 +2249,7 @@
   },
   {
    "file": "index.html",
-   "line": 10102,
+   "line": 10189,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -2241,7 +2257,7 @@
   },
   {
    "file": "index.html",
-   "line": 10135,
+   "line": 10222,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -2249,7 +2265,7 @@
   },
   {
    "file": "index.html",
-   "line": 10135,
+   "line": 10222,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -2257,7 +2273,7 @@
   },
   {
    "file": "index.html",
-   "line": 10151,
+   "line": 10238,
    "glyph": "\ud83e\udde0",
    "kind": "decoration",
    "generator_owned": false,
@@ -2265,7 +2281,7 @@
   },
   {
    "file": "index.html",
-   "line": 10165,
+   "line": 10252,
    "glyph": "\ud83e\ude7a",
    "kind": "decoration",
    "generator_owned": false,
@@ -2273,7 +2289,7 @@
   },
   {
    "file": "index.html",
-   "line": 10170,
+   "line": 10257,
    "glyph": "\ud83e\uddf9",
    "kind": "decoration",
    "generator_owned": false,
@@ -2281,7 +2297,7 @@
   },
   {
    "file": "index.html",
-   "line": 12399,
+   "line": 12511,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -2289,7 +2305,7 @@
   },
   {
    "file": "index.html",
-   "line": 12728,
+   "line": 12840,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -2297,7 +2313,7 @@
   },
   {
    "file": "index.html",
-   "line": 13485,
+   "line": 13597,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -2305,7 +2321,7 @@
   },
   {
    "file": "index.html",
-   "line": 16144,
+   "line": 16331,
    "glyph": "\u2194",
    "kind": "decoration",
    "generator_owned": false,
@@ -2313,7 +2329,7 @@
   },
   {
    "file": "index.html",
-   "line": 16171,
+   "line": 16358,
    "glyph": "\ud83d\udc65",
    "kind": "decoration",
    "generator_owned": false,
@@ -2321,7 +2337,7 @@
   },
   {
    "file": "index.html",
-   "line": 16173,
+   "line": 16360,
    "glyph": "\ud83d\udcdd",
    "kind": "decoration",
    "generator_owned": false,
@@ -2329,7 +2345,7 @@
   },
   {
    "file": "index.html",
-   "line": 16173,
+   "line": 16360,
    "glyph": "\ud83d\udce3",
    "kind": "decoration",
    "generator_owned": false,
@@ -2337,7 +2353,7 @@
   },
   {
    "file": "index.html",
-   "line": 16499,
+   "line": 16686,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": false,
@@ -2345,7 +2361,7 @@
   },
   {
    "file": "index.html",
-   "line": 16603,
+   "line": 16790,
    "glyph": "\ud83e\udde0",
    "kind": "decoration",
    "generator_owned": false,
@@ -2353,7 +2369,7 @@
   },
   {
    "file": "index.html",
-   "line": 16623,
+   "line": 16810,
    "glyph": "\ud83e\ude7a",
    "kind": "decoration",
    "generator_owned": false,
@@ -2361,7 +2377,7 @@
   },
   {
    "file": "index.html",
-   "line": 16746,
+   "line": 16933,
    "glyph": "&#128214;",
    "kind": "decoration",
    "generator_owned": false,
@@ -2369,7 +2385,7 @@
   },
   {
    "file": "index.html",
-   "line": 16760,
+   "line": 16947,
    "glyph": "&#128274;",
    "kind": "decoration",
    "generator_owned": false,
@@ -2377,7 +2393,7 @@
   },
   {
    "file": "index.html",
-   "line": 16763,
+   "line": 16950,
    "glyph": "&#128073;",
    "kind": "decoration",
    "generator_owned": false,
@@ -2385,7 +2401,7 @@
   },
   {
    "file": "index.html",
-   "line": 16768,
+   "line": 16955,
    "glyph": "&#128161;",
    "kind": "decoration",
    "generator_owned": false,
@@ -2393,7 +2409,7 @@
   },
   {
    "file": "CPL_Data.js",
-   "line": 2047,
+   "line": 2072,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -2401,7 +2417,7 @@
   },
   {
    "file": "CPL_Data.js",
-   "line": 2376,
+   "line": 2401,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -2409,7 +2425,7 @@
   },
   {
    "file": "CPL_Data.js",
-   "line": 3133,
+   "line": 3158,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -2425,7 +2441,7 @@
   },
   {
    "file": "a11y.config.js",
-   "line": 1318,
+   "line": 1325,
    "glyph": "\u26a0\ufe0f",
    "kind": "decoration",
    "generator_owned": false,
@@ -6561,7 +6577,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 651,
+   "line": 664,
    "glyph": "\ud83e\udde0",
    "kind": "decoration",
    "generator_owned": false,
@@ -6569,7 +6585,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 684,
+   "line": 697,
    "glyph": "\ud83c\udfa4",
    "kind": "decoration",
    "generator_owned": false,
@@ -6577,7 +6593,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 939,
+   "line": 952,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -6585,7 +6601,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 1027,
+   "line": 1040,
    "glyph": "\u26a0",
    "kind": "control",
    "generator_owned": false,
@@ -6593,7 +6609,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 1030,
+   "line": 1043,
    "glyph": "\u26a0",
    "kind": "decoration",
    "generator_owned": false,
@@ -6601,7 +6617,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 1241,
+   "line": 1254,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -6609,7 +6625,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 1242,
+   "line": 1255,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -6617,7 +6633,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 1243,
+   "line": 1256,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -6625,7 +6641,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 1341,
+   "line": 1354,
    "glyph": "\u2699",
    "kind": "decoration",
    "generator_owned": false,
@@ -6633,7 +6649,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 1445,
+   "line": 1458,
    "glyph": "\u2687",
    "kind": "decoration",
    "generator_owned": false,
@@ -6641,7 +6657,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 1463,
+   "line": 1476,
    "glyph": "\u2687",
    "kind": "decoration",
    "generator_owned": false,
@@ -6649,7 +6665,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 1469,
+   "line": 1482,
    "glyph": "\u2715",
    "kind": "decoration",
    "generator_owned": false,
@@ -6657,15 +6673,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 1478,
-   "glyph": "\ud83d\udd0d",
-   "kind": "decoration",
-   "generator_owned": false,
-   "context": "var perRowSearch = el(\"input\", { type: \"search\", placeholder: \"\ud83d\udd0d Search title or ID to add more \u2014 comma separates terms (e.g. digital, imag)\", style: \"width:100"
-  },
-  {
-   "file": "unified_courses.js",
-   "line": 1485,
+   "line": 1498,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -6673,7 +6681,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 1752,
+   "line": 1765,
    "glyph": "\u2728",
    "kind": "decoration",
    "generator_owned": false,
@@ -6681,7 +6689,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 1769,
+   "line": 1782,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -6689,7 +6697,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 1803,
+   "line": 1816,
    "glyph": "\u21ba",
    "kind": "decoration",
    "generator_owned": false,
@@ -6697,7 +6705,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 1887,
+   "line": 1900,
    "glyph": "\u2605",
    "kind": "decoration",
    "generator_owned": false,
@@ -6705,7 +6713,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 1887,
+   "line": 1900,
    "glyph": "\u2687",
    "kind": "decoration",
    "generator_owned": false,
@@ -6713,7 +6721,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 1947,
+   "line": 1960,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": false,
@@ -6721,7 +6729,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 1948,
+   "line": 1961,
    "glyph": "\u2605",
    "kind": "decoration",
    "generator_owned": false,
@@ -6729,7 +6737,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 1995,
+   "line": 2008,
    "glyph": "\ud83e\uddfe",
    "kind": "decoration",
    "generator_owned": false,
@@ -6737,7 +6745,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2004,
+   "line": 2017,
    "glyph": "\u26a0",
    "kind": "decoration",
    "generator_owned": false,
@@ -6745,7 +6753,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2009,
+   "line": 2022,
    "glyph": "\u2795",
    "kind": "decoration",
    "generator_owned": false,
@@ -6753,7 +6761,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2010,
+   "line": 2023,
    "glyph": "\u2795",
    "kind": "decoration",
    "generator_owned": false,
@@ -6761,7 +6769,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2019,
+   "line": 2032,
    "glyph": "\u2605",
    "kind": "decoration",
    "generator_owned": false,
@@ -6769,7 +6777,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2027,
+   "line": 2040,
    "glyph": "\u2606",
    "kind": "decoration",
    "generator_owned": false,
@@ -6777,7 +6785,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2057,
+   "line": 2070,
    "glyph": "\u2715",
    "kind": "decoration",
    "generator_owned": false,
@@ -6785,7 +6793,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2112,
+   "line": 2125,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -6793,7 +6801,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2126,
+   "line": 2139,
    "glyph": "\u2194",
    "kind": "decoration",
    "generator_owned": false,
@@ -6801,7 +6809,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2172,
+   "line": 2185,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -6809,7 +6817,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2217,
+   "line": 2230,
    "glyph": "\u2728",
    "kind": "decoration",
    "generator_owned": false,
@@ -6817,7 +6825,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2290,
+   "line": 2303,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -6825,7 +6833,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2296,
+   "line": 2309,
    "glyph": "\u2605",
    "kind": "decoration",
    "generator_owned": false,
@@ -6833,7 +6841,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2335,
+   "line": 2348,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": false,
@@ -6841,7 +6849,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2335,
+   "line": 2348,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": false,
@@ -6849,7 +6857,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2344,
+   "line": 2357,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": false,
@@ -6857,7 +6865,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2344,
+   "line": 2357,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": false,
@@ -6865,7 +6873,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2399,
+   "line": 2412,
    "glyph": "\u2315",
    "kind": "decoration",
    "generator_owned": false,
@@ -6873,7 +6881,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2422,
+   "line": 2435,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": false,
@@ -6881,7 +6889,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2423,
+   "line": 2436,
    "glyph": "\u2715",
    "kind": "decoration",
    "generator_owned": false,
@@ -6889,7 +6897,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2463,
+   "line": 2476,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -6897,7 +6905,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2594,
+   "line": 2607,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -6905,7 +6913,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2646,
+   "line": 2659,
    "glyph": "\u2728",
    "kind": "decoration",
    "generator_owned": false,
@@ -6913,7 +6921,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2682,
+   "line": 2695,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -6921,7 +6929,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2709,
+   "line": 2722,
    "glyph": "\u2728",
    "kind": "decoration",
    "generator_owned": false,
@@ -6929,7 +6937,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2739,
+   "line": 2752,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -6937,7 +6945,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2739,
+   "line": 2752,
    "glyph": "\ud83e\uddfe",
    "kind": "decoration",
    "generator_owned": false,
@@ -6945,7 +6953,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2762,
+   "line": 2775,
    "glyph": "\u2715",
    "kind": "decoration",
    "generator_owned": false,
@@ -6953,15 +6961,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2776,
-   "glyph": "\ud83d\udd0d",
-   "kind": "decoration",
-   "generator_owned": false,
-   "context": "placeholder: \"\ud83d\udd0d Search title or ID \u2014 comma separates terms (e.g. digital, imag)\","
-  },
-  {
-   "file": "unified_courses.js",
-   "line": 2795,
+   "line": 2808,
    "glyph": "\u2192",
    "kind": "status",
    "generator_owned": false,
@@ -6969,7 +6969,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2932,
+   "line": 2945,
    "glyph": "\u2728",
    "kind": "decoration",
    "generator_owned": false,
@@ -6977,7 +6977,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2935,
+   "line": 2948,
    "glyph": "\u26d3",
    "kind": "decoration",
    "generator_owned": false,
@@ -6985,7 +6985,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2938,
+   "line": 2951,
    "glyph": "\ud83e\uddfe",
    "kind": "decoration",
    "generator_owned": false,
@@ -6993,7 +6993,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2941,
+   "line": 2954,
    "glyph": "\ud83d\udcdd",
    "kind": "decoration",
    "generator_owned": false,
@@ -7001,7 +7001,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2944,
+   "line": 2957,
    "glyph": "\ud83c\udff7",
    "kind": "decoration",
    "generator_owned": false,
@@ -7009,7 +7009,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2957,
+   "line": 2970,
    "glyph": "\u2605",
    "kind": "decoration",
    "generator_owned": false,
@@ -7017,7 +7017,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2958,
+   "line": 2971,
    "glyph": "\u2605",
    "kind": "decoration",
    "generator_owned": false,
@@ -7025,7 +7025,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2966,
+   "line": 2979,
    "glyph": "\ud83e\uddfe",
    "kind": "decoration",
    "generator_owned": false,
@@ -7033,7 +7033,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2971,
+   "line": 2984,
    "glyph": "\u2605",
    "kind": "decoration",
    "generator_owned": false,
@@ -7041,7 +7041,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2975,
+   "line": 2988,
    "glyph": "\u26a0",
    "kind": "decoration",
    "generator_owned": false,
@@ -7049,7 +7049,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2977,
+   "line": 2990,
    "glyph": "\u26a0",
    "kind": "decoration",
    "generator_owned": false,
@@ -7057,7 +7057,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2978,
+   "line": 2991,
    "glyph": "\u26a0",
    "kind": "decoration",
    "generator_owned": false,
@@ -7065,7 +7065,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2992,
+   "line": 3005,
    "glyph": "\u26a0",
    "kind": "decoration",
    "generator_owned": false,
@@ -7073,7 +7073,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3002,
+   "line": 3015,
    "glyph": "\u26a0",
    "kind": "decoration",
    "generator_owned": false,
@@ -7081,7 +7081,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3009,
+   "line": 3022,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -7089,7 +7089,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3092,
+   "line": 3105,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -7097,7 +7097,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3319,
+   "line": 3332,
    "glyph": "\u2713",
    "kind": "decoration",
    "generator_owned": false,
@@ -7105,47 +7105,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3381,
-   "glyph": "\ud83d\udd0d",
-   "kind": "decoration",
-   "generator_owned": false,
-   "context": "var search = el(\"input\", { id: \"uc-search\", type: \"search\", placeholder: \"\ud83d\udd0d Search title, subject, or ID\u2026\", class: \"uc-filter\", style: \"flex:0 0 auto;width:300p"
-  },
-  {
-   "file": "unified_courses.js",
-   "line": 3389,
-   "glyph": "\u2193",
-   "kind": "decoration",
-   "generator_owned": false,
-   "context": "title: \"Download the full set (incl. stand-alone courses) as Excel\" }, [\"\u2193 Export all to .xlsx\"]);"
-  },
-  {
-   "file": "unified_courses.js",
-   "line": 3400,
-   "glyph": "\u2713",
-   "kind": "decoration",
-   "generator_owned": false,
-   "context": "[\"\u2713 Verify filtered\"]);"
-  },
-  {
-   "file": "unified_courses.js",
-   "line": 3406,
-   "glyph": "\u2728",
-   "kind": "decoration",
-   "generator_owned": false,
-   "context": "[\"\u2728 Suggested merges\"]);"
-  },
-  {
-   "file": "unified_courses.js",
-   "line": 3417,
-   "glyph": "\ud83c\udfaf",
-   "kind": "decoration",
-   "generator_owned": false,
-   "context": "[\"\ud83c\udfaf Cleanup impact\"]);"
-  },
-  {
-   "file": "unified_courses.js",
-   "line": 3468,
+   "line": 3479,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -7153,7 +7113,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3525,
+   "line": 3536,
    "glyph": "\u2605",
    "kind": "decoration",
    "generator_owned": false,
@@ -7161,7 +7121,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3529,
+   "line": 3540,
    "glyph": "\u21b6",
    "kind": "decoration",
    "generator_owned": false,
@@ -7169,7 +7129,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3537,
+   "line": 3548,
    "glyph": "\u21b3",
    "kind": "decoration",
    "generator_owned": false,
@@ -7177,7 +7137,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3540,
+   "line": 3551,
    "glyph": "\u2715",
    "kind": "decoration",
    "generator_owned": false,
@@ -7185,7 +7145,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3555,
+   "line": 3566,
    "glyph": "\u2715",
    "kind": "decoration",
    "generator_owned": false,
@@ -7193,15 +7153,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3560,
-   "glyph": "\ud83d\udd0d",
-   "kind": "decoration",
-   "generator_owned": false,
-   "context": "placeholder: \"\ud83d\udd0d Filter by course title or ID (e.g. weld, ANTH, a course id)\u2026\","
-  },
-  {
-   "file": "unified_courses.js",
-   "line": 3608,
+   "line": 3619,
    "glyph": "\u2197",
    "kind": "decoration",
    "generator_owned": false,
@@ -7209,7 +7161,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3627,
+   "line": 3638,
    "glyph": "\u270e",
    "kind": "decoration",
    "generator_owned": false,
@@ -7217,7 +7169,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3637,
+   "line": 3648,
    "glyph": "\u2717",
    "kind": "decoration",
    "generator_owned": false,
@@ -7225,7 +7177,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3653,
+   "line": 3664,
    "glyph": "\u2709",
    "kind": "decoration",
    "generator_owned": false,
@@ -7233,7 +7185,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3789,
+   "line": 3800,
    "glyph": "\ud83d\udd01",
    "kind": "decoration",
    "generator_owned": false,
@@ -7241,7 +7193,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3810,
+   "line": 3821,
    "glyph": "\u26a0",
    "kind": "decoration",
    "generator_owned": false,
@@ -7249,7 +7201,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3826,
+   "line": 3837,
    "glyph": "\u26d3",
    "kind": "decoration",
    "generator_owned": false,
@@ -7257,7 +7209,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3839,
+   "line": 3850,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -7265,7 +7217,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3840,
+   "line": 3851,
    "glyph": "\u2699",
    "kind": "decoration",
    "generator_owned": false,
@@ -7273,7 +7225,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3850,
+   "line": 3861,
    "glyph": "\u2691",
    "kind": "decoration",
    "generator_owned": false,
@@ -7281,7 +7233,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3865,
+   "line": 3876,
    "glyph": "\u26a0",
    "kind": "decoration",
    "generator_owned": false,
@@ -7289,7 +7241,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3874,
+   "line": 3885,
    "glyph": "\u2728",
    "kind": "decoration",
    "generator_owned": false,
@@ -7297,7 +7249,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3875,
+   "line": 3886,
    "glyph": "\u2728",
    "kind": "decoration",
    "generator_owned": false,
@@ -7305,7 +7257,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3876,
+   "line": 3887,
    "glyph": "\ud83e\uddfe",
    "kind": "decoration",
    "generator_owned": false,
@@ -7313,7 +7265,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3876,
+   "line": 3887,
    "glyph": "\ud83e\uddfe",
    "kind": "decoration",
    "generator_owned": false,
@@ -7321,7 +7273,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3878,
+   "line": 3889,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -7329,7 +7281,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3879,
+   "line": 3890,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -7337,7 +7289,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3880,
+   "line": 3891,
    "glyph": "\u2728",
    "kind": "decoration",
    "generator_owned": false,
@@ -7345,15 +7297,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3887,
-   "glyph": "\u2714",
-   "kind": "decoration",
-   "generator_owned": false,
-   "context": "}, [\"\u2714 Verified\"]));"
-  },
-  {
-   "file": "unified_courses.js",
-   "line": 3891,
+   "line": 3901,
    "glyph": "\u2699",
    "kind": "decoration",
    "generator_owned": false,
@@ -7361,7 +7305,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3892,
+   "line": 3902,
    "glyph": "\u2699",
    "kind": "decoration",
    "generator_owned": false,
@@ -7369,7 +7313,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3893,
+   "line": 3903,
    "glyph": "\u2699",
    "kind": "decoration",
    "generator_owned": false,
@@ -7377,7 +7321,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3894,
+   "line": 3904,
    "glyph": "\u2699",
    "kind": "decoration",
    "generator_owned": false,
@@ -7385,7 +7329,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3895,
+   "line": 3905,
    "glyph": "\u2699",
    "kind": "decoration",
    "generator_owned": false,
@@ -7393,7 +7337,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3895,
+   "line": 3905,
    "glyph": "\u2699",
    "kind": "decoration",
    "generator_owned": false,
@@ -7401,7 +7345,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3906,
+   "line": 3916,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -7409,7 +7353,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3965,
+   "line": 3975,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -7417,7 +7361,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3975,
+   "line": 3985,
    "glyph": "\u270e",
    "kind": "decoration",
    "generator_owned": false,
@@ -7425,7 +7369,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 4207,
+   "line": 4217,
    "glyph": "\u26a0",
    "kind": "decoration",
    "generator_owned": false,
@@ -7433,7 +7377,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 4353,
+   "line": 4363,
    "glyph": "\ud83c\udf93",
    "kind": "decoration",
    "generator_owned": false,
@@ -7441,7 +7385,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 4447,
+   "line": 4457,
    "glyph": "\u2699",
    "kind": "decoration",
    "generator_owned": false,
@@ -7449,7 +7393,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 4514,
+   "line": 4525,
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
@@ -7457,7 +7401,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 4541,
+   "line": 4552,
    "glyph": "\u26a0",
    "kind": "decoration",
    "generator_owned": false,
@@ -7465,7 +7409,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 4565,
+   "line": 4576,
    "glyph": "\u2687",
    "kind": "decoration",
    "generator_owned": false,
@@ -7473,7 +7417,7 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 4569,
+   "line": 4580,
    "glyph": "\u2687",
    "kind": "decoration",
    "generator_owned": false,
@@ -7485,7 +7429,7 @@
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
-   "context": "window.CPL_UC_SUGGESTIONS = {\"generated_at\":\"2026-10-13 02:24\",\"count\":2619,\"groups\":[{\"sig\":\"design landscape\",\"n\":5,\"score\":0.9,\"members\":[{\"id\":\"HORT M1032\","
+   "context": "window.CPL_UC_SUGGESTIONS = {\"generated_at\":\"2026-10-13 04:47\",\"count\":2619,\"groups\":[{\"sig\":\"design landscape\",\"n\":5,\"score\":0.9,\"members\":[{\"id\":\"HORT M1032\","
   },
   {
    "file": "unified_courses_suggestions.js",
@@ -7493,7 +7437,7 @@
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
-   "context": "window.CPL_UC_SUGGESTIONS = {\"generated_at\":\"2026-10-13 02:24\",\"count\":2619,\"groups\":[{\"sig\":\"design landscape\",\"n\":5,\"score\":0.9,\"members\":[{\"id\":\"HORT M1032\","
+   "context": "window.CPL_UC_SUGGESTIONS = {\"generated_at\":\"2026-10-13 04:47\",\"count\":2619,\"groups\":[{\"sig\":\"design landscape\",\"n\":5,\"score\":0.9,\"members\":[{\"id\":\"HORT M1032\","
   },
   {
    "file": "unified_courses_suggestions.js",
@@ -7501,7 +7445,7 @@
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
-   "context": "window.CPL_UC_SUGGESTIONS = {\"generated_at\":\"2026-10-13 02:24\",\"count\":2619,\"groups\":[{\"sig\":\"design landscape\",\"n\":5,\"score\":0.9,\"members\":[{\"id\":\"HORT M1032\","
+   "context": "window.CPL_UC_SUGGESTIONS = {\"generated_at\":\"2026-10-13 04:47\",\"count\":2619,\"groups\":[{\"sig\":\"design landscape\",\"n\":5,\"score\":0.9,\"members\":[{\"id\":\"HORT M1032\","
   },
   {
    "file": "unified_courses_suggestions.js",
@@ -7509,7 +7453,7 @@
    "glyph": "\u2192",
    "kind": "decoration",
    "generator_owned": false,
-   "context": "window.CPL_UC_SUGGESTIONS = {\"generated_at\":\"2026-10-13 02:24\",\"count\":2619,\"groups\":[{\"sig\":\"design landscape\",\"n\":5,\"score\":0.9,\"members\":[{\"id\":\"HORT M1032\","
+   "context": "window.CPL_UC_SUGGESTIONS = {\"generated_at\":\"2026-10-13 04:47\",\"count\":2619,\"groups\":[{\"sig\":\"design landscape\",\"n\":5,\"score\":0.9,\"members\":[{\"id\":\"HORT M1032\","
   },
   {
    "file": "workplan_goals.js",
@@ -7521,7 +7465,7 @@
   },
   {
    "file": "workplan_goals.js",
-   "line": 650,
+   "line": 674,
    "glyph": "\u270e",
    "kind": "status",
    "generator_owned": false,
