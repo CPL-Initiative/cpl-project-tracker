@@ -906,6 +906,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `api.github.com/repos/cpl-initiative` | `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `api.typesafe.ai` | scripts: `kb/_typesafe_smoke.py` |
 | `arc.losrios.edu` | tabs: `map-queue`, `map-users` |
+| `bakersfield.elumenapp.com` | scripts: `kb/_program_requirements_college.py` |
 | `bsky.app` | `edgefn:cpl-news-harvest` |
 | `c-id.net` | scripts: `kb/_ingest_cid_articulations.py` |
 | `c-idsystem.org` | scripts: `tmc/_parse_tmc_pdfs.py` |
@@ -1093,4 +1094,4 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 
 Coverage: 97 Supabase tables · 37 RPCs · 7 edge functions · 638 file
-datasets · 175 external services · 434 consumers · 50 workflows · 39 tabs.
+datasets · 176 external services · 434 consumers · 50 workflows · 39 tabs.

@@ -5,7 +5,7 @@
   "rpcs": 37,
   "edge_functions": 7,
   "file_datasets": 638,
-  "external_services": 175,
+  "external_services": 176,
   "consumers": 434,
   "workflows": 50,
   "data_js_files": 69,
@@ -455,6 +455,18 @@
       "map-queue",
       "map-users"
      ]
+    }
+   ],
+   "main_committers": []
+  },
+  "external:bakersfield.elumenapp.com": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 855
     }
    ],
    "main_committers": []
@@ -12264,7 +12276,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1089
+     "line": 1164
     }
    ],
    "served": true,
@@ -19416,7 +19428,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 1129
+     "line": 1204
     }
    ],
    "main_committers": []
