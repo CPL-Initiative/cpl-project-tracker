@@ -177,6 +177,17 @@ def in_scope(url: str, scope: str | None) -> bool:
     return not scope or (urllib.parse.urlparse(url).path or "/").startswith(scope)
 
 
+def link_page_ok(url: str, scope: str | None) -> bool:
+    """A page the link search found may stand for a program only where a sitemap
+    page could: inside this college's scope, and never a course list, policy,
+    archive or PDF. Coastline's course listing for Real Estate
+    (course-descriptions/credit-courses/re/) names every RE course, so it read as
+    the program's page at coverage 1.0 and would have been extracted as one (run
+    38406172949, S380: five programs on three course listings)."""
+    path = urllib.parse.urlparse(url or "").path or "/"
+    return bool(url) and in_scope(url, scope) and not NOT_PROGRAM_PATH.search(path)
+
+
 def program_candidates(urls: list[str], start: str, scope: str | None = None) -> list[str]:
     """The sitemap's pages that sit in a program section of this catalog: the
     catalog's own host (and, on a district host, this college's own path), a
@@ -914,7 +925,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                     res = P.locate_html(reader, {"title": prog["title"], "award": prog["award"]},
                                         prog["closed_list"], start, cache, False)
                     b = res["best"] or {}
-                    if b.get("coverage", 0.0) >= P.ACCEPT_SHARE and in_scope(b.get("url") or "", scope):
+                    if b.get("coverage", 0.0) >= P.ACCEPT_SHARE and link_page_ok(b.get("url") or "", scope):
                         best, method = dict(b, label=None), "link_search"
                 rec = source_record(college, prog, reg, best, method if best else "not_found")
             recs.append(rec)

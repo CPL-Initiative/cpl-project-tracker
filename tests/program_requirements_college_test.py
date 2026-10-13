@@ -724,6 +724,20 @@ try:
 finally:
     shutil.rmtree(parent, ignore_errors=True)
 
+# ── the link search never takes a course listing for a program (S380) ───────
+# Coastline run 38406172949: the link search accepted
+# course-descriptions/credit-courses/re/ for Real Estate at coverage 1.0 (a course
+# listing names every course in its subject) and three listings for five programs.
+CL = "https://catalog.cccd.edu/coastline/"
+check(not C.link_page_ok(CL + "course-descriptions/credit-courses/re/index.html", "/coastline/")
+      and not C.link_page_ok(CL + "course-descriptions/credit-courses/emgt/", "/coastline/")
+      and not C.link_page_ok("https://catalog.cccd.edu/golden-west/pathways/business/", "/coastline/")
+      and not C.link_page_ok("", "/coastline/"),
+      "a course listing, another college's path on a district host, or no address is never a program's page")
+check(C.link_page_ok(CL + "pathways/behavior-culture-society/aging-studies/aging-studies-aa/", "/coastline/")
+      and C.link_page_ok("https://catalog.mtsac.edu/programs/accounting/", None),
+      "a program page in the college's own scope, or on a host with no scope, stands")
+
 sql = open(os.path.join(ROOT, "chatbox", "supabase_program_requirement_records_college_load.sql")).read()
 body = sql.split("as $$")[1].split("$$;")[0]
 check("on conflict (college, control_number) do nothing" in body and "update" not in body.lower()
