@@ -4,7 +4,7 @@
   "supabase_tables": 97,
   "rpcs": 36,
   "edge_functions": 7,
-  "file_datasets": 636,
+  "file_datasets": 635,
   "external_services": 175,
   "consumers": 432,
   "workflows": 50,
@@ -5907,13 +5907,6 @@
   "file:docs/INDEX.md": {
    "consumers": [
     {
-     "id": "script:kb/_build_docs_index.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 50
-    },
-    {
      "id": "script:kb/_docs_audit.py",
      "kind": "script",
      "direction": "read",
@@ -6040,19 +6033,6 @@
      "direction": "read",
      "how": "literal",
      "line": 123
-    }
-   ],
-   "served": false,
-   "main_committers": []
-  },
-  "file:docs/roadmap_archive.md": {
-   "consumers": [
-    {
-     "id": "script:kb/_consolidation_loss_audit.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 45
     }
    ],
    "served": false,
@@ -22050,7 +22030,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1144,
+     "line": 1146,
      "tabs": [
       "workplan-goals"
      ]
@@ -22421,7 +22401,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1547,
+     "line": 1549,
      "tabs": [
       "workplan-goals"
      ]

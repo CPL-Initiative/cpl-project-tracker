@@ -363,7 +363,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `dashboard_filters.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `docs/*.md` | scripts: `kb/_build_docs_index.py` | — |
 | `docs/*_lessons.md` | scripts: `kb/_build_docs_index.py` | — |
-| `docs/INDEX.md` | scripts: `kb/_build_docs_index.py`, `kb/_docs_audit.py`, `kb/doctrine.py` | — |
+| `docs/INDEX.md` | scripts: `kb/_docs_audit.py`, `kb/doctrine.py` | — |
 | `docs/catalog/index.json` | tabs: `governance` | — |
 | `docs/common_cr_reference_scope.md` | scripts: `kb/_build_cr_reference.py` | — |
 | `docs/reference/library_filer.md` | scripts: `scripts/library_file.py` | — |
@@ -372,7 +372,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/reference/statute/t5_55050_55051_final_reg_text_<date>.txt` | scripts: `kb/_derive_55050_clean.py` | — |
 | `docs/reference/statute/t5_55050_clean_after_<date>.txt` | scripts: `kb/_verify_55050_redline.py` | scripts: `kb/_derive_55050_clean.py` |
 | `docs/research_workexp_crossdisc_remint_scope.md` | scripts: `kb/_crossdisc_dryrun.py` | — |
-| `docs/roadmap_archive.md` | scripts: `kb/_consolidation_loss_audit.py` | — |
 | `docs/session_<N>_handoff.md` | scripts: `kb/_build_docs_index.py` | — |
 | `docs/visuals/<date>-ccr-title-rung.html` | scripts: `kb/_build_ccr_title_rung_sheet.py` | scripts: `kb/_build_ccr_title_rung_sheet.py` |
 | `docs/visuals/<date>-claude-md-audit.html` | scripts: `kb/_build_claude_md_audit_decision_sheet.py` | scripts: `kb/_build_claude_md_audit_decision_sheet.py` |
@@ -1089,5 +1088,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 97 Supabase tables · 36 RPCs · 7 edge functions · 636 file
+Coverage: 97 Supabase tables · 36 RPCs · 7 edge functions · 635 file
 datasets · 175 external services · 432 consumers · 50 workflows · 39 tabs.
