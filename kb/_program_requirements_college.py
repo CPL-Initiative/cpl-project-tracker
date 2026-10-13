@@ -1105,6 +1105,29 @@ def el_department_slugs(html_text: str, catalog: str) -> list[str]:
     return out
 
 
+# A menu that names neither programs nor departments links hub pages one segment
+# under the catalog, each listing programs at <catalog>/program/<slug>: Modesto's
+# Programs A-Z and Programs by Type (2026-2027/programs, bytype), Palo Verde's award
+# categories (2025-2026/adt, associate-of-arts-degrees, certificate-of-achievements,
+# non-credit-certificates). Reads 38445240921, 38446053107 and S382's third read.
+EL_HUB_SLUG = re.compile(
+    r"^(?:programs?(?:-a-z|-by-type)?|bytype|majors?|adts?|associate-(?:of|in)-[a-z0-9-]+|"
+    r"certificates?-(?:of|in)-[a-z0-9-]+|[a-z0-9-]*-(?:degrees?|certificates?)|"
+    r"degrees?-(?:and-)?certificates?)$", re.I)
+EL_MAX_MENU_HUBS = 12
+
+
+def el_hub_slugs(html_text: str, catalog: str) -> list[str]:
+    """The program and award hubs a publish call's menu links, one segment under
+    the catalog, each once, in order, at most EL_MAX_MENU_HUBS."""
+    pat = re.compile(r'href="(?:/catalog/)?%s/([^"/?#]+)"' % re.escape(catalog or ""), re.I)
+    out = []
+    for slug in pat.findall(html_text or ""):
+        if EL_HUB_SLUG.match(slug) and slug not in out:
+            out.append(slug)
+    return out[:EL_MAX_MENU_HUBS]
+
+
 def el_text(html_text: str) -> str:
     """A content call's page as the lines a reader sees, without styles, scripts
     or icons."""
@@ -1162,6 +1185,13 @@ def el_pages_fast(reader, start: str, report: dict) -> list[dict]:
             page = el_html(el_fetch(reader, el_publish_url(start, ["department", d], content=True), errors))
             slugs += [s for s in el_program_slugs(page, catalog) if s not in slugs]
         report["elumen"].update(menu_departments=len(depts), department_programs=len(slugs))
+    if not slugs:
+        # A menu of program and award hubs (Modesto, Palo Verde): each hub's content call lists its programs.
+        hubs = el_hub_slugs(shell, catalog)
+        for h in hubs:
+            page = el_html(el_fetch(reader, el_publish_url(start, [h], content=True), errors))
+            slugs += [s for s in el_program_slugs(page, catalog) if s not in slugs]
+        report["elumen"].update(menu_hubs=hubs, hub_programs=len(slugs))
     slugs = slugs[:MAX_PAGES]
     pages = []
     for i, slug in enumerate(slugs):

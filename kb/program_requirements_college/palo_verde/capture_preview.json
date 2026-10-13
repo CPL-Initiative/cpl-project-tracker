@@ -1,0 +1,801 @@
+{
+ "college": "Palo Verde College",
+ "catalog_url": "https://pvc.elumenapp.com/catalog/2025-2026/presidents-welcome",
+ "platform": "elumen",
+ "catalog_year": "2025-2026",
+ "programs": 69,
+ "with_closed_list": 68,
+ "started": "2026-10-13T20:30:41Z",
+ "elumen": {
+  "catalog": "2025-2026",
+  "read": "publish/content",
+  "menu_programs": 0,
+  "errors": [],
+  "menu_departments": 0,
+  "department_programs": 0,
+  "menu_hubs": [
+   "programs",
+   "adt",
+   "associate-of-arts-degrees",
+   "associate-of-science-degrees",
+   "certificate-of-achievements",
+   "certificate-of-career-preparations",
+   "non-credit-certificates"
+  ],
+  "hub_programs": 84,
+  "program_pages": 84
+ },
+ "pages_read": 84,
+ "banner_h1": null,
+ "loads": 92,
+ "seconds": 387.8,
+ "found": 54,
+ "by_method": {
+  "no_closed_list": 1,
+  "not_found": 9,
+  "page_claimed": 5,
+  "sitemap_page": 54
+ },
+ "shared_pages": {},
+ "not_found": [
+  {
+   "control_number": "09816",
+   "title": "Vocational Nursing",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/science-core-for-nursing-certificate-of-achievement-2025-2026-fall-2025fa",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1630,
+     "content": 1630,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43203",
+   "title": "High School Equivalency Program",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/high-school-equivalency-program-2022-23-spring-2023sp",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1564,
+     "content": 1564,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45359",
+   "title": "California General Education Transfer Curriculum (Cal-GETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45471",
+   "title": "Child Care",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/child-and-adolescent-development-2025-2026-fall-2025fa",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3253,
+     "content": 3253,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45472",
+   "title": "Developing Capable Youth",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/child-development-developing-capable-youth-certificate-of-career-preparation-2021-22-summer-2022su",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1151,
+     "content": 1151,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45473",
+   "title": "Arts - Early Childhood Education",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/as-t-early-childhood-education-for-transfer-2025-2026-fall-2025fa",
+    "label": {
+     "award": 0,
+     "title": 0.75
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1941,
+     "content": 1941,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45959",
+   "title": "Umoja Scholars",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "46108",
+   "title": "Microsoft Word Specialist",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "46556",
+   "title": "Cross-Cultural Awareness",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "43010",
+   "title": "Communication Studies 2.0",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://pvc.elumenapp.com/catalog/2025-2026/program/communication-studies-2-0-2025-2026-fall-2025fa",
+    "https://pvc.elumenapp.com/catalog/2025-2026/program/law-public-policy-and-society-2025-2026-fall-2025fa"
+   ]
+  },
+  {
+   "control_number": "45376",
+   "title": "Alcohol and Drug Studies",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://pvc.elumenapp.com/catalog/2025-2026/program/associate-of-arts-in-liberal-arts-emphasis-in-social-and-behavior-science-2025-2026-fall-2025fa",
+    "https://pvc.elumenapp.com/catalog/2025-2026/program/alcohol-and-drug-studies-certificate-of-achievement-2025-2026-fall-2025fa"
+   ]
+  },
+  {
+   "control_number": "46554",
+   "title": "Anthropology",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://pvc.elumenapp.com/catalog/2025-2026/program/associate-of-arts-in-liberal-arts-emphasis-in-mathematics-and-science-2025-2026-fall-2025fa"
+   ]
+  },
+  {
+   "control_number": "46555",
+   "title": "Anthropology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://pvc.elumenapp.com/catalog/2025-2026/program/associate-of-arts-in-liberal-arts-emphasis-in-mathematics-and-science-2025-2026-fall-2025fa"
+   ]
+  },
+  {
+   "control_number": "46557",
+   "title": "Emphasis on Studies of the Americas",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://pvc.elumenapp.com/catalog/2025-2026/program/associate-of-arts-in-liberal-arts-emphasis-in-social-and-behavior-science-2025-2026-fall-2025fa"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 5,
+  "0.8-1.0": 17,
+  "1.0": 32
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 54,
+  "list": [
+   {
+    "control_number": "04436",
+    "title": "Business Management",
+    "award": "A.S. Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/business-management-associate-of-science-2025-2026-fall-2025fa",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04442",
+    "title": "Automotive Technology",
+    "award": "A.S. Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/automotive-technology-associate-of-science-2025-2026-fall-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04451",
+    "title": "Criminal Justice",
+    "award": "A.S. Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/criminal-justice-associate-of-science-2025-2026-fall-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04452",
+    "title": "Child Development",
+    "award": "A.S. Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/child-development-associate-of-science-2025-2026-fall-2025fa",
+    "coverage": 0.955,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09813",
+    "title": "Computer Information Systems",
+    "award": "A.S. Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/computer-information-systems-associate-of-science-2025-2026-fall-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09815",
+    "title": "Welding Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/welding-technology-certificate-of-achievement-2020-21-summer-2021su",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09819",
+    "title": "Hazardous Materials Specialist",
+    "award": "A.S. Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/hazardous-materials-specialist-associate-of-science-2025-2026-fall-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16369",
+    "title": "Building  Construction Technology",
+    "award": "A.S. Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/building-construction-technology-associate-of-science-2025-2026-fall-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16691",
+    "title": "Alcohol and Drug Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/alcohol-and-drug-studies-certificate-of-achievement-2025-2026-fall-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17998",
+    "title": "Liberal Arts with Emphasis in Arts and Humanities",
+    "award": "A.A. Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/associate-of-arts-in-liberal-arts-emphasis-in-arts-and-humanities-2025-2026-fall-2025fa",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17999",
+    "title": "Liberal Arts with Emphasis in Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/associate-of-arts-in-liberal-arts-emphasis-in-social-and-behavior-science-2025-2026-fall-2025fa",
+    "coverage": 0.581,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18000",
+    "title": "Liberal Arts with Emphasis in Mathematics and Science",
+    "award": "A.A. Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/associate-of-arts-in-liberal-arts-emphasis-in-mathematics-and-science-2025-2026-fall-2025fa",
+    "coverage": 0.867,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18045",
+    "title": "Liberal Arts with Emphasis in Business and Technology",
+    "award": "A.A. Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/associate-of-arts-in-liberal-arts-emphasis-in-business-and-technology-2025-2026-fall-2025fa",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22479",
+    "title": "Business Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/business-literacy-certificate-of-career-preparation-2019-20-fall-2019fa",
+    "coverage": 0.824,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22483",
+    "title": "Building Construction Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/building-construction-technology-certificate-of-achievement-2021-22-summer-2022su",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22484",
+    "title": "Child Development-Teacher",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/child-development-teacher-2025-2026-fall-2025fa",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22485",
+    "title": "Criminal Justice",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/criminal-justice-certificate-of-achievement-2019-20-fall-2019fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30514",
+    "title": "Welding Technology",
+    "award": "A.S. Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/welding-technology-associate-of-science-2025-2026-fall-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30594",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/psychology-2025-2026-fall-2025fa",
+    "coverage": 0.812,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30710",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/aa-t-in-sociology-for-transfer-2025-2026-fall-2025fa",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32242",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/as-t-administration-of-justice-for-transfer-2025-2026-fall-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32252",
+    "title": "Business Administration",
+    "award": "A.S. T Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/business-management-2020-21-fall-2020fa",
+    "coverage": 0.625,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32534",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/as-t-early-childhood-education-for-transfer-2025-2026-fall-2025fa",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33848",
+    "title": "Non-Credit English as a Second Language",
+    "award": "Noncredit program",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/english-as-a-second-language-non-credit-cert-of-completion-2019-20-fall-2019fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39494",
+    "title": "NON-CREDIT English as a Second Language II",
+    "award": "Noncredit program",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/non-credit-english-as-a-second-language-ii-2020-21-fall-2020fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39667",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/english-2025-2026-fall-2025fa",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39852",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/history-2025-2026-fall-2025fa",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39853",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/communication-studies-2-0-2025-2026-fall-2025fa",
+    "coverage": 0.7,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40016",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/kinesiology-2025-2026-fall-2025fa",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40017",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/law-public-policy-and-society-2025-2026-fall-2025fa",
+    "coverage": 0.81,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40020",
+    "title": "Child and Adolescent Development",
+    "award": "A.A- T Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/child-and-adolescent-development-2025-2026-fall-2025fa",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41189",
+    "title": "Fire Science Aircraft Rescue Firefighting Cert",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-aircraft-rescue-firefighting-certificate-2021-22-fall-2021fa",
+    "coverage": 0.986,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41208",
+    "title": "Fire Science Chief Officer Cert",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-chief-officer-certificate-2020-21-summer-2021su",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41221",
+    "title": "Fire Science Company Officer Cert",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-company-officer-certificate-2020-21-summer-2021su",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41222",
+    "title": "Fire Science Fire Apparatus Driver/Operator Cert",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-fire-apparatus-driver-operator-certificate-2020-21-summer-2021su",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41223",
+    "title": "Fire Science Fire Command Cert",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-fire-command-certificate-2020-21-spring-2021sp",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41224",
+    "title": "Fire Science Fire Investigator I Cert",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-fire-investigator-i-certificate-2020-21-summer-2021su",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41225",
+    "title": "Fire Science Fire Inspector II Cert",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-fire-inspector-ii-certificate-2020-21-spring-2021sp",
+    "coverage": 0.986,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41226",
+    "title": "Fire Science Fire Inspector I Cert",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-fire-inspector-i-certificate-2020-21-fall-2020fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41227",
+    "title": "Fire Science Hazardous Materials Specialist Cert",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-hazardous-materials-specialist-certificate-2020-21-summer-2021su",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41241",
+    "title": "Fire Science Instructor Cert",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-instructor-certificate-2020-21-summer-2021su",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41242",
+    "title": "Fire Science Technical Rescue Cert",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-technical-rescue-certificate-2020-21-summer-2021su",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41243",
+    "title": "Fire Science Technology Cert",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-technology-certificate-2021-22-fall-2021fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41250",
+    "title": "Fire Science Water & Boat Rescue Cert",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-water-boat-rescue-certificate-2021-22-fall-2021fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41260",
+    "title": "Fire Science Wildland Firefighting Cert",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-wildland-firefighting-certificate-2020-21-summer-2021su",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41266",
+    "title": "Fire Science Technology A.S.",
+    "award": "A.S. Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fire-science-technology-associates-degree-2025-2026-fall-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41693",
+    "title": "ADN",
+    "award": "A.S. Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/adn-associate-degree-in-nursing-2025-2026-fall-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42787",
+    "title": "English as a Second Language",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/english-as-a-second-language-2025-2026-fall-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43196",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/business-administration-2-0-2025-2026-fall-2025fa",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43202",
+    "title": "Fast Track Vocational Nursing",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/fast-track-vocational-nursing-2025-2026-fall-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45190",
+    "title": "Biological Sciences Associate of Science (Emphasis HealthScience)",
+    "award": "A.S. Degree",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/biological-sciences-associate-of-science-emphasis-health-science-2025-2026-fall-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45191",
+    "title": "Science Core for Nursing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/science-core-for-nursing-certificate-of-achievement-2025-2026-fall-2025fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45958",
+    "title": "American Sign Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/american-sign-language-certificate-of-career-preparation-2019-20-fall-2019fa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46524",
+    "title": "Small Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/small-business-management-certificate-of-career-preparation-2019-20-fall-2019fa",
+    "coverage": 0.625,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38461110935"
+}
