@@ -658,6 +658,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/subj4_dryrun/report.md` | workflows: `phase-1e-apply.yml` | — |
 | `kb/subj4_fold_out/<date>/alias_map.json` | scripts: `kb/_rekey_promotions.py`, `kb/alias_chain.py` | — |
 | `kb/subject_map_audit.json` | scripts: `kb/_audit_subject_map.py` | scripts: `kb/_audit_subject_map.py` |
+| `kb/supabase_workplan_move.sql` | modules: `scripts/verify_workplan_move.js` | — |
 | `kb/synonym_map.json` | scripts: `excel_to_dashboard.py`, `kb/_morphological_variant_dryrun.py`, `kb/_sug_segment_dryrun.py`, `kb/_synonym_candidate_dryrun.py` | — |
 | `kb/top_cip_map.json` | scripts: `excel_to_dashboard.py`, `kb/_build_top_cip_map.py`, `kb/_jev_adjudicate.py` | scripts: `kb/_build_top_cip_map.py` |
 | `kb/top_discipline_map.json` | scripts: `kb/_apply_crossdisc_remint.py`, `kb/_infer_disciplines_from_top.py`, `kb/_overmerge_dryrun.py`, `kb/_row_audit.py` | — |
@@ -1091,5 +1092,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 97 Supabase tables · 37 RPCs · 7 edge functions · 637 file
-datasets · 175 external services · 433 consumers · 50 workflows · 39 tabs.
+Coverage: 97 Supabase tables · 37 RPCs · 7 edge functions · 638 file
+datasets · 175 external services · 434 consumers · 50 workflows · 39 tabs.

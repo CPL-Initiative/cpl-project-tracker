@@ -4,9 +4,9 @@
   "supabase_tables": 97,
   "rpcs": 37,
   "edge_functions": 7,
-  "file_datasets": 637,
+  "file_datasets": 638,
   "external_services": 175,
-  "consumers": 433,
+  "consumers": 434,
   "workflows": 50,
   "data_js_files": 69,
   "tabs": 39
@@ -14073,6 +14073,19 @@
      "direction": "write",
      "how": "literal",
      "line": 63
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/supabase_workplan_move.sql": {
+   "consumers": [
+    {
+     "id": "module:scripts/verify_workplan_move.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 28
     }
    ],
    "served": true,
