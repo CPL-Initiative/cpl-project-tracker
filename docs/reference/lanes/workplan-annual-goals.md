@@ -32,7 +32,10 @@ related:
 
 ✅ **Sheet 72 answered and applied.** Sam ruled 2026-10-13 ~01:18Z (chat): *"Can't find 71 so I'll go with your recommendations"* on [Open Asks Sheet 72](https://claude.ai/artifact/LFbjZXFbHmPTNF8JqW3qMV) (`cpl_memory` `sam-sheet-72-rulings-2026-10-13`), and ran cards 2 and 3 himself (~03:50Z; `sheet-72-pastes-applied-2026-10-13`). Read back 03:51Z: **3.9** Futuro Behavioral Healthcare Project added (Goal 0/2/4/4/4, Stretch 0/4/8/8/8, Activity 3 home); **1.1.2 is 4.2.1** (Activity 4 home, the Activity 1 link kept, its RACI row and update moved, no table holds 1.1.2). That move ran as the card's hand SQL, not through the function, so `workplan_id_moves` has no row for it; its undo is the rollback block in `kb/receipts/workplan_2026-10-12_s372_add_3_9_move_1_1_2.sql`. **Card 4 is settled: Move stays reviewer sign-in only.** Card 1 (the `course_outcomes` table) belongs to the program requirements queue and was not run.
 
+⚠️ **The move broke the workplan charts until #2063.** `render_workplan_charts_html` picks the military, workforce and apprentice series by name and the last match wins; 4.2.1 (no ladder, all zeros) sorted after the real apprentice rows, and dashboard run 585 died dividing by zero. #2063: a zero ladder names no series; `build_trajectory` guards a zero sum. Any move or add that changes sort order can change which row a name-matched series picks.
+
 **NEXT:**
+0. **Merge #2063 on `test` and dispatch the dashboard** if it is still open; nothing publishes until it lands.
 1. **The first Refresh Sam runs:** read the posted rows (`item_updates` where `item_type = 'activity'` and `raw` names `activity_summaries.js`) and his edits (`raw.edited`, `raw.draft`). What he changes in a draft is the prompt's next revision.
 2. **The first Move a reviewer makes:** read its `workplan_id_moves` row (before-values and counts) and the guard's verdict; the undo is in `kb/supabase_workplan_move.sql`'s header.
 3. `card_actions.js` still lists `a.act-update-link` in `UPDATE_SEL`; no page prints it since run 583. Drop it with the next change to that file.

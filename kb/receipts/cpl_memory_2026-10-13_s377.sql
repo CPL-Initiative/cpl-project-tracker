@@ -43,3 +43,8 @@ select id, 'SkySequoiaS377', 'create', 'Sam''s Sheet 72 pastes read back', null:
 union all
 select id, 'SkySequoiaS377', 'supersede', 'superseded by sheet-72-pastes-applied-2026-10-13 (the Move function is live)', null::jsonb from sup
 returning memory_id, action;
+
+-- Added ~04:25Z: the charts pitfall (dashboard run 585). Logged once.
+-- Rollback: delete from public.cpl_memory where slug = 'workplan-charts-name-match-reads-sort-order-2026-10-13';
+-- (inserted with the same column list as above: kind pitfall, status proposed, author SkySequoiaS377,
+--  related sheet-72-pastes-applied-2026-10-13, source "S377 SkySequoia; dashboard run 38344616539; cpl-project-tracker#2063")

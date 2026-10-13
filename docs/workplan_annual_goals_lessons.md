@@ -70,4 +70,6 @@ Sam asked for four things on Annual Goals (move AI Apprenticeship CPL Tools unde
 
 - **The SQL editor is the route when the tool is down.** Sam ran Sheet 72 cards 2 and 3 in Supabase's SQL editor about 03:50Z, each block whole, as two queries; both landed at once while `apply_migration` still accepted nothing. A paste needs its read-back in the same block (card 2 ended with one) and a fresh footprint read before it goes out: S377 re-measured 1.1.2 in every id column at 03:20Z, since the card's move was written the day before.
 
+- **A move changes sort order, and a name-matched series reads sort order.** The workplan charts pick each population series from the goal rows by a word in the name, last match wins. 1.1.2 "AI Apprenticeship CPL Tools" carried no ladder (all zeros) and was harmless while it sorted first; as 4.2.1 it sorted last, the chart took its zeros, and dashboard run 585 died on a zero division. The read-back of the move itself was clean: the failure sat in a consumer three steps away. After a move or an add, run the generator (or wait for the dashboard run) before calling it done (#2063).
+
 **State:** #2059, #2061 and #2056 merged; the Move function live (anon false, authenticated true); 3.9 added and 1.1.2 is 4.2.1 (read back 03:51Z). The dashboard was dispatched after #2056.

@@ -34,6 +34,11 @@ queue; `list_sessions` first and agree one writer with any session still holding
   landing; `supabase_migrations.schema_migrations` has nothing newer than 23:19Z on 2026-10-12. New KB note:
   `playbook-when-apply-migration-times-out-read-the-migrations-table`.
 
+- **Dashboard run 585 (after #2056) crashed; #2063 fixes it.** `render_workplan_charts_html` picks the apprentice
+  series by name, last match wins; 4.2.1 (ladderless, all zeros) now sorts after the real apprentice rows, so
+  `build_trajectory` divided by zero. #2063 skips zero ladders and guards the sum
+  (`tests/workplan_charts_zero_ladder_test.py`, 1/3 on the old code). **No dashboard publishes until it merges.**
+
 ## Docs to read, in order
 
 1. `docs/reference/lanes/workplan-annual-goals.md`: state, NEXT, invariants.
@@ -44,8 +49,10 @@ queue; `list_sessions` first and agree one writer with any session still holding
 
 ## Priority, in order
 
-1. **Confirm the dashboard run after #2056 published** (dispatched ~04:04Z): 3.9 and 4.2.1 on the Annual Goals and
-   Activities tabs, no 1.1.2, and Move on each sub-activity for a signed-in reviewer.
+1. **#2063 merged and the dashboard green.** If S377 has not: merge #2063 on `test`, dispatch `daily-dashboard.yml`,
+   and confirm the run succeeds (run 585 failed). Then check the published page: 3.9 and 4.2.1 on the Annual Goals
+   and Activities tabs, no 1.1.2, Move on each sub-activity for a signed-in reviewer. The 06:17Z cron fails the same
+   way until #2063 is on main.
 2. **The first Refresh Sam runs:** read the posted `activity` rows and their `raw` (`edited`, `draft`). What he changes
    in a draft is the prompt's next revision; record his edits as a lesson, and a ruling as a `cpl_memory` row.
 3. **The first Move a reviewer makes:** read its `workplan_id_moves` row and the guard's verdict. The 1.1.2 move ran as
