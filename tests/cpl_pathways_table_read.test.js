@@ -309,6 +309,37 @@ function pickRecord(w, root, title) {
     check("(h) and the reader's pick stays", (sel.options[sel.selectedIndex] || {}).textContent === secondText, (sel.options[sel.selectedIndex] || {}).textContent);
   }
 
+  // ── (i) every program arrives, in pages (2026-10-13) ──
+  // PostgREST answers at most 1,000 rows a request: the one-shot list stopped at record
+  // 1,000 of 2,840. The read pages under that cap, over its order, to the short page.
+  {
+    const many = [];
+    for (let i = 0; i < 1300; i++) many.push({ college: "Norco College", control_number: String(50000 + i), program_title: "Paged Program " + i, award: "Associate in Science", checked: true });
+    const ranges = [];
+    const f = function (url, init) {
+      const h = (init && init.headers) || {};
+      const json = (body) => Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(body) });
+      if (/program_source_registry/.test(url)) return json([]);
+      if (/program_requirement_records/.test(url) && !/college=eq\./.test(url)) {
+        ranges.push({ range: h.Range, unit: h["Range-Unit"], url });
+        const m = /^(\d+)-(\d+)$/.exec(h.Range || "");
+        const from = m ? +m[1] : 0, to = m ? Math.min(+m[2], from + 999) : 999;
+        return json(many.slice(from, to + 1));
+      }
+      return json([]);
+    };
+    const w = freshWindow(f);
+    w.CPL_PATHWAYS_TAB.activate();
+    await settle(20);
+    const root = w.document.getElementById("cpl-pathways-root");
+    const opts = recordOptions(root.querySelector("select.cplpw-select")).map((o) => o.textContent);
+    check("(i) all 1,300 programs reach the list, past the 1,000-row cap", opts.length === 1300, opts.length);
+    check("(i) the last one included", opts.some((t) => /Paged Program 1299\b/.test(t)), opts.slice(-1));
+    check("(i) each page asks for a range under the cap, over the stable order", ranges.length === 3 && ranges.every((r) => {
+      const m = /^(\d+)-(\d+)$/.exec(r.range || ""); return r.unit === "items" && m && (+m[2] - +m[1] + 1) <= 1000 && /order=college,control_number/.test(r.url); }),
+      ranges.map((r) => r.range));
+  }
+
   let failed = 0;
   for (const [name, ok, why] of results) {
     if (!ok) { failed++; console.log("FAIL " + name + (why !== undefined ? "  [" + (typeof why === "string" ? why : JSON.stringify(why)) + "]" : "")); }

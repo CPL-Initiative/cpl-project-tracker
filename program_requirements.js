@@ -308,13 +308,64 @@
       return r.json();
     });
   }
+  /* ── every row, in pages (2026-10-13) ──
+     PostgREST answers at most 1,000 rows a request (db-max-rows), so the one-shot record
+     read stopped at the 1,000th of 2,840 records (Content-Range 0-999/*) and the colleges
+     after it never reached the tab. It also carried 11 MB of JSON in one statement, and as
+     anon (statement_timeout 3s) it answered 500 ("canceling statement due to statement
+     timeout"). Each page is RECORD_PAGE rows over the URL's own stable order; the first
+     asks for the exact count, so the rest go RECORD_PARALLEL at a time. Without a count it
+     reads on until a short page. A failed page fails the whole read, naming the table:
+     a short list must never pass for the whole one.
+     docs/kb-notes/methodology-paginate-postgrest-reads.md */
+  var RECORD_PAGE = 250, RECORD_PARALLEL = 3;
+  function getAllRows(url, hdrs) {
+    var name = url.split("?")[0].split("/").pop();
+    function page(i) {
+      var h = {};
+      Object.keys(hdrs || {}).forEach(function (k) { h[k] = hdrs[k]; });
+      h["Range-Unit"] = "items";
+      h.Range = (i * RECORD_PAGE) + "-" + ((i + 1) * RECORD_PAGE - 1);
+      if (i === 0) h.Prefer = "count=exact";
+      return fetch(url, { headers: h }).then(function (r) {
+        if (!r.ok) throw new Error(name + " answered " + r.status);
+        var range = r.headers && typeof r.headers.get === "function" ? r.headers.get("Content-Range") : null;
+        var m = /\/(\d+)\s*$/.exec(range || "");
+        return r.json().then(function (rows) { return { rows: rows || [], total: m ? +m[1] : null }; });
+      });
+    }
+    return page(0).then(function (first) {
+      if (first.rows.length < RECORD_PAGE) return first.rows;
+      if (first.total == null) {
+        var out = first.rows.slice();
+        var more = function (i) {
+          return page(i).then(function (p) {
+            out = out.concat(p.rows);
+            return p.rows.length < RECORD_PAGE ? out : more(i + 1);
+          });
+        };
+        return more(1);
+      }
+      var pages = Math.ceil(first.total / RECORD_PAGE), got = [first.rows], next = 1;
+      var worker = function () {
+        if (next >= pages) return Promise.resolve();
+        var i = next++;
+        return page(i).then(function (p) { got[i] = p.rows; return worker(); });
+      };
+      var workers = [];
+      for (var k = 0; k < Math.min(RECORD_PARALLEL, pages - 1); k++) workers.push(worker());
+      return Promise.all(workers).then(function () {
+        return got.reduce(function (all, rows) { return all.concat(rows || []); }, []);
+      });
+    });
+  }
   function load() {
     if (state.loading) return Promise.resolve();
     state.loading = true;
     state.error = null;
     var core = Promise.all([
       getJson(REST + "/program_source_registry?select=" + REGISTRY_SELECT + "&order=college"),
-      getJson(REST + "/program_requirement_records?select=" + RECORD_SELECT + "&order=college,control_number")
+      getAllRows(REST + "/program_requirement_records?select=" + RECORD_SELECT + "&order=college,control_number", headers())
     ]).then(function (got) {
       state.registry = got[0] || [];
       state.records = got[1] || [];
@@ -359,7 +410,8 @@
         });
       }
       return Promise.all([
-        get(REST + "/program_requirement_records?select=" + RECORD_SELECT + ",requirements_fp&order=college,control_number"),
+        getAllRows(REST + "/program_requirement_records?select=" + RECORD_SELECT + ",requirements_fp&order=college,control_number",
+          sessionHeaders()),
         get(REST + "/program_record_verdicts?select=" + VERDICT_SELECT + "&order=id.desc")
       ]).then(function (got) {
         state.review = { email: String(s.email).toLowerCase(), records: got[0] || [], verdicts: got[1] || [], error: null };
