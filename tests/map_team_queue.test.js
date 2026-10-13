@@ -19,7 +19,11 @@
 //      proposal-ready / looked-up-and-empty / NEVER LOOKED UP are three
 //      different actions and must not collapse into one "unroutable" count;
 //  (h) XSS — college names and register text are escaped (they reach here from
-//      Supabase and from committed JSON).
+//      Supabase and from committed JSON);
+//  (j) Sam, Open Asks Sheet 77 card 3: the program record items for the colleges
+//      to correct — counted per college, aged by the oldest record load, a failed
+//      read unknown, each college a closed line that reads its own list when
+//      opened, and every read paged past PostgREST's 1,000-row cap.
 //
 // Run from repo root: `npm test` (or `node tests/map_team_queue.test.js`).
 const fs = require("fs");
@@ -97,7 +101,14 @@ const FEEDBACK = [
   { created_at: "2026-08-09T00:00:00Z", status: "ci", page: "smoke", rating: "down" },
   { created_at: "2026-07-01T00:00:00Z", status: "new", page: "smoke", rating: "down" }
 ];
+const COLLEGE_ITEMS = [
+  { college: "Cerritos College", loaded_at: "2026-10-09T18:00:00Z" },
+  { college: "Cerritos College", loaded_at: "2026-10-09T18:00:00Z" },
+  { college: "Norco College", loaded_at: "2026-10-11T02:00:00Z" },
+  { college: "Cerritos College", loaded_at: "2026-10-09T18:00:00Z" }
+];
 const FULL = {
+  collegeItems: COLLEGE_ITEMS,
   gaps: GAPS, fallback: FALLBACK, feedback: FEEDBACK, owners: OWNERS, register: REGISTER,
   nudges: [], loads: [{ table_name: "map_student_credit", loaded_at: "2026-08-08T00:00:00Z" }],
   tracked: { items: [{ id: "t1", title: "Ask Malone for the view name", detail: "d",
@@ -282,11 +293,86 @@ function byId(items) {
     !/counsell/i.test(SRC));
 })();
 
+// (j) program record items for the colleges (Sheet 77 card 3)
+(function () {
+  const API = makeWin({ teamPass: "p" }).CPL_MAP_QUEUE;
+  const m = byId(API._buildQueue(FULL, "2026-10-13T12:00:00Z"));
+  const it = m["program-records-college"];
+  check("college items: counted as one item, every row", it && it.count === 4 && it.state === "waiting" && !it.personWaiting);
+  check("college items: one entry a college, the most first",
+    it && it.colleges.length === 2 && it.colleges[0].college === "Cerritos College" && it.colleges[0].n === 3 &&
+    it.colleges[1].college === "Norco College" && it.colleges[1].n === 1);
+  check("college items: aged by the oldest record load", it && it.ageDays === 3);
+  const failed = byId(API._buildQueue(Object.assign({}, FULL, { collegeItems: null }), NOW))["program-records-college"];
+  check("college items: a failed read is unknown, never zero", failed && failed.state === "unknown" && failed.count !== 0);
+  const none = byId(API._buildQueue(Object.assign({}, FULL, { collegeItems: [] }), NOW))["program-records-college"];
+  check("college items: none left is clear and kept", none && none.state === "clear" && none.count === 0);
+})();
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const API = w.CPL_MAP_QUEUE, root = w.document.getElementById("map-queue-root");
+  const asked = [];
+  w.fetch = function (url, o) {
+    asked.push({ url: url, range: o && o.headers && o.headers.Range, pass: o && o.headers && o.headers["x-team-pass"] });
+    if (/college=eq\.Norco/.test(url)) return Promise.resolve({ ok: false, status: 500, json: () => Promise.resolve(null) });
+    return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve([
+      { program_title: "Welding <b>", control_number: "02226", award: "A.S.", catalog_year: "2026-2027", checked: false, text: "The state's Program Course File lists WELD 101; the reader found it not in the text.", n: 1 },
+      { program_title: "Welding <b>", control_number: "02226", award: "A.S.", catalog_year: "2026-2027", checked: false, text: "The catalog prints WELD 9 for this program; the state's Program Course File does not list it.", n: 2 },
+      { program_title: "Machining", control_number: "03100", award: "C.A.", catalog_year: "2026-2027", checked: true, text: "MAP lists MACH 5 beside MACH 4.", n: 1 }]) });
+  };
+  API._state.items = API._buildQueue(FULL, NOW);
+  API.render(root);
+  const lines = root.querySelectorAll("details[data-mtq-college]");
+  check("college items: each college is a closed line with its count",
+    lines.length === 2 && !lines[0].open && lines[0].querySelector("summary").textContent === "Cerritos College (3)");
+  check("college items: nothing is read before a line opens", asked.length === 0);
+  lines[0].open = true; lines[0].dispatchEvent(new w.Event("toggle"));
+  return new Promise((r) => setTimeout(r, 20)).then(function () {
+    check("college items: opening reads that college's list, by name, in pages, with the phrase",
+      asked.length === 1 && /program_record_college_items\?college=eq\.Cerritos%20College&/.test(asked[0].url) &&
+      asked[0].range === "0-999" && asked[0].pass === "p", JSON.stringify(asked[0]));
+    const box = lines[0].querySelector(".mtq-col-list");
+    check("college items: the list groups by program and lists every item",
+      box.querySelectorAll("h4").length === 2 && box.querySelectorAll("li").length === 3);
+    check("college items: a program no person has checked says so", /not yet confirmed/.test(box.querySelectorAll("h4")[0].textContent) &&
+      !/not yet confirmed/.test(box.querySelectorAll("h4")[1].textContent));
+    check("college items: a title is escaped", !box.querySelector("b") && /Welding <b>/.test(box.querySelectorAll("h4")[0].textContent));
+    lines[0].open = false; lines[0].dispatchEvent(new w.Event("toggle"));
+    lines[0].open = true; lines[0].dispatchEvent(new w.Event("toggle"));
+    check("college items: a list read once is not read again", asked.length === 1);
+    lines[1].open = true; lines[1].dispatchEvent(new w.Event("toggle"));
+    return new Promise((r) => setTimeout(r, 20));
+  }).then(function () {
+    const box = lines[1].querySelector(".mtq-col-list");
+    check("college items: a failed list says so, never an empty list", /did not load/.test(box.textContent) && !box.querySelector("ul"));
+    check("college items: and reads again on the next open", !lines[1].getAttribute("data-read"));
+    check("college items: the sources line names the view", /program_record_college_items/.test(root.innerHTML));
+  });
+})().then(function () {
+  // jgetAll: a full page asks for the next; a failed page fails the whole read.
+  const w = makeWin({ teamPass: "p" });
+  const ranges = [];
+  w.fetch = function (url, o) {
+    ranges.push(o.headers.Range);
+    const n = o.headers.Range === "0-999" ? 1000 : 3;
+    return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(new Array(n).fill({ college: "X" })) });
+  };
+  return w.CPL_MAP_QUEUE._jgetAll("https://x/rest/v1/program_record_college_items?select=college").then(function (rows) {
+    check("paged read: past the 1,000-row cap it reads the next page", ranges.join(",") === "0-999,1000-1999" && rows.length === 1003);
+    w.fetch = function () { return Promise.resolve({ ok: false, status: 500, json: () => Promise.resolve(null) }); };
+    return w.CPL_MAP_QUEUE._jgetAll("https://x/rest/v1/program_record_college_items?select=college");
+  }).then(function (rows) {
+    check("paged read: a failed page is null, never a short list", rows === null);
+  });
+}).then(report);
+
 // ── Report ──
-let failed = 0;
-results.forEach(function (r) {
-  if (!r[1]) failed++;
-  console.log((r[1] ? "  ok   " : "  FAIL ") + r[0]);
-});
-console.log((results.length - failed) + "/" + results.length + " checks passed");
-if (failed) process.exit(1);
+function report() {
+  let failed = 0;
+  results.forEach(function (r) {
+    if (!r[1]) failed++;
+    console.log((r[1] ? "  ok   " : "  FAIL ") + r[0]);
+  });
+  console.log((results.length - failed) + "/" + results.length + " checks passed");
+  if (failed) process.exit(1);
+}

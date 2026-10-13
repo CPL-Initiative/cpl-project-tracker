@@ -891,6 +891,10 @@ block("(7)", function () {
 // Review. The failures this guards: a flag that floats free of the block whose courses it
 // names, a row that prints a flagged course without its number, a reader's note promoted
 // to a flag, and an owner shown by tint alone.
+// Numbered boxes are the reading procedure's alone (Sam, Open Asks Sheet 77 card 3, "Build
+// it", 2026-10-13): the college's items sit on one line that opens to the list. The
+// failures this guards: a college item drawn as a numbered box, a row numbered for one, and
+// a line that opens by default or loses an item.
 const ART = {
   college: "Irvine Valley College", control_number: "10265", program_title: "Art", award: "A.A. Degree",
   catalog_year: "2026-2027", source_url: "https://example.org/art", measure: "units", total_min: 27, total_max: 27,
@@ -911,22 +915,36 @@ const ART = {
       { kind: "Catalog and state file differ", owner: "college", text: "The state's Program Course File lists ARTH C1100; the reader found it not in the text." },
       { kind: "Catalog and state file differ", owner: "college", text: "The catalog prints ARTH 4, ARTH 25 for this program; the state's Program Course File does not list them." },
       { kind: "Check not met", owner: "procedure", text: "The blocks add to 25.5 units; the catalog prints 26.5 units." },
+      { kind: "Possible misread", owner: "procedure", text: "ARTH 22 reads as 3 units; check the catalog's line." },
       { kind: "Reader's note", owner: "procedure", text: "No program learning outcomes are printed in the text." }] }
 };
 block("(11)", function () {
   const { M, root } = ready();
   const F = M.flagsFor(ART);
-  check("(11) every gap but a reader's note is a flag", F.flags.length === 3 && F.notes.length === 1 && F.notes[0].kind === "Reader's note");
+  check("(11) the reading procedure's gaps are the flags; the college's and a reader's note are not",
+    F.flags.length === 2 && F.college.length === 2 && F.notes.length === 1 && F.notes[0].kind === "Reader's note" &&
+    F.flags.every(function (f) { return f.owner === "procedure"; }) && F.college.every(function (c) { return c.owner === "college"; }));
   check("(11) a flag naming no printed course sits on the whole record, numbered first",
-    F.flags[0].block == null && F.flags[1].block == null && F.flags[2].block === 1 && F.flags[2].n === 3);
-  check("(11) a flag's number rides each course its text names", JSON.stringify(F.byCode["ARTH 4"]) === "[3]" &&
-    JSON.stringify(F.byCode["ARTH 25"]) === "[3]" && !F.byCode["ARTH 27"]);
-  check("(11) the count names who fixes them", M.flagSummary(F.flags) === "3: 2 for the college, 1 for the reading procedure" &&
-    M.flagSummary(F.flags.slice(0, 1)) === "1, all for the college" && M.flagSummary([]) === "None");
+    F.flags[0].block == null && F.flags[0].n === 1 && F.flags[1].block === 2 && F.flags[1].n === 2);
+  check("(11) a flag's number rides each course its text names, and a college item numbers no row",
+    JSON.stringify(F.byCode["ARTH 22"]) === "[2]" && !F.byCode["ARTH 4"] && !F.byCode["ARTH 25"] && !F.byCode["ARTH 27"],
+    JSON.stringify(F.byCode));
+  check("(11) the count names the reading procedure", M.flagSummary(F.flags) === "2, for the reading procedure" && M.flagSummary([]) === "None");
+  check("(11) the college's line counts its items in words", M.collegeCount(F.college) === "2 places the catalog and the state file differ" &&
+    M.collegeCount([{ kind: "MAP names a second course" }, { kind: "Catalog and state file differ" }]) ===
+      "1 second course MAP names; 1 place the catalog and the state file differ", M.collegeCount(F.college));
   M._state.records = [IRONWORKER, ART]; pickAll(M); M._state.view = "records"; M._render();
   const card = root.querySelector('article[aria-label="Art, Irvine Valley College"]');
-  check("(11) the record's head counts its flags", card && /Flags3: 2 for the college, 1 for the reading procedure/.test(card.querySelector(".prh-checks").textContent),
-    card && card.querySelector(".prh-checks").textContent);
+  const head = card && card.querySelector(".prh-checks");
+  check("(11) the record's head counts its flags", head && /Flags2, for the reading procedure/.test(head.textContent), head && head.textContent);
+  const line = head && head.querySelector("details.prh-college-line");
+  check("(11) the college's items are one line in the head, shut until opened",
+    line && !line.open && line.querySelector("summary").textContent === "2 places the catalog and the state file differ" &&
+    /For the college/.test(line.closest(".prh-check").querySelector("dt").textContent), line && line.outerHTML.slice(0, 200));
+  check("(11) the line opens to every item, word for word, and says where the college's list is",
+    line && line.querySelectorAll("li").length === 2 &&
+    line.querySelectorAll("li")[0].textContent === ART.display.gaps[0].text &&
+    /My College and in the MAP team's queue/.test(line.textContent) && /For Irvine Valley/.test(line.textContent));
   /* Sam, 2026-10-11: "the program blocks are slow to load on click--times out my browser". A
      record's blocks are built the first time they show, so a draw of 1,210 records builds no
      hidden course tables; the button still names the body it controls before then. */
@@ -939,13 +957,16 @@ block("(11)", function () {
   check("(11) and hiding and showing again keeps the one copy", !body.hidden && body.querySelectorAll("table").length === ART.record.blocks.length, body.querySelectorAll("table").length + " tables");
   const whole = card.querySelector(".prh-flags");
   check("(11) whole-record flags sit before the blocks under their own heading",
-    whole && /On the whole record/.test(whole.textContent) && whole.querySelectorAll(".prh-flag").length === 2);
+    whole && /On the whole record/.test(whole.textContent) && whole.querySelectorAll(".prh-flag").length === 1);
   const own = Array.prototype.map.call(card.querySelectorAll(".prh-flag"), function (f) { return f.querySelector(".prh-flag-owner").textContent; });
-  check("(11) each flag names its owner in words", own.join("|") === "For the college|For the reading procedure|For the college", own.join("|"));
-  const marks = Array.prototype.filter.call(card.querySelectorAll("tbody tr"), function (tr) { return /Flag 3/.test(tr.textContent); });
-  check("(11) every row printing a flagged course carries the flag's number, in each block it appears", marks.length === 3,
+  check("(11) every numbered box is the reading procedure's, named in words", own.join("|") === "For the reading procedure|For the reading procedure", own.join("|"));
+  check("(11) no numbered box for a college item", !card.querySelector(".prh-flag-college") &&
+    !/Catalog and state file differ/.test(Array.prototype.map.call(card.querySelectorAll(".prh-flag"), function (f) { return f.textContent; }).join(" ")));
+  const marks = Array.prototype.filter.call(card.querySelectorAll("tbody tr"), function (tr) { return /Flag \d/.test(tr.textContent); });
+  check("(11) the row printing a flagged course carries the flag's number, and only it", marks.length === 1 && /ARTH 22/.test(marks[0].textContent) && /Flag 2/.test(marks[0].textContent),
     marks.length + " rows");
-  check("(11) a catalog addition keeps its words beside the flag", marks.every(function (tr) { return /Printed in the catalog; not on the state's list\. Flag 3/.test(tr.textContent); }));
+  const adds = Array.prototype.filter.call(card.querySelectorAll("tbody tr"), function (tr) { return /Printed in the catalog/.test(tr.textContent); });
+  check("(11) a catalog addition keeps its words, with no flag number", adds.length === 3 && adds.every(function (tr) { return /Printed in the catalog; not on the state's list/.test(tr.textContent) && !/Flag/.test(tr.textContent); }));
   const notes = Array.prototype.filter.call(card.querySelectorAll("details.prh-notes summary"), function (s) { return /Notes for the reading procedure/.test(s.textContent); });
   check("(11) the reader's notes stay notes", notes.length === 1 && /\(1\)/.test(notes[0].textContent));
   check("(11) signed out: no verdict box, and a way to sign in", !root.querySelector(".prh-verdict") &&
@@ -995,8 +1016,8 @@ block("(12)", function () {
     const box = card.querySelector(".prh-verdict");
     check("(12) each record ends with Your reading, Confirm and Needs a fix", box && /Your reading/.test(box.textContent) &&
       box.querySelectorAll("button")[0].textContent === "Confirm" && box.querySelectorAll("button")[1].textContent === "Needs a fix");
-    check("(12) a record passing its machine checks says confirming checks it, and its flags stay with the college",
-      /confirming marks it checked and Sierra may quote it\. The 2 flags for the college stay open with Irvine Valley/.test(box.textContent));
+    check("(12) a record passing its machine checks says confirming checks it, and its items stay with the college",
+      /confirming marks it checked and Sierra may quote it\. The 2 items for the college stay open with Irvine Valley/.test(box.textContent));
     box.querySelectorAll("button")[0].click();
     return tick().then(tick).then(function () {
       const post = r.posts[0];

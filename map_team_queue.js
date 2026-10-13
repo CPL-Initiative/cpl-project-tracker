@@ -329,6 +329,37 @@
         where: { tab: "course-credit", label: "Course Credit" } });
     }
 
+    // ── 9. Program record items for the colleges to correct ───────────────
+    // Sam, Open Asks Sheet 77 card 3 ("Build it", 2026-10-13): where a college's
+    // catalog and the state's Program Course File list different courses (and the
+    // few second courses MAP names), the harvest gives the college an item to
+    // correct, outside the MAP team's confirm. The Records view shows them on one
+    // line a record; each college reads its own list on My College; this item holds
+    // every college's list, and the MAP team decides when to send each one.
+    // Age: the oldest item's record load (a display build restamps every record).
+    if (!src.collegeItems) {
+      unknown("program-records-college", "Program record items for the colleges to correct",
+        "program_record_college_items did not load.", { tab: "program-requirements", label: "Program Requirements" });
+    } else {
+      var byCol = {}, oldestLoad = null;
+      src.collegeItems.forEach(function (r) {
+        byCol[r.college] = (byCol[r.college] || 0) + 1;
+        if (r.loaded_at && (!oldestLoad || r.loaded_at < oldestLoad)) oldestLoad = r.loaded_at;
+      });
+      var cols = Object.keys(byCol).sort(function (a, b) { return byCol[b] - byCol[a] || (a < b ? -1 : a > b ? 1 : 0); });
+      var nItems = src.collegeItems.length;
+      add({ id: "program-records-college", title: "Program record items for the colleges to correct",
+        detail: nItems + (nItems === 1 ? " item" : " items") + " at " + cols.length + (cols.length === 1 ? " college" : " colleges")
+          + ": places where a college's catalog and the state's Program Course File list different courses, and "
+          + "second courses MAP names beside a recommendation. Each college reads its own list on My College. "
+          + "Open a college below for its list.",
+        count: nItems, personWaiting: false, since: oldestLoad,
+        colleges: cols.map(function (c) { return { college: c, n: byCol[c] }; }),
+        why: "program_record_college_items: each gap a program record's display build gives the college "
+          + "(owner college), one row an item, read in pages.",
+        where: { tab: "program-requirements", label: "Program Requirements" } });
+    }
+
     // ── 8. The hand-tracked lane ───────────────────────────────────────────
     // No live source exists for these. They are shown with their staleness so
     // an unconfirmed item looks unreliable rather than authoritative.
@@ -406,7 +437,13 @@
       ".mtq-gate { color: var(--text-muted); padding:18px; border:1px dashed var(--border-strong);"
         + " border-radius:8px; background: var(--surface-subtle); }",
       ".mtq-note { font-size:.75rem; color: var(--text-muted); margin-top:10px; }",
-      ".mtq-note label { display:inline-flex; align-items:center; gap:5px; min-height:24px; cursor:pointer; }"
+      ".mtq-note label { display:inline-flex; align-items:center; gap:5px; min-height:24px; cursor:pointer; }",
+      ".mtq-cols { margin:6px 0 0; }",
+      ".mtq-col summary { cursor:pointer; min-height:24px; font-size:.85rem; }",
+      ".mtq-col-list { font-size:.82rem; margin:4px 0 8px 1.1em; max-width:var(--cpl-measure,none); }",
+      ".mtq-col-list h4 { font-size:.85rem; margin:8px 0 2px; color: var(--text-strong); }",
+      ".mtq-col-list .m { font-weight:400; color: var(--text-muted); }",
+      ".mtq-col-list ul { margin:2px 0 0; padding-left:1.2em; }"
     ].join("\n");
     var el = document.createElement("style");
     el.id = CSS_ID; el.textContent = css;
@@ -420,6 +457,25 @@
       if (!r.ok) throw new Error("HTTP " + r.status);
       return r.json();
     }).catch(function () { return null; });
+  }
+  // A read past PostgREST's 1,000-row cap, in pages; null when any page fails, so a
+  // short list never passes for the whole one (methodology-paginate-postgrest-reads).
+  var PAGE = 1000;
+  function jgetAll(url) {
+    var out = [];
+    function page(i) {
+      var h = authHeaders();
+      h["Range-Unit"] = "items";
+      h.Range = (i * PAGE) + "-" + ((i + 1) * PAGE - 1);
+      return fetch(url, { headers: h }).then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      }).then(function (rows) {
+        out = out.concat(rows || []);
+        return (rows || []).length < PAGE ? out : page(i + 1);
+      });
+    }
+    return page(0).catch(function () { return null; });
   }
   function jgetLocal(path) {
     return fetch(path).then(function (r) {
@@ -443,13 +499,14 @@
       jget(REST + "/map_data_loads?select=table_name,loaded_at&order=loaded_at.desc&limit=20"),
       jgetLocal("kb/governance_register.json"),
       jgetLocal("kb/map_team_tracked.json"),
-      loadFallbackContacts()
+      loadFallbackContacts(),
+      jgetAll(REST + "/program_record_college_items?select=college,loaded_at&order=college,control_number,n")
     ]).then(function (r) {
       var owners = null;
       if (r[2]) { owners = {}; r[2].forEach(function (o) { owners[o.register_id] = o; }); }
       return buildQueue({
         gaps: r[0], feedback: r[1], owners: owners, nudges: r[3], loads: r[4],
-        register: r[5], tracked: r[6], fallback: r[7]
+        register: r[5], tracked: r[6], fallback: r[7], collegeItems: r[8]
       }, new Date().toISOString());
     });
   }
@@ -499,6 +556,12 @@
         + (it.confirmedDays >= 14 ? '<span class="mtq-stale">' + ageLabel(it.confirmedDays) + " ago</span>"
                                   : ageLabel(it.confirmedDays) + " ago") + ".</p>";
     }
+    if (it.colleges && it.colleges.length) {
+      h += '<div class="mtq-cols">' + it.colleges.map(function (c) {
+        return '<details class="mtq-col" data-mtq-college="' + esc(c.college) + '"><summary>' + esc(c.college)
+          + " (" + c.n + ")</summary>" + '<div class="mtq-col-list" aria-live="polite"></div></details>';
+      }).join("") + "</div>";
+    }
     if (it.names && it.names.length) {
       var shown = it.names.slice(0, 8).join(" · ");
       h += '<p class="mtq-names">' + esc(shown)
@@ -512,6 +575,44 @@
     }
     h += '<p class="mtq-why">' + esc(it.why) + "</p></div>";
     return h;
+  }
+
+  // One college's items, grouped by program, read when its line first opens.
+  function collegeListHtml(rows) {
+    var h = "", last = null;
+    rows.forEach(function (r) {
+      if (r.control_number !== last) {
+        if (last !== null) h += "</ul>";
+        last = r.control_number;
+        var meta = [r.award, r.control_number ? "control number " + r.control_number : "",
+                    r.catalog_year ? r.catalog_year + " catalog" : "", r.checked ? "" : "not yet confirmed"]
+          .filter(Boolean).join(", ");
+        h += "<h4>" + esc(r.program_title || r.control_number) + (meta ? ' <span class="m">(' + esc(meta) + ")</span>" : "")
+          + "</h4><ul>";
+      }
+      h += "<li>" + esc(r.text || "") + "</li>";
+    });
+    return h ? h + "</ul>" : "<p>No items.</p>";
+  }
+  function wireCollegeLists(root) {
+    root.querySelectorAll("details[data-mtq-college]").forEach(function (d) {
+      d.addEventListener("toggle", function () {
+        if (!d.open || d.getAttribute("data-read")) return;
+        var c = d.getAttribute("data-mtq-college"), box = d.querySelector(".mtq-col-list");
+        d.setAttribute("data-read", "1");
+        box.textContent = "Reading the list…";
+        jgetAll(REST + "/program_record_college_items?college=eq." + encodeURIComponent(c)
+          + "&select=program_title,control_number,award,catalog_year,checked,text,n&order=control_number,n")
+          .then(function (rows) {
+            if (!rows) {
+              d.removeAttribute("data-read");
+              box.textContent = "The list did not load. Close and open it to read it again.";
+              return;
+            }
+            box.innerHTML = collegeListHtml(rows);
+          });
+      });
+    });
   }
 
   function render(root) {
@@ -600,11 +701,13 @@
 
     h += '<p class="mtq-note">Sources: <code>map_contact_gaps</code>, <code>sierra_feedback</code>, '
       + '<code>governance_owners</code>, <code>map_college_nudges</code>, <code>map_data_loads</code>, '
+      + '<code>program_record_college_items</code>, '
       + '<code>kb/governance_register.json</code>, <code>map_users.js</code> FALLBACK_CONTACTS, '
       + '<code>kb/map_team_tracked.json</code>.</p></div>';
 
     root.innerHTML = h;
 
+    wireCollegeLists(root);
     var cb = root.querySelector("[data-showclear]");
     if (cb) cb.addEventListener("change", function () { state.showClear = cb.checked; render(root); });
     root.querySelectorAll("[data-goto]").forEach(function (a) {
@@ -648,6 +751,8 @@
     _daysBetween: daysBetween,
     _ageLabel: ageLabel,
     _itemHtml: itemHtml,
+    _collegeListHtml: collegeListHtml,
+    _jgetAll: jgetAll,
     _signedIn: signedIn,
     _authHeaders: authHeaders
   };
