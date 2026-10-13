@@ -288,7 +288,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 4085
+  "text_chars": 5335
  },
  {
   "control_number": "09710",
@@ -616,12 +616,30 @@
   "title": "Aviation Maintenance Technology: Airframe",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVIM101G",
+   "AVIM101H",
+   "AVIM102G",
+   "AVIM102H",
+   "AVIM109D",
+   "AVIM110A",
+   "AVIM120",
+   "AVIM121A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19990",
+   "title": "Aviation Maintenance Technology - Airframe - Associate of Science Degree: Miramar",
+   "h1": "Aviation Maintenance Technology - Airframe - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2774
  },
  {
   "control_number": "09726",
@@ -735,12 +753,38 @@
   "title": "Aviation Business Administration",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "ACCT116A",
+   "ACCT116B",
+   "AVIA101",
+   "AVIA101L",
+   "AVIA105",
+   "AVIA115",
+   "AVIA125",
+   "AVIA128",
+   "AVIA133",
+   "AVIA228",
+   "AVIA270",
+   "BUSE119",
+   "BUSE140",
+   "BUSE201",
+   "CBTE180",
+   "CBTE210"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19987",
+   "title": "Aviation Business Administration - Associate of Science Degree: Miramar",
+   "h1": "Aviation Business Administration - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 4448
  },
  {
   "control_number": "12103",
@@ -1083,7 +1127,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 5220
+  "text_chars": 6198
  },
  {
   "control_number": "16700",
@@ -1138,12 +1182,30 @@
   "title": "Aviation General Studies",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVIM101G",
+   "AVIM101H",
+   "AVIM102G",
+   "AVIM102H",
+   "AVIM109D",
+   "AVIM110A",
+   "AVIM120",
+   "AVIM121A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19988",
+   "title": "Aviation General Studies - Associate of Science Degree: Miramar",
+   "h1": "Aviation General Studies - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 3035
  },
  {
   "control_number": "16732",
@@ -1252,12 +1314,48 @@
   "title": "Professional Aeronautics",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.963,
+  "codes_found": [
+   "ACCT116A",
+   "AVIA101",
+   "AVIA101L",
+   "AVIA105",
+   "AVIA115",
+   "AVIA125",
+   "AVIA128",
+   "AVIA151",
+   "AVIA161",
+   "AVIA161L",
+   "AVIA195",
+   "AVIA195L",
+   "AVIA196L",
+   "AVIA201",
+   "AVIA211",
+   "AVIA211L",
+   "AVIA215L",
+   "AVIA216L",
+   "AVIA228",
+   "AVIA270",
+   "BUSE201",
+   "GEOG101",
+   "GEOL104",
+   "PHYS125",
+   "PHYS180A",
+   "PHYS195"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20103",
+   "title": "Professional Aeronautics - Associate of Science Degree: Miramar",
+   "h1": "Professional Aeronautics - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 27,
-  "text_chars": 0
+  "text_chars": 4765
  },
  {
   "control_number": "16780",
@@ -1288,12 +1386,24 @@
   "title": "Pilot Studies",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVIM101G",
+   "AVIM101H"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20098",
+   "title": "Pilot Studies - Associate of Science Degree: Miramar",
+   "h1": "Pilot Studies - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1696
  },
  {
   "control_number": "17037",
@@ -2078,7 +2188,7 @@
    }
   },
   "listed": 8,
-  "text_chars": 4085
+  "text_chars": 5334
  },
  {
   "control_number": "18208",
@@ -2143,7 +2253,7 @@
    }
   },
   "listed": 9,
-  "text_chars": 5220
+  "text_chars": 6104
  },
  {
   "control_number": "18232",
@@ -2447,12 +2557,29 @@
   "title": "Aviation Operations Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVIA101",
+   "AVIA105",
+   "AVIA125",
+   "AVIA128",
+   "AVIA133",
+   "BUSE119",
+   "BUSE201"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19996",
+   "title": "Aviation Operations Management - Certificate of Achievement: Miramar",
+   "h1": "Aviation Operations Management - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2374
  },
  {
   "control_number": "22275",
@@ -2676,48 +2803,114 @@
   "title": "Aviation Maintenance Technology: Airframe",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVIM101G",
+   "AVIM101H",
+   "AVIM102G",
+   "AVIM102H",
+   "AVIM109D",
+   "AVIM110A",
+   "AVIM120",
+   "AVIM121A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19991",
+   "title": "Aviation Maintenance Technology - Airframe - Certificate of Achievement: Miramar",
+   "h1": "Aviation Maintenance Technology - Airframe - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2681
  },
  {
   "control_number": "22283",
   "title": "Pilot Studies",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "AVIM101G",
+   "AVIM101H"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20099",
+   "title": "Pilot Studies - Certificate of Achievement: Miramar",
+   "h1": "Pilot Studies - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 1603
  },
  {
   "control_number": "22284",
   "title": "Aviation General Studies",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVIM101G",
+   "AVIM101H",
+   "AVIM102G",
+   "AVIM102H",
+   "AVIM109D",
+   "AVIM110A",
+   "AVIM120",
+   "AVIM121A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19989",
+   "title": "Aviation General Studies - Certificate of Achievement: Miramar",
+   "h1": "Aviation General Studies - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 3034
  },
  {
   "control_number": "22285",
   "title": "Aviation Maintenance Technology: Airframe & Powerplant",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVIM101G",
+   "AVIM101H",
+   "AVIM102G",
+   "AVIM102H",
+   "AVIM109D",
+   "AVIM110A",
+   "AVIM120",
+   "AVIM121A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19993",
+   "title": "Aviation Maintenance Technology - Airframe & Powerplant - Certificate of Achievement: Miramar",
+   "h1": "Aviation Maintenance Technology - Airframe & Powerplant - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2971
  },
  {
   "control_number": "22286",
@@ -2827,7 +3020,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 2384
+  "text_chars": 2124
  },
  {
   "control_number": "30052",
@@ -2855,7 +3048,7 @@
    }
   },
   "listed": 6,
-  "text_chars": 2161
+  "text_chars": 2123
  },
  {
   "control_number": "30512",
@@ -3478,7 +3671,7 @@
    }
   },
   "listed": 4,
-  "text_chars": 6705
+  "text_chars": 6352
  },
  {
   "control_number": "33374",
@@ -4093,7 +4286,7 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.5,
   "codes_found": [
    "BUSE129",
    "BUSE155",
@@ -4101,23 +4294,16 @@
    "EXSC145A",
    "EXSC145B",
    "EXSC145C",
-   "EXSC145D",
-   "EXSC251",
-   "EXSC270",
-   "EXSC286",
-   "EXSC293A",
-   "EXSC293B",
-   "EXSC393A",
-   "HUMA201"
+   "EXSC145D"
   ],
   "source": {
-   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20882",
-   "title": "300-Hour Registered Yoga Teacher - Certificate of Achievement: Miramar",
-   "h1": "300-Hour Registered Yoga Teacher - Certificate of Achievement: Miramar",
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20070",
+   "title": "Independent Business Ownership - Certificate of Performance: Miramar",
+   "h1": "Independent Business Ownership - Certificate of Performance: Miramar",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 0.0
    }
   },
   "listed": 14,
@@ -4584,7 +4770,7 @@
    }
   },
   "listed": 22,
-  "text_chars": 4347
+  "text_chars": 3403
  },
  {
   "control_number": "44740",
@@ -4698,7 +4884,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 13066
+  "text_chars": 13403
  },
  {
   "control_number": "46222",

@@ -1,0 +1,323 @@
+{
+ "college": "San Diego Miramar College",
+ "control_number": "22282",
+ "shape": "certificate",
+ "title": "Aviation Maintenance Technology: Airframe",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19991",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5950,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5950,
+    "output_tokens": 1812,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1812,
+  "output_tokens_details": {
+   "thinking_tokens": 317
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06004,
+ "ms": 14542,
+ "seconds": 14.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 13,
+   "codes": [
+    "AVIM103A",
+    "AVIM103B",
+    "AVIM103C",
+    "AVIM103D",
+    "AVIM104A",
+    "AVIM104B",
+    "AVIM104C",
+    "AVIM104D",
+    "AVIM105A",
+    "AVIM105B",
+    "AVIM106A",
+    "AVIM106B",
+    "AVIM109A"
+   ],
+   "flagged": [
+    "AVIM103A",
+    "AVIM103B",
+    "AVIM103C",
+    "AVIM103D",
+    "AVIM104A",
+    "AVIM104B",
+    "AVIM104C",
+    "AVIM104D",
+    "AVIM105A",
+    "AVIM105B",
+    "AVIM106A",
+    "AVIM106B",
+    "AVIM109A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    47.0,
+    47.0
+   ],
+   "stated": [
+    47.0,
+    47.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Aviation Maintenance Technology - Airframe - Certificate of Achievement: Miramar",
+   "measure": "units",
+   "total_units": {
+    "min": 47,
+    "max": 47
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Possess the knowledge and skills necessary to research, inspect, repair, and maintain airframes in accordance with regulations, policies, and procedures set forth by the Federal Aviation Administration and the aeronautical manufacturers and maintenance organizations of the aviation industry."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "General Curriculum",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21.5,
+     "max": 21.5
+    },
+    "courses": [
+     {
+      "code": "AVIM 101G",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIM 101H",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIM 102G",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIM 102H",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIM 109D",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIM 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIM 121A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Airframe Curriculum",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25.5,
+     "max": 25.5
+    },
+    "courses": [
+     {
+      "code": "AVIM 103A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AVIM 104A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AVIM 103B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AVIM 104B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AVIM 103C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AVIM 104C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AVIM 103D",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AVIM 104D",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AVIM 105A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AVIM 106A",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AVIM 105B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AVIM 106B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AVIM 109A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AVIM 110A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints AVIM 106A with the same title as AVIM 105A ('Aircraft Cabin Atmosphere Control'); likely the applied lab course—reviewer may check.",
+   "Thirteen Airframe Curriculum courses (AVIM 103A-D, 104A-D, 105A, 105B, 106A, 106B, 109A) are not in the closed list and are recorded as catalog additions.",
+   "Block totals 21.5 and 25.5 sum to the stated Total Units of 47.0.",
+   "Text describes credit-by-rating (max 35 units) and military credit (max 15 units) policies; these reference Associate of Science degree requirements and are not recorded as blocks.",
+   "Summary states the certificate qualifies the student for the FAA Airframe exam; no career titles are named."
+  ]
+ },
+ "extracted_run": "38355780721"
+}
