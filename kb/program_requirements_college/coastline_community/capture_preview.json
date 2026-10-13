@@ -1,0 +1,1071 @@
+{
+ "college": "Coastline Community College",
+ "catalog_url": "https://catalog.cccd.edu/coastline/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 175,
+ "with_closed_list": 159,
+ "started": "2026-10-13T13:36:26Z",
+ "scope": "/coastline/",
+ "sitemap": {
+  "url": "https://catalog.cccd.edu/sitemap.xml",
+  "status": 200,
+  "listed": 4742,
+  "nested": 0,
+  "program_pages": 251,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 251,
+ "loads": 335,
+ "seconds": 1570.9,
+ "found": 29,
+ "by_method": {
+  "link_search": 15,
+  "no_closed_list": 16,
+  "not_found": 109,
+  "page_claimed": 21,
+  "sitemap_page": 14
+ },
+ "shared_pages": {
+  "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/": [
+   "11459",
+   "20352"
+  ],
+  "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/emgt/index.html": [
+   "19515",
+   "19516"
+  ],
+  "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/bci/index.html": [
+   "20372",
+   "20373"
+  ],
+  "https://catalog.cccd.edu/coastline/pathways/business-operations-management/accounting/": [
+   "20388",
+   "20389"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "03723",
+   "title": "Management",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "03724",
+   "title": "Supervision",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "03747",
+   "title": "Paralegal Studies",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "16736",
+   "title": "Retail Management",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "17983",
+   "title": "CalGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "18002",
+   "title": "Liberal Studies (for Teaching)",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18051",
+   "title": "American Studies",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18052",
+   "title": "Arts & Humanities",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18054",
+   "title": "Physical Education and Health",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18055",
+   "title": "Science and Math",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18056",
+   "title": "Social and Behavioral Sciences",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18216",
+   "title": "French",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18217",
+   "title": "Gerontology",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18218",
+   "title": "Health and Fitness",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18219",
+   "title": "History",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18220",
+   "title": "Human Services",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18224",
+   "title": "Sociology",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "19423",
+   "title": "Real Estate Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "20353",
+   "title": "Supervision",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "20356",
+   "title": "Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "20357",
+   "title": "Retail Management",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"
+  },
+  {
+   "control_number": "20366",
+   "title": "Paralegal Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "22939",
+   "title": "Supply Chain Management",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "22940",
+   "title": "Supply Chain Management II",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "23043",
+   "title": "Business",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "23044",
+   "title": "Business",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "23045",
+   "title": "Human Resources Management",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "23046",
+   "title": "Human Resources Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "23047",
+   "title": "Marketing",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "23048",
+   "title": "Marketing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "23049",
+   "title": "Business : Business Administration",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "23050",
+   "title": "Business Administration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "30255",
+   "title": "Health Care Management",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "30256",
+   "title": "Health Care Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "30350",
+   "title": "Emergency Management/Homeland Security: Criminal Justice",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "30879",
+   "title": "Sociology",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "30891",
+   "title": "Psychology",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "31333",
+   "title": "English",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "31453",
+   "title": "History",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "33014",
+   "title": "Communication Studies",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "35740",
+   "title": "Business Information Worker",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"
+  },
+  {
+   "control_number": "36112",
+   "title": "Horticulture",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "36288",
+   "title": "English as a Second Language Preparation for Careers",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "36800",
+   "title": "Porter",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "37669",
+   "title": "Economics",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "38335",
+   "title": "Child and Adolescent Development",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "38389",
+   "title": "Animal Care",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "38407",
+   "title": "Customer Service Technology Level 1 (Noncredit)",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "38416",
+   "title": "Customer Service Technology Level 2 (Noncredit)",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "38553",
+   "title": "ESL Intermediate Preparation for Careers",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "38554",
+   "title": "Guest Services",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "38555",
+   "title": "Language Preparation for U.S. Citizenship",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "38556",
+   "title": "Culinary Arts",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "38603",
+   "title": "Geology",
+   "award": "A.S. T Degree"
+  },
+  {
+   "control_number": "39477",
+   "title": "Wellness Coaching",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "39764",
+   "title": "Drama Basics",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "39880",
+   "title": "Educational Studies: STEM: Math Concentration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "39966",
+   "title": "Educational Studies: ECE Unit Concentration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "39967",
+   "title": "Educational Studies: STEM: Instructional Technology Support Concentration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "39997",
+   "title": "Educational Studies: General",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "40008",
+   "title": "Educational Studies: Teach Your Career/Community College Teaching",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "40011",
+   "title": "Educational Studies: STEM: Science concentration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "40124",
+   "title": "English Language Learning Intermediate to Advanced Oral/Aural Skills",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "40125",
+   "title": "English Language Learning Beginning-Level Skills",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "40477",
+   "title": "Music Basics",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "40844",
+   "title": "Art Basics",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "40845",
+   "title": "Creative Arts Basics",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "41130",
+   "title": "Global Business",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "41175",
+   "title": "Mathematics for Workforce Developmental Skills",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "41337",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree"
+  },
+  {
+   "control_number": "41645",
+   "title": "Public Health Science",
+   "award": "A.S. T Degree"
+  },
+  {
+   "control_number": "41677",
+   "title": "Anthropology",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "41727",
+   "title": "Political Science",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "41762",
+   "title": "Health Science",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "41801",
+   "title": "Philosophy",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "41933",
+   "title": "Health and Wellness for Esports",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42277",
+   "title": "Supplemental Instruction",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42322",
+   "title": "Online Learning Basics",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42323",
+   "title": "Successful Online Learning",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42600",
+   "title": "Geography",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "42665",
+   "title": "English Language Learning High Beginning Skills",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42710",
+   "title": "English as a Second Language Low Beginning Skills",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42718",
+   "title": "English Language Learning Low Intermediate Skills",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "43029",
+   "title": "Art History",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "43030",
+   "title": "Communication Studies",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "43057",
+   "title": "Communications Studies 2.0",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "43490",
+   "title": "Environmental Science",
+   "award": "A.S. T Degree"
+  },
+  {
+   "control_number": "43622",
+   "title": "English as a Second Language High Intermediate Skills",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "44017",
+   "title": "ESL Preparation for Digital Learning",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "44102",
+   "title": "Social Work and Human Services",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "44204",
+   "title": "Management (Applied)",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "44206",
+   "title": "Information and Computer Sciences",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "44207",
+   "title": "Information and Computer Sciences",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "44223",
+   "title": "Law, Public Policy, and Society",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "45085",
+   "title": "Core Professional Skills for Artists",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "45411",
+   "title": "AI for Cybersecurity",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "45416",
+   "title": "Artificial Intelligence",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "45424",
+   "title": "Artificial Intelligence",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "45429",
+   "title": "AI for Cybersecurity",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "45622",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "45695",
+   "title": "Social Media Strategy",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "45872",
+   "title": "Artificial Intelligence (AI) Readiness 2: Ethical and Creative Applications",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "45873",
+   "title": "Artificial Intelligence (AI) Readiness 3: Security, Privacy, and Bias",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "45874",
+   "title": "Visual Design Foundations",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "45879",
+   "title": "Artificial Intelligence (AI) Readiness 1: In the Workplace",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "46029",
+   "title": "Cyber Hygiene and Online Safety",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "46030",
+   "title": "Cyber Hygiene for the Workplace",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "46077",
+   "title": "Public Health",
+   "award": "A.S. T Degree"
+  },
+  {
+   "control_number": "46539",
+   "title": "Emergency Management Foundations",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "20383",
+   "title": "Cybersecurity",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/"
+   ]
+  },
+  {
+   "control_number": "33606",
+   "title": "Spanish",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/language-literature/spanish/"
+   ]
+  },
+  {
+   "control_number": "37925",
+   "title": "Biology",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/science-mathematics/chemistry/"
+   ]
+  },
+  {
+   "control_number": "38543",
+   "title": "Data Analytics",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/computer-information-systems/"
+   ]
+  },
+  {
+   "control_number": "39435",
+   "title": "Data Analytics",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/computer-information-systems/"
+   ]
+  },
+  {
+   "control_number": "39469",
+   "title": "Allied Health Care Careers",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/science-mathematics/biology/"
+   ]
+  },
+  {
+   "control_number": "39533",
+   "title": "Digital Forensics and Incident Response",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/"
+   ]
+  },
+  {
+   "control_number": "39971",
+   "title": "Digital Forensics and Incident Response",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/"
+   ]
+  },
+  {
+   "control_number": "40033",
+   "title": "Cybersecurity Analyst",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/"
+   ]
+  },
+  {
+   "control_number": "40394",
+   "title": "ESL Preparation for Freshman Composition",
+   "award": "Noncredit program",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-second-language/esl-preparation-college-level-english-certificate-competency/"
+   ]
+  },
+  {
+   "control_number": "41082",
+   "title": "Data Science",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/computer-information-systems/"
+   ]
+  },
+  {
+   "control_number": "41525",
+   "title": "Digital Media Design",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/visual-performing-arts/digital-media-design/"
+   ]
+  },
+  {
+   "control_number": "41633",
+   "title": "Nutrition and Dietetics",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/science-mathematics/biology/"
+   ]
+  },
+  {
+   "control_number": "42004",
+   "title": "Cloud Computing",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/",
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/"
+   ]
+  },
+  {
+   "control_number": "42005",
+   "title": "Cloud Computing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/",
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/"
+   ]
+  },
+  {
+   "control_number": "42526",
+   "title": "Offensive Security",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/"
+   ]
+  },
+  {
+   "control_number": "43031",
+   "title": "Studio Arts",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/visual-performing-arts/art/"
+   ]
+  },
+  {
+   "control_number": "43975",
+   "title": "Computer Information Systems",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/computer-information-systems/"
+   ]
+  },
+  {
+   "control_number": "44205",
+   "title": "IT Support Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/",
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/"
+   ]
+  },
+  {
+   "control_number": "45425",
+   "title": "Data Science",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/computer-information-systems/"
+   ]
+  },
+  {
+   "control_number": "46538",
+   "title": "Calculus",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.cccd.edu/coastline/pathways/science-mathematics/mathematics/"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 8,
+  "0.8-1.0": 8,
+  "1.0": 13
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 29,
+  "list": [
+   {
+    "control_number": "07510",
+    "title": "Aging Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/aging-studies/aging-studies-aa/",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11378",
+    "title": "Digital Media Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/coastline/pathways/visual-performing-arts/digital-media-design/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11459",
+    "title": "Entrepreneurship & Small Business Management",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18049",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/visual-performing-arts/art/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18215",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/language-literature/english/",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18222",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/psychology/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18223",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/language-literature/spanish/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19424",
+    "title": "Real Estate Broker",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/re/index.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19515",
+    "title": "Emergency Management Homeland Security",
+    "award": "A.A. Degree",
+    "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/emgt/index.html",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19516",
+    "title": "Emergency Management-Homeland Security",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/emgt/index.html",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20352",
+    "title": "Entrepreneurship and Small Business Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/",
+    "coverage": 0.643,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20365",
+    "title": "Aging Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/aging-studies/aging-studies-coa/",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20372",
+    "title": "Building Codes Inspector",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/bci/index.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20373",
+    "title": "Building Codes Inspector",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/bci/index.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20378",
+    "title": "Information Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/information-technology-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20379",
+    "title": "Information Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/information-technology-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20382",
+    "title": "Cybersecurity",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/",
+    "coverage": 0.895,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20388",
+    "title": "Accounting: Bookkeeping",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/accounting/",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20389",
+    "title": "Accounting: Bookkeeping",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/accounting/",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32136",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/mathematics/",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33015",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/physics/",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33112",
+    "title": "Pre-Medical Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/biology/",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39568",
+    "title": "Dietary Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/coastline/pathways/health-wellness/foods-nutrition/",
+    "coverage": 0.733,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40476",
+    "title": "Introduction to Careers in Esports",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english/introduction-careers-esports-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41639",
+    "title": "Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/chemistry/",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42525",
+    "title": "Cisco Certified Networking Administrator (CCNA)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42527",
+    "title": "IT Foundation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/it-support-specialist-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42635",
+    "title": "ESL Preparation for College-Level English",
+    "award": "Noncredit program",
+    "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-second-language/esl-preparation-college-level-english-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43976",
+    "title": "Computer Information Systems",
+    "award": "A.S. Degree",
+    "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/computer-information-systems/",
+    "coverage": 0.625,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38406172949"
+}
