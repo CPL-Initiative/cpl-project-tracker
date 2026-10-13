@@ -38,6 +38,8 @@ this file, work this queue; agree one writer with any session still holding wake
 
 ## Priority, in order
 
+0. **#2056 is RED (found at sign-off, not investigated; emergency stop at 13k context).** `suite (3)` and `test` failed on 03b015a (run 38329311088). Read the shard 3 failure (`node tests/run.js --shard 3/4` locally, or the job log), fix on `claude/s375-workplan-move`, then wait for card 3 before merging. Also merge #2058 (this checkpoint) and vault #327 on `test` if still open.
+
 1. **Check whether Sam has pasted** (his ruling above; also read Sheet 72's replies). For each card:
    - **Card 2 pasted:** read back projects 3.9 = 1, goal rows 3.9 = 2, projects 4.2.1 = 1, projects 1.1.2 = 0,
      links 4.2.1 "4 home, 1". Then dispatch `daily-dashboard.yml`.
