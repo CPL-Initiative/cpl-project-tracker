@@ -1,0 +1,181 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "45106",
+ "shape": "certificate",
+ "title": "Automation Technician",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/automation-technician-mjc-fall-2025",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5289,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5289,
+    "output_tokens": 1235,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1235,
+  "output_tokens_details": {
+   "thinking_tokens": 373
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04586,
+ "ms": 10319,
+ "seconds": 10.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automation Technician",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Analyze and modify typical control programs in standard PLCs, PACs, and HMI devices.",
+    "Analyze typical process lines that include conveyors, pumps, ventilation, and other commercial and industrial systems.",
+    "Implement modifications into existing control circuits incorporating sensing devices to enhance automated capabilities."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES - COMPLETE 19 UNITS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "ELTEC212",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELTEC221",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELTEC232",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELTEC234",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSCI240",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELTEC236",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space (e.g., ELTEC212, CSCI240); these match closed-list codes ELTEC 212, CSCI 240, etc., so none are marked as catalog additions.",
+   "All courses sit under an outer heading 'Automation Technician (Total 19) Complete all of the following' and a single inner block 'REQUIRED COURSES - COMPLETE 19 UNITS (Total 19)'; recorded as one 'all' block.",
+   "The description says the certificate is designed for 'practicing technicians in the field, or advanced Industrial Electronics students'; this describes the intended audience rather than naming careers, so careers was left empty. A reviewer may wish to check.",
+   "The lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' appears twice; the outcomes appear only once under 'Program Learning Outcomes'.",
+   "Award requires a 'C' or better in the required courses.",
+   "Source URL references 'fall-2025' although the catalog year is 2026-2027."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

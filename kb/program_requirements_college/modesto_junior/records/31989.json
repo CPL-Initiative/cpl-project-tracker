@@ -1,0 +1,443 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "31989",
+ "shape": "adt",
+ "title": "Kinesiology",
+ "award": "A.A- T Degree",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/kinesiology-for-transfer-degree-mjc-spring-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7065,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7065,
+    "output_tokens": 3635,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3635,
+  "output_tokens_details": {
+   "thinking_tokens": 1101
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10096,
+ "ms": 28801,
+ "seconds": 29.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 28,
+   "listed": 28,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 9,
+   "codes": [
+    "ANAT125",
+    "HE111",
+    "PHYS101",
+    "PHYS142",
+    "PHYSO101",
+    "PSYCC1000",
+    "PSYCH121",
+    "SOCIO101",
+    "STATC1000"
+   ],
+   "flagged": [
+    "ANAT125",
+    "HE111",
+    "PHYS101",
+    "PHYS142",
+    "PHYSO101",
+    "PSYCC1000",
+    "PSYCH121",
+    "SOCIO101",
+    "STATC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    23.0
+   ],
+   "stated": [
+    20.0,
+    23.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "KINESIOLOGY, AA-T *",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Assess measurements and types of movement to evaluate individual performance.",
+    "Consider how the body systems and structures work together to allow movement to occur.",
+    "Enter a University level Kinesiology program.",
+    "Relate basic motor skills and patterns to concepts, theories, and methods common to Kinesiology."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 11,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "ANAT125",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYSO101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "MOVEMENT BASED COURSES - (MINIMUM 3)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PEC108",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PEC168",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PEC171",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PEC102",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PEC164",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PEC165",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PEC166",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PEC128",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PEC140",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PEC148",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PEC187",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PEC195",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PEC115",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PEC143",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PEC175",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PEC176",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PEC106",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PEC183",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PEC184",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PEC186",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PEM162",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PEM163",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A: (SELECT TWO)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "HE101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HE110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HE111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYCC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOCIO101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HE100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM143",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS142",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYCH121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STATC1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Movement-based block rule: 'SELECT A MAXIMUM OF ONE (1) COURSE FROM ANY THREE (3) OF THE FOLLOWING AREAS FOR A MINIMUM OF THREE (3) UNITS.' Areas as printed (each 'Total 0 - 1'): AQUATICS (PEC108, PEC168, PEC171, PEC102); COMBATIVES (PEC164, PEC165, PEC166); FITNESS (PEC128, PEC140, PEC148, PEC187, PEC195, PEC115); INDIVIDUAL SPORTS (PEC143, PEC175, PEC176, PEC106); TEAM SPORTS (PEC183, PEC184, PEC186, PEM162, PEM163). Recorded as one choose_units block of 3; the one-per-area, three-area constraint is in this note.",
+   "LIST A: (SELECT TWO) is printed as three sub-lists each also named 'LIST A' with totals 0-3 (HE101, HE110, HE111, PSYCC1000, SOCIO101, HE100), 0-5 (CHEM143, CHEM101, PHYS101, PHYS142) and 0-4 (PSYCH121, STATC1000). The sub-list totals may imply at most one course per sub-list; reviewer should check. Recorded as one choose-2 block.",
+   "Course codes recorded as printed without spaces (e.g., KIN100 = KIN 100 in closed list).",
+   "Degree totals: major 20-23 units; up to 10 units may double count; Cal-GETC 34 units; CSU transferable electives 16-19 units (degree-level, not part of the major total); 60 units total.",
+   "Catalog text begins mid-sentence (description truncated) and prints the outcomes lead-in once before the 'KINESIOLOGY, AA-T *' heading with no outcomes under it; the outcomes are taken from the Program Learning Outcomes list that follows.",
+   "No careers are named in the text."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

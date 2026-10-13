@@ -1,0 +1,245 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "42581",
+ "shape": "degree",
+ "title": "Business Information Technology Level 2",
+ "award": "A.S. Degree",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/business-information-technology-level-2-mjc-fall-2023v2",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5792,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5792,
+    "output_tokens": 1451,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1451,
+  "output_tokens_details": {
+   "thinking_tokens": 250
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05219,
+ "ms": 11876,
+ "seconds": 12.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "BUSAD210"
+   ],
+   "flagged": [
+    "BUSAD210"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    28.0
+   ],
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Information Technology Level 2 A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "ge_pattern": "MJC Associate Degree Requirements",
+   "outcomes": [
+    "Create a variety of business documents using business applications software packages.",
+    "Apply the features and functions of web-based tools efficiently and effectively in order to meet the desired goals and outcomes of business.",
+    "Identify and describe current technologies used in today's businesses and apply these technologies to solve business problems, improve organizational productivity, and achieve the goals of business.",
+    "Demonstrate computer literacy with respect to computer hardware and software applications.",
+    "Apply standard rules of business conduct and customer service.",
+    "Use word processing, spreadsheet, presentation graphics, and scheduling software to perform business tasks.",
+    "Communicate professionally and work effectively in a team.",
+    "Demonstrate an understanding of the accounting cycle and prepare financial statements for business decisions."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Business Information Technology Level 2 - Complete all of the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "BIT231",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT261",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT262",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT270",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT280",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT303",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT313",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT314",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT315",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT316",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIT317",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUSAD310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Codes are printed without a space between subject and number (e.g., BIT231); recorded as printed.",
+   "BUSAD210 - Business Communication (3) is required in the catalog but not in the closed list; marked as catalog addition.",
+   "The description section prints the lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' with nothing under it; outcomes were taken from the Program Learning Outcomes heading.",
+   "Note in catalog: BIT 314 offered only in fall; BIT 315 only in spring.",
+   "GE pattern recorded as the MJC Associate Degree Requirements (local pattern) named in Award Instructions."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

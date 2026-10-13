@@ -1,0 +1,331 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "33944",
+ "shape": "degree",
+ "title": "Irrigation Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/irrigation-technology-mjc-summer-2020",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6204,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6204,
+    "output_tokens": 2871,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2871,
+  "output_tokens_details": {
+   "thinking_tokens": 1056
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08224,
+ "ms": 21531,
+ "seconds": 21.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "AG259A",
+    "AG259C",
+    "AG259D"
+   ],
+   "flagged": [
+    "AG259A",
+    "AG259C",
+    "AG259D"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    26.0,
+    32.0
+   ],
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "why": [
+    "the blocks sum to 26.0-32.0; the catalog states 29.0-29.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "IRRIGATION TECHNOLOGY, A.S. DEGREE",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "ge_pattern": "MJC Associate Degree Requirements",
+   "outcomes": [
+    "Analyze plant/soil/water relationships and determine irrigation requirements for optimum plant growth and crop yield.",
+    "Design and install an appropriate irrigation system that provides the crop water requirements in an efficient and cost effective manner.",
+    "Evaluate an existing irrigation system and make recommendations to improve distribution uniformity and efficiency.",
+    "Evaluate irrigation pump performance and make recommendations to improve overall pumping plant efficiency."
+   ],
+   "careers": [
+    "irrigation managers",
+    "pump testers and repair technicians",
+    "system designers",
+    "system installers",
+    "ditch tenders",
+    "utility personal"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "AGRICULTURE CAREER COURSES - COMPLETE 5 UNITS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AG115",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AGRICULTURE CAREER COURSES",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "AG249",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG259A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AG259B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG259C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AG259D",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "AGRICULTURE SCIENCE BREADTH COURSES",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "PLSC200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NR200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGM200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AGRICULTURE SCIENCE BREADTH COURSES",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AGEC200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGEC210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGEC225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "MAJOR REQUIRED COURSES - COMPLETE 15 UNITS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "AGM235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGM236",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGM237",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGM238",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGM239",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints '(Total 5)' for the parent group 'AGRICULTURE CAREER COURSES - COMPLETE 5 UNITS', which covers AG115 (1 unit) plus the nested 4-unit choice; the AG115-only block's stated is left null for that reason.",
+   "Catalog note: students must take AG 115 and complete an additional 4 units by taking AG 259D, or a combination of AG 259A-C, or a combination of AG 249 and AG 259A-B. AG259A, AG259C and AG259D are not in the closed list and are marked catalog_addition.",
+   "The parent group 'AGRICULTURE SCIENCE BREADTH COURSES - COMPLETE 9 UNITS' (Total 9) requires 9 units combined from two sub-lists: 6-9 units from PLSC200/ANSC200/NR200/AGM200 and 0-3 units from AGEC200/AGEC210/AGEC225.",
+   "Course codes are printed without a space between subject and number (e.g., AG115); recorded as printed.",
+   "The outcomes lead-in sentence appears twice on the page (once before the degree heading); only one outcomes list is printed and it is recorded.",
+   "Career 'utility personal' recorded as printed (likely 'personnel')."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

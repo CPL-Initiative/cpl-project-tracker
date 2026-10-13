@@ -1,0 +1,165 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "36583",
+ "shape": "noncredit",
+ "title": "English Language Instruction for College: Academic Language Skills for Success",
+ "award": "Noncredit program",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-language-instruction-for-college-academic-language-skills-for-success-mjc-summer-2020",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5319,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5319,
+    "output_tokens": 1172,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1172,
+  "output_tokens_details": {
+   "thinking_tokens": 405
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04472,
+ "ms": 10212,
+ "seconds": 10.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    0.0,
+    0.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "English Language Instruction for College: Academic Language Skills for Success",
+   "measure": "units",
+   "total_units": {
+    "min": 0,
+    "max": 0
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate understanding, use, and application of a variety of strategies for self-editing in academic courses.",
+    "Demonstrate understanding, use, and application of many English grammatical structures important for success in academic coursework."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES - ALL NON-CREDIT",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "ELIC910",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIC911",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIC912",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIC913",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The award is a noncredit Certificate of Competency (CDCP), but the catalog states no hours. It counts the award in units, printing '0.0 Units' for the total and 0 beside each course, so measure is 'units' and the total is recorded as the printed 0.",
+   "The catalog prints the course codes without a space (ELIC910 to ELIC913). These match closed-list ELIC 910 to ELIC 913, so none is marked as a catalog addition.",
+   "The outer heading 'English Language Instruction for College: Academic Language Skills for Success (Total 0) Complete all of the following' wraps the single block 'REQUIRED COURSES - ALL NON-CREDIT'. That inner block is the only one recorded.",
+   "The lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' also appears once before an unrelated certificate heading, with no outcomes under it there. The outcomes are taken from the 'Program Learning Outcomes' heading.",
+   "The description names 'employers or prospective employers' but no career or job title, so careers is empty."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

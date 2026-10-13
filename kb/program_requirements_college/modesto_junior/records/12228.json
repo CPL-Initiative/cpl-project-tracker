@@ -1,0 +1,203 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "12228",
+ "shape": "degree",
+ "title": "Athletic Training/Sports Medicine",
+ "award": "A.S. Degree",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/athletic-training-sports-medicine-mjc-fall-2025",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5550,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5550,
+    "output_tokens": 1251,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1251,
+  "output_tokens_details": {
+   "thinking_tokens": 298
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04722,
+ "ms": 10914,
+ "seconds": 11.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.0,
+    29.0
+   ],
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Athletic Training/Sports Medicine A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "ge_pattern": "MJC Associate Degree Requirements",
+   "outcomes": [
+    "Apply critical thinking to design and monitor preventive and rehabilitative plans, as well as provide emergency care.",
+    "Comply with degree related institutional GELO's.",
+    "Successfully perform NATA competencies, and be well versed in NATA perspectives, current research, and procedures.",
+    "Successfully transfer to a four (4) year degree program."
+   ],
+   "careers": [
+    "Certified Athletic Trainer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES - COMPLETE 29 UNITS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 29,
+     "max": 29
+    },
+    "courses": [
+     {
+      "code": "ANAT125",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM143",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HE101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HE110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN108",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSO101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints course codes without a space between subject and number (e.g., ANAT125, PSYCC1000); they match the closed-list codes (ANAT 125, PSYC C1000), so none are marked as catalog additions.",
+   "The ge_pattern is recorded as the 'MJC Associate Degree Requirements' the award instructions name. The text does not name a specific GE pattern such as CSU GE or IGETC.",
+   "The outcomes lead-in sentence appears twice, and one copy is followed by a stray heading 'ATHLETIC TRAINING / SPORTS MEDICINE, AS *'. The four outcomes are printed once under 'Program Learning Outcomes'.",
+   "The career 'Certified Athletic Trainer' is taken from the program description, where it is described as achievable after transfer and passing the national exam."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

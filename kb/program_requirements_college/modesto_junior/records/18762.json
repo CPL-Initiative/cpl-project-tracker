@@ -1,0 +1,182 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "18762",
+ "shape": "certificate",
+ "title": "Computer Network Administration",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/computer-network-administration-mjc-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5287,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5287,
+    "output_tokens": 1211,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1211,
+  "output_tokens_details": {
+   "thinking_tokens": 412
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04537,
+ "ms": 10165,
+ "seconds": 10.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CSCI210",
+    "CSCI241"
+   ],
+   "flagged": [
+    "CSCI210",
+    "CSCI241"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    15.0,
+    15.0
+   ],
+   "stated": [
+    15.0,
+    15.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Network Administration",
+   "measure": "units",
+   "total_units": {
+    "min": 15,
+    "max": 15
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Be prepared to obtain employment in an entry-level position assisting in network design and implementation.",
+    "Demonstrate a firm understanding and working knowledge of basic network topologies, client and server operating system configuration, network security principals, and directory services.",
+    "Demonstrate professional and effective communication skills.",
+    "Design, implement and document a client/server network complete with security policy and a disaster recovery plan for a small-business network."
+   ],
+   "careers": [
+    "computer network administration"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES - COMPLETE 15 UNITS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "CSCI210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSCI213",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSCI232",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSCI241",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSCI242",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints course codes without a space (e.g. CSCI213); they are recorded as printed and matched to the closed-list codes CSCI 213, CSCI 232 and CSCI 242.",
+   "CSCI210 (UNIX/Linux Systems and Programming) and CSCI241 (Advanced Networking & Security) are required but are not in the closed list; they are marked as catalog additions.",
+   "The outcome text 'network security principals' is copied as printed (likely meant 'principles').",
+   "The lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' appears twice; the first occurrence has no outcomes directly under it, and the outcomes follow the 'Program Learning Outcomes' heading.",
+   "The description mentions Microsoft MCP/MCSE certification and 'one additional course from the options list', but no options list is printed in this section."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

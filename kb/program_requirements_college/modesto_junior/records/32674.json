@@ -1,0 +1,216 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "32674",
+ "shape": "adt",
+ "title": "Early Childhood Education",
+ "award": "A.S. T Degree",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/early-childhood-education-for-transfer-degree-mjc-fall-2025",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5890,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5890,
+    "output_tokens": 1555,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1555,
+  "output_tokens_details": {
+   "thinking_tokens": 383
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05466,
+ "ms": 12303,
+ "seconds": 12.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "EARLY CHILDHOOD EDUCATION, AS-T *",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Apply effective guidance and interaction strategies that support all children’s social learning, identity and self-confidence.",
+    "Apply ethical standards and professional behaviors that demonstrate understanding and knowledge, deepening the commitment to the Early Care and Education.",
+    "Design, implement and evaluate environments and activities through observation, assessment, and intentional reflection that support positive, developmental play and learning outcomes for all young children.",
+    "Develop strategies that promote partnerships between programs, teachers, families and their communities.",
+    "Integrate understanding of the needs, the characteristics and multiple influences on development of children birth to age eight as related to high quality care and education of young children."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE - COMPLETE 24 UNITS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "CLDDV101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CLDDV103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CLDDV107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CLDDV109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CLDDV111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CLDDV167",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CLDDV262",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED CORE",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CLDDV128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CLDDV127",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space (e.g., CLDDV101); these match the closed-list codes (e.g., CLDDV 101).",
+   "The first block is named 'REQUIRED CORE - COMPLETE 24 UNITS' but its printed total is 21; the 24 refers to the whole major (21 core + 3 practicum).",
+   "The second block ('Complete the following number of credits: 3') is read as choosing one of CLDDV128 or CLDDV127.",
+   "A stray lead-in line 'Upon satisfactory completion of this award, the student should be prepared to:' appears before the section heading with no outcomes under it; the outcomes were taken from the Program Learning Outcomes heading under the AS-T section.",
+   "The degree's 5 CSU-transferable elective units are part of the 60-unit degree total, not the 24-unit major, so open_elective_units is null.",
+   "The source URL references 'mjc-fall-2025' while the catalog year is 2026-2027; a reviewer may want to confirm the catalog year."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

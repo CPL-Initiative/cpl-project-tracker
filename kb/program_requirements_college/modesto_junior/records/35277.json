@@ -1,0 +1,374 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "35277",
+ "shape": "degree",
+ "title": "Agricultural Environmental Science",
+ "award": "A.S. Degree",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agricultural-environmental-science-mjc-fall-2023",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6289,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6289,
+    "output_tokens": 2996,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2996,
+  "output_tokens_details": {
+   "thinking_tokens": 946
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08508,
+ "ms": 22968,
+ "seconds": 23.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "AG115",
+    "AG285",
+    "AGGE150",
+    "EHS201",
+    "EHS202",
+    "EHS210",
+    "ENSCI110"
+   ],
+   "flagged": [
+    "AG115",
+    "AG285",
+    "AGGE150",
+    "EHS201",
+    "EHS202",
+    "EHS210",
+    "ENSCI110"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    29.0,
+    35.0
+   ],
+   "stated": [
+    32.0,
+    32.0
+   ],
+   "why": [
+    "the blocks sum to 29.0-35.0; the catalog states 32.0-32.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Agricultural Environmental Science A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Apply environmental principles to sustainable resource management problems.",
+    "Demonstrate the effective, safe work habits and inter-personal communication skills required by employers in the Agriculture industry.",
+    "Employ the scientific method to solve agricultural problems.",
+    "Perform environmental practices necessary to be successful in the agriculture industry."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "ENVIRONMENTAL CAREER COURSES - COMPLETE 5 UNITS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "AG 115",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "ENVIRONMENTAL CAREER COURSES",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "AG 249",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG 259A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG 259B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG 259C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG 259D",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AGRICULTURE SCIENCE BREADTH COURSES",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "PLSC 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NR 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGEC 225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGEC 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGEC 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AGRICULTURE SCIENCE BREADTH COURSES",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AGM 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGM 235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AGRICULTURAL ENVIRONMENTAL MAJOR COURSES - COMPLETE 15 UNITS",
+    "rule": "choose_units",
+    "minimum": 15,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "NR 222",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENSCI 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENSCI 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGGE 146",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EHS 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EHS 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "MAJOR ELECTIVES - COMPLETE 3 UNITS",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AG 285",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGGE 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EHS 202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space (e.g. 'AG115'); they are recorded here with a space to match the closed-list format.",
+   "The 'Total 5' on the first block covers the whole career section: AG 115 (1 unit) plus the 4-unit ENVIRONMENTAL CAREER COURSES sub-block.",
+   "The two notes on Section I differ: the Award Instructions note allows AG 259D, or a combination of AG 259A-C, or AG 249 with AG 259A-B; the uppercase note under the list omits AG 259D and prints 'AG 259-AB'. The list itself includes AG 259D.",
+   "The Agriculture Science Breadth section requires 9 units total, split into a 6-9 unit sub-block (PLSC/NR/AGEC courses) and a 0-3 unit sub-block (AGM 200, AGM 235); the 0-3 sub-block is recorded with minimum 0.",
+   "The program is labeled '(Formerly Forestry)'. The source URL references fall-2023 although the catalog year is 2026-2027.",
+   "A stray lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' appears before the program heading with nothing under it; the outcomes were taken from the Program Learning Outcomes heading.",
+   "No careers are named; the description only mentions obtaining employment or transferring.",
+   "MJC Associate Degree Requirements (general education) are referenced but no specific GE pattern is named."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

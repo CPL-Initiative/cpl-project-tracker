@@ -1,0 +1,384 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "46148",
+ "shape": "degree",
+ "title": "Modern Policing",
+ "award": "A.S. Degree",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/modern-policing-mjc-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6656,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6656,
+    "output_tokens": 3363,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3363,
+  "output_tokens_details": {
+   "thinking_tokens": 907
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09388,
+ "ms": 26636,
+ "seconds": 27.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 24,
+   "listed": 24,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    45.0,
+    48.0
+   ],
+   "stated": [
+    45.0,
+    48.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "MODERN POLICING A.S. DEGREE",
+   "measure": "units",
+   "total_units": {
+    "min": 45,
+    "max": 48
+   },
+   "open_elective_units": null,
+   "ge_pattern": "MJC Associate Degree Requirements",
+   "outcomes": [
+    "Analyze and apply criminal, civil, and constitutional law—including the California Penal Code and landmark cases—to ensure lawful, fair, and rights-respecting enforcement that demonstrates integrity, accountability, and fairness in decision-making and public interactions consistent with California AB 89 and professional ethics.",
+    "Demonstrate effective two-way communication with an emphasis on empathy and clarity in order to engage respectfully with diverse communities by incorporating cultural, social, and historical context to reduce bias, foster trust, and enhance legitimacy.",
+    "Employ established community-oriented, problem-solving frameworks to collaborate with community members, leaders, and stakeholders in the scanning and analysis of public-safety challenges in order to design and implement targeted, evidence-informed strategies that strengthen public trust and safety.",
+    "Apply evidence-based techniques in crisis intervention and conflict resolution to de-escalate volatile situations by minimizing use of force and prioritizing peaceful outcomes in accordance with modern policing standards while evaluating outcomes to ensure continuous improvement."
+   ],
+   "careers": [
+    "Peace Officer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "CORE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ADJU201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJU203",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJU205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "COMPLETE ONE COURSE FOR A MINIMUM OF 3 UNITS",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ADJU202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJU212",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJU204",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJU232",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "COMPLETE ONE COURSE FOR A MINIMUM OF 3 UNITS",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ENGLC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLC1000E",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "COMPLETE ONE COURSE FOR A MINIMUM OF 3 UNITS",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "PSYCH121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD228",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "COMPLETE ALL OF THE FOLLOWING COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "COMM130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLC1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMMC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "COMPLETE ONE OF THE FOLLOWING COURSES",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ART143",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSG102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "COMPLETE ONE OF THE FOLLOWING",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CLDDV109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJU234",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Codes are written as the catalog prints them, without a space between subject and number (e.g. ADJU201 = ADJU 201, ENGLC1000 = ENGL C1000); all match closed-list courses.",
+   "The block 'COMPLETE ALL OF THE FOLLOWING COURSES' prints a total of 24 units, but its seven listed courses sum to 21 units. The program total of 45-48 is consistent with 21 units (9+3+3-5+3-4+21+3+3), so the 24 appears to be a catalog error, or a course is missing from the list. Reviewer should check.",
+   "The choose-one blocks are headed 'Complete one course' but the rule line reads 'Complete the following number of credits: N'. They are recorded as choose_courses with minimum 1, with the printed totals in stated.",
+   "MATH128 and BUSAD228 share the title 'Business Statistics' and may be cross-listed; they are recorded as separate options.",
+   "The catalog text begins mid-sentence (truncated program description).",
+   "The lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' appears once before the outcomes heading with nothing under it; the four outcomes follow the 'Program Learning Outcomes' heading.",
+   "Career 'Peace Officer' is taken from the description ('in their role as a Peace Officer').",
+   "GE is described only as 'MJC Associate Degree Requirements' (local degree requirements)."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

@@ -1,0 +1,195 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "45518",
+ "shape": "certificate",
+ "title": "Analytical Chemistry Technician",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/analytical-chemistry-technician-mjc-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5563,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5563,
+    "output_tokens": 1440,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1440,
+  "output_tokens_details": {
+   "thinking_tokens": 464
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05105,
+ "ms": 11513,
+ "seconds": 12.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.0,
+    17.0
+   ],
+   "stated": [
+    17.0,
+    17.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 17
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Enter an entry-level position as an analytical chemistry technician in many industries such as pharmaceuticals, environmental testing, food and beverage production, and more",
+    "Operate analytical instrumentation, conduct chemical analyses, interpret data, and ensure quality control.",
+    "Demonstrate practical skills and problem-solving abilities relevant to the field of analytical chemistry.",
+    "Obtain industry-recognized certifications and credentials."
+   ],
+   "careers": [
+    "analytical chemistry technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "CHEMISTRY FOR LAB TECHNICIANS CORE COURSES - REQUIRED",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "CHEMT315",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEMT310",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEMT305",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM164",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "CHEMISTRY FOR LAB TECHNICIANS PREPARATORY COURSE - CHOOSE ONE ELECTIVE COURSE",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CHEM142",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The core block says 'Complete the following number of credits: 14' and its four courses total exactly 14 units, so it is recorded as 'all'.",
+   "The preparatory block heading says 'CHOOSE ONE ELECTIVE COURSE' and 'Complete the following number of credits: 3'; it is recorded as choose 1 course (both options are 3 units).",
+   "Course codes are printed without a space (e.g., CHEMT315); they match closed-list codes CHEMT 315, etc.",
+   "The description names industries (pharmaceuticals, environmental testing, food and beverage production) in an outcome; these are recorded as industries, not careers.",
+   "A stray lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' appears in the description with no outcomes under it; the outcomes are taken from the Program Learning Outcomes heading."
+  ]
+ },
+ "extracted_run": "38477845911"
+}
