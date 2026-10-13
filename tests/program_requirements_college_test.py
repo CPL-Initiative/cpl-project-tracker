@@ -756,6 +756,45 @@ check(C.el_hubs(EL_LINKS, EL_START) == [EL_BASE + "programs-of-study"],
 check(C.el_program_urls([], EL_START) == [] and C.el_program_urls(EL_LINKS, "https://bakersfield.elumenapp.com/") == [],
       "no menu, or a start page that names no catalog, gives no program page")
 
+# ── eLumen: the fast read from the catalog's own publish calls (S380) ───────
+# Read 38413232841: the full publish call carries styles, the side menu (program
+# links written relative to /catalog/) and the page; the menu loads a page through
+# publish/content. A program's requirements print as rule-name / rule-credits.
+check(C.el_publish_url(EL_START, C.el_start_parts(EL_START)) ==
+      "https://api-prod.elumenapp.com/catalog/sites/publish/2026-2027-Catalog,about-bc"
+      "?tenant=bakersfield.elumenapp.com&api=https://api-prod.elumenapp.com:443"
+      and C.el_publish_url(EL_START, ["program", "ag-ed-as-fall-2026"], content=True) ==
+      "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,program,ag-ed-as-fall-2026"
+      "?tenant=bakersfield.elumenapp.com",
+      "the publish calls are the ones the catalog's own scripts make, full for the menu, content for a page")
+SHELL = ('<style scoped>.a{color:red}</style><nav>'
+         '<a class="navitem" href="2026-2027-Catalog/program/ag-ed-as-fall-2026">Ag Ed AS</a>'
+         '<a class="navitem" href="2026-2027-Catalog/course/agrib5">AGRI B5</a>'
+         '<a href="2026-2027-Catalog/program/ag-ed-as-fall-2026">again</a>'
+         '<a href="2025-2026-Catalog/program/old-as">old year</a>'
+         '<a href="2026-2027-Catalog/program/culinary-coa-fall-2026">Culinary</a></nav>')
+check(C.el_program_slugs(C.el_html(json.dumps({"html": SHELL})), "2026-2027-Catalog") ==
+      ["ag-ed-as-fall-2026", "culinary-coa-fall-2026"]
+      and C.el_program_slugs(SHELL, "2026-2027-Catalog") == ["ag-ed-as-fall-2026", "culinary-coa-fall-2026"]
+      and C.el_html("not json <p>x</p>") == "not json <p>x</p>" and C.el_html(None) == "",
+      "the menu's program slugs come once each, in this catalog only, from JSON or plain HTML")
+CONTENT = ('<style>.x{}</style><script>var a=1;</script><h2>Agricultural Education Associate of Science</h2>'
+           '<h4 class="accordionheader-x-text">Program Requirements</h4><h4>Agriculture Education AS (Total 30)</h4>'
+           '<p>Complete all of the following</p><div class="new-rule"><span class="rule-name"><a href="x">AGRIB5 - '
+           'Leadership in Agriculture</a></span><span class="rule-credits"> 3</span></div>'
+           '<div class="new-rule"><span class="rule-name"><a href="y">ANSCB1 - Introduction to Animal Science</a>'
+           '</span><span class="rule-credits"> 3</span></div>')
+EPG = C.el_page(EL_START, "ag-ed-as-fall-2026", CONTENT)
+check(EPG["url"] == EL_BASE + "program/ag-ed-as-fall-2026"
+      and EPG["title"] == "Agricultural Education Associate of Science"
+      and "var a" not in EPG["body"] and ".x{}" not in EPG["body"]
+      and "Complete all of the following" in EPG["body"]
+      and P.coverage(P.find_codes(EPG["body"], [{"code": "AGRI B5"}, {"code": "ANSC B1"}]),
+                     [{"code": "AGRI B5"}, {"code": "ANSC B1"}]) == 1.0
+      and C.el_page(EL_START, "x", "<style>a{}</style>") is None,
+      "a content call reads as its program's page: its heading, its requirements without styles or scripts, "
+      "and the spaceless codes Bakersfield prints (AGRIB5) count as the state's AGRI B5")
+
 sql = open(os.path.join(ROOT, "chatbox", "supabase_program_requirement_records_college_load.sql")).read()
 body = sql.split("as $$")[1].split("$$;")[0]
 check("on conflict (college, control_number) do nothing" in body and "update" not in body.lower()
