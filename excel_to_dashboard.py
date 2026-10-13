@@ -3376,8 +3376,10 @@ def render_awg_projects_section_html(work_projects):
     "Activity N" chip with the full text in title). The Lead cell carries the
     card_raci.js live hook (.cpl-raci-lead[data-raci-key]) so it resolves to
     the RACI Responsible at runtime, with the creation-era lead as fallback.
-    The header carries #awgProjectsAddSlot — project_add.js mounts its
-    "+ Add project" button there. Returns "" when there are no work projects.
+    The header still carries #awgProjectsAddSlot, but nothing mounts there now:
+    project_add.js was retired in S375 (it had lost both mount points), and the
+    one add flow is the Annual Goals dialog (workplan_goals.js,
+    window.CPL_WORKPLAN_ADD). Returns "" when there are no work projects.
     """
     if not work_projects:
         return ""

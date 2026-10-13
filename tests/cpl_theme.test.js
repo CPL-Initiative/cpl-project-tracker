@@ -244,7 +244,7 @@ const surfaces = ["CPL_Dashboard.html", "index.html", "excel_to_dashboard.py",
                   "cr_reference.js", "contracts.js", "nc_learning_partners.js",
                   "sierra_training.js", "mission_control.js", "cpl_pathways.js",
                   "map_users.js", "cpl_news.js", "team_phrases.js",
-                  "card_updates.js", "project_lifecycle.js", "project_add.js",
+                  "card_updates.js", "project_lifecycle.js",
                   "master_report.js", "report_generator.js", "dashboard_filters.js",
                   "college_report_generator.js", "annual_report.js", "cip_crosswalk.js"]
   .map((f) => fs.readFileSync(f, "utf8")).join("\n");
