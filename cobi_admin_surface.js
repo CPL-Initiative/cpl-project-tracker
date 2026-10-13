@@ -236,6 +236,7 @@ window.COBI_ADMIN_SURFACE = {
         "map_colleges",
         "map_contact_gaps",
         "map_data_loads",
+        "program_record_college_items",
         "sierra_feedback"
       ],
       "writes": [
