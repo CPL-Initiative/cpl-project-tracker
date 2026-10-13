@@ -248,16 +248,27 @@ def is_comparison(rep: dict) -> bool:
                 or "comparison-report-link" in (rep.get("Url") or ""))
 
 
-def outline_reports(row: dict, base: str, form: str = LEGACY_FORM) -> list[str]:
-    """The row's outline report addresses (a MetaReport titled for the outline)."""
+# Which report prints the SLOs, by title. RCCD's Course Outline (97) prints them; SDCCD's
+# Course Outline Report (493) prints Student Learning Objectives only, and its All Fields
+# report (4) prints each college's outcomes (trial 38350133448, census probe 38302465625),
+# so its .run names report=^All Fields$.
+REPORT_TITLE = r"outline"
+
+
+def reads(rep: dict, title: str = REPORT_TITLE) -> bool:
+    return bool(re.search(title, rep.get("Title") or "", re.I)) and not is_comparison(rep)
+
+
+def outline_reports(row: dict, base: str, form: str = LEGACY_FORM, title: str = REPORT_TITLE) -> list[str]:
+    """The row's report addresses: each MetaReport whose title names the report to read."""
     out = []
     for rep in row.get("MetaReports") or []:
-        if re.search(r"outline", rep.get("Title") or "", re.I) and not is_comparison(rep):
+        if reads(rep, title):
             out.append(base + form.format(course_id=row.get("CourseId"), report_id=rep.get("Id")))
     return out
 
 
-def report_titles(rows: list[dict]) -> list[dict]:
+def report_titles(rows: list[dict], title: str = REPORT_TITLE) -> list[dict]:
     """Every MetaReport the search returned, by id and title, with how many rows carry it
     and whether the index reads it, so a run shows which report it chose and why."""
     seen = {}
@@ -267,13 +278,12 @@ def report_titles(rows: list[dict]) -> list[dict]:
             if key not in seen:
                 seen[key] = {"id": rep.get("Id"), "title": rep.get("Title"), "rows": 0,
                              "comparison": is_comparison(rep),
-                             "read": bool(re.search(r"outline", rep.get("Title") or "", re.I))
-                                     and not is_comparison(rep)}
+                             "read": reads(rep, title)}
             seen[key]["rows"] += 1
     return sorted(seen.values(), key=lambda x: -x["rows"])
 
 
-def build_index(rows: list[dict], base: str, form: str = LEGACY_FORM) -> dict:
+def build_index(rows: list[dict], base: str, form: str = LEGACY_FORM, title: str = REPORT_TITLE) -> dict:
     """norm_code -> the active outline rows for it."""
     index = {}
     for row in rows:
@@ -284,7 +294,7 @@ def build_index(rows: list[dict], base: str, form: str = LEGACY_FORM) -> dict:
             continue
         index.setdefault(code, []).append({
             "course_id": row.get("CourseId"), "title": row.get("Title"),
-            "proposal_type": row.get("ProposalTypeTitle"), "reports": outline_reports(row, base, form)})
+            "proposal_type": row.get("ProposalTypeTitle"), "reports": outline_reports(row, base, form, title)})
     return index
 
 
@@ -333,12 +343,12 @@ def search_all(reader, url: str, delay_ms: int) -> dict:
     return out
 
 
-def write_index(url: str, searched: dict, wanted: dict, loads: int) -> int:
+def write_index(url: str, searched: dict, wanted: dict, loads: int, title: str = REPORT_TITLE) -> int:
     base = url if url.endswith("/") else url + "/"
     rows = searched.pop("rows", [])
     learned = report_form(searched.get("outline_links"), rows, base)
     form = learned or LEGACY_FORM
-    index = build_index(rows, base, form)
+    index = build_index(rows, base, form, title)
     union = set().union(*wanted.values()) if wanted else set()
     with_report = {c for c, v in index.items() if any(x["reports"] for x in v)}
     coverage = {slug: {"courses": len(codes), "with_outline": sum(1 for c in codes if c in with_report)}
@@ -347,7 +357,7 @@ def write_index(url: str, searched: dict, wanted: dict, loads: int) -> int:
     out = {"run": run, "at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "url": url,
            "search": searched, "loads": loads,
            "report_form": form, "report_form_from": "the page's own outline links" if learned else "RCCD's default",
-           "report_titles": report_titles(rows),
+           "report_title": title, "report_titles": report_titles(rows, title),
            "sample_row": {k: (rows[0] if rows else {}).get(k) for k in
                           ("CourseId", "SubjectCode", "CourseNumber", "StatusTitle", "ProposalTypeTitle", "MetaReports")},
            "active_codes": len(index), "active_with_report": len(with_report),
@@ -369,6 +379,7 @@ def main(argv=None) -> int:
     ap.add_argument("--discover", default="")
     ap.add_argument("--index", default="")
     ap.add_argument("--slugs", default="riverside_city,moreno_valley,norco")
+    ap.add_argument("--report", default=REPORT_TITLE, help="title pattern of the report that prints the SLOs")
     ap.add_argument("--delay", type=int, default=int(os.environ.get("CENSUS_DELAY_MS", "3000")))
     a = ap.parse_args(argv)
     if not (a.discover or a.index):
@@ -390,7 +401,7 @@ def main(argv=None) -> int:
         browser.close()
 
     if a.index:
-        return write_index(a.index, searched, wanted, reader.loads)
+        return write_index(a.index, searched, wanted, reader.loads, a.report or REPORT_TITLE)
 
     run = os.environ.get("GITHUB_RUN_ID", "local")
     listed = {norm_code(r["row"]) for r in (found.get("rows_at_load") or {}).get("rows", [])} - {None}

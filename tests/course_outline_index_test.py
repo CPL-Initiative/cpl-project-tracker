@@ -80,7 +80,8 @@ check("5 an SDCCD outline address is the dynamic report, the All Fields report l
 rev = dict(sd_rows[0], CourseId=20839, SubjectCode="AAPI", CourseNumber="124", MetaReports=[
     {"Id": 43, "Title": "Course Outline Comparison Report",
      "Url": '<a class="dropdown-item comparison-report-link" data-report-id="43" href="#">'},
-    {"Id": 1, "Title": "All Fields Comparison Report"}, {"Id": 493, "Title": "Course Outline Report"}])
+    {"Id": 1, "Title": "All Fields Comparison Report"}, {"Id": 4, "Title": "All Fields"},
+    {"Id": 493, "Title": "Course Outline Report"}])
 check("5 a comparison report is no outline: a revision reads its Course Outline Report only",
       idx.outline_reports(rev, sd, form) == [sd + "DynamicReports/AllFieldsReportByEntity/20839?entityType=Course&reportId=493"]
       and idx.outline_reports(dict(rev, MetaReports=[{"Id": 43, "Title": "Outline", "Url": 'class="comparison-report-link"'}]),
@@ -88,6 +89,10 @@ check("5 a comparison report is no outline: a revision reads its Course Outline 
 titles = {(t["id"], t["read"]) for t in idx.report_titles(sd_rows + [rev])}
 check("5 the run lists every report by id and title, and which one it reads",
       (493, True) in titles and (43, False) in titles and (4, False) in titles, titles)
+af = idx.build_index([rev], sd, form, r"^All Fields$")
+check("5 a host whose outline prints objectives only reads the report its .run names (SDCCD: All Fields, 4)",
+      af["AAPI 124"][0]["reports"] == [sd + "DynamicReports/AllFieldsReportByEntity/20839?entityType=Course&reportId=4"]
+      and idx.REPORT_TITLE == "outline", af)
 check("5 RCCD's own link gives RCCD's form, so its index is unchanged",
       idx.report_form(["https://rccd.curriqunet.com/Report/Course/GetReport/3794?reportId=97"], rows,
                       "https://rccd.curriqunet.com/") == idx.LEGACY_FORM)
