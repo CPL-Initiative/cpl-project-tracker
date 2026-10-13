@@ -276,6 +276,68 @@ block("(6b)", function () {
   });
 });
 
+// ── (6d) Every record arrives, in pages (2026-10-13) ──
+// PostgREST answers at most 1,000 rows a request: the one-shot read stopped at record 1,000
+// of 2,840 (Content-Range 0-999/*), and as anon its 11 MB statement passed the 3 s timeout
+// and answered 500. The read pages over its stable order and never passes a short list.
+function pagedTable(total, opts) {
+  opts = opts || {};
+  const rows = [];
+  for (let i = 0; i < total; i++) rows.push({ college: "College " + String(Math.floor(i / 100)).padStart(3, "0"),
+    control_number: String(10000 + i), program_title: "Program " + i, award: "A.S. Degree", display: { gaps: [] } });
+  const asked = [];
+  const fetch = function (url, init) {
+    const h = (init && init.headers) || {};
+    if (!/program_requirement_records/.test(url)) {
+      return Promise.resolve({ ok: true, json: function () { return Promise.resolve(/program_source_registry/.test(url) ? REGISTRY : []); } });
+    }
+    asked.push({ url: url, range: h.Range, unit: h["Range-Unit"], prefer: h.Prefer });
+    const m = /^(\d+)-(\d+)$/.exec(h.Range || "");
+    const from = m ? +m[1] : 0, to = m ? Math.min(+m[2], from + 999) : 999;
+    if (opts.failFrom != null && from === opts.failFrom) return Promise.resolve({ ok: false, status: 500 });
+    const slice = rows.slice(from, to + 1);
+    const cr = (slice.length ? from + "-" + (from + slice.length - 1) : "*") + "/" + (h.Prefer === "count=exact" ? total : "*");
+    return Promise.resolve({ ok: true, headers: opts.noHeaders ? undefined : { get: function (k) { return /content-range/i.test(k) ? cr : null; } },
+      json: function () { return Promise.resolve(slice); } });
+  };
+  return { fetch: fetch, asked: asked, rows: rows };
+}
+block("(6d)", function () {
+  const t = pagedTable(2840);
+  const { M } = loadModule({ fetch: t.fetch });
+  return M._load().then(function () {
+    const got = M._state.records || [];
+    check("(6d) all 2,840 records arrive, past the 1,000-row cap", got.length === 2840, "got " + got.length + "; error " + M._state.error);
+    check("(6d) in the table's order, the last college included",
+      got.length === 2840 && got[0].control_number === "10000" && got[2839].control_number === "12839");
+    check("(6d) every page asks for a range of at most 250 rows, over the stable order",
+      t.asked.length >= 12 && t.asked.every(function (a) {
+        const m = /^(\d+)-(\d+)$/.exec(a.range || ""); return a.unit === "items" && m && (+m[2] - +m[1] + 1) <= 250 &&
+          /order=college,control_number/.test(a.url); }), JSON.stringify(t.asked.slice(0, 2)));
+    check("(6d) only the first page asks for the count", t.asked.filter(function (a) { return a.prefer === "count=exact"; }).length === 1 &&
+      t.asked[0].prefer === "count=exact");
+    check("(6d) no page is read twice, none past the end", new Set(t.asked.map(function (a) { return a.range; })).size === t.asked.length &&
+      t.asked.length === Math.ceil(2840 / 250));
+  });
+});
+block("(6d2)", function () {
+  const t = pagedTable(1300, { noHeaders: true });
+  const { M } = loadModule({ fetch: t.fetch });
+  return M._load().then(function () {
+    check("(6d2) without a count it reads on to the short page, every record", (M._state.records || []).length === 1300,
+      "got " + (M._state.records || []).length);
+  });
+});
+block("(6d3)", function () {
+  const t = pagedTable(2840, { failFrom: 1000 });
+  const { M, root } = loadModule({ fetch: t.fetch });
+  return M._load().then(function () {
+    check("(6d3) a failed page fails the read, naming the table, never a short list",
+      /program_requirement_records answered 500/.test(M._state.error || "") && /program_requirement_records answered 500/.test(root.textContent),
+      "error " + M._state.error + "; records " + (M._state.records || []).length);
+  });
+});
+
 // ── (6c) Drafts for the college (Sam, open-asks sheet 32 card 2, as proposed) ──
 // A gap the college owns collects under the college as a draft the MAP team copies; a
 // gap the reading procedure owns stays with the record. The tab composes, never sends.
