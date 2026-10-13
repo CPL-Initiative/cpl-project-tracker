@@ -150,8 +150,8 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `team_members` | tabs: `raci` · scripts: `nudges/build_nudges.py` | tabs: `raci` |
 | `tmc_curator_notes` | tabs: `tmc-builder` | tabs: `tmc-builder` |
 | `tmc_submissions` | tabs: `tmc-builder` | tabs: `tmc-builder` |
-| `workplan_activity_associations` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_workplan_goals.py`, `kb/_seed_workplan_goals.py`, `kb/_seed_workplan_goals_apply.py`, `kb/_validate_workplan_goals.py` | pages: `CPL_Dashboard.html` |
-| `workplan_goals` | tabs: `workplan-goals` · scripts: `excel_to_dashboard.py`, `kb/_load_workplan_goals.py`, `kb/_seed_workplan_goals.py`, `kb/_seed_workplan_goals_apply.py`, `kb/_validate_workplan_goals.py` | tabs: `workplan-goals` |
+| `workplan_activity_associations` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_workplan_goals.py`, `kb/_seed_workplan_goals.py`, `kb/_seed_workplan_goals_apply.py`, `kb/_validate_workplan_goals.py` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` |
+| `workplan_goals` | scripts: `excel_to_dashboard.py`, `kb/_load_workplan_goals.py`, `kb/_seed_workplan_goals.py`, `kb/_seed_workplan_goals_apply.py`, `kb/_validate_workplan_goals.py` | tabs: `workplan-goals` |
 
 ## Supabase RPCs
 

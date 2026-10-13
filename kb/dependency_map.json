@@ -22472,9 +22472,9 @@
     {
      "id": "module:workplan_goals.js",
      "kind": "module",
-     "direction": "read",
-     "how": "helper",
-     "line": 1387,
+     "direction": "write",
+     "how": "literal",
+     "line": 1390,
      "tabs": [
       "workplan-goals"
      ]
@@ -22519,16 +22519,6 @@
   },
   "supabase:workplan_goals": {
    "consumers": [
-    {
-     "id": "module:workplan_goals.js",
-     "kind": "module",
-     "direction": "read",
-     "how": "helper",
-     "line": 1384,
-     "tabs": [
-      "workplan-goals"
-     ]
-    },
     {
      "id": "module:workplan_goals.js",
      "kind": "module",

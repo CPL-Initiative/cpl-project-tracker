@@ -1360,12 +1360,10 @@
     var headers = authHeaders(sess, "return=representation");
     var projectAdded = false;
 
-    function post(table, body) {
-      return fetch(SUPABASE_URL + "/rest/v1/" + table, {
-        method: "POST",
-        headers: headers,
-        body: JSON.stringify(body)
-      }).then(function (r) {
+    // Each insert names its table as a literal beside its method, so the Admin tab's
+    // surface map and the dependency map (both static scans) see all three writes.
+    function checked(table) {
+      return function (r) {
         if (!r.ok) {
           return r.text().then(function (t) {
             var err = new Error(table + " insert failed (HTTP " + r.status + "): " + t.slice(0, 200));
@@ -1373,18 +1371,24 @@
             throw err;
           });
         }
-      });
+      };
     }
 
     var chain = Promise.resolve();
     if (v.payload.projectRow) {
-      chain = chain.then(function () { return post("projects", v.payload.projectRow); })
-                   .then(function () { projectAdded = true; });
+      chain = chain.then(function () {
+        return fetch(SUPABASE_URL + "/rest/v1/projects", { method: "POST", headers: headers,
+          body: JSON.stringify(v.payload.projectRow) }).then(checked("projects"));
+      }).then(function () { projectAdded = true; });
     }
-    chain = chain.then(function () { return post("workplan_goals", v.payload.wpgRows); });
+    chain = chain.then(function () {
+      return fetch(SUPABASE_URL + "/rest/v1/workplan_goals", { method: "POST", headers: headers,
+        body: JSON.stringify(v.payload.wpgRows) }).then(checked("workplan_goals"));
+    });
     if (v.payload.kind === "project" && v.payload.assocRows.length) {
       chain = chain.then(function () {
-        return post("workplan_activity_associations", v.payload.assocRows);
+        return fetch(SUPABASE_URL + "/rest/v1/workplan_activity_associations", { method: "POST", headers: headers,
+          body: JSON.stringify(v.payload.assocRows) }).then(checked("workplan_activity_associations"));
       });
     }
     chain.then(function () {
