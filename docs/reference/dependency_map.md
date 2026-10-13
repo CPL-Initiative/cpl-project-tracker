@@ -150,7 +150,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `team_members` | tabs: `raci` · scripts: `nudges/build_nudges.py` | tabs: `raci` |
 | `tmc_curator_notes` | tabs: `tmc-builder` | tabs: `tmc-builder` |
 | `tmc_submissions` | tabs: `tmc-builder` | tabs: `tmc-builder` |
-| `workplan_activity_associations` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_workplan_goals.py`, `kb/_seed_workplan_goals.py`, `kb/_seed_workplan_goals_apply.py`, `kb/_validate_workplan_goals.py` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` |
+| `workplan_activity_associations` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_workplan_goals.py`, `kb/_seed_workplan_goals.py`, `kb/_seed_workplan_goals_apply.py`, `kb/_validate_workplan_goals.py` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` |
 | `workplan_goals` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_workplan_goals.py`, `kb/_seed_workplan_goals.py`, `kb/_seed_workplan_goals_apply.py`, `kb/_validate_workplan_goals.py` | tabs: `workplan-goals` |
 
 ## Supabase RPCs
@@ -207,6 +207,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `generate-letter` | pages: `budget-support/web/curator.html`, `budget-support/web/new-letter.html` | — |
 | `letter-curator` | pages: `budget-support/web/curator.html`, `budget-support/web/new-letter.html` | — |
 | `program-requirements-extract` | none found | produced by: `chatbox/supabase/functions/program-requirements-extract/index.ts` |
+| `workplan-rebuild` | tabs: `workplan-goals` | produced by: `chatbox/supabase/functions/workplan-rebuild/index.ts` |
 
 ## Storage buckets
 
@@ -913,7 +914,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `api.anthropic.com` | tabs: `annual-report` · pages: `CPL_Dashboard.html` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `api.careeronestop.org` | scripts: `kb/_sync_cos_certifications.py`, `kb/_sync_moc_crosswalk.py` |
 | `api.gdeltproject.org` | `edgefn:cpl-news-harvest` |
-| `api.github.com/repos/` | modules: `kb-portal/config.js` |
+| `api.github.com/repos/` | modules: `kb-portal/config.js` · `edgefn:workplan-rebuild` |
 | `api.github.com/repos/cpl-initiative` | `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `api.typesafe.ai` | scripts: `kb/_typesafe_smoke.py` |
 | `arc.losrios.edu` | tabs: `map-queue`, `map-users` |
@@ -933,7 +934,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `code.claude.com` | scripts: `scripts/install_prompt_guards.py` |
 | `commons.wikimedia.org` | pages: `CPL_Dashboard.html` · scripts: `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py`, `tools/source_first_light_art.mjs` |
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
-| `cpl-initiative.github.io` | tabs: `college-briefing`, `implementation-funding`, `map-queue`, `map-users` · scripts: `chatbox/health_check.sh`, `kb/_build_partner_crosswalk.py`, `kb/_program_source_census.py`, `prototype/funding_video/build.py`, `prototype/ironworker_video/build.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/noncredit_video/build.py`, `scripts/catalog_framing.py`, `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
+| `cpl-initiative.github.io` | tabs: `college-briefing`, `implementation-funding`, `map-queue`, `map-users` · scripts: `chatbox/health_check.sh`, `kb/_build_partner_crosswalk.py`, `kb/_program_source_census.py`, `prototype/funding_video/build.py`, `prototype/ironworker_video/build.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/noncredit_video/build.py`, `scripts/catalog_framing.py`, `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `edgefn:workplan-rebuild`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `cpl-proxy.slee-548.workers.dev` | tabs: `annual-report`, `credential-reference`, `raci` · modules: `kb-portal/config.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` · workflows: `daily-dashboard.yml` |
 | `cpldashboardcccco.azurewebsites.net` | tabs: `college-briefing`, `cpl-pathways` · scripts: `chatbox/scrape_landing_pages.py`, `fetch_veteran_jst.py`, `kb/_build_futuro_hth_crosswalk.py` · `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `crc.losrios.edu` | tabs: `map-queue`, `map-users` |
@@ -1105,5 +1106,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 97 Supabase tables · 38 RPCs · 7 edge functions · 647 file
-datasets · 177 external services · 439 consumers · 53 workflows · 39 tabs.
+Coverage: 97 Supabase tables · 38 RPCs · 8 edge functions · 647 file
+datasets · 177 external services · 440 consumers · 53 workflows · 39 tabs.
