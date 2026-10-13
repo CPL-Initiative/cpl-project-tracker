@@ -1,0 +1,206 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "09259",
+ "shape": "certificate",
+ "title": "Dietetic Services Supervisor Program",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/dietetic-services-supervisor-program-certificate-of-achievement-spring-2025",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5737,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5737,
+    "output_tokens": 1858,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1858,
+  "output_tokens_details": {
+   "thinking_tokens": 585
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06011,
+ "ms": 15520,
+ "seconds": 15.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 8,
+   "share": 0.875,
+   "missing": [
+    "FDSVB48WE"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "NUTRB48WE"
+   ],
+   "flagged": [
+    "NUTRB48WE"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.5,
+    18.5
+   ],
+   "stated": [
+    18.5,
+    18.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Dietetic Services Supervisor Program Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 18.5,
+    "max": 18.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Upon successful completion of the program, the student will be able to develop resident/patient profiles, including diet prescriptions, food preferences, texture modifications, and/or need for assistance during meal times.",
+    "Upon successful completion of the program, the student will be able to use the facility diet manual and help the registered dietitian design menus and standardized recipes that are within the diet allowances, textures, and nutritional needs of residents/patients in accordance with standards of care.",
+    "Upon successful completion of the program, the student will be able to assemble standardized recipes in production and follow the diet prescription ordered by the physician.",
+    "Upon successful completion of the program, the student will be able to appraise food quality in all phases of preparation, including receiving, storage, preparation, and service under sanitary conditions to prevent food-borne illness. Sanitation oversight includes all food service department areas and components such as storage rooms, refrigerators/freezers, food preparation, service equipment and surfaces, tray lines, and carts."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses-including completion of the ServSafe exam",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18.5,
+     "max": 18.5
+    },
+    "courses": [
+     {
+      "code": "FDSVB50",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FDSVB52",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FDSVB55A",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FDSVB55C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FDSVB59",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTRB10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTRB50",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTRB48WE",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "FDSV B48WE",
+    "why": "not in the text; catalog lists Work Experience Education as NUTRB48WE (2 units) instead"
+   }
+  ],
+  "notes": [
+   "The catalog text begins mid-sentence in the outcomes area ('iance with regulations...'), so the outcomes list is cut off at the start; earlier outcomes (e.g., numbers 1-2 of the 'Upon successful completion' list) are not in the text and were not recorded.",
+   "Two numbered lists appear interleaved before Program Requirements: one of statements beginning 'Upon successful completion of the program, the student will be able to...' (recorded as program outcomes, items 3-6) and another of competency-style statements (items 2-6 and 10, e.g., 'Identify the role and limitations of the Dietary Service Supervisor under Title 22.'). The second list's heading is not in the text; it may be another outcomes list or a competencies/description list. Reviewer should check against the full page.",
+   "Work Experience Education is printed as NUTRB48WE with 2 units, while the closed list has FDSV B48WE at 1 unit; recorded NUTRB48WE as a catalog addition.",
+   "Block name notes that completion of the ServSafe exam is included in the core requirement.",
+   "Units printed in the catalog sum to the stated 18.5 total."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

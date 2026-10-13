@@ -1,0 +1,152 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "43184",
+ "shape": "noncredit",
+ "title": "Automotive Detailing",
+ "award": "Noncredit program",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/automotive-detailing-certificate-of-completion-fall-2022",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5221,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5221,
+    "output_tokens": 1444,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1444,
+  "output_tokens_details": {
+   "thinking_tokens": 697
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04976,
+ "ms": 13516,
+ "seconds": 13.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    108.0,
+    108.0
+   ],
+   "stated": [
+    108.0,
+    108.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Detailing Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 108,
+    "max": 108
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Upon successful completion of the program, the student will be able to: Evaluate and analyze detailing equipment and its ability to work correctly and safely before starting to work on a vehicle.",
+    "Upon successful completion of the program, the student will be able to demonstrate the knowledge needed to work in the industry.",
+    "Upon successful completion of the program, the student will be able to obtain enough basic skills to be successfully employed in the automotive detailing industry and should be able to perform professional detailing services to paying customers.",
+    "Upon successful completion of the program, the student will be able to have the necessary knowledge to pursue International Detailing Association Certification, Level 1."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses-108 hours (Credits listed are in hours)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 108,
+     "max": 108
+    },
+    "courses": [
+     {
+      "code": "AUTOB60AN",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTOB60BN",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints the codes without a space (AUTOB60AN, AUTOB60BN); these are the closed-list courses AUTO B60AN and AUTO B60BN, so catalog_addition is false.",
+   "Hours are printed as '54 - 0' per course and the total as '108 - 0'; the trailing 0 looks like an empty unit field from the noncredit layout, not a range, so units_max is null and the total is recorded as 108 hours.",
+   "Each outcome includes the phrase 'Upon successful completion of the program, the student will be able to' as part of its printed text; it was kept verbatim because it appears inside every numbered item rather than as a separate lead-in sentence.",
+   "No careers or job titles are named in the program description. The outcomes mention employment in 'the automotive detailing industry', but this was not recorded as a career."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

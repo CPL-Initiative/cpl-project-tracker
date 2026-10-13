@@ -1,0 +1,165 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "43265",
+ "shape": "noncredit",
+ "title": "Mobile Equipment Electrical Systems",
+ "award": "Noncredit program",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/mobile-equipment-electrical-systems-certificate-of-completion-summer-2023",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5392,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5392,
+    "output_tokens": 1087,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1087,
+  "output_tokens_details": {
+   "thinking_tokens": 380
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04331,
+ "ms": 9396,
+ "seconds": 9.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    54.0,
+    54.0
+   ],
+   "stated": [
+    54.0,
+    54.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Mobile Equipment Electrical Systems Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 54,
+    "max": 54
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Upon successful completion of the program, the student will be able to apply basic electrical theory to the diagnosis and repair to mobile equipment electrical systems.",
+    "Upon the successful completion of the program, the student will be able to examine and follow the flow of current through circuits and components drawn on technical schematics commonly associated with mobile equipment.",
+    "Upon the successful completion of the program, the student will be able to communicate basic electrical troubleshooting practices both written and verbally."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses-54 hours (Credits listed are in hours)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 54,
+     "max": 54
+    },
+    "courses": [
+     {
+      "code": "MCAG B60NC",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MCAG B61NC",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MCAG B62NC",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MCAG B63NC",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space (e.g., 'MCAGB60NC'); recorded with the closed list's spacing since they are the same courses.",
+   "Hours are printed as '18 - 0', '9 - 0', and the total as '(Total 54 - 0)'; the trailing '- 0' appears to be a display artifact of the noncredit unit field, so it was read as a single hour value, not a range.",
+   "The block heading states 'Core Courses-54 hours (Credits listed are in hours)'; the block row itself shows 0 units, which was disregarded.",
+   "No careers are named in the program text."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

@@ -1,0 +1,360 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "35984",
+ "shape": "degree",
+ "title": "Health Information Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/health-information-technology-associate-of-science-summer-2022",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6445,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6445,
+    "output_tokens": 3405,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3405,
+  "output_tokens_details": {
+   "thinking_tokens": 1234
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09388,
+ "ms": 27498,
+ "seconds": 28.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 18,
+   "share": 0.889,
+   "missing": [
+    "STATC1000",
+    "STATC1000E"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "BIOLB18",
+    "BIOLB32",
+    "BIOLB33",
+    "HEITB60",
+    "MATHB22",
+    "MATHB22L"
+   ],
+   "flagged": [
+    "BIOLB18",
+    "BIOLB32",
+    "BIOLB33",
+    "HEITB60",
+    "MATHB22",
+    "MATHB22L"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    58.0,
+    63.5
+   ],
+   "stated": [
+    58.0,
+    59.5
+   ],
+   "why": [
+    "the blocks sum to 58.0-63.5; the catalog states 58.0-59.5"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Health Information Technology Associate of Science",
+   "measure": "units",
+   "total_units": {
+    "min": 58,
+    "max": 59.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Bakersfield College general education pattern",
+   "outcomes": [
+    "Upon successful completion of the program, the student will be able to apply the knowledge and skills needed to perform Health Information Technology Associate Degree entry-level competencies as defined by the American Health Information Management Association’s (AHIMA) Council for Excellence in Education (CEE).",
+    "Upon successful completion of the program, the student will be able to apply the knowledge and skills needed to successfully pass the national Registered Health Information Technician (RHIT) exam.",
+    "Upon successful completion of the program, the student will be able to apply biomedical knowledge (anatomy and physiology, pharmacology, pathophysiology, medical terminology) to the process of clinical code assignment",
+    "Upon successful completion of the program, the student will be able to demonstrate the ability to work effectively as an individual and collaboratively in a group to resolve health information challenges in a changing healthcare environment."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MEDS B37",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMP B5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEIT B10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEIT B11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEIT B12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEIT B13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEIT B15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEIT B16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEIT B20",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEIT B21",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEIT B22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEIT B23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEIT B24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEIT B25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEIT B26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEIT B30",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4.5
+    },
+    "courses": [
+     {
+      "code": "MATH B22",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH B22L",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Complete one of following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Anatomy and physiology",
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "HEIT B60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL B18",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select one of the above or the two below",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Anatomy and physiology",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "BIOL B32",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL B33",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "STAT C1000",
+    "why": "not in the text; catalog prints MATH B22 in the statistics choice (likely the pre-renumbering code)"
+   },
+   {
+    "code": "STAT C1000E",
+    "why": "not in the text; catalog prints MATH B22L in the statistics choice (likely the pre-renumbering code)"
+   }
+  ],
+  "notes": [
+   "The catalog prints codes without a space (e.g., MEDSB37, HEITB10); codes are recorded with a space between subject and number to match the closed list.",
+   "COMP B5 is titled 'Introduction to Microsoft Office' in the catalog but 'Introduction to Microsoft 365' in the closed list.",
+   "The statistics block is headed 'Complete one of the following' with 'Complete the following number of credits: 4-4.5'; recorded as choose 1 course. MATH B22 and MATH B22L appear to correspond to the closed list's STAT C1000 and STAT C1000E; reviewer should confirm.",
+   "The anatomy/physiology requirement is read as: one of HEIT B60 or BIOL B18, or both BIOL B32 and BIOL B33 ('Select one of the above or the two below').",
+   "Stated total is 58-59.5, but the listed courses sum to 51 core + 4-4.5 statistics + 3-8 anatomy/physiology (58-63.5); the stated maximum does not appear to account for the 8-unit BIOL B32/B33 path. Recorded the stated total as printed.",
+   "Grade policy text is inconsistent: one paragraph says a 'P' is not acceptable for major courses, while 'To Achieve the Associate of Science' says at least a 'C' or 'P' grade.",
+   "Catalog text begins mid-sentence (admission/clearance requirements cut off at the start).",
+   "URL slug references 'summer-2022' though the catalog year is 2026-2027; reviewer may wish to confirm currency."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

@@ -1,0 +1,201 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "09237",
+ "shape": "degree",
+ "title": "Animal Science",
+ "award": "A.S. Degree",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/registered-veterinary-technicians-job-skills-certificate-summer-2019",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5882,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5882,
+    "output_tokens": 1443,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1443,
+  "output_tokens_details": {
+   "thinking_tokens": 416
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05239,
+ "ms": 12442,
+ "seconds": 12.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 16,
+   "share": 0.0,
+   "missing": [
+    "AGBSB2",
+    "AGRIB1",
+    "ANSCB3",
+    "ANSCB4",
+    "ANSCB5",
+    "ANSCB6",
+    "ANSCB7",
+    "ANSCB84",
+    "ANSCB85",
+    "ANSCB86",
+    "ANSCB88",
+    "ANSCB90",
+    "ANSCB92",
+    "ANSCB94",
+    "ANSCB96",
+    "NRESB1"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Registered Veterinary Technicians Job Skills Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AGBS B2",
+    "why": "not in the text; the Animal Science A.S. section is not provided"
+   },
+   {
+    "code": "AGRI B1",
+    "why": "not in the text; the Animal Science A.S. section is not provided"
+   },
+   {
+    "code": "ANSC B3",
+    "why": "not in the text; the Animal Science A.S. section is not provided"
+   },
+   {
+    "code": "ANSC B4",
+    "why": "not in the text; the Animal Science A.S. section is not provided"
+   },
+   {
+    "code": "ANSC B5",
+    "why": "not in the text; the Animal Science A.S. section is not provided"
+   },
+   {
+    "code": "ANSC B6",
+    "why": "not in the text; the Animal Science A.S. section is not provided"
+   },
+   {
+    "code": "ANSC B7",
+    "why": "not in the text; the Animal Science A.S. section is not provided"
+   },
+   {
+    "code": "ANSC B84",
+    "why": "named only in the RVT Job Skills Certificate section, not the A.S."
+   },
+   {
+    "code": "ANSC B85",
+    "why": "named only in the RVT Job Skills Certificate section, not the A.S."
+   },
+   {
+    "code": "ANSC B86",
+    "why": "named only in the RVT Job Skills Certificate section, not the A.S."
+   },
+   {
+    "code": "ANSC B88",
+    "why": "named only in the RVT Job Skills Certificate section, not the A.S."
+   },
+   {
+    "code": "ANSC B90",
+    "why": "named only in the RVT Job Skills Certificate section, not the A.S."
+   },
+   {
+    "code": "ANSC B92",
+    "why": "named only in the RVT Job Skills Certificate section, not the A.S."
+   },
+   {
+    "code": "ANSC B94",
+    "why": "named only in the RVT Job Skills Certificate section, not the A.S."
+   },
+   {
+    "code": "ANSC B96",
+    "why": "named only in the RVT Job Skills Certificate section, not the A.S."
+   },
+   {
+    "code": "NRES B1",
+    "why": "not in the text; the Animal Science A.S. section is not provided"
+   }
+  ],
+  "notes": [
+   "The source page and text are for the Registered Veterinary Technicians Job Skills Certificate (17.5 units), not the Animal Science A.S. Degree. No section for the A.S. Degree appears in the text, so no blocks, totals, outcomes or careers are recorded for the named award.",
+   "The section heading recorded is the only heading printed; it belongs to a different award. A reviewer should locate the Animal Science A.S. Degree page in the 2026-2027 catalog.",
+   "The certificate section lists ANSC B83 through ANSC B96 (all required, 17.5 units), three program learning outcomes specific to the Job Skills Certificate, and names 'Animal Health Technicians' as a job title; these were not recorded because they belong to the certificate, not the A.S. Degree.",
+   "Source URL slug references 'summer-2019', suggesting the page may reflect an older certificate version."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

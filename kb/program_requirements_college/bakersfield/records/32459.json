@@ -1,0 +1,338 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "32459",
+ "shape": "adt",
+ "title": "Anthropology",
+ "award": "A.A- T Degree",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/anthropology-associate-in-arts-for-transfer-fall-2025",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6538,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6538,
+    "output_tokens": 2967,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2967,
+  "output_tokens_details": {
+   "thinking_tokens": 735
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08549,
+ "ms": 22844,
+ "seconds": 23.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 21,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Anthropology Associate in Arts for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "ge_pattern": "CalGETC (California General Education Transfer Curriculum)",
+   "outcomes": [
+    "Demonstrate an understanding of the biocultural nature of humanity through application of the core concepts, methods, and theories, in cultural anthropology, biological anthropology, and archaeology to explanations of human diversity. Assessment:Exams, Quizzes, Papers, Research, and Presentations.",
+    "Upon successful completion of the program, the student will be able to analyze and discuss the bio-cultural nature of humanity through application of core anthropological concepts, methods, and theories to explanations of human diversity.",
+    "Describe the origins and history of the discipline of American anthropology; its unique perspectives and approaches to the study of humanity; its ethical challenges; its dual nature as the humanistic/scientific study of humanity; and its uses and value in today’s world. Assessment:Exams, Quizzes, Papers, Research, and Presentations.",
+    "Upon successful completion of the program, the student will be able to apply current social issues and case studies to evaluate the history and origins of anthropology, the ethical challenges, and the dual nature of the discipline as a humanistic/scientific study of humanity.",
+    "Critically evaluate information about human societies and origins without reliance on taken-for-granted assumptions, using a combination of skills, including the scientific method, qualitative social analysis, and reflective writing. Assessment:Exams, Quizzes, Papers, Research, and Presentations.",
+    "Upon successful completion of the program, the student will be able to critically evaluate information about human societies and origins, without reliance on taken-for-granted assumptions, using a combination of skills, including the scientific method, qualitative social analysis, and reflective writing."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ANTH B1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH B2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH B3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A- Select one of the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTH B4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH B5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH B1L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B - Option 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List B",
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ERSC B10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ERSC B10L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B - Option 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List B",
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "GEOL B10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL B10L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C- Select 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTH B6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH B7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART B37",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART B38",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL B21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL B28",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST B15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST B18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST B33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC B24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI B28",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints course codes without a space (e.g. 'ANTHB1'); they are recorded in the closed-list form with a space (e.g. 'ANTH B1').",
+   "The text begins mid-sentence ('g both of the following:'), so part of the description above the transfer requirements is cut off; any careers or description text there is not available.",
+   "The Program Learning Outcomes list prints two versions of each of three outcomes (both numbered 1, 2, 3); all six lines are recorded as printed, including the trailing 'Assessment:Exams, Quizzes, Papers, Research, and Presentations.' text on the first version of each. A reviewer should check which version is current.",
+   "List A is headed 'Select one of the following' but its rule is 'Complete the following number of credits: 3' and it includes ANTH B1L (1 unit); recorded as choose 3 units. ANTH B1L alone would not satisfy 3 units, so the list may be in error.",
+   "List B ('Select 4 units from either of the two following List B options', Total 4) is recorded as two option blocks sharing option_group 'List B'.",
+   "Core Courses is printed as 'Complete the following number of credits: 9' over three 3-unit courses, so it is recorded as all required.",
+   "ERSC B10L is printed with the title 'Earth, Science, Laboratory'."
+  ]
+ },
+ "extracted_run": "38414480070"
+}
