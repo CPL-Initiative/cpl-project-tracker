@@ -1,0 +1,19 @@
+{
+ "_readme": "S382 SkyLarch, 2026-10-13. Cabrillo's read with extraction (run 38442109713) filed 271 records; 88 fail arithmetic, 58 of them because the record states no program total (General Business A.S. 06329: blocks sum to 34-35, total null; its Major Electives block names no unit count). Bakersfield, read the same way, failed 24 of 229. This read loads General Business's content call to see whether the page prints a total or an elective unit count the extraction missed. One load, no model call.",
+ "college": "Cabrillo College",
+ "questions": {
+  "program_total": "Whether the program page prints a total (Total Units, Major Total, units required) and how many units its elective block asks for."
+ },
+ "keywords": [
+  "[Tt]otal",
+  "[Uu]nits",
+  "[Cc]redits",
+  "[Cc]hoose|[Ss]elect|[Cc]omplete"
+ ],
+ "pages": [
+  {
+   "answers": ["program_total"],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,general-business-associate-in-science-a-s-fall-2025?tenant=cabrillo.elumenapp.com"
+  }
+ ]
+}
