@@ -62,7 +62,7 @@ function makeDom(proxy) {
 
   // (b)
   const ta = doc.querySelector("textarea.car-edit");
-  check("(b) the editor is labelled", ta && ta.labels && ta.labels.length === 1 && ta.labels[0].textContent === "Edit");
+  check("(b) the editor is labeled", ta && ta.labels && ta.labels.length === 1 && ta.labels[0].textContent === "Edit");
   const pv = doc.querySelector(".car-preview");
   check("(b) the preview is a keyboard-reachable region named Preview",
     pv && pv.getAttribute("tabindex") === "0" && pv.getAttribute("role") === "region"
