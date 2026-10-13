@@ -100,3 +100,19 @@ Sam asked for four things on Annual Goals (move AI Apprenticeship CPL Tools unde
   removal question (his 2026-07-02 immunity ruling) wait on him.
 
 **State:** #2080 merged; 4.7 drawn by run 590; three asks open (the lane's NEEDS SAM).
+
+## 2026-10-13 — SkySpruce (S383): Sheet 75, Table and Restore on Annual Goals
+
+**What we learned**
+- **Read the code before a card states what a ruling still does.** Sheet 75 card 3 said the 2026-07-02 ruling keeps official
+  sub-activities immune from Table and Archive. The Activities-tab reorg (Session 95) dropped that gate: every card there is
+  tableable by a reviewer or the team phrase, and `activityLayerIds()` is kept for reference only. Sam's "reviewer" answer
+  still decides the Annual Goals surface; whether the phrase keeps Table on the Activities tab goes back to him.
+- **A selector written for one markup survives a UI pass only by luck.** `setGoalsRowsHidden` hid a tabled row's Annual Goals
+  rows through a `td[rowspan]` name cell; #2054 made it a row header (`th`), and the rows still hid only because each ladder
+  cell carries `data-aid`. A row without a ladder cell (Current) would have stayed. The guard's fixture has one.
+- **One writer, two surfaces.** Annual Goals opens the Activities tab's own Table / Archive dialog and Restore
+  (`CPL_PROJECT_LIFECYCLE.openTable`, `.restore`) and listens for `cpl-lifecycle-changed`, so `project_lifecycle` has one
+  write path and both tabs agree at once.
+
+**State:** Sheet 75 answered (drop, both, reviewer); card 1 waits on Sam's paste; card 3 built (`tests/workplan_goals_table_control.test.js`, 16); card 2 is open work.
