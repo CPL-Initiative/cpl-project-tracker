@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-350 document(s).
+351 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 380 | [load the course outcomes, finish SDCCD's SLO read, then the next college](../session_380_handoff.md) | 2026-10-13 |
 | 379 | [Annual Goals: Move to the phrase held on Sheet 73; read the first Refresh and the first Move](../session_379_handoff.md) | 2026-10-13 |
 | 378 | [Annual Goals: the Move control is live; read the first Refresh and the first Move](../session_378_handoff.md) | 2026-10-13 |
 | 377 | [Annual Goals: read Sheet 72, land the Move control, then Refresh summaries](../session_377_handoff.md) | 2026-10-13 |

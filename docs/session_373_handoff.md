@@ -4,6 +4,8 @@ date: 2026-10-12
 session: 372 (SkyRedwood)
 tags: [handoff, program-requirements, san-diego-mesa, course-outlines, first-light, sierra]
 status: current
+superseded: true
+superseded_by: session_380_handoff.md
 ---
 
 # You are Session 373

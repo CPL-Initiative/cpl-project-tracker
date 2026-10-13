@@ -4,6 +4,8 @@ date: 2026-10-12
 session: 374 (SkyJuniper)
 tags: [handoff, program-requirements, course-outlines, course-outcomes, san-diego-mesa]
 status: current
+superseded: true
+superseded_by: session_380_handoff.md
 ---
 
 # You are Session 376

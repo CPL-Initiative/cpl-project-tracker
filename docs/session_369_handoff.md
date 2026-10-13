@@ -4,6 +4,8 @@ date: 2026-10-12
 session: 368 (SkyWillow)
 tags: [handoff, program-requirements, long-beach-city, chaffey, san-diego-city, cpl-pathways, ui-pass]
 status: current
+superseded: true
+superseded_by: session_380_handoff.md
 ---
 
 # You are Session 369

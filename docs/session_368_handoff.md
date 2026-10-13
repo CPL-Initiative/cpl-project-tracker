@@ -4,6 +4,8 @@ date: 2026-10-12
 session: 367 (SkyAspen)
 tags: [handoff, program-requirements, long-beach-city, cpl-pathways, vision-2030, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_380_handoff.md
 ---
 
 # You are Session 368
