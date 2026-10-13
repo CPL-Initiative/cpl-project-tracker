@@ -34,7 +34,9 @@ Your moniker is **SkyHazel**. Session 384 (**SkyPoplar**, `session_01EyHGwxpaqWS
 
 ## Priority, in order
 
-1. **Merge #2090 on `test`** (merge main first if it turns dirty; regenerate the dependency map, never pick). Then read
+1. **Merge this checkpoint (#2091) and CPLBrain #336 on green first.** S384 stopped at Rule 9a's warning line (89.8K
+   tokens left) and left #2090 unmerged on purpose, so its first live reads get checked the moment it deploys.
+   **Then merge #2090 on `test`** (merge main first if it turns dirty; regenerate the dependency map, never pick). Then read
    its first live reads in `edge_logs` (`request.path = '/rest/v1/program_requirement_records'`): every status 200 or
    206, `content_range` paging, no 400 (its JSON-path selects and quoted `in.()` lists were never sent live before
    deploy). A 400 names the select; fix it in a PR the same hour.
@@ -70,5 +72,5 @@ move. `CLAUDE.md` is still 440 bytes over its budget, and INDEX's update history
 
 ## Subscriptions and check-ins
 
-S384 holds a subscription on #2090 and watches on Sheets 76 and 77, and drops all three at sign-off. It holds no
+S384 dropped its subscriptions (#2090, #2091, CPLBrain #336) and its watches on Sheets 76 and 77 at sign-off. It holds no
 check-in. Subscribe to #2090 when you take it up.
