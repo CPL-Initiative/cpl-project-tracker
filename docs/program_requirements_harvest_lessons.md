@@ -659,3 +659,15 @@ The pilot paragraph, verbatim:
 - **`apply_migration` timed out six times** (22:45Z to 23:17Z) with nothing reaching the database: no table, no ledger row, no lock, no open transaction, the project healthy, `execute_sql` answering. The DDL waits in `chatbox/supabase_course_outcomes.sql`; the guard refuses DDL through `execute_sql`, so there is no second path from a session.
 - **Mesa's nine (#2050).** Seven page reads (`kb/college_reads/mesa_health_programs.json`, runs 38318250175 to 38321027873) walked catalog 70 from the top: 21 sections, programs only under 17540, one tab (All Programs, 18644), one link list (17541) of 200 entries, and all nine in it (17589, 17590, 17626, 17687, 17688, 17700, 17708, 17709, 17727). Each special-admission entry shows six tabs (Summary, Accreditation, Directed Clinical Practice Requirement, Admission Criteria, Requirements, Courses); `cq_children` read the first four visible ones, so the Requirements tab, fifth, was never read and each program scored 0.0. A tab titled Requirements is now read first. The S373 guess (another catalog section) was wrong: walk the tree before assuming where a thing is listed, and read the coverage number a record was filed with (0.0 says no page named a course, which points at the page, not the index).
 - **Moved from the lane (S374 compaction):** **Reading** (#1946-#1952): Program records finds a record and Side by side opens it beside its catalog page (`kb/catalog_framing.json`). Sam confirmed the Cerritos sample, 12 of 12. ④ CPL Pathways' UI pass done (#2016). Sheets 38, 39 and 42's rulings (writes, the OSHA issuer name, the outcomes on the 20 live rows) are under *Moved from the lane (S336 compaction)*. The Progress view: every section of the tab collapses (Expand all, Collapse all).
+
+## Moved from the lane (S376 compaction)
+
+The outcomes paragraph's settled parts, verbatim:
+
+✅ **Record shape 3 (S334):** extraction v4 keeps each outcome exactly as printed in `program.outcomes` and `course_outcomes`; the scorer fails a reworded or empty one; 19 of the 20 pilot records carry them. `kb/_program_requirements_file.py` keeps a read record's requirements and takes only outcomes; `reviewed_readings.json` holds each verdict to the requirements it read.
+
+**Sam's Open Asks Sheet 70 (20:40-20:42Z, `sam-sheet-70-rulings-2026-10-12`):** card 1 *Apply as a migration*; card 2 *Record and move on*, note *"And look for other repositories for the outcomes data and record the link and data in prog reqs"*; card 3 *Every course in the loaded records*.
+
+✅ **The registry fields (S373):** migration `program_source_registry_course_outline_2026_10_12` added the eight `cor_*` columns (`cor_slo_source_url` is Sam's other repositories); the weekly census never writes them. Filled on all 118 rows from census run 5 (#2047): public 49, sign_in 6, refused 3, unreached 1, not_found 59; 18 print SLOs.
+
+**The census** (#2042) opens one outline per host; curriQunet dashboards list public outline reports. ✅ **The course index (#2046):** RCCD's dashboard is a public JSON search; 1,605 of the 1,648 courses the RCCD records name have an outline.
