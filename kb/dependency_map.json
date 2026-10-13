@@ -2026,7 +2026,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 38
+     "line": 46
     },
     {
      "id": "script:kb/_program_requirements_college.py",
