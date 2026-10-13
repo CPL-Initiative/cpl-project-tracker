@@ -35,6 +35,7 @@ and checkpointed at Rule 9a's warning line. `list_sessions` first and agree one 
    table an official sub-activity, reversibly.
 2. The whole-harvest measure, the confirm step left out; later *"an optional college confirm once the procedures look
    stable and dependable"* (`cpl_memory` `sam-whole-harvest-measure-and-optional-college-confirm-2026-10-13`).
+3. COCI differences are for the colleges to correct, not his confirm (priority 4 below; his yes on the build pending).
 
 ## Priority, in order
 
@@ -46,7 +47,12 @@ and checkpointed at Rule 9a's warning line. `list_sessions` first and agree one 
    read before any fix (lessons S381).
 3. **Sheet 76's replies** (read the store before acting): card 1 the `WORKPLAN_DISPATCH_TOKEN` key; card 2 whether
    the team phrase keeps Table / Archive on the Activities tab.
-4. **Sheet 75 card 1:** Sam runs the delete in `kb/receipts/workplan_2026-10-13_s383_drop_4_7_activity_1_link.sql`
+4. **COCI-difference flags (Sam, ~20:20Z, `sam-coci-mismatch-flags-for-colleges-2026-10-13`):** he sees the larger
+   "Catalog and state file differ" boxes (owner college; 3,341 on 942 of 2,840 records) as the colleges' to correct,
+   outside his confirm. S383 proposed: keep each course as printed with its quiet COCI chip; collapse college-owned
+   COCI boxes to one line a record; a per-college COCI list (My College, the MAP-team queue); numbered boxes only for
+   reading-procedure flags (214 check not met, 148 no printed total, 76 possible misread). Build on his yes.
+5. **Sheet 75 card 1:** Sam runs the delete in `kb/receipts/workplan_2026-10-13_s383_drop_4_7_activity_1_link.sql`
    (the MCP guard refuses a delete). Read it back (one row gone) and note APPLIED in the receipt.
 
 ## Docs to read
