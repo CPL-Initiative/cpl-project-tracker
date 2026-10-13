@@ -41,3 +41,15 @@ Sam asked for four things on Annual Goals (move AI Apprenticeship CPL Tools unde
 - **`--on-accent` is not white in dark.** It turns near-black there while `--seal-blue` stays the navy, so the header text read 1.43:1. Text on `--seal-blue` takes `--white` (as the statewide tabs already do).
 - **The gray page band is the First Light background** (`#cplfl-bg`, fixed, 100vh). It scrolls with the reader; only a full-page capture shows it stopping. Not this tab's fault, and not a defect a reader meets.
 - **A preview needs no cron.** The committed `kb/workplan_goals_snapshot.json` plus `CPL_Data.js` feed `build_workplan_goals_from_supabase`, and the rendered table spliced into a scratch copy of `index.html` lets the a11y tool measure a renderer change before the cron publishes it.
+
+## 2026-10-13 — SkyTally (S375), continued: the Move control, held for its function
+
+**What we learned**
+- **A function that must finish or change nothing can be proven before it ships.** The sandbox cannot run a Postgres server, but PGlite runs the committed SQL file as written, with roles, grants and exceptions that roll back the statement. The Move function passed 22 checks there, including the one its design rests on: a table it does not know that still holds the old id stops the move and a before-and-after snapshot shows nothing changed (`docs/kb-notes/playbook-test-a-database-function-locally-with-pglite.md`).
+- **A move needs a run-time guard, not a list.** The tables that store a sub-activity id are measured today (seven); a test can pin that list but cannot see a table added next month. The function scans every public `project_id`, `item_id` and `activity_id` column after its re-key and raises if any still holds the old id, which is the #872 failure turned into an error.
+- **update_log's foreign key decides the order.** It references `projects(id)`, is not deferrable and does not cascade, so the function copies the project row under the new id, re-points the log, then deletes the old row.
+- **The governance proposer read RPC writes by their name's verb**, and "move" was not on its list, so the first scan proposed the tab instead of counting it mapped. "move" is on the list now; the surface maps to DR-13, the workplan's row.
+- **`apply_migration` was down for the night.** Four timeouts for this run (even a plain create table with grants), six for S374 an hour earlier, nothing landing, no lock. Two pending structure changes went to Sam as pastes on one sheet rather than a third route around the migrations path.
+- **A checkpoint PR can strand.** S374's #2052 passed `test` and its session ended before merging; it carried handoff 376. This run merged main into it (clean; derived files current) so it could land, and wrote its own handoff as 377.
+
+**State:** #2051, #2054 and #2055 merged and published; #2057 (checkbox targets) and #2056 (Move, held) open; Sheet 72 carries the four open asks.

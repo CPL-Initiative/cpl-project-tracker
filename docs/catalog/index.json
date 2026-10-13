@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 545,
+   "count": 546,
    "docs": [
     {
      "created": "2026-08-14",
@@ -9925,6 +9925,24 @@
      "updated": "2026-06-29"
     },
     {
+     "created": "2026-10-13",
+     "governs": [
+      "scripts/verify_workplan_move.js",
+      "kb/supabase_workplan_move.sql"
+     ],
+     "path": "docs/kb-notes/playbook-test-a-database-function-locally-with-pglite.md",
+     "status": "published",
+     "tags": [
+      "playbook",
+      "supabase",
+      "testing",
+      "sql"
+     ],
+     "title": "Test a database function locally with PGlite before it goes live",
+     "type": "playbook",
+     "updated": "2026-10-13"
+    },
+    {
      "created": "2026-09-20",
      "governs": [
       "kb/_typesafe_smoke.py",
@@ -15460,8 +15478,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 347,
+   "count": 348,
    "docs": [
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "n": 377,
+     "path": "docs/session_377_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "workplan",
+      "annual-goals",
+      "move",
+      "a11y"
+     ],
+     "title": "Annual Goals: read Sheet 72, land the Move control, then Refresh summaries",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-12",
      "governs": [],
@@ -21415,5 +21450,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1121
+ "total": 1123
 }
