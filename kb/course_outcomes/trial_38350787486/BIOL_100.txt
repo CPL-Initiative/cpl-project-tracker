@@ -1,0 +1,579 @@
+All Fields
+BIOL 100 - Natural History - Environmental Biology
+Cover
+Course Number
+100
+Subject
+BIOL
+Course Title
+Natural History - Environmental Biology
+Short Title
+Natrl History/Environmntl Biol
+Effective Semester
+2020 Fall
+CB04: Credit Status
+D - Credit - Degree Applicable
+CB05: Transfer Status
+A - Transferable to both UC and CSU.
+CB08: Basic Skills
+N - Not Basic Skills
+Main
+CB11 Classification Y - Credit Course
+CB22 Non-Credit Category Y - Not Applicable, Credit course
+Grading Method
+Grade Options Letter Grade or Pass/No Pass
+Catalog Description
+This course is an introduction to the basic principles of ecology. Emphasis is placed on the biological systems, plants, and animals of Southern California through lecture, laboratory, and field trips. Topics include the nature of the physical environment, terrestrial and aquatic ecosystems, evolution and biodiversity, species interactions, and human impacts on natural systems. This course is intended for students interested in environmental biology.
+Short Desc (100 Characters or Less)
+Intro to ecology with an emphasis on Southern California.
+Originating Campus MIRA - Miramar
+Colleges
+Mesa
+Miramar
+CCC Missions
+Course Equivalency No
+Equivalency Text
+Repeatability
+This course is repeatable No
+Number of Repeats Allowed
+Justification for Repeatability
+Proposal Information
+Reason For Proposed Action
+Six year review including entry skills revalidation and updates to example textbook editions.
+Costs
+No new costs.
+Field Trips Required
+Active Participatory Course (family required)
+This is an active participatory course related in content: applies to exercise science, visual arts, and performing arts courses. No
+Family
+This is a CTE Course No
+Codes
+CB03: TOP Code 040800 - Natural History
+CIP Code
+CB09: SAM Code E - Non-Occupational
+Student Learning Outcomes
+Learning Outcomes
+Group Title
+Mesa
+Outcome Text
+Critical Thinking: Think critically about the importance of biodiversity and ecological  interconnections and how they relate to evolution.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Outcome Text
+Communication: Describe the major biological communities of San Diego County including correctly identifying local species.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Outcome Text
+Environmental Responsibility: Recognize how our personal and collective behaviors affect biological systems.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Group Title
+Miramar
+Outcome Text
+Students will be able to identify the major biotic communities of San Diego County and name several dominant plants and animals of each.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Outcome Text
+Students will be able to diagram the trophic structure of typical ecosystems and the energy flow and nutrient recycling in each.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Student Learning Objectives
+Upon successful completion of the course the student will be able to:
+Objective Text
+Describe the major biotic communities of San Diego County and identify key factors that influence local and other biotic communities.
+Objective Text
+Describe major taxonomic groups and explain evolutionary trends among them.
+Objective Text
+Identify dominant plants and animals from each major biotic community of San Diego County.
+Objective Text
+Explain the process of evolution by natural selection.
+Objective Text
+Define and explain major processes influencing populations, communities, and ecosystems.
+Objective Text
+Identify and describe the major types of symbioses and give examples of each.
+Objective Text
+Explain and diagram the trophic structure of typical ecosystems and the energy flow and nutrient recycling in each.
+Objective Text
+Describe impacts of human beings on natural ecosystems.
+Objective Text
+Analyze the major environmental problems facing human beings and natural systems today.
+Objective Text
+Use the scientific method and critical thinking to solve ecological/environmental problems.
+Disciplines
+Minimum Qualification
+Minimum Qualification Biological Sciences (Masters Required)
+Additional Required Qualifications
+Condition
+Hours/Units
+Override No
+Variable Units No
+Lecture
+Min Lecture Units 3.000
+Max Lecture Units 0.000
+Min Lecture Hours - Override 0.000
+Max Lecture Hours - Override 0.000
+Min Lecture Hours: 48.000
+Max Lecture Hours: 54.000
+Lab
+Min Lab Units 1.000
+Max Lab Units 0.000
+Min Lab Hours - Override 0.000
+Max Lab Hours - Override 0.000
+Min Lab Hours: 48.000
+Max Lab Hours: 54.000
+Other
+Min Other Units 0.000
+Max Other Units 0.000
+Min Other Hours - Override 0.000
+Max Other Hours - Override 0.000
+Min Other Hours: 0
+Max Other Hours: 0
+Total Units
+Min Units 4.000
+Max Units 0.000
+Total Hours
+Min Contact Hours: 96
+Max Contact Hours: 108
+Min Outside-of-Class Hours: 96
+Max Outside-of-Class Hours: 108
+Min Total Student Learning Hours: 192
+Max Total Student Learning Hours: 216
+FTEF
+Total FTEF Min: 0.4
+Additional Information
+Content
+Course Lecture Content (Use outline format)
+Geomorphology of the San Diego region
+Description of the earth from core to lithosphere
+The rock cycle
+Climate
+Determinants of climate patterns
+Differentiation between climate and weather
+Oceanography
+Ocean currents
+Tides
+El Nino Southern Oscillation
+Soils
+Pedogenesis
+Soil properties and their effects on function
+Soil conservation
+Terrestrial ecosystems
+Biomes of the world
+Terrestrial ecosystems of Southern California
+Aquatic ecosystem
+Freshwater
+Lentic systems
+Lotic systems
+Estuarine
+Marine
+Intertidal
+Marine life zones
+Biological diversity
+Measures of biodiversity
+Types of biodiversity
+Evolution and natural selection
+Darwin
+Natural selection
+Special types of natural selection such as sexual selection
+Population demographics and dynamics
+Limits of population growth
+Human population growth trends
+Community structure and species interactions
+Distribution of plants and animals
+Symbioses
+Predation
+Parasitism
+Mutualism
+Commensalism
+Competition
+Ecosystems
+Trophic structure
+Energy transfer
+Cycling of matter
+Human impacts on the biosphere
+Effects on natural systems
+Consequences to humans
+Course Lab/Activity Content
+Assignments
+Reading Assignments
+Optional Text
+Assignments
+Assigned texts related to natural history and environmental biology.
+Laboratory manual.
+Online resources related to local natural history and environmental biology.
+Laboratory activity practice with scientific figures and tables.
+Writing Assignments
+Optional Text
+Assignments
+Brief research summaries.
+Reports describing visits to recommended natural history points of interest in Southern California.
+Weekly laboratory reports.
+Appropriate Outside Assignments
+Optional Text
+Assignments
+Reading assignments.
+Field trips to natural history points of interest in Southern California, including field observations of biomes, local ecosystems, food webs and biogeochemical cycles.
+Biodiversity surveys.
+Online and library research related to natural history and ecology.
+Preparation for in-class oral reports.
+Appropriate Assignments that Demonstrate Critical Thinking
+Optional Text
+Assignments
+Analyses of local ecological issues.
+Analyses of topographical maps and related data.
+Laboratory activities related to measuring abiotic variables: size, volume, density, temperature, pH, and salinity.
+Laboratory activities related to populations, sampling, data, and analyses.
+Field work with transects and quadrats.
+Laboratory work with plant distributions and random sampling.
+Experimental examination of variables affecting transpiration rate in plant leaves and variables of photosynthesis.
+Methods of Evaluation
+Evaluation Method
+Other
+If you selected "Other", please provide details.
+Quizzes and exams. Laboratory exams and worksheets. Written assignments. Class participation.
+Methods of Instruction
+Check all that apply:
+Computer Assisted Instruction
+Lecture Discussion
+Audio-Visual
+Collaborative Learning
+Other
+If you selected "Other", please provide details.
+Field trips.
+Credit for Prior Learning
+Eligible for Credit by Examination:
+Yes No
+Offered at:
+Industry Certification:
+Other Industry Certification:
+Standardized Exams:
+Credit by Portfolio Review:
+Yes No
+Portfolio Review Offered at:
+Military Training:
+Yes No
+I have completed this page.
+Distance Ed
+Does this course have a DE component? Yes
+Colleges
+Campus Mesa
+Delivery Methods
+Online – Emergency Only
+Other Methods
+Techniques used to ensure quality
+BIOL 100 - Lab requirements can be met online through the communication of concepts to students by way of e-text lab manuals, PowerPoints, live and recorded audio lab lectures, and through live and recorded video lab lectures. These interactions can be supplemented through the use of: pictures of real or modeled geography, plants, and animals; online climate, weather, ocean, ecosystem, natural selection, and animal simulations, games, and documentaries; through the use of safe at home observation, experimentation, and test kits; and recorded video versions of in class examples and experimentation. Clarification of concepts can be fulfilled through email, chat rooms, student break out rooms, and live video and audio student interactions.
+
+Online instruction includes regular student-to-student and instructor-to-student communication. Telephone calls between students and the instructor may be used to discuss questions and concerns throughout the course. E-mail may be used for asynchronous instructor-to-student and student-to-student communication. Chat rooms may be used for synchronous interaction between students and between the instructor and students. Threaded discussions may be used for instructor-to-student and student-to-student asynchronous group communication. Live-classroom may be used for synchronous online lectures, meetings and office hour meetings as appropriate. Video, audio, learning objects and archived live-classroom lectures may be included for students to interact with asynchronously where appropriate. Assignments and tests that will be used in the Distance Education course will be exactly the same as those in the traditional course. Students will submit all course work (tests and assignments) electronically to the instructor for grading.
+Evaluation Method
+The evaluation methods will mirror the on-campus course as specified in the course outline. The feedback on assignments and tests will be submitted electronically to the student.
+Additional Resources
+SDCCD and DSPS personnel will provide all needed accommodations. DSPS will provide a student in an online classroom with the same level of support as an on-campus student.
+Contact Types
+Announcements
+Frequency
+As needed
+Participant/s
+Faculty to Student/s No
+Among Students No
+Discussion Board
+Frequency
+At least weekly
+Participant/s
+Faculty to Student/s No
+Among Students No
+Email/Message System
+Frequency
+Frequent
+Participant/s
+Faculty to Student/s No
+Among Students No
+Synchronous or Asynchronous Video
+Frequency
+Frequent
+Participant/s
+Faculty to Student/s No
+Among Students No
+Telephone Contact
+Frequency
+As needed
+Participant/s
+Faculty to Student/s No
+Among Students No
+Campus Miramar
+Delivery Methods
+Online – Emergency Only
+Other Methods
+Techniques used to ensure quality
+Students interact with each other and the instructor in ways that mirror the traditional classroom; only the delivery system is altered. These methods include one-on-one communication with the instructor and with other students via email, the announcement system, the discussion board, or other tools. Students also demonstrate an understanding and integration of course concepts via research assignments using the internet or online library resources, problem sets, group projects, asynchronous class discussion, and/or other assignments. Laboratory content is taught using instructor-guided lab demos for experiments; directed lab activities from the assigned lab manual; and/or virtual labs created by the instructor, textbook publishers (e.g. McGraw-Hill, Pearson), or 3rd parties (e.g. Labster, Jove).
+Evaluation Method
+Multiple measures are used to assess student learning objectives. These include performance on objective examinations administered via the assessment tool, writing assignments, problem sets, weekly lab reports, and/or group or individual projects posted to the discussion board or other online collaboration tool.
+Additional Resources
+Materials posted online are consistent with those required for the in-person class. SDCCD and DSPS personnel provide all needed accommodations. DSPS provides a student in an online classroom with the same level of support as an on-campus student.
+Contact Types
+Announcements
+Frequency
+weekly
+Participant/s
+Faculty to Student/s No
+Among Students No
+Collaborative Web Documents
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s No
+Among Students No
+Conferencing
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s No
+Among Students No
+Discussion Board
+Frequency
+at least four times during the term with the instructor and with other students (in the absence of other collaborative student projects)
+Participant/s
+Faculty to Student/s No
+Among Students No
+Email/Message System
+Frequency
+as needed
+Participant/s
+Faculty to Student/s No
+Among Students No
+Individual Meetings
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s No
+Among Students No
+Individualized Assignment Feedback
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s No
+Among Students No
+Synchronous or Asynchronous Video
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s No
+Among Students No
+Telephone Contact
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s No
+Among Students No
+Textbooks/Resources
+Is there a Zero Textbook Cost listed for this course?
+Please explain why a Zero Cost textbook option is not included in the resource list
+Does your department have a commitment to using free, or low cost resources in all offerings of this course?
+Describe any additional strategies the department is using to lower the cost of resources students need when they enroll in this course.
+Zero Cost Textbook(s)/Open Educational Resource(s)
+Textbooks
+Text\Supplemental
+Author(s) Miller, G. Tyler and Scott Spoolman
+Title Environmental Science
+Edition 16th
+Publisher Cengage Learning
+Year 2019
+Is this a classic textbook? No
+ISBN # 9781337569613
+Additional Textbook Information
+Text\Supplemental
+Author(s) Stolzenburg, Will
+Title Where the Wild Things Were
+Edition 1st
+Publisher Bloomesbury
+Year 2009
+Is this a classic textbook? No
+ISBN # 9781596916241
+Additional Textbook Information
+Text\Supplemental
+Author(s) Miller, G. Tyler and Scott Spoolman
+Title Essentials of Ecology
+Edition 7th
+Publisher Cengage Learning
+Year 2015
+Is this a classic textbook? No
+ISBN # 9781285197265
+Additional Textbook Information
+Text\Supplemental
+Author(s) Houk, Rose
+Title Understanding the Life of Point Loma
+Edition 1st
+Publisher Cabrillo Historical Assn
+Year 2004
+Is this a classic textbook? No
+ISBN # 9780941032087
+Additional Textbook Information
+Text\Supplemental
+Author(s) Starr, Cecie, et al
+Title Biology: The Unity and Diversity of Life
+Edition 15th
+Publisher Cengage
+Year 2019
+Is this a classic textbook? No
+ISBN # 9781337408332
+Additional Textbook Information
+Periodicals
+Manual
+Software
+Other Learning Materials
+I have entered at least one resource
+Supplies (Instructional Materials)
+Enrollment Conditions
+Course has additional instructional materials fees Yes
+Explanation
+Supplies (Instructional Materials)
+Description
+Field guides may be required.
+Requisites
+Course Requisites
+Conditions of Enrollment Catalog View
+Use Legacy V2 Course Requisites in COR No
+Legacy V2 Course Requisites
+Content Review
+Is there a Course Requisite?
+Content Review
+Entry Skills
+Library
+Description
+Assigned textbooks may be kept on reserve.
+General Education/Transfer (Proposed)
+District General Education Yes
+District Multicultural Requirements No
+Exercise Science Activity Requirement No
+Health Education Requirement No
+American Institutions/California Government Requirement No
+CSU General Education Yes
+Cal-GETC Yes
+IGETC Yes
+UC Transfer Course Yes
+5 Natural Sciences
+B2 Area B. Scientific Inquiry and Quantitative Reasoning - Life Science
+B3 Area B. Scientific Inquiry and Quantitative Reasoning - Laboratory Activity
+5B: Biological Science
+Area 5. Physical and Biological Sciences - 5B: Biological Science
+Area 5. Physical and Biological Sciences - 5C: Science Laboratory
+General Education/Transfer (Approved)
+District General Education Yes
+District Multicultural Requirements No
+Exercise Science Activity Requirement No
+Health Education Requirement No
+American Institutions/California Government Requirement No
+CSU General Education No
+Cal-GETC Yes
+IGETC No
+UC Transfer Course No
+5 Natural Sciences
+5B: Biological Science
+Attachments
+Attached File
+Tech Review
+Please review for
+Compliance with District policy/procedures and state regulations,
+Course and/or Program alignment,
+Duplication of content,
+Feasibility (resources are adequate, e.g., classrooms, labs, equipment, and faculty load),
+Scheduling impact, and
+Impact on other disciplines and/or Programs.
+Similar Learning Objectives
+CB10: Work Experience C - Is part of a cooperative work experience education program.
+CB11: Course Classification Status Y - Credit Course
+CB13: Special Class Status N - Course is not a special class.
+Course Prior to College Level (CB21) Y - Not applicable
+Funding Agency Category (CB23) Y - Not Applicable (funding not used to develop course)
+Course Program Status (CB24)
+Mesa
+CB24: Program Status 1 - Program Applicable
+Miramar
+CB24: Program Status 1 - Program Applicable
+Course Gen Education Status (CB25)
+Course Support Course Status (CB26) N - Course is not a support course
+CB27: Upper Division Status N - Course is not an upper division course
+Major Restriction Code
+NONE -
+Lecture Hours
+Min: 48.000
+Max: 54.000
+Lab Hours
+Min: 48.000
+Max: 54.000
+Units
+Min: 4.000
+Max: 0.000
+FTEF
+Total FTEF Min: 0.400
+Comments
+ASSIST
+Queue for Assist No
+Last Request From Queue
+Last Direct Request
+ASSIST Preview
+Prefix BIOL
+Course Number 100
+Content The following topics are included in the framework of the course but are not intended as limits on content. The order of presentation and relative emphasis will vary with each instructor.
+Geomorphology of the San Diego region
+Description of the earth from core to lithosphere
+The rock cycle
+Climate
+Determinants of climate patterns
+Differentiation between climate and weather
+Oceanography
+Ocean currents
+Tides
+El Nino Southern Oscillation
+Soils
+Pedogenesis
+Soil properties and their effects on function
+Soil conservation
+Terrestrial ecosystems
+Biomes of the world
+Terrestrial ecosystems of Southern California
+Aquatic ecosystem
+Freshwater
+Lentic systems
+Lotic systems
+Estuarine
+Marine
+Intertidal
+Marine life zones
+Biological diversity
+Measures of biodiversity
+Types of biodiversity
+Evolution and natural selection
+Darwin
+Natural selection
+Special types of natural selection such as sexual selection
+Population demographics and dynamics
+Limits of population growth
+Human population growth trends
+Community structure and species interactions
+Distribution of plants and animals
+Symbioses
+Predation
+Parasitism
+Mutualism
+Commensalism
+Competition
+Ecosystems
+Trophic structure
+Energy transfer
+Cycling of matter
+Human impacts on the biosphere
+Effects on natural systems
+Consequences to humans
+Lab Content
+Course Description
+This course is an introduction to the basic principles of ecology. Emphasis is placed on the biological systems, plants, and animals of Southern California through lecture, laboratory, and field trips. Topics include the nature of the physical environment, terrestrial and aquatic ecosystems, evolution and biodiversity, species interactions, and human impacts on natural systems. This course is intended for students interested in environmental biology.
+Is Honors
+Lecture Hours
+Lab Hours
+Outline Approval Date
+Outline Effective Date
+Prerequisites
+Corequisites
+Advisories
+Enrollment Limitations
+Objectives
+Instruction Methods
+Evaluation Methods
+Other Texts
+Assignments
+Other Information

@@ -1,0 +1,464 @@
+All Fields
+EXSC 110A - Surfing I
+Cover
+Course Number
+110A
+Subject
+EXSC
+Course Title
+Surfing I
+Short Title
+Surfing I
+Effective Semester
+2020 Fall
+CB04: Credit Status
+D - Credit - Degree Applicable
+CB05: Transfer Status
+A - Transferable to both UC and CSU.
+CB08: Basic Skills
+N - Not Basic Skills
+Main
+CB11 Classification
+CB22 Non-Credit Category
+Grading Method
+Grade Options Letter Grade Only
+Catalog Description
+This is the first of four courses in surfing. Topics include historical perspective of surfing, ocean safety, surfing equipment, surfing etiquette, and surfing fundamentals. This course is designed for students interested in the Aquatics Certificate of Achievement, kinesiology majors or those that want to learn about surfing.
+Short Desc (100 Characters or Less)
+Introductory course in the sport of surfing.
+Originating Campus MESA - Mesa
+Colleges
+Mesa
+CCC Missions
+Transfer
+Vocational/Occupational
+Course Equivalency No
+Equivalency Text
+Repeatability
+This course is repeatable No
+Number of Repeats Allowed
+Justification for Repeatability
+Proposal Information
+Reason For Proposed Action
+New course proposed as part of the requirement for Certificate of Achievement in Aquatics.
+Costs
+Surfboards with leash
+Field Trips Required
+Active Participatory Course (family required)
+This is an active participatory course related in content: applies to exercise science, visual arts, and performing arts courses. Yes
+Family SURFING
+This is a CTE Course No
+Codes
+CB03: TOP Code 083570 - Aquatics and Lifesaving
+CIP Code 31.9999 - Parks, Recreation, Leisure, Fitness, and Kinesiology, Other
+CB09: SAM Code C - Clearly Occupational
+Student Learning Outcomes
+Learning Outcomes
+Group Title
+Mesa
+Outcome Text
+Self-Awareness: Demonstrate the aquatic skills necessary to participate successfully in aquatic activities.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Outcome Text
+Professional and Ethical Behavior: Demonstrate a healthy attitude towards safety in an aquatic environment including adhering to proper etiquette and rules and regulations.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Student Learning Objectives
+Upon successful completion of the course the student will be able to:
+Create Heading All objectives are covered whether the course is offered for 0.5 or 1.0 units. When this course is offered for more than 0.5 units the additional time is used to develop fundamental surfing skills.
+Objective Text
+Summarize the origins and history of the sport of surfing.
+Objective Text
+Explain, recognize and practice ocean safety. 
+Objective Text
+Describe the parts of surfboards and properly use surfing equipment.
+Objective Text
+Apply the rules of etiquette for picking locations and selecting waves.
+Objective Text
+Demonstrate the fundamental skills of body positioning, paddling, standing and wave recognition.
+Disciplines
+Minimum Qualification
+Minimum Qualification Physical Education (Masters Required)
+Additional Required Qualifications
+Condition
+Hours/Units
+Override No
+Variable Units Yes
+Lecture
+Min Lecture Units 0.000
+Max Lecture Units 0.000
+Min Lecture Hours - Override 0.000
+Max Lecture Hours - Override 0.000
+Min Lecture Hours: 0.000
+Max Lecture Hours: 0.000
+Lab
+Min Lab Units 0.500
+Max Lab Units 1.000
+Min Lab Hours - Override 0.000
+Max Lab Hours - Override 0.000
+Min Lab Hours: 24.000
+Max Lab Hours: 54.000
+Other
+Min Other Units 0.000
+Max Other Units 0.000
+Min Other Hours - Override 0.000
+Max Other Hours - Override 0.000
+Min Other Hours: 0
+Max Other Hours: 0
+Total Units
+Min Units 0.500
+Max Units 1.000
+Total Hours
+Min Contact Hours: 24
+Max Contact Hours: 54
+Min Outside-of-Class Hours: 0
+Max Outside-of-Class Hours: 0
+Min Total Student Learning Hours: 24
+Max Total Student Learning Hours: 54
+FTEF
+Total FTEF Min: 0.1
+Additional Information
+Content
+Course Lecture Content (Use outline format)
+Historical Perspective
+Ocean Safety
+Rip current recognition
+Tide effects on the surf
+Wind and current
+Falling safely
+Wave procedures
+Hypothermia
+Equipment
+Parts of a surfboard
+Types of surfboards
+Board care and maintenence
+Types of wetsuits
+Accessories
+Etiquette
+Location
+Wave priority
+Fundamentals
+Dry land
+Basic paddling
+Body positioning
+Hand and feet position
+Pop ups
+Paddling techniques
+Types of strokes
+Body positon
+Weight distribution
+Stomach vs. knees
+Standing
+Regular vs. goofy foot
+Posture
+Waves
+Proper selection for take-off
+Paddling for take-off
+Kick out of waves
+Course Lab/Activity Content
+Assignments
+Reading Assignments
+Optional Text
+Assignments
+Textbooks
+Instructor generated handouts from newspapers or periodicals
+Surfing periodicals such as "Surfer", "Surfing World" and "The Surfer's Journal"
+Related internet websites
+Writing Assignments
+Optional Text
+Assignments
+Journals, critiques and evaluations of surfing workouts and performances
+Critiques of magazine articles or selections from books related to surfing
+Analysis of video recorded performances in regards to technique and efficiency during class.
+Appropriate Outside Assignments
+Optional Text
+Assignments
+Viewing a surfing competition on TV or in person.
+Visiting surfing sites in San Diego area to develop wave recognition.
+Visiting a surf shop to view latest surfing equipment.
+Appropriate Assignments that Demonstrate Critical Thinking
+Optional Text
+Assignments
+Analyzing and evaluating video recorded surfing performances.
+Evaluating and monitoring individual progress of surfing techniques,
+Designing an individual surfing training program.
+Methods of Evaluation
+Evaluation Method
+Other
+If you selected "Other", please provide details.
+Class Participation Exams or Quizzes Skill Performance Presentation
+Methods of Instruction
+Check all that apply:
+Laboratory
+Audio-Visual
+Collaborative Learning
+If you selected "Other", please provide details.
+Credit for Prior Learning
+Eligible for Credit by Examination:
+Yes No
+Offered at:
+Industry Certification:
+Other Industry Certification:
+Standardized Exams:
+Credit by Portfolio Review:
+Yes No
+Portfolio Review Offered at:
+Military Training:
+Yes No
+I have completed this page.
+Distance Ed
+Does this course have a DE component? Yes
+Colleges
+Campus Mesa
+Delivery Methods
+Partially Online
+Other Methods
+Less than 50% of the course hours will be offered in an online format. Some presentation, assignments, exams or quizzes, and technique demonstration used in this course are more easily done online than at the beach or in the ocean since the beach and ocean are the "classrooms" for the in- person portion of the course.
+Techniques used to ensure quality
+Online instruction includes regular student-to-student and instructor-to-student communication. Announcements from the instructor to the students will be used as needed. Telephone calls between students and the instructor may be used to discuss questions and concerns throughout the course. E-mail/Messaging may be used for asynchronous instructor-to-student and student-to-student communication. Chat rooms may be used for synchronous interaction between students and between the instructor and students. Threaded discussions may be used for instructor-to-student and student-to-student asynchronous group communication. Live-classroom may be used for synchronous online lectures, meetings and office hour meetings as appropriate. Video, audio, learning objects and archived live-classroom lectures may be included for students to interact with asynchronously where appropriate. Assignments and tests that will be used in the Distance Education course will be exactly the same as those in the traditional course. Students will submit all course work (tests and assignments) electronically to the instructor for grading.
+Evaluation Method
+The evaluation methods will mirror the on-campus course as specified in the course outline. The feedback on assignments and tests will be submitted electronically to the student.
+Additional Resources
+SDCCD and DSPS personnel will provide all needed accommodations. DSPS will provide a student in an online classroom with the same level of support as an on-campus student.
+Contact Types
+Announcements
+Frequency
+As needed
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Discussion Board
+Frequency
+As appropriate
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Email/Message System
+Frequency
+As needed
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Synchronous or Asynchronous Video
+Frequency
+Frequent
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Telephone Contact
+Frequency
+As needed
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Textbooks/Resources
+Is there a Zero Textbook Cost listed for this course?
+Please explain why a Zero Cost textbook option is not included in the resource list
+Does your department have a commitment to using free, or low cost resources in all offerings of this course?
+Describe any additional strategies the department is using to lower the cost of resources students need when they enroll in this course.
+Zero Cost Textbook(s)/Open Educational Resource(s)
+Textbooks
+Text\Supplemental
+Author(s) Feel Good Journals
+Title Surfing Practice Notes for Athletes and Coaches
+Edition
+Publisher Independently Published
+Year 2018
+Is this a classic textbook? No
+ISBN # 9781729251812
+Additional Textbook Information
+Text\Supplemental
+Author(s) Guisado, Raul, Jeff Klass & Ben Marcus
+Title Surfing California
+Edition Second
+Publisher Falcon Guides
+Year 2013
+Is this a classic textbook? No
+ISBN # 9780762781645
+Additional Textbook Information
+Periodicals
+Manual
+Software
+Other Learning Materials
+I have entered at least one resource
+Supplies (Instructional Materials)
+Enrollment Conditions
+Course has additional instructional materials fees Yes
+Explanation
+Supplies (Instructional Materials)
+Description
+Appropriate bathing suits.
+
+Description
+Wetsuits and/or rash guard.
+
+
+Description
+Surf wax.
+
+Description
+Fins.
+
+Description
+Towel.
+Requisites
+Course Requisites
+Requisite Type Advisory
+Subject EXSC - Exercise Science
+Course # and Title EXSC 113A - Swimming I (Active)
+Purpose of Pre/Corequisite
+Required Statute
+Same pre/corequisite
+Comment
+Enrollment Limitation
+Requirement Type Course
+Requisite Type Limitation on Enrollment
+Subject
+Course # and Title
+Purpose of Pre/Corequisite
+Required Statute
+Same pre/corequisite
+Comment
+Students will need to demonstrate the ability to swim in an ocean environment prior to being allowed to participate in ocean activities.
+Enrollment Limitation Health and Safety.
+Requirement Type
+Conditions of Enrollment Catalog View
+Use Legacy V2 Course Requisites in COR No
+Legacy V2 Course Requisites
+Advisory:
+EXSC 113A with a grade of "C" or better, or equivalent
+Limitation on Enrollment:
+Health and Safety. Students will need to demonstrate the ability to swim in an ocean environment prior to being allowed to participate in ocean activities.
+Content Review
+Is there a Course Requisite?
+Content Review
+Entry Skills
+Opt Heading
+Entry Skill
+Ability to swim.
+Course Objectives
+Requisite Course Objective
+Identify, apply and execute the basic swim stroke mechanics.
+Requisite Course Objective
+Identify and apply safety principles and guidelines in an aquatic environment.
+Requisite Course Objective
+Demonstrate improved stroke technique and cardiovascular endurance through practice of swim sets.
+Library
+Description
+None
+General Education/Transfer (Proposed)
+District General Education No
+District Multicultural Requirements No
+Exercise Science Activity Requirement Yes
+Health Education Requirement No
+American Institutions/California Government Requirement No
+CSU General Education No
+Cal-GETC No
+IGETC No
+UC Transfer Course Yes
+General Education/Transfer (Approved)
+District General Education No
+District Multicultural Requirements No
+Exercise Science Activity Requirement No
+Health Education Requirement Yes
+American Institutions/California Government Requirement No
+CSU General Education No
+Cal-GETC No
+IGETC No
+UC Transfer Course Yes
+Attachments
+Attached File
+Tech Review
+Please review for
+Compliance with District policy/procedures and state regulations,
+Course and/or Program alignment,
+Duplication of content,
+Feasibility (resources are adequate, e.g., classrooms, labs, equipment, and faculty load),
+Scheduling impact, and
+Impact on other disciplines and/or Programs.
+Similar Learning Objectives
+CB10: Work Experience
+CB11: Course Classification Status
+CB13: Special Class Status
+Course Prior to College Level (CB21) Y - Not applicable
+Funding Agency Category (CB23) Y - Not Applicable (funding not used to develop course)
+Course Program Status (CB24)
+Mesa
+CB24: Program Status 1 - Program Applicable
+Course Gen Education Status (CB25)
+Course Support Course Status (CB26)
+CB27: Upper Division Status
+Major Restriction Code
+NONE -
+Lecture Hours
+Min: 0.000
+Max: 0.000
+Lab Hours
+Min: 24.000
+Max: 54.000
+Units
+Min: 0.500
+Max: 1.000
+FTEF
+Total FTEF Min: 0.100
+Comments
+ASSIST
+Queue for Assist No
+Last Request From Queue
+Last Direct Request
+ASSIST Preview
+Prefix EXSC
+Course Number 110A
+Content The following topics are included in the framework of the course but are not intended as limits on content. The order of presentation and relative emphasis will vary with each instructor.
+Historical Perspective
+Ocean Safety
+Rip current recognition
+Tide effects on the surf
+Wind and current
+Falling safely
+Wave procedures
+Hypothermia
+Equipment
+Parts of a surfboard
+Types of surfboards
+Board care and maintenence
+Types of wetsuits
+Accessories
+Etiquette
+Location
+Wave priority
+Fundamentals
+Dry land
+Basic paddling
+Body positioning
+Hand and feet position
+Pop ups
+Paddling techniques
+Types of strokes
+Body positon
+Weight distribution
+Stomach vs. knees
+Standing
+Regular vs. goofy foot
+Posture
+Waves
+Proper selection for take-off
+Paddling for take-off
+Kick out of waves
+Lab Content
+Course Description
+This is the first of four courses in surfing. Topics include historical perspective of surfing, ocean safety, surfing equipment, surfing etiquette, and surfing fundamentals. This course is designed for students interested in the Aquatics Certificate of Achievement, kinesiology majors or those that want to learn about surfing.
+Is Honors
+Lecture Hours
+Lab Hours
+Outline Approval Date
+Outline Effective Date
+Prerequisites
+Corequisites
+Advisories
+Enrollment Limitations
+Objectives
+Instruction Methods
+Evaluation Methods
+Other Texts
+Assignments
+Other Information

@@ -1,0 +1,651 @@
+All Fields
+PHOT 100 - Introduction to Darkroom Photography
+Cover
+Course Number
+100
+Subject
+PHOT
+Course Title
+Introduction to Darkroom Photography
+Short Title
+Intro Darkroom Photography
+Effective Semester
+2026 Fall
+CB04: Credit Status
+D - Credit - Degree Applicable
+CB05: Transfer Status
+A - Transferable to both UC and CSU.
+CB08: Basic Skills
+N - Not Basic Skills
+Main
+CB11 Classification Y - Credit Course
+CB22 Non-Credit Category Y - Not Applicable, Credit course
+Grading Method
+Grade Options Letter Grade Only
+Catalog Description
+This course is an introduction to basic camera handling skills and the diverse, global aesthetics of black and white film photography. Emphasis is placed on how to use 35mm cameras, lenses, enlargers, and related equipment. Topics include black and white film processing, darkroom printing, print presentation, and critical image analysis. Proper film exposure and utilizing compositional skills and techniques to create original images is also covered. This course is designed for photography majors and those seeking career opportunities in photography.
+Short Desc (100 Characters or Less)
+Introduces basic camera skills and film/darkroom photography.
+Originating Campus CITY - City
+Colleges
+City
+CCC Missions
+Transfer
+Vocational/Occupational
+Course Equivalency No
+Equivalency Text
+Repeatability
+This course is repeatable No
+Number of Repeats Allowed
+Justification for Repeatability
+Proposal Information
+Reason For Proposed Action
+Change name from Introduction to Black and White Photography to Introduction to Darkroom Photography. Two year review. Updated textbooks. Directly addressing diversity, equity, and inclusion. Updates to content are less than 50% different than original but are rearranged with an additional focus of supporting students in developing their personal photographic practice.  Update supply list and estimated expenses. Remove ENGL C1000 advisory.
+Costs
+No new costs.
+Field Trips May be required
+Active Participatory Course (family required)
+This is an active participatory course related in content: applies to exercise science, visual arts, and performing arts courses. Yes
+Family TRAD/B&W FILM (Traditional Black & White Film-PHOT
+This is a CTE Course Yes
+Codes
+CB03: TOP Code 101200 - Applied Photography
+CIP Code 50.0406 - Commercial Photography
+CB09: SAM Code D - Possibly Occupational
+Student Learning Outcomes
+Learning Outcomes
+Outcome Text
+Group Title
+City
+Outcome Text
+Select and use cameras, lenses and film to successfully expose black and white film and to create original images.
+Outcome Text
+Student must demonstrate competent use of exposure controls, focus, and film loading in camera operation.
+Outcome Text
+Student will employ visualization and compositional techniques to produce black and white photographic images.
+Outcome Text
+The student must prepare chemicals and use film-processing equipment to process black and white film.
+Outcome Text
+The student will apply appropriate camera settings and metering methods as well as the principles of light theory to create Black and White photographs.
+Outcome Text
+Student Learning Objectives
+Upon successful completion of the course the student will be able to:
+Objective Text
+Select and use cameras and lenses to successfully expose black and white film and develop images.
+Objective Text
+Distinguish and demonstrate the basic techniques of camera operation through manual exposure, lens focusing, metering methods, and film loading.
+Objective Text
+Select and prepare darkroom chemicals, implement film processing techniques, and use film processing equipment to produce black and white photographs.
+Objective Text
+Apply the principles of light theory to create black and white photographs. 
+Objective Text
+Analyze and employ visualization and compositional techniques to produce black and white darkroom images.
+Objective Text
+Demonstrate the use of silver gelatin paper and print finishing techniques to create black and white photographs. 
+Objective Text
+Recognize and interpret photography as an art form through the analysis of diverse historical and contemporary black and white photographs.
+Disciplines
+Minimum Qualification
+Minimum Qualification Photography (Masters Required)
+Additional Required Qualifications
+Condition
+Hours/Units
+Override No
+Variable Units No
+Lecture
+Min Lecture Units 2.000
+Max Lecture Units 0.000
+Min Lecture Hours - Override
+Max Lecture Hours - Override
+Min Lecture Hours: 32.000
+Max Lecture Hours: 36.000
+Lab
+Min Lab Units 1.000
+Max Lab Units 0.000
+Min Lab Hours - Override
+Max Lab Hours - Override
+Min Lab Hours: 48.000
+Max Lab Hours: 54.000
+Other
+Min Other Units 0.000
+Max Other Units 0.000
+Min Other Hours - Override 0.000
+Max Other Hours - Override 0.000
+Min Other Hours: 0
+Max Other Hours: 0
+Total Units
+Min Units 3.000
+Max Units 0.000
+Total Hours
+Min Contact Hours: 80
+Max Contact Hours: 90
+Min Outside-of-Class Hours: 64
+Max Outside-of-Class Hours: 72
+Min Total Student Learning Hours: 144
+Max Total Student Learning Hours: 162
+FTEF
+Total FTEF Min: 0.333
+Additional Information
+Content
+Course Lecture Content (Use outline format)
+Equipment selection
+Camera
+Format
+Electronic versus mechanical
+Automatic versus manual
+Care and maintenance
+Lenses
+Focal length
+Zoom versus fixed
+Maximum aperture
+Care and maintenance
+Focus
+Light meters
+Exposure and meters
+Camera settings
+Aperture
+Shutter speed
+Equivalent settings
+In-camera meters versus through-the-lens
+Handheld meters
+Reflected light
+Incident
+Metering methods
+Overall
+Substitute
+Close-up
+Averaging
+Spot
+Film
+Structure
+Characteristics
+Light sensitivity
+Grain structure
+Contrast
+Latitude
+Resolution
+Characteristic curve
+Film selection
+Care and handling
+Storage
+Travel/X-rays
+Age
+Film processing and equipment
+Equipment
+Chemicals
+Forms of Chemicals
+Dilution
+Storage
+Safety and environmental considerations
+Loading film
+Processing
+Timing
+Order of chemicals
+Agitation
+Contrast control
+Light theory
+Qualities of light
+Directions
+Shadows
+Reflections
+Contrast
+Intensity
+Establishment of mood
+Flash/electronic lights
+Creation of original black and white images
+Visualization and composition
+Design elements
+Subject emphasis
+Realism versus abstraction
+Perception of depth
+Camera angles
+Content and purpose
+Symbolism and metaphor
+Visual and psychological contrasts
+Time
+Individual style
+Purpose of images
+Black and white printing
+Silver Gelatin paper
+Characteristics
+Storage and handling
+Enlarger and related equipment
+Darkroom
+Chemicals
+Processes
+Troubleshooting
+Print finishing
+Spotting
+Mounting
+Presentation
+History and future
+Significant inventions and diverse historical perspectives
+Traditional silver gelatin printing around the globe
+Historical
+Contemporary
+Digital and future innovations and trends
+Course Lab/Activity Content
+Film processing and equipment
+Processing
+Timing
+Order of chemicals
+Agitation
+Contrast control
+Loading film
+Forms of Chemicals
+Dilution
+Storage
+Safety and environmental considerations
+Chemicals
+Equipment
+Black and white printing
+Silver Gelatin paper
+Characteristics
+Storage and handling
+Enlarger and related equipment
+Darkroom
+Chemicals
+Processes
+Troubleshooting
+Print finishing
+Spotting
+Mounting
+Presentation
+Assignments
+Reading Assignments
+Optional Text
+Assignments
+Assigned textbook(s) related to manual camera controls, composition, light, and darkroom printing and processing.
+Library and/or internet resources related to the theory and practice of black and white darkroom photography.
+Articles that cover issues of sustainability, health, and environmental regulations regarding film photography.
+Articles from or about the influence of diverse voices and perspectives in historical and contemporary film photography.
+Writing Assignments
+Optional Text
+Assignments
+Notetaking with class assignments, activities, and lectures.
+Written gallery review or artist interview.
+Journal reflections about how traditional silver gelatin darkroom practices have integrated with various artists’ explorations of the intersections of race, class, and gender over time.
+Appropriate Outside Assignments
+Optional Text
+Assignments
+Film exposure and project conceptualization with attention to light, shadow, reflection, contrast, composition, and mood.
+Research, such as in-person or online artist interviews and museum/gallery visits.
+Reflections about the conceptual and environmental impacts of silver gelatin photography on diverse global communities throughout history.
+Appropriate Assignments that Demonstrate Critical Thinking
+Optional Text
+Assignments
+Selection and use of analog cameras and silver gelatin film to achieve desired results.
+Interpretation, analysis, and evaluation of a variety of historical and contemporary black and white photographic images from diverse world artists.
+Employment of compositional elements to photograph subjects in a realistic or abstract manner.
+Critiques of professional, peer, and personal projects.
+Creation of unique darkroom photographs in a chosen genre, employing one’s own visual style, ethical principles, and photographic methodologies.
+Methods of Evaluation
+Text box for Common Course Numbering (CCN) only.
+Evaluation Method
+Essay/Paper
+Exams
+Homework
+Laboratory Assignments
+Participation
+Portfolio
+Problem Solving Exercises
+Quizzes
+Research Project
+If you selected "Other", please provide details.
+Methods of Instruction
+Check all that apply:
+Lecture
+Laboratory
+Lecture Discussion
+Discussion Seminar
+Learning Modules
+Audio-Visual
+Collaborative Learning
+If you selected "Other", please provide details.
+Credit for Prior Learning
+Eligible for Credit by Examination:
+Yes No
+Offered at:
+Industry Certification:
+Other Industry Certification:
+Standardized Exams:
+Credit by Portfolio Review:
+Yes No
+Portfolio Review Offered at:
+Military Training:
+Yes No
+I have completed this page. Yes
+Distance Ed
+Does this course have a DE component? Yes
+Colleges
+Campus City
+Delivery Methods
+Online – Emergency Only
+Other Methods
+Techniques used to ensure quality
+Students engage in regular and effective interaction with each other and the instructor in ways that mirror the traditional classroom; only the delivery system is altered. These methods include one-on-one communication with the instructor and with other students via e-mail, the announcement system, the discussion board, or other tools. Students also demonstrate an understanding and integration of course concepts via research assignments, problem sets, group projects, asynchronous class discussion, and/or other assignments. If possible, students have access to the photo lab and equipment on campus. If access is not possible, the assignments are modified so that labs and equipment are not required to complete.
+Evaluation Method
+Multiple measures are used to assess student learning objectives. These include performance on objective examinations administered via the assessment tool, writing assignments, and/or group or individual projects posted to the discussion board or other online collaboration tool. When access to the photo lab and equipment is not possible, assignments are modified to ensure equitable access to all students. Alternative assignments requiring minimal tools may include, but are not limited to, writing assignment modifications and options for darkroom-based production.
+Additional Resources
+Materials posted online are consistent with those required for campus based class. SDCCD and DSPS personnel provide all needed accommodations. DSPS provide a student in an online classroom with the same level of support as an on-campus student. Distance education techniques used in this course will be accessible to individuals with disabilities (Sections 504 and 508 of the Rehabilitation Act). Requests for technology accommodations will be met by working with the Adaptive Technology Specialist to ensure compliance with the Americans with Disabilities Act (ADA).
+Contact Types
+Announcements
+Frequency
+weekly
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Collaborative Web Documents
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Conferencing
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Discussion Board
+Frequency
+at least three times during the term
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Email/Message System
+Frequency
+as needed
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Field Trips
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Group Meetings
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Individual Meetings
+Frequency
+as needed
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Individualized Assignment Feedback
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Synchronous or Asynchronous Video
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Telephone Contact
+Frequency
+as needed
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Textbooks/Resources
+Is there a Zero Textbook Cost listed for this course? No
+Please explain why a Zero Cost textbook option is not included in the resource list
+None are applicable or relevant
+Does your department have a commitment to using free, or low cost resources in all offerings of this course? Yes
+Describe any additional strategies the department is using to lower the cost of resources students need when they enroll in this course.
+The price of film is rising so instructors will modify assignments to allow for less exposures per roll of film. 
+Zero Cost Textbook(s)/Open Educational Resource(s)
+Textbooks
+Text\Supplemental
+Author(s) London, Barbara, John Upton, and Jim Stone
+Title Photography
+Edition 13th
+Publisher Pearson Education
+Year 2024
+Is this a classic textbook? No
+ISBN # 9780137978007
+Additional Textbook Information
+Text\Supplemental
+Author(s) Marquardt, Chris and Andrae, Monika
+Title The Film Photography Handbook
+Edition 3rd
+Publisher Rocky Nook
+Year 2023
+Is this a classic textbook? No
+ISBN # 9781681989419
+Additional Textbook Information
+Periodicals
+Manual
+Software
+Other Learning Materials
+I have entered at least one resource Yes
+Supplies (Instructional Materials)
+Enrollment Conditions
+Course has additional instructional materials fees No
+Explanation
+Supplies (Instructional Materials)
+Description
+Manual 35mm camera: $250 and up
+Description
+Camera lenses: $50 and up
+Description
+RC Photo printing paper: $50 and up
+Description
+Black and white film: $50 and up
+Description
+Film negative sleeves: $10 and up
+Description
+Mat or mountboard and matting materials: $20 and up
+Description
+Composition book: $1 and up
+Requisites
+Course Requisites
+Conditions of Enrollment Catalog View
+ 
+Content Review
+Is there a Course Requisite? Yes
+Content Review
+Library
+Description
+N/A
+General Education/Transfer (Proposed)
+District General Education No
+District Multicultural Requirements No
+Exercise Science Activity Requirement No
+Health Education Requirement No
+American Institutions/California Government Requirement No
+CSU General Education No
+Cal-GETC No
+IGETC No
+UC Transfer Course No
+General Education/Transfer (Approved)
+District General Education No
+District Multicultural Requirements No
+Exercise Science Activity Requirement No
+Health Education Requirement No
+American Institutions/California Government Requirement No
+CSU General Education No
+Cal-GETC No
+IGETC No
+UC Transfer Course Yes
+Attachments
+Attached File
+Tech Review
+Please review for
+Compliance with District policy/procedures and state regulations,
+Course and/or Program alignment,
+Duplication of content,
+Feasibility (resources are adequate, e.g., classrooms, labs, equipment, and faculty load),
+Scheduling impact, and
+Impact on other disciplines and/or Programs.
+Similar Learning Objectives
+CB10: Work Experience N - Is not part of a cooperative work experience education program.
+CB13: Special Class Status N - Course is not a special class.
+Course Prior to College Level (CB21) Y - Not applicable
+Funding Agency Category (CB23) Y - Not Applicable (funding not used to develop course)
+Course Program Status (CB24)
+City
+CB24: Program Status 1 - Program Applicable
+Course Gen Education Status (CB25)
+Not Applicable
+Course Support Course Status (CB26) N - Course is not a support course
+CB27: Upper Division Status N - Course is not an upper division course
+Major Restriction Code
+NONE -
+Comments
+ASSIST
+Queue for Assist No
+Last Request From Queue
+Last Direct Request
+ASSIST Preview
+Prefix PHOT
+Course Number 100
+Content The following topics are included in the framework of the course but are not intended as limits on content. The order of presentation and relative emphasis will vary with each instructor.
+Equipment selection
+Camera
+Format
+Electronic versus mechanical
+Automatic versus manual
+Care and maintenance
+Lenses
+Focal length
+Zoom versus fixed
+Maximum aperture
+Care and maintenance
+Focus
+Light meters
+Exposure and meters
+Camera settings
+Aperture
+Shutter speed
+Equivalent settings
+In-camera meters versus through-the-lens
+Handheld meters
+Reflected light
+Incident
+Metering methods
+Overall
+Substitute
+Close-up
+Averaging
+Spot
+Film
+Structure
+Characteristics
+Light sensitivity
+Grain structure
+Contrast
+Latitude
+Resolution
+Characteristic curve
+Film selection
+Care and handling
+Storage
+Travel/X-rays
+Age
+Film processing and equipment
+Equipment
+Chemicals
+Forms of Chemicals
+Dilution
+Storage
+Safety and environmental considerations
+Loading film
+Processing
+Timing
+Order of chemicals
+Agitation
+Contrast control
+Light theory
+Qualities of light
+Directions
+Shadows
+Reflections
+Contrast
+Intensity
+Establishment of mood
+Flash/electronic lights
+Creation of original black and white images
+Visualization and composition
+Design elements
+Subject emphasis
+Realism versus abstraction
+Perception of depth
+Camera angles
+Content and purpose
+Symbolism and metaphor
+Visual and psychological contrasts
+Time
+Individual style
+Purpose of images
+Black and white printing
+Silver Gelatin paper
+Characteristics
+Storage and handling
+Enlarger and related equipment
+Darkroom
+Chemicals
+Processes
+Troubleshooting
+Print finishing
+Spotting
+Mounting
+Presentation
+History and future
+Significant inventions and diverse historical perspectives
+Traditional silver gelatin printing around the globe
+Historical
+Contemporary
+Digital and future innovations and trends
+Lab Content
+Film processing and equipment
+Processing
+Timing
+Order of chemicals
+Agitation
+Contrast control
+Loading film
+Forms of Chemicals
+Dilution
+Storage
+Safety and environmental considerations
+Chemicals
+Equipment
+Black and white printing
+Silver Gelatin paper
+Characteristics
+Storage and handling
+Enlarger and related equipment
+Darkroom
+Chemicals
+Processes
+Troubleshooting
+Print finishing
+Spotting
+Mounting
+Presentation
+Course Description
+This course is an introduction to basic camera handling skills and the diverse, global aesthetics of black and white film photography. Emphasis is placed on how to use 35mm cameras, lenses, enlargers, and related equipment. Topics include black and white film processing, darkroom printing, print presentation, and critical image analysis. Proper film exposure and utilizing compositional skills and techniques to create original images is also covered. This course is designed for photography majors and those seeking career opportunities in photography.
+Is Honors
+Lecture Hours
+Lab Hours
+Outline Approval Date
+Outline Effective Date
+Prerequisites
+Corequisites
+Advisories
+Enrollment Limitations
+Objectives
+Instruction Methods
+Evaluation Methods
+Other Texts
+Assignments
+Other Information

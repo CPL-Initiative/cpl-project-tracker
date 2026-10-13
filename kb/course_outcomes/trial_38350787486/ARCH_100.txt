@@ -1,0 +1,487 @@
+All Fields
+ARCH 100 - Graphic Design Communication I
+Cover
+Course Number
+100
+Subject
+ARCH
+Course Title
+Graphic Design Communication I
+Short Title
+Graphic Design Communication I
+Effective Semester
+2022 Fall
+CB04: Credit Status
+D - Credit - Degree Applicable
+CB05: Transfer Status
+B - Transferable to CSU only.
+CB08: Basic Skills
+N - Not Basic Skills
+Main
+CB11 Classification
+CB22 Non-Credit Category
+Grading Method
+Grade Options Letter Grade Only
+Catalog Description
+This course is designed for all students who wish to develop basic hand drafting skills for use in Architectural, Construction, and Interior Design programs. Topics include lettering, line control, sketching, use of drafting instruments and the development of architectural presentation drawings. This course is designed for students interested in developing hand drawing skills for use in architecture, interior design, and construction.
+Short Desc (100 Characters or Less)
+Basic hand drafting skills.
+Originating Campus MESA - Mesa
+Colleges
+Mesa
+CCC Missions
+Transfer
+Vocational/Occupational
+Course Equivalency No
+Equivalency Text
+Repeatability
+This course is repeatable No
+Number of Repeats Allowed
+Justification for Repeatability
+Proposal Information
+Reason For Proposed Action
+Six yr review including text review/update for currency.
+Costs
+None
+Field Trips May be required
+Active Participatory Course (family required)
+This is an active participatory course related in content: applies to exercise science, visual arts, and performing arts courses. No
+Family
+This is a CTE Course No
+Codes
+CB03: TOP Code 020100 - Architecture and Architectural Technology
+CIP Code 04.0202 - Architectural Design
+CB09: SAM Code C - Clearly Occupational
+Student Learning Outcomes
+Learning Outcomes
+Group Title
+Mesa
+Outcome Text
+Communication: Write about, speak about, and/or graphically articulate solutions to individual assignments and design problems and the processes of arriving at these solutions to faculty, visiting critics, and fellow students, responding appropriately in a variety of methods. When appropriate, write about, speak about, and/or otherwise describe more advanced individual assignments and design problems with emphasis on the plan, section, building form, sustainable and environmental issues.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Outcome Text
+Critical Thinking: Explain architectural design intentions while applying complex problem-solving methods to resolve programmatic, spatial, social, political, engineering and sustainable design issues while developing rational, personal, creative and individual assignments and design solutions. When appropriate, analyze the use of natural lighting, natural ventilation, and energy conservation policies in architectural design; Develop an original building design in response to complex and advanced architectural programs; Integrate concepts of natural lighting though the analysis of building plan and section; and, Integrate concepts of natural ventilation though the analysis of building plan and section.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Outcome Text
+Information Literacy: Demonstrate information & technological literacy while gathering, analyzing, evaluating and disseminating information using multiple means of expression including, but not limited to written assignments and analysis, design projects, non-digital and digital assignments and presentation techniques while demonstrating an awareness of current technology through the use of state-of-the-art equipment and software including, but not limited to, computers, scanners, plotters, printers, copiers, digital projectors, laser engravers and 3D model making technologies including current editions of software utilized in the profession.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Student Learning Objectives
+Upon successful completion of the course the student will be able to:
+Objective Text
+Use architectural terms to read, label and explain architectural drawings.
+Objective Text
+Select and use the correct tools to letter and draft construction documents.
+Objective Text
+Use a variety of scales to draft plans, sections, elevations, details and schedules.
+Objective Text
+Employ architectural lettering to label drawings.
+Objective Text
+Produce line types and weights to demonstrate line quality.
+Objective Text
+Prepare and present drawings and explain their function, logic, organization and composition.
+Objective Text
+Product drawings using pencil, pen and ink.
+Objective Text
+Apply shade and shadow theory and technique to architectural drawings.
+Disciplines
+Minimum Qualification
+Minimum Qualification Architecture
+Additional Required Qualifications
+Condition
+Hours/Units
+Override No
+Variable Units No
+Lecture
+Min Lecture Units 0.000
+Max Lecture Units 0.000
+Min Lecture Hours - Override 0.000
+Max Lecture Hours - Override 0.000
+Min Lecture Hours: 0.000
+Max Lecture Hours: 0.000
+Lab
+Min Lab Units 2.000
+Max Lab Units 0.000
+Min Lab Hours - Override 0.000
+Max Lab Hours - Override 0.000
+Min Lab Hours: 96.000
+Max Lab Hours: 108.000
+Other
+Min Other Units 0.000
+Max Other Units 0.000
+Min Other Hours - Override 0.000
+Max Other Hours - Override 0.000
+Min Other Hours: 0
+Max Other Hours: 0
+Total Units
+Min Units 2.000
+Max Units 0.000
+Total Hours
+Min Contact Hours: 96
+Max Contact Hours: 108
+Min Outside-of-Class Hours: 0
+Max Outside-of-Class Hours: 0
+Min Total Student Learning Hours: 96
+Max Total Student Learning Hours: 108
+FTEF
+Total FTEF Min: 0.4
+Additional Information
+Content
+Course Lecture Content (Use outline format)
+Introduction to Architectural Drafting
+Drafting tools
+Terminology
+Types of Architectural Drawings
+Construction drawings
+Plans
+Sections
+Elevations
+Details
+Schedules
+Presentation drawings
+Plans
+Sections
+Elevations
+Use of appropriate scale
+Construction and presentation drawing organization
+Architectural Lettering
+Formation of letter
+Styles
+Scale
+Density
+Line weight
+Chisel technique
+Drafted Lines
+Types and functions
+Density
+Line weight
+Working Drawings
+Definition
+Analysis
+Meaning
+Organization
+Composition
+Readability
+Preliminary Drawings
+Definition
+Analysis
+Meaning
+Organization
+Composition
+Readability
+Portfolio
+Content
+Organization
+Course Lab/Activity Content
+Assignments
+Reading Assignments
+Optional Text
+Assignments
+Assigned textbook related to hand drafting.
+Building codes, including:
+Professional journals, such as:
+Websites related to particular student architectural drawing projects.
+Technical and product manuals.
+California Building Code (CBC)
+International Building Code (IBC)
+Architectural Record
+Dwell
+Interior Design
+Writing Assignments
+Optional Text
+Assignments
+Maintenance of an architectural notebook including student comments.
+Brief critiques of examples of architecture, interior design, landscape architecture, urban planning and building construction technology.
+Appropriate Outside Assignments
+Optional Text
+Assignments
+Architectural notebook.
+Preparation of portfolio.
+Drafting and lettering assignments.
+Appropriate Assignments that Demonstrate Critical Thinking
+Optional Text
+Assignments
+Plan and compose a portfolio of drafting and lettering assignments.
+Assess and revise drafting and lettering assignments.
+Classify line, lettering and drawing types in order to produce a coherent set of construction and presentation drawings.
+Methods of Evaluation
+Evaluation Method
+Other
+If you selected "Other", please provide details.
+Drafting assignments. Sketching assignments. Color assignments. Lettering exercises. Quizzes. Midterm and final exams. Architectural notebook. Final portfolio. Class participation.
+Methods of Instruction
+Check all that apply:
+Laboratory
+Computer Assisted Instruction
+Audio-Visual
+Other
+If you selected "Other", please provide details.
+Demonstration of drawing and lettering techniques Field trips to architect offices
+Credit for Prior Learning
+Eligible for Credit by Examination:
+Yes Yes
+Offered at:
+Mesa
+Industry Certification:
+Other Industry Certification:
+Standardized Exams:
+Credit by Portfolio Review:
+Yes No
+Portfolio Review Offered at:
+Military Training:
+Yes No
+I have completed this page. Yes
+Distance Ed
+Does this course have a DE component? Yes
+Colleges
+Campus Mesa
+Delivery Methods
+Online – Emergency Only
+Other Methods
+Techniques used to ensure quality
+ARCH – Distance Education approval for this course is proposed as an emergency measure to be employed only during any prolonged period when direct classroom instruction is not possible (per title 5 - 5 CCR § 58146). Unless previously approved otherwise, all lab, lab/lecture and non-lab/lecture courses, will be taught in a synchronous interaction mode and will meet the same number of pre-arranged hours as the Architecture Program courses currently employ.  These courses will meet at pre-determined times established by the Chair of the Department with final approval of the Dean as is the current practice for face-to-face courses. Additionally, except for DE courses currently approved, the TBA (To Be Arranged) designation will not be allowed.
+
+
+
+Online instruction includes regular student-to-student and instructor-to-student communication. Telephone calls between students and the instructor may be used to discuss questions and concerns throughout the course. E-mail may be used for asynchronous instructor-to-student and student-to-student communication. Chat rooms may be used for synchronous interaction between students and between the instructor and students. Threaded discussions may be used for instructor-to-student and student-to-student asynchronous group communication. Live-classroom may be used for synchronous online lectures, meetings and office hour meetings as appropriate. Video, audio, learning objects and archived live-classroom lectures may be included for students to interact with asynchronously where appropriate. Assignments and tests that will be used in the Distance Education course will be exactly the same as those in the traditional course. Students will submit all course work (tests and assignments) electronically to the instructor for grading.
+Evaluation Method
+The evaluation methods will mirror the on-campus course as specified in the course outline. The feedback on assignments and tests will be submitted electronically to the student.
+Additional Resources
+SDCCD and DSPS personnel will provide all needed accommodations. DSPS will provide a student in an online classroom with the same level of support as an on-campus student.
+Contact Types
+Announcements
+Frequency
+As needed
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Discussion Board
+Frequency
+At least weekly
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Email/Message System
+Frequency
+As needed
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Synchronous or Asynchronous Video
+Frequency
+Weekly
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Telephone Contact
+Frequency
+As needed
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Textbooks/Resources
+Is there a Zero Textbook Cost listed for this course?
+Please explain why a Zero Cost textbook option is not included in the resource list
+Does your department have a commitment to using free, or low cost resources in all offerings of this course?
+Describe any additional strategies the department is using to lower the cost of resources students need when they enroll in this course.
+Zero Cost Textbook(s)/Open Educational Resource(s)
+Textbooks
+Text\Supplemental
+Author(s) Ching, Francis and James Eckler
+Title Introduction to Architecture
+Edition 1st
+Publisher John Wiley and Sons, Inc.
+Year 2012
+Is this a classic textbook? No
+ISBN # 9781118142066
+Additional Textbook Information
+Text\Supplemental
+Author(s) Ching, Francis
+Title Architectural Graphics
+Edition 6th
+Publisher Wiley, John & Sons
+Year 2015
+Is this a classic textbook? No
+ISBN # 9781119035664
+Additional Textbook Information
+Text\Supplemental
+Author(s) Ching, Francis
+Title Building Construction Illustrated
+Edition 6th
+Publisher Wiley, John & Sons
+Year 2019
+Is this a classic textbook? No
+ISBN # 9781119583165
+Additional Textbook Information
+Periodicals
+Manual
+Software
+Other Learning Materials
+I have entered at least one resource
+Supplies (Instructional Materials)
+Enrollment Conditions
+Course has additional instructional materials fees Yes
+Explanation
+Supplies (Instructional Materials)
+Description
+Leads
+Description
+Triangles
+Description
+Pencils
+Description
+Erasers
+Description
+Scales
+Description
+Templates
+Description
+Curves
+Description
+Drafting brush
+Description
+Drafting dots
+Description
+Sandpaper pencil pointer
+Description
+Ames lettering guide
+Description
+Drafting paper
+Requisites
+Course Requisites
+Conditions of Enrollment Catalog View
+Use Legacy V2 Course Requisites in COR No
+Legacy V2 Course Requisites
+Content Review
+Is there a Course Requisite?
+Content Review
+Entry Skills
+Library
+Description
+No new resources required
+General Education/Transfer (Proposed)
+District General Education No
+District Multicultural Requirements No
+Exercise Science Activity Requirement No
+Health Education Requirement No
+American Institutions/California Government Requirement No
+CSU General Education No
+Cal-GETC No
+IGETC No
+UC Transfer Course No
+General Education/Transfer (Approved)
+District General Education No
+District Multicultural Requirements No
+Exercise Science Activity Requirement No
+Health Education Requirement No
+American Institutions/California Government Requirement No
+CSU General Education No
+Cal-GETC No
+IGETC No
+UC Transfer Course No
+Attachments
+Attached File
+Tech Review
+Please review for
+Compliance with District policy/procedures and state regulations,
+Course and/or Program alignment,
+Duplication of content,
+Feasibility (resources are adequate, e.g., classrooms, labs, equipment, and faculty load),
+Scheduling impact, and
+Impact on other disciplines and/or Programs.
+Similar Learning Objectives
+CB10: Work Experience
+CB11: Course Classification Status
+CB13: Special Class Status
+Course Prior to College Level (CB21) Y - Not applicable
+Funding Agency Category (CB23) Y - Not Applicable (funding not used to develop course)
+Course Program Status (CB24)
+Mesa
+CB24: Program Status 1 - Program Applicable
+Course Gen Education Status (CB25)
+Not Applicable
+Course Support Course Status (CB26) N - Course is not a support course
+CB27: Upper Division Status
+Major Restriction Code
+NONE -
+Lecture Hours
+Min: 0.000
+Max: 0.000
+Lab Hours
+Min: 96.000
+Max: 108.000
+Units
+Min: 2.000
+Max: 0.000
+FTEF
+Total FTEF Min: 0.400
+Comments
+ASSIST
+Queue for Assist No
+Last Request From Queue
+Last Direct Request
+ASSIST Preview
+Prefix ARCH
+Course Number 100
+Content The following topics are included in the framework of the course but are not intended as limits on content. The order of presentation and relative emphasis will vary with each instructor.
+Introduction to Architectural Drafting
+Drafting tools
+Terminology
+Types of Architectural Drawings
+Construction drawings
+Plans
+Sections
+Elevations
+Details
+Schedules
+Presentation drawings
+Plans
+Sections
+Elevations
+Use of appropriate scale
+Construction and presentation drawing organization
+Architectural Lettering
+Formation of letter
+Styles
+Scale
+Density
+Line weight
+Chisel technique
+Drafted Lines
+Types and functions
+Density
+Line weight
+Working Drawings
+Definition
+Analysis
+Meaning
+Organization
+Composition
+Readability
+Preliminary Drawings
+Definition
+Analysis
+Meaning
+Organization
+Composition
+Readability
+Portfolio
+Content
+Organization
+Lab Content
+Course Description
+This course is designed for all students who wish to develop basic hand drafting skills for use in Architectural, Construction, and Interior Design programs. Topics include lettering, line control, sketching, use of drafting instruments and the development of architectural presentation drawings. This course is designed for students interested in developing hand drawing skills for use in architecture, interior design, and construction.
+Is Honors
+Lecture Hours
+Lab Hours
+Outline Approval Date
+Outline Effective Date
+Prerequisites
+Corequisites
+Advisories
+Enrollment Limitations
+Objectives
+Instruction Methods
+Evaluation Methods
+Other Texts
+Assignments
+Other Information
