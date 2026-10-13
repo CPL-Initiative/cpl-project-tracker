@@ -1,0 +1,217 @@
+{
+ "college": "Coastline Community College",
+ "control_number": "20382",
+ "shape": "degree",
+ "title": "Cybersecurity",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10824,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10824,
+    "output_tokens": 1410,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1410,
+  "output_tokens_details": {
+   "thinking_tokens": 319
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0715,
+ "ms": 13550,
+ "seconds": 14.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 19,
+   "share": 0.0,
+   "missing": [
+    "CISC157",
+    "CYBRC101",
+    "CYBRC132",
+    "CYBRC150",
+    "CYBRC160",
+    "CYBRC170",
+    "CYBRC225",
+    "CYBRC230",
+    "CYBRC234",
+    "CYBRC242",
+    "CYBRC250",
+    "CYBRC255",
+    "CYBRC256",
+    "CYBRC260",
+    "CYBRC270",
+    "CYBRC280",
+    "ITC128",
+    "ITC158",
+    "ITC191"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Credit Courses",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CIS C157",
+    "why": "not in the text; requirements section for the A.S. not included"
+   },
+   {
+    "code": "CYBR C101",
+    "why": "only a course description in the text; no requirements section for the A.S."
+   },
+   {
+    "code": "CYBR C132",
+    "why": "only a course description in the text; no requirements section for the A.S."
+   },
+   {
+    "code": "CYBR C150",
+    "why": "only a course description in the text; no requirements section for the A.S."
+   },
+   {
+    "code": "CYBR C160",
+    "why": "only a course description in the text; no requirements section for the A.S."
+   },
+   {
+    "code": "CYBR C170",
+    "why": "only a course description in the text; no requirements section for the A.S."
+   },
+   {
+    "code": "CYBR C225",
+    "why": "only a course description in the text; no requirements section for the A.S."
+   },
+   {
+    "code": "CYBR C230",
+    "why": "only a course description in the text; no requirements section for the A.S."
+   },
+   {
+    "code": "CYBR C234",
+    "why": "only a truncated course description in the text; no requirements section for the A.S."
+   },
+   {
+    "code": "CYBR C242",
+    "why": "not in the text; text cut off before it"
+   },
+   {
+    "code": "CYBR C250",
+    "why": "not in the text; text cut off before it"
+   },
+   {
+    "code": "CYBR C255",
+    "why": "not in the text; text cut off before it"
+   },
+   {
+    "code": "CYBR C256",
+    "why": "not in the text; text cut off before it"
+   },
+   {
+    "code": "CYBR C260",
+    "why": "named only as an advisory in a course description; no requirements section"
+   },
+   {
+    "code": "CYBR C270",
+    "why": "not in the text; text cut off before it"
+   },
+   {
+    "code": "CYBR C280",
+    "why": "not in the text; text cut off before it"
+   },
+   {
+    "code": "IT C128",
+    "why": "named only as an advisory in course descriptions; no requirements section"
+   },
+   {
+    "code": "IT C158",
+    "why": "named only as an advisory in a course description; no requirements section"
+   },
+   {
+    "code": "IT C191",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text is the program page's COURSES tab (course descriptions) and the tail of a program navigation list; it does not contain the requirements section for 'Cybersecurity, Associate of Science Degree'. No blocks, total units, GE pattern, outcomes or careers could be recorded.",
+   "section_heading records the heading of the text actually supplied ('Credit Courses'); the A.S. requirements heading is not printed in the text.",
+   "Course descriptions list 'Catalog Program Pages Referencing' entries that include 'Cybersecurity, Associate of Science Degree' for CYBR C101, C132, C150, C160, C170, C210, C225, C227 and C230, suggesting these belong to the degree, but the rules (required vs. elective) are not stated; not recorded as blocks. CYBR C210 and CYBR C227 are not on the closed list.",
+   "Careers named in course descriptions (e.g., Information Security Analyst, Cyber Crime Analyst) were not recorded, per instructions to read careers only from the program's own section.",
+   "The text is cut off mid-description at CYBR C234; a reviewer should fetch the full page's requirements tab."
+  ]
+ },
+ "extracted_run": "38412902035"
+}

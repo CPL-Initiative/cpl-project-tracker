@@ -1,0 +1,180 @@
+{
+ "college": "Coastline Community College",
+ "control_number": "41639",
+ "shape": "adt",
+ "title": "Chemistry",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/chemistry/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9917,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9917,
+    "output_tokens": 1320,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1320,
+  "output_tokens_details": {
+   "thinking_tokens": 421
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06607,
+ "ms": 12831,
+ "seconds": 13.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 12,
+   "share": 0.0,
+   "missing": [
+    "CHEMC180",
+    "CHEMC180L",
+    "CHEMC185",
+    "CHEMC185L",
+    "CHEMC220",
+    "CHEMC220L",
+    "CHEMC225",
+    "CHEMC225L",
+    "MATHC180",
+    "MATHC185",
+    "PHYSC185",
+    "PHYSC280"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Chemistry, Associate in Science Degree for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CHEM C180",
+    "why": "no requirements list in text; catalog now prints combined CHEM C180C (formerly CHEM C180 and CHEM C180L) in course descriptions only"
+   },
+   {
+    "code": "CHEM C180L",
+    "why": "no requirements list in text; merged into CHEM C180C per course description"
+   },
+   {
+    "code": "CHEM C185",
+    "why": "no requirements list in text; catalog now prints combined CHEM C185C (formerly CHEM C185 and CHEM C185L) in course descriptions only"
+   },
+   {
+    "code": "CHEM C185L",
+    "why": "no requirements list in text; merged into CHEM C185C per course description"
+   },
+   {
+    "code": "CHEM C220",
+    "why": "appears only in course descriptions; no requirements list in text"
+   },
+   {
+    "code": "CHEM C220L",
+    "why": "appears only in course descriptions; no requirements list in text"
+   },
+   {
+    "code": "CHEM C225",
+    "why": "appears only in course descriptions; no requirements list in text"
+   },
+   {
+    "code": "CHEM C225L",
+    "why": "appears only in course descriptions; no requirements list in text"
+   },
+   {
+    "code": "MATH C180",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH C185",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS C185",
+    "why": "named only in a CHEM C140 credit-limitation note; no requirements list in text"
+   },
+   {
+    "code": "PHYS C280",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text is the Chemistry pathway landing page plus its COURSES tab. It names 'Chemistry, Associate in Science Degree for Transfer' only as a link under DEGREES AND CERTIFICATES and does not print the degree's requirements, total units, GE pattern, outcomes or careers. No blocks were recorded; the degree's own page should be fetched and reviewed.",
+   "Course descriptions state CHEM C180C (5 units) is 'Formerly: CHEM C180 and CHEM C180L' and CHEM C185C (5 units) is 'Formerly: CHEM C185 and CHEM C185L'; both list 'Chemistry, Associate in Science Degree for Transfer' among referencing program pages. The closed list appears to predate this consolidation.",
+   "CHEM C220, CHEM C220L, CHEM C225 and CHEM C225L descriptions also list the A.S.-T among referencing program pages, but this is not a requirements statement."
+  ]
+ },
+ "extracted_run": "38412902035"
+}

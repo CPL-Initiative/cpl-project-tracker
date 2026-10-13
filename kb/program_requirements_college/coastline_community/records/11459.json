@@ -1,0 +1,147 @@
+{
+ "college": "Coastline Community College",
+ "control_number": "11459",
+ "shape": "degree",
+ "title": "Entrepreneurship & Small Business Management",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10166,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10166,
+    "output_tokens": 894,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 894,
+  "output_tokens_details": {
+   "thinking_tokens": 265
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05854,
+ "ms": 9359,
+ "seconds": 10.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 5,
+   "share": 0.0,
+   "missing": [
+    "ACCTC116",
+    "BUSC100",
+    "BUSC110",
+    "BUSC120",
+    "BUSC150"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACCT C116",
+    "why": "not in the text; no A.A. Degree requirements section is printed"
+   },
+   {
+    "code": "BUS C100",
+    "why": "appears only as a course description; no A.A. Degree requirements section is printed"
+   },
+   {
+    "code": "BUS C110",
+    "why": "appears only as a course description; no A.A. Degree requirements section is printed"
+   },
+   {
+    "code": "BUS C120",
+    "why": "appears only as a course description; no A.A. Degree requirements section is printed"
+   },
+   {
+    "code": "BUS C150",
+    "why": "not in the text; no A.A. Degree requirements section is printed"
+   }
+  ],
+  "notes": [
+   "The supplied text is the Business pathway page's degree/certificate index and the COURSES tab, not a program requirements section. No section for an Entrepreneurship and Small Business Management A.A. Degree appears.",
+   "The index lists only 'Entrepreneurship and Small Business Management, Certificate of Achievement' and 'Entrepreneurship Essentials, Certificate of Specialization'. No A.A. (or A.S.) degree in this field is listed for 2026-2027. The named award may not exist in this catalog year, or it may be printed on another page.",
+   "program.section_heading records the page heading 'Business' because no section for the named award exists.",
+   "Course descriptions note 'Catalog Program Pages Referencing' the Entrepreneurship and Small Business Management Certificate of Achievement for BUS C100, C101, C110, C120, C139, C141 and C142. These are references to the certificate, not to the A.A. Degree, so no blocks are recorded.",
+   "The catalog text is cut off mid-description at BUS C143."
+  ]
+ },
+ "extracted_run": "38412902035"
+}

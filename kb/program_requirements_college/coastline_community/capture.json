@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 175,
  "with_closed_list": 159,
- "started": "2026-10-13T13:36:26Z",
+ "started": "2026-10-13T14:24:21Z",
  "scope": "/coastline/",
  "sitemap": {
   "url": "https://catalog.cccd.edu/sitemap.xml",
@@ -18,12 +18,12 @@
  },
  "pages_read": 251,
  "loads": 335,
- "seconds": 1570.9,
- "found": 29,
+ "seconds": 1569.1,
+ "found": 24,
  "by_method": {
-  "link_search": 15,
+  "link_search": 10,
   "no_closed_list": 16,
-  "not_found": 109,
+  "not_found": 114,
   "page_claimed": 21,
   "sitemap_page": 14
  },
@@ -31,14 +31,6 @@
   "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/": [
    "11459",
    "20352"
-  ],
-  "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/emgt/index.html": [
-   "19515",
-   "19516"
-  ],
-  "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/bci/index.html": [
-   "20372",
-   "20373"
   ],
   "https://catalog.cccd.edu/coastline/pathways/business-operations-management/accounting/": [
    "20388",
@@ -137,6 +129,21 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
   },
   {
+   "control_number": "19424",
+   "title": "Real Estate Broker",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "19515",
+   "title": "Emergency Management Homeland Security",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "19516",
+   "title": "Emergency Management-Homeland Security",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
    "control_number": "20353",
    "title": "Supervision",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
@@ -155,6 +162,16 @@
    "control_number": "20366",
    "title": "Paralegal Studies",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "20372",
+   "title": "Building Codes Inspector",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "20373",
+   "title": "Building Codes Inspector",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
   },
   {
    "control_number": "22939",
@@ -767,13 +784,13 @@
  ],
  "coverage_bands": {
   "0.5-0.8": 8,
-  "0.8-1.0": 8,
-  "1.0": 13
+  "0.8-1.0": 6,
+  "1.0": 10
  },
  "would_extract": {
   "against": null,
   "kept": 0,
-  "programs": 29,
+  "programs": 24,
   "list": [
    {
     "control_number": "07510",
@@ -846,36 +863,6 @@
     "was_method": null
    },
    {
-    "control_number": "19424",
-    "title": "Real Estate Broker",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/re/index.html",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19515",
-    "title": "Emergency Management Homeland Security",
-    "award": "A.A. Degree",
-    "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/emgt/index.html",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19516",
-    "title": "Emergency Management-Homeland Security",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/emgt/index.html",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
     "control_number": "20352",
     "title": "Entrepreneurship and Small Business Management",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -891,26 +878,6 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/aging-studies/aging-studies-coa/",
     "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20372",
-    "title": "Building Codes Inspector",
-    "award": "A.S. Degree",
-    "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/bci/index.html",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20373",
-    "title": "Building Codes Inspector",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.cccd.edu/coastline/course-descriptions/credit-courses/bci/index.html",
-    "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
     "was_method": null
@@ -1067,5 +1034,5 @@
    }
   ]
  },
- "run": "38406172949"
+ "run": "38412902035"
 }

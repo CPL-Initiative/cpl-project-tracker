@@ -1,0 +1,591 @@
+{
+ "college": "Coastline Community College",
+ "programs": 175,
+ "with_closed_list": 159,
+ "found": 24,
+ "extracted": 24,
+ "errors": 0,
+ "passed_machine_checks": 6,
+ "failed": {
+  "coverage": 18,
+  "invented": 0,
+  "arithmetic": 17,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 1.42,
+ "cost_per_program": 0.0591,
+ "not_found": [
+  {
+   "control_number": "03723",
+   "title": "Management",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "03724",
+   "title": "Supervision",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "03747",
+   "title": "Paralegal Studies",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "16736",
+   "title": "Retail Management",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "17983",
+   "title": "CalGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "18002",
+   "title": "Liberal Studies (for Teaching)",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18051",
+   "title": "American Studies",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18052",
+   "title": "Arts & Humanities",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18054",
+   "title": "Physical Education and Health",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18055",
+   "title": "Science and Math",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18056",
+   "title": "Social and Behavioral Sciences",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18216",
+   "title": "French",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18217",
+   "title": "Gerontology",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18218",
+   "title": "Health and Fitness",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18219",
+   "title": "History",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18220",
+   "title": "Human Services",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18224",
+   "title": "Sociology",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "19423",
+   "title": "Real Estate Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "19424",
+   "title": "Real Estate Broker",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "19515",
+   "title": "Emergency Management Homeland Security",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "19516",
+   "title": "Emergency Management-Homeland Security",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "20353",
+   "title": "Supervision",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "20356",
+   "title": "Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "20357",
+   "title": "Retail Management",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"
+  },
+  {
+   "control_number": "20366",
+   "title": "Paralegal Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "20372",
+   "title": "Building Codes Inspector",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "20373",
+   "title": "Building Codes Inspector",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "22939",
+   "title": "Supply Chain Management",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "22940",
+   "title": "Supply Chain Management II",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "23043",
+   "title": "Business",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "23044",
+   "title": "Business",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "23045",
+   "title": "Human Resources Management",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "23046",
+   "title": "Human Resources Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "23047",
+   "title": "Marketing",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "23048",
+   "title": "Marketing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "23049",
+   "title": "Business : Business Administration",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "23050",
+   "title": "Business Administration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "30255",
+   "title": "Health Care Management",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "30256",
+   "title": "Health Care Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "30350",
+   "title": "Emergency Management/Homeland Security: Criminal Justice",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "30879",
+   "title": "Sociology",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "30891",
+   "title": "Psychology",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "31333",
+   "title": "English",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "31453",
+   "title": "History",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "33014",
+   "title": "Communication Studies",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "35740",
+   "title": "Business Information Worker",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"
+  },
+  {
+   "control_number": "36112",
+   "title": "Horticulture",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "36288",
+   "title": "English as a Second Language Preparation for Careers",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "36800",
+   "title": "Porter",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "37669",
+   "title": "Economics",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "38335",
+   "title": "Child and Adolescent Development",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "38389",
+   "title": "Animal Care",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "38407",
+   "title": "Customer Service Technology Level 1 (Noncredit)",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "38416",
+   "title": "Customer Service Technology Level 2 (Noncredit)",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "38553",
+   "title": "ESL Intermediate Preparation for Careers",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "38554",
+   "title": "Guest Services",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "38555",
+   "title": "Language Preparation for U.S. Citizenship",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "38556",
+   "title": "Culinary Arts",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "38603",
+   "title": "Geology",
+   "award": "A.S. T Degree"
+  },
+  {
+   "control_number": "39477",
+   "title": "Wellness Coaching",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "39764",
+   "title": "Drama Basics",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "39880",
+   "title": "Educational Studies: STEM: Math Concentration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "39966",
+   "title": "Educational Studies: ECE Unit Concentration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "39967",
+   "title": "Educational Studies: STEM: Instructional Technology Support Concentration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "39997",
+   "title": "Educational Studies: General",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "40008",
+   "title": "Educational Studies: Teach Your Career/Community College Teaching",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "40011",
+   "title": "Educational Studies: STEM: Science concentration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "40124",
+   "title": "English Language Learning Intermediate to Advanced Oral/Aural Skills",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "40125",
+   "title": "English Language Learning Beginning-Level Skills",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "40477",
+   "title": "Music Basics",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "40844",
+   "title": "Art Basics",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "40845",
+   "title": "Creative Arts Basics",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "41130",
+   "title": "Global Business",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "41175",
+   "title": "Mathematics for Workforce Developmental Skills",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "41337",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree"
+  },
+  {
+   "control_number": "41645",
+   "title": "Public Health Science",
+   "award": "A.S. T Degree"
+  },
+  {
+   "control_number": "41677",
+   "title": "Anthropology",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "41727",
+   "title": "Political Science",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "41762",
+   "title": "Health Science",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "41801",
+   "title": "Philosophy",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "41933",
+   "title": "Health and Wellness for Esports",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42277",
+   "title": "Supplemental Instruction",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42322",
+   "title": "Online Learning Basics",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42323",
+   "title": "Successful Online Learning",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42600",
+   "title": "Geography",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "42665",
+   "title": "English Language Learning High Beginning Skills",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42710",
+   "title": "English as a Second Language Low Beginning Skills",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42718",
+   "title": "English Language Learning Low Intermediate Skills",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "43029",
+   "title": "Art History",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "43030",
+   "title": "Communication Studies",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "43057",
+   "title": "Communications Studies 2.0",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "43490",
+   "title": "Environmental Science",
+   "award": "A.S. T Degree"
+  },
+  {
+   "control_number": "43622",
+   "title": "English as a Second Language High Intermediate Skills",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "44017",
+   "title": "ESL Preparation for Digital Learning",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "44102",
+   "title": "Social Work and Human Services",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "44204",
+   "title": "Management (Applied)",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "44206",
+   "title": "Information and Computer Sciences",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "44207",
+   "title": "Information and Computer Sciences",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "44223",
+   "title": "Law, Public Policy, and Society",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "45085",
+   "title": "Core Professional Skills for Artists",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "45411",
+   "title": "AI for Cybersecurity",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "45416",
+   "title": "Artificial Intelligence",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "45424",
+   "title": "Artificial Intelligence",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "45429",
+   "title": "AI for Cybersecurity",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "45622",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "45695",
+   "title": "Social Media Strategy",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "45872",
+   "title": "Artificial Intelligence (AI) Readiness 2: Ethical and Creative Applications",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "45873",
+   "title": "Artificial Intelligence (AI) Readiness 3: Security, Privacy, and Bias",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "45874",
+   "title": "Visual Design Foundations",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "45879",
+   "title": "Artificial Intelligence (AI) Readiness 1: In the Workplace",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "46029",
+   "title": "Cyber Hygiene and Online Safety",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "46030",
+   "title": "Cyber Hygiene for the Workplace",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "46077",
+   "title": "Public Health",
+   "award": "A.S. T Degree"
+  },
+  {
+   "control_number": "46539",
+   "title": "Emergency Management Foundations",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+  }
+ ],
+ "run": "38412902035"
+}
