@@ -193,6 +193,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `sierra_feedback_upsert` | tabs: `chatbot` · pages: `sierra/index.html` · scripts: `chatbox/smoke_test.sh` | — |
 | `team_pass_ok` | tabs: `raci` · pages: `CPL_Dashboard.html`, `kb-portal/index.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` · `edgefn:cpl-chat` | — |
 | `tmc_review_submission` | tabs: `tmc-builder` | — |
+| `workplan_move_sub_activity` | tabs: `workplan-goals` | — |
 
 ## Edge functions
 
@@ -1090,5 +1091,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
 
-Coverage: 97 Supabase tables · 36 RPCs · 7 edge functions · 637 file
+Coverage: 97 Supabase tables · 37 RPCs · 7 edge functions · 637 file
 datasets · 175 external services · 433 consumers · 50 workflows · 39 tabs.

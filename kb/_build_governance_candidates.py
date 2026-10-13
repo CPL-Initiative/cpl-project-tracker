@@ -154,8 +154,10 @@ def _human_write_surfaces():
         # nc-learning-partners tab writes ONLY through such RPCs — a
         # tables-only projection read it as a pure view. This is a heuristic in
         # a PROPOSER: a wrong guess costs one row a human dismisses once.
+        # "move" (S375): workplan_move_sub_activity re-keys seven tables and the
+        # name shape missed it.
         if is_rpc and not re.search(
-                r"replace|upsert|revise|apply|promote|clear|set_status|review",
+                r"replace|upsert|revise|apply|promote|clear|set_status|review|move",
                 name):
             continue
         for e in d.get("consumers", []):
