@@ -2,10 +2,10 @@
  "college": "San Diego Mesa College",
  "programs": 202,
  "with_closed_list": 184,
- "found": 168,
- "extracted": 168,
+ "found": 177,
+ "extracted": 177,
  "errors": 0,
- "passed_machine_checks": 162,
+ "passed_machine_checks": 171,
  "failed": {
   "coverage": 2,
   "invented": 0,
@@ -13,54 +13,8 @@
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 14.82,
- "cost_per_program": 0.0882,
- "not_found": [
-  {
-   "control_number": "05301",
-   "title": "Veterinary Technology",
-   "award": "A.S. Degree"
-  },
-  {
-   "control_number": "05344",
-   "title": "Dental Assisting: RDA, CDA",
-   "award": "A.S. Degree"
-  },
-  {
-   "control_number": "05347",
-   "title": "Physical Therapist Assistant",
-   "award": "A.S. Degree"
-  },
-  {
-   "control_number": "05348",
-   "title": "Health Information Technology",
-   "award": "A.S. Degree"
-  },
-  {
-   "control_number": "05349",
-   "title": "Radiologic Technology",
-   "award": "A.S. Degree"
-  },
-  {
-   "control_number": "22313",
-   "title": "Radiologic Technology",
-   "award": "Certificate of Achievement requiring 60+S/90+Q units"
-  },
-  {
-   "control_number": "22314",
-   "title": "Dental Assisting: RDA, CDA",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
-  },
-  {
-   "control_number": "38642",
-   "title": "Neurodiagnostic Technology",
-   "award": "A.S. Degree"
-  },
-  {
-   "control_number": "38643",
-   "title": "Neurodiagnostic Technology",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
-  }
- ],
- "run": "38282023973"
+ "cost_usd": 15.34,
+ "cost_per_program": 0.0867,
+ "not_found": [],
+ "run": "38322747831"
 }
