@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 546,
+   "count": 547,
    "docs": [
     {
      "created": "2026-08-14",
@@ -9943,6 +9943,23 @@
      "updated": "2026-10-13"
     },
     {
+     "created": "2026-10-13",
+     "governs": [
+      "kb/supabase_workplan_move.sql"
+     ],
+     "path": "docs/kb-notes/playbook-when-apply-migration-times-out-read-the-migrations-table.md",
+     "status": "published",
+     "tags": [
+      "playbook",
+      "supabase",
+      "migrations",
+      "connector"
+     ],
+     "title": "When apply_migration times out, read the migrations table before retrying",
+     "type": "playbook",
+     "updated": "2026-10-13"
+    },
+    {
      "created": "2026-09-20",
      "governs": [
       "kb/_typesafe_smoke.py",
@@ -10971,7 +10988,9 @@
       "excel_to_dashboard.py",
       "kb/supabase_projects_count_note.sql",
       "kb/receipts/workplan_2026-10-12_s372_add_3_9_move_1_1_2.sql",
-      "tests/workplan_goals_add_flow.test.js"
+      "tests/workplan_goals_add_flow.test.js",
+      "activity_summaries.js",
+      "tests/activity_summaries.test.js"
      ],
      "path": "docs/workplan_annual_goals_lessons.md",
      "status": null,
@@ -15478,8 +15497,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 348,
+   "count": 349,
    "docs": [
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "n": 378,
+     "path": "docs/session_378_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "workplan",
+      "annual-goals",
+      "move",
+      "activity-summaries"
+     ],
+     "title": "Annual Goals: read Sam's pastes, land the Move control, read the first Refresh",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-13",
      "governs": [],
@@ -21450,5 +21486,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1123
+ "total": 1125
 }

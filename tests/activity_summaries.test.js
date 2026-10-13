@@ -8,7 +8,7 @@
 //       prefix), and a tabled one stays out;
 //   (b) each header says how current its summary is, for every reader;
 //   (c) the prompt carries the sub-activities, their newest updates (three each),
-//       the naming rule, and no invented-figure licence;
+//       the naming rule, and no invented-figure license;
 //   (d) the team phrase alone sees no Refresh control; a signed-in reviewer does;
 //   (e) Refresh drafts one summary per Activity and posts NOTHING by itself;
 //   (f) Post writes item_updates activity:N, author the reviewer, the sources and
@@ -151,11 +151,11 @@ const posts = dom => dom._calls.filter(c => c.opts.method === "POST" && c.url.in
   const cards = doc.querySelectorAll(".as-card");
   const proxyCalls = dom._calls.filter(c => c.url.indexOf("proxy.example") >= 0);
   check("(e) one draft per Activity", cards.length === 2 && proxyCalls.length === 2);
-  check("(e) each draft is in a labelled, editable field",
+  check("(e) each draft is in a labeled, editable field",
     doc.getElementById("as-text-3").value === "Draft for Activity 3."
       && doc.querySelector('label[for="as-text-3"]').textContent === "Summary for Activity 3"
       && !doc.getElementById("as-text-3").readOnly);
-  check("(e) the panel is a labelled region", doc.querySelector(".as-panel").getAttribute("aria-labelledby") === "as-panel-title");
+  check("(e) the panel is a labeled region", doc.querySelector(".as-panel").getAttribute("aria-labelledby") === "as-panel-title");
   check("(e) drafting posted nothing", posts(dom).length === 0);
   check("(e) the sources line names what the draft drew on",
     /Drawn from 4 updates on 3 sub-activities, and the summary posted Jun 29, 2026\./.test(cards[0].querySelector(".as-sources").textContent));

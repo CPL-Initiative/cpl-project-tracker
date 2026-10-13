@@ -8,6 +8,8 @@ artifacts:
   - kb/supabase_projects_count_note.sql
   - kb/receipts/workplan_2026-10-12_s372_add_3_9_move_1_1_2.sql
   - tests/workplan_goals_add_flow.test.js
+  - activity_summaries.js
+  - tests/activity_summaries.test.js
 related:
   - "[[workplan-annual-goals]]"
   - "[[reference-workplan-activity-project-linking-model]]"
@@ -53,3 +55,17 @@ Sam asked for four things on Annual Goals (move AI Apprenticeship CPL Tools unde
 - **A checkpoint PR can strand.** S374's #2052 passed `test` and its session ended before merging; it carried handoff 376. This run merged main into it (clean; derived files current) so it could land, and wrote its own handoff as 377.
 
 **State:** #2051, #2054 and #2055 merged and published; #2057 (checkbox targets) and #2056 (Move, held) open; Sheet 72 carries the four open asks.
+
+## 2026-10-13 — SkySequoia (S377): Refresh summaries shipped; the Move control fixed and still held
+
+**What we learned**
+- **`indexOf` checks the first match, and a second dialog moved the first match.** The First Light test read "the dialog's lead word comes first" from the first `actions.appendChild(btnSubmit)` in `workplan_goals.js`; the Move dialog, added later in the file, appended Cancel before Move, and the test failed on the new dialog without naming it. Move now leads, and the test checks every Submit/Cancel pair in order.
+- **`apply_migration` was down, and the migrations table says so.** S377's full try and a table-only try both timed out with no row, no lock and no running query, and `supabase_migrations.schema_migrations` showed nothing newer than 23:19Z on 2026-10-12, though an 18,000-character migration had landed at 21:51Z. Read that table before retrying: a gap since the last success means the tool, never the SQL.
+- **A drafted update needs its provenance in the row, not in the page.** The summary posts with the approver as author (as the RACI composer writes it), and `raw` carries the drafter, the model, whether the reviewer edited it, the original draft when edited, and the `item_updates` and `projects` ids it drew on. Nothing renders `raw`, so the JSON costs readers nothing and lets a later session read what Sam changed.
+- **Group a sub-activity by its home field.** `projects.workplan_activity` names the home Activity (parsed by number); the id prefix lies after a move, and 1.1.2 is about to sit under Activity 4.
+- **The Update link's job moved, so the link went.** The Refresh field is editable and stays open when a draft fails, which covers writing a summary by hand; the RACI tab's composer still accepts activity keys for the team phrase.
+- **Measure overflow before blaming the new control.** At 390px the Activities page scrolled 71px sideways with or without the new panel: the header's link row was a `nowrap` span, and PR A's Add sub-activity pushed it over. The row now wraps, each link keeps `nowrap`.
+- **The published page versions its scripts** (`src="activity_summaries.js?v=d963b4a7"`), so grep the live page for the name with `?v=`, never the bare `src`.
+- **Playwright's last-registered route wins.** A catch-all abort registered after the stubs swallowed them; register the catch-all first.
+
+**State:** #2059 merged and published (run 583). #2056 green at `656e14f`, held for card 3. Sheet 72 cards 2 and 3 unpasted at 02:37Z.
