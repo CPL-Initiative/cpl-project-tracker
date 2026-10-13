@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Digital Media Design",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://catalog.cccd.edu/coastline/pathways/visual-performing-arts/digital-media-design/",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/visual-performing-arts/digital-media-design/digital-media-design-coa/",
  "record_shape": 4,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7955,
+  "input_tokens": 5804,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7955,
-    "output_tokens": 980,
+    "input_tokens": 5804,
+    "output_tokens": 955,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,37 +30,28 @@
     "model": null
    }
   ],
-  "output_tokens": 980,
+  "output_tokens": 955,
   "output_tokens_details": {
-   "thinking_tokens": 247
+   "thinking_tokens": 171
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.05142,
- "ms": 9860,
- "seconds": 10.9,
+ "cost_usd": 0.04232,
+ "ms": 8389,
+ "seconds": 9.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 8,
    "listed": 8,
-   "share": 0.0,
-   "missing": [
-    "ARTC184",
-    "ARTC185",
-    "DMDC116",
-    "DMDC117",
-    "DMDC118",
-    "DMDC120",
-    "DMDC135",
-    "DMDC136"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -69,94 +60,138 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Digital Media Design, Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "ge_pattern": null,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Demonstrate the ability to create projects with the appropriate settings within the software for web, print, and animation while using basic design principles and best practices employed in the design industry.",
+    "Demonstrate proficiency in determining the type of copyright, permissions, and licensing required to use specific content.",
+    "Demonstrate the ability to identify the purpose, audience, and audience needs for preparing images."
+   ],
+   "careers": [
+    "print",
+    "graphic design",
+    "digital media",
+    "animation/gaming graphics",
+    "web design graphics",
+    "digital media business basics"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ART C184",
-    "why": "not in a requirements list; named only in DMD C117's enrollment limitation"
-   },
-   {
-    "code": "ART C185",
-    "why": "not in a requirements list; named only in DMD C118's enrollment limitation"
-   },
-   {
-    "code": "DMD C116",
-    "why": "requirements section not in text; course description lists the certificate among referencing pages"
-   },
-   {
-    "code": "DMD C117",
-    "why": "requirements section not in text; course description lists the certificate among referencing pages"
-   },
-   {
-    "code": "DMD C118",
-    "why": "requirements section not in text; course description lists the certificate among referencing pages"
-   },
-   {
-    "code": "DMD C120",
-    "why": "requirements section not in text; course description lists the certificate among referencing pages"
-   },
-   {
-    "code": "DMD C135",
-    "why": "requirements section not in text; course description lists the certificate among referencing pages"
-   },
-   {
-    "code": "DMD C136",
-    "why": "requirements section not in text; course description lists the certificate among referencing pages"
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DMD C116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMD C117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART C184",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMD C118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART C185",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMD C120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMD C135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMD C136",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text holds only the page's program link list and the COURSES tab (course descriptions). It does not include the requirements, total units, outcomes or careers for the Digital Media Design Certificate of Achievement, so no blocks were recorded.",
-   "The section heading is taken from a link-list entry, not from a printed requirements section.",
-   "The 'Catalog Program Pages Referencing' lists under DMD C116, C117, C118, C120, C135 and C136 name 'Digital Media Design, Certificate of Achievement'. This suggests these courses belong to the certificate, but the rules (required versus elective, choose N) are not stated. A reviewer should fetch the program's requirements tab.",
-   "Course descriptions run the code and units together (e.g., 'DMD C1163 Units' = DMD C116, 3 units).",
-   "DMD C135's description mentions 'entry-level digital media roles'. That is course-level text, so it was not recorded as a program career."
+   "The catalog prints no units beside the 'or' alternatives ART C184 and ART C185; their units are recorded as null.",
+   "Careers are taken from the overview sentence listing entry-level positions in 'print, graphic design, digital media, animation/gaming graphics, web design graphics, digital media business basics and/or other related occupations'; 'digital media business basics' is included as printed although it reads more like a subject area than a career field.",
+   "Total Units 18 is printed for the Required Core, which is the whole certificate; recorded as the award total."
   ]
  },
- "extracted_run": "38412902035"
+ "extracted_run": "38445051060"
 }

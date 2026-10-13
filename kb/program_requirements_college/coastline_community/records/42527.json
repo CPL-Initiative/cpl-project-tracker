@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "IT Foundation",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/it-support-specialist-coa/",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/it-foundation-coa/",
  "record_shape": 4,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5828,
+  "input_tokens": 5772,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5828,
-    "output_tokens": 2006,
+    "input_tokens": 5772,
+    "output_tokens": 968,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 2006,
+  "output_tokens": 968,
   "output_tokens_details": {
-   "thinking_tokens": 1030
+   "thinking_tokens": 324
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.06343,
- "ms": 18184,
- "seconds": 18.5,
+ "cost_usd": 0.04245,
+ "ms": 8525,
+ "seconds": 8.8,
  "parts": null,
  "error": null,
  "score": {
@@ -54,27 +54,21 @@
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "CISC157",
-    "CYBRC230"
-   ],
-   "flagged": [
-    "CISC157",
-    "CYBRC230"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
    "pass": true,
    "status": "equal",
    "computed": [
-    19.0,
-    19.0
+    16.0,
+    16.0
    ],
    "stated": [
-    19.0,
-    19.0
+    16.0,
+    16.0
    ],
    "why": []
   },
@@ -83,9 +77,9 @@
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 2,
    "courses": 0,
-   "count": 3,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
@@ -93,7 +87,7 @@
    "pass": true
   },
   "careers": {
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -101,22 +95,19 @@
  },
  "record": {
   "program": {
-   "section_heading": "IT Support Specialist, Certificate of Achievement",
+   "section_heading": "IT Foundation, Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": 19,
-    "max": 19
+    "min": 16,
+    "max": 16
    },
    "open_elective_units": null,
    "ge_pattern": null,
    "outcomes": [
-    "Demonstrate the ability to locate technical resources to solve problems with networking, systems, and cloud solutions.",
-    "Demonstrate proficiency with various software packages to solve common networking, system, and cloud problems.",
-    "Demonstrate the ability to design and implement solutions for networking, system, and cloud operations."
+    "Demonstrate the ability to locate technical resources to solve problems with networking hardware and software.",
+    "Demonstrate proficiency with various software packages to solve common networking, system, and cloud problems."
    ],
-   "careers": [
-    "entry-level help desk computer support roles"
-   ]
+   "careers": []
   },
   "blocks": [
    {
@@ -129,6 +120,13 @@
      "max": null
     },
     "courses": [
+     {
+      "code": "CYBR C101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "IT C104",
       "units": 4,
@@ -163,31 +161,11 @@
       "catalog_addition": false
      },
      {
-      "code": "CIS C157",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
       "code": "IT C198",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "CYBR C230",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "CYBR C101",
-        "units": null,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": true
      }
     ]
    }
@@ -195,13 +173,10 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Title mismatch: the requested program is 'IT Foundation', but the supplied page (and its URL) is 'IT Support Specialist, Certificate of Achievement' (Control Number 44205, Banner Code 3_CN_ITSS). The site navigation lists 'IT Foundation, Certificate of Achievement' as a separate award, whose section is not in the text. This record reads the IT Support Specialist section because every closed-list course appears in it, which suggests the state file's 'IT Foundation' record may correspond to this control number (a possible rename). A reviewer should confirm before using it.",
-   "The units of the 'or' alternatives (IT C110, IT C201, CYBR C101) are not printed beside them in the catalog, so they are left null.",
-   "CIS C157 and CYBR C230 are in the catalog section but not in the closed list, so they are marked as catalog additions.",
-   "The catalog states 'Total Units 19' for the certificate.",
-   "The page states the program is 'Not Financial Aid Eligible'.",
-   "The certifications named (CompTIA Tech+, Network+, Server+, Security+) are industry certifications, not careers, so they are not recorded as careers."
+   "The catalog prints no units beside the 'or' alternatives IT C110 and IT C201, so their units are null; the closed list stores 4 and 3 units respectively.",
+   "The description mentions 'entry-level IT roles' and skill areas such as computer networking and help desk support, but names no specific career or job title, so careers is left empty; a reviewer may decide whether 'entry-level IT roles' should count as a career field.",
+   "The Required Core block prints no separate block total; the program total of 16 units is recorded in total_units."
   ]
  },
- "extracted_run": "38412902035"
+ "extracted_run": "38445051060"
 }

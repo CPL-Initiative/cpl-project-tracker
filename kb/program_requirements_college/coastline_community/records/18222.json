@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Psychology",
  "award": "A.A. Degree",
- "source_url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/psychology/",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/psychology/psychology-aa/",
  "record_shape": 4,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9728,
+  "input_tokens": 5888,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9728,
-    "output_tokens": 721,
+    "input_tokens": 5888,
+    "output_tokens": 1418,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,28 @@
     "model": null
    }
   ],
-  "output_tokens": 721,
+  "output_tokens": 1418,
   "output_tokens_details": {
-   "thinking_tokens": 254
+   "thinking_tokens": 383
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.05333,
- "ms": 9534,
- "seconds": 10.6,
+ "cost_usd": 0.05191,
+ "ms": 11517,
+ "seconds": 11.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 11,
    "listed": 11,
-   "share": 0.0,
-   "missing": [
-    "AGNGC170",
-    "PSYCC1000",
-    "PSYCC116",
-    "PSYCC118",
-    "PSYCC165",
-    "PSYCC170",
-    "PSYCC250",
-    "PSYCC255",
-    "PSYCC260",
-    "PSYCC280",
-    "STATC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -72,100 +60,170 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    20.0,
+    20.0
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Psychology",
+   "section_heading": "Psychology, Associate of Arts Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 20,
+    "max": 20
    },
    "open_elective_units": null,
-   "ge_pattern": null,
-   "outcomes": [],
-   "careers": []
+   "ge_pattern": "Local General Education or CalGETC pattern",
+   "outcomes": [
+    "Characterize the nature of psychology as a science.",
+    "Apply the major theories, principles, and concepts of psychology to everyday life.",
+    "Utilize investigative methods to collect, interpret, and present scientific data on psychological topics."
+   ],
+   "careers": [
+    "social service fields"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "AGNG C170",
-    "why": "no requirements in text; named only in a course enrollment limitation"
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C280",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "PSYC C1000",
-    "why": "no requirements in text; appears only in the course listing"
-   },
-   {
-    "code": "PSYC C116",
-    "why": "no requirements in text; appears only in the course listing"
-   },
-   {
-    "code": "PSYC C118",
-    "why": "no requirements in text; appears only in the course listing"
-   },
-   {
-    "code": "PSYC C165",
-    "why": "no requirements in text; appears only in the course listing"
-   },
-   {
-    "code": "PSYC C170",
-    "why": "no requirements in text; appears only in the course listing"
-   },
-   {
-    "code": "PSYC C250",
-    "why": "no requirements in text; appears only in the course listing"
-   },
-   {
-    "code": "PSYC C255",
-    "why": "no requirements in text; appears only in the course listing"
-   },
-   {
-    "code": "PSYC C260",
-    "why": "no requirements in text; appears only in the course listing"
-   },
-   {
-    "code": "PSYC C280",
-    "why": "no requirements in text; appears only in the course listing"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "no requirements in text; named only as a prerequisite"
+    "name": "Program Electives",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "PSYC C116",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C118",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C165",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AGNG C170",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C250",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C255",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C260",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints former course numbers in parentheses beside two core courses: PSYC C1000 (PSYC C100) and STAT C1000 (STAT C160); the current codes were recorded.",
+   "Units are not printed beside the individual Program Electives courses; only the block total of 9 units is printed.",
+   "'Units Required for the Major 20' recorded as the award total; the 60-unit degree total includes GE and electives listed as 'Varies'.",
+   "Open electives ('Electives to satisfy unit requirement Varies') sit outside the 20-unit major, so open_elective_units is null.",
+   "The description also mentions 'counseling or research psychologist positions' as requiring a Master's degree or higher; these were not recorded as careers for this program.",
+   "The page navigation also lists a separate 'Psychology, Associate in Arts Degree for Transfer'; only the A.A. section was read."
+  ]
  },
- "extracted_run": "38412902035"
+ "extracted_run": "38445051060"
 }

@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "English",
  "award": "A.A. Degree",
- "source_url": "https://catalog.cccd.edu/coastline/pathways/language-literature/english/",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/language-literature/english/english-aa/",
  "record_shape": 4,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10877,
+  "input_tokens": 6093,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10877,
-    "output_tokens": 1468,
+    "input_tokens": 6093,
+    "output_tokens": 2288,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,62 +30,54 @@
     "model": null
    }
   ],
-  "output_tokens": 1468,
+  "output_tokens": 2288,
   "output_tokens_details": {
-   "thinking_tokens": 489
+   "thinking_tokens": 577
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.07287,
- "ms": 13517,
- "seconds": 14.6,
+ "cost_usd": 0.07013,
+ "ms": 17435,
+ "seconds": 17.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 15,
    "listed": 16,
-   "share": 0.0,
+   "share": 0.938,
    "missing": [
-    "ANTHC190",
-    "BUSC139",
-    "ENGLC1001",
-    "ENGLC101",
-    "ENGLC128",
-    "ENGLC129",
-    "ENGLC133",
-    "ENGLC136",
-    "ENGLC140",
-    "ENGLC143",
-    "ENGLC150",
-    "ENGLC155",
-    "ENGLC270",
-    "ENGLC275",
-    "ENGLC296",
-    "ENGLC297"
+    "ANTHC190"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "ANTHA190"
+   ],
+   "flagged": [
+    "ANTHA190"
+   ],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    0.0,
-    0.0
+    21.0,
+    21.0
    ],
-   "stated": null,
+   "stated": [
+    18.0,
+    19.0
+   ],
    "why": [
-    "the record names no total"
+    "the blocks sum to 21.0-21.0; the catalog states 18.0-19.0"
    ]
   },
   "repeated": {
@@ -93,12 +85,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -111,90 +103,200 @@
  },
  "record": {
   "program": {
-   "section_heading": "English (ENGL)",
+   "section_heading": "English, Associate of Arts Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 19
    },
    "open_elective_units": null,
-   "ge_pattern": null,
-   "outcomes": [],
+   "ge_pattern": "Local General Education or CalGETC pattern",
+   "outcomes": [
+    "Write well-organized, well-developed expository essays in a variety of rhetorical modes, using Standard English, with a clear thesis statement and supporting topic sentences and supporting details.",
+    "Search for and find reliable, unbiased sources and to use these sources in research papers, using correct MLA documentation.",
+    "Evaluate a literary work in terms of style and descriptive technique, language, tone, mood, and literary conventions, such as symbolism, imagery, irony, and poetic devices such as meter and rhyme pattern.",
+    "Analyze a given literary work and explain its relevance to the time period and genre in which it was written as well as the relationship between the events in an author’s life, time, and culture to the development of his or her writing."
+   ],
    "careers": []
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGL C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Program Electives",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ENGL C150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C155",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C270",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C275",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ENGL C133",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C143",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select two of the following or any course not selected above",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ENGL C101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C128",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C129",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C136",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS C139",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C296",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C297",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH A190",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
     "code": "ANTH C190",
-    "why": "not in the text"
-   },
-   {
-    "code": "BUS C139",
-    "why": "not in the text"
-   },
-   {
-    "code": "ENGL C1001",
-    "why": "only a course description printed; no A.A. requirements section in text"
-   },
-   {
-    "code": "ENGL C101",
-    "why": "only a course description (apparently renumbered ENGL C1003) printed; no A.A. requirements section in text"
-   },
-   {
-    "code": "ENGL C128",
-    "why": "only a course description printed; no A.A. requirements section in text"
-   },
-   {
-    "code": "ENGL C129",
-    "why": "only a course description printed; no A.A. requirements section in text"
-   },
-   {
-    "code": "ENGL C133",
-    "why": "only a course description printed; no A.A. requirements section in text"
-   },
-   {
-    "code": "ENGL C136",
-    "why": "only a course description printed; no A.A. requirements section in text"
-   },
-   {
-    "code": "ENGL C140",
-    "why": "only a course description (apparently renumbered ENGL C1002) printed; no A.A. requirements section in text"
-   },
-   {
-    "code": "ENGL C143",
-    "why": "only a course description printed; no A.A. requirements section in text"
-   },
-   {
-    "code": "ENGL C150",
-    "why": "not in the text"
-   },
-   {
-    "code": "ENGL C155",
-    "why": "not in the text"
-   },
-   {
-    "code": "ENGL C270",
-    "why": "not in the text"
-   },
-   {
-    "code": "ENGL C275",
-    "why": "not in the text"
-   },
-   {
-    "code": "ENGL C296",
-    "why": "not in the text"
-   },
-   {
-    "code": "ENGL C297",
-    "why": "not in the text"
+    "why": "not in the text; catalog prints ANTH A190 (Introduction to Linguistic Anthropology) instead, recorded as a catalog addition"
    }
   ],
   "notes": [
-   "The supplied text contains only the English (ENGL) course description listing and 'Catalog Program Pages Referencing' link lists; the requirements section for 'English, Associate of Arts Degree' is not printed, so no blocks, total units, outcomes, or careers could be recorded. The text is cut off at both ends (begins mid-word 'tion for College-Level English', ends at 'Catalo').",
-   "Course descriptions show common-course renumbering: ENGL C1001 (3 units, formerly ENGL C1001), ENGL C1002 (3 units, Introduction to Literature) listed with program references for ENGL C140, ENGL C1003 (4 units, Critical Thinking and Writing Through Literature) listed with references for ENGL C101; the ENGL C1001 entry's reference list is headed 'ENGL C102'. A reviewer should check the full program page for the A.A. requirements.",
-   "'English, Associate of Arts Degree' appears among programs referencing ENGL C128, C129, C133, C136, C140 (C1002), C143, C101 (C1003), and ENGL C102, suggesting these courses figure in the degree, but the rule under which they count is not in the text."
+   "The catalog prints no units beside individual courses, so all course units are null.",
+   "ENGL C1001 is printed as 'ENGL C1001 (ENGL C102)'; the parenthetical appears to be a former/equivalent course number and was not recorded as a separate alternative.",
+   "ENGL C140 is titled 'Introduction to Literature' in the catalog but 'Appreciation of Literature' in the closed list.",
+   "ENGL C101 is titled 'Critical Thinking and Writing Through Literature' in the catalog vs. 'Critical Reasoning, Reading, and Writing Through Literature' in the closed list.",
+   "Stated block totals look inconsistent: 'Select two of the following' (C150/C155/C270/C275) prints 3-4 units for two courses, and 'Select one of the following' (C133/C143) prints 6 units for one course; the values may be swapped or misprinted. Recorded as printed.",
+   "The last elective block also allows 'any course not selected above' from the earlier elective lists.",
+   "ANTH A190 likely corresponds to closed-list ANTH C190 (Introduction to Linguistics) but the code and title differ; reviewer should verify.",
+   "'Electives to satisfy unit requirement' is outside the 18-19 unit major total, so open_elective_units is null."
   ]
  },
- "extracted_run": "38412902035"
+ "extracted_run": "38445051060"
 }

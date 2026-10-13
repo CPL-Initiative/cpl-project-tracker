@@ -1,0 +1,151 @@
+{
+ "college": "Coastline Community College",
+ "control_number": "42005",
+ "shape": "certificate",
+ "title": "Cloud Computing",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/cybersecurity-fundamentals-cos/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5714,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5714,
+    "output_tokens": 1104,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1104,
+  "output_tokens_details": {
+   "thinking_tokens": 352
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04494,
+ "ms": 10180,
+ "seconds": 10.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 6,
+   "share": 0.0,
+   "missing": [
+    "CSTC104",
+    "CYBRC101",
+    "ITC128",
+    "ITC158",
+    "ITC198",
+    "ITC295"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Cybersecurity Fundamentals, Certificate of Specialization",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CST C104",
+    "why": "not in the text; the page covers Cybersecurity Fundamentals, not Cloud Computing"
+   },
+   {
+    "code": "CYBR C101",
+    "why": "named only in the Cybersecurity Fundamentals Certificate of Specialization section, not a Cloud Computing section"
+   },
+   {
+    "code": "IT C128",
+    "why": "named only in the Cybersecurity Fundamentals Certificate of Specialization section, not a Cloud Computing section"
+   },
+   {
+    "code": "IT C158",
+    "why": "named only in the Cybersecurity Fundamentals Certificate of Specialization section, not a Cloud Computing section"
+   },
+   {
+    "code": "IT C198",
+    "why": "not in the text; the page covers Cybersecurity Fundamentals, not Cloud Computing"
+   },
+   {
+    "code": "IT C295",
+    "why": "not in the text; the page covers Cybersecurity Fundamentals, not Cloud Computing"
+   }
+  ],
+  "notes": [
+   "Source mismatch: the requested award is Cloud Computing, Certificate of Achievement, but the catalog page and text are for Cybersecurity Fundamentals, Certificate of Specialization (Banner Code 3_CE_CYFUND). No Cloud Computing section appears in the text, so no blocks, totals, outcomes or careers were recorded for the named award.",
+   "The section_heading field gives the only program heading the page prints, which is the Cybersecurity Fundamentals certificate, not Cloud Computing.",
+   "For reference, the Cybersecurity Fundamentals section lists a Required Core of CYBR C101, IT C128, IT C158, CIS C157 and CYBR C230 (3 units each), with Total Units 15. It also prints four program learning outcomes. None of these were recorded because they belong to a different program.",
+   "A reviewer should locate the correct Cloud Computing Certificate of Achievement page in the Coastline 2026-2027 catalog, likely under Information Technology."
+  ]
+ },
+ "extracted_run": "38445051060"
+}

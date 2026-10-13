@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Entrepreneurship & Small Business Management",
  "award": "A.A. Degree",
- "source_url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/supply-chain-management-associate-science-degree/",
  "record_shape": 4,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10166,
+  "input_tokens": 6150,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10166,
-    "output_tokens": 894,
+    "input_tokens": 6150,
+    "output_tokens": 969,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 894,
+  "output_tokens": 969,
   "output_tokens_details": {
-   "thinking_tokens": 265
+   "thinking_tokens": 328
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.05854,
- "ms": 9359,
- "seconds": 10.4,
+ "cost_usd": 0.04398,
+ "ms": 8776,
+ "seconds": 9.3,
  "parts": null,
  "error": null,
  "score": {
@@ -87,8 +87,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
-   "heading_without_outcomes": false,
+   "heading_printed": true,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Business",
+   "section_heading": "Supply Chain Management, Associate of Science Degree",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -116,32 +116,30 @@
   "missing_explained": [
    {
     "code": "ACCT C116",
-    "why": "not in the text; no A.A. Degree requirements section is printed"
+    "why": "text has no Entrepreneurship & Small Business Management A.A. section; appears only as an elective in the Supply Chain Management A.S."
    },
    {
     "code": "BUS C100",
-    "why": "appears only as a course description; no A.A. Degree requirements section is printed"
+    "why": "text has no Entrepreneurship & Small Business Management A.A. section; appears only in the Supply Chain Management A.S. core"
    },
    {
     "code": "BUS C110",
-    "why": "appears only as a course description; no A.A. Degree requirements section is printed"
+    "why": "text has no Entrepreneurship & Small Business Management A.A. section; appears only as an elective in the Supply Chain Management A.S."
    },
    {
     "code": "BUS C120",
-    "why": "appears only as a course description; no A.A. Degree requirements section is printed"
+    "why": "text has no Entrepreneurship & Small Business Management A.A. section; appears only as an elective in the Supply Chain Management A.S."
    },
    {
     "code": "BUS C150",
-    "why": "not in the text; no A.A. Degree requirements section is printed"
+    "why": "not in the text"
    }
   ],
   "notes": [
-   "The supplied text is the Business pathway page's degree/certificate index and the COURSES tab, not a program requirements section. No section for an Entrepreneurship and Small Business Management A.A. Degree appears.",
-   "The index lists only 'Entrepreneurship and Small Business Management, Certificate of Achievement' and 'Entrepreneurship Essentials, Certificate of Specialization'. No A.A. (or A.S.) degree in this field is listed for 2026-2027. The named award may not exist in this catalog year, or it may be printed on another page.",
-   "program.section_heading records the page heading 'Business' because no section for the named award exists.",
-   "Course descriptions note 'Catalog Program Pages Referencing' the Entrepreneurship and Small Business Management Certificate of Achievement for BUS C100, C101, C110, C120, C139, C141 and C142. These are references to the certificate, not to the A.A. Degree, so no blocks are recorded.",
-   "The catalog text is cut off mid-description at BUS C143."
+   "Source mismatch: the URL and catalog text are for the Supply Chain Management, Associate of Science Degree (Banner Code 3_AS_SCM, Control Number 22939), not the requested Entrepreneurship & Small Business Management A.A. Degree. None of that program's requirements are recorded here. The correct catalog page should be retrieved.",
+   "The Supply Chain Management A.S. page lists 24 units for the major, 4 program learning outcomes, and several careers (logistics analysts, buyers, etc.). These belong to a different program and were not recorded as this award's data.",
+   "Four of the five closed-list courses (ACCT C116, BUS C100, BUS C110, BUS C120) appear on the Supply Chain Management page. BUS C150 does not appear anywhere in the text."
   ]
  },
- "extracted_run": "38412902035"
+ "extracted_run": "38445051060"
 }

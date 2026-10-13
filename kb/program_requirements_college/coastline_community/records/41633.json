@@ -1,0 +1,320 @@
+{
+ "college": "Coastline Community College",
+ "control_number": "41633",
+ "shape": "adt",
+ "title": "Nutrition and Dietetics",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/health-wellness/foods-nutrition/nutrition-dietetics-associate-science-degree-transfer/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6006,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6006,
+    "output_tokens": 2807,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2807,
+  "output_tokens_details": {
+   "thinking_tokens": 1186
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08016,
+ "ms": 22535,
+ "seconds": 22.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 12,
+   "share": 0.667,
+   "missing": [
+    "CHEMC180",
+    "CHEMC180L",
+    "CHEMC185",
+    "CHEMC185L"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "BIOLC210",
+    "CHEMC180C",
+    "CHEMC185C",
+    "FNA180",
+    "FNC170"
+   ],
+   "flagged": [
+    "BIOLC210",
+    "CHEMC180C",
+    "CHEMC185C",
+    "FNA180",
+    "FNC170"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    23.0,
+    25.0
+   ],
+   "stated": [
+    27.0,
+    30.0
+   ],
+   "why": [
+    "the blocks sum to 23.0-25.0; the catalog states 27.0-30.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate Degree for Transfer Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "ge_pattern": "CalGETC (Coastline Option 2 General Education pattern)",
+   "outcomes": [
+    "Utilize up to date, evidence-based practices in the field of nutrition and dietetics.",
+    "Communicate effectively orally and in writing in a health care or community nutrition environment whether working with children, families, and seniors.",
+    "Advocate within the community for continued support of health and nutrition."
+   ],
+   "careers": [
+    "Nutrition and Dietetics",
+    "Registered Dietitians/Nutritionists",
+    "Dietetic Service Supervisors",
+    "Nutrition Assistants",
+    "Wellness Coaches",
+    "managers/supervisors",
+    "nutritional care specialists"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL C210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FN C170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Sequence 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Complete one sequence",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM C180C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Sequence 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Complete one sequence",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM C185C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "BIOL C220",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL C225",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "SOC C100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL C100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL C100C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL C100L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FN A180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CHEM C180",
+    "why": "not in the text; catalog prints combined CHEM C180C instead"
+   },
+   {
+    "code": "CHEM C180L",
+    "why": "not in the text; catalog prints combined CHEM C180C instead"
+   },
+   {
+    "code": "CHEM C185",
+    "why": "not in the text; catalog prints combined CHEM C185C instead"
+   },
+   {
+    "code": "CHEM C185L",
+    "why": "not in the text; catalog prints combined CHEM C185C instead"
+   }
+  ],
+  "notes": [
+   "The catalog prints '5-10' units for 'Complete one sequence' as a whole; it is not recorded on either sequence block. Sequence 1 lists only CHEM C180C and Sequence 2 only CHEM C185C (5 units each), which does not match the 5-10 range; Sequence 2 may be intended to include CHEM C180C as well. Reviewer should check.",
+   "List A rule depends on the sequence: two courses if Sequence 1 was completed, one course if Sequence 2 was completed ('Complete one or two courses'); minimum recorded as 1. Units are not printed beside List A or List B courses.",
+   "In List B, BIOL C100 & BIOL C100L together are one option, alternative to BIOL C100C; recorded as BIOL C100 (alternative BIOL C100C) plus a separate BIOL C100L entry.",
+   "List B note: FN A180 Principles of Food at Orange Coast College may be completed to satisfy 3 units of List B; recorded as a catalog addition with 3 units.",
+   "List B stated 3-4 taken from 'Complete three to four units'.",
+   "Program Learning Outcomes are printed on the program overview and apply to this degree."
+  ]
+ },
+ "extracted_run": "38445051060"
+}

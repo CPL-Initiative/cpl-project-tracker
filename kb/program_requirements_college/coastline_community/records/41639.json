@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Chemistry",
  "award": "A.S. T Degree",
- "source_url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/chemistry/",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/chemistry/chemistry-ast/",
  "record_shape": 4,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9917,
+  "input_tokens": 5828,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9917,
-    "output_tokens": 1320,
+    "input_tokens": 5828,
+    "output_tokens": 1554,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,71 +30,70 @@
     "model": null
    }
   ],
-  "output_tokens": 1320,
+  "output_tokens": 1554,
   "output_tokens_details": {
-   "thinking_tokens": 421
+   "thinking_tokens": 292
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.06607,
- "ms": 12831,
- "seconds": 13.3,
+ "cost_usd": 0.05439,
+ "ms": 12730,
+ "seconds": 13.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 8,
    "listed": 12,
-   "share": 0.0,
+   "share": 0.667,
    "missing": [
     "CHEMC180",
     "CHEMC180L",
     "CHEMC185",
-    "CHEMC185L",
-    "CHEMC220",
-    "CHEMC220L",
-    "CHEMC225",
-    "CHEMC225L",
-    "MATHC180",
-    "MATHC185",
-    "PHYSC185",
-    "PHYSC280"
+    "CHEMC185L"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "CHEMC180C",
+    "CHEMC185C"
+   ],
+   "flagged": [
+    "CHEMC180C",
+    "CHEMC185C"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    38.0,
+    38.0
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    38.0,
+    38.0
+   ],
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -103,78 +102,136 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Chemistry, Associate in Science Degree for Transfer",
+   "section_heading": "Associate Degree for Transfer Requirements",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 38,
+    "max": 38
    },
    "open_elective_units": null,
-   "ge_pattern": null,
-   "outcomes": [],
+   "ge_pattern": "CalGETC (Coastline Option 2 General Education pattern)",
+   "outcomes": [
+    "Explain three fundamental processes present in chemistry including atomic and molecular structure, chemical equilibrium with applications to acids and bases, thermodynamics, chemical kinetics, and reaction mechanisms.",
+    "Given the appropriate laboratory setting, design and apply the process of science to postulate a hypothesis, collect and interpret data and formulate a conclusion.",
+    "Communicate chemical concepts effectively in written and/or oral forms and locate, select and evaluate scientific information present in primary research literature, mass media, online or other sources."
+   ],
    "careers": []
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM C180C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM C185C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM C220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM C220L",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM C225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM C225L",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C180",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C185",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS C185",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS C280",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
     "code": "CHEM C180",
-    "why": "no requirements list in text; catalog now prints combined CHEM C180C (formerly CHEM C180 and CHEM C180L) in course descriptions only"
+    "why": "not in the text; catalog lists combined CHEM C180C (5 units) instead"
    },
    {
     "code": "CHEM C180L",
-    "why": "no requirements list in text; merged into CHEM C180C per course description"
+    "why": "not in the text; catalog lists combined CHEM C180C (5 units) instead"
    },
    {
     "code": "CHEM C185",
-    "why": "no requirements list in text; catalog now prints combined CHEM C185C (formerly CHEM C185 and CHEM C185L) in course descriptions only"
+    "why": "not in the text; catalog lists combined CHEM C185C (5 units) instead"
    },
    {
     "code": "CHEM C185L",
-    "why": "no requirements list in text; merged into CHEM C185C per course description"
-   },
-   {
-    "code": "CHEM C220",
-    "why": "appears only in course descriptions; no requirements list in text"
-   },
-   {
-    "code": "CHEM C220L",
-    "why": "appears only in course descriptions; no requirements list in text"
-   },
-   {
-    "code": "CHEM C225",
-    "why": "appears only in course descriptions; no requirements list in text"
-   },
-   {
-    "code": "CHEM C225L",
-    "why": "appears only in course descriptions; no requirements list in text"
-   },
-   {
-    "code": "MATH C180",
-    "why": "not in the text"
-   },
-   {
-    "code": "MATH C185",
-    "why": "not in the text"
-   },
-   {
-    "code": "PHYS C185",
-    "why": "named only in a CHEM C140 credit-limitation note; no requirements list in text"
-   },
-   {
-    "code": "PHYS C280",
-    "why": "not in the text"
+    "why": "not in the text; catalog lists combined CHEM C185C (5 units) instead"
    }
   ],
   "notes": [
-   "The supplied text is the Chemistry pathway landing page plus its COURSES tab. It names 'Chemistry, Associate in Science Degree for Transfer' only as a link under DEGREES AND CERTIFICATES and does not print the degree's requirements, total units, GE pattern, outcomes or careers. No blocks were recorded; the degree's own page should be fetched and reviewed.",
-   "Course descriptions state CHEM C180C (5 units) is 'Formerly: CHEM C180 and CHEM C180L' and CHEM C185C (5 units) is 'Formerly: CHEM C185 and CHEM C185L'; both list 'Chemistry, Associate in Science Degree for Transfer' among referencing program pages. The closed list appears to predate this consolidation.",
-   "CHEM C220, CHEM C220L, CHEM C225 and CHEM C225L descriptions also list the A.S.-T among referencing program pages, but this is not a requirements statement."
+   "The excerpt does not print the program's own title heading (e.g., 'Chemistry, A.S.-T'); section_heading uses the requirements heading printed in the text.",
+   "CHEM C180C and CHEM C185C (5 units each) appear to be combined lecture+lab versions replacing closed-list CHEM C180/C180L and CHEM C185/C185L; reviewer should confirm the Program Course File needs updating.",
+   "Catalog states 'Units Required for Major 38', 'CalGETC Pattern 34', transfer electives 'Varies', and 'Total Units for Degree 66'; the 66-unit degree total exceeds the 60-unit minimum.",
+   "The first outcome says 'three fundamental processes' but lists five; copied as printed.",
+   "The excerpt begins mid-sentence in the program description; earlier description text may be cut off.",
+   "Program learning outcomes appear printed for this A.S.-T page; no careers are named in the text."
   ]
  },
- "extracted_run": "38412902035"
+ "extracted_run": "38445051060"
 }
