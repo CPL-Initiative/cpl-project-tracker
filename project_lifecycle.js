@@ -284,7 +284,8 @@
   function setGoalsRowsHidden(pid, hidden) {
     var q = esc4q(pid);
     Array.prototype.forEach.call(document.querySelectorAll('table [data-pid="' + q + '"]'), function (a) {
-      var nameCell = a.closest && a.closest("td[rowspan]");
+      // The name cell is a row header since the S375 UI pass (#2054), a td before it.
+      var nameCell = a.closest && a.closest("th[rowspan], td[rowspan]");
       if (!nameCell) return;                                  // not a goals-table name cell
       var span = parseInt(nameCell.getAttribute("rowspan"), 10) || 1;
       var row = a.closest("tr");
@@ -410,10 +411,10 @@
     var ov = document.querySelector(".plc-modal-overlay");
     if (ov) ov.remove();
   }
-  function openTableModal(pid) {
+  function openTableModal(pid, nameHint) {
     closeModal();
     var card = cardFor(pid);
-    var name = (card && cardName(card)) || pid;
+    var name = (card && cardName(card)) || nameHint || pid;
     var sess = getSession();
 
     var overlay = el("div", { "class": "plc-modal-overlay" });
@@ -437,7 +438,7 @@
           unlockBtn.disabled = false;
           if (!ok) { statusEl.textContent = "That phrase doesn't match — try again, or sign in as a reviewer."; return; }
           try { localStorage.setItem(TEAM_PASS_KEY, p); } catch (e) {}
-          openTableModal(pid); // re-open in edit mode
+          openTableModal(pid, nameHint); // re-open in edit mode
         });
       });
       inp.addEventListener("keydown", function (e) { if (e.key === "Enter") unlockBtn.click(); });
@@ -490,17 +491,19 @@
       statusEl.textContent = "Saving…";
       var meta = { state: state, reason: reason, updated_by: sess.teamPass ? "(team)" : (sess.email || "(reviewer)"),
         updated_at: new Date().toISOString() };
-      // Optimistic: hide the card + add the entry.
+      // Optimistic: hide the card and its Annual Goals rows, add the entry.
       hideCard(pid, state);
+      setGoalsRowsHidden(pid, true);
       addEntry(pid, name, meta);
       mountControls();
       upsertLifecycle(pid, state, reason, sess).then(function (r) {
         if (r.ok) {
           _overlay[pid] = meta;
           closeModal();
+          announce(pid, state);
         } else {
           // rollback
-          showCard(pid); removeEntry(pid); mountControls();
+          showCard(pid); setGoalsRowsHidden(pid, false); removeEntry(pid); mountControls();
           confirm.disabled = false;
           statusEl.className = "plc-modal-status err";
           return r.text().then(function (t) {
@@ -509,7 +512,7 @@
           });
         }
       }).catch(function (e) {
-        showCard(pid); removeEntry(pid); mountControls();
+        showCard(pid); setGoalsRowsHidden(pid, false); removeEntry(pid); mountControls();
         confirm.disabled = false;
         statusEl.className = "plc-modal-status err";
         statusEl.textContent = "Network error: " + (e && e.message || "unknown");
@@ -520,6 +523,12 @@
     ta.focus();
   }
 
+  // A saved Table, Archive or Restore, for the other surfaces that list the row
+  // (the Annual Goals editor's Tabled and archived list, Sheet 75 card 3).
+  function announce(pid, state) {
+    try { window.dispatchEvent(new CustomEvent("cpl-lifecycle-changed", { detail: { pid: pid, state: state } })); } catch (e) {}
+  }
+
   function doRestore(pid, btn) {
     var sess = getSession();
     if (!sess) { return; }
@@ -527,19 +536,23 @@
     var name = entry ? entryNameOf(entry) : pid;
     var prevMeta = _overlay[pid];
     if (btn) { btn.disabled = true; btn.textContent = "Restoring…"; }
-    // Optimistic: un-hide the grid card (if present) + remove the entry.
+    // Optimistic: un-hide the grid card (if present) and its Annual Goals rows,
+    // remove the entry.
     showCard(pid);
+    setGoalsRowsHidden(pid, false);
     removeEntry(pid);
     mountControls();
     deleteLifecycle(pid, sess).then(function (r) {
-      if (r.ok) { delete _overlay[pid]; }
+      if (r.ok) { delete _overlay[pid]; announce(pid, null); }
       else {
         // rollback
+        setGoalsRowsHidden(pid, true);
         if (prevMeta) { hideCard(pid, prevMeta.state); addEntry(pid, name, prevMeta); mountControls(); }
         alert("Restore failed (HTTP " + r.status + "). " +
           (r.status === 401 || r.status === 403 ? "Your sign-in/phrase may have expired." : ""));
       }
     }).catch(function (e) {
+      setGoalsRowsHidden(pid, true);
       if (prevMeta) { hideCard(pid, prevMeta.state); addEntry(pid, name, prevMeta); mountControls(); }
       alert("Restore failed: " + (e && e.message || "network error"));
     });
@@ -653,6 +666,10 @@
     reconcile: reconcile,
     mountControls: mountControls,
     run: run,
+    // The Annual Goals editor opens the same dialog and the same Restore, so one
+    // writer keeps project_lifecycle (Sam, Open Asks Sheet 75 card 3).
+    openTable: function (pid, name) { openTableModal(pid, name); },
+    restore: function (pid) { doRestore(pid, null); },
     _setOverlay: function (m) { _overlay = m || {}; }  // test hook
   };
   if (typeof window !== "undefined") window.CPL_PROJECT_LIFECYCLE = api;

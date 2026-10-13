@@ -445,6 +445,7 @@
     paintSetTargets(state);
     paintActivityAddLinks(state);
     paintMoveLinks(state);
+    paintTabledList(state);
   }
 
   // An empty description is hidden from a reader; an editor sees "Add
@@ -528,21 +529,96 @@
   // reviewer-gated function (kb/supabase_workplan_move.sql). The team phrase does
   // not open it: whether it should is Sam's call on the Open Asks sheet.
   function canMove(sess) { return !!(sess && !sess.teamPass && sess.access_token); }
+  // Beside it, "Table" (Sam, Open Asks Sheet 75 card 3, "reviewer", 2026-10-13): an
+  // official sub-activity may leave the workplan, reversibly, by a signed-in
+  // reviewer. It opens the Activities tab's own Table / Archive dialog
+  // (project_lifecycle.js), so project_lifecycle keeps one writer.
+  function lifecycle() { return window.CPL_PROJECT_LIFECYCLE && window.CPL_PROJECT_LIFECYCLE.openTable ? window.CPL_PROJECT_LIFECYCLE : null; }
   function paintMoveLinks(state) {
     document.querySelectorAll('[data-title-edit="1"][data-pid]').forEach(function (title) {
       var cell = title.closest ? title.closest("th, td") : null;
       if (!cell) return;
-      var btn = cell.querySelector(".wpg-move");
-      if (!canMove(state.sess)) { if (btn) btn.parentNode.remove(); return; }
-      if (btn) return;
+      var row = cell.querySelector(".wpg-move-row");
+      if (!canMove(state.sess)) { if (row) row.remove(); return; }
+      if (row) return;
       var pid = title.getAttribute("data-pid");
-      btn = el("button", { "class": "wpg-btn wpg-move", "type": "button",
-        "aria-label": "Move " + pid + " " + (title.textContent || "").trim() }, ["Move"]);
+      var name = (title.textContent || "").trim();
+      var btn = el("button", { "class": "wpg-btn wpg-move", "type": "button",
+        "aria-label": "Move " + pid + " " + name }, ["Move"]);
       btn.addEventListener("click", function (e) {
         e.stopPropagation();
-        openMoveModal(state, pid, (title.textContent || "").trim());
+        openMoveModal(state, pid, name);
       });
-      cell.appendChild(el("div", { "class": "wpg-move-row" }, [btn]));
+      row = el("div", { "class": "wpg-move-row" }, [btn]);
+      if (lifecycle()) {
+        var tbl = el("button", { "class": "wpg-btn wpg-table", "type": "button",
+          "aria-label": "Table or archive " + pid + " " + name }, ["Table"]);
+        tbl.addEventListener("click", function (e) {
+          e.stopPropagation();
+          if (lifecycle()) lifecycle().openTable(pid, name);
+        });
+        row.appendChild(tbl);
+      }
+      cell.appendChild(row);
+    });
+  }
+
+  // What a reviewer tabled or archived, under the table, each with Restore: the row
+  // leaves the table at once and, after the rebuild, from the build itself, so this
+  // list is where it comes back from (the Activities tab's Tabled & Archived lists it too).
+  function fetchTabled() {
+    var h = { headers: { "apikey": SUPABASE_ANON } };
+    function rows(url) {
+      return fetch(url, h).then(function (r) { return r.ok ? r.json() : []; })
+        .then(function (x) { return Array.isArray(x) ? x : []; })
+        .catch(function () { return []; });
+    }
+    return Promise.all([
+      rows(SUPABASE_URL + "/rest/v1/project_lifecycle?select=project_id,state,reason,updated_at&order=updated_at.desc"),
+      rows(SUPABASE_URL + "/rest/v1/projects?select=id,name")
+    ]).then(function (got) {
+      var names = {};
+      got[1].forEach(function (p) { names[String(p.id)] = String(p.name || ""); });
+      return got[0].filter(function (l) {
+        return l && /^[0-9]+(\.[0-9]+)+$/.test(String(l.project_id)) && (l.state === "tabled" || l.state === "archived");
+      }).map(function (l) {
+        return { pid: String(l.project_id), state: l.state, reason: l.reason || "", name: names[String(l.project_id)] || "" };
+      });
+    });
+  }
+  function paintTabledList(state) {
+    var host = document.getElementById("tab-workplan-goals");
+    if (!host) return;
+    var box = host.querySelector(".wpg-tabled");
+    if (!canMove(state.sess) || !lifecycle() || !lifecycle().restore) { if (box) box.remove(); return; }
+    return fetchTabled().then(function (list) {
+      box = host.querySelector(".wpg-tabled");
+      if (!canMove(state.sess)) { if (box) box.remove(); return; }
+      if (!box) {
+        box = el("section", { "class": "wpg-tabled", "aria-labelledby": "wpg-tabled-h" }, []);
+        host.appendChild(box);
+      }
+      box.innerHTML = "";
+      box.appendChild(el("h3", { "id": "wpg-tabled-h" }, ["Tabled and archived (" + list.length + ")"]));
+      if (!list.length) {
+        box.appendChild(el("p", { "class": "wpg-tabled-none" }, ["None. Table on a sub-activity moves it here, reversibly."]));
+        return;
+      }
+      var ul = el("ul", {}, []);
+      list.forEach(function (t) {
+        var label = t.pid + (t.name ? " " + t.name : "");
+        var btn = el("button", { "class": "wpg-btn wpg-restore", "type": "button", "aria-label": "Restore " + label }, ["Restore"]);
+        btn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          btn.disabled = true;
+          if (lifecycle()) lifecycle().restore(t.pid);
+        });
+        ul.appendChild(el("li", {}, [
+          el("span", { "class": "wpg-tabled-name" }, [label]), " ",
+          el("span", { "class": "wpg-tabled-state" }, [t.state === "archived" ? "Archived" : "Tabled"]),
+          t.reason ? el("span", { "class": "wpg-tabled-reason" }, [" \u00b7 " + t.reason]) : "", " ", btn ]));
+      });
+      box.appendChild(ul);
     });
   }
 
@@ -1156,7 +1232,13 @@
       + '.wpg-count-label { font-weight:600; }'
       + '.wpg-empty { font-style:italic; }'
       + '.wpg-set-targets-row, .wpg-move-row { margin-top:0.3rem; }'
-      + '.wpg-move { font-size:0.75rem; }'
+      + '.wpg-move, .wpg-table { font-size:0.75rem; }'
+      + '.wpg-move-row { display:flex;flex-wrap:wrap;gap:0.6rem; }'
+      + '.wpg-tabled { margin-top:1.2rem; }'
+      + '.wpg-tabled h3 { font-size:0.95rem;margin:0 0 0.4rem 0;color:var(--text-strong); }'
+      + '.wpg-tabled ul { list-style:none;margin:0;padding:0; }'
+      + '.wpg-tabled li { display:flex;flex-wrap:wrap;align-items:center;gap:0.3rem;min-height:24px;padding:0.15rem 0; }'
+      + '.wpg-tabled-state, .wpg-tabled-reason, .wpg-tabled-none { color:var(--text-muted);font-size:0.8rem; }'
       + '.wpg-new-note { color:var(--text-muted);font-style:italic;font-size:0.8rem; }'
       + '.wpg-modal-card .wpg-keep-row { display:flex;align-items:center;gap:0.4rem;font-weight:500;color:var(--text-strong);min-height:24px;margin-top:0.6rem; }'
       + '.wpg-add-sub { font-size:0.72rem; }'
@@ -1908,6 +1990,8 @@
       paintEditability(state);
       paintAssocEditability();
     });
+    // A Table, Archive or Restore saved on either tab redraws the list here.
+    window.addEventListener("cpl-lifecycle-changed", function () { paintTabledList(state); });
     // The one add dialog, for the Activities tab and tests.
     window.CPL_WORKPLAN_ADD = {
       open: function (o) {
