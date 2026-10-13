@@ -101,6 +101,30 @@ check("5 a link counts only on this host and for a CourseId the search returned;
                        "https://other.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18607?entityType=Course&reportId=493"],
                       sd_rows, sd) is None and idx.report_form([], sd_rows, sd) is None)
 
+# 6. A trigger file main already holds starts nothing (S376): a branch that merged main
+# carried #2065's .run, and its next push re-ran the SDCCD index. Every workflow a
+# kb/ dot-file starts must gate its work on that file differing from main's.
+import glob
+import re as _re
+gated = {}
+for wf in sorted(glob.glob(os.path.join(ROOT, ".github", "workflows", "*.yml"))):
+    text = open(wf).read()
+    m = _re.search(r"push:.*?paths:\s*\n\s*- '(kb/[^']*/\.[a-z_-]+)'", text, _re.S)
+    if not m:
+        continue
+    trigger = m.group(1)
+    jobs = text.split("\njobs:\n", 1)[1]
+    names = _re.findall(r"^  ([a-z_-]+):\s*$", jobs, _re.M)
+    others = [n for n in names if n != "gate"]
+    gated[os.path.basename(wf)] = (
+        "gate" in names
+        and "git fetch -q --depth=1 origin main" in jobs
+        and ("git diff --quiet FETCH_HEAD -- %s" % trigger) in jobs
+        and all(_re.search(r"^  %s:\s*\n(?:    .*\n)*?    needs: \[?[^\n]*\bgate\b" % n, jobs, _re.M) for n in others)
+        and jobs.count("needs.gate.outputs.go == '1'") >= 1)
+check("6 every workflow a kb/ trigger file starts runs only when the pushed file differs from main's",
+      {"course-outline-census.yml", "course-outline-index.yml"} <= set(gated) and all(gated.values()), gated)
+
 src = open(os.path.join(ROOT, "kb", "_course_outline_index.py")).read()
 check("3 the index reads public pages only and never addresses the database (no Supabase address, REST path, "
       "rpc or PATCH); its one POST is the college's own search, replayed from the page",
