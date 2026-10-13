@@ -1,0 +1,26 @@
+{
+ "_readme": "S381 SkyRowan, 2026-10-13. Cabrillo's capture (run 38432112848) read no program page: the eLumen fast read (el_pages_fast, #2072) found no href=\"2026-2027/program/<slug>\" in the menu's publish call, and the rendered fallback found none on the front page or its two hubs. Bakersfield's menu linked every program under /program/. This read loads the same publish call and the front page to see how Cabrillo's menu names its program pages. Two page loads, no model call.",
+ "college": "Cabrillo College",
+ "questions": {
+  "menu_links": "Which addresses the menu's publish call links, and the path a program page uses (program/<slug>, or another segment).",
+  "program_list": "Which front-page links lead to programs, degrees or certificates, and what they are titled."
+ },
+ "keywords": [
+  "href=\\\\?\"(?:/catalog/)?2026-2027/[a-z0-9-]+/",
+  "[Dd]egrees? and [Cc]ertificates?",
+  "[Pp]rograms? of [Ss]tudy",
+  "[Aa]ssociate (?:in|of) (?:Arts|Science)"
+ ],
+ "pages": [
+  {
+   "answers": ["menu_links"],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/2026-2027,welcome?tenant=cabrillo.elumenapp.com&api=https://api-prod.elumenapp.com:443"
+  },
+  {
+   "answers": ["program_list"],
+   "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "network": true,
+   "links": "program|degree|certificate|major|associate|pathway|area"
+  }
+ ]
+}

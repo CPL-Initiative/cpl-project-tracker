@@ -1092,6 +1092,19 @@ def el_program_slugs(html_text: str, catalog: str) -> list[str]:
     return out
 
 
+def el_department_slugs(html_text: str, catalog: str) -> list[str]:
+    """The department slugs a publish call's menu links, each once, in order.
+    Cabrillo's menu links departments (href="2026-2027/department/accounting"), not
+    programs; each department's content call links its programs at
+    2026-2027/program/<slug> (reads 38433649784, 38437381277, S381)."""
+    pat = re.compile(r'href="(?:/catalog/)?%s/department/([^"/?#]+)"' % re.escape(catalog or ""), re.I)
+    out = []
+    for slug in pat.findall(html_text or ""):
+        if slug not in out:
+            out.append(slug)
+    return out
+
+
 def el_text(html_text: str) -> str:
     """A content call's page as the lines a reader sees, without styles, scripts
     or icons."""
@@ -1139,9 +1152,17 @@ def el_pages_fast(reader, start: str, report: dict) -> list[dict]:
     errors: list = []
     catalog = el_catalog(start)
     shell = el_html(el_fetch(reader, el_publish_url(start, el_start_parts(start)), errors))
-    slugs = el_program_slugs(shell, catalog)[:MAX_PAGES]
+    slugs = el_program_slugs(shell, catalog)
     report["elumen"] = {"catalog": catalog, "read": "publish/content", "menu_programs": len(slugs),
                         "errors": errors}
+    if not slugs:
+        # A menu of departments (Cabrillo): each department's content call lists its programs.
+        depts = el_department_slugs(shell, catalog)
+        for d in depts:
+            page = el_html(el_fetch(reader, el_publish_url(start, ["department", d], content=True), errors))
+            slugs += [s for s in el_program_slugs(page, catalog) if s not in slugs]
+        report["elumen"].update(menu_departments=len(depts), department_programs=len(slugs))
+    slugs = slugs[:MAX_PAGES]
     pages = []
     for i, slug in enumerate(slugs):
         html_text = el_html(el_fetch(reader, el_publish_url(start, ["program", slug], content=True), errors))

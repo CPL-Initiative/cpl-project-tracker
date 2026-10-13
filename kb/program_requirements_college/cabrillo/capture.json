@@ -1,0 +1,2858 @@
+{
+ "college": "Cabrillo College",
+ "catalog_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+ "platform": "elumen",
+ "catalog_year": "2026-2027",
+ "programs": 291,
+ "with_closed_list": 281,
+ "started": "2026-10-13T17:53:28Z",
+ "elumen": {
+  "catalog": "2026-2027",
+  "read": "publish/content",
+  "menu_programs": 0,
+  "errors": [],
+  "menu_departments": 70,
+  "department_programs": 291,
+  "program_pages": 291
+ },
+ "pages_read": 291,
+ "loads": 362,
+ "seconds": 1551.7,
+ "found": 271,
+ "by_method": {
+  "no_closed_list": 10,
+  "not_found": 7,
+  "page_claimed": 3,
+  "sitemap_page": 271
+ },
+ "shared_pages": {
+  "https://cabrillo.elumenapp.com/catalog/2026-2027/program/political-science-associate-in-arts-for-transfer-a-a-t-fall-2026": [
+   "06396",
+   "32067"
+  ],
+  "https://cabrillo.elumenapp.com/catalog/2026-2027/program/english-associate-in-arts-for-transfer-a-a-t-fall-2026": [
+   "09602",
+   "32200"
+  ],
+  "https://cabrillo.elumenapp.com/catalog/2026-2027/program/mathematics-2-0-associate-in-science-for-transfer-a-s-t-fall-2026": [
+   "30754",
+   "46244"
+  ],
+  "https://cabrillo.elumenapp.com/catalog/2026-2027/program/art-history-associate-in-arts-for-transfer-a-a-t-fall-2026": [
+   "31610",
+   "32201"
+  ],
+  "https://cabrillo.elumenapp.com/catalog/2026-2027/program/communication-studies-2-0-associate-in-arts-for-transfer-a-a-t-fall-2026": [
+   "32069",
+   "43111"
+  ],
+  "https://cabrillo.elumenapp.com/catalog/2026-2027/program/elementary-teacher-education-integrated-programs-associate-in-arts-for-transfer-a-a-t-fall-2026": [
+   "33673",
+   "46340"
+  ],
+  "https://cabrillo.elumenapp.com/catalog/2026-2027/program/video-certificate-of-achievement-fall-2026": [
+   "41099",
+   "46185"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "06362",
+   "title": "Nursing",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "36677",
+   "title": "Math PLUS: Preparation for Precalculus and Calculus",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "36680",
+   "title": "Math PLUS: Preparation for Algebra and Business Calculus",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "36837",
+   "title": "Math PLUS: Preparation for Statistics",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "37545",
+   "title": "Fundamentals of Teaching with Migrant Student Populations",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42748",
+   "title": "EMT-B National and State Preparation",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42764",
+   "title": "Cybersecurity Basics",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "36878",
+   "title": "Academic Writing and Research Literacy",
+   "award": "Noncredit program",
+   "pages": [
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/digital-literacy-certificate-of-competency-fall-2025"
+   ]
+  },
+  {
+   "control_number": "37328",
+   "title": "Functional Nutrition",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/culinary-arts-and-hospitality-management-certificate-of-achievement-fall-2026",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/entry-level-baking-certificate-of-achievement-fall-2026",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/entry-level-catering-certificate-of-achievement-fall-2026",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/entry-level-cook-certificate-of-achievement-fall-2026",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/entry-level-restaurant-preparation-certificate-of-achievement-fall-2026",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/personal-trainer-certificate-of-achievement-fall-2025",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/culinary-arts-and-hospitality-management-associate-in-science-a-s-fall-2026"
+   ]
+  },
+  {
+   "control_number": "43086",
+   "title": "Cybersecurity",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/information-security-certificate-of-achievement-fall-2025",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/cloud-computing-certificate-of-achievement-fall-2025",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/computer-information-systems-foundations-certificate-of-achievement-fall-2025",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/computer-support-certificate-of-achievement-fall-2025",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/information-technology-it-support-apprentice-certificate-of-achievement-fall-2025",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/networking-certificate-of-achievement-fall-2025",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/operating-systems-certificate-of-achievement-fall-2026",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/information-technology-associate-in-science-a-s-fall-2026",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/computer-support-associate-in-science-a-s-fall-2025"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 8,
+  "0.8-1.0": 45,
+  "1.0": 218
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 271,
+  "list": [
+   {
+    "control_number": "06326",
+    "title": "Astronomy",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/astronomy-associate-in-science-a-s-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06328",
+    "title": "Biology",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/biology-associate-in-science-a-s-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06329",
+    "title": "General Business",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/general-business-associate-in-science-a-s-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06330",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/accounting-associate-in-science-a-s-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06334",
+    "title": "Computer Applications/Business Technology",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/computer-applications-business-technology-associate-in-science-a-s-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06339",
+    "title": "Health Science",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/health-science-associate-in-arts-a-a-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06341",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/engineering-associate-in-science-a-s-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06345",
+    "title": "Engineering Technology",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/engineering-technology-associate-in-science-a-s-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06348",
+    "title": "Art History",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/art-history-associate-in-arts-a-a-fall-2026",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06349",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/music-associate-in-arts-a-a-fall-2025",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06350",
+    "title": "Theatre Arts/Drama",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/theatre-arts-drama-associate-in-arts-a-a-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06352",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/dance-associate-in-arts-a-a-fall-2025",
+    "coverage": 0.974,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06353",
+    "title": "Art Photography",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/art-photography-associate-in-arts-a-a-fall-2026",
+    "coverage": 0.949,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06358",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/spanish-associate-in-arts-a-a-fall-2026",
+    "coverage": 0.955,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06366",
+    "title": "Dental Hygiene",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/dental-hygiene-associate-in-science-a-s-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06370",
+    "title": "Radiologic Technology",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/radiologic-technology-associate-in-science-a-s-fall-2025",
+    "coverage": 0.739,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06372",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/english-associate-in-arts-a-a-fall-2026",
+    "coverage": 0.963,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06373",
+    "title": "Communication Studies",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/communication-studies-associate-in-arts-a-a-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06374",
+    "title": "Philosophy",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/philosophy-associate-in-arts-a-a-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06377",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/mathematics-associate-in-science-a-s-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06378",
+    "title": "Physics",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/physics-associate-in-science-a-s-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06379",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/chemistry-associate-in-science-a-s-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06380",
+    "title": "Geology",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/geology-associate-in-science-a-s-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06381",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/psychology-associate-in-arts-a-a-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06385",
+    "title": "Early Childhood Education",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/early-childhood-education-associate-in-science-a-s-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06389",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/fire-technology-associate-in-science-a-s-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06391",
+    "title": "Anthropology",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/anthropology-associate-in-arts-a-a-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06393",
+    "title": "Economics",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/economics-associate-in-arts-a-a-fall-2026",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06394",
+    "title": "History",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/history-associate-in-arts-a-a-fall-2026",
+    "coverage": 0.886,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06395",
+    "title": "Geography",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/geography-associate-in-arts-a-a-fall-2025",
+    "coverage": 0.947,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06396",
+    "title": "Political Science",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/political-science-associate-in-arts-for-transfer-a-a-t-fall-2026",
+    "coverage": 0.895,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06397",
+    "title": "Sociology",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/sociology-associate-in-arts-a-a-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06398",
+    "title": "Culinary Arts & Hospitality Management",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/culinary-arts-and-hospitality-management-associate-in-science-a-s-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06402",
+    "title": "Construction Management",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/construction-management-associate-in-science-a-s-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09590",
+    "title": "Greenhouse and Nursery Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/greenhouse-and-nursery-management-certificate-of-achievement-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09591",
+    "title": "Landscape Horticulture",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/landscape-horticulture-associate-in-science-a-s-fall-2025",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09592",
+    "title": "Landscape Horticulture",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/landscape-horticulture-certificate-of-achievement-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09594",
+    "title": "Administrative Support",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/administrative-support-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09597",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/computer-science-associate-in-science-a-s-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09599",
+    "title": "Building Inspection and Construction Codes",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/building-inspection-and-construction-codes-associate-in-science-a-s-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09600",
+    "title": "Medical Assisting",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/medical-assisting-associate-in-science-a-s-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09602",
+    "title": "General Science",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/english-associate-in-arts-for-transfer-a-a-t-fall-2026",
+    "coverage": 0.685,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09739",
+    "title": "Women's Studies",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/women-s-studies-associate-in-arts-a-a-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10007",
+    "title": "General Business",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/general-business-associate-in-arts-a-a-fall-2026",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10011",
+    "title": "Journalism",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/journalism-associate-in-arts-a-a-fall-2026",
+    "coverage": 0.893,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11293",
+    "title": "Art Studio",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/art-studio-associate-in-arts-a-a-fall-2026",
+    "coverage": 0.963,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12365",
+    "title": "Human Services",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/human-services-associate-in-science-a-s-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12744",
+    "title": "Early Childhood Education Administration",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/early-childhood-education-administration-certificate-of-achievement-fall-2025",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12745",
+    "title": "Infant Toddler Care",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/infant-toddler-care-certificate-of-achievement-fall-2025",
+    "coverage": 0.824,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12746",
+    "title": "Working with Culturally Diverse Families",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/working-with-culturally-diverse-families-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12747",
+    "title": "Anti-Bias Curriculum",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/anti-bias-curriculum-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12748",
+    "title": "Curriculum Planning",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/curriculum-planning-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12749",
+    "title": "Children's Literacy Curriculum",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/children-s-literacy-curriculum-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16552",
+    "title": "Computer Support",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/computer-support-associate-in-science-a-s-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16553",
+    "title": "Computer Programming",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/computer-programming-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16555",
+    "title": "Java Programming",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/java-programming-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16556",
+    "title": "C++ Programming",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/c-programming-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16558",
+    "title": "Bilingual Spanish English Teaching",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/bilingual-spanish-english-teaching-certificate-of-achievement-fall-2025",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20403",
+    "title": "General Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/general-business-certificate-of-achievement-fall-2025",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20404",
+    "title": "Accounting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/accounting-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20406",
+    "title": "Computer Applications/Business Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/computer-applications-business-technology-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20409",
+    "title": "Journalism/Blogging",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/journalism-blogging-certificate-of-achievement-fall-2026",
+    "coverage": 0.955,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20410",
+    "title": "Digital Publishing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/graphic-design-associate-in-science-a-s-fall-2026",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20413",
+    "title": "Computer Support",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/computer-support-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20414",
+    "title": "Engineering Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/engineering-technology-certificate-of-achievement-fall-2025",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20415",
+    "title": "Construction  Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/construction-management-certificate-of-achievement-fall-2025",
+    "coverage": 0.946,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20416",
+    "title": "Building Inspection and Construction Codes",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/building-inspection-and-construction-codes-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20417",
+    "title": "Medical Assisting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/medical-assisting-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20418",
+    "title": "Teaching",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/teaching-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20419",
+    "title": "Culinary Arts and Hospitality Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/culinary-arts-and-hospitality-management-certificate-of-achievement-fall-2026",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20421",
+    "title": "Human Services",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/human-services-certificate-of-achievement-fall-2025",
+    "coverage": 0.905,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30754",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/mathematics-2-0-associate-in-science-for-transfer-a-s-t-fall-2026",
+    "coverage": 0.588,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30756",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/sociology-associate-in-arts-for-transfer-a-a-t-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31441",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/early-childhood-education-associate-in-science-for-transfer-a-s-t-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31610",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/art-history-associate-in-arts-for-transfer-a-a-t-fall-2026",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31661",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/kinesiology-associate-in-arts-for-transfer-a-a-t-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31689",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/psychology-associate-in-arts-for-transfer-a-a-t-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31987",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/physics-associate-in-science-for-transfer-a-s-t-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32027",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/administration-of-justice-associate-in-science-for-transfer-a-s-t-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32067",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/political-science-associate-in-arts-for-transfer-a-a-t-fall-2026",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32068",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/theatre-arts-associate-in-arts-for-transfer-a-a-t-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32069",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/communication-studies-2-0-associate-in-arts-for-transfer-a-a-t-fall-2026",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32200",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/english-associate-in-arts-for-transfer-a-a-t-fall-2026",
+    "coverage": 0.919,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32201",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/art-history-associate-in-arts-for-transfer-a-a-t-fall-2026",
+    "coverage": 0.96,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32291",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/music-associate-in-arts-for-transfer-a-a-t-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32352",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/spanish-associate-in-arts-for-transfer-a-a-t-fall-2026",
+    "coverage": 0.958,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32498",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/geography-associate-in-arts-for-transfer-a-a-t-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32499",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/philosophy-associate-in-arts-for-transfer-a-a-t-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32524",
+    "title": "Energy Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/energy-management-certificate-of-achievement-fall-2026",
+    "coverage": 0.786,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32544",
+    "title": "Energy Management",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/energy-management-associate-in-science-a-s-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32566",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/anthropology-associate-in-arts-for-transfer-a-a-t-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33277",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/studio-arts-associate-in-arts-for-transfer-a-a-t-fall-2026",
+    "coverage": 0.972,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33667",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/geology-associate-in-science-for-transfer-a-s-t-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33673",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/elementary-teacher-education-integrated-programs-associate-in-arts-for-transfer-a-a-t-fall-2026",
+    "coverage": 0.766,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33947",
+    "title": "Music Technology and Recording Arts",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/music-technology-and-recording-arts-associate-in-science-a-s-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35130",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/biology-associate-in-science-for-transfer-a-s-t-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35219",
+    "title": "Digital Literacy",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/digital-literacy-certificate-of-competency-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35317",
+    "title": "Advanced English Fluency",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/advanced-english-fluency-certificate-of-competency-spring-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35570",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/economics-associate-in-arts-for-transfer-a-a-t-fall-2026",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35584",
+    "title": "Intermediate English Fluency",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/intermediate-english-fluency-certificate-of-competency-spring-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35590",
+    "title": "Business Information Worker",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/business-information-worker-certificate-of-achievement-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35651",
+    "title": "Agriculture Plant Science",
+    "award": "A.S. T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/agriculture-plant-science-associate-in-science-for-transfer-a-s-t-fall-2026",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35910",
+    "title": "Beginning Technology Skills",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/beginning-technology-skills-certificate-of-completion-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36833",
+    "title": "Basic Kitchen Skills",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/basic-kitchen-skills-certificate-of-completion-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37493",
+    "title": "Advanced Academic English Language Skills",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/advanced-academic-english-language-skills-certificate-of-competency-fall-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37494",
+    "title": "Intermediate Academic English Language Skills",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/intermediate-academic-english-language-skills-certificate-of-competency-fall-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37905",
+    "title": "Biology Laboratory and Research Skills",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/biology-laboratory-and-research-skills-certificate-of-completion-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37915",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/environmental-science-associate-in-science-for-transfer-a-s-t-fall-2026",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37918",
+    "title": "Communication Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/communication-studies-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37951",
+    "title": "Community Health Worker",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/community-health-worker-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37984",
+    "title": "Honors Scholar",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/honors-scholar-certificate-of-achievement-fall-2026",
+    "coverage": 0.904,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38360",
+    "title": "Latin American and Latino/a Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/latin-american-and-latino-a-studies-certificate-of-achievement-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38489",
+    "title": "Fundamentals of Sports Medicine Athletic Training",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/fundamentals-of-sports-medicine-athletic-training-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38568",
+    "title": "Technical Theatre",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/technical-theatre-certificate-of-achievement-fall-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38977",
+    "title": "Magnetic Resonance Imaging",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/magnetic-resonance-imaging-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38994",
+    "title": "Lifeguard Professional",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/lifeguard-professional-certificate-of-completion-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38995",
+    "title": "Personal Trainer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/personal-trainer-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39197",
+    "title": "Strategic Job Preparation",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/strategic-job-preparation-certificate-of-completion-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39198",
+    "title": "Professional Workplace Skills",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/professional-workplace-skills-certificate-of-completion-summer-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39464",
+    "title": "Computed Tomography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/computed-tomography-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39750",
+    "title": "English for Careers",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/english-for-careers-certificate-of-competency-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40395",
+    "title": "Human Relations and Resources",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/human-relations-and-resources-certificate-of-achievement-fall-2026",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40396",
+    "title": "Business Information Worker Level II",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/business-information-worker-level-ii-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40397",
+    "title": "Entrepreneurship and Small Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/entrepreneurship-and-small-business-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40398",
+    "title": "Office Software",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/office-software-certificate-of-achievement-fall-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40404",
+    "title": "Biotechnology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/biotechnology-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40406",
+    "title": "Global Citizen",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/global-citizen-certificate-of-completion-fall-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40496",
+    "title": "Customer Relationship Management (CRM)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/customer-relationship-management-crm-certificate-of-achievement-fall-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40585",
+    "title": "Payroll Accounting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/payroll-accounting-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40612",
+    "title": "Musical Theatre",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/musical-theatre-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40613",
+    "title": "Tax Preparation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/tax-preparation-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40745",
+    "title": "Sustainability",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/sustainability-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40780",
+    "title": "Community Health Worker",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/community-health-worker-certificate-of-completion-spring-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40835",
+    "title": "Computer Lab Support Assistant",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/computer-lab-support-assistant-certificate-of-completion-fall-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41098",
+    "title": "Image Use in Professional Settings",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/image-use-in-professional-settings-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41099",
+    "title": "Video",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/video-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41142",
+    "title": "Historical and Alternative Photographic Processes",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/historical-and-alternative-photographic-processes-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41143",
+    "title": "Traditional Black and White Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/traditional-black-and-white-photography-certificate-of-achievement-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41184",
+    "title": "American English Pronunciation",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/american-english-pronunciation-certificate-of-competency-fall-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41186",
+    "title": "Liberal Arts and Sciences: Emphasis in Kinesiology and Wellness",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/liberal-arts-and-sciences-emphasis-in-kinesiology-and-wellness-associate-in-arts-a-a-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41188",
+    "title": "CPA Exam Preparation",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/cpa-exam-preparation-certificate-of-achievement-fall-2025",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41305",
+    "title": "Basic Photoshop for Photography",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/basic-photoshop-for-photography-certificate-of-completion-fall-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41306",
+    "title": "Industry Exam Preparation",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/industry-exam-preparation-certificate-of-completion-fall-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41307",
+    "title": "CCNA Exam Preparation",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/ccna-exam-preparation-certificate-of-completion-fall-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41341",
+    "title": "Entry Level Baking",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/entry-level-baking-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41342",
+    "title": "Entry Level Cook",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/entry-level-cook-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41343",
+    "title": "Entry Level Restaurant Preparation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/entry-level-restaurant-preparation-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41345",
+    "title": "Entry Level Catering",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/entry-level-catering-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41374",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/business-administration-2-0-associate-in-science-for-transfer-a-s-t-fall-2026",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41429",
+    "title": "Liberal Arts and Sciences: Emphasis in Math and Science",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/liberal-arts-and-sciences-emphasis-in-math-and-science-associate-in-arts-a-a-fall-2025",
+    "coverage": 0.986,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41628",
+    "title": "Bookkeeping",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/bookkeeping-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41741",
+    "title": "Drug and Alcohol Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/drug-and-alcohol-studies-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41958",
+    "title": "A+ Certification Preparation",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/a-certification-preparation-certificate-of-completion-fall-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41959",
+    "title": "Google IT Support",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/google-it-support-certificate-of-completion-summer-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41967",
+    "title": "Art and Maker Entrepreneurship Online",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/art-and-maker-entrepreneurship-online-certificate-of-completion-fall-2026",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41991",
+    "title": "Foundations of Teamwork",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/foundations-of-teamwork-certificate-of-completion-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41997",
+    "title": "De-escalation: Verbal Communication and Self-Defense",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/de-escalation-verbal-communication-and-self-defense-certificate-of-completion-fall-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42083",
+    "title": "Information Technology",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/information-technology-associate-in-science-a-s-fall-2026",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42215",
+    "title": "General Horticulture and Crop Production",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/general-horticulture-and-crop-production-certificate-of-achievement-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42266",
+    "title": "Human Services General Practice",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/human-services-general-practice-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42363",
+    "title": "Building Performance and Energy Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/building-performance-and-energy-management-certificate-of-achievement-fall-2026",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42364",
+    "title": "Entry Level Building Inspection and Construction Codes",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/entry-level-building-inspection-and-construction-codes-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42365",
+    "title": "User Interface and User Experience (UI/UX)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/user-interface-and-user-experience-ui-ux-certificate-of-achievement-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42430",
+    "title": "CyberCamp",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/cybercamp-certificate-of-completion-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42431",
+    "title": "Accounting for Payroll",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/accounting-for-payroll-certificate-of-completion-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42432",
+    "title": "Advanced Photography and Visual Media",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/advanced-photography-and-visual-media-certificate-of-completion-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42433",
+    "title": "Basic Office Skills I",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/basic-office-skills-i-certificate-of-completion-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42434",
+    "title": "Basic Office Skills II",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/basic-office-skills-ii-certificate-of-completion-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42435",
+    "title": "Medical Assisting Administrative Exam Preparation",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/medical-assisting-administrative-exam-preparation-certificate-of-completion-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42436",
+    "title": "Public Safety Career Preparation",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/public-safety-career-preparation-certificate-of-completion-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42437",
+    "title": "Public Safety Reports, Evidence, and Testimony",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/public-safety-reports-evidence-and-testimony-certificate-of-completion-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42438",
+    "title": "Mushroom Cultivation",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/mushroom-cultivation-certificate-of-completion-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42440",
+    "title": "Portrait Photography",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/portrait-photography-certificate-of-completion-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42441",
+    "title": "Medical Assisting Clinical Exam Preparation",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/medical-assisting-clinical-exam-preparation-certificate-of-completion-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42452",
+    "title": "Construction Business Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/construction-business-management-certificate-of-achievement-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42453",
+    "title": "Construction Project Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/construction-project-management-certificate-of-achievement-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42459",
+    "title": "Podcasting",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/podcasting-certificate-of-completion-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42476",
+    "title": "Construction Plumbing and Mechanical Inspection and Codes",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/construction-plumbing-and-mechanical-inspection-and-codes-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42477",
+    "title": "Arboriculture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/arboriculture-certificate-of-achievement-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42478",
+    "title": "Permaculture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/permaculture-certificate-of-achievement-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42479",
+    "title": "Web Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/web-design-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42482",
+    "title": "Landscape Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/landscape-design-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42494",
+    "title": "Sustainable Construction and Blueprint Reading",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/sustainable-construction-and-blueprint-reading-certificate-of-completion-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42505",
+    "title": "Entry Level Construction Skills",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/entry-level-construction-skills-certificate-of-completion-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42510",
+    "title": "Introduction to Infant/Toddler Development",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/introduction-to-infant-toddler-development-certificate-of-completion-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42532",
+    "title": "Entry Level Construction and Energy Management Skills",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/entry-level-construction-and-energy-management-skills-certificate-of-achievement-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42537",
+    "title": "Graphic Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/graphic-design-certificate-of-achievement-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42556",
+    "title": "Digital Imaging",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/digital-imaging-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42557",
+    "title": "Typography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/typography-certificate-of-achievement-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42622",
+    "title": "Accounting for Quickbooks",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/accounting-for-quickbooks-certificate-of-completion-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42662",
+    "title": "Sustainability and Environmental Studies",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/sustainability-and-environmental-studies-associate-in-science-a-s-fall-2026",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42714",
+    "title": "Game Audio Production",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/game-audio-production-certificate-of-completion-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42721",
+    "title": "Food Presentation and Photography",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/food-presentation-and-photography-certificate-of-completion-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42730",
+    "title": "Cybersecurity Competitions I",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/cybersecurity-competitions-i-certificate-of-completion-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42731",
+    "title": "Cybersecurity Competitions II",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/cybersecurity-competitions-ii-certificate-of-completion-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42747",
+    "title": "Tutor Preparation",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/tutor-preparation-certificate-of-completion-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42749",
+    "title": "Cybersecurity Competitions III",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/cybersecurity-competitions-iii-certificate-of-completion-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42779",
+    "title": "Jazz Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/jazz-studies-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42781",
+    "title": "Voice",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/voice-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42841",
+    "title": "Digital Music Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/digital-music-production-certificate-of-achievement-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42842",
+    "title": "Audio Recording and Mixing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/audio-recording-and-mixing-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42866",
+    "title": "Game Audio Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/game-audio-production-certificate-of-achievement-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42897",
+    "title": "Basic Construction",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/basic-construction-certificate-of-completion-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42898",
+    "title": "Family Development Worker",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/family-development-worker-certificate-of-completion-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42931",
+    "title": "Introduction to Child Development",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/introduction-to-child-development-certificate-of-completion-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42954",
+    "title": "Phlebotomy Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/phlebotomy-technician-certificate-of-achievement-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42963",
+    "title": "Small Business",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/small-business-certificate-of-completion-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42982",
+    "title": "Computer-aided Drafting and Design",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/computer-aided-drafting-and-design-certificate-of-achievement-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42994",
+    "title": "STEM Teaching Assistant Preparation",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/stem-teaching-assistant-preparation-certificate-of-completion-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43082",
+    "title": "Cinema Arts Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/cinema-arts-studies-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43083",
+    "title": "3D Animation and Rendering",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/3d-animation-and-rendering-certificate-of-achievement-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43084",
+    "title": "Architecture Drafting and Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/architecture-drafting-and-design-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43085",
+    "title": "Wine Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/wine-studies-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43095",
+    "title": "Digital Illustration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/digital-illustration-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43111",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/communication-studies-2-0-associate-in-arts-for-transfer-a-a-t-fall-2026",
+    "coverage": 0.867,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43153",
+    "title": "Accessible Design and Creation",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/accessible-design-and-creation-certificate-of-completion-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43171",
+    "title": "Latin American Music",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/latin-american-music-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43247",
+    "title": "Audio Recording and Mixing",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/audio-recording-and-mixing-certificate-of-completion-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43248",
+    "title": "Digital Music Production",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/digital-music-production-certificate-of-completion-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43325",
+    "title": "Creative Careers",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/creative-careers-certificate-of-completion-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43367",
+    "title": "Wine Studies",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/wine-studies-associate-in-science-a-s-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43394",
+    "title": "Black and White Technical Photography",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/black-and-white-technical-photography-certificate-of-completion-spring-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43395",
+    "title": "Mexican Mariachi and Banda Ensemble",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/mexican-mariachi-and-banda-ensemble-certificate-of-completion-spring-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43556",
+    "title": "Piano",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/piano-certificate-of-achievement-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43582",
+    "title": "Introduction to UI/UX Design",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/introduction-to-ui-ux-design-certificate-of-completion-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43652",
+    "title": "Intercollegiate Athletics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/intercollegiate-athletics-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43666",
+    "title": "Global Wines",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/global-wines-certificate-of-completion-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43750",
+    "title": "Marine Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/marine-science-certificate-of-achievement-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43799",
+    "title": "Art Studio Digital Fabrication",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/art-studio-digital-fabrication-certificate-of-completion-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43803",
+    "title": "Heat-Pump Systems",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/heat-pump-systems-certificate-of-completion-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43804",
+    "title": "Basic Technical Photography",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/basic-technical-photography-certificate-of-completion-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43805",
+    "title": "Master Tutor",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/master-tutor-certificate-of-completion-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43820",
+    "title": "Photography Skills for Marketing and Outreach",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/photography-skills-for-marketing-and-outreach-certificate-of-completion-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43961",
+    "title": "Coaching",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/coaching-certificate-of-achievement-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44038",
+    "title": "Marketing and Promotion",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/marketing-and-promotion-certificate-of-completion-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44147",
+    "title": "Early Childhood Education for Elementary Teaching",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/early-childhood-education-for-elementary-teaching-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44173",
+    "title": "Early Childhood Education for Teaching Transitional Kindergarten",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/early-childhood-education-for-teaching-transitional-kindergarten-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44217",
+    "title": "Agriculture Business",
+    "award": "A.S. T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/agriculture-business-associate-in-science-for-transfer-a-s-t-fall-2026",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44346",
+    "title": "E-commerce",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/e-commerce-certificate-of-completion-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44498",
+    "title": "WordPress Web Design and Development",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/wordpress-web-design-and-development-certificate-of-completion-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44547",
+    "title": "Web Design and Development",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/web-design-and-development-certificate-of-completion-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44703",
+    "title": "Motion Graphics",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/motion-graphics-certificate-of-completion-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44704",
+    "title": "Photography Technician",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/photography-technician-certificate-of-completion-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44706",
+    "title": "Video",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/video-certificate-of-completion-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44886",
+    "title": "Wildland Firefighter",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/wildland-firefighter-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44887",
+    "title": "Firefighter Academy",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/firefighter-academy-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44888",
+    "title": "Emergency Medical Technician (EMT)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/emergency-medical-technician-emt-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44889",
+    "title": "Game and Interactive Media Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/game-and-interactive-media-design-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44898",
+    "title": "Film, Television, and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/film-television-and-electronic-media-associate-in-science-for-transfer-a-s-t-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44927",
+    "title": "Basic Welding",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/basic-welding-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44933",
+    "title": "Advanced Sports Medicine and Athletic Training",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/advanced-sports-medicine-and-athletic-training-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44937",
+    "title": "Advanced Welding",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/advanced-welding-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44978",
+    "title": "Information Technology (IT) Institute Pre-apprentice",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/information-technology-it-institute-pre-apprentice-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44992",
+    "title": "Exercise and Sports Science",
+    "award": "A.A. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/exercise-and-sports-science-associate-in-arts-a-a-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44997",
+    "title": "Environmental Science",
+    "award": "A.S. Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/environmental-science-associate-in-science-a-s-fall-2026",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45117",
+    "title": "Emergency Medical Responder",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/emergency-medical-responder-certificate-of-completion-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45185",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/public-health-associate-in-science-for-transfer-a-s-t-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45306",
+    "title": "Spanish Intermediate Proficiency",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/spanish-intermediate-proficiency-certificate-of-achievement-fall-2026",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45380",
+    "title": "Networking",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/networking-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45386",
+    "title": "Cloud Computing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/cloud-computing-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45387",
+    "title": "Information Technology (IT) Support Apprentice",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/information-technology-it-support-apprentice-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45401",
+    "title": "Computer Information Systems Foundations",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/computer-information-systems-foundations-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45415",
+    "title": "Information Security",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/information-security-certificate-of-achievement-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45653",
+    "title": "Early Childhood Education Professional Pathways",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/early-childhood-education-professional-pathways-certificate-of-completion-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45679",
+    "title": "Operating Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/operating-systems-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46185",
+    "title": "Video",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/video-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46244",
+    "title": "Mathematics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/mathematics-2-0-associate-in-science-for-transfer-a-s-t-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46273",
+    "title": "Certified Nursing Assistant",
+    "award": "Noncredit program",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/certified-nursing-assistant-certificate-of-completion-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46340",
+    "title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A- T Degree",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/elementary-teacher-education-integrated-programs-associate-in-arts-for-transfer-a-a-t-fall-2026",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46388",
+    "title": "Intercultural Competency and Global Awareness",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/intercultural-competency-and-global-awareness-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46519",
+    "title": "Python Programming",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/python-programming-certificate-of-achievement-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38442109713"
+}

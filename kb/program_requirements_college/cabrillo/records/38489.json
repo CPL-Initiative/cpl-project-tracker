@@ -1,0 +1,194 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "38489",
+ "shape": "certificate",
+ "title": "Fundamentals of Sports Medicine Athletic Training",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/fundamentals-of-sports-medicine-athletic-training-certificate-of-achievement-fall-2025",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6485,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6485,
+    "output_tokens": 1262,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1262,
+  "output_tokens_details": {
+   "thinking_tokens": 384
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05118,
+ "ms": 10306,
+ "seconds": 10.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "KIN13"
+   ],
+   "flagged": [
+    "KIN13"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    16.0
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fundamentals of Sports Medicine Athletic Training Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Analyze the anatomy of specific body systems to assess, treat, and rehabilitate common athletic injuries.",
+    "Design and monitor preventive and rehabilitative plans, incorporating stretching, strengthening, modalities, and training techniques.",
+    "Assess victims of injury and perform first aid care needed in medical emergencies, including cardiopulmonary resuscitation and the proper use of the Automatic External Defibrillator (AED).",
+    "Construct return-to-play guidelines for various athletic injuries."
+   ],
+   "careers": [
+    "athletic training",
+    "personal training",
+    "orthopedics",
+    "chiropractic care",
+    "massage therapy",
+    "physical therapy aides",
+    "coaching profession"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "BIO4",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN10A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN10AL",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN10B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN10BL",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes without a space (BIO4, KIN10A, etc.); these match closed-list codes BIO 4, KIN 10A, KIN 10AL, KIN 10B, KIN 10BL.",
+   "KIN10BL is printed at 2 credits in the catalog (requirements and program map) while the state file stores 1 unit.",
+   "KIN13 - First Aid is required by the catalog but is not on the closed list; recorded as a catalog addition.",
+   "Catalog states 16 credits for the certificate; the printed course credits also sum to 16.",
+   "Program map (Fall/Spring/Summer start) repeats the same required courses and was not recorded as separate blocks.",
+   "Careers taken from the description's list of sports medicine professions and the mention of the coaching profession."
+  ]
+ },
+ "extracted_run": "38442109713"
+}

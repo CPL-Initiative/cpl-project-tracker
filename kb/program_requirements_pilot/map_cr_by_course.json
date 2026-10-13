@@ -1,8 +1,8 @@
 {
- "_what": "MAP's credit recommendations per course at the harvest's fifteen colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City San Diego Mesa, Bakersfield and Coastline): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
+ "_what": "MAP's credit recommendations per course at the harvest's sixteen colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline and Cabrillo): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
  "_source": "public.map_college_cr_unit (reviewer-gated) joined to map_colleges by college_id; exhibit titles from map_ace_exhibit_titles, else chatbox_exhibits. A college_course string naming several courses ('ADJ-13 ...(3.0), ADJ-19 ...(3.0)') counts toward each course it names. Course code = the SUBJ-NUM token with the hyphen read as a space.",
  "_read_at": "2026-10-13",
- "_read_by": "SkyRowan (S381) through the Supabase MCP: Bakersfield (100 course codes) and Coastline (26) added; per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads c58de704f09a7b58007336979431dace and 8bccde4ad1bae0d610b6de34413e24e9 in SQL and over the filed rows. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added (44 course codes); the per-college md5 over code|recs|exhibits|untitled reads 9ad02bf038663b2c19ac0c6b8aed2574 and the md5 over each code's titles (title#source#recs, in the read's order) 38e86115426ffd0ca2856d3ad6713150, in SQL and over the filed rows. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey (94 course codes) and San Diego City (33) added; per-college md5 over code|recs|exhibits|untitled reads 115340c8a405300f47c2bd0223964f68 and 249410c6592148fbf3beb7b68b7f1cd0 in SQL and over the filed rows. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added (33 course codes; the per-course fingerprint over code, recs, exhibits, untitled exhibits and titles reads 5c7d3a90393e710daa4f686a2f56c917 in SQL and over the filed rows). Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
+ "_read_by": "SkySpruce (S383) through the Supabase MCP: Cabrillo added (112 course codes); the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 51b488541fdab60ea9e4d093eb052c0a and the md5 over each code's titles (code#title#source#recs, in the read's order) d71fa73bd6952487451eaeafb878f3eb, in SQL and over the filed rows. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield (100 course codes) and Coastline (26) added; per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads c58de704f09a7b58007336979431dace and 8bccde4ad1bae0d610b6de34413e24e9 in SQL and over the filed rows. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added (44 course codes); the per-college md5 over code|recs|exhibits|untitled reads 9ad02bf038663b2c19ac0c6b8aed2574 and the md5 over each code's titles (title#source#recs, in the read's order) 38e86115426ffd0ca2856d3ad6713150, in SQL and over the filed rows. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey (94 course codes) and San Diego City (33) added; per-college md5 over code|recs|exhibits|untitled reads 115340c8a405300f47c2bd0223964f68 and 249410c6592148fbf3beb7b68b7f1cd0 in SQL and over the filed rows. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added (33 course codes; the per-course fingerprint over code, recs, exhibits, untitled exhibits and titles reads 5c7d3a90393e710daa4f686a2f56c917 in SQL and over the filed rows). Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
  "_refresh": "By hand, the way kb/ccr_cpl_funnel.json is refreshed: run kb/program_requirements_pilot/map_cr_by_course.sql through the Supabase MCP when the funnel reloads (map-custom-report-load.yml) or the harvest adds a college, and file the rows here.",
  "colleges": {
   "Bakersfield College": {
@@ -2693,6 +2693,1920 @@
       "recs": 2,
       "title": "Allied Trades Specialist",
       "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   }
+  },
+  "Cabrillo College": {
+   "AP 26A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Visual Story Telling",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AP 46A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Photoshop for Photography I",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AP 46B": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Photoshop for Photography 2",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "AP 6": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Intro to Digital Photography High School Articulation",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ART 4": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Two-Dimensional Design and Color",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ART 95A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Survey of Digital Fabrication for Studio Arts",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "BIO 4": {
+    "recs": 3,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Hospital Corpsman Basic (USN)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Anatomy",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "BIO 41T": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Biotech Fundamental High School Articulation",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "BUS 88": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Starting and Operating a New Small Business",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CABT 102": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Spreadsheet Calculations",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CAHM 132": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Wine & Spirit Education Trust (WSET) Level III",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CAHM 134": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Wine & Spirit Education Trust (WSET) Level III",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CAHM 136": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "French Wines",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Wine & Spirit Education Trust (WSET) Level III",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CAHM 155": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Baking & Past High School Articulation",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CAHM 179": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Wine & Spirit Education Trust (WSET) Level III",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CAHM 33": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Wine & Spirit Education Trust (WSET) Level III",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CAHM 35": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Wine & Spirit Education Trust (WSET) Level III",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CAHM 50A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Intro Culinary Art High School Articulation",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CAHM 50B": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Intro Entree Prep High School Articulation",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CAHM 50C": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Intro Appetizers High School Articulation",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CAHM 64": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "American National Standard Institute (ANSI) Food Manager Certificate",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CAHM 72A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Wine & Spirit Education Trust (WSET) Level III",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CAHM 72B": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Wine & Spirit Education Trust (WSET) Level III",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CAHM 74": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Wine & Spirit Education Trust (WSET) Level III",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CAHM 76": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Wine & Spirit Education Trust (WSET) Level III",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CAHM 77": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Wine & Spirit Education Trust (WSET) Level III",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CEM 151": {
+    "recs": 2,
+    "exhibits": 4,
+    "exhibits_by_source": {
+     "ACE": 2,
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Builder",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Construction Fundamentals High School Articulation",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Construction Fundamentals: Principles and Practice",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Inter-service Builder Apprentice Training (Navy)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CEM 151EL": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "General Electrician Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CEM 151FC": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Finish Carpentry High School Articulation",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CEM 151L": {
+    "recs": 2,
+    "exhibits": 4,
+    "exhibits_by_source": {
+     "ACE": 2,
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Builder",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Construction Fundamentals Lab: Principles and Practices",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Construction Lab High School Articulation",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Inter-service Builder Apprentice Training (Navy)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CEM 154": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Builder",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Inter-service Builder Apprentice Training (Navy)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CEM 155": {
+    "recs": 2,
+    "exhibits": 4,
+    "exhibits_by_source": {
+     "ACE": 3,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Builder",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Construction Electrician (CE)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "General Electrician Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CEM 159": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Construction Management Crew Leader",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CEM 160": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Builder",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CEM 161": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Builder",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Inter-service Builder Apprentice Training (Navy)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CEM 162PS": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Passive Solar Design and Construction",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CEM 162SP": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "General Electrician Certification Solar",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CEM 163": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Renewable Energy Sy High School Articulation",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CEM 175C": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "General Electrician Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CEM 175R": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "General Electrician Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CEM 177": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Residential Framing",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CEM 178A": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Residential Construction 1 High School Articulation",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Residential Construction Front End",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CEM 178B": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Residential Construction 2 High School Articulation",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CEM 76": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Heat Pump Inverters",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CEM 77": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "High Performance Electric Water Heaters",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CEM 99": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Construction Apprenticeship 2 units",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 15": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Programming With Python High School Articulation",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Python Prgramming for Everyone",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 71": {
+    "recs": 3,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CompTIA A+ Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "It Essentials High School Articulation",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 73": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Iot Fundamentals High School Articulation",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 75": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CompTIA Security+ Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician System Administration",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 81": {
+    "recs": 3,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "ACE": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Journeyman Communications (JCC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tactical Computer Network Operator (TCNO)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CIS 90": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Introduciton to UNIX/Linux",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CJ 1": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Intro to Criminal J High School Articulation",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CJ 2": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Police/Basic Correction Specialist Phases 1---4, Phase 5 (95B) and Phase 5 (95C)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "CDCR Corrections Academy",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CJ 3": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CJ 4": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CJ 6": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CJ 7": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Criminal Justice Written Communication",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "CSU GE E": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Firefighter 1 Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DM 1": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Introduction to Digital Media High School Articulation",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DM 22": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Introduction to UI/UX Design",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DM 34": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Video Editing",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Video Editing High School Articulation",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DM 56": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Web Design Using WordPress",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "DMCP 10": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ENGL C1000": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Academic Reading and Writing ENGL C1000",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ETECH 131": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Intermediate Creo and Solidworks",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ETECH 24": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Introduction to AutoCAD",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ETECH 31": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Introduction to Electronic Circuit and Schematic Design",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ETECH 40": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "3D Animation",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ETECH 41": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Advanced AutoCAD",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ETECH 43": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Intermediate 3D Animation",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ETECH 61": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Architecture/Green Design: Planning and Construction",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ETECH 62": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Architecture/Green Design: Implementation using AutoCAD",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "ETECH 75": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "BIM and Sustainable Design Strategies I",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FIN 4": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Personal Financial Management by Correspondence",
+      "source": "ACE"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FT 1": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Protection Org High School Articulation",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Firefighter 1 Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FT 175": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CSTI Certified FRA & FRO Instructor",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FT 183": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Emergency Medical Technician (EMT)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Emergency Medical Technician NRE and CPR",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FT 183L": {
+    "recs": 2,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Emergency Medical Technician (EMT)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Emergency Medical Technician NRE and CPR",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FT 189": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CDF Wildland Fire Academy",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FT 2": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "SFT Fire Inspector 1 Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FT 3": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "SFT Fire Inspector 1 Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FT 4": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Building Construction for Fire Protection",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Cal-JAC Firefighter EMT",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FT 5": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Firefigher 1 and HAZMAT Tech-Specialist-Incident Cmdr or HAZWOPER",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Firefighter 1 Certification",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FT 6ES": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Principles of Emergency Services Safety and Survival",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FT 7": {
+    "recs": 1,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "MAP": 3
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CSTI Certified FRA & FRO Instructor",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "HAZMAT Tech",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "HAZWOPER",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "FT 9": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Investigator 1A, 1B, 1C",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "NFPA 1033: Fire Investigator",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "HORT 176": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Permaculture Design Certificate",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "HORT 1B": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Horticulture: Crop Prod High School Articulation",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "HORT 2": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Biodynamic Farmer Foundation Year Certificate",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "HORT 99": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Biodynamic Farmer Development Year Certificate",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "HS 10": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "unnamed": 2
+    },
+    "titles": null,
+    "untitled_exhibits": 2
+   },
+   "HS 130": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Introduction to Community Health Work",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "HS 131": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Community Health Worker Skills",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "KIN 10A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Athl Injury Prevent High School Articulation",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "KIN 10AL": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Sports Med Lab I High School Articulation",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "KIN 13": {
+    "recs": 9,
+    "exhibits": 17,
+    "exhibits_by_source": {
+     "ACE": 13,
+     "MAP": 4
+    },
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Expeditionary Combat Skills",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Life Support (BLS) Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cavalry Scout",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Constructionman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Emergency Medical Technician NRE and CPR",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Fighting Vehicle Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Health Care Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Indirect Fire Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Naval Aircrewman Candidate School",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Paramedic License - First Aid CPR",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Public Safety First Aid (PSFA)",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "KIN 22L": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    },
+    "titles": null,
+    "untitled_exhibits": 1
+   },
+   "KIN 23A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    },
+    "titles": null,
+    "untitled_exhibits": 1
+   },
+   "KIN 23B": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    },
+    "titles": null,
+    "untitled_exhibits": 1
+   },
+   "MA 70": {
+    "recs": 1,
+    "exhibits": 3,
+    "exhibits_by_source": {
+     "ACE": 2,
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Hospitalman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Medical Terminology High School Articulation",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MUS 57A": {
+    "recs": 1,
+    "exhibits": 2,
+    "exhibits_by_source": {
+     "MAP": 2
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Music Production I and MIDI",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Music Production I High School Articulation",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MUS 59A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Game Audio Production 1",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MUS 59B": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Game Audio Production 2",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "MUS 99": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Music Technology Recording Arts Internship",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "RT 50A": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Patient Care in Imaging Technology",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "RT 52": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Radiation Physics",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "RT 60": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Principles of Radiographic Imaging",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "RT 62": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Principles of Radiation Protection",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "SPAN 1": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Elem Spanish I High School Articulation",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "SPAN 2": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Elementary Spanish II",
+      "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   },
+   "W 150": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Arc Welding High School Articulation",
+      "source": "MAP"
      }
     ],
     "untitled_exhibits": 0
