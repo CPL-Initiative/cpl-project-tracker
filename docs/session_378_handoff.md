@@ -23,6 +23,10 @@ queue; `list_sessions` first and agree one writer with any session still holding
   Checked in Chromium. No summary has been posted with it yet.
 - **#2056 (the Move control) fixed and green at `656e14f`, still a draft, still HELD.** Shard 3 failed because the Move
   dialog put Cancel before Move; Move leads now and the test checks every dialog.
+- **UI pass: the Annual Report tab (#2061)**, its first audit. Underlined word controls in place of four glyph
+  buttons, a labeled editor, the preview a keyboard-reachable region, the status announced and red only on a
+  failure, tokens only, left-aligned prose, the data date in italics. a11y 1 finding to 0 in both themes; the ledger
+  records it. Merge it on `test` if S377 has not.
 - **`apply_migration` is down.** S377's two tries (the full Move SQL, then the table alone) timed out with nothing
   landing; `supabase_migrations.schema_migrations` has nothing newer than 23:19Z on 2026-10-12. New KB note:
   `playbook-when-apply-migration-times-out-read-the-migrations-table`.
@@ -50,7 +54,8 @@ queue; `list_sessions` first and agree one writer with any session still holding
    in a draft is the prompt's next revision; record his edits as a lesson, and a ruling as a `cpl_memory` row.
 3. **Small cleanup with the next `card_actions.js` change:** drop `a.act-update-link` from `UPDATE_SEL` (no page prints
    it since run 583).
-4. **UI pass:** `python3 scripts/ui_pass.py --next` (S377 skipped it; the ledger keeps the view due).
+4. **UI pass at your checkpoint:** `python3 scripts/ui_pass.py --next` names the next view (S377 did the Annual
+   Report).
 
 ## Decisions Sam made
 
@@ -76,7 +81,6 @@ queue; `list_sessions` first and agree one writer with any session still holding
 
 ## Skipped this checkpoint (and why)
 
-- **UI pass (9):** the run's room went to PR D's own browser check; the ledger keeps the next view due.
 - **Pipeline view (7):** the pipeline did not move.
 - **`kb/README.md`, `README.md`:** no KB structure or new user-facing tab.
 - **`--apply` handoff stamping:** not run, so 376 stays live for its queue.
@@ -85,4 +89,5 @@ queue; `list_sessions` first and agree one writer with any session still holding
 
 ## Subscriptions and check-ins
 
-At sign-off S377 drops its subscription to #2056 and arms no check-in. #2059 merged (unsubscribed). No artifact watch.
+At sign-off S377 drops its subscriptions (#2056, and #2060, #2061 and vault #328 if still open) and arms no
+check-in. #2059 merged (unsubscribed). No artifact watch.
