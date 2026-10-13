@@ -895,6 +895,44 @@ check(C.near_miss(it, [page(CL + "pathways/x/art/", "Art", "ART C100")]) == {"wh
       "with no page naming the program, it says so")
 check(C.near_miss(dict(it, closed_list=[]), [own_thin]) is None, "a program with no listed course has no near miss")
 
+# ── the coarse net reads a hidden Requirements tab (S382) ───────────────────
+# Capture-only run 38438077425: 98 of Coastline's 106 not-found programs were refused by
+# the coarse net. Page read 38443044852: Building Codes Inspector A.S. shows its Overview
+# alone (1,080 characters); its courses sit in a hidden Requirements tab, and textContent
+# runs each code into the cell before it, so no code token has a word boundary.
+bci = {"control_number": "20372", "title": "Building Codes Inspector", "award": "A.S. Degree",
+       "closed_list": [{"code": "BCI C%d" % n} for n in (100, 101, 102, 103, 104, 105, 106, 107, 108, 111)]}
+bci_req = "Requirements\nCourse\tTitle\tUnits\n" + "\n".join(
+    "BCI C%d\tCode Course %d\t3" % (n, n) for n in (100, 101, 102, 103, 104, 105, 106, 107, 108, 111))
+bci_glued = ("Building Codes Inspector, Associate of Science DegreeOVERVIEWREQUIREMENTSCoastline's Building Codes "
+             "Inspector program (BCI) is a comprehensive building codes program.CourseTitleUnits"
+             + "".join("BCI C%dCode Course %d3" % (n, n) for n in (100, 101, 102, 103, 104, 105, 106, 107, 108, 111)))
+bci_got = {"title": "Building Codes Inspector, Associate of Science Degree < Coastline College",
+           "h1": "Building Codes Inspector, Associate of Science Degree",
+           "body": "Building Codes Inspector, Associate of Science Degree\nOVERVIEW\nREQUIREMENTS\n"
+                   "Coastline's Building Codes Inspector program (BCI) is a comprehensive building codes program.",
+           "content": bci_glued,
+           "tabPanels": [{"label": "REQUIREMENTS", "id": "requirementstextcontainer", "text": bci_req}]}
+bci_page = {"url": CL + "pathways/law-safety/building-codes-inspector/building-codes-inspector-as/",
+            "title": bci_got["title"], "h1": bci_got["h1"], "body": bci_got["body"], "content": bci_got["content"],
+            "got": bci_got}
+check(not ({"BCIC100", "BCIC101"} & C.page_codes(bci_got["body"] + "\n" + bci_got["content"])),
+      "textContent runs each code into the cell before it, so the old net read none of them")
+check(C.page_net(bci_got) >= {P.norm_code(c["code"]) for c in bci["closed_list"]},
+      "the net reads the hidden Requirements tab cell by cell and names all ten listed courses")
+bci_page["codes"] = C.page_net(bci_got)
+bc = C.choose_page(bci, [bci_page])
+check(bc is not None and bc["field"] == "innerText+tabs" and bc["coverage"] == 1.0,
+      "the program's own page is accepted from its visible text and its tab: %s" % ((bc["field"], bc["coverage"]) if bc else None,))
+check(C.near_miss(bci, [dict(bci_page, codes=C.page_codes(bci_got["body"] + "\n" + bci_got["content"]))])["why"]
+      .startswith("coarse net"), "with the old net the same page is refused at the coarse net (the run's near miss)")
+cap_src = open(os.path.join(ROOT, "kb", "_program_requirements_college.py")).read()
+check('"codes": page_net(got)' in cap_src, "the capture loop builds each page's net with page_net()")
+nm3 = C.near_miss(bci, [dict(bci_page, codes=set(), got=dict(bci_got, error="Execution context was destroyed"))])
+check(nm3["error"] == "Execution context was destroyed" and nm3["chars"]["content"] == len(bci_glued)
+      and nm3["chars"]["tabs"] > 0 and nm3["tab_panels"] == [["REQUIREMENTS", len(bci_req)]],
+      "a near miss files what the capture held for the page: its script error, its text sizes, its tab panels")
+
 sql = open(os.path.join(ROOT, "chatbox", "supabase_program_requirement_records_college_load.sql")).read()
 body = sql.split("as $$")[1].split("$$;")[0]
 check("on conflict (college, control_number) do nothing" in body and "update" not in body.lower()

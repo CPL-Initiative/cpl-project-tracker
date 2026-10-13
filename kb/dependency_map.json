@@ -4,7 +4,7 @@
   "supabase_tables": 97,
   "rpcs": 38,
   "edge_functions": 7,
-  "file_datasets": 645,
+  "file_datasets": 644,
   "external_services": 177,
   "consumers": 438,
   "workflows": 52,
@@ -313,7 +313,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1032
+     "line": 1051
     }
    ],
    "main_committers": []
@@ -478,7 +478,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 971
+     "line": 990
     }
    ],
    "main_committers": []
@@ -1856,7 +1856,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 966
+     "line": 968
     }
    ],
    "main_committers": []
@@ -1971,7 +1971,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 968
+     "line": 970
     }
    ],
    "main_committers": []
@@ -1983,7 +1983,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 969
+     "line": 971
     }
    ],
    "main_committers": []
@@ -2057,7 +2057,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 674
+     "line": 693
     }
    ],
    "main_committers": []
@@ -2137,7 +2137,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 967
+     "line": 969
     }
    ],
    "main_committers": []
@@ -12331,19 +12331,6 @@
    "served": false,
    "main_committers": []
   },
-  "file:kb/program_requirements_college/chaffey/capture_preview.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_program_requirements_college.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 1414
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
   "file:kb/program_requirements_maps_sample.json": {
    "consumers": [
     {
@@ -19545,7 +19532,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 1454
+     "line": 1473
     }
    ],
    "main_committers": []

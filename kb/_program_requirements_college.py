@@ -257,6 +257,17 @@ def page_codes(text: str) -> set[str]:
             {P.norm_code(a + " " + b) for a, b in CODE_TOKEN_2.findall(t)})
 
 
+def page_net(got: dict) -> set[str]:
+    """The coarse net's codes for one loaded page: its visible text, its textContent, and
+    its hidden tab panels read cell by cell. Coastline prints each program's courses only
+    in a hidden Requirements tab, and textContent runs every code into the cell before it
+    ("Units3BCI C100Introduction"), so the net read none of Building Codes Inspector A.S.'s
+    ten listed courses on its own page and refused 98 of the 106 programs it found no page
+    for (capture-only run 38438077425, S382). The link search has no net and read
+    Information Technology A.S.'s page the same way at coverage 1.0, from the tab."""
+    return page_codes("\n".join([got.get("body") or "", got.get("content") or "", P.hidden_tabs_text(got)]))
+
+
 # A CourseLeaf address names the award in its last segment: field-ironworkers-aa,
 # public-health-science-as-t, medical-assistant-certifciate-achievement (the
 # catalog's own spelling), energy-corps-certificate-completion. Read from the
@@ -445,9 +456,17 @@ def near_miss(program: dict, pages: list[dict]) -> dict | None:
         why = "a short list on a page whose label does not name the program"
     else:
         why = "a candidate, lost to a program the page names more fully"
+    # What the capture itself held for the page (S382): a failed page script leaves the
+    # Reader's 6,000-character innerText alone, and a page read prints only what it renders.
+    got = pg.get("got") or {}
     return {"url": pg["url"], "label": {"award": award_hit, "title": title}, "field": field,
             "coverage": round(cov, 3), "body": round(P.coverage(fb, courses), 3),
-            "content": round(P.coverage(fc, courses), 3), "net": net, "listed": len(want), "why": why}
+            "content": round(P.coverage(fc, courses), 3), "net": net, "listed": len(want), "why": why,
+            "error": got.get("error"),
+            "chars": {"body": len(got.get("body") or ""), "content": len(got.get("content") or ""),
+                      "tabs": len(P.hidden_tabs_text(got))},
+            "tab_panels": [[(t.get("label") or t.get("id") or "")[:40], len(t.get("text") or "")]
+                           for t in (got.get("tabPanels") or [])][:8]}
 
 
 def choose_page(program: dict, pages: list[dict]) -> dict | None:
@@ -1204,7 +1223,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             got["links"] = (got.get("links") or [])[:300]   # a program page's menus need not ride in memory
             pages.append({"url": got.get("final_url") or u, "title": got.get("title"), "h1": got.get("h1"),
                           "body": got.get("body"), "content": got.get("content"), "got": got,
-                          "codes": page_codes((got.get("body") or "") + "\n" + (got.get("content") or ""))})
+                          "codes": page_net(got)})
             if i % 50 == 0:
                 print("  read %d of %d pages" % (i, len(queue)), flush=True)
         report["pages_read"] = len(pages)
