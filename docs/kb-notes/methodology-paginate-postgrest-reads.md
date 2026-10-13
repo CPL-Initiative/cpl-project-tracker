@@ -1,11 +1,14 @@
 ---
 title: "Paginate every PostgREST read that can outgrow 1,000 rows"
 created: 2026-07-08
+updated: 2026-10-13
 kb-status: published
 tags: [methodology, supabase, postgrest, pagination, overlay, cer, silent-truncation]
 artifacts:
   - credential_reference.js
   - tests/cer_overlay_pagination.test.js
+  - program_requirements.js
+  - tests/program_requirements.test.js
 related:
   - "[[docs/exhibit_canonicalization_lessons]]"
   - "[[docs/kb-notes/methodology-refresh-token-before-write]]"
@@ -78,3 +81,25 @@ activity** (overlays, logs, assignment namespaces). A read that returns
 exactly 1,000 rows in production is almost certainly truncated — treat that
 number as a smoke signal. Guard with a test whose fixture exceeds one page
 (`tests/cer_overlay_pagination.test.js` uses 2,400 rows across 3 pages).
+
+## Paging is not enough when each row is heavy (2026-10-13)
+
+The Program Requirements tab read 2,840 records with their full `record` and
+`display` jsonb in one request. Two faults stacked. The response stopped at
+1,000 rows (the edge log showed `Content-Range: 0-999/*`), and the read as
+anon answered **500**: the anon role's `statement_timeout` is **3 s**
+(authenticated 8 s, set in `pg_roles.rolconfig`), and 1,000 such rows are
+11.3 MB of JSON, 34 MB for all of them. Paging fixed the cap, but six 3 MB
+pages in flight still timed out.
+
+The rule that follows: **size a read by its bytes as well as its rows.**
+Read a light index of every row up front (the columns the cross-row views
+count, with JSON paths such as `alias:display->checks->>arithmetic`), and
+read heavy columns only for the rows a reader asks for: a filter the reader
+picks (`college=in.("A","B")`, values quoted), or a key a link names. Give a
+5xx page one retry, and fail the whole read when a page fails twice, naming
+the table, so a short list never passes for the whole one. After deploying a
+changed read, check `edge_logs` for each request's status,
+`response.headers.content_range` and `response.origin_time`.
+Worked example: #2088, #2089, #2090; lessons S384 in
+`docs/program_requirements_harvest_lessons.md`.

@@ -394,7 +394,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [One dependency derivation, many projections](../kb-notes/methodology-one-dependency-derivation-many-projections.md) | methodology | published | 2026-08-30 | 2026-08-30 |
 | [One symptom, two causes — and fixing the obvious one changes nothing](../kb-notes/methodology-one-symptom-two-causes-and-the-obvious-fix-changes-nothing.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [Overlay live data onto generated cards via a stamped data-key hook](../kb-notes/methodology-live-overlay-onto-generated-cards.md) | methodology | published | 2026-06-26 | 2026-06-26 |
-| [Paginate every PostgREST read that can outgrow 1,000 rows](../kb-notes/methodology-paginate-postgrest-reads.md) | methodology | published | 2026-07-08 |  |
+| [Paginate every PostgREST read that can outgrow 1,000 rows](../kb-notes/methodology-paginate-postgrest-reads.md) | methodology | published | 2026-07-08 | 2026-10-13 |
 | [Parse PDF column grids positionally (x/y anchors), never from linearized text — the MQ Index mis-bins](../kb-notes/methodology-positional-pdf-column-grids.md) | methodology | published | 2026-07-11 |  |
 | [Populate-on-file-drop seam for grounded reference data](../kb-notes/methodology-populate-on-file-drop-seam-for-grounded-reference-data.md) | methodology | published | 2026-07-29 | 2026-07-29 |
 | [Probe the class before calling a refusal local](../kb-notes/methodology-probe-the-class-before-calling-a-refusal-local.md) | methodology | published | 2026-10-04 | 2026-10-04 |

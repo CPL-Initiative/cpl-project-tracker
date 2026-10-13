@@ -411,6 +411,9 @@ async function seedRecords(page, theme) {
     S.review = { email: "reviewer@example.org", records: [art], verdicts: [], error: null };
     S.error = null;
     S.open = { "Irvine Valley College|10265": true };
+    /* The Records view lists the colleges a reader picks (2026-10-13): pick the record's, so its
+       card, the picker and the find controls are all measured. */
+    S.pick = ["Irvine Valley College"]; S.rscope = "pick";
     S.view = "records";
     M._render();
     const fix = document.querySelector("#program-requirements-root .prh-verdict button[aria-expanded]");
