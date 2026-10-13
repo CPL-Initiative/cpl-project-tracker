@@ -28,9 +28,12 @@ Your moniker is **SkyRowan**, on the **program requirements** queue. Session 380
 - 11:45Z: pasted the course_outcomes table.
 - ~13:40Z and 14:29Z: *"go ahead with the extractions when they land"* (Bakersfield and Coastline).
 - *"Keep rolling with our harvest."* Next college by tier is his standing order of work, not a new card.
-- Open: he asked how to stop pasting SQL. Proposed (in chat, no answer yet): a runner workflow that applies a
-  committed migration with a Supabase access token secret, optionally behind a GitHub environment he approves
-  with one tap. Do not build until he says go.
+- ~14:45Z: *"Build the runner with or without my approvals"* (stop SQL pastes). S380 built it as **#2076 (draft,
+  HELD)**: `scripts/supabase_migrate.py`, `supabase-migrate.yml` (trigger `kb/migrations/.apply`, the `database`
+  environment carries his optional approval), `tests/supabase_migrate_test.py` 6/6, using the existing
+  `SUPABASE_ACCESS_TOKEN` (sbp_). The session's permission check REFUSED the `kb/governance_surface_map.json`
+  entry dismissing this new production write path; a refusal is a hold, never a workaround. Ask Sam to allow that
+  step, then finish: the governance entry, the `js-tests.yml` lints wiring, Rule 10's pointer, merge on `test`.
 
 ## Docs to read, in order
 
@@ -68,9 +71,12 @@ Your moniker is **SkyRowan**, on the **program requirements** queue. Session 380
 
 ## Skipped this checkpoint (and why)
 
+- **EMERGENCY top-up (S380, ~14:50Z):** context at 49K; only this handoff and one memory row were refreshed
+  after the runner hold. Lessons, lane, INDEX and the vault note do not yet mention #2076.
+
 - **UI pass (9):** no room for a fix PR; the view stays due. **Pipeline view (7):** the M-ID pipeline did not move.
 - **Open Asks sheet rebuild:** no room; see priority 6.
 
 ## Subscriptions and check-ins
 
-S380 drops its subscriptions on #2072 and #2074 and its pending check-in at sign-off. No artifact watch.
+S380 dropped its subscriptions on #2072 and #2074 and its check-in; it holds #2075 (this checkpoint) until it merges. No artifact watch.
