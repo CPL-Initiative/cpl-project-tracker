@@ -1,0 +1,21 @@
+{
+ "_readme": "S380 SkyAlder, 2026-10-13. Chaffey's outcomes FAQ (chaffey.edu/outcomes/faq.php) says current course learning outcomes are kept in META CurriQunet. Discovery run 38392162605 found its dashboard links two public reports per course: Course Outline (reportId 225), which prints Course Objectives and no outcomes heading, and Course Outline - PDF (1225). This read loads the PDF report for the same course the discovery sampled (ACCTG 1A, CourseId 2368), to see whether it prints the course's outcomes. One page load, no model call.",
+ "college": "Chaffey College",
+ "questions": {
+  "course_outcomes": "Whether the Course Outline - PDF report prints the course's student or course learning outcomes, and under what heading."
+ },
+ "keywords": [
+  "[Oo]utcome",
+  "SLO",
+  "CLO",
+  "[Oo]bjective",
+  "[Uu]pon (successful )?completion"
+ ],
+ "pages": [
+  {
+   "answers": ["course_outcomes"],
+   "url": "https://chaffey.curriqunet.com/DynamicReports/AllFieldsReportByEntity/2368?entityType=Course&reportId=1225",
+   "network": true
+  }
+ ]
+}
