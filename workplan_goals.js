@@ -1175,6 +1175,78 @@
       .catch(function () { return []; });
   }
 
+  // A sub-activity added since the page was built is not drawn until tonight's
+  // rebuild, so Under could not offer it as a parent (Sam, 2026-10-13, adding
+  // under 4.7 EMS Corps). The add dialog reads the live rows instead: every id
+  // for the duplicate check, and as parents the sub-activities the page does not
+  // show yet, less a tabled or archived one (project_lifecycle hides those from
+  // the table) and the D.* helper rows the table leaves out.
+  function fetchLiveProjects() {
+    var h = { headers: { "apikey": SUPABASE_ANON } };
+    function rows(url) {
+      return fetch(url, h).then(function (r) { return r.ok ? r.json() : []; })
+        .then(function (x) { return Array.isArray(x) ? x : []; })
+        .catch(function () { return []; });
+    }
+    return Promise.all([
+      rows(SUPABASE_URL + "/rest/v1/projects?select=id,name"),
+      rows(SUPABASE_URL + "/rest/v1/project_lifecycle?select=project_id,state")
+    ]).then(function (got) {
+      var hidden = {};
+      got[1].forEach(function (l) {
+        if (l && (l.state === "tabled" || l.state === "archived")) hidden[String(l.project_id)] = true;
+      });
+      return {
+        ids: got[0].map(function (r) { return String(r.id); }),
+        parents: got[0].filter(function (r) {
+          return /^[0-9]+(\.[0-9]+)+$/.test(String(r.id)) && !hidden[String(r.id)];
+        }).map(function (r) { return { id: String(r.id), name: String(r.name || "") }; })
+      };
+    });
+  }
+
+  function parentOptionText(pid, name) {
+    var depth = pid.split(".").length - 1;
+    return new Array(depth + 1).join("\u00a0\u00a0\u00a0\u00a0") + pid + " " + (name || "");
+  }
+
+  // Under lists each Activity directly above its own sub-activities. It listed the
+  // four Activities first and every sub-activity after them, so Activity 4 sat
+  // far above 4.1-4.6 and adding 4.7 looked impossible (Sam, 2026-10-13).
+  function fillParentOptions(parentSel, ids, added) {
+    var keep = parentSel.value, placed = {};
+    while (parentSel.firstChild) parentSel.removeChild(parentSel.firstChild);
+    function addProject(pid) {
+      placed[pid] = true;
+      parentSel.appendChild(el("option", { "value": pid },
+        [parentOptionText(pid, ids.projectNames[pid]) + (added.indexOf(pid) !== -1 ? " (new)" : "")]));
+    }
+    ids.activities.forEach(function (aid) {
+      parentSel.appendChild(el("option", { "value": aid },
+        ["Activity " + aid + (ids.activityNames[aid] ? ": " + ids.activityNames[aid] : "")]));
+      ids.projects.forEach(function (pid) { if (homeActivityOf(pid) === aid) addProject(pid); });
+    });
+    ids.projects.forEach(function (pid) { if (!placed[pid]) addProject(pid); });
+    if (keep) parentSel.value = keep;
+  }
+
+  // Adds to Under each live sub-activity the page does not show yet, in order,
+  // marked new, keeping the current choice. Returns the ids it added.
+  function addLiveParents(parentSel, ids, parents) {
+    var added = [];
+    parents.forEach(function (p) {
+      if (ids.projects.indexOf(p.id) !== -1) return;
+      if (ids.activities.indexOf(homeActivityOf(p.id)) === -1) return;
+      ids.projects.push(p.id);
+      ids.projectNames[p.id] = p.name;
+      added.push(p.id);
+    });
+    if (!added.length) return added;
+    ids.projects.sort(byNatural);
+    fillParentOptions(parentSel, ids, added);
+    return added;
+  }
+
   // Tracks the active Esc listener so closeAddModal can detach it. Without
   // this, every modal open stacks another listener that survives Cancel /
   // overlay-click close paths until the next Esc keypress.
@@ -1378,15 +1450,7 @@
       var parentWrap = el("div", {}, []);
       parentWrap.appendChild(el("label", { "for": "wpg-add-parent" }, ["Under"]));
       parentSel.id = "wpg-add-parent";
-      ids.activities.forEach(function (aid) {
-        parentSel.appendChild(el("option", { "value": aid },
-          ["Activity " + aid + (ids.activityNames[aid] ? ": " + ids.activityNames[aid] : "")]));
-      });
-      ids.projects.forEach(function (pid) {
-        var depth = pid.split(".").length - 1;
-        parentSel.appendChild(el("option", { "value": pid },
-          [new Array(depth + 1).join("\u00a0\u00a0\u00a0\u00a0") + pid + " " + (ids.projectNames[pid] || "")]));
-      });
+      fillParentOptions(parentSel, ids, []);
       parentWrap.appendChild(parentSel);
       projectOnly.appendChild(parentWrap);
       card.appendChild(projectOnly);
@@ -1417,6 +1481,21 @@
     // ── Contributes to (sub-activity; the home Activity always links) ──
     var assocSection = el("div", {}, []);
     var assocLabels = {};
+    // The dialog checks the home Activity for you. When the home changes (another
+    // parent, a typed ID) it clears the box it checked before, unless you touched
+    // that box: 4.7 kept the default parent's Activity 1 as a second link (S382).
+    var autoHome = "", touchedBox = {};
+    function setHome(home) {
+      if (autoHome && autoHome !== home && !touchedBox[autoHome] && assocBoxes[autoHome]) {
+        assocBoxes[autoHome].checked = false;
+      }
+      Object.keys(assocBoxes).forEach(function (aid) {
+        var isHome = aid === home;
+        if (isHome) assocBoxes[aid].checked = true;
+        assocLabels[aid].textContent = " Activity " + aid + (isHome ? " (home)" : "");
+      });
+      autoHome = home;
+    }
     if (!targets) {
       assocSection.appendChild(el("label", {}, ["Contributes to"]));
       var assocBox = el("div", { "class": "wpg-assoc-checkboxes" }, []);
@@ -1424,6 +1503,7 @@
         var lbl = el("label", {}, []);
         var cb = el("input", { "type": "checkbox", "value": aid }, []);
         assocBoxes[aid] = cb;
+        cb.addEventListener("change", function () { touchedBox[aid] = true; });
         lbl.appendChild(cb);
         var txt = el("span", {}, [" Activity " + aid]);
         assocLabels[aid] = txt;
@@ -1477,12 +1557,7 @@
       if (targets) return;
       var parent = parentSel.value;
       idInput.value = suggestChildId(ids.projects.concat(liveIds), parent);
-      var home = homeActivityOf(idInput.value);
-      Object.keys(assocBoxes).forEach(function (aid) {
-        var isHome = aid === home;
-        if (isHome) assocBoxes[aid].checked = true;
-        assocLabels[aid].textContent = " Activity " + aid + (isHome ? " (home)" : "");
-      });
+      setHome(homeActivityOf(idInput.value));
     }
     function syncKindUI() {
       if (targets) return;
@@ -1504,17 +1579,20 @@
       parentSel.addEventListener("change", function () { idTouched = false; syncParent(); });
       idInput.addEventListener("input", function () {
         idTouched = true;
-        var home = homeActivityOf(idInput.value);
-        Object.keys(assocLabels).forEach(function (aid) {
-          assocLabels[aid].textContent = " Activity " + aid + (aid === home ? " (home)" : "");
-        });
+        setHome(homeActivityOf(idInput.value));
       });
       kindAct.addEventListener("change", syncKindUI);
       kindProj.addEventListener("change", syncKindUI);
       syncKindUI();
     }
-    fetchProjectIds().then(function (list) {
-      liveIds = list;
+    fetchLiveProjects().then(function (live) {
+      liveIds = live.ids;
+      if (!targets) {
+        var choice = parentSel.value;
+        addLiveParents(parentSel, ids, live.parents);
+        // A parent asked for by id (opts.parent) may only now be in the list.
+        if (!choice && opts.parent) parentSel.value = String(opts.parent);
+      }
       if (!targets && !idTouched && kindProj.checked) syncParent();
     });
 

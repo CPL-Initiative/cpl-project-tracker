@@ -19856,7 +19856,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1289,
+     "line": 1361,
      "tabs": [
       "workplan-goals"
      ]
@@ -22257,6 +22257,16 @@
      ]
     },
     {
+     "id": "module:workplan_goals.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1193,
+     "tabs": [
+      "workplan-goals"
+     ]
+    },
+    {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "read",
@@ -22671,7 +22681,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1704,
+     "line": 1782,
      "tabs": [
       "workplan-goals"
      ]

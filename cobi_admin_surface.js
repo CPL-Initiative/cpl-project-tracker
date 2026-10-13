@@ -66,7 +66,9 @@ window.COBI_ADMIN_SURFACE = {
       "modules": [
         "workplan_goals.js"
       ],
-      "reads": [],
+      "reads": [
+        "project_lifecycle"
+      ],
       "writes": [
         "projects",
         "workplan_activity_associations",
