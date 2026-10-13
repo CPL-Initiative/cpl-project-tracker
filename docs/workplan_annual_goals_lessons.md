@@ -116,3 +116,6 @@ Sam asked for four things on Annual Goals (move AI Apprenticeship CPL Tools unde
   write path and both tabs agree at once.
 
 **State:** Sheet 75 answered (drop, both, reviewer); card 1 waits on Sam's paste; card 3 built (`tests/workplan_goals_table_control.test.js`, 16); card 2 is open work.
+- **Card 2 built (#2083):** a save queues the build through `workplan-rebuild`, which checks its caller with the same
+  two RPCs the tables' policies use and reuses a build already waiting; an editor sees rows added or moved since the
+  build at once, a reader waits for the build. The key is Sam's to create (Sheet 76 card 1).

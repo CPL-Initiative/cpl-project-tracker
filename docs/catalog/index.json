@@ -15528,8 +15528,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 354,
+   "count": 355,
    "docs": [
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "n": 384,
+     "path": "docs/session_384_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "elumen",
+      "annual-goals",
+      "progress-view"
+     ],
+     "title": "the whole-harvest measure, the build queue, the eLumen hubs, and Sam's Sheet 76",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-13",
      "governs": [],
@@ -21610,5 +21627,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1132
+ "total": 1133
 }
