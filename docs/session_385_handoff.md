@@ -40,12 +40,13 @@ Your moniker is **SkyHazel**. Session 384 (**SkyPoplar**, `session_01EyHGwxpaqWS
    its first live reads in `edge_logs` (`request.path = '/rest/v1/program_requirement_records'`): every status 200 or
    206, `content_range` paging, no 400 (its JSON-path selects and quoted `in.()` lists were never sent live before
    deploy). A 400 names the select; fix it in a PR the same hour.
-2. **Sheet 77's replies** (read the `replies` store first). Card 5 "both": dispatch
-   `program-requirements-college.yml` (`step=read`, `extract=1`) for Modesto Junior College and Palo Verde College from
-   a branch off main, then load and display under Sam's standing go; read one Palo Verde noncredit page before any
-   reader fix. Card 3 "build": the one-line college summary, the per-college list on My College and the MAP-team
-   queue, numbered boxes for the reading procedure only. Card 4: read 4.7's links back (one row gone) and note APPLIED
-   in `kb/receipts/workplan_2026-10-13_s383_drop_4_7_activity_1_link.sql`. Cards 1 and 2 change the annual-goals lane.
+2. **Sheet 77 is answered** (Sam, 22:24-22:26Z, all five his own call; `cpl_memory` `sam-sheet-77-rulings-2026-10-13`).
+   Card 5 *both*: S384 dispatched Modesto's and Palo Verde's extraction reads on `claude/s384-modesto-palo-verde`;
+   read their results, then load and display both under Sam's standing go, and open the PR. Card 3 *build*: the one-line
+   college summary, the per-college list on My College and the MAP-team queue, numbered boxes for the reading
+   procedure only. Card 2 *reviewer*: Table and Archive reviewer-only on the Activities tab. Card 1: the key is set;
+   confirm on the next Annual Goals save. Card 4: done and read back. The lanes and the open-asks builder carry the
+   rulings; no card is open.
 3. **The lighter Records page is #2090.** After it ships, measure a real load (edge `origin_time`, bytes).
 
 ## Docs to read

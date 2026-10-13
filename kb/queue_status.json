@@ -19672,46 +19672,10 @@
     }
   ],
   "next_step": {
-    "title": "Merge the college filter, then check its first live reads",
-    "text": "Merge the Records view's college and district filter on its tests, then read its first live reads in the edge logs, and act on Sam's Sheet 77 replies."
+    "title": "Merge the checkpoint, then the college filter, and check its first live reads",
+    "text": "Merge the checkpoint and the college and district filter, read the filter's first live reads in the edge logs, then load Modesto and Palo Verde and build Sam's Sheet 77 rulings."
   },
-  "calls": [
-    {
-      "title": "Annual Goals: the build queue's GitHub key",
-      "text": "A save on Annual Goals starts the dashboard build through a small server function, deployed and waiting on its GitHub key, the secret WORKPLAN_DISPATCH_TOKEN.",
-      "if_no_reply": "Changes keep showing to everyone after the nightly build; an editor still sees them at once.",
-      "link": "https://claude.ai/artifact/1X2k19iJWgohcmpqGe1WYj",
-      "link_text": "Open Asks Sheet 77, card 1"
-    },
-    {
-      "title": "Annual Goals: the team phrase and Table on the Activities tab",
-      "text": "Since Session 95 the team phrase can table any sub-activity on the Activities tab; Annual Goals gives Table to a reviewer only.",
-      "if_no_reply": "The phrase keeps Table on the Activities tab.",
-      "link": "https://claude.ai/artifact/1X2k19iJWgohcmpqGe1WYj",
-      "link_text": "Open Asks Sheet 77, card 2"
-    },
-    {
-      "title": "Records: the catalog and state file boxes",
-      "text": "3,341 boxes on 942 of 2,840 records list differences for the colleges to correct; the proposal makes them one line a record and a list for each college.",
-      "if_no_reply": "The boxes stay as they are.",
-      "link": "https://claude.ai/artifact/1X2k19iJWgohcmpqGe1WYj",
-      "link_text": "Open Asks Sheet 77, card 3"
-    },
-    {
-      "title": "Annual Goals: remove 4.7's link to Activity 1",
-      "text": "Sam's Sheet 75 answer, a one-row delete the session's guard refuses; the card holds the statement to paste, and the receipt its rollback.",
-      "if_no_reply": "4.7 keeps showing under Activity 1 as a second link.",
-      "link": "https://claude.ai/artifact/1X2k19iJWgohcmpqGe1WYj",
-      "link_text": "Open Asks Sheet 77, card 4"
-    },
-    {
-      "title": "Modesto and Palo Verde: the extraction go",
-      "text": "Modesto's 189 and Palo Verde's 54 found programs are read and waiting on extraction, about $13 and $4.",
-      "if_no_reply": "Both colleges stay read but not extracted.",
-      "link": "https://claude.ai/artifact/1X2k19iJWgohcmpqGe1WYj",
-      "link_text": "Open Asks Sheet 77, card 5"
-    }
-  ],
+  "calls": [],
   "notes": {
     "addenda": "The reading agent starts after the Oct 11 census apply; until then a mismatch is read against the college's addendum by hand.",
     "procedures": "34 colleges have one since Oct 8: the 28 whose map host refuses or never reaches the reader each name the routes tried.",
@@ -19743,6 +19707,10 @@
     {
       "at": "2026-10-13T22:05:00Z",
       "text": "The college and district filter opened for review"
+    },
+    {
+      "at": "2026-10-13T22:26:11Z",
+      "text": "Sam answered Open Asks Sheet 77; Modesto's and Palo Verde's extraction started"
     }
   ],
   "headline": [
