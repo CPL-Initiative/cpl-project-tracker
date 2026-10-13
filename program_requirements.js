@@ -53,6 +53,12 @@
  * showed. Since Sam's Open Asks Sheet 67 (2026-10-12, "Every record, from the table") the public
  * reads every record too, and a record no person has checked says Not yet confirmed.
  *
+ * Records by college (Sam, 2026-10-13: "we don't have to load all the colleges and programs at
+ * once if we add a multi-select college/district drop down filter", then: "Provided the links
+ * that jump to items that need attention could still work without the filter being used"). The
+ * tab reads a light index of every record (INDEX_SELECT) and each record's full row only for the
+ * colleges the reader picks, or by key where a link names a record. See "reads" below.
+ *
  * A FAILED READ SAYS SO; it never renders as zero colleges or zero records.
  * Tests: tests/program_requirements.test.js
  */
@@ -73,11 +79,32 @@
   var SIERRA_SURFACE = "program-requirements";
   var CURRENT_YEAR = "2026-2027";
 
-  var REGISTRY_SELECT = "college,catalog_url,catalog_year,catalog_platform,catalog_format," +
+  /* college_id joins map_colleges for the Records view's districts. */
+  var REGISTRY_SELECT = "college,college_id,catalog_url,catalog_year,catalog_platform,catalog_format," +
     "sequence_source,sequence_url,sequence_host,sequence_access,sequence_note,access_status," +
     "corrected_by,census_checked_at,census_run_id,procedure,procedure_by,procedure_at";
+  /* A record's full row: read per college the reader picks, or by key where a link names it. */
   var RECORD_SELECT = "college,control_number,program_title,award,catalog_year,source_url," +
     "measure,total_min,total_max,record,checks,checked,checked_by,checked_at,display";
+  /* ── the light index (2026-10-13) ──
+     Every record, with only what the views that span colleges count: its name for the search,
+     its state for the waiting and checked signals, and the paths of its checks that recordChecks()
+     and machineFails() read (the Records view's glance and its Show filter). Sized on the live
+     table's 2,840 records (row_to_json, 2026-10-13): 0.57 MB, 0.72 MB signed in with each
+     record's requirements_fp, against 34 MB for every full row; one college's full rows run
+     up to 4.0 MB. fromIndex() rebuilds the shapes the rest of the file reads. */
+  var INDEX_SELECT = "college,control_number,program_title,checked," +
+    "cov:checks->coverage,inv:checks->invented,ar:checks->>arithmetic,rv:checks->reviewer->>verdict," +
+    "dar:display->checks->>arithmetic,drv:display->checks->>reviewer,here:display->counts->here";
+  /* What only a checked record shows, read for the checked records alone (31 rows, 10 KB): who
+     checked it and when, its display build, its program map, and whether its catalog prints
+     outcomes (the first one, or null). The Progress view's parts and headline count these. */
+  var CHECKED_SELECT = "college,control_number,checked_by,checked_at,build:display->>build,built:display->>built," +
+    "map:display->map->>status,out1:record->program->outcomes->0";
+  /* The gaps behind Drafts for the college, read for every record only when the Catalogs view's
+     drafts are asked for (about 5.6 MB); a college whose records are open counts its own. */
+  var DRAFT_SELECT = "college,control_number,award,catalog_year,gaps:display->gaps";
+  var PICK_KEY = "cplProgramRequirements.pick.v1";
   /* Written by every checkpoint (.claude/commands/checkpoint.md, scripts/queue_status.py):
      what no browser read can know. anon reads every record (Sam, Open Asks Sheet 67) but has
      no grant on program_source_registry_history, so the day's changes, and the unchecked list
@@ -122,9 +149,14 @@
   /* Gap kinds that stay notes for the reading procedure; every other gap is a flag. */
   var NOTE_KINDS = { "Reader's note": 1, "Fixed by a rerun": 1 };
 
+  /* records: the index, one row per record; a row stays _light until its full row merges into it
+     (the same object, so a card, a call and the counts all see one record). pick: the colleges
+     the Records view lists (remembered); rscope "all" lists every college, as a count the reader
+     followed counted them. failed: a college whose read failed, kept until the reader asks again. */
   var state = { registry: null, records: null, error: null, loading: false, progress: null,
-    view: "progress", q: "", show: "all", platform: "all", rq: "", rshow: "all", rcollege: "all", open: {}, secs: null,
-    review: null, sessionWired: false, framing: null, notice: null };
+    view: "progress", q: "", show: "all", platform: "all", rq: "", rshow: "all", pick: null, rscope: "pick", open: {}, secs: null,
+    review: null, sessionWired: false, framing: null, notice: null, districts: null, districtError: null,
+    failed: {}, draftsRead: null, draftsError: null };
 
   /* ── small helpers ── */
   function el(tag, attrs, kids) {
@@ -209,35 +241,56 @@
     }
     refreshTodo();
   }
+  /* A record a call names, as its line on the card. Its state reads from the index; Confirm and
+     Needs a fix need the full record, which load() reads by key before the first screen. A call
+     the page learns of later reads its records here, and each line redraws once its record lands. */
+  function callRecordItem(ref, mine) {
+    var p = findRecord(mine, ref);
+    if (p && p._gone) p = null;
+    var name = ref.label || (p ? (p.program_title + " " + award(p.award)).trim() : shortCollege(ref.college));
+    var sl = p && p.requirements_fp ? stateLine(p) : null;
+    var line = el("span", { cls: "prh-state" + (sl && sl.waiting ? " prh-state-waiting" : ""), text: sl ? sl.text : "" });
+    var read = el("button", { cls: "prh-word", type: "button", text: "Open it on Program records" });
+    read.addEventListener("click", function () {
+      /* The record's college joins the picked colleges and loads; the search finds the record. */
+      state.rq = ref.control_number; state.rshow = "all";
+      addPick([ref.college]); state.rscope = "pick";
+      choose("records", true);
+    });
+    var key = ref.college + "|" + ref.control_number;
+    var light = !!(p && p._light);
+    var body = [el("p", { cls: "prh-pg-links" }, [p && p.source_url ? link(p.source_url, "The catalog page") : null,
+      p && p.source_url ? splitButton(p) : null, read])];
+    if (light) body.push(el("p", { cls: "prh-small prh-quiet", text: state.failed[ref.college]
+      ? "The record could not be read (" + state.failed[ref.college] + "). Reload the tab to answer here."
+      : "Reading the record…" }));
+    else if (p && p.requirements_fp) body.push(verdictBox(p, flagsFor(p).flags, line));
+    var sum = el("summary", {}, [el("span", { cls: "prh-callrec-t" }, [doneMark(), el("b", { text: ref.control_number }), " " + name]), line]);
+    /* Opening a record starts the reading side by side (Sam, 2026-10-10: "The side by side view
+       should be the default view when I click in to start confirming"). */
+    if (p && p.requirements_fp && (light || p.source_url)) {
+      sum.setAttribute("data-split", key);
+      sum.addEventListener("click", function (e) { e.preventDefault(); openRecord(p, sum); });
+    }
+    var item = el("details", { cls: "prh-callrec" + (refAnswered(ref) ? " prh-answered" : ""), "data-key": key }, [
+      sum, el("div", { cls: "prh-callrec-b" }, body)]);
+    if (light && !state.failed[ref.college]) {
+      ensureRows([p]).then(function () {
+        if (!item.parentNode) return;
+        var had = document.activeElement === sum;
+        var next = callRecordItem(ref, state.review && state.review.records);
+        item.parentNode.replaceChild(next, item);
+        if (had) next.querySelector("summary").focus();
+      });
+    }
+    return item;
+  }
   function callRecords(c) {
     var refs = callRefs(c);
     if (!refs.length) return null;
     var Rv = state.review;
     var mine = Rv && Rv.records ? Rv.records : null;
-    var items = refs.map(function (ref) {
-      var p = findRecord(mine, ref);
-      var name = ref.label || (p ? p.program_title + " " + award(p.award) : shortCollege(ref.college));
-      var sl = p && p.requirements_fp ? stateLine(p) : null;
-      var line = el("span", { cls: "prh-state" + (sl && sl.waiting ? " prh-state-waiting" : ""), text: sl ? sl.text : "" });
-      var read = el("button", { cls: "prh-word", type: "button", text: "Open it on Program records" });
-      read.addEventListener("click", function () {
-        state.rq = ref.control_number; state.rshow = "all"; state.rcollege = ref.college;
-        choose("records", true);
-      });
-      var body = [el("p", { cls: "prh-pg-links" }, [p && p.source_url ? link(p.source_url, "The catalog page") : null,
-        p && p.source_url ? splitButton(p) : null, read])];
-      if (p && p.requirements_fp) body.push(verdictBox(p, flagsFor(p).flags, line));
-      var key = ref.college + "|" + ref.control_number;
-      var sum = el("summary", {}, [el("span", { cls: "prh-callrec-t" }, [doneMark(), el("b", { text: ref.control_number }), " " + name]), line]);
-      /* Opening a record starts the reading side by side (Sam, 2026-10-10: "The side by side view
-         should be the default view when I click in to start confirming"). */
-      if (p && p.source_url && p.requirements_fp) {
-        sum.setAttribute("data-split", key);
-        sum.addEventListener("click", function (e) { e.preventDefault(); openSplit(p, sum); });
-      }
-      return el("details", { cls: "prh-callrec" + (refAnswered(ref) ? " prh-answered" : ""), "data-key": key }, [
-        sum, el("div", { cls: "prh-callrec-b" }, body)]);
-    });
+    var items = refs.map(function (ref) { return callRecordItem(ref, mine); });
     var head = mine ? el("p", { cls: "prh-small prh-quiet", text: "Open a record to read it beside its catalog page and answer there." })
       : Rv && Rv.error ? el("p", { cls: "prh-small prh-caution", role: "status", text: "Your sign-in could not read the records (" + Rv.error + "). Reload the tab to answer here." })
       : signInBox();
@@ -275,7 +328,7 @@
         el(opts.h || "h3", { cls: "prh-sec-t", text: title }),
         meta ? el("span", { cls: "prh-sec-meta", text: meta }) : null]),
       b]);
-    if (opts.open || secOpen(key)) d.setAttribute("open", "");
+    if (!opts.shut && (opts.open || secOpen(key))) d.setAttribute("open", "");
     if (lazy) {
       var built = false;
       var fill = function () {
@@ -365,33 +418,220 @@
       });
     });
   }
+  /* ── the index, and full rows on demand (2026-10-13) ──
+     One read of every record's light row (INDEX_SELECT, CHECKED_SELECT) feeds every view that
+     spans colleges: the Progress view's counts and headline, the Records view's glance and its
+     picker, Sam's to-dos and the waiting signals. A record's full row (RECORD_SELECT) is read for
+     the colleges the reader picks (college=in.(...)), or by key where a link, a call or the next
+     waiting record names it; it merges into the index row, so each record stays one object.
+     A failed read names its table and leaves the rows light; nothing passes a short list off as
+     the whole one. */
+  var KEY_CHUNK = 200;
+  function msg(e) { return (e && e.message) || "the read failed"; }
+  function noop() {}
+  function keyOf(p) { return p.college + "|" + p.control_number; }
+  function keyRef(key) { var k = String(key || "").split("|"); return { college: k[0], control_number: k.slice(1).join("|") }; }
+  function isLight(p) { return !!(p && p._light); }
+  /* The rows the page reads from: the reviewer's (with fingerprints) when signed in, else the public's. */
+  function rows() { return (state.review && state.review.records) || state.records || []; }
+  function rowsOf(c) { return rows().filter(function (p) { return p.college === c; }); }
+  function setRows(arr) {
+    state.records = arr;
+    if (state.review && state.review.records) state.review.records = arr;
+  }
+  function reviewing() { return !!(state.review && state.review.records); }
+  /* A PostgREST in.() list: each value quoted, so the period in "Mt. San Antonio College" or a
+     comma in a name reads as text. */
+  function inList(vals) {
+    return "(" + vals.map(function (v) { return '"' + String(v).replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"'; }).join(",") + ")";
+  }
+  function fromIndex(r) {
+    var p = { college: r.college, control_number: r.control_number, program_title: r.program_title, checked: !!r.checked,
+      checked_by: null, checked_at: null,
+      checks: { coverage: r.cov, invented: r.inv, arithmetic: r.ar, reviewer: r.rv == null ? null : { verdict: r.rv } },
+      display: { checks: { arithmetic: r.dar, reviewer: r.drv }, counts: { here: r.here } }, _light: true };
+    if (r.requirements_fp !== undefined) p.requirements_fp = r.requirements_fp;
+    return p;
+  }
+  function readIndex(hdrs, withFp) {
+    var base = REST + "/program_requirement_records?select=";
+    return Promise.all([
+      getAllRows(base + INDEX_SELECT + (withFp ? ",requirements_fp" : "") + "&order=college,control_number", hdrs),
+      getAllRows(base + CHECKED_SELECT + "&checked=is.true&order=college,control_number", hdrs)
+    ]).then(function (got) {
+      var at = {};
+      var out = (got[0] || []).map(function (r) { var p = fromIndex(r); at[keyOf(p)] = p; return p; });
+      (got[1] || []).forEach(function (c) {
+        var p = at[keyOf(c)];
+        if (!p) return;
+        p.checked_by = c.checked_by; p.checked_at = c.checked_at;
+        p.display.build = c.build; p.display.built = c.built; p.display.map = { status: c.map };
+        p.record = { program: { outcomes: c.out1 == null ? [] : [c.out1] } };
+      });
+      return out;
+    });
+  }
+  function replaceRow(row, n) {
+    Object.keys(row).forEach(function (k) { delete row[k]; });
+    for (var k in n) row[k] = n[k];
+  }
+  /* A fresh index over the rows the page holds: a full row keeps its record and takes the
+     index's state, unless its requirements changed, when it goes light and reads again. */
+  function absorbIndex(fresh) {
+    var old = {};
+    (state.records || []).forEach(function (p) { old[keyOf(p)] = p; });
+    var out = fresh.map(function (n) {
+      var row = old[keyOf(n)];
+      if (!row || row === n) return n;
+      if (row._light || (n.requirements_fp && row.requirements_fp && n.requirements_fp !== row.requirements_fp)) {
+        replaceRow(row, n);
+        return row;
+      }
+      row.checked = n.checked; row.checked_by = n.checked_by; row.checked_at = n.checked_at;
+      if (n.requirements_fp !== undefined) row.requirements_fp = n.requirements_fp;
+      return row;
+    });
+    state.failed = {};
+    state.draftsRead = null;
+    setRows(out);
+    return out;
+  }
+  /* Full rows into the index rows they belong to. scope names what the read covered (whole
+     colleges, or keys), so a row it should have returned and did not is gone from the table. */
+  function absorb(got, scope) {
+    var P = rows(), at = {}, seen = {}, added = [];
+    P.forEach(function (p) { at[keyOf(p)] = p; });
+    (got || []).forEach(function (f) {
+      var k = keyOf(f), row = at[k];
+      seen[k] = 1;
+      if (!row) { added.push(f); return; }
+      var fp = row.requirements_fp;
+      replaceRow(row, f);
+      if (f.requirements_fp === undefined && fp !== undefined) row.requirements_fp = fp;
+    });
+    var gone = P.filter(function (p) {
+      return p._light && !seen[keyOf(p)] &&
+        (scope.colleges ? scope.colleges.indexOf(p.college) >= 0 : scope.keys.indexOf(keyOf(p)) >= 0);
+    });
+    if (!gone.length && !added.length) return;
+    gone.forEach(function (p) { p._gone = true; });
+    var out = P.filter(function (p) { return !p._gone; });
+    added.forEach(function (f) {
+      var at2 = -1;
+      out.forEach(function (p, i) { if (p.college === f.college) at2 = i; });
+      if (at2 < 0) out.push(f); else out.splice(at2 + 1, 0, f);
+    });
+    setRows(out);
+  }
+  function readerHeaders() {
+    if (!reviewing()) return Promise.resolve(headers());
+    return fresh().then(function () { return sessionHeaders(); });
+  }
+  function fullSelect() { return RECORD_SELECT + (reviewing() ? ",requirements_fp" : ""); }
+  function readColleges(cols) {
+    return readerHeaders().then(function (h) {
+      return getAllRows(REST + "/program_requirement_records?select=" + fullSelect() +
+        "&college=in." + encodeURIComponent(inList(cols)) + "&order=college,control_number", h);
+    });
+  }
+  /* Records by key: their colleges and their control numbers, one request; a row the pair of
+     lists returns beyond the keys asked for is a full row too, and merges like the rest. */
+  function readKeys(list) {
+    var cols = [], cns = [];
+    list.forEach(function (p) {
+      if (cols.indexOf(p.college) < 0) cols.push(p.college);
+      if (cns.indexOf(p.control_number) < 0) cns.push(p.control_number);
+    });
+    return readerHeaders().then(function (h) {
+      return getAllRows(REST + "/program_requirement_records?select=" + fullSelect() +
+        "&college=in." + encodeURIComponent(inList(cols)) + "&control_number=in." + encodeURIComponent(inList(cns)) +
+        "&order=college,control_number", h);
+    });
+  }
+  /* Every read in flight, so a test (and nothing else) can wait for the page to settle. */
+  var inflight = [], pending = {};
+  function track(p) {
+    inflight.push(p);
+    var drop = function () { var i = inflight.indexOf(p); if (i >= 0) inflight.splice(i, 1); };
+    p.then(drop, drop);
+    return p;
+  }
+  function idle(n) {
+    n = n || 0;
+    var tick = function () { return new Promise(function (r) { setTimeout(r, 0); }); };
+    if (!inflight.length || n > 50) return tick();
+    return Promise.all(inflight.map(function (p) { return p.then(noop, noop); })).then(tick).then(function () { return idle(n + 1); });
+  }
+  /* The full rows for these index rows. opts.college reads each one's whole college (a pick);
+     otherwise a college asking for more than a page reads whole, and the rest read by key.
+     A college whose last read failed waits for opts.retry (a reader's own ask). Resolves either
+     way: a row still light afterwards did not arrive, and state.failed says why. */
+  function ensureRows(list, opts) {
+    opts = opts || {};
+    var waits = [], byCol = {}, cols = [];
+    (list || []).forEach(function (p) {
+      if (!p || !p._light || p._gone) return;
+      var k = keyOf(p);
+      if (pending[k]) { if (waits.indexOf(pending[k]) < 0) waits.push(pending[k]); return; }
+      if (state.failed[p.college] && !opts.retry) return;
+      if (!byCol[p.college]) { byCol[p.college] = []; cols.push(p.college); }
+      byCol[p.college].push(p);
+    });
+    var whole = [], keys = [];
+    cols.forEach(function (c) {
+      if (opts.college || byCol[c].length > RECORD_PAGE) whole.push(c);
+      else keys = keys.concat(byCol[c]);
+    });
+    function run(read, members, colleges, scope) {
+      var done = track(read.then(function (got) {
+        absorb(got, scope);
+        colleges.forEach(function (c) { delete state.failed[c]; });
+      }, function (e) {
+        colleges.forEach(function (c) { state.failed[c] = msg(e); });
+      }).then(function () {
+        members.forEach(function (p) { var k = keyOf(p); if (pending[k] === done) delete pending[k]; });
+      }));
+      members.forEach(function (p) { pending[keyOf(p)] = done; });
+      waits.push(done);
+    }
+    if (whole.length) {
+      run(readColleges(whole), rows().filter(function (p) { return p._light && whole.indexOf(p.college) >= 0; }),
+        whole, { colleges: whole });
+    }
+    for (var i = 0; i < keys.length; i += KEY_CHUNK) {
+      var chunk = keys.slice(i, i + KEY_CHUNK), cc = [];
+      chunk.forEach(function (p) { if (cc.indexOf(p.college) < 0) cc.push(p.college); });
+      run(readKeys(chunk), chunk, cc, { keys: chunk.map(keyOf) });
+    }
+    return Promise.all(waits).then(noop);
+  }
+
   function load() {
     if (state.loading) return Promise.resolve();
     state.loading = true;
     state.error = null;
-    /* Signed in, the reviewer read (every record and its fingerprint, under the 8 s limit)
-       is the page's read too: the public read returns the same rows without the
-       fingerprint, so reading both doubled 34 MB and set six large reads against each
-       other, and the anon ones still hit the 3 s limit (2026-10-13 21:07Z). The public
-       read runs only when nobody is signed in, or the reviewer read failed. */
+    /* Signed in, the reviewer's index (every record, with its fingerprint, under the 8 s limit)
+       is the page's index too; the public one runs only when nobody is signed in, or the
+       reviewer read failed (#2089: one read per visit, never two set against each other). */
     var signedIn = !!session();
-    function publicRecords() {
-      return getAllRows(REST + "/program_requirement_records?select=" + RECORD_SELECT + "&order=college,control_number", headers());
-    }
     var core = Promise.all([
       getJson(REST + "/program_source_registry?select=" + REGISTRY_SELECT + "&order=college"),
-      signedIn ? Promise.resolve(null) : publicRecords()
+      signedIn ? Promise.resolve(null) : readIndex(headers(), false)
     ]).then(function (got) {
       state.registry = got[0] || [];
-      if (!signedIn) state.records = got[1] || [];
+      if (!signedIn) absorbIndex(got[1] || []);
     }).catch(function (e) {
-      state.error = (e && e.message) || "the read failed";
+      state.error = msg(e);
     });
-    return Promise.all([core, loadProgress(), loadReview(), loadFraming()]).then(function () {
-      if (!signedIn || state.error) return;
-      if (state.review && state.review.records) { state.records = state.review.records; return; }
-      return publicRecords().then(function (rows) { state.records = rows || []; },
-        function (e) { state.error = (e && e.message) || "the read failed"; });
+    return Promise.all([core, loadProgress(), loadReview(), loadFraming(), loadDistricts()]).then(function () {
+      if (!signedIn || state.error || reviewing()) return;
+      return readIndex(headers(), false).then(absorbIndex, function (e) { state.error = msg(e); });
+    }).then(function () {
+      /* What the first screen names, read by key before it draws: the reading room's record and,
+         for a reviewer, the records the calls name (their Confirm and Needs a fix need them). */
+      if (state.error) return;
+      var want = firstRefs().map(recordFor).filter(isLight);
+      return want.length ? ensureRows(want, { retry: true }) : null;
     }).then(function () {
       state.loading = false;
       render();
@@ -399,6 +639,25 @@
       /* A record that did not open shows the tab, with whatever it could read. */
       if (!split.on) roomShown();
     });
+  }
+  function firstRefs() {
+    var refs = RECORD_KEY ? [keyRef(RECORD_KEY)] : [];
+    var Q = state.progress && state.progress.queue;
+    if (reviewing() && Q && Array.isArray(Q.calls)) Q.calls.forEach(function (c) { refs = refs.concat(callRefs(c)); });
+    return refs;
+  }
+  /* The districts the Records view's picker groups colleges by: map_colleges, joined through
+     program_source_registry.college_id. A failed read lists the colleges by name and says so. */
+  function loadDistricts() {
+    return getJson(REST + "/map_colleges?select=college_id,district").then(function (r) {
+      var m = {};
+      (r || []).forEach(function (x) { if (x && x.college_id != null && x.district) m[x.college_id] = x.district; });
+      state.districts = m; state.districtError = null;
+    }, function (e) { state.districts = null; state.districtError = msg(e); });
+  }
+  function districtOf(c) {
+    var reg = (state.registry || []).filter(function (r) { return r.college === c; })[0];
+    return reg && reg.college_id != null && state.districts ? state.districts[reg.college_id] || null : null;
   }
 
   /* ── a reviewer's session (cpl_session.js keeps it; the server decides who may write) ── */
@@ -416,39 +675,58 @@
     var S = window.CPL_SESSION;
     return S && typeof S.ensureFresh === "function" ? Promise.resolve(S.ensureFresh()) : Promise.resolve(session());
   }
-  /* Signed in: every record the reviewer may read (the unchecked ones too) with its
-     fingerprint, and the verdict log. A failed read says so on the Records view and the
-     cards fall back to the public read; it never blocks the tab. */
+  function getVerdicts() {
+    return fetch(REST + "/program_record_verdicts?select=" + VERDICT_SELECT + "&order=id.desc", { headers: sessionHeaders() })
+      .then(function (r) {
+        if (!r.ok) throw new Error("program_record_verdicts answered " + r.status);
+        return r.json();
+      });
+  }
+  /* Signed in: the index with each record's fingerprint (the unchecked records too), and the
+     verdict log. A failed read says so on the Records view and the page falls back to the
+     public index; it never blocks the tab. */
   function loadReview() {
     if (!session()) { state.review = null; return Promise.resolve(); }
     return fresh().then(function (s) {
       if (!s || !s.email) { state.review = null; return; }
-      function get(url) {
-        return fetch(url, { headers: sessionHeaders() }).then(function (r) {
-          if (!r.ok) throw new Error(url.split("?")[0].split("/").pop() + " answered " + r.status);
-          return r.json();
-        });
-      }
-      return Promise.all([
-        getAllRows(REST + "/program_requirement_records?select=" + RECORD_SELECT + ",requirements_fp&order=college,control_number",
-          sessionHeaders()),
-        get(REST + "/program_record_verdicts?select=" + VERDICT_SELECT + "&order=id.desc")
-      ]).then(function (got) {
-        state.review = { email: String(s.email).toLowerCase(), records: got[0] || [], verdicts: got[1] || [], error: null };
+      var email = String(s.email).toLowerCase();
+      return Promise.all([readIndex(sessionHeaders(), true), getVerdicts()]).then(function (got) {
+        state.review = { email: email, records: [], verdicts: got[1] || [], error: null };
+        absorbIndex(got[0] || []);
       }, function (e) {
-        state.review = { email: String(s.email).toLowerCase(), records: null, verdicts: [], error: (e && e.message) || "the read failed" };
+        state.review = { email: email, records: null, verdicts: [], error: msg(e) };
       });
+    });
+  }
+  /* A sign-in or sign-out: the index again under the new reader, the rows the page holds kept. */
+  function reread() {
+    return loadReview().then(function () {
+      if (reviewing()) return;
+      return readIndex(headers(), false).then(absorbIndex, noop);
+    });
+  }
+  /* A verdict saved in the reading room pings this tab with its record ("<ms> college|number"):
+     the verdict log again, and that one record. */
+  function pingRead(value) {
+    if (!reviewing()) return reread();
+    var m = /^\S+\s+(.+\|.+)$/.exec(String(value || ""));
+    var p = m ? recordFor(keyRef(m[1])) : null;
+    return fresh().then(function () {
+      return Promise.all([
+        getVerdicts().then(function (v) { if (state.review) state.review.verdicts = v || []; }, noop),
+        p ? readKeys([p]).then(function (got) { absorb(got, { keys: [keyOf(p)] }); }, noop) : null
+      ]);
     });
   }
   function wireSession() {
     if (state.sessionWired) return;
     state.sessionWired = true;
     window.addEventListener("cpl-session-changed", function () {
-      loadReview().then(function () { if (document.getElementById(ROOT_ID)) render(); });
+      track(reread()).then(function () { if (document.getElementById(ROOT_ID)) render(); });
     });
     window.addEventListener("storage", function (e) {
       if (e.key !== PING_KEY || RECORD_KEY) return;
-      loadReview().then(function () { if (document.getElementById(ROOT_ID)) render(); });
+      track(pingRead(e.newValue)).then(function () { if (document.getElementById(ROOT_ID)) render(); });
     });
   }
   /* The Progress view's own reads. Each fails on its own and says so in the part it
@@ -541,6 +819,44 @@
       });
     });
     return out;
+  }
+  /* Which colleges' drafts the page can count: every record of the college is a full row, or
+     carries its gaps from the drafts read. A college counted from part of its records would
+     show a short count as the whole one. */
+  function draftsKnown() {
+    var cols = {}, known = {};
+    rows().forEach(function (p) {
+      cols[p.college] = 1;
+      if (known[p.college] === false) return;
+      known[p.college] = !p._light || !!p.gapsRead;
+    });
+    var of = Object.keys(cols).length, k = Object.keys(known).filter(function (c) { return known[c]; }).length;
+    return { all: k === of, known: k, of: of, colleges: known };
+  }
+  function knownDrafts() {
+    var d = collegeDrafts(rows()), dk = draftsKnown(), out = {};
+    Object.keys(d).forEach(function (c) { if (dk.colleges[c]) out[c] = d[c]; });
+    return out;
+  }
+  /* Every record's gaps, for the Catalogs view's drafts (DRAFT_SELECT), read once on request. */
+  function readDrafts() {
+    if (state.draftsRead) return state.draftsRead;
+    state.draftsError = null;
+    var run = readerHeaders().then(function (h) {
+      return getAllRows(REST + "/program_requirement_records?select=" + DRAFT_SELECT + "&order=college,control_number", h);
+    }).then(function (got) {
+      var at = {};
+      rows().forEach(function (p) { at[keyOf(p)] = p; });
+      (got || []).forEach(function (g) {
+        var p = at[keyOf(g)];
+        if (!p || !p._light) return;
+        p.award = g.award; p.catalog_year = g.catalog_year; p.display.gaps = g.gaps || []; p.gapsRead = true;
+      });
+      /* A row the read did not return has left the table since the index: it holds no draft. */
+      rows().forEach(function (p) { if (p._light && !p.gapsRead) { p.display.gaps = []; p.gapsRead = true; } });
+    }, function (e) { state.draftsError = msg(e); state.draftsRead = null; });
+    state.draftsRead = track(run);
+    return state.draftsRead;
   }
   /* The draft a person copies. House voice: no bullets, the ask last and small. The MAP
      team edits it before anyone sends it. */
@@ -753,6 +1069,27 @@
       ".prh-btn.prh-primary { background:var(--text-strong); color:var(--paper); border-color:var(--text-strong); }",
       ".prh-btn[disabled] { cursor:wait; }",
       ".prh-review-note p { margin:0; }",
+      /* the Records view's college picker (2026-10-13): a district's colleges under it, each a
+         checkbox with its counts; one column on a phone */
+      ".prh-pick { border:0; margin:0; padding:0; min-width:0; display:grid; gap:8px; }",
+      ".prh-pick legend { padding:0; font-size:.875rem; font-weight:700; color:var(--text-strong); }",
+      ".prh-pick p { margin:0; max-width:var(--cpl-measure,none); }",
+      ".prh-pick-list { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 18rem), 1fr)); gap:12px 24px; align-items:start; }",
+      ".prh-pick-d { min-width:0; display:grid; gap:2px; }",
+      ".prh-pick-dn { font-size:.8125rem; font-weight:700; color:var(--text-muted); }",
+      ".prh-pick-cs { list-style:none; margin:0; padding:0; display:grid; gap:2px; }",
+      ".prh-pick-dl + .prh-pick-cs { padding-left:26px; }",
+      ".prh-pick label { display:flex; flex-wrap:wrap; align-items:center; gap:2px 8px; min-height:24px; cursor:pointer; font-size:.9375rem; color:var(--text-body); }",
+      ".prh-pick label.prh-pick-dl { font-weight:700; color:var(--text-strong); }",
+      ".prh-pick input[type=\"checkbox\"] { width:18px; height:18px; margin:0; flex:none; accent-color:var(--cobalt); cursor:pointer; }",
+      ".prh-pick-c { min-width:0; overflow-wrap:anywhere; }",
+      ".prh-pick-n { flex:1 0 100%; padding-left:26px; font-size:.8125rem; font-weight:400; color:var(--text-muted); font-variant-numeric:tabular-nums; }",
+      ".prh-pick-acts { display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 16px; margin-top:8px; }",
+      ".prh-pick-acts .prh-pick-say { margin:0; }",
+      ".prh-rscope { margin:8px 0 0; display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 16px; }",
+      ".prh-rscope[hidden], .prh-word[hidden] { display:none; }",
+      ".prh-draft-note { margin:0 0 10px; display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px; }",
+      ".prh-draft-note:empty { display:none; }",
       "@media (max-width: 860px) { .prh-rhead { grid-template-columns:minmax(0,1fr); } .prh-checks { grid-template-columns:repeat(2, minmax(0,1fr)); } }",
       "@media (max-width: 560px) { .prh-count { margin-left:0; width:100%; }" +
         " .prh table.prh-stack thead { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }" +
@@ -946,7 +1283,7 @@
   /* ── views ── */
   function viewCatalogs() {
     var R = state.registry;
-    var drafts = collegeDrafts(state.records), adds = addendaByCollege();
+    var drafts = knownDrafts(), adds = addendaByCollege();
     var box = el("div");
     var withUrl = R.filter(function (r) { return r.catalog_url; }).length;
     var current = R.filter(function (r) { return r.catalog_year === CURRENT_YEAR; }).length;
@@ -978,8 +1315,45 @@
     q.value = state.q;
     var count = el("span", { cls: "prh-count", "aria-live": "polite" });
     var host = el("div");
+    /* Drafts for the college need each record's gaps (Sam's sheet 32 card 2), which the index
+       does not carry: a college whose records this page holds counts its own, and the rest are
+       read for every record when the reader asks, or chooses the drafts filter. */
+    var draftNote = el("p", { cls: "prh-small prh-quiet prh-draft-note", role: "status", "aria-live": "polite" });
+    function countDrafts() {
+      readDrafts().then(function () { drafts = knownDrafts(); if (host.isConnected !== false) draw(); });
+    }
+    function noteDrafts() {
+      var dk = draftsKnown();
+      draftNote.textContent = "";
+      if (dk.all) return;
+      if (state.draftsError) {
+        draftNote.appendChild(document.createTextNode("The drafts could not be counted (" + state.draftsError + "). "));
+      } else if (state.draftsRead) {
+        draftNote.appendChild(document.createTextNode("Reading every record's gaps to count the drafts for each college…"));
+        return;
+      } else {
+        draftNote.appendChild(document.createTextNode("This page counts drafts for the college at the " + dk.known + " of " + dk.of +
+          " colleges whose records it holds. "));
+      }
+      var go = el("button", { cls: "prh-word", type: "button", text: state.draftsError ? "Read again" : "Count them at every college" });
+      go.addEventListener("click", function () { state.draftsError = null; countDrafts(); noteDrafts(); draw(); });
+      draftNote.appendChild(go);
+    }
     function draw() {
       state.q = q.value; state.show = showSel.value; state.platform = platSel.value;
+      noteDrafts();
+      if (state.show === "drafts" && !draftsKnown().all) {
+        /* The filter waits for every college's count; a partial list never stands for the whole. */
+        host.textContent = "";
+        count.textContent = "";
+        if (state.draftsError) {
+          host.appendChild(el("div", { cls: "prh-empty", text: "The drafts could not be counted (" + state.draftsError + "). Read again above." }));
+          return;
+        }
+        host.appendChild(el("div", { cls: "prh-empty", text: "Reading every record's gaps to count the drafts for each college…" }));
+        if (!state.draftsRead) { countDrafts(); noteDrafts(); }
+        return;
+      }
       var rows = filterRegistry(R, state.q, state.show, state.platform, drafts, adds);
       host.textContent = "";
       host.appendChild(table([
@@ -1015,7 +1389,7 @@
         el("label", { "for": "prh-show" }, ["Show", showSel]),
         el("label", { "for": "prh-platform" }, ["Platform", platSel]),
         count
-      ]), host]));
+      ]), draftNote, host]));
     draw();
     return box;
   }
@@ -1260,14 +1634,18 @@
     try { return d.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "America/Los_Angeles" }); }
     catch (e) { return day(ts); }
   }
+  /* The log is newest first, so a record's first entry is its latest. The picker asks it of every
+     record in the index, so the lookup is a map, rebuilt when the log changes. */
+  var verdictAt = { arr: null, n: -1, map: null };
   function latestVerdict(p) {
     var R = state.review;
     if (!R || !R.verdicts) return null;
-    for (var i = 0; i < R.verdicts.length; i++) {
-      var v = R.verdicts[i];
-      if (v.college === p.college && v.control_number === p.control_number) return v;
+    if (verdictAt.arr !== R.verdicts || verdictAt.n !== R.verdicts.length) {
+      var m = {};
+      R.verdicts.forEach(function (v) { var k = v.college + "|" + v.control_number; if (!m[k]) m[k] = v; });
+      verdictAt = { arr: R.verdicts, n: R.verdicts.length, map: m };
     }
-    return null;
+    return verdictAt.map[p.college + "|" + p.control_number] || null;
   }
   function stateLine(p) {
     var me = state.review && state.review.email;
@@ -1397,9 +1775,29 @@
     return d;
   }
 
+  /* ── the colleges the Records view lists (Sam, 2026-10-13) ──
+     A pick is remembered; a college's full records load when it is picked, and stay held, so
+     picking it again reads nothing. */
+  function picks() {
+    if (!state.pick) {
+      var v = null;
+      try { v = JSON.parse(safeGet(PICK_KEY) || "[]"); } catch (e) { v = null; }
+      state.pick = Array.isArray(v) ? v.filter(function (c) { return typeof c === "string" && !!c; }) : [];
+    }
+    return state.pick;
+  }
+  function savePick() { safeSet(PICK_KEY, JSON.stringify(state.pick || [])); }
+  function addPick(cols) {
+    var P = picks().slice();
+    (cols || []).forEach(function (c) { if (c && P.indexOf(c) < 0) P.push(c); });
+    state.pick = P.sort();
+    savePick();
+  }
+  function readingText(c, n) { return "Reading " + c + "'s " + fmt(n) + (n === 1 ? " record…" : " records…"); }
+
   function viewRecords() {
     var Rv = state.review;
-    var P = Rv && Rv.records ? Rv.records : state.records, R = state.registry;
+    var P = rows(), R = state.registry;
     var box = el("div");
     box.appendChild(el("p", { cls: "prh-lede", text: "Each program read from its college's catalog: the required courses, the courses chosen from a list, and the electives. A record passes four checks: it places the courses the state's Program Course File lists, it adds no course the catalog does not print, its units add up to the catalog's total, and a person read it against the catalog. A misread changes the college's reading procedure, never the record." }));
     /* Who is reading: a lede beside the first one, so the view keeps only sections below it. */
@@ -1413,6 +1811,7 @@
       box.appendChild(el("div", { cls: "prh-empty", text: "No program record has been loaded yet." }));
       return box;
     }
+    /* The glance counts every record, from the index. */
     var checks = P.map(recordChecks);
     var passing = checks.filter(function (c) { return c.passes; }).length;
     var equal = checks.filter(function (c) { return c.arithmetic === "equal"; }).length;
@@ -1426,13 +1825,117 @@
         fact(equal, "totals agree with the catalog's"),
         fact(withCpl + " of " + P.length, "programs hold a course with CPL at the college")
       ])]));
-    var drafts = collegeDrafts(P);
     var reviewing = !!(Rv && Rv.records);
-    var totals = {};
-    P.forEach(function (p) { totals[p.college] = (totals[p.college] || 0) + 1; });
-    /* Find a record (Sam, 2026-10-09, reading Cerritos's 274 on his phone: "Yes, do them"):
-       a search by name or control number, what to show, and one college, in the first
-       section (open until the reader closes it); the college sections follow it. */
+    var totals = {}, waits = {};
+    P.forEach(function (p) {
+      totals[p.college] = (totals[p.college] || 0) + 1;
+      if (isWaiting(p)) waits[p.college] = (waits[p.college] || 0) + 1;
+    });
+    var names = Object.keys(totals).sort();
+    var kept = picks().filter(function (c) { return totals[c]; });
+    if (kept.length !== picks().length) { state.pick = kept; savePick(); }
+
+    /* ── Colleges: the picker. A district picks its colleges; each college names its records
+       and how many wait on a reading, from the index. ── */
+    var say = el("p", { cls: "prh-small prh-quiet prh-pick-say", role: "status", "aria-live": "polite" });
+    var boxes = [];
+    var clear = el("button", { cls: "prh-word", type: "button", text: "Clear the picks" });
+    function pickMeta() {
+      var n = picks().length, of = names.length + (names.length === 1 ? " college" : " colleges");
+      return n ? n + " of " + of + " picked" : "None picked; " + of + " hold records";
+    }
+    function syncBoxes() {
+      var pk = picks();
+      boxes.forEach(function (b) {
+        if (b.college) { b.input.checked = pk.indexOf(b.college) >= 0; return; }
+        var n = b.colleges.filter(function (c) { return pk.indexOf(c) >= 0; }).length;
+        b.input.checked = n === b.colleges.length;
+        b.input.indeterminate = n > 0 && n < b.colleges.length;
+      });
+      var m = pickSec.querySelector(".prh-sec-meta");
+      if (m) m.textContent = pickMeta();
+      clear.hidden = !pk.length;
+    }
+    /* ask: the reader picked it just now, so a college whose last read failed reads again. */
+    function loadPicked(cols, ask) {
+      var need = cols.filter(function (c) { return totals[c] && rowsOf(c).some(isLight) && (ask || !state.failed[c]); });
+      if (!need.length) return;
+      var n = need.reduce(function (s, c) { return s + totals[c]; }, 0);
+      say.textContent = need.length === 1 ? readingText(need[0], totals[need[0]])
+        : "Reading " + fmt(n) + " records at " + need.length + " colleges…";
+      var lights = rows().filter(function (p) { return p._light && need.indexOf(p.college) >= 0; });
+      ensureRows(lights, { college: true, retry: !!ask }).then(function () {
+        var bad = need.filter(function (c) { return state.failed[c]; });
+        say.textContent = bad.length
+          ? bad.map(function (c) { return c + "'s records could not be read (" + state.failed[c] + ")."; }).join(" ")
+          : need.length === 1 ? need[0] + "'s " + fmt(totals[need[0]]) + (totals[need[0]] === 1 ? " record is" : " records are") + " open below."
+          : fmt(n) + " records at " + need.length + " colleges are open below.";
+      });
+    }
+    function setPick(next) {
+      var before = picks().slice();
+      state.pick = next.filter(function (c, i) { return next.indexOf(c) === i; }).sort();
+      savePick();
+      state.rscope = "pick";
+      syncBoxes();
+      loadPicked(state.pick.filter(function (c) { return before.indexOf(c) < 0; }), true);
+      draw();
+    }
+    clear.addEventListener("click", function () {
+      setPick([]);
+      say.textContent = "No college is picked.";
+      /* The word hides once nothing is picked; focus goes to the first college's box. */
+      var firstBox = list.querySelector('input[type="checkbox"]');
+      if (firstBox) firstBox.focus();
+    });
+    var groups = {}, gorder = [];
+    names.forEach(function (c) {
+      var d = districtOf(c) || "";
+      if (!groups[d]) { groups[d] = []; gorder.push(d); }
+      groups[d].push(c);
+    });
+    gorder.sort(function (a, b) { return a === b ? 0 : !a ? 1 : !b ? -1 : a < b ? -1 : 1; });
+    var list = el("div", { cls: "prh-pick-list" });
+    gorder.forEach(function (d) {
+      var cs = groups[d], kids = [];
+      if (d && cs.length > 1) {
+        var di = el("input", { type: "checkbox", "data-district": d });
+        boxes.push({ input: di, colleges: cs });
+        di.addEventListener("change", function () {
+          var rest = picks().filter(function (c) { return cs.indexOf(c) < 0; });
+          setPick(di.checked ? rest.concat(cs) : rest);
+        });
+        kids.push(el("label", { cls: "prh-pick-dl" }, [di, el("span", { text: d }),
+          el("span", { cls: "prh-pick-n", text: cs.length + " colleges" })]));
+      } else if (d || state.districts) {
+        kids.push(el("p", { cls: "prh-pick-dn", text: d || "No district on record" }));
+      }
+      kids.push(el("ul", { cls: "prh-pick-cs" }, cs.map(function (c) {
+        var ci = el("input", { type: "checkbox", "data-college": c });
+        boxes.push({ input: ci, college: c });
+        ci.addEventListener("change", function () {
+          var rest = picks().filter(function (x) { return x !== c; });
+          setPick(ci.checked ? rest.concat([c]) : rest);
+        });
+        var w = waits[c] || 0;
+        return el("li", {}, [el("label", {}, [ci, el("span", { cls: "prh-pick-c", text: c }),
+          el("span", { cls: "prh-pick-n", text: fmt(totals[c]) + (totals[c] === 1 ? " record, " : " records, ") +
+            (w ? fmt(w) : "none") + (w === 1 ? " waits" : " wait") + (reviewing ? " on your reading" : " on a reading") })])]);
+      })));
+      list.appendChild(el("div", { cls: "prh-pick-d", role: "group", "aria-label": d || "Colleges" }, kids));
+    });
+    var pickSec = section("records:pick", "Colleges", pickMeta(), [
+      el("fieldset", { cls: "prh-pick" }, [
+        el("legend", { text: "Pick colleges, or a district to pick each of its colleges" }),
+        el("p", { cls: "prh-small prh-quiet", text: "A college's records load when you pick it and stay until the page reloads. The counts beside each college cover all of its records." }),
+        state.districtError ? el("p", { cls: "prh-small prh-caution", text: "The district list could not be read (" + state.districtError + "), so the colleges are listed by name." }) : null,
+        list]),
+      el("div", { cls: "prh-pick-acts" }, [clear, say])]);
+    box.appendChild(pickSec);
+    syncBoxes();
+
+    /* ── Find a record (Sam, 2026-10-09, reading Cerritos's 274 on his phone: "Yes, do them"):
+       a search by name or control number, and what to show, over the colleges listed. ── */
     var q = el("input", { id: "prh-rq", type: "search", placeholder: "Name or control number", autocomplete: "off" });
     q.value = state.rq;
     var shows = [["all", "All records"]].concat(reviewing ? [["waiting", "Waiting on your reading"]] : [])
@@ -1440,49 +1943,102 @@
     if (!shows.some(function (o) { return o[0] === state.rshow; })) state.rshow = "all";
     var showSel = el("select", { id: "prh-rshow" }, shows.map(function (o) { return el("option", { value: o[0], text: o[1] }); }));
     showSel.value = state.rshow;
-    var names = Object.keys(totals).sort();
-    if (state.rcollege !== "all" && !totals[state.rcollege]) state.rcollege = "all";
-    var colSel = el("select", { id: "prh-rcollege" }, [el("option", { value: "all", text: "All colleges" })]
-      .concat(names.map(function (c) { return el("option", { value: c, text: shortCollege(c) + " (" + totals[c] + ")" }); })));
-    colSel.value = state.rcollege;
     var count = el("span", { cls: "prh-count", "aria-live": "polite" });
+    /* A count on the Progress view lists every college, as it counted them (rscope "all"). */
+    var only = el("button", { cls: "prh-word", type: "button", text: "List only the colleges you picked" });
+    only.addEventListener("click", function () { state.rscope = "pick"; draw(); });
+    var first = el("button", { cls: "prh-word", type: "button", text: "Read the first waiting record side by side" });
+    var shown = [];
+    first.addEventListener("click", function () {
+      var r = shown.filter(readable)[0];
+      if (r) openRecord(r, first);
+    });
+    var scopeText = el("span");
+    var scopeLine = el("p", { cls: "prh-small prh-rscope" }, [scopeText, only, first]);
     var drawn = [];
+    /* A college's records, built the first time its section is open. Rows still light load
+       first: the whole college, or, in a narrowed list, the matches by key. */
+    function collegeBody(c, list, narrowed) {
+      var holder = el("div", { cls: "prh-college-b" });
+      function fill() {
+        holder.textContent = "";
+        var d = !narrowed ? knownDrafts()[c] : null;
+        if (d && d.length) holder.appendChild(draftsBox(c, d));
+        list.forEach(function (p) { if (!p._light && !p._gone) holder.appendChild(recordCard(p)); });
+      }
+      function failedLine() {
+        var again = el("button", { cls: "prh-word", type: "button", text: "Read again" });
+        again.addEventListener("click", function () { start(true); });
+        return el("p", { cls: "prh-small prh-caution", role: "status" }, [c + "'s records could not be read (" + state.failed[c] + "). ", again]);
+      }
+      function start(ask) {
+        var need = (narrowed ? list : rowsOf(c)).filter(isLight);
+        if (!need.length) { fill(); return; }
+        holder.textContent = "";
+        if (state.failed[c] && !ask) { holder.appendChild(failedLine()); return; }
+        var n = list.filter(isLight).length;
+        holder.appendChild(el("p", { cls: "prh-small prh-quiet", text: narrowed && n < totals[c]
+          ? "Reading " + fmt(n) + " of " + c + "'s records…" : readingText(c, totals[c]) }));
+        ensureRows(need, { college: !narrowed, retry: !!ask }).then(function () {
+          if (state.failed[c] && list.some(isLight)) { holder.textContent = ""; holder.appendChild(failedLine()); return; }
+          fill();
+        });
+      }
+      start(false);
+      return [holder];
+    }
     function draw() {
-      state.rq = q.value; state.rshow = showSel.value; state.rcollege = colSel.value;
-      var rows = filterRecords(P, state.rq, state.rshow, state.rcollege, reviewing ? isWaiting : null);
-      var narrowed = !!String(state.rq).trim() || state.rshow !== "all" || state.rcollege !== "all";
+      state.rq = q.value; state.rshow = showSel.value;
+      var all = state.rscope === "all", pk = picks();
+      var narrowed = !!String(state.rq).trim() || state.rshow !== "all";
+      var inScope = all ? P : P.filter(function (p) { return pk.indexOf(p.college) >= 0; });
+      shown = filterRecords(inScope, state.rq, state.rshow, null, reviewing ? isWaiting : null);
+      drawn.forEach(function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
+      drawn = [];
+      scopeText.textContent = all ? "Every college is listed, because the count you followed spans them all. " : "";
+      only.hidden = !all;
+      first.hidden = !(reviewing && state.rshow === "waiting" && shown.some(readable));
+      scopeLine.hidden = only.hidden && first.hidden;
+      if (!all && !pk.length) {
+        count.textContent = "";
+        drawn.push(box.appendChild(el("div", { cls: "prh-empty", text: "Pick a college or a district above to read its records." })));
+        return;
+      }
       var order = [], byCollege = {};
-      rows.forEach(function (p) {
+      shown.forEach(function (p) {
         if (!byCollege[p.college]) { byCollege[p.college] = []; order.push(p.college); }
         byCollege[p.college].push(p);
       });
-      drawn.forEach(function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
-      drawn = [];
-      if (!rows.length) drawn.push(box.appendChild(el("div", { cls: "prh-empty", text: "No record matches. Clear the search or choose All records." })));
+      if (!shown.length) drawn.push(box.appendChild(el("div", { cls: "prh-empty", text: "No record matches. Clear the search or choose All records." })));
+      /* Every college at once: a list a page long opens and reads its records by key; a longer
+         one keeps each college shut until the reader opens it, so nothing loads unasked. */
+      var few = shown.length <= RECORD_PAGE;
+      var drafts = knownDrafts();
       order.forEach(function (c) {
         var list = byCollege[c];
         var reg = R.filter(function (r) { return r.college === c; })[0] || {};
         var nd = (drafts[c] || []).length;
+        var cy = (list.filter(function (p) { return p.catalog_year; })[0] || reg).catalog_year;
         var n = list.length < totals[c] ? list.length + " of " + totals[c] : String(totals[c]);
-        var meta = ((PLATFORM[reg.catalog_platform] || "") + " catalog, " + yr(list[0].catalog_year)).trim() + " · " +
+        var meta = ((PLATFORM[reg.catalog_platform] || "") + " catalog" + (cy ? ", " + yr(cy) : "")).trim() + " · " +
           n + (totals[c] === 1 ? " program" : " programs") + (nd ? " · " + nd + (nd === 1 ? " draft" : " drafts") + " for the college" : "");
         /* A narrowed list opens its colleges, so a match is never hidden in a closed section. */
-        var sec = section("records:" + c, c, meta, function () {
-          return [drafts[c] && !narrowed ? draftsBox(c, drafts[c]) : null].concat(list.map(function (p) { return recordCard(p); }));
-        }, { cls: "prh-college", open: narrowed });
+        var sec = section("records:" + c, c, meta, function () { return collegeBody(c, list, narrowed); },
+          { cls: "prh-college", open: all ? few : narrowed, shut: all && !few });
         drawn.push(box.appendChild(sec));
       });
-      count.textContent = "Showing " + rows.length + " of " + P.length;
+      count.textContent = "Showing " + shown.length + " of " + inScope.length;
     }
     /* One event each: a select fires both input and change, and each draw rebuilds the list. */
     q.addEventListener("input", draw);
-    [showSel, colSel].forEach(function (c) { c.addEventListener("change", draw); });
-    box.appendChild(section("records:find", "Find a record", "By name or control number, what waits, and the college", [
+    showSel.addEventListener("change", draw);
+    box.appendChild(section("records:find", "Find a record", "By name or control number, and what waits", [
       el("div", { cls: "prh-controls prh-rfind", role: "search", "aria-label": "Find a program record" }, [
         el("label", { "for": "prh-rq" }, ["Find a program", q]),
         el("label", { "for": "prh-rshow" }, ["Show", showSel]),
-        el("label", { "for": "prh-rcollege" }, ["College", colSel]),
-        count])]));
+        count]), scopeLine]));
+    /* A remembered pick loads on open; one whose read failed waits for the reader to ask. */
+    if (state.rscope !== "all") loadPicked(picks(), false);
     draw();
     return box;
   }
@@ -1490,10 +2046,12 @@
   /* The Records view's filter, pure so a test reads it: the search matches the program's
      name or its control number; show narrows to the records waiting on the reader (when one
      is signed in), those failing or passing the three machine checks, or the checked ones. */
+  /* college: "all" (or none), one college's name, or a list of them (the Records view's picks). */
   function filterRecords(P, q, show, college, waiting) {
     var t = String(q || "").trim().toLowerCase();
     return (P || []).filter(function (p) {
-      if (college && college !== "all" && p.college !== college) return false;
+      if (Array.isArray(college)) { if (college.indexOf(p.college) < 0) return false; }
+      else if (college && college !== "all" && p.college !== college) return false;
       if (t && String(p.control_number || "").toLowerCase().indexOf(t) < 0 &&
           String(p.program_title || "").toLowerCase().indexOf(t) < 0) return false;
       if (show === "waiting") return waiting ? waiting(p) : true;
@@ -1888,7 +2446,7 @@
   }
 
   function progressContext(now) {
-    var R = state.registry || [], P = state.records || [], G = state.progress || { errors: {} };
+    var R = state.registry || [], P = rows(), G = state.progress || { errors: {} };
     var Q = G.queue || null, A = G.addenda || null;
     var P1 = P.filter(function (p) { return p.checked; });
     var unl = Q && Array.isArray(Q.unchecked) ? Q.unchecked : null;
@@ -2293,7 +2851,13 @@
   function goTo(to) {
     if (!to || !to.view) return;
     state.q = to.q || ""; state.show = to.show || "all"; state.platform = "all";
-    state.rq = to.rq || ""; state.rshow = to.rshow || "all"; state.rcollege = to.rcollege || "all";
+    state.rq = to.rq || ""; state.rshow = to.rshow || "all";
+    /* A count spans every college, so its list does too, whatever the reader picked; a target
+       that names a college adds it to the picks. Either way the records load as they show. */
+    if (to.view === "records") {
+      if (to.rcollege) { addPick([to.rcollege]); state.rscope = "pick"; }
+      else state.rscope = "all";
+    }
     if (to.sec) secSet(to.sec, true);
     choose(to.view, false);
     bringUp(document.getElementById("prh-panel"));
@@ -2324,7 +2888,7 @@
    * first record takes two clicks (the record, then Show the catalog on the left); Next waiting
    * record then moves both windows on one click. A narrow screen keeps the record here and opens
    * the catalog in a tab. */
-  var split = { on: false, node: null, opener: null, inert: [], key: null, changed: false };
+  var split = { on: false, node: null, opener: null, inert: [], key: null, changed: false, said: null };
   function hostOf(url) { var m = /^https?:\/\/([^\/?#:]+)/i.exec(String(url || "")); return m ? m[1].toLowerCase() : ""; }
   function framingOf(url) {
     var h = state.framing && state.framing[hostOf(url)];
@@ -2368,11 +2932,12 @@
     try { w.location.href = u; } catch (e) { return false; }
     return true;
   }
+  /* A record by its key (the reading room's link, or another window asking): it opens whatever
+     the picker holds, reading its full row first when the page holds only its index row. */
   function openKey(key) {
-    var k = String(key || "").split("|");
-    var p = recordFor({ college: k[0], control_number: k.slice(1).join("|") });
+    var p = recordFor(keyRef(key));
     if (!p) return false;
-    openSplit(p, null);
+    openRecord(p, null);
     return true;
   }
   function splitButton(p) {
@@ -2392,13 +2957,22 @@
       if (at < 0) continue;
       for (var n = 1; n < refs.length; n++) {
         var ref = refs[(at + n) % refs.length], q = recordFor(ref);
-        if (q && q.source_url && q.requirements_fp && stateLine(q).waiting) return q;
+        if (readable(q)) return q;
       }
       return null;
     }
     return null;
   }
-  function readable(q) { return !!(q && q.source_url && q.requirements_fp && stateLine(q).waiting); }
+  /* A record the reader can read side by side: waiting, with its fingerprint and its catalog
+     page. A light row has not brought its page yet; every record names one (2026-10-13), and
+     goNext() passes over one that arrives without. */
+  function readable(q) { return !!(q && !q._gone && (q._light || q.source_url) && q.requirements_fp && stateLine(q).waiting); }
+  /* The colleges the Records view lists: the picks, or every college (null) when it lists them
+     all or nothing is picked, so a record opened by a link still has a next one. */
+  function listedColleges() {
+    var pk = picks();
+    return state.rscope === "all" || !pk.length ? null : pk;
+  }
   /* The next record waiting on the reader (Sam, 2026-10-11: "bring me to the next item to
      confirm"). A record on a call: the next waiting one on that call, then on the calls after
      it. Any other record: the next waiting one in the list the Records view shows, in its order
@@ -2417,7 +2991,7 @@
       }
       return null;
     }
-    var P = filterRecords((state.review && state.review.records) || [], state.rq, state.rshow, state.rcollege, isWaiting);
+    var P = filterRecords((state.review && state.review.records) || [], state.rq, state.rshow, listedColleges(), isWaiting);
     var i0 = -1;
     P.forEach(function (r, i) { if (i0 < 0 && same(r)) i0 = i; });
     for (var k = 1; k <= P.length; k++) {
@@ -2431,17 +3005,56 @@
      opens in place, its catalog with it, and says what was saved. With nothing left, the
      screens close, the catalog's window too, and the tab says so. */
   function advanceFrom(p, saved) {
-    var q = nextToRead(p);
-    if (q) { openSplit(q, split.opener, saved); return; }
-    state.notice = saved + " Nothing else waits on your reading.";
-    closeCatalogWindow();
-    if (RECORD_KEY) {
-      try {
-        var M = window.opener && window.opener.CPL_PROGRAM_REQUIREMENTS;
-        if (M && typeof M.notice === "function") M.notice(state.notice);
-      } catch (e) { /* the opener moved on */ }
-    }
-    closeSplit();
+    goNext(p, saved, function () {
+      state.notice = saved + " Nothing else waits on your reading.";
+      closeCatalogWindow();
+      if (RECORD_KEY) {
+        try {
+          var M = window.opener && window.opener.CPL_PROGRAM_REQUIREMENTS;
+          if (M && typeof M.notice === "function") M.notice(state.notice);
+        } catch (e) { /* the opener moved on */ }
+      }
+      closeSplit();
+    });
+  }
+  /* The next record to read, opened side by side in place of p, whatever the picker holds: a
+     light one loads by key first (openSplit reads it ahead, so this is usually instant). none()
+     runs when nothing else waits. A read that fails says so in the bar and stays on p. */
+  function goNext(p, saved, none) {
+    var from = keyOf(p), hops = 0;
+    function still() { return split.on && split.key === from; }
+    function say(t) { if (split.said && still()) split.said.textContent = t; }
+    (function step(q) {
+      if (!q || ++hops > 50) { none(); return; }
+      if (q._light) {
+        say(((saved ? saved + " " : "") + "Reading the next record…").trim());
+        ensureRows([q], { retry: true }).then(function () {
+          if (!still()) return;
+          if (q._gone) { step(nextToRead(p)); return; }
+          if (q._light) { say(((saved ? saved + " " : "") + couldNotRead(q)).trim()); return; }
+          /* Its full row is the table's word now: read since, it passes to the one after. */
+          if (!readable(q)) { step(nextToRead(q)); return; }
+          step(q);
+        });
+        return;
+      }
+      if (q.source_url) { openSplit(q, split.opener, saved); return; }
+      step(nextToRead(q));
+    })(nextToRead(p));
+  }
+  function couldNotRead(p) {
+    var why = state.failed[p.college];
+    return shortCollege(p.college) + "'s record " + p.control_number + " could not be read" + (why ? " (" + why + ")." : ".");
+  }
+  /* A record opened side by side from anywhere: a light one loads by key first. */
+  function openRecord(p, opener, saved) {
+    if (!p) return;
+    if (!p._light) { if (p.source_url) openSplit(p, opener, saved); return; }
+    ensureRows([p], { retry: true }).then(function () {
+      if (!p._light && p.source_url) { openSplit(p, opener, saved); return; }
+      notice(p._gone ? "Record " + p.control_number + " has left the table since this page read it." : couldNotRead(p));
+      roomShown();
+    });
   }
   function notice(text) {
     state.notice = text || null;
@@ -2475,9 +3088,7 @@
     if (state.review && state.review.records) {
       next = el("button", { cls: "prh-word", type: "button", text: "Next waiting record" });
       next.addEventListener("click", function () {
-        var q = nextToRead(p);
-        if (!q) { said.textContent = "Nothing else waits on your reading."; return; }
-        openSplit(q, split.opener);
+        goNext(p, null, function () { said.textContent = "Nothing else waits on your reading."; });
       });
     }
     var close = el("button", { cls: "prh-word", type: "button", text: "Close", "aria-label": "Close side by side" });
@@ -2514,8 +3125,11 @@
     document.body.appendChild(node);
     roomShown();
     split.on = true; split.node = node; split.opener = opener || back || null; split.changed = carry;
-    split.key = p.college + "|" + p.control_number;
+    split.key = p.college + "|" + p.control_number; split.said = said;
     document.getElementById("prh-split-t").focus();
+    /* The next record, read ahead by key, so Next and a saved verdict move at once (and the
+       catalog's window moves inside the click that asked). */
+    if (next) { var ahead = nextToRead(p); if (ahead && ahead._light) ensureRows([ahead]); }
   }
   /* quiet: a new split replaces this one, so focus stays where the new one puts it. A verdict
      saved here redraws the tab, so the card behind shows it too. In the reading room, Close
@@ -2526,7 +3140,7 @@
     if (split.node && split.node.parentNode) split.node.parentNode.removeChild(split.node);
     split.inert.forEach(function (n) { n.removeAttribute("inert"); });
     document.documentElement.classList.remove("prh-split-open");
-    split.on = false; split.node = null; split.opener = null; split.inert = []; split.key = null; split.changed = false;
+    split.on = false; split.node = null; split.opener = null; split.inert = []; split.key = null; split.changed = false; split.said = null;
     if (quiet) return;
     if (RECORD_KEY) { try { window.close(); } catch (e) { /* a window the reader opened by hand stays */ } }
     if (changed && document.getElementById(ROOT_ID)) {
@@ -2541,7 +3155,7 @@
 
   /* ── frame ── */
   function counts() {
-    var R = state.registry || [], P = state.records || [];
+    var R = state.registry || [], P = rows();
     return { progress: null, catalogs: R.length, records: P.length,
       sequences: R.filter(function (r) { return r.sequence_url || r.sequence_host; }).length,
       procedures: R.filter(function (r) { return r.procedure; }).length };
@@ -2594,7 +3208,8 @@
       var b = el("button", { role: "tab", id: "prh-tab-" + v.id, "aria-controls": "prh-panel",
         "aria-selected": sel ? "true" : "false", tabindex: sel ? "0" : "-1", type: "button" },
         [v.label, n[v.id] == null ? null : el("span", { cls: "prh-n", text: String(n[v.id]) })]);
-      b.addEventListener("click", function () { choose(v.id, true); });
+      /* The Records tab itself lists the reader's picks; only a count's word lists every college. */
+      b.addEventListener("click", function () { if (v.id === "records") state.rscope = "pick"; choose(v.id, true); });
       b.addEventListener("keydown", function (e) {
         var k = e.key, j = null;
         if (k === "ArrowRight") j = (i + 1) % VIEWS.length;
@@ -2603,6 +3218,7 @@
         else if (k === "End") j = VIEWS.length - 1;
         if (j == null) return;
         e.preventDefault();
+        if (VIEWS[j].id === "records") state.rscope = "pick";
         choose(VIEWS[j].id, true);
       });
       sw.appendChild(b);
@@ -2660,7 +3276,8 @@
 
   window.CPL_PROGRAM_REQUIREMENTS = {
     activate: activate,
-    _state: state, _load: load, _render: render, mountSierra: mountSierra, SIERRA_SURFACE: SIERRA_SURFACE,
+    _state: state, _load: load, _render: render, _idle: idle, mountSierra: mountSierra, SIERRA_SURFACE: SIERRA_SURFACE,
+    INDEX_SELECT: INDEX_SELECT, CHECKED_SELECT: CHECKED_SELECT, DRAFT_SELECT: DRAFT_SELECT, PICK_KEY: PICK_KEY,
     catalogStatus: catalogStatus, filterRegistry: filterRegistry, filterRecords: filterRecords, recordChecks: recordChecks,
     ruleText: ruleText, procedureCounts: procedureCounts, award: award, span: span,
     collegeDrafts: collegeDrafts, draftText: draftText, flagsFor: flagsFor, flagSummary: flagSummary,
