@@ -12,6 +12,7 @@ Run from repo root: python3 tests/queue_status_test.py
 import copy
 import json
 import os
+import re
 import sys
 import tempfile
 
@@ -117,6 +118,41 @@ with tempfile.TemporaryDirectory() as d:
           and len(s["headline"]) in (before, before + 1), s["headline"])
     check("--headline keeps the earlier days, oldest first",
           s["headline"][0]["day"] == "2026-10-08" and [e["day"] for e in s["headline"]] == sorted(e["day"] for e in s["headline"]), s["headline"])
+
+# ── 4. the whole-harvest block (Sam, 2026-10-13: "an overall measure ... how far we are
+#       through the whole harvest process", the confirm step left out) ────────────────
+ROW = {"colleges": 118, "catalog_links": 118, "cms_links": 118, "ppm_links": 112, "active_programs": 20282,
+       "roep_programs": 2568, "coci_compared": 2568, "plo_read": 2568, "careers_read": 1518,
+       "program_courses": 89192, "slo_courses": 4123}
+hb = M.harvest_block(ROW, "2026-10-13", 308)
+check("the harvest block holds the five parts the view draws, each a [have, of] pair",
+      set(hb["parts"]) == {"links", "roep", "coci", "outcomes", "careers"} and hb["parts"]["links"]["ppm"] == [112, 118]
+      and hb["parts"]["outcomes"] == {"slo": [4123, 89192], "plo": [2568, 20282]} and hb["parts"]["careers"] == [1518, 20282], hb)
+check("filed gaps count toward ROEP data (a program accounted for), never past the active programs",
+      hb["parts"]["roep"] == [2876, 20282] and M.harvest_block(ROW, "2026-10-13", 99999)["parts"]["roep"] == [20282, 20282], hb["parts"]["roep"])
+check("a sound harvest block passes", M.harvest_faults(hb) == [], M.harvest_faults(hb))
+bad = copy.deepcopy(hb)
+bad["parts"]["coci"] = [30000, 20282]
+bad["parts"].pop("careers")
+fs = M.harvest_faults(bad)
+check("have past of, and a missing part, are named", any("coci" in f for f in fs) and any("careers" in f for f in fs), fs)
+check("the query reads every key the block needs, and the active programs from COCI",
+      all(k in M.HARVEST_SQL for k in M.HARVEST_KEYS) and "status = 'Active'" in M.HARVEST_SQL, M.HARVEST_SQL[:80])
+check("the view draws the same five parts the block holds",
+      set(re.findall(r'\{ id: "([a-z]+)", title: "[^"]+", note:', open(os.path.join(ROOT, "program_requirements.js"), encoding="utf-8").read()))
+      == set(M.WHOLE_PARTS), sorted(M.WHOLE_PARTS))
+with tempfile.TemporaryDirectory() as d:
+    p = os.path.join(d, "q.json")
+    q = copy.deepcopy(Q)
+    q["written_at"] = "2000-01-01T00:00:00Z"
+    with open(p, "w", encoding="utf-8") as f:
+        json.dump(q, f)
+    rc = M.main(["--harvest", json.dumps([ROW]), "--path", p])
+    with open(p, encoding="utf-8") as f:
+        s = json.load(f)
+    check("--harvest writes the block from the query's row and never moves written_at",
+          rc == 0 and s["written_at"] == "2000-01-01T00:00:00Z" and s["harvest"]["parts"]["coci"] == [2568, 20282]
+          and isinstance(s["harvest"]["gaps"], int), (rc, s.get("written_at"), s.get("harvest")))
 
 pass_n = sum(1 for r in results if r[1])
 for name, ok, why in results:
