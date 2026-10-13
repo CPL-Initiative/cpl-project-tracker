@@ -45,6 +45,8 @@ Your moniker is **SkyLarch**, on the **program requirements** queue. Session 381
    Count the gates; fix the one that refuses the program pages (Information Technology A.S. is the test: the link
    search takes its own page at coverage 1.0). Guard it, re-read with extraction (Sam's go stands for Coastline),
    load, add nothing to the dated reads (already there), display, procedure record, merge #2074 on `test`.
+   #2074's `lints` is red until then: `tests/roep_display_test.py` wants every filed record in the display receipt,
+   and Coastline's 32 are filed but not loaded (PR comment, 17:3xZ).
 2. **Cabrillo's capture:** found against its 281 with a course list. If sound, **ask Sam for the extraction go**
    (about $16 at $0.058 a program) as a card on a fresh sheet, then read, load, dated reads, display, procedure record.
    Merge #2078 on `test` once its capture files.
