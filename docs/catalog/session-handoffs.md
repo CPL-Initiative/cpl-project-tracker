@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-349 document(s).
+350 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 379 | [Annual Goals: Move to the phrase held on Sheet 73; read the first Refresh and the first Move](../session_379_handoff.md) | 2026-10-13 |
 | 378 | [Annual Goals: the Move control is live; read the first Refresh and the first Move](../session_378_handoff.md) | 2026-10-13 |
 | 377 | [Annual Goals: read Sheet 72, land the Move control, then Refresh summaries](../session_377_handoff.md) | 2026-10-13 |
 | 376 | [load the course outcomes, then re-read Mesa](../session_376_handoff.md) | 2026-10-12 |

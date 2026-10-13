@@ -73,3 +73,12 @@ Sam asked for four things on Annual Goals (move AI Apprenticeship CPL Tools unde
 - **A move changes sort order, and a name-matched series reads sort order.** The workplan charts pick each population series from the goal rows by a word in the name, last match wins. 1.1.2 "AI Apprenticeship CPL Tools" carried no ladder (all zeros) and was harmless while it sorted first; as 4.2.1 it sorted last, the chart took its zeros, and dashboard run 585 died on a zero division. The read-back of the move itself was clean: the failure sat in a consumer three steps away. After a move or an add, run the generator (or wait for the dashboard run) before calling it done (#2063).
 
 **State:** #2059, #2061 and #2056 merged; the Move function live (anon false, authenticated true); 3.9 added and 1.1.2 is 4.2.1 (read back 03:51Z). The dashboard was dispatched after #2056.
+
+## 2026-10-13 — SkyHemlock (S378, scheduled): Move to the phrase held; the Common Course Reference UI pass
+
+**What we learned**
+- **A scheduled session's permission check reads a widened grant as a permission change, whatever the ruling behind it.** Sam chose "the team phrase too" on Sheet 72; the session's first edit to the Move function (the gate plus `grant execute ... to anon`) was refused before any file changed. The routine's rule treats a refusal as a hold: a card on Sheet 73, no retry and no route around it. Access widening belongs in a session Sam opens.
+- **A tab that opens on another view is measured as that view.** The Common Course Reference opens on SkyView filling the window, so `npm run a11y cobi` measured the map and reported one heading fault, while the list a curator works in carried eight contrast faults in dark (the toggle 1.29:1, the id column 1.76:1) and five kinds of undersized targets. A seeded target on the list's own link (`#unified-courses/list`) found them; `ccr-list` and `ccr-list-dark` now measure it.
+- **Growing a target can push a fixed-layout column over.** The caret and the info mark at 24px pushed *Course* into the id column; the id was already clipped because `.uc-id` kept `nowrap` against a June fix that meant it to wrap. Look at the screen after a target-size fix: the sweep reported clean while the cells overlapped.
+
+**State:** #2063 merged and run 586 green; no Refresh posted and no Move made yet; Move to the phrase held on Sheet 73.
