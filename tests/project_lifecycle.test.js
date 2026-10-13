@@ -20,9 +20,11 @@
 //      builds a collapsed ledger entry — even for an overlay row whose pid has
 //      NO card (name falls back to the pid; no throw);
 //  (e) a baked ledger entry no longer in the overlay is removed on reconcile;
-//  (f) mountControls mounts a 🗄 control on EVERY active .activity-kpi-card[data-pid]
-//      (1.1 and a re-homed 1.1.1), NOT on the .activity-group-header, and NOT on a
-//      card already carrying data-lifecycle; Restore buttons gate on auth;
+//  (f) for a signed-in REVIEWER, mountControls mounts a 🗄 control on EVERY active
+//      .activity-kpi-card[data-pid] (1.1 and a re-homed 1.1.1), NOT on the
+//      .activity-group-header, and NOT on a card already carrying data-lifecycle;
+//      signed out or holding only the team phrase, no control and no Restore
+//      (Sam, Open Asks Sheet 77 card 2, "Reviewer only on both tabs", 2026-10-13);
 //  (g) the run() overlay-load fires on the post-reorg DOM (no #projectsGrid) —
 //      the Activities surface is detected via the nested cards / ledger, so a
 //      drift-tabled card still reconciles (hides) on load;
@@ -33,7 +35,10 @@
 //      mountControls + reconcile-restore) so pre-regen HTML works in transition;
 //  (j) the Table/Archive modal (opened from an .activity-kpi-card) survives
 //      clicks INSIDE it (Session-95 fix — the Archive radio used to dismiss it);
-//      Confirm saves the picked state + reason; a true backdrop click closes.
+//      Confirm saves the picked state + reason; a true backdrop click closes;
+//  (k) Sheet 77 card 2: no write carries x-team-pass, the signed-out dialog offers
+//      no phrase box, and the schema of record's write policies name the reviewer
+//      alone.
 //
 // Run from repo root: `npm test` (or `node tests/project_lifecycle.test.js`).
 const fs = require("fs");
@@ -57,9 +62,6 @@ function installFetch(dom) {
   w.fetch = function (url, fopts) {
     if (/project_lifecycle\?select/.test(url)) {
       return Promise.resolve({ ok: true, status: 200, json: function () { return Promise.resolve(dom._rows); } });
-    }
-    if (/rpc\/team_pass_ok/.test(url)) {
-      return Promise.resolve({ ok: true, status: 200, json: function () { return Promise.resolve(true); } });
     }
     // writes (POST upsert / DELETE) succeed — recorded for the modal test (j)
     dom._writes.push({ url: url, opts: fopts || {} });
@@ -163,6 +165,12 @@ function makeLegacyDom(overlayRows, opts) {
   return dom;
 }
 
+// A signed-in reviewer's session, the shape cpl_session.js keeps in sessionStorage.
+function signInReviewer(w) {
+  w.sessionStorage.setItem("cpl_sb", JSON.stringify({ access_token: "aaa.bbb.ccc", refresh_token: "r1",
+    email: "map@rccd.edu", exp: Date.now() + 3600 * 1000 }));
+}
+
 // Overlay: 5.1 tabled (matches an active card → drift hide), 7.7 archived (NO
 // card — name falls back), plus malformed rows that must be dropped.
 const OVERLAY = [
@@ -215,8 +223,21 @@ const OVERLAY = [
   // (e2) Annual Goals table — the tabled 5.1 rowspan block is hidden live.
   check("goals table: tabled 5.1's 3 rows are hidden", Array.prototype.every.call(doc.querySelectorAll(".g51"), function (r) { return r.style.display === "none"; }));
 
-  // (f) mountControls mounts a 🗄 control on EVERY active .activity-kpi-card —
-  // INVERTS the old "core ids are immune, no control" assertions.
+  // Signed out: no 🗄 control and no Restore (Sheet 77 card 2).
+  check("signed out: no 🗄 control on any card", doc.querySelectorAll(".plc-table-btn").length === 0);
+  check("signed out: Restore buttons hidden", Array.prototype.every.call(doc.querySelectorAll(".tabled-restore"), function (b) { return b.style.display === "none"; }));
+  check("the ledger note names the reviewer, not the phrase", /Sign in as a reviewer to Restore/.test(doc.querySelector(".tabled-archived-wrap").innerHTML) || !doc.querySelector(".tabled-archived-note"));
+
+  // The team phrase alone opens nothing now.
+  w.localStorage.setItem("cpl_team_pass", "cpl-team-2026");
+  API.mountControls();
+  check("team phrase only: no 🗄 control", doc.querySelectorAll(".plc-table-btn").length === 0);
+  check("team phrase only: Restore buttons hidden", Array.prototype.every.call(doc.querySelectorAll(".tabled-restore"), function (b) { return b.style.display === "none"; }));
+
+  // (f) a signed-in reviewer: mountControls mounts a 🗄 control on EVERY active
+  // .activity-kpi-card — INVERTS the old "core ids are immune, no control" assertions.
+  signInReviewer(w);
+  API.mountControls();
   check("🗄 control mounted on the active 1.1 card", !!doc.querySelector('.activity-kpi-card[data-pid="1.1"] .plc-table-btn'));
   check("🗄 control mounted on the re-homed child 1.1.1 card", !!doc.querySelector('.activity-kpi-card[data-pid="1.1.1"] .plc-table-btn'));
   check("no 🗄 control on the hidden/tabled 5.1 card", !doc.querySelector('.activity-kpi-card[data-pid="5.1"] .plc-table-btn'));
@@ -225,16 +246,14 @@ const OVERLAY = [
   check("no 🗄 control on any .activity-group-header", doc.querySelectorAll(".activity-group-header .plc-table-btn").length === 0);
   check("group headers stay visible (never hidden by tabling)", Array.prototype.every.call(doc.querySelectorAll(".activity-group-header"), function (h) { return h.style.display !== "none" && !h.getAttribute("data-lifecycle"); }));
 
-  // signed out: the 🗄 control is ALWAYS visible (affordance-visibility vs
-  // eligibility); Restore buttons stay hidden until authed.
-  check("signed out: 🗄 controls present on active cards", doc.querySelectorAll(".plc-table-btn").length >= 2);
-  check("signed out: Restore buttons hidden", Array.prototype.every.call(doc.querySelectorAll(".tabled-restore"), function (b) { return b.style.display === "none"; }));
+  check("reviewer: Restore buttons shown", Array.prototype.some.call(doc.querySelectorAll(".tabled-restore"), function (b) { return b.style.display !== "none"; }));
 
-  // Provide a team phrase → Restore lights up too.
-  w.localStorage.setItem("cpl_team_pass", "cpl-team-2026");
+  // Signing out takes the controls away again.
+  w.sessionStorage.removeItem("cpl_sb");
   API.mountControls();
-  check("with team phrase: 🗄 control still on the active 1.1 card", !!doc.querySelector('.activity-kpi-card[data-pid="1.1"] .plc-table-btn'));
-  check("with team phrase: Restore buttons shown", Array.prototype.some.call(doc.querySelectorAll(".tabled-restore"), function (b) { return b.style.display !== "none"; }));
+  check("signed out again: the 🗄 controls are removed", doc.querySelectorAll(".plc-table-btn").length === 0);
+  signInReviewer(w);
+  API.mountControls();
 
   // reconcile is idempotent (no throw, no duplicate entries).
   let threw = false;
@@ -252,7 +271,7 @@ const OVERLAY = [
           // a legacy 5.x id — the indexOf("5.") guard keeps it OUT of the map
           { activity_id: "Activity 4", kpis: [{ id: "5.1", name: "AI-Ready California Demonstration" }] },
         ] };
-        w2.localStorage.setItem("cpl_team_pass", "cpl-team-2026");
+        signInReviewer(w2);
       } });
   await new Promise((r) => setTimeout(r, 30));
   const doc2 = dom2.window.document;
@@ -270,7 +289,7 @@ const OVERLAY = [
   // still work against the old #projectsGrid .project-card structure.
   const domL = makeLegacyDom(
     [], // empty overlay → the baked-tabled 9.9 grid card is restored
-    { preEval: function (wL) { wL.localStorage.setItem("cpl_team_pass", "cpl-team-2026"); } });
+    { preEval: function (wL) { signInReviewer(wL); } });
   await new Promise((r) => setTimeout(r, 30));
   const docL = domL.window.document;
   check("legacy: 🗄 control mounts on the #projectsGrid .project-card 2.2", !!docL.querySelector('.project-card[data-pid="2.2"] .plc-table-btn'));
@@ -281,7 +300,7 @@ const OVERLAY = [
 
   // (j) the modal survives inner clicks; Archive is confirmable — opened from an
   // .activity-kpi-card. Empty overlay so 5.1 stays active + carries a control.
-  const dom3 = makeDom([], { preEval: function (w3) { w3.localStorage.setItem("cpl_team_pass", "cpl-team-2026"); } });
+  const dom3 = makeDom([], { preEval: function (w3) { signInReviewer(w3); w3.localStorage.setItem("cpl_team_pass", "cpl-team-2026"); } });
   await new Promise((r) => setTimeout(r, 30));
   const w3 = dom3.window, doc3 = w3.document;
   doc3.querySelector('.activity-kpi-card[data-pid="5.1"] .plc-table-btn').click();
@@ -298,6 +317,11 @@ const OVERLAY = [
   const body = upsert ? JSON.parse(upsert.opts.body) : {};
   check("Confirm saves state=archived (not the default tabled)", body.state === "archived");
   check("Confirm saves the typed reason", body.reason === "Completed in June.");
+  // (k) the write rides the reviewer's JWT, never the phrase, even with one stored.
+  const hdrs = (upsert && upsert.opts.headers) || {};
+  check("the write sends no x-team-pass header", !("x-team-pass" in hdrs));
+  check("the write carries the reviewer's bearer token", hdrs.Authorization === "Bearer aaa.bbb.ccc");
+  check("the write names the reviewer as updated_by", body.updated_by === "map@rccd.edu");
   check("Confirm optimistically hides the 5.1 card (via cardFor)", doc3.querySelector('.activity-kpi-card[data-pid="5.1"]').style.display === "none");
   check("Confirm optimistically adds a 5.1 ledger entry", !!doc3.querySelector('.tabled-card[data-pid="5.1"]'));
   // Reopen from another active card → a TRUE backdrop click still closes.
@@ -307,6 +331,23 @@ const OVERLAY = [
   check("modal reopens for the backdrop test", !!backdrop);
   if (backdrop) backdrop.click();
   check("a true backdrop click closes the modal", !doc3.querySelector(".plc-modal-overlay"));
+
+  // (k) signed out, the dialog (reachable through openTable) says who may use it
+  // and offers no phrase box.
+  const dom4 = makeDom([]);
+  await new Promise((r) => setTimeout(r, 30));
+  const doc4 = dom4.window.document;
+  dom4.window.CPL_PROJECT_LIFECYCLE.openTable("1.1", "CPL Faculty Toolkit");
+  check("signed out: the dialog asks for a reviewer sign-in", /Sign in as a reviewer/.test(doc4.querySelector(".plc-modal").textContent));
+  check("signed out: the dialog has no phrase box", !doc4.querySelector(".plc-modal input[type=password]"));
+  check("signed out: the dialog offers no Confirm", !doc4.querySelector(".plc-modal .plc-btn-submit"));
+  check("source: no team_pass_ok call and no x-team-pass header", !/team_pass_ok|x-team-pass"\]|"x-team-pass"/.test(SRC.replace(/\/\/.*$/mg, "").replace(/\/\*[\s\S]*?\*\//g, "")));
+  const SQL = fs.readFileSync("kb/supabase_project_lifecycle.sql", "utf8").replace(/--.*$/mg, "");
+  check("schema of record: no write policy names team_pass_ok", !/team_pass_ok/.test(SQL));
+  check("schema of record: insert, update and delete each name is_allowed_reviewer()",
+    /plc_insert[\s\S]*?with check \(is_allowed_reviewer\(\)\)/.test(SQL) &&
+    /plc_update[\s\S]*?using \(is_allowed_reviewer\(\)\)/.test(SQL) &&
+    /plc_delete[\s\S]*?using \(is_allowed_reviewer\(\)\)/.test(SQL));
 
   // ── report ──
   let failed = 0;

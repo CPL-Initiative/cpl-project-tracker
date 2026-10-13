@@ -19822,16 +19822,6 @@
      ]
     },
     {
-     "id": "module:project_lifecycle.js",
-     "kind": "module",
-     "direction": "call",
-     "how": "literal",
-     "line": 152,
-     "pages": [
-      "CPL_Dashboard.html"
-     ]
-    },
-    {
      "id": "module:raci.js",
      "kind": "module",
      "direction": "call",
@@ -22263,7 +22253,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 633,
+     "line": 603,
      "pages": [
       "CPL_Dashboard.html"
      ]
@@ -22273,7 +22263,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 181,
+     "line": 170,
      "pages": [
       "CPL_Dashboard.html"
      ]
