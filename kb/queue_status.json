@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-13T14:37:18Z",
-  "session": 380,
-  "moniker": "SkyAlder",
+  "written_at": "2026-10-13T17:28:40Z",
+  "session": 381,
+  "moniker": "SkyRowan",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_381_handoff.md",
+  "handoff": "docs/session_382_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -15210,11 +15210,1614 @@
       "award": "Certificate of Achievement: 18  or great",
       "control_number": "22285",
       "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Environmental Horticulture",
+      "award": "A.S. Degree",
+      "control_number": "01988",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Architecture/Architectural Drafting",
+      "award": "A.S. Degree",
+      "control_number": "01992",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Accounting",
+      "award": "A.A. Degree",
+      "control_number": "01997",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Administrative Office Assistant",
+      "award": "A.A. Degree",
+      "control_number": "02004",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "American Sign Language",
+      "award": "A.A. Degree",
+      "control_number": "02010",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Engineering",
+      "award": "A.S. Degree",
+      "control_number": "02014",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Industrial Technology: Electronics",
+      "award": "A.S. Degree",
+      "control_number": "02015",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Industrial Technology: Industrial Drawing",
+      "award": "A.S. Degree",
+      "control_number": "02027",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Manufacturing Technology",
+      "award": "A.S. Degree",
+      "control_number": "02029",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Welding",
+      "award": "A.S. Degree",
+      "control_number": "02031",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Registered Nursing",
+      "award": "A.S. Degree",
+      "control_number": "02044",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Vocational Nursing",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "02045",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Radiologic Technology",
+      "award": "A.S. Degree",
+      "control_number": "02048",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Criminal Justice",
+      "award": "A.A. Degree",
+      "control_number": "02068",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Correctional Administration",
+      "award": "A.A. Degree",
+      "control_number": "02069",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Culinary Arts",
+      "award": "A.S. Degree",
+      "control_number": "02081",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Bookkeeping",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "09241",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Engineering Technology",
+      "award": "A.S. Degree",
+      "control_number": "09243",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Woodworking / Cabinetmaking",
+      "award": "A.S. Degree",
+      "control_number": "09244",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Child Development Teacher",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "09258",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Dietetic Services Supervisor Program",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "09259",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Food Service Management",
+      "award": "A.S. Degree",
+      "control_number": "09260",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Fire Technology",
+      "award": "A.A. Degree",
+      "control_number": "09966",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Office Assistant",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "11276",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "LVN to Registered Nursing",
+      "award": "A.S. Degree",
+      "control_number": "11281",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Child Development Master Teacher: Infant Toddler",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "11282",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Wildland Firefighting",
+      "award": "A.S. Degree",
+      "control_number": "16988",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Animal Science",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20235",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Environmental Horticulture",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20238",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Agriculture Business",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20239",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Electronics Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20251",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Construction Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20253",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Woodworking / Cabinetmaking",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20259",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Manufacturing Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20262",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Culinary Arts",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20268",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Fire Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20269",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "30593",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "30628",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "31667",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "32459",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Geology",
+      "award": "A.S. T Degree",
+      "control_number": "32460",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "32461",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "MATH",
+      "award": "A.S. T Degree",
+      "control_number": "32557",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Music",
+      "award": "A.A- T Degree",
+      "control_number": "32724",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Theatre Arts",
+      "award": "A.A- T Degree",
+      "control_number": "32769",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "32781",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "32783",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Journalism",
+      "award": "A.A- T Degree",
+      "control_number": "32786",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "32796",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "32797",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Spanish",
+      "award": "A.A- T Degree",
+      "control_number": "32800",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Computer Science",
+      "award": "A.S. T Degree",
+      "control_number": "32826",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "32897",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "32967",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Elementary Teacher Education",
+      "award": "A.A- T Degree",
+      "control_number": "33173",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Photography",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33247",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Philosophy",
+      "award": "A.A- T Degree",
+      "control_number": "33262",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Fire Fighter I Academy",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33328",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Paramedic Program",
+      "award": "A.S. Degree",
+      "control_number": "33781",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Paramedic",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "33787",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "CompTIA",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33894",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Industrial Automation",
+      "award": "Baccalaureate of Science (B.S.) Degree.",
+      "control_number": "34006",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Executive Chief Fire Officer",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35102",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Media Arts",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35113",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "35302",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Chemistry",
+      "award": "A.S. T Degree",
+      "control_number": "35389",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Automotive Heating and Air Conditioning",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35469",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Automatic Transmissions",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "35471",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Public Health Science",
+      "award": "A.S. T Degree",
+      "control_number": "35480",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Agriculture Plant Science",
+      "award": "A.S. T Degree",
+      "control_number": "35625",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Engine Overhaul and Repair",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35695",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Light Duty Diesel Performance",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35696",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Manual Drive Train and Axles",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "35697",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Brake Systems",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "35725",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Engine Performance",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35726",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Suspension and Steering",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "35727",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Automotive Technology",
+      "award": "A.S. Degree",
+      "control_number": "35728",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Electrical and Electronic Systems",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "35729",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Agriculture Business",
+      "award": "A.S. T Degree",
+      "control_number": "35807",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Agriculture Animal Science",
+      "award": "A.S. T Degree",
+      "control_number": "35826",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Health Information Technology",
+      "award": "A.S. Degree",
+      "control_number": "35984",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Occupational Safety and Risk Management, Agriculture",
+      "award": "A.S. Degree",
+      "control_number": "36024",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Occupational Safety and Risk Management, Industrial Technology",
+      "award": "A.S. Degree",
+      "control_number": "36037",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Industrial Drawing",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "36485",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Occupational Safety and Risk Management, Business",
+      "award": "A.S. Degree",
+      "control_number": "36488",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Occupational Safety and Risk Management, Health Science",
+      "award": "A.S. Degree",
+      "control_number": "36489",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Art History",
+      "award": "A.A- T Degree",
+      "control_number": "36571",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Industrial Automation",
+      "award": "A.S. Degree",
+      "control_number": "36579",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Heavy Equipment Technician",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "36590",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Construction Management",
+      "award": "A.S. Degree",
+      "control_number": "36640",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Manufacturing Metal Fabrication Technology",
+      "award": "A.S. Degree",
+      "control_number": "36772",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Environmental Science",
+      "award": "A.S. T Degree",
+      "control_number": "36773",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Health Navigator",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "36778",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Child Development Master Teacher: Special Education",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "36781",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "HVAC Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37018",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Industrial Automation",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "37055",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Information Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37068",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "HVAC Technology",
+      "award": "A.S. Degree",
+      "control_number": "37147",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Process Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37178",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Process Technology",
+      "award": "A.S. Degree",
+      "control_number": "37319",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Mechanized Agriculture",
+      "award": "A.S. Degree",
+      "control_number": "37368",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Engineering Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37394",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Transitional Kindergarten",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37843",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Web Design and Development",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37903",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Japanese",
+      "award": "A.A. Degree",
+      "control_number": "38523",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Paraprofessional Level I",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "38832",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Paraprofessional Level III",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38841",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Paraprofessional Level II",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38842",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "UCTP Chemistry",
+      "award": "A.S. T Degree",
+      "control_number": "39473",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Human Biology",
+      "award": "A.S. Degree",
+      "control_number": "39516",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "English for Multilingual Students Intermediate",
+      "award": "Noncredit program",
+      "control_number": "39541",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "English for Multilingual Students Listening/Speaking",
+      "award": "Noncredit program",
+      "control_number": "39542",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "English for Multilingual Students Reading",
+      "award": "Noncredit program",
+      "control_number": "39543",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "English for Multilingual Students Writing",
+      "award": "Noncredit program",
+      "control_number": "39544",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Sales Techniques",
+      "award": "Noncredit program",
+      "control_number": "39545",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Food Science and Technology",
+      "award": "A.S. Degree",
+      "control_number": "39547",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Introduction to Early Care and Education",
+      "award": "Noncredit program",
+      "control_number": "39549",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Basic Internet Skills",
+      "award": "Noncredit program",
+      "control_number": "39550",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Basic Office Skills",
+      "award": "Noncredit program",
+      "control_number": "39551",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Basic Office Software Skills",
+      "award": "Noncredit program",
+      "control_number": "39552",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Beginning Computer Skills",
+      "award": "Noncredit program",
+      "control_number": "39553",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Customer Relations",
+      "award": "Noncredit program",
+      "control_number": "39554",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Entrepreneurship",
+      "award": "Noncredit program",
+      "control_number": "39555",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Digital Marketing for Small Business",
+      "award": "Noncredit program",
+      "control_number": "39556",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Powerful Presentation",
+      "award": "Noncredit program",
+      "control_number": "39557",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "QuickBooks Basics for Small Business",
+      "award": "Noncredit program",
+      "control_number": "39558",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "UCTP Physics",
+      "award": "A.S. T Degree",
+      "control_number": "39560",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Occupational Safety and Risk Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39686",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "English for Multilingual Students Advanced",
+      "award": "Noncredit program",
+      "control_number": "39687",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "English for Multilingual Students Introduction",
+      "award": "Noncredit program",
+      "control_number": "39688",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Nutrition and Dietetics",
+      "award": "A.S. T Degree",
+      "control_number": "40073",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Application of Transformational Policing",
+      "award": "Noncredit program",
+      "control_number": "40258",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Online Teaching",
+      "award": "Noncredit program",
+      "control_number": "40259",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Food Science and Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40334",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Electrical Safety",
+      "award": "Noncredit program",
+      "control_number": "40359",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Advanced Electrical Safety and Arc Flash",
+      "award": "Noncredit program",
+      "control_number": "40393",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Paraprofessional Level IV",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "40685",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Online Teaching Level II",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40686",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Education Studies",
+      "award": "A.S. Degree",
+      "control_number": "40749",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Physical Therapist Assistant",
+      "award": "A.S. Degree",
+      "control_number": "40880",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Social Justice Studies",
+      "award": "A.A- T Degree",
+      "control_number": "41001",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Logistics Management",
+      "award": "A.S. Degree",
+      "control_number": "41348",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Logistics Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41349",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Inclusive and Accessible Digital Content",
+      "award": "Noncredit program",
+      "control_number": "41350",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "41351",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Applied Leadership",
+      "award": "Noncredit program",
+      "control_number": "41352",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Public Health for Non Health Professionals",
+      "award": "Noncredit program",
+      "control_number": "41548",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Kitchen Techniques for New Culinarians  (NC)",
+      "award": "Noncredit program",
+      "control_number": "41549",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "School Food Service",
+      "award": "Noncredit program",
+      "control_number": "41550",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Introduction to Welding Processes",
+      "award": "Noncredit program",
+      "control_number": "41574",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Mammography Program",
+      "award": "Noncredit program",
+      "control_number": "41894",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "College and Academic Writing Success",
+      "award": "Noncredit program",
+      "control_number": "42034",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "English for Multilingual Students Basic",
+      "award": "Noncredit program",
+      "control_number": "42035",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Study Skills for College Success",
+      "award": "Noncredit program",
+      "control_number": "42036",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Basic Industrial and Construction Skills",
+      "award": "Noncredit program",
+      "control_number": "42069",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Industrial Safety",
+      "award": "Noncredit program",
+      "control_number": "42070",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Student Success",
+      "award": "Noncredit program",
+      "control_number": "42071",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Teaching and Learning",
+      "award": "Noncredit program",
+      "control_number": "42072",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Warehousing",
+      "award": "Noncredit program",
+      "control_number": "42073",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Modern Energy",
+      "award": "Noncredit program",
+      "control_number": "42074",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Small Business Execution",
+      "award": "Noncredit program",
+      "control_number": "42076",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Small Business Funding",
+      "award": "Noncredit program",
+      "control_number": "42077",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Law, Public Policy, and Society",
+      "award": "A.A- T Degree",
+      "control_number": "42226",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Edible Education Garden",
+      "award": "Noncredit program",
+      "control_number": "42307",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Child and Adolescent Development",
+      "award": "A.A- T Degree",
+      "control_number": "42310",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Natural Resource Management",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "42508",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Research Laboratory Technology",
+      "award": "A.S. Degree",
+      "control_number": "42523",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Natural Resource Management",
+      "award": "A.S. Degree",
+      "control_number": "42536",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Environmental Resource Management",
+      "award": "A.S. Degree",
+      "control_number": "42569",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Environmental Resource Management",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "42570",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Cesar E. Chavez Leadership",
+      "award": "Noncredit program",
+      "control_number": "42766",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Social-Emotional and Cognitive Development",
+      "award": "Noncredit program",
+      "control_number": "42934",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Police Science",
+      "award": "A.S. Degree",
+      "control_number": "43011",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Pest Control Adviser Preparation",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "43012",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Agricultural Engineering Technology",
+      "award": "A.S. Degree",
+      "control_number": "43022",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Mechanical Engineering Technology",
+      "award": "A.S. Degree",
+      "control_number": "43157",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Automotive Detailing",
+      "award": "Noncredit program",
+      "control_number": "43184",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Electronic Systems Engineering Technology",
+      "award": "A.S. Degree",
+      "control_number": "43190",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Diesel Engine Systems",
+      "award": "Noncredit program",
+      "control_number": "43264",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Mobile Equipment Electrical Systems",
+      "award": "Noncredit program",
+      "control_number": "43265",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Mobile Equipment Hydraulic Systems",
+      "award": "Noncredit program",
+      "control_number": "43266",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Equipment Technician Level 1",
+      "award": "Noncredit program",
+      "control_number": "43267",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Academic Research Skills",
+      "award": "Noncredit program",
+      "control_number": "43268",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "College and Math Skill Building Success",
+      "award": "Noncredit program",
+      "control_number": "43269",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Sports Medicine",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43270",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Hospitality Management",
+      "award": "A.S. T Degree",
+      "control_number": "43434",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Research Laboratory Technology",
+      "award": "Baccalaureate of Science (B.S.) Degree.",
+      "control_number": "43499",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Forest Resource Management",
+      "award": "A.S. Degree",
+      "control_number": "43531",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Forest Resource Management",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "43532",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Civil Engineering Technology",
+      "award": "A.S. Degree",
+      "control_number": "43602",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Data Analyst Apprenticeship",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43639",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Help Desk Support Technician Apprenticeship",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43643",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Civil Engineering Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "43829",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "General Engineering",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "43830",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Sustainable Landscape",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43850",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Ornamental Horticulture",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43851",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Ornamental Horticulture",
+      "award": "A.S. Degree",
+      "control_number": "43873",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "43877",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Coaching",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43985",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Emerging Media Literacy",
+      "award": "Noncredit program",
+      "control_number": "44031",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Public Health Informatics II",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44282",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Intercollegiate Athletics",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44284",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Fitness Trainer",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44372",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Graphic Design - Level I",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44380",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Digital Marketer Apprenticeship",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44440",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Plant Science",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44441",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Automotive Management",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44442",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Community Health Worker  II",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44544",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Public Health",
+      "award": "A.S. T Degree",
+      "control_number": "44746",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Building a Canvas Course",
+      "award": "Noncredit program",
+      "control_number": "44836",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Teaching with AI: Today and Tomorrow",
+      "award": "Noncredit program",
+      "control_number": "44837",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Energy Management and Auditing",
+      "award": "Noncredit program",
+      "control_number": "44859",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "44895",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Plant Science",
+      "award": "A.S. Degree",
+      "control_number": "44917",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Recreation, Parks, and Tourism Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44952",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Clinical Medical Assistant",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44953",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Artificial Intelligence (AI) Proficiency for College and Career",
+      "award": "Noncredit program",
+      "control_number": "45086",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Respiratory Therapy",
+      "award": "A.S. Degree",
+      "control_number": "45142",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Logic, Argumentation, and Critical Thinking",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45197",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Graphic Design - Level II",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45404",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Elementary Teacher Education: Integrated Programs",
+      "award": "A.A- T Degree",
+      "control_number": "45618",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Registered Veterinary Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46070",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Medical Coding Specialist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46087",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Adult and Juvenile Correctional and Probation Officer",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46164",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Culinary Fundamentals",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46495",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Food Service Management",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "46496",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Institutional Food Service Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46497",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Health Information Technology Assistant",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46572",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Bakersfield College",
+      "program": "Human Resource Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46573",
+      "loaded": "2026-10-13"
     }
   ],
   "next_step": {
-    "title": "Load Bakersfield and Coastline",
-    "text": "Read the two colleges' filed records, load each one not yet confirmed, then build the display so their programs appear on CPL Pathways and the Program Requirements tab."
+    "title": "Coastline's near misses, then Cabrillo",
+    "text": "Read which gate refused each Coastline program page, fix it, re-read and load Coastline; read Cabrillo's capture and ask for its extraction go."
   },
   "calls": [
     {
@@ -15245,24 +16848,20 @@
   },
   "changes": [
     {
-      "at": "2026-10-13T11:50Z",
-      "text": "Course outcomes loaded at Riverside City, Norco and Moreno Valley (2,665 courses)"
+      "at": "2026-10-13T16:12:04Z",
+      "text": "Bakersfield's 229 program records loaded, unchecked"
     },
     {
-      "at": "2026-10-13T12:30Z",
-      "text": "Course outcomes loaded at San Diego City, Mesa and Miramar (2,229 courses)"
+      "at": "2026-10-13T16:35:01Z",
+      "text": "Display build 2121fcc84f86 applied to all 2,432 rows"
     },
     {
-      "at": "2026-10-13T12:16Z",
-      "text": "Chaffey's course outcomes found to be kept off its public reports"
+      "at": "2026-10-13T16:41:00Z",
+      "text": "Bakersfield's reading procedure updated (version 3)"
     },
     {
-      "at": "2026-10-13T14:22Z",
-      "text": "Coastline read with two catalog reader fixes, extraction under way"
-    },
-    {
-      "at": "2026-10-13T14:35Z",
-      "text": "Bakersfield read through the eLumen catalog's own page calls, extraction under way"
+      "at": "2026-10-13T17:26:00Z",
+      "text": "Progress view: every count opens what it totals; waiting items link where to answer"
     }
   ],
   "headline": [

@@ -753,3 +753,35 @@ The outcomes paragraph's settled parts:
   search: their link-search records are worth one check for a course-listing source.
 - **Next college by tier:** no Leading college is left on a platform the reader handles except eLumen; among
   Advancing CourseLeaf/curriQunet colleges Coastline (984 CPL students) leads, then Southwestern, Fresno City, Cypress.
+
+## S381 SkyRowan (2026-10-13): Bakersfield end to end, Coastline's second miss, Cabrillo's department menu, and the Progress cards
+
+- **Bakersfield, the first eLumen college, read to display in one session.** Read 38414480070 (S380): 231 of 241
+  with a list, 207 pass, $13.38. Load 38428412859 inserted 229 (09237 Animal Science A.S. and 09968 Human Services
+  A.A. place none of their courses). The builder's two dated reads gained Bakersfield and Coastline (Coastline ahead
+  of its load, so two branches would not both edit them); the per-college md5 over code|recs|exhibits|untitled
+  matched in SQL and over the filed rows. Display 38430743762 applied build `2121fcc84f86` to all 2,432 rows. Its
+  24 arithmetic failures are mostly transfer degrees whose blocks sum above the stated total (Psychology 30593,
+  Theatre Arts 32769): the mark of a choose-from-a-list block read as required. Filed on its procedure record v3.
+- **A fix that clears the visible failure is not the fix (Coastline).** S380's `dir_form()` left 24 of 159.
+  Every Coastline page's h1 is the banner "ACADEMIC CATALOGS", so the hidden-text heading rule refused every
+  program page whose requirements sit in a hidden tab; `drop_banner_h1()` reads the title instead (an h1 on half
+  the pages read, at least ten). That and `child_pages()` raised it to 32. Read 38437346167 then showed the sitemap
+  does list the program pages: the main pass reads them and still refuses most, while the link search takes the same
+  page at coverage 1.0. **The capture filed nothing about a refused page**, so each guess cost a 27-minute run;
+  `near_miss()` now files, for every not-found program, the page that names it best and the gate that refused it.
+  Read a capture's near misses before writing the next fix.
+- **A page read is the cheapest test of a theory.** Two loads, no model call, about two minutes on a runner: Cabrillo
+  (menu, then one department) and Coastline (the sitemap searched for known program addresses) each answered in one
+  read what a capture could not.
+- **eLumen menus differ.** Bakersfield's menu links programs (`<catalog>/program/<slug>`); Cabrillo's links
+  departments (`2026-2027/department/<slug>`), and each department's content call links its programs at the same
+  `program/<slug>` path. `el_department_slugs()` reads them when the menu names no program (#2078). Report keys
+  are overwritten by the rendered fallback when the fast read finds nothing: read the job log, not only the report.
+- **No course-listing record is live** at the earlier CourseLeaf colleges: Mt. San Antonio's six from
+  `adult-continuing-coursesaz/` were removed by S362 on Sheet 62 (handoff 381 priority 4, answered).
+- **A stash check can unstage a commit's code.** `git stash` then `git stash pop` without `--index` left the reader
+  unstaged, and the commit carried only the dependency map; the run dispatched on it was canceled and the code
+  pushed in a second commit. Pop with `--index`, and read `git show --stat HEAD` before dispatching a run on it.
+- **The Progress view's counts open their lists** (Sam, 2026-10-13, on his phone; #2077). A call with no answer link
+  named a question with nowhere to tap: `scripts/queue_status.py` now refuses one.
