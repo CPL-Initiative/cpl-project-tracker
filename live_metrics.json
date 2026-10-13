@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-10-13T00:38:18.844Z",
+  "scraped_at": "2026-10-13T02:24:14.010Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -138,17 +138,17 @@
         },
         {
           "college": "Chaffey College",
-          "students": 3709,
-          "units": 19657.5,
-          "avgUnits": 5.299946077109733,
+          "students": 3708,
+          "units": 19654.5,
+          "avgUnits": 5.300566343042071,
           "transcriptionRate": 1.8,
-          "avgTranscribed": 0.09652197357778376,
+          "avgTranscribed": 0.0965480043149946,
           "criteriaMetCount": 3,
-          "militaryStudents": 375,
+          "militaryStudents": 374,
           "nonMilitaryStudents": 3336,
           "apprenticeStudents": 12,
-          "savings": 20868655,
-          "yearImpact": 96754015,
+          "savings": 20863465,
+          "yearImpact": 96735814,
           "transcribedUnits": 358
         },
         {
@@ -1772,11 +1772,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "55,021",
+      "value": "55,020",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "29,023"
+          "value": "29,022"
         },
         {
           "label": "Workforce/Other",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 55021,
-    "Units": 239387.65000000002,
+    "Students": 55020,
+    "Units": 239384.65000000002,
     "TranscribedUnits": 83690.34999999999,
-    "Savings": 354823800.25,
-    "YearImpact": 1413504736.3999999,
-    "MilitaryStudents": 29023,
+    "Savings": 354818610.25,
+    "YearImpact": 1413486535.3999999,
+    "MilitaryStudents": 29022,
     "NonMilitaryStudents": 26092,
     "AprenticeStudents": 949,
-    "AverageUnits": 4.3508414968830085,
-    "TranscribedAverage": 1.521061958161429
+    "AverageUnits": 4.350866048709561,
+    "TranscribedAverage": 1.5210896037804433
   }
 }
