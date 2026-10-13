@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1143,
-    "bytes": 11786721,
-    "over_budget": 8,
-    "handoff_max": 381,
+    "files": 1144,
+    "bytes": 11796131,
+    "over_budget": 9,
+    "handoff_max": 382,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60304,
     "superseded_files": 0,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 119,
-        "bytes": 3481075,
+        "bytes": 3481380,
         "over": 3
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 82,
-        "bytes": 2362758,
+        "bytes": 2365994,
         "over": 3
       },
       "kb_note": {
@@ -46,27 +46,26 @@
       },
       "roadmap_lane": {
         "files": 37,
-        "bytes": 345334,
-        "over": 1
+        "bytes": 345416,
+        "over": 2
       },
       "handoff": {
-        "files": 352,
-        "bytes": 2803379,
+        "files": 353,
+        "bytes": 2809166,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 8,
+      "oversized_doc": 9,
       "house_voice": 23,
       "kb_note_dialect": 1,
-      "american_spelling": 2,
       "vault_heavy_path": 61
     },
     "vault": {
-      "files": 6944,
-      "bytes": 2130599361,
-      "heavy_bytes": 1088813350,
-      "heavy_share": 0.511,
+      "files": 7188,
+      "bytes": 2154050659,
+      "heavy_bytes": 1112132266,
+      "heavy_share": 0.516,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/regional_cpl_out",
@@ -403,21 +402,6 @@
       "path": "docs/noncredit_cpl_thinking.md"
     },
     {
-      "rule": "american_spelling",
-      "fixable": false,
-      "detail": {
-        "total": 1,
-        "forms": {
-          "cancelled": {
-            "n": 1,
-            "prefer": "canceled"
-          }
-        }
-      },
-      "message": "1 British form — cancelled→canceled",
-      "path": "docs/program_requirements_harvest_lessons.md"
-    },
-    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -455,18 +439,16 @@
       "path": "docs/reference/lanes/common-cr-reference.md"
     },
     {
-      "rule": "american_spelling",
+      "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "total": 1,
-        "forms": {
-          "cancelled": {
-            "n": 1,
-            "prefer": "canceled"
-          }
-        }
+        "bytes": 20616,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 616,
+        "ratio": 1.03
       },
-      "message": "1 British form — cancelled→canceled",
+      "message": "20,616 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/program-requirements-harvest.md"
     },
     {
@@ -559,10 +541,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 253434389,
+        "bytes": 275084719,
         "kind": "dir"
       },
-      "message": "directory totals 253,434,389 B inside the vault"
+      "message": "directory totals 275,084,719 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -609,10 +591,10 @@
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 16263714,
+        "bytes": 17932164,
         "kind": "dir"
       },
-      "message": "directory totals 16,263,714 B inside the vault"
+      "message": "directory totals 17,932,164 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -779,10 +761,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 12726154,
+        "bytes": 12726290,
         "kind": "file"
       },
-      "message": "12,726,154 B single file inside the vault"
+      "message": "12,726,290 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
