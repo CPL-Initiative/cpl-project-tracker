@@ -34,6 +34,11 @@ queue; `list_sessions` first and agree one writer with any session still holding
   landing; `supabase_migrations.schema_migrations` has nothing newer than 23:19Z on 2026-10-12. New KB note:
   `playbook-when-apply-migration-times-out-read-the-migrations-table`.
 
+- **Dashboard run 585 (after #2056) crashed; #2063 fixes it.** `render_workplan_charts_html` picks the apprentice
+  series by name, last match wins; 4.2.1 (ladderless, all zeros) now sorts after the real apprentice rows, so
+  `build_trajectory` divided by zero. #2063 skips zero ladders and guards the sum
+  (`tests/workplan_charts_zero_ladder_test.py`, 1/3 on the old code). **No dashboard publishes until it merges.**
+
 ## Docs to read, in order
 
 1. `docs/reference/lanes/workplan-annual-goals.md`: state, NEXT, invariants.
@@ -44,8 +49,13 @@ queue; `list_sessions` first and agree one writer with any session still holding
 
 ## Priority, in order
 
-1. **Confirm the dashboard run after #2056 published** (dispatched ~04:04Z): 3.9 and 4.2.1 on the Annual Goals and
-   Activities tabs, no 1.1.2, and Move on each sub-activity for a signed-in reviewer.
+1. **#2063 merged and the dashboard green.** If S377 has not: merge #2063 on `test`, dispatch `daily-dashboard.yml`,
+   and confirm the run succeeds (run 585 failed). Then check the published page: 3.9 and 4.2.1 on the Annual Goals
+   and Activities tabs, no 1.1.2, Move on each sub-activity for a signed-in reviewer. The 06:17Z cron fails the same
+   way until #2063 is on main.
+1b. **Open Move to the team phrase (Sam's Sheet 72 card 4).** He clicked "phrase" at 03:50:39Z, after the chat reply
+   read as reviewer-only (`sam-sheet-72-card-4-team-phrase-too-2026-10-13`). The lane's NEXT 0b lists the SQL, the
+   PGlite proof, the UI and the paste; the DDL goes to Sam as a sheet card while `apply_migration` is down.
 2. **The first Refresh Sam runs:** read the posted `activity` rows and their `raw` (`edited`, `draft`). What he changes
    in a draft is the prompt's next revision; record his edits as a lesson, and a ruling as a `cpl_memory` row.
 3. **The first Move a reviewer makes:** read its `workplan_id_moves` row and the guard's verdict. The 1.1.2 move ran as
@@ -60,7 +70,7 @@ queue; `list_sessions` first and agree one writer with any session still holding
 
 - No new rulings in S377. Sam ran Sheet 72 cards 2 and 3 himself (~03:50Z, `sheet-72-pastes-applied-2026-10-13`,
   verified by read-back). His standing rulings for this queue: Sheet 72's
-  recommendations stand (`sam-sheet-72-rulings-2026-10-13`), Move stays reviewer-only, and generated summaries are
+  recommendations stand (`sam-sheet-72-rulings-2026-10-13`), Move opens to the team phrase too (card 4, his 03:50Z click; built reviewer-only, so open), and generated summaries are
   drafts he approves before they post (`sam-annual-goals-rulings-2026-10-12`).
 
 ## Patterns that worked

@@ -15497,8 +15497,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 349,
+   "count": 350,
    "docs": [
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "n": 379,
+     "path": "docs/session_379_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "workplan",
+      "annual-goals",
+      "move",
+      "ui-pass",
+      "scheduled-sessions"
+     ],
+     "title": "Annual Goals: Move to the phrase held on Sheet 73; read the first Refresh and the first Move",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-13",
      "governs": [],
@@ -21486,5 +21504,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1125
+ "total": 1126
 }

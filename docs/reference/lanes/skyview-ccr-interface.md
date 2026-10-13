@@ -223,6 +223,8 @@ hover, Put back's hover and the pressed Night word; no route reaches those state
 
 ## NEXT
 
+**The CCR list's UI pass (S378) left two items:** the Merge, Unify and worklist dialogs still paint about 90 inline hex colors in `unified_courses.js`, and the list's 15 column headers clip (*Commo*, *Memb*). Measure with `npm run a11y ccr-list ccr-list-dark` (the cobi sweep sees only the map).
+
 ⭐ **CPL MODE IS A SECOND UNIVERSE, NOT A RELABELING** (Sam's ruling, 2026-09-10).
 Exhibits grouped into discipline islands the way courses are, CER canonical titles
 as the entities, local exhibits as their members, a ring where courses are

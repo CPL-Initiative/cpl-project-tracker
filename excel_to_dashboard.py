@@ -3476,9 +3476,19 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
     BASE_APP = int(cfg.get("BASE_APP", 196))
 
     # ── Look up workplan goal entries by name ──
+    def _num(v):
+        try:
+            return float(v or 0)
+        except (TypeError, ValueError):
+            return 0.0
     mil_wg, wf_wg, app_wg = {}, {}, {}
     for wg in (workplan_goals or []):
         name_l = wg.get("name", "").lower()
+        # A ladderless row (all zeros) never names a series: once 1.1.2 moved to
+        # 4.2.1 it sorted after the apprentice rows and the chart divided by zero
+        # (run 585, S377).
+        if not any(_num(v) for v in (wg.get("goal") or [])):
+            continue
         if "military" in name_l:
             mil_wg = wg
         elif "apprentice" in name_l:
@@ -3509,6 +3519,8 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
                 pts.append((2026 + i, int(val)))
         else:
             annual_sum = sum(annual_vals) if annual_vals else 1
+            if not annual_sum:
+                return pts
             delta = endpoint - baseline
             pts.append((2025, int(baseline + delta * (annual_vals[0] * 0.5) / annual_sum)))
             cumul_prop = 0

@@ -44,9 +44,11 @@ jobs:
           discover=$(sed -n 's/^discover=//p' kb/course_outline_index/.run)
           slugs=$(sed -n 's/^slugs=//p' kb/course_outline_index/.run)
           index=$(sed -n 's/^index=//p' kb/course_outline_index/.run)
+          report=$(sed -n 's/^report=//p' kb/course_outline_index/.run)
           [ -n "$discover" ] && args+=(--discover "$discover")
           [ -n "$index" ] && args+=(--index "$index")
           [ -n "$slugs" ] && args+=(--slugs "$slugs")
+          [ -n "$report" ] && args+=(--report "$report")
           python3 kb/_course_outline_index.py "${args[@]}"
 
       - name: Commit the result to this branch
