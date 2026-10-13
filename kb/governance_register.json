@@ -203,7 +203,7 @@
       "element": "Team responsibility, updates and the directory (item_raci · item_updates · team_members)",
       "drives": "Who is Responsible / Accountable / Consulted / Informed per activity and project; the posted updates that travel to the card faces, the master report and the Annual Report; and the team directory (staff contact data) that feeds the nudge builder.",
       "decides": "The Accountable person for the item; Sam is the default while the owner column is being filled. Acceptance: a signed-in team member (reviewer magic link or team phrase); assignments name people, not roles; an update reads as Annual-Report-quotable and carries its author; directory entries are real staff who know they are listed, removed when someone leaves rather than by cleanup sweeps.",
-      "maintained_in": "public.item_raci · public.item_updates · public.team_members via the Team & RACI tab",
+      "maintained_in": "public.item_raci · public.item_updates · public.team_members via the Team & RACI tab; an Activity's summary (item_updates activity:N) also via Refresh summaries on the Activities tab (activity_summaries.js: a drafted summary a signed-in reviewer edits and posts)",
       "owner": null,
       "when_empty": "Before this row, outward-facing Annual Report text could be edited with no named standard behind it."
     },
