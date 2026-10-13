@@ -1,0 +1,152 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "45653",
+ "shape": "noncredit",
+ "title": "Early Childhood Education Professional Pathways",
+ "award": "Noncredit program",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/early-childhood-education-professional-pathways-certificate-of-completion-fall-2025",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5387,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5387,
+    "output_tokens": 852,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 852,
+  "output_tokens_details": {
+   "thinking_tokens": 331
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03859,
+ "ms": 8144,
+ "seconds": 8.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    72.0,
+    108.0
+   ],
+   "stated": [
+    72.0,
+    108.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Early Childhood Education Professional Pathways Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 72,
+    "max": 108
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Identify a personal Early Childhood Education (ECE) professional pathway to advance career goals.",
+    "Create and present an ECE professional portfolio."
+   ],
+   "careers": [
+    "professional Early Childhood Education (ECE) caregivers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 72,
+     "max": 108
+    },
+    "courses": [
+     {
+      "code": "ECE480A",
+      "units": 36,
+      "units_max": 54,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE480B",
+      "units": 36,
+      "units_max": 54,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate counted in hours; course hours (36-54 each) and the 72-108 hour total are taken from the Program Requirements section.",
+   "The catalog prints codes without a space (ECE480A, ECE480B); these match closed-list ECE 480A and ECE 480B.",
+   "The Program Map (one-semester and two-semester) repeats the same two required courses and the 72.0-108.0 hour total; it adds no requirements.",
+   "Career entry is taken from the description's phrase 'professional Early Childhood Education (ECE) caregivers'; reviewer may check whether it should count as a named occupation."
+  ]
+ },
+ "extracted_run": "38442109713"
+}

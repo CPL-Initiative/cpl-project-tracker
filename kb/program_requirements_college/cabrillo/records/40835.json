@@ -1,0 +1,158 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "40835",
+ "shape": "noncredit",
+ "title": "Computer Lab Support Assistant",
+ "award": "Noncredit program",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/computer-lab-support-assistant-certificate-of-completion-fall-2021",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5118,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5118,
+    "output_tokens": 861,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 861,
+  "output_tokens_details": {
+   "thinking_tokens": 300
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03769,
+ "ms": 7504,
+ "seconds": 8.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    216.0,
+    216.0
+   ],
+   "stated": [
+    216.0,
+    216.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Lab Support Assistant Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 216,
+    "max": 216
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate knowledge of customer service, basic office skills, time-management, interoffice and interpersonal relations, and teamwork.",
+    "Demonstrate knowledge of methods for tutoring students for student support."
+   ],
+   "careers": [
+    "tutoring and lab support positions",
+    "customer support",
+    "office work",
+    "reception",
+    "technical support",
+    "business focused technical support",
+    "web and graphic design"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 216,
+     "max": 216
+    },
+    "courses": [
+     {
+      "code": "CABT410A",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABT410B",
+      "units": 162,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate counted in hours; all units fields hold hours (216 total; CABT410A 54 hours, CABT410B 162 hours).",
+   "The catalog prints codes without a space (CABT410A, CABT410B); these match closed-list CABT 410A and CABT 410B.",
+   "Program Map repeats the same two courses (Fall: CABT410A 54.0 hours; Spring: CABT410B 162.0 hours); not recorded as separate blocks.",
+   "The catalog URL references fall-2021, while the requested catalog year is 2026-2027; the page is under the 2026-2027 catalog path."
+  ]
+ },
+ "extracted_run": "38442109713"
+}

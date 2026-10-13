@@ -1,0 +1,171 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "43666",
+ "shape": "noncredit",
+ "title": "Global Wines",
+ "award": "Noncredit program",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/global-wines-certificate-of-completion-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5509,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5509,
+    "output_tokens": 1230,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1230,
+  "output_tokens_details": {
+   "thinking_tokens": 527
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04664,
+ "ms": 11113,
+ "seconds": 11.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    198.0,
+    198.0
+   ],
+   "stated": [
+    198.0,
+    198.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Global Wines Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 198,
+    "max": 198
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Evaluate wine for condition, quality, style, and value using analytical tasting techniques and a defined rubric.",
+    "Recommend wine based on point of origin, quality, and style across all price points."
+   ],
+   "careers": [
+    "wine business",
+    "wine steward/sommelier",
+    "wholesale and retail buyer",
+    "food service professional"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 198,
+     "max": 198
+    },
+    "courses": [
+     {
+      "code": "CAHM432",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAHM434",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAHM436",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAHM479",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate counted in hours: the catalog states '198 Hours' and 'Complete the following number of hours: 198'.",
+   "The catalog prints 0 (and 0.0 in the program map) beside each course. These values cannot be the course hours, since the stated total is 198 hours, so the per-course hours are recorded as null. A reviewer should check the actual hours for each course.",
+   "The catalog prints the codes without a space (e.g. CAHM432). These match the closed-list codes (e.g. CAHM 432), so none is marked as a catalog addition.",
+   "The program map (Summer Start and Fall Start sequences) only orders the same four required courses. It is not recorded as separate blocks.",
+   "The description states an age requirement of 18 years or older and that only one Certificate of Completion is granted per student.",
+   "'wine business' is recorded as a career field from 'working in the fields of wine business'."
+  ]
+ },
+ "extracted_run": "38442109713"
+}

@@ -1,0 +1,153 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "42510",
+ "shape": "noncredit",
+ "title": "Introduction to Infant/Toddler Development",
+ "award": "Noncredit program",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/introduction-to-infant-toddler-development-certificate-of-completion-fall-2023",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5162,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5162,
+    "output_tokens": 841,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 841,
+  "output_tokens_details": {
+   "thinking_tokens": 267
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03747,
+ "ms": 7404,
+ "seconds": 7.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    54.0,
+    90.0
+   ],
+   "stated": [
+    54.0,
+    90.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Introduction to Infant/Toddler Development Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 54,
+    "max": 90
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Synthesize observations of infants, developmental theories, and family beliefs to develop approaches that support infant development and learning.",
+    "Synthesize observations of toddlers, developmental theories, and family beliefs to develop approaches that support infant development and learning."
+   ],
+   "careers": [
+    "private childcare settings"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 54,
+     "max": 90
+    },
+    "courses": [
+     {
+      "code": "ECE433",
+      "units": 18,
+      "units_max": 36,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE434",
+      "units": 36,
+      "units_max": 54,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate counted in hours; course and total values are hours as printed (54-90 Hours total).",
+   "The catalog prints the codes without a space (ECE433, ECE434); they match closed-list ECE 433 and ECE 434.",
+   "The second program outcome refers to toddlers but ends with 'support infant development and learning'. It is copied as printed.",
+   "The career entry comes from the sentence 'students will be able to work in private childcare settings'. It names a work setting rather than a job title; a reviewer should check whether it belongs in careers.",
+   "The Program Map (Fall Start) repeats the same two required courses with 18.0-36.0 and 36.0-54.0 hours, totaling 54.0-90.0 hours."
+  ]
+ },
+ "extracted_run": "38442109713"
+}

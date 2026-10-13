@@ -1,0 +1,56 @@
+{
+ "college": "Cabrillo College",
+ "programs": 291,
+ "with_closed_list": 281,
+ "found": 271,
+ "extracted": 271,
+ "errors": 0,
+ "passed_machine_checks": 183,
+ "failed": {
+  "coverage": 3,
+  "invented": 0,
+  "arithmetic": 88,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 18.17,
+ "cost_per_program": 0.0671,
+ "not_found": [
+  {
+   "control_number": "06362",
+   "title": "Nursing",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "36677",
+   "title": "Math PLUS: Preparation for Precalculus and Calculus",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "36680",
+   "title": "Math PLUS: Preparation for Algebra and Business Calculus",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "36837",
+   "title": "Math PLUS: Preparation for Statistics",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "37545",
+   "title": "Fundamentals of Teaching with Migrant Student Populations",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42748",
+   "title": "EMT-B National and State Preparation",
+   "award": "Noncredit program"
+  },
+  {
+   "control_number": "42764",
+   "title": "Cybersecurity Basics",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  }
+ ],
+ "run": "38442109713"
+}
