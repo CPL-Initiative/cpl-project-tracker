@@ -1,0 +1,151 @@
+{
+ "college": "Coastline Community College",
+ "control_number": "45874",
+ "shape": "noncredit",
+ "title": "Visual Design Foundations",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/digital-media-design/visual-design-foundations-noncredit/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5507,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5507,
+    "output_tokens": 852,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 852,
+  "output_tokens_details": {
+   "thinking_tokens": 259
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03907,
+ "ms": 7714,
+ "seconds": 8.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    54.0,
+    54.0
+   ],
+   "stated": [
+    54.0,
+    54.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Visual Design Foundations, Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": 54,
+    "max": 54
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Apply design elements and principles—balance, contrast, alignment, repetition, and hierarchy—to create visually effective digital artwork.",
+    "Demonstrate technical proficiency in raster and vector design by producing, revising, and exporting digital projects using browser-based or open-source tools.",
+    "Integrate feedback and reflection to improve design quality and articulate how creative choices communicate meaning in digital media.",
+    "Transition confidently to for-credit digital media courses (DMD C116, C118, C135) or entry-level creative work."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Course List",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 54,
+     "max": 54
+    },
+    "courses": [
+     {
+      "code": "DMD C010N",
+      "units": 27,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMD C020N",
+      "units": 27,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate counted in hours: each course 27 hours, Total Hours 54.",
+   "DMD C116, DMD C118 and DMD C135 are named in the overview and an outcome only as follow-on for-credit courses, not as requirements; they are not placed in a block.",
+   "No careers recorded: the text mentions 'career changers' (a student audience) and 'entry-level creative work' (inside an outcome) but names no specific career or job title; a reviewer may decide whether 'entry-level creative work' should count as a career field."
+  ]
+ },
+ "extracted_run": "38445051060"
+}

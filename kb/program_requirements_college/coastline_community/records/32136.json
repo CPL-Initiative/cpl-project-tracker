@@ -1,0 +1,200 @@
+{
+ "college": "Coastline Community College",
+ "control_number": "32136",
+ "shape": "adt",
+ "title": "Mathematics",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/mathematics/mathematics-2.0-ast/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5699,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5699,
+    "output_tokens": 891,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 891,
+  "output_tokens_details": {
+   "thinking_tokens": 164
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04062,
+ "ms": 7811,
+ "seconds": 8.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 6,
+   "share": 0.833,
+   "missing": [
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CISC157"
+   ],
+   "flagged": [
+    "CISC157"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    23.0,
+    24.0
+   ],
+   "stated": [
+    23.0,
+    24.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Mathematics 2.0, Associate in Science Degree for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "ge_pattern": "CalGETC",
+   "outcomes": [
+    "Select and apply correct quantitative methods to find the correct solution to a problem in familiar or unique situations or contexts.",
+    "Accurately interpret and create mathematical models such as formulas, graphs, tables, and schematics; include predictions based on the model.",
+    "Adequately explain thinking and mathematical processes, and justify mathematical solutions effectively and accurately."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH C180",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C185",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C280",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C285",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select One",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CIS C157",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS C185",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "STAT C1000",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Units Required for Major printed as 23-24; the 60 total units includes CalGETC (34) and electives listed as 'Varies' to reach the degree total, which are not part of the major total, so open_elective_units is null.",
+   "The text describes the degree as useful for students majoring in STEM fields; this names majors, not careers, so careers is empty."
+  ]
+ },
+ "extracted_run": "38445051060"
+}

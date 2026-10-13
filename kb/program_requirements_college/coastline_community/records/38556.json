@@ -1,0 +1,202 @@
+{
+ "college": "Coastline Community College",
+ "control_number": "38556",
+ "shape": "noncredit",
+ "title": "Culinary Arts",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/special-education/culinary-arts-certificate-completion/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5715,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5715,
+    "output_tokens": 1031,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1031,
+  "output_tokens_details": {
+   "thinking_tokens": 237
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04348,
+ "ms": 9183,
+ "seconds": 9.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 7,
+   "listed": 8,
+   "share": 0.875,
+   "missing": [
+    "SPEDC53N"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    280.0,
+    280.0
+   ],
+   "stated": [
+    280.0,
+    280.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Culinary Arts, Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 280,
+    "max": 280
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate skills and experience required to take part in basic culinary activities.",
+    "Independently recall and perform best practices while participating in work activities alone or with faculty, managers, staff, students, and customers.",
+    "Become ServSafe certified."
+   ],
+   "careers": [
+    "Food Preparer",
+    "Prep Cook",
+    "Dishwasher",
+    "Dining Room or Cafeteria Attendant",
+    "Food Server",
+    "Busser",
+    "Expediter",
+    "Food Runner",
+    "Cook"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SPED C001N",
+      "units": 40,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPED C090N",
+      "units": 40,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPED C002N",
+      "units": 40,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPED C091N",
+      "units": 40,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPED C005N",
+      "units": 40,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPED C061N",
+      "units": 40,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPED C092N",
+      "units": 40,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "SPED C053N",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The Required Core is printed under subheadings Semester 1 (SPED C001N, SPED C090N), Semester 2 (SPED C002N, SPED C091N) and Semester 3 (SPED C005N, SPED C061N, SPED C092N); recorded as one 'all' block in catalog order.",
+   "Program counted in hours: each course 40 hours, Total Hours 280.",
+   "Catalog title for SPED C002N reads 'Problem-Solving in the Workplace' versus closed list 'Problem-Solving in the Work Place'."
+  ]
+ },
+ "extracted_run": "38445051060"
+}

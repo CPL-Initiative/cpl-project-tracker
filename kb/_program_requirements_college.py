@@ -177,6 +177,50 @@ def in_scope(url: str, scope: str | None) -> bool:
     return not scope or (urllib.parse.urlparse(url).path or "/").startswith(scope)
 
 
+INDEX_FILE = re.compile(r"/index\.html?$", re.I)
+
+
+def dir_form(url: str) -> str:
+    """A CourseLeaf page's address as its directory: <dir>/index.html serves the
+    same page as <dir>/. Coastline's catalog (catalog.cccd.edu, the Coast district)
+    lists every program page as .../business-as/index.html, and NOT_PROGRAM_PATH,
+    written to keep catalog index files out, dropped all of them: 109 of 159
+    programs found no page (run 38406172949, S380)."""
+    return INDEX_FILE.sub("/", (url or "").split("#")[0])
+
+
+def link_page_ok(url: str, scope: str | None) -> bool:
+    """A page the link search found may stand for a program only where a sitemap
+    page could: inside this college's scope, and never a course list, policy,
+    archive or PDF. Coastline's course listing for Real Estate
+    (course-descriptions/credit-courses/re/) names every RE course, so it read as
+    the program's page at coverage 1.0 and would have been extracted as one (run
+    38406172949, S380: five programs on three course listings)."""
+    url = dir_form(url)
+    path = urllib.parse.urlparse(url or "").path or "/"
+    return bool(url) and in_scope(url, scope) and not NOT_PROGRAM_PATH.search(path)
+
+
+def child_pages(page_url: str, links: list[dict] | None, start: str, scope: str | None = None) -> list[str]:
+    """The program pages a page links beneath its own address. Coastline's sitemap
+    lists its subject pages (pathways/<area>/<subject>/) and few of the program
+    pages each one links (.../business/marketing-applied-as/), so 114 of 159
+    programs found no page and the link search reached ten of them (run
+    38412902035, S381). A page's children pass the sitemap's own filter; a menu's
+    links to other sections are not beneath the page and stay out."""
+    base = dir_form(page_url)
+    path = urllib.parse.urlparse(base).path or "/"
+    if not path.endswith("/"):
+        return []
+    kids = []
+    for ln in links or []:
+        u = dir_form(ln.get("href") or "")
+        p = urllib.parse.urlparse(u).path or "/"
+        if p.startswith(path) and len(p) > len(path) and P.same_site(u, start):
+            kids.append(u)
+    return program_candidates(kids, start, scope)
+
+
 def program_candidates(urls: list[str], start: str, scope: str | None = None) -> list[str]:
     """The sitemap's pages that sit in a program section of this catalog: the
     catalog's own host (and, on a district host, this college's own path), a
@@ -184,7 +228,7 @@ def program_candidates(urls: list[str], start: str, scope: str | None = None) ->
     PDF uses. Deduplicated, in the sitemap's order."""
     out, seen = [], set()
     for u in urls:
-        u = u.split("#")[0]
+        u = dir_form(u)
         if not P.same_site(u, start) or u in seen or not in_scope(u, scope):
             continue
         path = urllib.parse.urlparse(u).path or "/"
@@ -213,6 +257,17 @@ def page_codes(text: str) -> set[str]:
             {P.norm_code(a + " " + b) for a, b in CODE_TOKEN_2.findall(t)})
 
 
+def page_net(got: dict) -> set[str]:
+    """The coarse net's codes for one loaded page: its visible text, its textContent, and
+    its hidden tab panels read cell by cell. Coastline prints each program's courses only
+    in a hidden Requirements tab, and textContent runs every code into the cell before it
+    ("Units3BCI C100Introduction"), so the net read none of Building Codes Inspector A.S.'s
+    ten listed courses on its own page and refused 98 of the 106 programs it found no page
+    for (capture-only run 38438077425, S382). The link search has no net and read
+    Information Technology A.S.'s page the same way at coverage 1.0, from the tab."""
+    return page_codes("\n".join([got.get("body") or "", got.get("content") or "", P.hidden_tabs_text(got)]))
+
+
 # A CourseLeaf address names the award in its last segment: field-ironworkers-aa,
 # public-health-science-as-t, medical-assistant-certifciate-achievement (the
 # catalog's own spelling), energy-corps-certificate-completion. Read from the
@@ -226,6 +281,14 @@ SLUG_AWARD = [
     ("bs", re.compile(r"-bs/?$|bachelor")),
     ("coa", re.compile(r"certif\w*-(?:of-)?achievement|-coa/?$")),
     ("noncredit", re.compile(r"certif\w*-(?:of-)?(?:completion|competency)|noncredit")),
+    # Coastline spells some awards out: marketing-associate-science-degree,
+    # business-administration-2.0-associate-science-degree-transfer,
+    # project-management-essentials-certificate-specialization (S381). The transfer
+    # form is tested first, as "-as-t" is above.
+    ("adt", re.compile(r"associate-(?:in-|of-)?(?:science|arts)-degree-(?:for-)?transfer/?$")),
+    ("as", re.compile(r"associate-(?:in-|of-)?science-degree/?$")),
+    ("aa", re.compile(r"associate-(?:in-|of-)?arts-degree/?$")),
+    ("other", re.compile(r"certif\w*-(?:of-)?specialization/?$")),
 ]
 
 
@@ -264,6 +327,32 @@ HEADING_AWARD = re.compile(
     r"certificate of (?:achievement|accomplishment|completion|competency)|transfer degree|"
     r"\ba\.?\s?[as]\.?(?:\s*-\s*t)?\b|\bdegree\b|\bcertificate\b", re.I)
 LEVEL = re.compile(r"\blevel\s*(\d+|[ivx]+)\b", re.I)
+# A page title ends in the site's name after a "|" or, in CourseLeaf's
+# breadcrumb form, a "<" ("Aging Studies, Associate of Arts Degree < Coastline College").
+TITLE_SPLIT = re.compile(r"\s*\|\s*|\s+<\s+")
+BANNER_SHARE = 0.5     # an h1 on half the pages read, and on at least
+BANNER_PAGES = 10      # this many, is the catalog's banner, not a page's heading
+
+
+def drop_banner_h1(pages: list[dict]) -> str | None:
+    """Blank an h1 the catalog prints on every page, so a page's heading is read
+    from its title. Every Coastline page's h1 is "ACADEMIC CATALOGS" (run
+    38412902035, S381), so no page reached through its hidden text could name its
+    program, and the heading rule turned each one away. Returns the banner."""
+    counts: dict[str, int] = {}
+    for pg in pages:
+        h = (pg.get("h1") or "").strip()
+        if h:
+            counts[h] = counts.get(h, 0) + 1
+    if not counts:
+        return None
+    h, n = max(counts.items(), key=lambda kv: kv[1])
+    if n < BANNER_PAGES or n < BANNER_SHARE * len(pages):
+        return None
+    for pg in pages:
+        if (pg.get("h1") or "").strip() == h:
+            pg["h1"] = ""
+    return h
 
 
 def heading_match(page: dict, program: dict) -> tuple[float, float]:
@@ -272,7 +361,7 @@ def heading_match(page: dict, program: dict) -> tuple[float, float]:
     page's h1, else its title before a "|". A title word and a heading word match when
     equal, or when one begins the other and both run past three letters (Science,
     Sciences). Two different levels ("Level 2", "Level 1") score (0, 0)."""
-    head = page.get("h1") or (page.get("title") or "").split("|")[0]
+    head = page.get("h1") or TITLE_SPLIT.split(page.get("title") or "")[0]
     title = program.get("title") or ""
     lt, lh = LEVEL.search(title), LEVEL.search(head)
     if lt and lh and lt.group(1).lower() != lh.group(1).lower():
@@ -332,6 +421,52 @@ def candidates(program: dict, pages: list[dict]) -> list[dict]:
                     "key": (award_hit, title, round(cov, 3))})
     out.sort(key=lambda c: c["key"], reverse=True)
     return out
+
+
+def near_miss(program: dict, pages: list[dict]) -> dict | None:
+    """For a program no page was accepted for: the page read whose heading, title and
+    address name it best, and which of candidates()'s gates turned that page away, so a
+    not-found program says why instead of only that. Coastline's re-read (run 38429656959,
+    S381) read Information Technology A.S.'s own page from the sitemap and still left the
+    program to the link search, which took that page at coverage 1.0; nothing on file said
+    which gate had refused it."""
+    courses = program.get("closed_list") or []
+    want = {P.norm_code(c.get("code") or "") for c in courses}
+    if not want:
+        return None
+    best = None
+    for pg in pages:
+        key = label_score(pg, program)
+        if key[1] >= 0.5 and (best is None or key > best[0]):
+            best = (key, pg)
+    if best is None:
+        return {"why": "no page read names the program"}
+    (award_hit, title), pg = best
+    fb = P.find_codes(pg.get("body") or "", courses)
+    fc = P.find_codes(pg.get("content") or "", courses)
+    _, found, field = P.best_text(pg["got"], fb, fc, courses)
+    cov, net = P.coverage(found, courses), len(want & pg["codes"])
+    if net < P.ACCEPT_SHARE * len(want) * 0.8:
+        why = "coarse net: the page's code tokens name %d of %d listed courses" % (net, len(want))
+    elif cov < P.ACCEPT_SHARE:
+        why = "coverage %.2f in %s, below %.2f" % (cov, field, P.ACCEPT_SHARE)
+    elif field == "textContent" and not heading_names_program(pg, program):
+        why = "hidden text only, and the heading does not name the program"
+    elif len(want) < SMALL_LIST and title < 0.5:
+        why = "a short list on a page whose label does not name the program"
+    else:
+        why = "a candidate, lost to a program the page names more fully"
+    # What the capture itself held for the page (S382): a failed page script leaves the
+    # Reader's 6,000-character innerText alone, and a page read prints only what it renders.
+    got = pg.get("got") or {}
+    return {"url": pg["url"], "label": {"award": award_hit, "title": title}, "field": field,
+            "coverage": round(cov, 3), "body": round(P.coverage(fb, courses), 3),
+            "content": round(P.coverage(fc, courses), 3), "net": net, "listed": len(want), "why": why,
+            "error": got.get("error"),
+            "chars": {"body": len(got.get("body") or ""), "content": len(got.get("content") or ""),
+                      "tabs": len(P.hidden_tabs_text(got))},
+            "tab_panels": [[(t.get("label") or t.get("id") or "")[:40], len(t.get("text") or "")]
+                           for t in (got.get("tabPanels") or [])][:8]}
 
 
 def choose_page(program: dict, pages: list[dict]) -> dict | None:
@@ -1072,17 +1207,29 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             pages = []
             print("%s: %d programs (%d with a course list), %d candidate pages, %.1f s between loads"
                   % (college, len(programs), report["with_closed_list"], len(urls), delay / 1000), flush=True)
-        for i, u in enumerate(urls):
+        # A page's own program pages beneath it are read too (child_pages()), once each.
+        queue, seen, i = list(urls), set(urls), 0
+        while i < len(queue):
+            u = queue[i]
+            i += 1
             got = P.load(reader, u, cache, platform == "elumen")   # an eLumen view fills in late
             if got.get("access") != "ok":
                 continue
+            if platform not in ("curriqunet", "elumen"):
+                for kid in child_pages(got.get("final_url") or u, got.get("links"), start, scope):
+                    if kid not in seen and len(queue) < MAX_PAGES:
+                        seen.add(kid)
+                        queue.append(kid)
             got["links"] = (got.get("links") or [])[:300]   # a program page's menus need not ride in memory
             pages.append({"url": got.get("final_url") or u, "title": got.get("title"), "h1": got.get("h1"),
                           "body": got.get("body"), "content": got.get("content"), "got": got,
-                          "codes": page_codes((got.get("body") or "") + "\n" + (got.get("content") or ""))})
-            if i % 50 == 49:
-                print("  read %d of %d pages" % (i + 1, len(urls)), flush=True)
+                          "codes": page_net(got)})
+            if i % 50 == 0:
+                print("  read %d of %d pages" % (i, len(queue)), flush=True)
         report["pages_read"] = len(pages)
+        if platform not in ("curriqunet", "elumen"):
+            report["child_pages"] = len(queue) - len(urls)
+        report["banner_h1"] = drop_banner_h1(pages)
         recs, fallback = [], 0
         P.MAX_LOADS = FALLBACK_LOADS      # the link search, shorter here: most programs already have a page
         given = assign(programs, pages)
@@ -1108,9 +1255,11 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                     res = P.locate_html(reader, {"title": prog["title"], "award": prog["award"]},
                                         prog["closed_list"], start, cache, False)
                     b = res["best"] or {}
-                    if b.get("coverage", 0.0) >= P.ACCEPT_SHARE and in_scope(b.get("url") or "", scope):
+                    if b.get("coverage", 0.0) >= P.ACCEPT_SHARE and link_page_ok(b.get("url") or "", scope):
                         best, method = dict(b, label=None), "link_search"
                 rec = source_record(college, prog, reg, best, method if best else "not_found")
+                if not best:
+                    rec["near_miss"] = near_miss(prog, pages)
             recs.append(rec)
             _write(os.path.join(out_dir, "sources", prog["control_number"] + ".json"), rec)
             print("%-6s %-12s cov %-5s %s" % (prog["control_number"], rec["method"][:12], rec["coverage"],
@@ -1128,7 +1277,8 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         by_method={m: sum(1 for r in recs if r["method"] == m)
                    for m in sorted({r["method"] for r in recs})},
         shared_pages={u: cns for u, cns in urls_used.items() if len(cns) > 1},
-        not_found=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"]}
+        not_found=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"],
+                    "near_miss": r.get("near_miss")}
                    for r in recs if r["method"] == "not_found"],
         page_claimed=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"],
                        "pages": r.get("lost_pages")} for r in recs if r["method"] == "page_claimed"],

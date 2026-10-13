@@ -1,0 +1,156 @@
+{
+ "college": "Coastline Community College",
+ "control_number": "42718",
+ "shape": "noncredit",
+ "title": "English Language Learning Low Intermediate Skills",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-language-learning/ell-low-intermediate-skills-certificate-competency/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5580,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5580,
+    "output_tokens": 817,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 817,
+  "output_tokens_details": {
+   "thinking_tokens": 267
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03866,
+ "ms": 7762,
+ "seconds": 8.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    120.0,
+    288.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "English Language Learning Low Intermediate Skills, Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Given a simplified text, identify the main idea and supporting details.",
+    "Express original ideas in appropriate, grammatically-correct sentences in response to level-appropriate readings in academic and real-world settings.",
+    "Participate in short spontaneous conversations and accurately report information given by others."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Select 2 courses from the following:",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 120,
+     "max": 288
+    },
+    "courses": [
+     {
+      "code": "ESL C032N",
+      "units": 144,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL C033N",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELL C040N",
+      "units": 48,
+      "units_max": 144,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award is noncredit and counted in hours; all units fields hold hours.",
+   "The catalog prints only a block 'Subtotal 120-288' hours and no separate program total, so total_units is left null; the subtotal is recorded in the block's stated. A reviewer may treat 120-288 hours as the program total since there is only one block.",
+   "The page names the certificate as a Certificate of Competency; no specific careers are named (only 'career training programs' as a further pathway)."
+  ]
+ },
+ "extracted_run": "38445051060"
+}

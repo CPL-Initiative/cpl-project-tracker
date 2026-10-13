@@ -1,0 +1,29 @@
+{
+ "_readme": "S382 SkyLarch, 2026-10-13. Coastline's capture-only run 38438077425 filed a near miss for each of the 106 programs it found no page for: 98 were refused by the coarse net, and many on their own page (Building Codes Inspector A.S. on building-codes-inspector-as/ naming 0 of its 10 listed BCI courses in either innerText or textContent; Real Estate Studies 0 of 6; Marketing A.S. 0 of 15), while Information Technology A.S.'s page read at coverage 1.0. This read loads three of the refused pages to see whether their text names the courses at all, and what the page's own scripts fetch. Three loads, no model call.",
+ "college": "Coastline Community College",
+ "questions": {
+  "refused_page_text": "Whether a refused program page's text names its listed courses (BCI C100-C111, RE C1xx, MKTG/BUS C1xx), and where on the page."
+ },
+ "keywords": [
+  "BCI\\s?C\\d+",
+  "RE\\s?C\\d+",
+  "MKTG\\s?C\\d+",
+  "BUS\\s?C\\d+",
+  "[Rr]equire"
+ ],
+ "pages": [
+  {
+   "answers": ["refused_page_text"],
+   "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/building-codes-inspector/building-codes-inspector-as/",
+   "network": true
+  },
+  {
+   "answers": ["refused_page_text"],
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/real-estate/real-estate-studies-certificate-achievement/"
+  },
+  {
+   "answers": ["refused_page_text"],
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/marketing-applied-as/"
+  }
+ ]
+}

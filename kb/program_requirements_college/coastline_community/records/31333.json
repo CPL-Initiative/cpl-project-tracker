@@ -1,0 +1,333 @@
+{
+ "college": "Coastline Community College",
+ "control_number": "31333",
+ "shape": "adt",
+ "title": "English",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/language-literature/english/english-associate-arts-degree-transfer/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6158,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6158,
+    "output_tokens": 2426,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2426,
+  "output_tokens_details": {
+   "thinking_tokens": 641
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07315,
+ "ms": 18241,
+ "seconds": 18.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 21,
+   "share": 0.667,
+   "missing": [
+    "ANTHC190",
+    "ENGLC144",
+    "ENGLC145",
+    "ENGLC146",
+    "ENGLC181",
+    "HUMC100",
+    "THEAC101"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ANTHG190",
+    "ENGLC101"
+   ],
+   "flagged": [
+    "ANTHG190",
+    "ENGLC101"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Requirements for the Major",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": "CalGETC (Coastline Option 2 General Education pattern)",
+   "outcomes": [
+    "Write well-organized, well-developed expository essays using Standard English, with a clear thesis statement and supporting topic sentences and supporting details.",
+    "Search for and find reliable, unbiased sources and use these sources in research papers, using correct MLA documentation.",
+    "Evaluate a literary work in terms of style and descriptive technique, language, tone, mood, and literary conventions, such as symbolism, imagery, irony, and poetic devices such as meter and rhyme pattern.",
+    "Analyze a given literary work and explain its relevance to the time period and genre in which it was written as well as the relationship between the events in an author’s life, time, and culture to the development of his or her writing."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGL C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ENGL C150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C155",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C270",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C275",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL C133",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C143",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL C101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C128",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C129",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C136",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS C139",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C296",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C297",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH G190",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH C190",
+    "why": "not in the text; catalog prints ANTH G190 (Introduction to Linguistics) in List C instead"
+   },
+   {
+    "code": "ENGL C144",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C145",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C146",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C181",
+    "why": "not in the text"
+   },
+   {
+    "code": "HUM C100",
+    "why": "not in the text"
+   },
+   {
+    "code": "THEA C101",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "ENGL C1001 is printed as 'ENGL C1001 (ENGL C102)'; the parenthetical appears to be the former course number.",
+   "ENGL C140 is titled 'Introduction to Literature' in the catalog but 'Appreciation of Literature' in the closed list.",
+   "List B: 'Complete the following or any course not taken above in List A' (3 units) — recorded as choose 1 course; any unused List A course may also satisfy List B.",
+   "List C: 'Select one of the following or any course not taken above in List A or B' (3 units) — unused List A or List B courses may also satisfy List C.",
+   "Units for List A, B and C courses are not printed beside each course; only block totals are printed.",
+   "ANTH G190 is printed with a 'G' prefix (possibly a Golden West College code or a typo for ANTH C190); recorded as printed, flagged as catalog addition.",
+   "ENGL C101 (Critical Thinking and Writing Through Literature) is not in the closed list; recorded as catalog addition.",
+   "Major total 18 units; degree total 60 with CalGETC (34) and transfer electives 'as needed' (Varies) outside the major, so open_elective_units left null.",
+   "Program Learning Outcomes are printed on the page for the program and recorded for this award."
+  ]
+ },
+ "extracted_run": "38445051060"
+}

@@ -1,0 +1,335 @@
+{
+ "college": "Coastline Community College",
+ "control_number": "44223",
+ "shape": "adt",
+ "title": "Law, Public Policy, and Society",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/law-safety/criminal-justice/law-public-policy-society-aat/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6497,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6497,
+    "output_tokens": 2864,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2864,
+  "output_tokens_details": {
+   "thinking_tokens": 1088
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08327,
+ "ms": 22794,
+ "seconds": 23.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 26,
+   "listed": 26,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.0,
+    32.0
+   ],
+   "stated": [
+    32.0,
+    32.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate Degree for Transfer Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "ge_pattern": "CalGETC (Coastline Option 2 General Education pattern)",
+   "outcomes": [
+    "Develop legal and critical-thinking skills in judicial issues.",
+    "Evaluate legal issues in a variety of different environments.",
+    "Analyze issues by application of relevant rules of law, ethical standards, and social mores."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CJ C128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CJ C140",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CJ C141",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CMST C140",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST C220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1001",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL C115",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C175",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL C120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CJ C128",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CJ C140",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CJ C141",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS C110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C175",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCI C183",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSCI C185",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSCI C188",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSCI C200",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC C185",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH C100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG C185",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC C233",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COUN C105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints old codes in parentheses beside new ones: COMM C1000 (COMM C110), ENGL C1000 (ENGL C100), ENGL C1001 (ENGL C102), STAT C1000 (STAT C160); the new codes are recorded.",
+   "Units are printed only on the first course of each 'or' row in the Required Core; alternatives and List A courses have no units printed beside them, so their units are null.",
+   "List A: select two courses (not used in Core completion) from 2 different areas. Each area is recorded as one entry with the area's 'or' options as alternatives: Administration of Justice (CJ C128/C140/C141), Business (BUS C110), Economics (ECON C170/C175), Political Science (PSCI C183/C185/C188/C200), Public Policy (SOC C185), Diversity (ANTH C100/GEOG C185/SOC C233), College Success (COUN C105).",
+   "Catalog titles HIST C170 'United States History to 1877' and HIST C175 'United States History since 1865', differing from the closed-list titles (To 1876 / Since 1876).",
+   "Major Units 32 recorded as total; CalGETC 34 units and transfer electives ('varies') to reach 60 are outside the major total.",
+   "The description mentions preparation for law school and skills essential in the 'legal profession'/'legal field' but names no specific career, so careers is left empty; reviewer may consider 'legal profession' a career field.",
+   "Program Learning Outcomes are printed once on the page for this AA-T program."
+  ]
+ },
+ "extracted_run": "38445051060"
+}
