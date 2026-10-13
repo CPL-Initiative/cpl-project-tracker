@@ -15,3 +15,31 @@ select m.id, 'SkySequoiaS377', 'create', 'checkpoint auto-write', to_jsonb(m) fr
 where m.author = 'SkySequoiaS377' and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.actor = 'SkySequoiaS377');
 select m.slug, m.kind, m.status, (select count(*) from public.cpl_memory_log l where l.memory_id = m.id) as logs
 from public.cpl_memory m where m.author = 'SkySequoiaS377' order by m.created_at;
+
+-- Added ~03:53Z: Sam ran Sheet 72 cards 2 and 3; read back, verified (he ran them; the session read them back).
+-- Supersedes S375's workplan-move-function-built-not-applied-2026-10-13 (a session row, now false). Logged: create + supersede.
+-- Rollback: update public.cpl_memory set status = 'proposed', superseded_by = null
+--             where slug = 'workplan-move-function-built-not-applied-2026-10-13';
+--           delete from public.cpl_memory where slug = 'sheet-72-pastes-applied-2026-10-13';
+with ins as (
+  insert into public.cpl_memory (slug, kind, org, title, summary, detail, plain, tags, source, related, status, author, verified_by, verified_at, event_date)
+  values ('sheet-72-pastes-applied-2026-10-13', 'milestone', 'cpl', 'Sam pasted Sheet 72 cards 2 and 3: 3.9 added, 1.1.2 is 4.2.1, Move function live',
+   'Sam ran Open Asks Sheet 72 cards 2 and 3 in the SQL editor (~03:50Z 2026-10-13). Read back 03:51Z: 3.9 added (Goal 0/2/4/4/4, Stretch 0/4/8/8/8, Activity 3 home); 1.1.2 is 4.2.1 (Activity 4 home, Activity 1 kept, RACI and update moved, no table holds 1.1.2); workplan_move_sub_activity live, anon false, authenticated true.',
+   'workplan_id_moves exists with RLS on. Card 1 (course_outcomes, the program requirements queue) not run. The Move control PR #2056 merges on test after this; apply_migration itself was still down (nothing newer than 23:19Z 2026-10-12 in schema_migrations before Sam''s paste).',
+   'Sam ran the two database changes himself. The Futuro Behavioral Healthcare project is now 3.9, the AI apprenticeship tools project now sits under the Apprenticeship Sprint as 4.2.1, and the Move button''s database routine is switched on for signed-in reviewers.',
+   array['workplan','annual-goals','move','sam-action','milestone'],
+   'Sam in S377 chat ("Ran both 72 cards"), read back by S377 SkySequoia; receipts kb/receipts/workplan_2026-10-12_s372_add_3_9_move_1_1_2.sql and kb/supabase_workplan_move.sql',
+   array['sam-sheet-72-rulings-2026-10-13','workplan-move-function-built-not-applied-2026-10-13','sam-annual-goals-rulings-2026-10-12'],
+   'verified', 'SkySequoiaS377', 'Sam Lee', now(), '2026-10-13')
+  on conflict (slug) do nothing
+  returning id
+), sup as (
+  update public.cpl_memory set status = 'superseded', superseded_by = (select id from ins), updated_at = now()
+   where slug = 'workplan-move-function-built-not-applied-2026-10-13' and status <> 'superseded' and exists (select 1 from ins)
+  returning id
+)
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select id, 'SkySequoiaS377', 'create', 'Sam''s Sheet 72 pastes read back', null::jsonb from ins
+union all
+select id, 'SkySequoiaS377', 'supersede', 'superseded by sheet-72-pastes-applied-2026-10-13 (the Move function is live)', null::jsonb from sup
+returning memory_id, action;

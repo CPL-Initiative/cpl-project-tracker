@@ -68,4 +68,6 @@ Sam asked for four things on Annual Goals (move AI Apprenticeship CPL Tools unde
 - **The published page versions its scripts** (`src="activity_summaries.js?v=d963b4a7"`), so grep the live page for the name with `?v=`, never the bare `src`.
 - **Playwright's last-registered route wins.** A catch-all abort registered after the stubs swallowed them; register the catch-all first.
 
-**State:** #2059 merged and published (run 583). #2056 green at `656e14f`, held for card 3. Sheet 72 cards 2 and 3 unpasted at 02:37Z.
+- **The SQL editor is the route when the tool is down.** Sam ran Sheet 72 cards 2 and 3 in Supabase's SQL editor about 03:50Z, each block whole, as two queries; both landed at once while `apply_migration` still accepted nothing. A paste needs its read-back in the same block (card 2 ended with one) and a fresh footprint read before it goes out: S377 re-measured 1.1.2 in every id column at 03:20Z, since the card's move was written the day before.
+
+**State:** #2059, #2061 and #2056 merged; the Move function live (anon false, authenticated true); 3.9 added and 1.1.2 is 4.2.1 (read back 03:51Z). The dashboard was dispatched after #2056.

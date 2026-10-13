@@ -1,5 +1,5 @@
 ---
-title: "Session 378 handoff — Annual Goals: read Sam's pastes, land the Move control, read the first Refresh"
+title: "Session 378 handoff — Annual Goals: the Move control is live; read the first Refresh and the first Move"
 date: 2026-10-13
 session: 377 (SkySequoia)
 tags: [handoff, workplan, annual-goals, move, activity-summaries]
@@ -21,13 +21,16 @@ queue; `list_sessions` first and agree one writer with any session still holding
   which drafts each Activity through the report proxy from its sub-activities and posts one only on its own **Post**
   (`item_updates` `activity:N`, provenance in `raw`). The header's Update link is gone; the link row wraps at 390px.
   Checked in Chromium. No summary has been posted with it yet.
-- **#2056 (the Move control) fixed and green at `656e14f`, still a draft, still HELD.** Shard 3 failed because the Move
-  dialog put Cancel before Move; Move leads now and the test checks every dialog.
+- **Sam ran Sheet 72 cards 2 and 3 (~03:50Z), so #2056 (the Move control) merged.** Read back 03:51Z: 3.9 Futuro
+  Behavioral Healthcare Project added (Goal 0/2/4/4/4, Stretch 0/4/8/8/8, Activity 3 home); 1.1.2 is 4.2.1 (Activity 4
+  home, Activity 1 kept, no table holds 1.1.2); `workplan_move_sub_activity` live (anon false, authenticated true).
+  Shard 3 had failed because the Move dialog put Cancel before Move; Move leads now and the test checks every dialog.
+  Dashboard dispatched after the merge. Card 1 (`course_outcomes`) belongs to handoff 376's queue and was not run.
 - **UI pass: the Annual Report tab (#2061)**, its first audit. Underlined word controls in place of four glyph
   buttons, a labeled editor, the preview a keyboard-reachable region, the status announced and red only on a
   failure, tokens only, left-aligned prose, the data date in italics. a11y 1 finding to 0 in both themes; the ledger
-  records it. Merge it on `test` if S377 has not.
-- **`apply_migration` is down.** S377's two tries (the full Move SQL, then the table alone) timed out with nothing
+  records it. Merged.
+- **`apply_migration` was down all night.** S377's two tries (the full Move SQL, then the table alone) timed out with nothing
   landing; `supabase_migrations.schema_migrations` has nothing newer than 23:19Z on 2026-10-12. New KB note:
   `playbook-when-apply-migration-times-out-read-the-migrations-table`.
 
@@ -36,30 +39,27 @@ queue; `list_sessions` first and agree one writer with any session still holding
 1. `docs/reference/lanes/workplan-annual-goals.md`: state, NEXT, invariants.
 2. `docs/workplan_annual_goals_lessons.md`: the S375 and S377 sections.
 3. `activity_summaries.js` header, then `kb/supabase_workplan_move.sql` (its header carries the undo).
-4. `cpl_memory` tags `workplan`, `annual-goals` (S377 adds three rows, author `SkySequoiaS377`).
+4. `cpl_memory` tags `workplan`, `annual-goals` (S377 adds four rows, author `SkySequoiaS377`; `sheet-72-pastes-applied-2026-10-13`
+   supersedes S375's "Move control built, not yet live").
 
 ## Priority, in order
 
-1. **Check whether Sam pasted** (nothing had at 02:37Z). Read [Open Asks Sheet 72](https://claude.ai/artifact/LFbjZXFbHmPTNF8JqW3qMV)'s
-   `replies` store too (empty so far; his ruling came in chat).
-   - **Card 2:** projects 3.9 = 1, goal rows 3.9 = 2, projects 4.2.1 = 1, projects 1.1.2 = 0, links 4.2.1 "4 home, 1".
-     Then dispatch `daily-dashboard.yml`.
-   - **Card 3:** `to_regclass('public.workplan_id_moves')` not null; `has_function_privilege` on
-     `workplan_move_sub_activity(text,text,boolean)`: anon false, authenticated true. Then merge main into
-     `claude/s375-workplan-move` if behind (regenerate the dependency map, never pick sides), mark #2056 ready, merge on
-     `test`, dispatch the dashboard.
-   - **Neither:** before any `apply_migration` try, read `schema_migrations` for a row newer than 23:19Z on 2026-10-12.
-     None means the tool is still down; ask Sam in one line and leave it.
+1. **Confirm the dashboard run after #2056 published** (dispatched ~04:04Z): 3.9 and 4.2.1 on the Annual Goals and
+   Activities tabs, no 1.1.2, and Move on each sub-activity for a signed-in reviewer.
 2. **The first Refresh Sam runs:** read the posted `activity` rows and their `raw` (`edited`, `draft`). What he changes
    in a draft is the prompt's next revision; record his edits as a lesson, and a ruling as a `cpl_memory` row.
-3. **Small cleanup with the next `card_actions.js` change:** drop `a.act-update-link` from `UPDATE_SEL` (no page prints
+3. **The first Move a reviewer makes:** read its `workplan_id_moves` row and the guard's verdict. The 1.1.2 move ran as
+   hand SQL, so its undo is the receipt's rollback block, never the function.
+4. **Small cleanup with the next `card_actions.js` change:** drop `a.act-update-link` from `UPDATE_SEL` (no page prints
    it since run 583).
-4. **UI pass at your checkpoint:** `python3 scripts/ui_pass.py --next` names the next view (S377 did the Annual
-   Report).
+5. **UI pass at your checkpoint:** `python3 scripts/ui_pass.py --next` names the next view (S377 did the Annual
+   Report). Before any DDL, read `schema_migrations` for a row newer than 23:19Z on 2026-10-12 (none: the tool is
+   still down, and the SQL goes to Sam as a paste).
 
 ## Decisions Sam made
 
-- None new in S377 (he opened the session and was away). His standing rulings for this queue: Sheet 72's
+- No new rulings in S377. Sam ran Sheet 72 cards 2 and 3 himself (~03:50Z, `sheet-72-pastes-applied-2026-10-13`,
+  verified by read-back). His standing rulings for this queue: Sheet 72's
   recommendations stand (`sam-sheet-72-rulings-2026-10-13`), Move stays reviewer-only, and generated summaries are
   drafts he approves before they post (`sam-annual-goals-rulings-2026-10-12`).
 
@@ -89,5 +89,5 @@ queue; `list_sessions` first and agree one writer with any session still holding
 
 ## Subscriptions and check-ins
 
-At sign-off S377 drops its subscriptions (#2056, and #2060, #2061 and vault #328 if still open) and arms no
+At sign-off S377 holds no subscription (#2056, #2059, #2060, #2061 and vault #328 all merged) and arms no
 check-in. #2059 merged (unsubscribed). No artifact watch.
