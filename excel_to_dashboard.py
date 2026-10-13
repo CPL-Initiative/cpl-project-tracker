@@ -1050,6 +1050,7 @@ def read_projects(wb):
             "update_date":   fmt_date(cell_val(ws, r, COL_UPDATE_DATE, "")),
             "kpi_metric":    fmt_number(kpi_metric) if kpi_metric is not None else "",
             "kpi_unit":      str(kpi_unit),
+            "count_note":    "",
             "kpi_goal_2526": fmt_number(kpi_g2526) if isinstance(kpi_g2526, (int, float)) else str(kpi_g2526) if kpi_g2526 else "",
             "kpi_stretch_2526": fmt_number(kpi_s2526) if isinstance(kpi_s2526, (int, float)) else str(kpi_s2526) if kpi_s2526 else "",
             "kpi_goal_2627": fmt_number(kpi_g2627) if isinstance(kpi_g2627, (int, float)) else str(kpi_g2627) if kpi_g2627 else "",
@@ -1179,6 +1180,10 @@ def build_projects_from_supabase(supabase_rows):
             "update_date":   fmt_date(row.get("update_date") or ""),
             "kpi_metric":    fmt_number(kpi_metric_raw) if kpi_metric_raw not in (None, "") else "",
             "kpi_unit":      str(row.get("kpi_unit") or ""),
+            # How the annual goal numbers are counted (projects.count_note, Sam
+            # 2026-10-12) — edited on Annual Workplan Goals, shown on the cards
+            # and sent to the report generator.
+            "count_note":    str(row.get("count_note") or ""),
             "workplan_notes": row.get("wp_notes") or "",
             "kpi_order":     int(kpi_order_raw) if isinstance(kpi_order_raw, (int, float)) and kpi_order_raw else None,
             "override":      None,
@@ -1424,22 +1429,31 @@ def render_annual_goals_table_html(annual_goals, activities=None):
             for k in sorted(seen.keys(), key=_natural_activity_sort_key)
         ]
     activity_options_json = json.dumps(activity_options, ensure_ascii=False)
-
     year_cols = ["2025-26", "2026-27", "2027-28", "2028-29", "2029-30"]
+    # The phone card prints each year above its value (the Goal row only), so the
+    # short form keeps six columns inside a 390px screen.
+    year_short = {yr: yr[2:] for yr in year_cols}
 
-    html = '''        <div style="margin:2rem 0;padding:1.5rem;background:var(--surface-opaque);border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
-            <h2 style="color:var(--navy-primary);margin:0 0 1rem 0;">Annual Workplan Goals</h2>
-            <div style="overflow-x:auto;" tabindex="0" role="region" aria-label="Annual Workplan Goals table">
-            <table style="width:100%;border-collapse:collapse;font-size:0.82rem;">
+    # Presentation lives in workplan_goals.js (injectStyles, the .wpg-annual*
+    # rules): classes here, no inline colors, so the theme tokens and the phone
+    # card layout (below 560px) can reach every cell. S375 UI pass: the inline
+    # styles carried 715 raw hexes and no media query could override them.
+    html = '''        <div class="wpg-annual">
+            <h2 class="wpg-annual-title">Annual Workplan Goals</h2>
+            <div class="wpg-annual-scroll" tabindex="0" role="region" aria-label="Annual Workplan Goals table">
+            <table class="wpg-annual-table">
+                <colgroup><col class="wpg-c-name"><col class="wpg-c-type">'''
+    html += '<col class="wpg-c-yr">' * len(year_cols)
+    html += '''<col class="wpg-c-total"></colgroup>
                 <thead>
-                    <tr style="background:var(--seal-blue);color:#fff;">
-                        <th style="padding:0.5rem 0.6rem;text-align:left;white-space:nowrap;border:1px solid var(--navy-secondary);">Sub-Activity</th>
-                        <th style="padding:0.5rem 0.4rem;text-align:center;width:55px;border:1px solid var(--navy-secondary);">Type</th>
+                    <tr>
+                        <th scope="col" class="wpg-h-name">Sub-Activity</th>
+                        <th scope="col">Type</th>
 '''
     for yr in year_cols:
-        html += f'                        <th style="padding:0.5rem 0.4rem;text-align:center;white-space:nowrap;border:1px solid var(--navy-secondary);">{yr}</th>\n'
-    html += '                        <th style="padding:0.5rem 0.4rem;text-align:center;border:1px solid var(--navy-secondary);">TOTAL</th>\n'
-    html += '                    </tr>\n                </thead>\n                <tbody>\n'
+        html += f'                        <th scope="col">{yr}</th>\n'
+    html += '                        <th scope="col">Total</th>\n'
+    html += '                    </tr>\n                </thead>\n'
 
     # Activity header lookup: display label ("Activity N: Name") → the activity
     # entry (id + description), so the group header can render editable title +
@@ -1447,12 +1461,16 @@ def render_annual_goals_table_html(annual_goals, activities=None):
     # activities list; a group with no matching entry renders plain (read-only).
     act_by_name = {a["name"]: a for a in (activities or [])}
 
-    current_activity = ""
+    current_activity = None
     for row in annual_goals:
         # Activity group header — curator-editable Activity name + description.
         # Name → PATCH workplan_goals.name (kind='activity', both GOAL+STRETCH);
         # description → PATCH workplan_goals.description. Single source of truth.
+        # Each Activity is its own <tbody>, headed by a rowgroup <th>, so a screen
+        # reader names the Activity for every cell under it.
         if row["activity"] != current_activity:
+            if current_activity is not None:
+                html += '                </tbody>\n'
             current_activity = row["activity"]
             act = act_by_name.get(current_activity)
             if act:
@@ -1462,28 +1480,30 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                              if current_activity.startswith(prefix)
                              else current_activity)
                 act_desc = act.get("description") or ""
+                # An empty description renders hidden: a reader sees nothing, an
+                # editor sees "Add description" (workplan_goals.js paints it).
                 header_inner = (
-                    f'<span style="opacity:0.85;">Activity {html_escape(aid_num)}: </span>'
+                    f'<span class="wpg-act-num">Activity {html_escape(aid_num)}: </span>'
                     f'<span class="wpg-title-cell" data-activity-title-edit="1" '
                     f'data-aid="{html_escape(aid_num, quote=True)}" '
                     f'data-val="{html_escape(name_part, quote=True)}">{html_escape(name_part)}</span>'
                     f'<div class="wpg-act-desc-cell" data-activity-desc-edit="1" '
                     f'data-aid="{html_escape(aid_num, quote=True)}" '
-                    f'data-val="{html_escape(act_desc, quote=True)}" '
-                    f'style="font-weight:400;font-size:0.78rem;opacity:0.92;margin-top:0.2rem;">'
-                    f'{html_escape(act_desc) if act_desc else "&mdash;"}</div>'
+                    f'data-val="{html_escape(act_desc, quote=True)}"{"" if act_desc else " hidden"}>'
+                    f'{html_escape(act_desc)}</div>'
                 )
             else:
                 header_inner = html_escape(current_activity)
-            html += (f'                    <tr style="background:var(--navy-secondary);color:var(--on-accent);">\n'
-                     f'                        <td colspan="8" style="padding:0.5rem 0.6rem;font-weight:700;border:1px solid var(--navy-primary);">{header_inner}</td>\n'
-                     f'                    </tr>\n')
+            html += ('                <tbody class="wpg-act-group">\n'
+                     '                    <tr class="wpg-act-row">\n'
+                     f'                        <th scope="rowgroup" colspan="{len(year_cols) + 3}" class="wpg-act-head">{header_inner}</th>\n'
+                     '                    </tr>\n')
 
         # Three rows per sub-activity: GOAL, CURRENT, STRETCH
-        for rtype, vals, style in [
-            ("Goal", row["goal"], "background:var(--bg-off-white);font-weight:600;color:var(--navy-primary);"),
-            ("Current", row["current"], "background:var(--surface-opaque);color:var(--green-progress);font-weight:700;"),
-            ("Stretch", row["stretch"], "background:var(--bg-off-white);color:var(--mustard-text);font-style:italic;"),
+        for rtype, vals in [
+            ("Goal", row["goal"]),
+            ("Current", row["current"]),
+            ("Stretch", row["stretch"]),
         ]:
             is_first = rtype == "Goal"
             name_cell = ""
@@ -1505,22 +1525,15 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                         "wpg-act-chip wpg-act-chip-primary" if is_primary
                         else "wpg-act-chip"
                     )
-                    chips_html += (
-                        f'<span class="{chip_cls}" '
-                        f'style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;'
-                        f'background:var(--surface-muted);color:var(--navy-secondary);border-radius:10px;font-size:0.65rem;'
-                        f'font-weight:600;">{star}Activity {assoc_id}</span>'
-                    )
+                    chips_html += f'<span class="{chip_cls}">{star}Activity {assoc_id}</span>'
                 assoc_json = json.dumps(assoc_records, ensure_ascii=False)
                 chip_line = (
                     f'<div class="wpg-assoc-cell" data-assoc-edit="1" '
                     f'data-pid="{html_escape(row["id"], quote=True)}" '
                     f'data-assoc="{html_escape(assoc_json, quote=True)}" '
                     f'data-assoc-backfilled="{1 if row.get("assoc_backfilled") else 0}" '
-                    f'data-activities="{html_escape(activity_options_json, quote=True)}" '
-                    f'style="font-size:0.65rem;color:var(--text-muted);font-weight:400;'
-                    f'margin-top:0.15rem;">'
-                    f'<span style="color:var(--text-muted);">Contributes to:</span> '
+                    f'data-activities="{html_escape(activity_options_json, quote=True)}">'
+                    f'<span class="wpg-assoc-label">Contributes to:</span> '
                     f'{chips_html}'
                     f'<span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span>'
                     f'</div>'
@@ -1529,40 +1542,66 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                 # Session 85: the name is wrapped in an editable span (data-title-edit)
                 # → PATCH projects.name (the single authoritative title store).
                 # Brief description under the title — editable, single-stored in
-                # projects.description (data-desc-edit → PATCH). "—" when empty.
+                # projects.description (data-desc-edit → PATCH). Hidden when empty:
+                # an editor sees "Add description" in its place (S375).
                 proj_desc = row.get("description") or ""
                 desc_line = (
                     f'<div class="wpg-desc-cell" data-desc-edit="1" '
                     f'data-pid="{html_escape(row["id"], quote=True)}" '
-                    f'data-val="{html_escape(proj_desc, quote=True)}" '
-                    f'style="font-weight:400;font-size:0.72rem;color:var(--text-muted);margin-top:0.2rem;">'
-                    f'{html_escape(proj_desc) if proj_desc else "&mdash;"}</div>'
+                    f'data-val="{html_escape(proj_desc, quote=True)}"{"" if proj_desc else " hidden"}>'
+                    f'{html_escape(proj_desc)}</div>'
                 )
+                # What the numbers count + how they are counted (Sam, 2026-10-12:
+                # "Notes for annual goals ... to define what the numbers will be
+                # counting"). kpi_unit and count_note PATCH projects; an empty line
+                # stays hidden for readers and opens as "Add" for an editor.
+                kpi_unit = row.get("kpi_unit") or ""
+                count_note = row.get("count_note") or ""
+                count_line = (
+                    f'<div class="wpg-count-line"{"" if kpi_unit else " hidden"}>'
+                    f'<span class="wpg-count-label">Counts:</span> '
+                    f'<span class="wpg-unit-cell" data-unit-edit="1" '
+                    f'data-pid="{html_escape(row["id"], quote=True)}" '
+                    f'data-val="{html_escape(kpi_unit, quote=True)}">{html_escape(kpi_unit)}</span></div>'
+                    f'<div class="wpg-count-line"{"" if count_note else " hidden"}>'
+                    f'<span class="wpg-count-label">How it is counted:</span> '
+                    f'<span class="wpg-note-cell" data-note-edit="1" '
+                    f'data-pid="{html_escape(row["id"], quote=True)}" '
+                    f'data-val="{html_escape(count_note, quote=True)}">{html_escape(count_note)}</span></div>'
+                )
+                # A project with no goal ladder (Path A blank row) carries its id +
+                # name so the editor can offer "Set targets", which creates the
+                # missing GOAL + STRETCH rows in place.
+                no_ladder_attrs = ("" if row.get("has_ladder", True) else
+                                   f' data-no-ladder="1" data-pid="{html_escape(row["id"], quote=True)}"'
+                                   f' data-name="{html_escape(row["name"], quote=True)}"')
                 # Hierarchy: a three-level id (X.Y.Z, e.g. 4.1.1 "29 Palms" under
                 # 4.1 "Veteran Sprint") renders as a SUBSIDIARY of its X.Y parent —
                 # indented + an accent left-border + a "↳" marker — while staying
                 # its own row (a significant project preserved as a card, per Sam).
                 # Order already nests it (rows sort by home Activity + natural id).
+                # The indent rides a custom property so the phone card can halve it.
                 _depth = str(row["id"]).count(".")
                 _indent_rem = max(0, _depth - 1) * 1.25
-                _pad_left = 0.6 + _indent_rem
-                _nest_style = ("border-left:3px solid var(--seal-blue);"
-                               if _depth >= 2 else "")
-                _sub_marker = ('<span style="color:var(--seal-blue-text,#002F6D);" '
-                               'aria-hidden="true">↳ </span>' if _depth >= 2 else '')
-                name_cell = (f'<td rowspan="3" style="padding:0.4rem 0.6rem 0.4rem {_pad_left:.2f}rem;'
-                             f'border:1px solid #ddd;{_nest_style}'
-                             f'vertical-align:top;font-weight:600;background:var(--surface-opaque);">'
+                _nest_cls = " wpg-nest" if _depth >= 2 else ""
+                _indent_attr = (f' style="--wpg-indent:{_indent_rem:.2f}rem"'
+                                if _indent_rem else "")
+                _sub_marker = ('<span class="wpg-sub-marker" aria-hidden="true">↳ </span>'
+                               if _depth >= 2 else '')
+                # The name is the row header for its three rows (Goal, Current,
+                # Stretch): a screen reader names the sub-activity for each value.
+                name_cell = (f'<th scope="row" rowspan="3" class="wpg-name{_nest_cls}"'
+                             f'{_indent_attr}{no_ladder_attrs}>'
                              f'{_sub_marker}'
-                             f'<span style="color:var(--text-muted);font-size:0.75rem;">{html_escape(row["id"])}</span> '
+                             f'<span class="wpg-pid">{html_escape(row["id"])}</span> '
                              f'<span class="wpg-title-cell" data-title-edit="1" '
                              f'data-pid="{html_escape(row["id"], quote=True)}">'
-                             f'{html_escape(row["name"])}</span>{desc_line}{chip_line}</td>')
+                             f'{html_escape(row["name"])}</span>{desc_line}{count_line}{chip_line}</th>')
 
-            html += f'                    <tr style="{style}">\n'
-            html += f'                        {name_cell}\n'
-            html += (f'                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;'
-                     f'font-size:0.75rem;">{rtype}</td>\n')
+            html += f'                    <tr class="wpg-r wpg-r-{rtype.lower()}">\n'
+            if name_cell:
+                html += f'                        {name_cell}\n'
+            html += f'                        <th scope="row" class="wpg-type">{rtype}</th>\n'
             # GOAL/STRETCH rows are editable year-ladders (Supabase). The CURRENT
             # row is HYBRID (Session 85): a KPI-mapped sub-activity shows the LIVE
             # headline value read-only (current_source=='live'); an unmapped one
@@ -1588,26 +1627,26 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                 if isinstance(v, float) and v == int(v):
                     v = int(v)
                 disp = fmt_number(v) if v else ""
-                # Highlight current year (2025-26) with special styling
-                yr_style = "font-weight:700;" if yr == "2025-26" and rtype == "Current" and v else ""
-                # ── Current row, 2025-26 cell: live badge or manual editor ──
+                label = f' data-label="{year_short[yr]}"'
+                # ── Current row, 2025-26 cell: live note or manual editor ──
                 if is_current and yr == "2025-26":
                     if cur_live:
                         live_disp = html_escape(str(row.get("current_live_display", "")))
                         as_of = html_escape(str(row.get("current_as_of", "")))
+                        # Muted words under the value, never a filled badge (S375):
+                        # it says where the number comes from, not a state to act on.
                         badge = (
-                            ' <span class="wpg-live-badge" '
+                            '<span class="wpg-live-badge" '
                             'title="Synced live from the MAP CPL Dashboard — matches the headline KPI card">'
-                            'live' + (f' · as of {as_of}' if as_of else '') + '</span>'
+                            'live' + (f', as of {as_of}' if as_of else '') + '</span>'
                         )
-                        html += (f'                        <td style="padding:0.3rem 0.4rem;text-align:center;'
-                                 f'border:1px solid #ddd;font-weight:700;white-space:nowrap;">{live_disp}{badge}</td>\n')
+                        html += (f'                        <td class="wpg-val wpg-live"{label}>'
+                                 f'{live_disp}{badge}</td>\n')
                         continue
                     if not has_ladder:
                         # No backing workplan_goals row → Current is read-only here
                         # (a manual edit would PATCH 0 rows). Render a plain cell.
-                        html += (f'                        <td style="padding:0.3rem 0.4rem;text-align:center;'
-                                 f'border:1px solid #ddd;{yr_style}">{disp}</td>\n')
+                        html += f'                        <td class="wpg-val"{label}>{disp}</td>\n'
                         continue
                     # Manual current — click-to-edit in the Annual Workplan tab.
                     pct_attr = ' data-pct="1"' if row.get("is_percentage") else ''
@@ -1616,8 +1655,8 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                         f'data-val="{v if v else 0}"{pct_attr}'
                     )
                     hint = ' <span class="wpg-manual-hint" aria-hidden="true">✎</span>'
-                    html += (f'                        <td{cur_attrs} style="padding:0.3rem 0.4rem;text-align:center;'
-                             f'border:1px solid #ddd;{yr_style}white-space:nowrap;">{disp}{hint}</td>\n')
+                    html += (f'                        <td class="wpg-val"{label}{cur_attrs}>'
+                             f'{disp}{hint}</td>\n')
                     continue
                 data_attrs = ""
                 if editable:
@@ -1627,11 +1666,11 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                         f' data-editable="1" data-aid="{row["id"]}" data-kind="project" data-rt="{rt_attr}" '
                         f'data-yr="{yr}" data-yr-key="{year_keys_map[yr]}" data-val="{v if v else 0}"'
                     )
-                html += (f'                        <td{data_attrs} style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;{yr_style}">'
-                         f'{disp}</td>\n')
+                html += f'                        <td class="wpg-val"{label}{data_attrs}>{disp}</td>\n'
             total = vals.get("total", 0)
             if isinstance(total, float) and total == int(total):
                 total = int(total)
+            total_label = ' data-label="Total"'
             total_attrs = ""
             if editable:
                 total_attrs = (
@@ -1641,19 +1680,21 @@ def render_annual_goals_table_html(annual_goals, activities=None):
             elif is_current and cur_live:
                 # Live: TOTAL mirrors the verbatim headline string (read-only).
                 live_disp = html_escape(str(row.get("current_live_display", "")))
-                html += (f'                        <td style="padding:0.3rem 0.4rem;text-align:center;'
-                         f'border:1px solid #ddd;font-weight:700;white-space:nowrap;">{live_disp}</td>\n')
+                html += (f'                        <td class="wpg-val wpg-total"{total_label}>'
+                         f'{live_disp}</td>\n')
                 html += '                    </tr>\n'
                 continue
             elif is_current:
                 # Manual: TOTAL mirrors the single Current value; data-current-total
                 # lets the editor repaint it optimistically on save.
                 total_attrs = f' data-current-total="1" data-aid="{html_escape(row["id"], quote=True)}"'
-            html += (f'                        <td{total_attrs} style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-weight:700;">'
+            html += (f'                        <td class="wpg-val wpg-total"{total_label}{total_attrs}>'
                      f'{fmt_number(total) if total else ""}</td>\n')
             html += '                    </tr>\n'
 
-    html += '                </tbody>\n            </table>\n            </div>\n        </div>\n'
+    if current_activity is not None:
+        html += '                </tbody>\n'
+    html += '            </table>\n            </div>\n        </div>\n'
     return html
 
 
@@ -1875,6 +1916,7 @@ def build_activity_kpis(projects, activities=None):
             "goal":          p.get("goal", ""),
             "metric":        p.get("kpi_metric", ""),
             "unit":          p.get("kpi_unit", ""),
+            "count_note":    p.get("count_note", ""),
             "goal_2526":   p.get("kpi_goal_2526", ""),
             "stretch_2526":  p.get("kpi_stretch_2526", ""),
             "goal_2627":   p.get("kpi_goal_2627", ""),
@@ -2178,13 +2220,14 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
         html += f'            <div class="activity-group">\n'
         html += (f'            <div class="activity-group-header">\n'
                  f'                <h3><span style="color:var(--text-muted);font-weight:600;">{act_id}:</span> {html_escape(act_name)}</h3>\n'
-                 f'                <span style="display:inline-flex;gap:0.8rem;align-items:center;white-space:nowrap;">\n'
+                 # The row wraps (each link keeps nowrap): with Add sub-activity it ran
+                 # 71px past a 390px screen (measured S377).
+                 f'                <span style="display:inline-flex;flex-wrap:wrap;gap:0.3rem 0.8rem;align-items:center;">\n'
                  f'                <a href="#raci" class="act-raci-link" data-raci-key="activity:{act_num}" title="Who\'s Responsible / Accountable / Consulted / Informed for this Activity — hover for the roster, click to open Team &amp; RACI" '
                  f'onclick="try{{sessionStorage.setItem(\'cpl_raci_focus\',\'activity:{act_num}\')}}catch(e){{}}" '
                  f'style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">RACI</a>\n'
-                 f'                <a href="#raci" class="act-update-link" title="Braindump a quick status update for this Activity — CC writes it up and saves it" '
-                 f'onclick="try{{sessionStorage.setItem(\'cpl_update_focus\',\'activity:{act_num}\')}}catch(e){{}}" '
-                 f'style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">Update</a>\n'
+                 # No Update link here (S377): an Activity's summary is drafted by
+                 # Refresh summaries (activity_summaries.js) and posted by a reviewer.
                  f'                <a href="#raci" class="act-nudge-link" title="Nudge this Activity\'s Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)" '
                  f'onclick="try{{sessionStorage.setItem(\'cpl_nudge_focus\',\'activity:{act_num}\')}}catch(e){{}}" '
                  f'style="display:inline-flex;align-items:center;min-height:24px;font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;white-space:nowrap;">Nudge</a>\n'
@@ -2305,12 +2348,17 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                 if has_metric:
                     html += (f'                <div class="akpi-metric-row">\n'
                              f'                    <span class="akpi-metric-value">{kpi["metric"]}</span>\n'
-                             f'                    <span class="akpi-metric-unit">{kpi["unit"]}</span>\n'
+                             f'                    <span class="akpi-metric-unit">{html_escape(str(kpi["unit"]))}</span>\n'
                              f'                </div>\n')
                 else:
                     html += (f'                <div class="akpi-metric-row">\n'
-                             f'                    <span class="akpi-metric-unit" style="opacity:0.5;">{kpi["unit"]}</span>\n'
+                             f'                    <span class="akpi-metric-unit" style="opacity:0.5;">{html_escape(str(kpi["unit"]))}</span>\n'
                              f'                </div>\n')
+                # How the numbers are counted (projects.count_note), so a reader of a
+                # tech-development target knows what a "4" means.
+                if kpi.get("count_note"):
+                    html += (f'                <div class="akpi-count-note" style="font-size:0.7rem;color:var(--text-muted);'
+                             f'margin:-0.1rem 0 0.4rem 0;">How it is counted: {html_escape(str(kpi["count_note"]))}</div>\n')
 
                 # Annual cumulative goals — mini table: Year / Goal / Stretch
                 g2526 = kpi.get("goal_2526", "")
@@ -3329,8 +3377,10 @@ def render_awg_projects_section_html(work_projects):
     "Activity N" chip with the full text in title). The Lead cell carries the
     card_raci.js live hook (.cpl-raci-lead[data-raci-key]) so it resolves to
     the RACI Responsible at runtime, with the creation-era lead as fallback.
-    The header carries #awgProjectsAddSlot — project_add.js mounts its
-    "+ Add project" button there. Returns "" when there are no work projects.
+    The header still carries #awgProjectsAddSlot, but nothing mounts there now:
+    project_add.js was retired in S375 (it had lost both mount points), and the
+    one add flow is the Annual Goals dialog (workplan_goals.js,
+    window.CPL_WORKPLAN_ADD). Returns "" when there are no work projects.
     """
     if not work_projects:
         return ""
@@ -3426,9 +3476,19 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
     BASE_APP = int(cfg.get("BASE_APP", 196))
 
     # ── Look up workplan goal entries by name ──
+    def _num(v):
+        try:
+            return float(v or 0)
+        except (TypeError, ValueError):
+            return 0.0
     mil_wg, wf_wg, app_wg = {}, {}, {}
     for wg in (workplan_goals or []):
         name_l = wg.get("name", "").lower()
+        # A ladderless row (all zeros) never names a series: once 1.1.2 moved to
+        # 4.2.1 it sorted after the apprentice rows and the chart divided by zero
+        # (run 585, S377).
+        if not any(_num(v) for v in (wg.get("goal") or [])):
+            continue
         if "military" in name_l:
             mil_wg = wg
         elif "apprentice" in name_l:
@@ -3459,6 +3519,8 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
                 pts.append((2026 + i, int(val)))
         else:
             annual_sum = sum(annual_vals) if annual_vals else 1
+            if not annual_sum:
+                return pts
             delta = endpoint - baseline
             pts.append((2025, int(baseline + delta * (annual_vals[0] * 0.5) / annual_sum)))
             cumul_prop = 0
@@ -11418,6 +11480,11 @@ def build_workplan_goals_from_supabase(
             # projects.description (the field the retired card editor wrote).
             # Editable on the Annual Workplan Goals tab now.
             "description": (proj_map.get(aid, {}) or {}).get("description") or "",
+            # What the numbers count (projects.kpi_unit, the short label the
+            # Activities cards print beside the number) and how they are counted
+            # (projects.count_note, Sam 2026-10-12). Both editable on this tab.
+            "kpi_unit": (proj_map.get(aid, {}) or {}).get("kpi_unit") or "",
+            "count_note": (proj_map.get(aid, {}) or {}).get("count_note") or "",
             # Path A: does this project have a backing workplan_goals ladder row?
             # A blank-ladder project (reflected here but with no wg row) renders
             # its year/Current cells READ-ONLY — an editable cell would PATCH a

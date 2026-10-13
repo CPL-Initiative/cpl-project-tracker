@@ -55,7 +55,7 @@ SELECT_COLUMNS = (
     "id,name,description,workplan_activity,vision_2030_action,cpl_goal,"
     "budget_source,budget,lead,team,status,percent_complete,"
     "start_date,end_date,milestones,latest_update,update_date,"
-    "kpi_metric,kpi_unit,wp_notes,kpi_order"
+    "kpi_metric,kpi_unit,wp_notes,kpi_order,count_note"
 )
 
 

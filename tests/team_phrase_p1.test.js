@@ -179,8 +179,13 @@ function makeWin(html, opts) {
     check("wpg: submitAdd drops phrase on the REAL status (no message regex)",
       wpg.indexOf("maybeDropStalePhrase(sess, e.status)") >= 0
       && !/40\[13\]\\b/.test(wpg));
+    // S375: the add writes three tables through one post() helper, so there is one
+    // throw site; what matters is that every Error submitAdd throws carries the real
+    // HTTP status, and that it throws at least one.
+    const sa = wpg.slice(wpg.indexOf("function submitAdd("), wpg.indexOf("// ─── Init"));
+    const errs = (sa.match(/new Error\(/g) || []).length;
     check("wpg: submitAdd throw sites carry err.status",
-      (wpg.match(/err\.status = r2?\.status/g) || []).length >= 2);
+      errs >= 1 && (sa.match(/err\.status = r2?\.status/g) || []).length === errs);
   }
 
   // ── (e) schema + template pins ──

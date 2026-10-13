@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 543,
+   "count": 548,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2251,6 +2251,24 @@
      "updated": "2026-09-04"
     },
     {
+     "created": "2026-10-12",
+     "governs": [
+      "kb/_course_outcomes_read.py",
+      "tests/course_outcomes_read_test.py",
+      "kb/course_outcomes/trial_38317539422/"
+     ],
+     "path": "docs/kb-notes/methodology-a-lead-in-sentence-is-not-a-section-heading.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "course-outlines",
+      "harvest"
+     ],
+     "title": "A lead-in sentence is not a section heading",
+     "type": "methodology",
+     "updated": "2026-10-12"
+    },
+    {
      "created": "2026-08-12",
      "governs": [
       "sierra_training.js",
@@ -4384,6 +4402,21 @@
      "updated": "2026-08-23"
     },
     {
+     "created": "2026-10-13",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md",
+     "status": "published",
+     "tags": [
+      "ci",
+      "github-actions",
+      "workflows",
+      "program-requirements-harvest"
+     ],
+     "title": "A trigger file must differ from main's before its workflow runs",
+     "type": "methodology",
+     "updated": "2026-10-13"
+    },
+    {
      "created": "2026-09-20",
      "governs": [
       "kb/_typesafe_smoke.py",
@@ -5043,6 +5076,21 @@
      "title": "An opportunity figure must be what peers ACHIEVED, not what the record allows",
      "type": "methodology",
      "updated": "2026-08-17"
+    },
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-an-option-list-read-from-the-page-dies-with-the-renderer.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "front-end",
+      "testing",
+      "workplan"
+     ],
+     "title": "An option list read from the page dies with the renderer that printed it",
+     "type": "methodology",
+     "updated": "2026-10-12"
     },
     {
      "created": "2026-08-17",
@@ -9892,6 +9940,41 @@
      "updated": "2026-06-29"
     },
     {
+     "created": "2026-10-13",
+     "governs": [
+      "scripts/verify_workplan_move.js",
+      "kb/supabase_workplan_move.sql"
+     ],
+     "path": "docs/kb-notes/playbook-test-a-database-function-locally-with-pglite.md",
+     "status": "published",
+     "tags": [
+      "playbook",
+      "supabase",
+      "testing",
+      "sql"
+     ],
+     "title": "Test a database function locally with PGlite before it goes live",
+     "type": "playbook",
+     "updated": "2026-10-13"
+    },
+    {
+     "created": "2026-10-13",
+     "governs": [
+      "kb/supabase_workplan_move.sql"
+     ],
+     "path": "docs/kb-notes/playbook-when-apply-migration-times-out-read-the-migrations-table.md",
+     "status": "published",
+     "tags": [
+      "playbook",
+      "supabase",
+      "migrations",
+      "connector"
+     ],
+     "title": "When apply_migration times out, read the migrations table before retrying",
+     "type": "playbook",
+     "updated": "2026-10-13"
+    },
+    {
      "created": "2026-09-20",
      "governs": [
       "kb/_typesafe_smoke.py",
@@ -10886,7 +10969,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 86,
+   "count": 87,
    "docs": [
     {
      "created": "2026-08-14",
@@ -10912,6 +10995,29 @@
      "title": "Admin tab + the side menu as data \u2014 lessons",
      "type": null,
      "updated": "2026-08-14"
+    },
+    {
+     "created": "2026-10-12",
+     "governs": [
+      "workplan_goals.js",
+      "excel_to_dashboard.py",
+      "kb/supabase_projects_count_note.sql",
+      "kb/receipts/workplan_2026-10-12_s372_add_3_9_move_1_1_2.sql",
+      "tests/workplan_goals_add_flow.test.js",
+      "activity_summaries.js",
+      "tests/activity_summaries.test.js"
+     ],
+     "path": "docs/workplan_annual_goals_lessons.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "workplan",
+      "annual-goals",
+      "activities"
+     ],
+     "title": "Annual Workplan Goals \u2014 lessons",
+     "type": null,
+     "updated": ""
     },
     {
      "created": "2026-06-30",
@@ -14621,7 +14727,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 55,
+   "count": 56,
    "docs": [
     {
      "created": "2026-08-28",
@@ -14648,6 +14754,19 @@
      "title": "Admin tab / the side menu as data \u2014 lane state",
      "type": null,
      "updated": "2026-08-30"
+    },
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "path": "docs/reference/lanes/workplan-annual-goals.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Annual Workplan Goals / adding, moving and counting sub-activities \u2014 lane state",
+     "type": null,
+     "updated": "2026-10-13"
     },
     {
      "created": "2026-09-08",
@@ -14977,7 +15096,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-10-12"
+     "updated": "2026-10-13"
     },
     {
      "created": "2026-08-28",
@@ -15393,8 +15512,112 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 345,
+   "count": 351,
    "docs": [
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "n": 380,
+     "path": "docs/session_380_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "course-outcomes",
+      "course-outlines",
+      "sdccd",
+      "san-diego-miramar"
+     ],
+     "title": "load the course outcomes, finish SDCCD's SLO read, then the next college",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "n": 379,
+     "path": "docs/session_379_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "workplan",
+      "annual-goals",
+      "move",
+      "ui-pass",
+      "scheduled-sessions"
+     ],
+     "title": "Annual Goals: Move to the phrase held on Sheet 73; read the first Refresh and the first Move",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "n": 378,
+     "path": "docs/session_378_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "workplan",
+      "annual-goals",
+      "move",
+      "activity-summaries"
+     ],
+     "title": "Annual Goals: the Move control is live; read the first Refresh and the first Move",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "n": 377,
+     "path": "docs/session_377_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "workplan",
+      "annual-goals",
+      "move",
+      "a11y"
+     ],
+     "title": "Annual Goals: read Sheet 72, land the Move control, then Refresh summaries",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "n": 376,
+     "path": "docs/session_376_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "course-outlines",
+      "course-outcomes",
+      "san-diego-mesa"
+     ],
+     "title": "load the course outcomes, then re-read Mesa",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "n": 375,
+     "path": "docs/session_375_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "workplan",
+      "annual-goals",
+      "activities",
+      "fifty-percent-law"
+     ],
+     "title": "Annual Goals: land PR A, then B, C, D",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-12",
      "governs": [],
@@ -21314,5 +21537,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1115
+ "total": 1128
 }

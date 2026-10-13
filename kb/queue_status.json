@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-12T22:08:45Z",
-  "session": 373,
-  "moniker": "SkyCypress",
+  "written_at": "2026-10-13T08:00:10Z",
+  "session": 376,
+  "moniker": "SkyLinden",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_374_handoff.md",
+  "handoff": "docs/session_380_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -15056,13 +15056,171 @@
       "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
       "control_number": "45835",
       "loaded": "2026-10-12"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Veterinary Technology",
+      "award": "A.S. Degree",
+      "control_number": "05301",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Dental Assisting: RDA, CDA",
+      "award": "A.S. Degree",
+      "control_number": "05344",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Physical Therapist Assistant",
+      "award": "A.S. Degree",
+      "control_number": "05347",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Health Information Technology",
+      "award": "A.S. Degree",
+      "control_number": "05348",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Radiologic Technology",
+      "award": "A.S. Degree",
+      "control_number": "05349",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Radiologic Technology",
+      "award": "Certificate of Achievement requiring 60+",
+      "control_number": "22313",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Dental Assisting: RDA, CDA",
+      "award": "Certificate of Achievement requiring 30S",
+      "control_number": "22314",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Neurodiagnostic Technology",
+      "award": "A.S. Degree",
+      "control_number": "38642",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "San Diego Mesa College",
+      "program": "Neurodiagnostic Technology",
+      "award": "Certificate of Achievement requiring 30S",
+      "control_number": "38643",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "San Diego City College",
+      "program": "Licensed Vocational Nurse to Registered Nurse",
+      "award": "A.S. Degree",
+      "control_number": "31168",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "San Diego City College",
+      "program": "Registered Nurse: Generic",
+      "award": "A.S. Degree",
+      "control_number": "31169",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "San Diego City College",
+      "program": "Cyber Defense and Analysis",
+      "award": "Baccalaureate of Science (B.S.) Degree.",
+      "control_number": "43523",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Aviation Maintenance Technology: Airframe",
+      "award": "A.S. Degree",
+      "control_number": "09725",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Aviation Business Administration",
+      "award": "A.S. Degree",
+      "control_number": "11728",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Aviation General Studies",
+      "award": "A.S. Degree",
+      "control_number": "16731",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Professional Aeronautics",
+      "award": "A.S. Degree",
+      "control_number": "16779",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Pilot Studies",
+      "award": "A.S. Degree",
+      "control_number": "16973",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Aviation Operations Management",
+      "award": "Certificate of Achievement requiring 16S",
+      "control_number": "22274",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Aviation Maintenance Technology: Airframe",
+      "award": "Certificate of Achievement: 18  or great",
+      "control_number": "22282",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Pilot Studies",
+      "award": "Certificate of Achievement: 18  or great",
+      "control_number": "22283",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Aviation General Studies",
+      "award": "Certificate of Achievement: 18  or great",
+      "control_number": "22284",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "San Diego Miramar College",
+      "program": "Aviation Maintenance Technology: Airframe & Powerplant",
+      "award": "Certificate of Achievement: 18  or great",
+      "control_number": "22285",
+      "loaded": "2026-10-13"
     }
   ],
   "next_step": {
-    "title": "Read the course SLOs on Riverside's outlines",
-    "text": "The course index found a public outline for 1,605 of the 1,648 courses in the Riverside City, Moreno Valley and Norco records. Next comes a table that keeps each course's outcomes by college and course, then the read of every outline, then San Diego and Chaffey."
+    "title": "Load the course outcomes once the table exists",
+    "text": "Riverside, Moreno Valley and Norco's 1,605 course outlines are read, and San Diego City, Mesa and Miramar's are being read by college. The table that holds the outcomes waits on one paste in the database editor; then both loads run."
   },
   "calls": [
+    {
+      "title": "Create the course outcomes table",
+      "text": "You chose to paste it (Open Asks Sheet 72, card 1). The database tool timed out again this morning. No reply: the outcomes stay filed in the repository and nothing reaches the table."
+    },
     {
       "title": "The gallery picks",
       "text": "Mark the paintings to keep, drop or add on the gallery page. No reply: the gallery stays as it is and nothing changes on the site."
@@ -15076,6 +15234,18 @@
     "reading": "Cerritos read on Oct 9 and Mt. San Antonio on Oct 10. RCCD's three colleges were read on Oct 10 and their Liberal Arts emphasis programs recovered on Oct 11. 18 records that read another program's page were removed on Oct 11. Long Beach City was read on Oct 11 and re-read on Oct 12: 344 records, unchecked. Chaffey was read and loaded on Oct 12: 191 records, unchecked, for 1,745 in all."
   },
   "changes": [
+    {
+      "at": "2026-10-13T04:59Z",
+      "text": "San Diego Mesa's nine health programs loaded, not yet confirmed (175 records)"
+    },
+    {
+      "at": "2026-10-13T06:30Z",
+      "text": "San Diego City's two nursing degrees and its Cyber Defense degree loaded, not yet confirmed (167 records)"
+    },
+    {
+      "at": "2026-10-13T07:45Z",
+      "text": "San Diego Miramar's ten aviation programs loaded, not yet confirmed (120 records); the display build covers all 2,203 records"
+    },
     {
       "at": "2026-10-12T20:05Z",
       "text": "San Diego Mesa's 166 records loaded, not yet confirmed, and the page's display build covers all 2,181 records"
@@ -15095,6 +15265,10 @@
     {
       "at": "2026-10-12T22:00Z",
       "text": "Riverside's course index: a public outline for 1,605 of the 1,648 courses in its three colleges' records"
+    },
+    {
+      "at": "2026-10-12T22:25Z",
+      "text": "Riverside's course index, the course outline fields and the last checkpoint merged"
     }
   ],
   "headline": [
@@ -15127,11 +15301,17 @@
       "active": 20282,
       "checked": 31,
       "colleges": 6
+    },
+    {
+      "day": "2026-10-13",
+      "active": 20282,
+      "checked": 31,
+      "colleges": 6
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-13T05:12:14Z"
+    "at": "2026-10-14T05:12:14Z"
   }
 }

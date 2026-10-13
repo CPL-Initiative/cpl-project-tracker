@@ -4,8 +4,8 @@ name: Course outline index
 # the Riverside course index"). kb/_course_outline_index.py reads pages only and
 # writes no table; it files kb/course_outline_index/<step>_<run>.json, which this
 # job commits back to the branch that ran it. Runs when a claude/** push changes
-# kb/course_outline_index/.run, never on a merge commit (a merge of main carries
-# that file's change too).
+# kb/course_outline_index/.run to something main does not hold (the gate job),
+# never on a merge commit (a merge of main carries that file's change too).
 on:
   push:
     branches: ['claude/**']
@@ -20,8 +20,30 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  index:
+  gate:
+    # Runs the job only when the pushed trigger file differs from main's. A merge of
+    # main carries every trigger file main holds, and a push after it (not only the
+    # merge commit) starts this workflow (S376: a display push on a branch that had
+    # merged main re-ran the SDCCD index). To run the same file again, change a
+    # field in it (run=).
     if: github.actor != 'github-actions[bot]' && !startsWith(github.event.head_commit.message, 'Merge')
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.diff.outputs.go }}
+    steps:
+      - uses: actions/checkout@v7
+      - id: diff
+        run: |
+          git fetch -q --depth=1 origin main
+          if git diff --quiet FETCH_HEAD -- kb/course_outline_index/.run; then
+            echo "go=0" >> "$GITHUB_OUTPUT"; echo "kb/course_outline_index/.run matches main's: nothing to run."
+          else
+            echo "go=1" >> "$GITHUB_OUTPUT"
+          fi
+
+  index:
+    needs: gate
+    if: needs.gate.outputs.go == '1'
     runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:
@@ -44,9 +66,11 @@ jobs:
           discover=$(sed -n 's/^discover=//p' kb/course_outline_index/.run)
           slugs=$(sed -n 's/^slugs=//p' kb/course_outline_index/.run)
           index=$(sed -n 's/^index=//p' kb/course_outline_index/.run)
+          report=$(sed -n 's/^report=//p' kb/course_outline_index/.run)
           [ -n "$discover" ] && args+=(--discover "$discover")
           [ -n "$index" ] && args+=(--index "$index")
           [ -n "$slugs" ] && args+=(--slugs "$slugs")
+          [ -n "$report" ] && args+=(--report "$report")
           python3 kb/_course_outline_index.py "${args[@]}"
 
       - name: Commit the result to this branch
