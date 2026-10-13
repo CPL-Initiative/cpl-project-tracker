@@ -43,3 +43,12 @@ select id, 'SkySequoiaS377', 'create', 'Sam''s Sheet 72 pastes read back', null:
 union all
 select id, 'SkySequoiaS377', 'supersede', 'superseded by sheet-72-pastes-applied-2026-10-13 (the Move function is live)', null::jsonb from sup
 returning memory_id, action;
+
+-- Added ~04:25Z: the charts pitfall (dashboard run 585). Logged once.
+-- Rollback: delete from public.cpl_memory where slug = 'workplan-charts-name-match-reads-sort-order-2026-10-13';
+-- (inserted with the same column list as above: kind pitfall, status proposed, author SkySequoiaS377,
+--  related sheet-72-pastes-applied-2026-10-13, source "S377 SkySequoia; dashboard run 38344616539; cpl-project-tracker#2063")
+
+-- Added ~04:35Z: Sam's Sheet 72 card 4 chip ("phrase", 03:50:39Z), verified from the sheet's replies store.
+-- New row, not a supersede: sam-sheet-72-rulings-2026-10-13 stays (cards 1-3 hold); this row replaces its card 4 line.
+-- Rollback: delete from public.cpl_memory where slug = 'sam-sheet-72-card-4-team-phrase-too-2026-10-13';
