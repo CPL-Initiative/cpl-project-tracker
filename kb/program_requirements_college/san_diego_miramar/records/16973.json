@@ -1,0 +1,179 @@
+{
+ "college": "San Diego Miramar College",
+ "control_number": "16973",
+ "shape": "degree",
+ "title": "Pilot Studies",
+ "award": "A.S. Degree",
+ "source_url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20098",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5213,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5213,
+    "output_tokens": 992,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 992,
+  "output_tokens_details": {
+   "thinking_tokens": 267
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04069,
+ "ms": 8647,
+ "seconds": 9.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "AVIA101",
+    "AVIA128",
+    "AVIA133"
+   ],
+   "flagged": [
+    "AVIA101",
+    "AVIA128",
+    "AVIA133"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    21.0
+   ],
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Pilot Studies - Associate of Science Degree: Miramar",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Possess the knowledge and skills necessary to research, inspect, repair, and maintain airframes in accordance with regulations, policies, and procedures set forth by the Federal Aviation Administration and the aeronautical manufacturers and maintenance organizations of the aviation industry."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "AVIA 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AVIA 128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AVIA 133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AVIM 101G",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVIM 101H",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "AVIA 101, AVIA 128 and AVIA 133 are printed as required major courses but are not in the closed list; recorded as catalog additions.",
+   "The catalog states the Associate Degree requires a minimum of 60 degree-applicable semester units but names no specific GE pattern, so ge_pattern is null.",
+   "The single learning outcome describes airframe maintenance skills, while the summary describes preparation for the FAA Private Pilot exam; recorded word for word as printed.",
+   "Credit-by-rating provisions (up to 35 units for an FAA Airframe or Powerplant Rating; up to 15 units for military technical schools) are printed with the degree; they are not recorded as blocks.",
+   "No careers are named in the text."
+  ]
+ },
+ "extracted_run": "38355780721"
+}
