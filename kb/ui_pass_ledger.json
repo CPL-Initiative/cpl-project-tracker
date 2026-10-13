@@ -198,8 +198,8 @@
    "name": "Annual Report",
    "page": "index.html#annual-report",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-13",
+   "outcome": "First pass. npm run a11y found the preview scrolling with no keyboard reach at 390px (both themes); the screen showed four boxed glyph buttons, an unlabelled editor, unannounced status lines colored green and a raw #A33, hex fallbacks in its CSS, centered report prose and literal underscores on the data date. Fixed in one PR: underlined word controls (26px), labelled editor, the preview a named keyboard region, status announced and red only for a failure, tokens only, left-aligned, the date in italics. Wiring: the 8 headline KPIs the report quotes match CPL_DATA and the Dashboard cards; item_updates activity rows are the same newest-per-key the cards paint. a11y: 1 finding to 0, light and dark."
   },
   {
    "id": "cobi:unified-courses",
