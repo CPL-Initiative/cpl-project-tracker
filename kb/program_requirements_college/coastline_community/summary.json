@@ -2,19 +2,19 @@
  "college": "Coastline Community College",
  "programs": 175,
  "with_closed_list": 159,
- "found": 24,
- "extracted": 24,
+ "found": 32,
+ "extracted": 32,
  "errors": 0,
- "passed_machine_checks": 6,
+ "passed_machine_checks": 10,
  "failed": {
-  "coverage": 18,
+  "coverage": 20,
   "invented": 0,
-  "arithmetic": 17,
+  "arithmetic": 21,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 1.42,
- "cost_per_program": 0.0591,
+ "cost_usd": 1.86,
+ "cost_per_program": 0.0582,
  "not_found": [
   {
    "control_number": "03723",
@@ -69,11 +69,6 @@
   {
    "control_number": "18056",
    "title": "Social and Behavioral Sciences",
-   "award": "A.A. Degree"
-  },
-  {
-   "control_number": "18216",
-   "title": "French",
    "award": "A.A. Degree"
   },
   {
@@ -252,11 +247,6 @@
    "award": "Noncredit program"
   },
   {
-   "control_number": "36288",
-   "title": "English as a Second Language Preparation for Careers",
-   "award": "Noncredit program"
-  },
-  {
    "control_number": "36800",
    "title": "Porter",
    "award": "Noncredit program"
@@ -310,11 +300,6 @@
    "control_number": "38603",
    "title": "Geology",
    "award": "A.S. T Degree"
-  },
-  {
-   "control_number": "39477",
-   "title": "Wellness Coaching",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
   },
   {
    "control_number": "39764",
@@ -427,16 +412,6 @@
    "award": "Noncredit program"
   },
   {
-   "control_number": "42322",
-   "title": "Online Learning Basics",
-   "award": "Noncredit program"
-  },
-  {
-   "control_number": "42323",
-   "title": "Successful Online Learning",
-   "award": "Noncredit program"
-  },
-  {
    "control_number": "42600",
    "title": "Geography",
    "award": "A.A- T Degree"
@@ -495,21 +470,6 @@
    "control_number": "44204",
    "title": "Management (Applied)",
    "award": "A.S. Degree"
-  },
-  {
-   "control_number": "44206",
-   "title": "Information and Computer Sciences",
-   "award": "A.S. Degree"
-  },
-  {
-   "control_number": "44207",
-   "title": "Information and Computer Sciences",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
-  },
-  {
-   "control_number": "44223",
-   "title": "Law, Public Policy, and Society",
-   "award": "A.A- T Degree"
   },
   {
    "control_number": "45085",
@@ -587,5 +547,5 @@
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
   }
  ],
- "run": "38412902035"
+ "run": "38429656959"
 }

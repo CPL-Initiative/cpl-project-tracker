@@ -40,7 +40,7 @@
   "title": "Aging Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 0.5,
   "codes_found": [
    "AGNGC131",
@@ -57,7 +57,10 @@
    "title": "Aging Studies, Associate of Arts Degree < Coastline College",
    "h1": "ACADEMIC CATALOGS",
    "text_from": "textContent",
-   "label": null
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
   },
   "listed": 16,
   "text_chars": 5053
@@ -328,12 +331,24 @@
   "title": "French",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "FRENC180",
+   "FRENC185"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/language-literature/french/",
+   "title": "French < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 4279
  },
  {
   "control_number": "18217",
@@ -431,29 +446,25 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.5,
   "codes_found": [
-   "SPANC180",
    "SPANC180A",
    "SPANC180B",
-   "SPANC185",
    "SPANC185A",
-   "SPANC185B",
-   "SPANC280",
-   "SPANC285"
+   "SPANC185B"
   ],
   "source": {
-   "url": "https://catalog.cccd.edu/coastline/pathways/language-literature/spanish/",
-   "title": "Spanish < Coastline College",
+   "url": "https://catalog.cccd.edu/coastline/pathways/language-literature/spanish/spanish-aa/",
+   "title": "Spanish, Associate of Arts Degree < Coastline College",
    "h1": "ACADEMIC CATALOGS",
-   "text_from": "innerText+tabs",
+   "text_from": "textContent",
    "label": {
-    "award": 0,
+    "award": 1,
     "title": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 12037
+  "text_chars": 3313
  },
  {
   "control_number": "18224",
@@ -608,7 +619,7 @@
   "title": "Aging Studies",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "link_search",
+  "method": "sitemap_page",
   "coverage": 0.5,
   "codes_found": [
    "AGNGC131",
@@ -625,7 +636,10 @@
    "title": "Aging Studies, Certificate of Achievement < Coastline College",
    "h1": "ACADEMIC CATALOGS",
    "text_from": "textContent",
-   "label": null
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
   },
   "listed": 16,
   "text_chars": 4838
@@ -1206,12 +1220,30 @@
   "title": "Spanish",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "SPANC180",
+   "SPANC180A",
+   "SPANC180B",
+   "SPANC185",
+   "SPANC185A",
+   "SPANC185B",
+   "SPANC280",
+   "SPANC285"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/language-literature/spanish/",
+   "title": "Spanish < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 12037
  },
  {
   "control_number": "35740",
@@ -1242,12 +1274,29 @@
   "title": "English as a Second Language Preparation for Careers",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLC11N",
+   "ESLC12N",
+   "ESLC13N",
+   "ESLC22N",
+   "ESLC23N",
+   "ESLC32N",
+   "ESLC33N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-second-language/english-second-language-preparation-careers-certificate-completion/",
+   "title": "English as a Second Language Preparation for Careers, Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 4007
  },
  {
   "control_number": "36800",
@@ -1470,12 +1519,30 @@
   "title": "Wellness Coaching",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.615,
+  "codes_found": [
+   "AGNGC225",
+   "BIOLC221",
+   "HLTHC120",
+   "HLTHC230",
+   "KINC190",
+   "KINC289",
+   "PEC201",
+   "PSYCC230"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/health-wellness/health/wellness-coaching-certificate-achievement/",
+   "title": "Wellness Coaching, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3910
  },
  {
   "control_number": "39533",
@@ -1954,19 +2021,33 @@
   "title": "Online Learning Basics",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "EDUCC96N",
+   "EDUCC97N",
+   "EDUCC98N",
+   "EDUCC99N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/education/online-learning-basics-certificate-competency/",
+   "title": "Online Learning Basics, Certificate of Competency < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 3175
  },
  {
   "control_number": "42323",
   "title": "Successful Online Learning",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2281,19 +2362,36 @@
   "title": "Information and Computer Sciences",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.583,
+  "codes_found": [
+   "CISC157",
+   "CYBRC101",
+   "ICSC120",
+   "ICSC123",
+   "ICSC141",
+   "ICSC165",
+   "ICSC290"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-computer-sciences/",
+   "title": "Information and Computer Sciences < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 13444
  },
  {
   "control_number": "44207",
   "title": "Information and Computer Sciences",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2305,12 +2403,38 @@
   "title": "Law, Public Policy, and Society",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.615,
+  "codes_found": [
+   "CJC140",
+   "CJC141",
+   "CMSTC140",
+   "COMMC1000",
+   "ECONC175",
+   "ENGLC1000",
+   "ENGLC1001",
+   "GEOGC185",
+   "HISTC175",
+   "PHILC115",
+   "POLSC1000",
+   "PSCIC185",
+   "PSCIC188",
+   "PSCIC200",
+   "SOCC233",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/criminal-justice/law-public-policy-society-aat/",
+   "title": "Law, Public Policy, and Society, Associate in Arts Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 26,
-  "text_chars": 0
+  "text_chars": 4389
  },
  {
   "control_number": "45085",
@@ -2509,12 +2633,25 @@
   "title": "Calculus",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "MATHC170",
+   "MATHC285",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/mathematics/calculus-coa/",
+   "title": "Calculus, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 3090
  },
  {
   "control_number": "46539",
