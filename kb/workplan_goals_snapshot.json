@@ -2,7 +2,7 @@
   "_about": "Daily-cached snapshot of public.workplan_goals + public.workplan_activity_associations. Written by kb/_load_workplan_goals.py after a successful Supabase fetch. Falls back to this file on Supabase outage so the dashboard regen continues without manual intervention.",
   "_fetched_at": "2026-10-13",
   "_source_table": "public.workplan_goals",
-  "row_count": 58,
+  "row_count": 60,
   "rows": [
     {
       "activity_id": "1.1",
@@ -621,6 +621,34 @@
       "total": 0
     },
     {
+      "activity_id": "4.7",
+      "name": "EMS Corps",
+      "description": null,
+      "row_type": "GOAL",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 0,
+      "yr_2026_27": 2,
+      "yr_2027_28": 2,
+      "yr_2028_29": 2,
+      "yr_2029_30": 2,
+      "total": 8
+    },
+    {
+      "activity_id": "4.7",
+      "name": "EMS Corps",
+      "description": null,
+      "row_type": "STRETCH",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 0,
+      "yr_2026_27": 4,
+      "yr_2027_28": 4,
+      "yr_2028_29": 4,
+      "yr_2029_30": 4,
+      "total": 16
+    },
+    {
       "activity_id": "4",
       "name": "Activity 4: Coordinate CPL Sprints, Targeted Projects, Professional Learning, and Strategic Partnerships",
       "description": "Scale CPL through sprints, partnerships, training, policy, and sustainable funding",
@@ -850,6 +878,16 @@
     },
     {
       "project_id": "4.2.1",
+      "activity_id": "1",
+      "is_primary": false
+    },
+    {
+      "project_id": "4.7",
+      "activity_id": "4",
+      "is_primary": true
+    },
+    {
+      "project_id": "4.7",
       "activity_id": "1",
       "is_primary": false
     },

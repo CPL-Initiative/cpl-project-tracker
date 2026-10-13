@@ -258,7 +258,8 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    check `service_role` holds an explicit grant (`has_function_privilege`),
    or the revoke breaks the cron. (c) The
    sandbox cannot reach `*.supabase.co` — all Supabase access goes through the
-   MCP tools. Worked examples:
+   MCP tools; when `apply_migration` times out, a committed file goes through
+   `supabase-migrate.yml` (`kb/migrations/.apply`; Sam, Sheet 74). Worked examples:
    `docs/kb-notes/playbook-trail-crew-method-magic-audit.md`.
 
 ## Naming & terminology (Sam's conventions — honor in all output)

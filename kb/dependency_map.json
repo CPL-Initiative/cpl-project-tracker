@@ -4,10 +4,10 @@
   "supabase_tables": 97,
   "rpcs": 38,
   "edge_functions": 7,
-  "file_datasets": 644,
+  "file_datasets": 647,
   "external_services": 177,
-  "consumers": 438,
-  "workflows": 52,
+  "consumers": 439,
+  "workflows": 53,
   "data_js_files": 69,
   "tabs": 39
  },
@@ -1413,7 +1413,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1608,
+     "line": 1629,
      "tabs": [
       "program-requirements"
      ]
@@ -12331,6 +12331,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/program_requirements_college/chaffey/capture_preview.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 1433
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/program_requirements_maps_sample.json": {
    "consumers": [
     {
@@ -12695,6 +12708,10 @@
     },
     {
      "by": "workflow:program-requirements-college.yml",
+     "how": "commit"
+    },
+    {
+     "by": "workflow:supabase-migrate.yml",
      "how": "commit"
     }
    ],
@@ -16352,6 +16369,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:scripts/supabase_migrate.py": {
+   "consumers": [
+    {
+     "id": "workflow:supabase-migrate.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:scripts/tab_review_sheet/fs/capture.json": {
    "consumers": [
     {
@@ -17901,6 +17931,19 @@
    "main_committers": []
   },
   "file:tests/supabase_function_grants_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/supabase_migrate_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -19813,7 +19856,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1289,
+     "line": 1361,
      "tabs": [
       "workplan-goals"
      ]
@@ -22214,6 +22257,16 @@
      ]
     },
     {
+     "id": "module:workplan_goals.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1193,
+     "tabs": [
+      "workplan-goals"
+     ]
+    },
+    {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "read",
@@ -22628,7 +22681,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1704,
+     "line": 1782,
      "tabs": [
       "workplan-goals"
      ]
@@ -23382,6 +23435,7 @@
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
     "tests/supabase_table_grants_test.py",
+    "tests/supabase_migrate_test.py",
     "tests/program_record_verdicts_sql_test.py",
     "tests/library_file_test.py",
     "tests/program_source_census_test.py",
@@ -23792,6 +23846,20 @@
    "chain": [],
    "urls": []
   },
+  "supabase-migrate.yml": {
+   "name": "Supabase migrate",
+   "crons": [],
+   "scripts": [
+    "scripts/supabase_migrate.py"
+   ],
+   "adds": [
+    "kb/receipts"
+   ],
+   "push": "triggering branch",
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
   "supabase-rekey.yml": {
    "name": "Supabase kb_curation re-key (re-mint)",
    "crons": [],
@@ -24147,7 +24215,8 @@
   "chatbox/sync_program_courses.py",
   "cpl_session.js",
   "kb/_program_requirements_extract.py",
-  "reviewer_signin.js"
+  "reviewer_signin.js",
+  "scripts/supabase_migrate.py"
  ],
  "warnings": []
 }
