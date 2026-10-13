@@ -63,27 +63,41 @@ html = gen.render_annual_goals_table_html(annual_goals, [{"id": k, "name": v} fo
 
 check("the table renders (fixture reaches the renderer)", "Annual Workplan Goals" in html and "29 Palms" in html)
 
+with open(os.path.join(ROOT, "workplan_goals.js")) as fh:
+    js = fh.read()
+
+
+def css_rule(selector):
+    """The declaration block of one rule in workplan_goals.js's injected CSS."""
+    m = re.search(re.escape(selector) + r" \{([^}]*)\}", js)
+    return m.group(1) if m else ""
+
+
+# S375 UI pass: the table prints classes and workplan_goals.js paints them, so the
+# checks read the markup for the class and the injected CSS for the color.
 wrap = re.search(r'<h2[^>]*>Annual Workplan Goals</h2>\s*<div ([^>]*)>', html)
 attrs = wrap.group(1) if wrap else ""
 check("the scrolling wrapper is keyboard reachable and named (tabindex 0, role region, aria-label)",
-      "overflow-x:auto" in attrs and 'tabindex="0"' in attrs and 'role="region"' in attrs
+      'class="wpg-annual-scroll"' in attrs and "overflow-x:auto" in css_rule(".wpg-annual-scroll")
+      and 'tabindex="0"' in attrs and 'role="region"' in attrs
       and 'aria-label="Annual Workplan Goals table"' in attrs)
 
-marker = re.search(r'<span style="([^"]*)" aria-hidden="true">↳ </span>', html)
+marker = re.search(r'<span class="wpg-sub-marker" aria-hidden="true">↳ </span>', html)
+marker_css = css_rule(".wpg-annual-table .wpg-sub-marker")
 check("the subsidiary marker ↳ renders for 4.1.1 in the themed text grade (--seal-blue-text), at full strength",
-      bool(marker) and "var(--seal-blue-text" in marker.group(1) and "opacity" not in marker.group(1))
+      bool(marker) and "var(--seal-blue-text" in marker_css and "opacity" not in marker_css)
 
 check("the id and 'Contributes to:' use --text-muted, not #888",
-      '<span style="color:var(--text-muted);font-size:0.75rem;">4.1.1</span>' in html
-      and '<span style="color:var(--text-muted);">Contributes to:</span>' in html
+      '<span class="wpg-pid">4.1.1</span>' in html
+      and '<span class="wpg-assoc-label">Contributes to:</span>' in html
+      and "color:var(--text-muted)" in css_rule(".wpg-annual-table .wpg-pid")
+      and "color:var(--text-muted)" in css_rule(".wpg-annual-table .wpg-assoc-cell")
       and "#888" not in html and "#999" not in html)
 
 chip = re.search(r"\.wpg-act-chip-primary \{([^}]*)\}", gen.EXHIBIT_ANALYSIS_CSS)
 check("the primary chip's ground themes (var(--gold-soft,#FBF3DA)), so --mustard-text reads in dark",
       bool(chip) and "background:var(--gold-soft,#FBF3DA)" in chip.group(1))
 
-with open(os.path.join(ROOT, "workplan_goals.js")) as fh:
-    js = fh.read()
 hint = re.search(r"\.wpg-manual-hint \{ color:([^;]+);", js)
 sep = re.search(r'widget\.appendChild\(el\("span", \{ "style": "color:([^;]+);" \}, \["·"\]\)\)', js)
 check("the manual-value pencil and the '·' separator use --text-muted (were #bbb and #999)",

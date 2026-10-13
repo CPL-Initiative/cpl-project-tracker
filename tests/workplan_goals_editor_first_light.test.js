@@ -50,12 +50,17 @@ check("(c) the dialog's buttons lose their frames and fill",
     && !/\.wpg-btn-submit \{ ?background:var\(--cobalt\)/.test(code));
 
 // (d)
-const sub = code.indexOf("actions.appendChild(btnSubmit)"), can = code.indexOf("actions.appendChild(btnCancel)");
-check("(d) the dialog's lead word, Add row, comes first", sub > 0 && can > sub);
+// Every dialog (Add, Move): each Cancel follows a lead word appended before it.
+const subs = [], cans = [];
+code.replace(/actions\.appendChild\(btn(Submit|Cancel)\)/g, (m, w, at) => { (w === "Submit" ? subs : cans).push(at); return m; });
+check("(d) every dialog's lead word (Add row, Move) comes before Cancel",
+  subs.length > 0 && subs.length === cans.length && subs.every((s, i) => s < cans[i]));
 
 // (e)
 check("(e) the dialog's radio labels are 24px tall",
   /\.wpg-modal-card \.wpg-radio-row label \{[^}]*min-height:24px/.test(code));
+check("the Add dialog's Activity checkboxes are 24px targets (their labels; S375 measured 19.9px)",
+  /\.wpg-modal-card \.wpg-assoc-checkboxes label \{[^}]*min-height:24px/.test(code));
 
 let pass = 0;
 results.forEach(function (r) { if (r[1]) pass++; else console.log("FAIL " + r[0]); });

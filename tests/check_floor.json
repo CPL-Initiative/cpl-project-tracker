@@ -228,7 +228,6 @@
     "our_process.test.js": 23,
     "phantom_token_repair.test.js": 6,
     "pii_guard.test.js": 7,
-    "project_add.test.js": 26,
     "project_lifecycle.test.js": 53,
     "public_pages_a11y.test.js": 44,
     "quickstart_header_bar.test.js": 11,

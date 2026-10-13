@@ -1,0 +1,41 @@
+---
+title: "Annual Workplan Goals / adding, moving and counting sub-activities — lane state"
+created: 2026-10-12
+updated: 2026-10-13
+tags: [reference, roadmap-lane]
+kb-status: internal
+obsidian-folder: cpl-project-tracker/reference/lanes
+related:
+  - "[[CLAUDE]]"
+  - "[[workplan_annual_goals_lessons]]"
+  - "[[reference-workplan-activity-project-linking-model]]"
+---
+
+# Annual Workplan Goals: adding, moving and counting sub-activities
+
+> **Always-current lane state, not an archive.** Story: [`docs/workplan_annual_goals_lessons.md`](../../workplan_annual_goals_lessons.md).
+
+**What this lane is:** the Annual Workplan Goals tab as the one editor of the workplan's structure (add, move, set targets, say what each number counts), wired to the Activities tab and the report generator, plus the Activities tab's generated activity summaries.
+
+## Status
+
+✅ **PR A merged (#2051, 2026-10-13): one add flow, Set targets, counting notes.**
+- **The add bug (Sam, 2026-10-12, adding 3.9):** the dialog read `[data-kind="activity"]`, a marker the Annual table stopped printing when it won the AWG injection, so its Activity list was empty and every sub-activity was refused. And a sub-activity add wrote only `workplan_goals`, never `projects`, which the table iterates (Path A), so a valid add never appeared.
+- **The fix:** one dialog (parent picker suggests the next free id; writes projects → workplan_goals → links, home primary, each insert a literal URL so the surface maps see it; reads tabled ids live), opened from Annual Goals and from **Add sub-activity** on each Activities-tab activity header (`window.CPL_WORKPLAN_ADD`). **Set targets** on ladderless rows writes the ladder only. **Counting notes:** `projects.kpi_unit` (Counts) + `projects.count_note` (How it is counted; migration `add_projects_count_note`), edited in place, shown on the cards and sent to `report_generator.js`, `master_report.js`, `generate_reports.js`. `project_add.js` is retired (#2055): it had lost both mount points.
+- ⛔ **The tree is keyed by the id itself** (projects has no parent column): a move is a re-key of projects, item_raci, item_updates, workplan_activity_associations, workplan_goals, project_lifecycle, update_log (FK, not deferrable). Miss one and it silently mis-attaches (#872).
+
+✅ **PR B merged (#2054), published by run 582: the UI audit fixes.** Keyboard: every editable value takes Tab for an editor and opens on Enter or Space, the field is named, Escape or Enter returns focus (Chrome's blur-on-removal made the cell editors throw on every Escape and save; a `done` guard closes each field once); the chip line opens its popover from the keyboard with focus inside. Headers: `scope="col"`, each Activity a `<tbody>` with a rowgroup `<th>`, names and Goal/Current/Stretch as row headers. The renderer prints classes; `workplan_goals.js` paints them (no raw hex left in the published table). Goal and Stretch on the plain surface, Current in ink, a cobalt rule under each editable value, dotted underlines under editable words, each 24px tall. Below 560px each sub-activity is a card. An empty description is hidden for a reader and reads **Add description** for an editor. The live Current is muted words; Unlock editing is an underlined word. `npm run a11y workplan-goals-editor` passes on the published page with its functional keyboard and phone-card check. The **gray band** is the First Light background, fixed at the viewport; dismissed. The Add dialog's Activity checkboxes measured 19.9px tall on the published page: **#2057** makes them 24px.
+
+✅ **PR C merged (#2056): the Move control, live.** `workplan_move_sub_activity(old, new, keep_old_link)` (`kb/supabase_workplan_move.sql`) re-keys the seven tables above in one transaction (the projects row is copied under the new id so update_log can follow its FK), makes the new home the primary link and keeps the old Activity's link unless dropped, then scans every public `project_id` / `item_id` / `activity_id` column and rolls back if any still holds the old id. Each move files its before-values in `workplan_id_moves`; the file's header carries the undo. Reviewer sign-in only; closed to anon. The dialog offers "Move" on each sub-activity to a reviewer, never offers the row or its children as a parent, suggests the next free number from the live list. Governance: `tab:workplan-goals` and the RPC map to DR-13, whose `maintained_in` names the function. Verified against Postgres 16 in PGlite (`scripts/verify_workplan_move.js`, 22/22) and in jsdom (`tests/workplan_move.test.js`, 39). **Live since Sam's paste** (Sheet 72 card 3, ~03:50Z on 2026-10-13; `apply_migration` was down): `workplan_id_moves` with RLS on, and `has_function_privilege` anon false, authenticated true, service_role true. Merged on `test` at `fa48b38` (the Move dialog leads with Move, as Add does). No move has been made with it yet.
+
+✅ **PR D merged (#2059), published by run 583: Refresh summaries.** `activity_summaries.js`: under every Activities-tab activity header a line says how current its summary is (*Summary posted Jun 29, 2026 · 7 sub-activity updates since*), for every reader. A signed-in reviewer (magic link; the team phrase neither drafts nor posts) gets **Refresh summaries** above the first Activity: it drafts each Activity through the report proxy (`claude-sonnet-4-5`, the report generator's model, with its naming rule) from the sub-activities whose home field names that Activity (tabled ones out): three newest `item_updates` each, else the creation-era `latest_update`, plus status, percent, 2025-26 goal and current. Each draft sits in an editable field with its sources named and posts only on its own **Post**: `item_updates` `activity:N`, author the reviewer's email, `raw` a JSON of drafter, approver, model, edited flag and source ids; `cpl-item-updated` repaints the cards. **Skip** and **Redraft**; a failed draft leaves the field open to write by hand. The header's **Update** link is gone (the RACI composer still takes activity updates), and the header's link row wraps (it ran 71px past a 390px screen once Add sub-activity joined it). DR-20 names the writer. Checked in Chromium at 1280 and 390; `tests/activity_summaries.test.js` (38). No summary has been posted with it yet.
+
+✅ **Sheet 72 answered and applied.** Sam ruled 2026-10-13 ~01:18Z (chat): *"Can't find 71 so I'll go with your recommendations"* on [Open Asks Sheet 72](https://claude.ai/artifact/LFbjZXFbHmPTNF8JqW3qMV) (`cpl_memory` `sam-sheet-72-rulings-2026-10-13`), and ran cards 2 and 3 himself (~03:50Z; `sheet-72-pastes-applied-2026-10-13`). Read back 03:51Z: **3.9** Futuro Behavioral Healthcare Project added (Goal 0/2/4/4/4, Stretch 0/4/8/8/8, Activity 3 home); **1.1.2 is 4.2.1** (Activity 4 home, the Activity 1 link kept, its RACI row and update moved, no table holds 1.1.2). That move ran as the card's hand SQL, not through the function, so `workplan_id_moves` has no row for it; its undo is the rollback block in `kb/receipts/workplan_2026-10-12_s372_add_3_9_move_1_1_2.sql`. **Card 4 is settled: Move stays reviewer sign-in only.** Card 1 (the `course_outcomes` table) belongs to the program requirements queue and was not run.
+
+**NEXT:**
+1. **The first Refresh Sam runs:** read the posted rows (`item_updates` where `item_type = 'activity'` and `raw` names `activity_summaries.js`) and his edits (`raw.edited`, `raw.draft`). What he changes in a draft is the prompt's next revision.
+2. **The first Move a reviewer makes:** read its `workplan_id_moves` row (before-values and counts) and the guard's verdict; the undo is in `kb/supabase_workplan_move.sql`'s header.
+3. `card_actions.js` still lists `a.act-update-link` in `UPDATE_SEL`; no page prints it since run 583. Drop it with the next change to that file.
+4. **`apply_migration`:** before a session's next DDL, read `supabase_migrations.schema_migrations` for anything newer than 23:19Z on 2026-10-12; none means the tool is still down and the SQL goes to Sam as a paste.
+
+**Related:** the 50% Law finding for CPL spending (restricted funds sit outside the calculation; `cpl_memory` `fifty-percent-law-restricted-cpl-funds-outside-cee-2026-10-12`; public KB `policy-and-funding/fifty-percent-law-and-cpl-funds.md`) belongs to the funding lane, whose file is at its size limit.

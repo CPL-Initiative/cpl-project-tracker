@@ -86,8 +86,8 @@
    "name": "Annual Workplan Goals",
    "page": "index.html#workplan-goals",
    "audience": "staff",
-   "last": "2026-10-11",
-   "outcome": "AA in both themes at desktop and 390px (S361): the id, Contributes to, the separator and the pencil moved from #888/#999/#bbb to --text-muted; the primary chip took the themed --gold-soft ground; the subsidiary marker took --seal-blue-text; the table wrapper became a focusable named region. S364 finished the editor with seeded signed-in sweeps (workplan-goals-editor and workplan-goals-add, both themes): a title cell in its navy row read 1.06:1 on the pale saving tint in light as well as dark, so each save state sets its own ink on a tint that flips with the theme and a failed save is a red outline; Add new row, Sign in, Sign out, Lock and the dialog's Add row and Cancel are underlined words with the lead word first (the lock emoji gone); the dialog's radio labels reach 24px; #ccc, #4D7EA8, #A33 and #2A7D4F became tokens. Reads no dataset."
+   "last": "2026-10-13",
+   "outcome": "S375: keyboard reach for every editable value and the chip line (the cell editors also threw on every save and Escape in Chrome, fixed), header scopes and row headers, classes for 715 raw hexes, phone cards below 560px, Current in ink, Add description for editors, the Add dialog's checkboxes to 24px (#2054, #2057); the gray band is the fixed First Light background."
   },
   {
    "id": "cobi:budget",
@@ -198,8 +198,8 @@
    "name": "Annual Report",
    "page": "index.html#annual-report",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-13",
+   "outcome": "First pass. npm run a11y found the preview scrolling with no keyboard reach at 390px (both themes); the screen showed four boxed glyph buttons, an unlabelled editor, unannounced status lines colored green and a raw #A33, hex fallbacks in its CSS, centered report prose and literal underscores on the data date. Fixed in one PR: underlined word controls (26px), labelled editor, the preview a named keyboard region, status announced and red only for a failure, tokens only, left-aligned, the date in italics. Wiring: the 8 headline KPIs the report quotes match CPL_DATA and the Dashboard cards; item_updates activity rows are the same newest-per-key the cards paint. a11y: 1 finding to 0, light and dark."
   },
   {
    "id": "cobi:unified-courses",
