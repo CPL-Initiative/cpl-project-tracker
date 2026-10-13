@@ -614,7 +614,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/projects_validation.md` | none found | scripts: `kb/_validate_projects.py` · committed by: `projects-seed-apply.yml` |
 | `kb/promotions.json` | scripts: `excel_to_dashboard.py`, `kb/_analyze_official_fold_evidence.py`, `kb/_analyze_witness_kinship.py`, `kb/_build_remint_blast_radius.py`, `kb/_desc_consolidation_dryrun.py`, `kb/_esl_package_dryrun.py`, `kb/_rekey_promotions.py`, `kb/_remint_apply.py`, `kb/_seed_authority_codes.py`, `kb/_title_consolidation_dryrun.py`, `kb/_uc_cur_zscheme_dryrun.py` | scripts: `kb/_rekey_promotions.py` |
 | `kb/queue_status.json` | tabs: `program-requirements` · scripts: `scripts/queue_status.py` | — |
-| `kb/receipts` | none found | committed by: `course-outcomes-load.yml`, `program-requirements-college.yml` |
+| `kb/receipts` | none found | committed by: `course-outcomes-load.yml`, `program-requirements-college.yml`, `supabase-migrate.yml` |
 | `kb/receipts/cr_reference_decisions_<date>_s280.json` | scripts: `kb/_build_decision_sheet_demo.py` | — |
 | `kb/receipts/jev_ccr_title_rung_<date>_s282.json` | scripts: `kb/_build_ccr_title_rung_sheet.py` | — |
 | `kb/reference/CIPCode2020.csv` | scripts: `excel_to_dashboard.py`, `kb/_build_cip_crosswalk.py`, `kb/_build_it_ai_credential_catalog.py` | — |
@@ -767,6 +767,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `scripts/fetch_sierra_art.py` | workflows: `sierra-art-fetch.yml` | — |
 | `scripts/publish_skyview_desc_shards.sh` | workflows: `daily-dashboard.yml`, `skyview-desc-shards.yml` | — |
 | `scripts/stamp_asset_versions.py` | workflows: `pages.yml` | — |
+| `scripts/supabase_migrate.py` | workflows: `supabase-migrate.yml` | — |
 | `scripts/tab_review_sheet/fs/capture.json` | none found | modules: `scripts/tab_review_sheet/capture.js` |
 | `scripts/tab_review_sheet/fs/snapshot.json` | modules: `scripts/tab_review_sheet/capture.js`, `scripts/tab_review_sheet/tab.js` | — |
 | `sierra/art/*.webp` | none found | committed by: `sierra-art-fetch.yml` |
@@ -864,6 +865,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/statewide_recs_test.py` | workflows: `js-tests.yml` | — |
 | `tests/stop_hook_git_check_test.py` | workflows: `js-tests.yml` | — |
 | `tests/supabase_function_grants_test.py` | workflows: `js-tests.yml` | — |
+| `tests/supabase_migrate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/supabase_sql_guard_test.py` | workflows: `js-tests.yml` | — |
 | `tests/supabase_table_grants_test.py` | workflows: `js-tests.yml` | — |
 | `tests/top_code_lookup_code4_test.py` | workflows: `js-tests.yml` | — |
@@ -1101,6 +1103,7 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `kb/_program_requirements_extract.py`
 - `reviewer_signin.js`
+- `scripts/supabase_migrate.py`
 
-Coverage: 97 Supabase tables · 38 RPCs · 7 edge functions · 645 file
-datasets · 177 external services · 438 consumers · 52 workflows · 39 tabs.
+Coverage: 97 Supabase tables · 38 RPCs · 7 edge functions · 647 file
+datasets · 177 external services · 439 consumers · 53 workflows · 39 tabs.

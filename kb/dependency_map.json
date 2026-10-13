@@ -4,10 +4,10 @@
   "supabase_tables": 97,
   "rpcs": 38,
   "edge_functions": 7,
-  "file_datasets": 645,
+  "file_datasets": 647,
   "external_services": 177,
-  "consumers": 438,
-  "workflows": 52,
+  "consumers": 439,
+  "workflows": 53,
   "data_js_files": 69,
   "tabs": 39
  },
@@ -12709,6 +12709,10 @@
     {
      "by": "workflow:program-requirements-college.yml",
      "how": "commit"
+    },
+    {
+     "by": "workflow:supabase-migrate.yml",
+     "how": "commit"
     }
    ],
    "served": false,
@@ -16365,6 +16369,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:scripts/supabase_migrate.py": {
+   "consumers": [
+    {
+     "id": "workflow:supabase-migrate.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:scripts/tab_review_sheet/fs/capture.json": {
    "consumers": [
     {
@@ -17914,6 +17931,19 @@
    "main_committers": []
   },
   "file:tests/supabase_function_grants_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/supabase_migrate_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -23395,6 +23425,7 @@
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
     "tests/supabase_table_grants_test.py",
+    "tests/supabase_migrate_test.py",
     "tests/program_record_verdicts_sql_test.py",
     "tests/library_file_test.py",
     "tests/program_source_census_test.py",
@@ -23805,6 +23836,20 @@
    "chain": [],
    "urls": []
   },
+  "supabase-migrate.yml": {
+   "name": "Supabase migrate",
+   "crons": [],
+   "scripts": [
+    "scripts/supabase_migrate.py"
+   ],
+   "adds": [
+    "kb/receipts"
+   ],
+   "push": "triggering branch",
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
   "supabase-rekey.yml": {
    "name": "Supabase kb_curation re-key (re-mint)",
    "crons": [],
@@ -24160,7 +24205,8 @@
   "chatbox/sync_program_courses.py",
   "cpl_session.js",
   "kb/_program_requirements_extract.py",
-  "reviewer_signin.js"
+  "reviewer_signin.js",
+  "scripts/supabase_migrate.py"
  ],
  "warnings": []
 }
