@@ -1,14 +1,12 @@
 {
- "_readme": "S382 SkyLarch, 2026-10-13. The next Leading eLumen college after Bakersfield (menu links programs, read 38414480070) and Cabrillo (menu links departments, read 38433649784; el_department_slugs(), #2078). Before a 25-minute capture, this read loads the catalog's menu publish call once to see which shape the menu takes, and which catalog it names. One load, no model call.",
+ "_readme": "S382 SkyLarch, 2026-10-13. The next Leading eLumen college after Bakersfield (menu links programs, read 38414480070) and Cabrillo (menu links departments, read 38433649784; el_department_slugs(), #2078). Before a 25-minute capture, this read loads the catalog's menu publish call once to see which shape the menu takes, and which catalog it names. One load, no model call. Read 38445240921 printed only 24 excerpts of Modesto's 704,547-character menu call, all general menu items. This read prints only program, department and degree menu links. One load, no model call.",
  "college": "Modesto Junior College",
  "questions": {
   "menu_links": "Whether the menu's publish call links program pages (<catalog>/program/<slug>), department pages (<catalog>/department/<slug>) or another segment, and which catalog year it names."
  },
  "keywords": [
-  "href=\\\\?\"(?:/catalog/)?[A-Za-z0-9-]+/(?:program|department|programs|degrees?|areas?-of-study)/",
-  "20\\d\\d-20\\d\\d",
-  "[Dd]egrees? and [Cc]ertificates?",
-  "[Pp]rograms? of [Ss]tudy"
+  "href=\\\\?\"(?:/catalog/)?[A-Za-z0-9-]+/(?:program|department)/[a-z0-9-]+",
+  "navitem-x-text[^<]{0,60}(?:Degree|Certificate|Program|Department|Area|Pathway|Major)"
  ],
  "pages": [
   {
