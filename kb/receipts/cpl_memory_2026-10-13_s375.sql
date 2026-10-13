@@ -18,3 +18,16 @@ select m.id, 'SkyTallyS375', 'create', 'checkpoint auto-write', to_jsonb(m) from
 where m.author = 'SkyTallyS375' and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.actor = 'SkyTallyS375');
 select m.slug, m.kind, m.status, (select count(*) from public.cpl_memory_log l where l.memory_id = m.id) as logs
 from public.cpl_memory m where m.author = 'SkyTallyS375' order by m.created_at;
+
+-- Added 01:20Z: Sam's ruling, verified (he said it in chat), logged (creates = 1).
+-- Rollback: delete from public.cpl_memory where slug = 'sam-sheet-72-rulings-2026-10-13';
+insert into public.cpl_memory (slug, kind, org, title, summary, detail, plain, tags, source, related, status, author, verified_by, verified_at)
+values ('sam-sheet-72-rulings-2026-10-13', 'decision', 'cpl', 'Sam: Sheet 72, the recommendations stand',
+ 'Sam, 2026-10-13 ~01:18Z, in chat: "Can''t find 71 so I''ll go with your recommendations." Open Asks Sheet 72: card 1 paste the course_outcomes table; card 2 paste the 3.9 add and 1.1.2 move; card 3 paste the Move function; card 4 the Move control stays reviewer sign-in only (not the team phrase).',
+ 'No chip was clicked in the sheet''s store; the chat reply is the ruling. apply_migration timed out a fifth time at 01:19Z (nothing landed), so cards 1-3 wait on Sam''s pastes. Sheet 71 is superseded by 72, which carries its card.',
+ 'Sam accepted every recommendation on the decision sheet: he will paste the three pending database changes himself, and moving a workplan item stays limited to signed-in reviewers.',
+ array['sam-ruling','workplan','annual-goals','move','course-outlines','open-asks'],
+ 'Sam in S375 chat, 2026-10-13; https://claude.ai/artifact/LFbjZXFbHmPTNF8JqW3qMV',
+ array['workplan-move-function-built-not-applied-2026-10-13','apply-migration-timeouts-2026-10-13'],
+ 'verified', 'SkyTallyS375', 'Sam Lee', now())
+on conflict (slug) do nothing;

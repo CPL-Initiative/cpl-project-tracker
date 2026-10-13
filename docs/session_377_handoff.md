@@ -38,21 +38,23 @@ this file, work this queue; agree one writer with any session still holding wake
 
 ## Priority, in order
 
-1. **Read Sheet 72's replies** (`ArtifactData list replies`). For each card:
+1. **Check whether Sam has pasted** (his ruling above; also read Sheet 72's replies). For each card:
    - **Card 2 pasted:** read back projects 3.9 = 1, goal rows 3.9 = 2, projects 4.2.1 = 1, projects 1.1.2 = 0,
      links 4.2.1 "4 home, 1". Then dispatch `daily-dashboard.yml`.
    - **Card 3 pasted** (or retry `apply_migration` once and check `to_regclass` after a timeout): read
      `has_function_privilege` (anon false, authenticated true), mark #2056 ready, merge on `test`, dispatch the
      dashboard.
-   - **Card 4 "The team phrase too":** add `or public.team_pass_ok()` to the gate, `grant execute ... to anon`, let
-     `canMove()` accept a phrase session, and update the PGlite and jsdom checks.
+   - **Card 4 is settled** (reviewer sign-in only); nothing to build.
    - **Card 1** belongs to the other queue (course outcomes). Leave it to SkyLinden unless Sam says otherwise.
-2. **Merge #2057** on `test`; **#2052** too, if it is still open and green.
+2. **#2057 and #2052 merged** before sign-off; nothing to do.
 3. **PR D, Refresh summaries** (lane NEXT 3; Sam approves each draft before it posts).
 
 ## Decisions Sam made
 
-None this session: he opened it with the handoff line, and the work ran from his lane rulings of 2026-10-12.
+- **2026-10-13 ~01:18Z, in chat: "Can't find 71 so I'll go with your recommendations."** That is every Sheet 72
+  proposal: he pastes cards 1-3 (the course outcomes table, the 3.9 add and 1.1.2 move, the Move function), and **Move
+  stays reviewer sign-in only** (card 4, settled). `cpl_memory` `sam-sheet-72-rulings-2026-10-13` (verified). No chip
+  was clicked; the chat reply is the record. `apply_migration` timed out a fifth time at 01:19Z.
 
 ## Patterns that worked
 
