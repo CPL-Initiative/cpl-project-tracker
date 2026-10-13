@@ -246,7 +246,7 @@
         state.sess.teamPass
           ? ["Editing unlocked (team phrase)"]
           : ["Signed in as ", state.sess.email || "(no email)"]));
-      var sub = el("span", { "style": "color:var(--text-muted);" }, ["Click any goal/stretch/current cell or a sub-activity title to edit • Enter saves • Esc cancels"]);
+      var sub = el("span", { "style": "color:var(--text-muted);" }, ["Click or Tab to any underlined value and press Enter to edit it. Enter saves, Esc cancels."]);
       widget.appendChild(sub);
       var btnAdd = el("button", {
         "class": "wpg-btn wpg-btn-add"
@@ -267,6 +267,7 @@
       var emailInput = el("input", {
         "type": "email",
         "placeholder": "you@example.edu",
+        "aria-label": "Email address",
         "style": "padding:0.35rem 0.5rem;border:1px solid var(--border-strong);border-radius:5px;font-size:0.8rem;min-width:180px;"
       }, []);
       var btnIn = el("button", {
@@ -309,10 +310,16 @@
       // server-side before store; one unlock covers every phrase-enabled tab.
       if (window.CPL_TEAM_PHRASE) {
         widget.appendChild(el("span", { "style": "color:var(--text-muted);" }, ["·"]));
-        widget.appendChild(window.CPL_TEAM_PHRASE.unlockRow({
+        var unlock = window.CPL_TEAM_PHRASE.unlockRow({
           blurb: "or the team phrase:",
           onUnlocked: function () { onChange(); }
-        }));
+        });
+        // Controls are underlined words (Sam, 2026-10-09): this view converts the
+        // shared row's boxed Unlock button at its UI pass (S375); other tabs keep
+        // theirs until their own pass.
+        var ub = unlock.querySelector("button");
+        if (ub) { ub.removeAttribute("style"); ub.className = "wpg-btn"; }
+        widget.appendChild(unlock);
       }
       widget.appendChild(status);
     }
@@ -348,13 +355,47 @@
       '[data-editable="1"], [data-current-edit="1"], [data-title-edit="1"], '
       + '[data-desc-edit="1"], [data-activity-title-edit="1"], [data-activity-desc-edit="1"], '
       + '[data-unit-edit="1"], [data-note-edit="1"]');
+    // Every editable value takes Tab focus for an editor and opens on Enter or
+    // Space (S375 UI pass: a mouse-only editor fails WCAG 2.1.1, Level A). A table
+    // cell keeps its cell role, so its row and column headers still name it; a
+    // word in the name cell becomes a button.
     cells.forEach(function (c) {
-      if (state.sess) c.classList.add("wpg-editable");
-      else c.classList.remove("wpg-editable");
+      var isCell = c.tagName === "TD" || c.tagName === "TH";
+      if (state.sess) {
+        c.classList.add("wpg-editable");
+        c.setAttribute("tabindex", "0");
+        if (!isCell) c.setAttribute("role", "button");
+      } else {
+        c.classList.remove("wpg-editable");
+        c.removeAttribute("tabindex");
+        if (!isCell) c.removeAttribute("role");
+      }
     });
+    paintEmptyPrompts(state);
     paintCountLines(state);
     paintSetTargets(state);
     paintActivityAddLinks(state);
+  }
+
+  // An empty description is hidden from a reader; an editor sees "Add
+  // description" in its place (S375 UI pass: the bare "—" told neither anything).
+  // The value itself lives in data-val, so the prompt is never saved as text.
+  function paintEmptyPrompts(state) {
+    document.querySelectorAll('[data-desc-edit="1"], [data-activity-desc-edit="1"]').forEach(function (c) {
+      if (c.classList.contains("wpg-editing") || c.classList.contains("wpg-saving")) return;
+      if (!c.hasAttribute("data-val")) return;
+      var val = (c.getAttribute("data-val") || "").trim();
+      if (val) { c.hidden = false; c.classList.remove("wpg-empty"); return; }
+      if (state.sess) {
+        c.hidden = false;
+        c.textContent = "Add description";
+        c.classList.add("wpg-empty");
+      } else {
+        c.textContent = "";
+        c.classList.remove("wpg-empty");
+        c.hidden = true;
+      }
+    });
   }
 
   // The "Counts:" and "How it is counted:" lines stay hidden for a reader when
@@ -413,6 +454,15 @@
   }
 
   // ─── Per-cell edit interaction ──────────────────────────────────────────
+  // After Enter or Escape, focus goes back to the value that was edited, so a
+  // keyboard editor keeps its place in the table (the field it typed in is gone).
+  // Deferred one tick: Chrome drops a focus() made inside the keydown that removed
+  // the focused field (measured S375: focus landed on <body>).
+  function refocus(cell) {
+    if (!cell || !cell.getAttribute || cell.getAttribute("tabindex") === null || !cell.focus) return;
+    setTimeout(function () { if (cell.isConnected !== false) cell.focus(); }, 0);
+  }
+
   function fmtVal(v, isPct) {
     if (isPct) return Math.round(v * 100) + "%";
     if (v === 0 || v === null || v === undefined || v === "") return "";
@@ -454,6 +504,7 @@
       "type": "text",
       "value": isPct && oldNum ? (Math.round(oldNum * 100) + "%") : (oldNum || ""),
       "class": "wpg-cell-input",
+      "aria-label": (row_type === "STRETCH" ? "Stretch " : "Goal ") + year_label + " for " + activity_id,
       "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid var(--cobalt);border-radius:3px;text-align:right;background:var(--surface-opaque);"
     }, []);
 
@@ -464,12 +515,18 @@
     input.focus();
     input.select();
 
+    // One close per open (S375): removing the field fires its blur in Chrome, and
+    // blur commits, so without this the restore ran twice and threw mid-keydown.
+    var done = false;
     function cancel() {
+      if (done) return;
+      done = true;
       cell.innerHTML = prevHtml;
       cell.classList.remove("wpg-editing");
     }
 
     function commit() {
+      if (done) return;
       var newNum = parseInput(input.value, isPct);
       if (newNum === null) {
         input.style.borderColor = "var(--red-alert)";
@@ -479,6 +536,7 @@
         cancel();
         return;
       }
+      done = true;
       // Optimistic UI: paint all matching cells, mark as saving.
       // PR-B: when this cell carries a data-kind, scope the selectors so
       // an Activity edit can't paint a Project row (or vice-versa).
@@ -557,8 +615,8 @@
     }
 
     input.addEventListener("keydown", function (e) {
-      if (e.key === "Enter") { e.preventDefault(); commit(); }
-      else if (e.key === "Escape") { e.preventDefault(); cancel(); }
+      if (e.key === "Enter") { e.preventDefault(); commit(); refocus(cell); }
+      else if (e.key === "Escape") { e.preventDefault(); cancel(); refocus(cell); }
     });
     input.addEventListener("blur", commit);
   }
@@ -576,6 +634,7 @@
       "type": "text",
       "value": isPct && oldNum ? (Math.round(oldNum * 100) + "%") : (oldNum || ""),
       "class": "wpg-cell-input",
+      "aria-label": "Current value for " + activity_id,
       "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid var(--cobalt);border-radius:3px;text-align:right;background:var(--surface-opaque);"
     }, []);
     cell.classList.add("wpg-editing");
@@ -591,14 +650,21 @@
         + ' <span class="wpg-manual-hint" aria-hidden="true">✎</span>';
       if (saving) c.classList.add("wpg-saving");
     }
+    // One close per open (S375): removing the field fires its blur in Chrome, and
+    // blur commits, so without this the restore ran twice and threw mid-keydown.
+    var done = false;
     function cancel() {
+      if (done) return;
+      done = true;
       cell.innerHTML = prevHtml;
       cell.classList.remove("wpg-editing");
     }
     function commit() {
+      if (done) return;
       var newNum = parseInput(input.value, isPct);
       if (newNum === null) { input.style.borderColor = "var(--red-alert)"; return; }
       if (newNum === oldNum) { cancel(); return; }
+      done = true;
       // The TOTAL cell mirrors the single Current value (no ✎ hint there).
       var totalCell = document.querySelector(
         '[data-current-total="1"][data-aid="' + activity_id + '"]');
@@ -633,8 +699,8 @@
       });
     }
     input.addEventListener("keydown", function (e) {
-      if (e.key === "Enter") { e.preventDefault(); commit(); }
-      else if (e.key === "Escape") { e.preventDefault(); cancel(); }
+      if (e.key === "Enter") { e.preventDefault(); commit(); refocus(cell); }
+      else if (e.key === "Escape") { e.preventDefault(); cancel(); refocus(cell); }
     });
     input.addEventListener("blur", commit);
   }
@@ -650,6 +716,7 @@
       "type": "text",
       "value": oldName,
       "class": "wpg-title-input",
+      "aria-label": "Name of " + pid,
       "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid var(--cobalt);border-radius:3px;background:var(--surface-opaque);"
     }, []);
     cell.classList.add("wpg-editing");
@@ -659,14 +726,21 @@
     input.focus();
     input.select();
 
+    // One close per open (S375): removing the field fires its blur in Chrome, and
+    // blur commits, so without this the restore ran twice and threw mid-keydown.
+    var done = false;
     function cancel() {
+      if (done) return;
+      done = true;
       cell.innerHTML = prevHtml;
       cell.classList.remove("wpg-editing");
     }
     function commit() {
+      if (done) return;
       var newName = (input.value || "").trim();
       if (!newName) { input.style.borderColor = "var(--red-alert)"; return; }
       if (newName === oldName.trim()) { cancel(); return; }
+      done = true;
       cell.classList.remove("wpg-editing");
       cell.textContent = newName;
       cell.classList.add("wpg-saving");
@@ -689,8 +763,8 @@
       });
     }
     input.addEventListener("keydown", function (e) {
-      if (e.key === "Enter") { e.preventDefault(); commit(); }
-      else if (e.key === "Escape") { e.preventDefault(); cancel(); }
+      if (e.key === "Enter") { e.preventDefault(); commit(); refocus(cell); }
+      else if (e.key === "Escape") { e.preventDefault(); cancel(); refocus(cell); }
     });
     input.addEventListener("blur", commit);
   }
@@ -712,6 +786,7 @@
       : el("input", { "type": "text", "class": "wpg-title-input",
           "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid var(--cobalt);border-radius:3px;background:var(--surface-opaque);color:var(--text-strong);" }, []);
     field.value = oldVal;
+    if (opts.label) field.setAttribute("aria-label", opts.label);
     cell.classList.add("wpg-editing");
     var prevHtml = cell.innerHTML;
     cell.innerHTML = "";
@@ -759,9 +834,9 @@
     }
     field.addEventListener("keydown", function (e) {
       if (e.key === "Enter" && (!opts.multiline || e.metaKey || e.ctrlKey)) {
-        e.preventDefault(); commit();
+        e.preventDefault(); commit(); refocus(cell);
       } else if (e.key === "Escape") {
-        e.preventDefault(); cancel();
+        e.preventDefault(); cancel(); refocus(cell);
       }
     });
     field.addEventListener("blur", commit);
@@ -773,6 +848,8 @@
     if (!pid) return;
     inlineTextEditor(cell, state, {
       multiline: true,
+      emptyText: "Add description",
+      label: "Description of " + pid,
       save: function (v, sess) { return saveDesc(pid, v || null, sess); }
     });
   }
@@ -784,6 +861,7 @@
     if (!aid) return;
     inlineTextEditor(cell, state, {
       required: true,
+      label: "Name of Activity " + aid,
       save: function (v, sess) {
         return saveActivityField(aid, { name: "Activity " + aid + ": " + v }, sess);
       }
@@ -796,6 +874,8 @@
     if (!aid) return;
     inlineTextEditor(cell, state, {
       multiline: true,
+      emptyText: "Add description",
+      label: "Description of Activity " + aid,
       save: function (v, sess) {
         return saveActivityField(aid, { description: v || null }, sess);
       }
@@ -808,6 +888,7 @@
     if (!pid) return;
     inlineTextEditor(cell, state, {
       emptyText: "Add",
+      label: "What the numbers count for " + pid,
       save: function (v, sess) { return saveProjectField(pid, { kpi_unit: v || null }, sess); }
     });
   }
@@ -819,8 +900,29 @@
     inlineTextEditor(cell, state, {
       multiline: true,
       emptyText: "Add",
+      label: "How the numbers are counted for " + pid,
       save: function (v, sess) { return saveProjectField(pid, { count_note: v || null }, sess); }
     });
+  }
+
+  // One map from an element's edit marker to its editor, shared by the click
+  // and the keyboard paths. Returns true when it opened one.
+  var EDITORS = [
+    ["data-editable", function (t, s) { startEdit(t, s); }],
+    ["data-current-edit", function (t, s) { startCurrentEdit(t, s); }],
+    ["data-title-edit", function (t, s) { startTitleEdit(t, s); }],
+    ["data-desc-edit", function (t, s) { startDescEdit(t, s); }],
+    ["data-activity-title-edit", function (t, s) { startActivityTitleEdit(t, s); }],
+    ["data-activity-desc-edit", function (t, s) { startActivityDescEdit(t, s); }],
+    ["data-unit-edit", function (t, s) { startUnitEdit(t, s); }],
+    ["data-note-edit", function (t, s) { startNoteEdit(t, s); }]
+  ];
+  function openEditorFor(target, state) {
+    if (!target.getAttribute) return false;
+    for (var i = 0; i < EDITORS.length; i++) {
+      if (target.getAttribute(EDITORS[i][0]) === "1") { EDITORS[i][1](target, state); return true; }
+    }
+    return false;
   }
 
   function attachClickHandler(state) {
@@ -828,36 +930,88 @@
     document.body.addEventListener("click", function (e) {
       var target = e.target;
       while (target && target !== document.body) {
-        if (target.getAttribute) {
-          if (target.getAttribute("data-editable") === "1") {
-            startEdit(target, state); return;
-          }
-          if (target.getAttribute("data-current-edit") === "1") {
-            startCurrentEdit(target, state); return;
-          }
-          if (target.getAttribute("data-title-edit") === "1") {
-            startTitleEdit(target, state); return;
-          }
-          if (target.getAttribute("data-desc-edit") === "1") {
-            startDescEdit(target, state); return;
-          }
-          if (target.getAttribute("data-activity-title-edit") === "1") {
-            startActivityTitleEdit(target, state); return;
-          }
-          if (target.getAttribute("data-activity-desc-edit") === "1") {
-            startActivityDescEdit(target, state); return;
-          }
-          if (target.getAttribute("data-unit-edit") === "1") {
-            startUnitEdit(target, state); return;
-          }
-          if (target.getAttribute("data-note-edit") === "1") {
-            startNoteEdit(target, state); return;
-          }
-        }
+        if (openEditorFor(target, state)) return;
         target = target.parentNode;
       }
     });
+    // The keyboard path (S375 UI pass): Enter or Space on a focused editable value
+    // opens its editor. Only the focused element itself counts, so Enter inside an
+    // open editor's own field never reaches here as a second open.
+    document.body.addEventListener("keydown", function (e) {
+      if (e.key !== "Enter" && e.key !== " " && e.key !== "Spacebar") return;
+      var t = e.target;
+      if (!t || !t.classList || !t.classList.contains("wpg-editable")) return;
+      if (t.classList.contains("wpg-editing")) return;
+      if (openEditorFor(t, state)) e.preventDefault();
+    });
   }
+
+  // ─── The Annual Workplan Goals table (S375 UI pass) ─────────────────────
+  // The generator (render_annual_goals_table_html) prints classes and these rules
+  // paint them, so every color is a theme token and the phone card can reach each
+  // cell (the old inline styles carried 715 raw hexes and beat any media query).
+  // Goal and Stretch sit on the plain surface: the gray fill read as disabled.
+  // Current is plain ink: green is for a state the user must act on.
+  // An editor sees an at-rest cue on every editable value (a cobalt rule under the
+  // cell, a dotted underline under editable words), and every one is reachable by Tab.
+  var ANNUAL_TABLE_CSS = ''
+    + '.wpg-annual { margin:2rem 0;padding:1.5rem;background:var(--surface-opaque);border-radius:10px;box-shadow:0 2px 8px rgba(28,28,26,0.06); }'
+    + '.wpg-annual-title { color:var(--text-strong);margin:0 0 1rem 0; }'
+    + '.wpg-annual-scroll { overflow-x:auto; }'
+    + '.wpg-annual-table { width:100%;border-collapse:collapse;font-size:0.82rem;table-layout:fixed; }'
+    + '.wpg-annual-table .wpg-c-name { width:34%; }'
+    + '.wpg-annual-table .wpg-c-type { width:4.75rem; }'
+    + '.wpg-annual-table .wpg-c-total { width:5.25rem; }'
+    // --white, not --on-accent: --seal-blue stays the navy in dark, where --on-accent
+    // turns near-black (1.43:1 measured on the S375 preview).
+    + '.wpg-annual-table thead th { background:var(--seal-blue);color:var(--white);padding:0.5rem 0.4rem;text-align:center;font-size:0.78rem;border:1px solid var(--seal-blue); }'
+    + '.wpg-annual-table thead th.wpg-h-name { text-align:left;padding-left:0.6rem; }'
+    + '.wpg-annual-table .wpg-act-head { background:var(--navy-secondary);color:var(--on-accent);text-align:left;font-weight:700;padding:0.5rem 0.6rem;border:1px solid var(--navy-secondary); }'
+    + '.wpg-annual-table .wpg-act-desc-cell { font-weight:400;font-size:0.78rem;margin-top:0.2rem; }'
+    + '.wpg-annual-table td, .wpg-annual-table .wpg-type, .wpg-annual-table .wpg-name { border:1px solid var(--border);background:var(--surface-opaque); }'
+    + '.wpg-annual-table .wpg-r-goal > * { border-top:2px solid var(--border-strong); }'
+    + '.wpg-annual-table .wpg-name { text-align:left;vertical-align:top;font-weight:600;font-style:normal;color:var(--text-strong);padding:0.4rem 0.6rem 0.4rem calc(0.6rem + var(--wpg-indent, 0rem)); }'
+    + '.wpg-annual-table .wpg-name.wpg-nest { border-left:3px solid var(--seal-blue-text); }'
+    + '.wpg-annual-table .wpg-sub-marker { color:var(--seal-blue-text); }'
+    + '.wpg-annual-table .wpg-pid { color:var(--text-muted);font-size:0.75rem; }'
+    + '.wpg-annual-table .wpg-desc-cell, .wpg-annual-table .wpg-count-line { font-weight:400;font-size:0.72rem;color:var(--text-muted);margin-top:0.2rem; }'
+    + '.wpg-annual-table .wpg-assoc-cell { font-weight:400;font-size:0.65rem;color:var(--text-muted);margin-top:0.15rem; }'
+    + '.wpg-annual-table .wpg-act-chip { margin-right:0.2rem;font-size:0.65rem; }'
+    + '.wpg-annual-table .wpg-type { text-align:center;font-weight:inherit;font-size:0.75rem;padding:0.3rem 0.4rem; }'
+    + '.wpg-annual-table .wpg-val { text-align:center;padding:0.3rem 0.4rem; }'
+    + '.wpg-annual-table .wpg-total { font-weight:700; }'
+    + '.wpg-annual-table .wpg-r-goal { color:var(--text-strong);font-weight:600; }'
+    + '.wpg-annual-table .wpg-r-current { color:var(--text-strong);font-weight:700; }'
+    + '.wpg-annual-table .wpg-r-stretch { color:var(--mustard-text);font-style:italic; }'
+    + '.wpg-annual-table td.wpg-editable { box-shadow:inset 0 -1px 0 var(--cobalt); }'
+    + '.wpg-title-cell.wpg-editable, .wpg-desc-cell.wpg-editable, .wpg-act-desc-cell.wpg-editable, .wpg-unit-cell.wpg-editable, .wpg-note-cell.wpg-editable { text-decoration:underline dotted 1px;text-underline-offset:3px; }'
+    // An editable word is a target once it takes focus, so it meets the 24x24
+    // minimum (WCAG 2.5.8): the one-line words grow to 24px, "Add" included.
+    + '.wpg-title-cell.wpg-editable, .wpg-unit-cell.wpg-editable, .wpg-note-cell.wpg-editable { display:inline-block;min-height:24px;min-width:24px;box-sizing:border-box;padding:3px 0; }'
+    + '.wpg-desc-cell.wpg-editable, .wpg-act-desc-cell.wpg-editable, .wpg-assoc-cell.wpg-assoc-on { min-height:24px;box-sizing:border-box;padding-top:3px;padding-bottom:3px; }'
+    + '.wpg-editable:focus-visible { outline:2px solid var(--focus-ring);outline-offset:-2px; }'
+    + '.wpg-act-head .wpg-editable:focus-visible { outline-color:var(--on-accent);outline-offset:2px; }'
+    + '.wpg-assoc-cell.wpg-assoc-on .wpg-assoc-label { text-decoration:underline dotted 1px;text-underline-offset:3px; }'
+    + '.wpg-assoc-cell.wpg-assoc-on:focus-visible .wpg-assoc-edit-hint { opacity:1;color:var(--cobalt); }'
+    + '.wpg-assoc-cell.wpg-assoc-on:focus-visible { outline:2px solid var(--focus-ring);outline-offset:2px; }'
+    // Phone: each sub-activity becomes a card. Its name runs full width, then a
+    // Type column and six value columns, the Goal row printing each year above
+    // its value. The column headers stay in the page for a screen reader.
+    + '@media (max-width: 560px) {'
+    +   '.wpg-annual { margin:1rem 0;padding:1rem 0.75rem; }'
+    +   '.wpg-annual-scroll { overflow:visible; }'
+    +   '.wpg-annual-table, .wpg-annual-table tbody, .wpg-annual-table .wpg-act-row, .wpg-annual-table .wpg-act-head { display:block;width:100%;box-sizing:border-box; }'
+    +   '.wpg-annual-table colgroup { display:none; }'
+    +   '.wpg-annual-table thead { position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0; }'
+    +   '.wpg-annual-table .wpg-r { display:grid;grid-template-columns:3.75rem repeat(6, minmax(0, 1fr));align-items:end; }'
+    +   '.wpg-annual-table .wpg-name { grid-column:1 / -1;border:0;border-top:2px solid var(--border-strong);padding-left:calc(0.5rem + var(--wpg-indent, 0rem) / 2); }'
+    +   '.wpg-annual-table .wpg-name.wpg-nest { border-left:3px solid var(--seal-blue-text); }'
+    +   '.wpg-annual-table td, .wpg-annual-table .wpg-type { border:0;border-bottom:1px solid var(--border); }'
+    +   '.wpg-annual-table .wpg-r-goal > td, .wpg-annual-table .wpg-r-goal > .wpg-type { border-top:0; }'
+    +   '.wpg-annual-table .wpg-type { text-align:left;padding:0.3rem 0.25rem 0.3rem 0.5rem; }'
+    +   '.wpg-annual-table .wpg-val { padding:0.3rem 0.1rem;font-size:0.75rem;overflow-wrap:anywhere; }'
+    +   '.wpg-annual-table .wpg-r-goal .wpg-val::before { content:attr(data-label);display:block;font-size:0.62rem;font-weight:600;color:var(--text-muted);margin-bottom:0.1rem; }'
+    + '}';
 
   // ─── Style injection (light; matches existing dashboard palette) ────────
   function injectStyles() {
@@ -898,7 +1052,9 @@
       + '.wpg-modal-card .wpg-btn-submit:disabled { color:var(--text-muted);text-decoration:none;cursor:not-allowed; }'
       + '.wpg-act-chip { display:inline-block;padding:0.05rem 0.4rem;background:var(--surface-muted);color:var(--navy-secondary);border-radius:10px;font-size:0.7rem;font-weight:600; }'
       // Session 85 — Current hybrid + title editor affordances
-      + '.wpg-live-badge { display:inline-block;margin-left:0.35rem;padding:0.02rem 0.34rem;background:var(--cobalt,#2A6FB0);color:var(--on-accent);border-radius:8px;font-size:0.6rem;font-weight:700;letter-spacing:0.02em;vertical-align:middle;white-space:nowrap; }'
+      // Where a live Current comes from, in muted words under the value (S375 UI pass:
+      // the filled blue badge read as a state to act on, which it is not).
+      + '.wpg-live-badge { display:block;font-size:0.65rem;font-weight:400;font-style:normal;color:var(--text-muted);white-space:normal;line-height:1.25; }'
       + '.wpg-manual-hint { color:var(--text-muted);font-size:0.72rem; }'
       + '.wpg-editable.wpg-manual-hint, .wpg-editable .wpg-manual-hint { color:var(--cobalt); }'
       + '.wpg-title-cell { border-radius:3px; }'
@@ -908,7 +1064,8 @@
       + '.wpg-add-sub { font-size:0.72rem; }'
       + '.wpg-modal-card select, .wpg-modal-card textarea { width:100%;padding:0.4rem 0.55rem;border:1px solid var(--border-strong);border-radius:5px;font:inherit;font-size:0.85rem;box-sizing:border-box;background:var(--surface-opaque);color:var(--text-strong); }'
       + '.wpg-modal-card textarea { min-height:4.2em;resize:vertical; }'
-      + '.wpg-modal-card .wpg-fixed { font-size:0.95rem;font-weight:600;margin:0.4rem 0 0.2rem 0; }';
+      + '.wpg-modal-card .wpg-fixed { font-size:0.95rem;font-weight:600;margin:0.4rem 0 0.2rem 0; }'
+      + ANNUAL_TABLE_CSS;
     var style = document.createElement("style");
     style.id = "wpg-editor-styles";
     style.textContent = css;
