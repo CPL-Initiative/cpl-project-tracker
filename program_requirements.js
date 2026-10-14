@@ -1058,11 +1058,11 @@
       ".prh h4 { margin:0 0 6px; color:var(--text-strong); font-size:.95rem; display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; }",
       ".prh-draft { font-size:.75rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; background:var(--mustard-fill); color:var(--on-mustard, var(--text-strong)); border-radius:10px; padding:3px 10px; }",
       ".prh-meta { margin:0; font-size:.875rem; color:var(--text-muted); max-width:var(--cpl-measure,none); }",
-      ".prh-ask { display:inline-flex; align-items:center; font-weight:700; color:var(--seal-blue-text); text-decoration:none; border:1px solid var(--border-strong); border-radius:8px; padding:6px 12px; min-height:40px; background:var(--surface-opaque); }",
-      ".prh-ask:hover { border-color:var(--seal-blue-text); }",
-      ".prh-switch { display:flex; flex-wrap:wrap; gap:6px; padding-block:14px; }",
-      ".prh-switch button { font:inherit; font-weight:600; color:var(--text-body); background:var(--surface-opaque); border:1px solid var(--border-strong); border-radius:8px; padding:8px 14px; min-height:44px; cursor:pointer; }",
-      ".prh-switch button[aria-selected=\"true\"] { background:var(--text-strong); color:var(--paper); border-color:var(--text-strong); }",
+      /* controls are underlined words (Sam, 2026-10-09); the view in use reads heavier and darker */
+      ".prh-switch { display:flex; flex-wrap:wrap; gap:6px 18px; padding-block:14px; }",
+      ".prh-switch button { font:inherit; font-weight:600; color:var(--cobalt); background:none; border:0; padding:2px 0; min-height:24px; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
+      ".prh-switch button:hover { text-decoration-thickness:2px; }",
+      ".prh-switch button[aria-selected=\"true\"] { color:var(--text-strong); font-weight:700; text-decoration-thickness:2px; }",
       ".prh-switch .prh-n { font-weight:400; margin-left:6px; font-variant-numeric:tabular-nums; }",
       ".prh a:focus-visible, .prh button:focus-visible, .prh select:focus-visible, .prh input:focus-visible, .prh summary:focus-visible, .prh [tabindex]:focus-visible { outline:3px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
       ".prh-lede { margin:0 0 14px; max-width:var(--cpl-measure,none); }",
@@ -1095,7 +1095,8 @@
       ".prh-rec.prh-open .prh-rhead { border-bottom:1px solid var(--border); }",
       ".prh-rtitle { min-width:0; display:grid; gap:2px; justify-items:start; }",
       ".prh-rtitle strong { color:var(--text-strong); }",
-      ".prh-toggle { font:inherit; font-size:.875rem; font-weight:600; color:var(--cobalt); background:none; border:1px solid var(--border-strong); border-radius:6px; padding:4px 10px; min-height:32px; cursor:pointer; margin-top:4px; }",
+      ".prh-toggle { font:inherit; font-size:.875rem; font-weight:600; color:var(--cobalt); background:none; border:0; padding:2px 0; min-height:24px; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; margin-top:4px; }",
+      ".prh-toggle:hover { text-decoration-thickness:2px; }",
       ".prh-checks { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:6px 12px; min-width:0; margin:0; }",
       ".prh-check { min-width:0; font-size:.875rem; }",
       ".prh-check dt { font-size:.75rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--text-muted); }",
@@ -1114,7 +1115,7 @@
       ".prh-drafts[open] { padding-bottom:14px; }",
       ".prh-drafts p, .prh-drafts ul { margin:0; }",
       ".prh-draft-text { width:100%; box-sizing:border-box; font:inherit; font-size:.875rem; line-height:1.5; color:var(--text-body); background:var(--surface-opaque); border:1px solid var(--border-strong); border-radius:6px; padding:8px 10px; resize:vertical; }",
-      ".prh-draft-actions { display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; }",
+      ".prh-draft-actions { display:flex; flex-wrap:wrap; align-items:center; gap:8px 18px; }",
       ".prh-dl { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:8px 16px; margin:0; }",
       ".prh-dl dt { font-size:.75rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--text-muted); }",
       ".prh-dl dd { margin:0; font-variant-numeric:tabular-nums; }",
@@ -1146,9 +1147,9 @@
       /* COCI's word on a mismatched course, and a unit difference kept as printed: quiet chips the college reads */
       ".prh-coci { display:inline-block; margin:2px 0 0; padding:0 6px; border:1px solid var(--border-strong); border-radius:4px; font-size:.75rem; font-weight:600; line-height:1.5; color:var(--text-muted); overflow-wrap:anywhere; }",
       ".prh-alts .prh-coci { display:table; }",
-      ".prh-btn { font:inherit; font-size:.9rem; font-weight:600; color:var(--text-body); background:var(--surface-opaque); border:1px solid var(--border-strong); border-radius:8px; padding:6px 14px; min-height:44px; cursor:pointer; }",
-      ".prh-btn:hover { border-color:var(--cobalt); }",
-      ".prh-btn.prh-primary { background:var(--text-strong); color:var(--paper); border-color:var(--text-strong); }",
+      /* the verdict's actions are underlined words; the lead comes first, never filled (Sam, 2026-10-09) */
+      ".prh-btn { font:inherit; font-size:.9rem; font-weight:600; color:var(--cobalt); background:none; border:0; padding:2px 0; min-height:24px; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
+      ".prh-btn:hover { text-decoration-thickness:2px; }",
       ".prh-btn[disabled] { cursor:wait; }",
       ".prh-review-note p { margin:0; }",
       /* the Records view's college picker (2026-10-13): a district's colleges under it, each a
@@ -1182,9 +1183,9 @@
         " .prh table.prh-stack tbody td::before, .prh table.prh-stack tbody th::before { content:attr(data-label); font-weight:600; color:var(--text-muted); font-size:.8125rem; } }",
       /* sections: a <details> per section, its summary the heading plus a line that reads shut;
          the marker is drawn in CSS (a word-free disclosure, no glyph) */
-      ".prh-allctl { display:flex; flex-wrap:wrap; gap:6px; }",
-      ".prh-all { font:inherit; font-size:.875rem; font-weight:600; color:var(--text-body); background:var(--surface-opaque); border:1px solid var(--border-strong); border-radius:8px; padding:6px 12px; min-height:40px; cursor:pointer; }",
-      ".prh-all:hover { border-color:var(--cobalt); }",
+      ".prh-allctl { display:flex; flex-wrap:wrap; gap:6px 18px; }",
+      ".prh-all { font:inherit; font-size:.875rem; font-weight:600; color:var(--cobalt); background:none; border:0; padding:2px 0; min-height:24px; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
+      ".prh-all:hover { text-decoration-thickness:2px; }",
       ".prh-sec { border:1px solid var(--border); border-radius:10px; background:var(--surface-opaque); margin-bottom:12px; min-width:0; }",
       ".prh-sec-sum { list-style:none; cursor:pointer; position:relative; display:flex; flex-wrap:wrap; align-items:baseline; gap:2px 12px; padding:11px 14px 11px 36px; min-height:44px; box-sizing:border-box; border-radius:10px; }",
       ".prh-sec-sum::-webkit-details-marker { display:none; }",
@@ -1899,11 +1900,11 @@
         (forCollege ? " The " + (forCollege === 1 ? "item" : forCollege + " items") + " for the college stay open with " +
           shortCollege(p.college) + "; they concern the catalog itself and do not hold the record back." : ""));
     var said = el("p", { cls: "prh-said", "aria-live": "polite" });
-    var confirm = el("button", { cls: "prh-btn prh-primary", type: "button", text: "Confirm" });
+    var confirm = el("button", { cls: "prh-btn", type: "button", text: "Confirm" });
     var fixBtn = el("button", { cls: "prh-btn", type: "button", "aria-expanded": "false", "aria-controls": id + "-fix", text: "Needs a fix" });
     var note = el("textarea", { id: id + "-note", rows: "3", maxlength: "2000", cls: "prh-draft-text",
       placeholder: "For example: read the elective lists from the catalog's addendum once it posts." });
-    var save = el("button", { cls: "prh-btn prh-primary", type: "button", text: "Save the note" });
+    var save = el("button", { cls: "prh-btn", type: "button", text: "Save the note" });
     var fix = el("div", { cls: "prh-fix", id: id + "-fix" }, [
       el("label", { "for": id + "-note", cls: "prh-small" }, [el("b", { text: "What should change." }),
         " The note goes to " + shortCollege(p.college) + "'s reading procedure; the next run carries it out."]),
