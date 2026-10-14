@@ -48,8 +48,21 @@ the Implementation Funding tab (#2132) and left the checkpoint to S392.
    pages on a runner (`kb/college_reads/`), add its steps to `kb/program_requirements_reconcile.json`, run `step=reconcile`.
 5. **Palo Verde's 2026-27 catalog** after Sunday's census apply (2026-10-18 10:29 UTC): `extract=1`, then `step=reread`.
 6. **The UI pass:** `python3 scripts/ui_pass.py --next` names **GR Priorities** (S392 skipped it: no room for a fix PR).
-7. The funding session's open ask (which noncredit percentage, if any) is not on a sheet; add a card if its lane carries a
-   NEEDS SAM marker.
+7. The funding lane carries no NEEDS SAM marker and needs no card: Sam is trying 15% on a Scenario 3 copy himself (below).
+
+## The parallel funding session (`session_01LS3ZdGFdtRScAaGKYMNSj6`, checkpointed 23:20Z)
+
+- **Shipped:** #2132, live 22:36Z. A noncredit-portion setting on the funding tab (*Credit and noncredit*, beside base and
+  cap; blank keeps the teaching mix, 7.18%); the explainer's three funding boxes in one row, the institutions box split credit
+  and noncredit, each box's words editable; Bold and Italic in the passage editor. Refresh everything carries all of it.
+- **Sam's decisions:** a percentage is the control he wants; *"Keep in mind to wire in the Refresh Everything procedure"*; he
+  sets 15% on a Scenario 3 copy himself on the tab (*"It's OK if not; I can make the change"*); Scenario 2 stays published
+  and blank. Rows `sam-funding-noncredit-portion-and-boxes-2026-10-14`, `sam-nc-portion-15-on-scenario-3-copy-2026-10-14`.
+- **Open, his to type:** the passage under the boxes still opens "Those two lines account for the whole appropriation." The
+  tab's own text blocks (Introduction, FAQ and the rest) take plain text; bold there is a small build if he asks.
+- **Read:** `docs/reference/lanes/implementation-funding.md`, `docs/cpl_funding_lessons.md` (2026-10-14), KB note
+  `methodology-a-share-target-inside-a-bounded-allocation-is-a-solved-weight`.
+- **Let go:** #2132's watch dropped, its check-in deleted, no artifact watch.
 
 ## Docs to read
 

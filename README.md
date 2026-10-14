@@ -298,6 +298,11 @@ The whole ecosystem, end-to-end:
    snapshot**: it loads `cpl_funding.js` and paints every figure from the same
    engine and the same Supabase config the Implementation Funding tab uses, so a
    dial change appears on the next reload with nothing to rebuild or republish.
+   Its headline row sets the appropriation beside its two destinations, the
+   institutions box split into credit and noncredit, and noncredit's share follows
+   the tab's *Credit and noncredit* setting (blank keeps each institution's
+   teaching mix); the words in every box and passage edit on the tab under *The
+   explainer's text*, with Bold and Italic.
    Its **Max award by institution** section, directly after the introduction, is
    the tab's own institution table rendered in embed mode
    (`window.CPL_FUNDING_EMBED = "college"`) — the same rows, drill-in, search
