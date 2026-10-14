@@ -577,6 +577,23 @@ function fixtureRun(seed) {
       && !/units?\)$/.test(g.canonical)));
 })();
 
+// ═════════ D. First Light controls (S388 UI pass) ═════════════════════════
+// npm run a11y measured the CSV control at 19px tall (WCAG 2.2 2.5.8 floor is 24)
+// and the rank at 3.55:1 (--text-faint is decorative only). Sam's 2026-10-09 rule:
+// a control that acts is an underlined cobalt word, no border, no fill.
+(function () {
+  const rule = (SRC.match(/"\.crr-mini,\.crr-btn\{[^"]*"(?:,\s*"[^"]*")*/) || [""])[0];
+  check("D1 controls are underlined words at least 24px tall, no border, no fill",
+    /border:0/.test(rule) && /background:none/.test(rule) && /min-height:24px/.test(rule)
+      && /text-decoration:underline/.test(rule) && /var\(--cobalt\)/.test(rule));
+  check("D2 no later rule boxes or fills a control again",
+    !/"\.crr-(mini|btn)(\.primary)?(:hover)?\{[^"]*(border:1px|background:var)/.test(SRC));
+  check("D3 the CSV control is a word, with no glyph",
+    /id="crr-csv">Download CSV</.test(SRC) && !/&#8615;/.test(SRC));
+  check("D4 the rank reads on --text-muted, never the decorative --text-faint",
+    /"\.crr-rank\{color:var\(--text-muted\)/.test(SRC));
+})();
+
 // ═════════ report ══════════════════════════════════════════════════════════
 Promise.resolve(pendingEmptyWrite).then(() => {
   let failed = 0;
