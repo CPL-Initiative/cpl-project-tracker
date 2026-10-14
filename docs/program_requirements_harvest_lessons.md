@@ -932,3 +932,43 @@ The one-shot record read stopped at PostgREST's 1,000-row cap (Content-Range 0-9
   and safety programs, Kinesiology AA-T at 21 of 60 codes, Yoga Teacher Training, a noncredit Family Child Care). Fresno
   City (curriQunet JSON, 474 loads, 38 min): 237 of 251, 199 full coverage, 6 no page (five noncredit). Both above
   Sheet 59's 85% bar; extraction waits on Sam (Sheet 78).
+
+### Moved from the lane (S386 compaction, verbatim)
+
+**A refusal is on the college's record (Sam, sheet 29 card 3, 2026-10-04 11:59Z):**
+*"Note this in the record for the college. Rather than ask permission, we will
+make the agent aware of the limitation and to continue to look for solutions or
+workarounds."* So no access request goes to Miramar or the mapper's operator.
+`program_source_registry` carries four columns the census never writes
+(`sequence_host`, `sequence_access` open/refused/unreached/not_read,
+`sequence_note`, `sequence_checked_run`), filled S326 for 25 colleges from the two
+runs' evidence: **18 refused** (Miramar's mapper and the probe's 17), **5 not read**
+(Bakersfield, LA Harbor, Merced and West LA link to a mapper not yet read; Palo
+Verde's address is a homepage `#`), **2 open** (Irvine Valley's and Santa Monica's
+own maps pages; Santa Monica timed out in the morning probe and answered in run
+37209313523, filed by `..._2026-10-04b_s326.sql`). Receipt:
+`kb/receipts/program_source_registry_sequence_access_2026-10-04_s326.sql`. The reader reads them: it never
+requests a host on record as refused, follows the college's own links to the
+program's map, pathway, roadmap or sequence (a page or a PDF), and the probe asks
+each recorded host's front page once a run, flagging `CHANGED: file it` when a refused host or an unreached page now
+answers. ⚠️ **"Workaround" means another public source, never the same refused
+host under another name:** the reader keeps the census user agent that names the
+CPL Initiative (Sam's call 5 on sheet 23), so it never retries a refusal in
+disguise. The program read still needs the dispatch input `read: 1`.
+
+**Sam's sheet 32 (2026-10-04 17:33Z, both his own calls, as proposed):** (1) a
+program shows "up to" (the CPL course taken in every choice, the option with more
+CPL) plus the recommended path's figure where a map is read, and *"continue to
+include any CPL that the college might adopt for the courses on the pathway. And
+think about how we can include any certs we know of that haven't yet been
+articulated in the system for consideration. This is the reason we're adding all
+those potential certs to the CER and ECRA"*: each course carries CPL in three
+kinds, articulated here, could adopt (the same course articulated elsewhere), and
+for consideration (a CER/EACR cert whose recommendation points at the course,
+not yet articulated); (2) catalog-and-state-file differences collect as drafts
+on the college's harvest-tab row and My College to-dos; the MAP team sends.
+✅ **The harvest-tab half is built (S335):** Program records lists each college's own gaps under its heading as *Drafts for the college*, with a draft to copy; Catalogs counts and filters them. 28 live at the five pilot colleges (Miramar's two second-course drafts since 2026-10-05 21:45Z). ✅ **The My College half (Sam, sheet 42 card 3, 2026-10-05 20:58Z, his own call: *Show them now*):** My College lists each college's drafts now, under *Your program records, for review*, marked *For review* and *Beta draft*, right after *Start here* (S336, #1878). It reads the registry by `college_id`, then the college's records; a gap the reading procedure owns never reaches the college's page. The MAP team still decides when to send each one.
+- **Two colleges capture at once on two branches.** A capture-only read is a dispatch of
+  `program-requirements-college.yml` (`extract 0`, `step read`) on a branch cut from main; the concurrency group is
+  per ref and the hosts differ, so Southwestern and Fresno City read side by side in about 37 minutes and each filed
+  `capture_preview.json` to its own branch. Extraction then runs on the same branch after Sam's go.

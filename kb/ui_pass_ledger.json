@@ -214,8 +214,8 @@
    "name": "Common Subjects Reference",
    "page": "index.html#canonical-subj4",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-14",
+   "outcome": "Five color pairs below AA (gray tags and dashes in light; light fills behind dark-theme text in dark) moved to First Light tokens in both HTMLs, and 159 controls brought to 24px tall (#2099); a dozen raw hexes remain in border and input-state rules that pass contrast."
   },
   {
    "id": "cobi:cr-reference",

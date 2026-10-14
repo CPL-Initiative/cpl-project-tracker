@@ -70,26 +70,7 @@ the link into the mapper, and accepts a page naming half the program's listed
 courses and at least two terms. **Run 1 (37197332656):** Miramar's own mapper page links `san-diego-miramar.programmapper.com`, which answered all seven requests **403 Forbidden**. None of the 20 captured catalog pages prints a
 term sequence.
 
-**A refusal is on the college's record (Sam, sheet 29 card 3, 2026-10-04 11:59Z):**
-*"Note this in the record for the college. Rather than ask permission, we will
-make the agent aware of the limitation and to continue to look for solutions or
-workarounds."* So no access request goes to Miramar or the mapper's operator.
-`program_source_registry` carries four columns the census never writes
-(`sequence_host`, `sequence_access` open/refused/unreached/not_read,
-`sequence_note`, `sequence_checked_run`), filled S326 for 25 colleges from the two
-runs' evidence: **18 refused** (Miramar's mapper and the probe's 17), **5 not read**
-(Bakersfield, LA Harbor, Merced and West LA link to a mapper not yet read; Palo
-Verde's address is a homepage `#`), **2 open** (Irvine Valley's and Santa Monica's
-own maps pages; Santa Monica timed out in the morning probe and answered in run
-37209313523, filed by `..._2026-10-04b_s326.sql`). Receipt:
-`kb/receipts/program_source_registry_sequence_access_2026-10-04_s326.sql`. The reader reads them: it never
-requests a host on record as refused, follows the college's own links to the
-program's map, pathway, roadmap or sequence (a page or a PDF), and the probe asks
-each recorded host's front page once a run, flagging `CHANGED: file it` when a refused host or an unreached page now
-answers. ⚠️ **"Workaround" means another public source, never the same refused
-host under another name:** the reader keeps the census user agent that names the
-CPL Initiative (Sam's call 5 on sheet 23), so it never retries a refusal in
-disguise. The program read still needs the dispatch input `read: 1`.
+**A refusal is on the college's record (Sam, sheet 29 card 3):** the agent notes the limitation and keeps looking, and asks no one for access; `program_source_registry` carries `sequence_host`, `sequence_access`, `sequence_note`, `sequence_checked_run`. ⚠️ **A workaround is another public source, never the same refused host under another name**: the reader keeps the census user agent that names the CPL Initiative. Detail and the 25 colleges filed: lessons, *Moved from the lane (S386 compaction)*.
 
 **Sam's ruling (2026-10-04, 11:1xZ, in chat):** *"No need for governance at this
 point. Everything is public record and we can mark the tab and contents as beta
@@ -118,18 +99,7 @@ pilot records).
 **The map names the pick inside a choice**; the catalog keeps the rule. Mock-up:
 [CPL Pathways ROEP](https://claude.ai/artifact/8hkej9jHsmLRX6cZYxrXbM). ✅ **Ported (S334):** the pathway selector lists every catalog record (Beta draft); each opens By requirement (tiles, an option fork, CPL in three kinds in words, the checks, the outcomes, the gaps read-only) or By term (the map's status, every course in the tray), for the College or Student or public viewer. Guard `tests/cpl_pathways_roep_view.test.js`; a11y targets `cpl-pathways-roep` and `-dark`.
 
-**Sam's sheet 32 (2026-10-04 17:33Z, both his own calls, as proposed):** (1) a
-program shows "up to" (the CPL course taken in every choice, the option with more
-CPL) plus the recommended path's figure where a map is read, and *"continue to
-include any CPL that the college might adopt for the courses on the pathway. And
-think about how we can include any certs we know of that haven't yet been
-articulated in the system for consideration. This is the reason we're adding all
-those potential certs to the CER and ECRA"*: each course carries CPL in three
-kinds, articulated here, could adopt (the same course articulated elsewhere), and
-for consideration (a CER/EACR cert whose recommendation points at the course,
-not yet articulated); (2) catalog-and-state-file differences collect as drafts
-on the college's harvest-tab row and My College to-dos; the MAP team sends.
-✅ **The harvest-tab half is built (S335):** Program records lists each college's own gaps under its heading as *Drafts for the college*, with a draft to copy; Catalogs counts and filters them. 28 live at the five pilot colleges (Miramar's two second-course drafts since 2026-10-05 21:45Z). ✅ **The My College half (Sam, sheet 42 card 3, 2026-10-05 20:58Z, his own call: *Show them now*):** My College lists each college's drafts now, under *Your program records, for review*, marked *For review* and *Beta draft*, right after *Start here* (S336, #1878). It reads the registry by `college_id`, then the college's records; a gap the reading procedure owns never reaches the college's page. The MAP team still decides when to send each one.
+**Sam's sheet 32 (2026-10-04):** a program shows "up to" plus the recommended path's figure, each course carries CPL in three kinds (articulated here, could adopt, for consideration), and catalog-and-state-file differences go to the college as drafts on the harvest tab and My College while the MAP team sends. Verbatim: lessons, *Moved from the lane (S386 compaction)*.
 
 **The display build** (`kb/_build_roep_display.py`) writes each program's facts once, under one build stamp, to `program_requirement_records.display` (Sierra) and `cpl_pathways_roep_data.js` (the page); guard `tests/roep_display_test.py`. Its history (S327-S336): the lessons doc, *Moved from the lane (S346 compaction)*.
 
@@ -147,7 +117,7 @@ on the college's harvest-tab row and My College to-dos; the MAP team sends.
 
 🔨 **The Records view loads by college (S384; Sam, 2026-10-13, `cpl_memory` `sam-records-load-by-college-filter-2026-10-13`).** The cap, the anon timeout and #2088-#2089: lessons, *Moved from the lane (S385 compaction)*. #2090 (merged S385, deployed 22:45Z): a light index for every college (about 0.6 MB), full records only for the colleges a multi-select college/district picker names (it opens empty and remembers the last pick, Sam's default), and every attention link (deep link, call cards, Next waiting, the Progress counts) loading its record on demand with nothing picked. ✅ **First live reads clean** (22:50Z; lessons S385). **NEXT:** the first college pick (`college=in.(...)`, quoted) has not been sent live; read it in `edge_logs` after one.
 
-✅ **Sheet 77 card 3, built and merged (S385, #2093; Sam, *Build it*, 22:25Z):** numbered boxes are the reading procedure's alone. A record's college items (*Catalog and state file differ*, *MAP names a second course*) sit on one line in its head, *For the college*, that opens to the list; course rows carry no number for them (the quiet COCI chip and *Printed in the catalog* stay). The MAP team queue gains *Program record items for the colleges to correct*: a count a college, each a closed line that reads its list when opened, from the view `program_record_college_items` (`chatbox/supabase_program_record_college_items.sql`). My College's list is unchanged (it reads the same gaps from the table). Counts: lessons S385. ✅ Applied by `supabase-migrate.yml` run 38482375985 and read back (lessons S385). **NEXT:** My College could read the view too (Cerritos's list is 577 rows against about 4 MB of full rows).
+✅ **Sheet 77 card 3, built and merged (S385, #2093; Sam, *Build it*, 22:25Z):** numbered boxes are the reading procedure's alone. A record's college items (*Catalog and state file differ*, *MAP names a second course*) sit on one line in its head, *For the college*, that opens to the list; course rows carry no number for them (the quiet COCI chip and *Printed in the catalog* stay). The MAP team queue gains *Program record items for the colleges to correct*: a count a college, each a closed line that reads its list when opened, from the view `program_record_college_items` (`chatbox/supabase_program_record_college_items.sql`). My College's list is unchanged (it reads the same gaps from the table). Counts: lessons S385. ✅ Applied by `supabase-migrate.yml` run 38482375985 and read back (lessons S385). ✅ **My College reads the view too (S386, #2097):** one row an item, read a page at a time (Cerritos 577 rows, where every record's display was about 4 MB).
 
 ✅ **Flags and a person's reading are built (S347; Sam, Sheet 51 card 1).** Confirm or Needs a fix writes `program_record_verdicts` through `program_record_verdict_add`; a trigger keeps a person's reading across a reload. Detail: lessons doc, *Moved from the lane (S356 compaction)*.
 

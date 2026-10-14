@@ -1,7 +1,7 @@
 ---
 title: A green check you did not scope is not evidence
 created: 2026-08-23
-updated: 2026-08-23
+updated: 2026-10-14
 tags: [methodology, testing, ci, verification, process]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -53,6 +53,21 @@ exhibit the bug.**
 
 That is the same error in miniature: a green signal chosen without asking what
 it is capable of showing.
+
+## A fourth green: the stand-in that stopped matching (2026-10-14)
+
+The a11y sweep seeds each COBI view by replacing `window.fetch` with stand-ins
+keyed on the URL a read makes. When My College moved its drafts read from
+`program_requirement_records` to the view `program_record_college_items`
+(#2097), the seed's stand-in no longer matched any request. The section simply
+did not paint, and the sweep measured the rest of the page and passed. Nothing
+failed, because nothing that was checked contained the change.
+
+The fix scopes the green: the seed now waits for the element its stand-in feeds
+(`ul.cb-dr li`), so a stand-in that stops matching fails the seed instead of
+thinning the page. Proved both ways: pointed back at the old table, the seed
+times out. Any stand-in keyed on a URL deserves the same wait for the element it
+exists to paint.
 
 ## The check
 
