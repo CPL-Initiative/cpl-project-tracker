@@ -1,0 +1,23 @@
+{
+ "_readme": "S386 SkyElm, 2026-10-14. 21 of Palo Verde's 54 records fail the arithmetic check because the record names no program total (extraction run 38477849603). This read loads two of those pages, Automotive Technology A.S. 04442 (its blocks sum to 30) and Psychology AA-T 30594 (17-20), to see whether the page prints a total the record left out, and where. Two page loads, no model call.",
+ "college": "Palo Verde College",
+ "questions": {
+  "program_total": "Whether a Palo Verde program page prints a program or major total, and in what words."
+ },
+ "keywords": [
+  "[Tt]otal",
+  "UNITS",
+  "[Uu]nits",
+  "[Mm]ajor"
+ ],
+ "pages": [
+  {
+   "answers": ["program_total"],
+   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/automotive-technology-associate-of-science-2025-2026-fall-2025fa"
+  },
+  {
+   "answers": ["program_total"],
+   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/psychology-2025-2026-fall-2025fa"
+  }
+ ]
+}
