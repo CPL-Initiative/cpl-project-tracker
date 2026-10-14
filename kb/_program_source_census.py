@@ -865,18 +865,24 @@ def year_in_body(text: str) -> tuple[str | None, str | None]:
     return y, None
 
 
-def index_years(links: list[dict], current_start: int, college: str | None = None,
-                foreign=frozenset()) -> list[int]:
-    """The start years of the catalogs a page lists by year, never an addendum or a
-    sibling's catalog: the same links the index below chooses among."""
+def index_newest(links: list[dict], current_start: int, college: str | None = None,
+                 foreign=frozenset()) -> dict | None:
+    """The catalog an index of catalogs leads to: the newest year-named link naming
+    the most of this college's words. None unless the page lists two or more
+    year-named catalog links. Every year-named link says the page is an index; the
+    choice is never an addendum (Merced's index handed over a 2025-26 addendum) or a
+    sibling's catalog. Yuba's page lists its 2026-27 catalog and its addendum, so the
+    count comes before the filter (run 37140411314)."""
     tokens = college_tokens(college)
-    out = []
-    for c in pick_catalog_candidates(links, current_start, limit=12):
-        y = year_of_link(c["text"], c["href"])
-        if (y is not None and not re.search(r"addend|supplement|errata", (c["text"] + " " + c["href"]).lower())
-                and not sibling_link(c["text"], c["href"], tokens, foreign)):
-            out.append(y)
-    return out
+    listed = [c for c in pick_catalog_candidates(links, current_start, limit=12)
+              if year_of_link(c["text"], c["href"]) is not None]
+    yearly = [c for c in listed
+              if not re.search(r"addend|supplement|errata", (c["text"] + " " + c["href"]).lower())
+              and not sibling_link(c["text"], c["href"], tokens, foreign)]
+    if len(listed) < 2 or not yearly:
+        return None
+    return max(yearly, key=lambda c: (names_college(c["text"], c["href"], tokens),
+                                      year_of_link(c["text"], c["href"])))
 
 
 def read_catalog(reader: Reader, cand: dict, current_start: int,
@@ -915,15 +921,23 @@ def read_catalog(reader: Reader, cand: dict, current_start: int,
             # wrong turn: Porterville's "2026-2027 CATALOG" page led to an
             # eLumen change log read as 2021-22 (run 37137334059).
             older = year and inner.get("year") and inner["year"] < year
-            # A yearless index that lists a newer catalog than the hop reached is a
-            # wrong turn too: Palo Verde's catalog page lists "2026-2027 Catalog" at
-            # catalog.paloverde.edu above "2025-2026 Catalog" on eLumen, and the
-            # vendor's two points took the older one (college page read
-            # 38506078868, S387). The index below picks the newest.
-            listed = index_years(links, current_start, college, foreign)
-            behind = (yearless_custom and len(listed) >= 2 and inner.get("year")
-                      and int(inner["year"][:4]) < max(listed))
-            if inner.get("access") == "ok" and not older and not behind:
+            # A page with no year of its own that lists a newer catalog than the hop
+            # reached sends the census to that catalog: Palo Verde's catalog page lists
+            # "2026-2027 Catalog" at catalog.paloverde.edu above "2025-2026 Catalog" on
+            # eLumen, its eLumen links make the page itself read as eLumen, and the
+            # vendor's two points took the older one (college page read 38506078868,
+            # census dry run 38506794465, S387).
+            newest = index_newest(links, current_start, college, foreign) if year is None else None
+            if (newest is not None and inner.get("year") and reader.loads < MAX_PAGES
+                    and int(inner["year"][:4]) < year_of_link(newest["text"], newest["href"])):
+                newest["found_by"] = "the catalog index"
+                alt = read_catalog(reader, newest, current_start, depth + 1, college, foreign)
+                if alt.get("access") == "ok":
+                    alt["index_url"] = url
+                    alt["addenda"] = merge_addenda(
+                        alt.get("addenda"), addendum_links(links, current_start, college, foreign))
+                    return alt
+            if inner.get("access") == "ok" and not older:
                 inner["index_url"] = url
                 inner["addenda"] = merge_addenda(
                     inner.get("addenda"), addendum_links(links, current_start, college, foreign))
@@ -931,20 +945,8 @@ def read_catalog(reader: Reader, cand: dict, current_start: int,
     # An index of catalogs: no year of its own, several year-named catalog links.
     if (not is_pdf and platform == "custom_html" and year is None
             and depth == 0 and reader.loads < MAX_PAGES):
-        tokens = college_tokens(college)
-        listed = [c for c in pick_catalog_candidates(links, current_start, limit=12)
-                  if year_of_link(c["text"], c["href"]) is not None]
-        # Every year-named link says the page is an index; the choice is
-        # never an addendum (Merced's index handed over a 2025-26 addendum)
-        # or a sibling's catalog. Yuba's page lists its 2026-27 catalog and
-        # its addendum, so the count comes before the filter (run 37140411314).
-        yearly = [c for c in listed
-                  if not re.search(r"addend|supplement|errata",
-                                   (c["text"] + " " + c["href"]).lower())
-                  and not sibling_link(c["text"], c["href"], tokens, foreign)]
-        if len(listed) >= 2 and yearly:
-            newest = max(yearly, key=lambda c: (names_college(c["text"], c["href"], tokens),
-                                                year_of_link(c["text"], c["href"])))
+        newest = index_newest(links, current_start, college, foreign)
+        if newest is not None:
             newest["found_by"] = "the catalog index"
             inner = read_catalog(reader, newest, current_start, depth + 1, college,
                                  foreign)

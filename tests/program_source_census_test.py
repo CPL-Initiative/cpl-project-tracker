@@ -521,10 +521,16 @@ pvc = {
     "https://pvc.elumenapp.com/catalog/2025-2026/presidents-welcome": {
         "status": 200, "access": "ok", "title": "Presidents Welcome", "h1": "Palo Verde College Course Catalog 2025-2026"},
 }
-row = C.census_one(FakeReader(pvc), "Palo Verde College", "https://www.paloverde.edu/", CUR)
-check(row["catalog_url"] == "https://catalog.paloverde.edu/" and row["catalog_year"] == "2026-2027",
-      "a vendor hop behind the newest year a yearless index lists is refused (Palo Verde), got %r" % (
-          {k: row[k] for k in ("catalog_url", "catalog_year")},))
+# The live page's own eLumen links make it read as eLumen (tier html), not as a
+# plain page: the census dry run 38506794465 kept 2025-26 on a fix that covered
+# only the plain page. Both forms are checked.
+for form, page_html in (("its eLumen links in the page", '<a href="https://pvc.elumenapp.com/catalog/2025-2026/presidents-welcome">2025-2026 Catalog</a>'),
+                        ("a plain page", "")):
+    pvc["https://www.paloverde.edu/current-students/catalog.html"]["html"] = page_html
+    row = C.census_one(FakeReader(pvc), "Palo Verde College", "https://www.paloverde.edu/", CUR)
+    check(row["catalog_url"] == "https://catalog.paloverde.edu/" and row["catalog_year"] == "2026-2027",
+          "a yearless index sends the census past a vendor hop to the newest catalog it lists (Palo Verde, %s), got %r" % (
+              form, {k: row[k] for k in ("catalog_url", "catalog_year")},))
 
 # San Diego City's homepage links both years on one vendor host; the newer
 # link's misspelled text ("Catolog") scored below the older one's, and the
