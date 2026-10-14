@@ -18,7 +18,10 @@ So each college's reading procedure may carry reconcile steps
 searches the same text for a figure the record lacks and fills it, and every
 change names the words it came from. A step never overwrites a figure the reading
 holds, except the one kind that says which words the reading took a figure from
-(clear_minimum: "at least 30 units in the major" is no major total).
+(clear_minimum: "at least 30 units in the major" is no major total). A set step
+fills a figure the catalog prints once for every degree on another page (Cerritos's
+general education units), where the program page's words point to it, and cites
+both the page's words and the catalog page's.
 
 It runs in two places, both free of model calls:
   * the extraction (kb/_program_requirements_college.py extract): every record a
@@ -102,6 +105,16 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
             now = lo if field == "open_elective_units" else {"min": lo, "max": hi}
             notes.append({"field": field, "was": prog.get(field), "now": now, "words": m.group(0).strip()})
             prog[field] = now
+        elif st["kind"] == "set":
+            # A figure the catalog prints once for every degree, on its own page (Cerritos's general
+            # education pattern): set where the program page's words point to it, citing both.
+            if not _empty(prog.get(field)):
+                continue
+            if st.get("only_without") and not _empty(prog.get(st["only_without"])):
+                continue
+            notes.append({"field": field, "was": prog.get(field), "now": st["value"],
+                          "words": "%s (%s: %s)" % (m.group(0).strip(), st["source"], st["source_words"])})
+            prog[field] = copy.deepcopy(st["value"])
         elif st["kind"] == "clear_minimum":
             n = _num(m.group("n"))
             if _span_of(prog.get(field)) != (n, n) or _empty(prog.get("degree_total")):

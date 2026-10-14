@@ -1462,6 +1462,26 @@ check(new["program"]["total_units"] == {"min": 36, "max": 36} and new["program"]
       and not new["program"].get("open_elective_units"),
       "a major total that is not the minimum sentence's stays, and the degree's electives go beside it")
 
+# A set step (S393, Cerritos): a figure the catalog prints once for every degree, on its own page, set
+# where the program page's words point to it, never over a figure the reading holds, citing both.
+SET_STEPS = {"Test College": {"awards": "associate", "steps": [
+    {"kind": "set", "field": "ge_units", "value": {"min": 21, "max": 21},
+     "pattern": "\\(2\\) the General Education requirements",
+     "source": "https://example.edu/cgec/", "source_words": "a minimum of 21 units"}]}}
+SET_TEXT = ("Total Units 28 \u00b7 ASSOCIATE OF ARTS DEGREE REQUIREMENTS\nComplete a minimum of 60 units to include "
+            "(1) the above major requirements, (2) the General Education requirements, and (3) electives as needed")
+new, notes = RC.reconcile({"program": {"total_units": {"min": 28, "max": 28}}, "blocks": []}, SET_TEXT,
+                          "Test College", "A.A. Degree", steps=SET_STEPS)
+check(new["program"]["ge_units"] == {"min": 21, "max": 21} and len(notes) == 1
+      and "(2) the General Education requirements" in notes[0]["words"] and "https://example.edu/cgec/" in notes[0]["words"]
+      and "a minimum of 21 units" in notes[0]["words"],
+      "a set step fills the GE units the catalog's GE page states, citing the program page's words and that page's: %s"
+      % json.dumps(notes))
+check(RC.reconcile({"program": {"ge_units": {"min": 34, "max": 34}}, "blocks": []}, SET_TEXT, "Test College",
+                   "A.A. Degree", steps=SET_STEPS)[1] == []
+      and RC.reconcile({"program": {}, "blocks": []}, "Total Units 28", "Test College", "A.A. Degree", steps=SET_STEPS)[1] == [],
+      "a set step never overwrites the reading's figure, and needs the program page's words")
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:
