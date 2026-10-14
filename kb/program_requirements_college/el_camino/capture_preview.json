@@ -5,13 +5,116 @@
  "catalog_year": "2026-2027",
  "programs": 189,
  "with_closed_list": 135,
- "started": "2026-10-14T12:33:17Z",
+ "started": "2026-10-14T12:37:49Z",
  "acalog": {
   "base": "https://catalog.elcamino.edu",
   "start_status": 200,
   "catoid": 13,
   "start_links": 112,
+  "start_menu": [
+   [
+    "Academic Calendar",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=860"
+   ],
+   [
+    "About Us",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=861"
+   ],
+   [
+    "Announcement of Courses",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=878"
+   ],
+   [
+    "General Education Transfer Patterns",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=877"
+   ],
+   [
+    "Programs of Study",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=886"
+   ],
+   [
+    "Program Learning Outcomes",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=895"
+   ],
+   [
+    "Degrees and Certificates",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=885"
+   ],
+   [
+    "Degrees and Certificates by Division",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=879"
+   ],
+   [
+    "Course Descriptions",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=880"
+   ],
+   [
+    "Student Learning Outcomes",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=862"
+   ],
+   [
+    "Admission Requirements",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=863"
+   ],
+   [
+    "Path to Enrollment",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=864"
+   ],
+   [
+    "Registration for Classes",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=865"
+   ],
+   [
+    "Student Fees/Refunds/Credits",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=866"
+   ],
+   [
+    "Student Support Services",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=867"
+   ],
+   [
+    "Student Development/College Life",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=868"
+   ],
+   [
+    "Students’ Rights and Responsibilities",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=869"
+   ],
+   [
+    "Academic Regulations",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=870"
+   ],
+   [
+    "Credit for Prior Learning",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=871"
+   ],
+   [
+    "Alternative Credit Options",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=872"
+   ],
+   [
+    "Honors Program",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=873"
+   ],
+   [
+    "Other College Programs",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=874"
+   ],
+   [
+    "Graduation Requirements",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=875"
+   ],
+   [
+    "Faculty",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=881"
+   ],
+   [
+    "Archived Catalogs",
+    "http://catalog.elcamino.edu/content.php?catoid=13&navoid=893"
+   ]
+  ],
   "sitemap_status": null,
+  "sitemap_access": "unreachable",
   "sitemap_programs": 0,
   "program_navs": [
    "https://catalog.elcamino.edu/content.php?catoid=13&navoid=886",
@@ -22,12 +125,56 @@
    "https://catalog.elcamino.edu/content.php?catoid=13&navoid=874"
   ],
   "navs_read": 6,
+  "navs": [
+   {
+    "url": "https://catalog.elcamino.edu/content.php?catoid=13&navoid=886",
+    "access": "unreachable",
+    "title": "",
+    "links": 0,
+    "sample": []
+   },
+   {
+    "url": "https://catalog.elcamino.edu/content.php?catoid=13&navoid=895",
+    "access": "unreachable",
+    "title": "",
+    "links": 0,
+    "sample": []
+   },
+   {
+    "url": "https://catalog.elcamino.edu/content.php?catoid=13&navoid=885",
+    "access": "unreachable",
+    "title": "",
+    "links": 0,
+    "sample": []
+   },
+   {
+    "url": "https://catalog.elcamino.edu/content.php?catoid=13&navoid=879",
+    "access": "unreachable",
+    "title": "",
+    "links": 0,
+    "sample": []
+   },
+   {
+    "url": "https://catalog.elcamino.edu/content.php?catoid=13&navoid=873",
+    "access": "unreachable",
+    "title": "",
+    "links": 0,
+    "sample": []
+   },
+   {
+    "url": "https://catalog.elcamino.edu/content.php?catoid=13&navoid=874",
+    "access": "unreachable",
+    "title": "",
+    "links": 0,
+    "sample": []
+   }
+  ],
   "program_pages": 0
  },
  "pages_read": 0,
  "banner_h1": null,
  "loads": 8,
- "seconds": 45.2,
+ "seconds": 36.9,
  "found": 0,
  "by_method": {
   "no_closed_list": 54,
@@ -1128,5 +1275,5 @@
   "programs": 0,
   "list": []
  },
- "run": "38564504906"
+ "run": "38565157199"
 }
