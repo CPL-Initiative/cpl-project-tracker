@@ -865,6 +865,20 @@ def year_in_body(text: str) -> tuple[str | None, str | None]:
     return y, None
 
 
+def index_years(links: list[dict], current_start: int, college: str | None = None,
+                foreign=frozenset()) -> list[int]:
+    """The start years of the catalogs a page lists by year, never an addendum or a
+    sibling's catalog: the same links the index below chooses among."""
+    tokens = college_tokens(college)
+    out = []
+    for c in pick_catalog_candidates(links, current_start, limit=12):
+        y = year_of_link(c["text"], c["href"])
+        if (y is not None and not re.search(r"addend|supplement|errata", (c["text"] + " " + c["href"]).lower())
+                and not sibling_link(c["text"], c["href"], tokens, foreign)):
+            out.append(y)
+    return out
+
+
 def read_catalog(reader: Reader, cand: dict, current_start: int,
                  depth: int = 0, college: str | None = None,
                  foreign=frozenset()) -> dict:
@@ -901,7 +915,15 @@ def read_catalog(reader: Reader, cand: dict, current_start: int,
             # wrong turn: Porterville's "2026-2027 CATALOG" page led to an
             # eLumen change log read as 2021-22 (run 37137334059).
             older = year and inner.get("year") and inner["year"] < year
-            if inner.get("access") == "ok" and not older:
+            # A yearless index that lists a newer catalog than the hop reached is a
+            # wrong turn too: Palo Verde's catalog page lists "2026-2027 Catalog" at
+            # catalog.paloverde.edu above "2025-2026 Catalog" on eLumen, and the
+            # vendor's two points took the older one (college page read
+            # 38506078868, S387). The index below picks the newest.
+            listed = index_years(links, current_start, college, foreign)
+            behind = (yearless_custom and len(listed) >= 2 and inner.get("year")
+                      and int(inner["year"][:4]) < max(listed))
+            if inner.get("access") == "ok" and not older and not behind:
                 inner["index_url"] = url
                 inner["addenda"] = merge_addenda(
                     inner.get("addenda"), addendum_links(links, current_start, college, foreign))
