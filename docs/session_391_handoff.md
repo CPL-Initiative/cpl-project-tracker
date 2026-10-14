@@ -38,7 +38,7 @@ checkpoint (about 90,000 tokens left), not at sign-off. `list_sessions` first, a
 1. **Read [Open Asks Sheet 79](https://claude.ai/artifact/V1vZDZuwRqphwkcPAYVnt8)** (current, no replies at 16:10Z). Card 1
    *count*, card 2 *adt*, card 3 *extract* El Camino. Add a card for Sheet 80: `project_lifecycle` is anon-readable with
    `updated_by` (Sam's email is fine public; another reviewer's may not be). S390 built no Sheet 80 for want of context.
-2. **Merge #2121 and #2120** once `test` passes on each head. Merge `main` into either if it moved; regenerate the
+2. **Merge #2121, #2120 and #2122 (this checkpoint)** once `test` passes on each head. Merge `main` into either if it moved; regenerate the
    dependency map rather than picking sides.
 3. **San Joaquin Delta's catalog year:** read it from the Acalog catalog page into the capture report before extraction.
 4. **Palo Verde's 2026-27 catalog** after Sunday's census apply (2026-10-18 10:29 UTC): read all 52 with `extract=1`, then
@@ -59,5 +59,6 @@ checkpoint (about 90,000 tokens left), not at sign-off. `list_sessions` first, a
 
 ## Subscriptions and check-ins
 
-S390 watches #2120 and #2121 and CPLBrain #343. At sign-off it drops them and names each here. No check-in is armed.
+S390 dropped its watches at sign-off (16:25Z): #2120, #2121, #2122 and CPLBrain #343 (the braindump and the S390 session
+note; merge it). No check-in is armed. Subscribe to each PR you drive.
 The CPL Queue routine fires next at 2026-10-15 05:12 UTC.
