@@ -1234,6 +1234,12 @@ AC_CATALOG_MENU_JS = r"""() => Array.from(document.querySelectorAll('select'))
   .flatMap(s => Array.from(s.options).map(o => [o.value, (o.textContent || '').trim(), o.selected]))"""
 
 
+# A catalog named by its terms: San Joaquin Delta's current one is "Summer 2026 -
+# Summer 2027 College Catalog" (run 38615275825), which the census's pair reader
+# does not take. Two years a word or two apart, the second the first plus one.
+AC_TERM_SPAN = re.compile(r"(?<!\d)(20\d\d)\D{1,16}?(20\d\d)(?!\d)")
+
+
 def ac_catalog_year(options: list, catoid: int | None, title: str = "") -> tuple[str | None, str | None]:
     """The year of the catalog being read, and where it came from: the menu's
     option for its catoid, else the option the menu has selected, else the page
@@ -1243,6 +1249,10 @@ def ac_catalog_year(options: list, catoid: int | None, title: str = "") -> tuple
     picks = [o for o in options if want and str(o[0]).strip() == want] or [o for o in options if o[2]]
     for o in picks:
         y = parse_catalog_year(o[1], max_start=2100)
+        if not y:
+            m = AC_TERM_SPAN.search(o[1] or "")
+            if m and int(m.group(2)) == int(m.group(1)) + 1:
+                y = "%s-%s" % (m.group(1), m.group(2))
         if y:
             return y, "catalog menu"
     y = parse_catalog_year(title or "", max_start=2100)
@@ -1332,7 +1342,7 @@ def ac_urls(reader, start: str, cache: dict, report: dict) -> list[str]:
     except Exception as exc:
         report["acalog"]["catalog_menu_error"] = str(exc).splitlines()[0][:200] if str(exc) else type(exc).__name__
     year, year_from = ac_catalog_year(options, catoid, front.get("title") or "")
-    report["acalog"].update(catalog_menu=[o[1][:60] for o in options][:12],
+    report["acalog"].update(catalog_menu=[[o[0], o[1][:60], o[2]] for o in options][:12],
                             catalog_year_read=year, catalog_year_from=year_from)
     report["acalog"]["start_menu"] =[[(ln.get("text") or "")[:60], ln.get("href")] for ln in links
                                       if AC_NAV.search(ln.get("href") or "")][:40]
