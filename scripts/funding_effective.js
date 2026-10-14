@@ -122,7 +122,12 @@ console.log("  at base / cap   " + e.pool.at_floor + " / " + e.pool.at_cap);
 console.log("  noncredit face  " + money(e.pool.nc_college_shares + e.pool.nc_only_held_by_origination) +
   "   (" + money(e.pool.nc_college_shares) + " riding college awards + " +
   money(e.pool.nc_only_held_by_origination) + " held by origination at the noncredit-only three)");
-if (e.pool.unspent > 0.5) console.log("  UNSPENT         " + money(e.pool.unspent) + "  <-- the dials strand this");
+console.log("  NC portion      " + (e.pool.nc_portion_set == null
+  ? "not set — the teaching mix decides (" + (e.pool.nc_portion_natural * 100).toFixed(2) + "%)"
+  : e.pool.nc_portion_set + "% set, " + (e.pool.nc_portion_reached * 100).toFixed(2) + "% reached, noncredit FTES weighted " +
+    e.pool.nc_weight.toFixed(3) + " (teaching mix alone " + (e.pool.nc_portion_natural * 100).toFixed(2) + "%)" +
+    (e.pool.nc_portion_unreachable ? "  <-- UNREACHABLE (" + e.pool.nc_portion_unreachable + ")" : "")));
+if (e.pool.unspent > 0.5) console.log("  UNSPENT       " + money(e.pool.unspent) + "  <-- the dials strand this");
 if (e.pool.floor_infeasible) console.log("  BASE INFEASIBLE — the pool cannot pay this base award to every institution");
 if (e.pool.cap_below_floor) console.log("  CAP BELOW BASE — check the dials");
 
