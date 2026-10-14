@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1150,
-    "bytes": 11862552,
-    "over_budget": 7,
-    "handoff_max": 388,
+    "files": 1151,
+    "bytes": 11870262,
+    "over_budget": 8,
+    "handoff_max": 389,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59989,
     "superseded_files": 0,
@@ -26,18 +26,18 @@
       },
       "other": {
         "files": 119,
-        "bytes": 3485875,
+        "bytes": 3486117,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 9605,
+        "bytes": 9913,
         "over": 0
       },
       "lessons": {
         "files": 82,
-        "bytes": 2394039,
-        "over": 3
+        "bytes": 2397040,
+        "over": 4
       },
       "kb_note": {
         "files": 551,
@@ -46,26 +46,26 @@
       },
       "roadmap_lane": {
         "files": 37,
-        "bytes": 348542,
+        "bytes": 348769,
         "over": 1
       },
       "handoff": {
-        "files": 359,
-        "bytes": 2837812,
+        "files": 360,
+        "bytes": 2841744,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 23,
-      "oversized_doc": 7,
+      "oversized_doc": 8,
       "kb_note_dialect": 1,
-      "vault_heavy_path": 61
+      "vault_heavy_path": 62
     },
     "vault": {
-      "files": 7924,
-      "bytes": 2236744653,
-      "heavy_bytes": 1194171299,
-      "heavy_share": 0.534,
+      "files": 7989,
+      "bytes": 2239207625,
+      "heavy_bytes": 1204561166,
+      "heavy_share": 0.538,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/regional_cpl_out",
@@ -74,6 +74,7 @@
         "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/kb/program_requirements_college",
         "cpl-project-tracker/tmc",
+        "cpl-project-tracker/kb/course_outcomes",
         "cpl-project-tracker/unified_courses_member_desc.js",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
         "cpl-project-tracker/kb/coci_minted_courses.json",
@@ -389,6 +390,19 @@
       "path": "docs/noncredit_cpl_thinking.md"
     },
     {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 120036,
+        "limit": 120000,
+        "lane": "lessons",
+        "over_by": 36,
+        "ratio": 1.0
+      },
+      "message": "120,036 B is 1.0× the lessons budget (120,000 B) — candidate for compaction",
+      "path": "docs/program_requirements_harvest_lessons.md"
+    },
+    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -515,10 +529,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 351785188,
+        "bytes": 352000223,
         "kind": "dir"
       },
-      "message": "directory totals 351,785,188 B inside the vault"
+      "message": "directory totals 352,000,223 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -579,6 +593,16 @@
         "kind": "dir"
       },
       "message": "directory totals 14,868,311 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/course_outcomes",
+      "detail": {
+        "bytes": 10174832,
+        "kind": "dir"
+      },
+      "message": "directory totals 10,174,832 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
