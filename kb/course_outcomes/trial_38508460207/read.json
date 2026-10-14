@@ -1,0 +1,288 @@
+{
+ "run": "38508460207",
+ "index": "catalog:coastline_community",
+ "host": "https://catalog.cccd.edu/coastline/",
+ "system": "courseleaf",
+ "source_kind": "course_outline",
+ "slugs": "coastline_community",
+ "part": 1,
+ "of": 1,
+ "wanted": 555,
+ "slice": 12,
+ "at": "2026-10-14T03:55:18Z",
+ "complete": true,
+ "summary": {
+  "read": 12,
+  "shapes": {
+   "none": 12
+  },
+  "status_not_200": 3,
+  "outcomes": 0
+ },
+ "rows": [
+  {
+   "code": "ACCT C100",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/acct-c100/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 200,
+   "final_url": "https://catalog.cccd.edu/courses/acct-c100/",
+   "access": "public",
+   "title_printed": "ACCT C100: Introduction to Accounting < Coast Community College District",
+   "chars": 7291,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "ARTH C1100",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/arth-c1100/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 404,
+   "final_url": "https://catalog.cccd.edu/courses/arth-c1100/",
+   "access": "unreached",
+   "title_printed": "Page Not Found < Coast Community College District",
+   "chars": 528,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "BUS C100",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/bus-c100/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 200,
+   "final_url": "https://catalog.cccd.edu/courses/bus-c100/",
+   "access": "public",
+   "title_printed": "BUS C100: Introduction to Business < Coast Community College District",
+   "chars": 7207,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "CMST C060N",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/cmst-c060n/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 200,
+   "final_url": "https://catalog.cccd.edu/courses/cmst-c060n/",
+   "access": "public",
+   "title_printed": "CMST C060N: Introduction to eSports < Coast Community College District",
+   "chars": 5812,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "DMC C100",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/dmc-c100/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 200,
+   "final_url": "https://catalog.cccd.edu/courses/dmc-c100/",
+   "access": "public",
+   "title_printed": "DMC C100: Introduction to Mass Communication < Coast Community College District",
+   "chars": 10363,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "ELL C020N",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/ell-c020n/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 200,
+   "final_url": "https://catalog.cccd.edu/courses/ell-c020n/",
+   "access": "public",
+   "title_printed": "ELL C020N: Integrated English Skills 1A < Coast Community College District",
+   "chars": 4904,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "ETHS C100",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/eths-c100/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 200,
+   "final_url": "https://catalog.cccd.edu/courses/eths-c100/",
+   "access": "public",
+   "title_printed": "ETHS C100: Introduction to Ethnic Studies < Coast Community College District",
+   "chars": 15114,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "HIST C1001",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/hist-c1001/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 404,
+   "final_url": "https://catalog.cccd.edu/courses/hist-c1001/",
+   "access": "unreached",
+   "title_printed": "Page Not Found < Coast Community College District",
+   "chars": 635,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "IT C104",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/it-c104/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 200,
+   "final_url": "https://catalog.cccd.edu/courses/it-c104/",
+   "access": "public",
+   "title_printed": "IT C104: IT Fundamentals (Tech+) < Coast Community College District",
+   "chars": 9400,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "LIBR C110",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/libr-c110/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 200,
+   "final_url": "https://catalog.cccd.edu/courses/libr-c110/",
+   "access": "public",
+   "title_printed": "LIBR C110: Library Research and Information Competency < Coast Community College District",
+   "chars": 4155,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "MUS C100",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/mus-c100/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 200,
+   "final_url": "https://catalog.cccd.edu/courses/mus-c100/",
+   "access": "public",
+   "title_printed": "MUS C100: History and Appreciation of Music < Coast Community College District",
+   "chars": 4502,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "POLS C1000",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/pols-c1000/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 404,
+   "final_url": "https://catalog.cccd.edu/courses/pols-c1000/",
+   "access": "unreached",
+   "title_printed": "Page Not Found < Coast Community College District",
+   "chars": 667,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  }
+ ]
+}
