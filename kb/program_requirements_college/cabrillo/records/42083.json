@@ -106,8 +106,7 @@
     24.0
    ],
    "why": [],
-   "within": true,
-   "rescored": "Open Asks Sheet 81"
+   "within": true
   },
   "repeated": {
    "codes": [],
@@ -128,6 +127,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
@@ -138,7 +140,7 @@
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
+   "open_elective_units": 0,
    "ge_pattern": "Cabrillo College General Education",
    "degree_total": {
     "min": 60,
@@ -510,5 +512,14 @@
    "The 4-credit block with CS12P and CIS15 effectively requires one of the two Python courses."
   ]
  },
- "extracted_run": "38565227455"
+ "extracted_run": 38639316727,
+ "reconciled": [
+  {
+   "field": "open_elective_units",
+   "was": null,
+   "now": 0,
+   "words": "General electives: any transferable or degree applicable course.\n0"
+  }
+ ],
+ "read_run": "38565227455"
 }

@@ -63,15 +63,20 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    0.0,
-    0.0
+    24.0,
+    24.0
    ],
    "stated": [
-    18.0,
-    18.0
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
    ],
    "why": [
-    "the blocks sum to 0.0-0.0; the catalog states 18.0-18.0"
+    "the blocks and general education sum to 24.0-24.0; the catalog prints 60.0-60.0 for the degree"
    ]
   },
   "repeated": {
@@ -93,6 +98,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": false
  },
  "record": {
@@ -100,8 +108,8 @@
    "section_heading": "Exercise and Sports Science - Associate in Arts (A.A.)",
    "measure": "units",
    "total_units": {
-    "min": 18,
-    "max": 18
+    "min": null,
+    "max": null
    },
    "open_elective_units": null,
    "ge_pattern": "Cabrillo College General Education",
@@ -115,7 +123,15 @@
     "coaching",
     "lifeguarding",
     "Physical Therapy Aides"
-   ]
+   ],
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   }
   },
   "blocks": [
    {
@@ -308,5 +324,38 @@
    "The catalog text begins mid-sentence ('is exciting discipline'), so part of the program description appears to be cut off. The source URL references 'fall-2025' while the catalog year is 2026-2027."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 38639316727,
+ "reconciled": [
+  {
+   "field": "degree_total",
+   "was": null,
+   "now": {
+    "min": 60,
+    "max": 60
+   },
+   "words": "Program Requirements\nExercise and Sports Science - Associate in Arts (A.A.)\nComplete the following number of credits: 60"
+  },
+  {
+   "field": "ge_units",
+   "was": null,
+   "now": {
+    "min": 24,
+    "max": 24
+   },
+   "words": "Cabrillo College General Education\n24"
+  },
+  {
+   "field": "total_units",
+   "was": {
+    "min": 18,
+    "max": 18
+   },
+   "now": {
+    "min": null,
+    "max": null
+   },
+   "words": "at least 18 units in the major"
+  }
+ ],
+ "read_run": "38442109713"
 }

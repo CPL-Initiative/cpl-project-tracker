@@ -76,9 +76,29 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 34.0-38.0; the catalog states 18.0-18.0"
-   ]
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     58.0,
+     62.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": [],
+    "within": true
+   }
   },
   "repeated": {
    "codes": [],
@@ -98,6 +118,9 @@
    "count": 13,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": false
  },
@@ -131,7 +154,15 @@
     "negocios",
     "turismo",
     "lingüística"
-   ]
+   ],
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   }
   },
   "blocks": [
    {
@@ -352,5 +383,26 @@
    "Program Outcomes are printed for the program as a whole on this A.A. page and recorded for this award."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 38639316727,
+ "reconciled": [
+  {
+   "field": "degree_total",
+   "was": null,
+   "now": {
+    "min": 60,
+    "max": 60
+   },
+   "words": "Program Requirements\nSpanish - Associate in Arts (A.A.)\nComplete the following number of credits: 60"
+  },
+  {
+   "field": "ge_units",
+   "was": null,
+   "now": {
+    "min": 24,
+    "max": 24
+   },
+   "words": "Cabrillo College General Education\n24"
+  }
+ ],
+ "read_run": "38442109713"
 }

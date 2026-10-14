@@ -104,9 +104,30 @@
     58.0,
     58.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 90.0-90.0; the catalog states 58.0-58.0"
-   ]
+   ],
+   "degree": {
+    "pass": false,
+    "status": "unequal",
+    "computed": [
+     114.0,
+     114.0
+    ],
+    "stated": [
+     82.0,
+     82.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": [
+     "the blocks and general education sum to 114.0-114.0; the catalog prints 82.0-82.0 for the degree"
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -127,6 +148,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": false
  },
  "record": {
@@ -143,7 +167,15 @@
     "Promote dental health and disease prevention both at chairside and at the community level.",
     "Apply ethical, professional, and legal concepts to the provision and/or the support of oral health care services to all persons."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total": {
+    "min": 82,
+    "max": 82
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   }
   },
   "blocks": [
    {
@@ -479,5 +511,26 @@
    "The 'Program Outcomes' list is printed for the program and recorded for this A.S. award."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 38639316727,
+ "reconciled": [
+  {
+   "field": "degree_total",
+   "was": null,
+   "now": {
+    "min": 82,
+    "max": 82
+   },
+   "words": "Program Requirements\nDental Hygiene - Associate in Science (A.S.)\nComplete the following number of credits: 82"
+  },
+  {
+   "field": "ge_units",
+   "was": null,
+   "now": {
+    "min": 24,
+    "max": 24
+   },
+   "words": "Cabrillo College General Education\n24"
+  }
+ ],
+ "read_run": "38442109713"
 }

@@ -63,12 +63,17 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    30.0,
-    30.0
+    60.0,
+    60.0
    ],
    "stated": [
-    30.0,
-    30.0
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
    ],
    "why": []
   },
@@ -91,6 +96,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
@@ -98,10 +106,10 @@
    "section_heading": "Mathematics - Associate in Science (A.S.)",
    "measure": "units",
    "total_units": {
-    "min": 30,
-    "max": 30
+    "min": null,
+    "max": null
    },
-   "open_elective_units": null,
+   "open_elective_units": 6,
    "ge_pattern": "Cabrillo College General Education",
    "outcomes": [
     "Utilize number sense and computational skills by applying mathematical terminology, symbols, and operations in occupational, personal, and educational contexts. (Mathematical Fluency)",
@@ -115,7 +123,15 @@
     "educator",
     "programmer",
     "researcher"
-   ]
+   ],
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   }
   },
   "blocks": [
    {
@@ -289,5 +305,44 @@
    "The catalog text begins mid-sentence; the start of the program description is cut off."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 38639316727,
+ "reconciled": [
+  {
+   "field": "degree_total",
+   "was": null,
+   "now": {
+    "min": 60,
+    "max": 60
+   },
+   "words": "Program Requirements\nMathematics - Associate in Science (A.S.)\nComplete the following number of credits: 60"
+  },
+  {
+   "field": "ge_units",
+   "was": null,
+   "now": {
+    "min": 24,
+    "max": 24
+   },
+   "words": "Cabrillo College General Education\n24"
+  },
+  {
+   "field": "total_units",
+   "was": {
+    "min": 30,
+    "max": 30
+   },
+   "now": {
+    "min": null,
+    "max": null
+   },
+   "words": "at least 30 units in the major"
+  },
+  {
+   "field": "open_elective_units",
+   "was": null,
+   "now": 6,
+   "words": "General electives: any transferable or degree applicable course.\n6"
+  }
+ ],
+ "read_run": "38442109713"
 }

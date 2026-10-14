@@ -104,6 +104,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
@@ -600,5 +603,14 @@
    "Program Outcomes are printed for the program as a whole on this A.S. page and are recorded for this award."
   ]
  },
- "extracted_run": "38565227455"
+ "extracted_run": 38639316727,
+ "reconciled": [
+  {
+   "field": "open_elective_units",
+   "was": 0,
+   "now": 0,
+   "words": "General electives: any transferable or degree applicable course.\n0"
+  }
+ ],
+ "read_run": "38565227455"
 }

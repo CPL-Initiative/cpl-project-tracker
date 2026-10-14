@@ -60,17 +60,38 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    28.0,
-    28.0
+    62.0,
+    62.0
    ],
    "stated": [
-    28.0,
-    28.0
+    60.0,
+    60.0
    ],
-   "why": []
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
+   "why": [
+    "the blocks and general education sum to 62.0-62.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     28.0,
+     28.0
+    ],
+    "stated": [
+     28.0,
+     28.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -91,7 +112,10 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": true
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
  },
  "record": {
   "program": {
@@ -121,7 +145,15 @@
     "geophysics",
     "glaciology",
     "economic geology"
-   ]
+   ],
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   }
   },
   "blocks": [
    {
@@ -189,5 +221,26 @@
    "The Program Map (Fall Start) lists Cal-GETC GE courses; these were not recorded as blocks. The catalog text is truncated at the beginning (description) and at the end (in the program map)."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 38639316727,
+ "reconciled": [
+  {
+   "field": "degree_total",
+   "was": null,
+   "now": {
+    "min": 60,
+    "max": 60
+   },
+   "words": "Program Requirements\nGeology Associate in Science for Transfer (A.S.-T)\nComplete the following number of credits: 60"
+  },
+  {
+   "field": "ge_units",
+   "was": null,
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "Cal-GETC General Education\n34"
+  }
+ ],
+ "read_run": "38442109713"
 }

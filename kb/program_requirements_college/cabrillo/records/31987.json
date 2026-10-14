@@ -60,17 +60,38 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    30.0,
-    30.0
+    64.0,
+    64.0
    ],
    "stated": [
-    30.0,
-    30.0
+    60.0,
+    60.0
    ],
-   "why": []
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
+   "why": [
+    "the blocks and general education sum to 64.0-64.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     30.0,
+     30.0
+    ],
+    "stated": [
+     30.0,
+     30.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -91,7 +112,10 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": true
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
  },
  "record": {
   "program": {
@@ -120,7 +144,15 @@
     "experimental or theoretical research",
     "teaching at the university level",
     "basic research in government or industry"
-   ]
+   ],
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   }
   },
   "blocks": [
    {
@@ -188,5 +220,26 @@
    "Careers were taken from the program description, which describes options for physics graduates at the bachelor's level and beyond; reviewer should confirm these phrases count as careers."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 38639316727,
+ "reconciled": [
+  {
+   "field": "degree_total",
+   "was": null,
+   "now": {
+    "min": 60,
+    "max": 60
+   },
+   "words": "Program Requirements\nPhysics Associate in Science for Transfer (A.S.-T)\nComplete the following number of credits: 60"
+  },
+  {
+   "field": "ge_units",
+   "was": null,
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "Cal-GETC General Education\n34"
+  }
+ ],
+ "read_run": "38442109713"
 }

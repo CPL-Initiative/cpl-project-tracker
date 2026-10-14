@@ -60,19 +60,22 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    25.0,
-    25.0
+    60.0,
+    60.0
    ],
    "stated": [
-    18.0,
-    18.0
+    60.0,
+    60.0
    ],
-   "why": [
-    "the blocks sum to 25.0-25.0; the catalog states 18.0-18.0"
-   ]
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
+   ],
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -93,17 +96,20 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Anthropology - Associate in Arts (A.A.)",
    "measure": "units",
    "total_units": {
-    "min": 18,
+    "min": null,
     "max": null
    },
-   "open_elective_units": null,
+   "open_elective_units": 11,
    "ge_pattern": "Cabrillo College General Education",
    "outcomes": [
     "Critically analyze theories of human behavior and cultural change using the anthropological perspective, a holistic approach to observing humans as beings integrated by biology, culture, and language, throughout time and space.",
@@ -128,7 +134,15 @@
     "local/state/national parks",
     "city, state, and/or federal agencies",
     "the private sector"
-   ]
+   ],
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   }
   },
   "blocks": [
    {
@@ -334,5 +348,44 @@
    "Codes are written as printed without a space (e.g., ANTHR1); they match closed-list codes such as ANTHR 1."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 38639316727,
+ "reconciled": [
+  {
+   "field": "degree_total",
+   "was": null,
+   "now": {
+    "min": 60,
+    "max": 60
+   },
+   "words": "Program Requirements\nAnthropology - Associate in Arts (A.A.)\nComplete the following number of credits: 60"
+  },
+  {
+   "field": "ge_units",
+   "was": null,
+   "now": {
+    "min": 24,
+    "max": 24
+   },
+   "words": "Cabrillo College General Education\n24"
+  },
+  {
+   "field": "total_units",
+   "was": {
+    "min": 18,
+    "max": null
+   },
+   "now": {
+    "min": null,
+    "max": null
+   },
+   "words": "at least 18 units in the major"
+  },
+  {
+   "field": "open_elective_units",
+   "was": null,
+   "now": 11,
+   "words": "General electives: any transferable or degree applicable course.\n11"
+  }
+ ],
+ "read_run": "38442109713"
 }

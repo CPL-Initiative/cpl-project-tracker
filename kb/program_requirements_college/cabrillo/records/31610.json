@@ -101,15 +101,26 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    34.0,
+    34.0
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
+   "why": [],
+   "transfer": true,
+   "fill": [
+    26.0,
+    26.0
    ]
   },
   "repeated": {
@@ -131,6 +142,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": false
  },
  "record": {
@@ -144,7 +158,15 @@
    "open_elective_units": null,
    "ge_pattern": null,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   }
   },
   "blocks": [],
   "course_outcomes": [],
@@ -318,5 +340,26 @@
    "The text begins mid-sentence and is cut off at the end (program map, 'PSYCH2B - Researc')."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 38639316727,
+ "reconciled": [
+  {
+   "field": "degree_total",
+   "was": null,
+   "now": {
+    "min": 60,
+    "max": 60
+   },
+   "words": "Program Requirements\nArt History Associate in Arts for Transfer (A.A.-T)\nComplete the following number of credits: 60"
+  },
+  {
+   "field": "ge_units",
+   "was": null,
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "Cal-GETC General Education\n34"
+  }
+ ],
+ "read_run": "38442109713"
 }

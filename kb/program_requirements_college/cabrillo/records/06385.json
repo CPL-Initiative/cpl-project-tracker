@@ -106,6 +106,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": false
  },
  "record": {
@@ -116,7 +119,7 @@
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
+   "open_elective_units": 0,
    "ge_pattern": "Cabrillo College General Education",
    "degree_total": {
     "min": 60,
@@ -443,5 +446,14 @@
    "Program Outcomes are printed once for the program and recorded for this A.S. degree."
   ]
  },
- "extracted_run": "38565227455"
+ "extracted_run": 38639316727,
+ "reconciled": [
+  {
+   "field": "open_elective_units",
+   "was": null,
+   "now": 0,
+   "words": "General electives: any transferable or degree applicable course.\n0"
+  }
+ ],
+ "read_run": "38565227455"
 }

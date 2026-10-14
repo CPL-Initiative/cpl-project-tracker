@@ -78,17 +78,24 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    18.0,
-    18.0
+    42.0,
+    42.0
    ],
    "stated": [
-    18.0,
-    18.0
+    60.0,
+    60.0
    ],
-   "why": []
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
+   ],
+   "why": [
+    "the blocks and general education sum to 42.0-42.0; the catalog prints 60.0-60.0 for the degree"
+   ]
   },
   "repeated": {
    "codes": [],
@@ -109,15 +116,18 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": true
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
  },
  "record": {
   "program": {
    "section_heading": "Theatre Arts/Drama - Associate in Arts (A.A.)",
    "measure": "units",
    "total_units": {
-    "min": 18,
-    "max": 18
+    "min": null,
+    "max": null
    },
    "open_elective_units": null,
    "ge_pattern": "Cabrillo College General Education",
@@ -139,7 +149,15 @@
     "business",
     "sales",
     "law"
-   ]
+   ],
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   }
   },
   "blocks": [
    {
@@ -348,5 +366,38 @@
    "Degree total of 60 units includes 24 units Cabrillo College General Education; total_units records the 18-unit major."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 38639316727,
+ "reconciled": [
+  {
+   "field": "degree_total",
+   "was": null,
+   "now": {
+    "min": 60,
+    "max": 60
+   },
+   "words": "Program Requirements\nTheatre Arts/Drama - Associate in Arts (A.A.)\nComplete the following number of credits: 60"
+  },
+  {
+   "field": "ge_units",
+   "was": null,
+   "now": {
+    "min": 24,
+    "max": 24
+   },
+   "words": "Cabrillo College General Education\n24"
+  },
+  {
+   "field": "total_units",
+   "was": {
+    "min": 18,
+    "max": 18
+   },
+   "now": {
+    "min": null,
+    "max": null
+   },
+   "words": "at least 18 units in the major"
+  }
+ ],
+ "read_run": "38442109713"
 }

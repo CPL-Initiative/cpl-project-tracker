@@ -71,15 +71,20 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    0.0,
-    0.0
+    29.0,
+    29.0
    ],
    "stated": [
-    18.0,
-    18.0
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
    ],
    "why": [
-    "the blocks sum to 0.0-0.0; the catalog states 18.0-18.0"
+    "the blocks and general education sum to 29.0-29.0; the catalog prints 60.0-60.0 for the degree"
    ]
   },
   "repeated": {
@@ -101,6 +106,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": false
  },
  "record": {
@@ -108,10 +116,10 @@
    "section_heading": "Dance - Associate in Arts (A.A.)",
    "measure": "units",
    "total_units": {
-    "min": 18,
+    "min": null,
     "max": null
    },
-   "open_elective_units": null,
+   "open_elective_units": 5,
    "ge_pattern": "Cabrillo College General Education",
    "outcomes": [
     "Perform dances in a variety of cultural contexts including stage, community spaces, and media.",
@@ -123,7 +131,15 @@
     "arts administration",
     "physical therapy for dancers",
     "dance for children, seniors, and special education"
-   ]
+   ],
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   }
   },
   "blocks": [
    {
@@ -504,5 +520,44 @@
    "The source URL references 'fall-2025' while the catalog year is 2026-2027; verify the year."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 38639316727,
+ "reconciled": [
+  {
+   "field": "degree_total",
+   "was": null,
+   "now": {
+    "min": 60,
+    "max": 60
+   },
+   "words": "Program Requirements\nDance - Associate in Arts (A.A.)\nComplete the following number of credits: 60"
+  },
+  {
+   "field": "ge_units",
+   "was": null,
+   "now": {
+    "min": 24,
+    "max": 24
+   },
+   "words": "Cabrillo College General Education\n24"
+  },
+  {
+   "field": "total_units",
+   "was": {
+    "min": 18,
+    "max": null
+   },
+   "now": {
+    "min": null,
+    "max": null
+   },
+   "words": "at least 18 units in the major"
+  },
+  {
+   "field": "open_elective_units",
+   "was": null,
+   "now": 5,
+   "words": "General electives: any transferable or degree applicable course.\n5"
+  }
+ ],
+ "read_run": "38442109713"
 }

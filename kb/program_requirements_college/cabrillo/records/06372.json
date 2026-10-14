@@ -68,19 +68,23 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    18.0,
-    21.0
+    57.0,
+    60.0
    ],
    "stated": [
-    18.0,
-    18.0
+    60.0,
+    60.0
    ],
-   "why": [
-    "the blocks sum to 18.0-21.0; the catalog states 18.0-18.0"
-   ]
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
+   ],
+   "why": [],
+   "within": true
   },
   "repeated": {
    "codes": [],
@@ -101,17 +105,20 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "English - Associate in Arts (A.A.)",
    "measure": "units",
    "total_units": {
-    "min": 18,
-    "max": 18
+    "min": null,
+    "max": null
    },
-   "open_elective_units": null,
+   "open_elective_units": 15,
    "ge_pattern": "Cabrillo College General Education",
    "outcomes": [
     "Write with a persuasive and knowledgeable grasp of one's subject and message, using a demonstrated awareness of diverse audiences and contexts and a variety of rhetorical strategies for different academic, creative, and professional writing tasks.",
@@ -124,7 +131,15 @@
     "communications",
     "government",
     "business environments"
-   ]
+   ],
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   }
   },
   "blocks": [
    {
@@ -444,5 +459,44 @@
    "Catalog text begins mid-sentence ('n for careers in law, ...'); the program description is cut off, so more careers may be named in text not supplied. 'business environments' is from 'a variety of business environments'."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 38639316727,
+ "reconciled": [
+  {
+   "field": "degree_total",
+   "was": null,
+   "now": {
+    "min": 60,
+    "max": 60
+   },
+   "words": "Program Requirements\nEnglish - Associate in Arts (A.A.)\nComplete the following number of credits: 60"
+  },
+  {
+   "field": "ge_units",
+   "was": null,
+   "now": {
+    "min": 24,
+    "max": 24
+   },
+   "words": "Cabrillo College General Education\n24"
+  },
+  {
+   "field": "total_units",
+   "was": {
+    "min": 18,
+    "max": 18
+   },
+   "now": {
+    "min": null,
+    "max": null
+   },
+   "words": "at least 18 units in the major"
+  },
+  {
+   "field": "open_elective_units",
+   "was": null,
+   "now": 15,
+   "words": "General electives: any transferable or degree applicable course.\n15"
+  }
+ ],
+ "read_run": "38442109713"
 }

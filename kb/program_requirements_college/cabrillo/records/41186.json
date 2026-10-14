@@ -63,15 +63,20 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    15.0,
-    15.0
+    57.0,
+    57.0
    ],
    "stated": [
-    18.0,
-    18.0
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
    ],
    "why": [
-    "the blocks sum to 15.0-15.0; the catalog states 18.0-18.0"
+    "the blocks and general education sum to 57.0-57.0; the catalog prints 60.0-60.0 for the degree"
    ]
   },
   "repeated": {
@@ -93,6 +98,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": false
  },
  "record": {
@@ -100,10 +108,10 @@
    "section_heading": "Liberal Arts and Sciences: Emphasis in Kinesiology and Wellness - Associate in Arts (A.A.)",
    "measure": "units",
    "total_units": {
-    "min": 18,
-    "max": 18
+    "min": null,
+    "max": null
    },
-   "open_elective_units": null,
+   "open_elective_units": 18,
    "ge_pattern": "Cabrillo College General Education",
    "outcomes": [
     "Demonstrate awareness of the scope and variety of work in the field of Kinesiology.",
@@ -113,7 +121,15 @@
     "Identify and/or explain the benefits of physical activity as related to physical and mental health.",
     "Effectively communicate in writing (clear, concise and coherent) on topics in Kinesiology."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   }
   },
   "blocks": [
    {
@@ -505,5 +521,44 @@
    "The text begins mid-sentence with a description that seems to concern math and science. The source URL references 'fall-2025' while the catalog year is 2026-2027; the reviewer should verify the year."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 38639316727,
+ "reconciled": [
+  {
+   "field": "degree_total",
+   "was": null,
+   "now": {
+    "min": 60,
+    "max": 60
+   },
+   "words": "Program Requirements\nLiberal Arts and Sciences: Emphasis in Kinesiology and Wellness - Associate in Arts (A.A.)\nComplete the following number of credits: 60"
+  },
+  {
+   "field": "ge_units",
+   "was": null,
+   "now": {
+    "min": 24,
+    "max": 24
+   },
+   "words": "Cabrillo College General Education\n24"
+  },
+  {
+   "field": "total_units",
+   "was": {
+    "min": 18,
+    "max": 18
+   },
+   "now": {
+    "min": null,
+    "max": null
+   },
+   "words": "at least 18 units in the major"
+  },
+  {
+   "field": "open_elective_units",
+   "was": null,
+   "now": 18,
+   "words": "General electives: any transferable or degree applicable course.\n18"
+  }
+ ],
+ "read_run": "38442109713"
 }
