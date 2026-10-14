@@ -1,0 +1,146 @@
+{
+ "college": "El Camino College",
+ "control_number": "30301",
+ "shape": "certificate",
+ "title": "Refrigeration",
+ "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+ "source_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3518&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6426,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6426,
+    "output_tokens": 1262,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1262,
+  "output_tokens_details": {
+   "thinking_tokens": 578
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05094,
+ "ms": 12080,
+ "seconds": 12.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 3,
+   "share": 0.0,
+   "missing": [
+    "ACR21",
+    "ACR23",
+    "ACR6"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Air Conditioning and Refrigeration, AS",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACR 21",
+    "why": "named only in the Air Conditioning and Refrigeration, AS section; no Refrigeration certificate section in the text"
+   },
+   {
+    "code": "ACR 23",
+    "why": "named only in the Air Conditioning and Refrigeration, AS section; no Refrigeration certificate section in the text"
+   },
+   {
+    "code": "ACR6",
+    "why": "named only in the Air Conditioning and Refrigeration, AS section (as ACR 6); no Refrigeration certificate section in the text"
+   }
+  ],
+  "notes": [
+   "The supplied page is the Air Conditioning and Refrigeration, AS degree page, not the Refrigeration Certificate of Achievement. No section for the certificate appears in the text, so no blocks, totals or outcomes are recorded for it.",
+   "The AS page lists a Required Core of 11 ACR courses (Total Major Units: 36), Recommended Electives (ACR 95, BUS 115, CIS 13, CTEC 100), a GE choice of ECC GE 24 units or Cal-GETC 34 units, and a Minimum Degree Total of 60 units. None of these figures belong to the Refrigeration certificate.",
+   "The shared program description mentions 'the degree or certificate requirements' and names careers ('advanced apprentice', 'entry-level heating, ventilation, air conditioning, and controls technician'). These careers were not recorded because the certificate's own section is absent. A reviewer may wish to attach them if the description is judged to cover the certificate.",
+   "Reviewer should locate the Refrigeration certificate page (a different poid) to record its actual requirements."
+  ]
+ },
+ "extracted_run": "38631686677"
+}

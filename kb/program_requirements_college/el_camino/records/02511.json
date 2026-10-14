@@ -1,0 +1,294 @@
+{
+ "college": "El Camino College",
+ "control_number": "02511",
+ "shape": "degree",
+ "title": "Theatre",
+ "award": "A.A. Degree",
+ "source_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3664&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6234,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6234,
+    "output_tokens": 2039,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2039,
+  "output_tokens_details": {
+   "thinking_tokens": 827
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06572,
+ "ms": 16720,
+ "seconds": 17.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 11,
+   "codes": [
+    "THEA103",
+    "THEA104",
+    "THEA114",
+    "THEA188",
+    "THEA189",
+    "THEA214A",
+    "THEA215",
+    "THEA216",
+    "THEA217",
+    "THEA240",
+    "THEA270ABCD"
+   ],
+   "flagged": [
+    "THEA103",
+    "THEA104",
+    "THEA114",
+    "THEA188",
+    "THEA189",
+    "THEA214A",
+    "THEA215",
+    "THEA216",
+    "THEA217",
+    "THEA240",
+    "THEA270ABCD"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.0,
+    27.0
+   ],
+   "stated": [
+    26.0,
+    27.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Theatre, AA",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "ge_pattern": "ECC GE",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": true,
+   "outcomes": [],
+   "careers": [
+    "theatre and entertainment related careers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "THEA 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 184",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 185",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 189",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 214A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "3 units from",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "THEA 197abcd",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 270abcd",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "2-3 units from",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "THEA 188",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 215",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 216",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 217",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "THEA 197abcd printed in lowercase; matched to closed-list THEA 197ABCD.",
+   "Catalog note: a minimum of 1 unit from THEA 197abcd is required within the '3 units from' block.",
+   "The 'Required Core: 21 units' heading covers the seven 3-unit courses; the two choice blocks bring the major to the printed 26-27 total.",
+   "GE: page offers ECC GE (24 units, required for local AA/AS degrees) or Cal-GETC (34 units, for transfer degrees); recorded ECC GE 24 since this is a local A.A.",
+   "Electives 'as needed to reach a minimum of 60 degree-applicable units'; 'Minimum Degree Total: 60 units' recorded as degree_total.",
+   "Career phrase 'a variety of theatre and entertainment related careers' recorded as a single entry; reviewer may split into theatre/entertainment.",
+   "No program learning outcomes printed in the text."
+  ]
+ },
+ "extracted_run": "38631686677"
+}
