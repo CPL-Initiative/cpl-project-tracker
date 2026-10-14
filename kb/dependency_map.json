@@ -330,6 +330,13 @@
   "external:api-prod.elumenapp.com": {
    "consumers": [
     {
+     "id": "script:kb/_course_outcomes_read.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 312
+    },
+    {
      "id": "script:kb/_program_requirements_college.py",
      "kind": "script",
      "direction": "read",
@@ -10484,7 +10491,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 391
+     "line": 465
     }
    ],
    "served": false,
