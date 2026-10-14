@@ -5,11 +5,11 @@
  "title": "Studio Arts",
  "award": "A.A- T Degree",
  "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/studio-arts-associate-in-arts-for-transfer-a-a-t-fall-2026",
- "record_shape": 4,
+ "record_shape": 5,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12984,
+  "input_tokens": 13851,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12984,
-    "output_tokens": 3505,
+    "input_tokens": 13851,
+    "output_tokens": 3278,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 3505,
+  "output_tokens": 3278,
   "output_tokens_details": {
-   "thinking_tokens": 971
+   "thinking_tokens": 900
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.12204,
- "ms": 27581,
- "seconds": 28.1,
+ "cost_usd": 0.12096,
+ "ms": 25619,
+ "seconds": 25.9,
  "parts": null,
  "error": null,
  "score": {
@@ -69,14 +69,22 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    24.0,
-    25.0
+    59.0,
+    60.0
    ],
-   "stated": null,
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
    "why": [
-    "the record names no total"
+    "the blocks and general education sum to 59.0-60.0; the catalog prints 60.0-60.0 for the degree"
    ]
   },
   "repeated": {
@@ -108,8 +116,17 @@
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
+   "open_elective_units": 1,
    "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Imagine and develop solutions to a variety of creative problems.",
     "Create and present art forms that communicate individual and/or cultural ideas.",
@@ -434,20 +451,18 @@
   "missing_explained": [
    {
     "code": "AH 20B",
-    "why": "not in the text; the Core lists ARTHC1200 (Survey of Art from the Renaissance to Contemporary) in its place"
+    "why": "not in the text; the core lists ARTHC1200 (Survey of Art from the Renaissance to Contemporary) instead"
    }
   ],
   "notes": [
-   "The catalog states no total for the major; 'Complete the following number of credits: 60' is the degree total, so total_units is null. The block totals printed are Core 12, List A 3 and List B 9-10.",
-   "List B prints 'Complete the following number of credits: 9-10'; recorded as choose_units minimum 9 with stated 9-10. The Program Map schedules one List B course in each of three terms.",
-   "ART37A and ART37B are printed at 3 units in the catalog; the closed list stores 1 unit each.",
-   "ARTHC1200 and ART2B are not in the closed list and are recorded as catalog additions. The catalog writes codes without spaces (e.g., ART2A); they match the closed-list codes.",
-   "A 'General Electives' section (Complete the following number of credits: 1; 'any transferable course.' printed with 3 and 2) belongs to the 60-unit degree rather than the major; it was not recorded as a block or as open_elective_units. Its stated 1 credit looks inconsistent with the 3 and 2 printed beside the entries.",
-   "Program Outcomes are printed for the program as a whole on this A.A.-T page and are recorded as this award's outcomes.",
-   "Careers are named in the program description as careers a bachelor's degree in fine art may lead to; the phrase 'other jobs in the private and public sector that require creative skills' was not recorded as a career.",
-   "Cal-GETC General Education is listed at 34 units; GE courses from the Program Map were not placed in blocks.",
-   "The catalog text begins mid-sentence and is cut off at the end, within the Program Map's Year 2, Spring Cal-GETC Area 3B list; this does not affect the major requirements."
+   "The page prints no total for the major alone; 'Complete the following number of credits: 60' is recorded as degree_total and 'Cal-GETC General Education 34' as ge_units.",
+   "General Electives block reads 'Complete the following number of credits: 1' followed by two rows 'any transferable course.' printed with 3 and 2; open_elective_units recorded as the stated 1, but the printed row values (3, 2) conflict and a reviewer should check.",
+   "ART37A and ART37B are printed with 3 units in the catalog, while the state file stores 1 unit each; catalog value recorded.",
+   "AH11H and AH13H recorded as honors alternatives of AH11 and AH13 within List A.",
+   "ARTHC1200 and ART2B are not in the closed list and are marked catalog_addition.",
+   "Catalog text is truncated at the beginning (program description) and at the end (program map, Cal-GETC Area 3B list); the program map and Cal-GETC courses were not recorded as blocks.",
+   "Program outcomes are printed for the program as a whole on this A.A.-T page."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": "38565227455"
 }
