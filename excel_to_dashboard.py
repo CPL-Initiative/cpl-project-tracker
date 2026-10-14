@@ -3315,14 +3315,11 @@ def render_tabled_archived_section(inactive_projects, lifecycle):
         meta = lifecycle.get(p["id"], {})
         state = meta.get("state", "tabled")
         reason = (meta.get("reason") or "").strip()
-        by = (meta.get("updated_by") or "").strip()
         when = (meta.get("updated_at") or "")[:10]
-        meta_bits = []
-        if when:
-            meta_bits.append("Since " + when)
-        if by:
-            meta_bits.append(html_escape(by))
-        meta_line = " · ".join(meta_bits)
+        # The date only. updated_by is the reviewer's sign-in email, and this page is
+        # public: 2026-10-14's run baked a staff address here and tests/pii_guard.test.js
+        # failed every PR. Who tabled it stays in project_lifecycle and its ledger.
+        meta_line = ("Since " + when) if when else ""
         reason_html = (
             f'<div class="tabled-reason" style="font-size:0.78rem;color:var(--text-body);'
             f'margin:0.3rem 0;line-height:1.4;">{html_escape(reason)}</div>'
