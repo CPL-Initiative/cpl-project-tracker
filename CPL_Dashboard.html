@@ -9600,7 +9600,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
             #tab-canonical-subj4 .cs-disc { font-weight:600; color:var(--navy-primary); max-width:24ch; }
             #tab-canonical-subj4 .cs-mono { font-family:ui-monospace,Menlo,monospace; }
             #tab-canonical-subj4 .cs-variants { color:#475569; font-size:.78rem; max-width:42ch; }
-            #tab-canonical-subj4 .cs-variants .cs-var-modal { font-weight:400; color:#000; }
+            #tab-canonical-subj4 .cs-variants .cs-var-modal { font-weight:400; color:var(--text-body); }
             #tab-canonical-subj4 .cs-variants .cs-var-other { color:var(--text-muted); }
             #tab-canonical-subj4 input.cs-canon { font-family:ui-monospace,Menlo,monospace; text-transform:uppercase; width:7ch; padding:3px 6px; border:1px solid #cbd5e1; border-radius:5px; font-size:.78rem; letter-spacing:0.25px; }
             #tab-canonical-subj4 input.cs-canon.cs-invalid { border-color:#dc2626; background:#fef2f2; }
@@ -9623,7 +9623,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
             #tab-canonical-subj4 .cs-stamp.draft { color:#92400e; background:#FEF3C7; border-color:#F59E0B; font-weight:600; }
             #tab-canonical-subj4 .cs-guidelines-btn { background:var(--seal-blue); color:#fff; border:none; padding:7px 14px; border-radius:6px; font-size:.85rem; cursor:pointer; font-weight:600; }
             #tab-canonical-subj4 .cs-guidelines-btn:hover { background:#0d2c52; }
-            #tab-canonical-subj4 .cs-auth-tag { display:block; font-size:.7rem; color:#9ca3af; margin-top:2px; }
+            #tab-canonical-subj4 .cs-auth-tag { display:block; font-size:.7rem; color:var(--text-muted); margin-top:2px; }
             /* Sign-in feedback panel — inline replacement for the corner toast */
             #tab-canonical-subj4 .cs-auth-panel { display:inline-block; padding:8px 12px; border-radius:6px; max-width:420px; font-size:.78rem; line-height:1.5; vertical-align:top; text-align:left; }
             #tab-canonical-subj4 .cs-auth-panel strong { display:block; font-size:.88rem; margin-bottom:3px; }
@@ -9671,22 +9671,22 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
             /* Wider search box */
             #tab-canonical-subj4 input.cs-search-wide { min-width:280px; }
             /* TOP category headers (when grouping is on) */
-            #tab-canonical-subj4 tr.cs-cat-header td { background:#F1F5F9; color:var(--navy-primary); padding:8px 12px; font-size:.85rem; border-top:2px solid #94A3B8; }
+            #tab-canonical-subj4 tr.cs-cat-header td { background:var(--surface-muted); color:var(--navy-primary); padding:8px 12px; font-size:.85rem; border-top:2px solid var(--border-strong); }
             #tab-canonical-subj4 tr.cs-cat-header:hover td { background:#E2E8F0; }
-            #tab-canonical-subj4 tr.cs-cat-header.collapsed td { background:#F8FAFC; border-bottom:1px solid #cbd5e1; }
+            #tab-canonical-subj4 tr.cs-cat-header.collapsed td { background:var(--surface-subtle); border-bottom:1px solid var(--border); }
             /* Validate button */
             #tab-canonical-subj4 button.cs-validate-btn { background:var(--seal-blue); color:#fff; border:none; padding:4px 12px; border-radius:5px; font-size:.78rem; cursor:pointer; font-weight:600; }
             #tab-canonical-subj4 button.cs-validate-btn:hover:not(:disabled) { background:#0d2c52; }
             #tab-canonical-subj4 button.cs-validate-btn:disabled { background:#9ca3af; cursor:not-allowed; }
-            #tab-canonical-subj4 .cs-muted-dash { color:#cbd5e1; font-size:.85rem; }
+            #tab-canonical-subj4 .cs-muted-dash { color:var(--text-muted); font-size:.85rem; }
             /* Group-by toggle inline flag */
             #tab-canonical-subj4 .cs-flag-toggle { display:inline-flex; align-items:center; gap:4px; font-size:.85rem; color:var(--text-body); padding:0 6px; }
             /* Collapse-all twisty (shown above the table when grouping is on) */
             #tab-canonical-subj4 .cs-collapse-all { background:var(--surface-opaque); border:1px solid #cbd5e1; color:var(--navy-primary); padding:5px 10px; border-radius:5px; font-size:.78rem; cursor:pointer; margin:0 0 8px; font-weight:600; }
             #tab-canonical-subj4 .cs-collapse-all:hover { background:#eef6ff; border-color:var(--navy-primary); }
             /* Top callout — clarifies scope (CPL crosswalk only) + source of discipline list */
-            #tab-canonical-subj4 .cs-scope-note { background:#F0F9FF; border:1px solid #BAE6FD; border-radius:8px; padding:10px 14px; margin:0 0 14px; font-size:.85rem; color:#0c4a6e; }
-            #tab-canonical-subj4 .cs-scope-note strong { color:#075985; }
+            #tab-canonical-subj4 .cs-scope-note { background:var(--surface-subtle); border:1px solid var(--border); border-radius:8px; padding:10px 14px; margin:0 0 14px; font-size:.85rem; color:var(--text-body); }
+            #tab-canonical-subj4 .cs-scope-note strong { color:var(--navy-primary); }
         </style>
         <h2>Common Subjects Reference <span class="cs-stamp draft">Development Draft</span> <span class="cs-stamp">curator-edited</span><br><span class="cs-sub">— one shared 4-letter abbreviation per discipline</span></h2>
         <p class="cs-intro"><strong>This is a development draft — nothing here is final.</strong> Different colleges abbreviate the same discipline different ways. Sign Language American shows up across 10 different codes (ASL, AMSL, DEAF, SIGN, …); Physical Education across 71. This page picks <strong>one 4-letter code per discipline</strong> so the dashboard uses a single, consistent label everywhere. Click the <strong>Common SUBJ</strong> cell on a row to set or change a code, add notes if you'd like, then a faculty validator confirms when you're done.</p>
