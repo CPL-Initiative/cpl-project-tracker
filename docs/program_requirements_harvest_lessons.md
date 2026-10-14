@@ -897,3 +897,27 @@ a degree total, a core and electives (lessons S382).
 ✅ **eLumen (#2072, merged S381):** `el_pages_fast()`: one publish call for the menu, one `publish/content` call a program. Bakersfield loaded 229 (S381; lessons S381). ✅ **Coastline (#2074) and Cabrillo (#2078), merged S383:** 140 and 268 loaded, procedures v1; how each reader was fixed, and Cabrillo's 88 arithmetic failures: lessons S382-S383. ✅ **eLumen hubs (#2085, merged S384):** a menu naming neither programs nor departments links hubs (Modesto `programs`/`bytype`/`adt`; Palo Verde's award categories); `el_hub_slugs()` reads them. Capture-only reads (S384): Modesto 189 of 199 found (163 full coverage; misses Animal Science, Small Animal Vet Tech, three GE patterns), run 38461105673; Palo Verde 54 of 69 (32 full; misses five noncredit programs at 0 coverage, Vocational Nursing, Cal-GETC, Umoja, Cross-Cultural), run 38461110935. ✅ **Sam's go, both (Sheet 77 card 5, 22:26Z):** extraction reads dispatched on `claude/s384-modesto-palo-verde`.
 
 The one-shot record read stopped at PostgREST's 1,000-row cap (Content-Range 0-999/*) and, as anon (statement_timeout 3 s), answered 500; all 2,840 records are 34 MB (`records-view-1000-row-cap-and-anon-timeout-2026-10-13`). #2088 pages every read (CPL Pathways' index too); #2089 reads once when signed in and retries a 5xx page.
+
+## S386 SkyElm (2026-10-14): Palo Verde's noncredit programs, and courses printed under another subject
+
+- **The reader was right; the catalog names the courses differently.** One college page read (run 38491285062, three
+  loads) of the noncredit hub and the two pages the titles named. High School Equivalency 43203 prints NBE031-NBE034,
+  144 hours each, total 576 (its header says 288.0 Units); the Program Course File lists GED031-GED034, the same
+  numbers and titles, and neither set is in COCI's course list. Developing Capable Youth 45472's page is a 2021-22
+  credit Certificate of Career Preparation (CHD120, 2 units; CHD227, 1 unit); the file lists the noncredit mirrors NBE
+  120 and NBE 227 (0 units, in COCI). Child Care 45471 and Arts - Early Childhood Education 45473 have no page: the
+  noncredit hub lists two ESL certificates and High School Equivalency. Each difference is the college's.
+- **The run's page text cannot reach a session.** The extraction run's artifact holds every page, but its download
+  host (`*.blob.core.windows.net`) is refused by the container's proxy; a college page read on a runner is the way to
+  see a page.
+- **Same number, another subject: measured, not built.** On loaded records, 257 pairs pair a listed course missing
+  from the text with a printed course off the list of the same number. COCI's course list titles both for 128 of them:
+  32 agree (Riverside City HIS→HIST, and three more colleges), 5 are near, 91 differ (Long Beach's GE lists: ANAT 1
+  against ASL 1). For the other 129 one code has no COCI title (Norco's HIST 1), so a title test needs the catalog's
+  printed title, which a record does not carry. Each such course reaches the college as two items today; only Palo
+  Verde's 43203 lost its record over it.
+- **21 of Palo Verde's 25 arithmetic failures name no total;** the other 4 sum to another figure (three Fire Science
+  certificates, Child Development-Teacher). No page has been read for the 21 yet.
+- **Modesto and Palo Verde had no procedure record for their catalog reads.** S386 wrote Modesto v1 and Palo Verde
+  v3 (v2's maps kept byte for byte by composing on the stored record in SQL); receipts
+  `kb/receipts/program_source_procedure_modesto_junior_v1_2026-10-14_s386.sql` and `..._palo_verde_v3_...`.
