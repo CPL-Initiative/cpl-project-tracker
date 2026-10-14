@@ -1,0 +1,755 @@
+{
+ "run": "38504437775",
+ "read_by": "S388 SkyBuckeye (session_01Pxh3mBstgWoo73P4pvotYx)",
+ "source": "College page read run 38504437775 (S387, #2102): each addendum page text in the job log",
+ "shape": "kb/supabase_program_source_addenda_read.sql",
+ "rows": [
+  {
+   "id": 77,
+   "college": "Cabrillo College",
+   "published_on": null,
+   "effective_term": null,
+   "programs_changed": [],
+   "note": "Prints \"No updates at this time\" for pages, courses and programs."
+  },
+  {
+   "id": 39,
+   "college": "Cerritos College",
+   "published_on": null,
+   "effective_term": "Fall 2026",
+   "programs_changed": [
+    {
+     "scope": "program",
+     "control_number": null,
+     "title": "Augmentative and Alternative Communication",
+     "award": "CERT",
+     "course": null,
+     "change_kind": "new",
+     "change": "New program",
+     "effective": "Fall 2026",
+     "dated": null
+    },
+    {
+     "scope": "program",
+     "control_number": null,
+     "title": "Autism and Neurodiversity Studies",
+     "award": "CERT",
+     "course": null,
+     "change_kind": "new",
+     "change": "New program",
+     "effective": "Fall 2026",
+     "dated": null
+    },
+    {
+     "scope": "program",
+     "control_number": null,
+     "title": "Behavior Management",
+     "award": "CERT",
+     "course": null,
+     "change_kind": "new",
+     "change": "New program",
+     "effective": "Fall 2026",
+     "dated": null
+    },
+    {
+     "scope": "program",
+     "control_number": null,
+     "title": "Early Intervention in Speech-Language Pathology Assisting",
+     "award": "CERT",
+     "course": null,
+     "change_kind": "new",
+     "change": "New program",
+     "effective": "Fall 2026",
+     "dated": null
+    },
+    {
+     "scope": "program",
+     "control_number": null,
+     "title": "Health Science",
+     "award": "A.S.",
+     "course": null,
+     "change_kind": "new",
+     "change": "New program",
+     "effective": "Fall 2026",
+     "dated": null
+    },
+    {
+     "scope": "program",
+     "control_number": null,
+     "title": "Health Science",
+     "award": "CERT",
+     "course": null,
+     "change_kind": "new",
+     "change": "New program",
+     "effective": "Fall 2026",
+     "dated": null
+    },
+    {
+     "scope": "program",
+     "control_number": null,
+     "title": "Intercollegiate Athletics",
+     "award": "CERT",
+     "course": null,
+     "change_kind": "new",
+     "change": "New program",
+     "effective": "Fall 2026",
+     "dated": null
+    },
+    {
+     "scope": "program",
+     "control_number": null,
+     "title": "Physics 2.0",
+     "award": "AS-T",
+     "course": null,
+     "change_kind": "new",
+     "change": "New program",
+     "effective": "Fall 2026",
+     "dated": null
+    },
+    {
+     "scope": "program",
+     "control_number": null,
+     "title": "Sport Coach",
+     "award": "CERT",
+     "course": null,
+     "change_kind": "new",
+     "change": "New program",
+     "effective": "Fall 2026",
+     "dated": null
+    },
+    {
+     "scope": "program",
+     "control_number": null,
+     "title": "Sport Management",
+     "award": "CERT",
+     "course": null,
+     "change_kind": "new",
+     "change": "New program",
+     "effective": "Fall 2026",
+     "dated": null
+    },
+    {
+     "scope": "program",
+     "control_number": null,
+     "title": "Advanced AI Integration and Design",
+     "award": "CERT",
+     "course": null,
+     "change_kind": "new",
+     "change": "New program",
+     "effective": "Spring 2027",
+     "dated": null
+    },
+    {
+     "scope": "program",
+     "control_number": null,
+     "title": "Educational Technology and Applied Artificial Intelligence",
+     "award": "CERT",
+     "course": null,
+     "change_kind": "new",
+     "change": "New program",
+     "effective": "Spring 2027",
+     "dated": null
+    },
+    {
+     "scope": "program",
+     "control_number": "11804",
+     "title": "Educational Technology",
+     "award": "CERT",
+     "course": null,
+     "change_kind": "revised",
+     "change": "EDT 110 retitled Foundations of Educational Technology (was Introduction to Educational Technology) and raised from 2.0 units (1 lecture, 2 lab) to 3.0 units (3 lecture); EDT 118, EDT 140 and EDT 160 retitled",
+     "effective": "Spring 2027",
+     "dated": null
+    },
+    {
+     "scope": "program",
+     "control_number": "44983",
+     "title": "Education Studies: Special Education",
+     "award": "A.A.",
+     "course": null,
+     "change_kind": "revised",
+     "change": "EDT 110 retitled Foundations of Educational Technology (was Introduction to Educational Technology) and raised from 2.0 units (1 lecture, 2 lab) to 3.0 units (3 lecture)",
+     "effective": "Spring 2027",
+     "dated": null
+    },
+    {
+     "scope": "program",
+     "control_number": "44984",
+     "title": "Education Studies: Special Education",
+     "award": "Certificate of Achievement",
+     "course": null,
+     "change_kind": "revised",
+     "change": "EDT 110 retitled Foundations of Educational Technology (was Introduction to Educational Technology) and raised from 2.0 units (1 lecture, 2 lab) to 3.0 units (3 lecture)",
+     "effective": "Spring 2027",
+     "dated": null
+    },
+    {
+     "scope": "course",
+     "control_number": null,
+     "title": "Foundations of Educational Technology",
+     "award": null,
+     "course": "EDT 110",
+     "change_kind": "revised",
+     "change": "EDT 110 retitled Foundations of Educational Technology (was Introduction to Educational Technology) and raised from 2.0 units (1 lecture, 2 lab) to 3.0 units (3 lecture)",
+     "effective": "Spring 2027",
+     "dated": null
+    },
+    {
+     "scope": "course",
+     "control_number": null,
+     "title": "Emerging Topics in AI, Media, and Digital Learning",
+     "award": null,
+     "course": "EDT 118",
+     "change_kind": "retitled",
+     "change": "Was Emerging Trends in Educational Technology",
+     "effective": "Spring 2027",
+     "dated": null
+    },
+    {
+     "scope": "course",
+     "control_number": null,
+     "title": "Accessibility and Inclusive Design in Education",
+     "award": null,
+     "course": "EDT 140",
+     "change_kind": "retitled",
+     "change": "Was Exploring Assistive Technology in Education",
+     "effective": "Spring 2027",
+     "dated": null
+    },
+    {
+     "scope": "course",
+     "control_number": null,
+     "title": "Applied AI in Learning Environments",
+     "award": null,
+     "course": "EDT 160",
+     "change_kind": "retitled",
+     "change": "Was Using Artificial Intelligence in the Educational Environment",
+     "effective": "Spring 2027",
+     "dated": null
+    }
+   ]
+  },
+  {
+   "id": 68,
+   "college": "Modesto Junior College",
+   "published_on": "2026-08-27",
+   "effective_term": null,
+   "programs_changed": [
+    {
+     "scope": "program",
+     "control_number": "08109",
+     "title": "Agriculture: Sales, Service",
+     "award": "A.S.",
+     "course": null,
+     "change_kind": "corrected",
+     "change": "AGEC 215 removed from the electives (it is already required)",
+     "effective": null,
+     "dated": "2026-05-06"
+    },
+    {
+     "scope": "program",
+     "control_number": "06637",
+     "title": "Agriculture Science - Communications",
+     "award": "A.S.",
+     "course": null,
+     "change_kind": "corrected",
+     "change": "Agriculture major area corrected to two courses (had read one course for 6 units)",
+     "effective": null,
+     "dated": "2026-04-20"
+    },
+    {
+     "scope": "program",
+     "control_number": null,
+     "title": "Elementary Teacher Education: Integrated Programs",
+     "award": "A.A.-T",
+     "course": null,
+     "change_kind": "retitled",
+     "change": "Required title change effective Fall 2026",
+     "effective": "Fall 2026",
+     "dated": "2026-04-17"
+    },
+    {
+     "scope": "program",
+     "control_number": "06681",
+     "title": "Medical Assisting",
+     "award": "A.S.",
+     "course": null,
+     "change_kind": "revised",
+     "change": "Catalog description and award instructions updated",
+     "effective": null,
+     "dated": "2026-04-24"
+    },
+    {
+     "scope": "program",
+     "control_number": "20325",
+     "title": "Medical Assisting",
+     "award": "Certificate of Achievement",
+     "course": null,
+     "change_kind": "revised",
+     "change": "Catalog description updated",
+     "effective": null,
+     "dated": "2026-04-24"
+    },
+    {
+     "scope": "program",
+     "control_number": "06678",
+     "title": "Nursing: ADN Program (RN)",
+     "award": "A.S.",
+     "course": null,
+     "change_kind": "corrected",
+     "change": "Work experience elective statement wording (\"facility\")",
+     "effective": null,
+     "dated": "2026-04-20"
+    },
+    {
+     "scope": "program",
+     "control_number": "06673",
+     "title": "Photography",
+     "award": "A.A.",
+     "course": null,
+     "change_kind": "corrected",
+     "change": "ART 165 shown as ARTH C1200 in the degree",
+     "effective": null,
+     "dated": "2026-04-20"
+    },
+    {
+     "scope": "program",
+     "control_number": "45982",
+     "title": "Veterinary Technician",
+     "award": "A.S.",
+     "course": null,
+     "change_kind": "retitled",
+     "change": "Retitled Veterinary Technician (was Registered Veterinary Technician)",
+     "effective": null,
+     "dated": "2026-07-13"
+    },
+    {
+     "scope": "program",
+     "control_number": "44877",
+     "title": "Cal-GETC",
+     "award": "Certificate of Achievement",
+     "course": null,
+     "change_kind": "revised",
+     "change": "Pattern updated for new Cal-GETC approvals (ART 152, CMPGR 221, ENGL 176, ETHS 120, HE 111, MATH 101)",
+     "effective": null,
+     "dated": "2026-05-26"
+    }
+   ]
+  },
+  {
+   "id": 26,
+   "college": "Moreno Valley College",
+   "published_on": "2026-09-24",
+   "effective_term": null,
+   "programs_changed": [
+    {
+     "scope": "program",
+     "control_number": "46200",
+     "title": "Nutrition and Dietetics",
+     "award": "AS-T",
+     "course": null,
+     "change_kind": "new",
+     "change": "New program (MAS908)",
+     "effective": "2026-27",
+     "dated": "2026-03-23"
+    },
+    {
+     "scope": "program",
+     "control_number": "46215",
+     "title": "Emergency Management",
+     "award": "B.S.",
+     "course": null,
+     "change_kind": "new",
+     "change": "New program (MBS3001/MBS3001C)",
+     "effective": "2026-27",
+     "dated": "2026-03-23"
+    },
+    {
+     "scope": "program",
+     "control_number": "46236",
+     "title": "Mathematics 2.0",
+     "award": "AS-T",
+     "course": null,
+     "change_kind": "new",
+     "change": "Available for 2026-27 (MAS1107)",
+     "effective": "2026-27",
+     "dated": "2026-03-26"
+    },
+    {
+     "scope": "program",
+     "control_number": "46532",
+     "title": "Elementary Teacher Education: Integrated Programs",
+     "award": "AA-T",
+     "course": null,
+     "change_kind": "revised",
+     "change": "Programmatic changes implemented and approved (MAA1106)",
+     "effective": null,
+     "dated": "2026-06-04"
+    },
+    {
+     "scope": "program",
+     "control_number": null,
+     "title": "Physics 2.0",
+     "award": "AS-T",
+     "course": null,
+     "change_kind": "new",
+     "change": "Available for 2026-27 (MAS1108)",
+     "effective": "2026-27",
+     "dated": "2026-07-06"
+    },
+    {
+     "scope": "course",
+     "control_number": null,
+     "title": "General Work Experience",
+     "award": null,
+     "course": "WKX-200",
+     "change_kind": "revised",
+     "change": "Title, grading, unit range (1-14), hours and a limitation on enrollment changed",
+     "effective": "Summer 2026",
+     "dated": "2026-05-20"
+    },
+    {
+     "scope": "course",
+     "control_number": null,
+     "title": "POST Requalification Course",
+     "award": null,
+     "course": "ADJ-RQ01",
+     "change_kind": "new",
+     "change": "New course",
+     "effective": "2026-27",
+     "dated": "2026-06-22"
+    },
+    {
+     "scope": "course",
+     "control_number": null,
+     "title": "Fire Investigator 1A: Basic Fire Investigation",
+     "award": null,
+     "course": "FIT-INV1A",
+     "change_kind": "new",
+     "change": "New course",
+     "effective": "2026-27",
+     "dated": "2026-06-22"
+    },
+    {
+     "scope": "course",
+     "control_number": null,
+     "title": "Fire Investigator 1B: Evidence, Documentation, Interviews, and Wildland",
+     "award": null,
+     "course": "FIT-INV1B",
+     "change_kind": "new",
+     "change": "New course",
+     "effective": "2026-27",
+     "dated": "2026-06-22"
+    },
+    {
+     "scope": "course",
+     "control_number": null,
+     "title": "Fire Investigator 1C: Preparation for Legal Proceedings",
+     "award": null,
+     "course": "FIT-INV1C",
+     "change_kind": "new",
+     "change": "New course",
+     "effective": "2026-27",
+     "dated": "2026-06-22"
+    },
+    {
+     "scope": "course",
+     "control_number": null,
+     "title": "FI-210: Wildland Fire Origin and Cause Determination",
+     "award": null,
+     "course": "FIT-INV1D",
+     "change_kind": "new",
+     "change": "New course",
+     "effective": "2026-27",
+     "dated": "2026-06-22"
+    }
+   ]
+  },
+  {
+   "id": 27,
+   "college": "Norco College",
+   "published_on": null,
+   "effective_term": null,
+   "programs_changed": [
+    {
+     "scope": "program",
+     "control_number": "33952",
+     "title": "Chemistry",
+     "award": "AS-T",
+     "course": null,
+     "change_kind": "revised",
+     "change": "MATH-C2210H added; courses renamed under Common Course Numbering",
+     "effective": null,
+     "dated": "2026-05"
+    },
+    {
+     "scope": "program",
+     "control_number": "40131",
+     "title": "Successful Career Transitions",
+     "award": "Noncredit program",
+     "course": null,
+     "change_kind": "corrected",
+     "change": "PDS-809 removed from the requirements (listed in error); total hours 33 to 21",
+     "effective": null,
+     "dated": "2026-07"
+    },
+    {
+     "scope": "program",
+     "control_number": null,
+     "title": "Biology 2.0",
+     "award": "AS-T",
+     "course": null,
+     "change_kind": "new",
+     "change": "New program (NAS1124)",
+     "effective": "2026-27",
+     "dated": "2026-08"
+    },
+    {
+     "scope": "program",
+     "control_number": null,
+     "title": "Elementary Teacher Education: Integrated Programs",
+     "award": "AA-T",
+     "course": null,
+     "change_kind": "new",
+     "change": "New program (NAA1106)",
+     "effective": "2026-27",
+     "dated": "2026-08"
+    },
+    {
+     "scope": "program",
+     "control_number": null,
+     "title": "Game Art: Character Modeling",
+     "award": "A.A.",
+     "course": null,
+     "change_kind": "discontinued",
+     "change": "Approved for discontinuance; no longer accepting applications",
+     "effective": null,
+     "dated": "2025-05-27"
+    },
+    {
+     "scope": "program",
+     "control_number": null,
+     "title": "Game Art: Environments and Vehicles",
+     "award": "A.A.",
+     "course": null,
+     "change_kind": "discontinued",
+     "change": "Approved for discontinuance; no longer accepting applications",
+     "effective": null,
+     "dated": "2025-05-27"
+    },
+    {
+     "scope": "program",
+     "control_number": "31317",
+     "title": "Game Art: Environments and Vehicles",
+     "award": "Certificate of Achievement",
+     "course": null,
+     "change_kind": "discontinued",
+     "change": "Approved for discontinuance; no longer accepting applications",
+     "effective": null,
+     "dated": "2025-05-27"
+    },
+    {
+     "scope": "course",
+     "control_number": null,
+     "title": "General Work Experience",
+     "award": null,
+     "course": "WKX-200",
+     "change_kind": "new",
+     "change": "New course",
+     "effective": "Summer 2026",
+     "dated": null
+    },
+    {
+     "scope": "course",
+     "control_number": null,
+     "title": "Applied Accounting/Bookkeeping",
+     "award": null,
+     "course": "CAT-55",
+     "change_kind": "new",
+     "change": "New course",
+     "effective": "Fall 2026",
+     "dated": null
+    },
+    {
+     "scope": "course",
+     "control_number": null,
+     "title": "Mass Timber Framing",
+     "award": null,
+     "course": "CRP-405",
+     "change_kind": "new",
+     "change": "New course",
+     "effective": "Fall 2026",
+     "dated": null
+    },
+    {
+     "scope": "course",
+     "control_number": null,
+     "title": "Building Envelope Principles",
+     "award": null,
+     "course": "CRP-496",
+     "change_kind": "new",
+     "change": "New course",
+     "effective": "Fall 2026",
+     "dated": null
+    },
+    {
+     "scope": "course",
+     "control_number": null,
+     "title": "Exterior Metal Frame",
+     "award": null,
+     "course": "CRP-497",
+     "change_kind": "new",
+     "change": "New course",
+     "effective": "Fall 2026",
+     "dated": null
+    },
+    {
+     "scope": "course",
+     "control_number": null,
+     "title": "Ballet, Intermediate",
+     "award": null,
+     "course": "DAN-D22",
+     "change_kind": "new",
+     "change": "New course",
+     "effective": "Fall 2026",
+     "dated": null
+    }
+   ]
+  },
+  {
+   "id": 69,
+   "college": "Palo Verde College",
+   "published_on": null,
+   "effective_term": "Spring 2027",
+   "programs_changed": [
+    {
+     "scope": "course",
+     "control_number": null,
+     "title": "Astronomy: The Solar System",
+     "award": null,
+     "course": "AST 105",
+     "change_kind": "revised",
+     "change": "4 units with a lab (3 hours lecture, 3 hours lab); prerequisite STAT C1000, MAT 108 or MAT 110, and ENGL C1000",
+     "effective": "Spring 2027",
+     "dated": null
+    },
+    {
+     "scope": "course",
+     "control_number": null,
+     "title": "Astronomy: Beyond the Solar System",
+     "award": null,
+     "course": "AST 110",
+     "change_kind": "revised",
+     "change": "4 units with a lab (3 hours lecture, 3 hours lab); prerequisite STAT C1000, MAT 108 or MAT 110, and ENGL C1000",
+     "effective": "Spring 2027",
+     "dated": null
+    },
+    {
+     "scope": "course",
+     "control_number": null,
+     "title": "Liberal Arts Mathematics",
+     "award": null,
+     "course": "MAT 108",
+     "change_kind": "revised",
+     "change": "4 units (4 hours lecture); advisory MAT 110 and STAT C1000",
+     "effective": "Spring 2027",
+     "dated": null
+    },
+    {
+     "scope": "course",
+     "control_number": null,
+     "title": "Fundamentals in Nursing",
+     "award": null,
+     "course": "NUR 251",
+     "change_kind": "revised",
+     "change": "5 units (5 hours lecture); corequisite NUR 252; ADN program only",
+     "effective": "Spring 2027",
+     "dated": null
+    }
+   ]
+  },
+  {
+   "id": 70,
+   "college": "Palo Verde College",
+   "published_on": null,
+   "effective_term": "Spring 2026",
+   "programs_changed": [
+    {
+     "scope": "program",
+     "control_number": "45376",
+     "title": "Alcohol and Drug Studies",
+     "award": "A.A.",
+     "course": null,
+     "change_kind": "revised",
+     "change": "Program printed in full: 39 core units (18 foundation, 15 skill building, 6 field study) plus the Cal-GETC pattern",
+     "effective": "Spring 2026",
+     "dated": null
+    },
+    {
+     "scope": "program",
+     "control_number": "45359",
+     "title": "California General Education Transfer Curriculum (Cal-GETC)",
+     "award": "Certificate of Achievement",
+     "course": null,
+     "change_kind": "revised",
+     "change": "Pattern printed in full, 34-38 units (adds AST 105 and AST 110 to areas 5A and 5C)",
+     "effective": "Spring 2026",
+     "dated": null
+    },
+    {
+     "scope": "program",
+     "control_number": "45471",
+     "title": "Child Care",
+     "award": "Noncredit program",
+     "course": null,
+     "change_kind": "new",
+     "change": "Certificate of Completion: NBE100, NBE145, NBE111",
+     "effective": "Spring 2026",
+     "dated": null
+    },
+    {
+     "scope": "program",
+     "control_number": "45473",
+     "title": "Arts - Early Childhood Education",
+     "award": "Noncredit program",
+     "course": null,
+     "change_kind": "new",
+     "change": "Certificate of Completion: NBE130, NBE131, NBE135",
+     "effective": "Spring 2026",
+     "dated": null
+    },
+    {
+     "scope": "program",
+     "control_number": "45472",
+     "title": "Developing Capable Youth",
+     "award": "Noncredit program",
+     "course": null,
+     "change_kind": "new",
+     "change": "Certificate of Completion",
+     "effective": "Spring 2026",
+     "dated": null
+    }
+   ]
+  },
+  {
+   "id": 55,
+   "college": "San Diego Miramar College",
+   "published_on": null,
+   "effective_term": null,
+   "programs_changed": [
+    {
+     "scope": "program",
+     "control_number": "31605",
+     "title": "Administration of Justice",
+     "award": "AS-T",
+     "course": null,
+     "change_kind": "corrected",
+     "change": "Catalog description corrected; ADJU 194 removed from the program requirements",
+     "effective": null,
+     "dated": "2025-06-27"
+    }
+   ],
+   "note": "The link is the whole 549-page 2025-26 catalog; its errata table is on pages 2-8."
+  }
+ ]
+}
