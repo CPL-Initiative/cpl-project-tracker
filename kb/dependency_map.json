@@ -4706,7 +4706,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 197,
+     "line": 199,
      "tabs": [
       "coci-lookup"
      ]
@@ -4793,7 +4793,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 531,
+     "line": 533,
      "tabs": [
       "coci-lookup"
      ]

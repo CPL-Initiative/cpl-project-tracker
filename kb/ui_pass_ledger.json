@@ -230,8 +230,8 @@
    "name": "COCI Lookup",
    "page": "index.html#coci-lookup",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-14",
+   "outcome": "S389: dark mode failed on the CSV control (1.29:1, a dark fill), the identity chips (1.2:1, a half-white fill) and six inputs with no focus ring; every control is now an underlined cobalt word (Download CSV, Show more, no glyph), chips paint no fill, filters show a cobalt ring. Clean in light and dark."
   },
   {
    "id": "cobi:cip-crosswalk",
