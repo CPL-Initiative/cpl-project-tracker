@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-361 document(s).
+362 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 391 | [Session 391 handoff: Sheet 79, Fresno City and the Records filters to merge, Delta's catalog year](../session_391_handoff.md) | 2026-10-14 |
 | 390 | [Session 390 handoff: Sheet 79's replies, Fresno City's load, the Acalog reader](../session_390_handoff.md) | 2026-10-14 |
 | 389 | [Palo Verde's Acalog catalog after Sunday's census; the addenda reader widens](../session_389_handoff.md) | 2026-10-14 |
 | 388 | [course outcomes from catalog pages; Palo Verde's catalog year](../session_388_handoff.md) | 2026-10-14 |

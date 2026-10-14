@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-14T13:29:04Z",
-  "session": 389,
-  "moniker": "SkyPersimmon",
+  "written_at": "2026-10-14T16:20:33Z",
+  "session": 390,
+  "moniker": "SkySaguaro",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_390_handoff.md",
+  "handoff": "docs/session_391_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -22658,11 +22658,1488 @@
       "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
       "control_number": "46356",
       "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Library Technology",
+      "award": "A.S. Degree",
+      "control_number": "01658",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Biology",
+      "award": "A.S. Degree",
+      "control_number": "01659",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Accounting",
+      "award": "A.S. Degree",
+      "control_number": "01660",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Business Administration: Management",
+      "award": "A.S. Degree",
+      "control_number": "01662",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Marketing",
+      "award": "A.S. Degree",
+      "control_number": "01664",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Legal Secretary",
+      "award": "A.S. Degree",
+      "control_number": "01669",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Medical Office Specialist",
+      "award": "A.S. Degree",
+      "control_number": "01670",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Industrial Technology, Manufacturing Emphasis",
+      "award": "A.S. Degree",
+      "control_number": "01677",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Electrical Systems Technology",
+      "award": "A.S. Degree",
+      "control_number": "01680",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "HVAC Technology II",
+      "award": "A.S. Degree",
+      "control_number": "01684",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Automotive Technology",
+      "award": "A.S. Degree",
+      "control_number": "01687",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Automotive Collision Repair Technology",
+      "award": "A.S. Degree",
+      "control_number": "01688",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Computer Aided Drafting and Design",
+      "award": "A.S. Degree",
+      "control_number": "01696",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Computer Aided Manufacturing",
+      "award": "A.S. Degree",
+      "control_number": "01698",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Welding Technology, Metal Fabrication Option",
+      "award": "A.S. Degree",
+      "control_number": "01699",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Art",
+      "award": "A.A. Degree",
+      "control_number": "01704",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Instrumental Music",
+      "award": "A.A. Degree",
+      "control_number": "01705",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Theatre Arts",
+      "award": "A.A. Degree",
+      "control_number": "01707",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Professional Photography",
+      "award": "A.S. Degree",
+      "control_number": "01709",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Graphic Design",
+      "award": "A.A. Degree",
+      "control_number": "01710",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Nursing, Registered",
+      "award": "A.S. Degree",
+      "control_number": "01714",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Clinical Medical Assistant",
+      "award": "A.S. Degree",
+      "control_number": "01716",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Dental Hygiene",
+      "award": "A.S. Degree",
+      "control_number": "01717",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Respiratory Care Practitioner",
+      "award": "A.S. Degree",
+      "control_number": "01718",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Health Information Technology",
+      "award": "A.S. Degree",
+      "control_number": "01719",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Radiologic Technology",
+      "award": "A.S. Degree",
+      "control_number": "01720",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Child Development",
+      "award": "A.S. Degree",
+      "control_number": "01723",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Food and Nutrition",
+      "award": "A.S. Degree",
+      "control_number": "01724",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Dietary Service Supervisor",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "01725",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Paralegal Studies",
+      "award": "A.S. Degree",
+      "control_number": "01726",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Human Services: Pre-Social Work Option",
+      "award": "A.S. Degree",
+      "control_number": "01737",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Recreation Leadership",
+      "award": "A.A. Degree",
+      "control_number": "01740",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Fire Technology",
+      "award": "A.S. Degree",
+      "control_number": "01741",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Basic Fire Academy",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "01742",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "African-American Studies",
+      "award": "A.A. Degree",
+      "control_number": "01745",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Women's and Gender Studies",
+      "award": "A.A. Degree",
+      "control_number": "01754",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Construction",
+      "award": "A.S. Degree",
+      "control_number": "01755",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Computerized Accounting for the Workplace",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "10980",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Office Specialist",
+      "award": "A.S. Degree",
+      "control_number": "10985",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "General Motors ASEP Program",
+      "award": "A.S. Degree",
+      "control_number": "10992",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Welding Technology, Pipe and Structural Steel Certification",
+      "award": "A.S. Degree",
+      "control_number": "10999",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Music, Vocal Majors",
+      "award": "A.A. Degree",
+      "control_number": "11002",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Music, Piano Major",
+      "award": "A.A. Degree",
+      "control_number": "11003",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Music, Guitar Majors",
+      "award": "A.A. Degree",
+      "control_number": "11004",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Commercial Music",
+      "award": "A.S. Degree",
+      "control_number": "11005",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Design/Technical Theatre Studies",
+      "award": "A.S. Degree",
+      "control_number": "11006",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Dance",
+      "award": "A.A. Degree",
+      "control_number": "11008",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Food Services Management",
+      "award": "A.S. Degree",
+      "control_number": "11017",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Child Nutrition",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "11018",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Alcoholism and Drug Abuse Counseling Option",
+      "award": "A.S. Degree",
+      "control_number": "11019",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Law Enforcement Option",
+      "award": "A.S. Degree",
+      "control_number": "11020",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Correctional Science Option",
+      "award": "A.S. Degree",
+      "control_number": "11021",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Chicano-Latino Studies",
+      "award": "A.A. Degree",
+      "control_number": "11026",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "American Indian Studies",
+      "award": "A.A. Degree",
+      "control_number": "11027",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Architecture",
+      "award": "A.S. Degree",
+      "control_number": "11031",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Networking/Computer Technician",
+      "award": "A.S. Degree",
+      "control_number": "11893",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Marketing, Retail Management",
+      "award": "A.S. Degree",
+      "control_number": "12215",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Medical Office Assistant",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "12217",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Microsoft Certified Specialist",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "12413",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Web Developer",
+      "award": "A.S. Degree",
+      "control_number": "12575",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Computer Information Systems",
+      "award": "A.S. Degree",
+      "control_number": "12780",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Family Child Care",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "13640",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Commercial Photography",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "15740",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Digital Photography",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "15741",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Fine Art Photography",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "15742",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Documentary Media",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "15743",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Early Intervention",
+      "award": "A.S. Degree",
+      "control_number": "16507",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Electrical Systems Technology: Building Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "16511",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Electrical Systems Technology: Low Voltage",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "17157",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Electrical Systems Technology: Industrial Automation 1",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "17158",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "HVAC Technology I",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "17162",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Liberal Arts: Foreign Languages",
+      "award": "A.A. Degree",
+      "control_number": "19083",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Liberal Arts Emphasis in Cultural Studies",
+      "award": "A.A. Degree",
+      "control_number": "19191",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Liberal Arts Emphasis in Social Sciences",
+      "award": "A.A. Degree",
+      "control_number": "19195",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Welding Technology, Welding Multi-Process",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19322",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Welding Technology, Welding Design & Fabrication",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19323",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Basic Police Academy",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19798",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Paramedic",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19801",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Early Childhood Education",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19813",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Early Intervention Assistant",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19814",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Business Administration: Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21199",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Marketing, Retail Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21200",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Office Specialist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21205",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Legal Secretary",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21209",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Medical Office Specialist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21210",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Web Developer",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21217",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Education Paraprofessional",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "21218",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Electrical Systems Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "21219",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Automotive Collision Repair Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "21223",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Construction Trades II",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "21224",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Welding Technology, Pipe & Structural Steel Certification",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "21228",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Art, Studio Art",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21231",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Professional Photography",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "21235",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Graphic Design",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "21236",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Marketing, Fashion Merchandising",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21240",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Human Services: Pre-Social Work Option",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "21245",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Alcoholism and Drug Abuse Counseling Option",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "21246",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Child Welfare",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "30212",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "30742",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "30751",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "31177",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Medical Coding",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "31230",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "31863",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "American Sign Language",
+      "award": "A.A. Degree",
+      "control_number": "31872",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Geology",
+      "award": "A.S. T Degree",
+      "control_number": "32048",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Philosophy",
+      "award": "A.A- T Degree",
+      "control_number": "32171",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "32217",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Journalism",
+      "award": "A.A- T Degree",
+      "control_number": "32383",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "32541",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "32870",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Spanish",
+      "award": "A.A- T Degree",
+      "control_number": "32871",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Music",
+      "award": "A.A- T Degree",
+      "control_number": "33306",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Chemistry",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33355",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "35161",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Nutrition and Dietetics",
+      "award": "A.S. T Degree",
+      "control_number": "35170",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Infant and Toddler Specialist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35306",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "35316",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Early Childhood Paraprofessional",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "35380",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Special Education Paraprofessional",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "35383",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "35393",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Field Biologist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35472",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Kinesiology: Physical Education",
+      "award": "A.S. Degree",
+      "control_number": "36458",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Biomedical Equipment Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37005",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Asian American Studies",
+      "award": "A.A. Degree",
+      "control_number": "37009",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Photovoltaics",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37049",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Pre-Allied Health",
+      "award": "A.S. Degree",
+      "control_number": "37104",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Alternative Fueled Vehicle (AFV)",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37327",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Zero Emission Vehicle (ZEV)",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37329",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Engineering: Civil",
+      "award": "A.S. Degree",
+      "control_number": "37355",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Engineering: Computer",
+      "award": "A.S. Degree",
+      "control_number": "37357",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Engineering: Electrical",
+      "award": "A.S. Degree",
+      "control_number": "37359",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Engineering: Mechanical, Aerospace, and Manufacturing",
+      "award": "A.S. Degree",
+      "control_number": "37406",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Engineering: Electrical",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "37439",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Engineering: Computer",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "37577",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Engineering: Civil",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "37578",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Engineering: Mechanical, Aerospace, and Manufacturing",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "37579",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Elder Care Human Services",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37908",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Cybersecurity",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37926",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Diesel Technology",
+      "award": "A.S. Degree",
+      "control_number": "38357",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "One-Person Office",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "38505",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Computer Aided Drafting and Design Entrepreneurship",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38579",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Social Work and Human Services",
+      "award": "A.A- T Degree",
+      "control_number": "38599",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Art History",
+      "award": "A.A- T Degree",
+      "control_number": "38600",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Social Justice Studies, General",
+      "award": "A.A- T Degree",
+      "control_number": "38601",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Social Justice Studies, Chicano Studies",
+      "award": "A.A- T Degree",
+      "control_number": "38602",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Law, Public Policy, and Society",
+      "award": "A.A- T Degree",
+      "control_number": "38866",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Electricity Fundamentals 1",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39111",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Industrial Automation 2",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39227",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Electricity Fundamentals 2",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39299",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Honors Program",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40219",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Video Production",
+      "award": "A.S. Degree",
+      "control_number": "40410",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Video Production",
+      "award": "Noncredit program",
+      "control_number": "40413",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Animation",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40414",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Graphic Design",
+      "award": "Noncredit program",
+      "control_number": "40498",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Animation",
+      "award": "Noncredit program",
+      "control_number": "40499",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Employment Essentials",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "40568",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Welding and Fabrication Entrepreneurship",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "40574",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Automated Welding Systems",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40683",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Entrepreneurship Skills",
+      "award": "Noncredit program",
+      "control_number": "41105",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "41205",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Data Analytics and Predictive Modeling",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41299",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Social Media Content Design",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41300",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Company Officer",
+      "award": "A.S. Degree",
+      "control_number": "41301",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Industrial Technology - Construction Emphasis",
+      "award": "A.S. Degree",
+      "control_number": "41433",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Human Biology",
+      "award": "A.S. Degree",
+      "control_number": "41707",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Personal Training",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "41905",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Automotive - Diesel MLR (Maintenance and Light Repair Technician)",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42392",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Automotive - Diesel Fixed Operations Administrator",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42393",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "ASL/English Interpreting",
+      "award": "A.A. Degree",
+      "control_number": "42772",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Community Change Studies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42773",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Stagecraft",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42790",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Dental Assisting",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42977",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Race, Equity, and Language in Early Education",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42978",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Certified Dietary Manager",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43113",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Chassis Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43168",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Culinary Arts",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43180",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Data Analytics and Predictive Modeling",
+      "award": "A.S. Degree",
+      "control_number": "43188",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Introduction to Digital Literacy",
+      "award": "Noncredit program",
+      "control_number": "43406",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "43435",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Essential Skills for College & Career Success",
+      "award": "Noncredit program",
+      "control_number": "43436",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Music Teaching Program",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "43657",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Entrepreneurship",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43978",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Computer Science",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44281",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Computer Science",
+      "award": "A.S. Degree",
+      "control_number": "44283",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Kinesiology: Sports Management",
+      "award": "A.A. Degree",
+      "control_number": "44289",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Music Performance",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44297",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Paramedic",
+      "award": "A.S. Degree",
+      "control_number": "44313",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Information Literacy",
+      "award": "Noncredit program",
+      "control_number": "44514",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Environmental Science",
+      "award": "A.S. T Degree",
+      "control_number": "44558",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Agricultural Foundations",
+      "award": "Noncredit program",
+      "control_number": "44559",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Drone Operations",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44602",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Community Health Advocacy",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44609",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Social Media Imaging",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44610",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Digital Video",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44619",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Agricultural Foundations",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44620",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "MC3 Pre-Apprenticeship Employment Ready",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44625",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "MC3 Pre-Apprenticeship Plus",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44626",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Engineering: Geomatics",
+      "award": "A.S. Degree",
+      "control_number": "44661",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Electrical Systems Technology, Electrical Safety",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44932",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Adobe Applications",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45299",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Engineering: Chemical",
+      "award": "A.S. Degree",
+      "control_number": "45343",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Intermediate Academic and Vocational EMLS",
+      "award": "Noncredit program",
+      "control_number": "45462",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Advanced Academic and Vocational EMLS",
+      "award": "Noncredit program",
+      "control_number": "45484",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Fine Art Photography",
+      "award": "Noncredit program",
+      "control_number": "45598",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Photography, Commercial Photography",
+      "award": "Noncredit program",
+      "control_number": "45603",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Professional Photography",
+      "award": "Noncredit program",
+      "control_number": "45604",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Film, Television, and Electronic Media",
+      "award": "A.A- T Degree",
+      "control_number": "45638",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Public Health",
+      "award": "A.S. T Degree",
+      "control_number": "45738",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Pre-Human Nutritional Science",
+      "award": "A.S. Degree",
+      "control_number": "45950",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Commercial Dance",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45953",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Fresno City College",
+      "program": "Automotive Collision Repair Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45956",
+      "loaded": "2026-10-14"
     }
   ],
   "next_step": {
-    "title": "Read Sheet 79, then load Fresno City",
-    "text": "Sheet 79 asks whether a degree total inside the range the requirements allow adds up, whether a transfer degree's 60 is filled by transferable electives, and whether to extract El Camino. Fresno City's extraction loads and displays under Sam's Sheet 78 go."
+    "title": "Read Sheet 79, then merge Fresno City and the Records filters",
+    "text": "Sheet 79 asks whether a degree total inside the range the requirements allow adds up, whether a transfer degree's 60 is filled by transferable electives, and whether to extract El Camino. Fresno City (211 records, displayed) and the Records view's District, College, SWP Region and CIP Sector filters wait on a green test to merge."
   },
   "calls": [
     {
@@ -22699,24 +24176,24 @@
   },
   "changes": [
     {
-      "at": "2026-10-14T12:20:37Z",
-      "text": "Records keep the degree total and general education units a page prints, and the check adds against the degree total"
+      "at": "2026-10-14T14:52:00Z",
+      "text": "Southwestern's reading procedure written, version 1"
     },
     {
-      "at": "2026-10-14T13:09:00Z",
-      "text": "Palo Verde's 19 records re-read and replaced: 11 add up to the degree total"
+      "at": "2026-10-14T14:56:08Z",
+      "text": "Fresno City's 211 records loaded, unchecked"
     },
     {
-      "at": "2026-10-14T13:16:00Z",
-      "text": "Cabrillo's 55 records re-read and replaced: 13 add up to the degree total"
+      "at": "2026-10-14T15:41:00Z",
+      "text": "Each course's learning outcomes open from Program records and COCI Lookup"
     },
     {
-      "at": "2026-10-14T13:16:30Z",
-      "text": "Southwestern loaded: 190 records, unchecked"
+      "at": "2026-10-14T15:55:00Z",
+      "text": "Display build 04872c826890 applied to all 3,478 records, Fresno City's among them"
     },
     {
-      "at": "2026-10-14T12:46:23Z",
-      "text": "COCI Lookup passes AA in light and dark"
+      "at": "2026-10-14T16:00:00Z",
+      "text": "Fresno City's reading procedure written, version 1"
     }
   ],
   "headline": [
@@ -22787,11 +24264,11 @@
         ]
       },
       "roep": [
-        3207,
+        3592,
         20282
       ],
       "coci": [
-        2976,
+        3187,
         20282
       ],
       "outcomes": {
@@ -22800,12 +24277,12 @@
           89192
         ],
         "plo": [
-          2976,
+          3187,
           20282
         ]
       },
       "careers": [
-        1926,
+        2137,
         20282
       ]
     }

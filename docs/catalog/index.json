@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 549,
+   "count": 550,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3186,6 +3186,24 @@
      "title": "A receipt too large for the connector applies from the runner",
      "type": "methodology",
      "updated": "2026-10-10"
+    },
+    {
+     "created": "2026-10-14",
+     "governs": [
+      "tests/pii_guard.test.js",
+      "tests/nav_groups_overlay.test.js",
+      "excel_to_dashboard.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-red-merge-ref-can-be-mains.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ci",
+      "pull-requests"
+     ],
+     "title": "A red merge ref can be main's, and every open PR inherits it",
+     "type": "methodology",
+     "updated": "2026-10-14"
     },
     {
      "created": "2026-09-02",
@@ -15530,8 +15548,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 361,
+   "count": 362,
    "docs": [
+    {
+     "created": "2026-10-14",
+     "governs": [],
+     "n": 391,
+     "path": "docs/session_391_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "course-outcomes",
+      "records-filters",
+      "fresno-city",
+      "decision-sheet"
+     ],
+     "title": "Session 391 handoff: Sheet 79, Fresno City and the Records filters to merge, Delta's catalog year",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-14",
      "governs": [],
@@ -21735,5 +21771,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1139
+ "total": 1141
 }

@@ -285,12 +285,7 @@ Also open: **printing while in dark mode** — consumer-JS dark rules still appl
 to a print, so it comes out dark-on-dark in places. That wants `@media screen`
 scoping on every dark rule and is its own pass.
 
-Also open: **the CIP Codes tab's First Light conversion** (UI pass S390, #2118). Its first screen is AA clean in
-both themes at 390 and 1440, and its rail controls are underlined words. It still paints from a private
-`--cipx-*` palette (75 raw colors across its light and dark blocks) in place of First Light tokens, with about 56
-boxed or filled controls past the rail (Fit check, the pills, Review's actions), and it keeps a Theme word beside the
-header's control (it writes through `cpl_theme.js`). That is one pass of its own: map each `--cipx-*` role to a
-First Light token, then convert the controls and re-measure Review and Fit check with seeded targets.
+Also open: **the CIP Codes tab's palette and boxed controls** (UI pass S390, #2118; the ledger names them).
 
 ## ✅ RULED AND LANDED (Sam, open-asks sheet items 11-13, 2026-09-22)
 
