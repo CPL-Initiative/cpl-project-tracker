@@ -4,6 +4,8 @@ date: 2026-10-14
 session: 386 (SkyElm)
 tags: [handoff, program-requirements, my-college, ui-pass, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_388_handoff.md
 ---
 
 # You are Session 387

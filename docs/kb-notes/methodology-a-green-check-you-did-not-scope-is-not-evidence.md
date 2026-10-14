@@ -69,6 +69,21 @@ thinning the page. Proved both ways: pointed back at the old table, the seed
 times out. Any stand-in keyed on a URL deserves the same wait for the element it
 exists to paint.
 
+## A fifth green: the fixture that left out what decided the case (2026-10-14)
+
+The census picked Palo Verde's 2025-26 eLumen catalog over its 2026-27 one. The first fix
+came with a test that reproduced the wrong pick on the old code and passed on the new.
+A dry run of the census against every college's live page then showed Palo Verde
+unchanged. The live catalog page links eLumen in its own HTML, so the census reads the
+page itself as eLumen, and the fix only applied to a plain page; the test's fake page
+carried no HTML at all. The fixture had left out the one property that decided which
+branch ran. The second fix was tested on both page forms, and the dry run moved Palo
+Verde and no other college.
+
+When a check can be run against the live input before merge (a dry run, a read-only
+pass), run it: a test proves the code does what the fixture says, and only the live
+read proves the fixture says what the page does.
+
 ## The check
 
 Before a passing signal counts as verification, answer all three:
