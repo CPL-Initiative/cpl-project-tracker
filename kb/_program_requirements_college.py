@@ -1629,7 +1629,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         got = X.call(src, key)
         rec = got.get("record")
         try:
-            sc = X.score(rec, src["closed_list"], src["text"]) if isinstance(rec, dict) else None
+            sc = X.score(rec, src["closed_list"], src["text"], src.get("award")) if isinstance(rec, dict) else None
         except Exception as exc:   # one record the scorer cannot read never stops the others
             sc, got = None, dict(got, error="score: " + str(exc).splitlines()[0][:200])
         row = {"college": src["college"], "control_number": src["control_number"], "shape": src["shape"],

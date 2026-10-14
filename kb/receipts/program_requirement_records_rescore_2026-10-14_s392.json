@@ -1,0 +1,580 @@
+{
+ "rule": "Open Asks Sheet 81 cards 1 (count) and 2 (adt), Sam, 2026-10-14",
+ "at": "2026-10-14T20:30:42Z",
+ "rescored": 35,
+ "records": [
+  {
+   "college": "Cabrillo College",
+   "control_number": "06329",
+   "award": "A.S. Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    59.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/06329.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "06330",
+   "award": "A.S. Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    59.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/06330.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "06345",
+   "award": "A.S. Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    59.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/06345.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "06373",
+   "award": "A.A. Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    58.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/06373.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "06374",
+   "award": "A.A. Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    54.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/06374.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "06389",
+   "award": "A.S. Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    44.5,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/06389.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "06396",
+   "award": "A.A. Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    57.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/06396.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "10007",
+   "award": "A.A. Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    56.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/10007.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "12365",
+   "award": "A.S. Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    60.0,
+    62.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/12365.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "30754",
+   "award": "A.S. T Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    59.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/30754.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "30756",
+   "award": "A.A- T Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    57.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/30756.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "31661",
+   "award": "A.A- T Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    57.0,
+    61.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/31661.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "31689",
+   "award": "A.A- T Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    57.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/31689.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "32027",
+   "award": "A.S. T Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    60.0,
+    61.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/32027.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "32067",
+   "award": "A.A- T Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    57.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/32067.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "32069",
+   "award": "A.A- T Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    58.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/32069.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "32201",
+   "award": "A.A- T Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    57.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/32201.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "32352",
+   "award": "A.A- T Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    58.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/32352.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "32498",
+   "award": "A.A- T Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    57.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/32498.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "32566",
+   "award": "A.A- T Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    56.0,
+    61.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/32566.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "33277",
+   "award": "A.A- T Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    59.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/33277.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "35570",
+   "award": "A.A- T Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    53.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/35570.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "35651",
+   "award": "A.S. T Degree",
+   "extracted_run": "38565227455",
+   "how": "transfer",
+   "computed": [
+    55.0,
+    58.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/35651.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "42083",
+   "award": "A.S. Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    58.0,
+    68.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/42083.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "42662",
+   "award": "A.S. Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    60.0,
+    62.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/42662.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "43111",
+   "award": "A.A- T Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    58.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/43111.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "44217",
+   "award": "A.S. T Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    60.0,
+    63.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/44217.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "44898",
+   "award": "A.S. T Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    59.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/44898.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "45185",
+   "award": "A.S. T Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    57.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/45185.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "46244",
+   "award": "A.S. T Degree",
+   "extracted_run": "38565227455",
+   "how": "within",
+   "computed": [
+    59.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/46244.json"
+  },
+  {
+   "college": "Palo Verde College",
+   "control_number": "30710",
+   "award": "A.A- T Degree",
+   "extracted_run": "38567765687",
+   "how": "transfer",
+   "computed": [
+    53.0,
+    57.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/palo_verde/records/30710.json"
+  },
+  {
+   "college": "Palo Verde College",
+   "control_number": "39852",
+   "award": "A.A- T Degree",
+   "extracted_run": "38567765687",
+   "how": "transfer",
+   "computed": [
+    52.0,
+    56.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/palo_verde/records/39852.json"
+  },
+  {
+   "college": "Palo Verde College",
+   "control_number": "39853",
+   "award": "A.A- T Degree",
+   "extracted_run": "38567765687",
+   "how": "transfer",
+   "computed": [
+    52.0,
+    56.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/palo_verde/records/39853.json"
+  },
+  {
+   "college": "Palo Verde College",
+   "control_number": "40016",
+   "award": "A.A- T Degree",
+   "extracted_run": "38567765687",
+   "how": "within",
+   "computed": [
+    58.0,
+    62.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/palo_verde/records/40016.json"
+  },
+  {
+   "college": "Palo Verde College",
+   "control_number": "40020",
+   "award": "A.A- T Degree",
+   "extracted_run": "38567765687",
+   "how": "within",
+   "computed": [
+    55.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/palo_verde/records/40020.json"
+  }
+ ],
+ "apply": "update public.program_requirement_records r\n   set checks = jsonb_set(r.checks, '{arithmetic}', '\"equal\"')\n  from (values\n  ('Cabrillo College', '06329', 38565227455),\n  ('Cabrillo College', '06330', 38565227455),\n  ('Cabrillo College', '06345', 38565227455),\n  ('Cabrillo College', '06373', 38565227455),\n  ('Cabrillo College', '06374', 38565227455),\n  ('Cabrillo College', '06389', 38565227455),\n  ('Cabrillo College', '06396', 38565227455),\n  ('Cabrillo College', '10007', 38565227455),\n  ('Cabrillo College', '12365', 38565227455),\n  ('Cabrillo College', '30754', 38565227455),\n  ('Cabrillo College', '30756', 38565227455),\n  ('Cabrillo College', '31661', 38565227455),\n  ('Cabrillo College', '31689', 38565227455),\n  ('Cabrillo College', '32027', 38565227455),\n  ('Cabrillo College', '32067', 38565227455),\n  ('Cabrillo College', '32069', 38565227455),\n  ('Cabrillo College', '32201', 38565227455),\n  ('Cabrillo College', '32352', 38565227455),\n  ('Cabrillo College', '32498', 38565227455),\n  ('Cabrillo College', '32566', 38565227455),\n  ('Cabrillo College', '33277', 38565227455),\n  ('Cabrillo College', '35570', 38565227455),\n  ('Cabrillo College', '35651', 38565227455),\n  ('Cabrillo College', '42083', 38565227455),\n  ('Cabrillo College', '42662', 38565227455),\n  ('Cabrillo College', '43111', 38565227455),\n  ('Cabrillo College', '44217', 38565227455),\n  ('Cabrillo College', '44898', 38565227455),\n  ('Cabrillo College', '45185', 38565227455),\n  ('Cabrillo College', '46244', 38565227455),\n  ('Palo Verde College', '30710', 38567765687),\n  ('Palo Verde College', '39852', 38567765687),\n  ('Palo Verde College', '39853', 38567765687),\n  ('Palo Verde College', '40016', 38567765687),\n  ('Palo Verde College', '40020', 38567765687)) as v(college, control_number, extracted_run)\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = 'unequal'\nreturning r.college, r.control_number;",
+ "rollback": "update public.program_requirement_records r\n   set checks = jsonb_set(r.checks, '{arithmetic}', '\"unequal\"')\n  from (values\n  ('Cabrillo College', '06329', 38565227455),\n  ('Cabrillo College', '06330', 38565227455),\n  ('Cabrillo College', '06345', 38565227455),\n  ('Cabrillo College', '06373', 38565227455),\n  ('Cabrillo College', '06374', 38565227455),\n  ('Cabrillo College', '06389', 38565227455),\n  ('Cabrillo College', '06396', 38565227455),\n  ('Cabrillo College', '10007', 38565227455),\n  ('Cabrillo College', '12365', 38565227455),\n  ('Cabrillo College', '30754', 38565227455),\n  ('Cabrillo College', '30756', 38565227455),\n  ('Cabrillo College', '31661', 38565227455),\n  ('Cabrillo College', '31689', 38565227455),\n  ('Cabrillo College', '32027', 38565227455),\n  ('Cabrillo College', '32067', 38565227455),\n  ('Cabrillo College', '32069', 38565227455),\n  ('Cabrillo College', '32201', 38565227455),\n  ('Cabrillo College', '32352', 38565227455),\n  ('Cabrillo College', '32498', 38565227455),\n  ('Cabrillo College', '32566', 38565227455),\n  ('Cabrillo College', '33277', 38565227455),\n  ('Cabrillo College', '35570', 38565227455),\n  ('Cabrillo College', '35651', 38565227455),\n  ('Cabrillo College', '42083', 38565227455),\n  ('Cabrillo College', '42662', 38565227455),\n  ('Cabrillo College', '43111', 38565227455),\n  ('Cabrillo College', '44217', 38565227455),\n  ('Cabrillo College', '44898', 38565227455),\n  ('Cabrillo College', '45185', 38565227455),\n  ('Cabrillo College', '46244', 38565227455),\n  ('Palo Verde College', '30710', 38567765687),\n  ('Palo Verde College', '39852', 38567765687),\n  ('Palo Verde College', '39853', 38567765687),\n  ('Palo Verde College', '40016', 38567765687),\n  ('Palo Verde College', '40020', 38567765687)) as v(college, control_number, extracted_run)\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = 'equal'\nreturning r.college, r.control_number;",
+ "applied": {
+  "how": "supabase-migrate.yml (kb/migrations/.apply), the committed file",
+  "file": "chatbox/supabase_program_requirement_records_rescore_2026_10_14_s392.sql"
+ },
+ "before": {
+  "read_at": "2026-10-14T20:30Z",
+  "by": "S392 execute_sql (select)",
+  "rows": 35,
+  "all": "present, checked false, extracted_run equal to the filed run, checks.arithmetic 'unequal'",
+  "checks_other_keys": "listed, placed, coverage true, invented true: unchanged by the update"
+ }
+}
