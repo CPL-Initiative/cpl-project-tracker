@@ -928,6 +928,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `calmatters.org` | `edgefn:cpl-news-harvest` |
 | `calnevjatc.org` | scripts: `kb/fire_electrical_external_credentials.py` |
 | `canadacollege.edu` | tabs: `map-queue`, `map-users` |
+| `catalog.cccd.edu` | scripts: `kb/_course_outcomes_read.py` |
 | `catalog.example` | modules: `a11y.config.js` |
 | `cdn.jsdelivr.net` | tabs: `pipeline` |
 | `cdnjs.cloudflare.com` | scripts: `prototype/globe/build_globe.py` |
@@ -1109,4 +1110,4 @@ check these BY HAND before trusting an absence:
 - `scripts/supabase_migrate.py`
 
 Coverage: 98 Supabase tables · 38 RPCs · 8 edge functions · 648 file
-datasets · 177 external services · 440 consumers · 53 workflows · 39 tabs.
+datasets · 178 external services · 440 consumers · 53 workflows · 39 tabs.
