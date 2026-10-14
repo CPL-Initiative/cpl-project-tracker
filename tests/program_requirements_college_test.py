@@ -642,7 +642,8 @@ key_line = "SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}"
 holders = [st.splitlines()[0] for st in steps(read_job) + steps(load_job) + steps(display_job)
            if "SUPABASE_SERVICE_KEY" in st]
 check(wf.count("SUPABASE_SERVICE_KEY") == 2 * wf.count(key_line) == 6
-      and holders == ["- name: Extract and score", "- name: Load the committed records, unchecked",
+      and holders == ["- name: Extract and score",
+                      "- name: Load the committed records, unchecked (or replace unchecked rows from the newest run)",
                       "- name: Apply the display build the page carries"],
       "the service key reaches the extraction, load and display steps, and no other: %r" % holders)
 check("if: env.EXTRACT == 'true'" in read_job, "the extraction step runs only when asked")
@@ -721,8 +722,61 @@ try:
           and "'00002'" not in receipt["rollback"],
           "the rollback names only the keys this load inserted, and only while they are unchecked")
     check(refused == 2, "a load without a numeric run id refuses")
+
+    # The re-read (S389; Sam, Open Asks Sheet 78 card 2): only the newest extraction run's records
+    # are posted, and the receipt holds each replaced row's before-values, which is the rollback.
+    # The failures this guards: posting records an earlier run read (their rows already hold them),
+    # and a replace with no way back.
+    reposted = []
+
+    def repost(body):
+        reposted.append(body)
+        return {"replaced_keys": [r["control_number"] for r in body["p_rows"]], "absent_keys": [],
+                "held_keys": [], "kept_keys": [],
+                "before": [{"control_number": r["control_number"], "record": {"was": True}} for r in body["p_rows"]]}
+
+    C.COLLEGE_DIR, C.RECEIPTS = parent, os.path.join(parent, "receipts")
+    try:
+        code = C.reread("Cerritos College", "38000000002", post=repost)
+        rr = json.load(open(C.reread_receipt_path("Cerritos College", "38000000002")))
+    finally:
+        C.COLLEGE_DIR, C.RECEIPTS = real
+    check(code == 0 and [r["control_number"] for b in reposted for r in b["p_rows"]] == ["00002"]
+          and rr["extracted_run"] == "37966828676",
+          "a re-read posts only the newest extraction run's records: %r" % rr.get("replaced_keys"))
+    check(rr["replaced_keys"] == ["00002"] and rr["before"] == [{"control_number": "00002", "record": {"was": True}}]
+          and "checked = false" in rr["rollback"] and "r.extracted_run = 37966828676" in rr["rollback"],
+          "the re-read's receipt holds each replaced row's before-values and a rollback guarded by "
+          "the re-read's run and checked = false")
+
+    # force=incomplete names the filed records whose arithmetic is incomplete and that place a course.
+    rec("00009", score={"coverage": {"pass": True, "placed": 5, "listed": 6}, "invented": {"pass": True},
+                        "arithmetic": {"status": "incomplete"}, "pass": False})
+    rec("00010", score={"coverage": {"pass": True, "placed": 0, "listed": 6}, "invented": {"pass": True},
+                        "arithmetic": {"status": "incomplete"}, "pass": False})
+    check(C.forced(tmp, "incomplete, 00001") == {"00009", "00001"} and C.forced(tmp, "") == set(),
+          "force=incomplete takes the incomplete records that place a course (never one that read another "
+          "program's page), plus any control number named")
 finally:
     shutil.rmtree(parent, ignore_errors=True)
+
+# The re-read function (chatbox/supabase_program_requirement_records_college_reread.sql) replaces
+# a row only while it is unchecked, unread by a person and from an earlier run, never touches
+# checked or display, returns the before-values, and answers the service role alone (Rule 10).
+RR = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "chatbox",
+                       "supabase_program_requirement_records_college_reread.sql")).read()
+RR_BODY = RR.split("as $$", 1)[1].split("$$;", 1)[0]
+check("auth.role(), '') <> 'service_role'" in RR_BODY and "from public, anon, authenticated" in RR
+      and "to service_role" in RR,
+      "the re-read function answers the service role alone, in its body and in its grants")
+check("cur.checked or exists" in RR_BODY and "program_record_verdicts" in RR_BODY
+      and "cur.extracted_run >= new_run" in RR_BODY and "and checked = false;" in RR_BODY,
+      "the re-read holds a checked row and one a person has read, keeps a row from the same or a newer run, "
+      "and its UPDATE is guarded by checked = false")
+check("insert into" not in RR_BODY.lower() and "delete from" not in RR_BODY.lower()
+      and "display =" not in RR_BODY and "checked_by =" not in RR_BODY and "checked =" not in RR_BODY.replace("checked = false", ""),
+      "the re-read never inserts, deletes, or writes checked, checked_by or display")
+check("'before', before" in RR_BODY, "the re-read returns each replaced row's before-values")
 
 # ── the link search never takes a course listing for a program (S380) ───────
 # Coastline run 38406172949: the link search accepted
