@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-10-01
+updated: 2026-10-14
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -46,112 +46,6 @@ the two consolidations (Session 219) on **2026-09-30** (S306), and the 2026-09-0
 > **2026-09-30** (S307), and the 2026-09-02 calm pass (S220) on **2026-09-30** (S308) — each time because the doc crossed its size
 > budget and the checkpoint needed to append. Those phases are shipped and settled; read the archive only for the
 > reasoning behind a decision you are about to change.
-
-## 2026-09-09 — the text surfaces, three curator affordances, and two dead guards
-
-**PR [#1528](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1528)**, merged
-as `1570fa6`. Sam prepared the Implementation Funding tab for debut: he was editing the
-introduction live and wanted the language revised against the new draft Title 5 §55050.
-The run produced a decision sheet, nine verdicts, and three features he asked for
-mid-stream.
-
-### What Sam ruled, in his words
-
-- **The banking sense of "draw" is out.** *"'draws' is a business term tied to banking
-  and I don't want that connotation."* Fourteen rendered sites became **earn**; the
-  baseline gate became **receive**, because that sentence releases funding a college has
-  already earned.
-- **Expended and allocated are not interchangeable.** *"expended should be kept if I am
-  referring to the colleges spending the funds. Allocated should be used if I am
-  referring to the CO awarding or dispensing the funds to colleges."* This narrowed a
-  sweep that would otherwise have run too wide — the memo sentence in question follows
-  *"each institution's CIO must submit…"*, so its subject is the colleges, and
-  *expended* stayed. Only `utilize` → `use` there.
-- **Active voice, and name the actor.** *"avoid mannerly language, using instead active
-  voice, avoidance of adjective phrases and asides, and… plain language or language
-  consistent with the terminology used in the T5 revision."* On funding prose the
-  recurring failure is a passive that hides the model: *is measured*, *are then
-  applied*, *is produced by*. Also: say **model**, not *engine*.
-- **The outcomes are not the model's.** Mid-turn: *"the outcomes are not draw from the
-  model, they are drawn from Ed Code."* The introduction had said the model "calculates
-  the priority outcomes from records in MAP", which reads as the model producing them.
-  It now says **"the priority outcomes required by Ed. Code §78093.2(d)(1)"** — the
-  phrasing the tab's own section heading already used.
-
-### The blockquote, and why a lossless round trip turned out to be load-bearing
-
-The prose blocks store plain text and escape it on render — that is what keeps a page
-every visitor reads free of markup an author can inject. It also meant the statute Sam
-was quoting rendered at exactly the weight of the page's own sentences, and the block's
-one formatting affordance (a blank line starts a paragraph) could not say otherwise.
-Leading spaces cannot either: `plainNormalize()` strips them by design so a paste keeps
-its shape, which I verified by running his text through the real painter rather than
-guessing.
-
-A paragraph whose EVERY line opens `>` now renders inside a `<blockquote>`. All-or-
-nothing on purpose: a rule that fired on any `>` would silently reformat ordinary prose
-containing "3 > 2", and the author's only clue would be an indent they did not ask for.
-
-⭐ **The reverse mapping (`htmlToPlain` → `> ` lines) looked like future-proofing until
-item 7 landed.** Baking Sam's approved introduction as `ABOUT_DEFAULT_HTML` put a
-`<blockquote>` in the DEFAULT — and `setText()` decides whether to store an override by
-comparing what was typed against `htmlToPlain(default)`. A lossy round trip would mean
-opening Edit and pressing Save without typing anything stores an override that renders
-the statute as body prose. The test that pins it (`saving the default back UNCHANGED
-stores no override`) guards a failure with no visible symptom at the moment it happens.
-
-### One resolver, because two would drift
-
-Rename and Hide ride `sectionShell()`, the one function every section on every subview
-passes through, which is why they reached the model page, the $50K view, the Report and
-the standalone public page in one change. The explainer is a different shape — seven
-hand-written sections — so it reads `T.sectionCuration()`, the tab's own resolver over
-the same `titles` / `secHidden` maps, rather than a second copy of the lookup. Same
-lesson as `one-resolver-for-two-surfaces-that-describe-the-same-thing` (2026-09-01): two
-surfaces describing one section would eventually disagree and neither would look wrong
-alone.
-
-⚠️ **And that is exactly why item 9 stopped being tidiness.** Hiding rides
-`sectionShell()`, which only `cpl_funding_public.html` passed through — so a section the
-CO held back stayed visible on `funding-model/`. Two public renderings of one model is a
-correctness problem the moment either becomes curatable. The old page is now a
-meta-refresh + canonical redirect; Pages cannot issue a 301 and the URL had gone to
-colleges, so a stub beats a 404.
-
-### Two dead guards, and a reporting failure of my own
-
-⚠️ **`detail_trim`'s T1d counted a phrase that the sweep deleted.** It asserted *at most
-one* occurrence of "qualifying later still lets it draw". After the sweep it matched
-nothing, counted zero, passed, and guarded nothing — reading exactly like a clean
-result. The count must tolerate zero (that fixture's college is not always gated), so
-the phrase is now asserted against the module source instead: reword it and the test
-fails, pointing at the count that needs re-aiming. **Third occurrence** of
-`a-test-coupled-to-position-or-wording-breaks-on-correct-work`, and the first found by a
-change that happened to walk past it rather than by looking.
-
-⚠️ **`cobi_prose_measure` broke on the redirect, and I predicted it would pass.** Its
-list of "every file that carried a prose measure" asserted each still has one; gutting
-the page's stylesheet left nothing to find. The stub is off the list now, with a check
-that it IS still a stub — so restoring content there fails loudly instead of escaping
-the sweep.
-
-⭐ **`npm test 2>&1 | tail -14` reports TAIL's exit status, not the suite's.** I read
-"exit code 0" off that pipeline and told Sam the full suite was clean, twice. The second
-of those runs had a failure in it, printed in the very text I was tailing. Running
-`npm test > log 2>&1; echo "REAL_EXIT=$?"` caught a genuine `exit 1` on the next run.
-A pipeline's status is its LAST command's, and `tail` almost always succeeds.
-
-### State at the end of the run
-
-All 318 test files pass (verified with the exit status captured directly). New:
-`cpl_funding_prose_blockquote` 27, `cpl_funding_section_titles` 24. Raised:
-`funding_model_page` 37 → 44, `gate_ledger_public` 57 → 58, `detail_trim` 20 → 21,
-`cobi_prose_measure` 15 → 16. `cpl_funding_calm`'s vocabulary guard now bans the draw
-stem and *unspent* alongside pool / money / apportion / the advance concept.
-
-Open: the explainer's footer (whether *sources* splits from the "not adopted policy"
-disclaimer so the first becomes hideable), and sweeping the rest of the memo builder
-against the expended/allocated rule.
 
 ## 2026-09-12 — Session 258 (SkyList): four asks, an unreachable resolver, and a class that was an API
 
@@ -1246,3 +1140,32 @@ Sam asked for "a script for the scenario 2 video for an ElevenLabs narrator... v
 The lane passed its 20 KB budget; this closed ruling moved here verbatim.
 
 ✅ **Kept (Sam, sheet 11 cards 2-4, 2026-09-30):** the Timeline at the prose size; the priority cards keep their boxes; the sign-in form shows to every reader of a college's *Reported expenditures*.
+
+## 2026-10-14 — the funding session beside S392: noncredit's portion, the three boxes, Bold and Italic
+
+Sam's five asks and his note to wire them into Refresh everything (verbatim: `cpl_memory`
+`sam-funding-noncredit-portion-and-boxes-2026-10-14`) shipped in #2132, live 22:36Z.
+
+- **Noncredit's portion is a solved weight.** `pool.nc_portion_pct`; blank keeps the teaching mix
+  (7.18%). Set, one weight on noncredit FTES enters the size and the split alike, found by bisection,
+  inside the one solve and its bounds. 15% needs 2.72; 20% needs 4.23. Method and the measured table:
+  [the note](kb-notes/methodology-a-share-target-inside-a-bounded-allocation-is-a-solved-weight.md).
+- **The explainer's guard wants an id on every typed copy of a figure.** `funding_model_page`'s
+  unpainted-figure check reads `id=` only, so the noncredit total's second copy took its own alias id
+  (`f-nc2` through `FIG_ID_ALIAS`), the `l-floor`/`l-cap` pattern. A `data-fig` copy is painted, and the
+  guard cannot see it. CI shard 3 caught this on the first run.
+- **A test that pins a layout pins a ruling.** The statewide-box check counted Sam's two boxes of
+  2026-10-01; his 2026-10-14 ask made the row three. The count moved; its purpose (one statewide figure,
+  no staff box) stayed.
+- **Refresh everything carries any setting the config holds**, because `render()` clears the caches
+  before the subscribers repaint. Test 6a-6g proves it across two windows on one channel.
+- **A still-running local file is not a pass.** One local process reached about 62 of 430 test files in
+  30 minutes; `xargs -P 6` over the 99 funding, explainer and briefing files finished 98, and the one it
+  had not finished was the file CI failed. CI's four shards decide.
+- **Sam's calls:** the control he wants is a percentage; *"Keep in mind to wire in the Refresh
+  Everything procedure"*; he sets 15% on a Scenario 3 copy himself through the tab (*"It's OK if not; I
+  can make the change"*), which keeps the curator edit where the lane says it belongs. Bold in the editor:
+  the asterisks show in the edit box and render as bold on the page; a second press of Bold removes them.
+- **Parallel sessions:** S392 held the checkpoint, and a `send_message` put #2132 into its handoff 393.
+  A third session (the queue, from 22:37Z) then held the next handoff, so this checkpoint wrote only the
+  funding files and the shared generated ones.

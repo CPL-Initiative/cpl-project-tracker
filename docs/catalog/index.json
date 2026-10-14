@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 551,
+   "count": 552,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3647,6 +3647,24 @@
      "title": "A share is not a fact until you have measured the whole",
      "type": "methodology",
      "updated": "2026-09-11"
+    },
+    {
+     "created": "2026-10-14",
+     "governs": [
+      "cpl_funding.js",
+      "tests/cpl_funding_nc_portion.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-share-target-inside-a-bounded-allocation-is-a-solved-weight.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "implementation-funding",
+      "noncredit",
+      "allocation"
+     ],
+     "title": "A share target inside a bounded allocation is reached by solving one weight",
+     "type": "methodology",
+     "updated": "2026-10-14"
     },
     {
      "created": "2026-08-12",
@@ -11742,7 +11760,7 @@
      ],
      "title": "CPL Implementation Funding tab \u2014 workstream lessons",
      "type": null,
-     "updated": "2026-10-01"
+     "updated": "2026-10-14"
     },
     {
      "created": "2026-06-21",
@@ -21828,5 +21846,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1144
+ "total": 1145
 }
