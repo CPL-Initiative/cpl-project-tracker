@@ -1,0 +1,31 @@
+{
+ "_readme": "S386 SkyElm, 2026-10-14. Palo Verde's extraction read (run 38477849603) found a page for four of its five noncredit programs and read none of their listed courses there: High School Equivalency 43203 (GED031-GED034) on high-school-equivalency-program-2022-23-spring-2023sp, title 1.0, 1,564 characters; Developing Capable Youth 45472 (NBE 120, NBE 227) on child-development-developing-capable-youth-certificate-of-career-preparation-2021-22-summer-2022su, title 1.0, 1,151 characters; Child Care 45471 and Arts - Early Childhood Education 45473 (NBE 100-145) only near credit pages. The coarse net read 0 course codes on each. This read loads the catalog's noncredit hub and the two pages the titles name, with network on the first, to see whether those pages print their courses at all, print them under another code (no space, a prefix), or load them by a call the publish/content read does not make. Three page loads, no model call.",
+ "college": "Palo Verde College",
+ "questions": {
+  "noncredit_index": "Which noncredit programs the 2025-2026 catalog lists, and under which addresses.",
+  "noncredit_courses": "Whether a noncredit program page prints its courses, in what code form, and from which call."
+ },
+ "keywords": [
+  "GED",
+  "NBE",
+  "[Hh]ours",
+  "[Rr]equire",
+  "[Cc]ourse"
+ ],
+ "pages": [
+  {
+   "answers": ["noncredit_index"],
+   "url": "https://pvc.elumenapp.com/catalog/2025-2026/non-credit-certificates",
+   "links": "program/"
+  },
+  {
+   "answers": ["noncredit_courses"],
+   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/high-school-equivalency-program-2022-23-spring-2023sp",
+   "network": true
+  },
+  {
+   "answers": ["noncredit_courses"],
+   "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/child-development-developing-capable-youth-certificate-of-career-preparation-2021-22-summer-2022su"
+  }
+ ]
+}
