@@ -821,3 +821,22 @@ Progress, and filters Records with dropdowns, adding CIP Sectors and SWP Regions
   `Promise.all` of its blocks (in #2116).
 
 **NEXT.** El Camino's extraction waits on Sheet 79 card 3; San Joaquin Delta needs its catalog year read before it extracts.
+
+## S391 SkyJuniper (2026-10-14): San Joaquin Delta's catalog year
+
+- **An Acalog page names its catalog in a menu, and the year is in that option's words.** Every Acalog page carries a select of
+  the college's catalogs, current and archived, each option's value its catoid. Run 38615275825 read Delta's: nine catalogs, the
+  current one (catoid 14) *Summer 2026 - Summer 2027 College Catalog*, the rest *2025-2026 San Joaquin Delta College Catalog
+  [ARCHIVED CATALOG]* and older. Read the option for the catoid being read, never the newest year the menu lists.
+- **The census's year reader takes adjacent pairs only** (*2026-2027*, *2026-27*). A catalog named by its terms reads as nothing
+  there, so the first run filed no year. The Acalog picker also reads two years a word or two apart, the second the first plus one;
+  the census reader is unchanged. Re-run 38619208635 filed 2026-2027.
+- **The registry row still names no year.** The capture fills it in memory where the registry names none, so the records and the
+  capture report carry it; a registry year that differs from the page's is reported, never overwritten.
+- **Delta's page is out of the session's reach** (the proxy refuses `catalog.deltacollege.edu`), and a run's artifact downloads from
+  a host the proxy also refuses. Read a page through a capture-only dispatch and the report it files on the branch.
+
+**Moved from the lane (S391 compaction),** verbatim: The re-read path (S389): `program_requirement_records_college_reread()` replaces a row only while it is unchecked, no person has read it and an earlier run read it, and returns the before-values the receipt files (`kb/receipts/program_requirement_records_college_reread_<slug>_<run>.json`, the rollback); a read dispatched with `force=incomplete` extracts those records again though their pages are unchanged, and `step=reread` posts the newest run's records.
+
+**NEXT.** San Joaquin Delta's extraction is an ask (about $12 to $22 for 203 programs); El Camino's is Sheet 79 card 3, carried.
+

@@ -1146,7 +1146,52 @@ check([u.split("poid=")[1] for u in ac_got] == ["4410&print", "4423&print", "450
       "with no site map, the program menus list the programs, each once: %s %s" % (ac_got, rep_ac.get("acalog")))
 check(any("sitemap.php?catoid=21" in u for u in asked_ac) and not any("catoid=19" in u for u in asked_ac),
       "the site map is tried first, and only for the catalog the start page serves")
+check(rep_ac["acalog"]["catalog_year_read"] is None and rep_ac["acalog"].get("catalog_menu_error"),
+      "a reader that cannot run the menu script reads no year, and says why")
+
+# The year of the catalog being read (S391): San Joaquin Delta's registry row names none.
+MENU = [["22", "2026-2027 Catalog", False], ["21", "2025-2026 Catalog", True],
+        ["19", "2024-2025 Catalog [ARCHIVED CATALOG]", False]]
+check(C.ac_catalog_year(MENU, 21) == ("2025-2026", "catalog menu"),
+      "the menu's option for the catoid read names the year, never the newest year the menu lists")
+check(C.ac_catalog_year([[o[0], o[1], o[0] == "22"] for o in MENU], 99) == ("2026-2027", "catalog menu"),
+      "a catoid the menu does not list takes the option the menu has selected")
+check(C.ac_catalog_year([["14", "Summer 2026 - Summer 2027 College Catalog", True],
+                         ["13", "2025-2026 San Joaquin Delta College Catalog [ARCHIVED CATALOG]", False]], 14)
+      == ("2026-2027", "catalog menu")
+      and C.ac_catalog_year([["14", "Fall 2026 - Spring 2028 Catalog", True]], 14) == (None, None),
+      "a catalog named by its terms (San Joaquin Delta, run 38615275825) reads as its academic year; "
+      "two years apart read as none")
+check(C.ac_catalog_year([["21", "Current Catalog", True]], 21, "2025-2026 Catalog | Delta") == ("2025-2026", "page title")
+      and C.ac_catalog_year([], 21, "San Joaquin Delta College") == (None, None),
+      "with no year in the menu the page title is read, and a title naming none gives none")
+
+
+class MenuPage:
+    def __init__(self, options):
+        self.options = options
+
+    def evaluate(self, js):
+        return self.options if "select" in js else None
+
+
+class MenuReader:
+    def __init__(self, options):
+        self.page = MenuPage(options)
+
+
+real_load, C.P.load = C.P.load, ac_load
+try:
+    rep_menu = {"with_closed_list": 10}
+    C.ac_urls(MenuReader(MENU), ELC, {}, rep_menu)
+finally:
+    C.P.load = real_load
+check(rep_menu["acalog"]["catalog_year_read"] == "2025-2026" and rep_menu["acalog"]["catalog_year_from"] == "catalog menu"
+      and rep_menu["acalog"]["catalog_menu"][0] == ["22", "2026-2027 Catalog", False],
+      "the capture report keeps the year read from the start page's catalog menu, and the menu itself: %s" % rep_menu["acalog"])
 CS = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "kb", "_program_requirements_college.py")).read()
+check("reg = dict(reg, catalog_year=read_year)" in CS and 'report["catalog_year"] = read_year' in CS,
+      "an Acalog year read from the page fills a registry row that names none, in the records and the report alike")
 check('platform not in ("courseleaf", "curriqunet", "elumen", "acalog")' in CS
       and 'platform not in ("curriqunet", "elumen", "acalog")' in CS,
       "the capture reads Acalog, without the child-page walk or the link search its program list makes needless")

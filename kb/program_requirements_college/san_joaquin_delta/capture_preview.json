@@ -2,15 +2,64 @@
  "college": "San Joaquin Delta College",
  "catalog_url": "https://catalog.deltacollege.edu/",
  "platform": "acalog",
- "catalog_year": null,
+ "catalog_year": "2026-2027",
  "programs": 251,
  "with_closed_list": 233,
- "started": "2026-10-14T13:10:00Z",
+ "started": "2026-10-14T18:56:05Z",
  "acalog": {
   "base": "https://catalog.deltacollege.edu",
   "start_status": 200,
   "catoid": 14,
   "start_links": 139,
+  "catalog_menu": [
+   [
+    "14",
+    "Summer 2026 - Summer 2027 College Catalog",
+    true
+   ],
+   [
+    "12",
+    "2025-2026 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+    false
+   ],
+   [
+    "11",
+    "2024-2025 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+    false
+   ],
+   [
+    "10",
+    "2023-2024 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+    false
+   ],
+   [
+    "9",
+    "2022-2023 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+    false
+   ],
+   [
+    "8",
+    "2021-2022 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+    false
+   ],
+   [
+    "6",
+    "2020-2021 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+    false
+   ],
+   [
+    "5",
+    "2019-2020 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+    false
+   ],
+   [
+    "2",
+    "2018-2019 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+    false
+   ]
+  ],
+  "catalog_year_read": "2026-2027",
+  "catalog_year_from": "catalog menu",
   "start_menu": [
    [
     "About Delta College",
@@ -402,10 +451,11 @@
   ],
   "program_pages": 245
  },
+ "catalog_year_from": "catalog menu",
  "pages_read": 245,
  "banner_h1": null,
  "loads": 250,
- "seconds": 1474.5,
+ "seconds": 1431.1,
  "found": 203,
  "by_method": {
   "no_closed_list": 18,
@@ -881,8 +931,8 @@
     "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
     "error": null,
     "chars": {
-     "body": 2023,
-     "content": 35835,
+     "body": 2160,
+     "content": 35974,
      "tabs": 0
     },
     "tab_panels": []
@@ -3159,5 +3209,5 @@
    }
   ]
  },
- "run": "38569401921"
+ "run": "38619208635"
 }
