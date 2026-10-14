@@ -1,0 +1,201 @@
+{
+ "college": "Fresno City College",
+ "control_number": "21198",
+ "shape": "certificate",
+ "title": "Accounting",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Accounting-Programs/6483",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6356,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6356,
+    "output_tokens": 1308,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1308,
+  "output_tokens_details": {
+   "thinking_tokens": 396
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05158,
+ "ms": 11625,
+ "seconds": 11.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 14,
+   "share": 0.0,
+   "missing": [
+    "ACCTG19",
+    "ACCTG4A",
+    "ACCTG4B",
+    "ACCTG51",
+    "ACCTG52",
+    "ACCTG53",
+    "ACCTG54A",
+    "ACCTG56",
+    "ACCTG57",
+    "ACCTG61",
+    "ACCTG70",
+    "BT24",
+    "CIT15",
+    "CIT23"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACCTG 19",
+    "why": "named only in the A.S. section"
+   },
+   {
+    "code": "ACCTG 4A",
+    "why": "named only in the A.S. section"
+   },
+   {
+    "code": "ACCTG 4B",
+    "why": "named only in the A.S. section"
+   },
+   {
+    "code": "ACCTG 51",
+    "why": "named only in the A.S. section"
+   },
+   {
+    "code": "ACCTG 52",
+    "why": "named only in the A.S. section"
+   },
+   {
+    "code": "ACCTG 53",
+    "why": "named only in the A.S. section"
+   },
+   {
+    "code": "ACCTG 54A",
+    "why": "named only in the A.S. section"
+   },
+   {
+    "code": "ACCTG 56",
+    "why": "named only in the A.S. section"
+   },
+   {
+    "code": "ACCTG 57",
+    "why": "named only in the A.S. section"
+   },
+   {
+    "code": "ACCTG 61",
+    "why": "named only in the A.S. section"
+   },
+   {
+    "code": "ACCTG 70",
+    "why": "named only in the A.S. section"
+   },
+   {
+    "code": "BT 24",
+    "why": "named only in the A.S. section"
+   },
+   {
+    "code": "CIT 15",
+    "why": "named only in the A.S. section"
+   },
+   {
+    "code": "CIT 23",
+    "why": "named only in the A.S. section"
+   }
+  ],
+  "notes": [
+   "The catalog text contains only the section 'Accounting, Associate of Science - Major #2010'; no Certificate of Achievement section for Accounting appears, so no blocks, totals, outcomes or careers are recorded for the certificate. section_heading is left empty because no heading for this award is printed.",
+   "The A.S. section lists: required ACCTG 4A (4), ACCTG 4B (4), ACCTG 19 (1), ACCTG 51 (3), ACCTG 52 (3), ACCTG 70 (3), CIT 15 (3), plus BT 24 (1) OR CIT 23 (2); select 3 of ACCTG 53, 54A, 56, 57, 61 (9 units); Total 31-32. A reviewer should check whether the certificate shares these requirements; the certificate's own page or section appears to be cut from the supplied text.",
+   "The A.S. learning outcomes and the career statement ('entry-level accounting positions in business, government, industry, and financial institutions') are printed for the A.S. degree only and were not recorded for the certificate.",
+   "The source URL references a 2025-2026 FCC catalog alias under a 2026-27 path; verify catalog year."
+  ]
+ },
+ "extracted_run": "38563582873"
+}

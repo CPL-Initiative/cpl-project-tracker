@@ -1,0 +1,231 @@
+{
+ "college": "Fresno City College",
+ "control_number": "10985",
+ "shape": "degree",
+ "title": "Office Specialist",
+ "award": "A.S. Degree",
+ "source_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6552",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6144,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6144,
+    "output_tokens": 1545,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1545,
+  "output_tokens_details": {
+   "thinking_tokens": 402
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05548,
+ "ms": 13378,
+ "seconds": 13.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.5,
+    28.5
+   ],
+   "stated": [
+    28.5,
+    28.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Office Specialist - Formerly Office Professional - Executive Assistant Emphasis, Office Professional II and Administrative Assistant Emphasis, Associate of Science - Major #2216",
+   "measure": "units",
+   "total_units": {
+    "min": 28.5,
+    "max": 28.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Achieve a satisfactory evaluation in a work experience setting.",
+    "Use technology applications, office equipment, and software effectively in a professional setting.",
+    "Proofread documents and correct errors in punctuation, grammar, capitalization, number expression, and spelling."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Recommended First Semester Courses (Required)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "BT 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 6",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 9",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 33",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Second Semester Courses (Required)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14.5,
+     "max": 14.5
+    },
+    "courses": [
+     {
+      "code": "BT 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 19",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 131",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Both blocks are headed 'Recommended ... Semester Courses (Required)'; the '(Required)' label was read as making every course required, so rule is 'all' rather than 'recommended'.",
+   "Total : 28.5 is read as the major total; the text says additional general education units are required for the AS degree but prints no degree total and names no GE pattern.",
+   "Closed list writes 'BT33'; catalog prints 'BT 33'. Treated as the same course (catalog_addition false).",
+   "BT 5 is printed '( same as BA 5 )', a cross-listing; BA 5 was not recorded as a separate alternative. Reviewer may check.",
+   "BT 19 printed with 2 units in the catalog; the state file stores 1 unit (variable-unit work experience course likely).",
+   "Several courses are marked '( Historical )' (BT 1, BT 9, BT 10) in a 2026-27 catalog; reviewer may check currency. The source URL path references the 2025-2026 FCC Catalog."
+  ]
+ },
+ "extracted_run": "38563582873"
+}

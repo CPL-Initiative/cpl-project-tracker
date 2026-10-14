@@ -1,0 +1,270 @@
+{
+ "college": "Fresno City College",
+ "control_number": "01677",
+ "shape": "degree",
+ "title": "Industrial Technology, Manufacturing Emphasis",
+ "award": "A.S. Degree",
+ "source_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Industrial-Technology-Programs/6710",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6489,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6489,
+    "output_tokens": 1848,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1848,
+  "output_tokens_details": {
+   "thinking_tokens": 500
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06292,
+ "ms": 15412,
+ "seconds": 15.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    23.0
+   ],
+   "stated": [
+    20.0,
+    23.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Industrial Technology, Manufacturing Emphasis - Formerly Industrial Technology and Industrial Arts and Technology, Associate of Science - Major #8994",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will gain knowledge in the areas of Architecture, Construction, Drafting, Electricity and Welding. Allowing them to teach these areas in secondary education.",
+    "Create and modify files using Microsoft Office programs."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 11,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "AT 21",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CADD 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CADD 23",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CADD 10",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CADD 16",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Electives (9 units minimum)",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "AT 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CADD 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CADD 24",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CADD 28",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 5",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAM 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRAFT 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EST 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EST 53",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 2A",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The block headed 'Recommended Electives (9 units minimum)' is recorded as choose_units with minimum 9, not 'recommended': it states a 9-unit minimum and the printed Total 20-23 equals the required 11-14 plus 9, so these electives count toward the total.",
+   "The two 'OR' pairs (CADD 14 or CADD 23, sub-total 3-4; CADD 10 or CADD 16, sub-total 3-5) are recorded as single entries with alternatives inside Required Courses.",
+   "EST 50 in the catalog matches closed-list entry 'EST50' (spacing difference only); treated as not a catalog addition. The closed list stores no units for it; catalog prints 3.",
+   "Total 20-23 is the major's total; the page prints no degree total and names no GE pattern.",
+   "No careers are named in the description; the first outcome mentions teaching in secondary education, which was not recorded as a career.",
+   "The URL references a 2025-2026 FCC catalog path under the 2026-27 listing; reviewer may verify catalog year."
+  ]
+ },
+ "extracted_run": "38563582873"
+}

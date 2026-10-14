@@ -1,0 +1,316 @@
+{
+ "college": "Fresno City College",
+ "control_number": "37104",
+ "shape": "degree",
+ "title": "Pre-Allied Health",
+ "award": "A.S. Degree",
+ "source_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Allied-Health-Programs/6494",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6735,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6735,
+    "output_tokens": 2408,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2408,
+  "output_tokens_details": {
+   "thinking_tokens": 737
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0751,
+ "ms": 19212,
+ "seconds": 19.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CHEM3A",
+    "HIT10"
+   ],
+   "flagged": [
+    "CHEM3A",
+    "HIT10"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    27.0
+   ],
+   "stated": [
+    24.0,
+    27.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Pre-Allied Health - Formerly Pre-Allied Health Registered Nursing Option, Associate of Science - Major #4526",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Assess career options and the necessary educational pathway for health professions.",
+    "Express knowledge of current scientific and social issues affecting health care systems.",
+    "Develop an education plan for entry into Dental Hygiene, Health Information Technology, Registered Nursing, Radiologic Technology, or Respiratory Care careers."
+   ],
+   "careers": [
+    "Dental Hygiene",
+    "Health Information Technology",
+    "Medical Assisting",
+    "Radiologic Technology",
+    "Registered Nursing",
+    "Respiratory Care"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "AHLTH 100",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 3A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIT 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required BIOL Courses (BIOL 20 and BIOL 22)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required BIOL Courses",
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "BIOL 20",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 22",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required BIOL Courses (BIOL 21A and BIOL 21B)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required BIOL Courses",
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "BIOL 21A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 21B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select two courses from the following:",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ANTH 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 2H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 31",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 3B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FN 35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FN 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'Required Courses 18' total appears to include the nested Required BIOL Courses (9 units); the three listed courses AHLTH 100, CHEM 3A and HIT 10 total 9 units.",
+   "Required BIOL Courses: student completes either BIOL 20 and BIOL 22, or BIOL 21A and BIOL 21B (9 units each).",
+   "Closed list writes ANTH2, ANTH2H, SOCIC1000, SOCIC1000H without spaces; matched to catalog codes ANTH 2, ANTH 2H, SOCI C1000, SOCI C1000H and not marked as additions.",
+   "CHEM 3A and HIT 10 are not in the closed list; marked catalog_addition true.",
+   "Catalog note: a college-level chemistry course with a face-to-face lab component may be used in place of Chem 3A.",
+   "No general education pattern or degree total is printed in the text; Total 24-27 recorded as the major total.",
+   "Source URL path includes both '2026-27-degree-and-certificate-programs' and '2025-2026-FCC-Catalog'; reviewer should confirm catalog year.",
+   "Many courses are labeled '( Historical )' in the catalog text."
+  ]
+ },
+ "extracted_run": "38563582873"
+}

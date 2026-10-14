@@ -1,0 +1,159 @@
+{
+ "college": "Fresno City College",
+ "programs": 266,
+ "with_closed_list": 251,
+ "found": 237,
+ "extracted": 237,
+ "errors": 0,
+ "passed_machine_checks": 203,
+ "failed": {
+  "coverage": 26,
+  "invented": 0,
+  "arithmetic": 33,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 14.1,
+ "cost_per_program": 0.0595,
+ "not_found": [
+  {
+   "control_number": "30874",
+   "title": "Maintenance Mechanic",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Maintenance-Mechanic-CTC-Programs/6920",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1924,
+     "content": 1924,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "40558",
+   "title": "Keyboarding Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business-Administration-Programs/7013",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 445,
+     "content": 445,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "40559",
+   "title": "Basic Clerical Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Architecture-Programs/6506",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 897,
+     "content": 897,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41110",
+   "title": "Competencies for Today’s Evolving Workplace",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business-Administration-Programs/6542",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 712,
+     "content": 712,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41634",
+   "title": "Basic Employment Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Architecture-Programs/6506",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 897,
+     "content": 897,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41636",
+   "title": "Special Event Photography",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "38563582873"
+}

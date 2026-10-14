@@ -1,0 +1,273 @@
+{
+ "college": "Fresno City College",
+ "control_number": "32871",
+ "shape": "adt",
+ "title": "Spanish",
+ "award": "A.A- T Degree",
+ "source_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Spanish-Programs/6786",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7007,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7007,
+    "output_tokens": 2332,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2332,
+  "output_tokens_details": {
+   "thinking_tokens": 781
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07467,
+ "ms": 19337,
+ "seconds": 19.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    21.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 24.0-24.0; the catalog states 21.0-24.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Spanish for Transfer, Associate in Arts - Major #5550",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Engage in conversation using Spanish in daily life situations.",
+    "Read with a certain depth of understanding and/or write at the advanced level in a variety of modalities, including personal and professional letters, short narratives, and descriptive essays.",
+    "Recognize and understand cultural similarities and differences between U.S. culture and that of the Spanish-speaking world. Distinguish simple behavioral patterns that represent these cultures and behave in culturally appropriate ways in specific situations."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SPAN 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core Courses: SPAN 3 and SPAN 4",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Intermediate sequence",
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "SPAN 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 4",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core Courses: SPAN 3NS and SPAN 4NS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Intermediate sequence",
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "SPAN 3NS",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 4NS",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Group A: Select a minimum of four (4) additional units from the following list:",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "SPAN 5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 6",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 7",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 8",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 9",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 41",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "total_units recorded as 21-24 from the description and Note 3 ('21-24 semester units within the major'); the requirements table prints 'Total : 24'. Reviewer should confirm which to use.",
+   "Note 1: students entering at Spanish 2 or higher complete the 21-unit minimum, substituting Group A courses for the skipped courses.",
+   "'Required Core Courses' prints 20.0 for the whole core (SPAN 1, SPAN 2 plus one 10-unit intermediate sequence); the SPAN 1/SPAN 2 block itself carries no printed total, so its stated is null.",
+   "The intermediate sequences (SPAN 3 AND SPAN 4) OR (SPAN 3NS AND SPAN 4NS) are recorded as alternative blocks in one option_group, each printed with 10 units.",
+   "degree_total 60 taken from the statement that the Associate in Spanish for Transfer requires 60 semester units including Cal-GETC; no GE unit figure is printed.",
+   "Note 4: SPAN 1 and SPAN 2 may be challenged per Foreign Language Department policy.",
+   "Source URL path mentions 2025-2026 FCC Catalog while the requested year is 2026-2027; reviewer should verify catalog year.",
+   "Career text names only 'a variety of career options' with no specific careers, so careers is empty."
+  ]
+ },
+ "extracted_run": "38563582873"
+}
