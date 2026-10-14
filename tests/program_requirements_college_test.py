@@ -1085,7 +1085,7 @@ finally:
     C.P.load = real_load
 check([u.split("poid=")[1] for u in ac_got] == ["4410&print", "4423&print", "4500&print"]
       and rep_ac["acalog"]["catoid"] == 21 and rep_ac["acalog"]["sitemap_programs"] == 0
-      and rep_ac["acalog"]["navs_read"] == 2,
+      and rep_ac["acalog"]["navs_read"] == 2 and [n["links"] for n in rep_ac["acalog"]["navs"]] == [3, 1],
       "with no site map, the program menus list the programs, each once: %s %s" % (ac_got, rep_ac.get("acalog")))
 check(any("sitemap.php?catoid=21" in u for u in asked_ac) and not any("catoid=19" in u for u in asked_ac),
       "the site map is tried first, and only for the catalog the start page serves")

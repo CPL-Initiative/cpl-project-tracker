@@ -1290,18 +1290,25 @@ def ac_urls(reader, start: str, cache: dict, report: dict) -> list[str]:
     if catoid is None:
         report["acalog"]["stopped"] = "the start page's links name no catalog id"
         return []
+    report["acalog"]["start_menu"] = [[(ln.get("text") or "")[:60], ln.get("href")] for ln in links
+                                      if AC_NAV.search(ln.get("href") or "")][:40]
     sm = P.load(reader, "%s/sitemap.php?catoid=%d" % (base, catoid), cache, False)
     urls = ac_program_urls(sm.get("links") or [], base, catoid) if sm.get("access") == "ok" else []
-    report["acalog"].update(sitemap_status=sm.get("status"), sitemap_programs=len(urls))
+    report["acalog"].update(sitemap_status=sm.get("status"), sitemap_access=sm.get("access"),
+                            sitemap_programs=len(urls))
     navs = ac_program_navs(links, base, catoid)
     read = []
     for nav in navs[:AC_MAX_NAVS]:
         if len(urls) >= 0.5 * report.get("with_closed_list", 0) and sm.get("access") == "ok":
             break
         got = P.load(reader, nav, cache, False)
-        read.append(nav)
-        urls += [u for u in ac_program_urls(got.get("links") or [], base, catoid) if u not in urls]
-    report["acalog"].update(program_navs=navs[:AC_MAX_NAVS], navs_read=len(read), program_pages=len(urls))
+        nl = got.get("links") or []
+        # What each menu held, so a catalog that lists its programs elsewhere says where (S389).
+        read.append({"url": nav, "access": got.get("access"), "title": (got.get("title") or "")[:80],
+                     "links": len(nl), "sample": [[(ln.get("text") or "")[:50], ln.get("href")] for ln in nl
+                                                  if re.search(r"poid|preview_|navoid|ent_oid", ln.get("href") or "")][:25]})
+        urls += [u for u in ac_program_urls(nl, base, catoid) if u not in urls]
+    report["acalog"].update(program_navs=navs[:AC_MAX_NAVS], navs_read=len(read), navs=read, program_pages=len(urls))
     return urls
 
 
