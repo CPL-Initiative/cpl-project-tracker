@@ -5,11 +5,11 @@
  "title": "Engineering Technology",
  "award": "A.S. Degree",
  "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/engineering-technology-associate-in-science-a-s-fall-2025",
- "record_shape": 4,
+ "record_shape": 5,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6029,
+  "input_tokens": 6896,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6029,
-    "output_tokens": 2132,
+    "input_tokens": 6896,
+    "output_tokens": 2235,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 2132,
+  "output_tokens": 2235,
   "output_tokens_details": {
-   "thinking_tokens": 662
+   "thinking_tokens": 736
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.06676,
- "ms": 17886,
- "seconds": 18.4,
+ "cost_usd": 0.07228,
+ "ms": 17830,
+ "seconds": 18.2,
  "parts": null,
  "error": null,
  "score": {
@@ -69,14 +69,22 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    33.0,
-    34.0
+    59.0,
+    60.0
    ],
-   "stated": null,
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
+   ],
    "why": [
-    "the record names no total"
+    "the blocks and general education sum to 59.0-60.0; the catalog prints 60.0-60.0 for the degree"
    ]
   },
   "repeated": {
@@ -108,8 +116,17 @@
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
+   "open_elective_units": 2,
    "ge_pattern": "Cabrillo College General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Analyze and troubleshoot electrical circuits and mechanical systems based upon industry protocols and standards.",
     "Develop a portfolio of laboratory reports that demonstrate skills acquired within a particular technology.",
@@ -255,7 +272,7 @@
     ]
    },
    {
-    "name": "Recommended (Note: We strongly recommend CS1 and CS1L)",
+    "name": "Recommended (Note: strongly recommend CS1 and CS1L)",
     "rule": "recommended",
     "minimum": null,
     "option_group": null,
@@ -284,13 +301,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog states no total for the major itself; it prints 'Complete the following number of credits: 60' for the whole degree, Core 27, and Major Electives 6-7. Total_units left null rather than computing 33-34.",
-   "'General electives: any transferable or degree applicable course. 2 - 3' appears in the degree requirements; it fills the 60-unit degree rather than the major, so open_elective_units is left null.",
-   "CS1 and CS1L are strongly recommended in a note in the program description for students in computer-based engineering technology courses; recorded as a recommended block without units, since none are printed.",
-   "Codes are recorded as printed without a space (e.g., ETECH24 = ETECH 24).",
-   "The catalog text begins mid-sentence; the start of the program description may be cut off.",
-   "Source URL references fall 2025 while the catalog year is 2026-2027; reviewer may wish to confirm the year."
+   "Codes are written as the catalog prints them, without a space (e.g., ETECH24 = closed-list ETECH 24).",
+   "No major total is printed; core (27) plus electives (6-7) is not summed. The generic sentence 'at least 30 units in the major' is not recorded as a total.",
+   "Degree total of 60 and Cabrillo College General Education 24 are printed in the Program Requirements table.",
+   "General electives ('any transferable or degree applicable course') are printed as 2 - 3 units; open_elective_units records the low end 2 because the field holds a single number.",
+   "CS1 and CS1L are strongly recommended for students enrolling in computer-based engineering technology courses; recorded as a recommended block with no units printed. They are not counted toward the award.",
+   "CEM155 Blueprint Reading appears in Major Electives but is not on the closed list."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": "38565227455"
 }

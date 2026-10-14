@@ -5,11 +5,11 @@
  "title": "Medical Assisting",
  "award": "A.S. Degree",
  "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/medical-assisting-associate-in-science-a-s-fall-2025",
- "record_shape": 4,
+ "record_shape": 5,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6305,
+  "input_tokens": 7172,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6305,
-    "output_tokens": 2344,
+    "input_tokens": 7172,
+    "output_tokens": 2754,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 2344,
+  "output_tokens": 2754,
   "output_tokens_details": {
-   "thinking_tokens": 975
+   "thinking_tokens": 1324
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.0721,
- "ms": 22457,
- "seconds": 23.0,
+ "cost_usd": 0.08377,
+ "ms": 22907,
+ "seconds": 23.2,
  "parts": null,
  "error": null,
  "score": {
@@ -71,14 +71,22 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    43.0,
-    43.0
+    67.0,
+    67.0
    ],
-   "stated": null,
+   "stated": [
+    61.0,
+    61.0
+   ],
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
+   ],
    "why": [
-    "the record names no total"
+    "the blocks and general education sum to 67.0-67.0; the catalog prints 61.0-61.0 for the degree"
    ]
   },
   "repeated": {
@@ -96,7 +104,7 @@
    "pass": true
   },
   "careers": {
-   "count": 1,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
@@ -110,15 +118,25 @@
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
+   "open_elective_units": 0,
    "ge_pattern": "Cabrillo College General Education",
+   "degree_total": {
+    "min": 61,
+    "max": 61
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Accurately and safely perform medical assisting tasks and procedures.",
     "Perform receptionist and administrative medical facility duties.",
     "Interact professionally and ethically with patients and medical facility personnel, working within the medical assistant scope of practice."
    ],
    "careers": [
-    "medical assistant"
+    "medical assistant",
+    "supervisory, clinical, and administrative management roles"
    ]
   },
   "blocks": [
@@ -278,14 +296,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog states 61 credits for the whole degree, including 24 units of Cabrillo College General Education; no separate total for the major alone is printed, so total_units is left null.",
-   "'General electives: any transferable or degree applicable course' is printed with 0 units; no open elective unit count is stated, so open_elective_units is null.",
-   "MA70 and the English course (ENGLC1000, its honors twin ENGLC1000H, or ESL1A) are listed under Program Requirements but are described as program prerequisites to be completed before beginning the program.",
-   "CG51 is named only as recommended preparation, with no units printed.",
-   "Career text also mentions advancement to 'supervisory, clinical, and administrative management roles' and settings from urgent care to family practice and all medical specialties; only 'medical assistant' was recorded as a named career. A reviewer may want to check whether the advancement roles should be added.",
-   "Catalog note: MA125 must be taken within one year of the externship; MA135 must be taken in the semester immediately preceding MA101 (externship).",
-   "Source URL references Fall 2025 although the catalog year is 2026-2027."
+   "The page prints '61 Credits' and 'Complete the following number of credits: 61' over Cabrillo College General Education (24) and the major; recorded as degree_total. No separate major total is printed, so total_units is null.",
+   "GE 24 + core 37 = 61; the Prerequisite (MA70, 3) and English Prerequisite (3) blocks appear not to be counted in the 61 total. They are program-entry prerequisites listed under Program Requirements.",
+   "General electives line ('any transferable or degree applicable course') prints 0 units; recorded open_elective_units as 0 as printed.",
+   "English Prerequisite: ENGLC1000, its honors twin ENGLC1000H, or ESL1A; one is needed (3 credits).",
+   "CG51 appears only as recommended preparation in the description ('may be taken prior'); recorded as recommended with no units printed.",
+   "Note under core: MA125 must be taken within one year of externship; MA135 must be taken in the semester immediately preceding MA101.",
+   "Source URL references fall 2025 though catalog year is 2026-2027; reviewer may confirm year."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": "38565227455"
 }
