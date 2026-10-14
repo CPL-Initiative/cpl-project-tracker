@@ -16,9 +16,8 @@ available to S388; check if you have it).
 
 - **#2103 (merged):** the eLumen path for course outcomes. Cabrillo 1,124 courses loaded (load 38515664600) and Modesto
   Junior 910 (read 38515689944, load 38521527453). Both are insert-only, and each receipt names its rollback.
-- **#2105 (open, Coastline):** `main` merged in (conflicts resolved by ancestry: the PR's code was a strict superset),
-  Coastline loaded 522 courses (load 38523415414), and the lane updated. It merges once `test` passes on head `4f66ee5`.
-  If it is still open, read `get_check_runs`, then squash it.
+- **#2105 (merged):** the Coast district path. `main` was merged in (conflicts resolved by ancestry: the PR's code was
+  a strict superset), Coastline loaded 522 courses (load 38523415414), and the lane updated.
 - **#2107 (merged):** the addenda reading agent. `program_source_addenda_read()` was applied by `supabase-migrate.yml`
   (run 38516806015). The eight S387 reads are filed as `read` (42 program and 20 course changes); receipt
   `kb/receipts/program_source_addenda_read_2026-10-14_s388.sql`.
@@ -35,16 +34,15 @@ replies. The builder reproduces it unchanged.
 
 1. **Read Sheet 78's replies first** (`ArtifactData` list `replies`); act per handoff 387's card notes. Both of its cards
    spend model calls, so hold until he answers.
-2. **#2105:** if it is still open, merge it on a green `test` (squash).
-3. **The Acalog reader** for `kb/_program_requirements_college.py`: Palo Verde 2026-27, then El Camino and San Joaquin
+2. **The Acalog reader** for `kb/_program_requirements_college.py`: Palo Verde 2026-27, then El Camino and San Joaquin
    Delta. First confirm the census apply (Sunday 2026-10-18 10:29 UTC) moved Palo Verde's registry row to
    `catalog.paloverde.edu`. Capture Palo Verde with no model calls, then put the extraction on the next sheet. Before
    Sunday, the reader can be written and tried against a `trial=12` capture.
-4. **Palo Verde's course outcomes:** after its records re-read from 2026-27, run `elumen=`/`catalog=` against its
+3. **Palo Verde's course outcomes:** after its records re-read from 2026-27, run `elumen=`/`catalog=` against its
    catalog. Acalog may print SLOs on course pages, so try that in the reader's trial.
-5. **The addenda reader widens:** the other 71 `listed` addenda, college by college, as each college's reader reaches
+4. **The addenda reader widens:** the other 71 `listed` addenda, college by college, as each college's reader reaches
    them. A filing in `kb/addenda_reads/` goes through `program_source_addenda_read()` with a receipt.
-6. **The UI pass:** `python3 scripts/ui_pass.py --next` names the next view.
+5. **The UI pass:** `python3 scripts/ui_pass.py --next` names the next view.
 
 ## Docs to read
 
@@ -62,5 +60,5 @@ replies. The builder reproduces it unchanged.
 
 ## Subscriptions and check-ins
 
-At sign-off S388 drops its subscription to #2105. It holds no check-in and no artifact watch. The CPL Queue routine
+At sign-off S388 holds no PR subscription, no check-in and no artifact watch; every PR it opened is merged. The CPL Queue routine
 fires next at 05:12 UTC.
