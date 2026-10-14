@@ -1,0 +1,337 @@
+{
+ "run": "38506174617",
+ "index": "elumen:cabrillo",
+ "host": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+ "system": "elumen",
+ "slugs": "cabrillo",
+ "part": 1,
+ "of": 1,
+ "wanted": 1140,
+ "slice": 12,
+ "at": "2026-10-14T03:28:11Z",
+ "complete": true,
+ "summary": {
+  "read": 12,
+  "shapes": {
+   "list": 12
+  },
+  "status_not_200": 0,
+  "outcomes": 38
+ },
+ "rows": [
+  {
+   "code": "ACCT 151A",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,acct151a?tenant=cabrillo.elumenapp.com",
+   "named_by": [
+    "cabrillo"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,acct151a?tenant=cabrillo.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1474,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Upon successful completion of this course, students should be prepared to",
+   "lead": "Upon successful completion of this course, students should be prepared to:",
+   "outcomes": [
+    "Analyze and synthesize information necessary to complete the full accounting cycle.",
+    "Construct fully classified financial statements for a sole proprietorship in a service and/or merchandise business.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "90536db3e80dbdabd7f70901d28c43ed"
+  },
+  {
+   "code": "ART 10A",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,art10a?tenant=cabrillo.elumenapp.com",
+   "named_by": [
+    "cabrillo"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,art10a?tenant=cabrillo.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1536,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Upon successful completion of this course, students should be prepared to",
+   "lead": "Upon successful completion of this course, students should be prepared to:",
+   "outcomes": [
+    "Construct a portfolio of sculpture and/or jewelry incorporating the principles and practices of metal coloration.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "c761adf995cfe4cdea691e67eabc2dc5"
+  },
+  {
+   "code": "CABT 100",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,cabt100?tenant=cabrillo.elumenapp.com",
+   "named_by": [
+    "cabrillo"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,cabt100?tenant=cabrillo.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1793,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Upon successful completion of this course, students should be prepared to",
+   "lead": "Upon successful completion of this course, students should be prepared to:",
+   "outcomes": [
+    "Demonstrate productive competence with business office procedures and equipment including organizing records, producing business correspondence, communicating using e-mail, fax, phone and copy machines, and scheduling time and activities.",
+    "Apply the use of business technology and procedures to solve common business problems and issues.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "2b0e756293b23e24b4710e3c576bf2ad"
+  },
+  {
+   "code": "CJ 1",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,cj1?tenant=cabrillo.elumenapp.com",
+   "named_by": [
+    "cabrillo"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,cj1?tenant=cabrillo.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1526,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Upon successful completion of this course, students should be prepared to",
+   "lead": "Upon successful completion of this course, students should be prepared to:",
+   "outcomes": [
+    "Analyze and explain the historical development of the criminal justice system and its components.",
+    "Explain the interrelationship of the various subsystems within the justice system",
+    "Explain the various theories of crime causation.",
+    "Compare and contrast various theories of punishment and rehabilitation in the justice system.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "2ae87b666988f6dad429b7953b8a0132"
+  },
+  {
+   "code": "DH 160",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,dh160?tenant=cabrillo.elumenapp.com",
+   "named_by": [
+    "cabrillo"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,dh160?tenant=cabrillo.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1512,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Upon successful completion of this course, students should be prepared to",
+   "lead": "Upon successful completion of this course, students should be prepared to:",
+   "outcomes": [
+    "Demonstrate theoretical knowledge base needed to provide entry level dental hygiene patient education.",
+    "Apply critical thinking and clinical decision making in the creation of disease control programs on a sample of patients as part of the dental hygiene process of care.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "f40dd0af1fe251cf7dc1007641435ee7"
+  },
+  {
+   "code": "EDUC 400",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,educ400?tenant=cabrillo.elumenapp.com",
+   "named_by": [
+    "cabrillo"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,educ400?tenant=cabrillo.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1447,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Upon successful completion of this course, students should be prepared to",
+   "lead": "Upon successful completion of this course, students should be prepared to:",
+   "outcomes": [
+    "Create content using principles of Universal Design for Learning.",
+    "Edit a document for Universal Design for Learning remediation.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "e7db5cc1b473e6e66172d43dfa0d32f2"
+  },
+  {
+   "code": "ETECH 130",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,etech130?tenant=cabrillo.elumenapp.com",
+   "named_by": [
+    "cabrillo"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,etech130?tenant=cabrillo.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1426,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Upon successful completion of this course, students should be prepared to",
+   "lead": "Upon successful completion of this course, students should be prepared to:",
+   "outcomes": [
+    "Construct an assembly of components for a mechanical design in order to fully describe its size and shape parameters.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "781ec3eae57c904dc966005b833158e5"
+  },
+  {
+   "code": "GEOL 10",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,geol10?tenant=cabrillo.elumenapp.com",
+   "named_by": [
+    "cabrillo"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,geol10?tenant=cabrillo.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1768,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Upon successful completion of this course, students should be prepared to",
+   "lead": "Upon successful completion of this course, students should be prepared to:",
+   "outcomes": [
+    "Analyze and identify unknown nonsilicate and silicate minerals and igneous, sedimentary and metamorphic rocks to determine origin, general geologic history, economic value and age.",
+    "Assemble a comprehensive list of internal and external processes and demonstrate how they relate to the rock cycle, earth resources, plate tectonics, land-form evolution and geologic hazards.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "2e4316434ec2677943d4abc7fa5a5280"
+  },
+  {
+   "code": "ITAL 1",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,ital1?tenant=cabrillo.elumenapp.com",
+   "named_by": [
+    "cabrillo"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,ital1?tenant=cabrillo.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1613,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Upon successful completion of this course, students should be prepared to",
+   "lead": "Upon successful completion of this course, students should be prepared to:",
+   "outcomes": [
+    "Interact with sympathetic speakers of Italian in the present tense, demonstrating a working knowledge of structures and vocabulary used to express personal information, activities, and preferences.",
+    "Write descriptive sentences on familiar topics with simple syntax in the present tense.",
+    "Identify basic ideas in descriptive passages about familiar cultural topics written in the present tense.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "1a03e75515cb51c31efcb8a09ee66c51"
+  },
+  {
+   "code": "MUS 1",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,mus1?tenant=cabrillo.elumenapp.com",
+   "named_by": [
+    "cabrillo"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,mus1?tenant=cabrillo.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1892,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Upon successful completion of this course, students should be prepared to",
+   "lead": "Upon successful completion of this course, students should be prepared to:",
+   "outcomes": [
+    "Compose three voices above a given figured bass line,following the standards of figured bass notation, within the ranges of standard voice ranges.",
+    "Write a harmonic analysis of a chorale, including Roman numeral chord progression, cadences, key, non-harmonic tones.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "4f50beaccce1d15e4233ef292522bdd5"
+  },
+  {
+   "code": "POLSC 1000",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,polsc1000?tenant=cabrillo.elumenapp.com",
+   "named_by": [
+    "cabrillo"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,polsc1000?tenant=cabrillo.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1952,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Upon successful completion of this course, students should be prepared to",
+   "lead": "Upon successful completion of this course, students should be prepared to:",
+   "outcomes": [
+    "Demonstrate understanding of the structures, interactions, and functioning of the various levels of government in the United States.",
+    "Synthesize knowledge and analysis of political events and concepts to construct a personal political viewpoint.",
+    "Analyze and assess theoretical arguments, empirical evidence, and political events.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "abf3cd77e7ab965a0f2c6c96b183bd59"
+  },
+  {
+   "code": "SOC 1",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,soc1?tenant=cabrillo.elumenapp.com",
+   "named_by": [
+    "cabrillo"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,soc1?tenant=cabrillo.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1683,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Upon successful completion of this course, students should be prepared to",
+   "lead": "Upon successful completion of this course, students should be prepared to:",
+   "outcomes": [
+    "Evaluate the dynamics of human social behavior, interaction, and structures using a sociological perspective.",
+    "Formulate individual- and societal- level analysis employing sociological theories, concepts, research, and data sources.",
+    "Toggle"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "76557025afb9dd8f4ad7e15d4d4cfc31"
+  }
+ ]
+}
