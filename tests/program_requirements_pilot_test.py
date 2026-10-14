@@ -754,6 +754,39 @@ for award, want in (("A.A- T Degree", True), ("A.S. T Degree", True), ("A.S. Deg
                     ("A.A. Degree", False), ("Associate in Science for Transfer", True), (None, False)):
     check(S.transfer_degree(award, {}) is want, "transfer_degree(%r) is %s" % (award, want))
 
+# Record shape 6 (S392; Sam, 2026-10-14, Cabrillo Biology 06328 Needs a fix): a page printing the
+# major's total and the degree's checks both. Cabrillo Astronomy, which Sam confirmed: GE 24, a
+# 30-unit major and 6 units of major electives make the 60 the page prints.
+AST = [{"code": "ASTRO %d" % i, "units": 3} for i in range(1, 13)]
+ast = {"program": {"total_units": {"min": 30, "max": 30}, "degree_total": {"min": 60, "max": 60},
+                   "ge_units": {"min": 24, "max": 24}, "ge_pattern": "Cabrillo College General Education",
+                   "degree_elective_units": {"min": 6, "max": 6}, "electives_fill_degree": False},
+       "blocks": [{"name": "Recommended Major Requirements", "rule": "all",
+                   "courses": [{"code": "ASTRO %d" % i, "units": 3} for i in range(1, 11)]},
+                  {"name": "Recommended Major Electives", "rule": "choose_units", "minimum": 6,
+                   "stated": {"min": 6, "max": 6}, "optional": False,
+                   "courses": [{"code": "ASTRO 11", "units": 3}, {"code": "ASTRO 12", "units": 3}]}]}
+ast["blocks"][1]["name"] = "General electives"
+ast_major = {**ast, "blocks": [ast["blocks"][0]]}
+AST = AST[:10]
+r = S.score(ast_major, AST, None, "A.S. Degree")
+check(r["pass"] and r["arithmetic"]["against"] == "program" and r["arithmetic"]["degree"]["pass"]
+      and r["arithmetic"]["degree"]["computed"] == [60.0, 60.0],
+      "a 30-unit major, GE 24 and 6 degree electives check the major and the degree both: %s" % json.dumps(r["arithmetic"]))
+r = S.score({**ast_major, "program": {**ast["program"], "degree_elective_units": {"min": None, "max": None}}},
+            AST, None, "A.S. Degree")
+check(not r["pass"] and r["arithmetic"]["against"] == "degree" and r["arithmetic"]["status"] == "unequal"
+      and r["arithmetic"]["major"]["pass"] and r["arithmetic"]["computed"] == [54.0, 54.0],
+      "a major that meets its total and a degree that misses its 60 names the degree: %s" % json.dumps(r["arithmetic"]))
+r = S.score({**ast_major, "program": {**ast["program"], "total_units": {"min": 33, "max": 33}}}, AST, None, "A.S. Degree")
+check(not r["pass"] and r["arithmetic"]["against"] == "program" and "degree" in r["arithmetic"],
+      "a major that misses its own total is named first, with the degree's check beside it")
+check(S.score(ast_major, AST, None, "A.S. Degree")["degree"]["status"] == "read"
+      and S.score({**ast_major, "program": {"total_units": {"min": 30, "max": 30}}}, AST, None, "A.S. Degree")["degree"]["status"] == "major only"
+      and S.score({**ast_major, "program": {"total_units": {"min": 30, "max": 30}}}, AST, None,
+                  "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units")["degree"]["status"] == "n/a",
+      "the degree reading: read, major only, or n/a for a certificate")
+
 # The rescore (kb/_program_requirements_rescore.py) applies the same verdict to a filed record's sum.
 import _program_requirements_rescore as RS  # noqa: E402
 filed = {"award": "A.A. Degree", "record": {"program": {"electives_fill_degree": False}},
@@ -823,7 +856,9 @@ for field in ('"outcomes"', '"course_outcomes"'):
 check("exactly as printed" in fn and "Never reword" in fn,
       "the prompt tells the model to copy each outcome as printed and never reword one")
 import _program_requirements_extract as X3  # noqa: E402
-check(X3.RECORD_SHAPE == 5, "the extraction pass stamps record shape 5 on what it files")
+check(X3.RECORD_SHAPE == 6, "the extraction pass stamps record shape 6 on what it files")
+check("degree_elective_units" in fn and "at least 30 units in the major" in fn,
+      "the prompt keeps a degree's own electives and never reads a major-minimum sentence as the major total")
 # Record shape v5 (Sam, Open Asks Sheet 78 card 2): the degree total and the general education
 # units as printed, never in total_units, and electives that fill the degree named, never computed.
 for field in ('"degree_total"', '"ge_units"', '"electives_fill_degree"'):
