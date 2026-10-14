@@ -13,10 +13,11 @@
  "summary": {
   "read": 12,
   "shapes": {
-   "none": 12
+   "list": 11,
+   "paragraph": 1
   },
   "status_not_200": 0,
-  "outcomes": 0
+  "outcomes": 33
  },
  "rows": [
   {
@@ -33,13 +34,17 @@
    "title_printed": "",
    "chars": 1658,
    "offered_at": null,
-   "shape": "none",
-   "heading": null,
+   "shape": "list",
+   "heading": "Learning Outcomes",
    "lead": null,
-   "outcomes": [],
+   "outcomes": [
+    "Describe the origin and history of the Criminal Justice system in the United States.",
+    "Explain the functions of the police, courts, and corrections in the United States.",
+    "Define the concept of crime and the major theories of criminal behavior."
+   ],
    "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": null
+   "parsed_from": "html",
+   "fingerprint": "91a0124a14ad5e884952a70c0098c069"
   },
   {
    "code": "ANTHR 102",
@@ -55,13 +60,17 @@
    "title_printed": "",
    "chars": 1997,
    "offered_at": null,
-   "shape": "none",
-   "heading": null,
+   "shape": "list",
+   "heading": "Learning Outcomes",
    "lead": null,
-   "outcomes": [],
+   "outcomes": [
+    "Describe the basic concepts, methods of inquiry, and the theories of sociocultural anthropology.",
+    "Apply the above in comparative studies of sociocultural systems, and especially to explain observed variation, change and adaptation.",
+    "Use anthropological perspectives to describe and explain contemporary issues."
+   ],
    "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": null
+   "parsed_from": "html",
+   "fingerprint": "c10d44458be4ea09f32a797bc813abb9"
   },
   {
    "code": "BIT 231",
@@ -77,13 +86,17 @@
    "title_printed": "",
    "chars": 1712,
    "offered_at": null,
-   "shape": "none",
-   "heading": null,
+   "shape": "list",
+   "heading": "Learning Outcomes",
    "lead": null,
-   "outcomes": [],
+   "outcomes": [
+    "Demonstrate competency in using mail merge features to create customized business correspondence in acceptable format.",
+    "Customize documents utilizing/applying tools such as page numbering, styles, headers and footers, graphic objects, tables, columns, and forms.",
+    "Protect and prepare documents for multiple users; e.g., restricting access, modifying document properties, creating digital signatures, using markup features, and saving files as read-only."
+   ],
    "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": null
+   "parsed_from": "html",
+   "fingerprint": "8efdfafa5dcc99ba4bdfffd3e3c32a1b"
   },
   {
    "code": "COMM 102",
@@ -99,13 +112,17 @@
    "title_printed": "",
    "chars": 1875,
    "offered_at": null,
-   "shape": "none",
-   "heading": null,
+   "shape": "list",
+   "heading": "Learning Outcomes",
    "lead": null,
-   "outcomes": [],
+   "outcomes": [
+    "Prepare outlines and deliver speeches which demonstrate adaptation to audience and effective use of research, organization, and delivery skills",
+    "Manage communication apprehension",
+    "Demonstrate effective group and interpersonal communication skills in a variety of communication contexts"
+   ],
    "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": null
+   "parsed_from": "html",
+   "fingerprint": "f7fe9a41e348cf15916795baecffbb2b"
   },
   {
    "code": "EHS 201",
@@ -121,13 +138,16 @@
    "title_printed": "",
    "chars": 1413,
    "offered_at": null,
-   "shape": "none",
-   "heading": null,
+   "shape": "list",
+   "heading": "Learning Outcomes",
    "lead": null,
-   "outcomes": [],
+   "outcomes": [
+    "Identify and explain the function of a variety of specific plant descriptors.",
+    "Identify and describe the cultural characteristics of the spring plant list."
+   ],
    "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": null
+   "parsed_from": "html",
+   "fingerprint": "a59c0fbf78a93460edd614fbd230d9d5"
   },
   {
    "code": "ENGTC 300",
@@ -143,13 +163,17 @@
    "title_printed": "",
    "chars": 1253,
    "offered_at": null,
-   "shape": "none",
-   "heading": null,
+   "shape": "list",
+   "heading": "Learning Outcomes",
    "lead": null,
-   "outcomes": [],
+   "outcomes": [
+    "Use AutoCAD 2D drawing tools to efficiently and accurately draw predefined objects containing a variety of geometric shapes.",
+    "Annotate a 2D AutoCAD drawing with predefined dimensions and notes.",
+    "Use AutoCAD viewports and layouts to print a 2D drawing at the specified scale on various engineering paper sizes."
+   ],
    "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": null
+   "parsed_from": "html",
+   "fingerprint": "7edf16edcd35346f041f03756d30b75d"
   },
   {
    "code": "GEOG 101",
@@ -165,13 +189,18 @@
    "title_printed": "",
    "chars": 1479,
    "offered_at": null,
-   "shape": "none",
-   "heading": null,
+   "shape": "list",
+   "heading": "Learning Outcomes",
    "lead": null,
-   "outcomes": [],
+   "outcomes": [
+    "Describe the geographical approach to analyzing earth features.",
+    "Analyze the human impact upon an earth system.",
+    "Utilize a map to identify global patterns and geographical features.",
+    "Describe a map pattern to validate the distribution of an Earth process."
+   ],
    "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": null
+   "parsed_from": "html",
+   "fingerprint": "2c77067e2792ade524b1cffbe45c04cd"
   },
   {
    "code": "IIS 901",
@@ -187,13 +216,16 @@
    "title_printed": "",
    "chars": 1067,
    "offered_at": null,
-   "shape": "none",
-   "heading": null,
+   "shape": "list",
+   "heading": "Learning Outcomes",
    "lead": null,
-   "outcomes": [],
+   "outcomes": [
+    "Compare and contrast learning strategies necessary to achieve competency in college courses.",
+    "Identify their own personal learning style and strategies for competency in college course."
+   ],
    "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": null
+   "parsed_from": "html",
+   "fingerprint": "51673b016d9d1ba5df041eab97d5a537"
   },
   {
    "code": "MICRO 101",
@@ -209,13 +241,18 @@
    "title_printed": "",
    "chars": 1686,
    "offered_at": null,
-   "shape": "none",
-   "heading": null,
+   "shape": "list",
+   "heading": "Learning Outcomes",
    "lead": null,
-   "outcomes": [],
+   "outcomes": [
+    "Judge differences between different types of microorganisms.",
+    "Measure and evaluate how microorganisms grow and what factors influence their growth.",
+    "Describe how the host's immunity works to prevent disease and how the microorganisms interact with host cells.",
+    "Describe the principles of microbial metabolism and genetics and relate it to heredity."
+   ],
    "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": null
+   "parsed_from": "html",
+   "fingerprint": "e3bad0f761271830d93cd59e1f0e8c72"
   },
   {
    "code": "NURSE 270",
@@ -231,13 +268,15 @@
    "title_printed": "",
    "chars": 1028,
    "offered_at": null,
-   "shape": "none",
-   "heading": null,
+   "shape": "paragraph",
+   "heading": "Learning Outcomes",
    "lead": null,
-   "outcomes": [],
+   "outcomes": [
+    "Apply pharmaceutics, pharmacotherapeutics, pharmacokinetics, and pharmacodynamics in the accurate preparation and administration of medications."
+   ],
    "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": null
+   "parsed_from": "html",
+   "fingerprint": "f6a015b7fd3373b2253c490504e75d0d"
   },
   {
    "code": "PHILO 101",
@@ -253,13 +292,17 @@
    "title_printed": "",
    "chars": 2051,
    "offered_at": null,
-   "shape": "none",
-   "heading": null,
+   "shape": "list",
+   "heading": "Learning Outcomes",
    "lead": null,
-   "outcomes": [],
+   "outcomes": [
+    "Analyze and evaluate the issues and possible solutions to the \"Great Questions\" asked by philosophers.",
+    "Synthesize a world view based on an array of the possible solutions to the \"Great Questions\" asked by philosophers.",
+    "Construct arguments in support of, and in opposition to, the world views generated by the possible solutions to the questions asked by philosophers."
+   ],
    "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": null
+   "parsed_from": "html",
+   "fingerprint": "60cb8e5054fb596c34393dc795babc80"
   },
   {
    "code": "PSYCH 103",
@@ -275,13 +318,19 @@
    "title_printed": "",
    "chars": 1903,
    "offered_at": null,
-   "shape": "none",
-   "heading": null,
+   "shape": "list",
+   "heading": "Learning Outcomes",
    "lead": null,
-   "outcomes": [],
+   "outcomes": [
+    "Explain the functioning of the brain's reward circuit.",
+    "Explain the functioning of the sensory and motor divisions of the nervous system."
+   ],
    "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": null
+   "parsed_from": "html",
+   "fingerprint": "50e3b82c4d5069066fd8c2b081a05412"
   }
- ]
+ ],
+ "reparsed_at": "2026-10-14T03:33:42Z",
+ "reparsed_note": "The filed pages parsed again by parse_page, the read's own parser at the time of the reparse (S374: RCCD's objectives read as SLOs; S376: SDCCD's groups by college).",
+ "source_kind": "catalog"
 }

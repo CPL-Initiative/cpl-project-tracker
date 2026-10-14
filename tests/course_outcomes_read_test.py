@@ -193,6 +193,43 @@ def _():
     assert pv["ACC 101"]["report"].endswith("/2025-2026,course,acc101?tenant=pvc.elumenapp.com"), pv["ACC 101"]
 
 
+EL_MJC = os.path.join(ROOT, "kb", "course_outcomes", "trial_38505894485")   # Modesto: SLO: over a list
+EL_CAB = os.path.join(ROOT, "kb", "course_outcomes", "trial_38506174617")   # Cabrillo: a lead-in over a table
+
+
+def filed(folder, stem):
+    import gzip
+    return (gzip.open(os.path.join(folder, stem + ".html.gz"), "rt").read(),
+            open(os.path.join(folder, stem + ".txt")).read())
+
+
+@check("an eLumen course page's outcomes are read from its Learning Outcomes box, as printed (Modesto's list)")
+def _():
+    got = reader.parse_page(*filed(EL_MJC, "ADJU_201"), "elumen")
+    assert got["parsed_from"] == "html" and got["heading"] == "Learning Outcomes" and got["lead"] is None, got
+    assert got["outcomes"] == [
+        "Describe the origin and history of the Criminal Justice system in the United States.",
+        "Explain the functions of the police, courts, and corrections in the United States.",
+        "Define the concept of crime and the major theories of criminal behavior."], got
+
+
+@check("Cabrillo's table rows are outcomes with their numbers removed, its lead-in is kept, and the next accordion's Toggle is never an outcome")
+def _():
+    got = reader.parse_page(*filed(EL_CAB, "ACCT_151A"), "elumen")
+    assert got["parsed_from"] == "html", got
+    assert got["lead"] == "Upon successful completion of this course, students should be prepared to:", got
+    assert got["outcomes"] == [
+        "Analyze and synthesize information necessary to complete the full accounting cycle.",
+        "Construct fully classified financial statements for a sole proprietorship in a service and/or "
+        "merchandise business."], got
+    for folder in (EL_MJC, EL_CAB):
+        for name in os.listdir(folder):
+            if name.endswith(".html.gz"):
+                g = reader.parse_page(*filed(folder, name[:-8]), "elumen")
+                assert g["parsed_from"] == "html" and g["outcomes"], (folder, name)
+                assert not any(re.match(r"toggle|\d+\.", o, re.I) for o in g["outcomes"]), (name, g["outcomes"])
+
+
 @check("the read workflow hands an elumen= line to the reader in place of an index")
 def _():
     wf = open(os.path.join(ROOT, ".github", "workflows", "course-outcomes-read.yml")).read()
