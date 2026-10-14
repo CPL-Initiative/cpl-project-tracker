@@ -433,6 +433,17 @@ async function seedExhibits(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// Seeds the Records view with its first filter open (S391 UI pass): the dropdowns of #2121
+// (Sam, 2026-10-14) open a list of checkboxes no other target paints.
+async function seedFilterOpen(page, theme) {
+  await seedRecords(page, theme);
+  await page.evaluate(() => {
+    const b = document.querySelector("#program-requirements-root .prh-dd-btn");
+    if (b) b.click();
+  });
+  await page.waitForTimeout(300);
+}
+
 // Seeds the side by side view (S355, Sam 2026-10-09: "show a split view like this on the
 // Prog Rev tab so I don't have to do it manually"): the signed-in record above, opened
 // beside its catalog page, so the bar, the frame's pane and the record pane are measured
@@ -1860,6 +1871,23 @@ module.exports = {
     routes: [{ hash: "program-requirements", name: "records-dark" }],
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedRecords(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── Program Requirements: a Records filter open (S391 UI pass) ──────── */
+  "program-requirements-filter": {
+    file: "index.html",
+    title: "Program Requirements: Records, a filter open",
+    routes: [{ hash: "program-requirements", name: "filter" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedFilterOpen(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "program-requirements-filter-dark": {
+    file: "index.html",
+    title: "Program Requirements: Records, a filter open, dark",
+    routes: [{ hash: "program-requirements", name: "filter-dark" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedFilterOpen(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── Program Requirements: the exhibits view (S355) ─────────────────────
