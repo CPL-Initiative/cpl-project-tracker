@@ -1,0 +1,174 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "43664",
+ "shape": "certificate",
+ "title": "Electric Vehicle",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/electric-vehicle-mjc-fall-2024",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5583,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5583,
+    "output_tokens": 1182,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1182,
+  "output_tokens_details": {
+   "thinking_tokens": 375
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04597,
+ "ms": 9494,
+ "seconds": 9.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.5,
+    18.5
+   ],
+   "stated": [
+    18.5,
+    18.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Electric Vehicle",
+   "measure": "units",
+   "total_units": {
+    "min": 18.5,
+    "max": 18.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Recognize, diagnose, and repair faults in the following systems: Fuel Cell Power, Traction Motors, Electrical Energy Storage Systems, High Voltage Drive Train Topology, safety, and Drive Train Electricity and Electronics.",
+    "Demonstrate skills using online vehicle diagnostic/repair information and specialized test equipment that is consistent with industry standards.",
+    "Execute safe, proper, and ethical work practices."
+   ],
+   "careers": [
+    "service and diagnosis of electric and hybrid vehicles"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18.5,
+     "max": 18.5
+    },
+    "courses": [
+     {
+      "code": "AUTEC311",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTEC368",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTEC369",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTEC376",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTEC377",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space (e.g., AUTEC311); these match the closed-list codes AUTEC 311, 368, 369, 376 and 377, so none are marked as catalog additions.",
+   "The page prints an orphaned lead-in ('Upon satisfactory completion of this award, the student should be prepared to:') followed by 'Electric Vehicle *' before the Program Learning Outcomes heading; the outcomes were taken from the Program Learning Outcomes section.",
+   "Career entry is drawn from the description's phrase 'the emerging field of service and diagnosis of electric and hybrid vehicles'; no explicit job titles are named. Reviewer may judge whether this counts as a career field.",
+   "The source URL references a 'fall-2024' program version while the catalog year is 2026-2027."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

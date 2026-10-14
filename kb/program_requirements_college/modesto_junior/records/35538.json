@@ -1,0 +1,348 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "35538",
+ "shape": "adt",
+ "title": "Agriculture Animal Sciences",
+ "award": "A.S. T Degree",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-animal-sciences-for-transfer-degree-mjc-spring-2027",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6428,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6428,
+    "output_tokens": 2758,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2758,
+  "output_tokens_details": {
+   "thinking_tokens": 890
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08087,
+ "ms": 21626,
+ "seconds": 22.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "AGEC210",
+    "ANSC202",
+    "ANSC221",
+    "ANSC224",
+    "CHEM143",
+    "STATC1000"
+   ],
+   "flagged": [
+    "AGEC210",
+    "ANSC202",
+    "ANSC221",
+    "ANSC224",
+    "CHEM143",
+    "STATC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    32.0
+   ],
+   "stated": [
+    20.0,
+    32.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "AGRICULTURE ANIMAL SCIENCES, AS-T *",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Demonstrate practical skills in animal husbandry in the areas of management, production, breeding, nutrition, health, safety and handling.",
+    "Explain and demonstrate techniques used in preparing animals for marketing, shows and exhibitions.",
+    "Explain the role of government agencies in regulating and monitoring various factors associated with livestock and animal production.",
+    "Identify and explain production parameters associated with efficient livestock and animal management (i.e. feed conversion rates, normal rates of gain, growth rates, reproduction rates etc.)."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "ANSC200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED CORE",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AGEC210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECONC2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED CORE",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CHEM101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM143",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "AREA 1: ANIMAL PRODUCTION (3 UNITS)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANSC201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC207",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "AREA 2: ANIMAL HEALTH (3-5 UNITS)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ANSC214",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM112",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST B: SELECT 0-9 UNITS",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "AGEC200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGM235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC224",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANSC221",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PLSC205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints course codes without a space between subject and number (e.g., ANSC200); codes are recorded as printed and matched to the closed list (ANSC 200, etc.).",
+   "The parent heading 'REQUIRED CORE: 14-15 UNITS' (Total 14-15) groups the three REQUIRED CORE blocks; it holds no courses of its own and is not recorded as a separate block.",
+   "The parent heading 'LIST A: SELECT ONE FROM EACH AREA LISTED BELOW' (Total 6-8) groups the Area 1 and Area 2 blocks; it is not recorded as a separate block.",
+   "Area 2 says 'Complete the following number of credits: 3-5'; minimum recorded as 3 (one course from the area).",
+   "List B is 'SELECT 0-9 UNITS'; minimum recorded as 0. Reviewer may check whether List B units are needed to reach a stated major minimum.",
+   "The catalog text begins mid-sentence (description truncated), and a stray outcomes lead-in line appears before the section heading; outcomes were taken from the Program Learning Outcomes heading.",
+   "Award instructions also state a minimum of 18 semester units in the major, but the printed major total is 20-32."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

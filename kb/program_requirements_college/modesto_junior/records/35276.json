@@ -1,0 +1,324 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "35276",
+ "shape": "certificate",
+ "title": "Agricultural Environmental Science",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agricultural-environmental-science-mjc-fall-2023v2",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6232,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6232,
+    "output_tokens": 2629,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2629,
+  "output_tokens_details": {
+   "thinking_tokens": 748
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07751,
+ "ms": 21421,
+ "seconds": 21.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ENSCI110"
+   ],
+   "flagged": [
+    "ENSCI110"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    20.0,
+    26.0
+   ],
+   "stated": [
+    23.0,
+    23.0
+   ],
+   "why": [
+    "the blocks sum to 20.0-26.0; the catalog states 23.0-23.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "AGRICULTURAL ENVIRONMENTAL SCIENCE (Formerly Forestry), CERTIFICATE OF ACHIEVEMENT *",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Apply sustainable resource management skills for technical employment in the natural resource management.",
+    "Apply the principles of ecology, soil science, silviculture, cartography, and facilities maintenance and development to sustainable resources management problems.",
+    "Practice safe work habits in an employment setting, including handling and storage of hazardous materials and operation of basic tools and equipment."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "AGRICULTURE CAREER COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AG115",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AGRICULTURE CAREER COURSES",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "AG249",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG259A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG259B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG259C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG259D",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AGRICULTURE SCIENCE BREADTH COURSES",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "PLSC200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NR200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGEC225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AGRICULTURE SCIENCE BREADTH COURSES CONTINUED-TAKE AGM 200 OR AGM 235 BUT NOT BOTH",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AGM200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGM235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AGRICULTURE MAJOR COURSES - COMPLETE 9 UNITS",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ENSCI108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENSCI110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NR222",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGGE150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AGRICULTURE MAJOR ELECTIVES - COMPLETE 3 UNITS",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AGM215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EHS276",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Section I (AGRICULTURE CAREER COURSES - COMPLETE 5 UNITS, Total 5) is split into two blocks: AG115 required (1 unit) plus a nested 'Complete the following number of credits: 4' list. The catalog note says the 4 units must be AG 259D, or a combination of AG 259A-C, or a combination of AG 249 and AG 259A-B.",
+   "Section II (AGRICULTURE SCIENCE BREADTH COURSES - COMPLETE 6 UNITS, Total 6) requires 6 units across two sub-lists: 3-6 units from PLSC200/NR200/AGEC225 and 0-3 units from AGM200 or AGM235 (not both). Minimums recorded as the low end of each printed range (3 and 0); the combined 6-unit requirement applies across both blocks.",
+   "The overall 'AGRICULTURE CAREER COURSES (Total 5)' heading total was not assigned to the AG115-only block; that block's stated is left null.",
+   "ENSCI110 (California Water) appears in the catalog but not in the closed list; recorded as catalog_addition.",
+   "The same lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' appears twice; the three outcomes are printed once under Program Learning Outcomes.",
+   "No specific careers or job titles are named; the description mentions only obtaining employment or transferring."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

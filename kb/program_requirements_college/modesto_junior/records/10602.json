@@ -1,0 +1,434 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "10602",
+ "shape": "degree",
+ "title": "Soil Science",
+ "award": "A.S. Degree",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/soil-science-mjc-summer-2020",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6564,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6564,
+    "output_tokens": 4125,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4125,
+  "output_tokens_details": {
+   "thinking_tokens": 1521
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10876,
+ "ms": 31303,
+ "seconds": 31.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 15,
+   "share": 0.933,
+   "missing": [
+    "ENSCI108"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 9,
+   "codes": [
+    "AG259A",
+    "AG259C",
+    "AG259D",
+    "EHS210",
+    "NR222",
+    "PLSC205",
+    "PLSC230",
+    "PLSC241",
+    "PLSC250"
+   ],
+   "flagged": [
+    "AG259A",
+    "AG259C",
+    "AG259D",
+    "EHS210",
+    "NR222",
+    "PLSC205",
+    "PLSC230",
+    "PLSC241",
+    "PLSC250"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    23.0,
+    35.0
+   ],
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "why": [
+    "the blocks sum to 23.0-35.0; the catalog states 29.0-29.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 11,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Soil Science",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "ge_pattern": "MJC Associate Degree Requirements",
+   "outcomes": [
+    "Apply the principles of ecology, soil science, silviculture, cartography, and facilities maintenance and development to sustainable resources management problems.",
+    "Employ environmental stewardship as an operational philosophy for resource management, public education of natural resources, and wildlife management.",
+    "Employ the scientific method to solve problems in the laboratory and in the natural environment."
+   ],
+   "careers": [
+    "soil and water management",
+    "conservation",
+    "analysis",
+    "survey",
+    "farm management",
+    "range management",
+    "hydrology",
+    "irrigation",
+    "drainage",
+    "fertilization",
+    "rural and urban planning"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "AGRICULTURE CAREER COURSES - COMPLETE 5 UNITS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "AG 115",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AGRICULTURE CAREER COURSES",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "AG 249",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG 259A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AG 259B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG 259C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AG 259D",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "AGRICULTURE BREADTH COURSES",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "PLSC 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGEC 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGEC 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGEC 225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AGRICULTURE SCIENCE BREADTH COURSES",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AGM 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGM 235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "COMPLETE 3 UNITS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "NR 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "COMPLETE 6 UNITS",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "AGM 235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLSC 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PLSC 230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PLSC 205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PLSC 241",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "AGRICULTURE MAJOR ELECTIVES",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "NR 222",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EHS 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PLSC 255",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AGRICULTURE MAJOR ELECTIVES",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AGGE 146",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLSC 260",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENSCI 108",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Catalog prints codes without spaces (e.g. AG115, PLSC200); recorded with a space between subject and number, matching the catalog's own notes ('AG 115', 'AG 249') and the closed list.",
+   "The heading 'AGRICULTURE CAREER COURSES - COMPLETE 5 UNITS' prints Total 5, which covers both AG 115 (1 unit) and the 4-unit sub-block 'AGRICULTURE CAREER COURSES'; the 5 is recorded on the AG 115 block.",
+   "Career courses rule: the 4 additional units must be AG 259D, or a combination of AG 259A-C, or a combination of AG 249 and AG 259A-B; AG 249 internship/work experience must be agriculture related.",
+   "'AGRICULTURE SCIENCE BREADTH COURSES - COMPLETE 9 UNITS' (Total 9) combines the 6-9 unit 'AGRICULTURE BREADTH COURSES' list and the 0-3 unit 'AGRICULTURE SCIENCE BREADTH COURSES' list; minimum 0 recorded for the 0-3 list.",
+   "'AGRICULTURE MAJOR COURSES - COMPLETE 9 UNITS' consists of NR 200 (3) plus 6 units from the list; AGM 235 appears both in the science breadth list and the major courses list.",
+   "'AGRICULTURE MAJOR ELECTIVES - COMPLETE 6 UNITS' (Total 6) combines a 3-6 unit list and a 0-3 unit list; the 0-3 list also allows 'ANY COURSE NOT ALREADY TAKEN IN AREA III (AGRICULTURE MAJOR COURSES) ABOVE' (3 units), which is not an open elective and is not recorded as a course.",
+   "A stray lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' appears before 'SOIL SCIENCE, AS *' with no outcomes beneath it; outcomes were taken from the Program Learning Outcomes heading. The outcomes mention silviculture, cartography and wildlife management, which read like a natural resources program; reviewer may verify they belong to this award.",
+   "Source URL slug references 'summer-2020' though the catalog year is 2026-2027; reviewer may verify currency."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

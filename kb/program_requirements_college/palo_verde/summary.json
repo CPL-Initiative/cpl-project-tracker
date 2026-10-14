@@ -1,0 +1,183 @@
+{
+ "college": "Palo Verde College",
+ "programs": 69,
+ "with_closed_list": 68,
+ "found": 54,
+ "extracted": 54,
+ "errors": 0,
+ "passed_machine_checks": 29,
+ "failed": {
+  "coverage": 2,
+  "invented": 0,
+  "arithmetic": 25,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 4.4,
+ "cost_per_program": 0.0814,
+ "not_found": [
+  {
+   "control_number": "09816",
+   "title": "Vocational Nursing",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/science-core-for-nursing-certificate-of-achievement-2025-2026-fall-2025fa",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1630,
+     "content": 1630,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43203",
+   "title": "High School Equivalency Program",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/high-school-equivalency-program-2022-23-spring-2023sp",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1564,
+     "content": 1564,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45359",
+   "title": "California General Education Transfer Curriculum (Cal-GETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45471",
+   "title": "Child Care",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/child-and-adolescent-development-2025-2026-fall-2025fa",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3253,
+     "content": 3253,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45472",
+   "title": "Developing Capable Youth",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/child-development-developing-capable-youth-certificate-of-career-preparation-2021-22-summer-2022su",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1151,
+     "content": 1151,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45473",
+   "title": "Arts - Early Childhood Education",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/as-t-early-childhood-education-for-transfer-2025-2026-fall-2025fa",
+    "label": {
+     "award": 0,
+     "title": 0.75
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1941,
+     "content": 1941,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45959",
+   "title": "Umoja Scholars",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "46108",
+   "title": "Microsoft Word Specialist",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "46556",
+   "title": "Cross-Cultural Awareness",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "38477849603"
+}

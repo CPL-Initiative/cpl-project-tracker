@@ -1,0 +1,435 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "45982",
+ "shape": "degree",
+ "title": "Registered Veterinary Technician",
+ "award": "A.S. Degree",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/veterinary-technician-mjc-spring-2027",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6827,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6827,
+    "output_tokens": 3204,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3204,
+  "output_tokens_details": {
+   "thinking_tokens": 753
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09139,
+ "ms": 23156,
+ "seconds": 23.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 27,
+   "listed": 29,
+   "share": 0.931,
+   "missing": [
+    "ANSC252",
+    "ANSC255"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "VETT203",
+    "VETT211"
+   ],
+   "flagged": [
+    "VETT203",
+    "VETT211"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    67.0,
+    72.0
+   ],
+   "stated": [
+    67.0,
+    72.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Veterinary Technician A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 67,
+    "max": 72
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Describe how proper sanitation and OSHA regulations lead to an increase in the quality of care and practice in a veterinary hospital.",
+    "Demonstrate industry standard techniques in surgical, dental, radiographic and equipment procedures in veterinary technology."
+   ],
+   "careers": [
+    "Registered Veterinary Technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "AGRICULTURE CAREER COURSES - COMPLETE 1 UNIT",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "AG115",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "PROGRAM PREREQUISITES - CHOOSE ONE MATHEMATICS COURSE FROM THE LIST BELOW",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "MATH112",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH166",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH171",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "PROGRAM PREREQUISITES - CHOOSE BOTH COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ANSC55",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "PROGRAM PREREQUISITES - CHOOSE ONE FROM THE LIST BELOW",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ENGLC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLC1000E",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "PROGRAM PREREQUISITES - CHOOSE ONE FROM THE LIST BELOW",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CHEM143",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AGRICULTURE SCIENCE BREADTH - COMPLETE 3 UNITS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AGEC210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AGRICULTURE MAJOR REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 46,
+     "max": 46
+    },
+    "courses": [
+     {
+      "code": "VETT200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VETT201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VETT202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VETT203",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VETT204",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VETT205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VETT206",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VETT214",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VETT215",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VETT216",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VETT217",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VETT208",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VETT209",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VETT210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VETT211",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VETT212",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VETT213",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANSC 252",
+    "why": "not in the text (VETT203 Veterinary Equipment: Operation and Safety appears instead)"
+   },
+   {
+    "code": "ANSC 255",
+    "why": "not in the text (VETT211 Veterinary Surgical Nursing and Anesthesia may replace it)"
+   }
+  ],
+  "notes": [
+   "Program title in the closed list is 'Registered Veterinary Technician'; the catalog section is headed 'Veterinary Technician A.S. Degree'.",
+   "'Registered Veterinary Technician *' is printed under a lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' before the Program Learning Outcomes heading; read as a career listing.",
+   "The math, English and chemistry blocks say 'Complete the following number of credits' with a range, but their headings say choose one course; recorded as choose_courses 1 with the printed totals in stated.",
+   "AGRICULTURE MAJOR REQUIRED COURSES says 'Complete the following number of credits: 46'; the listed courses sum to exactly 46 units, so recorded as all.",
+   "VETT203 and VETT211 are not in the closed list (catalog additions); they may correspond to ANSC 252 and ANSC 255 in the state file.",
+   "Closed list title for VETT208 is a placeholder ('units change substantial...'); catalog names it Veterinary Emergency Procedures.",
+   "Codes recorded as printed without spaces (e.g., MATH112, STATC1000); matched to closed-list codes with spaces.",
+   "Page notes it was revised since initial catalog publication (addendum version)."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

@@ -1,0 +1,315 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "35537",
+ "shape": "adt",
+ "title": "Agriculture Business",
+ "award": "A.S. T Degree",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-business-for-transfer-degree-mjc-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6309,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6309,
+    "output_tokens": 2475,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2475,
+  "output_tokens_details": {
+   "thinking_tokens": 760
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07474,
+ "ms": 19151,
+ "seconds": 19.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "AGEC220",
+    "AGEC225",
+    "ANSC230",
+    "ECONC2002",
+    "EHS210"
+   ],
+   "flagged": [
+    "AGEC220",
+    "AGEC225",
+    "ANSC230",
+    "ECONC2002",
+    "EHS210"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.0,
+    33.0
+   ],
+   "stated": [
+    22.0,
+    33.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "AGRICULTURE BUSINESS, AS-T *",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Analyze financial records and develop financial documents required by agricultural lenders and commercial banks.",
+    "Describe the scope and economic significance of agriculture in the state of California.",
+    "Explain farm management concepts and practices utilized in agri-business including developing budgets, farm record analysis, profit and loss analysis.",
+    "Use knowledge of economic laws in order to facilitate and improve overall business operation.",
+    "Utilize the computer to create graphs, databases and to access information relevant to agricultural business."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "AGEC210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONC2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED CORE - FOURTH COURSE",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "NR200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM143",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A: SELECT THREE COURSES",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "AGEC200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGEC225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGEC220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGEC280",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PLSC200",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST B: SELECT 0-9 UNITS",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "BUSAD218",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANSC230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANSC220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLSC230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EHS210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGM235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The REQUIRED CORE: 13-15 UNITS heading (Total 13-15) contains the REQUIRED CORE (10) and REQUIRED CORE - FOURTH COURSE (3-5) sub-blocks; recorded as the two sub-blocks.",
+   "REQUIRED CORE - FOURTH COURSE says 'Complete the following number of credits: 3-5'; this effectively means one course from NR200, CHEM143 or CHEM101. Recorded as choose_units with minimum 3.",
+   "List A note: 'MAY TAKE ANSC 200 OR PLSC 200, BUT NOT BOTH' (printed with 3 units); recorded as ANSC200 with PLSC200 as its alternative.",
+   "List B includes an entry 'ANY COURSE NOT ALREADY USED.' (3-4 units), likely meaning any List A course not already used; not recorded as a course and open_elective_units left null. Reviewer should check.",
+   "List B minimum of 0 units means the block is optional; it is needed only to reach the 18-unit major minimum depending on core choices.",
+   "An introductory line 'Upon satisfactory completion of this award, the student should be prepared to:' appears before the section heading with no outcomes under it; the outcomes were taken from the Program Learning Outcomes heading.",
+   "Codes are printed without spaces (e.g., AGEC210, STATC1000) and were kept as printed."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

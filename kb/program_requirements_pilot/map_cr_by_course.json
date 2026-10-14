@@ -1,8 +1,8 @@
 {
- "_what": "MAP's credit recommendations per course at the harvest's sixteen colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline and Cabrillo): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
+ "_what": "MAP's credit recommendations per course at the harvest's eighteen colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline, Cabrillo, Modesto Junior and Palo Verde): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
  "_source": "public.map_college_cr_unit (reviewer-gated) joined to map_colleges by college_id; exhibit titles from map_ace_exhibit_titles, else chatbox_exhibits. A college_course string naming several courses ('ADJ-13 ...(3.0), ADJ-19 ...(3.0)') counts toward each course it names. Course code = the SUBJ-NUM token with the hyphen read as a space.",
  "_read_at": "2026-10-13",
- "_read_by": "SkySpruce (S383) through the Supabase MCP: Cabrillo added (112 course codes); the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 51b488541fdab60ea9e4d093eb052c0a and the md5 over each code's titles (code#title#source#recs, in the read's order) d71fa73bd6952487451eaeafb878f3eb, in SQL and over the filed rows. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield (100 course codes) and Coastline (26) added; per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads c58de704f09a7b58007336979431dace and 8bccde4ad1bae0d610b6de34413e24e9 in SQL and over the filed rows. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added (44 course codes); the per-college md5 over code|recs|exhibits|untitled reads 9ad02bf038663b2c19ac0c6b8aed2574 and the md5 over each code's titles (title#source#recs, in the read's order) 38e86115426ffd0ca2856d3ad6713150, in SQL and over the filed rows. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey (94 course codes) and San Diego City (33) added; per-college md5 over code|recs|exhibits|untitled reads 115340c8a405300f47c2bd0223964f68 and 249410c6592148fbf3beb7b68b7f1cd0 in SQL and over the filed rows. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added (33 course codes; the per-course fingerprint over code, recs, exhibits, untitled exhibits and titles reads 5c7d3a90393e710daa4f686a2f56c917 in SQL and over the filed rows). Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
+ "_read_by": "SkyHazel (S385) through the Supabase MCP: Modesto Junior (162 course codes) and Palo Verde (58) added; the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 44f69ec1a24823e14935781dbd760bd8 and 4acabc5730dedeb1e0f28194796eb23c, and the md5 over each code's titles (code#title#source#recs, in the read's order) 30765bf9ceef64b44a2e862b58111469 and 83bbe816ab4eb109b72be382c170d47a, in SQL and over the filed rows. Earlier: SkySpruce (S383) through the Supabase MCP: Cabrillo added (112 course codes); the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 51b488541fdab60ea9e4d093eb052c0a and the md5 over each code's titles (code#title#source#recs, in the read's order) d71fa73bd6952487451eaeafb878f3eb, in SQL and over the filed rows. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield (100 course codes) and Coastline (26) added; per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads c58de704f09a7b58007336979431dace and 8bccde4ad1bae0d610b6de34413e24e9 in SQL and over the filed rows. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added (44 course codes); the per-college md5 over code|recs|exhibits|untitled reads 9ad02bf038663b2c19ac0c6b8aed2574 and the md5 over each code's titles (title#source#recs, in the read's order) 38e86115426ffd0ca2856d3ad6713150, in SQL and over the filed rows. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey (94 course codes) and San Diego City (33) added; per-college md5 over code|recs|exhibits|untitled reads 115340c8a405300f47c2bd0223964f68 and 249410c6592148fbf3beb7b68b7f1cd0 in SQL and over the filed rows. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added (33 course codes; the per-course fingerprint over code, recs, exhibits, untitled exhibits and titles reads 5c7d3a90393e710daa4f686a2f56c917 in SQL and over the filed rows). Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
  "_refresh": "By hand, the way kb/ccr_cpl_funnel.json is refreshed: run kb/program_requirements_pilot/map_cr_by_course.sql through the Supabase MCP when the funnel reloads (map-custom-report-load.yml) or the harvest adds a college, and file the rows here.",
  "colleges": {
   "Bakersfield College": {
@@ -8561,6 +8561,2740 @@
     "untitled_exhibits": 0
    }
   },
+  "Modesto Junior College": {
+   "ADJU 201": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ADJU201 Introduction to Administration of Justice",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ADJU 202": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ADJU 202\tPrinciples/Procedures of Justice Sysytem - Industry Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "ADJU 202\tPrinciples/Procedures of Justice Sysytem - Portfolio",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "ADJU 203": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ADJU 203\tConcepts of Criminal Law - Industry Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "ADJU 203\tConcepts of Criminal Law - Portfolio",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "ADJU 204": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ADJU 204\tLegal Aspects of Evidence - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "ADJU 204\tLegal Aspects of Evidence - Portfolio",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "ADJU 205": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ADJU 205\tCommunity Relations - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "ADJU 205\tCommunity Relations - Portfolio",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "ADJU 212": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ADJU 212\tCriminal Investation - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ADJU 213": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ADJU 213\tPatrol Procedure - Industry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ADJU 215": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ADJU 215\tIntroduction to Firearms - Industry Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ADJU 216": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ADJU 216 Advanced Firearms & Range Application - Industry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ADJU 217": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ADJU 217\tSubstance Abuse - Industry Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ADJU 219": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ADJU 219\tCorrections Firearms Training - Industry Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ADJU 222": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ADJU 222\tProfiling Terrorism",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "ADJU 222\tProfiling Terrorism - Industry Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "ADJU 232": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ADJU 232 - Juvenile Justice Procedures - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ADJU 234": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ADJU234 Introduction to Crime",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ADJU 235": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ADJU 235\tIntroduction to Corrections - Industry Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ADJU 243": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ADJU 243\tDomestic Violence Crisis Intervention - Industry Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ADJU 310": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ADJU 310\tCommunications in Criminal Justice - Industry Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AG 259A": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AG 259A\tAgricultural Work Experience - Industry Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AG 259D": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AG 259D\tAgricultural Work Experience - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AGEC 210": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AGEC 210\tElements of Agricultural Economics - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AGM 210": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AGM 210\tAgricultural Welding - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AGM 210\tAgricultural Welding - Industry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "AGM 211": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AGM 211 Advanced Agricultural Welding - Military",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AGM 216": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AGM 216\tAgriculture Occupational Safety - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AGM 236": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AGM 236\tAdvanced Irrigation and Drainage - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AGM 239": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AGM 239\tIrrigation System Installation and Maintenance - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AGM 289": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AGM 289\tPrinciples of Power Mechanics/Small Engines - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ANAT 125": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ANAT 125\tHuman Anatomy - Portfolio Review",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "ANAT 125 Human Anatomy - Military",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "ANSC 252": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ANSC 252\tVeterinary Equipment: Operation, Instrumentation, and Safety - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ANSC 253": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ANSC 253\tVeterinary Laboratory Procedures - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ANSC 254": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ANSC 254\tVeterinary Medical Office Procedures - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ANSC 255": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ANSC 255\tPreparation for Veterinary Surgical and Dental Assistance - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ANSC 256": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ANSC 256\tVeterinary Assistance & Nursing: Emergency Procedures - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ANSC 257": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ANSC 257\tVet Assistance & Nurs: Anim Handling - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ANSC 258": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ANSC258 Horsemanship",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ANTHR 110": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ANTHR 110\tBiological Anthropology With Laboratory - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ART 120": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ART 120\tBasic Drawing 1 - Portfolio",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ART 148": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ART 148\tPainting 1 (in Oil) - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ART 170": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ART 170 Basic Photography",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ART 173": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ART 173 Basic Digital Photography - Military",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AUTEC 311": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AUTEC 311\tBasic Automotive Systems - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "BIO 101": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "BIO 101 Biological Principles - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "BIO 111": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "BIO 111\tGeneral Biology - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "BIO 111 \tGeneral Biology - Advanced Placement",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "BIT 231": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "OFADM 231 (change to BIT 231)\tIntermediate Word Processing - Industry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "BIT 250": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "OFADM 256 (change to BIT 250)\tIntroduction to Microsoft Word - Industry Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "OFADM 256 (change to BIT 250) Introduction to Microsoft Word - Military Training",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "BIT 260": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "OFADM 259 (change to BIT 260)\tIntroduction to Microsoft Excel - Industry Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "OFADM 259 (change to BIT 260) Introduction to Microsoft Excel - Military",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "BIT 261": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "OFADM 260 (Change to BIT 261)\tIntermediate Microsoft Excel - Industry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "BIT 262": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "BIT 262\tAdvanced Microsoft Excel - Industry Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "BIT 270": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "OFADM 261 (change to BIT 270) Introduction to Microsoft Access - Military",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "BIT 375": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "BIT 375\t10-KEY on the Computer - Industry Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "BUSAD 210": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "BUSAD 210\tBusiness Communication - Portfolio",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "BUSAD 210 Business Communication - Military Training",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician Networks",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Explosive Ordnance Disposal Technician",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 4,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 2,
+     "MAP": 2
+    }
+   },
+   "CHEM 142": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CHEM 142\tPre-General Chemistry - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "CHEM 142\tPre-General Chemistry - Industry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "CHEM 143": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CHEM 143\tIntroductory College Chemistry",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CLDDV 107": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CLDDV207 Introduction to Curriculum",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CMPET 311": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CMPET 311\tIT Support Fundamentals 1 - Industry Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CMPET 315": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CMPET 315\tGoogle IT Support Professional Certificate Prep Industry Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CMPET 316": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CMPET 316\tArduino Fundamentals Certification Prep - Industry Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CMPGR 213": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CMPGR 213\tDigital Drawing and Painting - Portfolio",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CMPGR 215": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CMPGR 215\tBusiness Presentation Graphics - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CMPGR 235": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CMPGR 235\tBeginning Photoshop - Industry Certificate",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "CMPGR 235\tBeginning Photoshop - Portfolio",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "CMPGR 284": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CMPGR 284\tBeginning After Effects - Portfolio",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "COMM 102": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "COMM 102 Introduction to Human Communication - Military",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "COMM 103": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "COMM 103 Interpersonal Communication",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "COMM C1000": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "COMM 1000 (COMM 100) \tFundamentals of Public Speaking - Industry Certificate",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "COMM C1000 (COMM 100) Fundamentals of Public Speaking",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "CSCI 201": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CSCI 201\tGeneral Computer Literacy - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CSCI 232": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CSCI 232 Database Server Administration - Military",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CSCI 240": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CSCI 240 Networking Essentials",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CSCI 270": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CSCI 270\tIntroduction to Programming - Advanced Placement",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "CSCI 270\tIntroduction to Programming - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "CSCI 271": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CSCI 271\tProblem Solving and Programming 1 - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CSCI 295": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CSCI 295\tInternship in Computer Science Discussion",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CSCI 296ABC": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CSCI 296C\tInternship in Computer Science - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "DANCE 183": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "DANCE183 Dance Rehearsal and Performance 3",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "EHS 215": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "EHS 215\tLandscape Design - Portfolio",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "EHS 280": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "EHS 280\tPrinciples of Floral Art and Design - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELTEC 208": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ELTEC 208\tFundamentals of Electricity and Electronics - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "ELTEC 208\tFundamentals of Electricity and Electronics - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "ELTEC 212": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ELTEC 212\tDigital Principles and Circuits - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELTEC 221": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ELTEC 221\tInstrumentation Devices and Systems - Industry Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "ELTEC 221\tInstrumentation Devices and Systems - Portfolio",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "ELTEC 225": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ELTEC 225\tResidental Wiring - Portfolio",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELTEC 226": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ELTEC 226\tMotors, Controls, and Controllers - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELTEC 229": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ELTEC 229\tCommercial & Industrial Wiring  - Portfolio",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELTEC 230": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ELTEC 230\tBlueprint Reading for Electricians - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELTEC 232": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ELTEC 232\tIntroduction to Programmable Logic Controllers - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "ELTEC 232\tIntroduction to Programmable Logic Controllers - Portfolio",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "ELTEC 234": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ELTEC 234\tIntroduction to PACs:Programmable Automation Controllers - Portfolio",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELTEC 265": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ELTEC 265\tTroubleshooting Techniques - Industry Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "ELTEC 265\tTroubleshooting Techniques - Portfolio",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "ELTEC 320": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ELTEC 320\tElectrical Safety - Industry Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "ELTEC 320\tElectrical Safety - Portfolio",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "ELTEC 322": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ELTEC 322\tTechnical Measurements - Portfolio",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "EMS 350": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "EMS 350\tFirst Responder with Healthcare Provider CPR - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "EMS 350\tFirst Responder with Healthcare Provider CPR - Industry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "EMS 380": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "EMS 380 Basic ECG Interp/Intro to Cardiac Care - Military",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "EMS 389": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "EMS 389\tEmergency Medical Technician 1- Clinical - Industry Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "EMS 389 Emergency Medical Technician 1- Clinical - Military",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "EMS 390": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "EMS 390\tEmergency Medical Technician 1 - Industry Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "EMS 390 Emergency Medical Technician 1",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "EMS 391": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "EMS 391 EMT 1- Refresher Course",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ENGL 102": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ENGL 102\tAdvanced Composition & Introduction to Literature - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ENGL C1000": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ENGL C1000 (ENGL 101)\tComposition and Reading - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "ENGL C1000 (ENGL 101)\tComposition and Reading - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "ENSCI 108": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ENSCI 108\tEnvironmental Conservation - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FREN 101": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FREN 101\tFrench 1 - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FTECH 301": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FTECH 301\tPrinciples of Emergency Services - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FTECH 301\tPrinciples of Emergency Services - Industry Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FTECH 301\tPrinciples of Emergency Services - Portfolio Review",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Principles of Emergency Services Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 4,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 4
+    }
+   },
+   "FTECH 302": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Prevention Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FTECH 302\tFire Prevention - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FTECH 302\tFire Prevention - Industry Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FTECH 302 Fire Prevention",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 4,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 4
+    }
+   },
+   "FTECH 303": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Protection Systems Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FTECH 303\tFire Protection Systems - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FTECH 303\tFire Protection Systems - Industry Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FTECH 303 Fire Protection Systems",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 4,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 4
+    }
+   },
+   "FTECH 304": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FTECH 304\tBuilding Construction for Fire Protection - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FTECH 304\tBuilding Construction for Fire Protection - Industry Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FTECH 304 Building Construction for Fire Protection - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 3
+    }
+   },
+   "FTECH 305": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FTECH 305\tFire Behavior and Combustion - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FTECH 305\tFire Behavior and Combustion - Industry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "FTECH 306": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FTECH 306\tPrinciples of Fire and Emergency Services Safety and Survival",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FTECH 306\tPrinciples of Fire and Emergency Services Safety and Survival - Industry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "FTECH 307": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FTECH 307\tFire Science Tactics & Strategy - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FTECH 307\tFire Science Tactics & Strategy - Industry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "FTECH 308": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FTECH 308\tFire Service Career Development/Promotions - Industry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FTECH 317": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FTECH 317\tFirefighter 1 Academy Physical Training - Industry Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FTECH 319": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FTECH 319\tAdvanced Firefighter 1 Academy - Industry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FTECH 321XABC": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FTECH 321C\tFire Service In-Service Training/EMS - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FTECH 331": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FTECH 331\tRescue Systems 1 - Industry Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FTECH 341": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FTECH 341\tFire Apparatus Driver/Operator 1A - Industry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FTECH 342": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FTECH 342\tFire Apparatus Driver/Operator 1B - Industry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "GEOG 105": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "GEOG 105\tEconomic Geography - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "GEOL 166": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "GEOL 166\tHistorical Geology - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "HE 100": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "HE 100\tStandard First Aid/CPR/AED - Industry Certificate",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "HE 100\tStandard First Aid/CPR/AED - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "HE 101": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "HE 101\tEmergency Medical Response; CPR PRO/Healthcare Provider - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "HE 101\tEmergency Medical Response; CPR PRO/Healthcare Provider - Industry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "HE 105": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "HE 105\t Exploration of Health Professions - Industry Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "HE 110": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "HE 110\tHealthful Living - Industry Certificate",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Basic Military Training (BMT)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    }
+   },
+   "HE 118": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "HE 118\tExercise and Nutrition for Healthy Living - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "HIST 101": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "HIST 101\tHistory of U.S. to 1877 - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "HIST 101\tHistory of U.S. to 1877 - Standardized Assessment",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "HIST 102": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "HIST 102\tHistory of the United States Since 1865 - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "HIST 105": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "HIST 105\tWestern Civilization Since 1648 - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "HIST 107": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "World History-AP Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "HUMSR 147": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "HUMSR-147\tField Studies & Seminar I - Industry Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "KIN 106": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "KIN106 Care and Prevention of Athletic Injuries",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "LOGST 202": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "LOGST 202 Introduction to Supply Chain Management",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MACH 395B": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "MACH 395B\tAdvanced Mach Tool Technology Lab - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MATH 171": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "MATH 171\tCalculus: First Course - Advanced Placement",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "MATH 171\tCalculus: First Course - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "MATH 171\tCalculus: First Course - Industry Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 3
+    }
+   },
+   "MATH 172": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "MATH 172\tCalculus: Second Course - Advanced Placement",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "MATH 172\tCalculus: Second Course - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "MDAST 321": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "MDAST 321 - Medical Terminology",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MDAST 322": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "MDAST 322 Medical Assisting Administrative Procedures - Industry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MDAST 323": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "MDAST 323 - Medical Assisting Clinical - Indsutry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MDAST 324": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "MDAST 324 - Introduction to Disease & Pharmacology - Industrial Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MDAST 325": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "MDAST 325 - Medical Assisting Lab Procedures - Industry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MDAST 326": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "MDAST 326 Medical Assisting Practicum - Indsutry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MICRO 101": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "MICRO 101\tMicrobiology - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MUSG 101": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "MUSG 101\tMusic Appreciation - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MUST 121": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "MUST 121\tMusic Theory 1 - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "MUST 121\tMusic Theory 1 - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "NURSE 115": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "NURSE 115\tIntroduction for Nursing Majors - Industry Training",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "NURSE 270": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "NURSE 270 Nursing Process: Pharmacology - Military",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "NURSE 271": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "NURSE 271\tNursing Process: Fundamentals - Portfolio Review",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "NURSE 271 Nursing Process: Fundamentals",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "NURSE 272": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "NURSE 272 Nursing Process: Geriatrics",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "NURSE 273": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "NURSE 273\tNursing Process: Maternal-Child - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "NURSE 274": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "NURSE 271 Nursing Process: Fundamentals",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "NURSE 274\tNursing Process: Mental Health - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "PEC 115": {
+    "recs": 1,
+    "titles": [],
+    "exhibits": 1,
+    "untitled_exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    }
+   },
+   "PEC 140": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "PEC 140\tExercise for Fitness - Industry Certificate",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "PEC 140 Exercise for Fitness",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 2,
+     "unnamed": 1
+    }
+   },
+   "PEC 164": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "PEC 164\tSelf Defense",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "PEC 164\tSelf Defense - Industry Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "PHYS 101": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "PHYS 101\tGeneral Physics: Mechanics - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "PHYS 142": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "PHYS 142\tMechanics, Heat, & Waves - Advanced Placement",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "PHYS 165": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "PHYS 165\tIntroductory Physics - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "PHYS 165\tIntroductory Physics - Standardized Assessment",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "PHYSO 101": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "PHYSO 101\tIntroductory Human Physiology - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "POLS C1000": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "POLS C1000 (POLSC 101) American Politics - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "POLSC 130": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "POLSC 130\tPolitical Theory - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "PSYC C1000": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "PSYCH 101\tGeneral Psychology - Portfolio Review",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "PSYCH 101\tIntro to Psycholoy - Advanced Placement",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "PSYCH 101\tIntro to Psycholoy - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Psych c1000 - Introduction to Psychology - AP Credit",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 4,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 4
+    }
+   },
+   "PSYCH 118": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "PSYCH118 Drugs and Human Behavior",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "RLES 380": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "RLES 380\tReal Estate Principles - Industry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "RLES 381": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "RLES 381\tReal Estate Practice - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "RLES 381\tReal Estate Practice - Industry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "RLES 382": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "RLES 382\tLegal Aspects of Real Estate - Industry Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "RLES 384": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "RLES 384 \tReal Estate Finance - Industry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "RLES 392": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "RLES 392\tBasic Escrow Procedure - Industry Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "SM 331": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "SM 331\tSheet Metal and Installation 1 - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "SOCIO 101": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "SOCIO 101\tIntroduction to Sociology - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "SPAN 101": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "SPAN 101\tSpanish 1 - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "SPAN 101\tSpanish 1 - Standardized Assessment",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "SPAN 110": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "SPAN 110\tSpanish for Spanish Speakers 2 - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "STAT C1000": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "MATH 134-STAT-C1000\tElementary Statistics - Advanced Placement",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "MATH 134-STAT-C1000\tElementary Statistics - Credit by Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "WELD 200": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "WELD 200\tArc & Gas Welding - Industry Certificate",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "WELD 200 \tArc & Gas Welding - Credit by Exam",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "WELD 200 \tArc & Gas Welding - Portfolio",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 3
+    }
+   }
+  },
   "Moreno Valley College": {
    "ADJ 1": {
     "recs": 4,
@@ -15802,6 +18536,923 @@
     "untitled_exhibits": 0,
     "exhibits_by_source": {
      "ACE": 1
+    }
+   }
+  },
+  "Palo Verde College": {
+   "EMS 161": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Emergency Medical Technician",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Samaritan EMT-Paramedic training program",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "FST 081": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CAL FIRE  Ethical Leadership in the classroom",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 090": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Firefighter I Academy",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Fighter I",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Fighter II",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 3
+    }
+   },
+   "FST 106": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Auto Extrication",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 107": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Driver/Operator: Aerial/Truck Operations",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 110": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Swiftwater & Flood Rescue-1 Operational NFPA Operations Level",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 113": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Rescue Boat Operations",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 115": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Fire Apparatus Driver/Operator 1A",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 116": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Fire Apparatus Driver/Operator 1B",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 119": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Ctrl 6 Wildland Fire",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 120": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Fire Fighter Survival",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 121": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "1st Receiver Ops & Decon",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 123": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Fire Control 3B: Structural FIre Fighting in Live-fire Simulators",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 124": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Fire Control 4A: Ignitable Liquids and Gases Awareness/Operations",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Control 3A: Structural Firefighting in Acquired Structures",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "FST 125": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Surface Rescue Boat Technician",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 148": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "National Wildfire Coordinating Group-S-190 Introduction to Windland Fire Behavior",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 150": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "First Responder Awareness/Operations",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 151": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Hazmat 1st Respond Awareness",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 152": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Haz Mat Technician 1A: Basic Chemistry",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 153": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Haz Mat Technician 1B: Applied Chemistry",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 154": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Haz Mat Technician 1C: Incident Considerations",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 155": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Haz Mat Technician 1D: Tactical Field Operations",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 156": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Trench Rescue",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 157": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Specialist Course Module F",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 158": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Specialist Course Module G",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 159": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "State Fire Training ICS I-200",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "U.S. HOMELAND SECURITY IS-200 Basic Incident Command System (ICS)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "FST 162": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire I-300 Intermediate ICS",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 163": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire I-400 Advanced ICS (2019)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 165": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Confined Space Rescue Operations/Technician",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 166": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Confined Space Rescue Awareness",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 173": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Rescue Systems 1",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 174": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Rescue Systems 2",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 175": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Low Angle Rope Rescue Operational",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 183": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal E.M.A.  Hazardous Materials Technician/Specialist WMD Terrorism",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 219": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Rescue Systems 3: Structural Collapse Technician",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 221": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "S404 Safety Officer",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 224": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Fire and Emergency Services Instructor 1",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Cal Fire Instructor I",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Cal Fire Training Instructor 1A",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 3
+    }
+   },
+   "FST 226": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Instructor 2",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 240": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Fire Prevention 1A",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Cal Fire Fire Prevention 1B",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "FST 241": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Fire Investigation 1A",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 242": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Investigation 1B: Techniques of Fire Investigation",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 245": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Company Officer 2A: Human Resource Management",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Cal Fire Fire Management 1",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "FST 246": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Company Officer 2B: General Administrative Functions",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 247": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Company Officer 2C: Fire Inspections and Investigations",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "FST 248": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Company Officer 2D: All Risk Command Operations",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 249": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Company Officer 2E: Wildland Incident Operations",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 252": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Chief Fire Officer 3A:  Human Resource Management (2014)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 253": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Chief Fire Officer 3B: Budget and Fiscal Responsibilities (2014)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 254": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Chief Fire Officer 3C: General Administrative Functions",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 256": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Chief Fire Officer 3D: Emergency Service Delivery Responsibilities",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 257": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Inspector 1A: Duties and Administration",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 258": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Fire Prevention 1B",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 259": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Fire Prevention 1C",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 266": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Hazardous Materials First Responder Operational Level, Decontamination",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 272": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire S-290: Intermediate Wildland Fire Behavior",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 273": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Instructor III: Instructional Program Management",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 276": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Open Water Rescuer-Basic",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FST 277": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cal Fire Rope Rescue Technician",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
     }
    }
   },

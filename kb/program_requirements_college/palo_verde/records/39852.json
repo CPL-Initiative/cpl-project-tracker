@@ -1,0 +1,290 @@
+{
+ "college": "Palo Verde College",
+ "control_number": "39852",
+ "shape": "adt",
+ "title": "History",
+ "award": "A.A- T Degree",
+ "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/history-2025-2026-fall-2025fa",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5690,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5690,
+    "output_tokens": 2276,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2276,
+  "output_tokens_details": {
+   "thinking_tokens": 874
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06828,
+ "ms": 19811,
+ "seconds": 20.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 12,
+   "share": 0.833,
+   "missing": [
+    "HISTC1001",
+    "HISTC1002"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "GEL103",
+    "HIS130",
+    "HIS140"
+   ],
+   "flagged": [
+    "GEL103",
+    "HIS130",
+    "HIS140"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "History A.A. Degree for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": "CalGETC",
+   "outcomes": [
+    "Acquired fundamental grounding in communication, critical thinking, scientific inquiry, and quantitative reasoning, the arts, literature and humanities, social, political and economic institutions, and self-development.",
+    "Identify historical sources and then apply appropriate historical methods to explain historical context.",
+    "Describe, compare, and evaluate historical interpretations, analyzing them for relative quality and accuracy."
+   ],
+   "careers": [
+    "teachers",
+    "historical researchers",
+    "teaching career",
+    "the legal profession"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HIS130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HIS110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIS120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B Area 1",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "SOC115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIS115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIS125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPA102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B Area 2",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANT101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEL103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLSC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPE105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HISTC1001",
+    "why": "not in the text; catalog prints HIS130 - American History I in its place"
+   },
+   {
+    "code": "HISTC1002",
+    "why": "not in the text; catalog prints HIS140 - American History II in its place"
+   }
+  ],
+  "notes": [
+   "The only totals printed are 60 (the whole degree, including CalGETC) and the generic 18-unit AA-T minimum; no major-specific total is stated, so total_units is null. The block totals sum to 18 but this was not recorded as a stated total.",
+   "List A says 'Complete the following number of credits: 6' over two 3-unit courses, which in effect requires both; recorded as choose_units 6.",
+   "HIS130 and HIS140 are not on the closed list, which instead names HISTC1001 and HISTC1002 (US History to 1877 / since 1865); these are likely the same courses renumbered under Common Course Numbering. Reviewer should check.",
+   "GEL103 - Environmental Geology appears in List B Area 2 but is not on the closed list.",
+   "Course codes are recorded as printed without spaces (e.g., HIS110, POLSC1000).",
+   "Catalog labels the award 'A.A. Degree for Transfer'; the GE pattern is printed as 'CalGETC' (34-38 units)."
+  ]
+ },
+ "extracted_run": "38477849603"
+}

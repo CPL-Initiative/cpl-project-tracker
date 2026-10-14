@@ -1,0 +1,168 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "45134",
+ "shape": "certificate",
+ "title": "Basic Electrical Training",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/basic-electrical-training-mjc-fall-2025",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5361,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5361,
+    "output_tokens": 1223,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1223,
+  "output_tokens_details": {
+   "thinking_tokens": 404
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0459,
+ "ms": 11130,
+ "seconds": 11.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    9.0,
+    9.0
+   ],
+   "stated": [
+    9.0,
+    9.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Basic Electrical Training - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 9,
+    "max": 9
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Perform typical estimations for technical applications based on known formulas, field measurements, establishing proportions, or other numerical relationships used in practical situations in the workplace.",
+    "Identify electrical devices in a panel or an electrical schematic, their technological characteristics and ratings, and, following electrical safety procedures, build simple control circuits or replace defective parts.",
+    "Following electrical safety procedures, perform basic testing such as measuring voltage or doing continuity tests to assist technicians in troubleshooting procedures on electrical circuits or electro-mechanical systems."
+   ],
+   "careers": [
+    "helpers in electrical maintenance positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES - COMPLETE 9 UNITS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ELTEC322",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELTEC320",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELTEC223",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELTEC265",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space (e.g., ELTEC322); these match closed-list codes ELTEC 322, ELTEC 320, ELTEC 223 and ELTEC 265.",
+   "The required-courses block sits inside an outer 'Basic Electrical Training (Total 9) Complete all of the following' wrapper; recorded as one block.",
+   "The outcomes lead-in sentence appears twice; the first instance has no outcomes under it, and the three outcomes follow the 'Program Learning Outcomes' heading.",
+   "The description mentions classes approved for training of 'electrical trainees (ET)'; this was not recorded as a career because it describes the training classification rather than a job the certificate leads to. A reviewer may want to add it.",
+   "The source URL references fall 2025 while the catalog year is 2026-2027."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

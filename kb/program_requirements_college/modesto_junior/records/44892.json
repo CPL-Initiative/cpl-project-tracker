@@ -1,0 +1,324 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "44892",
+ "shape": "certificate",
+ "title": "Vocational Nurse",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/vocational-nurse-mjc-fall-2025",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9878,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9878,
+    "output_tokens": 2629,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2629,
+  "output_tokens_details": {
+   "thinking_tokens": 732
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09209,
+ "ms": 20938,
+ "seconds": 21.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 18,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    49.5,
+    49.5
+   ],
+   "stated": [
+    49.5,
+    49.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 10,
+   "courses": 0,
+   "count": 10,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "VOCATIONAL NURSE: CERTIFICATE OF ACHIEVEMENT",
+   "measure": "units",
+   "total_units": {
+    "min": 49.5,
+    "max": 49.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Provide client-centered care using effective communication.",
+    "Integrate teamwork to foster collaborative relationships with the interprofessional health care.",
+    "Assimilate critical thinking principles and evidenced based practice to ensure safe care.",
+    "Integrate nursing informatics and technology to support clinical decision-making.",
+    "Assume accountability by functioning within the legal/ethical scope of practice of a vocational nurse",
+    "Integrate concepts of the Roy Adaptation Model to individualize client care planning.",
+    "Relate cultural factors to the planning and implementation of client care.",
+    "Implement the elements of the nursing process for improved client care outcomes.",
+    "Plan nursing care to meet the unique needs of our geriatric client population.",
+    "Assist community-based organizations to provide wellness education and foster health promotion for clients and their support systems."
+   ],
+   "careers": [
+    "Licensed Vocational Nurse (LVN)",
+    "entry-level vocational nurses"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES- TERM 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "VOCNR301",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOCNR302",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOCNR303",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOCNR304",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED COURSES- TERM 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "VOCNR305",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOCNR306",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOCNR307",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOCNR308",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED COURSES- TERM 3",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "VOCNR309",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOCNR310",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOCNR311",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOCNR312",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED COURSES- TERM 4",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "VOCNR313",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOCNR314",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOCNR315",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED COURSES- TERM 5",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 4.5,
+     "max": 4.5
+    },
+    "courses": [
+     {
+      "code": "VOCNR316",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOCNR317",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOCNR318",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Each term block reads 'Complete the following number of credits: N', and the listed courses sum exactly to N, so every course is required; recorded as rule 'all' with the printed total in stated.",
+   "The catalog prints codes without a space (e.g., 'VOCNR301'); these match closed-list codes such as 'VOCNR 301', so catalog_addition is false.",
+   "Admission prerequisites (FDNTR 219, ANAT 125, MDAST 321, VOCNR 300) are listed as requirements for acceptance into the program, not as certificate requirements; they are not placed in blocks and are not in the closed list.",
+   "The description mentions 576 hours of theory and 954 hours of clinical, but the award is counted in units (49.5 Units).",
+   "The outcomes list is printed under 'Program Learning Outcomes' for this certificate, the only award on the page. A stray lead-in line 'Upon satisfactory completion of this award, the student should be prepared to:' also appears before the heading with nothing under it.",
+   "The Scholastic Requirements text refers to NCLEX-RN and the California BRN, which appear to be copied from an RN program page; a reviewer may want to check.",
+   "Source URL slug says 'fall-2025' while the catalog year is 2026-2027."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

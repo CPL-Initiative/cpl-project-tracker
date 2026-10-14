@@ -1,0 +1,224 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "30675",
+ "shape": "adt",
+ "title": "Mathematics",
+ "award": "A.S. T Degree",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/mathematics-for-transfer-degree-mjc-spring-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5920,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5920,
+    "output_tokens": 1612,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1612,
+  "output_tokens_details": {
+   "thinking_tokens": 537
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05592,
+ "ms": 13059,
+ "seconds": 13.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CSCI271"
+   ],
+   "flagged": [
+    "CSCI271"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    15.0,
+    22.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "why": [
+    "the blocks sum to 15.0-22.0; the catalog states 18.0-19.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "MATHEMATICS, AS-T *",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Master the techniques of integration and differentiation.",
+    "Successfully complete upper division coursework in mathematics.",
+    "Use these techniques to model real-world applications."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE - COMPLETE 12 UNITS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "MATH171",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH172",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH173",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A: SELECT ONE TO TWO",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "MATH191",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH193",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST B: SELECT ONE",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "PHYS101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSCI271",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STATC1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "An overarching rule spans Lists A and B: 'SELECT 6 UNITS MINIMUM FROM THE LISTS BELOW WITH AT LEAST 3 UNITS FROM LIST A' (printed total 6). The catalog notes that while 3 units are required from List A, no units are required from List B; List B is recorded as choose_units with minimum 0 (stated 0-4). The 6-unit combined minimum across both lists can be met with two List A courses or one List A course plus one List B course.",
+   "The lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' is printed twice; the first instance has no outcomes under it. The outcomes were taken from the 'Program Learning Outcomes' heading.",
+   "Electives of 10-14 units and Cal-GETC (34 units) belong to the 60-unit degree total, not the 18-19 unit major, so open_elective_units is null.",
+   "CSCI271 (Problem Solving and Programming 1) is printed in List B but is not in the closed list; it is recorded as a catalog addition.",
+   "The catalog prints codes without spaces (e.g., MATH171, STATC1000); they are recorded as printed."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

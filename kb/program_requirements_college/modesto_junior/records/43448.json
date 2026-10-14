@@ -1,0 +1,186 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "43448",
+ "shape": "noncredit",
+ "title": "English Language Instruction for College: Integrated Skills",
+ "award": "Noncredit program",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-language-instruction-for-college-integrated-skills-mjc-fall-2023",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5485,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5485,
+    "output_tokens": 1007,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1007,
+  "output_tokens_details": {
+   "thinking_tokens": 194
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04208,
+ "ms": 8609,
+ "seconds": 8.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    612.0,
+    612.0
+   ],
+   "stated": [
+    612.0,
+    612.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "English Language Instruction for College: Integrated Skills",
+   "measure": "hours",
+   "total_units": {
+    "min": 612,
+    "max": 612
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate ability to critically reason, research, and analyze readings at an intermediate level of English.",
+    "Demonstrate competent control over written language, academic form, style, and tone at the intermediate level of English.",
+    "Demonstrate ability to use vocabulary, aurally comprehend academic English, and speak in a variety of academic situations at the intermediate level of English."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "COMPLETE ALL OF THE FOLLOWING COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 612,
+     "max": 612
+    },
+    "courses": [
+     {
+      "code": "ELIC920",
+      "units": 126,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIC931",
+      "units": 126,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIC922",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIC932",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIC942",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIC923",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELIC933",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog labels this award a Certificate of Competency (noncredit). It prints 0.0 Units but states a total of 612 hours (\"seven courses for a total of 612 hours\"), so the measure is hours. The hours beside each course sum to 612.",
+   "The catalog prints codes without a space (e.g. ELIC920). These match the closed-list codes (ELIC 920, etc.), so none is marked as a catalog addition.",
+   "Each course must be completed with a noncredit progress indicator of P or SP.",
+   "The lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' appears twice; the outcomes are printed only once, under Program Learning Outcomes."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

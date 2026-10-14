@@ -1,0 +1,221 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "32590",
+ "shape": "adt",
+ "title": "Political Science",
+ "award": "A.A- T Degree",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/political-science-for-transfer-degree-mjc-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5871,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5871,
+    "output_tokens": 1792,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1792,
+  "output_tokens_details": {
+   "thinking_tokens": 526
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05932,
+ "ms": 15187,
+ "seconds": 15.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "POLITICAL SCIENCE, AA-T *",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Analyze key concepts and important theories in political science.",
+    "Effectively search for, interpret, and critique political science literature.",
+    "Formulate and communicate thoughtful opinions about governmental systems, political institutions, laws, and public policies.",
+    "Use critical and creative thinking to address major political problems."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE: (9 UNITS)",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "POLSC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLSC130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLSC140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLSC110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A: SELECT TWO (6 UNITS)",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "POLSC165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLSC102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST B - SELECT ONE (3 UNITS)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "POLSC120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLSC180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Required Core lists four courses (POLSC1000, POLSC130, POLSC140, POLSC110) under 'Complete the following number of credits: 9', so it is recorded as choose 9 units (three of four) rather than all; the heading says 'REQUIRED CORE' — reviewer should confirm whether POLSC1000 is mandatory as in the state TMC.",
+   "List A also allows 'ANY COURSE NOT SELECTED FROM CORE.' (3 units), i.e., an unused core course may count toward List A; this placeholder row has no code and is not recorded as a course.",
+   "List B also allows 'ANY COURSE NOT SELECTED ABOVE.' (3 units), i.e., any unused core or List A course may count toward List B; this placeholder row has no code and is not recorded as a course.",
+   "Catalog prints codes without spaces (e.g., 'POLSC1000', 'POLSC130'); these are treated as matching the closed list codes 'POLS C1000', 'POLSC 130', etc.",
+   "The degree total of 60 units includes 34 Cal-GETC units and 11 CSU transferable electives as needed; these electives are outside the 18-unit major and are not recorded as open_elective_units.",
+   "A statistics course is recommended for students transferring to CSU Stanislaus, but no specific course is named, so no recommended block is recorded.",
+   "The text includes a stray duplicated lead-in line ('Upon satisfactory completion of this award...') before the section heading with no outcomes under it; the outcomes are taken from the Program Learning Outcomes heading."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

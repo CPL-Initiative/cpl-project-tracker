@@ -1,0 +1,303 @@
+{
+ "college": "Palo Verde College",
+ "control_number": "40016",
+ "shape": "adt",
+ "title": "Kinesiology",
+ "award": "A.A- T Degree",
+ "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/kinesiology-2025-2026-fall-2025fa",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5969,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5969,
+    "output_tokens": 2711,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2711,
+  "output_tokens_details": {
+   "thinking_tokens": 1062
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0781,
+ "ms": 22190,
+ "seconds": 22.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 16,
+   "share": 0.938,
+   "missing": [
+    "SOCIC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "SOC101"
+   ],
+   "flagged": [
+    "SOC101"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    24.0,
+    28.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Kinesiology A.A. Degree for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": "CalGETC",
+   "outcomes": [
+    "Acquire fundamental grounding in communication, critical thinking, scientific inquiry, and quantitative reasoning, the arts, literature and humanities, social, political and economic institutions, and self-development.",
+    "Identify and apply basic physiological principles of human movement in exercise and sports settings."
+   ],
+   "careers": [
+    "health care",
+    "coaching",
+    "sports officiating",
+    "athletic training",
+    "kinesiologists"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "BIO210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO211",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses: Movement Based Courses (Select a maximum of one (1) course from any three (3) of the following areas for a minimum of three units: Aquatics, Combatives, Team Sports, Individual Sports, Fitness, Dance)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PHE100",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHE135",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHE176",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHE177",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHE155",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHE156",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select two (6 units)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CHE210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHE211",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEA140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: PSY 101 or SOC 101",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "SOC101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYCC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "SOCIC1000",
+    "why": "not printed under this code; catalog lists SOC101 - Introduction to Sociology instead, likely the same course"
+   }
+  ],
+  "notes": [
+   "The 'Kinesiology (Total 60)' figure is the 60-unit degree total, not the major total; the trailing '34 - 38' printed after the CalGETC sentence appears to be the GE units, so total_units is left null.",
+   "'List A: Select two (6 units)' also says 'Complete the following number of credits: 6'; recorded as choose 2 courses with stated 6, though choosing CHE 210/211 would exceed 6 units. Reviewer may prefer choose_units 6.",
+   "'List A: PSY 101 or SOC 101' says 'Complete at least one of the following rules' with stated total 3-6; recorded as choose 1 course.",
+   "SOC101 is not in the closed list (closed list has SOCIC1000 Introduction to Sociology); flagged as catalog addition.",
+   "Movement-based block restricts to at most one course from each of three different activity areas; area assignments of PHE courses are not printed.",
+   "Program outcomes are printed under 'Associate in Arts in Kinesiology'; recorded for this A.A.-T.",
+   "'kinesiologists' recorded as an occupation from 'Public schools also recruit kinesiologists'; advanced degrees (Physical Therapy, Occupation Therapy, Medical School) were not recorded as careers."
+  ]
+ },
+ "extracted_run": "38477849603"
+}

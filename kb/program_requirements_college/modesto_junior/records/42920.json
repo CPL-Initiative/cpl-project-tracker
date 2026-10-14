@@ -1,0 +1,241 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "42920",
+ "shape": "certificate",
+ "title": "Machinist Apprentice",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machinist-apprentice-mjc-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5696,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5696,
+    "output_tokens": 1685,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1685,
+  "output_tokens_details": {
+   "thinking_tokens": 541
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05648,
+ "ms": 14350,
+ "seconds": 14.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    29.0
+   ],
+   "stated": [
+    19.0,
+    29.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Machinist Apprentice — Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate compliance with current machine shop safety and environmental regulations.",
+    "Demonstrate effective operation of manual and CNC equipment in accordance with industry recognized and accepted practices."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Machinist Apprentice",
+    "rule": "choose_units",
+    "minimum": 19,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 29
+    },
+    "courses": [
+     {
+      "code": "ELTEC322",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH200D",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MACH200E",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH205",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH357",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH206",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH207",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH208",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELTEC320",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD206",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH161",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS165",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The block heading reads 'Complete all of the following' but also 'COMPLETE A MINIMUM OF: 19-29 UNITS' / 'Complete the following number of credits: 19-29'. The listed courses total 39-40 units, so this is recorded as choose_units with a minimum of 19; a reviewer should confirm the intended rule.",
+   "MACH200D and MACH200E are recorded as one choice ('Students may take MACH200D or MACH200E, but not both.'); the catalog prints '4 - 5' beside this pair.",
+   "Codes are written as the catalog prints them, without a space (e.g., 'ELTEC322'). All of them match closed-list courses.",
+   "The text prints 'Upon satisfactory completion of this award, the student should be prepared to:' once after the description with no outcomes under it. The two outcomes appear under the 'Program Learning Outcomes' heading.",
+   "The description refers to individuals hired as apprentices but names no specific careers, so careers is left empty."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

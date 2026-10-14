@@ -5,7 +5,7 @@
  "catalog_year": "2025-2026",
  "programs": 69,
  "with_closed_list": 68,
- "started": "2026-10-13T20:30:41Z",
+ "started": "2026-10-13T22:52:59Z",
  "elumen": {
   "catalog": "2025-2026",
   "read": "publish/content",
@@ -28,7 +28,7 @@
  "pages_read": 84,
  "banner_h1": null,
  "loads": 92,
- "seconds": 387.8,
+ "seconds": 384.1,
  "found": 54,
  "by_method": {
   "no_closed_list": 1,
@@ -797,5 +797,5 @@
    }
   ]
  },
- "run": "38461110935"
+ "run": "38477849603"
 }

@@ -1,0 +1,205 @@
+{
+ "college": "Palo Verde College",
+ "control_number": "22479",
+ "shape": "certificate",
+ "title": "Business Management",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/business-literacy-certificate-of-career-preparation-2019-20-fall-2019fa",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5464,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5464,
+    "output_tokens": 1934,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1934,
+  "output_tokens_details": {
+   "thinking_tokens": 629
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06054,
+ "ms": 16820,
+ "seconds": 17.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 17,
+   "share": 0.0,
+   "missing": [
+    "ACC101",
+    "ACC102",
+    "BUS101",
+    "BUS105",
+    "BUS115",
+    "BUS135",
+    "BUS201",
+    "BUS202",
+    "BUS206",
+    "BUS210",
+    "ECONC2001",
+    "ECONC2002",
+    "MAN105",
+    "MAN106",
+    "MAN107",
+    "MAN145",
+    "PSY145"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Literacy Certificate of Career Preparation",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACC 101",
+    "why": "Listed only under the Business Literacy Certificate of Career Preparation electives, a different award; no Business Management section in text"
+   },
+   {
+    "code": "ACC 102",
+    "why": "Listed only under the Business Literacy Certificate of Career Preparation electives, a different award; no Business Management section in text"
+   },
+   {
+    "code": "BUS 101",
+    "why": "Listed only under the Business Literacy Certificate of Career Preparation core, a different award; no Business Management section in text"
+   },
+   {
+    "code": "BUS 105",
+    "why": "Listed only under the Business Literacy Certificate of Career Preparation core, a different award; no Business Management section in text"
+   },
+   {
+    "code": "BUS 115",
+    "why": "Listed only under the Business Literacy Certificate of Career Preparation electives, a different award; no Business Management section in text"
+   },
+   {
+    "code": "BUS 135",
+    "why": "Listed only under the Business Literacy Certificate of Career Preparation electives, a different award; no Business Management section in text"
+   },
+   {
+    "code": "BUS 201",
+    "why": "Listed only under the Business Literacy Certificate of Career Preparation electives, a different award; no Business Management section in text"
+   },
+   {
+    "code": "BUS 202",
+    "why": "Listed only under the Business Literacy Certificate of Career Preparation electives, a different award; no Business Management section in text"
+   },
+   {
+    "code": "BUS 206",
+    "why": "Listed only under the Business Literacy Certificate of Career Preparation electives, a different award; no Business Management section in text"
+   },
+   {
+    "code": "BUS 210",
+    "why": "Listed only under the Business Literacy Certificate of Career Preparation electives, a different award; no Business Management section in text"
+   },
+   {
+    "code": "ECONC2001",
+    "why": "Not in the text"
+   },
+   {
+    "code": "ECONC2002",
+    "why": "Not in the text"
+   },
+   {
+    "code": "MAN 105",
+    "why": "Listed only under the Business Literacy Certificate of Career Preparation electives, a different award; no Business Management section in text"
+   },
+   {
+    "code": "MAN 106",
+    "why": "Listed only under the Business Literacy Certificate of Career Preparation electives, a different award; no Business Management section in text"
+   },
+   {
+    "code": "MAN 107",
+    "why": "Listed only under the Business Literacy Certificate of Career Preparation electives, a different award; no Business Management section in text"
+   },
+   {
+    "code": "MAN 145",
+    "why": "Listed only under the Business Literacy Certificate of Career Preparation electives, a different award; no Business Management section in text"
+   },
+   {
+    "code": "PSY 145",
+    "why": "Not in the text"
+   }
+  ],
+  "notes": [
+   "Source mismatch: the catalog text (and URL) is for the Business Literacy Certificate of Career Preparation (13-14 units, noncredit-style career preparation certificate), not the Business Management Certificate of Achievement (30S/45Q to fewer than 60S/90Q units). No section for the named award appears in the text, so no blocks, totals, outcomes or careers were recorded. section_heading names the only section present, which was not read as this award.",
+   "For reference only (not recorded): the Business Literacy section requires ACC100 (4), BUS101 (3), BUS105 (3) as core (10 units) plus one elective of 3-4 units from ACC101, ACC102, BUS103, BUS115, BUS135, BUS201, BUS202, BUS206, BUS210, BUS221, MAN105, MAN106, MAN107, MAN145, MAN205; its one outcome is 'Acquired fundamental understanding of the principles and practices of business.'",
+   "Reviewer should locate the correct 2025-2026 Palo Verde College catalog page for the Business Management Certificate of Achievement and re-run."
+  ]
+ },
+ "extracted_run": "38477849603"
+}
