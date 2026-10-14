@@ -1251,6 +1251,9 @@
       ".prh-exbody h4 { margin:6px 0 4px; }",
       ".prh-exlist { list-style:none; margin:0; padding:0; display:grid; gap:8px; }",
       ".prh-exlist li { display:grid; gap:2px; padding:8px 10px; border:1px solid var(--border); border-radius:8px; background:var(--surface-subtle); }",
+      ".prh-outslot:not(:empty) { margin-left:8px; }",
+      ".prh-outbtn { font-size:.8rem; font-weight:500; }",
+      ".prh-outlist { margin:0; padding-left:1.4em; display:grid; gap:6px; }",
       ".prh-extype { justify-self:start; font-size:.75rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--text-muted); }",
       ".prh-split-solo .prh-split-panes { grid-template-columns:minmax(0, 1fr); grid-template-rows:minmax(0, 1fr); }",
       "@media (max-width: 900px) { .prh-split-panes { grid-template-columns:minmax(0, 1fr); grid-template-rows:minmax(0, 1fr) minmax(0, 1fr); }" +
@@ -1580,7 +1583,11 @@
           el("span", { cls: "prh-alts", text: (c.credit ? c.credit + "; " : "") + "a statewide recommendation names C-ID " + c.cid })]);
       })));
     }
-    var close = el("button", { cls: "prh-word", type: "button", text: "Close", "aria-label": "Close the exhibits for " + code });
+    openDialog(p, code, info, kids, "the exhibits", opener);
+  }
+  /* The one dialog both views open: a course's heading, its numbers, and the body it is given. */
+  function openDialog(p, code, info, kids, what, opener) {
+    var close = el("button", { cls: "prh-word", type: "button", text: "Close", "aria-label": "Close " + what + " for " + code });
     var node = el("div", { cls: "prh prh-exback" }, [
       el("div", { cls: "prh-exdialog", role: "dialog", "aria-modal": "true", "aria-labelledby": "prh-ex-t" }, [
         el("div", { cls: "prh-exhead" }, [
@@ -1608,6 +1615,91 @@
     if (d.node.parentNode) d.node.parentNode.removeChild(d.node);
     d.inert.forEach(function (x) { x.removeAttribute("inert"); });
     if (d.opener && d.opener.focus) d.opener.focus();
+  }
+
+  /* ── a course's learning outcomes (Sam, 2026-10-14) ──
+   * "Where can I view the SLOs we've pulled so far? Seems like there should be a link to them on
+   * each course listing." course_outcomes holds each course's SLOs as its outline or catalog
+   * prints them (public read; the newest read_run is current). A college's codes are read once,
+   * as an index, when one of its records opens; a course's outcomes when its link is clicked.
+   * The two sides print a code with or without its space or hyphen (PSYCH35, PSYCH 35, BUS-47),
+   * so they meet on codeKey. A failed read says so in the record; it never passes for no outcomes. */
+  var OUTCOME_SELECT = "course_code,course_title,heading,lead,outcomes,maps_to,shape,fingerprint," +
+    "source_url,source_kind,source_system,read_run,loaded_at";
+  var OUTCOME_SOURCE = { course_outline: "the course outline of record", catalog: "the catalog's course page" };
+  function codeKey(code) { return String(code || "").toUpperCase().replace(/[^A-Z0-9]/g, ""); }
+  var outcomeIndex = {};
+  function outcomeCodes(college) {
+    if (!outcomeIndex[college]) {
+      outcomeIndex[college] = getAllRows(REST + "/course_outcomes?select=course_code&college=eq." +
+        encodeURIComponent(college) + "&order=id", headers()).then(function (rows) {
+        var m = {};
+        rows.forEach(function (r) {
+          var k = codeKey(r.course_code);
+          if (!m[k]) m[k] = [];
+          if (m[k].indexOf(r.course_code) < 0) m[k].push(r.course_code);
+        });
+        return m;
+      }, function (err) { delete outcomeIndex[college]; throw err; });
+    }
+    return outcomeIndex[college];
+  }
+  /* The link on each course row of a record that has outcomes, and a quiet line if the read fails. */
+  function fillOutcomeLinks(body, p, courses) {
+    outcomeCodes(p.college).then(function (index) {
+      Array.prototype.forEach.call(body.querySelectorAll(".prh-outslot"), function (slot) {
+        var codes = index[slot.getAttribute("data-key")];
+        if (!codes || slot.firstChild) return;
+        var code = slot.getAttribute("data-code"), info = courses[code] || {};
+        var b = el("button", { cls: "prh-word prh-outbtn", type: "button", text: "Outcomes",
+          "aria-label": "Learning outcomes of " + code + " at " + shortCollege(p.college) + "; show them" });
+        b.addEventListener("click", function () { openOutcomes(p, code, info, codes, b); });
+        slot.appendChild(b);
+      });
+    }, function (err) {
+      body.appendChild(el("p", { cls: "prh-small prh-quiet", style: "margin:0",
+        text: "The courses' learning outcomes could not be read (" + (err && err.message || "no answer") + ")." }));
+    });
+  }
+  function currentOutcomes(rows) {
+    var top = rows.reduce(function (m, r) { return Math.max(m, Number(r.read_run) || 0); }, 0), seen = {};
+    return rows.filter(function (r) {
+      if ((Number(r.read_run) || 0) !== top || seen[r.fingerprint]) return false;
+      seen[r.fingerprint] = true;
+      return true;
+    });
+  }
+  function outcomesBlock(o) {
+    var maps = o.maps_to || [];
+    var list = o.shape === "paragraph" && o.outcomes.length === 1 ? el("p", { text: o.outcomes[0] })
+      : el("ol", { cls: "prh-outlist" }, o.outcomes.map(function (t, i) {
+        var m = maps[i] && maps[i].length ? maps[i] : null;
+        return el("li", {}, [t, m ? el("span", { cls: "prh-alts", text: "Maps to: " + m.join("; ") }) : null]);
+      }));
+    return [el("h4", { text: (o.heading || "Learning outcomes") + " (" + o.outcomes.length + ")" }),
+      o.lead ? el("p", { cls: "prh-small", text: o.lead }) : null,
+      list,
+      el("p", { cls: "prh-small prh-quiet" }, ["As printed in ",
+        link(o.source_url, OUTCOME_SOURCE[o.source_kind] || "the college's page"),
+        (o.source_system ? " (" + o.source_system + ")" : "") + ", read " + day(o.loaded_at) + "."])];
+  }
+  function openOutcomes(p, code, info, codes, opener) {
+    closeExhibits();
+    hideTip();
+    var body = el("div", {}, [el("p", { cls: "prh-quiet", text: "Reading the outcomes…" })]);
+    openDialog(p, code, info, [body], "the learning outcomes", opener);
+    var url = REST + "/course_outcomes?select=" + OUTCOME_SELECT + "&college=eq." + encodeURIComponent(p.college) +
+      "&course_code=in.(" + codes.map(function (c) { return encodeURIComponent('"' + c.replace(/"/g, "") + '"'); }).join(",") + ")" +
+      "&order=read_run.desc,id.desc";
+    getJson(url).then(function (rows) {
+      var cur = currentOutcomes(rows || []);
+      body.textContent = "";
+      if (!cur.length) { body.appendChild(el("p", { cls: "prh-quiet", text: "No outcomes are on file for " + code + " yet." })); return; }
+      cur.forEach(function (o) { outcomesBlock(o).forEach(function (n) { if (n) body.appendChild(n); }); });
+    }, function (err) {
+      body.textContent = "";
+      body.appendChild(el("p", { text: "The outcomes could not be read (" + (err && err.message || "no answer") + ")." }));
+    });
   }
 
   /* What COCI says of a course the catalog prints off the program's list (Sam, 2026-10-11:
@@ -2195,7 +2287,8 @@
         var alts = (c.alternatives || []).map(function (a) { return a.code || a; });
         return [
           [c.code, alts.length ? el("span", { cls: "prh-alts", text: "or " + alts.join(", ") }) : null, idChips(info)],
-          [info.title || "", rowMark(c, F.byCode, courses)],
+          [info.title || "", rowMark(c, F.byCode, courses),
+            el("span", { cls: "prh-outslot", "data-key": codeKey(c.code), "data-code": c.code })],
           c.units != null || info.units_from_state_file == null ? span(c.units, c.units_max) : fmt(info.units_from_state_file) + " (COCI)",
           n || hasLeads(info) ? cplButton(p, c.code, info, n) : el("span", { cls: "prh-quiet", text: "0" })
         ];
@@ -2210,6 +2303,7 @@
       "Read from ", p.source_url ? link(p.source_url, "the catalog page") : "the catalog",
       " (" + yr(p.catalog_year) + ")" + (p.checked_by ? "; read against the catalog by " + p.checked_by : "") + ".",
       disp.build ? " Display build " + disp.build + (disp.built ? ", " + disp.built : "") + "." : ""]));
+    fillOutcomeLinks(body, p, courses);
     var gaps = F.notes;
     if (gaps.length) body.appendChild(el("details", { cls: "prh-notes" }, [
       el("summary", { text: "Notes for the reading procedure (" + gaps.length + ")" }),

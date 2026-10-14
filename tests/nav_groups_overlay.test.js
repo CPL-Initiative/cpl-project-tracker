@@ -67,10 +67,14 @@ const groupIds = (w) => Array.prototype.slice
   .call(w.document.querySelectorAll("nav.cpl-tabs .cpl-nav-group"))
   .map((g) => g.getAttribute("data-nav-group"));
 
+// Every async block's promise: the report waits for all of them (S390: a fixed 900 ms timer
+// reported before the last check registered on a loaded runner, 30 of 31).
+const blocks = [];
+
 // ── The menu builds from code WHILE the read is still in flight ─────────────
 // The overlay fetch here NEVER resolves, so this is exactly what a visitor on a
 // slow or blocked connection sees. It has to be a complete, usable menu.
-(async function () {
+blocks.push((async function () {
   const w = makeWin({ pending: true });
   await new Promise((r) => setTimeout(r, 40));
   check("the rail is grouped from code defaults while the overlay is still loading",
@@ -83,10 +87,10 @@ const groupIds = (w) => Array.prototype.slice
         .map((b) => b.getAttribute("data-tab")).join(",") === "contracts,budget,implementation-funding";
     })());
   check("a never-resolving overlay never blanks the menu", railOrder(w).length === 8);
-})();
+})());
 
 // ── An overlay that arrives rearranges the LIVE rail ────────────────────────
-(async function () {
+blocks.push((async function () {
   const w = makeWin({
     nav: [
       { kind: "tab", key: "implementation-funding", parent: "funding", sort_order: 0 },
@@ -110,10 +114,10 @@ const groupIds = (w) => Array.prototype.slice
   check("no tab is lost in the rebuild", railOrder(w).length === 8);
   check("groups are not duplicated by the rebuild",
     groupIds(w).length === new Set(groupIds(w)).size);
-})();
+})());
 
 // ── Rebuilding must MOVE the buttons, never recreate them ───────────────────
-(async function () {
+blocks.push((async function () {
   const w = makeWin({ nav: [{ kind: "tab", key: "budget", parent: "funding", sort_order: 0 }] });
   const btn = w.document.querySelector('.cpl-tab[data-tab="budget"]');
   let clicked = 0;
@@ -123,10 +127,10 @@ const groupIds = (w) => Array.prototype.slice
   check("the rebuild reuses the SAME button element", after === btn);
   after.dispatchEvent(new w.MouseEvent("click"));
   check("listeners bound by other modules survive the rebuild", clicked === 1);
-})();
+})());
 
 // ── A hidden tab leaves the menu but stays routable ─────────────────────────
-(async function () {
+blocks.push((async function () {
   const w = makeWin({ nav: [{ kind: "tab", key: "governance", hidden: true }] });
   await new Promise((r) => setTimeout(r, 40));
   const btn = w.document.querySelector('.cpl-tab[data-tab="governance"]');
@@ -136,10 +140,10 @@ const groupIds = (w) => Array.prototype.slice
     btn.getAttribute("data-nav-hidden") === "1");
   check("tabs that were not hidden are untouched",
     w.document.querySelector('.cpl-tab[data-tab="budget"]').style.display !== "none");
-})();
+})());
 
 // ── Every failure mode still leaves a working menu ──────────────────────────
-(async function () {
+blocks.push((async function () {
   {
     const w = makeWin({ fetchFails: true });
     await new Promise((r) => setTimeout(r, 40));
@@ -177,7 +181,7 @@ const groupIds = (w) => Array.prototype.slice
     check("…and Dashboard", visible.indexOf("dashboard") !== -1);
     check("…and hides the rest, so the control is not a lie", visible.length === 2);
   }
-})();
+})());
 
 
 // ── The audience filter, in the actual rail ─────────────────────────────────
@@ -202,7 +206,7 @@ const vis = (w, t) => {
   return b && b.style.display !== "none";
 };
 
-(async function () {
+blocks.push((async function () {
   const ROWS = [{ kind: "tab", key: "governance", audience: "signed_in" }];
   {
     const w = makeAudRail(ROWS, {});
@@ -236,11 +240,11 @@ const vis = (w, t) => {
     check("with no overlay rows, the audience filter hides nothing",
       vis(w, "governance") && vis(w, "sierra-training") && vis(w, "budget"));
   }
-})();
+})());
 
-setTimeout(function () {
+Promise.all(blocks).then(function () {
   let pass = 0;
   results.forEach(([n, ok]) => { console.log((ok ? "  ok   " : "  FAIL ") + n); if (ok) pass++; });
   console.log(`\nnav_groups_overlay.test.js: ${pass}/${results.length} checks passed`);
   if (pass !== results.length) process.exit(1);
-}, 900);
+}, function (e) { console.error("nav_groups_overlay.test.js: a block threw: " + (e && e.stack || e)); process.exit(1); });
