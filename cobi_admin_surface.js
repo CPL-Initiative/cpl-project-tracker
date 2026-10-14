@@ -346,7 +346,9 @@ window.COBI_ADMIN_SURFACE = {
         "coci_lookup.js",
         "coci_lookup_data.js"
       ],
-      "reads": [],
+      "reads": [
+        "course_outcomes"
+      ],
       "writes": [],
       "rpcs": [],
       "measured": true
@@ -367,6 +369,7 @@ window.COBI_ADMIN_SURFACE = {
       ],
       "reads": [
         "coci_college_programs",
+        "course_outcomes",
         "map_colleges",
         "program_record_verdicts",
         "program_requirement_records",

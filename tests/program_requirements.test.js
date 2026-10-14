@@ -2283,6 +2283,94 @@ block("(20)", function () {
   check("(20) a malformed block never draws a number", /not counted yet/.test(p.root.querySelector(".prh-pg-whole").textContent));
 });
 
+// ── (25) A course's learning outcomes (Sam, 2026-10-14) ──
+// "Where can I view the SLOs we've pulled so far? Seems like there should be a link to them on
+// each course listing." The failures this guards: a code printed with a hyphen or no space on
+// one side (PSYCH35, BUS-47) never meeting its outcomes; a link on a course with none; an older
+// read shown beside the current one; and a failed read that passes for no outcomes.
+const OUTCOME_ROWS = [
+  { course_code: "HED-100", course_title: null, heading: "Student Learning Outcomes", lead: "Upon completion, students will:",
+    outcomes: ["Analyze a health problem.", "Plan a change in behavior."], maps_to: [["Critical Thinking"], null], shape: "list",
+    fingerprint: "a".repeat(32), source_url: "https://example.org/outline/hed100", source_kind: "course_outline",
+    source_system: "curriqunet", read_run: 200, loaded_at: "2026-10-13T20:00:00Z" },
+  { course_code: "HED-100", course_title: null, heading: "Student Learning Outcomes", lead: null,
+    outcomes: ["An outcome an older read found."], maps_to: null, shape: "list",
+    fingerprint: "b".repeat(32), source_url: "https://example.org/outline/hed100", source_kind: "course_outline",
+    source_system: "curriqunet", read_run: 100, loaded_at: "2026-10-12T20:00:00Z" },
+  { course_code: "ENGLC 1000", course_title: null, heading: "Learning Outcomes", lead: null,
+    outcomes: ["Write an argument."], maps_to: null, shape: "paragraph",
+    fingerprint: "c".repeat(32), source_url: "https://example.org/catalog/englc1000", source_kind: "catalog",
+    source_system: "elumen", read_run: 300, loaded_at: "2026-10-14T01:00:00Z" }
+];
+function outcomesFetch(asked, fail) {
+  function res(status, body, range) {
+    return Promise.resolve({ ok: status < 300, status: status,
+      headers: { get: function (k) { return /content-range/i.test(k) ? (range || null) : null; } },
+      json: function () { return Promise.resolve(body); } });
+  }
+  return function (url) {
+    url = String(url);
+    if (!/\/course_outcomes\?/.test(url)) return new Promise(function () {});
+    asked.push(url);
+    if (fail) return res(503, null);
+    const qp = new URL(url).searchParams;
+    let rows = qp.get("college") === "eq.Cerritos College" ? OUTCOME_ROWS : [];
+    const inq = qp.get("course_code");
+    if (inq) {
+      const want = inq.replace(/^in\.\(|\)$/g, "").split(",").map(function (c) { return c.replace(/^"|"$/g, ""); });
+      rows = rows.filter(function (r) { return want.indexOf(r.course_code) >= 0; });
+    }
+    if (qp.get("select") === "course_code") return res(200, rows.map(function (r) { return { course_code: r.course_code }; }), "0-" + (rows.length - 1) + "/" + rows.length);
+    return res(200, JSON.parse(JSON.stringify(rows)));
+  };
+}
+block("(25)", function () {
+  const asked = [];
+  const m = loadModule({ fetch: outcomesFetch(asked) });
+  m.M._state.registry = REGISTRY; m.M._state.records = [NUMBERED]; pickAll(m.M); m.M._state.view = "records";
+  m.M._state.open = { "Cerritos College|41982": true }; m.M._render();
+  return tick().then(tick).then(function () {
+    const rows = m.root.querySelectorAll("article.prh-rec tbody tr");
+    const hed = rows[0].querySelector("button.prh-outbtn"), engl = rows[1].querySelector("button.prh-outbtn");
+    check("(25) a course whose code is printed another way (HED-100, ENGLC 1000) gets its Outcomes link",
+      !!hed && !!engl && hed.textContent === "Outcomes" && /^Learning outcomes of HED 100 at Cerritos/.test(hed.getAttribute("aria-label")));
+    check("(25) a course with none on file gets no link", !rows[2].querySelector("button.prh-outbtn"));
+    check("(25) the college's codes are read once, codes only", asked.length === 1 && /select=course_code&college=eq\.Cerritos%20College/.test(asked[0]), asked.join(" "));
+    hed.click();
+    return tick().then(tick).then(function () {
+      const d = m.w.document.querySelector('.prh-exdialog[role="dialog"][aria-modal="true"]');
+      const txt = d ? d.textContent : "";
+      check("(25) the link opens the outcomes as printed, numbered, with what each maps to",
+        /Student Learning Outcomes \(2\)/.test(txt) && /Upon completion, students will:/.test(txt) &&
+        d.querySelectorAll("ol.prh-outlist li").length === 2 && /Maps to: Critical Thinking/.test(txt), txt.slice(0, 300));
+      check("(25) only the newest read shows", !/older read/.test(txt));
+      const a = d.querySelector('a[href="https://example.org/outline/hed100"]');
+      check("(25) it names and links where it was read", !!a && a.textContent === "the course outline of record" && /\(curriqunet\), read 2026-10-13/.test(txt));
+      check("(25) the click asks for that course by its own spelling", /course_code=in\.\(%22HED-100%22\)/.test(asked[1] || ""), asked[1]);
+      d.parentNode.dispatchEvent(new m.w.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+      check("(25) Escape closes it and returns to the link", !m.w.document.querySelector(".prh-exdialog") && m.w.document.activeElement === hed);
+      engl.click();
+      return tick().then(tick).then(function () {
+        const d2 = m.w.document.querySelector(".prh-exdialog");
+        check("(25) a paragraph prints as one paragraph, and a catalog source says so",
+          !!d2 && !d2.querySelector("ol") && /Write an argument\./.test(d2.textContent) && /the catalog's course page/.test(d2.textContent));
+        m.M.closeExhibits();
+      });
+    });
+  });
+});
+block("(25b)", function () {
+  const asked = [];
+  const m = loadModule({ fetch: outcomesFetch(asked, true) });
+  m.M._state.registry = REGISTRY; m.M._state.records = [NUMBERED]; pickAll(m.M); m.M._state.view = "records";
+  m.M._state.open = { "Cerritos College|41982": true }; m.M._render();
+  return tick().then(tick).then(function () {
+    const art = m.root.querySelector("article.prh-rec");
+    check("(25b) a failed read says so in the record, and draws no link",
+      /learning outcomes could not be read \(course_outcomes answered 503\)/.test(art.textContent) && !art.querySelector("button.prh-outbtn"), art.textContent.slice(-200));
+  });
+});
+
 Promise.all(pending).then(function () {
   let pass = 0;
   for (const [name, ok, why] of results) {
