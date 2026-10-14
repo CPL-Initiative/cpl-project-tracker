@@ -240,6 +240,22 @@ def _():
     assert reader.page_system(reader.catalog_index("cabrillo")["url"]) == "elumen"
 
 
+CCCD = os.path.join(ROOT, "kb", "course_outcomes", "trial_38508460207")   # Coastline: outlines of record
+
+
+@check("a Coast district outline's SLOs are the list under Course Level Student Learning Outcome(s), never its objectives")
+def _():
+    got = reader.parse_page(*filed(CCCD, "ACCT_C100"), "courseleaf")
+    assert got["parsed_from"] == "html" and got["heading"] == "Course Level Student Learning Outcome(s)", got
+    assert got["outcomes"] == [
+        "Complete an accounting cycle for sole proprietorship according to Generally Accepted Accounting Principles (GAAP).",
+        "Analyze and record in applicable journals, post to a general ledger, and prepare financial statements: "
+        "Statement of Income, Statement of Owner's Equity, and Balance Sheet.",
+        "Generate and record payroll-related transactions in accordance with state and federal laws and regulations."], got
+    # A common course number the district files elsewhere answers 404: no outcomes, never a guess.
+    assert reader.parse_page(*filed(CCCD, "ARTH_C1100"), "courseleaf")["outcomes"] == []
+
+
 @check("the read workflow hands a catalog= (or elumen=) line to the reader in place of an index")
 def _():
     wf = open(os.path.join(ROOT, ".github", "workflows", "course-outcomes-read.yml")).read()

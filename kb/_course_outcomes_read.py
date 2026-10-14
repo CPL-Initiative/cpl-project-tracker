@@ -427,12 +427,42 @@ def elumen_outcomes_from_html(page_html: str) -> dict | None:
             "outcomes": items, "maps_to": None, "parsed_from": "html"}
 
 
+# The Coast district's outline of record prints its SLOs as a heading followed by the
+# list, then Course Objectives (trial 38508460207: <h3>Course Level Student Learning
+# Outcome(s)</h3><ol><li>...). The text reader does not take that heading.
+CCCD_SLO_HEAD = re.compile(r"^course level student learning outcomes?(?:\(s\))?:?$", re.I)
+
+
+def cccd_outcomes_from_html(page_html: str) -> dict | None:
+    """The list that follows the outline's Course Level Student Learning Outcome(s)
+    heading, before the next heading; each item as printed. None when the page has
+    no such heading or no list under it."""
+    tree = _Tree()
+    tree.feed(page_html or "")
+    for head in tree.root.find(lambda n: n.tag in ("h2", "h3", "h4") and CCCD_SLO_HEAD.match(_ws(n.text()))):
+        sibs = [k for k in head.parent.kids if not isinstance(k, str)]
+        for k in sibs[sibs.index(head) + 1:]:
+            if k.tag in ("h2", "h3", "h4"):
+                break
+            if k.tag in ("ol", "ul"):
+                items = [MARKER.sub("", _ws(li.text(skip=("ol", "ul"))), count=1).strip()
+                         for li in k.kids if not isinstance(li, str) and li.tag == "li"]
+                items = [x for x in items if x]
+                if items:
+                    return {"shape": "list" if len(items) > 1 else "paragraph",
+                            "heading": _ws(head.text()), "lead": None, "outcomes": items,
+                            "maps_to": None, "parsed_from": "html"}
+        return None
+    return None
+
+
 def parse_page(page_html: str, text: str, system: str | None = None) -> dict:
     """The outcomes a page prints: each college's group (SDCCD's All Fields report), else
     the SLO area of an integrated outline (RCCD), else an eLumen course page's block,
     else the text reader."""
-    if system == "elumen":
-        got = elumen_outcomes_from_html(page_html) or outcomes_of(text)
+    if system in ("elumen", "courseleaf"):
+        own = elumen_outcomes_from_html if system == "elumen" else cccd_outcomes_from_html
+        got = own(page_html) or outcomes_of(text)
         return {**got, "fingerprint": fingerprint(got["outcomes"]) if got["outcomes"] else None}
     groups = groups_from_html(page_html)
     if groups is not None:
