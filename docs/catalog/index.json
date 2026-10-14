@@ -15530,8 +15530,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 359,
+   "count": 360,
    "docs": [
+    {
+     "created": "2026-10-14",
+     "governs": [],
+     "n": 389,
+     "path": "docs/session_389_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "course-outcomes",
+      "addenda",
+      "ui-pass",
+      "decision-sheet"
+     ],
+     "title": "Palo Verde's Acalog catalog after Sunday's census; the addenda reader widens",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-14",
      "governs": [],
@@ -21699,5 +21717,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1137
+ "total": 1138
 }

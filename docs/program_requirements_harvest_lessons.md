@@ -1005,3 +1005,33 @@ on the college's harvest-tab row and My College to-dos; the MAP team sends.
 ### Moved from the lane (S387 compaction, verbatim)
 
 ✅ **Sheet 77 card 3, built and merged (S385, #2093; Sam, *Build it*, 22:25Z):** numbered boxes are the reading procedure's alone. A record's college items (*Catalog and state file differ*, *MAP names a second course*) sit on one line in its head, *For the college*, that opens to the list; course rows carry no number for them (the quiet COCI chip and *Printed in the catalog* stay). The MAP team queue gains *Program record items for the colleges to correct*: a count a college, each a closed line that reads its list when opened, from the view `program_record_college_items` (`chatbox/supabase_program_record_college_items.sql`). My College's list is unchanged (it reads the same gaps from the table). Counts: lessons S385. ✅ Applied by `supabase-migrate.yml` run 38482375985 and read back (lessons S385). ✅ **My College reads the view too (S386, #2097):** one row an item, read a page at a time (Cerritos 577 rows, where every record's display was about 4 MB).
+
+## S388 SkyBuckeye (2026-10-14, the CPL Queue routine): three colleges' course SLOs loaded, the addenda reading agent, the Common CR Reference UI pass
+
+- **Course outcomes at nine colleges** (live read: 7,450 courses, 20,891 SLOs). Cabrillo 1,124 (read 38507187621, load
+  38515664600), Modesto Junior 910 (read 38515689944, load 38521527453) and Coastline 522 (read 38508963773, load
+  38523415414). Every eLumen page answered 200; the 16 and 14 courses with no outcomes print none. Coastline's 28 misses
+  are common course numbers the district's outline host answers 404 for. #2103 merged; #2105 merges on its `test`.
+- **A handoff's trigger line can name a key the branch does not read.** Handoff 388 said `catalog=modesto_junior`; the
+  `catalog=` key lives on #2105, and #2103's workflow reads `elumen=`. The first push would have read nothing; it was
+  canceled and re-pushed. Read the branch's workflow before pushing a trigger file it parses.
+- **A stacked branch's conflicts resolve by ancestry.** #2105 carried #2103's parser commit (f827ece), and `main`'s
+  copies of the three code files equaled that commit's, so #2105's side was a strict superset: take it for code and
+  `.run`, regenerate the dependency map, never pick sides on a generated file.
+- **A receipt at a PR's head leaves `test` unreported.** `js-tests.yml` runs on `pull_request` and `main` pushes; the
+  bot's receipt commit gets `action_required` runs. Put a real commit of yours on top (a merge of `main`, or the lane
+  edit the PR's state calls for), then read `test` on that head.
+- **The addenda reading agent (#2107):** `program_source_addenda_read(run_id, rows)` moves an addendum from listed to
+  read and files `programs_changed`, `published_on` and `effective_term`; service_role only, never a corrected row,
+  history under the run id. Applied by `supabase-migrate.yml` run 38516806015. The eight S387 reads are filed from
+  `kb/addenda_reads/read_38504437775.json`: 42 program and 20 course changes, each with scope, kind, change and date;
+  COCI control numbers where the program is in the snapshot (new ones are not). Receipt
+  `kb/receipts/program_source_addenda_read_2026-10-14_s388.sql` (8 read, 0 skipped). Cabrillo's addendum prints none.
+  Palo Verde's 2026-27 addendum changes four courses and no program; its 2025-26 one prints five programs in full.
+- **Common CR Reference UI pass (#2108):** CSV control 19px tall, rank 3.55:1; every control now an underlined cobalt
+  word, the rank on `--text-muted`; clean in light and dark (light failures 7 to 6 across 40 routes).
+- **Local `main` can be a week stale in a fresh container:** a `git pull -q` on `main` failed silently and the first UI
+  pass measured 2026-10-07 code. Branch from `origin/main` after a fetch.
+
+**NEXT.** The Acalog reader once Sunday's census apply moves Palo Verde's registry row; then Palo Verde's records re-read
+from 2026-27 and its course outcomes. The other 71 listed addenda wait for the reader to reach their colleges.

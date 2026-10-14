@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-359 document(s).
+360 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 389 | [Palo Verde's Acalog catalog after Sunday's census; the addenda reader widens](../session_389_handoff.md) | 2026-10-14 |
 | 388 | [course outcomes from catalog pages; Palo Verde's catalog year](../session_388_handoff.md) | 2026-10-14 |
 | 387 | [Sheet 78 waits; Southwestern and Fresno City captured](../session_387_handoff.md) | 2026-10-14 |
 | 386 | [Sheet 77 built, Modesto and Palo Verde displayed](../session_386_handoff.md) | 2026-10-14 |
