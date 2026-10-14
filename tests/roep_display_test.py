@@ -202,6 +202,26 @@ gk = b.gaps_for("X College", "courseleaf", "A.S. Degree", "units", filed_k, None
 named = sorted((g.get("coci") or [{}])[0].get("code") for g in gk if g["kind"] == "Catalog and state file differ")
 check(named == ["CC 3", "DD 4"], "gaps: no flag for a course the program lists through an older version (got %s)" % named)
 
+# 2e. Record shape 5 (Sam, Open Asks Sheet 78 card 2, "Record both figures"): a page that prints the
+# degree total with general education and no major total. The failure this guards: the gaps saying
+# "The catalog prints no program total" for a page that prints one for the degree.
+def deg_gaps(arith):
+    fd = {"record": {"program": {"degree_total": {"min": 64, "max": 68}, "ge_units": {"min": 34, "max": 38}},
+                     "blocks": []}, "score": {"arithmetic": arith}}
+    return b.gaps_for("X College", "elumen", "A.S. Degree", "units", fd, None, {"min": None}, None, lambda code: None)
+gd = deg_gaps({"status": "equal", "against": "degree", "computed": [64, 68]})
+check(not any(g["kind"] in ("No printed total", "Check not met") for g in gd),
+      "gaps: blocks and general education that make the printed degree total raise no gap (got %s)" % gd)
+gd = deg_gaps({"status": "unequal", "against": "degree", "computed": [60, 64]})
+check(any(g["kind"] == "Check not met" and g["text"] == "The blocks and general education add to 60-64 units; "
+          "the catalog prints 64-68 units for the degree." for g in gd)
+      and not any("no program total" in g["text"] for g in gd),
+      "gaps: a degree total the blocks and general education miss names both figures (got %s)" % gd)
+gd = deg_gaps({"status": "incomplete", "against": "degree", "computed": [30, 30],
+               "why": ["the record names the degree total and the CalGETC pattern, but no units for it"]})
+check(any(g["kind"] == "Check not met" and g["text"].startswith("The catalog prints 64-68 units for the degree") for g in gd),
+      "gaps: a degree total the check could not add to says why (got %s)" % gd)
+
 # 2d. A receipt never names a word the Supabase connector holds, even when a record's text
 # does (Long Beach City 37305, 2026-10-11: a careers note says "a reviewer may choose to drop
 # it", and the guard refused the whole build). The failures this guard: a stalling word in the
