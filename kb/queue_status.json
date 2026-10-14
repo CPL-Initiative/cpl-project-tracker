@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-13T22:15:55Z",
-  "session": 384,
-  "moniker": "SkyPoplar",
+  "written_at": "2026-10-14T00:17:52Z",
+  "session": 385,
+  "moniker": "SkyHazel",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_385_handoff.md",
+  "handoff": "docs/session_386_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -19669,11 +19669,1670 @@
       "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
       "control_number": "46519",
       "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Agriculture Science - Communications",
+      "award": "A.S. Degree",
+      "control_number": "06637",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Landscape and Park Maintenance",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "06638",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Agriculture Business",
+      "award": "A.S. Degree",
+      "control_number": "06639",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Animal Artificial Insemination Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "06640",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Agriculture Mechanics",
+      "award": "A.S. Degree",
+      "control_number": "06642",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Business",
+      "award": "A.S. Degree",
+      "control_number": "06644",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Accounting",
+      "award": "A.S. Degree",
+      "control_number": "06645",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Management",
+      "award": "A.S. Degree",
+      "control_number": "06647",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Marketing",
+      "award": "A.S. Degree",
+      "control_number": "06649",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Real Estate",
+      "award": "A.S. Degree",
+      "control_number": "06650",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Computer Science",
+      "award": "A.S. Degree",
+      "control_number": "06655",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Engineering",
+      "award": "A.S. Degree",
+      "control_number": "06656",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Automotive Technician",
+      "award": "A.S. Degree",
+      "control_number": "06662",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Welding",
+      "award": "A.S. Degree",
+      "control_number": "06668",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Art",
+      "award": "A.A. Degree",
+      "control_number": "06670",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Music",
+      "award": "A.A. Degree",
+      "control_number": "06671",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Theatre",
+      "award": "A.A. Degree",
+      "control_number": "06672",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Photography",
+      "award": "A.A. Degree",
+      "control_number": "06673",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Medical Assisting",
+      "award": "A.S. Degree",
+      "control_number": "06681",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Respiratory Care",
+      "award": "A.S. Degree",
+      "control_number": "06683",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Child Development",
+      "award": "A.S. Degree",
+      "control_number": "06688",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Human Services",
+      "award": "A.A. Degree",
+      "control_number": "06700",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Administration of Justice",
+      "award": "A.S. Degree",
+      "control_number": "06701",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Fire Science",
+      "award": "A.S. Degree",
+      "control_number": "06704",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Poultry Science",
+      "award": "A.S. Degree",
+      "control_number": "08018",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Crop Science",
+      "award": "A.S. Degree",
+      "control_number": "08103",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Fruit Science",
+      "award": "A.S. Degree",
+      "control_number": "08104",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Environmental Horticultural Science",
+      "award": "A.S. Degree",
+      "control_number": "08105",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Plant Nursery Production",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "08107",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Commercial Floristry Technician",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "08108",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Agriculture: Sales, Service",
+      "award": "A.S. Degree",
+      "control_number": "08109",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Dairy Science",
+      "award": "A.S. Degree",
+      "control_number": "08111",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Computer Information Systems",
+      "award": "A.S. Degree",
+      "control_number": "08124",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Physical Education",
+      "award": "A.A. Degree",
+      "control_number": "08125",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Industrial Electronics",
+      "award": "A.S. Degree",
+      "control_number": "08129",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Maintenance Machinist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "08131",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Autobody/Collision Repair",
+      "award": "A.S. Degree",
+      "control_number": "08134",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Computer Graphics Applications",
+      "award": "A.S. Degree",
+      "control_number": "08136",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Addiction Studies",
+      "award": "A.A. Degree",
+      "control_number": "08154",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Soil Science",
+      "award": "A.S. Degree",
+      "control_number": "10602",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Athletic Training/Sports Medicine",
+      "award": "A.S. Degree",
+      "control_number": "12228",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Associate Teacher",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "14885",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Teacher",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "14886",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Master Teacher",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "14887",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Site Supervisor",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "14888",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Early Interventionist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "14890",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Computer Applications Specialist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "16278",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Computer Programming Specialist",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "16279",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Agriculture",
+      "award": "A.S. Degree",
+      "control_number": "18545",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Biological Sciences",
+      "award": "A.S. Degree",
+      "control_number": "18547",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Chemistry",
+      "award": "A.S. Degree",
+      "control_number": "18548",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Humanities",
+      "award": "A.A. Degree",
+      "control_number": "18553",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "General Studies: Natural Sciences",
+      "award": "A.A. Degree",
+      "control_number": "18599",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "General Studies: Language and Rationality",
+      "award": "A.A. Degree",
+      "control_number": "18600",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "General Studies: Social & Behavioral Sciences",
+      "award": "A.A. Degree",
+      "control_number": "18601",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "General Studies: Arts and Humanities",
+      "award": "A.A. Degree",
+      "control_number": "18602",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Language Studies",
+      "award": "A.A. Degree",
+      "control_number": "18646",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Computer Network Administration",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "18762",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Advanced Heavy Equipment Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19348",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Heavy Machinery Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19372",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Agriculture: Sales, Service Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20283",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Accounting: Full-Charge Bookkeeper",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20295",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Accounting: Entry-Level Bookkeeper",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20298",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20299",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Real Estate Broker",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20303",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Computer Graphics Advanced",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20308",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Industrial Electronics",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20310",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Autobody/Collision Repair Technician",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "20320",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Medical Assisting",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20325",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Human Services",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20329",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Fire Science",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20330",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Mechanized Agriculture Technician",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "30509",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Communication Studies",
+      "award": "A.A- T Degree",
+      "control_number": "30643",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Mathematics",
+      "award": "A.S. T Degree",
+      "control_number": "30675",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Music",
+      "award": "A.A- T Degree",
+      "control_number": "31722",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "31756",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Art History",
+      "award": "A.A- T Degree",
+      "control_number": "31763",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "31774",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Theatre Arts",
+      "award": "A.A- T Degree",
+      "control_number": "31800",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Geology",
+      "award": "A.S. T Degree",
+      "control_number": "31852",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "31989",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "32038",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "32226",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "32227",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "32241",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "32249",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "32433",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "32590",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "32674",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Automotive Engines and Transmissions",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "32679",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Philosophy",
+      "award": "A.A- T Degree",
+      "control_number": "32705",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Geography",
+      "award": "A.A- T Degree",
+      "control_number": "32782",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Automotive Diagnosis",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33149",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Automotive Brakes and Suspension",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33152",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Automotive Service",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "33158",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Equine Science",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33171",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Manufacturing Technology (Interdisciplinary)",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33221",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Computer Science",
+      "award": "A.S. T Degree",
+      "control_number": "33672",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Dance",
+      "award": "A.A. Degree",
+      "control_number": "33803",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Addiction Studies",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "33809",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Irrigation Design",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33844",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Irrigation Construction and Installation",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33845",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Irrigation Management",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "33935",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Irrigation Technology",
+      "award": "A.S. Degree",
+      "control_number": "33944",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Irrigation Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33945",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Logistics and Supply Chain Management",
+      "award": "A.S. Degree",
+      "control_number": "35012",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Logistics and Supply Chain Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35013",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Electrician",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "35084",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Spanish",
+      "award": "A.A- T Degree",
+      "control_number": "35127",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Electro-Mechanic",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "35237",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Agricultural Environmental Science",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35276",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Agricultural Environmental Science",
+      "award": "A.S. Degree",
+      "control_number": "35277",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Agriculture Business",
+      "award": "A.S. T Degree",
+      "control_number": "35537",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Agriculture Animal Sciences",
+      "award": "A.S. T Degree",
+      "control_number": "35538",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Agriculture Plant Science",
+      "award": "A.S. T Degree",
+      "control_number": "35541",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "English for Life and Work: Elementary",
+      "award": "Noncredit program",
+      "control_number": "35789",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "English for Life and Work: Proficient",
+      "award": "Noncredit program",
+      "control_number": "35790",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Basic Heavy Equipment Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "36013",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "English Language Instruction for College: Academic Language Skills for Success",
+      "award": "Noncredit program",
+      "control_number": "36583",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Agriculture Science",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "37300",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Microsoft Computer Applications",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "37500",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Agriculture Welding Fabrication",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "37753",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Agriculture Welding Repair",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "37754",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Autobody/Collision Refinishing Technician",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "38065",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Equine Science",
+      "award": "A.S. Degree",
+      "control_number": "38067",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Recording Arts",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38763",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Design & Technical Theatre",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38764",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Learning Strategies: Academic Skills",
+      "award": "Noncredit program",
+      "control_number": "38773",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "English for Citizenship",
+      "award": "Noncredit program",
+      "control_number": "38776",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Entrepreneurship",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38869",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "English Language Instruction for College: Academic Reading and Writing Skills For Success",
+      "award": "Noncredit program",
+      "control_number": "38989",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Emergency Medical Technician",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "39094",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Fire Academy",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39095",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Photography",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39471",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Accelerated Access in English to Early Childhood Education",
+      "award": "Noncredit program",
+      "control_number": "41588",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Purchasing/Customer Service Assistant",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42278",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Warehousing and Distribution Assistant",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42279",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Production Scheduling Assistant",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42280",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Import/Export Assistant",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42281",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "42302",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Business Information Technology Level 1",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42579",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Business Information Technology Quick Start",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42580",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Business Information Technology Level 2",
+      "award": "A.S. Degree",
+      "control_number": "42581",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Business Information Technology Level 2",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42582",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "English Language Instruction for College",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42597",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Tutoring",
+      "award": "Noncredit program",
+      "control_number": "42621",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Law, Public Policy, and Society",
+      "award": "A.A- T Degree",
+      "control_number": "42664",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "42673",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Film, Television, & Electronic Media",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42686",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Calibration and Instrumentation Technician Apprentice",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42918",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Electro-Mechanical Technician Apprentice",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42919",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Machinist Apprentice",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42920",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Machinery Maintenance Apprentice",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42921",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "43164",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Electrician Maintenance Apprentice",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43195",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "English Language Instruction for College: Integrated Skills",
+      "award": "Noncredit program",
+      "control_number": "43448",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Packaging Technician Apprentice",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43472",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "43651",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Electric Vehicle",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43664",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Public Health",
+      "award": "A.S. T Degree",
+      "control_number": "44503",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "English for Life and Work: Intermediate",
+      "award": "Noncredit program",
+      "control_number": "44588",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Social Work and Human Services",
+      "award": "A.A- T Degree",
+      "control_number": "44748",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Basic Automation Training",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44760",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Residential Electrical Installer",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44761",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Applied Electrical Technology",
+      "award": "A.S. Degree",
+      "control_number": "44799",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Pharmacy Technician",
+      "award": "Noncredit program",
+      "control_number": "44822",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Vocational Nurse",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "44892",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Community Health Worker",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44916",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "American Sign Language Studies",
+      "award": "A.A. Degree",
+      "control_number": "44985",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Computer Graphics Foundations",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45102",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Fitness Specialist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45105",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Automation Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45106",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Electrical Business Entrepreneurship",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45107",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Electrical Installer",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45119",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Electrical Maintenance Assistant",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45120",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Electro-Mechanical Technical Assistant",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45121",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Electrotechnical Assistant",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45122",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Basic Electrical Training",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "45134",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Analytical Chemistry Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45518",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Professional Practices in Music II",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45771",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Professional Practices in Music I",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45787",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Environmental Science",
+      "award": "A.S. T Degree",
+      "control_number": "45979",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Registered Veterinary Technician",
+      "award": "A.S. Degree",
+      "control_number": "45982",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Veterinary Assistant & Animal Care",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45983",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Modesto Junior College",
+      "program": "Modern Policing",
+      "award": "A.S. Degree",
+      "control_number": "46148",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Business Management",
+      "award": "A.S. Degree",
+      "control_number": "04436",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Automotive Technology",
+      "award": "A.S. Degree",
+      "control_number": "04442",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Criminal Justice",
+      "award": "A.S. Degree",
+      "control_number": "04451",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Child Development",
+      "award": "A.S. Degree",
+      "control_number": "04452",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Computer Information Systems",
+      "award": "A.S. Degree",
+      "control_number": "09813",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Welding Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "09815",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Hazardous Materials Specialist",
+      "award": "A.S. Degree",
+      "control_number": "09819",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Building  Construction Technology",
+      "award": "A.S. Degree",
+      "control_number": "16369",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Alcohol and Drug Studies",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "16691",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Liberal Arts with Emphasis in Arts and Humanities",
+      "award": "A.A. Degree",
+      "control_number": "17998",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Liberal Arts with Emphasis in Social and Behavioral Sciences",
+      "award": "A.A. Degree",
+      "control_number": "17999",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Liberal Arts with Emphasis in Mathematics and Science",
+      "award": "A.A. Degree",
+      "control_number": "18000",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Liberal Arts with Emphasis in Business and Technology",
+      "award": "A.A. Degree",
+      "control_number": "18045",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Building Construction Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22483",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Child Development-Teacher",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22484",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Criminal Justice",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22485",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Welding Technology",
+      "award": "A.S. Degree",
+      "control_number": "30514",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "30594",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "30710",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "32242",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "32534",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Non-Credit English as a Second Language",
+      "award": "Noncredit program",
+      "control_number": "33848",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "NON-CREDIT English as a Second Language II",
+      "award": "Noncredit program",
+      "control_number": "39494",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "39667",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "39852",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Communication Studies",
+      "award": "A.A- T Degree",
+      "control_number": "39853",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "40016",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Law, Public Policy, and Society",
+      "award": "A.A- T Degree",
+      "control_number": "40017",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Child and Adolescent Development",
+      "award": "A.A- T Degree",
+      "control_number": "40020",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Fire Science Aircraft Rescue Firefighting Cert",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "41189",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Fire Science Chief Officer Cert",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "41208",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Fire Science Company Officer Cert",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "41221",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Fire Science Fire Apparatus Driver/Operator Cert",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "41222",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Fire Science Fire Command Cert",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "41223",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Fire Science Fire Investigator I Cert",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "41224",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Fire Science Fire Inspector II Cert",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "41225",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Fire Science Fire Inspector I Cert",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "41226",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Fire Science Hazardous Materials Specialist Cert",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "41227",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Fire Science Instructor Cert",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "41241",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Fire Science Technical Rescue Cert",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "41242",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Fire Science Technology Cert",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "41243",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Fire Science Water & Boat Rescue Cert",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "41250",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Fire Science Wildland Firefighting Cert",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "41260",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Fire Science Technology A.S.",
+      "award": "A.S. Degree",
+      "control_number": "41266",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "ADN",
+      "award": "A.S. Degree",
+      "control_number": "41693",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "English as a Second Language",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "42787",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "43196",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Fast Track Vocational Nursing",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "43202",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Biological Sciences Associate of Science (Emphasis HealthScience)",
+      "award": "A.S. Degree",
+      "control_number": "45190",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Science Core for Nursing",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45191",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "American Sign Language",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45958",
+      "loaded": "2026-10-13"
+    },
+    {
+      "college": "Palo Verde College",
+      "program": "Small Business",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46524",
+      "loaded": "2026-10-13"
     }
   ],
   "next_step": {
-    "title": "Merge the checkpoint, then the college filter, and check its first live reads",
-    "text": "Merge the checkpoint and the college and district filter, read the filter's first live reads in the edge logs, then load Modesto and Palo Verde and build Sam's Sheet 77 rulings."
+    "title": "Read the first college pick, then Palo Verde's noncredit page",
+    "text": "Read the Records view's first college pick in the edge logs when someone picks one, then read one Palo Verde noncredit program page before any reader fix, and pick the next college to read."
   },
   "calls": [],
   "notes": {
@@ -19685,32 +21344,24 @@
   },
   "changes": [
     {
-      "at": "2026-10-13T20:36:11Z",
-      "text": "The Annual Goals build queue merged and its function deployed"
+      "at": "2026-10-13T22:43:40Z",
+      "text": "The Records view loads a light index for every college and full records by college or by key"
     },
     {
-      "at": "2026-10-13T20:55:27Z",
-      "text": "The eLumen hub reader merged with Modesto's and Palo Verde's capture-only reads"
+      "at": "2026-10-13T23:02:29Z",
+      "text": "Table, Archive and Restore on the Activities tab are for a signed-in reviewer only"
     },
     {
-      "at": "2026-10-13T21:00:35Z",
-      "text": "The Records view reads every record in pages, past the 1,000-row cap"
+      "at": "2026-10-13T23:25:44Z",
+      "text": "The college's items sit on one line a record, and the MAP team queue lists them by college"
     },
     {
-      "at": "2026-10-13T21:17:17Z",
-      "text": "The whole-harvest measure merged on the Progress view"
+      "at": "2026-10-13T23:15:26Z",
+      "text": "Modesto Junior and Palo Verde loaded, 185 and 52 records"
     },
     {
-      "at": "2026-10-13T21:36:57Z",
-      "text": "A signed-in page reads the records once, and a timed-out page gets one retry"
-    },
-    {
-      "at": "2026-10-13T22:05:00Z",
-      "text": "The college and district filter opened for review"
-    },
-    {
-      "at": "2026-10-13T22:26:11Z",
-      "text": "Sam answered Open Asks Sheet 77; Modesto's and Palo Verde's extraction started"
+      "at": "2026-10-13T23:58:31Z",
+      "text": "Display build 2d812b8ce768 applied to all 3,077 records"
     }
   ],
   "headline": [
@@ -19749,6 +21400,12 @@
       "active": 20282,
       "checked": 31,
       "colleges": 6
+    },
+    {
+      "day": "2026-10-14",
+      "active": 20282,
+      "checked": 31,
+      "colleges": 6
     }
   ],
   "next_run": {
@@ -19757,8 +21414,8 @@
     "at": "2026-10-14T05:12:14Z"
   },
   "harvest": {
-    "day": "2026-10-13",
-    "gaps": 328,
+    "day": "2026-10-14",
+    "gaps": 353,
     "parts": {
       "links": {
         "catalog": [
@@ -19775,11 +21432,11 @@
         ]
       },
       "roep": [
-        2896,
+        3155,
         20282
       ],
       "coci": [
-        2568,
+        2802,
         20282
       ],
       "outcomes": {
@@ -19788,12 +21445,12 @@
           89192
         ],
         "plo": [
-          2568,
+          2802,
           20282
         ]
       },
       "careers": [
-        1518,
+        1752,
         20282
       ]
     }

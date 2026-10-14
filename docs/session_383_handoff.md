@@ -4,6 +4,8 @@ date: 2026-10-13
 session: 382 (SkyLarch)
 tags: [handoff, program-requirements, coastline, cabrillo, elumen, annual-goals]
 status: current
+superseded: true
+superseded_by: session_386_handoff.md
 ---
 
 # You are Session 383

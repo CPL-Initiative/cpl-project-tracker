@@ -891,3 +891,9 @@ a degree total, a core and electives (lessons S382).
   waiting on `test`.
 - **#2090's first live reads were clean:** the light index paged `0-249/2840` then 250-row pages, 106-403 ms each,
   no 400. The first college pick (`college=in.(...)`) waits on a visitor.
+
+### Moved from the lane (S385 compaction, verbatim)
+
+✅ **eLumen (#2072, merged S381):** `el_pages_fast()`: one publish call for the menu, one `publish/content` call a program. Bakersfield loaded 229 (S381; lessons S381). ✅ **Coastline (#2074) and Cabrillo (#2078), merged S383:** 140 and 268 loaded, procedures v1; how each reader was fixed, and Cabrillo's 88 arithmetic failures: lessons S382-S383. ✅ **eLumen hubs (#2085, merged S384):** a menu naming neither programs nor departments links hubs (Modesto `programs`/`bytype`/`adt`; Palo Verde's award categories); `el_hub_slugs()` reads them. Capture-only reads (S384): Modesto 189 of 199 found (163 full coverage; misses Animal Science, Small Animal Vet Tech, three GE patterns), run 38461105673; Palo Verde 54 of 69 (32 full; misses five noncredit programs at 0 coverage, Vocational Nursing, Cal-GETC, Umoja, Cross-Cultural), run 38461110935. ✅ **Sam's go, both (Sheet 77 card 5, 22:26Z):** extraction reads dispatched on `claude/s384-modesto-palo-verde`.
+
+The one-shot record read stopped at PostgREST's 1,000-row cap (Content-Range 0-999/*) and, as anon (statement_timeout 3 s), answered 500; all 2,840 records are 34 MB (`records-view-1000-row-cap-and-anon-timeout-2026-10-13`). #2088 pages every read (CPL Pathways' index too); #2089 reads once when signed in and retries a 5xx page.

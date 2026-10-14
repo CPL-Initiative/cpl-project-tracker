@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-356 document(s).
+357 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 386 | [Sheet 77 built, Modesto and Palo Verde displayed](../session_386_handoff.md) | 2026-10-14 |
 | 385 | [the college filter's first live reads, and Sam's Sheet 77](../session_385_handoff.md) | 2026-10-13 |
 | 384 | [the whole-harvest measure, the build queue, the eLumen hubs, and Sam's Sheet 76](../session_384_handoff.md) | 2026-10-13 |
 | 383 | [Cabrillo's display, #2074's merge, the eLumen hub reader, and Sam's Annual Goals asks](../session_383_handoff.md) | 2026-10-13 |

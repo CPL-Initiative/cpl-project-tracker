@@ -4,6 +4,8 @@ date: 2026-10-13
 session: 376 (SkyLinden)
 tags: [handoff, program-requirements, course-outcomes, course-outlines, sdccd, san-diego-miramar]
 status: current
+superseded: true
+superseded_by: session_386_handoff.md
 ---
 
 # You are Session 380

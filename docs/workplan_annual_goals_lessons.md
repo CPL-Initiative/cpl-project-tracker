@@ -119,3 +119,15 @@ Sam asked for four things on Annual Goals (move AI Apprenticeship CPL Tools unde
 - **Card 2 built (#2083):** a save queues the build through `workplan-rebuild`, which checks its caller with the same
   two RPCs the tables' policies use and reuses a build already waiting; an editor sees rows added or moved since the
   build at once, a reader waits for the build. The key is Sam's to create (Sheet 76 card 1).
+
+## S385 SkyHazel (2026-10-13): Table and Archive reviewer-only on both tabs
+
+- **Sheet 77 card 2 built (#2092).** `project_lifecycle.js` shows Table, Archive and Restore to a signed-in reviewer
+  only and sends no `x-team-pass`; the three write policies on `project_lifecycle` name `is_allowed_reviewer()` alone.
+  The test suite proves seven checks fail on the old code (phrase-only and signed out show nothing, the write carries
+  the reviewer's token, the schema of record names the reviewer).
+- **The first database change through `supabase-migrate.yml`** (#2076): no approval wait, applied in under a minute,
+  ledger `20261013224742`, receipt committed by the bot. Read back from `pg_policies` before merge. Its rollback is a
+  committed file with the policies as read live before the change.
+- **A bot's receipt commit runs no CI.** The runner pushes with the workflow token, so no `test` runs on that head; a
+  commit of your own on top (here the lane's read-back line) puts `test` on the head the merge needs.
