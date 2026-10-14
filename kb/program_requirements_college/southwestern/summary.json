@@ -1,0 +1,227 @@
+{
+ "college": "Southwestern College",
+ "programs": 272,
+ "with_closed_list": 233,
+ "found": 220,
+ "extracted": 220,
+ "errors": 0,
+ "passed_machine_checks": 162,
+ "failed": {
+  "coverage": 32,
+  "invented": 2,
+  "arithmetic": 55,
+  "repeated": 0,
+  "outcomes": 1
+ },
+ "cost_usd": 13.77,
+ "cost_per_program": 0.0626,
+ "not_found": [
+  {
+   "control_number": "05415",
+   "title": "Administration of Justice---Corrections Emphasis",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "05427",
+   "title": "Environmental Health and Safety Studies",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.swccd.edu/noncredit-certificates-courses/healthwellnesspublicsafety/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 13,
+    "why": "coarse net: the page's code tokens name 0 of 13 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2743,
+     "content": 3799,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "08202",
+   "title": "Administration of Justice---Law Enforcement Emphasis",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "12166",
+   "title": "Forensic Studies",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/paralegal-studies-bilingual/paralegal-studies-bilingual-english-spanish-as/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5948,
+     "content": 7008,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "14602",
+   "title": "Fitness Specialist Certification---Advanced",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/exercise-science/fitness-specialist-certification-advanced-certificate/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.222,
+    "body": 0.222,
+    "content": 0.0,
+    "net": 2,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 2 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4687,
+     "content": 5819,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "20616",
+   "title": "Environmental Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/business-management/ebusiness-intermediate-certificate/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4490,
+     "content": 5641,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "20704",
+   "title": "Occupational Health and Safety",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.swccd.edu/noncredit-certificates-courses/healthwellnesspublicsafety/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2743,
+     "content": 3799,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "32747",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/exercise-science/kinesiology-aat/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.35,
+    "body": 0.35,
+    "content": 0.05,
+    "net": 21,
+    "listed": 60,
+    "why": "coarse net: the page's code tokens name 21 of 60 listed courses",
+    "error": null,
+    "chars": {
+     "body": 7283,
+     "content": 8197,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "39701",
+   "title": "Family Child Care Business Provider",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "44011",
+   "title": "Yoga Teacher Training - 300 Hour",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/exercise-science/yoga-teacher-training-300hour/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.167,
+    "body": 0.167,
+    "content": 0.111,
+    "net": 3,
+    "listed": 18,
+    "why": "coarse net: the page's code tokens name 3 of 18 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5461,
+     "content": 6558,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "run": "38563578596"
+}

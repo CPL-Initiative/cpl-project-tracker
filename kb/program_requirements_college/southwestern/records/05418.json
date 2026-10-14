@@ -1,0 +1,831 @@
+{
+ "college": "Southwestern College",
+ "control_number": "05418",
+ "shape": "degree",
+ "title": "Anthropology",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/liberal-arts-areas-emphasis/liberal-arts-emphasis-social-behavioral-sciences-aa/",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8706,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8706,
+    "output_tokens": 4685,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4685,
+  "output_tokens_details": {
+   "thinking_tokens": 936
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.12852,
+ "ms": 33903,
+ "seconds": 34.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 73,
+   "codes": [
+    "AFRO110",
+    "AFRO111",
+    "AFRO151",
+    "AJ110",
+    "AJ111",
+    "AJ114",
+    "ANTH112",
+    "ASIA112",
+    "ASIA113",
+    "ASIA114",
+    "ASIA115",
+    "CD135",
+    "CD170",
+    "CD284",
+    "COMM174",
+    "COMM176",
+    "COMM200",
+    "ECON100",
+    "ECONC2001",
+    "ECONC2002",
+    "GEOG106",
+    "GEOG120",
+    "HIST104",
+    "HIST105",
+    "HIST106",
+    "HIST107",
+    "HIST110",
+    "HIST111",
+    "HIST112",
+    "HIST113",
+    "HIST114",
+    "HIST121",
+    "HIST122",
+    "HIST132",
+    "HIST141",
+    "HIST142",
+    "HIST152",
+    "HIST153",
+    "HISTC1001",
+    "HISTC1002",
+    "JOUR101",
+    "MAS141",
+    "MAS142",
+    "MAS150",
+    "MAS170",
+    "NAIS152",
+    "NAIS153",
+    "POLSC1000",
+    "PS101",
+    "PS103",
+    "PS104",
+    "PSYC106",
+    "PSYC109",
+    "PSYC116",
+    "PSYC201",
+    "PSYC211",
+    "PSYC230",
+    "PSYC250",
+    "PSYC255",
+    "PSYC260",
+    "PSYC271",
+    "PSYC280",
+    "PSYCC1000",
+    "SOC101",
+    "SOC106",
+    "SOC107",
+    "SOC110",
+    "SOC116",
+    "SOC135",
+    "SOC140",
+    "SOC255",
+    "SOC271",
+    "SOC280"
+   ],
+   "flagged": [
+    "AFRO110",
+    "AFRO111",
+    "AFRO151",
+    "AJ110",
+    "AJ111",
+    "AJ114",
+    "ANTH112",
+    "ASIA112",
+    "ASIA113",
+    "ASIA114",
+    "ASIA115",
+    "CD135",
+    "CD170",
+    "CD284",
+    "COMM174",
+    "COMM176",
+    "COMM200",
+    "ECON100",
+    "ECONC2001",
+    "ECONC2002",
+    "GEOG106",
+    "GEOG120",
+    "HIST104",
+    "HIST105",
+    "HIST106",
+    "HIST107",
+    "HIST110",
+    "HIST111",
+    "HIST112",
+    "HIST113",
+    "HIST114",
+    "HIST121",
+    "HIST122",
+    "HIST132",
+    "HIST141",
+    "HIST142",
+    "HIST152",
+    "HIST153",
+    "HISTC1001",
+    "HISTC1002",
+    "JOUR101",
+    "MAS141",
+    "MAS142",
+    "MAS150",
+    "MAS170",
+    "NAIS152",
+    "NAIS153",
+    "POLSC1000",
+    "PS101",
+    "PS103",
+    "PS104",
+    "PSYC106",
+    "PSYC109",
+    "PSYC116",
+    "PSYC201",
+    "PSYC211",
+    "PSYC230",
+    "PSYC250",
+    "PSYC255",
+    "PSYC260",
+    "PSYC271",
+    "PSYC280",
+    "PSYCC1000",
+    "SOC101",
+    "SOC106",
+    "SOC107",
+    "SOC110",
+    "SOC116",
+    "SOC135",
+    "SOC140",
+    "SOC255",
+    "SOC271",
+    "SOC280"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Social & Behavioral Science Emphasis",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Southwestern College Associate Degree General Education (Option 1) or Cal-GETC (Option 2)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the social and behavioral science skills necessary to engage competently in personal, professional, civic and social contexts."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Social & Behavioral Science Emphasis",
+    "rule": "choose_units",
+    "minimum": 18,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "AFRO 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 110",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "AFRO 111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 111",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "AFRO 151",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AJ 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AJ 111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AJ 114",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 112",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASIA 112",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 112",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASIA 113",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 113",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASIA 114",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 114",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASIA 115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CD 135",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CD 170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CD 284",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 174",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 176",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 200",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 122",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 132",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JOUR 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MAS 141",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 141",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MAS 142",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 142",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MAS 150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NAIS 152",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 152",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "NAIS 153",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 153",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MAS 170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PS 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PS 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PS 104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 109",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 116",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 201",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 211",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 230",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 250",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 255",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 260",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 270",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 270",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 271",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 271",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 280",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 280",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 116",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 135",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 255",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The program is named Anthropology A.A., but the source page is the Liberal Arts A.A. with an Area of Emphasis in Social & Behavioral Sciences (Option 1 Major Code 01377; Option 2 Major Code 01730). Anthropology courses are only three of many choices; a reviewer should confirm this page is the right source.",
+   "No units are printed beside individual courses in the emphasis list, so course units are null.",
+   "Cross-listed codes printed as 'AFRO/HIST 110', 'PSYC/SOC 270', etc. are recorded as one entry with the second subject as an alternative.",
+   "Footnote 1 rule: include a minimum of two courses from a single discipline (depth) and at least two disciplines (breadth); not encoded in the block.",
+   "degree_total 60 is taken from the page's instruction 'Complete a minimum of 60 degree applicable transferable semester units (including major and general education courses)'; it may be a generic degree minimum.",
+   "General education depends on option: Option 1 Southwestern College Associate Degree GE minimum 21 units plus 3 units Lifelong Learning & Wellness graduation requirement; Option 2 Cal-GETC minimum 34 units. ge_units recorded as 21-34 to span the two options.",
+   "The page prints one Program Student Learning Outcome for the emphasis; recorded as shared by the award.",
+   "Courses marked '*' (AJ 110, PSYC 201) are not UC transferable."
+  ]
+ },
+ "extracted_run": "38563578596"
+}

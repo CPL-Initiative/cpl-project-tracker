@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 272,
  "with_closed_list": 233,
- "started": "2026-10-14T01:23:09Z",
+ "started": "2026-10-14T12:26:30Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.swccd.edu/sitemap.xml",
@@ -20,7 +20,7 @@
  "child_pages": 33,
  "banner_h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
  "loads": 451,
- "seconds": 2171.1,
+ "seconds": 2152.6,
  "found": 220,
  "by_method": {
   "link_search": 2,
@@ -2516,5 +2516,5 @@
    }
   ]
  },
- "run": "38495332618"
+ "run": "38563578596"
 }
