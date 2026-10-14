@@ -1226,6 +1226,27 @@ AC_CATOID = re.compile(r"[?&]catoid=(\d+)", re.I)
 AC_NAV = re.compile(r"content\.php\?(?:[^#\s]*&)?navoid=(\d+)", re.I)
 AC_PROGRAM_NAV = re.compile(r"program|degree|certificate|areas? of (?:study|interest)|majors?|pathway", re.I)
 AC_MAX_NAVS = 12          # navigation pages read for program links, at most
+# Every Acalog page carries a catalog menu (a select naming each catalog the
+# college keeps, current and archived). The option for the catoid being read
+# names its year; San Joaquin Delta's registry row names none (S391).
+AC_CATALOG_MENU_JS = r"""() => Array.from(document.querySelectorAll('select'))
+  .filter(s => /catalog/i.test((s.name || '') + ' ' + (s.id || '')))
+  .flatMap(s => Array.from(s.options).map(o => [o.value, (o.textContent || '').trim(), o.selected]))"""
+
+
+def ac_catalog_year(options: list, catoid: int | None, title: str = "") -> tuple[str | None, str | None]:
+    """The year of the catalog being read, and where it came from: the menu's
+    option for its catoid, else the option the menu has selected, else the page
+    title. Only that one option counts, never the newest year the menu lists."""
+    from _program_source_census import parse_catalog_year
+    want = str(catoid) if catoid is not None else None
+    picks = [o for o in options if want and str(o[0]).strip() == want] or [o for o in options if o[2]]
+    for o in picks:
+        y = parse_catalog_year(o[1], max_start=2100)
+        if y:
+            return y, "catalog menu"
+    y = parse_catalog_year(title or "", max_start=2100)
+    return (y, "page title") if y else (None, None)
 
 
 def ac_base(start: str, links: list[dict] | None = None) -> str:
@@ -1304,7 +1325,16 @@ def ac_urls(reader, start: str, cache: dict, report: dict) -> list[str]:
     if catoid is None:
         report["acalog"]["stopped"] = "the start page's links name no catalog id"
         return []
-    report["acalog"]["start_menu"] = [[(ln.get("text") or "")[:60], ln.get("href")] for ln in links
+    # Read while the reader still shows the start page, before the site map loads.
+    options = []
+    try:
+        options = reader.page.evaluate(AC_CATALOG_MENU_JS) or []
+    except Exception as exc:
+        report["acalog"]["catalog_menu_error"] = str(exc).splitlines()[0][:200] if str(exc) else type(exc).__name__
+    year, year_from = ac_catalog_year(options, catoid, front.get("title") or "")
+    report["acalog"].update(catalog_menu=[o[1][:60] for o in options][:12],
+                            catalog_year_read=year, catalog_year_from=year_from)
+    report["acalog"]["start_menu"] =[[(ln.get("text") or "")[:60], ln.get("href")] for ln in links
                                       if AC_NAV.search(ln.get("href") or "")][:40]
     sm = P.load(reader, "%s/sitemap.php?catoid=%d" % (base, catoid), cache, False)
     urls = ac_program_urls(sm.get("links") or [], base, catoid) if sm.get("access") == "ok" else []
@@ -1365,6 +1395,14 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                      "publish/content" if pages else "rendered", delay / 1000), flush=True)
         elif platform == "acalog":
             urls, pages = ac_urls(reader, start, cache, report)[:MAX_PAGES], []
+            read_year = report["acalog"].get("catalog_year_read")
+            if read_year and not reg.get("catalog_year"):
+                # Each record's source carries the registry's year, and the load stamps the report's.
+                reg = dict(reg, catalog_year=read_year)
+                report["catalog_year"] = read_year
+                report["catalog_year_from"] = report["acalog"].get("catalog_year_from")
+            elif read_year and read_year != reg.get("catalog_year"):
+                report["catalog_year_page_differs"] = read_year
             print("%s: %d programs (%d with a course list), %d Acalog program pages (catalog %s), %.1f s between loads"
                   % (college, len(programs), report["with_closed_list"], len(urls),
                      report["acalog"].get("catoid"), delay / 1000), flush=True)
