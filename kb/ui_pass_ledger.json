@@ -246,8 +246,8 @@
    "name": "Program Requirements",
    "page": "index.html#program-requirements",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-14",
+   "outcome": "S391: light and dark clean before and after at 390-1440 on all six seeded views (Progress, Records signed in, exhibits) and the cobi sweeps' route; no raw hex, every token it names defined in both HTMLs, no glyphs. Converted to underlined words (Sam, 2026-10-09): the view switch (the view in use heavier and darker), the verdict's Confirm, Needs a fix and Save the note (no filled lead), a record's toggles and Expand all / Collapse all; dead .prh-ask CSS removed. New target program-requirements-filter (light, dark) measures a Records filter open: clean. Wiring: this tab and CPL Pathways read every program_requirement_records row, paged and unfiltered; the live side by side could not be opened from the session (Supabase is unreachable from its browser)."
   },
   {
    "id": "cobi:gr-priorities",
