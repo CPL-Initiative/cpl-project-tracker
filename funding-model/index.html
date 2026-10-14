@@ -519,7 +519,7 @@ section[hidden]{display:none}
       <b id="f-main">$25,240,308</b> to institutions is <b>one funding total</b>, shared among all 118 in
       proportion to combined credit + noncredit size within the base award and the cap. Every award then
       splits into a credit share and a <b>noncredit</b> share by the institution&rsquo;s own teaching mix:
-      statewide, <b data-fig="f-nc">$1,812,403</b> is noncredit, carried within <b id="l-nc-count">108</b> college
+      statewide, <b id="f-nc2">$1,812,403</b> is noncredit, carried within <b id="l-nc-count">108</b> college
       awards and restricted to noncredit outcomes. The $9.04&nbsp;million remaining from 2025-26 is a
       separate distribution.</p>
     </div>
@@ -1212,6 +1212,7 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     setText("l-nc-count", String(D.nc.ncColleges));
     setText("t-nc", money(D.nc.face));
     setText("f-nc", money(D.nc.face));
+    setText("f-nc2", money(D.nc.face));   // its second copy, under the boxes
     // The credit side of the institutions box (Sam, 2026-10-14): the box's own
     // figure less the noncredit total, so the two printed figures add up to the
     // one above them, rounding included.

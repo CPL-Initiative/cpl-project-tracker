@@ -681,15 +681,20 @@ check("the status line is empty on a successful paint",
   check("the destinations sum to the appropriation, by construction",
     Math.round(instBox + D3.pool.scaling + D3.pool.admin)
       === Math.round(D3.pool.one_time));
-  // TWO BOXES (Sam, 2026-10-01: "combine in one box the Projects & Supports
-  // with Staff funding together with projects in one value"), and the average
-  // in the middle of the range row with its credit and noncredit split.
+  // TWO DESTINATIONS (Sam, 2026-10-01: "combine in one box the Projects &
+  // Supports with Staff funding together with projects in one value"), and the
+  // average in the middle of the range row with its credit and noncredit split.
+  // Since 2026-10-14 the appropriation shares their row ("the 3 funding boxes
+  // ... the same width and on the same row"), so the row holds three boxes:
+  // the appropriation, then the two destinations, and still no staff box.
   const money0 = (n) => "$" + Math.round(n).toLocaleString("en-US");
   // The page's own payload, painted now: earlier blocks moved its dials.
   const Dp = win.CPL_FUNDING_EXPLAINER.buildPayload(win.CPL_FUNDING_TAB, win.CPL_FUNDING);
   win.CPL_PAINT_EXPLAINER(Dp);
-  check("the statewide box is ONE figure: projects and technology plus the two posts, and no third box",
-    doc.querySelectorAll(".figs .fig").length === 2 && !doc.getElementById("f-staff") &&
+  const rowFigs = Array.from(doc.querySelectorAll(".figs .fig"));
+  check("the statewide box is ONE figure: projects and technology plus the two posts, and no staff box beside the appropriation and its two destinations",
+    rowFigs.length === 3 && !!rowFigs[0].querySelector("#f-total") && !!rowFigs[1].querySelector("#f-inst") &&
+    !!rowFigs[2].querySelector("#f-proj") && !doc.getElementById("f-staff") &&
     doc.getElementById("f-proj").textContent === money0(Dp.pool.scaling + Dp.pool.admin) &&
     doc.getElementById("f-inst").textContent === money0(Dp.pool.one_time - Dp.pool.admin - Dp.pool.scaling));
   check("the range row's middle box is the AVERAGE, not the median, and no box says Typical",

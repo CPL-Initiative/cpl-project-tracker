@@ -3592,9 +3592,10 @@
   ];
   var FIG_ID = {}, FIG_NAME = {};
   FIG_TOKENS.forEach(function (t) { FIG_ID[t[0].toLowerCase()] = t[1]; FIG_NAME[t[1]] = t[0]; });
-  // The page's typed markup paints three figures under a second id as well;
-  // each reads back as the one name.
-  var FIG_ID_ALIAS = { "l-floor": "f-floorv", "l-cap": "f-capv", "l-avg-n": "l-basis-n" };
+  // The page's typed markup paints four figures under a second id as well;
+  // each reads back as the one name. (f-nc2: the noncredit total's copy under
+  // the three boxes, since the institutions box carries the first, 2026-10-14.)
+  var FIG_ID_ALIAS = { "l-floor": "f-floorv", "l-cap": "f-capv", "l-avg-n": "l-basis-n", "f-nc2": "f-nc" };
   // In page order. `sec` is the explainer section's data-fsec and `title` its
   // heading; `where` places the passage inside it for the curator.
   var EXPLAINER_BLOCKS = [
