@@ -1088,6 +1088,69 @@ check("auth.role(), '') <> 'service_role'" in body
       and "from public, anon, authenticated;" in sql and "to service_role;" in sql.split("grant execute")[1],
       "only the service role may load: the body checks the caller's role, and the grant names service_role alone")
 
+# ── Acalog (S389): the catalog the start page serves, its program pages, its program menus ──
+# Palo Verde 2026-27, El Camino and San Joaquin Delta read Acalog (Modern Campus). The
+# failures this guards: an archived catalog's id from the catalog picker taken for the
+# current one, another catalog's program read as this one's, and a program read twice.
+ELC = "http://catalog.elcamino.edu/"
+ELC_LINKS = [{"text": "Programs", "href": "https://catalog.elcamino.edu/content.php?catoid=21&navoid=1001"},
+             {"text": "Courses", "href": "https://catalog.elcamino.edu/content.php?catoid=21&navoid=1002"},
+             {"text": "Degrees and Certificates", "href": "https://catalog.elcamino.edu/content.php?catoid=21&navoid=1003"},
+             {"text": "Home", "href": "https://catalog.elcamino.edu/index.php?catoid=21"},
+             {"text": "2025-2026 Catalog [ARCHIVED]", "href": "https://catalog.elcamino.edu/index.php?catoid=19"},
+             {"text": "Financial Aid", "href": "https://www.elcamino.edu/aid?catoid=19"},
+             {"text": "Accounting, A.S.", "href": "https://catalog.elcamino.edu/preview_program.php?catoid=21&poid=4410&returnto=1001"},
+             {"text": "Accounting, A.S. (again)", "href": "https://catalog.elcamino.edu/preview_program.php?catoid=21&poid=4410&returnto=1003"},
+             {"text": "Art History, AA-T", "href": "/preview_program.php?catoid=21&poid=4423"},
+             {"text": "Last year's Accounting", "href": "https://catalog.elcamino.edu/preview_program.php?catoid=19&poid=3999"}]
+check(C.ac_catoid(ELC_LINKS, ELC) == 21,
+      "the catalog the start page serves is the id its own links carry most, never an archived one in the picker")
+check(C.ac_catoid([], ELC) is None, "a page whose links name no catalog id names none")
+check(C.ac_base(ELC, ELC_LINKS) == "https://catalog.elcamino.edu"
+      and C.ac_base(ELC, [{"href": "http://catalog.elcamino.edu/content.php?catoid=13&navoid=886"}]) == "http://catalog.elcamino.edu"
+      and C.ac_base("https://catalog.deltacollege.edu/") == "https://catalog.deltacollege.edu",
+      "an Acalog host is read over the scheme its own links use (El Camino serves http only), else the start's")
+check(C.ac_program_urls(ELC_LINKS, C.ac_base(ELC, ELC_LINKS), 21) ==
+      ["https://catalog.elcamino.edu/preview_program.php?catoid=21&poid=4410&print",
+       "https://catalog.elcamino.edu/preview_program.php?catoid=21&poid=4423&print"],
+      "each of this catalog's programs is read once, as its print-friendly page, and another catalog's never")
+check(C.ac_program_navs(ELC_LINKS, C.ac_base(ELC, ELC_LINKS), 21) ==
+      ["https://catalog.elcamino.edu/content.php?catoid=21&navoid=1001",
+       "https://catalog.elcamino.edu/content.php?catoid=21&navoid=1003"],
+      "the navigation pages read for programs are those named programs, degrees or certificates")
+
+asked_ac = []
+
+
+def ac_load(reader, url, cache, spa):
+    asked_ac.append(url)
+    if "sitemap.php" in url:
+        return {"access": "refused", "status": 404, "links": []}
+    if "navoid=1001" in url:
+        return {"access": "ok", "status": 200, "links": ELC_LINKS[6:9]}
+    if "navoid=1003" in url:
+        return {"access": "ok", "status": 200,
+                "links": [{"text": "Biology, A.S.", "href": "https://catalog.elcamino.edu/preview_program.php?catoid=21&poid=4500"}]}
+    return {"access": "ok", "status": 200, "links": ELC_LINKS}
+
+
+real_load, C.P.load = C.P.load, ac_load
+try:
+    rep_ac = {"with_closed_list": 10}
+    ac_got = C.ac_urls(None, ELC, {}, rep_ac)
+finally:
+    C.P.load = real_load
+check([u.split("poid=")[1] for u in ac_got] == ["4410&print", "4423&print", "4500&print"]
+      and rep_ac["acalog"]["catoid"] == 21 and rep_ac["acalog"]["sitemap_programs"] == 0
+      and rep_ac["acalog"]["navs_read"] == 2 and [n["links"] for n in rep_ac["acalog"]["navs"]] == [3, 1],
+      "with no site map, the program menus list the programs, each once: %s %s" % (ac_got, rep_ac.get("acalog")))
+check(any("sitemap.php?catoid=21" in u for u in asked_ac) and not any("catoid=19" in u for u in asked_ac),
+      "the site map is tried first, and only for the catalog the start page serves")
+CS = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "kb", "_program_requirements_college.py")).read()
+check('platform not in ("courseleaf", "curriqunet", "elumen", "acalog")' in CS
+      and 'platform not in ("curriqunet", "elumen", "acalog")' in CS,
+      "the capture reads Acalog, without the child-page walk or the link search its program list makes needless")
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:

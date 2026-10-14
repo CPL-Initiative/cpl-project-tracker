@@ -788,3 +788,14 @@ from 2026-27 and its course outcomes. The other 71 listed addenda wait for the r
 - **Restacking a branch:** `git rebase onto` replays the old base commit; use `git rebase --onto <new> <old>`.
 
 **Patterns that worked.** Verify a re-read by diffing each record's `source_url`, coverage and arithmetic against main before posting it. One display build after several loads. A capture-only run with diagnostics in the report (each menu's title, links and a sample) turned two failed Acalog runs into fixes without a page-read plan.
+
+## S390 SkySaguaro (2026-10-14): San Joaquin Delta's Acalog capture
+
+- **San Joaquin Delta captures through the Acalog reader** (run 38569401921, capture only, 250 loads, 25 min): catoid 14,
+  no site map (404), three program menus. 203 of 233 programs with a list found a page, 125 at full coverage, 58 at
+  0.8-1.0, 20 at 0.5-0.8; 24 found none and 6 lost their page to a fuller program. On 15 of the 24 the best page
+  names none of the listed courses: six apprenticeship options, the two psychiatric technician programs, three
+  digital media certificates and four newer programs (45193-45195, 45583). Above Sheet 59's 85% bar.
+- **Its registry row names no catalog year, and the reader reads none from the page.** Extraction stamps
+  `catalog_year` from the registry, so Delta's records would carry none. Read the year from the catalog's own page into
+  the capture report before Delta extracts. El Camino's row names 2026-2027.
