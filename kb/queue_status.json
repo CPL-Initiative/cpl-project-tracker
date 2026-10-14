@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-14T16:20:33Z",
-  "session": 390,
-  "moniker": "SkySaguaro",
+  "written_at": "2026-10-14T19:41:16Z",
+  "session": 391,
+  "moniker": "SkyJuniper",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_391_handoff.md",
+  "handoff": "docs/session_392_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -24138,32 +24138,47 @@
     }
   ],
   "next_step": {
-    "title": "Read Sheet 79, then merge Fresno City and the Records filters",
-    "text": "Sheet 79 asks whether a degree total inside the range the requirements allow adds up, whether a transfer degree's 60 is filled by transferable electives, and whether to extract El Camino. Fresno City (211 records, displayed) and the Records view's District, College, SWP Region and CIP Sector filters wait on a green test to merge."
+    "title": "Read Sheet 81 and carry out what Sam answers",
+    "text": "Sheet 81 asks whether a degree total inside the range the requirements allow adds up, whether a transfer degree's 60 is filled by transferable electives, whether to extract El Camino and San Joaquin Delta, and who may read a reviewer's sign-in email. Palo Verde's 2026-27 catalog is read after Sunday's census apply."
   },
   "calls": [
     {
       "title": "Count a degree total inside the requirements' range as adding up",
       "text": "31 re-read records at Cabrillo and Palo Verde read 57 to 60 units against a printed 60 because general electives printed as a range are kept as one number.",
       "if_no_reply": "They stay flagged as a check not met.",
-      "link": "https://claude.ai/artifact/V1vZDZuwRqphwkcPAYVnt8",
-      "link_text": "Open Asks Sheet 79, card 1",
+      "link": "https://claude.ai/artifact/ExZErAUjsA1vh4kLHRfkt3",
+      "link_text": "Open Asks Sheet 81, card 1",
       "part": "reading"
     },
     {
       "title": "Count a transfer degree's 60 as filled by transferable electives",
-      "text": "Five Palo Verde transfer degrees print Total 60 and no elective line, so the major and general education read 52 to 57 against 60.",
+      "text": "Five Palo Verde transfer degrees print a total of 60, a major and CalGETC, and no line for electives.",
       "if_no_reply": "They stay flagged for the college.",
-      "link": "https://claude.ai/artifact/V1vZDZuwRqphwkcPAYVnt8",
-      "link_text": "Open Asks Sheet 79, card 2",
+      "link": "https://claude.ai/artifact/ExZErAUjsA1vh4kLHRfkt3",
+      "link_text": "Open Asks Sheet 81, card 2",
       "part": "reading"
     },
     {
       "title": "Extract El Camino",
-      "text": "The Acalog reader found a page for 124 of 135 programs with a course list; extraction costs about 8 to 14 dollars.",
-      "if_no_reply": "El Camino stays captured and unrecorded.",
-      "link": "https://claude.ai/artifact/V1vZDZuwRqphwkcPAYVnt8",
-      "link_text": "Open Asks Sheet 79, card 3",
+      "text": "The Acalog reader found a page for 124 of El Camino's 135 programs with a course list, 94 at full coverage. Extraction costs about $8 to $14.",
+      "if_no_reply": "El Camino stays read but unrecorded.",
+      "link": "https://claude.ai/artifact/ExZErAUjsA1vh4kLHRfkt3",
+      "link_text": "Open Asks Sheet 81, card 3",
+      "part": "reading"
+    },
+    {
+      "title": "Who may read a reviewer's sign-in email",
+      "text": "Tabling a project writes the reviewer's sign-in email to a table anyone can read. One reviewer's sign-in is already public on 3,222 rows of four other tables.",
+      "if_no_reply": "The emails stay public as they are.",
+      "link": "https://claude.ai/artifact/ExZErAUjsA1vh4kLHRfkt3",
+      "link_text": "Open Asks Sheet 81, card 4"
+    },
+    {
+      "title": "Extract San Joaquin Delta",
+      "text": "The Acalog reader found a page for 203 of Delta's 233 programs with a course list, 125 at full coverage, and read its catalog year 2026-2027 from the catalog's own menu. Extraction costs about $12 to $22.",
+      "if_no_reply": "San Joaquin Delta stays read but unrecorded.",
+      "link": "https://claude.ai/artifact/ExZErAUjsA1vh4kLHRfkt3",
+      "link_text": "Open Asks Sheet 81, card 5",
       "part": "reading"
     }
   ],
@@ -24176,24 +24191,20 @@
   },
   "changes": [
     {
-      "at": "2026-10-14T14:52:00Z",
-      "text": "Southwestern's reading procedure written, version 1"
+      "at": "2026-10-14T17:31:00Z",
+      "text": "Fresno City's 211 records merged with their display build, and the Records view's District, College, SWP Region and CIP Sector filters"
     },
     {
-      "at": "2026-10-14T14:56:08Z",
-      "text": "Fresno City's 211 records loaded, unchecked"
+      "at": "2026-10-14T18:27:00Z",
+      "text": "Sheet 80 asks who may read a reviewer's sign-in email"
     },
     {
-      "at": "2026-10-14T15:41:00Z",
-      "text": "Each course's learning outcomes open from Program records and COCI Lookup"
+      "at": "2026-10-14T18:52:00Z",
+      "text": "The Program Requirements tab's controls are underlined words, and an open filter is measured for accessibility"
     },
     {
-      "at": "2026-10-14T15:55:00Z",
-      "text": "Display build 04872c826890 applied to all 3,478 records, Fresno City's among them"
-    },
-    {
-      "at": "2026-10-14T16:00:00Z",
-      "text": "Fresno City's reading procedure written, version 1"
+      "at": "2026-10-14T19:38:00Z",
+      "text": "San Joaquin Delta's catalog year, 2026-2027, is read from its catalog menu, and its extraction is Sheet 81 card 5"
     }
   ],
   "headline": [
@@ -24247,7 +24258,7 @@
   },
   "harvest": {
     "day": "2026-10-14",
-    "gaps": 405,
+    "gaps": 434,
     "parts": {
       "links": {
         "catalog": [
@@ -24264,7 +24275,7 @@
         ]
       },
       "roep": [
-        3592,
+        3621,
         20282
       ],
       "coci": [

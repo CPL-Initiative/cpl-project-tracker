@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 87 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 56 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 362 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1141** | |
+| Session handoffs | 363 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1142** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-14 (S391 SkyJuniper): handoff 392; Sheets 80 and 81; San Joaquin Delta's catalog year (#2125); the Program Requirements UI pass (#2124).
 - **2026-10-14 (S390 SkySaguaro):** Southwestern merged with its procedure record (#2115); Fresno City loaded, displayed (build `04872c826890`) and its procedure record (#2120); the SLO links on Program records and COCI Lookup (#2116); the tabled line's email fixed at the generator (#2117); CIP Codes UI pass (#2118); the Acalog reader merged with San Joaquin Delta's capture (#2112); the Records view's District, College, SWP Region and CIP Sector dropdowns, Progress first, no Sierra (#2121); handoff 391 (SkyJuniper).
 - **2026-10-14 (S389 SkyPersimmon):** record shape 5, the degree total a page prints (#2110, Sam's Sheet 78 card 2); the re-read path (#2111); Palo Verde's 19 (#2114) and Cabrillo's 55 re-read and replaced, Southwestern loaded and displayed (#2115); an Acalog reader, El Camino captured (#2112); COCI Lookup UI pass (#2113); Open Asks Sheet 79; lessons doc compacted (S353-S359 to the archive); handoff 390 (SkySaguaro).
 - **2026-10-14 (S388 SkyBuckeye):** course SLOs loaded at Cabrillo, Modesto Junior (#2103) and Coastline (#2105), nine colleges and 20,891 SLOs live; the addenda reading agent `program_source_addenda_read()` and the eight reads filed (#2107); Common CR Reference UI pass (#2108); handoff 389 (SkyPersimmon).
