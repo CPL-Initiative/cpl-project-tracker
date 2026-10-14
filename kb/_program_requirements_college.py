@@ -1206,6 +1206,105 @@ def el_pages_fast(reader, start: str, report: dict) -> list[dict]:
     return pages
 
 
+# ── Acalog (S389): Palo Verde 2026-27, El Camino, San Joaquin Delta ─────────
+# An Acalog catalog (Modern Campus) serves every page from one host under a
+# catalog id (catoid): content.php?catoid=N&navoid=M for a navigation page,
+# preview_program.php?catoid=N&poid=P for a program, sitemap.php?catoid=N for a
+# list of every page where the college keeps it on. The reader takes the
+# catalog the start page's own links name most, lists its programs from the
+# site map and, short of that, from the navigation pages whose names say
+# programs, degrees or certificates, and reads each program's print-friendly
+# view (the same page without the catalog's menus).
+AC_PROGRAM = re.compile(r"preview_program\.php\?(?:[^#\s]*&)?poid=(\d+)", re.I)
+AC_CATOID = re.compile(r"[?&]catoid=(\d+)", re.I)
+AC_NAV = re.compile(r"content\.php\?(?:[^#\s]*&)?navoid=(\d+)", re.I)
+AC_PROGRAM_NAV = re.compile(r"program|degree|certificate|areas? of (?:study|interest)|majors?|pathway", re.I)
+AC_MAX_NAVS = 12          # navigation pages read for program links, at most
+
+
+def ac_base(start: str) -> str:
+    u = urllib.parse.urlparse(start)
+    return "%s://%s" % ("https" if u.scheme in ("", "http", "https") else u.scheme, u.netloc)
+
+
+def ac_catoid(links: list[dict], start: str) -> int | None:
+    """The catalog the start page serves: the catoid its own host's links carry
+    most (every menu link names the current catalog; an archived one appears
+    once, in the catalog picker)."""
+    host = urllib.parse.urlparse(start).netloc.lower()
+    counts: dict[int, int] = {}
+    for ln in links or []:
+        href = ln.get("href") or ""
+        if urllib.parse.urlparse(href).netloc.lower() not in ("", host):
+            continue
+        m = AC_CATOID.search(href)
+        if m:
+            counts[int(m.group(1))] = counts.get(int(m.group(1)), 0) + 1
+    return max(counts, key=lambda c: (counts[c], c)) if counts else None
+
+
+def ac_program_url(base: str, catoid: int, poid: str | int) -> str:
+    return "%s/preview_program.php?catoid=%d&poid=%s&print" % (base, catoid, poid)
+
+
+def ac_program_urls(links: list[dict], base: str, catoid: int) -> list[str]:
+    """The catalog's program pages a page links, once each, in its order, as
+    their print-friendly view. A link to another catalog's program is left."""
+    out, seen = [], set()
+    for ln in links or []:
+        href = ln.get("href") or ""
+        m = AC_PROGRAM.search(href)
+        c = AC_CATOID.search(href)
+        if not m or (c and int(c.group(1)) != catoid) or m.group(1) in seen:
+            continue
+        seen.add(m.group(1))
+        out.append(ac_program_url(base, catoid, m.group(1)))
+    return out
+
+
+def ac_program_navs(links: list[dict], base: str, catoid: int) -> list[str]:
+    """The navigation pages whose names say programs, degrees or certificates."""
+    out = []
+    for ln in links or []:
+        href, text = ln.get("href") or "", ln.get("text") or ""
+        m, c = AC_NAV.search(href), AC_CATOID.search(href)
+        if m and (not c or int(c.group(1)) == catoid) and AC_PROGRAM_NAV.search(text):
+            u = "%s/content.php?catoid=%d&navoid=%s" % (base, catoid, m.group(1))
+            if u not in out:
+                out.append(u)
+    return out
+
+
+def ac_urls(reader, start: str, cache: dict, report: dict) -> list[str]:
+    """Every program page of the catalog the start page serves."""
+    base = ac_base(start)
+    front = P.load(reader, start, cache, False)
+    links = front.get("links") or []
+    catoid = ac_catoid(links, start)
+    if catoid is None and not start.rstrip("/").endswith("index.php"):
+        front = P.load(reader, base + "/index.php", cache, False)
+        links = front.get("links") or []
+        catoid = ac_catoid(links, start)
+    report["acalog"] = {"base": base, "start_status": front.get("status"), "catoid": catoid,
+                        "start_links": len(links)}
+    if catoid is None:
+        report["acalog"]["stopped"] = "the start page's links name no catalog id"
+        return []
+    sm = P.load(reader, "%s/sitemap.php?catoid=%d" % (base, catoid), cache, False)
+    urls = ac_program_urls(sm.get("links") or [], base, catoid) if sm.get("access") == "ok" else []
+    report["acalog"].update(sitemap_status=sm.get("status"), sitemap_programs=len(urls))
+    navs = ac_program_navs(links, base, catoid)
+    read = []
+    for nav in navs[:AC_MAX_NAVS]:
+        if len(urls) >= 0.5 * report.get("with_closed_list", 0) and sm.get("access") == "ok":
+            break
+        got = P.load(reader, nav, cache, False)
+        read.append(nav)
+        urls += [u for u in ac_program_urls(got.get("links") or [], base, catoid) if u not in urls]
+    report["acalog"].update(program_navs=navs[:AC_MAX_NAVS], navs_read=len(read), program_pages=len(urls))
+    return urls
+
+
 def capture(college: str, out_dir: str, limit: int = 0) -> int:
     t0 = time.time()
     programs = college_programs(college)
@@ -1219,9 +1318,9 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
               "started": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
     os.makedirs(os.path.join(out_dir, "sources"), exist_ok=True)
     platform = reg.get("catalog_platform")
-    if not start or platform not in ("courseleaf", "curriqunet", "elumen"):
-        # Phase 2 opens on CourseLeaf (Cerritos), curriQunet (S357) and eLumen (S380); another platform names its own enumeration first.
-        report["stopped"] = "this pass enumerates CourseLeaf, curriQunet and eLumen catalogs; %s reads %s" % (college, platform)
+    if not start or platform not in ("courseleaf", "curriqunet", "elumen", "acalog"):
+        # Phase 2 opens on CourseLeaf (Cerritos), curriQunet (S357), eLumen (S380) and Acalog (S389); another platform names its own enumeration first.
+        report["stopped"] = "this pass enumerates CourseLeaf, curriQunet, eLumen and Acalog catalogs; %s reads %s" % (college, platform)
         _write(os.path.join(out_dir, "capture.json"), report)
         print(report["stopped"])
         return 1
@@ -1243,6 +1342,11 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             print("%s: %d programs (%d with a course list), %d eLumen program pages (%s), %.1f s between loads"
                   % (college, len(programs), report["with_closed_list"], len(pages) or len(urls),
                      "publish/content" if pages else "rendered", delay / 1000), flush=True)
+        elif platform == "acalog":
+            urls, pages = ac_urls(reader, start, cache, report)[:MAX_PAGES], []
+            print("%s: %d programs (%d with a course list), %d Acalog program pages (catalog %s), %.1f s between loads"
+                  % (college, len(programs), report["with_closed_list"], len(urls),
+                     report["acalog"].get("catoid"), delay / 1000), flush=True)
         else:
             scope = district_scope(start, host_registry_urls(start))
             report["scope"] = scope
@@ -1266,7 +1370,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             got = P.load(reader, u, cache, platform == "elumen")   # an eLumen view fills in late
             if got.get("access") != "ok":
                 continue
-            if platform not in ("curriqunet", "elumen"):
+            if platform not in ("curriqunet", "elumen", "acalog"):
                 for kid in child_pages(got.get("final_url") or u, got.get("links"), start, scope):
                     if kid not in seen and len(queue) < MAX_PAGES:
                         seen.add(kid)
@@ -1278,7 +1382,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             if i % 50 == 0:
                 print("  read %d of %d pages" % (i, len(queue)), flush=True)
         report["pages_read"] = len(pages)
-        if platform not in ("curriqunet", "elumen"):
+        if platform not in ("curriqunet", "elumen", "acalog"):
             report["child_pages"] = len(queue) - len(urls)
         report["banner_h1"] = drop_banner_h1(pages)
         recs, fallback = [], 0
@@ -1300,8 +1404,9 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                     print("%-6s page_claimed %s" % (prog["control_number"], g["lost"][0]), flush=True)
                     continue
                 # A curriQunet catalog has no links to search: its index is the whole list.
-                # An eLumen catalog's menu is the whole list too; its links would find it again.
-                if best is None and fallback < MAX_FALLBACKS and platform not in ("curriqunet", "elumen"):
+                # An eLumen catalog's menu is the whole list too; its links would find it again,
+                # and so would an Acalog catalog's site map or program pages.
+                if best is None and fallback < MAX_FALLBACKS and platform not in ("curriqunet", "elumen", "acalog"):
                     fallback += 1
                     res = P.locate_html(reader, {"title": prog["title"], "award": prog["award"]},
                                         prog["closed_list"], start, cache, False)
