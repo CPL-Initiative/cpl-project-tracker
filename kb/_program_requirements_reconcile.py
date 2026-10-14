@@ -112,8 +112,10 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
                 continue
             if st.get("only_without") and not _empty(prog.get(st["only_without"])):
                 continue
-            notes.append({"field": field, "was": prog.get(field), "now": st["value"],
-                          "words": "%s (%s: %s)" % (m.group(0).strip(), st["source"], st["source_words"])})
+            words = m.group(0).strip()
+            if st.get("source"):
+                words = "%s (%s: %s)" % (words, st["source"], st["source_words"])
+            notes.append({"field": field, "was": prog.get(field), "now": st["value"], "words": words})
             prog[field] = copy.deepcopy(st["value"])
         elif st["kind"] == "clear_minimum":
             n = _num(m.group("n"))
