@@ -3407,7 +3407,7 @@ function displayLines(d: any, college: string, measure: string, total: string): 
   let out = "";
   if (!f.up_to) out += `  CPL figure: no course in this program carries CPL ${college} has articulated yet.\n`;
   else if (total) out += `  CPL figure: up to ${upTo} of the ${total} the catalog prints can be met through CPL ${college} has articulated, taking the CPL course in every choice.\n`;
-  else out += `  CPL figure: ${upTo} of this program's courses carry CPL ${college} has articulated; the catalog prints no total to measure against.\n`;
+  else out += `  CPL figure: ${upTo} of this program's courses carry CPL ${college} has articulated; the catalog prints no ${f.degree ? "major " : ""}total to measure against.\n`;
   // The figure along a read map (Sam, open-asks sheet 47 card 9): the build follows the map's
   // picks. Until a map is read, the figure stays TBA.
   if (f.path != null) {
@@ -3479,8 +3479,15 @@ function requirementLines(rec: any, titles: Map<string, string>, college?: strin
     for (const o of opts) out += blockLines(o, "    ");
   }
   const total = fmtAmount(rec.total_min, rec.total_max, measure);
+  // Record shape 5 (Sam, Open Asks Sheet 78 card 2): a page that prints the degree total with
+  // general education and no major total. Name both figures as printed; add nothing.
+  const deg = prog.degree_total || {};
+  const degTotal = total ? "" : fmtAmount(deg.min, deg.max, measure);
+  const geUnits = prog.ge_units ? fmtAmount(prog.ge_units.min, prog.ge_units.max, measure) : "";
   out += total
     ? `  Program total, as the catalog prints it: ${total}.\n`
+    : degTotal
+    ? `  The catalog prints no major total. It prints the degree total with general education: ${degTotal}${geUnits ? `, of which general education is ${geUnits}` : ""}${prog.electives_fill_degree ? ", with electives making up the rest" : ""}. Say so; never add up a major total.\n`
     : `  The catalog prints no program total. Say so; never add one up.\n`;
   if (prog.open_elective_units) out += `  Open electives: ${fmtAmount(prog.open_elective_units, null, measure)}.\n`;
   if (prog.ge_pattern) out += `  General education: the ${prog.ge_pattern} pattern, beside the major.\n`;

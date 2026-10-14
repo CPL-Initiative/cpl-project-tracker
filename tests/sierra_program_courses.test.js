@@ -176,6 +176,15 @@ block("12. the record's own shapes read right", () => {
   const { rec } = recOf("mtsac_42916");                    // Vocational Nursing: the catalog prints no total
   check("no printed total says so and forbids adding one",
     /The catalog prints no program total\. Say so; never add one up\./.test(M.requirementLines(rec, new Map())));
+  // Record shape 5 (Sam, Open Asks Sheet 78 card 2): the page prints the degree total with general
+  // education and no major total (Palo Verde Automotive Technology A.S.: Total 64 - 68, CalGETC 34 - 38).
+  const degRec = { ...rec, measure: "units", total_min: null, total_max: null,
+    record: { ...rec.record, program: { ...rec.record.program, measure: "units", total_units: { min: null, max: null },
+      degree_total: { min: 64, max: 68 }, ge_units: { min: 34, max: 38 }, ge_pattern: "CalGETC" } } };
+  const degLines = M.requirementLines(degRec, new Map());
+  check("a degree total printed with general education is named, both figures as printed",
+    /The catalog prints no major total\. It prints the degree total with general education: 64-68 units, of which general education is 34-38 units\. Say so; never add up a major total\./.test(degLines), degLines);
+  check("and it never reads as a page with no total", !/no program total/.test(degLines), degLines);
   const pub = recOf("cerritos_45549").rec;                  // Public Health: choose blocks, alternatives
   const lines = M.requirementLines(pub, new Map([["HO102", "Introduction to Public Health"]]));
   check("a choose block carries the catalog's words and the rule",
