@@ -5,12 +5,25 @@
  "catalog_year": null,
  "programs": 251,
  "with_closed_list": 233,
- "started": "2026-10-14T13:10:00Z",
+ "started": "2026-10-14T18:28:11Z",
  "acalog": {
   "base": "https://catalog.deltacollege.edu",
   "start_status": 200,
   "catoid": 14,
   "start_links": 139,
+  "catalog_menu": [
+   "Summer 2026 - Summer 2027 College Catalog",
+   "2025-2026 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+   "2024-2025 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+   "2023-2024 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+   "2022-2023 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+   "2021-2022 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+   "2020-2021 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+   "2019-2020 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+   "2018-2019 San Joaquin Delta College Catalog [ARCHIVED CATALO"
+  ],
+  "catalog_year_read": null,
+  "catalog_year_from": null,
   "start_menu": [
    [
     "About Delta College",
@@ -405,7 +418,7 @@
  "pages_read": 245,
  "banner_h1": null,
  "loads": 250,
- "seconds": 1474.5,
+ "seconds": 1377.6,
  "found": 203,
  "by_method": {
   "no_closed_list": 18,
@@ -881,8 +894,8 @@
     "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
     "error": null,
     "chars": {
-     "body": 2023,
-     "content": 35835,
+     "body": 2160,
+     "content": 35974,
      "tabs": 0
     },
     "tab_panels": []
@@ -3159,5 +3172,5 @@
    }
   ]
  },
- "run": "38569401921"
+ "run": "38615275825"
 }
