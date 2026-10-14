@@ -141,7 +141,7 @@
       ".crr-row.done{opacity:.72}",
       ".crr-rowhead{display:flex;gap:11px;align-items:flex-start;padding:11px 13px;cursor:pointer}",
       ".crr-rowhead:hover{background:var(--surface-subtle)}",
-      ".crr-rank{color:var(--text-faint);font-size:11.5px;min-width:34px;padding-top:2px;font-variant-numeric:tabular-nums}",
+      ".crr-rank{color:var(--text-muted);font-size:11.5px;min-width:34px;padding-top:2px;font-variant-numeric:tabular-nums}",
       ".crr-canon{flex:1;min-width:0}",
       ".crr-canon b{color:var(--text-strong);font-size:14px;display:block;line-height:1.4}",
       ".crr-meta{color:var(--text-muted);font-size:12px;margin-top:3px}",
@@ -155,19 +155,19 @@
       ".crr-body{border-top:1px solid var(--border);padding:13px;background:var(--surface-subtle)}",
       ".crr-why{color:var(--text-muted);font-size:12.5px;line-height:1.5;margin-bottom:11px;",
       "  border-left:3px solid var(--border-strong);padding-left:10px}",
-      ".crr-mem{display:flex;gap:9px;align-items:baseline;padding:6px 8px;border-radius:6px;font-size:13px}",
+      ".crr-mem{display:flex;gap:9px;column-gap:18px;align-items:baseline;padding:6px 8px;border-radius:6px;font-size:13px}",
       ".crr-mem:nth-child(odd){background:var(--surface)}",
       ".crr-mem.out{opacity:.55;text-decoration:line-through}",
       ".crr-mem-n{color:var(--text-faint);font-size:11.5px;min-width:62px;font-variant-numeric:tabular-nums}",
       ".crr-mem-t{flex:1;min-width:0;color:var(--text-body);word-break:break-word}",
-      ".crr-mini{border:1px solid var(--border-strong);background:var(--surface);color:var(--text-muted);",
-      "  border-radius:5px;padding:2px 7px;font-size:11px;cursor:pointer;white-space:nowrap}",
-      ".crr-mini:hover{color:var(--text-strong);border-color:var(--cobalt)}",
-      ".crr-acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px;padding-top:12px;border-top:1px solid var(--border)}",
-      ".crr-btn{border:1px solid var(--border-strong);background:var(--surface);color:var(--text-body);",
-      "  border-radius:6px;padding:7px 13px;font-size:12.5px;cursor:pointer;font-weight:600}",
-      ".crr-btn:hover{border-color:var(--cobalt);color:var(--cobalt)}",
-      ".crr-btn.primary{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-accent)}",
+      // Controls are underlined words (Sam, 2026-10-09; S388 UI pass): no border, no
+      // fill, 24px tall, words at least 18px apart. The lead action is first in order.
+      ".crr-mini,.crr-btn{border:0;background:none;color:var(--cobalt);font-weight:600;padding:2px 0;",
+      "  min-height:24px;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;",
+      "  cursor:pointer;white-space:nowrap;font-size:12.5px}",
+      ".crr-mini:hover,.crr-btn:hover{text-decoration-thickness:2px}",
+      ".crr-mini:focus-visible,.crr-btn:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}",
+      ".crr-acts{display:flex;gap:6px 18px;flex-wrap:wrap;margin-top:13px;padding-top:12px;border-top:1px solid var(--border)}",
       ".crr-btn:disabled{opacity:.5;cursor:default}",
       ".crr-note{width:100%;box-sizing:border-box;margin-top:9px;padding:7px 9px;border:1px solid var(--border-strong);",
       "  border-radius:6px;background:var(--surface);color:var(--text-body);font:inherit;font-size:12.5px}",
@@ -447,7 +447,7 @@
     });
     h.push('<input class="crr-search" id="crr-q" placeholder="Search any wording&hellip;" value="'
       + esc(state.q) + '">');
-    h.push('<button class="crr-mini" id="crr-csv">&#8615; CSV</button>');
+    h.push('<button class="crr-mini" id="crr-csv">Download CSV</button>');
     h.push("</div>");
 
     if (!groups.length) {

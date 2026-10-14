@@ -1,0 +1,22 @@
+{
+ "_readme": "S387 SkyMagnolia, 2026-10-14. Read 38504437775 opened a 2026-27 catalog addendum (effective Spring 2027) for Palo Verde, whose catalog of record in the registry is the 2025-2026 eLumen catalog (the census found it through the vendor link on this page). This read opens the college's catalog page with its catalog and addendum links shown, to learn whether a 2026-27 catalog is published (eLumen or PDF) that the harvest's Palo Verde records should be read from. One load, no model call, no table write.",
+ "college": "Palo Verde College",
+ "questions": {
+  "catalog_of_record": "Which catalog years the college's catalog page links, in what form, and which one it names as current."
+ },
+ "keywords": [
+  "20(25|26|27)",
+  "[Cc]atalog",
+  "[Aa]ddend",
+  "elumen"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "catalog_of_record"
+   ],
+   "url": "https://www.paloverde.edu/current-students/catalog.html",
+   "links": "catalog|addend|elumen|\\.pdf|2026|2027"
+  }
+ ]
+}

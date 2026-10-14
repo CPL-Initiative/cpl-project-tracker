@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/supabase_program_source_addenda_read.sql",
+ "name": "program_source_addenda_read_fn_2026_10_14_s388",
+ "version": "20261014052922",
+ "sha256": "1d3ebf2cbdd32f0dc2c3d657726238baffab760b4c1be9563f84ebb3265d7b58",
+ "run": "38516806015",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
