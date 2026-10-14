@@ -881,3 +881,48 @@ field. The first count of degree chips searched the receipt's JSON in the wrong 
 
 **Patterns that worked.** Measure the blast radius live before answering a question about one record. Read the page on a runner
 before writing a reconcile pattern. Diff every reconciled record's check against main before posting it.
+
+## S393 SkySycamore (2026-10-14): Sheet 82 carried out, Cerritos's reconcile steps, an overnight schedule and a $40 go
+
+**Sam's rulings and words this run.** Sheet 82 (22:14Z, both his own call): *carry* and *overlap*. In session (~23:03Z),
+on the CPL Queue routine: *"set it and limit is $40 per college"* (`cpl_memory` `sam-extraction-standing-go-40-per-college-2026-10-14`):
+a college's extraction runs with no card up to $40, and the overnight schedule (hourly 10:12 PM to 6:12 AM Pacific) is his to
+set in the Routines form, because the platform refuses an agent's edit to a routine it did not create. And (~23:20Z, an idea
+for later): a weekly routine per district to keep the data fresh (`sam-weekly-refresh-per-district-idea-2026-10-14`; S393
+recommended a page fingerprint in the census instead, so only changed colleges are re-read).
+
+- **Card 2, overlap (#2136).** `degree_verdict()` passes a transfer degree whose sum runs past its printed total (`overlap`).
+  The rescore found exactly the ten the card counted (Cabrillo 8, Palo Verde 2); the live rows moved through
+  `supabase-migrate.yml` (run 38652994360; receipt `kb/receipts/program_requirement_records_rescore_2026-10-14_s393.json`).
+- **Card 1, carry (#2136).** The re-read function carries a confirm when the row's latest verdict is a confirm of the record
+  it replaces and the new record has the same `program_record_carry_basis` (every block and every other program field, as
+  jsonb). The basis leaves out the totals and the degree's figures, which are every field a reconcile step writes; a test
+  reads `kb/program_requirements_reconcile.json` and fails when a step writes a field the basis keeps. The carried row is a
+  confirm in the reviewer's name naming the verdict it carries; the receipt's rollback restores the row unchecked and
+  deletes the carried rows. Astronomy 06326 (replaced before the carry existed) was carried once by a guarded file (verdict
+  35); it reads checked.
+- **Astronomy needed the major total in the basis's exclusions.** Its rerun changed `degree_total` and `ge_units` and cleared
+  `total_units` (the misread "at least 30 units in the major"). "Only the degree's figures" read literally would not have
+  carried the card's own case. Proceeded on the recommendation; Sheet 83 asks Sam to keep or narrow it.
+- **A local Postgres proved the SQL before the live apply.** The container has Postgres 16 (`/usr/lib/postgresql/16/bin`;
+  initdb as the postgres user in a directory it owns, not the scratchpad, whose permissions reset). Stubs for `auth.role()`,
+  the roles and the two tables, then both chatbox files load as written. Seven carry cases, the rollback, and Astronomy's
+  one-time file against its real records (it carries once; a second apply refuses). The md5 of `jsonb::text` reads `3` and
+  `3.0` as different values; jsonb equality reads them as one, so the basis compares jsonb.
+- **Display build b87c61607e71** after the rescore, applied from `main` (Sam's standing go of 2026-10-10).
+- **Cerritos (the most Major only records, 148 of 148).** Its degree pages print the major's own total and *"Complete a
+  minimum of 60 units to include (1) the above major requirements, (2) the General Education requirements, and (3) electives
+  as needed"* (college-page-read 38654411937). The GE units are on the catalog's CGEC page (*"CGEC, which is 24-28 units, is
+  intended to meet the GE requirements"*; site map read 38655666139, page read 38656043692): Areas 1 to 7 carry 24 units,
+  Area 8 three and Area 9 one, and a major of 32 units or more skips Areas 8 and 9. New: a `set` reconcile step (a figure the
+  catalog prints once for every degree on its own page, cited from both pages) and `degree_total_minimum` (the 60 is a floor:
+  a sum past it meets it, electives make up a sum short of it). Without the floor, every large Cerritos major (Automotive 42-43
+  + GE 24-28 = 66-71) would trade Major only for a false Check not met.
+
+**What went wrong.** A `&&` chain after `check_generated.sh` pushed a stale catalog once more (it prints its hint and exits 0);
+read its output before pushing. The builder of the open-asks sheet rewrites the current sheet's file when run with any argument,
+`--help` included; restore it with `git checkout`.
+
+**Patterns that worked.** Measure the class before building for one record (Major only per college, then the page). Read the
+page, then its catalog's site map, then the page the site map names: three runner reads, no model call. Test SQL on a local
+Postgres before the migrate job.
