@@ -1,7 +1,7 @@
 ---
 title: College action page & MAP-team queue — lessons
 created: 2026-08-09
-updated: 2026-08-21
+updated: 2026-10-14
 tags: [lessons, college-action-page, map-team-queue, governance, contacts, measurement]
 artifacts:
   - map_team_queue.js
@@ -1662,3 +1662,16 @@ dark ground at 2.47:1.
 **The rest of the pass:** 29px of sideways scroll at 320px (a 300px grid floor; every floor is now
 `min(Npx,100%)`), section titles as h3 so the items' h4 no longer skip a level, and the controls
 converted to underlined words (Sam, 2026-10-09). Clean light and dark at 320, 390 and 1440.
+
+## S386 SkyElm (2026-10-14): My College reads the college's items from the view (#2097)
+
+- **The drafts section read every record's display to keep a few gaps.** At Cerritos that was about 4 MB for 577
+  items. It now reads `program_record_college_items` (the view #2093 built for the MAP team queue), one row an item,
+  grouped by control number in the view's order (`order=control_number,n`). The page's text is unchanged.
+- **A paged read is the guard, not the row count.** Cerritos is under PostgREST's 1,000-row cap today; `jgetAll`
+  pages anyway, and a failed page is a failed read (the section stays off), never a short list.
+- **The a11y seed stands in for each read the page makes by URL.** Pointing My College at the view left the seed's
+  `program_requirement_records` stand-in unmatched, so the sweep would have measured a page without the drafts
+  section and passed. The seed now waits for `ul.cb-dr li`: a stand-in that stops matching fails the seed.
+- **Prove a test guards the change:** the new drafts test against main's `college_briefing.js` dies on a TypeError,
+  and the a11y seed pointed back at the table times out.

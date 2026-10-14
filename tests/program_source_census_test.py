@@ -500,6 +500,38 @@ check(row["catalog_url"] in ("https://www.mccd.edu/uploads/Catalog-2025-26.pdf",
                              "https://www.mccd.edu/uploads/Catalog-2025-26-spring.pdf"),
       "an index never hands over an addendum, even a newer one, got %r" % (row["catalog_url"],))
 
+# Palo Verde's catalog page is a yearless index: "2026-2027 Catalog" at
+# catalog.paloverde.edu above "2025-2026 Catalog" on eLumen, each with its
+# addendum. The vendor's points took 2025-26 (census of 2026-10-11; college page
+# read 38506078868, S387); a hop behind the newest year the index lists is refused.
+pvc = {
+    "https://www.paloverde.edu/": {
+        "status": 200, "access": "ok", "title": "Palo Verde College",
+        "links": [{"text": "Course Catalog", "href": "https://www.paloverde.edu/current-students/catalog.html"}]},
+    "https://www.paloverde.edu/current-students/catalog.html": {
+        "status": 200, "access": "ok", "title": "College Catalogs",
+        "links": [
+            {"text": "2026-2027 Catalog", "href": "https://catalog.paloverde.edu/"},
+            {"text": "Addendum 1", "href": "https://www.paloverde.edu/current-students/pdf/catalog/26-27/26-27%20PVC%20Catalog%20Addendum.pdf"},
+            {"text": "2025-2026 Catalog", "href": "https://pvc.elumenapp.com/catalog/2025-2026/presidents-welcome"},
+            {"text": "2024-2025 Catalog", "href": "https://pvc.elumenapp.com/catalog/2024-2025/"},
+            {"text": "2020-2021 Catalog", "href": "https://www.paloverde.edu/current-students/pdf/catalog/20-21/2020-2021%20Catalog.pdf"}]},
+    "https://catalog.paloverde.edu/": {
+        "status": 200, "access": "ok", "title": "2026-2027 Catalog | Palo Verde College"},
+    "https://pvc.elumenapp.com/catalog/2025-2026/presidents-welcome": {
+        "status": 200, "access": "ok", "title": "Presidents Welcome", "h1": "Palo Verde College Course Catalog 2025-2026"},
+}
+# The live page's own eLumen links make it read as eLumen (tier html), not as a
+# plain page: the census dry run 38506794465 kept 2025-26 on a fix that covered
+# only the plain page. Both forms are checked.
+for form, page_html in (("its eLumen links in the page", '<a href="https://pvc.elumenapp.com/catalog/2025-2026/presidents-welcome">2025-2026 Catalog</a>'),
+                        ("a plain page", "")):
+    pvc["https://www.paloverde.edu/current-students/catalog.html"]["html"] = page_html
+    row = C.census_one(FakeReader(pvc), "Palo Verde College", "https://www.paloverde.edu/", CUR)
+    check(row["catalog_url"] == "https://catalog.paloverde.edu/" and row["catalog_year"] == "2026-2027",
+          "a yearless index sends the census past a vendor hop to the newest catalog it lists (Palo Verde, %s), got %r" % (
+              form, {k: row[k] for k in ("catalog_url", "catalog_year")},))
+
 # San Diego City's homepage links both years on one vendor host; the newer
 # link's misspelled text ("Catolog") scored below the older one's, and the
 # first apply (run 37142060932) filed 2025-26. The newer year goes first.

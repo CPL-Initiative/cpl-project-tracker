@@ -118,6 +118,20 @@ def _():
     assert not re.search(r"^\s*(update|delete)\b", sql, re.I | re.M), "an update or delete in the SQL"
 
 
+EL_CAB = os.path.join(ROOT, "kb", "course_outcomes", "trial_38506174617", "read.json")
+
+
+@check("an eLumen read loads one row per course for the college whose records name it, marked as read from the catalog")
+def _():
+    rows, skipped = load.rows_from([EL_CAB], "cabrillo")
+    trial = json.load(open(EL_CAB))["rows"]
+    assert len(rows) == len(trial) and not skipped, (len(rows), skipped)
+    assert {r["college"] for r in rows} == {"Cabrillo College"}, {r["college"] for r in rows}
+    assert {(r["source_kind"], r["source_system"]) for r in rows} == {("catalog", "elumen")}
+    acct = [r for r in rows if r["course_code"] == "ACCT 151A"][0]
+    assert len(acct["outcomes"]) == 2 and acct["source_url"].endswith(",course,acct151a?tenant=cabrillo.elumenapp.com"), acct
+
+
 def main():
     failed = 0
     for i, (name, fn) in enumerate(checks, 1):

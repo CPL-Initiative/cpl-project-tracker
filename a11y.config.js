@@ -1084,14 +1084,14 @@ async function seedMyCollegePage(page, theme) {
       sum_articulated_credits: 240, distinct_students: 80, withheld_recommendations: 0 },
       { credit_rec: "1 semester unit in Physical Education", college_course: "KIN 10", course_type: "Course",
         sum_articulated_credits: 60, distinct_students: null, withheld_recommendations: 2 }];
-    const gap = (t) => ({ kind: "Catalog and state file differ", text: t, owner: "college",
-      where: "Chaffey College's program record in the state's curriculum inventory" });
-    const RECORDS = [
+    // program_record_college_items' rows, one an item the college owns (S386).
+    const ITEMS = [
       { program_title: "Welding Technology", control_number: "04755", award: "A.S. Degree", catalog_year: "2026-2027", checked: false,
-        display: { gaps: [gap("The catalog prints WELD 410 and WELD 413 for this program; the state's Program Course File does not list them.")] } },
+        n: 1, kind: "Catalog and state file differ",
+        text: "The catalog prints WELD 410 and WELD 413 for this program; the state's Program Course File does not list them." },
       { program_title: "Emergency Medical Technician", control_number: "20675", award: "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-        catalog_year: "2026-2027", checked: true,
-        display: { gaps: [gap("The state's Program Course File lists EMS 10, which the catalog does not print for this program.")] } }];
+        catalog_year: "2026-2027", checked: true, n: 1, kind: "Catalog and state file differ",
+        text: "The state's Program Course File lists EMS 10, which the catalog does not print for this program." }];
     const json = (b) => Promise.resolve(new Response(JSON.stringify(b), { status: 200, headers: { "Content-Type": "application/json" } }));
     const real = window.fetch;
     window.fetch = function (url) {
@@ -1106,7 +1106,7 @@ async function seedMyCollegePage(page, theme) {
       if (/\/map_college_goal2(_pub)?\?/.test(u)) return json(GOAL2);
       if (/\/map_college_cr_waiting_pub\?|\/map_college_cr_unit\?/.test(u)) return json(WAITING);
       if (/\/program_source_registry\?/.test(u)) return json([{ college: C }]);
-      if (/\/program_requirement_records\?/.test(u)) return json(RECORDS);
+      if (/\/program_record_college_items\?/.test(u)) return json(ITEMS);
       return real.apply(this, arguments);
     };
     const M = window.CPL_COLLEGE_BRIEFING, root = document.getElementById("college-briefing-root");
@@ -1127,6 +1127,9 @@ async function seedMyCollegePage(page, theme) {
     s.dispatchEvent(new Event("change", { bubbles: true }));
   });
   await page.waitForTimeout(1200);
+  // The drafts section paints from program_record_college_items (S386); a seed whose
+  // stand-in read no longer matches the page's request would sweep a page without it.
+  await page.waitForSelector("#college-briefing-root ul.cb-dr li", { state: "attached", timeout: 20000 });
   // Every section open, so the sweep measures what a reader can expand.
   await page.evaluate(() => {
     document.querySelectorAll("#college-briefing-root details").forEach((d) => { d.open = true; });

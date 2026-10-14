@@ -79,6 +79,29 @@ to read. requirements_md5() fingerprints everything but the outcomes, so a
 person's reading follows the requirements it read
 (kb/program_requirements_pilot/reviewed_readings.json).
 
+Version 5 (S389; Sam, Open Asks Sheet 78 card 2, 2026-10-14, "Record both
+figures") reads a page that prints the degree total with general education and
+no total for the major (Palo Verde's Automotive Technology A.S.: Total 64 - 68 =
+a 24-unit core, 6 units of electives and CalGETC 34 - 38; Cabrillo's
+"Complete the following number of credits: 60"). Before it, 79 records at the
+two colleges failed arithmetic as "incomplete" though their pages add up:
+  program.degree_total   the total the page prints for the whole award with
+                         general education in it, as printed, never computed.
+  program.ge_units       the units the page prints for its general education
+                         pattern (CalGETC 34 - 38, Cabrillo College General
+                         Education 24).
+  program.electives_fill_degree
+                         true when the page says electives make up the rest of
+                         the degree total and prints no figure for them
+                         (Psychology AA-T: "Total 60" = a 19-21-unit major,
+                         CalGETC 34-38 and transferable electives).
+When the record carries no major total and does carry a degree total, the check
+adds the blocks, the open electives and the general education units against
+the degree total (arithmetic "against": "degree"). With electives filling the
+rest, it passes when every end of that sum fits under the degree total, and
+"fill" names the units the electives make up. A major total, when printed, is
+still the one checked ("against": "program").
+
 When the catalog prints no figure at all (Mt. San Antonio's Vocational Nursing
 names no hours, no units and no total), there is nothing to add. Arithmetic is
 then "unstated", and it passes only when all three hold: the record carries no
@@ -242,7 +265,8 @@ def has_figure(record: dict) -> bool:
     """Whether the record carries any number to add: a total, a block total,
     or a course's units."""
     prog = record.get("program") or {}
-    if _span(prog.get("total_units")) or _num(prog.get("open_elective_units")):
+    if (_span(prog.get("total_units")) or _num(prog.get("open_elective_units"))
+            or _span(prog.get("degree_total")) or _span(prog.get("ge_units"))):
         return True
     for b in record.get("blocks") or []:
         if _span(b.get("stated")) or (b.get("rule") == "choose_units" and _num(b.get("minimum"))):
@@ -368,6 +392,42 @@ def places_none(score: dict | None) -> bool:
     return bool(cov.get("listed")) and cov.get("placed") == 0
 
 
+ELECTIVE = re.compile(r"\belectives?\b", re.I)
+
+
+def degree_check(prog: dict, degree: tuple[float, float], lo: float, hi: float,
+                 reasons: list[str], text: str | None) -> dict:
+    """The blocks, the open electives and the general education units against
+    the degree total the page prints (record shape 5). A degree that names a
+    general education pattern and no units for it cannot be added up."""
+    ge = _span(prog.get("ge_units"))
+    out = {"pass": False, "status": "incomplete", "computed": [round(lo, 2), round(hi, 2)],
+           "stated": list(degree), "against": "degree", "ge": list(ge) if ge else None, "why": list(reasons)}
+    if ge is None and prog.get("ge_pattern"):
+        out["why"].append("the record names the degree total and the %s pattern, but no units for it"
+                          % prog["ge_pattern"])
+    if out["why"]:
+        return out
+    g = ge or (0.0, 0.0)
+    lo, hi = round(lo + g[0], 2), round(hi + g[1], 2)
+    out["computed"] = [lo, hi]
+    if prog.get("electives_fill_degree"):
+        if text is not None and not ELECTIVE.search(text):
+            out["why"] = ["the record says electives fill the degree total, but the catalog text names no electives"]
+            return out
+        ok = lo <= degree[0] + TOL and hi <= degree[1] + TOL
+        out.update({"pass": ok, "status": "equal" if ok else "unequal",
+                    "fill": [round(max(0.0, degree[0] - hi), 2), round(max(0.0, degree[1] - lo), 2)] if ok else None,
+                    "why": [] if ok else ["the blocks and general education come to %s-%s, past the %s-%s the "
+                                          "catalog prints for the degree" % (lo, hi, degree[0], degree[1])]})
+        return out
+    ok = abs(lo - degree[0]) <= TOL and abs(hi - degree[1]) <= TOL
+    out.update({"pass": ok, "status": "equal" if ok else "unequal",
+                "why": [] if ok else ["the blocks and general education sum to %s-%s; the catalog prints %s-%s "
+                                      "for the degree" % (lo, hi, degree[0], degree[1])]})
+    return out
+
+
 def score(record: dict, closed: list[dict], text: str | None = None) -> dict:
     """The automatic bars. text is the catalog text the record was read
     from; without it a record that states no figure cannot pass."""
@@ -390,27 +450,31 @@ def score(record: dict, closed: list[dict], text: str | None = None) -> dict:
     unflagged = [k for k in invented if k not in flagged]
 
     (lo, hi), reasons = program_units(record, listed)
-    oe = _num((record.get("program") or {}).get("open_elective_units")) or 0.0
+    prog = record.get("program") or {}
+    oe = _num(prog.get("open_elective_units")) or 0.0
     lo, hi = lo + oe, hi + oe
-    stated = _span((record.get("program") or {}).get("total_units"))
-    if stated is None and not has_figure(record) and not any(listed.values()):
+    stated = _span(prog.get("total_units"))
+    degree = _span(prog.get("degree_total"))
+    if stated is None and degree is not None:
+        arith = degree_check(prog, degree, lo, hi, reasons, text)
+    elif stated is None and not has_figure(record) and not any(listed.values()):
         figures = [m.group(0) for m in FIGURE.finditer(text or "")]
         ok = text is not None and not figures
-        arith = {"pass": ok, "status": "unstated", "computed": None, "stated": None,
+        arith = {"pass": ok, "status": "unstated", "computed": None, "stated": None, "against": None,
                  "why": ["the catalog prints no total, no hours and no units"] if ok else
                         ["the record states no figure, but the catalog text names %s"
                          % ", ".join(figures[:4])] if figures else
                         ["the record states no figure, and no catalog text came to check it against"]}
     elif stated is None:
         arith = {"pass": False, "status": "incomplete", "computed": [lo, hi], "stated": None,
-                 "why": reasons + ["the record names no total"]}
+                 "against": None, "why": reasons + ["the record names no total"]}
     elif reasons:
         arith = {"pass": False, "status": "incomplete", "computed": [lo, hi],
-                 "stated": list(stated), "why": reasons}
+                 "stated": list(stated), "against": "program", "why": reasons}
     else:
         ok = abs(lo - stated[0]) <= TOL and abs(hi - stated[1]) <= TOL
         arith = {"pass": ok, "status": "equal" if ok else "unequal",
-                 "computed": [round(lo, 2), round(hi, 2)], "stated": list(stated),
+                 "computed": [round(lo, 2), round(hi, 2)], "stated": list(stated), "against": "program",
                  "why": [] if ok else ["the blocks sum to %s-%s; the catalog states %s-%s"
                                        % (round(lo, 2), round(hi, 2), stated[0], stated[1])]}
 

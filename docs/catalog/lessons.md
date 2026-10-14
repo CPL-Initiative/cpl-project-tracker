@@ -37,7 +37,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [COBI summary-data tools — lessons & roadmap](../cobi_summary_tools_lessons.md) | `cobi_summary_tools_lessons.md` | 2026-08-03 | 2026-08-03 |
 | [COBI — the masthead rename and the Mamba brand layer](../cobi_lessons.md) | `cobi_lessons.md` | 2026-06-19 | 2026-09-04 |
 | [College & district identity — lessons](../college_identity_lessons.md) | `college_identity_lessons.md` | 2026-08-12 | 2026-08-12 |
-| [College action page & MAP-team queue — lessons](../college_action_page_lessons.md) | `college_action_page_lessons.md` | 2026-08-09 | 2026-08-21 |
+| [College action page & MAP-team queue — lessons](../college_action_page_lessons.md) | `college_action_page_lessons.md` | 2026-08-09 | 2026-10-14 |
 | [College CPL landing-page link sync — lessons](../cpl_landing_pages_lessons.md) | `cpl_landing_pages_lessons.md` | 2026-06-25 |  |
 | [College-scoped occupation → CPL crosswalk (SJCOE ↔ San Joaquin Delta) — lessons](../delta_college_crosswalk_lessons.md) | `delta_college_crosswalk_lessons.md` | 2026-08-19 |  |
 | [Common CR Reference — lessons](../common_cr_reference_lessons.md) | `common_cr_reference_lessons.md` | 2026-08-13 |  |

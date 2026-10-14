@@ -4,8 +4,8 @@
   "supabase_tables": 98,
   "rpcs": 38,
   "edge_functions": 8,
-  "file_datasets": 647,
-  "external_services": 177,
+  "file_datasets": 648,
+  "external_services": 178,
   "consumers": 440,
   "workflows": 53,
   "data_js_files": 69,
@@ -330,6 +330,13 @@
   "external:api-prod.elumenapp.com": {
    "consumers": [
     {
+     "id": "script:kb/_course_outcomes_read.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 312
+    },
+    {
      "id": "script:kb/_program_requirements_college.py",
      "kind": "script",
      "direction": "read",
@@ -346,7 +353,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 6442
+     "line": 6449
     },
     {
      "id": "edgefn:cpl-news-harvest",
@@ -599,6 +606,18 @@
       "map-queue",
       "map-users"
      ]
+    }
+   ],
+   "main_committers": []
+  },
+  "external:catalog.cccd.edu": {
+   "consumers": [
+    {
+     "id": "script:kb/_course_outcomes_read.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 336
     }
    ],
    "main_committers": []
@@ -1038,7 +1057,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2391,
+     "line": 2398,
      "tabs": [
       "college-briefing"
      ]
@@ -1048,7 +1067,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2780,
+     "line": 2787,
      "tabs": [
       "cpl-pathways"
      ]
@@ -1114,7 +1133,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 4902
+     "line": 4909
     }
    ],
    "main_committers": []
@@ -1552,7 +1571,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2779,
+     "line": 2786,
      "tabs": [
       "cpl-pathways"
      ]
@@ -1723,7 +1742,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2383,
+     "line": 2390,
      "tabs": [
       "college-briefing"
      ]
@@ -2054,7 +2073,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 5764
+     "line": 5771
     }
    ],
    "main_committers": []
@@ -2321,7 +2340,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2409,
+     "line": 2416,
      "tabs": [
       "college-briefing"
      ]
@@ -2472,7 +2491,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2778,
+     "line": 2785,
      "tabs": [
       "cpl-pathways"
      ]
@@ -3468,7 +3487,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2411,
+     "line": 2418,
      "tabs": [
       "college-briefing"
      ]
@@ -5125,7 +5144,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3045,
+     "line": 3052,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5195,7 +5214,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3039,
+     "line": 3046,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5238,7 +5257,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4000,
+     "line": 4007,
      "tabs": [
       "college-briefing"
      ]
@@ -5268,7 +5287,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3845,
+     "line": 3852,
      "tabs": [
       "college-briefing"
      ]
@@ -5346,7 +5365,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2767,
+     "line": 2774,
      "tabs": [
       "college-briefing"
      ]
@@ -5474,7 +5493,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2179,
+     "line": 2186,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5517,7 +5536,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3005,
+     "line": 3012,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5540,7 +5559,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2346,
+     "line": 2353,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5596,7 +5615,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3053,
+     "line": 3060,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5739,7 +5758,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3026,
+     "line": 3033,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6443,7 +6462,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3548,
+     "line": 3555,
      "tabs": [
       "college-briefing"
      ]
@@ -10484,7 +10503,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 391
+     "line": 532
     }
    ],
    "served": false,
@@ -15004,7 +15023,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3886,
+     "line": 3893,
      "tabs": [
       "college-briefing"
      ]
@@ -16777,7 +16796,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3857,
+     "line": 3864,
      "tabs": [
       "college-briefing"
      ]
@@ -17823,6 +17842,19 @@
    "main_committers": []
   },
   "file:tests/program_requirements_pilot_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/program_source_addenda_read_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -19346,7 +19378,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 3578
+     "line": 3585
     },
     {
      "id": "script:chatbox/smoke_test.sh",
@@ -19377,7 +19409,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 4330,
+     "line": 4337,
      "tabs": [
       "college-briefing"
      ]
@@ -19476,7 +19508,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5532
+     "line": 5539
     }
    ],
    "main_committers": []
@@ -19568,7 +19600,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 6070
+     "line": 6077
     }
    ],
    "main_committers": []
@@ -19622,7 +19654,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 1115
+     "line": 1139
     }
    ],
    "main_committers": []
@@ -19634,7 +19666,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 1088
+     "line": 1112
     }
    ],
    "main_committers": []
@@ -19646,7 +19678,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 4225
+     "line": 4232
     },
     {
      "id": "script:chatbox/smoke_test.sh",
@@ -19822,7 +19854,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 5536
+     "line": 5543
     },
     {
      "id": "module:kb-portal/composer_util.js",
@@ -19940,7 +19972,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 250
+     "line": 281
     }
    ],
    "main_committers": []
@@ -20019,7 +20051,7 @@
      "kind": "edgefn",
      "direction": "write",
      "how": "literal",
-     "line": 6691
+     "line": 6698
     },
     {
      "id": "module:sierra_training.js",
@@ -20041,7 +20073,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 3831
+     "line": 3838
     },
     {
      "id": "script:kb/_course_title_cleanup_apply.py",
@@ -20213,7 +20245,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 4238
+     "line": 4245
     }
    ],
    "main_committers": []
@@ -20412,7 +20444,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4486,
+     "line": 4512,
      "tabs": [
       "college-briefing"
      ]
@@ -21389,7 +21421,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 4548
+     "line": 4555
     },
     {
      "id": "module:college_briefing.js",
@@ -21767,7 +21799,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4507,
+     "line": 4533,
      "tabs": [
       "college-briefing"
      ]
@@ -22103,6 +22135,16 @@
   "supabase:program_record_college_items": {
    "consumers": [
     {
+     "id": "module:college_briefing.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1803,
+     "tabs": [
+      "college-briefing"
+     ]
+    },
+    {
      "id": "module:map_team_queue.js",
      "kind": "module",
      "direction": "read",
@@ -22137,17 +22179,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 3596
-    },
-    {
-     "id": "module:college_briefing.js",
-     "kind": "module",
-     "direction": "read",
-     "how": "literal",
-     "line": 1800,
-     "tabs": [
-      "college-briefing"
-     ]
+     "line": 3603
     },
     {
      "id": "module:cpl_pathways.js",
@@ -22208,7 +22240,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1797,
+     "line": 1800,
      "tabs": [
       "college-briefing"
      ]
@@ -22469,7 +22501,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 5835
+     "line": 5842
     },
     {
      "id": "module:sierra_training.js",
@@ -22501,7 +22533,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 5223
+     "line": 5230
     },
     {
      "id": "module:sierra_training.js",
@@ -23497,6 +23529,7 @@
     "tests/supabase_table_grants_test.py",
     "tests/supabase_migrate_test.py",
     "tests/program_record_verdicts_sql_test.py",
+    "tests/program_source_addenda_read_test.py",
     "tests/library_file_test.py",
     "tests/program_source_census_test.py",
     "tests/program_requirements_pilot_test.py",

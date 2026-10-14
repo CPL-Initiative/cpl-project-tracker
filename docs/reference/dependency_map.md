@@ -133,9 +133,9 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `nc_integration_backlog` | tabs: `nc-learning-partners` | — |
 | `nc_partner_notes` | tabs: `nc-learning-partners` | — |
 | `personnel` | scripts: `excel_to_dashboard.py`, `kb/_load_budget.py`, `kb/_test_budget_cutover.py` | — |
-| `program_record_college_items` | tabs: `map-queue` | — |
+| `program_record_college_items` | tabs: `college-briefing`, `map-queue` | — |
 | `program_record_verdicts` | tabs: `program-requirements` | — |
-| `program_requirement_records` | tabs: `college-briefing`, `cpl-pathways`, `program-requirements` · scripts: `chatbox/smoke_test.sh`, `scripts/catalog_framing.py` · `edgefn:cpl-chat` | — |
+| `program_requirement_records` | tabs: `cpl-pathways`, `program-requirements` · scripts: `chatbox/smoke_test.sh`, `scripts/catalog_framing.py` · `edgefn:cpl-chat` | — |
 | `program_source_addenda` | tabs: `program-requirements` | — |
 | `program_source_registry` | tabs: `college-briefing`, `cpl-pathways`, `program-requirements` · scripts: `kb/_course_outline_census.py`, `kb/_program_requirements_pilot.py`, `kb/_program_source_census.py`, `scripts/catalog_framing.py` | — |
 | `project_lifecycle` | tabs: `raci`, `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py` | pages: `CPL_Dashboard.html` |
@@ -856,6 +856,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_requirements_college_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_display_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_pilot_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_source_addenda_read_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_source_census_test.py` | workflows: `js-tests.yml` | — |
 | `tests/queue_status_test.py` | workflows: `js-tests.yml` | — |
 | `tests/rekey_crnc_mirrors_test.py` | workflows: `js-tests.yml` | — |
@@ -911,7 +912,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `127.0.0.1:` | modules: `prototype/check_ccr_atlas.js`, `prototype/check_skyview_sweep.js`, `scripts/a11y.js`, `scripts/check_memory_briefing_layout.js`, `scripts/tab_review_sheet/capture.js`, `scripts/tab_review_sheet/tab.js` · scripts: `prototype/mockup_harness/capture.mjs`, `prototype/mockup_harness/capture_model_words.mjs`, `prototype/mockup_harness/capture_mycpl.mjs` |
 | `127.0.0.1:9333` | scripts: `prototype/funding_video/render.mjs` |
 | `alameda.edu` | tabs: `map-queue`, `map-users` |
-| `api-prod.elumenapp.com` | scripts: `kb/_program_requirements_college.py` |
+| `api-prod.elumenapp.com` | scripts: `kb/_course_outcomes_read.py`, `kb/_program_requirements_college.py` |
 | `api.anthropic.com` | tabs: `annual-report` · pages: `CPL_Dashboard.html` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `api.careeronestop.org` | scripts: `kb/_sync_cos_certifications.py`, `kb/_sync_moc_crosswalk.py` |
 | `api.gdeltproject.org` | `edgefn:cpl-news-harvest` |
@@ -927,6 +928,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `calmatters.org` | `edgefn:cpl-news-harvest` |
 | `calnevjatc.org` | scripts: `kb/fire_electrical_external_credentials.py` |
 | `canadacollege.edu` | tabs: `map-queue`, `map-users` |
+| `catalog.cccd.edu` | scripts: `kb/_course_outcomes_read.py` |
 | `catalog.example` | modules: `a11y.config.js` |
 | `cdn.jsdelivr.net` | tabs: `pipeline` |
 | `cdnjs.cloudflare.com` | scripts: `prototype/globe/build_globe.py` |
@@ -1107,5 +1109,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 98 Supabase tables · 38 RPCs · 8 edge functions · 647 file
-datasets · 177 external services · 440 consumers · 53 workflows · 39 tabs.
+Coverage: 98 Supabase tables · 38 RPCs · 8 edge functions · 648 file
+datasets · 178 external services · 440 consumers · 53 workflows · 39 tabs.

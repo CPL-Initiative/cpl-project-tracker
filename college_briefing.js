@@ -1793,12 +1793,15 @@
       // Drafts for the college (Sam, sheet 42 card 3). The harvest keys its
       // program records by the catalog-data name, so the registry turns this
       // college_id into that name first. A college the harvest has not read
-      // has no registry match or no records: an empty list, never an error.
+      // has no registry match or no items: an empty list, never an error.
+      // The items come from program_record_college_items, one row an item the
+      // college owns (S386): Cerritos's 577 rows, where every record's display
+      // was about 4 MB.
       jget(REST + "/program_source_registry?college_id=eq." + id + "&select=college").then(function (rows) {
         if (!rows) return null;
         if (!rows.length) return [];
-        return jget(REST + "/program_requirement_records?college=eq." + encodeURIComponent(rows[0].college)
-          + "&select=program_title,control_number,award,catalog_year,checked,display&order=control_number");
+        return jgetAll(REST + "/program_record_college_items?college=eq." + encodeURIComponent(rows[0].college)
+          + "&select=program_title,control_number,award,catalog_year,checked,n,kind,text&order=control_number,n");
       })
     ]).then(function (r) {
       state.detail = { rollup: r[0] || [], adopted: r[1] || [], potential: r[2] || [],
@@ -1820,17 +1823,21 @@
    * (2026-10-05 20:58Z) he chose "Show them now": a college reads its drafts
    * here, marked for review, while the MAP team decides when to send each one.
    * The facts are the display build's, word for word; this page adds no
-   * judgment of its own. PURE. */
-  function collegeDrafts(records) {
-    var out = [];
-    (records || []).forEach(function (p) {
-      var items = ((p && p.display && p.display.gaps) || []).filter(function (g) {
-        return g && g.owner === "college" && g.text;
-      });
-      if (!items.length) return;
-      out.push({ program: p.program_title || "", award: p.award || "", control_number: p.control_number || "",
-                 catalog_year: p.catalog_year || "", checked: !!p.checked,
-                 items: items.map(function (g) { return { kind: g.kind || "", text: g.text }; }) });
+   * judgment of its own. The rows are program_record_college_items', one an
+   * item, and that view keeps only the gaps the college owns: a gap the reading
+   * procedure owns is the MAP team's work and never reaches this page. PURE. */
+  function collegeDrafts(rows) {
+    var out = [], at = {};
+    (rows || []).forEach(function (r) {
+      if (!r || !r.text) return;
+      var key = r.control_number || "";
+      var d = at[key];
+      if (!d) {
+        d = at[key] = { program: r.program_title || "", award: r.award || "", control_number: key,
+                        catalog_year: r.catalog_year || "", checked: !!r.checked, items: [] };
+        out.push(d);
+      }
+      d.items.push({ kind: r.kind || "", text: r.text });
     });
     return out;
   }
@@ -4433,6 +4440,25 @@
       return r.json();
     }).catch(function () { return null; });
   }
+  /* Every row of a read, a page at a time, so PostgREST's 1,000-row cap never
+   * passes a short list off as the whole one. null when any page fails. */
+  var PAGE = 1000;
+  function jgetAll(url) {
+    var out = [];
+    function page(i) {
+      var h = authHeaders();
+      h["Range-Unit"] = "items";
+      h.Range = (i * PAGE) + "-" + ((i + 1) * PAGE - 1);
+      return fetch(url, { headers: h }).then(function (r) {
+        if (!r.ok) throw new Error(String(r.status));
+        return r.json();
+      }).then(function (rows) {
+        out = out.concat(rows || []);
+        return (rows || []).length < PAGE ? out : page(i + 1);
+      });
+    }
+    return page(0).catch(function () { return null; });
+  }
 
   function recompute() {
     if (!state.data) return;
@@ -4648,6 +4674,7 @@
     // Pure. The drafts for the college, for review (Sam, sheet 42 card 3).
     _collegeDrafts: collegeDrafts,
     _draftsSection: draftsSection,
+    _jgetAll: jgetAll,
     // Pure. Exposed because the three-way split (filled / blank / held back) is
     // the difference between telling a college its VP is missing and telling it
     // we did not ask.

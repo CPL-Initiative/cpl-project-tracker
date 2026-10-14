@@ -178,6 +178,10 @@ jobs:
       # append-only log, and the same machine checks in SQL and in the tab.
       - name: Program record verdicts (the tab's one write)
         run: python3 tests/program_record_verdicts_sql_test.py
+      # The addenda reading agent's write (S388): service_role only, a person's
+      # correction never touched, and each filing's changes say scope and kind.
+      - name: Program source addenda read (the reading agent's write)
+        run: python3 tests/program_source_addenda_read_test.py
       # The Library filer (scripts/library_file.py): version names, resumable
       # upload, the two-folder fence, receipts guarded on the Drive file id, and
       # no delete anywhere. Pure-stdlib python with a fake Drive; same non-required check.

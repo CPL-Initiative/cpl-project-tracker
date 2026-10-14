@@ -679,7 +679,18 @@ def gaps_for(college: str, platform: str, award: str, measure: str, filed: dict,
                   "text": "The catalog prints %s for this program; the state's Program Course File does not list %s."
                           % (", ".join(unlisted), "it" if len(unlisted) == 1 else "them")})
     arith = score.get("arithmetic") or {}
-    if arith.get("status") and arith["status"] != "equal":
+    degree = (rec.get("program") or {}).get("degree_total") or {}
+    if arith.get("against") == "degree" and arith.get("status") != "equal":
+        # Record shape 5 (Sam, Open Asks Sheet 78 card 2): the page prints the degree total with
+        # general education and no major total, and the check adds the blocks and the GE to it.
+        comp = arith.get("computed") or [None, None]
+        printed = amount(degree.get("min"), degree.get("max"), measure)
+        g.append({"kind": "Check not met", "owner": "procedure", "where": proc,
+                  "text": ("The blocks and general education add to %s; the catalog prints %s for the degree."
+                           % (amount(comp[0], comp[1], measure), printed)) if arith["status"] == "unequal" else
+                          ("The catalog prints %s for the degree with general education, and the blocks could "
+                           "not be added to it: %s." % (printed, "; ".join(arith.get("why") or [])))})
+    elif arith.get("status") and arith["status"] != "equal":
         if total.get("min") is not None:
             comp = arith.get("computed") or [None, None]
             g.append({"kind": "Check not met", "owner": "procedure", "where": proc,
@@ -961,6 +972,17 @@ def build() -> dict:
         display["checks"] = {"checked": row["checked"], "coverage": {"placed": placed_n, "listed": listed_n},
                              "additions": adds, "arithmetic": (score.get("arithmetic") or {}).get("status"),
                              "reviewer": verdict}
+        # The degree total a page prints with general education, where it prints no major total
+        # (record shape 5, Sam's Open Asks Sheet 78 card 2): the page names it and adds nothing.
+        deg = program.get("degree_total") or {}
+        if total.get("min") is None and deg.get("min") is not None:
+            ge = program.get("ge_units") or {}
+            display["figure"]["degree"] = {"total": {"min": deg.get("min"), "max": deg.get("max")},
+                                           "ge": ({"min": ge.get("min"), "max": ge.get("max")}
+                                                  if ge.get("min") is not None else None),
+                                           "ge_pattern": program.get("ge_pattern"),
+                                           "electives_fill": bool(program.get("electives_fill_degree"))}
+            display["checks"]["against"] = (score.get("arithmetic") or {}).get("against")
         # A unit difference kept and chipped (Sam, 2026-10-11, Agricultural Science and
         # Technology: "Preserve the unit difference and highlight with a chip"): the blocks'
         # sum beside the printed total, both as the catalog prints them.

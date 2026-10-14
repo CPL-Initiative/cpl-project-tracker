@@ -95,7 +95,7 @@ def rows_from(paths: list[str], host: str = "") -> tuple[list[dict], list[dict]]
                      "heading": block.get("heading"), "lead": block.get("lead"), "outcomes": block["outcomes"],
                      "maps_to": block.get("maps_to"),
                      "shape": block["shape"], "fingerprint": block["fingerprint"], "source_url": r["report"],
-                     "source_kind": "course_outline", "source_system": d.get("system", "curriqunet"),
+                     "source_kind": d.get("source_kind", "course_outline"), "source_system": d.get("system", "curriqunet"),
                      "read_run": str(d["run"])})
 
     for path in paths:

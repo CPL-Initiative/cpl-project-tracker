@@ -24,6 +24,7 @@ every SAVE_EVERY loads so a slice that runs out of time keeps what it read.
 
 Usage (runner): python3 kb/_course_outcomes_read.py --index kb/course_outline_index/index_38313849383.json --trial 12
                 python3 kb/_course_outcomes_read.py --index ... --part 1 --of 4
+                python3 kb/_course_outcomes_read.py --catalog cabrillo --trial 12   (course pages by code: no index)
 """
 from __future__ import annotations
 
@@ -303,6 +304,68 @@ def host_slug(url: str) -> str:
     return urllib.parse.urlparse(url).netloc.split(".")[0].lower()
 
 
+# An eLumen catalog prints each course's SLOs on the course's own catalog page, which
+# loads through the same light call the program read uses (college page read
+# 38504338656, S387: Cabrillo ASTRO 3, Modesto AG 115, Palo Verde ACC 101). A program
+# page links its courses at <catalog>/course/<code in lower case, no space>, so the
+# index is built from the codes, with no listing to read.
+EL_COURSE = "https://api-prod.elumenapp.com/catalog/sites/publish/content/%s,course,%s?tenant=%s"
+
+
+def elumen_index(slug: str) -> dict:
+    """The course index for an eLumen college, in the shape wanted_courses() reads:
+    each course the college's loaded records name, its catalog course page as the one
+    report. The catalog and host come from the college's capture."""
+    cap = json.load(open(os.path.join(HERE, "program_requirements_college", slug, "capture.json")))
+    catalog = (cap.get("elumen") or {}).get("catalog")
+    host = urllib.parse.urlparse(cap.get("catalog_url") or "").netloc
+    if not catalog or not host.endswith("elumenapp.com"):
+        raise SystemExit("%s: the capture names no eLumen catalog" % slug)
+    index = {}
+    for code in index_mod.record_codes([slug])[slug]:
+        path = re.sub(r"[^a-z0-9]", "", code.lower())
+        index[code] = [{"title": None, "course_id": None,
+                        "reports": [EL_COURSE % (catalog, path, host)]}]
+    return {"url": cap["catalog_url"], "index": index}
+
+
+# The Coast district's CourseLeaf catalog serves each course's Course Outline of
+# Record at /courses/<subject>-<number>/, its SLOs under Course Level Student
+# Learning Outcome(s) (college page read 38507237083, S387: Coastline ACCT C116 and
+# BUS C100). Golden West and Orange Coast share the host.
+CCCD_COURSE = "https://catalog.cccd.edu/courses/%s/"
+CATALOG_COURSE_HOSTS = {"catalog.cccd.edu": "courseleaf"}
+
+
+def cccd_index(slug: str) -> dict:
+    """The course index for a Coast district college: each course its loaded records
+    name, its outline of record addressed by code (ACCT C116 at acct-c116)."""
+    cap = json.load(open(os.path.join(HERE, "program_requirements_college", slug, "capture.json")))
+    if urllib.parse.urlparse(cap.get("catalog_url") or "").netloc != "catalog.cccd.edu":
+        raise SystemExit("%s: the capture names no Coast district catalog" % slug)
+    index = {}
+    for code in index_mod.record_codes([slug])[slug]:
+        path = "-".join(re.sub(r"[^a-z0-9 ]", "", code.lower()).split())
+        index[code] = [{"title": None, "course_id": None, "reports": [CCCD_COURSE % path]}]
+    # Filed under the district (the first label of catalog.cccd.edu names nothing).
+    return {"url": cap["catalog_url"], "host": "cccd", "index": index}
+
+
+def catalog_index(slug: str) -> dict:
+    """The course index for a college whose catalog addresses each course page by its
+    code: eLumen, or the Coast district's outlines."""
+    cap = json.load(open(os.path.join(HERE, "program_requirements_college", slug, "capture.json")))
+    host = urllib.parse.urlparse(cap.get("catalog_url") or "").netloc
+    return cccd_index(slug) if host == "catalog.cccd.edu" else elumen_index(slug)
+
+
+def page_system(url: str) -> str:
+    """The system a course page belongs to, for the parser: the census's outline
+    systems, or the catalog host that serves outlines itself."""
+    return (cor.system_of(url) or CATALOG_COURSE_HOSTS.get(urllib.parse.urlparse(url or "").netloc)
+            or "other")
+
+
 def wanted_courses(index: dict, slugs: list[str]) -> list[dict]:
     """Each course the loaded records name that has an outline report, once, with the
     colleges (by slug) whose records name it."""
@@ -320,9 +383,87 @@ def wanted_courses(index: dict, slugs: list[str]) -> list[dict]:
     return out
 
 
-def parse_page(page_html: str, text: str) -> dict:
+# An eLumen course page prints its outcomes inside the accordion its heading opens, in
+# the college's own template (trials 38505894485 and 38506174617, all 24 pages):
+#   Modesto:  Learning Outcomes > a field label "SLO:" > a numbered list (<ol><li>)
+#   Cabrillo: Learning Outcomes > a lead-in label "Upon successful completion of this
+#             course, students should be prepared to:" > a table, one outcome a row,
+#             each row numbered in its own text ("1. Analyze ...")
+# The text reader takes neither heading as an SLO heading, and on Cabrillo it read the
+# accordion's next "Toggle" as an outcome.
+EL_SLO_HEAD = re.compile(r"^(?:(?:student|course) )?(?:learning )?outcomes?:?$|^slos?:?$", re.I)
+EL_HEAD_TAGS = {"h2", "h3", "h4", "h5", "h6", "strong", "b", "dt", "label"}
+
+
+def elumen_outcomes_from_html(page_html: str) -> dict | None:
+    """The SLO block of an eLumen catalog course page: the first heading or field label
+    that names the outcomes, and within the box that holds it (the accordion) the
+    lead-in label, then each item of the first list, or else each row of the first
+    table, as printed with its number removed. None when the page names no outcomes or
+    its box holds none."""
+    tree = _Tree()
+    tree.feed(page_html or "")
+    heads = list(tree.root.find(lambda n: n.tag in EL_HEAD_TAGS and EL_SLO_HEAD.match(_ws(n.text()))))
+    if not heads:
+        return None
+    head = heads[0]
+    box = head.parent
+    items = []
+    lists = list(box.find(lambda n: n.tag in ("ol", "ul")))
+    if lists:
+        items = [_ws(li.text(skip=("ol", "ul"))) for li in lists[0].kids
+                 if not isinstance(li, str) and li.tag == "li"]
+    else:
+        tables = list(box.find(lambda n: n.tag == "table"))
+        if tables:
+            items = [_ws(tr.text()) for tr in tables[0].find(lambda n: n.tag == "tr")]
+    items = [x for x in (MARKER.sub("", i, count=1).strip() for i in items) if x]
+    if not items:
+        return None
+    lead = [_ws(n.text()) for n in box.find(lambda n: n.tag in ("h5", "h6", "p") and n is not head)
+            if not EL_SLO_HEAD.match(_ws(n.text())) and LEAD.match(_ws(n.text()))]
+    return {"shape": "list" if len(items) > 1 else "paragraph",
+            "heading": _ws(head.text()).rstrip(":").strip(), "lead": lead[0] if lead else None,
+            "outcomes": items, "maps_to": None, "parsed_from": "html"}
+
+
+# The Coast district's outline of record prints its SLOs as a heading followed by the
+# list, then Course Objectives (trial 38508460207: <h3>Course Level Student Learning
+# Outcome(s)</h3><ol><li>...). The text reader does not take that heading.
+CCCD_SLO_HEAD = re.compile(r"^course level student learning outcomes?(?:\(s\))?:?$", re.I)
+
+
+def cccd_outcomes_from_html(page_html: str) -> dict | None:
+    """The list that follows the outline's Course Level Student Learning Outcome(s)
+    heading, before the next heading; each item as printed. None when the page has
+    no such heading or no list under it."""
+    tree = _Tree()
+    tree.feed(page_html or "")
+    for head in tree.root.find(lambda n: n.tag in ("h2", "h3", "h4") and CCCD_SLO_HEAD.match(_ws(n.text()))):
+        sibs = [k for k in head.parent.kids if not isinstance(k, str)]
+        for k in sibs[sibs.index(head) + 1:]:
+            if k.tag in ("h2", "h3", "h4"):
+                break
+            if k.tag in ("ol", "ul"):
+                items = [MARKER.sub("", _ws(li.text(skip=("ol", "ul"))), count=1).strip()
+                         for li in k.kids if not isinstance(li, str) and li.tag == "li"]
+                items = [x for x in items if x]
+                if items:
+                    return {"shape": "list" if len(items) > 1 else "paragraph",
+                            "heading": _ws(head.text()), "lead": None, "outcomes": items,
+                            "maps_to": None, "parsed_from": "html"}
+        return None
+    return None
+
+
+def parse_page(page_html: str, text: str, system: str | None = None) -> dict:
     """The outcomes a page prints: each college's group (SDCCD's All Fields report), else
-    the SLO area of an integrated outline (RCCD), else the text reader."""
+    the SLO area of an integrated outline (RCCD), else an eLumen course page's block,
+    else the text reader."""
+    if system in ("elumen", "courseleaf"):
+        own = elumen_outcomes_from_html if system == "elumen" else cccd_outcomes_from_html
+        got = own(page_html) or outcomes_of(text)
+        return {**got, "fingerprint": fingerprint(got["outcomes"]) if got["outcomes"] else None}
     groups = groups_from_html(page_html)
     if groups is not None:
         found = [g for g in groups if g["outcomes"]]
@@ -336,7 +477,7 @@ def parse_page(page_html: str, text: str) -> dict:
 def read_one(reader, course: dict) -> dict:
     page = cor.load_full(reader, course["report"])
     body = page.get("body") or ""
-    got = parse_page(page.get("html") or "", body)
+    got = parse_page(page.get("html") or "", body, page_system(course["report"]))
     return {**course, "status": page.get("status"), "final_url": page.get("final_url"),
             "access": cor.access_of(page), "title_printed": (page.get("title") or "")[:160],
             "chars": len(body), "offered_at": offered_at(body), **got}
@@ -375,7 +516,7 @@ def reparse(folder: str) -> int:
         page_html = gzip.open(os.path.join(folder, stem + ".html.gz"), "rt").read()
         text = open(os.path.join(folder, stem + ".txt")).read()
         row.pop("groups", None)
-        row.update(parse_page(page_html, text), offered_at=offered_at(text))
+        row.update(parse_page(page_html, text, page_system(row.get("report") or "")), offered_at=offered_at(text))
     d["summary"] = summarize(d["rows"])
     d["reparsed_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     d["reparsed_note"] = ("The filed pages parsed again by parse_page, the read's own parser at the time of the "
@@ -389,6 +530,8 @@ def reparse(folder: str) -> int:
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--index", default="", help="kb/course_outline_index/index_<run>.json")
+    ap.add_argument("--catalog", "--elumen", dest="catalog", default="",
+                    help="a college whose catalog addresses course pages by code (eLumen, the Coast district): no index file")
     ap.add_argument("--slugs", default="riverside_city,moreno_valley,norco")
     ap.add_argument("--trial", type=int, default=0)
     ap.add_argument("--part", type=int, default=1)
@@ -398,23 +541,30 @@ def main(argv=None) -> int:
     a = ap.parse_args(argv)
     if a.reparse:
         return reparse(a.reparse)
-    if not a.index:
-        ap.error("--index FILE (or --reparse FOLDER)")
-    index = json.load(open(a.index))
+    if a.catalog:
+        index, a.slugs = catalog_index(a.catalog), a.catalog
+    elif a.index:
+        index = json.load(open(a.index))
+    else:
+        ap.error("--index FILE or --catalog SLUG (or --reparse FOLDER)")
     courses = wanted_courses(index, [s for s in a.slugs.split(",") if s])
     if a.trial:
         todo = spread(courses, a.trial)
     else:
         todo = [c for i, c in enumerate(courses) if i % a.of == a.part - 1]
     run = os.environ.get("GITHUB_RUN_ID", "local")
-    host = host_slug(index["url"])
+    host = index.get("host") or host_slug(index["url"])
     print("wanted %d courses with an outline; this run reads %d" % (len(courses), len(todo)), flush=True)
 
     out_dir = os.path.join(OUT_DIR, "trial_%s" % run) if a.trial else os.path.join(OUT_DIR, host)
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, "read.json" if a.trial else "read_%s_p%dof%d.json" % (run, a.part, a.of))
-    head = {"run": run, "index": os.path.relpath(a.index, os.path.dirname(HERE)), "host": index["url"],
-            "system": cor.system_of(index["url"]) or "other",
+    head = {"run": run, "index": ("catalog:" + a.catalog) if a.catalog else os.path.relpath(a.index, os.path.dirname(HERE)),
+            "host": index["url"],
+            "system": page_system(index["url"]),
+            # A row read from the catalog's own course page (eLumen) is a catalog row; the
+            # Coast district's catalog page is the outline of record itself.
+            "source_kind": "catalog" if a.catalog and page_system(index["url"]) == "elumen" else "course_outline",
             "slugs": a.slugs, "part": a.part, "of": a.of, "wanted": len(courses), "slice": len(todo)}
     rows: list[dict] = []
 

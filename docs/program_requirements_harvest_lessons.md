@@ -1,7 +1,7 @@
 ---
 title: Program requirements harvest — Decisions & Lessons
 date: 2026-10-03
-prs: [2049, 2050, 2012, 2015, 2016, 1836, 1838, 1839, 1841, 1844, 1845, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866, 1868, 1874, 1876, 1877, 1878, 1894]
+prs: [2101, 2102, 2103, 2104, 2105, 2049, 2050, 2012, 2015, 2016, 1836, 1838, 1839, 1841, 1844, 1845, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866, 1868, 1874, 1876, 1877, 1878, 1894]
 tags: [program-requirements, catalog-harvest, census, supabase, playwright, governance, lessons]
 artifacts:
   - kb/_program_source_census.py
@@ -921,3 +921,117 @@ The one-shot record read stopped at PostgREST's 1,000-row cap (Content-Range 0-9
 - **Modesto and Palo Verde had no procedure record for their catalog reads.** S386 wrote Modesto v1 and Palo Verde
   v3 (v2's maps kept byte for byte by composing on the stored record in SQL); receipts
   `kb/receipts/program_source_procedure_modesto_junior_v1_2026-10-14_s386.sql` and `..._palo_verde_v3_...`.
+- **Palo Verde prints the degree total with general education, as Cabrillo does** (college page read 38497793717, two
+  pages). Automotive Technology A.S.: header *64.0 - 68.0 Units*, *Total 64 - 68* = core 24 + electives 6 + *CalGETC
+  34 - 38*. Psychology AA-T: *Total 60* = major 19-21 + CalGETC 34-38, the rest transferable electives. No major total
+  is printed, so the extraction leaves it blank and 79 records at the two colleges fail arithmetic. The display's
+  *"The catalog prints no program total"* (and Sierra's and CPL Pathways' same words) is wrong for these pages; the
+  wording waits on how the record carries the figure (Open Asks Sheet 78).
+- **Southwestern and Fresno City capture cleanly.** Southwestern (CourseLeaf sitemap, 451 loads, 36 min): 220 of 233
+  found, 167 full coverage, 10 no page (two Administration of Justice options, Forensic Studies, three environmental
+  and safety programs, Kinesiology AA-T at 21 of 60 codes, Yoga Teacher Training, a noncredit Family Child Care). Fresno
+  City (curriQunet JSON, 474 loads, 38 min): 237 of 251, 199 full coverage, 6 no page (five noncredit). Both above
+  Sheet 59's 85% bar; extraction waits on Sam (Sheet 78).
+
+### Moved from the lane (S386 compaction, verbatim)
+
+**A refusal is on the college's record (Sam, sheet 29 card 3, 2026-10-04 11:59Z):**
+*"Note this in the record for the college. Rather than ask permission, we will
+make the agent aware of the limitation and to continue to look for solutions or
+workarounds."* So no access request goes to Miramar or the mapper's operator.
+`program_source_registry` carries four columns the census never writes
+(`sequence_host`, `sequence_access` open/refused/unreached/not_read,
+`sequence_note`, `sequence_checked_run`), filled S326 for 25 colleges from the two
+runs' evidence: **18 refused** (Miramar's mapper and the probe's 17), **5 not read**
+(Bakersfield, LA Harbor, Merced and West LA link to a mapper not yet read; Palo
+Verde's address is a homepage `#`), **2 open** (Irvine Valley's and Santa Monica's
+own maps pages; Santa Monica timed out in the morning probe and answered in run
+37209313523, filed by `..._2026-10-04b_s326.sql`). Receipt:
+`kb/receipts/program_source_registry_sequence_access_2026-10-04_s326.sql`. The reader reads them: it never
+requests a host on record as refused, follows the college's own links to the
+program's map, pathway, roadmap or sequence (a page or a PDF), and the probe asks
+each recorded host's front page once a run, flagging `CHANGED: file it` when a refused host or an unreached page now
+answers. ⚠️ **"Workaround" means another public source, never the same refused
+host under another name:** the reader keeps the census user agent that names the
+CPL Initiative (Sam's call 5 on sheet 23), so it never retries a refusal in
+disguise. The program read still needs the dispatch input `read: 1`.
+
+**Sam's sheet 32 (2026-10-04 17:33Z, both his own calls, as proposed):** (1) a
+program shows "up to" (the CPL course taken in every choice, the option with more
+CPL) plus the recommended path's figure where a map is read, and *"continue to
+include any CPL that the college might adopt for the courses on the pathway. And
+think about how we can include any certs we know of that haven't yet been
+articulated in the system for consideration. This is the reason we're adding all
+those potential certs to the CER and ECRA"*: each course carries CPL in three
+kinds, articulated here, could adopt (the same course articulated elsewhere), and
+for consideration (a CER/EACR cert whose recommendation points at the course,
+not yet articulated); (2) catalog-and-state-file differences collect as drafts
+on the college's harvest-tab row and My College to-dos; the MAP team sends.
+✅ **The harvest-tab half is built (S335):** Program records lists each college's own gaps under its heading as *Drafts for the college*, with a draft to copy; Catalogs counts and filters them. 28 live at the five pilot colleges (Miramar's two second-course drafts since 2026-10-05 21:45Z). ✅ **The My College half (Sam, sheet 42 card 3, 2026-10-05 20:58Z, his own call: *Show them now*):** My College lists each college's drafts now, under *Your program records, for review*, marked *For review* and *Beta draft*, right after *Start here* (S336, #1878). It reads the registry by `college_id`, then the college's records; a gap the reading procedure owns never reaches the college's page. The MAP team still decides when to send each one.
+- **Two colleges capture at once on two branches.** A capture-only read is a dispatch of
+  `program-requirements-college.yml` (`extract 0`, `step read`) on a branch cut from main; the concurrency group is
+  per ref and the hosts differ, so Southwestern and Fresno City read side by side in about 37 minutes and each filed
+  `capture_preview.json` to its own branch. Extraction then runs on the same branch after Sam's go.
+
+## S387 SkyMagnolia (2026-10-14): course SLOs from catalog pages, the eight addenda, and Palo Verde's catalog year
+
+- **eLumen prints each course's SLOs on its catalog course page** (college page read 38504338656): the program read's
+  `publish/content` call at `<catalog>,course,<code in lower case, no space>` (Cabrillo `astro3`, Modesto `ag115`, Palo
+  Verde `acc101`), the address a program page links. Each college has its own template inside the Learning Outcomes
+  accordion: Modesto a label `SLO:` over an `<ol>`; Cabrillo a lead-in label over a table, one outcome a row, numbered in
+  its text. The text reader read none of Modesto's and took Cabrillo's next *Toggle* as an outcome; the box parser reads
+  24 of 24 trial pages exactly (trials 38505894485, 38506174617). eLumen rows load as `source_kind = catalog` (#2103).
+- **The Coast district serves outlines of record by code** (`catalog.cccd.edu/courses/acct-c116/`): an `<h3>Course Level
+  Student Learning Outcome(s)</h3>` then the list, then Course Objectives. Nine of 12 trial pages parse exactly (trial
+  38508460207); the three common course numbers (ARTH C1100, HIST C1001, POLS C1000) answer 404 there. Filed under
+  `cccd`; `catalog=<slug>` in `.run` reads either form (#2105).
+- **CourseLeaf course entries print no SLOs** at Cerritos, Long Beach City and Mt. San Antonio; `/search/` is disallowed by
+  robots.txt at all four loaded CourseLeaf hosts (#2101). Course pages: Cerritos
+  `/degrees-certificates-courses/course-descriptions/<subj>/`, Long Beach `/course-descriptions/<subj>/`, Mt. SAC
+  `/programs/coursesaz/<subj>/`.
+- **An online catalog's addendum is a changelog of edits its pages already carry** (read 38504437775, #2102). eLumen
+  dates each change and flags the page; Cerritos, Norco and Moreno Valley list new and revised programs and courses. Two
+  checked against loaded records were already in the pages read: Norco's Successful Career Transitions (PDS-809 out of the
+  required block, 33 hours to 21) and Cerritos's EDT 110 (2 units to 3). Miramar's "addendum" is the whole 549-page
+  2025-26 catalog with an errata table on page 2.
+- **Palo Verde's catalog of record was a year behind** (read 38506078868): its catalog page lists *2026-2027 Catalog* at
+  `catalog.paloverde.edu` (Acalog) above *2025-2026 Catalog* on eLumen. `vendor_catalog_link` gives a vendor host two
+  points, more than a newer year's margin. The first fix passed its test and failed the dry run (38506794465): the live
+  page links eLumen in its own HTML, so it reads as eLumen, and the guard required a plain page; the fixture had no HTML.
+  The second follows the newest catalog a yearless page lists whatever the page's platform (dry run 38508144436: Palo
+  Verde alone moves; #2104). Its 52 loaded records stay 2025-26 until an Acalog reader re-reads them.
+- **A census push runs its own full dry run**: a hand dispatch on the same branch queues a duplicate (cancel it).
+
+### Moved from the lane (S387 compaction, verbatim)
+
+✅ **Sheet 77 card 3, built and merged (S385, #2093; Sam, *Build it*, 22:25Z):** numbered boxes are the reading procedure's alone. A record's college items (*Catalog and state file differ*, *MAP names a second course*) sit on one line in its head, *For the college*, that opens to the list; course rows carry no number for them (the quiet COCI chip and *Printed in the catalog* stay). The MAP team queue gains *Program record items for the colleges to correct*: a count a college, each a closed line that reads its list when opened, from the view `program_record_college_items` (`chatbox/supabase_program_record_college_items.sql`). My College's list is unchanged (it reads the same gaps from the table). Counts: lessons S385. ✅ Applied by `supabase-migrate.yml` run 38482375985 and read back (lessons S385). ✅ **My College reads the view too (S386, #2097):** one row an item, read a page at a time (Cerritos 577 rows, where every record's display was about 4 MB).
+
+## S388 SkyBuckeye (2026-10-14, the CPL Queue routine): three colleges' course SLOs loaded, the addenda reading agent, the Common CR Reference UI pass
+
+- **Course outcomes at nine colleges** (live read: 7,450 courses, 20,891 SLOs). Cabrillo 1,124 (read 38507187621, load
+  38515664600), Modesto Junior 910 (read 38515689944, load 38521527453) and Coastline 522 (read 38508963773, load
+  38523415414). Every eLumen page answered 200; the 16 and 14 courses with no outcomes print none. Coastline's 28 misses
+  are common course numbers the district's outline host answers 404 for. #2103 merged; #2105 merges on its `test`.
+- **A handoff's trigger line can name a key the branch does not read.** Handoff 388 said `catalog=modesto_junior`; the
+  `catalog=` key lives on #2105, and #2103's workflow reads `elumen=`. The first push would have read nothing; it was
+  canceled and re-pushed. Read the branch's workflow before pushing a trigger file it parses.
+- **A stacked branch's conflicts resolve by ancestry.** #2105 carried #2103's parser commit (f827ece), and `main`'s
+  copies of the three code files equaled that commit's, so #2105's side was a strict superset: take it for code and
+  `.run`, regenerate the dependency map, never pick sides on a generated file.
+- **A receipt at a PR's head leaves `test` unreported.** `js-tests.yml` runs on `pull_request` and `main` pushes; the
+  bot's receipt commit gets `action_required` runs. Put a real commit of yours on top (a merge of `main`, or the lane
+  edit the PR's state calls for), then read `test` on that head.
+- **The addenda reading agent (#2107):** `program_source_addenda_read(run_id, rows)` moves an addendum from listed to
+  read and files `programs_changed`, `published_on` and `effective_term`; service_role only, never a corrected row,
+  history under the run id. Applied by `supabase-migrate.yml` run 38516806015. The eight S387 reads are filed from
+  `kb/addenda_reads/read_38504437775.json`: 42 program and 20 course changes, each with scope, kind, change and date;
+  COCI control numbers where the program is in the snapshot (new ones are not). Receipt
+  `kb/receipts/program_source_addenda_read_2026-10-14_s388.sql` (8 read, 0 skipped). Cabrillo's addendum prints none.
+  Palo Verde's 2026-27 addendum changes four courses and no program; its 2025-26 one prints five programs in full.
+- **Common CR Reference UI pass (#2108):** CSV control 19px tall, rank 3.55:1; every control now an underlined cobalt
+  word, the rank on `--text-muted`; clean in light and dark (light failures 7 to 6 across 40 routes).
+- **Local `main` can be a week stale in a fresh container:** a `git pull -q` on `main` failed silently and the first UI
+  pass measured 2026-10-07 code. Branch from `origin/main` after a fetch.
+
+**NEXT.** The Acalog reader once Sunday's census apply moves Palo Verde's registry row; then Palo Verde's records re-read
+from 2026-27 and its course outcomes. The other 71 listed addenda wait for the reader to reach their colleges.
