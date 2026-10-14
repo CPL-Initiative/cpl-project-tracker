@@ -238,8 +238,8 @@
    "name": "CIP Codes",
    "page": "index.html#cip-crosswalk",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-14",
+   "outcome": "S390: light and dark clean on the first screen at 390 and 1440 (before: 4 targets under 24px, the three source links 19.6px and the theme control 23.5px; Coco's name 3.7:1 under its container's opacity). The rail's Theme, Expand and CSV are underlined words. Remaining, a lane item: the tab's private --cipx-* palette (75 raw colors, light and dark) in place of First Light tokens, about 56 boxed or filled controls past the rail (Fit check, pills, Review actions), and its own theme control beside the header's. Wiring: coci_programs_data.js is one global read untransformed here and by COCI Lookup; no shared figure sits on either first screen."
   },
   {
    "id": "cobi:program-requirements",
