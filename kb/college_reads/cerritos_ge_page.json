@@ -1,0 +1,16 @@
+{
+ "_readme": "S393 SkySycamore, 2026-10-14. Read cerritos_degree_figures (run 38654411937) found every Cerritos degree page printing its major total and 'Complete a minimum of 60 units to include (1) the above major requirements, (2) the General Education requirements, and (3) electives as needed', with no GE units; the guessed graduation-requirements address answered 404. This read finds the catalog's general education and associate degree requirements pages in its site map. One load, no model call.",
+ "college": "Cerritos College",
+ "questions": {
+  "ge_address": "The catalog addresses of the associate degree general education pattern and the graduation requirements."
+ },
+ "keywords": [
+  "https://cerritos-public\\.courseleaf\\.com/[^<\\s\"]*(?:general-education|graduation|degree-requirement|associate-degree|ge-pattern|cal-getc|igetc|requirements-for)[^<\\s\"]*"
+ ],
+ "pages": [
+  {
+   "answers": ["ge_address"],
+   "url": "https://cerritos-public.courseleaf.com/sitemap.xml"
+  }
+ ]
+}
