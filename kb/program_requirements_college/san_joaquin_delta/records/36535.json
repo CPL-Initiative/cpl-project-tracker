@@ -1,0 +1,523 @@
+{
+ "college": "San Joaquin Delta College",
+ "control_number": "36535",
+ "shape": "certificate",
+ "title": "Pre-Law Studies",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3339&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7356,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7356,
+    "output_tokens": 3495,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3495,
+  "output_tokens_details": {
+   "thinking_tokens": 876
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09932,
+ "ms": 25305,
+ "seconds": 25.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 15,
+   "share": 0.733,
+   "missing": [
+    "COMST7",
+    "ENGL1B",
+    "HIST17A",
+    "HIST17B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 22,
+   "codes": [
+    "BUS68V",
+    "BUS7",
+    "BUS8",
+    "COMM14",
+    "COMM3",
+    "COMM4",
+    "COMM52",
+    "COMM7",
+    "COMM8",
+    "ENGLC1000E",
+    "ENGLC1002",
+    "HIST27",
+    "HISTC1001",
+    "HISTC1002",
+    "LAW16",
+    "LAW2",
+    "LAW20",
+    "LAW25",
+    "LAW26",
+    "LAW35A",
+    "LAW50SS",
+    "PSYC2"
+   ],
+   "flagged": [
+    "BUS68V",
+    "BUS7",
+    "BUS8",
+    "COMM14",
+    "COMM3",
+    "COMM4",
+    "COMM52",
+    "COMM7",
+    "COMM8",
+    "ENGLC1000E",
+    "ENGLC1002",
+    "HIST27",
+    "HISTC1001",
+    "HISTC1002",
+    "LAW16",
+    "LAW2",
+    "LAW20",
+    "LAW25",
+    "LAW26",
+    "LAW35A",
+    "LAW50SS",
+    "PSYC2"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    21.0,
+    22.0
+   ],
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 21.0-22.0; the catalog states 21.0-21.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 13,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Pre-Law Studies",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the ability to identify and explain the ideas and institutions that make up the American political system, including the legal system, to describe the evolution of civil liberties and rights in the United States and apply this knowledge to current events and legal issues, and to recognize the role of public opinion, interest groups, and political parties regarding the electoral process, law, and public policy.",
+    "Demonstrate the ability to effectively write and speak to persuade a diversity of audiences, to analyze, criticize, and advocate for ideas, to communicate for a variety of purposes, to read and comprehend a diversity of texts, to develop awareness of society and its historical roots, to appreciate diversity and to be sensitive to the impact of race, sex, and class on the American experience, to organize information, to engage in argumentation to support a position, to evaluate and cite sources, to explain the historical development of American institutions in law and society, to demonstrate facility with numbers, and to conduct research.",
+    "Demonstrate knowledge of the various classifications of the law, including being able to distinguish among the various parts of a contract."
+   ],
+   "careers": [
+    "attorney",
+    "judge",
+    "mediator",
+    "paralegal",
+    "secretary",
+    "consultant",
+    "educator",
+    "court administrator",
+    "governmental administrator",
+    "business entrepreneur",
+    "corporate executive",
+    "law enforcement official",
+    "politician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "BUS 8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000E",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives - Area A",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives - Area B",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 27",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 30A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 30B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 34",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives - Area C",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUS 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 52",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LAW 20",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives - Area D",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "COMM 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LAW 26",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Recommended but not required elective courses",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUS 68V",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LAW 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LAW 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LAW 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LAW 35A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LAW 50SS",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COM ST 7",
+    "why": "not in the text; catalog prints COMM 7 Intercultural Communication instead (likely renumbered)"
+   },
+   {
+    "code": "ENGL 1B",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 17A",
+    "why": "not in the text; catalog prints HIST C1001 United States History to 1877"
+   },
+   {
+    "code": "HIST 17B",
+    "why": "not in the text; catalog prints HIST C1002 United States History since 1865"
+   }
+  ],
+  "notes": [
+   "The catalog text begins mid-description; the program heading is cut off, so section_heading uses the program title.",
+   "Area blocks are under the printed heading 'Restricted Electives'; block names combine it with the Area letter.",
+   "Each Area prints 'Complete 3 units selected from', recorded as choose_units 3 and stated 3; Core prints 'Complete 9 units'.",
+   "COMM 7 (Intercultural Communication) is marked a catalog addition because the closed list names COM ST 7; reviewer may treat them as the same course.",
+   "Total 'Minimum Units Required: 21' recorded as total_units.",
+   "All courses must be completed with a grade of 'C' or better."
+  ]
+ },
+ "extracted_run": "38631691511"
+}

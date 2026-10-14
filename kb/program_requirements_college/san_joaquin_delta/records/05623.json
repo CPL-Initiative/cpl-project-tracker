@@ -1,0 +1,287 @@
+{
+ "college": "San Joaquin Delta College",
+ "control_number": "05623",
+ "shape": "degree",
+ "title": "Nursing R.N.",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3191&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7152,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7152,
+    "output_tokens": 2619,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2619,
+  "output_tokens_details": {
+   "thinking_tokens": 655
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08099,
+ "ms": 20044,
+ "seconds": 20.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "FCS19",
+    "PSYCC1000",
+    "SOCIO1A"
+   ],
+   "flagged": [
+    "FCS19",
+    "PSYCC1000",
+    "SOCIO1A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    59.5,
+    59.5
+   ],
+   "stated": [
+    59.5,
+    59.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Nursing R.N. A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 59.5,
+    "max": 59.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": "San Joaquin Delta College Associate Degree General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 77.5,
+    "max": 77.5
+   },
+   "ge_units": {
+    "min": 27,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Through application of the nursing process, utilizing best practices across the life-span in a variety of settings, the graduate will facilitate optimum client outcomes through nursing care that incorporates professionalism, leadership, inter-professional collaboration, teamwork, and quality improvement.",
+    "Through application of the nursing process, utilizing best practices across the life-span in a variety of settings, the graduate will facilitate optimum client outcomes by managing care that promotes health maintenance through client advocacy and education.",
+    "Through application of the nursing process, utilizing best practices across the life-span in a variety of settings, the graduate will facilitate optimum client outcomes by providing therapeutic communication to clients, their families/significant others.",
+    "Through application of the nursing process, utilizing best practices across the life-span in a variety of settings, the graduate will facilitate optimum client outcomes by managing care that addresses the emotional, mental, social, and cultural needs of clients, their families/significant others.",
+    "Through application of the nursing process, utilizing best practices across the life-span in a variety of settings, the graduate will facilitate optimum client outcomes by managing (1) the activities of daily living for clients, (2) comfort measures of clients, and (3) safe and accurate medication administration and parenteral therapies to clients.",
+    "Through application of the nursing process, utilizing best practices across the life-span in a variety of settings, the graduate will facilitate optimum client outcomes which are based upon decisions and care that prevent and / or manage complications or health problems related to existing conditions, treatments, or procedures by providing evidence-based care to multiple clients with acute, chronic and/or life threatening physical conditions.",
+    "Through application of the nursing process, utilizing best practices across the life-span in a variety of settings, the graduate will facilitate optimum client outcomes by providing quality, effective nursing care in an environment that is safe for clients, their families/significant others and other health care personnel."
+   ],
+   "careers": [
+    "Registered Nurse"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Requirements - Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 55,
+     "max": 55
+    },
+    "courses": [
+     {
+      "code": "BIOL 31",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 32",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "H S 19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FCS 19",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURSADN 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURSADN 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURSADN 4",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURSADN 5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURSADN 6",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURSADN 7",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURSADN 8",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURSADN 9",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOCIO 1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - Restricted Electives",
+    "rule": "choose_units",
+    "minimum": 4.5,
+    "option_group": null,
+    "stated": {
+     "min": 4.5,
+     "max": 4.5
+    },
+    "courses": [
+     {
+      "code": "BIOL 22",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 23",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-description; the program heading itself is not printed in the text, so section_heading uses the program title and award.",
+   "Catalog prints the cross-listed code 'FCS /H S 19'; recorded as H S 19 with FCS 19 (not in closed list) as alternative.",
+   "BIOL 31 printed at 4.5 units in catalog versus 4 in the state file; BIOL 22 printed at 4.5 versus 4.",
+   "ge_units holds the range of the two GE options: local pattern 27 units or Cal-GETC 34 units.",
+   "Minimum Degree Units Required 77.5 recorded as degree_total; Minimum Major Units Required 59.5 recorded as total_units.",
+   "Note says BIOL 31 or BIOL 32, SOCIO 1A and FCS 19 or H S 19 may double count toward GE and major.",
+   "Career 'Registered Nurse' taken from the truncated description fragment 'within the scope of practice of the Registered Nurse'; reviewer may check the full description."
+  ]
+ },
+ "extracted_run": "38631691511"
+}

@@ -1,0 +1,236 @@
+{
+ "college": "San Joaquin Delta College",
+ "control_number": "22260",
+ "shape": "certificate",
+ "title": "Baking and Pastry",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3244&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6361,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6361,
+    "output_tokens": 1358,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1358,
+  "output_tokens_details": {
+   "thinking_tokens": 251
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0526,
+ "ms": 10310,
+ "seconds": 10.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 7,
+   "share": 0.571,
+   "missing": [
+    "CULART1",
+    "CULART25",
+    "CULART72"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "CULART4",
+    "CULART5",
+    "CULART72A",
+    "CULART72B"
+   ],
+   "flagged": [
+    "CULART4",
+    "CULART5",
+    "CULART72A",
+    "CULART72B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.0,
+    26.0
+   ],
+   "stated": [
+    26.0,
+    26.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Baking and Pastry Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Perform effectively in a bakery or pastry establishment by applying professional baking techniques, station organization, and teamwork.",
+    "Demonstrate baking principles by applying correct mixing methods, dough handling skills, and professional pastry techniques.",
+    "Work efficiently in a professional bakery or food service bakeshop by managing a station, following production timelines, and supporting team operations.",
+    "Demonstrate proper sanitation, safety, equipment handling, and regulatory compliance in bakery settings.",
+    "Deliver front-of-house bakery service through customer interaction, point-of-sale operation, and accurate order processing.",
+    "Produce consistent, high-quality baked goods by following standardized recipes, production timelines, and quality-control practices.",
+    "Use culinary math for scaling, recipe adjustments, costing, yield, and inventory purposes."
+   ],
+   "careers": [
+    "bakery and pastry positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 26,
+     "max": 26
+    },
+    "courses": [
+     {
+      "code": "CUL ART 3",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL ART 4",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CUL ART 5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CUL ART 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL ART 8",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL ART 71",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL ART 72A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CUL ART 72B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CUL ART 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "CUL ART 25",
+    "why": "not in the text"
+   },
+   {
+    "code": "CUL ART 72",
+    "why": "not in the text; catalog lists CUL ART 72A and CUL ART 72B instead"
+   }
+  ],
+  "notes": [
+   "Catalog requires all courses with a grade of 'C' or better.",
+   "CUL ART 72 (Retail Bakery Management, 4 units) in the closed list appears to have been replaced by CUL ART 72A and CUL ART 72B in this catalog; reviewer should confirm.",
+   "Printed core courses sum to 26 units, matching the stated minimum.",
+   "Career entry taken from 'prepares students for immediate employment in bakery and pastry positions'; workplaces named (commercial bakeries, pastry shops, cafés) not recorded as careers."
+  ]
+ },
+ "extracted_run": "38631691511"
+}

@@ -1,0 +1,267 @@
+{
+ "college": "San Joaquin Delta College",
+ "control_number": "05597",
+ "shape": "certificate",
+ "title": "Engineering Fundamentals",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3332&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6505,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6505,
+    "output_tokens": 1497,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1497,
+  "output_tokens_details": {
+   "thinking_tokens": 318
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05596,
+ "ms": 11950,
+ "seconds": 12.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 13,
+   "share": 0.923,
+   "missing": [
+    "PHYSC4B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "CSP31A",
+    "ENGLC1000E",
+    "PHYSC4C"
+   ],
+   "flagged": [
+    "CSP31A",
+    "ENGLC1000E",
+    "PHYSC4C"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    55.0,
+    56.0
+   ],
+   "stated": [
+    55.0,
+    55.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 55.0-56.0; the catalog states 55.0-55.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Engineering Fundamentals Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 55,
+    "max": 55
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge of the theory and application of mathematics, physics, and chemistry as applied in the engineering field.",
+    "Demonstrate knowledge of the theory and application of the engineering design process, and is able to communicate the process in graphic and written format."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 55,
+     "max": 55
+    },
+    "courses": [
+     {
+      "code": "CHEM 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSP 31A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000E",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 2",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 4",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 6",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 4",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSC 4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSC 4C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "PHYSC 4B",
+    "why": "not in the text; catalog lists PHYSC 4C instead"
+   }
+  ],
+  "notes": [
+   "Catalog prints ENGR 2 at 3.5 units and ENGR 4 at 4.5 units; the state file stores 3 and 4. Printed units recorded.",
+   "PHYSC 4C (Electricity and Magnetism) appears in the catalog but not in the closed list, while closed-list PHYSC 4B does not appear in the text; reviewer may want to check whether the state file is out of date.",
+   "Printed course units sum to 55 with ENGL C1000 (3 units), matching 'Complete 55 units' and 'Minimum Units Required: 55'; choosing ENGL C1000E (4 units) would give 56.",
+   "Catalog requires a grade of 'C' or better in all courses."
+  ]
+ },
+ "extracted_run": "38631691511"
+}

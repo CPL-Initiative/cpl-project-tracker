@@ -1,0 +1,302 @@
+{
+ "college": "San Joaquin Delta College",
+ "control_number": "13497",
+ "shape": "certificate",
+ "title": "Municipal Clerk",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3277&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6541,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6541,
+    "output_tokens": 2367,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2367,
+  "output_tokens_details": {
+   "thinking_tokens": 851
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0735,
+ "ms": 18440,
+ "seconds": 18.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 14,
+   "share": 0.857,
+   "missing": [
+    "BIM43",
+    "BUS1A"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ACCT1A",
+    "BIM73",
+    "ENGLC1000E"
+   ],
+   "flagged": [
+    "ACCT1A",
+    "BIM73",
+    "ENGLC1000E"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    38.0,
+    39.0
+   ],
+   "stated": [
+    38.0,
+    38.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 38.0-39.0; the catalog states 38.0-38.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Municipal Clerk Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 38,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge of public relations, organizational behavior, management, public administration, legislative procedures, meeting preparation and keeping of official minutes, elections planning and procedures, processing of annexations and vacations, license and permit processing, projects and capital improvements approvals, contracts and deeds processing, and records management. This program provides training in all of these areas."
+   ],
+   "careers": [
+    "City Clerk",
+    "support staff in the office of the city clerk",
+    "public administration positions",
+    "Municipal Clerk"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 32,
+     "max": 32
+    },
+    "courses": [
+     {
+      "code": "BIM 73",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACCT 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 88",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 37",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000E",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives - Area A",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUS 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives - Area B",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUS 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIM 43",
+    "why": "not in the text; catalog prints BIM 73 with the same title (Records Management in Public Agencies)"
+   },
+   {
+    "code": "BUS 1A",
+    "why": "not in the text; catalog prints ACCT 1A with the same title (Principles of Accounting, 5 units)"
+   }
+  ],
+  "notes": [
+   "BIM 73 (catalog) appears to correspond to closed-list BIM 43 (same title); recorded as a catalog addition. Reviewer should check whether the course was renumbered.",
+   "ACCT 1A (catalog) appears to correspond to closed-list BUS 1A (same title and units); recorded as a catalog addition.",
+   "CS 11 matched to closed-list 'CS11' (spacing difference only), though the catalog title 'Introduction to Computing Information Technology' differs from the closed-list title 'Fundamentals of Computer Science'.",
+   "ENGL C1000E (4 units) is printed as an 'or' alternative to ENGL C1000 and is not in the closed list.",
+   "Core printed as 'Complete 32 units'; Areas A and B each 'Complete 3 units selected from'; Minimum Units Required: 38, consistent with 32+3+3.",
+   "The single printed program learning outcome includes the sentence 'This program provides training in all of these areas.' and was copied in full as printed."
+  ]
+ },
+ "extracted_run": "38631691511"
+}

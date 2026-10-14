@@ -1,0 +1,7539 @@
+[
+ {
+  "control_number": "05577",
+  "title": "Agriculture Business: Plant Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGBUS10",
+   "AGBUS12",
+   "AGBUS15",
+   "AGBUS17",
+   "AGBUS46",
+   "HORT1",
+   "HORT10",
+   "HORT12",
+   "HORT14",
+   "HORT2",
+   "HORT20",
+   "HORT21",
+   "HORT23",
+   "HORT24",
+   "HORT26",
+   "HORT3",
+   "HORT4",
+   "HORT5",
+   "PLANT10",
+   "PLANT10L",
+   "PLANT11",
+   "PLANT14",
+   "PLANT20",
+   "PLANT21",
+   "PLANT26",
+   "PLANT30",
+   "PLANT31",
+   "PLANT32",
+   "PLANT33",
+   "PLANT34",
+   "PLANT40",
+   "PLANT41"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3173&print",
+   "title": "Program: Agriculture Business - Plant Science Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Agriculture Business - Plant Science Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 3974
+ },
+ {
+  "control_number": "05579",
+  "title": "Agriculture Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.969,
+  "codes_found": [
+   "AGBUS10",
+   "AGBUS12",
+   "AGBUS15",
+   "AGBUS17",
+   "AGBUS46",
+   "ASCI10",
+   "ASCI10L",
+   "ASCI19",
+   "ASCI34",
+   "ASCI47",
+   "ASCI57",
+   "ASCI67",
+   "BUS18A",
+   "COMMC1000",
+   "HORT10",
+   "HORT12",
+   "HORT23",
+   "HORT5",
+   "NR2",
+   "PLANT10",
+   "PLANT10L",
+   "PLANT14",
+   "PLANT20",
+   "PLANT21",
+   "PLANT26",
+   "PLANT30",
+   "PLANT31",
+   "PLANT40",
+   "PLANT41",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3162&print",
+   "title": "Program: Agriculture Business, AS - San Joaquin Delta College",
+   "h1": "Agriculture Business, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 4787
+ },
+ {
+  "control_number": "05581",
+  "title": "Agriculture Mechanics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOMECH73",
+   "INDUS35",
+   "INDUS94",
+   "MACH16",
+   "WELDING10"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3309&print",
+   "title": "Program: Agriculture Mechanics Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Agriculture Mechanics Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1564
+ },
+ {
+  "control_number": "05584",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05586",
+  "title": "Supervision and Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.867,
+  "codes_found": [
+   "BUS17",
+   "BUS18A",
+   "BUS18B",
+   "BUS19",
+   "BUS20",
+   "BUS26",
+   "BUS30",
+   "BUS31",
+   "BUS32",
+   "BUS35",
+   "BUS36",
+   "CSA20",
+   "LAW25"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3267&print",
+   "title": "Program: Supervision and Management Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Supervision and Management Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2968
+ },
+ {
+  "control_number": "05587",
+  "title": "Merchandising",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.882,
+  "codes_found": [
+   "BUS18A",
+   "BUS18B",
+   "BUS19",
+   "BUS20",
+   "BUS21",
+   "BUS22",
+   "BUS23",
+   "BUS24",
+   "BUS26",
+   "BUS30",
+   "BUS31",
+   "BUS8",
+   "FASHION2",
+   "FASHION24",
+   "LAW25"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3278&print",
+   "title": "Program: Merchandising Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Merchandising Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2316
+ },
+ {
+  "control_number": "05588",
+  "title": "Logistics and Transportation Supervisor",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIM39",
+   "BUS17",
+   "BUS20",
+   "BUS21",
+   "BUS30",
+   "BUS31",
+   "BUS51",
+   "BUS57",
+   "BUS84",
+   "BUS86",
+   "CS11",
+   "CSA20"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3281&print",
+   "title": "Program: Logistics and Transportation Supervisor Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Logistics and Transportation Supervisor Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2182
+ },
+ {
+  "control_number": "05589",
+  "title": "Real Estate",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "BUS18A",
+   "BUS18B",
+   "BUS19",
+   "BUS22",
+   "BUS23",
+   "BUS26",
+   "BUS8",
+   "CSA20"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3274&print",
+   "title": "Program: Real Estate Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Real Estate Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3280
+ },
+ {
+  "control_number": "05593",
+  "title": "Computer Operations",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05594",
+  "title": "Computer Programming",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.85,
+  "codes_found": [
+   "COMMC1000",
+   "CS11",
+   "CS32",
+   "CS33",
+   "CS56",
+   "CSA20",
+   "CSP17",
+   "CSP25",
+   "CSP26B",
+   "CSP31B",
+   "CSP43A",
+   "ELECT14C",
+   "ENGLC1000",
+   "MATH1",
+   "MATH20",
+   "MATH39",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3178&print",
+   "title": "Program: Computer Programming Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Computer Programming Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3029
+ },
+ {
+  "control_number": "05597",
+  "title": "Engineering Fundamentals",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "CHEM1A",
+   "ENGLC1000",
+   "ENGR1",
+   "ENGR2",
+   "ENGR4",
+   "ENGR6",
+   "ENGR8",
+   "MATH1",
+   "MATH2",
+   "MATH3",
+   "MATH4",
+   "PHYSC4A"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3332&print",
+   "title": "Program: Engineering Fundamentals Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Engineering Fundamentals Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2203
+ },
+ {
+  "control_number": "05599",
+  "title": "Electron Microscopy - Biological Concentration Advanced Sample Preparation",
+  "award": "Certificate of Achievement requiring 60+S/90+Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "BIOL23",
+   "BIOL31",
+   "BIOL32",
+   "CHEM1A",
+   "CHEM3A",
+   "EM70",
+   "EM71",
+   "EM74",
+   "EM76",
+   "EM77",
+   "EM78",
+   "EM80",
+   "EM84B",
+   "EM88",
+   "EM89"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3329&print",
+   "title": "Program: Electron Microscopy - Biological Concentration Advanced Sample Preparation Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Electron Microscopy - Biological Concentration Advanced Sample Preparation Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3460
+ },
+ {
+  "control_number": "05601",
+  "title": "Heating & Air Conditioning: Refrigeration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05602",
+  "title": "Diesel Automotive Equipment Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGEGR30C",
+   "AUTOMECH92",
+   "AUTOMECH95",
+   "AUTOMECH96B",
+   "AUTOMECH97",
+   "DIESL91",
+   "DIESL92",
+   "DIESL93",
+   "DIESL94",
+   "DIESL95",
+   "DIESL96",
+   "DIESL97",
+   "DIESL98",
+   "DIESL99",
+   "INDUS35",
+   "INDUS94",
+   "WELDING10"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3324&print",
+   "title": "Program: Diesel Automotive Equipment Technician Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Diesel Automotive Equipment Technician Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2409
+ },
+ {
+  "control_number": "05603",
+  "title": "Automotive Mechanics Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "AUTOMECH73",
+   "AUTOMECH92",
+   "AUTOMECH93",
+   "AUTOMECH94",
+   "AUTOMECH96A",
+   "AUTOMECH96B",
+   "AUTOMECH97",
+   "INDUS35",
+   "WELDING10"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3318&print",
+   "title": "Program: Automotive Mechanics Technology Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Automotive Mechanics Technology Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2714
+ },
+ {
+  "control_number": "05604",
+  "title": "Auto Body Intermediate Repair and Restoration",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOBODY84A",
+   "AUTOBODY84B",
+   "AUTOBODY84C",
+   "AUTOBODY84D",
+   "AUTOMECH72",
+   "AUTOMECH73",
+   "AUTOMECH92",
+   "AUTOMECH95"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3313&print",
+   "title": "Program: Auto Body - Intermediate Repair and Restoration Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Auto Body - Intermediate Repair and Restoration Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2165
+ },
+ {
+  "control_number": "05612",
+  "title": "Industrial Technology - Level I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELEC30",
+   "ELECT11",
+   "HVACR70A",
+   "INDUS20",
+   "INDUS31",
+   "INDUS45",
+   "INDUS94",
+   "MACH16",
+   "WELDING10"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3287&print",
+   "title": "Program: Industrial Technology - Level I Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Industrial Technology - Level I Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1844
+ },
+ {
+  "control_number": "05613",
+  "title": "Manual Machining",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "INDUS94",
+   "MACH70A",
+   "MACH70B",
+   "MACH73A",
+   "MACH73B",
+   "WELDING10",
+   "WELDING98"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3280&print",
+   "title": "Program: Manual Machining Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Manual Machining Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1997
+ },
+ {
+  "control_number": "05623",
+  "title": "Nursing R.N.",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL22",
+   "BIOL23",
+   "BIOL31",
+   "BIOL32",
+   "HS19",
+   "NURSADN1",
+   "NURSADN2",
+   "NURSADN4",
+   "NURSADN5",
+   "NURSADN6",
+   "NURSADN7",
+   "NURSADN8",
+   "NURSADN9"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3191&print",
+   "title": "Program: Nursing, AS - San Joaquin Delta College",
+   "h1": "Nursing, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4277
+ },
+ {
+  "control_number": "05628",
+  "title": "Interior Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.625,
+  "codes_found": [
+   "ID10",
+   "ID11",
+   "ID13",
+   "ID2",
+   "ID8"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3249&print",
+   "title": "Program: Interior Design Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Interior Design Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1921
+ },
+ {
+  "control_number": "05629",
+  "title": "Fashion Design",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FASHION30",
+   "FASHION31",
+   "FASHION37",
+   "FASHION42",
+   "FASHION8",
+   "ID6"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3246&print",
+   "title": "Program: Fashion Design Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Fashion Design Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2242
+ },
+ {
+  "control_number": "05630",
+  "title": "Early Childhood Education Teacher",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "ECE21",
+   "ECE24",
+   "ECE25",
+   "ECE26",
+   "ECE27",
+   "ECE28",
+   "ECE29",
+   "ECE30",
+   "ECE31A",
+   "ECE31B",
+   "ECE32A",
+   "ECE34",
+   "ECE40",
+   "ECE63",
+   "ECE72",
+   "ECE73"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3214&print",
+   "title": "Program: Early Childhood Education Teacher Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Early Childhood Education Teacher Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3027
+ },
+ {
+  "control_number": "05641",
+  "title": "Correctional Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.895,
+  "codes_found": [
+   "AJ21",
+   "AJ22",
+   "AJ28",
+   "AJ30",
+   "AJ31",
+   "AJ41",
+   "AJ51",
+   "AJ53",
+   "AJ55",
+   "AJ57",
+   "HIST27",
+   "HIST30A",
+   "HIST30B",
+   "LAW16",
+   "POLSC1000",
+   "SOCIO1A",
+   "SOCIO1B"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3198&print",
+   "title": "Program: Correctional Science, AS - San Joaquin Delta College",
+   "h1": "Correctional Science, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 2912
+ },
+ {
+  "control_number": "05642",
+  "title": "Basic Peace Officer Academy",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ95A",
+   "AJ95B",
+   "AJ95C"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3209&print",
+   "title": "Program: Basic Peace Officer Academy Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Basic Peace Officer Academy Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2069
+ },
+ {
+  "control_number": "07273",
+  "title": "Horticulture - Sustainable Landscape Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGBUS15",
+   "AGBUS17",
+   "HORT1",
+   "HORT14",
+   "HORT2",
+   "HORT20",
+   "HORT21",
+   "HORT23",
+   "HORT24",
+   "HORT3",
+   "HORT5",
+   "HORT96V"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3187&print",
+   "title": "Program: Horticulture - Sustainable Landscape Management Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Horticulture - Sustainable Landscape Management Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2344
+ },
+ {
+  "control_number": "07274",
+  "title": "Agriculture Business: Animal Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "AGBUS10",
+   "AGBUS12",
+   "AGBUS15",
+   "AGBUS46",
+   "ASCI10",
+   "ASCI10L"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3172&print",
+   "title": "Program: Agriculture Business - Animal Science Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Agriculture Business - Animal Science Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2270
+ },
+ {
+  "control_number": "07276",
+  "title": "Accounting Clerk",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07303",
+  "title": "Tax Preparation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07304",
+  "title": "Computer Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS32",
+   "CS42",
+   "CS50SS",
+   "CSN40",
+   "CSN60",
+   "CSP25",
+   "CSP31B",
+   "CSP43A",
+   "CSW21",
+   "CSW23",
+   "CSW38"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3164&print",
+   "title": "Program: Computer Science, AS - San Joaquin Delta College",
+   "h1": "Computer Science, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4170
+ },
+ {
+  "control_number": "07347",
+  "title": "Fluid Power & Automation Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELEC30",
+   "ELECT11",
+   "INDUS31",
+   "INDUS35",
+   "MACH16",
+   "PHYSC10"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3298&print",
+   "title": "Program: Fluid Power and Automation Technology, AS - San Joaquin Delta College",
+   "h1": "Fluid Power and Automation Technology, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2541
+ },
+ {
+  "control_number": "07402",
+  "title": "Electrical Technology - Electrical Maintenance",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ELEC30",
+   "ELEC32",
+   "ELEC34",
+   "ELEC37",
+   "ELEC77",
+   "INDUS31",
+   "INDUS45",
+   "INDUS94",
+   "MACH16",
+   "PHYSC10",
+   "WELDING10"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3326&print",
+   "title": "Program: Electrical Technology - Electrical Maintenance Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Electrical Technology - Electrical Maintenance Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2294
+ },
+ {
+  "control_number": "07403",
+  "title": "Electronics Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELECT11",
+   "ELECT12",
+   "ELECT13A",
+   "ELECT14C",
+   "MATH14"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3331&print",
+   "title": "Program: Electronics Technology Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Electronics Technology Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1830
+ },
+ {
+  "control_number": "07407",
+  "title": "Administrative Office Executive",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.727,
+  "codes_found": [
+   "BIM1A",
+   "BIM1B",
+   "BIM38",
+   "BIM39",
+   "BIM79",
+   "BIM81",
+   "BIM9",
+   "BUS17",
+   "BUS30",
+   "BUS36",
+   "BUS8",
+   "BUS98V",
+   "COMMC1000",
+   "CS22",
+   "CSA20",
+   "ENGLC1000"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3275&print",
+   "title": "Program: Administrative Executive Assistant Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Administrative Executive Assistant Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 22,
+  "text_chars": 4236
+ },
+ {
+  "control_number": "07408",
+  "title": "Administrative Office Assistant II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "BIM1A",
+   "BIM1B",
+   "BIM38",
+   "BIM39",
+   "BIM79",
+   "BIM81",
+   "BIM9",
+   "BUS17",
+   "CSA20"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3308&print",
+   "title": "Program: Administrative Assistant II Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Administrative Assistant II Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 12,
+  "text_chars": 3552
+ },
+ {
+  "control_number": "07419",
+  "title": "Refrigeration",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELEC30",
+   "ELECT11",
+   "HVACR70A",
+   "HVACR70B",
+   "HVACR71A",
+   "HVACR71B",
+   "HVACR71C",
+   "HVACR72A",
+   "HVACR72B",
+   "WELDING10",
+   "WELDING98"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3273&print",
+   "title": "Program: Refrigeration Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Refrigeration Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1929
+ },
+ {
+  "control_number": "07420",
+  "title": "Diesel Equipment Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIESL92",
+   "DIESL93",
+   "DIESL98"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3262&print",
+   "title": "Program: Diesel Equipment Technician, AS - San Joaquin Delta College",
+   "h1": "Diesel Equipment Technician, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2544
+ },
+ {
+  "control_number": "07421",
+  "title": "Graphic Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07422",
+  "title": "Automotive Electric Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "AUTOBODY84A",
+   "AUTOMECH60",
+   "AUTOMECH73",
+   "AUTOMECH74",
+   "AUTOMECH90A",
+   "AUTOMECH90B",
+   "AUTOMECH91",
+   "AUTOMECH92",
+   "AUTOMECH93",
+   "AUTOMECH94",
+   "AUTOMECH96A",
+   "AUTOMECH96B",
+   "AUTOMECH97",
+   "DIESL94",
+   "DIESL96",
+   "DIESL99",
+   "INDUS45"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3315&print",
+   "title": "Program: Automotive Electric Technology Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Automotive Electric Technology Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3314
+ },
+ {
+  "control_number": "07423",
+  "title": "Automotive Master Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOBODY84A",
+   "AUTOMECH91",
+   "AUTOMECH92",
+   "AUTOMECH93",
+   "AUTOMECH94",
+   "AUTOMECH95",
+   "AUTOMECH96A",
+   "AUTOMECH96B",
+   "AUTOMECH97",
+   "INDUS35",
+   "INDUS45"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3317&print",
+   "title": "Program: Automotive Master Technician Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Automotive Master Technician Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3373
+ },
+ {
+  "control_number": "07425",
+  "title": "Architectural Drafting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH1",
+   "ARCH14",
+   "ARCH20",
+   "ARCH21",
+   "ARCH6",
+   "ARCH78",
+   "ARCH8",
+   "CSA20",
+   "ID10"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3254&print",
+   "title": "Program: Architectural Drafting, AS - San Joaquin Delta College",
+   "h1": "Architectural Drafting, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3209
+ },
+ {
+  "control_number": "07426",
+  "title": "Welding Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELEC30",
+   "INDUS35",
+   "INDUS45",
+   "INDUS94",
+   "MACH16",
+   "WELDING82",
+   "WELDING84",
+   "WELDING86",
+   "WELDING98"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3270&print",
+   "title": "Program: Welding Technology Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Welding Technology Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1856
+ },
+ {
+  "control_number": "07439",
+  "title": "Fashion Merchandising",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.727,
+  "codes_found": [
+   "FASHION10",
+   "FASHION2",
+   "FASHION22",
+   "FASHION24",
+   "FASHION28A",
+   "FASHION4",
+   "FASHION8",
+   "FASHION9"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3247&print",
+   "title": "Program: Fashion Merchandising Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Fashion Merchandising Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1847
+ },
+ {
+  "control_number": "07445",
+  "title": "Substance Abuse Counselor",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 12,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07446",
+  "title": "Law Enforcement",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.538,
+  "codes_found": [
+   "AJ21",
+   "AJ22",
+   "AJ23",
+   "AJ24",
+   "AJ25",
+   "AJ28",
+   "AJ31"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3203&print",
+   "title": "Program: Law Enforcement, AS - San Joaquin Delta College",
+   "h1": "Law Enforcement, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3056
+ },
+ {
+  "control_number": "10139",
+  "title": "Computer Support - Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10140",
+  "title": "Electron Microscopy - Crystalline Materials Advanced Training",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EM70",
+   "EM71",
+   "EM73M",
+   "EM74",
+   "EM80",
+   "EM83M",
+   "EM85M",
+   "EM86M",
+   "EM87A",
+   "EM88",
+   "EM89",
+   "EM90"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3330&print",
+   "title": "Program: Electron Microscopy - Crystalline Materials Advanced Training Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Electron Microscopy - Crystalline Materials Advanced Training Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3051
+ },
+ {
+  "control_number": "10141",
+  "title": "Early Childhood Education Master Teacher",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMC1000",
+   "COMMDIS1A",
+   "COMMDIS1B",
+   "ECE21",
+   "ECE24",
+   "ECE25",
+   "ECE26",
+   "ECE27",
+   "ECE28",
+   "ECE29",
+   "ECE30",
+   "ECE31A",
+   "ECE31B",
+   "ECE32A",
+   "ECE32B",
+   "ECE33",
+   "ECE34",
+   "ECE35",
+   "ECE40",
+   "ECE63",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "SL1"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3212&print",
+   "title": "Program: Early Childhood Education Master Teacher Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Early Childhood Education Master Teacher Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3874
+ },
+ {
+  "control_number": "10142",
+  "title": "Culinary Arts - Advanced",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CULART1",
+   "CULART11",
+   "CULART13",
+   "CULART19",
+   "CULART29",
+   "CULART3",
+   "CULART7",
+   "CULART8",
+   "CULART9",
+   "FCS6"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3229&print",
+   "title": "Program: Culinary Arts - Advanced, AS - San Joaquin Delta College",
+   "h1": "Culinary Arts - Advanced, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2766
+ },
+ {
+  "control_number": "10257",
+  "title": "Psychiatric Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10258",
+  "title": "Computer Support",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "COMMC1000",
+   "CS11",
+   "CS12",
+   "CS56",
+   "CSA20",
+   "CSA35",
+   "CSP17",
+   "CSP43A",
+   "CSW23",
+   "ELECT14C",
+   "ENGLC1000",
+   "MATH1",
+   "MATH20",
+   "MATH39",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3182&print",
+   "title": "Program: Computer Support Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Computer Support Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 2240
+ },
+ {
+  "control_number": "11844",
+  "title": "Traffic Shipping & Receiving Technician",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.769,
+  "codes_found": [
+   "BIM38",
+   "BIM39",
+   "BIM81",
+   "BUS51",
+   "BUS57",
+   "BUS84",
+   "BUS98V",
+   "CS11",
+   "CSA20",
+   "ENGLC1000"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3269&print",
+   "title": "Program: Traffic Shipping and Receiving Technician Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Traffic Shipping and Receiving Technician Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2893
+ },
+ {
+  "control_number": "11968",
+  "title": "Engineering Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "ENGR1",
+   "ETECH11",
+   "ETECH22",
+   "ETECH34",
+   "ETECH41",
+   "MACH16"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3297&print",
+   "title": "Program: Engineering Technology, AS - San Joaquin Delta College",
+   "h1": "Engineering Technology, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2736
+ },
+ {
+  "control_number": "11969",
+  "title": "Engineering Computer-Aided Drafter",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGR1",
+   "ETECH11",
+   "ETECH12",
+   "ETECH22",
+   "ETECH31",
+   "ETECH80",
+   "MACH16"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3333&print",
+   "title": "Program: Engineering Computer-Aided Drafter Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Engineering Computer-Aided Drafter Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1526
+ },
+ {
+  "control_number": "11970",
+  "title": "Early Childhood Education Site Supervisor",
+  "award": "Certificate of Achievement requiring 60+S/90+Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMC1000",
+   "ECE21",
+   "ECE25",
+   "ECE26",
+   "ECE27",
+   "ECE28",
+   "ECE31A",
+   "ECE31B",
+   "ECE32A",
+   "ECE32B",
+   "ECE35",
+   "ECE37",
+   "ECE38",
+   "ENGLC1000",
+   "ENGLC1000E"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3213&print",
+   "title": "Program: Early Childhood Education Site Supervisor Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Early Childhood Education Site Supervisor Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3487
+ },
+ {
+  "control_number": "11972",
+  "title": "Early Childhood Education Associate Teacher",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE21",
+   "ECE26",
+   "ECE28",
+   "ECE31A",
+   "ECE63"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3211&print",
+   "title": "Program: Early Childhood Education Associate Teacher Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Early Childhood Education Associate Teacher Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1700
+ },
+ {
+  "control_number": "12300",
+  "title": "Speech Language Pathology Assistant (SLPA)",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "BIM38",
+   "BIOL1",
+   "BIOL11",
+   "BIOL31",
+   "BIOL32",
+   "BIOL33",
+   "COMMDIS1A",
+   "COMMDIS1B",
+   "COMMDIS3",
+   "COMMDIS5",
+   "COMMDIS7",
+   "COMMDIS9",
+   "CS11",
+   "CSA20",
+   "ECE34",
+   "HS19",
+   "PSYCC1000",
+   "SL1"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3193&print",
+   "title": "Program: Speech Language Pathology Assistant (SLPA), AS - San Joaquin Delta College",
+   "h1": "Speech Language Pathology Assistant (SLPA), AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 4264
+ },
+ {
+  "control_number": "12327",
+  "title": "Retail Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "BUS17",
+   "BUS21",
+   "BUS24",
+   "BUS30",
+   "BUS31",
+   "BUS36",
+   "CSA20"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3272&print",
+   "title": "Program: Retail Management Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Retail Management Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2574
+ },
+ {
+  "control_number": "12666",
+  "title": "Computer Web Developer",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "CS11",
+   "CS22",
+   "CS42",
+   "CS56",
+   "CSN40",
+   "CSP26B",
+   "CSP31B",
+   "CSP43A",
+   "CSW21",
+   "CSW23",
+   "CSW38"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3185&print",
+   "title": "Program: Computer Web Developer Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Computer Web Developer Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2026
+ },
+ {
+  "control_number": "13259",
+  "title": "Computer Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "CS32",
+   "CS42",
+   "CSN40",
+   "CSN60",
+   "CSW21",
+   "CSW23",
+   "CSW38"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3345&print",
+   "title": "Program: Computer Information Systems, AS - San Joaquin Delta College",
+   "h1": "Computer Information Systems, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3136
+ },
+ {
+  "control_number": "13497",
+  "title": "Municipal Clerk",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "BUS17",
+   "BUS30",
+   "BUS31",
+   "BUS33",
+   "BUS36",
+   "BUS37",
+   "BUS7",
+   "BUS88",
+   "CS11",
+   "ENGLC1000",
+   "ENGLC1001",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3277&print",
+   "title": "Program: Municipal Clerk Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Municipal Clerk Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2461
+ },
+ {
+  "control_number": "13973",
+  "title": "Business",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS18A",
+   "BUS19",
+   "BUS20",
+   "BUS21",
+   "BUS22",
+   "BUS23",
+   "BUS30",
+   "BUS31",
+   "BUS8"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3319&print",
+   "title": "Program: Business Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Business Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2236
+ },
+ {
+  "control_number": "13976",
+  "title": "International Business",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "BUS12",
+   "BUS2",
+   "BUS55",
+   "BUS57",
+   "BUS84",
+   "LAW25"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3282&print",
+   "title": "Program: International Business Certificate of Achievement - San Joaquin Delta College",
+   "h1": "International Business Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2131
+ },
+ {
+  "control_number": "13977",
+  "title": "Medical Office Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "BIM1A",
+   "BIM38",
+   "BIM81",
+   "BIM9",
+   "CSA20",
+   "HS36"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3279&print",
+   "title": "Program: Medical Administrative Assistant Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Medical Administrative Assistant Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 7,
+  "text_chars": 2077
+ },
+ {
+  "control_number": "13994",
+  "title": "Horticulture - Nursery Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGBUS15",
+   "HORT1",
+   "HORT10",
+   "HORT12",
+   "HORT2",
+   "HORT23",
+   "HORT3",
+   "HORT5",
+   "HORT96V"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3188&print",
+   "title": "Program: Horticulture - Nursery Management Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Horticulture - Nursery Management Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2313
+ },
+ {
+  "control_number": "14146",
+  "title": "Heavy Equipment Mechanic",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGEGR30C",
+   "DIESL94",
+   "DIESL95",
+   "DIESL97",
+   "DIESL99",
+   "INDUS35"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3289&print",
+   "title": "Program: Heavy Equipment Mechanic Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Heavy Equipment Mechanic Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1656
+ },
+ {
+  "control_number": "14147",
+  "title": "Heavy Equipment Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "14290",
+  "title": "Caterpillar Dealer Service Technician Apprenticeship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAT21",
+   "CAT69V",
+   "CAT80",
+   "CAT81",
+   "CAT82",
+   "CAT83",
+   "CAT84",
+   "CAT85",
+   "CAT86",
+   "CAT87",
+   "CAT90",
+   "CAT91",
+   "CAT92",
+   "CAT93",
+   "CAT94"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3259&print",
+   "title": "Program: Caterpillar Dealer Service Technician Apprenticeship, AS - San Joaquin Delta College",
+   "h1": "Caterpillar Dealer Service Technician Apprenticeship, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3129
+ },
+ {
+  "control_number": "14581",
+  "title": "Baking and Pastry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.571,
+  "codes_found": [
+   "CULART3",
+   "CULART7",
+   "CULART71",
+   "CULART8"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3227&print",
+   "title": "Program: Baking and Pastry, AS - San Joaquin Delta College",
+   "h1": "Baking and Pastry, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2932
+ },
+ {
+  "control_number": "14594",
+  "title": "Industrial Technology: Maintenance Apprenticeship Option",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 22,
+  "text_chars": 0
+ },
+ {
+  "control_number": "14595",
+  "title": "Electrical Technology: Apprenticeship Option",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "14597",
+  "title": "Industrial Technology: Electrical Apprenticeship Option",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 18,
+  "text_chars": 0
+ },
+ {
+  "control_number": "14598",
+  "title": "Industrial Technology: Mechanical Apprenticeship Option",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 17,
+  "text_chars": 0
+ },
+ {
+  "control_number": "14599",
+  "title": "Industrial Technology: Operations Apprenticeship Option",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 17,
+  "text_chars": 0
+ },
+ {
+  "control_number": "14763",
+  "title": "Graphic Arts",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART6",
+   "BUS23",
+   "CSW23",
+   "ENGLC1000",
+   "GRART1A",
+   "GRART1B",
+   "GRART2A",
+   "GRART2B",
+   "GRART3A",
+   "GRART3B",
+   "GRART4A",
+   "GRART4B",
+   "GRART6A",
+   "GRART6B",
+   "GRART8",
+   "MCOM10",
+   "PHOTO1A"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3248&print",
+   "title": "Program: Graphic Arts Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Graphic Arts Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2524
+ },
+ {
+  "control_number": "14773",
+  "title": "Mental Health Specialist",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 18,
+  "text_chars": 0
+ },
+ {
+  "control_number": "14777",
+  "title": "Fitness Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HED1",
+   "HED31",
+   "PETHEORY48",
+   "PETHEORY49",
+   "PETHEORY50SS",
+   "PETHEORY51",
+   "PETHEORY52"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3215&print",
+   "title": "Program: Fitness Specialist Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Fitness Specialist Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2922
+ },
+ {
+  "control_number": "15050",
+  "title": "Computer Network Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNT30A",
+   "CNT30B",
+   "CNT30C",
+   "CNT30D",
+   "CNT30E",
+   "CS32",
+   "CSA20",
+   "ELECT14C"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3261&print",
+   "title": "Program: Computer Network Technician, AS - San Joaquin Delta College",
+   "h1": "Computer Network Technician, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2914
+ },
+ {
+  "control_number": "16764",
+  "title": "Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC17",
+   "MUSIC27",
+   "MUSIC29",
+   "MUSIC38A",
+   "MUSIC38B",
+   "MUSIC38C",
+   "MUSIC38D",
+   "MUSIC3A",
+   "MUSIC3B",
+   "MUSIC3C",
+   "MUSIC3D",
+   "MUSIC40A",
+   "MUSIC40B",
+   "MUSIC40C",
+   "MUSIC40D"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3236&print",
+   "title": "Program: Music, AA - San Joaquin Delta College",
+   "h1": "Music, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3396
+ },
+ {
+  "control_number": "17506",
+  "title": "American Sign Language",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "ENGLC1000",
+   "SL1",
+   "SL2",
+   "SL3",
+   "SL31",
+   "SL32",
+   "SL33",
+   "SL34",
+   "SL4"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3223&print",
+   "title": "Program: American Sign Language Certificate of Achievement - San Joaquin Delta College",
+   "h1": "American Sign Language Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1797
+ },
+ {
+  "control_number": "17714",
+  "title": "Computer Networking - Essentials",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17715",
+  "title": "Computer Programming - Essentials",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18025",
+  "title": "Computer Networking-Competence",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18026",
+  "title": "Computer Programming-Competence",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18336",
+  "title": "Computer Web Developer Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18586",
+  "title": "Interdisciplinary Studies - Arts, Humanities, and Social Sciences Option",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.761,
+  "codes_found": [
+   "AJ21",
+   "ANTH1",
+   "ART12",
+   "ART20A",
+   "ART33A",
+   "ART33B",
+   "ART33C",
+   "ART64A",
+   "ART7A",
+   "ARTHC1100",
+   "ARTHC1200",
+   "BUS18A",
+   "BUS18B",
+   "BUS19",
+   "BUS20",
+   "COMM12",
+   "COMM5",
+   "DRAMA10",
+   "DRAMA15A",
+   "DRAMA19B",
+   "DRAMA27A",
+   "DRAMA27B",
+   "DRAMA31",
+   "DRAMA44A",
+   "DRAMA6A",
+   "DRAMA6B",
+   "ECE21",
+   "ECE25",
+   "ECE26",
+   "ECE27",
+   "ECE28",
+   "ECE31A",
+   "ECE31B",
+   "EDUC10",
+   "EDUC12",
+   "ENGL37",
+   "ENGL38",
+   "ENGL42A",
+   "ENGL45",
+   "ENGL46A",
+   "ENGL46B",
+   "ENGL52",
+   "ENGLC1001",
+   "GEOG1",
+   "GEOG10",
+   "GEOG1L",
+   "GEOG2",
+   "GEOG3",
+   "HED31",
+   "HIST27",
+   "HIST2A",
+   "HIST2B",
+   "HIST30A",
+   "HIST30B",
+   "HIST31",
+   "HIST34",
+   "HIST37",
+   "HIST4A",
+   "HIST4B",
+   "HIST6A",
+   "HIST6C",
+   "HIST7",
+   "HORT4",
+   "HUM3",
+   "ID2",
+   "ID6",
+   "MCOM10",
+   "MCOM12B",
+   "MCOM7",
+   "MUSIC27",
+   "MUSIC38A",
+   "MUSIC3A",
+   "MUSIC3B",
+   "MUSIC3C",
+   "MUSIC3D",
+   "MUSIC40A",
+   "MUSIC40B",
+   "MUSIC40C",
+   "MUSIC40D",
+   "MUSIC7",
+   "MUSIC8",
+   "PETHEORY40",
+   "PHILO30",
+   "PHILO40",
+   "PHILO45",
+   "PHILO50",
+   "POLS2",
+   "POLS3",
+   "POLS4",
+   "POLS5",
+   "POLS6",
+   "POLSC1000",
+   "PSYC3",
+   "PSYC30",
+   "PSYC4",
+   "PSYCC1000",
+   "RELGN14A",
+   "RELGN14B",
+   "SOCIO1A",
+   "SOCIO1B",
+   "SOCIO27",
+   "SOCIO33",
+   "SPAN4A",
+   "SPAN5",
+   "SPAN6"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3346&print",
+   "title": "Program: Interdisciplinary Studies: Arts, Humanities, and Social Sciences Option, AA - San Joaquin Delta College",
+   "h1": "Interdisciplinary Studies: Arts, Humanities, and Social Sciences Option, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 138,
+  "text_chars": 12667
+ },
+ {
+  "control_number": "18815",
+  "title": "Interdisciplinary Studies - Mathematics and Science Option",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.904,
+  "codes_found": [
+   "ASCI10",
+   "ASCI10L",
+   "ASTRO1",
+   "BIOL1",
+   "BIOL10",
+   "BIOL11",
+   "BIOL2",
+   "BIOL22",
+   "BIOL23",
+   "BIOL30",
+   "BIOL33",
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM3A",
+   "CS55",
+   "ENGR2",
+   "ENGR4",
+   "ENGR6",
+   "ENGR8",
+   "GEOG10",
+   "GEOG2",
+   "GEOG3",
+   "GEOL15",
+   "GEOL16",
+   "GEOL1B",
+   "GEOL5",
+   "GEOL5A",
+   "MATH1",
+   "MATH13",
+   "MATH17A",
+   "MATH17B",
+   "MATH2",
+   "MATH20",
+   "MATH3",
+   "MATH38A",
+   "MATH38B",
+   "MATH4",
+   "MATH5",
+   "PHYSC10",
+   "PHYSC2B",
+   "PHYSC4A",
+   "PHYSC4B",
+   "PHYSC4C",
+   "PLANT10",
+   "PLANT10L",
+   "PSYC30",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3168&print",
+   "title": "Program: Interdisciplinary Studies: Mathematics and Science Option, AS - San Joaquin Delta College",
+   "h1": "Interdisciplinary Studies: Mathematics and Science Option, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 52,
+  "text_chars": 5898
+ },
+ {
+  "control_number": "18858",
+  "title": "Interdisciplinary Studies - Business Option",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19688",
+  "title": "Horticulture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "HORT10",
+   "HORT12",
+   "HORT2",
+   "HORT20",
+   "HORT21",
+   "HORT23",
+   "HORT24",
+   "HORT26",
+   "HORT3",
+   "HORT4",
+   "HORT5"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3167&print",
+   "title": "Program: Horticulture, AS - San Joaquin Delta College",
+   "h1": "Horticulture, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3095
+ },
+ {
+  "control_number": "19689",
+  "title": "Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19692",
+  "title": "Retail Management and Merchandising",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19693",
+  "title": "Transportation",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19694",
+  "title": "Real Estate",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19728",
+  "title": "Engineering - Mechanical, Aeronautical, and Manufacturing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "ENGR1",
+   "ENGR2",
+   "ENGR29",
+   "ENGR4",
+   "ENGR6",
+   "ENGR8",
+   "MATH1",
+   "MATH2",
+   "MATH3",
+   "MATH4",
+   "PHYSC4A",
+   "PHYSC4C"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3295&print",
+   "title": "Program: Engineering - Mechanical, Aeronautical, and Manufacturing, AS - San Joaquin Delta College",
+   "h1": "Engineering - Mechanical, Aeronautical, and Manufacturing, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2823
+ },
+ {
+  "control_number": "19730",
+  "title": "Engineering Computer-Aided Drafting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGR1",
+   "ETECH11",
+   "ETECH22",
+   "MACH16"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3296&print",
+   "title": "Program: Engineering Computer-Aided Drafting, AS - San Joaquin Delta College",
+   "h1": "Engineering Computer-Aided Drafting, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1932
+ },
+ {
+  "control_number": "19731",
+  "title": "Radiologic Technology",
+  "award": "Certificate of Achievement requiring 60+S/90+Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RAD10",
+   "RAD10A",
+   "RAD10B",
+   "RAD11",
+   "RAD12",
+   "RAD13",
+   "RAD14",
+   "RAD20",
+   "RAD20A",
+   "RAD21",
+   "RAD22",
+   "RAD23",
+   "RAD30",
+   "RAD30A",
+   "RAD30B",
+   "RAD31",
+   "RAD32",
+   "RAD40",
+   "RAD40A",
+   "RAD41",
+   "RAD43"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3195&print",
+   "title": "Program: Radiologic Technology Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Radiologic Technology Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 2664
+ },
+ {
+  "control_number": "19737",
+  "title": "Family and Consumer Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "ECE21",
+   "ECE28",
+   "FASHION30",
+   "FCS2",
+   "FCS23",
+   "FCS3",
+   "FCS6",
+   "ID2"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3189&print",
+   "title": "Program: Family and Consumer Sciences, AS - San Joaquin Delta College",
+   "h1": "Family and Consumer Sciences, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2761
+ },
+ {
+  "control_number": "19738",
+  "title": "Interior Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19739",
+  "title": "Fashion Merchandising",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19740",
+  "title": "Early Childhood Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19741",
+  "title": "Culinary Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19742",
+  "title": "Psychology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 12,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19744",
+  "title": "History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.867,
+  "codes_found": [
+   "HIST27",
+   "HIST2A",
+   "HIST2B",
+   "HIST30A",
+   "HIST30B",
+   "HIST31",
+   "HIST34",
+   "HIST37",
+   "HIST4A",
+   "HIST4B",
+   "HIST6A",
+   "HIST6C",
+   "HIST7"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3200&print",
+   "title": "Program: History, AA - San Joaquin Delta College",
+   "h1": "History, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3524
+ },
+ {
+  "control_number": "19746",
+  "title": "Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART12",
+   "ART20A",
+   "ART20B",
+   "ART20C",
+   "ART33A",
+   "ART33B",
+   "ART33C",
+   "ART64A",
+   "ART64B",
+   "ART64C",
+   "ART7A",
+   "ART7B",
+   "ART7C",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3225&print",
+   "title": "Program: Art, AA - San Joaquin Delta College",
+   "h1": "Art, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3200
+ },
+ {
+  "control_number": "19747",
+  "title": "Dance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "DANCE10A",
+   "DANCE10B",
+   "DANCE12A",
+   "DANCE12B",
+   "DANCE29",
+   "DANCE3",
+   "DANCE30",
+   "DANCE35A",
+   "DANCE35B",
+   "DANCE36A",
+   "DANCE37A",
+   "DANCE37B",
+   "DANCE5A",
+   "DANCE5B",
+   "DANCE6A",
+   "DANCE6B"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3230&print",
+   "title": "Program: Dance, AA - San Joaquin Delta College",
+   "h1": "Dance, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3439
+ },
+ {
+  "control_number": "19748",
+  "title": "Photography",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART20A",
+   "ART40A",
+   "ART6",
+   "ART64A",
+   "ART7A",
+   "GRART1B",
+   "MCOM7",
+   "PHOTO1A",
+   "PHOTO34"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3238&print",
+   "title": "Program: Photography, AA - San Joaquin Delta College",
+   "h1": "Photography, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3840
+ },
+ {
+  "control_number": "19749",
+  "title": "French Language",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTHC1200",
+   "DANCE6A",
+   "ETHNS35",
+   "FASHION8",
+   "FREN1",
+   "FREN2",
+   "FREN3",
+   "FREN4",
+   "FREN50SS"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3220&print",
+   "title": "Program: French Language, AA - San Joaquin Delta College",
+   "h1": "French Language, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2570
+ },
+ {
+  "control_number": "19752",
+  "title": "Spanish Language",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "HIST31",
+   "SPAN4A",
+   "SPAN5",
+   "SPAN6"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3337&print",
+   "title": "Program: San Joaquin Delta College Associate Degree General Education Pattern - San Joaquin Delta College",
+   "h1": "San Joaquin Delta College Associate Degree General Education Pattern",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 13430
+ },
+ {
+  "control_number": "19799",
+  "title": "Administrative Assistant I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIM1A",
+   "BIM1B",
+   "BIM38",
+   "BIM79",
+   "BIM9",
+   "BUS17",
+   "CSA20"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3276&print",
+   "title": "Program: Administrative Assistant I Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Administrative Assistant I Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3031
+ },
+ {
+  "control_number": "19950",
+  "title": "Apparel Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FASHION37",
+   "ID21",
+   "ID6"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3224&print",
+   "title": "Program: Apparel Design, AA - San Joaquin Delta College",
+   "h1": "Apparel Design, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3318
+ },
+ {
+  "control_number": "19951",
+  "title": "Physical Education",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATH1",
+   "ATH37",
+   "ATH38",
+   "ATH39",
+   "ATH40",
+   "ATH41",
+   "ATH42",
+   "ATH43",
+   "ATH44",
+   "ATH45",
+   "ATH46",
+   "ATH47",
+   "ATH48",
+   "ATH49",
+   "ATH50",
+   "ATH51",
+   "ATH52",
+   "ATH53",
+   "ATH54",
+   "ATH55",
+   "ATH56",
+   "ATH57",
+   "ATH58",
+   "ATH60",
+   "ATH61",
+   "ATH62",
+   "ATH63",
+   "ATH64",
+   "ATH65",
+   "ATH68",
+   "ATH69",
+   "HED1",
+   "HED30",
+   "HED31",
+   "PEACTIV10A",
+   "PEACTIV10B",
+   "PEACTIV11A",
+   "PEACTIV11B",
+   "PEACTIV12A",
+   "PEACTIV12B",
+   "PEACTIV14A",
+   "PEACTIV14B",
+   "PEACTIV18A",
+   "PEACTIV18B",
+   "PEACTIV19A",
+   "PEACTIV19B",
+   "PEACTIV1A",
+   "PEACTIV1B",
+   "PEACTIV24A",
+   "PEACTIV24B",
+   "PEACTIV25A",
+   "PEACTIV25B",
+   "PEACTIV26A",
+   "PEACTIV26B",
+   "PEACTIV2A",
+   "PEACTIV2B",
+   "PEACTIV34A",
+   "PEACTIV34B",
+   "PEACTIV39E",
+   "PEACTIV39F",
+   "PETHEORY40",
+   "PETHEORY41",
+   "PETHEORY42A",
+   "PETHEORY42B",
+   "PETHEORY42J",
+   "PETHEORY42K",
+   "PETHEORY42L",
+   "PETHEORY42M",
+   "PETHEORY42N",
+   "PETHEORY42O",
+   "PETHEORY42P",
+   "PETHEORY42Q",
+   "PETHEORY42R",
+   "PETHEORY42T",
+   "PETHEORY42U",
+   "PETHEORY42V",
+   "PETHEORY42W",
+   "PETHEORY44A",
+   "PETHEORY44B",
+   "PETHEORY45",
+   "PETHEORY48",
+   "PETHEORY49",
+   "PETHEORY51",
+   "PETHEORY52",
+   "PETHEORY69V"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3204&print",
+   "title": "Program: Physical Education, AS - San Joaquin Delta College",
+   "h1": "Physical Education, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 85,
+  "text_chars": 6848
+ },
+ {
+  "control_number": "19952",
+  "title": "Theatre Arts: Technical Theatre",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.65,
+  "codes_found": [
+   "DRAMA15A",
+   "DRAMA16A",
+   "DRAMA19A",
+   "DRAMA19B",
+   "DRAMA20A",
+   "DRAMA21A",
+   "DRAMA22A",
+   "DRAMA23A",
+   "DRAMA24A",
+   "DRAMA25B",
+   "DRAMA31",
+   "DRAMA40A",
+   "DRAMA47B"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3241&print",
+   "title": "Program: Theatre Arts - Technical Theatre, AA - San Joaquin Delta College",
+   "h1": "Theatre Arts - Technical Theatre, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3135
+ },
+ {
+  "control_number": "19953",
+  "title": "Theatre Arts - Acting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAMA14A",
+   "DRAMA15A",
+   "DRAMA16A",
+   "DRAMA19A",
+   "DRAMA19B",
+   "DRAMA20A",
+   "DRAMA21A",
+   "DRAMA22A",
+   "DRAMA23A",
+   "DRAMA24A",
+   "DRAMA25A",
+   "DRAMA25B",
+   "DRAMA27A",
+   "DRAMA27B",
+   "DRAMA27C",
+   "DRAMA31",
+   "DRAMA32",
+   "DRAMA33",
+   "DRAMA34",
+   "DRAMA35",
+   "DRAMA36A",
+   "DRAMA38",
+   "DRAMA39A",
+   "DRAMA39B",
+   "DRAMA39C",
+   "DRAMA41",
+   "DRAMA42",
+   "DRAMA43",
+   "DRAMA44A",
+   "DRAMA46",
+   "DRAMA47A",
+   "DRAMA47B",
+   "DRAMA51",
+   "DRAMA6A",
+   "MUSIC20A"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3240&print",
+   "title": "Program: Theatre Arts - Acting, AA - San Joaquin Delta College",
+   "h1": "Theatre Arts - Acting, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 35,
+  "text_chars": 4513
+ },
+ {
+  "control_number": "22243",
+  "title": "Agriculture Business",
+  "award": "Certificate of Achievement requiring 60+S/90+Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "AGBUS10",
+   "AGBUS12",
+   "AGBUS15",
+   "AGBUS17",
+   "AGBUS46",
+   "ASCI10",
+   "ASCI10L",
+   "COMMC1000",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "PLANT10",
+   "PLANT10L",
+   "POLSC1000",
+   "POLSC1000H",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3171&print",
+   "title": "Program: Agriculture Business Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Agriculture Business Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3728
+ },
+ {
+  "control_number": "22244",
+  "title": "Architectural Drafting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH1",
+   "ARCH14",
+   "ARCH20",
+   "ARCH6",
+   "ARCH78"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3310&print",
+   "title": "Program: Architectural Drafting Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Architectural Drafting Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1957
+ },
+ {
+  "control_number": "22245",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22246",
+  "title": "Administrative Executive Professional/Office Manager",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.722,
+  "codes_found": [
+   "BIM1A",
+   "BIM1B",
+   "BIM38",
+   "BIM39",
+   "BIM79",
+   "BIM81",
+   "BIM9",
+   "BUS15",
+   "BUS17",
+   "BUS36",
+   "BUS7",
+   "COMMC1000",
+   "CSA20"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3304&print",
+   "title": "Program: Administrative Executive Professional/Office Manager, AS - San Joaquin Delta College",
+   "h1": "Administrative Executive Professional/Office Manager, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3745
+ },
+ {
+  "control_number": "22247",
+  "title": "Computer Science",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMC1000",
+   "CS11",
+   "CS32",
+   "CS33",
+   "CS42",
+   "CS56",
+   "CSP17",
+   "CSP25",
+   "CSP26B",
+   "CSP31B",
+   "CSP43A",
+   "ELECT14C",
+   "ENGLC1000",
+   "MATH1",
+   "MATH2",
+   "MATH39"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3181&print",
+   "title": "Program: Computer Science Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Computer Science Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2027
+ },
+ {
+  "control_number": "22248",
+  "title": "Computer Networking Software",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMC1000",
+   "CS32",
+   "CS42",
+   "CS56",
+   "CSN60",
+   "CSP26B",
+   "CSP31B",
+   "CSW23",
+   "ELECT14C",
+   "ENGLC1000"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3176&print",
+   "title": "Program: Computer Networking Software Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Computer Networking Software Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2206
+ },
+ {
+  "control_number": "22249",
+  "title": "Computer Network Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNT30A",
+   "CNT30B",
+   "CNT30C",
+   "CNT30D",
+   "CNT30E",
+   "ELECT14C"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3322&print",
+   "title": "Program: Computer Network Technician Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Computer Network Technician Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2057
+ },
+ {
+  "control_number": "22250",
+  "title": "Fluid Power & Automation Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELEC30",
+   "ELECT11",
+   "INDUS31",
+   "INDUS35",
+   "INDUS94",
+   "MACH16"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3291&print",
+   "title": "Program: Fluid Power and Automation Technology Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Fluid Power and Automation Technology Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1914
+ },
+ {
+  "control_number": "22251",
+  "title": "Heating and Air Conditioning",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELEC30",
+   "ELECT11",
+   "HVACR70A",
+   "HVACR70B",
+   "HVACR71A",
+   "HVACR71B",
+   "HVACR71C",
+   "HVACR71D",
+   "HVACR72A",
+   "HVACR72B",
+   "INDUS20",
+   "INDUS94",
+   "WELDING10",
+   "WELDING98"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3290&print",
+   "title": "Program: Heating and Air Conditioning Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Heating and Air Conditioning Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2069
+ },
+ {
+  "control_number": "22252",
+  "title": "Diesel Equipment Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGEGR30C",
+   "DIESL91",
+   "DIESL92",
+   "DIESL93",
+   "DIESL94",
+   "DIESL95",
+   "DIESL96",
+   "DIESL97",
+   "DIESL98",
+   "DIESL99",
+   "INDUS35",
+   "INDUS94",
+   "WELDING10"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3324&print",
+   "title": "Program: Diesel Automotive Equipment Technician Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Diesel Automotive Equipment Technician Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2409
+ },
+ {
+  "control_number": "22253",
+  "title": "Heavy Equipment Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGEGR30C",
+   "DIESL94",
+   "DIESL95",
+   "DIESL96",
+   "DIESL97",
+   "DIESL99",
+   "INDUS35",
+   "WELDING10"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3288&print",
+   "title": "Program: Heavy Equipment Technician Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Heavy Equipment Technician Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2010
+ },
+ {
+  "control_number": "22256",
+  "title": "Engineering Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGR1",
+   "ETECH11",
+   "ETECH12",
+   "ETECH20",
+   "ETECH22",
+   "ETECH31",
+   "ETECH34",
+   "ETECH41",
+   "ETECH46",
+   "ETECH47",
+   "ETECH78",
+   "ETECH80",
+   "MACH16"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3334&print",
+   "title": "Program: Engineering Technology Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Engineering Technology Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2031
+ },
+ {
+  "control_number": "22259",
+  "title": "Culinary Arts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CULART19",
+   "CULART5",
+   "CULART73",
+   "CULART9"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3245&print",
+   "title": "Program: Culinary Arts Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Culinary Arts Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1988
+ },
+ {
+  "control_number": "22260",
+  "title": "Baking and Pastry",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.571,
+  "codes_found": [
+   "CULART3",
+   "CULART7",
+   "CULART71",
+   "CULART8"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3244&print",
+   "title": "Program: Baking and Pastry Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Baking and Pastry Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2264
+ },
+ {
+  "control_number": "22261",
+  "title": "Law Enforcement",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ21",
+   "AJ22",
+   "AJ23",
+   "AJ24",
+   "AJ25",
+   "AJ28",
+   "AJ31",
+   "AJ51",
+   "LAW16"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3216&print",
+   "title": "Program: Law Enforcement Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Law Enforcement Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1881
+ },
+ {
+  "control_number": "22262",
+  "title": "Correctional Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.955,
+  "codes_found": [
+   "AJ21",
+   "AJ22",
+   "AJ24",
+   "AJ28",
+   "AJ30",
+   "AJ31",
+   "AJ41",
+   "AJ51",
+   "AJ53",
+   "AJ55",
+   "AJ57",
+   "HIST27",
+   "HIST30A",
+   "HIST30B",
+   "HIST31",
+   "HIST34",
+   "LAW16",
+   "LAW8",
+   "SOCIO1A",
+   "SOCIO1B",
+   "SOCIO33"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3210&print",
+   "title": "Program: Correctional Science Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Correctional Science Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 2843
+ },
+ {
+  "control_number": "30723",
+  "title": "Automotive Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "AUTOBODY84A",
+   "AUTOBODY84B",
+   "AUTOBODY84C",
+   "AUTOBODY84D",
+   "AUTOMECH60",
+   "AUTOMECH72",
+   "AUTOMECH73",
+   "AUTOMECH91",
+   "AUTOMECH92",
+   "AUTOMECH94",
+   "AUTOMECH95",
+   "AUTOMECH96A",
+   "AUTOMECH96B",
+   "AUTOMECH97"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3256&print",
+   "title": "Program: Automotive Technology, AS - San Joaquin Delta College",
+   "h1": "Automotive Technology, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4343
+ },
+ {
+  "control_number": "30758",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.625,
+  "codes_found": [
+   "BIOL11",
+   "BIOL30",
+   "PSYC3",
+   "PSYC4",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3208&print",
+   "title": "Program: Psychology, AA-T - San Joaquin Delta College",
+   "h1": "Psychology, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2575
+ },
+ {
+  "control_number": "31651",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH1",
+   "MATH2",
+   "MATH3",
+   "PHYSC4A",
+   "PHYSC4B",
+   "PHYSC4C"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3170&print",
+   "title": "Program: Physics, AS-T - San Joaquin Delta College",
+   "h1": "Physics, AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2338
+ },
+ {
+  "control_number": "31655",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH1",
+   "MATH2",
+   "MATH3",
+   "MATH4",
+   "MATH5",
+   "PHYSC4A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3169&print",
+   "title": "Program: Mathematics, AS-T - San Joaquin Delta College",
+   "h1": "Mathematics, AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2574
+ },
+ {
+  "control_number": "31685",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE21",
+   "ECE25",
+   "ECE26",
+   "ECE27",
+   "ECE28",
+   "ECE31A",
+   "ECE31B"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3348&print",
+   "title": "Program: Early Childhood Education, AS-T - San Joaquin Delta College",
+   "h1": "Early Childhood Education, AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3158
+ },
+ {
+  "control_number": "31692",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "ART12",
+   "ART20A",
+   "ART33A",
+   "ART33B",
+   "ART33C",
+   "ART64A",
+   "ART7A",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3239&print",
+   "title": "Program: Studio Art, AA-T - San Joaquin Delta College",
+   "h1": "Studio Art, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 10,
+  "text_chars": 2849
+ },
+ {
+  "control_number": "31866",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM1B",
+   "GEOL1A",
+   "GEOL1B",
+   "MATH1",
+   "MATH2"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3166&print",
+   "title": "Program: Geology, AS-T - San Joaquin Delta College",
+   "h1": "Geology, AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2809
+ },
+ {
+  "control_number": "31879",
+  "title": "Horticulture - Irrigation Technician",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGBUS15",
+   "AGBUS17",
+   "HORT1",
+   "HORT20",
+   "HORT21",
+   "HORT23"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3186&print",
+   "title": "Program: Horticulture - Irrigation Technician Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Horticulture - Irrigation Technician Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2049
+ },
+ {
+  "control_number": "32297",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "ANTH1",
+   "GEOG10",
+   "GEOG2",
+   "HIST27",
+   "HIST2A",
+   "HIST2B",
+   "HIST30A",
+   "HIST30B",
+   "HIST31",
+   "HIST34",
+   "HIST37",
+   "HIST4A",
+   "HIST4B",
+   "HIST6A",
+   "HIST6C"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3201&print",
+   "title": "Program: History, AA-T - San Joaquin Delta College",
+   "h1": "History, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3802
+ },
+ {
+  "control_number": "32302",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAMA19B",
+   "DRAMA22A",
+   "DRAMA31",
+   "DRAMA44A"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3242&print",
+   "title": "Program: Theatre Arts, AA-T - San Joaquin Delta College",
+   "h1": "Theatre Arts, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3707
+ },
+ {
+  "control_number": "32341",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "ENGL37",
+   "ENGL38",
+   "ENGL42A",
+   "ENGL42B",
+   "ENGL45",
+   "ENGL46A",
+   "ENGL46B",
+   "ENGL52",
+   "ENGLC1001"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3219&print",
+   "title": "Program: English, AA-T - San Joaquin Delta College",
+   "h1": "English, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4983
+ },
+ {
+  "control_number": "32386",
+  "title": "Auto Body Basic Repair and Restoration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOBODY84B",
+   "AUTOMECH72",
+   "AUTOMECH73",
+   "INDUS94"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3312&print",
+   "title": "Program: Auto Body - Basic Repair and Restoration Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Auto Body - Basic Repair and Restoration Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1705
+ },
+ {
+  "control_number": "32387",
+  "title": "Auto Body Advanced Repair and Restoration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOBODY88A",
+   "AUTOBODY88B",
+   "AUTOMECH92",
+   "AUTOMECH95"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3314&print",
+   "title": "Program: Auto Body - Advanced Repair and Restoration Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Auto Body - Advanced Repair and Restoration Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1959
+ },
+ {
+  "control_number": "32478",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32549",
+  "title": "Stagecraft",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAMA14A",
+   "DRAMA15A",
+   "DRAMA19A",
+   "DRAMA20A",
+   "DRAMA21A",
+   "DRAMA22A",
+   "DRAMA23A",
+   "DRAMA24A",
+   "DRAMA25B",
+   "DRAMA40A",
+   "DRAMA40B",
+   "DRAMA42",
+   "DRAMA43",
+   "DRAMA47B"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3252&print",
+   "title": "Program: Stagecraft Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Stagecraft Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2105
+ },
+ {
+  "control_number": "32820",
+  "title": "Psychiatric Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32913",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "BIOL31",
+   "GEOG2",
+   "GEOL1A",
+   "PSYC4",
+   "PSYCC1000",
+   "SOCIO1A",
+   "SOCIO27",
+   "SOCIO33",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3197&print",
+   "title": "Program: Anthropology, AA-T - San Joaquin Delta College",
+   "h1": "Anthropology, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3450
+ },
+ {
+  "control_number": "32914",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ21",
+   "AJ22",
+   "AJ23",
+   "AJ24",
+   "AJ25",
+   "AJ28",
+   "AJ31",
+   "AJ51",
+   "AJ53",
+   "AJ55",
+   "AJ57",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3196&print",
+   "title": "Program: Administration of Justice, AS-T - San Joaquin Delta College",
+   "h1": "Administration of Justice, AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4038
+ },
+ {
+  "control_number": "32942",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.882,
+  "codes_found": [
+   "BIOL10",
+   "CHEM3A",
+   "COMM5",
+   "COMMC1000",
+   "ECE21",
+   "EDUC10",
+   "ENGLC1000",
+   "ENGLC1001",
+   "GEOG10",
+   "HIST2A",
+   "MATH17A",
+   "MUSIC4",
+   "PHILO30",
+   "PHYSC10",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3199&print",
+   "title": "Program: Elementary Teacher Education, AA-T - San Joaquin Delta College",
+   "h1": "Elementary Teacher Education, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3218
+ },
+ {
+  "control_number": "32950",
+  "title": "Computer Numerical Control (CNC) Operator/Programmer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ETECH12",
+   "ETECH22",
+   "MACH74A",
+   "MACH74B",
+   "MACH76A",
+   "MACH76B"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3323&print",
+   "title": "Program: Computer Numerical Control (CNC) Operator/Programmer Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Computer Numerical Control (CNC) Operator/Programmer Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1997
+ },
+ {
+  "control_number": "33018",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33038",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33039",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL11",
+   "BIOL31",
+   "BIOL32",
+   "HED31",
+   "PEACTIV1A",
+   "PEACTIV24A",
+   "PEACTIV25A",
+   "PETHEORY40",
+   "PHYSC2A",
+   "PHYSC4A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3202&print",
+   "title": "Program: Kinesiology, AA-T - San Joaquin Delta College",
+   "h1": "Kinesiology, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2956
+ },
+ {
+  "control_number": "33123",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33197",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33706",
+  "title": "Journalism",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM5",
+   "ENGLC1001",
+   "MCOM1",
+   "MCOM10",
+   "MCOM12A",
+   "MCOM12B",
+   "MCOM13",
+   "MCOM7",
+   "PHILO30",
+   "PHOTO1A"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3234&print",
+   "title": "Program: Journalism, AA-T - San Joaquin Delta College",
+   "h1": "Journalism, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3081
+ },
+ {
+  "control_number": "33753",
+  "title": "Automotive Lubrication Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOMECH72",
+   "AUTOMECH73",
+   "AUTOMECH91",
+   "AUTOMECH92"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3316&print",
+   "title": "Program: Automotive Lubrication Technician Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Automotive Lubrication Technician Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1914
+ },
+ {
+  "control_number": "33754",
+  "title": "Computer Network Security Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNT30A",
+   "CNT30B",
+   "CNT30C",
+   "CNT30D",
+   "CNT34",
+   "ELECT14C"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3321&print",
+   "title": "Program: Computer Network Security Technician Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Computer Network Security Technician Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2242
+ },
+ {
+  "control_number": "33757",
+  "title": "Multimedia",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DMEDIA11",
+   "DMEDIA21",
+   "GRART1A",
+   "GRART3A",
+   "MCOM1",
+   "MCOM10",
+   "MCOM5",
+   "PHOTO1A",
+   "PHOTO3A"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3250&print",
+   "title": "Program: Multimedia Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Multimedia Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1932
+ },
+ {
+  "control_number": "35050",
+  "title": "Automation Technology - Mechatronics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNT30A",
+   "ELECT11",
+   "ELECT12",
+   "ELECT13A",
+   "ELECT14B",
+   "ELECT17",
+   "ELECT18",
+   "ETECH47"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3255&print",
+   "title": "Program: Automation Technology - Mechatronics, AS - San Joaquin Delta College",
+   "h1": "Automation Technology - Mechatronics, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2705
+ },
+ {
+  "control_number": "35051",
+  "title": "Computer Network Security Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNT30A",
+   "CNT30B",
+   "CNT30C",
+   "CNT30D",
+   "CNT30E",
+   "CS32",
+   "CS42",
+   "CSA20",
+   "CSP17",
+   "ELECT14C"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3260&print",
+   "title": "Program: Computer Network Security Technician, AS - San Joaquin Delta College",
+   "h1": "Computer Network Security Technician, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3112
+ },
+ {
+  "control_number": "35052",
+  "title": "Automation Technician - Mechatronics",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNT30A",
+   "CSP17",
+   "ELECT11",
+   "ELECT12",
+   "ELECT13A",
+   "ELECT14B",
+   "ELECT17",
+   "ELECT18",
+   "ETECH47",
+   "MATH14"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3311&print",
+   "title": "Program: Automation Technician - Mechatronics Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Automation Technician - Mechatronics Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2312
+ },
+ {
+  "control_number": "35059",
+  "title": "Electrical Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELEC30",
+   "ELEC31",
+   "ELEC32",
+   "ELEC37",
+   "ELEC41",
+   "ELEC70",
+   "ELEC73",
+   "ELEC77"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3263&print",
+   "title": "Program: Electrical Technology, AS - San Joaquin Delta College",
+   "h1": "Electrical Technology, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3114
+ },
+ {
+  "control_number": "35066",
+  "title": "Machining Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ETECH22",
+   "MACH70A",
+   "MACH70B",
+   "MACH73A",
+   "MACH73B",
+   "MACH74A",
+   "MACH74B",
+   "MACH76A",
+   "MACH76B",
+   "WELDING10",
+   "WELDING98"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3303&print",
+   "title": "Program: Machining Technology, AS - San Joaquin Delta College",
+   "h1": "Machining Technology, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3974
+ },
+ {
+  "control_number": "35073",
+  "title": "Electrical Technology - General Electrician Trainee",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35074",
+  "title": "Solar Photovoltaic Installation Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "ELEC30",
+   "ELEC31",
+   "ELEC52",
+   "ELEC73",
+   "ELEC80"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3266&print",
+   "title": "Program: Solar Photovoltaic Installation Technician Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Solar Photovoltaic Installation Technician Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2057
+ },
+ {
+  "control_number": "35077",
+  "title": "Police Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ95A",
+   "AJ95B",
+   "AJ95C"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3205&print",
+   "title": "Program: Police Science, AS - San Joaquin Delta College",
+   "h1": "Police Science, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2643
+ },
+ {
+  "control_number": "35118",
+  "title": "Electron Microscopy - Biological Concentration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "BIOL23",
+   "BIOL31",
+   "BIOL32",
+   "CHEM1A",
+   "CHEM3A",
+   "EM70",
+   "EM71",
+   "EM74",
+   "EM76",
+   "EM77",
+   "EM78",
+   "EM80",
+   "EM84B",
+   "EM88",
+   "EM89",
+   "MATH1",
+   "MATH37",
+   "MATH37EX"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3264&print",
+   "title": "Program: Electron Microscopy - Biological Concentration, AS - San Joaquin Delta College",
+   "h1": "Electron Microscopy - Biological Concentration, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 2938
+ },
+ {
+  "control_number": "35119",
+  "title": "Electron Microscopy - Materials",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM3A",
+   "EM70",
+   "EM71",
+   "EM73M",
+   "EM74",
+   "EM80",
+   "EM83M",
+   "EM85M",
+   "EM86M",
+   "EM87A",
+   "EM88",
+   "EM89",
+   "EM90",
+   "ETECH20"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3265&print",
+   "title": "Program: Electron Microscopy - Materials, AS - San Joaquin Delta College",
+   "h1": "Electron Microscopy - Materials, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4140
+ },
+ {
+  "control_number": "35178",
+  "title": "Health Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "BIOL31",
+   "BIOL32",
+   "CS11",
+   "HS36",
+   "POLSC1000",
+   "PSYCC1000",
+   "SOCIO1A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3190&print",
+   "title": "Program: Health Science, AS - San Joaquin Delta College",
+   "h1": "Health Science, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2483
+ },
+ {
+  "control_number": "35634",
+  "title": "Agriculture Business",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "AGBUS10",
+   "AGBUS12",
+   "AGBUS15",
+   "AGBUS46",
+   "AGBUS5",
+   "ASCI10",
+   "ASCI19",
+   "ASCI57",
+   "BUS18A",
+   "CHEM1A",
+   "CHEM3A",
+   "MCOM11",
+   "PLANT10",
+   "PLANT14",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3163&print",
+   "title": "Program: Agriculture Business, AS-T - San Joaquin Delta College",
+   "h1": "Agriculture Business, AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3465
+ },
+ {
+  "control_number": "35916",
+  "title": "Photography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART40A",
+   "ART6",
+   "ART64A",
+   "ART7A",
+   "DMEDIA21",
+   "MCOM7",
+   "MCOM8",
+   "PHOTO1A",
+   "PHOTO34",
+   "PHOTO3B"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3251&print",
+   "title": "Program: Photography Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Photography Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3001
+ },
+ {
+  "control_number": "35920",
+  "title": "Engineering - Electrical",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "ENGR1",
+   "ENGR6",
+   "MATH1",
+   "MATH2",
+   "MATH3",
+   "MATH4",
+   "PHYSC4A",
+   "PHYSC4C"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3294&print",
+   "title": "Program: Engineering - Electrical, AS - San Joaquin Delta College",
+   "h1": "Engineering - Electrical, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2483
+ },
+ {
+  "control_number": "35932",
+  "title": "Multimedia",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DMEDIA1",
+   "MCOM10",
+   "MCOM5"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3235&print",
+   "title": "Program: Multimedia, AA - San Joaquin Delta College",
+   "h1": "Multimedia, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2649
+ },
+ {
+  "control_number": "35939",
+  "title": "Engineering - Civil",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "ENGR1",
+   "ENGR10",
+   "ENGR2",
+   "ENGR29",
+   "ENGR4",
+   "ENGR6",
+   "ENGR8",
+   "MATH1",
+   "MATH2",
+   "MATH3",
+   "MATH4",
+   "PHYSC4A",
+   "PHYSC4C"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3292&print",
+   "title": "Program: Engineering - Civil, AS - San Joaquin Delta College",
+   "h1": "Engineering - Civil, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2796
+ },
+ {
+  "control_number": "35940",
+  "title": "Engineering - Computer",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS55",
+   "CSP31B",
+   "ENGR1",
+   "ENGR6",
+   "MATH1",
+   "MATH2",
+   "MATH3",
+   "MATH4",
+   "PHYSC4A",
+   "PHYSC4C"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3293&print",
+   "title": "Program: Engineering - Computer, AS - San Joaquin Delta College",
+   "h1": "Engineering - Computer, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2533
+ },
+ {
+  "control_number": "35974",
+  "title": "Apparel Industry Sewing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FASHION30",
+   "FASHION31",
+   "FASHION32"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3243&print",
+   "title": "Program: Apparel Industry Sewing Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Apparel Industry Sewing Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1483
+ },
+ {
+  "control_number": "36005",
+  "title": "Small Business",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.824,
+  "codes_found": [
+   "BUS18A",
+   "BUS19",
+   "BUS21",
+   "BUS22",
+   "BUS23",
+   "BUS28",
+   "BUS29",
+   "BUS60",
+   "BUS94A",
+   "BUS94B",
+   "BUS94C",
+   "BUS94D",
+   "BUS94E",
+   "BUS94F"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3271&print",
+   "title": "Program: Small Business Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Small Business Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2563
+ },
+ {
+  "control_number": "36006",
+  "title": "Entrepreneurship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "BUS12",
+   "BUS2",
+   "BUS21",
+   "BUS22",
+   "BUS28",
+   "BUS29",
+   "BUS60",
+   "BUS94A",
+   "BUS94B",
+   "BUS94C",
+   "BUS94D",
+   "BUS94E",
+   "BUS94F"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3347&print",
+   "title": "Program: Entrepreneurship Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Entrepreneurship Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2184
+ },
+ {
+  "control_number": "36535",
+  "title": "Pre-Law Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.733,
+  "codes_found": [
+   "COMM12",
+   "COMM5",
+   "COMMC1000",
+   "ENGLC1000",
+   "ENGLC1001",
+   "HIST30A",
+   "HIST30B",
+   "HIST31",
+   "HIST34",
+   "POLSC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3339&print",
+   "title": "Program: Pre-Law Studies Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Pre-Law Studies Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4586
+ },
+ {
+  "control_number": "36595",
+  "title": "Gas Tungsten Arc Welding (GTAW)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELDING82",
+   "WELDING88",
+   "WELDING98"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3342&print",
+   "title": "Program: Gas Tungsten Arc Welding (GTAW) Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Gas Tungsten Arc Welding (GTAW) Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2652
+ },
+ {
+  "control_number": "36597",
+  "title": "Oxy-Fuel Processes and Shielded Metal Arc Welding (SMAW)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELDING82",
+   "WELDING84",
+   "WELDING98"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3343&print",
+   "title": "Program: Oxy-Fuel Processes and Shielded Metal Arc Welding (SMAW) Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Oxy-Fuel Processes and Shielded Metal Arc Welding (SMAW) Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2774
+ },
+ {
+  "control_number": "36607",
+  "title": "Speech Language Pathology Assistant Advanced Placement",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMDIS5",
+   "COMMDIS7",
+   "COMMDIS9"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3344&print",
+   "title": "Program: Speech Language Pathology Assistant Advanced Placement Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Speech Language Pathology Assistant Advanced Placement Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2851
+ },
+ {
+  "control_number": "36608",
+  "title": "Gas Metal Arc Welding (GMAW)/Flux Core Arc Welding (FCAW)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELDING82",
+   "WELDING86",
+   "WELDING98"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3341&print",
+   "title": "Program: Gas Metal Arc Welding (GMAW)/Flux Core Arc Welding (FCAW) Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Gas Metal Arc Welding (GMAW)/Flux Core Arc Welding (FCAW) Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2760
+ },
+ {
+  "control_number": "36609",
+  "title": "Caterpillar Dealer Engine Technician Apprenticeship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAT69V",
+   "CAT80",
+   "CAT81",
+   "CAT82",
+   "CAT83",
+   "CAT84"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3340&print",
+   "title": "Program: Caterpillar Dealer Engine Technician Apprenticeship Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Caterpillar Dealer Engine Technician Apprenticeship Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3083
+ },
+ {
+  "control_number": "36747",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.837,
+  "codes_found": [
+   "AJ21",
+   "AJ22",
+   "AJ23",
+   "AJ24",
+   "AJ28",
+   "AJ40",
+   "AJ51",
+   "ANTH1",
+   "BUS18A",
+   "BUS19",
+   "BUS33",
+   "BUS68V",
+   "BUS8",
+   "COMM5",
+   "ENGLC1000",
+   "ENGLC1001",
+   "GEOG2",
+   "HIST27",
+   "HIST30A",
+   "HIST30B",
+   "HIST31",
+   "HIST34",
+   "LAW16",
+   "LAW25",
+   "LAW26",
+   "LAW68V",
+   "PHILO30",
+   "PHILO40",
+   "POLS2",
+   "POLS3",
+   "POLS5",
+   "POLSC1000",
+   "PSYC2",
+   "SOCIO27",
+   "SOCIO33",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3338&print",
+   "title": "Program: Law, Public Policy, and Society, AA-T - San Joaquin Delta College",
+   "h1": "Law, Public Policy, and Society, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 43,
+  "text_chars": 5922
+ },
+ {
+  "control_number": "37532",
+  "title": "American Sign Language",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SL1",
+   "SL2",
+   "SL3",
+   "SL31",
+   "SL32",
+   "SL33",
+   "SL34",
+   "SL4"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3354&print",
+   "title": "Program: American Sign Language, AA - San Joaquin Delta College",
+   "h1": "American Sign Language, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2506
+ },
+ {
+  "control_number": "37610",
+  "title": "Paralegal/Legal Assistant Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LAW2",
+   "LAW3",
+   "LAW4",
+   "LAW5",
+   "LAW6",
+   "LAW7",
+   "LAW8",
+   "LAW9"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3359&print",
+   "title": "Program: Paralegal/Legal Assistant Studies Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Paralegal/Legal Assistant Studies Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3126
+ },
+ {
+  "control_number": "37611",
+  "title": "Electrical Technology: Apprenticeship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37612",
+  "title": "Paralegal/Legal Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.846,
+  "codes_found": [
+   "LAW11",
+   "LAW14",
+   "LAW16",
+   "LAW2",
+   "LAW3",
+   "LAW4",
+   "LAW5",
+   "LAW6",
+   "LAW7",
+   "LAW8",
+   "LAW9"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3356&print",
+   "title": "Program: Paralegal/Legal Assistant Studies, AS - San Joaquin Delta College",
+   "h1": "Paralegal/Legal Assistant Studies, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4159
+ },
+ {
+  "control_number": "37638",
+  "title": "Social Justice Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.898,
+  "codes_found": [
+   "AJ21",
+   "ANTH1",
+   "BIOL30",
+   "ECE21",
+   "ENGL37",
+   "ENGL43C",
+   "GEOG2",
+   "HIST27",
+   "HIST2A",
+   "HIST2B",
+   "HIST30A",
+   "HIST30B",
+   "HIST31",
+   "HIST34",
+   "HIST4A",
+   "HIST4B",
+   "HIST6A",
+   "HIST6C",
+   "LAW16",
+   "MUSIC7",
+   "PHILO45",
+   "PHILO50",
+   "PHILO6",
+   "POLS2",
+   "POLS3",
+   "POLS6",
+   "POLSC1000",
+   "PSYC3",
+   "PSYC30",
+   "PSYC4",
+   "PSYCC1000",
+   "RELGN14A",
+   "RELGN14B",
+   "SL2",
+   "SL3",
+   "SL4",
+   "SOCIO1A",
+   "SOCIO1B",
+   "SOCIO27",
+   "SOCIO33",
+   "SPAN4A",
+   "SPAN5",
+   "SPAN6",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3357&print",
+   "title": "Program: Social Justice Studies, AA-T - San Joaquin Delta College",
+   "h1": "Social Justice Studies, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 49,
+  "text_chars": 6289
+ },
+ {
+  "control_number": "37666",
+  "title": "Agriculture Plant Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "AGBUS12",
+   "CHEM12A",
+   "CHEM1A",
+   "CHEM3A",
+   "HORT12",
+   "HORT2",
+   "HORT3",
+   "PLANT10",
+   "PLANT10L",
+   "PLANT14",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3353&print",
+   "title": "Program: Agriculture Plant Science, AS-T - San Joaquin Delta College",
+   "h1": "Agriculture Plant Science, AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3159
+ },
+ {
+  "control_number": "37670",
+  "title": "Industrial Technology - Level II - Mechanical",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIESL94",
+   "ELEC30",
+   "ELEC37",
+   "ELECT11",
+   "HVACR70A",
+   "HVACR72A",
+   "INDUS20",
+   "INDUS45",
+   "INDUS94",
+   "MACH16",
+   "WELDING10",
+   "WELDING98"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3358&print",
+   "title": "Program: Industrial Technology - Level II - Mechanical Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Industrial Technology - Level II - Mechanical Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2067
+ },
+ {
+  "control_number": "37671",
+  "title": "Diesel Bus Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGEGR88",
+   "DIESL89",
+   "DIESL91",
+   "DIESL94",
+   "DIESL98",
+   "DIESL99",
+   "INDUS35",
+   "INDUS94",
+   "WELDING10"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3351&print",
+   "title": "Program: Diesel Bus Technician Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Diesel Bus Technician Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2161
+ },
+ {
+  "control_number": "37675",
+  "title": "Agriculture Animal Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "AGBUS12",
+   "ASCI10",
+   "ASCI19",
+   "ASCI34",
+   "ASCI47",
+   "ASCI57",
+   "ASCI67",
+   "CHEM1A",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3352&print",
+   "title": "Program: Agriculture Animal Science, AS-T - San Joaquin Delta College",
+   "h1": "Agriculture Animal Science, AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3330
+ },
+ {
+  "control_number": "39474",
+  "title": "Social Media",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS2",
+   "BUS20",
+   "BUS21",
+   "BUS23",
+   "BUS28",
+   "BUS29",
+   "DMEDIA31",
+   "MCOM1",
+   "MCOM10",
+   "MCOM5",
+   "MCOM8",
+   "MCOM9"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3362&print",
+   "title": "Program: Social Media Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Social Media Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2476
+ },
+ {
+  "control_number": "40069",
+  "title": "ECE Administration and Adult Supervision Add On",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE35",
+   "ECE37",
+   "ECE38"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3360&print",
+   "title": "Program: ECE Administration and Adult Supervision Add On Certificate of Achievement - San Joaquin Delta College",
+   "h1": "ECE Administration and Adult Supervision Add On Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2161
+ },
+ {
+  "control_number": "40070",
+  "title": "Paraprofessional Preparation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE21",
+   "ECE63",
+   "EDUC10",
+   "EDUC12",
+   "EDUC13",
+   "EDUC14",
+   "EDUC70",
+   "ENGLC1000",
+   "MATH17A",
+   "MATH17B"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3361&print",
+   "title": "Program: Paraprofessional Preparation Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Paraprofessional Preparation Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2374
+ },
+ {
+  "control_number": "40824",
+  "title": "World Languages and Global Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.842,
+  "codes_found": [
+   "ANTH1",
+   "ART9",
+   "ARTHC1100",
+   "ARTHC1200",
+   "BUS55",
+   "CULART16",
+   "DANCE29",
+   "DANCE32",
+   "DANCE35A",
+   "DANCE35B",
+   "DANCE37A",
+   "DANCE37B",
+   "DANCE37C",
+   "ENGL43C",
+   "ENGL43D",
+   "ENGL62B",
+   "ENGL62C",
+   "FASHION10",
+   "GEOG10",
+   "GEOG2",
+   "GERM1",
+   "GERM2",
+   "HIST2A",
+   "HIST2B",
+   "HIST30A",
+   "HIST30B",
+   "HIST31",
+   "HIST34",
+   "HIST4A",
+   "HIST4B",
+   "HIST6A",
+   "HIST6C",
+   "HUM3",
+   "MUSIC7",
+   "PHILO50",
+   "POLS2",
+   "POLS5",
+   "POLS6",
+   "RELGN14A",
+   "RELGN14B",
+   "SL1",
+   "SL2",
+   "SL3",
+   "SL4",
+   "SOCIO33",
+   "SPAN4A",
+   "SPAN5",
+   "SPAN6"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3363&print",
+   "title": "Program: World Languages and Global Studies, AA - San Joaquin Delta College",
+   "h1": "World Languages and Global Studies, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 57,
+  "text_chars": 6113
+ },
+ {
+  "control_number": "40881",
+  "title": "Digital Media with Emphasis in Video",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DMEDIA1",
+   "DMEDIA11",
+   "DMEDIA2",
+   "DMEDIA21",
+   "DMEDIA24",
+   "DMEDIA25A",
+   "DMEDIA25B",
+   "DMEDIA31",
+   "GRART8",
+   "MCOM1",
+   "MCOM10",
+   "MCOM7",
+   "MCOM9"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3366&print",
+   "title": "Program: Digital Media with Emphasis in Video Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Digital Media with Emphasis in Video Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2716
+ },
+ {
+  "control_number": "40882",
+  "title": "Digital Media",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DMEDIA1",
+   "DMEDIA11",
+   "DMEDIA2",
+   "DMEDIA21",
+   "DMEDIA24",
+   "DMEDIA25A",
+   "DMEDIA25B",
+   "DMEDIA31",
+   "MCOM1",
+   "MCOM10",
+   "MCOM8",
+   "MCOM9"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3364&print",
+   "title": "Program: Digital Media, AA - San Joaquin Delta College",
+   "h1": "Digital Media, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3349
+ },
+ {
+  "control_number": "40883",
+  "title": "Digital Media with Emphasis in Audio",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DMEDIA1",
+   "DMEDIA11",
+   "DMEDIA2",
+   "DMEDIA21",
+   "DMEDIA24",
+   "DMEDIA25A",
+   "DMEDIA25B",
+   "DMEDIA31",
+   "MCOM1",
+   "MCOM8",
+   "MCOM9"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3365&print",
+   "title": "Program: Digital Media with Emphasis in Audio Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Digital Media with Emphasis in Audio Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2647
+ },
+ {
+  "control_number": "40884",
+  "title": "Hospitality Front of House Essentials",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "CULART1",
+   "CULART25",
+   "CULART3",
+   "CULART73",
+   "CULART9"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3368&print",
+   "title": "Program: Hospitality Front of House Essentials Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Hospitality Front of House Essentials Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1752
+ },
+ {
+  "control_number": "40885",
+  "title": "Hospitality Front of House Service Operations",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "CULART1",
+   "CULART25",
+   "CULART29",
+   "CULART3",
+   "CULART31",
+   "CULART32",
+   "CULART73",
+   "CULART9",
+   "CULART91",
+   "CULART92"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3369&print",
+   "title": "Program: Hospitality Front of House Service Operations Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Hospitality Front of House Service Operations Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2107
+ },
+ {
+  "control_number": "40902",
+  "title": "Winery Sales and Marketing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "BUS21",
+   "BUS22",
+   "CULART30A",
+   "CULART31",
+   "CULART32",
+   "CULART85",
+   "CULART86A",
+   "CULART86B",
+   "CULART87",
+   "CULART88",
+   "CULART93V",
+   "MCOM9"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3372&print",
+   "title": "Program: Winery Sales and Marketing Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Winery Sales and Marketing Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2466
+ },
+ {
+  "control_number": "40903",
+  "title": "Winery Event Coordinator",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "BUS94F",
+   "CULART31",
+   "CULART32",
+   "CULART74",
+   "CULART85",
+   "CULART86A",
+   "CULART87",
+   "CULART88",
+   "CULART92",
+   "CULART93V",
+   "MCOM9"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3370&print",
+   "title": "Program: Winery Event Coordinator Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Winery Event Coordinator Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2403
+ },
+ {
+  "control_number": "40904",
+  "title": "Winery Tasting Room Associate",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "BUS94F",
+   "CULART31",
+   "CULART32",
+   "CULART85",
+   "CULART86A",
+   "CULART87",
+   "CULART88",
+   "CULART93V"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3371&print",
+   "title": "Program: Winery Tasting Room Associate Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Winery Tasting Room Associate Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2238
+ },
+ {
+  "control_number": "40905",
+  "title": "Horticulture, Landscape Arborist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGBUS15",
+   "HORT1",
+   "HORT2",
+   "HORT20",
+   "HORT21",
+   "HORT23",
+   "HORT24",
+   "HORT26",
+   "HORT3",
+   "HORT5",
+   "HORT96V",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3367&print",
+   "title": "Program: Horticulture - Landscape Arborist Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Horticulture - Landscape Arborist Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2734
+ },
+ {
+  "control_number": "42524",
+  "title": "Real Estate Broker",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42565",
+  "title": "Real Estate Salesperson",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.64,
+  "codes_found": [
+   "BUS12",
+   "BUS15",
+   "BUS17",
+   "BUS18A",
+   "BUS18B",
+   "BUS19",
+   "BUS21",
+   "BUS22",
+   "BUS32",
+   "BUS33",
+   "BUS7",
+   "CSA20",
+   "FCS3",
+   "LAW13",
+   "LAW25",
+   "LAW5"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3374&print",
+   "title": "Program: Real Estate Salesperson Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Real Estate Salesperson Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 3622
+ },
+ {
+  "control_number": "42855",
+  "title": "Graphic Arts - Print Production",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GRART8"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3373&print",
+   "title": "Program: Graphic Arts - Print Production Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Graphic Arts - Print Production Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 2077
+ },
+ {
+  "control_number": "43281",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "BUS18A",
+   "BUS19",
+   "BUS20",
+   "MATH13",
+   "MATH20",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3258&print",
+   "title": "Program: Business Administration 2.0, AS-T - San Joaquin Delta College",
+   "h1": "Business Administration 2.0, AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3618
+ },
+ {
+  "control_number": "43308",
+  "title": "Power Performance and Data Collecting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOMECH72",
+   "AUTOMECH73",
+   "AUTOMECH74",
+   "AUTOMECH93",
+   "AUTOMECH99"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3379&print",
+   "title": "Program: Power Performance and Data Collecting Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Power Performance and Data Collecting Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2191
+ },
+ {
+  "control_number": "43462",
+  "title": "Digital Media Content Entrepreneurship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43463",
+  "title": "Social Media Strategy",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43492",
+  "title": "Digital Imaging",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43785",
+  "title": "ESL Milestone for Multilingual Speakers: Pathway to Electrical Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "ELEC29A",
+   "ELEC29B",
+   "ELEC30",
+   "ESL87"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3381&print",
+   "title": "Program: ESL Milestone for Multilingual Speakers: Pathway to Electrical Technology Certificate of Achievement - San Joaquin Delta College",
+   "h1": "ESL Milestone for Multilingual Speakers: Pathway to Electrical Technology Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2418
+ },
+ {
+  "control_number": "43786",
+  "title": "ESL Milestone for Multilingual Speakers: Pathway to Business",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS20",
+   "ESL59",
+   "ESL87"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3380&print",
+   "title": "Program: ESL Milestone for Multilingual Speakers: Pathway to Business Certificate of Achievement - San Joaquin Delta College",
+   "h1": "ESL Milestone for Multilingual Speakers: Pathway to Business Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2198
+ },
+ {
+  "control_number": "43787",
+  "title": "ESL Milestone for Multilingual Speakers: Pathway to Health Careers",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL59",
+   "ESL87",
+   "HS36"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3382&print",
+   "title": "Program: ESL Milestone for Multilingual Speakers: Pathway to Health Careers Certificate of Achievement - San Joaquin Delta College",
+   "h1": "ESL Milestone for Multilingual Speakers: Pathway to Health Careers Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2318
+ },
+ {
+  "control_number": "43791",
+  "title": "Public Relations",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "BUS35",
+   "COMMC1000",
+   "DMEDIA31",
+   "LAW25",
+   "MCOM1",
+   "MCOM13",
+   "MCOM5"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3383&print",
+   "title": "Program: Public Relations Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Public Relations Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2254
+ },
+ {
+  "control_number": "44197",
+  "title": "Caterpillar Dealer Service Technician Apprenticeship",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAT21",
+   "CAT69V",
+   "CAT80",
+   "CAT81",
+   "CAT82",
+   "CAT83",
+   "CAT84",
+   "CAT85",
+   "CAT86",
+   "CAT87",
+   "CAT90",
+   "CAT91",
+   "CAT92",
+   "CAT93",
+   "CAT94"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3385&print",
+   "title": "Program: Caterpillar Dealer Service Technician Apprenticeship Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Caterpillar Dealer Service Technician Apprenticeship Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3210
+ },
+ {
+  "control_number": "44322",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.625,
+  "codes_found": [
+   "ANTH1",
+   "COMM12",
+   "COMM14",
+   "COMM4",
+   "COMM5",
+   "COMMC1000",
+   "ENGLC1001",
+   "MCOM5",
+   "PSYCC1000",
+   "SOCIO1A"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3384&print",
+   "title": "Program: Communication Studies 2.0, AA-T - San Joaquin Delta College",
+   "h1": "Communication Studies 2.0, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4115
+ },
+ {
+  "control_number": "44708",
+  "title": "Noncredit ESL Milestone for Multilingual Speakers - Pathway to Health Careers",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL9059",
+   "ESL9086",
+   "ESL9087",
+   "ESL9088",
+   "HS9036"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3397&print",
+   "title": "Program: Noncredit ESL Milestone for Multilingual Speakers - Pathway to Health Careers Certificate of Completion - San Joaquin Delta College",
+   "h1": "Noncredit ESL Milestone for Multilingual Speakers - Pathway to Health Careers Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2823
+ },
+ {
+  "control_number": "44710",
+  "title": "Low-Intermediate ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL9080",
+   "ESL9081",
+   "ESL9082"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3401&print",
+   "title": "Program: Low-Intermediate ESL Certificate of Competency - San Joaquin Delta College",
+   "h1": "Low-Intermediate ESL Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2397
+ },
+ {
+  "control_number": "44711",
+  "title": "High-Intermediate ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL9083",
+   "ESL9084",
+   "ESL9085"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3400&print",
+   "title": "Program: High-Intermediate ESL Certificate of Competency - San Joaquin Delta College",
+   "h1": "High-Intermediate ESL Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2500
+ },
+ {
+  "control_number": "44712",
+  "title": "Advanced ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL9086",
+   "ESL9087",
+   "ESL9088"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3399&print",
+   "title": "Program: Advanced ESL Certificate of Competency - San Joaquin Delta College",
+   "h1": "Advanced ESL Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2324
+ },
+ {
+  "control_number": "44860",
+  "title": "Creative Writing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.76,
+  "codes_found": [
+   "DMEDIA2",
+   "DRAMA46",
+   "ENGL37",
+   "ENGL38",
+   "ENGL42A",
+   "ENGL42B",
+   "ENGL45",
+   "ENGL46A",
+   "ENGL46B",
+   "ENGL52",
+   "ENGL57",
+   "ENGL61",
+   "ENGL62B",
+   "ENGL62C",
+   "ENGL62D",
+   "ENGL62E",
+   "ENGL88",
+   "ENGLC1000",
+   "ENGLC1000E"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3390&print",
+   "title": "Program: Creative Writing Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Creative Writing Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 2983
+ },
+ {
+  "control_number": "44905",
+  "title": "Agriculture Engineering Production Plant - Level 1 Safety",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGBUS15",
+   "AGBUS17",
+   "CULART3",
+   "ELEC29A",
+   "ELEC29B",
+   "INDUS20",
+   "INDUS94",
+   "MACH16"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3387&print",
+   "title": "Program: Agriculture Engineering Production Plant - Level 1 Safety Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Agriculture Engineering Production Plant - Level 1 Safety Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1697
+ },
+ {
+  "control_number": "44906",
+  "title": "Agriculture Engineering Production Plant - Level 2 Mechanical",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGBUS15",
+   "AGBUS17",
+   "CULART3",
+   "ELEC29A",
+   "ELEC29B",
+   "ELECT17",
+   "ETECH47",
+   "HVACR70A",
+   "HVACR72A",
+   "INDUS20",
+   "INDUS31",
+   "INDUS94",
+   "MACH16",
+   "WELDING10"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3388&print",
+   "title": "Program: Agriculture Engineering Production Plant - Level 2 Mechanical Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Agriculture Engineering Production Plant - Level 2 Mechanical Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2073
+ },
+ {
+  "control_number": "44907",
+  "title": "Costume Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAMA19A",
+   "DRAMA19B",
+   "DRAMA23A",
+   "DRAMA23B",
+   "DRAMA23C",
+   "DRAMA25B",
+   "DRAMA40A",
+   "DRAMA40B",
+   "DRAMA40C",
+   "DRAMA44B",
+   "DRAMA47B"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3389&print",
+   "title": "Program: Costume Technician Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Costume Technician Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2013
+ },
+ {
+  "control_number": "44908",
+  "title": "Scenic Artist",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAMA14A",
+   "DRAMA14B",
+   "DRAMA19A",
+   "DRAMA19B",
+   "DRAMA20A",
+   "DRAMA20B",
+   "DRAMA22A",
+   "DRAMA23A",
+   "DRAMA24A",
+   "DRAMA25B",
+   "DRAMA40A",
+   "DRAMA40B",
+   "DRAMA40C",
+   "DRAMA44B",
+   "DRAMA47B"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3391&print",
+   "title": "Program: Scenic Artist Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Scenic Artist Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2180
+ },
+ {
+  "control_number": "44909",
+  "title": "Scenic Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAMA14A",
+   "DRAMA19A",
+   "DRAMA19B",
+   "DRAMA20A",
+   "DRAMA22A",
+   "DRAMA24A",
+   "DRAMA24B",
+   "DRAMA25B",
+   "DRAMA40A",
+   "DRAMA40B",
+   "DRAMA40C",
+   "DRAMA42",
+   "DRAMA43",
+   "DRAMA44B",
+   "DRAMA47B",
+   "WELDING10"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3392&print",
+   "title": "Program: Scenic Technician Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Scenic Technician Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2225
+ },
+ {
+  "control_number": "44910",
+  "title": "Stage Electrician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAMA19A",
+   "DRAMA19B",
+   "DRAMA21A",
+   "DRAMA21B",
+   "DRAMA21C",
+   "DRAMA22A",
+   "DRAMA22B",
+   "DRAMA22C",
+   "DRAMA25B",
+   "DRAMA40A",
+   "DRAMA40B",
+   "DRAMA40C",
+   "DRAMA42",
+   "DRAMA43",
+   "DRAMA44B",
+   "DRAMA47B",
+   "ELEC29A",
+   "ELEC29B",
+   "ELEC30"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3393&print",
+   "title": "Program: Stage Electrician Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Stage Electrician Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 2366
+ },
+ {
+  "control_number": "44911",
+  "title": "Stage Makeup Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAMA15A",
+   "DRAMA15B",
+   "DRAMA15C",
+   "DRAMA19A",
+   "DRAMA19B",
+   "DRAMA25B",
+   "DRAMA40A",
+   "DRAMA40B",
+   "DRAMA40C",
+   "DRAMA44B",
+   "DRAMA47B"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3394&print",
+   "title": "Program: Stage Makeup Technician Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Stage Makeup Technician Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1993
+ },
+ {
+  "control_number": "44912",
+  "title": "Modern Policing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "AJ21",
+   "AJ22",
+   "AJ23",
+   "AJ24",
+   "AJ25",
+   "AJ28",
+   "AJ31",
+   "AJ40",
+   "COMMC1000",
+   "ECE26",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1001",
+   "LAW16",
+   "LAW25",
+   "PHILO40",
+   "PSYC2",
+   "PSYC3",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3386&print",
+   "title": "Program: Modern Policing, AS - San Joaquin Delta College",
+   "h1": "Modern Policing, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 4402
+ },
+ {
+  "control_number": "45193",
+  "title": "Control Systems Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45194",
+  "title": "Basic Electronics Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45195",
+  "title": "Nurse Assistant and Home Health Aide",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45583",
+  "title": "Public Safety Dispatcher",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45621",
+  "title": "California General Education Transfer Curriculum (Cal-GETC)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.894,
+  "codes_found": [
+   "ANTH1",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ASTRO1",
+   "ASTRO11",
+   "ASTRO12",
+   "ASTRO1L",
+   "BIOL1",
+   "BIOL10",
+   "BIOL11",
+   "BIOL2",
+   "BIOL23",
+   "BIOL3",
+   "BIOL30",
+   "BIOL31",
+   "BIOL32",
+   "BIOL33",
+   "BUS26",
+   "BUS8",
+   "BUS8H",
+   "CHEM10",
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM3A",
+   "COMM14",
+   "COMMC1000",
+   "DANCE29",
+   "DANCE32",
+   "DRAMA10",
+   "DRAMA16A",
+   "ECE21",
+   "ENGL30",
+   "ENGL37",
+   "ENGL38",
+   "ENGL42A",
+   "ENGL42B",
+   "ENGL43C",
+   "ENGL43D",
+   "ENGL45",
+   "ENGL46A",
+   "ENGL46B",
+   "ENGL52",
+   "ENGL57",
+   "ENGL61",
+   "ENGL62B",
+   "ENGL62C",
+   "ENGL62D",
+   "ENGL62E",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1001",
+   "ETHNS30",
+   "ETHNS33",
+   "ETHNS34",
+   "ETHNS35",
+   "ETHNS36",
+   "FREN3",
+   "FREN4",
+   "GEOG1",
+   "GEOG10",
+   "GEOG1L",
+   "GEOG2",
+   "GEOG3",
+   "GEOL15",
+   "GEOL16",
+   "GEOL1A",
+   "GEOL1B",
+   "GEOL2",
+   "GEOL5",
+   "HIST27",
+   "HIST2A",
+   "HIST2B",
+   "HIST30A",
+   "HIST30B",
+   "HIST31",
+   "HIST34",
+   "HIST37",
+   "HIST4A",
+   "HIST4B",
+   "HIST6A",
+   "HIST6C",
+   "HIST7",
+   "HUM3",
+   "LAW16",
+   "LAW26",
+   "MATH1",
+   "MATH13",
+   "MATH2",
+   "MATH20",
+   "MATH3",
+   "MATH37",
+   "MATH37EX",
+   "MATH38A",
+   "MATH38B",
+   "MATH39",
+   "MATH4",
+   "MATH5",
+   "MUSIC1",
+   "MUSIC4",
+   "MUSIC7",
+   "MUSIC8",
+   "PETHEORY41",
+   "PETHEORY49",
+   "PHILO40",
+   "PHILO45",
+   "PHILO50",
+   "PHILO6",
+   "PHSCI1",
+   "PHYSC10",
+   "PHYSC2A",
+   "PHYSC4A",
+   "PLANT10",
+   "PLANT10L",
+   "PLANT14",
+   "POLS2",
+   "POLS3",
+   "POLS4",
+   "POLS5",
+   "POLS6",
+   "POLSC1000",
+   "PSYC3",
+   "PSYC30",
+   "PSYC4",
+   "PSYCC1000",
+   "RELGN14A",
+   "RELGN14B",
+   "SL3",
+   "SL4",
+   "SOCIO17",
+   "SOCIO1A",
+   "SOCIO1B",
+   "SOCIO27",
+   "SOCIO33",
+   "SPAN20",
+   "SPAN3",
+   "SPAN3A",
+   "SPAN4",
+   "SPAN4A",
+   "SPAN5",
+   "SPAN6",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3403&print",
+   "title": "Program: California General Education Transfer Curriculum (Cal-GETC) Certificate of Achievement - San Joaquin Delta College",
+   "h1": "California General Education Transfer Curriculum (Cal-GETC) Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 161,
+  "text_chars": 15258
+ },
+ {
+  "control_number": "46020",
+  "title": "Noncredit ESL Milestone for Multilingual Speakers - Pathway to Digital Media",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DMEDIA9021",
+   "ESL9059",
+   "ESL9086",
+   "ESL9087",
+   "ESL9088"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3419&print",
+   "title": "Program: Noncredit ESL Milestone for Multilingual Speakers - Pathway to Digital Media Certificate of Completion - San Joaquin Delta College",
+   "h1": "Noncredit ESL Milestone for Multilingual Speakers - Pathway to Digital Media Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2925
+ },
+ {
+  "control_number": "46025",
+  "title": "Noncredit ESL Milestone for Multilingual Speakers - Introduction to Health Careers",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL9080",
+   "ESL9081",
+   "ESL9082",
+   "ESL9085",
+   "HS9039"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3418&print",
+   "title": "Program: Noncredit ESL Milestone for Multilingual Speakers - Introduction to Health Careers Certificate of Completion - San Joaquin Delta College",
+   "h1": "Noncredit ESL Milestone for Multilingual Speakers - Introduction to Health Careers Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2695
+ },
+ {
+  "control_number": "46048",
+  "title": "Intercollegiate Athletics",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.981,
+  "codes_found": [
+   "ATH30",
+   "ATH37",
+   "ATH38",
+   "ATH39",
+   "ATH40",
+   "ATH41",
+   "ATH42",
+   "ATH43",
+   "ATH44",
+   "ATH45",
+   "ATH46",
+   "ATH47",
+   "ATH48",
+   "ATH49",
+   "ATH50",
+   "ATH51",
+   "ATH52",
+   "ATH53",
+   "ATH54",
+   "ATH55",
+   "ATH56",
+   "ATH57",
+   "ATH58",
+   "ATH60",
+   "ATH61",
+   "ATH62",
+   "ATH63",
+   "ATH64",
+   "ATH65",
+   "ATH67",
+   "ATH68",
+   "ATH69",
+   "HED1",
+   "PETHEORY40",
+   "PETHEORY42A",
+   "PETHEORY42J",
+   "PETHEORY42K",
+   "PETHEORY42L",
+   "PETHEORY42M",
+   "PETHEORY42O",
+   "PETHEORY42W",
+   "PETHEORY44A",
+   "PETHEORY45",
+   "PETHEORY49",
+   "PETHEORY50SS",
+   "PETHEORY52",
+   "PETHEORY53A",
+   "PETHEORY54A",
+   "PETHEORY55A",
+   "PETHEORY56A",
+   "PETHEORY70",
+   "PETHEORY87A"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3417&print",
+   "title": "Program: Intercollegiate Athletics Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Intercollegiate Athletics Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 53,
+  "text_chars": 3804
+ },
+ {
+  "control_number": "46173",
+  "title": "Electron Microscopy - Crystalline Materials Basic Imaging",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EM70",
+   "EM71",
+   "EM73M",
+   "EM74",
+   "EM85M",
+   "EM86M",
+   "EM87A"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3422&print",
+   "title": "Program: Electron Microscopy - Crystalline Materials Basic Imaging Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Electron Microscopy - Crystalline Materials Basic Imaging Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2628
+ },
+ {
+  "control_number": "46174",
+  "title": "Electron Microscopy - Field Service Technician Basic Training",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELECT11",
+   "ELECT12",
+   "EM70",
+   "EM73M",
+   "EM74",
+   "EM80",
+   "EM87A"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3423&print",
+   "title": "Program: Electron Microscopy - Field Service Technician Basic Training Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Electron Microscopy - Field Service Technician Basic Training Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2380
+ },
+ {
+  "control_number": "46175",
+  "title": "Electron Microscopy - Biological Concentration Basic Sample Preparation",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "BIOL31",
+   "CHEM3A",
+   "EM70",
+   "EM74",
+   "EM76",
+   "EM77",
+   "EM80"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3421&print",
+   "title": "Program: Electron Microscopy - Biological Concentration Basic Sample Preparation Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Electron Microscopy - Biological Concentration Basic Sample Preparation Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2483
+ },
+ {
+  "control_number": "46176",
+  "title": "Electron Microscopy: Field Service Technician Advanced Training",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELECT11",
+   "ELECT12",
+   "ELECT13A",
+   "EM70",
+   "EM73M",
+   "EM74",
+   "EM80",
+   "EM83M",
+   "EM85M",
+   "EM86M",
+   "EM87A",
+   "EM87B",
+   "EM88",
+   "EM90"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3424&print",
+   "title": "Program: Electron Microscopy - Field Service Technician Advanced Training Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Electron Microscopy - Field Service Technician Advanced Training Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3089
+ },
+ {
+  "control_number": "46287",
+  "title": "Spanish for Medical Professions",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HS36",
+   "SPAN1",
+   "SPAN11",
+   "SPAN12",
+   "SPAN2",
+   "SPAN3A",
+   "SPAN4A"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3420&print",
+   "title": "Program: Spanish for Medical Professions Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Spanish for Medical Professions Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2167
+ },
+ {
+  "control_number": "46410",
+  "title": "Spanish for Medical Professions",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HS9036",
+   "SPAN9011",
+   "SPAN9012"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3425&print",
+   "title": "Program: Spanish for Medical Professions Certificate of Completion - San Joaquin Delta College",
+   "h1": "Spanish for Medical Professions Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1155
+ },
+ {
+  "control_number": "46499",
+  "title": "Electronics Technology - Manufacturing Associate",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELECT11",
+   "ELECT17",
+   "ETECH12",
+   "ETECH47",
+   "INDUS20",
+   "INDUS94",
+   "MACH16",
+   "WELDING10"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3426&print",
+   "title": "Program: Electronics Technology - Manufacturing Associate Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Electronics Technology - Manufacturing Associate Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2452
+ },
+ {
+  "control_number": "46500",
+  "title": "Viticulture - Level 1",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGBUS17",
+   "AGBUS5",
+   "HORT2",
+   "PLANT10",
+   "PLANT10L",
+   "PLANT14",
+   "PLANT33",
+   "PLANT40"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3428&print",
+   "title": "Program: Viticulture - Level 1 Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Viticulture - Level 1 Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1593
+ },
+ {
+  "control_number": "46501",
+  "title": "Viticulture - Level 2",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGBUS17",
+   "AGBUS5",
+   "CULART3",
+   "CULART30A",
+   "HORT2",
+   "PLANT10",
+   "PLANT10L",
+   "PLANT14",
+   "PLANT20",
+   "PLANT21",
+   "PLANT30",
+   "PLANT31",
+   "PLANT33",
+   "PLANT34",
+   "PLANT40",
+   "PLANT41"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3429&print",
+   "title": "Program: Viticulture - Level 2 Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Viticulture - Level 2 Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2468
+ },
+ {
+  "control_number": "46502",
+  "title": "Nurse Assistant and Home Health Aide",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "HS70"
+  ],
+  "source": {
+   "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3427&print",
+   "title": "Program: Nurse Assistant and Home Health Aide Certificate of Achievement - San Joaquin Delta College",
+   "h1": "Nurse Assistant and Home Health Aide Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1528
+ }
+]

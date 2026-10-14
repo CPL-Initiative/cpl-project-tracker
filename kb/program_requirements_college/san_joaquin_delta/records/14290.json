@@ -1,0 +1,266 @@
+{
+ "college": "San Joaquin Delta College",
+ "control_number": "14290",
+ "shape": "degree",
+ "title": "Caterpillar Dealer Service Technician Apprenticeship",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3259&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6955,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6955,
+    "output_tokens": 2033,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2033,
+  "output_tokens_details": {
+   "thinking_tokens": 582
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06848,
+ "ms": 16137,
+ "seconds": 16.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    55.0,
+    55.0
+   ],
+   "stated": [
+    55.0,
+    55.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Caterpillar Dealer Service Technician Apprenticeship, AS",
+   "measure": "units",
+   "total_units": {
+    "min": 55,
+    "max": 55
+   },
+   "open_elective_units": null,
+   "ge_pattern": "San Joaquin Delta College Associate Degree General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 82,
+    "max": 82
+   },
+   "ge_units": {
+    "min": 27,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Score 60 or higher on the AED test administered by Caterpillar and/or Association of Equipment Dealers.",
+    "Use precision measuring tools to identify serviceable parts from worn parts."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Major Requirements - Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 39,
+     "max": 39
+    },
+    "courses": [
+     {
+      "code": "CAT 21",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT 80",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT 81",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT 82",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT 83",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT 84",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT 85",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT 86",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT 87",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT 90",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT 91",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT 92",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT 93",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAT 94",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Internship",
+    "rule": "choose_units",
+    "minimum": 16,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "CAT 69V",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints CAT 92 at 3 units; the closed list stores 2 units. The core sums to the stated 39 units only with CAT 92 at 3.",
+   "Internship block: 'Complete 16 units' of CAT 69V (1-4 units), a single variable-unit course that must evidently be repeated/taken in multiple enrollments to reach 16 units; recorded as choose_units with minimum 16.",
+   "General education offers two patterns: San Joaquin Delta College Associate Degree GE Pattern (27 units) or Cal-GETC (34 units); ge_units recorded as 27-34 from these two printed figures.",
+   "Minimum Degree Units Required: 82 recorded as degree_total; Minimum Major Units Required: 55 recorded as total_units. 55 + 27 = 82 matches the local GE pattern; page notes double-counting of major and GE courses.",
+   "Description refers to the 'San Joaquin Valley Automotive Technician Apprenticeship Program' for a Caterpillar program; possibly a catalog wording carryover worth checking.",
+   "Description says apprentices are qualified to perform service, maintenance, repairs and troubleshooting on Caterpillar equipment but names no specific job title or career field, so careers is empty.",
+   "Catalog page header reads 'Summer 2026 - Summer 2027 College Catalog', consistent with the 2026-2027 catalog year."
+  ]
+ },
+ "extracted_run": "38631691511"
+}

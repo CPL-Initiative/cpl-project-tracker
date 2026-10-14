@@ -1,0 +1,174 @@
+{
+ "college": "San Joaquin Delta College",
+ "control_number": "44710",
+ "shape": "noncredit",
+ "title": "Low-Intermediate ESL",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3401&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6285,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6285,
+    "output_tokens": 1093,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1093,
+  "output_tokens_details": {
+   "thinking_tokens": 243
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.047,
+ "ms": 14669,
+ "seconds": 15.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    198.0,
+    198.0
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Core Requirements' has no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Low-Intermediate ESL Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": 198,
+    "max": 198
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Write a paragraph utilizing low-intermediate structures of English and demonstrating comprehension while responding to the prompt with organization, development, and support.",
+    "Read a text and locate information in response to comprehension questions about main ideas and details.",
+    "Write a paragraph utilizing low-intermediate structures of English grammar and demonstrating mastery of simple sentence structure and verb tenses.",
+    "Read a paragraph with grammar errors (e.g. subject-verb agreement, verb tense, etc.) to identify and correct them.",
+    "Answer comprehension questions after listening to a brief, simple recording.",
+    "Demonstrate clear pronunciation and adequate speed of speech appropriate to the low-intermediate level of English fluency by giving short presentations and answering questions orally."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESL 9080",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 9081",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 9082",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Measure recorded as hours: the catalog states 'Total Contact Hours: 198' for this noncredit Certificate of Competency, recorded in total_units. The catalog prints 'Units: 0' beside each course and 'Minimum Units Required: 0', but no per-course hours, so course units fields are null.",
+   "Closed list stores 'ESL9080' without a space; the catalog prints 'ESL 9080'. Treated as the same course (catalog_addition false).",
+   "All courses must be completed with a grade of 'P'.",
+   "Catalog page is the Summer 2026 - Summer 2027 College Catalog, consistent with the 2026-2027 catalog year.",
+   "The description mentions transition to vocational training, academic programs, or employment opportunities, but names no specific careers; careers left empty."
+  ]
+ },
+ "extracted_run": "38631691511"
+}

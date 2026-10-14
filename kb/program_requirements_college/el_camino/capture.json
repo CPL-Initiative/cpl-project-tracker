@@ -5,12 +5,56 @@
  "catalog_year": "2026-2027",
  "programs": 189,
  "with_closed_list": 135,
- "started": "2026-10-14T12:42:13Z",
+ "started": "2026-10-14T20:24:46Z",
  "acalog": {
   "base": "http://catalog.elcamino.edu",
   "start_status": 200,
   "catoid": 13,
   "start_links": 112,
+  "catalog_menu": [
+   [
+    "13",
+    "2026-2027 Catalog",
+    true
+   ],
+   [
+    "12",
+    "2025-2026 Catalog [Archived] [ARCHIVED CATALOG]",
+    false
+   ],
+   [
+    "11",
+    "2024-2025 Catalog [Archived] [ARCHIVED CATALOG]",
+    false
+   ],
+   [
+    "9",
+    "2023-2024 Catalog [Archived] [ARCHIVED CATALOG]",
+    false
+   ],
+   [
+    "7",
+    "2022-2023 Catalog [Archived] [ARCHIVED CATALOG]",
+    false
+   ],
+   [
+    "6",
+    "2021-2022 Catalog [Archived] [ARCHIVED CATALOG]",
+    false
+   ],
+   [
+    "3",
+    "2020-2021 Catalog [Archived] [ARCHIVED CATALOG]",
+    false
+   ],
+   [
+    "2",
+    "2019-2020 Catalog [Archived] [ARCHIVED CATALOG]",
+    false
+   ]
+  ],
+  "catalog_year_read": "2026-2027",
+  "catalog_year_from": "catalog menu",
   "start_menu": [
    [
     "Academic Calendar",
@@ -780,7 +824,7 @@
  "pages_read": 257,
  "banner_h1": null,
  "loads": 265,
- "seconds": 1550.0,
+ "seconds": 1453.5,
  "found": 124,
  "by_method": {
   "no_closed_list": 54,
@@ -2374,5 +2418,5 @@
    }
   ]
  },
- "run": "38565658064"
+ "run": "38631686677"
 }

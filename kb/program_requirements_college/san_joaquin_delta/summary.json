@@ -1,0 +1,645 @@
+{
+ "college": "San Joaquin Delta College",
+ "programs": 251,
+ "with_closed_list": 233,
+ "found": 203,
+ "extracted": 203,
+ "errors": 0,
+ "passed_machine_checks": 152,
+ "failed": {
+  "coverage": 10,
+  "invented": 9,
+  "arithmetic": 44,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 13.42,
+ "cost_per_program": 0.0661,
+ "not_found": [
+  {
+   "control_number": "05584",
+   "title": "Accounting",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3253&print",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.3,
+    "body": 0.3,
+    "content": 0.1,
+    "net": 3,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 3 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4167,
+     "content": 37951,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "07276",
+   "title": "Accounting Clerk",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3320&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.455,
+    "body": 0.455,
+    "content": 0.182,
+    "net": 5,
+    "listed": 11,
+    "why": "coverage 0.45 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2229,
+     "content": 36065,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "07303",
+   "title": "Tax Preparation",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3268&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.222,
+    "body": 0.222,
+    "content": 0.111,
+    "net": 2,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 2 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1793,
+     "content": 35595,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "07445",
+   "title": "Substance Abuse Counselor",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3218&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.083,
+    "body": 0.083,
+    "content": 0.0,
+    "net": 1,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 1 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2958,
+     "content": 36759,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "10257",
+   "title": "Psychiatric Technician",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3194&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3447,
+     "content": 37249,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "14594",
+   "title": "Industrial Technology: Maintenance Apprenticeship Option",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3285&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 22,
+    "why": "coarse net: the page's code tokens name 0 of 22 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2623,
+     "content": 36414,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "14595",
+   "title": "Electrical Technology: Apprenticeship Option",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3327&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2187,
+     "content": 35991,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "14597",
+   "title": "Industrial Technology: Electrical Apprenticeship Option",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3286&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 18,
+    "why": "coarse net: the page's code tokens name 0 of 18 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2278,
+     "content": 36073,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "14598",
+   "title": "Industrial Technology: Mechanical Apprenticeship Option",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3284&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2281,
+     "content": 36077,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "14599",
+   "title": "Industrial Technology: Operations Apprenticeship Option",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3283&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.941,
+    "body": 0.941,
+    "content": 0.0,
+    "net": 0,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2255,
+     "content": 36051,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "14773",
+   "title": "Mental Health Specialist",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3217&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.444,
+    "body": 0.444,
+    "content": 0.056,
+    "net": 8,
+    "listed": 18,
+    "why": "coverage 0.44 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2626,
+     "content": 36418,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19694",
+   "title": "Real Estate",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3305&print",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.364,
+    "body": 0.364,
+    "content": 0.273,
+    "net": 4,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 4 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4176,
+     "content": 37997,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19742",
+   "title": "Psychology",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3208&print",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.25,
+    "body": 0.25,
+    "content": 0.083,
+    "net": 3,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 3 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2575,
+     "content": 36372,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "22245",
+   "title": "Accounting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3307&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.333,
+    "body": 0.333,
+    "content": 0.0,
+    "net": 2,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 2 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2180,
+     "content": 35982,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "32820",
+   "title": "Psychiatric Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3192&print",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3677,
+     "content": 37481,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37611",
+   "title": "Electrical Technology: Apprenticeship",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3355&print",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2888,
+     "content": 36690,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "42524",
+   "title": "Real Estate Broker",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3375&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.222,
+    "body": 0.222,
+    "content": 0.111,
+    "net": 2,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 2 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2827,
+     "content": 36629,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43462",
+   "title": "Digital Media Content Entrepreneurship",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3377&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2160,
+     "content": 35974,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43463",
+   "title": "Social Media Strategy",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3378&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2076,
+     "content": 35886,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43492",
+   "title": "Digital Imaging",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3376&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1596,
+     "content": 35407,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45193",
+   "title": "Control Systems Technician",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3396&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1821,
+     "content": 35628,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45194",
+   "title": "Basic Electronics Technician",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3395&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1295,
+     "content": 35105,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45195",
+   "title": "Nurse Assistant and Home Health Aide",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3398&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1585,
+     "content": 35396,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45583",
+   "title": "Public Safety Dispatcher",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3402&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1651,
+     "content": 35461,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "run": "38631691511"
+}

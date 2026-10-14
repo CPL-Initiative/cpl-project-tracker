@@ -1,0 +1,195 @@
+{
+ "college": "San Joaquin Delta College",
+ "control_number": "35074",
+ "shape": "certificate",
+ "title": "Solar Photovoltaic Installation Technician",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3266&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6305,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6305,
+    "output_tokens": 814,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 814,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0415,
+ "ms": 8961,
+ "seconds": 9.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 6,
+   "share": 0.833,
+   "missing": [
+    "ELEC82"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    21.0
+   ],
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Solar Photovoltaic Installation Technician Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Perform a site survey in order to determine the optimal location for a small size solar photovoltaic system.",
+    "Assess safety hazards in respect to fire, shock, and falls when installing or repairing photovoltaic systems.",
+    "Demonstrate the ability to troubleshoot basic solar photovoltaic circuits and determine potential problems with wiring and equipment malfunctions to industry standards.",
+    "Perform testing procedures with industry tools and test equipment necessary for solar photovoltaic module installations.",
+    "Identify and calculate different sizes of wire according to the National Electrical Code and industry standards.",
+    "Describe the components in a complete grid tie photovoltaic system."
+   ],
+   "careers": [
+    "solar installer",
+    "solar electrical installer",
+    "solar installer trainee"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "ELEC 30",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 31",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 52",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 73",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELEC 80",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ELEC 82",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Catalog text is labeled Summer 2026 - Summer 2027 College Catalog.",
+   "Description also mentions 'other emerging careers in this field' and qualification for the NABCEP PV Entry Level exam; ELEC 82 (NABCEP Entry Level Test Review) is on the closed list but not printed in the requirements.",
+   "All courses must be completed with a grade of C or better."
+  ]
+ },
+ "extracted_run": "38631691511"
+}

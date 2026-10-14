@@ -1,8 +1,8 @@
 {
- "_what": "MAP's credit recommendations per course at the harvest's eighteen colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline, Cabrillo, Modesto Junior and Palo Verde): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
+ "_what": "MAP's credit recommendations per course at the harvest's twenty-two colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline, Cabrillo, Modesto Junior, Palo Verde, Southwestern, Fresno City, El Camino and San Joaquin Delta): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
  "_source": "public.map_college_cr_unit (reviewer-gated) joined to map_colleges by college_id; exhibit titles from map_ace_exhibit_titles, else chatbox_exhibits. A college_course string naming several courses ('ADJ-13 ...(3.0), ADJ-19 ...(3.0)') counts toward each course it names. Course code = the SUBJ-NUM token with the hyphen read as a space.",
  "_read_at": "2026-10-14",
- "_read_by": "SkyPersimmon (S389) through the Supabase MCP: Southwestern (3 course codes; md5 220de7f7 counts, b4f52863 titles) and Fresno City (2; afd80e74, 6b4b8433) added. Earlier: SkyHazel (S385) through the Supabase MCP: Modesto Junior (162 course codes) and Palo Verde (58) added; the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 44f69ec1a24823e14935781dbd760bd8 and 4acabc5730dedeb1e0f28194796eb23c, and the md5 over each code's titles (code#title#source#recs, in the read's order) 30765bf9ceef64b44a2e862b58111469 and 83bbe816ab4eb109b72be382c170d47a, in SQL and over the filed rows. Earlier: SkySpruce (S383) through the Supabase MCP: Cabrillo added (112 course codes); the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 51b488541fdab60ea9e4d093eb052c0a and the md5 over each code's titles (code#title#source#recs, in the read's order) d71fa73bd6952487451eaeafb878f3eb, in SQL and over the filed rows. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield (100 course codes) and Coastline (26) added; per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads c58de704f09a7b58007336979431dace and 8bccde4ad1bae0d610b6de34413e24e9 in SQL and over the filed rows. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added (44 course codes); the per-college md5 over code|recs|exhibits|untitled reads 9ad02bf038663b2c19ac0c6b8aed2574 and the md5 over each code's titles (title#source#recs, in the read's order) 38e86115426ffd0ca2856d3ad6713150, in SQL and over the filed rows. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey (94 course codes) and San Diego City (33) added; per-college md5 over code|recs|exhibits|untitled reads 115340c8a405300f47c2bd0223964f68 and 249410c6592148fbf3beb7b68b7f1cd0 in SQL and over the filed rows. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added (33 course codes; the per-course fingerprint over code, recs, exhibits, untitled exhibits and titles reads 5c7d3a90393e710daa4f686a2f56c917 in SQL and over the filed rows). Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
+ "_read_by": "SkyTamarack (S392) through the Supabase MCP: El Camino (no course code: its one college_course reads \"-\") and San Joaquin Delta (1 course code; md5 c814004d counts, d7d7ab68 titles; its \"CSU GE E\" line names no course) added. Earlier: SkyPersimmon (S389) through the Supabase MCP: Southwestern (3 course codes; md5 220de7f7 counts, b4f52863 titles) and Fresno City (2; afd80e74, 6b4b8433) added. Earlier: SkyHazel (S385) through the Supabase MCP: Modesto Junior (162 course codes) and Palo Verde (58) added; the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 44f69ec1a24823e14935781dbd760bd8 and 4acabc5730dedeb1e0f28194796eb23c, and the md5 over each code's titles (code#title#source#recs, in the read's order) 30765bf9ceef64b44a2e862b58111469 and 83bbe816ab4eb109b72be382c170d47a, in SQL and over the filed rows. Earlier: SkySpruce (S383) through the Supabase MCP: Cabrillo added (112 course codes); the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 51b488541fdab60ea9e4d093eb052c0a and the md5 over each code's titles (code#title#source#recs, in the read's order) d71fa73bd6952487451eaeafb878f3eb, in SQL and over the filed rows. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield (100 course codes) and Coastline (26) added; per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads c58de704f09a7b58007336979431dace and 8bccde4ad1bae0d610b6de34413e24e9 in SQL and over the filed rows. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added (44 course codes); the per-college md5 over code|recs|exhibits|untitled reads 9ad02bf038663b2c19ac0c6b8aed2574 and the md5 over each code's titles (title#source#recs, in the read's order) 38e86115426ffd0ca2856d3ad6713150, in SQL and over the filed rows. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey (94 course codes) and San Diego City (33) added; per-college md5 over code|recs|exhibits|untitled reads 115340c8a405300f47c2bd0223964f68 and 249410c6592148fbf3beb7b68b7f1cd0 in SQL and over the filed rows. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added (33 course codes; the per-course fingerprint over code, recs, exhibits, untitled exhibits and titles reads 5c7d3a90393e710daa4f686a2f56c917 in SQL and over the filed rows). Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
  "_refresh": "By hand, the way kb/ccr_cpl_funnel.json is refreshed: run kb/program_requirements_pilot/map_cr_by_course.sql through the Supabase MCP when the funnel reloads (map-custom-report-load.yml) or the harvest adds a college, and file the rows here.",
  "colleges": {
   "Bakersfield College": {
@@ -7668,6 +7668,7 @@
     "untitled_exhibits": 0
    }
   },
+  "El Camino College": {},
   "Fresno City College": {
    "PE 6": {
     "recs": 1,
@@ -23424,6 +23425,23 @@
       "recs": 1,
       "title": "Legal Procedures",
       "source": "MAP"
+     }
+    ],
+    "untitled_exhibits": 0
+   }
+  },
+  "San Joaquin Delta College": {
+   "WELDING 10": {
+    "recs": 1,
+    "exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 1
+    },
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Gas Turbine Strand (Electrical/Mechanical)",
+      "source": "ACE"
      }
     ],
     "untitled_exhibits": 0

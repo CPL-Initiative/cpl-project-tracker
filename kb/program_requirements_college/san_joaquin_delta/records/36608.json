@@ -1,0 +1,172 @@
+{
+ "college": "San Joaquin Delta College",
+ "control_number": "36608",
+ "shape": "certificate",
+ "title": "Gas Metal Arc Welding (GMAW)/Flux Core Arc Welding (FCAW)",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3341&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6498,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6498,
+    "output_tokens": 1112,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1112,
+  "output_tokens_details": {
+   "thinking_tokens": 249
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04823,
+ "ms": 8689,
+ "seconds": 9.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Gas Metal Arc Welding (GMAW)/Flux Core Arc Welding (FCAW) Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the correct use of parallel line development, radial line development, and triangulation during the layout of flat patterns for projects. During the execution of pattern development student will utilize proper measuring tools and techniques, identify the proper equipment to be used for metal fabrication/welding, while achieving a high level of accuracy in relation to fit and finish of the final product.",
+    "Demonstrate significant blueprint reading knowledge through lab exercises using symbols in accordance with American Welding Society publication 2.4 “Standard Symbols for Welding, Brazing, and Non-Destructive Examinations”.",
+    "Demonstrate Gas Metal Arc and Flux Core Arc Welding practices in practical lab exercises utilizing industry accepted safety practices, equipment set up/knowledge and operation, and complete weldments free of defects or discontinuities in accordance to the applicable code or standard."
+   ],
+   "careers": [
+    "motorsports/automotive design",
+    "robotics",
+    "industrial maintenance",
+    "heavy equipment fabrication"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "WELDING 82",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELDING 86",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELDING 98",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Careers are read from the description's list of industries using these skills ('other industries such as motorsports/automotive design, robotics, industrial maintenance, and heavy equipment fabrication'); the description also mentions 'Trades involved in the construction of buildings and bridges', which was not recorded as a separate career entry — reviewer may wish to check.",
+   "Catalog requires all courses completed with a grade of 'C' or better.",
+   "Total stated as 'Complete 20 units' and 'Minimum Units Required: 20'."
+  ]
+ },
+ "extracted_run": "38631691511"
+}
