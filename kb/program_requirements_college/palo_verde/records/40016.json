@@ -5,11 +5,11 @@
  "title": "Kinesiology",
  "award": "A.A- T Degree",
  "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/kinesiology-2025-2026-fall-2025fa",
- "record_shape": 4,
+ "record_shape": 5,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5969,
+  "input_tokens": 6836,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5969,
-    "output_tokens": 2711,
+    "input_tokens": 6836,
+    "output_tokens": 2723,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,15 +30,15 @@
     "model": null
    }
   ],
-  "output_tokens": 2711,
+  "output_tokens": 2723,
   "output_tokens_details": {
-   "thinking_tokens": 1062
+   "thinking_tokens": 1032
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.0781,
- "ms": 22190,
+ "cost_usd": 0.0818,
+ "ms": 22061,
  "seconds": 22.6,
  "parts": null,
  "error": null,
@@ -67,14 +67,22 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    24.0,
-    28.0
+    58.0,
+    62.0
    ],
-   "stated": null,
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    38.0
+   ],
    "why": [
-    "the record names no total"
+    "the blocks and general education sum to 58.0-62.0; the catalog prints 60.0-60.0 for the degree"
    ]
   },
   "repeated": {
@@ -108,6 +116,15 @@
    },
    "open_elective_units": null,
    "ge_pattern": "CalGETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 38
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Acquire fundamental grounding in communication, critical thinking, scientific inquiry, and quantitative reasoning, the arts, literature and humanities, social, political and economic institutions, and self-development.",
     "Identify and apply basic physiological principles of human movement in exercise and sports settings."
@@ -210,8 +227,8 @@
    },
    {
     "name": "List A: Select two (6 units)",
-    "rule": "choose_courses",
-    "minimum": 2,
+    "rule": "choose_units",
+    "minimum": 6,
     "option_group": null,
     "stated": {
      "min": 6,
@@ -286,18 +303,18 @@
   "missing_explained": [
    {
     "code": "SOCIC1000",
-    "why": "not printed under this code; catalog lists SOC101 - Introduction to Sociology instead, likely the same course"
+    "why": "not in the text; catalog prints SOC101 - Introduction to Sociology instead (likely the same course under a different code)"
    }
   ],
   "notes": [
-   "The 'Kinesiology (Total 60)' figure is the 60-unit degree total, not the major total; the trailing '34 - 38' printed after the CalGETC sentence appears to be the GE units, so total_units is left null.",
-   "'List A: Select two (6 units)' also says 'Complete the following number of credits: 6'; recorded as choose 2 courses with stated 6, though choosing CHE 210/211 would exceed 6 units. Reviewer may prefer choose_units 6.",
-   "'List A: PSY 101 or SOC 101' says 'Complete at least one of the following rules' with stated total 3-6; recorded as choose 1 course.",
-   "SOC101 is not in the closed list (closed list has SOCIC1000 Introduction to Sociology); flagged as catalog addition.",
-   "Movement-based block restricts to at most one course from each of three different activity areas; area assignments of PHE courses are not printed.",
-   "Program outcomes are printed under 'Associate in Arts in Kinesiology'; recorded for this A.A.-T.",
-   "'kinesiologists' recorded as an occupation from 'Public schools also recruit kinesiologists'; advanced degrees (Physical Therapy, Occupation Therapy, Medical School) were not recorded as careers."
+   "The 60 total ('Kinesiology (Total 60) Complete the following number of credits: 60') sits over the major blocks and the CalGETC 34-38, so it is recorded as degree_total; no separate major total is printed.",
+   "Required Courses block states 15 units but its three listed courses (BIO210 4, BIO211 5, KIN100 3) total 12; a course may be missing from the printed list.",
+   "Movement Based Courses: at most one course from any three of the areas (Aquatics, Combatives, Team Sports, Individual Sports, Fitness, Dance); the listed PHE courses are not labeled by area.",
+   "'List A: Select two (6 units)' is recorded as choose_units 6 per 'Complete the following number of credits: 6'; heading also says select two courses.",
+   "Block 'List A: PSY 101 or SOC 101' heading uses old codes; courses printed are SOC101 and PSYCC1000. SOC101 is flagged as a catalog addition since the closed list names SOCIC1000.",
+   "Program Outcomes are printed under the heading 'Associate in Arts in Kinesiology'.",
+   "Description also mentions advanced degrees in Physical Therapy, Occupation Therapy or Medical School; not recorded as careers."
   ]
  },
- "extracted_run": "38477849603"
+ "extracted_run": "38567765687"
 }

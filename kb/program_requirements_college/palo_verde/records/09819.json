@@ -5,11 +5,11 @@
  "title": "Hazardous Materials Specialist",
  "award": "A.S. Degree",
  "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/hazardous-materials-specialist-associate-of-science-2025-2026-fall-2025fa",
- "record_shape": 4,
+ "record_shape": 5,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9492,
+  "input_tokens": 10359,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9492,
-    "output_tokens": 5120,
+    "input_tokens": 10359,
+    "output_tokens": 5103,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 5120,
+  "output_tokens": 5103,
   "output_tokens_details": {
-   "thinking_tokens": 1254
+   "thinking_tokens": 1217
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.14037,
- "ms": 37293,
- "seconds": 37.7,
+ "cost_usd": 0.1435,
+ "ms": 36851,
+ "seconds": 37.8,
  "parts": null,
  "error": null,
  "score": {
@@ -60,16 +60,22 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    25.5,
-    26.0
+    59.5,
+    64.0
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    59.5,
+    64.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    38.0
+   ],
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -90,7 +96,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -102,6 +108,15 @@
    },
    "open_elective_units": null,
    "ge_pattern": "General Education Requirements",
+   "degree_total": {
+    "min": 59.5,
+    "max": 64
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 38
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Acquired fundamental grounding in communications, science, mathematics, humanities, the social sciences and self-development in preparation for an occupation, and possible transfer to a four-year institution.",
     "Demonstrated knowledge of fire-fighting equipment, operation and maintenance, principles of fire science and combustible substances, methods of controlling different types of fires hazardous materials handling, fire rescue procedures, public relations and applicable laws and regulations."
@@ -671,15 +686,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The page header states 60.0 - 64.0 Units (degree total) and Program Requirements '(Total 59.5 - 64)', which appears to include the 34-38 GE/Associate Degree units (13.5-14 core + 12 electives + 34-38). No separate major-only total is printed, so total_units is left null; the block totals are 13.5-14 and 12.",
-   "Required Core Courses is printed as 'Complete the following number of credits: 13.5-14'; the listed courses sum to exactly 13.5-14, so the block is recorded as 'all'.",
-   "The elective block is labeled 'Unrestricted Electives' but is limited to FST courses at the 100 level or above, with a listed set; recorded as choose_units 12 and open_elective_units left null.",
-   "FST263 is printed twice in the elective list; recorded once.",
-   "FST162 appears both in the required core and in the elective list; recorded in both blocks as printed.",
-   "Several catalog units differ from the state file (e.g., FST111 0.75 vs 1; FST250 0.2-0.75 vs 0.3; FST290 0.25-6 vs 0.3); catalog values recorded.",
-   "The final '34 - 38' after the GE sentence appears to be the GE/Associate Degree Requirements units; GE courses not recorded.",
-   "The outcomes are printed under the heading 'Program Outcomes' for this A.S. degree."
+   "The page header prints 'Units: 60.0 - 64.0 Units' while Program Requirements prints '(Total 59.5 - 64)'; degree_total records the Program Requirements total 59.5-64, which appears to include core (13.5-14), electives (12) and GE (34-38). No separate major total is printed, so total_units is null.",
+   "The GE units '34 - 38' are printed unlabeled after the sentence about Associate Degree Requirements and General Education Requirements; no named pattern (CSU GE, IGETC, Cal-GETC) is given.",
+   "The 'Required Core Courses' block says 'Complete the following number of credits: 13.5-14'; the listed courses sum to 13.5-14, so it is recorded as 'all'.",
+   "The electives are limited to FST courses at 100 level or above, so open_elective_units is null despite the heading 'Unrestricted Electives'.",
+   "FST162 is listed both in the core and in the elective list; it is recorded in both blocks.",
+   "FST263 is printed twice in the elective list; it is recorded once.",
+   "Some printed units differ from the state file (e.g., FST111 printed 0.75 vs 1; several ranges such as FST290 0.25-6); printed values are recorded.",
+   "The program outcomes are printed under the program heading for this A.S. degree."
   ]
  },
- "extracted_run": "38477849603"
+ "extracted_run": "38567765687"
 }

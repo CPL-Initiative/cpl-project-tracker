@@ -5,16 +5,16 @@
  "found": 54,
  "extracted": 54,
  "errors": 0,
- "passed_machine_checks": 29,
+ "passed_machine_checks": 40,
  "failed": {
   "coverage": 2,
   "invented": 0,
-  "arithmetic": 25,
+  "arithmetic": 14,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 4.4,
- "cost_per_program": 0.0814,
+ "cost_usd": 4.46,
+ "cost_per_program": 0.0826,
  "not_found": [
   {
    "control_number": "09816",
@@ -179,5 +179,5 @@
    }
   }
  ],
- "run": "38477849603"
+ "run": "38567765687"
 }
