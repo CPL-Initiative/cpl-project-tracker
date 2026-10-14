@@ -22,8 +22,8 @@ and heard nothing more from him. `list_sessions` first and agree one writer.
 - **#2098 + CPLBrain #338:** Palo Verde's no-total pages print the degree total with general education, as Cabrillo's do
   (79 records fail arithmetic); Southwestern (220 of 233) and Fresno City (237 of 251) captured with no model calls
   (previews on `claude/s386-southwestern`, `claude/s386-fresno-city`); two NEEDS SAM markers; **Open Asks Sheet 78**.
-- **#2099 (open at checkpoint):** the UI pass on the Common Subjects Reference: five color pairs to First Light tokens,
-  159 controls to 24px. Merge it when `test` passes on its head.
+- **#2099:** the UI pass on the Common Subjects Reference: five color pairs to First Light tokens, 159 controls to
+  24px (merged after the checkpoint commit).
 
 ## Decisions Sam made this run
 
@@ -43,7 +43,6 @@ None. Sheet 78 is unanswered: [Open Asks Sheet 78](https://claude.ai/artifact/C7
    - Answering a card drops its NEEDS SAM in the harvest lane in the same PR.
 2. **The Records view's first college pick** (`college=in.(...)`) has still never run live: read `edge_logs` when one does.
 3. **Card 1's key on Annual Goals:** confirm on the next save that the message says *within about 10 minutes*.
-4. **Merge #2099** when `test` passes; its PR body has the before and after.
 
 ## Docs to read
 
@@ -66,5 +65,5 @@ The pipeline viz (7): the M-ID pipeline did not move. `kb/README.md` and `README
 
 ## Subscriptions and check-ins
 
-S386 drops its subscription to #2099 and holds no check-in. Sheet 78's artifact watch was reported arming and was
+S386 holds no PR subscription (#2096-#2100 merged) and no check-in. Sheet 78's artifact watch was reported arming and was
 never confirmed.
