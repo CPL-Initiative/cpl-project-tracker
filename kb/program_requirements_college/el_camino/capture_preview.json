@@ -5,9 +5,9 @@
  "catalog_year": "2026-2027",
  "programs": 189,
  "with_closed_list": 135,
- "started": "2026-10-14T12:37:49Z",
+ "started": "2026-10-14T12:42:13Z",
  "acalog": {
-  "base": "https://catalog.elcamino.edu",
+  "base": "http://catalog.elcamino.edu",
   "start_status": 200,
   "catoid": 13,
   "start_links": 112,
@@ -113,345 +113,751 @@
     "http://catalog.elcamino.edu/content.php?catoid=13&navoid=893"
    ]
   ],
-  "sitemap_status": null,
-  "sitemap_access": "unreachable",
+  "sitemap_status": 404,
+  "sitemap_access": "not_found",
   "sitemap_programs": 0,
   "program_navs": [
-   "https://catalog.elcamino.edu/content.php?catoid=13&navoid=886",
-   "https://catalog.elcamino.edu/content.php?catoid=13&navoid=895",
-   "https://catalog.elcamino.edu/content.php?catoid=13&navoid=885",
-   "https://catalog.elcamino.edu/content.php?catoid=13&navoid=879",
-   "https://catalog.elcamino.edu/content.php?catoid=13&navoid=873",
-   "https://catalog.elcamino.edu/content.php?catoid=13&navoid=874"
+   "http://catalog.elcamino.edu/content.php?catoid=13&navoid=886",
+   "http://catalog.elcamino.edu/content.php?catoid=13&navoid=895",
+   "http://catalog.elcamino.edu/content.php?catoid=13&navoid=885",
+   "http://catalog.elcamino.edu/content.php?catoid=13&navoid=879",
+   "http://catalog.elcamino.edu/content.php?catoid=13&navoid=873",
+   "http://catalog.elcamino.edu/content.php?catoid=13&navoid=874"
   ],
   "navs_read": 6,
   "navs": [
    {
-    "url": "https://catalog.elcamino.edu/content.php?catoid=13&navoid=886",
-    "access": "unreachable",
-    "title": "",
-    "links": 0,
-    "sample": []
+    "url": "http://catalog.elcamino.edu/content.php?catoid=13&navoid=886",
+    "access": "ok",
+    "title": "Programs of Study - El Camino College",
+    "links": 375,
+    "sample": [
+     [
+      "Skip to Content",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=886#select_catalog"
+     ],
+     [
+      "Skip to Main Menu",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=886#mainNav"
+     ],
+     [
+      "Academic Calendar",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=860"
+     ],
+     [
+      "About Us",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=861"
+     ],
+     [
+      "Announcement of Courses",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=878"
+     ],
+     [
+      "General Education Transfer Patterns",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=877"
+     ],
+     [
+      "Programs of Study",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=886"
+     ],
+     [
+      "Program Learning Outcomes",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=895"
+     ],
+     [
+      "Degrees and Certificates",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=885"
+     ],
+     [
+      "Degrees and Certificates by Division",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=879"
+     ],
+     [
+      "Course Descriptions",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=880"
+     ],
+     [
+      "Student Learning Outcomes",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=862"
+     ],
+     [
+      "Admission Requirements",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=863"
+     ],
+     [
+      "Path to Enrollment",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=864"
+     ],
+     [
+      "Registration for Classes",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=865"
+     ],
+     [
+      "Student Fees/Refunds/Credits",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=866"
+     ],
+     [
+      "Student Support Services",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=867"
+     ],
+     [
+      "Student Development/College Life",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=868"
+     ],
+     [
+      "Students’ Rights and Responsibilities",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=869"
+     ],
+     [
+      "Academic Regulations",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=870"
+     ],
+     [
+      "Credit for Prior Learning",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=871"
+     ],
+     [
+      "Alternative Credit Options",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=872"
+     ],
+     [
+      "Honors Program",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=873"
+     ],
+     [
+      "Other College Programs",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=874"
+     ],
+     [
+      "Graduation Requirements",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=875"
+     ]
+    ]
    },
    {
-    "url": "https://catalog.elcamino.edu/content.php?catoid=13&navoid=895",
-    "access": "unreachable",
-    "title": "",
-    "links": 0,
-    "sample": []
+    "url": "http://catalog.elcamino.edu/content.php?catoid=13&navoid=895",
+    "access": "ok",
+    "title": "Program Learning Outcomes - El Camino College",
+    "links": 119,
+    "sample": [
+     [
+      "Skip to Content",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=895#select_catalog"
+     ],
+     [
+      "Skip to Main Menu",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=895#mainNav"
+     ],
+     [
+      "Academic Calendar",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=860"
+     ],
+     [
+      "About Us",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=861"
+     ],
+     [
+      "Announcement of Courses",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=878"
+     ],
+     [
+      "General Education Transfer Patterns",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=877"
+     ],
+     [
+      "Programs of Study",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=886"
+     ],
+     [
+      "Program Learning Outcomes",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=895"
+     ],
+     [
+      "Degrees and Certificates",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=885"
+     ],
+     [
+      "Degrees and Certificates by Division",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=879"
+     ],
+     [
+      "Course Descriptions",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=880"
+     ],
+     [
+      "Student Learning Outcomes",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=862"
+     ],
+     [
+      "Admission Requirements",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=863"
+     ],
+     [
+      "Path to Enrollment",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=864"
+     ],
+     [
+      "Registration for Classes",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=865"
+     ],
+     [
+      "Student Fees/Refunds/Credits",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=866"
+     ],
+     [
+      "Student Support Services",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=867"
+     ],
+     [
+      "Student Development/College Life",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=868"
+     ],
+     [
+      "Students’ Rights and Responsibilities",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=869"
+     ],
+     [
+      "Academic Regulations",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=870"
+     ],
+     [
+      "Credit for Prior Learning",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=871"
+     ],
+     [
+      "Alternative Credit Options",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=872"
+     ],
+     [
+      "Honors Program",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=873"
+     ],
+     [
+      "Other College Programs",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=874"
+     ],
+     [
+      "Graduation Requirements",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=875"
+     ]
+    ]
    },
    {
-    "url": "https://catalog.elcamino.edu/content.php?catoid=13&navoid=885",
-    "access": "unreachable",
-    "title": "",
-    "links": 0,
-    "sample": []
+    "url": "http://catalog.elcamino.edu/content.php?catoid=13&navoid=885",
+    "access": "ok",
+    "title": "Degrees and Certificates - El Camino College",
+    "links": 375,
+    "sample": [
+     [
+      "Skip to Content",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=885#select_catalog"
+     ],
+     [
+      "Skip to Main Menu",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=885#mainNav"
+     ],
+     [
+      "Academic Calendar",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=860"
+     ],
+     [
+      "About Us",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=861"
+     ],
+     [
+      "Announcement of Courses",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=878"
+     ],
+     [
+      "General Education Transfer Patterns",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=877"
+     ],
+     [
+      "Programs of Study",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=886"
+     ],
+     [
+      "Program Learning Outcomes",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=895"
+     ],
+     [
+      "Degrees and Certificates",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=885"
+     ],
+     [
+      "Degrees and Certificates by Division",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=879"
+     ],
+     [
+      "Course Descriptions",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=880"
+     ],
+     [
+      "Student Learning Outcomes",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=862"
+     ],
+     [
+      "Admission Requirements",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=863"
+     ],
+     [
+      "Path to Enrollment",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=864"
+     ],
+     [
+      "Registration for Classes",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=865"
+     ],
+     [
+      "Student Fees/Refunds/Credits",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=866"
+     ],
+     [
+      "Student Support Services",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=867"
+     ],
+     [
+      "Student Development/College Life",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=868"
+     ],
+     [
+      "Students’ Rights and Responsibilities",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=869"
+     ],
+     [
+      "Academic Regulations",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=870"
+     ],
+     [
+      "Credit for Prior Learning",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=871"
+     ],
+     [
+      "Alternative Credit Options",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=872"
+     ],
+     [
+      "Honors Program",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=873"
+     ],
+     [
+      "Other College Programs",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=874"
+     ],
+     [
+      "Graduation Requirements",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=875"
+     ]
+    ]
    },
    {
-    "url": "https://catalog.elcamino.edu/content.php?catoid=13&navoid=879",
-    "access": "unreachable",
-    "title": "",
-    "links": 0,
-    "sample": []
+    "url": "http://catalog.elcamino.edu/content.php?catoid=13&navoid=879",
+    "access": "ok",
+    "title": "Degrees and Certificates by Division - El Camino College",
+    "links": 386,
+    "sample": [
+     [
+      "Skip to Content",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=879#select_catalog"
+     ],
+     [
+      "Skip to Main Menu",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=879#mainNav"
+     ],
+     [
+      "Academic Calendar",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=860"
+     ],
+     [
+      "About Us",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=861"
+     ],
+     [
+      "Announcement of Courses",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=878"
+     ],
+     [
+      "General Education Transfer Patterns",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=877"
+     ],
+     [
+      "Programs of Study",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=886"
+     ],
+     [
+      "Program Learning Outcomes",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=895"
+     ],
+     [
+      "Degrees and Certificates",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=885"
+     ],
+     [
+      "Degrees and Certificates by Division",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=879"
+     ],
+     [
+      "Course Descriptions",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=880"
+     ],
+     [
+      "Student Learning Outcomes",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=862"
+     ],
+     [
+      "Admission Requirements",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=863"
+     ],
+     [
+      "Path to Enrollment",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=864"
+     ],
+     [
+      "Registration for Classes",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=865"
+     ],
+     [
+      "Student Fees/Refunds/Credits",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=866"
+     ],
+     [
+      "Student Support Services",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=867"
+     ],
+     [
+      "Student Development/College Life",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=868"
+     ],
+     [
+      "Students’ Rights and Responsibilities",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=869"
+     ],
+     [
+      "Academic Regulations",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=870"
+     ],
+     [
+      "Credit for Prior Learning",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=871"
+     ],
+     [
+      "Alternative Credit Options",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=872"
+     ],
+     [
+      "Honors Program",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=873"
+     ],
+     [
+      "Other College Programs",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=874"
+     ],
+     [
+      "Graduation Requirements",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=875"
+     ]
+    ]
    },
    {
-    "url": "https://catalog.elcamino.edu/content.php?catoid=13&navoid=873",
-    "access": "unreachable",
-    "title": "",
-    "links": 0,
-    "sample": []
+    "url": "http://catalog.elcamino.edu/content.php?catoid=13&navoid=873",
+    "access": "ok",
+    "title": "Honors Program - El Camino College",
+    "links": 202,
+    "sample": [
+     [
+      "Skip to Content",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=873#select_catalog"
+     ],
+     [
+      "Skip to Main Menu",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=873#mainNav"
+     ],
+     [
+      "Academic Calendar",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=860"
+     ],
+     [
+      "About Us",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=861"
+     ],
+     [
+      "Announcement of Courses",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=878"
+     ],
+     [
+      "General Education Transfer Patterns",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=877"
+     ],
+     [
+      "Programs of Study",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=886"
+     ],
+     [
+      "Program Learning Outcomes",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=895"
+     ],
+     [
+      "Degrees and Certificates",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=885"
+     ],
+     [
+      "Degrees and Certificates by Division",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=879"
+     ],
+     [
+      "Course Descriptions",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=880"
+     ],
+     [
+      "Student Learning Outcomes",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=862"
+     ],
+     [
+      "Admission Requirements",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=863"
+     ],
+     [
+      "Path to Enrollment",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=864"
+     ],
+     [
+      "Registration for Classes",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=865"
+     ],
+     [
+      "Student Fees/Refunds/Credits",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=866"
+     ],
+     [
+      "Student Support Services",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=867"
+     ],
+     [
+      "Student Development/College Life",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=868"
+     ],
+     [
+      "Students’ Rights and Responsibilities",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=869"
+     ],
+     [
+      "Academic Regulations",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=870"
+     ],
+     [
+      "Credit for Prior Learning",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=871"
+     ],
+     [
+      "Alternative Credit Options",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=872"
+     ],
+     [
+      "Honors Program",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=873"
+     ],
+     [
+      "Other College Programs",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=874"
+     ],
+     [
+      "Graduation Requirements",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=875"
+     ]
+    ]
    },
    {
-    "url": "https://catalog.elcamino.edu/content.php?catoid=13&navoid=874",
-    "access": "unreachable",
-    "title": "",
-    "links": 0,
-    "sample": []
+    "url": "http://catalog.elcamino.edu/content.php?catoid=13&navoid=874",
+    "access": "ok",
+    "title": "Other College Programs - El Camino College",
+    "links": 122,
+    "sample": [
+     [
+      "Skip to Content",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=874#select_catalog"
+     ],
+     [
+      "Skip to Main Menu",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=874#mainNav"
+     ],
+     [
+      "Academic Calendar",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=860"
+     ],
+     [
+      "About Us",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=861"
+     ],
+     [
+      "Announcement of Courses",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=878"
+     ],
+     [
+      "General Education Transfer Patterns",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=877"
+     ],
+     [
+      "Programs of Study",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=886"
+     ],
+     [
+      "Program Learning Outcomes",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=895"
+     ],
+     [
+      "Degrees and Certificates",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=885"
+     ],
+     [
+      "Degrees and Certificates by Division",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=879"
+     ],
+     [
+      "Course Descriptions",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=880"
+     ],
+     [
+      "Student Learning Outcomes",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=862"
+     ],
+     [
+      "Admission Requirements",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=863"
+     ],
+     [
+      "Path to Enrollment",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=864"
+     ],
+     [
+      "Registration for Classes",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=865"
+     ],
+     [
+      "Student Fees/Refunds/Credits",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=866"
+     ],
+     [
+      "Student Support Services",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=867"
+     ],
+     [
+      "Student Development/College Life",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=868"
+     ],
+     [
+      "Students’ Rights and Responsibilities",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=869"
+     ],
+     [
+      "Academic Regulations",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=870"
+     ],
+     [
+      "Credit for Prior Learning",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=871"
+     ],
+     [
+      "Alternative Credit Options",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=872"
+     ],
+     [
+      "Honors Program",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=873"
+     ],
+     [
+      "Other College Programs",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=874"
+     ],
+     [
+      "Graduation Requirements",
+      "http://catalog.elcamino.edu/content.php?catoid=13&navoid=875"
+     ]
+    ]
    }
   ],
-  "program_pages": 0
+  "program_pages": 257
  },
- "pages_read": 0,
+ "pages_read": 257,
  "banner_h1": null,
- "loads": 8,
- "seconds": 36.9,
- "found": 0,
+ "loads": 265,
+ "seconds": 1550.0,
+ "found": 124,
  "by_method": {
   "no_closed_list": 54,
-  "not_found": 135
+  "not_found": 11,
+  "sitemap_page": 124
  },
- "shared_pages": {},
+ "shared_pages": {
+  "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3523&print": [
+   "02481",
+   "19857"
+  ],
+  "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3551&print": [
+   "02487",
+   "19861"
+  ],
+  "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3660&print": [
+   "02494",
+   "19869"
+  ],
+  "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3562&print": [
+   "02503",
+   "19877"
+  ],
+  "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3668&print": [
+   "02506",
+   "19881"
+  ],
+  "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3639&print": [
+   "02512",
+   "19883"
+  ],
+  "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3635&print": [
+   "02523",
+   "19889"
+  ],
+  "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4008&print": [
+   "08636",
+   "19885"
+  ],
+  "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3518&print": [
+   "30301",
+   "30302"
+  ],
+  "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3697&print": [
+   "38839",
+   "38948"
+  ],
+  "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3729&print": [
+   "43992",
+   "43993"
+  ]
+ },
  "not_found": [
-  {
-   "control_number": "02481",
-   "title": "Architecture - Professional Practice",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02485",
-   "title": "Business Management",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02487",
-   "title": "Marketing",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
   {
    "control_number": "02489",
    "title": "Business Office Administration",
    "award": "A.S. Degree",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02491",
-   "title": "Journalism",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02493",
-   "title": "Liberal Studies (Elementary Teaching)",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02494",
-   "title": "Sign Language Interpreter Training",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02495",
-   "title": "Physical Education",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02503",
-   "title": "Computer Aided Design/Drafting",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02506",
-   "title": "Welding",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02508",
-   "title": "Art History",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02511",
-   "title": "Theatre",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02512",
-   "title": "Photography",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02513",
-   "title": "French",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02515",
-   "title": "Spanish",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02517",
-   "title": "Japanese",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02518",
-   "title": "Nursing",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02519",
-   "title": "Respiratory Care",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02520",
-   "title": "Radiologic Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02523",
-   "title": "Paralegal Studies",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02524",
-   "title": "English",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02527",
-   "title": "Mathematics",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02528",
-   "title": "Physical Science",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02535",
-   "title": "Recreation",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02536",
-   "title": "Fire and Emergency Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02538",
-   "title": "Economics",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "02544",
-   "title": "Cosmetology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "08021",
-   "title": "Computer Information Systems",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "08023",
-   "title": "Dance",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "08024",
-   "title": "Jewelry Design and Fabrication",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "08031",
-   "title": "Fire Academy",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "08636",
-   "title": "Paramedical Technician",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "15250",
-   "title": "Digital Art & Design Foundation",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "15251",
-   "title": "Visual Communications",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3553&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.154,
+    "body": 0.154,
+    "content": 0.0,
+    "net": 2,
+    "listed": 13,
+    "why": "coarse net: the page's code tokens name 2 of 13 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1789,
+     "content": 13953,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -459,31 +865,25 @@
    "title": "Retail Management (WAFC)",
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "15566",
-   "title": "Fashion Stylist",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "15581",
-   "title": "Electronics and Computer Hardware Technology: Computer Technology Option",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19857",
-   "title": "Architecture",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3550&print",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1366,
+     "content": 13538,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -491,7 +891,25 @@
    "title": "Accounting - CPA Track",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "why": "no page read names the program"
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3547&print",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.25,
+    "body": 0.25,
+    "content": 0.125,
+    "net": 2,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 2 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1371,
+     "content": 13551,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -499,327 +917,25 @@
    "title": "Business Management",
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19861",
-   "title": "Marketing",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19866",
-   "title": "Journalism",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19869",
-   "title": "Sign Language Interpreter Training",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19870",
-   "title": "Electronics Engineering Technician",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19871",
-   "title": "Computer Hardware Electronics Technician",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19872",
-   "title": "Heating, Ventilation, and Air Conditioning (HVAC) and Refrigeration",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19877",
-   "title": "Computer Aided Design/Drafting",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19881",
-   "title": "Welding",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19883",
-   "title": "Photography",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19884",
-   "title": "Respiratory Care",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19885",
-   "title": "Paramedical Technician",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19888",
-   "title": "Early Childhood Education",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19889",
-   "title": "Paralegal Studies",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19891",
-   "title": "Fire & Emergency Technology",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19892",
-   "title": "Cosmetology Level II",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30301",
-   "title": "Refrigeration",
-   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30302",
-   "title": "Air Conditioning",
-   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30305",
-   "title": "Engine and Driveline Technician",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31023",
-   "title": "Sociology",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31319",
-   "title": "Commercial Music",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31358",
-   "title": "Geology",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31445",
-   "title": "Psychology",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31684",
-   "title": "Physics",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31728",
-   "title": "Mathematics",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31942",
-   "title": "Administration of Justice",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32141",
-   "title": "Geography",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32165",
-   "title": "History",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32177",
-   "title": "English",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32238",
-   "title": "Forensics",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32273",
-   "title": "Elementary Teacher Education",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32333",
-   "title": "Early Childhood Education",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32378",
-   "title": "Theatre Arts",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33577",
-   "title": "Philosophy",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35049",
-   "title": "Business Programming",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36167",
-   "title": "Database Management",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36974",
-   "title": "ESL for Math",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37087",
-   "title": "ESL for Healthcare",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37112",
-   "title": "Computer User Support Specialist",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37185",
-   "title": "ESL for Healthcare II",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37186",
-   "title": "ESL for Childhood Educators",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3548&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1786,
+     "content": 13953,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -827,55 +943,25 @@
    "title": "Business Information Worker",
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37904",
-   "title": "Cloud Computing with Amazon Web Services",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38788",
-   "title": "Cisco Networking Administration",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38791",
-   "title": "Cybersecurity",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38839",
-   "title": "Entrepreneurial Studies",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38948",
-   "title": "Entrepreneurial Studies",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38949",
-   "title": "Women, Gender and Sexual Studies",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3686&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.429,
+    "body": 0.429,
+    "content": 0.143,
+    "net": 3,
+    "listed": 7,
+    "why": "coverage 0.43 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 1324,
+     "content": 13502,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -883,31 +969,25 @@
    "title": "ESL Listening and Speaking",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39005",
-   "title": "ESL Reading and Vocabulary",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39006",
-   "title": "ESL Writing and Grammar",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39056",
-   "title": "Communication Studies",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3703&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 928,
+     "content": 13115,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -915,7 +995,25 @@
    "title": "Accounting - Tax Preparation",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "why": "no page read names the program"
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3708&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.4,
+    "body": 0.4,
+    "content": 0.0,
+    "net": 2,
+    "listed": 5,
+    "why": "coverage 0.40 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 1267,
+     "content": 13454,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -923,7 +1021,25 @@
    "title": "Accounting Clerical",
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
-    "why": "no page read names the program"
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3707&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.333,
+    "body": 0.333,
+    "content": 0.0,
+    "net": 1,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 1 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 907,
+     "content": 13094,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -931,319 +1047,25 @@
    "title": "Fundamentals of Construction",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "40650",
-   "title": "Technical Support and Networking Specialist",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "40668",
-   "title": "Introduction to College and Career Success",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "40715",
-   "title": "Transition to College Success",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41383",
-   "title": "Social Justice Studies",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41395",
-   "title": "Real Estate Broker",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41396",
-   "title": "Real Estate Escrow",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41400",
-   "title": "Real Estate Property Management",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41401",
-   "title": "Real Estate Salesperson",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41531",
-   "title": "Real Estate Investments",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41532",
-   "title": "Real Estate Finance",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42541",
-   "title": "Business Administration 2.0",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42780",
-   "title": "Recreation Aquatics Specialist",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43210",
-   "title": "Respiratory Care",
-   "award": "Baccalaureate of Science (B.S.) Degree.",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43815",
-   "title": "Piano Teaching",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43963",
-   "title": "Personal Care Aide",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43992",
-   "title": "Hybrid, Electric and Alternative Fuels",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43993",
-   "title": "Hybrid, Electric, and Alternative Fuels",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44035",
-   "title": "High School Equivalency Test",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44420",
-   "title": "Basic Office Computer Skills",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44465",
-   "title": "Introduction to Child Development and Early Childhood Education",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44466",
-   "title": "Parenting/Caregiving",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44467",
-   "title": "Medical Transcription",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44505",
-   "title": "Sterile Processing Technician",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44583",
-   "title": "Actuarial Science",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44584",
-   "title": "IRS Volunteer Income Tax Assistance (VITA) Program",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44744",
-   "title": "Dance Teacher",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44764",
-   "title": "Data Science",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45070",
-   "title": "Digital Art and Design: 2D Animation",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45073",
-   "title": "Digital Art and Design: 3D Modeling & Animation",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45129",
-   "title": "Digital Art and Design: Concept Design",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45130",
-   "title": "Digital Art and Design: Game Art and Animation",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45144",
-   "title": "Digital Art and Design",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45290",
-   "title": "Cal-GETC",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45307",
-   "title": "Adult High School Diploma",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45647",
-   "title": "Biotechnology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45648",
-   "title": "Biotechnology Laboratory Assistant",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45649",
-   "title": "Biotechnology Technician",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45744",
-   "title": "Fashion Entrepreneurship",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45974",
-   "title": "Communication Studies 2.0",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3706&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 993,
+     "content": 13180,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -1251,7 +1073,25 @@
    "title": "Academic Skills",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3740&print",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1423,
+     "content": 13614,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -1259,21 +1099,1280 @@
    "title": "Math Essentials",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3691&print",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 858,
+     "content": 13045,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   }
  ],
  "page_claimed": [],
  "coverage_bands": {
-  "0.5-0.8": 0,
-  "0.8-1.0": 0,
-  "1.0": 0
+  "0.5-0.8": 4,
+  "0.8-1.0": 26,
+  "1.0": 94
  },
  "would_extract": {
   "against": null,
   "kept": 0,
-  "programs": 0,
-  "list": []
+  "programs": 124,
+  "list": [
+   {
+    "control_number": "02481",
+    "title": "Architecture - Professional Practice",
+    "award": "A.S. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3523&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02485",
+    "title": "Business Management",
+    "award": "A.S. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3548&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02487",
+    "title": "Marketing",
+    "award": "A.S. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3551&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02491",
+    "title": "Journalism",
+    "award": "A.A. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3621&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02493",
+    "title": "Liberal Studies (Elementary Teaching)",
+    "award": "A.A. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3624&print",
+    "coverage": 0.974,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02494",
+    "title": "Sign Language Interpreter Training",
+    "award": "A.A. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3660&print",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02495",
+    "title": "Physical Education",
+    "award": "A.A. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3512&print",
+    "coverage": 0.982,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02503",
+    "title": "Computer Aided Design/Drafting",
+    "award": "A.S. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3562&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02506",
+    "title": "Welding",
+    "award": "A.S. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3668&print",
+    "coverage": 0.952,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02508",
+    "title": "Art History",
+    "award": "A.A. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3501&print",
+    "coverage": 0.735,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02511",
+    "title": "Theatre",
+    "award": "A.A. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3664&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02512",
+    "title": "Photography",
+    "award": "A.S. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3639&print",
+    "coverage": 0.842,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02513",
+    "title": "French",
+    "award": "A.A. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3612&print",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02515",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3662&print",
+    "coverage": 0.935,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02517",
+    "title": "Japanese",
+    "award": "A.A. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3620&print",
+    "coverage": 0.966,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02518",
+    "title": "Nursing",
+    "award": "A.S. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3511&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02519",
+    "title": "Respiratory Care",
+    "award": "A.S. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3657&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02520",
+    "title": "Radiologic Technology",
+    "award": "A.S. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3651&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02523",
+    "title": "Paralegal Studies",
+    "award": "A.A. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3635&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02524",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3595&print",
+    "coverage": 0.972,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02527",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3510&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02528",
+    "title": "Physical Science",
+    "award": "A.S. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3643&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02535",
+    "title": "Recreation",
+    "award": "A.A. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3656&print",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02536",
+    "title": "Fire and Emergency Technology",
+    "award": "A.S. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3607&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02538",
+    "title": "Economics",
+    "award": "A.A. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3581&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "02544",
+    "title": "Cosmetology",
+    "award": "A.S. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3577&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08021",
+    "title": "Computer Information Systems",
+    "award": "A.S. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3505&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08023",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3580&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08024",
+    "title": "Jewelry Design and Fabrication",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3526&print",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08031",
+    "title": "Fire Academy",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3609&print",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08636",
+    "title": "Paramedical Technician",
+    "award": "A.S. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4008&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15250",
+    "title": "Digital Art & Design Foundation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3502&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15251",
+    "title": "Visual Communications",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3527&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15566",
+    "title": "Fashion Stylist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3604&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15581",
+    "title": "Electronics and Computer Hardware Technology: Computer Technology Option",
+    "award": "A.S. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3583&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19857",
+    "title": "Architecture",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3523&print",
+    "coverage": 0.571,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19861",
+    "title": "Marketing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3551&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19866",
+    "title": "Journalism",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3623&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19869",
+    "title": "Sign Language Interpreter Training",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3660&print",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19870",
+    "title": "Electronics Engineering Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3585&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19871",
+    "title": "Computer Hardware Electronics Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3584&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19872",
+    "title": "Heating, Ventilation, and Air Conditioning (HVAC) and Refrigeration",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3521&print",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19877",
+    "title": "Computer Aided Design/Drafting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3562&print",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19881",
+    "title": "Welding",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3668&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19883",
+    "title": "Photography",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3639&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19884",
+    "title": "Respiratory Care",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3658&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19885",
+    "title": "Paramedical Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4008&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19888",
+    "title": "Early Childhood Education",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3557&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19889",
+    "title": "Paralegal Studies",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3635&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19891",
+    "title": "Fire & Emergency Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3608&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19892",
+    "title": "Cosmetology Level II",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3578&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30301",
+    "title": "Refrigeration",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3518&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30302",
+    "title": "Air Conditioning",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3518&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30305",
+    "title": "Engine and Driveline Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3537&print",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31023",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3661&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31319",
+    "title": "Commercial Music",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3634&print",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31358",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3617&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31445",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3650&print",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31684",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3645&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31728",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3632&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31942",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3517&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32141",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3616&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32165",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3619&print",
+    "coverage": 0.802,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32177",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3508&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32238",
+    "title": "Forensics",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3516&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32273",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3625&print",
+    "coverage": 0.952,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32333",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3560&print",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32378",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3666&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33577",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3638&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35049",
+    "title": "Business Programming",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3506&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36167",
+    "title": "Database Management",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3566&print",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36974",
+    "title": "ESL for Math",
+    "award": "Noncredit program",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3691&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37087",
+    "title": "ESL for Healthcare",
+    "award": "Noncredit program",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3689&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37112",
+    "title": "Computer User Support Specialist",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3687&print",
+    "coverage": 0.571,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37185",
+    "title": "ESL for Healthcare II",
+    "award": "Noncredit program",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3690&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37186",
+    "title": "ESL for Childhood Educators",
+    "award": "Noncredit program",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3688&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37904",
+    "title": "Cloud Computing with Amazon Web Services",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3695&print",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38788",
+    "title": "Cisco Networking Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3700&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38791",
+    "title": "Cybersecurity",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3702&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38839",
+    "title": "Entrepreneurial Studies",
+    "award": "A.S. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3697&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38948",
+    "title": "Entrepreneurial Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3697&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38949",
+    "title": "Women, Gender and Sexual Studies",
+    "award": "A.A. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3698&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39005",
+    "title": "ESL Reading and Vocabulary",
+    "award": "Noncredit program",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3721&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39006",
+    "title": "ESL Writing and Grammar",
+    "award": "Noncredit program",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3722&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39056",
+    "title": "Communication Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3701&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40650",
+    "title": "Technical Support and Networking Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3705&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40668",
+    "title": "Introduction to College and Career Success",
+    "award": "Noncredit program",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3709&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40715",
+    "title": "Transition to College Success",
+    "award": "Noncredit program",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3710&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41383",
+    "title": "Social Justice Studies",
+    "award": "A.A- T Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3719&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41395",
+    "title": "Real Estate Broker",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3711&print",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41396",
+    "title": "Real Estate Escrow",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3712&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41400",
+    "title": "Real Estate Property Management",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3715&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41401",
+    "title": "Real Estate Salesperson",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3716&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41531",
+    "title": "Real Estate Investments",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3714&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41532",
+    "title": "Real Estate Finance",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3713&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42541",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3555&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42780",
+    "title": "Recreation Aquatics Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3725&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43210",
+    "title": "Respiratory Care",
+    "award": "Baccalaureate of Science (B.S.) Degree.",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3723&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43815",
+    "title": "Piano Teaching",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3724&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43963",
+    "title": "Personal Care Aide",
+    "award": "Noncredit program",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3726&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43992",
+    "title": "Hybrid, Electric and Alternative Fuels",
+    "award": "A.S. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3729&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43993",
+    "title": "Hybrid, Electric, and Alternative Fuels",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3729&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44035",
+    "title": "High School Equivalency Test",
+    "award": "Noncredit program",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3727&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44420",
+    "title": "Basic Office Computer Skills",
+    "award": "Noncredit program",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3740&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44465",
+    "title": "Introduction to Child Development and Early Childhood Education",
+    "award": "Noncredit program",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3732&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44466",
+    "title": "Parenting/Caregiving",
+    "award": "Noncredit program",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3733&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44467",
+    "title": "Medical Transcription",
+    "award": "Noncredit program",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3734&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44505",
+    "title": "Sterile Processing Technician",
+    "award": "Noncredit program",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3735&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44583",
+    "title": "Actuarial Science",
+    "award": "A.S. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3736&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44584",
+    "title": "IRS Volunteer Income Tax Assistance (VITA) Program",
+    "award": "Noncredit program",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3739&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44744",
+    "title": "Dance Teacher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3741&print",
+    "coverage": 0.963,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44764",
+    "title": "Data Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3737&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45070",
+    "title": "Digital Art and Design: 2D Animation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3745&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45073",
+    "title": "Digital Art and Design: 3D Modeling & Animation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3746&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45129",
+    "title": "Digital Art and Design: Concept Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3747&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45130",
+    "title": "Digital Art and Design: Game Art and Animation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3748&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45144",
+    "title": "Digital Art and Design",
+    "award": "A.S. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3744&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45290",
+    "title": "Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3749&print",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45307",
+    "title": "Adult High School Diploma",
+    "award": "Noncredit program",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3750&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45647",
+    "title": "Biotechnology",
+    "award": "A.S. Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3751&print",
+    "coverage": 0.95,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45648",
+    "title": "Biotechnology Laboratory Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3752&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45649",
+    "title": "Biotechnology Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3753&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45744",
+    "title": "Fashion Entrepreneurship",
+    "award": "Noncredit program",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3754&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45974",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3755&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
  },
- "run": "38565157199"
+ "run": "38565658064"
 }
