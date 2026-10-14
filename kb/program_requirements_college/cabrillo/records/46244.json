@@ -5,11 +5,11 @@
  "title": "Mathematics 2.0",
  "award": "A.S. T Degree",
  "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/mathematics-2-0-associate-in-science-for-transfer-a-s-t-fall-2026",
- "record_shape": 4,
+ "record_shape": 5,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11895,
+  "input_tokens": 12762,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11895,
-    "output_tokens": 2062,
+    "input_tokens": 12762,
+    "output_tokens": 2169,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 2062,
+  "output_tokens": 2169,
   "output_tokens_details": {
-   "thinking_tokens": 736
+   "thinking_tokens": 884
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.08882,
- "ms": 16824,
- "seconds": 17.3,
+ "cost_usd": 0.09443,
+ "ms": 19228,
+ "seconds": 19.5,
  "parts": null,
  "error": null,
  "score": {
@@ -61,14 +61,22 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    25.0,
-    26.0
+    59.0,
+    60.0
    ],
-   "stated": null,
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
    "why": [
-    "the record names no total"
+    "the blocks and general education sum to 59.0-60.0; the catalog prints 60.0-60.0 for the degree"
    ]
   },
   "repeated": {
@@ -86,7 +94,7 @@
    "pass": true
   },
   "careers": {
-   "count": 11,
+   "count": 6,
    "not_verbatim": [],
    "pass": true
   },
@@ -102,6 +110,15 @@
    },
    "open_elective_units": null,
    "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Apply mathematical terminology, symbols, and operations utilizing number sense and computational skills in occupational, personal, and educational contexts.",
     "Apply logical, critical, and abstract thinking skills to solve problems in occupational and personal contexts.",
@@ -113,12 +130,7 @@
     "actuary",
     "educator",
     "programmer",
-    "researcher",
-    "private industry",
-    "government",
-    "educational institutions",
-    "many areas of technological research",
-    "computer-related fields"
+    "researcher"
    ]
   },
   "blocks": [
@@ -241,14 +253,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints no total for the major; 'Complete the following number of credits: 60' is the degree total, and the Core (21) and List A (4-5) block totals are recorded in stated. total_units left null rather than computed.",
-   "List A says 'Complete the following number of credits: 4-5' in requirements and 'Take one of the following' in the program map; recorded as choose 1 course.",
-   "A 'General Electives' item (0-1 credits, 'any transferable course') appears as part of the 60-unit degree, not the major; not recorded as a block and open_elective_units left null.",
-   "Cal-GETC General Education (34) is listed; GE courses from the program map are not placed in blocks.",
-   "Careers include the occupations named ('data analyst' through 'researcher') and the sectors under 'Graduates can work in'; reviewer may judge whether the sectors count as career fields. The list of fields where students 'can apply these skills' (pure and applied mathematics, physical sciences, etc.) was read as academic fields and not recorded.",
-   "Catalog prints codes without spaces (e.g., MATH5A); matched to closed-list codes such as MATH 5A.",
-   "Catalog text is truncated in the program map (Year 2, Spring, Cal-GETC Area 3B list)."
+   "The page prints no total for the major alone; 'Complete the following number of credits: 60' over the whole program is recorded as degree_total, and 'Cal-GETC General Education 34' as ge_units.",
+   "List A says 'Complete the following number of credits: 4-5'; the program map says 'Take one of the following', so it is recorded as choose 1 course with stated 4-5.",
+   "General Electives prints 'Complete the following number of credits: 0-1' with two rows 'any transferable course.' at 1 and 3 units; the program map shows 3 units of general electives. Because the printed elective amount is a range (0-1) and conflicts with the map, open_elective_units is left null for review.",
+   "Course codes are printed without a space (e.g., MATH5A); they match closed-list courses (e.g., MATH 5A) and are not treated as additions.",
+   "The outcomes are printed as 'Program Outcomes' for this program and are recorded for this award.",
+   "The program map's Cal-GETC course lists are general education and are not recorded as blocks; the catalog text is cut off at the end of the program map."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": "38565227455"
 }

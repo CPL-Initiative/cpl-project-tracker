@@ -5,11 +5,11 @@
  "title": "Art Photography",
  "award": "A.A. Degree",
  "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/art-photography-associate-in-arts-a-a-fall-2026",
- "record_shape": 4,
+ "record_shape": 5,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9152,
+  "input_tokens": 10019,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9152,
-    "output_tokens": 8695,
+    "input_tokens": 10019,
+    "output_tokens": 8363,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 8695,
+  "output_tokens": 8363,
   "output_tokens_details": {
-   "thinking_tokens": 2248
+   "thinking_tokens": 1919
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.21051,
- "ms": 62851,
- "seconds": 63.4,
+ "cost_usd": 0.20734,
+ "ms": 59427,
+ "seconds": 59.7,
  "parts": null,
  "error": null,
  "score": {
@@ -74,16 +74,22 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    30.0,
-    30.0
+    60.0,
+    60.0
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
+   ],
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -104,7 +110,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -114,8 +120,17 @@
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
+   "open_elective_units": 6,
    "ge_pattern": "Cabrillo College General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Produce photographic imagery and/or moving image projects utilizing diverse equipment and a variety of methods such as, but not limited to, historical, traditional, digital, experimental, or alternative processes.",
     "Analyze significant social, cultural, aesthetic and historical trends in photography and moving image art and assess the implications and consequences of these trends.",
@@ -1126,7 +1141,7 @@
   "missing_explained": [
    {
     "code": "AH 20B",
-    "why": "not in the text (catalog lists ARTHC1200, possibly its replacement)"
+    "why": "not in the text (ARTHC1200 appears instead)"
    },
    {
     "code": "ART 48",
@@ -1134,23 +1149,21 @@
    },
    {
     "code": "MUS 79",
-    "why": "not in the text (catalog lists VAPA79, possibly its replacement)"
+    "why": "not in the text (VAPA79 Thrive in the Arts appears instead)"
    }
   ],
   "notes": [
-   "Catalog text begins mid-sentence; the program description is cut off at the start.",
-   "The 60 credits printed under the heading are the degree total (24 Cabrillo GE + major + 6 general electives). The text says only 'at least 18 units in the major' generically; no major total is printed, so total_units is null. Blocks sum to 12+3+3+12 = 30 but this was not recorded as a stated total.",
-   "'General electives: any transferable or degree applicable course. 6' is part of the 60-unit degree, not the major; open_elective_units left null.",
-   "All major blocks are labeled 'Recommended Major Requirements'/'Recommended Major Electives' and the description calls them 'courses recommended by the department that can be used to meet major requirements'; they were read as the major's structure (complete N credits) rather than as non-counting recommended courses. Reviewer should check.",
-   "First block requires 12 credits from four 3-unit courses, recorded as 'all'.",
-   "'Recommended Major Electives' header (complete 12 credits, with a stray '0' printed) introduces a choice of one focus block; each focus is recorded as a block in option_group 'Focus'. Student Selected Focus also prints a stray '0'.",
-   "AP32B is printed as 3 units in two focuses and as 1-3 in the Student Selected Focus (state file stores 1); AP32A printed as 3 and as 1-3. Units recorded as printed in each block.",
-   "ART31A printed as 3.5 units (state file stores 3).",
-   "AP35 and its honors twin AP35H recorded as one entry with an alternative.",
-   "Careers read from the description's 'professional fields of photography, video, and design'.",
-   "Program Outcomes are printed for the program as a whole; recorded for this A.A., the only award in the section.",
-   "Codes are recorded as printed without spaces (e.g., AP1A); matched against the closed list ignoring the space."
+   "All major blocks are labeled 'Recommended Major Requirements'/'Recommended Major Electives' and the description says these are 'courses recommended by the department that can be used to meet major requirements' (A.A. requires at least 18 major units). Because each block prints a credit count that sums with GE 24 and general electives 6 to the printed 60, they were recorded as all/choose_units requirement blocks rather than 'recommended'; reviewer should confirm.",
+   "No major total is printed; total_units left null (blocks sum to 30 but not computed as a printed total). Degree total 60 and Cabrillo College General Education 24 recorded as printed.",
+   "General electives: any transferable or degree applicable course, 6 units, recorded as open_elective_units against the degree total.",
+   "'Recommended Major Electives - Complete the following number of credits: 12' (printed with 0) is a header over the focus blocks; each focus is recorded as its own choose_units 12 block in option_group 'Focus' (student completes one focus).",
+   "First 'Recommended Major Requirements' block lists four 3-unit courses totaling the stated 12, so recorded as 'all'.",
+   "AP35 and its honors twin AP35H are recorded as one entry with an alternative.",
+   "AP32B is printed with 3 units in two focus blocks and '1 - 3' in Student Selected Focus; the state file stores 1 unit. AP32A is printed as 3 in some blocks and '1 - 3' in others.",
+   "Codes are written as printed without spaces (e.g., AP1A) and matched to closed-list codes with spaces (AP 1A).",
+   "Catalog text begins mid-sentence; the start of the program description is cut off.",
+   "Program outcomes are printed once for the program and recorded for this A.A."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": "38565227455"
 }

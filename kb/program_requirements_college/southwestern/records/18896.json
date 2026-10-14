@@ -1,0 +1,196 @@
+{
+ "college": "Southwestern College",
+ "control_number": "18896",
+ "shape": "certificate",
+ "title": "Professional Photography",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/art/professional-photography-certificate/",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6823,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6823,
+    "output_tokens": 1045,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1045,
+  "output_tokens_details": {
+   "thinking_tokens": 205
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04819,
+ "ms": 9471,
+ "seconds": 10.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.0,
+    19.0
+   ],
+   "stated": [
+    17.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Professional Photography",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Communicate concepts, aesthetics, and project production to clients.",
+    "Collaborate effectively with client, production resources, and personal vision on photographic assignments.",
+    "Demonstrate proficiency in digital capture, Camera RAW workflow, digital imaging workflow, and digital printing.",
+    "Demonstrate proficiency in lighting concepts including light ratios, studio strobe use, small portable flash use, lighting setups for specific effects, and use of light modifiers.",
+    "Understand color management and the relationship between digital capture profiles, monitor profiles, color workspaces, and digital printing profiles."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ART 138",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 192",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 207",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 197",
+      "units": 2,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "ART 290",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The '2-4' units are printed once on the ART 197 / or ART 290 row; it likely spans both choices (state file lists ART 197 at 3 units and ART 290 at 2). Recorded on ART 197 as 2-4; ART 290 has no units printed beside it.",
+   "Catalog prints ART 290 title as 'WORK EXPERIENCE IN APPLIED ARTS I'; state file title is 'Cooperative Work Experience in Applied Visual Arts I'.",
+   "The description names no specific careers or job titles, so careers is empty."
+  ]
+ },
+ "extracted_run": "38563578596"
+}

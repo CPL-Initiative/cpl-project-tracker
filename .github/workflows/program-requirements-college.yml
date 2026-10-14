@@ -34,6 +34,16 @@ name: Program requirements, one college
 #   is how the load rolls back. kb/governance_surface_map.json dismisses this
 #   workflow with its reason (public catalog data).
 #
+# reread (a dispatch with step=reread, never a push): posts the records the
+#   newest extraction run COMMITTED on the branch to
+#   program_requirement_records_college_reread(), which replaces a row only
+#   while it is unchecked, unread by a person and from an earlier run, and
+#   commits the receipt holding each replaced row's before-values
+#   (kb/receipts/program_requirement_records_college_reread_<slug>_<run>.json),
+#   the rollback. A read dispatched with force= extracts those programs again
+#   though their pages are unchanged ("incomplete": every filed record whose
+#   arithmetic is incomplete; Sam, Open Asks Sheet 78 card 2, record shape 5).
+#
 # display (a dispatch with step=display, never a push): applies the receipt of
 #   the display build cpl_pathways_roep_data.js carries
 #   (kb/_program_requirements_display_apply.py), one PATCH of display a program,
@@ -59,9 +69,13 @@ on:
         required: false
         default: "0"
       step:
-        description: "read (capture, extract, file), load (the committed records, unchecked) or display (the page's display build)"
+        description: "read (capture, extract, file), load (the committed records, unchecked), reread (replace unchecked rows from the newest run) or display (the page's display build)"
         required: false
         default: "read"
+      force:
+        description: "read only: control numbers to extract again though their page is unchanged (comma-separated), or 'incomplete'"
+        required: false
+        default: ""
   push:
     branches: ['claude/**']
     paths:
@@ -77,7 +91,7 @@ jobs:
     # The filing commit (github-actions[bot]) never runs the workflow again.
     if: >-
       github.actor != 'github-actions[bot]' && (
-      (github.event_name == 'workflow_dispatch' && github.event.inputs.step != 'load' && github.event.inputs.step != 'display') ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.step != 'load' && github.event.inputs.step != 'reread' && github.event.inputs.step != 'display') ||
       (github.event_name == 'push' && (startsWith(github.event.head_commit.message, '[read]') ||
                                        startsWith(github.event.head_commit.message, '[extract]'))))
     runs-on: ubuntu-latest
@@ -110,7 +124,8 @@ jobs:
         if: env.EXTRACT == 'true'
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-        run: python3 kb/_program_requirements_college.py extract --college "$COLLEGE" --out out --workers 6
+          FORCE: ${{ github.event.inputs.force || '' }}
+        run: python3 kb/_program_requirements_college.py extract --college "$COLLEGE" --out out --workers 6 --force "$FORCE"
       - name: File the run
         run: python3 kb/_program_requirements_college.py file --college "$COLLEGE" --out out
       - name: Commit to the branch that ran it
@@ -135,7 +150,7 @@ jobs:
   load:
     if: >-
       github.actor != 'github-actions[bot]' && (
-      (github.event_name == 'workflow_dispatch' && github.event.inputs.step == 'load') ||
+      (github.event_name == 'workflow_dispatch' && (github.event.inputs.step == 'load' || github.event.inputs.step == 'reread')) ||
       (github.event_name == 'push' && startsWith(github.event.head_commit.message, '[load]')))
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -143,15 +158,16 @@ jobs:
       contents: write
     env:
       COLLEGE: ${{ github.event.inputs.college || 'Cerritos College' }}
+      STEP: ${{ github.event.inputs.step == 'reread' && 'reread' || 'load' }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
-      - name: Load the committed records, unchecked
+      - name: Load the committed records, unchecked (or replace unchecked rows from the newest run)
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-        run: python3 kb/_program_requirements_college.py load --college "$COLLEGE"
+        run: python3 kb/_program_requirements_college.py "$STEP" --college "$COLLEGE"
       - name: Commit the receipt to the branch that ran it
         if: always()
         run: |
@@ -159,7 +175,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add kb/receipts
           if git diff --cached --quiet; then echo "no receipt"; exit 0; fi
-          git commit -m "Receipt: the load of $COLLEGE's program records (run ${{ github.run_id }})"
+          git commit -m "Receipt: the $STEP of $COLLEGE's program records (run ${{ github.run_id }})"
           for i in 1 2 3 4; do
             git push origin "HEAD:${{ github.ref_name }}" && exit 0
             sleep $((i * 5)); git pull --rebase origin "${{ github.ref_name }}"

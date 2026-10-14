@@ -2,6 +2,14 @@
   "_about": "Committed ledger of public.project_lifecycle — projects that have been Tabled (paused) or Archived (done/cancelled). Written by kb/_load_projects.py after a successful Supabase fetch (the daily cron commits it). It is BOTH the offline fallback for the dashboard regen AND the durable 'noted in the KB' record that syncs into the Obsidian vault, so a removed project never reads as an active priority. Empty `rows` = every project is active.",
   "_fetched_at": "2026-10-14",
   "_source_table": "public.project_lifecycle",
-  "row_count": 0,
-  "rows": []
+  "row_count": 1,
+  "rows": [
+    {
+      "project_id": "4.5.1",
+      "state": "archived",
+      "reason": "Redundant with 4.5 Law and Regulation Review.",
+      "updated_by": "slee@cccco.edu",
+      "updated_at": "2026-10-14T12:47:56.047+00:00"
+    }
+  ]
 }

@@ -1,0 +1,288 @@
+{
+ "college": "Southwestern College",
+ "control_number": "37775",
+ "shape": "certificate",
+ "title": "Drone Technology and Applications",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/drone-technology-applications/drone-certofachievement/",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7098,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7098,
+    "output_tokens": 1913,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1913,
+  "output_tokens_details": {
+   "thinking_tokens": 433
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06665,
+ "ms": 18718,
+ "seconds": 19.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    16.0
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 15,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Drone Technology and Applications — Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Student will analyze FAA regulations governing safe and responsible operation, licensing and registration requirements of small Unmanned Aerial Systems (sUAS).",
+    "Student will assess and analyze a variety of problems that can be potentially solved using a UAS, and identify appropriate solutions.",
+    "Student will process and analyze data gathered from a UAS.",
+    "Student will describe the functions and limitations of various UAS hardware components (e.g. battery, gimbal, GPS module, flight controller, frame, sensor), and identify the appropriate components for particular applications.",
+    "Student will discuss the social, ethical, economic, and legal implications of UAS operations on individuals, organizations, and society in general.",
+    "Student will research and evaluate the financial, marketing, legal, and management needs that are essential to successfully launching and operating a new venture in UAS."
+   ],
+   "careers": [
+    "remote pilots",
+    "entrepreneurs",
+    "environmental science and management",
+    "real estate",
+    "journalism",
+    "search and rescue",
+    "precision agriculture",
+    "disaster response and management",
+    "fire science",
+    "maintenance and operations",
+    "law enforcement",
+    "photography and videography",
+    "mapping and surveying",
+    "remote sensing",
+    "cultural resource management"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOG 107",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AERO 107",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AERO 108",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "FTMA 108",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 188",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 154",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHS 154",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one elective course from the list below",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "GEOG 155",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHS 155",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 192",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 205",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART 131",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Cross-listed courses are printed as combined codes (e.g., 'GEOG/AERO 107', 'GEOG/AERO/FTMA 108/ART 188', 'GEOG/PHS 154', 'GEOG/PHS 155', 'FTMA 102/ART 131'); recorded the first-listed code as the course and the cross-listed codes as alternatives.",
+   "Elective courses have no units printed beside them; the block prints 3 units for one course, recorded as the block's stated total.",
+   "Careers include the fields the description names as deploying sUAS, where students may work as remote pilots or entrepreneurs; reviewer may wish to confirm these fields count as career fields.",
+   "Page is the Certificate of Achievement (Major Code 01671); no degree section appears in the text."
+  ]
+ },
+ "extracted_run": "38563578596"
+}

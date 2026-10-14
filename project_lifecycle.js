@@ -86,16 +86,15 @@
 
   // Inner HTML for one collapsed "Tabled & Archived" card. Matches the server's
   // render_tabled_archived_section so a live-tabled entry looks identical to a
-  // baked one. `name`/`reason`/`by` are escaped (overlay text is reviewer-written
-  // but treated as untrusted).
+  // baked one. `name`/`reason` are escaped (overlay text is reviewer-written
+  // but treated as untrusted). The line names the date only: updated_by is the
+  // reviewer's sign-in email and the page is public (2026-10-14).
   function entryHtml(pid, name, meta) {
     meta = meta || {};
     var reason = (meta.reason || "").trim();
-    var by = (meta.updated_by || "").trim();
     var when = fmtDate(meta.updated_at);
     var metaBits = [];
     if (when) metaBits.push("Since " + when);
-    if (by) metaBits.push(escapeHtml(by));
     var reasonHtml = reason
       ? '<div class="tabled-reason" style="font-size:0.78rem;color:var(--text-body);margin:0.3rem 0;line-height:1.4;">' + escapeHtml(reason) + '</div>'
       : "";

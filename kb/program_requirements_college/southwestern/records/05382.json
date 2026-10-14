@@ -1,0 +1,220 @@
+{
+ "college": "Southwestern College",
+ "control_number": "05382",
+ "shape": "degree",
+ "title": "Exercise Science",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/exercise-science/exercise-science-aa/",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7103,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7103,
+    "output_tokens": 1570,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1570,
+  "output_tokens_details": {
+   "thinking_tokens": 527
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05981,
+ "ms": 18045,
+ "seconds": 19.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    28.0,
+    28.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 28.0-28.0; the catalog states 30.0-30.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Exercise Science — Associate in Arts, Transfer Preparation* (Major Code: A1360)",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Learn how the body responds to exercise demands and the positive benefits, known as training effects, that can be achieved through healthy exercise habits.",
+    "Differentiate between cardio-respiratory exercise and muscle strength and endurance exercise and how those components make up physical fitness."
+   ],
+   "careers": [
+    "teaching",
+    "physical educator",
+    "physical therapy",
+    "athletic training",
+    "recreation",
+    "research",
+    "private fitness and health"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Plan of Study Grid",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 101",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ES/T 202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 260",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 261",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints only a Plan of Study Grid (by semester), not a separate requirements list; all named courses were read as required.",
+   "The grid also includes 'Select 1 unit of ES/Activity' in the third and fourth semesters (2 units total) with no courses named; not recorded as a block because no courses are listed.",
+   "Total Units 30 is the plan-of-study total (major courses plus 2 units of ES/Activity), recorded as total_units; no degree total or GE units are printed. Page says additional general education and graduation requirements must be completed for the associate degree.",
+   "Catalog titles BIOL 100 'INTRODUCTION TO BIOLOGY' and BIOL 101 'INTRODUCTION TO BIOLOGY LAB' differ from the closed list's 'PRINCIPLES OF BIOLOGY' titles; codes match.",
+   "Program Student Learning Outcomes appear to be printed for the Exercise Science program; recorded for this A.A."
+  ]
+ },
+ "extracted_run": "38563578596"
+}

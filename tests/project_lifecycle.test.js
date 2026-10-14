@@ -200,6 +200,13 @@ const OVERLAY = [
   check("entryHtml carries a Tabled badge", /Tabled<\/span>/.test(xss));
   check("entryHtml carries a Restore button with the pid", /tabled-restore"[^>]*data-pid="5\.1"/.test(xss));
   check("badgeHtml distinguishes archived", /Archived<\/span>/.test(API.badgeHtml("archived")));
+  // The public line names the date, never who (2026-10-14: the daily run baked a staff
+  // email into both HTMLs and pii_guard failed every PR). Both renders hold the rule.
+  const named = API.entryHtml("5.2", "Law review", { state: "tabled", reason: "Redundant.", updated_by: "someone@cccco.edu", updated_at: "2026-10-14T14:00:00Z" });
+  check("entryHtml shows the date and no email", /Since /.test(named) && named.indexOf("@") === -1);
+  const GEN = fs.readFileSync("excel_to_dashboard.py", "utf8");
+  const tabledFn = (/def render_tabled_archived_section[\s\S]*?\n(?=def |\S)/.exec(GEN) || [""])[0];
+  check("the generator's tabled section never bakes updated_by", tabledFn.length > 200 && !/get\("updated_by"\)|\["updated_by"\]/.test(tabledFn));
 
   // let the auto-run fetch resolve + reconcile. (g) — run() must load the overlay
   // even though there is NO #projectsGrid (the Activities surface is detected via

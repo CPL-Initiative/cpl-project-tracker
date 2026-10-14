@@ -180,6 +180,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `nc_artifact_revise` | tabs: `nc-learning-partners` | — |
 | `nc_partner_note_revise` | tabs: `nc-learning-partners` | — |
 | `program_requirement_records_college_load` | scripts: `kb/_program_requirements_college.py` | — |
+| `program_requirement_records_college_reread` | scripts: `kb/_program_requirements_college.py` | — |
 | `program_source_addenda_apply` | scripts: `kb/_program_source_census.py` | — |
 | `program_source_census_apply` | scripts: `kb/_program_source_census.py` | — |
 | `program_typical_courses` | scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
@@ -599,6 +600,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/preseed_out/2026-07-07/live_values.json` | scripts: `kb/_preseed_unclassified.py` | — |
 | `kb/program_course_graph.json` | none found | committed by: `program-course-fetch.yml` |
 | `kb/program_requirements_college` | none found | committed by: `program-requirements-college.yml` |
+| `kb/program_requirements_college/chaffey/capture_preview.json` | scripts: `kb/_program_requirements_college.py` | — |
 | `kb/program_requirements_maps_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
 | `kb/program_requirements_pilot/map_cr_by_course.json` | scripts: `kb/_build_roep_display.py` | — |
 | `kb/program_requirements_pilot/registry_read.json` | scripts: `kb/_build_roep_display.py` | — |
@@ -1108,5 +1110,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 98 Supabase tables · 38 RPCs · 8 edge functions · 647 file
+Coverage: 98 Supabase tables · 39 RPCs · 8 edge functions · 648 file
 datasets · 178 external services · 440 consumers · 53 workflows · 39 tabs.

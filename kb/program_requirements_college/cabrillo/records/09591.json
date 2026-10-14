@@ -5,11 +5,11 @@
  "title": "Landscape Horticulture",
  "award": "A.S. Degree",
  "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/landscape-horticulture-associate-in-science-a-s-fall-2025",
- "record_shape": 4,
+ "record_shape": 5,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5822,
+  "input_tokens": 6689,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5822,
-    "output_tokens": 1580,
+    "input_tokens": 6689,
+    "output_tokens": 1566,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 1580,
+  "output_tokens": 1566,
   "output_tokens_details": {
-   "thinking_tokens": 315
+   "thinking_tokens": 365
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.05489,
- "ms": 13845,
- "seconds": 14.4,
+ "cost_usd": 0.05808,
+ "ms": 12613,
+ "seconds": 12.9,
  "parts": null,
  "error": null,
  "score": {
@@ -68,16 +68,22 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    36.0,
-    36.0
+    60.0,
+    60.0
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
+   ],
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -94,11 +100,11 @@
    "pass": true
   },
   "careers": {
-   "count": 3,
+   "count": 4,
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -110,6 +116,15 @@
    },
    "open_elective_units": null,
    "ge_pattern": "Cabrillo College General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Create landscape designs that integrate functional diagrams with form and spatial composition.",
     "Identify popular landscape plants using scientific and common names and describe their best use."
@@ -117,7 +132,8 @@
    "careers": [
     "landscape design",
     "landscape installation",
-    "maintenance"
+    "maintenance",
+    "landscape design build"
    ]
   },
   "blocks": [
@@ -259,13 +275,12 @@
    }
   ],
   "notes": [
-   "The catalog states no explicit total for the major; it prints Core 23 credits and Major Electives 13 credits, and a degree total of 60 with 24 for Cabrillo College General Education. Generic text says 'at least 30 units in the major'. total_units left null rather than computed.",
-   "The catalog text is cut off at the start ('orticulture and soil science...'), so part of the program description may be missing.",
-   "Course codes are printed without a space between subject and number (e.g., HORT1A); recorded as printed.",
-   "HORT99 (Horticulture Internships/Work Experience) and HORT173 (Landscape Pruning) are not in the closed list; marked as catalog additions.",
-   "Careers taken from 'career opportunities in landscape design, landscape installation, and maintenance'; the text also mentions self-employment in landscape design build and employment with city or county government agencies and water companies (employers rather than careers), not recorded as careers.",
-   "URL slug references 'fall-2025' while the catalog year is 2026-2027; reviewer may confirm the section matches the intended catalog year."
+   "The page prints 'Complete the following number of credits: 60' as the degree total, with Cabrillo College General Education 24, core 23 and electives 13; no separate major total is printed (core + electives would be 36, not recorded as total_units).",
+   "Program Outcomes are printed for the program as a whole under the A.S. page; recorded for this award.",
+   "The text opens mid-word ('orticulture...'); the beginning of the description appears cut off.",
+   "The text also mentions employment with city or county government agencies and water companies; these are employers rather than career titles and were not recorded as careers.",
+   "HORT99 (Horticulture Internships/Work Experience) is printed with 1 unit; it may be variable-unit in the course catalog."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": "38565227455"
 }

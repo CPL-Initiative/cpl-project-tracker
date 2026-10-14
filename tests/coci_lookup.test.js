@@ -241,6 +241,22 @@ const rowTitles = (doc) => visibleRows(doc).map((tr) => txt(tr.children[4]));
   check("programs: toggling back to Courses restores the course table",
     !!doc.getElementById("cplcoci-identity") && visibleRows(doc).length === 4);
 
+  // ── 9. The S389 UI pass: controls are underlined words; dark mode keeps every pair AA ──
+  // npm run a11y cobi-dark measured the CSV control at 1.29:1 (a dark fill under dark text),
+  // the chips at 1.2:1 (a half-white fill over the dark surface) and six inputs with no focus
+  // ring. The failures this guards: a fill coming back, a glyph standing in for the word, and
+  // outline:none with nothing in its place.
+  const css = (doc.getElementById("cpl-coci-lookup-css") || {}).textContent || "";
+  check("ui pass: the CSV control reads Download CSV, no glyph",
+    txt(doc.getElementById("cplcoci-csv")) === "Download CSV");
+  check("ui pass: a control is an underlined cobalt word with no border or fill, 24px tall",
+    /\.cplcoci-btn \{ border:0; background:none; color: var\(--cobalt\);[^}]*min-height:24px; text-decoration:underline;/.test(css)
+    && !/cplcoci-btn ghost/.test(src));
+  check("ui pass: a chip paints no light fill of its own", /\.cplcoci-chip \{[^}]*background: transparent;/.test(css)
+    && !/rgba\(255,255,255,\.5\)/.test(css));
+  check("ui pass: the filters show a focus ring", /\.cplcoci-toolbar input:focus-visible, \.cplcoci-toolbar select:focus-visible \{ outline:2px solid var\(--cobalt\)/.test(css)
+    && !/outline:none/.test(css));
+
   // ── report ──
   let fail = 0;
   results.forEach(([name, ok]) => {

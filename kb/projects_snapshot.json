@@ -26,12 +26,12 @@
       "kpi_unit": "Cumulative MAP features added and significantly enhanced",
       "wp_notes": "Progress made across eight feature areas with 50+ development tickets completed. Key enhancements include Student Portal, AI-assisted JST parsing, credential matching, and dashboard improvements.",
       "kpi_order": null,
-      "count_note": null
+      "count_note": "A feature is counted toward the annual goal when significant design or development work is put into production."
     },
     {
       "id": "1.1.1",
       "name": "AI Certification-to-Course Matching",
-      "description": "AI-assisted matching of 117 industry certifications to CCC courses across priority sectors; Phase 2 beta expanding pool",
+      "description": "The initiative used artificial intelligence to identify potential alignments between industry-recognized certifications and California Community College courses. AI-generated recommendations were subsequently reviewed by faculty participants, whose expertise helped validate, refine, and strengthen the resulting recommendations.\n\nThe work is intended to accelerate CPL exploration while preserving local curriculum, policy, and faculty decision-making.",
       "workplan_activity": "Activity 1: AI-Enhanced CPL Infrastructure",
       "vision_2030_action": "Action 1a; Action 5",
       "cpl_goal": "Goal 2",
@@ -533,30 +533,6 @@
       "count_note": null
     },
     {
-      "id": "3.9",
-      "name": "Futuro Behavioral Healthcare Project",
-      "description": null,
-      "workplan_activity": "Activity 3: Scale CPL Access, Awards, and Procedures",
-      "vision_2030_action": null,
-      "cpl_goal": null,
-      "budget_source": null,
-      "budget": null,
-      "lead": null,
-      "team": null,
-      "status": "Not Started",
-      "percent_complete": 0,
-      "start_date": null,
-      "end_date": null,
-      "milestones": null,
-      "latest_update": null,
-      "update_date": null,
-      "kpi_metric": null,
-      "kpi_unit": null,
-      "wp_notes": null,
-      "kpi_order": null,
-      "count_note": null
-    },
-    {
       "id": "4.1",
       "name": "Veteran Sprint",
       "description": "Ensure all 34,000+ enrolled CCC veterans have JSTs processed in MAP; 3 goals: JST upload, basic training credit, systemwide articulation, military base demonstration project",
@@ -650,7 +626,7 @@
       "kpi_unit": "",
       "wp_notes": "AI apprenticeship CPL tools Phase 1 in progress with construction and electrician trades at Santiago Canyon College and Norco College. Proof-of-concept pilot funded ($54,764). Phase 2 will scale statewide.",
       "kpi_order": null,
-      "count_note": null
+      "count_note": "Outcomes are identified in the project contract and counted when accomplished."
     },
     {
       "id": "4.3",
@@ -703,7 +679,7 @@
     {
       "id": "4.4.1",
       "name": "VRC CPL Module Revision",
-      "description": "Rewrite and expand Virtual Resource Center CPL training modules with CCCF/Success Center",
+      "description": "Vision Resource Center technical assistance modules focused on CPL policy, procedure, resources, tools, integrations, opportunities for all constituents.",
       "workplan_activity": "Activity 4: Sprints, Projects & Partnerships",
       "vision_2030_action": "Action 1a; Action 5",
       "cpl_goal": "Goal 3",
@@ -722,7 +698,7 @@
       "kpi_unit": "",
       "wp_notes": "VRC CPL Module revision: Review and gap analysis complete. Content development phase underway. Final packaging targeted May-June 2026.",
       "kpi_order": null,
-      "count_note": null
+      "count_note": "Each training module in production is counted"
     },
     {
       "id": "4.5",
@@ -746,7 +722,7 @@
       "kpi_unit": "policy actions",
       "wp_notes": "AB 123 chaptered establishing first-ever ongoing CPL state funding ($5M ongoing + $15M one-time). Title 5 regulatory updates advanced to reduce residency and access barriers. Draft trailer bill for additional $2M ongoing + $35M one-time under review.",
       "kpi_order": null,
-      "count_note": null
+      "count_note": "Each legislative bill enacted or regulation revised or guidance memo to the field is counted."
     },
     {
       "id": "4.5.1",
@@ -819,6 +795,30 @@
       "wp_notes": null,
       "kpi_order": null,
       "count_note": "Self-reported descriptive data on the improvements made"
+    },
+    {
+      "id": "4.8",
+      "name": "Futuro Behavioral Healthcare Project",
+      "description": null,
+      "workplan_activity": "Activity 4: Sprints, Projects & Partnerships",
+      "vision_2030_action": null,
+      "cpl_goal": null,
+      "budget_source": null,
+      "budget": null,
+      "lead": null,
+      "team": null,
+      "status": "Not Started",
+      "percent_complete": 0,
+      "start_date": null,
+      "end_date": null,
+      "milestones": null,
+      "latest_update": null,
+      "update_date": null,
+      "kpi_metric": null,
+      "kpi_unit": null,
+      "wp_notes": null,
+      "kpi_order": null,
+      "count_note": null
     }
   ]
 }
