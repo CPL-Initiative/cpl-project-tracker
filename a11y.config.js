@@ -224,11 +224,11 @@ async function seedCollegeSelect(page) {
    function's stream is stubbed, and six questions are asked, so the first one
    expands the dock exactly as a reader's would and every answer carries the
    feedback row cpl_chat.js writes. One answer carries a table wider than a
-   phone. Program Requirements, because its Sierra is open by default. */
+   phone. My College, because its Sierra is open by default. */
 async function seedSierraDockFull(page, theme) {
-  // The sweep aborts the tab's reads, and the read-failed state has no Sierra
-  // section; the Progress seed paints the tab whole first.
-  await seedProgress(page, theme);
+  // Sierra docks on My College (she left Program Requirements, Sam 2026-10-14); its seed
+  // paints the page whole first.
+  await seedMyCollegePage(page, theme);
   // First Light's once-a-day greeting opens 650 ms after load and would cover
   // the screenshots: mark the day seen and close it if it is up.
   await page.evaluate(() => {
@@ -236,10 +236,10 @@ async function seedSierraDockFull(page, theme) {
     const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
     if (x) x.click();
   });
-  await page.waitForFunction(() => window.CPL_CHAT && document.querySelector("#prh-sierra-mount .cplchat .cplchat-dock-btn"),
+  await page.waitForFunction(() => window.CPL_CHAT && document.querySelector("#cb-assistant-mount .cplchat .cplchat-dock-btn"),
     null, { timeout: 60000 });
   await page.evaluate(async () => {
-    const wrap = document.querySelector("#prh-sierra-mount .cplchat");
+    const wrap = document.querySelector("#cb-assistant-mount .cplchat");
     const chip = Array.from(wrap.querySelectorAll(".cplchat-aud-chip")).find((b) => /Faculty/.test(b.textContent));
     if (chip) chip.click();
     const table = "\n\n| Credential | Course | Units | College | C-ID |\n|---|---|---|---|---|\n" +
@@ -320,7 +320,7 @@ async function sierraDockFullChecks(page) {
   await page.keyboard.press("Escape");
   await page.waitForTimeout(100);
   out.push(await page.evaluate(() => {
-    const w = document.querySelector("#prh-sierra-mount > .cplchat");
+    const w = document.querySelector("#cb-assistant-mount > .cplchat");
     return {
       name: "Escape takes her back to the tab, the conversation with her",
       ok: !document.querySelector(".cplchat-full") && !!w && w.querySelectorAll(".cplchat-msg").length === 12 &&
@@ -1900,12 +1900,12 @@ module.exports = {
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── The docked Sierra, full screen (S349, Sheet 54 card 1) ─────────────
-     Expanded over Program Requirements with six seeded turns, one per theme:
+     Expanded over My College with six seeded turns, one per theme:
      the dialog, the page behind it inert, the sticky box, End and Escape. */
   "sierra-dock-full": {
     file: "index.html",
     title: "Sierra docked, full screen while she answers",
-    routes: [{ hash: "program-requirements", name: "dock-full" }],
+    routes: [{ hash: "college-briefing", name: "dock-full" }],
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedSierraDockFull(page, "light"),
     keyboard: async (page) => sierraDockFullChecks(page),
@@ -1914,7 +1914,7 @@ module.exports = {
   "sierra-dock-full-dark": {
     file: "index.html",
     title: "Sierra docked, full screen while she answers, dark",
-    routes: [{ hash: "program-requirements", name: "dock-full-dark" }],
+    routes: [{ hash: "college-briefing", name: "dock-full-dark" }],
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedSierraDockFull(page, "dark"),
     keyboard: async (page) => sierraDockFullChecks(page),

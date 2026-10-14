@@ -150,6 +150,12 @@ function restDb(opts) {
     if (/program_source_registry\?/.test(url)) return res(200, opts.registry || REGISTRY);
     if (/map_colleges\?/.test(url)) return opts.colleges ? res(200, opts.colleges) : res(503, null);
     if (/program_source_addenda\?/.test(url)) return res(200, opts.addenda || []);
+    if (/coci_college_programs\?select=control_number,cip_code/.test(url)) {
+      db.asked[db.asked.length - 1].cip = true;
+      if (opts.cipFail) return res(503, null);
+      const want = decodeURIComponent((/control_number=in\.\(([^)]*)\)/.exec(url) || [])[1] || "").split(",").map(function (c) { return c.replace(/^"|"$/g, ""); });
+      return res(200, want.filter(function (c) { return (opts.cips || {})[c]; }).map(function (c) { return { control_number: c, cip_code: opts.cips[c] }; }));
+    }
     if (/coci_college_programs\?/.test(url)) return res(200, [{ control_number: "x" }], "0-0/20282");
     if (/queue_status/.test(url)) return opts.queue ? res(200, opts.queue) : res(404, null);
     return res(404, null);
@@ -273,39 +279,20 @@ block("(3)", function () {
   check("(3) a held request is counted", n.held === 1 && n.open === 1 && n.hosts === 2, JSON.stringify(n));
 });
 
-// ── (4b) Sierra docks at the top of the tab (Sam, sheet 38 card 5; "Sierra at the top") ──
-// The failure this guards: a second copy of the assistant, a mount that drops the
-// tab's surface, or a reader's choice to close her that does not hold.
+// ── (4b) No Sierra window on the tab (Sam, 2026-10-14: "Let's take the Sierra window off the
+// program requirements (PR) tab as I don't think it will be useful for now") ──
+// The failure this guards: the assistant mounting here again, or her open/closed memory surviving.
 block("(4b)", function () {
-  const a = ready();
-  a.M._state.view = "catalogs"; a.M._render();
-  const sec = a.root.querySelector("details#prh-sierra");
-  check("(4b) Sierra's section is open until the reader closes it, as on My College", !!sec && sec.open === true);
-  check("(4b) without the chat module the section links to the CPL Assistant",
-    !!a.root.querySelector('#prh-sierra-mount a[href="#chatbot"]'));
-
   const b = ready();
   const calls = [];
-  b.w.CPL_CHAT = { mountInto: function (h, surface) {
-    calls.push([h.id, surface]);
-    h.innerHTML = '<textarea class="cplchat-input"></textarea>';
-  } };
-  b.M._state.view = "catalogs"; b.M._render();
-  check("(4b) the tab mounts the one assistant with its own surface",
-    calls.length === 1 && calls[0][0] === "prh-sierra-mount" && calls[0][1] === "program-requirements", JSON.stringify(calls));
-  check("(4b) her box is in the open section", !!b.root.querySelector("details#prh-sierra[open] .cplchat-input"));
-  const sec2 = b.root.querySelector("details#prh-sierra");
-  sec2.open = false;
-  sec2.dispatchEvent(new b.w.Event("toggle"));
-  check("(4b) closing her is remembered",
-    b.w.localStorage.getItem("cplProgramRequirements.sierra.v1") === "0");
-  b.M._render();
-  check("(4b) a re-render keeps her closed and mounts her again",
-    b.root.querySelector("details#prh-sierra").open === false && calls.length === 2);
-
-  const c = ready({ noStorage: true });
-  c.M._state.view = "catalogs"; c.M._render();
-  check("(4b) a private window still renders her section", !!c.root.querySelector("details#prh-sierra"));
+  b.w.CPL_CHAT = { mountInto: function (h, surface) { calls.push([h && h.id, surface]); } };
+  ["progress", "catalogs", "records", "sequences", "procedures"].forEach(function (v) {
+    b.M._state.view = v; b.M._render();
+  });
+  check("(4b) no view carries a Sierra section, a mount or a link to the CPL Assistant",
+    !b.root.querySelector("#prh-sierra, #prh-sierra-mount, .prh-sierra, a[href=\"#chatbot\"]"), b.root.innerHTML.slice(0, 200));
+  check("(4b) and the tab never mounts the assistant", calls.length === 0 && b.M.mountSierra === undefined, JSON.stringify(calls));
+  check("(4b) her section's CSS and memory are gone from the source", !/prh-sierra|cplProgramRequirements\.sierra/.test(SRC));
 });
 
 // ── (4) Render: the four views ────────────────────────────────────────────
@@ -316,12 +303,9 @@ block("(4)", function () {
   check("(4) Catalogs counts the registry", /Showing 4 of 4/.test(txt), txt.slice(0, 400));
   check("(4) a person's correction is shown on the row", /Corrected by Sam/.test(txt));
   check("(4) the Beta draft label is on the tab", /Beta draft/.test(txt));
-  const sierraSec = root.querySelector("details#prh-sierra"), switcher = root.querySelector(".prh-switch");
-  check("(4) Sierra sits at the top of the tab, above the views (Sam: \"Sierra at the top\")",
-    !!sierraSec && !!switcher && !!(sierraSec.compareDocumentPosition(switcher) & 4));
-  check("(4) one way to reach her: no second Ask Sierra control in the header",
-    !root.querySelector("header .prh-ask") &&
-    !Array.prototype.some.call(root.querySelectorAll("header button, header a"), function (b) { return /Sierra|Ask/i.test(b.textContent); }));
+  check("(4) no Sierra control anywhere on the tab",
+    !root.querySelector(".prh-ask") &&
+    !Array.prototype.some.call(root.querySelectorAll("button, a"), function (b) { return /Sierra|Ask/i.test(b.textContent); }));
 
   pickAll(M); M._state.view = "records"; M._render();
   txt = root.textContent;
@@ -558,6 +542,22 @@ function progressReady(nChecked, errors) {
 block("(8)", function () {
   const fresh = loadModule();
   check("(8) Progress is the view a first visit opens", fresh.M._state.view === "progress");
+  // Sam, 2026-10-14: "Show the Progress view as initial view first." A view remembered by an
+  // earlier build no longer decides; a view chosen in the tab holds until the page reloads.
+  const back = loadModule();
+  back.w.localStorage.setItem("cplProgramRequirements.view.v2", "records");
+  back.M.activate();
+  check("(8) the tab opens on Progress even with a view remembered from before", back.M._state.view === "progress");
+  back.M._state.view = "catalogs";
+  back.M.activate();
+  check("(8) a view chosen in the tab holds when the tab is opened again", back.M._state.view === "catalogs");
+  check("(8) nothing writes or reads a remembered view", !/cplProgramRequirements\.view\./.test(SRC));
+  // The CIP Sector filter's family titles are the CIP tab's, word for word.
+  const cw = {}; new Function("window", fs.readFileSync("cip_crosswalk_data.js", "utf8"))(cw);
+  const fams = cw.CIP_CROSSWALK && cw.CIP_CROSSWALK.fams;
+  check("(8) the CIP family titles equal cip_crosswalk_data.js fams", !!fams &&
+    JSON.stringify(Object.keys(fams).sort().map(function (k) { return [k, fams[k]]; })) ===
+    JSON.stringify(Object.keys(fresh.M.CIP_FAMS).sort().map(function (k) { return [k, fresh.M.CIP_FAMS[k]]; })));
 
   const { root, M } = progressReady(20);
   const txt = root.textContent;
@@ -837,7 +837,7 @@ block("(9)", function () {
     const panel = p.root.querySelector('[role="tabpanel"]');
     const secs = panel.querySelectorAll("details.prh-sec");
     const loose = Array.prototype.filter.call(panel.children[0].children, function (c) {
-      return !c.matches("details.prh-sec, .prh-lede, .prh-pg-head, .prh-pg-main, .prh-empty");
+      return !c.matches("details.prh-sec, .prh-lede, .prh-pg-head, .prh-pg-main, .prh-empty, .prh-filterbar");
     });
     check("(9) " + v + ": every section is a collapsible details with a heading in its summary",
       secs.length >= 2 && Array.prototype.every.call(secs, function (d) {
@@ -850,17 +850,16 @@ block("(9)", function () {
   check("(9) the header offers Expand all and Collapse all, as words",
     btns.length === 2 && btns[0].textContent === "Expand all" && btns[1].textContent === "Collapse all");
   btns[1].click();
-  const shut = p.root.querySelectorAll("details.prh-sec[open], details#prh-sierra[open]");
-  check("(9) Collapse all shuts every section, Sierra included", shut.length === 0, shut.length + " still open");
-  check("(9) Collapse all is remembered for Sierra", p.w.localStorage.getItem("cplProgramRequirements.sierra.v1") === "0");
+  const shut = p.root.querySelectorAll("details.prh-sec[open]");
+  check("(9) Collapse all shuts every section", shut.length === 0, shut.length + " still open");
   p.M._state.view = "catalogs"; p.M._render();
   check("(9) Collapse all carries to a view that was not on screen",
     p.root.querySelectorAll("details.prh-sec").length >= 2 && !p.root.querySelector("details.prh-sec[open]"));
   const sum = p.root.querySelector('details[data-sec="catalogs:glance"] > summary');
   check("(9) a shut section still says what is inside", /colleges with a catalog address/.test(sum.textContent), sum.textContent);
   p.root.querySelector("header .prh-allctl button[data-all=open]").click();
-  check("(9) Expand all opens every section, Sierra included",
-    !p.root.querySelector("details.prh-sec:not([open])") && p.root.querySelector("details#prh-sierra").open === true);
+  check("(9) Expand all opens every section",
+    !p.root.querySelector("details.prh-sec:not([open])"));
   const d = p.root.querySelector('details[data-sec="catalogs:registry"]');
   d.open = false; d.dispatchEvent(new p.w.Event("toggle"));
   p.M._render();
@@ -1105,10 +1104,11 @@ block("(13)", function () {
   const root = m.root;
   const q = root.querySelector("#prh-rq"), show = root.querySelector("#prh-rshow"), col = root.querySelector('input[type="checkbox"][data-college="Cerritos College"]');
   const secKeys = Array.prototype.map.call(root.querySelectorAll('[role="tabpanel"] details.prh-sec'), function (d) { return d.getAttribute("data-sec"); });
-  check("(13) the find controls are labeled, in an open section after the picker and above the colleges", !!q && !!show && !!col && col.checked &&
+  const bar = root.querySelector(".prh-filterbar"), findSec = root.querySelector('details[data-sec="records:find"]');
+  check("(13) the find controls are labeled, in an open section after the filters and above the colleges", !!q && !!show && !!col && col.checked &&
     !!q.closest('details[data-sec="records:find"][open]') && !!root.querySelector('label[for="prh-rq"]') &&
     root.querySelector(".prh-rfind").getAttribute("role") === "search" &&
-    secKeys.indexOf("records:pick") >= 0 && secKeys.indexOf("records:pick") < secKeys.indexOf("records:find") &&
+    !!bar && !!(bar.compareDocumentPosition(findSec) & 4) && secKeys.indexOf("records:pick") < 0 &&
     secKeys.indexOf("records:find") < secKeys.indexOf("records:Cerritos College"), secKeys.join(","));
   check("(13) signed out, no Waiting on your reading: that filter is the reviewer's",
     !Array.prototype.some.call(show.options, function (o) { return o.value === "waiting"; }));
@@ -1906,14 +1906,23 @@ const HREG = [["Cabrillo College", 10], ["Irvine Valley College", 40], ["Moreno 
   return { college: x[0], college_id: x[1], catalog_url: "https://catalog.example/", catalog_year: "2026-2027", catalog_platform: "courseleaf",
     catalog_format: "html_per_program", sequence_source: "none_found", access_status: "ok", census_checked_at: "2026-10-04T15:28:31Z", procedure: null };
 });
-const HCOLLEGES = [{ college_id: 10, district: "Cabrillo Community College District" }, { college_id: 20, district: "Riverside Community College District" },
-  { college_id: 21, district: "Riverside Community College District" }, { college_id: 22, district: "Riverside Community College District" },
-  { college_id: 30, district: "Mt. San Antonio Community College District" }, { college_id: 40, district: "South Orange County Community College District" },
-  { college_id: 99, district: "A district with no harvest yet" }];
+const HCOLLEGES = [{ college_id: 10, district: "Cabrillo Community College District", swp_region: "Bay Area" },
+  { college_id: 20, district: "Riverside Community College District", swp_region: "Inland Empire/Desert" },
+  { college_id: 21, district: "Riverside Community College District", swp_region: "Inland Empire/Desert" },
+  { college_id: 22, district: "Riverside Community College District", swp_region: "Inland Empire/Desert" },
+  { college_id: 30, district: "Mt. San Antonio Community College District", swp_region: "Los Angeles" },
+  { college_id: 40, district: "South Orange County Community College District", swp_region: "Orange County" },
+  { college_id: 99, district: "A district with no harvest yet", swp_region: "Far North" }];
+// Each program's CIP code in COCI, by control number (the CIP Sector filter, Sam 2026-10-14).
+const HCIPS = {};
+for (let i = 1; i <= 12; i++) HCIPS[String(10000 + i)] = i <= 6 ? "51.3801" : "52.0201";
+["30201", "30202", "30203", "60501", "60502", "60503", "60504"].forEach(function (c) { HCIPS[c] = "47.0604"; });
+for (let i = 1; i <= 5; i++) HCIPS[String(40300 + i)] = "11.0701";
+HCIPS["50401"] = "51.0904"; HCIPS["20101"] = "50.0409";
 const HQUEUE = { schema: 1, written_at: "2026-10-13T20:15:50Z", session: 384, moniker: "SkyTest", decider: "Sam",
   unchecked: [{ college: "Cabrillo College", control_number: "10003", loaded: "2026-10-12" }], calls: [], changes: [] };
 function harvestDb(o) {
-  return restDb(Object.assign({ records: HARVEST, registry: HREG, colleges: HCOLLEGES, queue: HQUEUE, addenda: [] }, o || {}));
+  return restDb(Object.assign({ records: HARVEST, registry: HREG, colleges: HCOLLEGES, queue: HQUEUE, addenda: [], cips: HCIPS }, o || {}));
 }
 function harvestReviewer(o, url) {
   const db = harvestDb(o);
@@ -1964,31 +1973,60 @@ block("(24a)", function () {
     [A, B].forEach(function (m) { m.M._state.view = "records"; m.M._render(); });
     const ga = A.root.querySelector('details[data-sec="records:glance"]').textContent, gb = B.root.querySelector('details[data-sec="records:glance"]').textContent;
     check("(24a) the Records view's glance counts the same: passing, totals agreeing, CPL held", ga === gb && /4 of 28 records pass all four checks/.test(ga), ga + " | " + gb);
-    const ka = A.root.querySelector('details[data-sec="records:pick"]').textContent, kb = B.root.querySelector('details[data-sec="records:pick"]').textContent;
-    check("(24a) and the picker's counts for each college: its records and how many wait", ka === kb &&
+    const ka = A.root.querySelector('.prh-dd[data-filter="college"] .prh-dd-list').textContent, kb = B.root.querySelector('.prh-dd[data-filter="college"] .prh-dd-list').textContent;
+    check("(24a) and the College filter's counts for each college: its records and how many wait", ka === kb &&
       /Cabrillo College12 records, 10 wait on a reading/.test(ka), ka.slice(0, 300));
     check("(24a) nothing else was read to draw them", recordReads(db).length === 2);
   });
 });
 
 block("(24b)", function () {
+  // Sam, 2026-10-14: "change that to a simple drop down multi-select filter and add filters for CIP
+  // Sectors and SWP Regions".
   const db = harvestDb();
   const m = loadModule({ fetch: db.fetch });
   return m.M._load().then(function () {
     m.M._state.view = "records"; m.M._render();
+    return m.M._idle();
+  }).then(function () {
     const root = m.root;
-    check("(24b) the Records view opens on the picker with nothing loaded", recordReads(db).length === 2 &&
-      !root.querySelector("article.prh-rec") && /Pick a college or a district above to read its records/.test(root.textContent));
-    const fs = root.querySelector('details[data-sec="records:pick"][open] fieldset.prh-pick');
-    check("(24b) the picker is a labeled group of checkboxes, each named by its college and counts",
-      !!fs && !!fs.querySelector("legend") && fs.querySelectorAll('input[type="checkbox"][data-college]').length === 6 &&
-      Array.prototype.every.call(fs.querySelectorAll('input[type="checkbox"]'), function (i) { return !!i.closest("label"); }));
-    const dist = fs.querySelectorAll('input[type="checkbox"][data-district]');
-    check("(24b) a district with more than one college picks them all; a district of one names itself above its college",
-      dist.length === 1 && dist[0].getAttribute("data-district") === "Riverside Community College District" &&
-      /Cabrillo Community College District/.test(fs.textContent), dist.length + " district boxes");
-    check("(24b) the picker's words are plain and its controls words", !/[\u{1F300}-\u{1FAFF}]/u.test(fs.textContent) &&
-      wordButton(root, "Clear the picks") && wordButton(root, "Clear the picks").hidden === true);
+    check("(24b) the Records view opens on the filters with no record loaded", recordReads(db).length === 2 &&
+      !root.querySelector("article.prh-rec") && /Choose a district, college, SWP region or CIP sector above to read its records/.test(root.textContent));
+    const bar = root.querySelector('.prh-filterbar [role="group"][aria-label="Filter the records"]');
+    const labels = Array.prototype.map.call(root.querySelectorAll(".prh-dd-btn"), function (b) { return b.textContent; });
+    check("(24b) four dropdowns, in order: District, College, SWP Region, CIP Sector", !!bar &&
+      JSON.stringify(labels) === '["District","College","SWP Region","CIP Sector"]', JSON.stringify(labels));
+    check("(24b) each opens from a word, its list hidden until asked",
+      Array.prototype.every.call(root.querySelectorAll(".prh-dd-btn"), function (b) {
+        const pop = root.querySelector("#" + b.getAttribute("aria-controls"));
+        return b.classList.contains("prh-word") && b.getAttribute("aria-expanded") === "false" && !!pop && pop.hidden === true;
+      }) && !root.querySelector("fieldset.prh-pick, input[data-district]:not(.prh-dd-pop input)"));
+    check("(24b) the College list names each college with its counts, a checkbox in a label",
+      root.querySelectorAll('.prh-dd[data-filter="college"] input[type="checkbox"][data-college]').length === 6 &&
+      Array.prototype.every.call(root.querySelectorAll('.prh-dd input[type="checkbox"]'), function (i) { return !!i.closest("label"); }));
+    const dists = Array.prototype.map.call(root.querySelectorAll('.prh-dd[data-filter="district"] input[data-district]'), function (i) { return i.value; });
+    check("(24b) the District list holds the districts with records, each counted", dists.length === 4 &&
+      /Riverside Community College District3 colleges, 9 records/.test(root.querySelector('.prh-dd[data-filter="district"]').textContent), JSON.stringify(dists));
+    const regions = Array.prototype.map.call(root.querySelectorAll('.prh-dd[data-filter="region"] input[data-region]'), function (i) { return i.value; });
+    check("(24b) the SWP Region list holds the regions with records", JSON.stringify(regions) === '["Bay Area","Inland Empire/Desert","Los Angeles","Orange County"]', JSON.stringify(regions));
+    const sectors = root.querySelectorAll('.prh-dd[data-filter="sector"] input[data-sector]');
+    const sectorTxt = root.querySelector('.prh-dd[data-filter="sector"]').textContent;
+    check("(24b) the CIP Sector list offers every two-digit family, counted, and the records with no CIP",
+      sectors.length === Object.keys(m.M.CIP_FAMS).length + 1 && /51 · Health Professions and Related Programs7 records/.test(sectorTxt) &&
+      /No CIP assigned yet2 records/.test(sectorTxt) && /27 · Mathematics and Statistics0 records/.test(sectorTxt), sectorTxt.slice(0, 200));
+    const cipReads = db.asked.filter(function (a) { return a.cip; });
+    check("(24b) the CIP codes are read once, by control number, in batches", cipReads.length === 1 && /control_number=in\./.test(cipReads[0].url));
+    check("(24b) the filters' words are plain, and Clear hides with nothing set", !/[\u{1F300}-\u{1FAFF}]/u.test(root.querySelector(".prh-filterbar").textContent) &&
+      wordButton(root, "Clear the filters") && wordButton(root, "Clear the filters").hidden === true);
+    const btn = root.querySelector('.prh-dd[data-filter="college"] .prh-dd-btn');
+    btn.click();
+    const pop = root.querySelector("#prh-dd-college");
+    check("(24b) the word opens its list and says so", pop.hidden === false && btn.getAttribute("aria-expanded") === "true");
+    pop.dispatchEvent(new m.w.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+    check("(24b) Escape closes it and returns to the word", pop.hidden === true && m.w.document.activeElement === btn);
+    btn.click();
+    m.w.document.body.dispatchEvent(new m.w.Event("click", { bubbles: true }));
+    check("(24b) a click elsewhere closes it", pop.hidden === true && btn.getAttribute("aria-expanded") === "false");
   });
 });
 
@@ -2029,18 +2067,74 @@ block("(24d)", function () {
     m.M._state.view = "records"; m.M._render();
     const d = m.root.querySelector('input[type="checkbox"][data-district="Riverside Community College District"]');
     change(m.w, d, true);
-    check("(24d) a district pick selects all its colleges", ["Moreno Valley College", "Norco College", "Riverside City College"].every(function (c) {
-      return collegeBox(m.root, c).checked; }) && !collegeBox(m.root, "Cabrillo College").checked &&
-      JSON.stringify(m.M._state.pick) === '["Moreno Valley College","Norco College","Riverside City College"]', JSON.stringify(m.M._state.pick));
+    check("(24d) a district filter lists its colleges, and picks no college for you",
+      JSON.stringify(m.M._state.filt.district) === '["Riverside Community College District"]' && m.M._state.pick.length === 0 &&
+      !collegeBox(m.root, "Norco College").checked &&
+      m.root.querySelector('.prh-dd[data-filter="district"] .prh-dd-btn').textContent === "District (1)");
     return m.M._idle().then(function () {
       const full = recordReads(db).filter(asksFull);
-      check("(24d) in one read of those colleges", full.length === 1 &&
+      check("(24d) its three colleges are read in one read", full.length === 1 &&
         JSON.stringify(inValues(full[0].filters.college).sort()) === '["Moreno Valley College","Norco College","Riverside City College"]',
         full.map(function (a) { return a.filters.college; }).join(" "));
       check("(24d) and their records appear", m.root.querySelectorAll("article.prh-rec").length === 9);
-      change(m.w, collegeBox(m.root, "Norco College"), false);
-      check("(24d) a district with some of its colleges picked reads as partly picked", d.indeterminate === true && d.checked === false);
+      change(m.w, collegeBox(m.root, "Norco College"), true);
+      check("(24d) a college inside it narrows the list to that college: every filter must pass",
+        m.root.querySelectorAll("details.prh-college").length === 1 && cardsAt(m.root, "Norco College") === 2);
+      change(m.w, collegeBox(m.root, "Cabrillo College"), true);
+      check("(24d) a college outside the district matches nothing more", m.root.querySelectorAll("details.prh-college").length === 1);
+      wordButton(m.root, "Clear the filters").click();
+      check("(24d) Clear the filters clears them all and is remembered", m.M._state.pick.length === 0 && m.M._state.filt.district.length === 0 &&
+        m.w.localStorage.getItem(m.M.FILTERS_KEY) === '{"district":[],"region":[],"sector":[]}' && !m.root.querySelector("article.prh-rec"));
     });
+  });
+});
+
+block("(24m)", function () {
+  // The SWP Region and CIP Sector filters (Sam, 2026-10-14).
+  const db = harvestDb();
+  const m = loadModule({ fetch: db.fetch });
+  return m.M._load().then(function () {
+    m.M._state.view = "records"; m.M._render();
+    return m.M._idle();
+  }).then(function () {
+    change(m.w, m.root.querySelector('input[data-region="Inland Empire/Desert"]'), true);
+    return m.M._idle();
+  }).then(function () {
+    check("(24m) a region lists its colleges' records", m.root.querySelectorAll("details.prh-college").length === 3 &&
+      m.root.querySelectorAll("article.prh-rec").length === 9 && m.root.querySelector('.prh-dd[data-filter="region"] .prh-dd-btn').textContent === "SWP Region (1)");
+    change(m.w, m.root.querySelector('input[data-sector="51"]'), true);
+    return m.M._idle();
+  }).then(function () {
+    check("(24m) a sector narrows to the programs in that CIP family", m.root.querySelectorAll("article.prh-rec").length === 1 &&
+      cardsAt(m.root, "Norco College") === 1 && /Showing 1 of 1/.test(m.root.querySelector(".prh-count").textContent),
+      m.root.querySelector(".prh-count").textContent);
+    change(m.w, m.root.querySelector('input[data-region="Inland Empire/Desert"]'), false);
+    return m.M._idle();
+  }).then(function () {
+    check("(24m) a sector alone spans every college, reading the matches by key",
+      m.root.querySelectorAll("article.prh-rec").length === 7 && cardsAt(m.root, "Cabrillo College") === 6 &&
+      recordReads(db).filter(asksFull).slice(-1).every(function (a) { return !!a.filters.control_number; }));
+    change(m.w, m.root.querySelector('input[data-sector=""]'), true);
+    return m.M._idle();
+  }).then(function () {
+    check("(24m) and the records with no CIP are one more choice", m.root.querySelectorAll("article.prh-rec").length === 9);
+    check("(24m) the filters are remembered", JSON.parse(m.w.localStorage.getItem(m.M.FILTERS_KEY)).sector.join("|") === "|51");
+  });
+});
+
+block("(24n)", function () {
+  // A failed CIP read says so and leaves the sector filter out; a remembered sector says why nothing lists.
+  const db = harvestDb({ cipFail: true });
+  const m = loadModule({ fetch: db.fetch });
+  m.w.localStorage.setItem("cplProgramRequirements.filters.v1", JSON.stringify({ district: [], region: [], sector: ["51"] }));
+  return m.M._load().then(function () {
+    m.M._state.view = "records"; m.M._render();
+    return m.M._idle();
+  }).then(function () {
+    const txt = m.root.querySelector(".prh-filterbar").textContent;
+    check("(24n) a failed CIP read names the table and leaves the filter out",
+      /The programs' CIP codes could not be read \(coci_college_programs answered 503\)/.test(txt) && !m.root.querySelector('.prh-dd[data-filter="sector"]'), txt);
+    check("(24n) a remembered sector never reads as no records", /no record can be matched to a sector/.test(m.root.textContent) && !/No record matches/.test(m.root.textContent));
   });
 });
 
@@ -2061,8 +2155,8 @@ block("(24e)", function () {
     const priv = loadModule({ fetch: db2.fetch, noStorage: true });
     return priv.M._load().then(function () {
       priv.M._state.view = "records"; priv.M._render();
-      check("(24e) a private window (storage throws) renders the picker with nothing picked",
-        !!priv.root.querySelector("fieldset.prh-pick") && /Pick a college or a district/.test(priv.root.textContent));
+      check("(24e) a private window (storage throws) renders the filters with nothing set",
+        !!priv.root.querySelector(".prh-filterbar .prh-dd") && /Choose a district, college, SWP region or CIP sector/.test(priv.root.textContent));
       change(priv.w, collegeBox(priv.root, "Norco College"), true);
       return priv.M._idle().then(function () {
         check("(24e) and a pick there still loads", cardsAt(priv.root, "Norco College") === 2);
@@ -2143,14 +2237,14 @@ block("(24h)", function () {
     check("(24h) a page-long list reads its records by key, never a college whole",
       !recordReads(r.db).some(function (a) { return asksFull(a) && !a.filters.control_number; }));
     check("(24h) it says it lists every college, and offers the picks back", /Every college is listed, because the count you followed spans them all/.test(root.textContent) &&
-      wordButton(root, "List only the colleges you picked") && !wordButton(root, "List only the colleges you picked").hidden);
+      wordButton(root, "List only what the filters choose") && !wordButton(root, "List only what the filters choose").hidden);
     const first = wordButton(root, "Read the first waiting record side by side");
     check("(24h) and the first waiting record, side by side", !!first && !first.hidden);
     first.click();
     const d = r.w.document.querySelector(".prh-split");
     check("(24h) which opens it", !!d && /^Program 10003/.test(d.querySelector("#prh-split-t").textContent));
     r.M.closeSplit(true);
-    wordButton(root, "List only the colleges you picked").click();
+    wordButton(root, "List only what the filters choose").click();
     check("(24h) back to the picks, the waiting at Norco only", /Showing 2 of 2/.test(root.querySelector(".prh-count").textContent) &&
       root.querySelectorAll("details.prh-college").length === 1);
   });
@@ -2207,11 +2301,11 @@ block("(24k)", function () {
   const m = loadModule({ fetch: db.fetch });
   return m.M._load().then(function () {
     m.M._state.view = "records"; m.M._render();
-    check("(24k) an unread district list says so, naming the table, and lists the colleges by name",
-      /The district list could not be read \(map_colleges answered 503\)/.test(m.root.textContent) &&
-      m.root.querySelectorAll('input[type="checkbox"][data-college]').length === 6 && !m.root.querySelector("input[data-district]"));
-    check("(24k) the picker's CSS is tokens only", /\.prh-pick input\[type=\\"checkbox\\"\] \{[^}]*accent-color:var\(--cobalt\)/.test(SRC) &&
-      !/\.prh-(pick|rscope|draft-note)[^"]*#[0-9a-fA-F]{3,6}/.test(SRC));
+    check("(24k) an unread district list says so, naming the table, leaves out District and SWP Region, and lists the colleges by name",
+      /The district and region lists could not be read \(map_colleges answered 503\)/.test(m.root.textContent) &&
+      m.root.querySelectorAll('input[type="checkbox"][data-college]').length === 6 && !m.root.querySelector("input[data-district], input[data-region]"));
+    check("(24k) the filters' CSS is tokens only", /\.prh-dd-list input\[type=\\"checkbox\\"\] \{[^}]*accent-color:var\(--cobalt\)/.test(SRC) &&
+      !/\.prh-(dd|filter|pick|rscope|draft-note)[^"]*(#[0-9a-fA-F]{3,6}|rgba?\()/.test(SRC));
   });
 });
 
