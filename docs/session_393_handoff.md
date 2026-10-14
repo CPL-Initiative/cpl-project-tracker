@@ -34,9 +34,12 @@ the Implementation Funding tab (#2132) and left the checkpoint to S392.
 
 ## Priority, in order
 
-1. **Read [Open Asks Sheet 82](https://claude.ai/artifact/Ef9Qou4fQbZtpKz1dyDc8B)** (current; store empty at ~21:55Z). Card 1
-   *carry* or *reread*: does a confirm carry over when a rerun changes only degree figures (Astronomy 06326). Card 2 *overlap* or
-   *flag*: transfer degrees past their total (10). Carry out each answer; change the harvest lane's two S392 markers in the PR.
+1. **Carry out Sheet 82 (Sam answered at 22:14Z, both his own call; `sam-sheet-82-rulings-2026-10-14`).** Card 2
+   *overlap*: in `degree_verdict()`, a transfer degree whose sum runs past its printed total adds up (`overlap`); rescore the
+   10 filed records (`kb/_program_requirements_rescore.py`), move their live `checks` through `supabase-migrate.yml`, and fold
+   it into the display build below. Card 1 *carry*: when a rerun's blocks match the confirmed record and only degree fields
+   change, the confirm carries over. Build it in the re-read path; never change `program_record_fp`, which would orphan every
+   stored verdict. Astronomy 06326 is the case. No sheet is open after these.
 2. **A display build** so Cabrillo's 35 re-read records show their new figures: `kb/_build_roep_display.py` on a branch, commit
    both outputs, dispatch `step=display`.
 3. **Re-extract Cabrillo 06350 and 06378** under v8 (`force=06350,06378`, about $0.25): their reading dropped a Recommended Major

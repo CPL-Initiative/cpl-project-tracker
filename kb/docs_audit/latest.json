@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1157,
-    "bytes": 11913184,
+    "bytes": 11914189,
     "over_budget": 8,
     "handoff_max": 393,
     "always_loaded_files": 1,
@@ -26,12 +26,12 @@
       },
       "other": {
         "files": 119,
-        "bytes": 3518176,
+        "bytes": 3519525,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 10606,
+        "bytes": 9950,
         "over": 0
       },
       "lessons": {
@@ -46,25 +46,24 @@
       },
       "roadmap_lane": {
         "files": 37,
-        "bytes": 350355,
+        "bytes": 350357,
         "over": 2
       },
       "handoff": {
         "files": 364,
-        "bytes": 2858989,
+        "bytes": 2859299,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 23,
       "oversized_doc": 8,
-      "unindexed_kb_note": 1,
       "kb_note_dialect": 1,
       "vault_heavy_path": 62
     },
     "vault": {
       "files": 8853,
-      "bytes": 2349820782,
+      "bytes": 2349749931,
       "heavy_bytes": 1307357977,
       "heavy_share": 0.556,
       "ignore_filters": [
@@ -308,15 +307,6 @@
       "path": "docs/kb-notes/methodology-a-frequency-is-not-a-rule.md"
     },
     {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "methodology-a-reviewer-confirm-is-a-probe-for-procedure-gaps"
-      },
-      "message": "not referenced from docs/INDEX.md or any catalog it links to — unreachable by browsing",
-      "path": "docs/kb-notes/methodology-a-reviewer-confirm-is-a-probe-for-procedure-gaps.md"
-    },
-    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -465,13 +455,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 720013,
+        "bytes": 720988,
         "limit": 150000,
         "lane": "other",
-        "over_by": 570013,
-        "ratio": 4.8
+        "over_by": 570988,
+        "ratio": 4.81
       },
-      "message": "720,013 B is 4.8× the other budget (150,000 B) — candidate for compaction",
+      "message": "720,988 B is 4.8× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
