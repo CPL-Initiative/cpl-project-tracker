@@ -148,6 +148,8 @@ const signIn = function (win) {
   }
   check("the hint names the buttons and the marks they type",
     /press Bold or Italic/.test(doc.querySelector('[data-sec="explainer_text"]').textContent));
+  check("the tab lists {2025-26 remaining} among the figures a passage can name",
+    /\{2025-26 remaining\}/.test(doc.querySelector('[data-sec="explainer_text"] .cplfund-xtext-figs').textContent));
 }
 
 // ── 4. the explainer's three boxes ─────────────────────────────────────────
@@ -206,6 +208,17 @@ const signIn = function (win) {
   check("a curator's words for a box reach the page, its figure still live",
     /Custom words/.test(lab.textContent) && !!lab.querySelector('strong [data-fig="f-cr"]') &&
     /^\$[0-9,]+$/.test(lab.querySelector('[data-fig="f-cr"]').textContent));
+
+  // {2025-26 remaining} (Sam, 2026-10-14: "an amount $9.04M in this explainer
+  // text is just text. Is there a field I can reference?"). The figure is the
+  // model's own pool field, read back through the payload, never typed here.
+  T._setShared(Object.assign({}, T._getShared(), { text: { x_lede_figs: "The {2025-26 remaining} remaining from 2025-26 is a separate distribution." } }));
+  T.render();
+  const Dr = win.CPL_FUNDING_EXPLAINER.buildPayload(T, win.CPL_FUNDING);
+  const rem = doc.querySelector('[data-ftext="x_lede_figs"] [data-fig="f-rem2526"]');
+  check("{2025-26 remaining} paints the model's remaining 2025-26 balance, read from its pool field",
+    Dr.pool.remaining > 0 && Dr.pool.remaining === Number(T._pool("remaining_2025_26")) &&
+    !!rem && moneyNum(rem.textContent) === Math.round(Dr.pool.remaining) && !/\{2025-26 remaining\}/.test(doc.querySelector('[data-ftext="x_lede_figs"]').textContent));
 }
 
 // ── 6. Refresh everything carries both (Sam, 2026-10-14: "Keep in mind to
