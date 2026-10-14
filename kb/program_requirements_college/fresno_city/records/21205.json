@@ -1,0 +1,237 @@
+{
+ "college": "Fresno City College",
+ "control_number": "21205",
+ "shape": "certificate",
+ "title": "Office Specialist",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/6552",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6154,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6154,
+    "output_tokens": 1658,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1658,
+  "output_tokens_details": {
+   "thinking_tokens": 464
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05778,
+ "ms": 13407,
+ "seconds": 13.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "BT10"
+   ],
+   "flagged": [
+    "BT10"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.5,
+    28.5
+   ],
+   "stated": [
+    28.5,
+    28.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Office Specialist - Formerly Office Professional - Executive Assistant Emphasis, Office Professional II and Administrative Assistant Emphasis, Associate of Science - Major #2216",
+   "measure": "units",
+   "total_units": {
+    "min": 28.5,
+    "max": 28.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Achieve a satisfactory evaluation in a work experience setting.",
+    "Use technology applications, office equipment, and software effectively in a professional setting.",
+    "Proofread documents and correct errors in punctuation, grammar, capitalization, number expression, and spelling."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Recommended First Semester Courses (Required)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "BT 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 6",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 9",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 33",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Second Semester Courses (Required)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14.5,
+     "max": 14.5
+    },
+    "courses": [
+     {
+      "code": "BT 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BT 19",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 131",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The only section in the text is headed as the Associate of Science (Major #2216); no separate Certificate of Achievement section is printed. The requirements, total (28.5) and outcomes were read from this section, assuming the certificate shares them; the 28.5 total fits the 16-30 unit certificate range. Reviewer should confirm.",
+   "The text states additional general education units are required for the AS degree but names no GE pattern and prints no degree total.",
+   "The block headings say 'Recommended ... Semester Courses' but are marked '(Required)'; recorded as required ('all') blocks.",
+   "BT 33 in the catalog matches closed-list code BT33; treated as the same course.",
+   "BT 5 is printed as '( same as BA 5 )', a cross-listing; BA 5 not recorded as a separate alternative.",
+   "BT 19 printed with 2 units in the catalog; the state file stores 1 unit (variable-unit work experience likely).",
+   "BT 10 Computer Applications II is not in the closed list; recorded as a catalog addition.",
+   "Several courses are marked '( Historical )' (BT 1, BT 9, BT 10), which may indicate they are inactive."
+  ]
+ },
+ "extracted_run": "38563582873"
+}

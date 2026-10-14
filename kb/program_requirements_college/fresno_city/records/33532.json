@@ -1,0 +1,161 @@
+{
+ "college": "Fresno City College",
+ "control_number": "33532",
+ "shape": "certificate",
+ "title": "Clinical Medical Assistant",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Medical-Assistant-Programs/6741",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6510,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6510,
+    "output_tokens": 1154,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1154,
+  "output_tokens_details": {
+   "thinking_tokens": 683
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04912,
+ "ms": 11790,
+ "seconds": 12.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 7,
+   "share": 0.0,
+   "missing": [
+    "AHLTH11",
+    "AHLTH12",
+    "MA19",
+    "MA4",
+    "MA5",
+    "MA6A",
+    "MA6B"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "No Certificate of Achievement section in the text; only section printed: Clinical Medical Assistant - Formerly Medical Assistant-Clinician, Associate of Science - Major #2122",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AHLTH 11",
+    "why": "named only in the A.S. section; no certificate section in the text"
+   },
+   {
+    "code": "AHLTH 12",
+    "why": "named only in the A.S. section; no certificate section in the text"
+   },
+   {
+    "code": "MA 19",
+    "why": "named only in the A.S. section (3 units there); no certificate section in the text"
+   },
+   {
+    "code": "MA 4",
+    "why": "named only in the A.S. section; no certificate section in the text"
+   },
+   {
+    "code": "MA 5",
+    "why": "named only in the A.S. section; no certificate section in the text"
+   },
+   {
+    "code": "MA 6A",
+    "why": "named only in the A.S. section; no certificate section in the text"
+   },
+   {
+    "code": "MA6B",
+    "why": "named only in the A.S. section (printed as MA 6B, 2.5 units); no certificate section in the text"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "38563582873"
+}

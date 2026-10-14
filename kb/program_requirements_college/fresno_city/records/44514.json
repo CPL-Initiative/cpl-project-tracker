@@ -1,0 +1,161 @@
+{
+ "college": "Fresno City College",
+ "control_number": "44514",
+ "shape": "noncredit",
+ "title": "Information Literacy",
+ "award": "Noncredit program",
+ "source_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Business---Technology-Programs/7088",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5715,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5715,
+    "output_tokens": 709,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 709,
+  "output_tokens_details": {
+   "thinking_tokens": 163
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03704,
+ "ms": 6518,
+ "seconds": 6.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.12,
+    24.12
+   ],
+   "stated": [
+    24.12,
+    24.12
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Information Literacy, Certificate of Completion - Major #2331",
+   "measure": "hours",
+   "total_units": {
+    "min": 24.12,
+    "max": 24.12
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Launch a computer, navigate to productivity software, and begin working.",
+    "Perform best practices for computer maintenance and security, including protecting oneself from vulnerability to cyber schemes and phishing."
+   ],
+   "careers": [
+    "office occupations"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24.1,
+     "max": 24.12
+    },
+    "courses": [
+     {
+      "code": "BT 371",
+      "units": 12.06,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 373",
+      "units": 12.06,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate counted in hours; 'Total Hours : 24.12' recorded as total_units, and the 12.06 hours beside each course recorded as units.",
+   "The Required Courses heading prints '24.1 24.12', recorded as the block's stated range (24.1 to 24.12). It may be a display rounding of 24.12; a reviewer should check it.",
+   "The catalog URL path references the 2025-2026 FCC Catalog, while the page alias says 2026-27; confirm the catalog year."
+  ]
+ },
+ "extracted_run": "38563582873"
+}

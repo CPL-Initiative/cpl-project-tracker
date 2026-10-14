@@ -1,0 +1,221 @@
+{
+ "college": "Fresno City College",
+ "control_number": "40413",
+ "shape": "noncredit",
+ "title": "Video Production",
+ "award": "Noncredit program",
+ "source_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Graphic-Communications-Programs/6690",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6097,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6097,
+    "output_tokens": 1272,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1272,
+  "output_tokens_details": {
+   "thinking_tokens": 347
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04983,
+ "ms": 11217,
+ "seconds": 11.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    810.0,
+    810.0
+   ],
+   "stated": [
+    810.0,
+    810.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Video Production, Certificate of Completion - Major #8511",
+   "measure": "hours",
+   "total_units": {
+    "min": 810,
+    "max": 810
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate competency in communications techniques and visual design theory through the use of application specific software and hardware."
+   ],
+   "careers": [
+    "videographer",
+    "editor",
+    "YouTube hobbyist",
+    "content producer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 810,
+     "max": 810
+    },
+    "courses": [
+     {
+      "code": "GRC 322",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRC 323",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRC 327",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRC 331",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRC 332",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRC 338",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRC 341",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRC 347",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRC 351",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRC 353",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit program counted in hours; course figures are hours as printed, and the 'Total Hours : 810' is recorded as total_units. The block header also prints '810.0 810'.",
+   "The closed list stores 'GRC338' (no space); the catalog prints 'GRC 338'. Treated as the same course, so catalog_addition is false.",
+   "GRC 322 is printed as '( same as GRC 22 )'; the credit course GRC 22 is a cross-listing, not recorded as an alternative.",
+   "The 'Assessment: critique of project work, portfolio review.' line following the outcome is not recorded as an outcome.",
+   "Source URL path references the 2025-2026 FCC catalog while the program is for the 2026-2027 catalog year; reviewer may verify the year."
+  ]
+ },
+ "extracted_run": "38563582873"
+}

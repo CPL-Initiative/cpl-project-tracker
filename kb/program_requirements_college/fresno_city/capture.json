@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 266,
  "with_closed_list": 251,
- "started": "2026-10-14T01:23:08Z",
+ "started": "2026-10-14T12:26:36Z",
  "curriqunet": {
   "catalog": 1758,
   "view_prefix": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/",
@@ -25,7 +25,7 @@
  "pages_read": 301,
  "banner_h1": null,
  "loads": 474,
- "seconds": 2288.6,
+ "seconds": 2202.7,
  "found": 237,
  "by_method": {
   "no_closed_list": 15,
@@ -2779,5 +2779,5 @@
    }
   ]
  },
- "run": "38495335905"
+ "run": "38563582873"
 }
