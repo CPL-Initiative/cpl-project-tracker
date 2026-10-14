@@ -5,7 +5,7 @@
   "rpcs": 38,
   "edge_functions": 8,
   "file_datasets": 648,
-  "external_services": 177,
+  "external_services": 178,
   "consumers": 440,
   "workflows": 53,
   "data_js_files": 69,
@@ -606,6 +606,18 @@
       "map-queue",
       "map-users"
      ]
+    }
+   ],
+   "main_committers": []
+  },
+  "external:catalog.cccd.edu": {
+   "consumers": [
+    {
+     "id": "script:kb/_course_outcomes_read.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 336
     }
    ],
    "main_committers": []
@@ -10491,7 +10503,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 465
+     "line": 532
     }
    ],
    "served": false,
