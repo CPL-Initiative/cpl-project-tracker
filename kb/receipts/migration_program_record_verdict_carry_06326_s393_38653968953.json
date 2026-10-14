@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "chatbox/supabase_program_record_verdict_carry_06326_s393.sql",
+ "name": "program_record_verdict_carry_06326_s393",
+ "version": "20261014232628",
+ "sha256": "0d0e490b29cd7a7dd12e9a0cad9e74fd64c65831091ce1aff97e1327e33f6a05",
+ "run": "38653968953",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

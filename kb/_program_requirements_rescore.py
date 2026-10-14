@@ -5,7 +5,9 @@ Sam, Open Asks Sheet 81 (2026-10-14, cards 1 "count" and 2 "adt", both his own
 call) counts two more kinds of record as adding up against the degree total a
 page prints (kb/_program_requirements_score.py, degree_verdict): a degree total
 inside the span the requirements allow, and a transfer degree's 60 filled by
-transferable electives where the page names none. Card 1 said what it costs:
+transferable electives where the page names none. Sheet 82 card 2 ("overlap",
+the same day) adds a third: a transfer degree whose major and general education
+run past its total, because a course counts toward both. Card 1 said what it costs:
 "no model call, a rescore of the filed records and a new display build."
 
 A filed record keeps the scorer's sum ("computed": blocks, open electives and
@@ -60,8 +62,15 @@ def rescore(filed: dict) -> dict | None:
         return None
     new = dict(arith)
     new.update(v)
-    new["rescored"] = "Open Asks Sheet 81"
+    new["rescored"] = "Open Asks Sheet 82" if v.get("overlap") else "Open Asks Sheet 81"
     return new
+
+
+def how(new: dict) -> str:
+    for k in ("within", "overlap", "transfer"):
+        if new.get(k):
+            return k
+    return "fill"
 
 
 def passes(score: dict) -> bool:
@@ -78,7 +87,7 @@ def run(write: bool) -> list[dict]:
             continue
         changed.append({"college": filed["college"], "control_number": filed["control_number"],
                         "award": filed.get("award"), "extracted_run": filed.get("extracted_run"),
-                        "how": "within" if new.get("within") else "transfer" if new.get("transfer") else "fill",
+                        "how": how(new),
                         "computed": new.get("computed"), "stated": new.get("stated"),
                         "path": os.path.relpath(path, ROOT)})
         if write:
@@ -124,7 +133,7 @@ def main(argv=None) -> int:
         return 0
     path = os.path.join(RECEIPTS, "program_requirement_records_rescore_%s_%s.json"
                         % (time.strftime("%Y-%m-%d", time.gmtime()), args.tag))
-    receipt = {"rule": "Open Asks Sheet 81 cards 1 (count) and 2 (adt), Sam, 2026-10-14",
+    receipt = {"rule": "Open Asks Sheet 81 cards 1 (count) and 2 (adt) and Sheet 82 card 2 (overlap), Sam, 2026-10-14",
                "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                "rescored": len(changed), "records": changed,
                "apply": update_sql(changed, "equal", "unequal"),

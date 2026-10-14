@@ -747,9 +747,22 @@ check(not r["pass"] and r["arithmetic"]["status"] == "unequal",
 r = S.score({**adt, "program": {**adt["program"], "open_elective_units": 0.5}}, PSY, PSY_TEXT, "A.S. T Degree")
 check(not r["pass"] and r["arithmetic"]["status"] == "unequal",
       "a transfer degree whose page names its electives is checked against them, never filled")
+# Sheet 82 card 2 ("overlap", Sam, 2026-10-14): a course counts toward the major and Cal-GETC both,
+# so a transfer degree whose sum runs past its printed total adds up (Cabrillo Geology AS-T: 62 against 60).
 r = S.score({**adt, "program": {**adt["program"], "degree_total": {"min": 52, "max": 52}}}, PSY, PSY_TEXT, "A.A- T Degree")
-check(not r["pass"] and r["arithmetic"]["status"] == "unequal",
-      "a transfer degree whose major and general education run past its total fails")
+check(r["pass"] and r["arithmetic"]["status"] == "equal" and r["arithmetic"].get("overlap") is True
+      and r["arithmetic"]["computed"] == [53.0, 59.0] and r["arithmetic"]["stated"] == [52.0, 52.0],
+      "a transfer degree whose major and general education run past its total adds up and keeps both figures: %s"
+      % json.dumps(r["arithmetic"]))
+r = S.score({**psy, "program": {**psy["program"], "degree_total": {"min": 52, "max": 52}}}, PSY, PSY_TEXT, "A.S. T Degree")
+check(r["pass"] and r["arithmetic"].get("overlap") is True,
+      "the overlap holds where the record says electives fill the degree, too")
+r = S.score({**adt, "program": {**adt["program"], "degree_total": {"min": 52, "max": 52}}}, PSY, PSY_TEXT, "A.S. Degree")
+check(not r["pass"] and r["arithmetic"]["status"] == "unequal" and not r["arithmetic"].get("overlap"),
+      "an A.S. that is not for transfer and runs past its degree total still fails")
+r = S.score({**adt, "program": {**adt["program"], "degree_total": {"min": 55, "max": 58}}}, PSY, PSY_TEXT, "A.A- T Degree")
+check(r["arithmetic"].get("within") and not r["arithmetic"].get("overlap"),
+      "a transfer degree whose total sits inside the span is within, not overlap")
 for award, want in (("A.A- T Degree", True), ("A.S. T Degree", True), ("A.S. Degree", False),
                     ("A.A. Degree", False), ("Associate in Science for Transfer", True), (None, False)):
     check(S.transfer_degree(award, {}) is want, "transfer_degree(%r) is %s" % (award, want))
@@ -799,6 +812,12 @@ check(RS.rescore({**filed, "score": {"arithmetic": {**filed["score"]["arithmetic
       "the rescore leaves a record checked against its major total alone")
 check(RS.rescore({**filed, "score": {"arithmetic": {**filed["score"]["arithmetic"], "computed": [50.0, 55.0]}}}) is None,
       "the rescore leaves a record that still falls short alone")
+new = RS.rescore({**filed, "award": "A.S. T Degree",
+                  "score": {"arithmetic": {**filed["score"]["arithmetic"], "computed": [62.0, 62.0]}}})
+check(new and new["pass"] and new.get("overlap") and new["rescored"] == "Open Asks Sheet 82" and RS.how(new) == "overlap",
+      "the rescore passes a filed AS-T at 62 against 60 as overlap (Sheet 82 card 2): %s" % json.dumps(new))
+check(RS.rescore({**filed, "score": {"arithmetic": {**filed["score"]["arithmetic"], "computed": [62.0, 62.0]}}}) is None,
+      "the rescore leaves an A.A. that is not for transfer and runs past its total alone")
 stale = RS.run(write=False)
 check(not stale, "every filed record's degree arithmetic is scored by the current rule (run "
       "kb/_program_requirements_rescore.py): %s" % [(c["college"], c["control_number"]) for c in stale][:6])

@@ -24,6 +24,7 @@ network. Run from repo root: python3 tests/program_requirements_college_test.py
 """
 import json
 import os
+import re
 import shutil
 import tempfile
 import urllib.parse
@@ -748,6 +749,17 @@ try:
           and "checked = false" in rr["rollback"] and "r.extracted_run = 37966828676" in rr["rollback"],
           "the re-read's receipt holds each replaced row's before-values and a rollback guarded by "
           "the re-read's run and checked = false")
+    # Sheet 82 card 1: a confirm the re-read carried over checked its row, so the rollback restores
+    # that row too, sets it unchecked, and deletes the carried verdict rows this run wrote.
+    cr = C.reread_receipt("Cabrillo College", "38700000000", "38639316727", [], [],
+                          [{"replaced_keys": ["06326", "06327"], "carried_keys": ["06326"],
+                            "before": [{"control_number": "06326"}, {"control_number": "06327"}]}])
+    check(cr["carried"] == 1 and cr["carried_keys"] == ["06326"]
+          and "(r.checked = false or r.control_number in ('06326'))" in cr["rollback"]
+          and "checked = false, checked_by = null, checked_at = null" in cr["rollback"]
+          and "delete from public.program_record_verdicts where college = 'Cabrillo College' and control_number in ('06326')"
+              in cr["rollback"] and "re-read run 38700000000 %" in cr["rollback"],
+          "a carried confirm's rollback restores its row unchecked and deletes the carried verdict: %s" % cr["rollback"])
 
     # force=incomplete names the filed records whose arithmetic is incomplete and that place a course.
     rec("00009", score={"coverage": {"pass": True, "placed": 5, "listed": 6}, "invented": {"pass": True},
@@ -765,17 +777,44 @@ finally:
 # checked or display, returns the before-values, and answers the service role alone (Rule 10).
 RR = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "chatbox",
                        "supabase_program_requirement_records_college_reread.sql")).read()
-RR_BODY = RR.split("as $$", 1)[1].split("$$;", 1)[0]
+RR_BODY = RR.split("function public.program_requirement_records_college_reread(", 1)[1].split("as $$", 1)[1].split("$$;", 1)[0]
 check("auth.role(), '') <> 'service_role'" in RR_BODY and "from public, anon, authenticated" in RR
       and "to service_role" in RR,
       "the re-read function answers the service role alone, in its body and in its grants")
-check("elsif cur.checked then" in RR_BODY and "program_record_verdicts" not in RR_BODY
+check("elsif cur.checked then" in RR_BODY
       and "cur.extracted_run >= new_run" in RR_BODY and "and checked = false;" in RR_BODY,
       "the re-read holds a checked row only (S392: a rerun is the fix a reviewer's Needs a fix or confirm "
       "waits on), keeps a row from the same or a newer run, and its UPDATE is guarded by checked = false")
-check("insert into" not in RR_BODY.lower() and "delete from" not in RR_BODY.lower()
+inserts = re.findall(r"insert into\s+([\w.]+)", RR_BODY, re.I)
+check(inserts == ["public.program_record_verdicts"] and "delete from" not in RR_BODY.lower()
       and "display =" not in RR_BODY and "checked_by =" not in RR_BODY and "checked =" not in RR_BODY.replace("checked = false", ""),
-      "the re-read never inserts, deletes, or writes checked, checked_by or display")
+      "the re-read never deletes or writes checked, checked_by or display, and its one insert is a carried "
+      "confirm in program_record_verdicts: %r" % inserts)
+# Sheet 82 card 1 ("carry", Sam, 2026-10-14): the confirm carries over only when it was given on the
+# record being replaced and the posted record keeps every block and every other program field.
+carry = RR_BODY.split("Sheet 82 card 1", 1)[1].split("update public.program_requirement_records", 1)[0]
+check("v.verdict = 'confirm'" in carry and "v.requirements_fp = public.program_record_fp(cur.record)" in carry
+      and "program_record_carry_basis(r->'record') = public.program_record_carry_basis(cur.record)" in carry
+      and "'confirm'" in carry and "v.by_email" in carry and "program_record_machine_pass(r->'checks')" in carry
+      and "carried := carried ||" in carry and "'carried_keys', to_jsonb(carried)" in RR_BODY,
+      "the carry needs the latest verdict to be a confirm of the replaced record and an equal basis, "
+      "writes the confirm in the reviewer's name with the new record's checks, and reports the carried keys")
+BASIS = RR.split("function public.program_record_carry_basis", 1)[1].split("$$;", 1)[0]
+check(all("- '%s'" % k in BASIS for k in ("outcomes", "careers", "total_units", "degree_total", "ge_units",
+                                          "ge_pattern", "open_elective_units", "degree_elective_units",
+                                          "electives_fill_degree"))
+      and BASIS.count("- '") == 9 and "'blocks',  coalesce(rec->'blocks'" in BASIS and "md5" not in BASIS
+      and "program_record_carry_basis(jsonb) from public, anon, authenticated" in RR,
+      "the carry basis leaves out exactly the totals, the degree's figures, outcomes and careers, keeps every "
+      "block, compares as jsonb (3 and 3.0 alike), and is closed to the API roles")
+steps_fields = {st["field"] for c in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "kb",
+                "program_requirements_reconcile.json")))["colleges"].values() for st in c["steps"]}
+check(all("- '%s'" % f in BASIS for f in steps_fields),
+      "every field a college's reconcile steps fill or clear is one a confirm carries across: %s" % sorted(steps_fields))
+VF = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "chatbox",
+                       "supabase_program_record_verdicts.sql")).read()
+check("- 'outcomes' - 'careers',\n    'blocks',  coalesce(rec->'blocks', '[]'::jsonb))::text);" in VF,
+      "program_record_fp is unchanged, so every stored verdict keeps matching its record (Sheet 82 card 1)")
 check("'before', before" in RR_BODY, "the re-read returns each replaced row's before-values")
 
 # ── the reconcile step on filed records (S392; Sam, 2026-10-14) ───────────────

@@ -1,0 +1,171 @@
+{
+ "rule": "Open Asks Sheet 81 cards 1 (count) and 2 (adt) and Sheet 82 card 2 (overlap), Sam, 2026-10-14",
+ "at": "2026-10-14T23:12:04Z",
+ "rescored": 10,
+ "records": [
+  {
+   "college": "Cabrillo College",
+   "control_number": "31987",
+   "award": "A.S. T Degree",
+   "extracted_run": 38639316727,
+   "how": "overlap",
+   "computed": [
+    64.0,
+    64.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/31987.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "32200",
+   "award": "A.A- T Degree",
+   "extracted_run": "38565227455",
+   "how": "overlap",
+   "computed": [
+    66.0,
+    68.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/32200.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "33667",
+   "award": "A.S. T Degree",
+   "extracted_run": 38639316727,
+   "how": "overlap",
+   "computed": [
+    62.0,
+    62.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/33667.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "33673",
+   "award": "A.A- T Degree",
+   "extracted_run": "38565227455",
+   "how": "overlap",
+   "computed": [
+    81.0,
+    85.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/33673.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "35130",
+   "award": "A.S. T Degree",
+   "extracted_run": "38565227455",
+   "how": "overlap",
+   "computed": [
+    70.0,
+    72.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/35130.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "37915",
+   "award": "A.S. T Degree",
+   "extracted_run": "38565227455",
+   "how": "overlap",
+   "computed": [
+    74.0,
+    77.0
+   ],
+   "stated": [
+    61.0,
+    64.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/37915.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "41374",
+   "award": "A.S. T Degree",
+   "extracted_run": "38565227455",
+   "how": "overlap",
+   "computed": [
+    66.0,
+    70.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/41374.json"
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "46340",
+   "award": "A.A- T Degree",
+   "extracted_run": "38565227455",
+   "how": "overlap",
+   "computed": [
+    81.0,
+    85.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/cabrillo/records/46340.json"
+  },
+  {
+   "college": "Palo Verde College",
+   "control_number": "40017",
+   "award": "A.A- T Degree",
+   "extracted_run": "38567765687",
+   "how": "overlap",
+   "computed": [
+    65.0,
+    69.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/palo_verde/records/40017.json"
+  },
+  {
+   "college": "Palo Verde College",
+   "control_number": "43196",
+   "award": "A.S. T Degree",
+   "extracted_run": "38567765687",
+   "how": "overlap",
+   "computed": [
+    61.0,
+    65.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "path": "kb/program_requirements_college/palo_verde/records/43196.json"
+  }
+ ],
+ "apply": "update public.program_requirement_records r\n   set checks = jsonb_set(r.checks, '{arithmetic}', '\"equal\"')\n  from (values\n  ('Cabrillo College', '31987', 38639316727),\n  ('Cabrillo College', '32200', 38565227455),\n  ('Cabrillo College', '33667', 38639316727),\n  ('Cabrillo College', '33673', 38565227455),\n  ('Cabrillo College', '35130', 38565227455),\n  ('Cabrillo College', '37915', 38565227455),\n  ('Cabrillo College', '41374', 38565227455),\n  ('Cabrillo College', '46340', 38565227455),\n  ('Palo Verde College', '40017', 38567765687),\n  ('Palo Verde College', '43196', 38567765687)) as v(college, control_number, extracted_run)\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = 'unequal'\nreturning r.college, r.control_number;",
+ "rollback": "update public.program_requirement_records r\n   set checks = jsonb_set(r.checks, '{arithmetic}', '\"unequal\"')\n  from (values\n  ('Cabrillo College', '31987', 38639316727),\n  ('Cabrillo College', '32200', 38565227455),\n  ('Cabrillo College', '33667', 38639316727),\n  ('Cabrillo College', '33673', 38565227455),\n  ('Cabrillo College', '35130', 38565227455),\n  ('Cabrillo College', '37915', 38565227455),\n  ('Cabrillo College', '41374', 38565227455),\n  ('Cabrillo College', '46340', 38565227455),\n  ('Palo Verde College', '40017', 38567765687),\n  ('Palo Verde College', '43196', 38567765687)) as v(college, control_number, extracted_run)\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = 'equal'\nreturning r.college, r.control_number;",
+ "applied": null,
+ "before": "Read live 2026-10-14 ~23:20Z: all 10 rows present on the filed run, checks.arithmetic \"unequal\"."
+}

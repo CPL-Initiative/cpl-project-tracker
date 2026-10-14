@@ -442,6 +442,10 @@ def degree_verdict(prog: dict, degree: tuple[float, float], lo: float, hi: float
                    award: str | None = None) -> dict:
     """How a sum of the blocks, open electives and general education (lo-hi)
     meets the degree total the page prints: pass, status, and how it passed."""
+    if transfer_degree(award, prog) and lo > degree[0] + TOL and hi > degree[1] + TOL:
+        # Sheet 82 card 2 ("overlap", Sam, 2026-10-14): a course counts toward the major and
+        # Cal-GETC both, so a transfer degree's sum runs past the total it prints.
+        return {"pass": True, "status": "equal", "overlap": True, "why": []}
     fits = lo <= degree[0] + TOL and hi <= degree[1] + TOL
     fill = [round(max(0.0, degree[0] - hi), 2), round(max(0.0, degree[1] - lo), 2)]
     if prog.get("electives_fill_degree"):

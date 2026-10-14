@@ -1865,28 +1865,37 @@ def reread_receipt(college: str, run_id: str, newest: str | None, rows: list[dic
                    results: list[dict], error: str | None = None) -> dict:
     """What the re-read replaced, and how to take it back: each replaced row's
     before-values, restored where the row still holds the re-read's run and is
-    still unchecked (Rule 10 a2)."""
+    still unchecked or was checked by a confirm this run carried over (Sheet 82
+    card 1), whose verdict rows the rollback deletes (Rule 10 a2)."""
     pick = lambda k: [x for r in results for x in (r.get(k) or [])]
     before = pick("before")
+    carried = pick("carried_keys")
+    q = lambda v: "'%s'" % str(v).replace("'", "''")
+    held_by = ("(r.checked = false or r.control_number in (%s))" % ", ".join(q(k) for k in carried)
+               if carried else "r.checked = false")
     return {
         "college": college, "reread_run": run_id, "function": REREAD_FUNCTION, "extracted_run": newest,
         "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "posted": len(rows), "batches": len(results), "skipped": skipped, "error": error,
         "replaced": len(pick("replaced_keys")), "absent": len(pick("absent_keys")),
-        "held": len(pick("held_keys")), "kept": len(pick("kept_keys")),
+        "held": len(pick("held_keys")), "kept": len(pick("kept_keys")), "carried": len(carried),
         "replaced_keys": pick("replaced_keys"), "absent_keys": pick("absent_keys"),
-        "held_keys": pick("held_keys"), "kept_keys": pick("kept_keys"),
+        "held_keys": pick("held_keys"), "kept_keys": pick("kept_keys"), "carried_keys": carried,
         "machine_pass": sum(1 for r in rows if r["checks"]["coverage"] is True and r["checks"]["invented"] is True
                             and r["checks"]["arithmetic"] in ("equal", "unstated")),
         "rollback": ("update public.program_requirement_records r set program_title = b.program_title, "
                      "award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, "
                      "measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, "
-                     "checks = b.checks, extracted_run = b.extracted_run from jsonb_to_recordset(<before>) as "
+                     "checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, "
+                     "checked_at = null from jsonb_to_recordset(<before>) as "
                      "b(control_number text, program_title text, award text, catalog_year text, source_url text, "
                      "measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, "
-                     "extracted_run bigint) where r.college = '%s' and r.control_number = b.control_number "
-                     "and r.checked = false and r.extracted_run = %s;  -- <before> is this receipt's before, "
-                     "as a jsonb literal" % (college.replace("'", "''"), newest)) if before else None,
+                     "extracted_run bigint) where r.college = %s and r.control_number = b.control_number "
+                     "and %s and r.extracted_run = %s;  -- <before> is this receipt's before, "
+                     "as a jsonb literal" % (q(college), held_by, newest)
+                     + ("\ndelete from public.program_record_verdicts where college = %s and control_number in (%s) "
+                        "and verdict = 'confirm' and note like 'Carried over from verdict %% re-read run %s %%';"
+                        % (q(college), ", ".join(q(k) for k in carried), run_id) if carried else "")) if before else None,
         "before": before,
     }
 
@@ -1915,9 +1924,9 @@ def reread(college: str, run_id: str | None, batch: int = LOAD_BATCH, post=None)
     receipt = reread_receipt(college, str(run_id), newest, rows, skipped, results, error)
     os.makedirs(RECEIPTS, exist_ok=True)
     _write(reread_receipt_path(college, str(run_id)), receipt)
-    print("re-read of %s (extraction run %s): %d posted, %d replaced, %d absent, %d held, %d kept%s"
+    print("re-read of %s (extraction run %s): %d posted, %d replaced, %d absent, %d held, %d kept, %d confirms carried%s"
           % (college, newest, len(rows), receipt["replaced"], receipt["absent"], receipt["held"],
-             receipt["kept"], "; STOPPED at " + error if error else ""))
+             receipt["kept"], receipt["carried"], "; STOPPED at " + error if error else ""))
     return 1 if error else 0
 
 
