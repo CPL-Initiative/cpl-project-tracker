@@ -1,0 +1,277 @@
+{
+ "college": "Southwestern College",
+ "control_number": "39578",
+ "shape": "adt",
+ "title": "Biology",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/biology/biology-ast/",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7138,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7138,
+    "output_tokens": 1988,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1988,
+  "output_tokens_details": {
+   "thinking_tokens": 583
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06831,
+ "ms": 16540,
+ "seconds": 17.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "BIOL207",
+    "BIOL215"
+   ],
+   "flagged": [
+    "BIOL207",
+    "BIOL215"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    33.0,
+    36.0
+   ],
+   "stated": [
+    35.0,
+    36.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 33.0-36.0; the catalog states 35.0-36.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Biology",
+   "measure": "units",
+   "total_units": {
+    "min": 35,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Upon successful completion of the Biology Program, students will be able to communicate clearly in a way that reflects knowledge and understanding of biological processes and structures.",
+    "Upon successful completion of the Biology Program, students will be able to approach and examine issues related to the biological sciences from an evidence-based perspective and communicate this information in a clear manner.",
+    "Upon successful completion of the Biology Program, students will be able to demonstrate information literacy skills to access, evaluate, and use resources.",
+    "Upon successful completion of the Biology Program, students will be able to use and apply the scientific method to critically evaluate hypotheses."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 211",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 212",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 200",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "MATH 121",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 122",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 151",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 153",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Electives",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 207",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 215",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints a single 'Biology' section for the Associate in Science Transfer Preparation (Major Code 01514); no separate award heading beyond 'Biology'.",
+   "The 5-6 range is printed on the MATH C2210 row covering the whole choice: MATH C2210 alone, or MATH 121 and MATH 122 together (printed as 'or MATH 121 & MATH 122'). MATH 121 and MATH 122 are recorded as alternatives but must be taken as a pair; no individual units are printed for them.",
+   "The 60-unit requirement is the generic statement for all AA-T/AS-T degrees, not printed as this award's total, so degree_total is null. Cal-GETC is required but no GE units are printed.",
+   "Recommended Electives printed as 'BIOL 207 and/or BIOL 215' with no units; both codes are not in the closed list.",
+   "Footnote: CHEM 170 is a prerequisite to CHEM 200 (not a program requirement, not recorded as a course).",
+   "Total Units 35-36 is the major total; no career titles are named in the text."
+  ]
+ },
+ "extracted_run": "38563578596"
+}

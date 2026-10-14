@@ -72,6 +72,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `coci_program_courses` | scripts: `kb/_program_requirements_pilot.py` | — |
 | `college` | scripts: `kb/_identity_daily_check.py` | — |
 | `college_geo` | `edgefn:cpl-chat` | — |
+| `course_outcomes` | tabs: `coci-lookup`, `program-requirements` | — |
 | `cpl_adoption_interest` | tabs: `cpl-pathways` | tabs: `cpl-pathways` |
 | `cpl_contract_deliverables` | tabs: `contracts` | — |
 | `cpl_contract_documents` | tabs: `contracts` | tabs: `contracts` |
@@ -1109,5 +1110,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 98 Supabase tables · 39 RPCs · 8 edge functions · 647 file
+Coverage: 99 Supabase tables · 39 RPCs · 8 edge functions · 647 file
 datasets · 178 external services · 440 consumers · 53 workflows · 39 tabs.

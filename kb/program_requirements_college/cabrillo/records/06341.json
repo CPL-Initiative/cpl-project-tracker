@@ -5,11 +5,11 @@
  "title": "Engineering",
  "award": "A.S. Degree",
  "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/engineering-associate-in-science-a-s-fall-2025",
- "record_shape": 4,
+ "record_shape": 5,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6586,
+  "input_tokens": 7453,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6586,
-    "output_tokens": 3787,
+    "input_tokens": 7453,
+    "output_tokens": 3644,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 3787,
+  "output_tokens": 3644,
   "output_tokens_details": {
-   "thinking_tokens": 894
+   "thinking_tokens": 710
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.10208,
- "ms": 29240,
- "seconds": 29.8,
+ "cost_usd": 0.10269,
+ "ms": 26613,
+ "seconds": 28.2,
  "parts": null,
  "error": null,
  "score": {
@@ -75,14 +75,22 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    38.0,
-    48.0
+    62.0,
+    72.0
    ],
-   "stated": null,
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
+   ],
    "why": [
-    "the record names no total"
+    "the blocks and general education sum to 62.0-72.0; the catalog prints 60.0-60.0 for the degree"
    ]
   },
   "repeated": {
@@ -116,6 +124,15 @@
    },
    "open_elective_units": null,
    "ge_pattern": "Cabrillo College General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Identify, formulate, and solve complex engineering problems by applying principles of engineering, science, and mathematics.",
     "Apply engineering design to produce solutions that meet specified needs with consideration of public health, safety, and welfare, as well as global, cultural, social, environmental, and economic factors.",
@@ -475,15 +492,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "No major total is stated for this award specifically; the page says generically that an A.S. requires 60 units including at least 30 units in the major, and 'Complete the following number of credits: 60' is the degree total including 24 units of Cabrillo College General Education. total_units left null.",
-   "The degree is loosely structured: 'Any of the courses below; at least 12 units of ENGR courses'. The 12-unit ENGR minimum is a cross-block constraint not captured by the block rules.",
-   "The 'Required' block (27 credits) carries the note 'it is recommended that students take the courses listed below if transferring to a university'; recorded as 'all' because the heading says Required, but reviewer should check whether these are truly required.",
-   "Focus blocks are introduced as 'Students should select a focus in the degree and complete the block of recommended courses centered around that focus'; recorded as alternative 'all' blocks in option_group 'Focus', though the wording 'recommended' is ambiguous.",
-   "Additional Electives block states 0-7 credits; recorded as choose_units with minimum 0. Note says students can take additional electives to fulfill the required 12 units of ENGR courses.",
-   "Codes are written as printed without a space (e.g., ENGR5, MATH5A); they match closed-list codes such as ENGR 5 and MATH 5A.",
-   "Program outcomes are printed for the program as a whole under 'Program Outcomes'; recorded for this A.S. award.",
-   "Source URL slug refers to 'fall-2025' while the catalog year is 2026-2027; reviewer may verify the catalog year."
+   "The page prints 'Complete the following number of credits: 60' for the whole degree (recorded as degree_total) and 'Cabrillo College General Education 24' (recorded as ge_units); no total for the major alone is printed, so total_units is null. The generic sentence that an A.S. requires at least 30 units in the major was not recorded as a total.",
+   "The 'Required' block (27 credits) carries a note saying 'it is recommended that students take the courses listed below if transferring to a university', and the page describes major courses as 'recommended by the department'; recorded as 'all' because of the 'Required' heading, but a reviewer should check whether these are truly required.",
+   "The five Focus blocks are recorded as one option_group ('Focus') because the page says 'Students should select a focus in the degree and complete the block of recommended courses centered around that focus'; each prints its own credit total.",
+   "Overall rule 'Any of the courses below; at least 12 units of ENGR courses' is not modeled as a block; Additional Electives (0-7 credits) note says they can be used to fulfill the required 12 units of ENGR courses. Minimum for Additional Electives recorded as the low end of the printed 0-7 range.",
+   "Codes are written as printed without spaces (e.g., ENGR5, MATH5A). Catalog additions not in the closed list: PHYS4A, PHYS4B, PHYS4C, ENGR1A, ENGR40, CS11.",
+   "Program Outcomes are printed for the program as a whole; recorded for this A.S. degree. No careers are named in the text."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": "38565227455"
 }

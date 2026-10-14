@@ -5,11 +5,11 @@
  "title": "Fire Technology",
  "award": "A.S. Degree",
  "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/fire-technology-associate-in-science-a-s-fall-2025",
- "record_shape": 4,
+ "record_shape": 5,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6969,
+  "input_tokens": 7836,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6969,
-    "output_tokens": 4818,
+    "input_tokens": 7836,
+    "output_tokens": 4640,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 4818,
+  "output_tokens": 4640,
   "output_tokens_details": {
-   "thinking_tokens": 1753
+   "thinking_tokens": 1454
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.12424,
- "ms": 38218,
- "seconds": 38.8,
+ "cost_usd": 0.12414,
+ "ms": 35393,
+ "seconds": 35.7,
  "parts": null,
  "error": null,
  "score": {
@@ -61,14 +61,22 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    20.5,
-    36.0
+    44.5,
+    60.0
    ],
-   "stated": null,
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
+   ],
    "why": [
-    "the record names no total"
+    "the blocks and general education sum to 44.5-60.0; the catalog prints 60.0-60.0 for the degree"
    ]
   },
   "repeated": {
@@ -102,6 +110,15 @@
    },
    "open_elective_units": null,
    "ge_pattern": "Cabrillo College General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Identify minimum qualifications and the needed entry skills for all the fire service related jobs.",
     "Demonstrate the ability to analyze, appraise, and evaluate fire incidents.",
@@ -482,15 +499,17 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "No single major total is stated; the text says generically that an A.S. requires 'at least 30 units in the major' and the degree totals 60 units (24 Cabrillo GE). Core is 18 and the pathway choice 16.5-18, but no major total is printed, so total_units is null.",
-   "'Major Requirements - Choose One Pathway' prints 16.5-18 units; the options are the EMT Pathway (16.5), Firefighter Academy Pathway (18), Wildland Firefighter Pathway (18-18.5) and, apparently, the Major Electives list (18) for a student-created pathway. All are given option_group 'Pathway'.",
-   "The Wildland Firefighter Pathway (18-18.5) is printed as two sub-blocks both titled 'Required': all of 15.5 units plus one of FT8 or FT169 (2.5-3). Both sub-blocks together form the single Wildland option, even though they share the option_group 'Pathway'.",
-   "Major Electives is read as a fourth pathway option (choose 18 units); the catalog calls the list 'recommended electives' for building one's own pathway with a counselor. Reviewer should check whether it is a separate requirement or an option.",
-   "'General electives: any transferable or degree applicable course. 0 - 1.5' is part of the 60-unit degree total, not the major, so open_elective_units is null.",
-   "Catalog prints units differing from the state file: FT183L 2.5 in the EMT pathway and 1-3 in electives (state 1); FT185 14 (state 13.5); FT189 2.5 (state 2.3).",
-   "Codes are printed without spaces (e.g., FT1 = FT 1, COMMC1000 = COMM C1000); all match the closed list.",
-   "The careers paragraph is cut off at the start ('or, fire investigator, ...'); the first career named is truncated and not recorded."
+   "No total for the major alone is printed; the page prints 'Complete the following number of credits: 60' for the whole degree (recorded as degree_total) and Cabrillo College General Education 24 (ge_units). Core is 18 and 'Choose One Pathway' is 16.5-18.",
+   "General electives ('any transferable or degree applicable course') are printed as 0 - 1.5 units, a range; open_elective_units left null because the field takes one number. Reviewer may record 1.5 as the maximum.",
+   "'Major Requirements - Choose One Pathway' (16.5-18) offers the EMT, Firefighter Academy, and Wildland Firefighter pathways; the 'Major Electives' list (18 units, 'create their own pathway based on the list of recommended electives below') is read as a fourth, self-designed pathway option and recorded as choose_units 18 in the same option_group. Reviewer should confirm.",
+   "The Wildland Firefighter Pathway (18-18.5) is split into two blocks both named 'Required' in the catalog: one all-required (15.5) and one stated 2.5-3 with FT8 (3) and FT169 (2.5), read as choose one. Both carry option_group 'Pathway' but together form a single pathway option.",
+   "COMMC1000H recorded as honors alternative to COMMC1000.",
+   "Printed units differ from the state file: FT185 printed 14 (state 13.5), FT189 printed 2.5 (state 2.3), FT183L printed 2.5 in the EMT pathway and 1 - 3 in Major Electives (state 1).",
+   "Catalog prints codes without spaces (e.g. FT1, KIN13); these match closed-list courses FT 1, KIN 13, etc.",
+   "Program description is cut off at the start ('or, fire investigator, ...'); one or more careers before 'fire investigator' may be missing from the text.",
+   "Program outcomes appear to be printed for the program as a whole on this A.S. page; recorded as this award's outcomes.",
+   "Source URL slug references 'fall-2025' although the catalog year is 2026-2027."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": "38565227455"
 }

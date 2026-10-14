@@ -1,0 +1,8030 @@
+[
+ {
+  "control_number": "05372",
+  "title": "Architecture Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH112",
+   "ARCH115",
+   "ARCH150",
+   "ARCH151",
+   "ARCH200",
+   "ARCH201",
+   "ARCH222",
+   "ARCH235"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/architecture/as-architecture-technology/",
+   "title": "Architecture Technology | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3257
+ },
+ {
+  "control_number": "05373",
+  "title": "Biology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL210",
+   "BIOL211",
+   "BIOL212",
+   "BIOL215",
+   "CHEM170",
+   "CHEM200",
+   "CHEM210",
+   "CHEM240",
+   "MATH121",
+   "MATH122",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS150",
+   "PHYS151",
+   "PHYS152",
+   "PHYS153"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/biology/biology-bs/",
+   "title": "Biology | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 5596
+ },
+ {
+  "control_number": "05374",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05375",
+  "title": "Finance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "ACCT102",
+   "BUS121",
+   "BUS123",
+   "BUS140",
+   "BUS183",
+   "BUS212",
+   "CIS101",
+   "ECONC2001",
+   "ECONC2002"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/business-administration/finance-aa/",
+   "title": "Finance | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3572
+ },
+ {
+  "control_number": "05376",
+  "title": "Management",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05377",
+  "title": "Real Estate",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05378",
+  "title": "Journalism",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART121",
+   "ART159",
+   "COMM180",
+   "FTMA105",
+   "FTMA163",
+   "JOUR151",
+   "JOUR171",
+   "JOUR200"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/journalism/journalism-aa/",
+   "title": "Journalism | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3517
+ },
+ {
+  "control_number": "05382",
+  "title": "Exercise Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "BIOL100",
+   "BIOL101",
+   "BIOL260",
+   "BIOL261",
+   "CHEM100",
+   "COMM103",
+   "PSYCC1000",
+   "SOC101"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/exercise-science/exercise-science-aa/",
+   "title": "Exercise Science | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3625
+ },
+ {
+  "control_number": "05383",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM200",
+   "ENGR110",
+   "ENGR120C",
+   "ENGR250",
+   "ENGR251",
+   "ENGR270",
+   "MATH252",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS270",
+   "PHYS271",
+   "PHYS272",
+   "PHYS273",
+   "PHYS274",
+   "PHYS275"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/engineering/engineering-as/",
+   "title": "Engineering | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4080
+ },
+ {
+  "control_number": "05384",
+  "title": "3D Modeling and Animation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH201",
+   "ART192",
+   "ART192L",
+   "CAD230",
+   "CAD231",
+   "CAD273",
+   "CAD274",
+   "CAD275A",
+   "CAD275B"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/computer-aided-design-drafting/3d-modeling-animation-as/",
+   "title": "3D Modeling and Animation | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3078
+ },
+ {
+  "control_number": "05387",
+  "title": "Automotive Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AT101",
+   "AT102",
+   "AT109",
+   "AT110",
+   "AT120",
+   "AT130",
+   "AT131",
+   "AT140",
+   "AT220",
+   "AT230",
+   "AT234",
+   "AT236",
+   "AT242",
+   "AT247"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/automotive-technology/automotive-technology-as/",
+   "title": "Automotive Technology | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3623
+ },
+ {
+  "control_number": "05391",
+  "title": "Construction Inspection",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "CI10",
+   "CI20",
+   "CI40",
+   "CI50",
+   "CI60",
+   "CI65",
+   "CI70",
+   "CI90",
+   "SES105"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/construction-inspection/construction-inspection-as/",
+   "title": "Construction Inspection | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3171
+ },
+ {
+  "control_number": "05392",
+  "title": "Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART100",
+   "ART100L",
+   "ART101",
+   "ART102",
+   "ART103",
+   "ART104",
+   "ART105",
+   "ART107",
+   "ART110",
+   "ART111",
+   "ART113",
+   "ART116",
+   "ART129",
+   "ART130",
+   "ART131",
+   "ART148A",
+   "ART149",
+   "ART156",
+   "ART157",
+   "ART170",
+   "ART173A",
+   "ART182",
+   "ART185A",
+   "ART190",
+   "ART200",
+   "ART205",
+   "ART206",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/art/art-aa/",
+   "title": "Art | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 4743
+ },
+ {
+  "control_number": "05393",
+  "title": "Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05394",
+  "title": "Commercial Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.912,
+  "codes_found": [
+   "FTMA111",
+   "MUS101",
+   "MUS102",
+   "MUS107",
+   "MUS111",
+   "MUS113",
+   "MUS119A",
+   "MUS119B",
+   "MUS119C",
+   "MUS119D",
+   "MUS125",
+   "MUS131",
+   "MUS132A",
+   "MUS132B",
+   "MUS140",
+   "MUS141",
+   "MUS150",
+   "MUS151",
+   "MUS155",
+   "MUS162",
+   "MUS170",
+   "MUS193A",
+   "MUS193B",
+   "MUS193C",
+   "MUS193D",
+   "RA&T100",
+   "RA&T105",
+   "RA&T107",
+   "RA&T110",
+   "RA&T120",
+   "RA&T121"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/music/commercial-music-aa/",
+   "title": "Commercial Music | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 34,
+  "text_chars": 3980
+ },
+ {
+  "control_number": "05395",
+  "title": "Theatre Arts---Performance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "FTMA116",
+   "FTMA154",
+   "TA101",
+   "TA102",
+   "TA108",
+   "TA110",
+   "TA111",
+   "TA115",
+   "TA141",
+   "TA142",
+   "TA152",
+   "TA160"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/theatre-arts/theatre-arts-performance-aa/",
+   "title": "Theatre Arts---Performance | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3636
+ },
+ {
+  "control_number": "05397",
+  "title": "French",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FREN101",
+   "FREN102",
+   "FREN201",
+   "FREN202"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/french/french-aa/",
+   "title": "French | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3362
+ },
+ {
+  "control_number": "05398",
+  "title": "Spanish",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05399",
+  "title": "Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADN112",
+   "ADN112L",
+   "ADN113",
+   "ADN113L",
+   "ADN118",
+   "ADN118L",
+   "ADN119",
+   "ADN119L",
+   "ADN214",
+   "ADN221",
+   "ADN221L",
+   "ADN223",
+   "ADN223L",
+   "ADN225"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/nursing-health-occupations/nursing-as/",
+   "title": "Nursing | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 6576
+ },
+ {
+  "control_number": "05400",
+  "title": "Nursing, Vocational",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYCC1000",
+   "VN103",
+   "VN103L",
+   "VN130",
+   "VN201",
+   "VN201L",
+   "VN250",
+   "VN250L",
+   "VN251",
+   "VN251L",
+   "VN30",
+   "VN31"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/nursing-health-occupations/vocational-nursing-as/",
+   "title": "Nursing, Vocational | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4277
+ },
+ {
+  "control_number": "05401",
+  "title": "Surgical Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL260",
+   "BIOL265",
+   "COMM174",
+   "MEDOP230",
+   "PSYCC1000",
+   "ST110",
+   "ST120",
+   "ST130",
+   "ST140",
+   "ST150",
+   "ST160"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/nursing-health-occupations/surgical-technology-as/",
+   "title": "Surgical Technology | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4136
+ },
+ {
+  "control_number": "05402",
+  "title": "Emergency Medical Technology and Paramedic",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL190",
+   "EMT113",
+   "EMT113L",
+   "EMTP200",
+   "EMTP200L",
+   "EMTP201",
+   "EMTP201L",
+   "EMTP202",
+   "EMTP203",
+   "EMTP225",
+   "EMTP230",
+   "EMTP231"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/emergency-medical-technology-paramedic/emergency-medical-technology-paramedic-as/",
+   "title": "Emergency Medical Technology and Paramedic | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4308
+ },
+ {
+  "control_number": "05403",
+  "title": "English",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05404",
+  "title": "Communication",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM103",
+   "COMM142",
+   "COMM160",
+   "COMM170",
+   "COMM174",
+   "COMM176",
+   "COMM180",
+   "COMM185",
+   "COMM262",
+   "COMM263",
+   "COMM264",
+   "COMM265",
+   "COMM272",
+   "COMM273",
+   "COMM274",
+   "COMM275",
+   "COMMC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/communication/communication-aa/",
+   "title": "Communication | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4177
+ },
+ {
+  "control_number": "05405",
+  "title": "Philosophy",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HUM101",
+   "HUM102",
+   "HUM104",
+   "HUM140",
+   "PHIL101",
+   "PHIL103",
+   "PHIL106",
+   "PHIL120"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/philosophy/philosophy-aa/",
+   "title": "Philosophy | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3856
+ },
+ {
+  "control_number": "05408",
+  "title": "Physics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM200",
+   "MATH252",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS270",
+   "PHYS271",
+   "PHYS272",
+   "PHYS273",
+   "PHYS274",
+   "PHYS275"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/physics/physics-as/",
+   "title": "Physics | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3700
+ },
+ {
+  "control_number": "05409",
+  "title": "Chemistry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM200",
+   "CHEM210",
+   "CHEM240",
+   "CHEM242",
+   "CHEM250",
+   "MATH252",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS270",
+   "PHYS271",
+   "PHYS272",
+   "PHYS273"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/chemistry/chemistry-as/",
+   "title": "Chemistry | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4023
+ },
+ {
+  "control_number": "05410",
+  "title": "Astronomy",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASTR201",
+   "MATH252",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS270",
+   "PHYS271",
+   "PHYS272",
+   "PHYS273",
+   "PHYS274",
+   "PHYS275"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/astronomy/astronomy-as/",
+   "title": "Astronomy | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3775
+ },
+ {
+  "control_number": "05412",
+  "title": "Psychology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "BIOL100",
+   "BIOL101",
+   "BIOL130",
+   "BIOL180",
+   "BIOL190",
+   "PSYC211",
+   "PSYC230",
+   "PSYC260",
+   "PSYCC1000",
+   "SOC270",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/psychology/psychology-aa/",
+   "title": "Psychology | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3672
+ },
+ {
+  "control_number": "05413",
+  "title": "Public Administration",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "CIS101",
+   "ECONC2001",
+   "ECONC2002",
+   "POLSC1000",
+   "PSYC270",
+   "SOC270",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/political-science/public-administration-aa/",
+   "title": "Public Administration | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3512
+ },
+ {
+  "control_number": "05414",
+  "title": "Social Work and Human Services",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "BIOL100",
+   "BIOL101",
+   "ECONC2001",
+   "ECONC2002",
+   "PSYCC1000",
+   "SOC101",
+   "SOC270",
+   "STATC1000",
+   "SWHS110",
+   "SWHS120"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/swhs/swhs-aa/",
+   "title": "Social Work and Human Services | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3737
+ },
+ {
+  "control_number": "05415",
+  "title": "Administration of Justice---Corrections Emphasis",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05417",
+  "title": "Child Development",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CD135",
+   "CD170",
+   "CD170L",
+   "CD180",
+   "CD181",
+   "CD184",
+   "CD278",
+   "CD282A",
+   "CD284",
+   "PSYC270",
+   "PSYCC1000",
+   "SOC101",
+   "SOC270"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/family-studies/child-development-aa/",
+   "title": "Child Development | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3900
+ },
+ {
+  "control_number": "05418",
+  "title": "Anthropology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "ANTH101",
+   "ANTH102",
+   "ANTH103",
+   "SOC270"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/liberal-arts-areas-emphasis/liberal-arts-emphasis-social-behavioral-sciences-aa/",
+   "title": "Liberal Arts: Emphasis in Social and Behavioral Sciences | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 6084
+ },
+ {
+  "control_number": "05419",
+  "title": "Asian American Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.902,
+  "codes_found": [
+   "AFRO111",
+   "AFRO151",
+   "ANTH102",
+   "ANTH115",
+   "ART129",
+   "ASIA114",
+   "ASIA115",
+   "ASIA117",
+   "ASIA118",
+   "CD181",
+   "CD284",
+   "COMM142",
+   "COMM176",
+   "ENGL270",
+   "ENGL272",
+   "ENGL273",
+   "FIL101",
+   "FTMA161",
+   "FTMA162",
+   "FTMA164",
+   "HIST112",
+   "HIST114",
+   "HIST122",
+   "HIST132",
+   "HISTC1001",
+   "HISTC1002",
+   "HUM112",
+   "HUM120",
+   "HUM122",
+   "MAS142",
+   "MAS150",
+   "MAS170",
+   "NAIS153",
+   "PHIL106",
+   "PSYC106",
+   "PSYC109",
+   "PSYCC1000",
+   "SOC101",
+   "SOC106",
+   "SOC107",
+   "SOC110",
+   "SOC135",
+   "SOC140",
+   "SOC255",
+   "SWHS110",
+   "SWHS120"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/asian-american-studies/asian-american-studies-aa/",
+   "title": "Asian American Studies | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 51,
+  "text_chars": 5226
+ },
+ {
+  "control_number": "05420",
+  "title": "Economics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05421",
+  "title": "History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HIST104",
+   "HIST105",
+   "HIST106",
+   "HIST107",
+   "HIST121",
+   "HIST122",
+   "HISTC1001",
+   "HISTC1002"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/history/history-aa/",
+   "title": "History | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4019
+ },
+ {
+  "control_number": "05423",
+  "title": "Political Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05424",
+  "title": "Sociology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "PSYC116",
+   "PSYC270",
+   "SOC101",
+   "SOC106",
+   "SOC110",
+   "SOC135",
+   "SOC140",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/sociology/sociology-aa/",
+   "title": "Sociology | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3497
+ },
+ {
+  "control_number": "05425",
+  "title": "Travel and Tourism",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05426",
+  "title": "General Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05427",
+  "title": "Environmental Health and Safety Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 13,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07364",
+  "title": "Paralegal Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ151",
+   "AJ181",
+   "BUS140",
+   "LEGL225",
+   "LEGL255",
+   "LEGL256",
+   "LEGL258",
+   "LEGL259",
+   "LEGL260",
+   "LEGL261",
+   "LEGL262",
+   "LEGL263",
+   "LEGL264",
+   "LEGL266",
+   "LEGL267",
+   "LEGL268",
+   "LEGL269",
+   "LEGL270",
+   "LEGL271",
+   "LEGL272",
+   "RE106"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/paralegal-studies/paralegal-studies-as/",
+   "title": "Paralegal Studies | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 4657
+ },
+ {
+  "control_number": "07365",
+  "title": "Paralegal Studies: Bilingual (English/Spanish)",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS226",
+   "BUS229",
+   "LEGL225",
+   "LEGL255",
+   "LEGL256",
+   "LEGL258",
+   "LEGL259",
+   "LEGL260",
+   "LEGL261",
+   "LEGL262",
+   "LEGL263",
+   "LEGL264",
+   "LEGL266",
+   "LEGL267",
+   "LEGL268",
+   "LEGL269",
+   "LEGL270",
+   "LEGL271",
+   "LEGL272",
+   "LEGL291",
+   "LEGL292",
+   "LEGL293"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/paralegal-studies-bilingual/paralegal-studies-bilingual-english-spanish-as/",
+   "title": "Paralegal Studies: Bilingual (English/Spanish) | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 5194
+ },
+ {
+  "control_number": "08148",
+  "title": "Landscape Architecture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH115",
+   "GEOG145",
+   "LA104",
+   "LA200",
+   "LA201",
+   "LNT100",
+   "LNT120",
+   "LNT122",
+   "LNT124",
+   "LNT128",
+   "LNT131",
+   "LNT134",
+   "LNT148",
+   "LNT151",
+   "LNT152"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/landscape-architecture-landscape-nursery-technology/landscape-architecture-as/",
+   "title": "Landscape Architecture | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3368
+ },
+ {
+  "control_number": "08150",
+  "title": "Landscape Occupations",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.765,
+  "codes_found": [
+   "LNT100",
+   "LNT120",
+   "LNT122",
+   "LNT123",
+   "LNT124",
+   "LNT128",
+   "LNT132",
+   "LNT134",
+   "LNT136",
+   "LNT148",
+   "LNT72",
+   "LNT75",
+   "LNT94"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/landscape-architecture-landscape-nursery-technology/",
+   "title": "Landscape Architecture/Landscape and Nursery Technology | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5
+   }
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "08151",
+  "title": "Floral Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 16,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08153",
+  "title": "Architecture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH101",
+   "ARCH110",
+   "ARCH112",
+   "ARCH115",
+   "ARCH150",
+   "ARCH151",
+   "ARCH165",
+   "ARCH200",
+   "ARCH201",
+   "ARCH222",
+   "ARCH235",
+   "ARCH252",
+   "ARCH253",
+   "ARCH265",
+   "ARCH266"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/architecture/as-architecture/",
+   "title": "Architecture | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4120
+ },
+ {
+  "control_number": "08156",
+  "title": "Accounting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "ACCT102",
+   "BUS140",
+   "BUS212",
+   "CIS101",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH120",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/business-administration/business-administration-aa/",
+   "title": "Business Administration | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3579
+ },
+ {
+  "control_number": "08159",
+  "title": "Business Administration",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08166",
+  "title": "Real Estate",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08171",
+  "title": "OIS: Office Information Systems Professional---Bilingual",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08172",
+  "title": "OIS: Office Information Systems Professional",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS200A",
+   "BUS200B",
+   "BUS206",
+   "BUS210",
+   "BUS211",
+   "BUS212",
+   "BUS218",
+   "BUS290",
+   "BUS291",
+   "BUS292",
+   "BUS293",
+   "BUS73",
+   "BUS74",
+   "CIS122B"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/office-information-systems-professional/ois-office-information-systems-professional-as/",
+   "title": "OIS: Office Information Systems Professional | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3769
+ },
+ {
+  "control_number": "08179",
+  "title": "Legal Interpretation and Translation--Intermediate (English/Spanish)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS211",
+   "BUS227",
+   "BUS234",
+   "SPAN216"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/legal-interpretation-translation/legal-interpretation-and-translation-intermediate-english-spanish-certificate/",
+   "title": "Legal Interpretation and Translation--Intermediate (English/Spanish) | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3631
+ },
+ {
+  "control_number": "08185",
+  "title": "CIS---Systems Programming Emphasis",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08186",
+  "title": "Information Systems",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "ACCT102",
+   "BUS140",
+   "BUS212",
+   "CIS101",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH120",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/computer-information-systems/cis-information-systems-aa/",
+   "title": "Information Systems | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3544
+ },
+ {
+  "control_number": "08193",
+  "title": "Automotive Performance Systems",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08195",
+  "title": "Computer Aided Design and Drafting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH201",
+   "CAD220",
+   "CAD222",
+   "CAD223",
+   "CAD224",
+   "CAD230",
+   "CAD231",
+   "CAD273",
+   "CAD274"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/computer-aided-design-drafting/computer-aided-design-drafting-as/",
+   "title": "Computer Aided Design and Drafting | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3263
+ },
+ {
+  "control_number": "08196",
+  "title": "Preparation for Allied Health Programs",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "BIOL260",
+   "BIOL261",
+   "BIOL265",
+   "CHEM100",
+   "CHEM102",
+   "CHEM170",
+   "COMM103",
+   "COMM174",
+   "COMM176",
+   "SOC270",
+   "SOC280",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/nursing-health-occupations/preparation-allied-health-programs-aa/",
+   "title": "Preparation for Allied Health Programs | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3976
+ },
+ {
+  "control_number": "08197",
+  "title": "Operating Room Nursing",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08202",
+  "title": "Administration of Justice---Law Enforcement Emphasis",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08203",
+  "title": "Law Enforcement Training Academy",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ41",
+   "AJ42"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/law-enforcement-training-academy/",
+   "title": "Law Enforcement Training Academy | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3923
+ },
+ {
+  "control_number": "08207",
+  "title": "African American Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AFRO110",
+   "AFRO111",
+   "AFRO151",
+   "ASIA113",
+   "ASIA115",
+   "DANC145",
+   "DANC146",
+   "DANC147",
+   "DANC148",
+   "ENGL273",
+   "HIST106",
+   "HIST107",
+   "HIST113",
+   "HIST121",
+   "HIST122",
+   "HIST141",
+   "HIST142",
+   "HIST152",
+   "HIST153",
+   "MAS141",
+   "MAS142",
+   "NAIS152",
+   "NAIS153"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/african-american-studies/aa-african-american-studies/",
+   "title": "African American Studies | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 4517
+ },
+ {
+  "control_number": "08208",
+  "title": "Mexican-American Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08209",
+  "title": "Transfer Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10548",
+  "title": "Construction Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "ARCH115",
+   "ARCH165",
+   "ARCH200",
+   "ARCH235",
+   "ARCH265",
+   "ARCH266",
+   "BUS140",
+   "CI60",
+   "CI65",
+   "CI90"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/construction-inspection/construction-management-as/",
+   "title": "Construction Management | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3347
+ },
+ {
+  "control_number": "10550",
+  "title": "Computer Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL210",
+   "BIOL211",
+   "BIOL212",
+   "CHEM200",
+   "CHEM210",
+   "MATH130",
+   "MATH140",
+   "MATH230",
+   "MATH252",
+   "MATH253",
+   "MATH254",
+   "MATH265",
+   "MATHC2210",
+   "MATHC2220"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/computer-science/computer-science-aa/",
+   "title": "Computer Science | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4009
+ },
+ {
+  "control_number": "10552",
+  "title": "Dance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10553",
+  "title": "Graphic Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART101",
+   "ART159",
+   "ART160",
+   "ART161",
+   "ART168",
+   "ART192",
+   "ARTHC1100",
+   "ARTHC1200",
+   "CIS123"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/art/graphic-design-aa/",
+   "title": "Graphic Design | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3787
+ },
+ {
+  "control_number": "10554",
+  "title": "Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10557",
+  "title": "Marketing",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS174"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/business-administration/marketing-aa/",
+   "title": "Marketing | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 3459
+ },
+ {
+  "control_number": "11039",
+  "title": "Liberal Studies: Elementary Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.881,
+  "codes_found": [
+   "AFRO110",
+   "AFRO111",
+   "BIOL100",
+   "CD170",
+   "COMM103",
+   "COMM160",
+   "COMMC1000",
+   "ENGL115H",
+   "ENGL230",
+   "ENGL231",
+   "ENGL270",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1002",
+   "ESL115A",
+   "GEOG106",
+   "GEOL104",
+   "HIST106",
+   "HIST110",
+   "HIST111",
+   "HIST141",
+   "HIST142",
+   "HISTC1001",
+   "HISTC1002",
+   "HLTH101",
+   "HLTH280",
+   "MAS141",
+   "MAS142",
+   "MATH110",
+   "MATH111",
+   "PHIL101",
+   "PHIL103",
+   "PHIL106",
+   "PHIL120",
+   "PHS101",
+   "POLSC1000",
+   "TA101"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/associate-degree-as-aa-general-education-requirements/",
+   "title": "Associate Degree (A.S./A.A.) General Education Requirements | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.25
+   }
+  },
+  "listed": 42,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "11413",
+  "title": "Dental Hygiene",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DH101",
+   "DH106",
+   "DH108",
+   "DH109",
+   "DH112",
+   "DH113A",
+   "DH113B",
+   "DH113C",
+   "DH114",
+   "DH115",
+   "DH116",
+   "DH118",
+   "DH121",
+   "DH122",
+   "DH125",
+   "DH200A",
+   "DH200B",
+   "DH202",
+   "DH203",
+   "DH205",
+   "DH206",
+   "DH211",
+   "DH214"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/dental-hygiene/dental-hygiene-as/",
+   "title": "Dental Hygiene | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 4909
+ },
+ {
+  "control_number": "12017",
+  "title": "Golf and Sports Turf Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "12064",
+  "title": "Occupational Health and Safety",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "12166",
+  "title": "Forensic Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "14602",
+  "title": "Fitness Specialist Certification---Advanced",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15540",
+  "title": "Music---Mariachi Specialization",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16543",
+  "title": "Pharmaceutical and Laboratory Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16560",
+  "title": "Professional Baking and Pastry",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CA181",
+   "CA182",
+   "CA183",
+   "CA184",
+   "CA185",
+   "CA186"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/culinary-arts/professional-baking-pastry-certificate/",
+   "title": "Professional Baking and Pastry | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2940
+ },
+ {
+  "control_number": "16625",
+  "title": "CIS---Web Site Designer and Developer",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS134",
+   "BUS211",
+   "CIS108",
+   "CIS123",
+   "CIS124",
+   "CIS255",
+   "CIS256",
+   "CIS290",
+   "CIS291",
+   "CIS292",
+   "CIS293"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/computer-information-systems/cis-website-designer-and-developer-as/",
+   "title": "CIS---Web Site Designer and Developer | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3125
+ },
+ {
+  "control_number": "16862",
+  "title": "Travel and Tourism---Basic",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16865",
+  "title": "Event and Convention Planning-Advanced",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16896",
+  "title": "Hospitality: Travel and Tourism Management---Basic",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16897",
+  "title": "Travel and Tourism Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "ACCT7",
+   "BUS290",
+   "CIS101",
+   "COMM176",
+   "HTM150",
+   "T&T138",
+   "T&T160",
+   "T&T162",
+   "T&T164",
+   "T&T258",
+   "T&T260",
+   "T&T45"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/hospitality-tourism-management/hospitality-travel-and-tourism-management-as/",
+   "title": "Travel and Tourism Management | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3356
+ },
+ {
+  "control_number": "16898",
+  "title": "Hospitality: Event and Convention Management---Basic",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16899",
+  "title": "Event and Convention Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS152",
+   "BUS212",
+   "BUS290",
+   "EVNT154",
+   "EVNT155",
+   "EVNT157",
+   "HTM150",
+   "HTM151",
+   "HTM156",
+   "LDR150"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/hospitality-tourism-management/hospitality-event-convention-management-as/",
+   "title": "Event and Convention Management | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3101
+ },
+ {
+  "control_number": "16900",
+  "title": "Hospitality: Hotel Operations Management---Basic",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16901",
+  "title": "Hotel Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS140",
+   "BUS152",
+   "BUS212",
+   "BUS290",
+   "EVNT154",
+   "HTM150",
+   "HTM151",
+   "HTM156",
+   "LDR150"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/hospitality-tourism-management/hospitality-hotel-operations-management-as/",
+   "title": "Hotel Management | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3099
+ },
+ {
+  "control_number": "17509",
+  "title": "Medical Assisting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM174",
+   "MEDOP121",
+   "MEDOP135",
+   "MEDOP20",
+   "MEDOP23",
+   "MEDOP230",
+   "MEDOP231",
+   "MEDOP234",
+   "MEDOP236",
+   "MEDOP27",
+   "MEDOP45"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/medical-office-professions/medical-assisting-as/",
+   "title": "Medical Assisting | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3193
+ },
+ {
+  "control_number": "17514",
+  "title": "Business Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "ACCT12",
+   "ACCT7",
+   "ACCT8",
+   "BUS120",
+   "BUS140",
+   "BUS142",
+   "BUS143",
+   "BUS150",
+   "BUS151",
+   "BUS152",
+   "BUS177",
+   "BUS212",
+   "BUS239",
+   "BUS290",
+   "CIS122B",
+   "LDR150",
+   "LDR151"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/business-management/business-management-as/",
+   "title": "Business Management | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 4092
+ },
+ {
+  "control_number": "17836",
+  "title": "Culinary Arts: Cooking Essentials",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CA170",
+   "CA181",
+   "CA182",
+   "CA183"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/culinary-arts/culinary-arts-cooking-essentials-basic-certificate/",
+   "title": "Culinary Arts: Cooking Essentials | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2763
+ },
+ {
+  "control_number": "17837",
+  "title": "Professional Cooking",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CA170",
+   "CA171",
+   "CA172",
+   "CA173",
+   "CA181",
+   "CA183"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/culinary-arts/culinary-arts-cooking-baking-advanced-certificate/",
+   "title": "Professional Cooking | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2808
+ },
+ {
+  "control_number": "17838",
+  "title": "Culinary Arts",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS290",
+   "CA170",
+   "CA171",
+   "CA172",
+   "CA173",
+   "CA181",
+   "CA182",
+   "CA183",
+   "CA184",
+   "CA185",
+   "CA186",
+   "HTM156"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/culinary-arts/culinary-arts-cooking-baking-as/",
+   "title": "Culinary Arts | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3246
+ },
+ {
+  "control_number": "17888",
+  "title": "Restaurant and Foodservice Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS140",
+   "BUS212",
+   "BUS290",
+   "CA181",
+   "EVNT154",
+   "HTM150",
+   "HTM151",
+   "HTM156",
+   "LDR150"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/hospitality-tourism-management/hospitality-culinary-arts-food-services-management-as/",
+   "title": "Restaurant and Foodservice Management | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3160
+ },
+ {
+  "control_number": "17889",
+  "title": "Hospitality: Culinary Arts-Food Services Management-Basic",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.714,
+  "codes_found": [
+   "ACCT101",
+   "BUS183",
+   "BUS210",
+   "CIS101",
+   "CIS92"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/business-management/",
+   "title": "Business Management | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.143
+   }
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "17890",
+  "title": "Food and Beverage Management",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CA181",
+   "EVNT154",
+   "HTM150",
+   "HTM151",
+   "HTM156",
+   "LDR150"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/hospitality-tourism-management/hospitality-culinary-arts-food-services-management-advanced-certificate/",
+   "title": "Food and Beverage Management | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2919
+ },
+ {
+  "control_number": "17892",
+  "title": "International Trade Logistics",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS122",
+   "BUS140",
+   "BUS177",
+   "LEGL256"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/logistics-transportation/international-logistics-and-transportation-basic-certificate/",
+   "title": "International Trade Logistics | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2720
+ },
+ {
+  "control_number": "17893",
+  "title": "Senior Data Analyst",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "CIS101",
+   "CIS106",
+   "CIS239",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/logistics-transportation/international-logistics-and-transportation-intermediate-certificate/",
+   "title": "Senior Data Analyst | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3050
+ },
+ {
+  "control_number": "17894",
+  "title": "Supply Chain Management and Logistics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS211",
+   "BUS212",
+   "BUS290"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/logistics-transportation/international-logistics-and-transportation-as/",
+   "title": "Supply Chain Management and Logistics | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2956
+ },
+ {
+  "control_number": "18896",
+  "title": "Professional Photography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART138",
+   "ART192",
+   "ART197",
+   "ART205",
+   "ART207",
+   "ART210",
+   "ART290"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/art/professional-photography-certificate/",
+   "title": "Professional Photography | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3114
+ },
+ {
+  "control_number": "18914",
+  "title": "Legal Interpretation and Translation--Basic (English/Spanish)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS181",
+   "BUS210",
+   "BUS226",
+   "BUS227",
+   "BUS229",
+   "BUS233",
+   "SPAN215"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/legal-interpretation-translation/legal-interpretation-basic-english-spanish-certificate/",
+   "title": "Legal Interpretation and Translation--Basic (English/Spanish) | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2990
+ },
+ {
+  "control_number": "19031",
+  "title": "Medical Laboratory Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MLT100",
+   "MLT100L",
+   "MLT102",
+   "MLT110",
+   "MLT110L",
+   "MLT111",
+   "MLT111L",
+   "MLT112",
+   "MLT120",
+   "MLT120L",
+   "MLT121",
+   "MLT130",
+   "MLT130L",
+   "MLT131",
+   "MLT132",
+   "MLT132L",
+   "MLT79",
+   "MLT80",
+   "MLT90",
+   "MLT90L"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/medical-laboratory-technology/medical-laboratory-technician-as/",
+   "title": "Medical Laboratory Technician | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 4897
+ },
+ {
+  "control_number": "19072",
+  "title": "Child Development Teacher",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CD133",
+   "CD135",
+   "CD170",
+   "CD172",
+   "CD173",
+   "CD175",
+   "CD176",
+   "CD177",
+   "CD180",
+   "CD181",
+   "CD184",
+   "CD275",
+   "CD278",
+   "CD279",
+   "CD282A",
+   "CD283",
+   "CD284"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/family-studies/child-development-teacher-aa/",
+   "title": "Child Development Teacher | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3861
+ },
+ {
+  "control_number": "19259",
+  "title": "Medical Assisting-Clinical",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM174",
+   "MEDOP121",
+   "MEDOP135",
+   "MEDOP20",
+   "MEDOP230",
+   "MEDOP234",
+   "MEDOP236",
+   "MEDOP25",
+   "MEDOP27"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/medical-office-professions/medical-assisting-clinical-certificate/",
+   "title": "Medical Assisting-Clinical | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2971
+ },
+ {
+  "control_number": "19261",
+  "title": "Medical Assisting-Medical Insurance Billing and Coding",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MEDOP121",
+   "MEDOP133",
+   "MEDOP20",
+   "MEDOP21",
+   "MEDOP22",
+   "MEDOP23",
+   "MEDOP230",
+   "MEDOP231",
+   "MEDOP35"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/medical-office-professions/medical-assisting-medical-insurance-billing-coding-certificate/",
+   "title": "Medical Assisting-Medical Insurance Billing and Coding | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3024
+ },
+ {
+  "control_number": "19271",
+  "title": "Community, Economic and Urban Development",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH101",
+   "ARCH210",
+   "BUS211",
+   "BUS212",
+   "BUS290",
+   "BUS52",
+   "BUS83",
+   "CI10",
+   "CI50",
+   "ECONC2002",
+   "GEOG145",
+   "LA104",
+   "LDR100",
+   "LDR152",
+   "LDR154",
+   "LDR155",
+   "LDR200"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/community-economic-urban-development/community-economic-urban-development-basic-certificate/",
+   "title": "Community, Economic and Urban Development | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4029
+ },
+ {
+  "control_number": "19272",
+  "title": "Urban Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "ECONC2001",
+   "ECONC2002",
+   "GEOG120",
+   "LDR100",
+   "LDR200",
+   "POLSC1000",
+   "PS101",
+   "PSYC270",
+   "SOC101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/community-economic-urban-development/community-economic-urban-development-intermediate-certificate/",
+   "title": "Urban Studies | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3224
+ },
+ {
+  "control_number": "19273",
+  "title": "Community, Economic and Urban Development",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.955,
+  "codes_found": [
+   "ACCT101",
+   "BUS140",
+   "BUS142",
+   "BUS211",
+   "BUS212",
+   "BUS290",
+   "BUS291",
+   "BUS292",
+   "BUS293",
+   "BUS52",
+   "BUS83",
+   "BUS84",
+   "ECONC2001",
+   "ECONC2002",
+   "GEOG145",
+   "LDR100",
+   "LDR152",
+   "LDR154",
+   "LDR155",
+   "LDR156",
+   "LEGL266"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/community-economic-urban-development/community-economic-urban-development-as/",
+   "title": "Community, Economic and Urban Development | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 3740
+ },
+ {
+  "control_number": "19313",
+  "title": "Liberal Arts: Emphasis in Arts and Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19315",
+  "title": "Liberal Arts: Emphasis in Communication in the English Language",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19317",
+  "title": "Liberal Arts: Emphasis in Math and Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19319",
+  "title": "Liberal Arts: Emphasis in Social and Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20610",
+  "title": "Landscape Architecture",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH115",
+   "GEOG145",
+   "LA104",
+   "LA200",
+   "LA201",
+   "LNT100",
+   "LNT120",
+   "LNT122",
+   "LNT124",
+   "LNT128",
+   "LNT131",
+   "LNT134",
+   "LNT148",
+   "LNT151",
+   "LNT152"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/landscape-architecture-landscape-nursery-technology/landscape-architecture-certificate/",
+   "title": "Landscape Architecture | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3250
+ },
+ {
+  "control_number": "20611",
+  "title": "Landscape Occupations",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20612",
+  "title": "Floral Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LNT100",
+   "LNT118",
+   "LNT138",
+   "LNT140",
+   "LNT141",
+   "LNT151",
+   "LNT152",
+   "LNT95"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/landscape-architecture-landscape-nursery-technology/floral-design-certificate/",
+   "title": "Floral Design | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2882
+ },
+ {
+  "control_number": "20613",
+  "title": "Plant Production",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LNT124",
+   "LNT136",
+   "LNT146",
+   "LNT151",
+   "LNT152",
+   "LNT70",
+   "LNT94"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/landscape-architecture-landscape-nursery-technology/retail-nursery-plant-production-certificate/",
+   "title": "Plant Production | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2807
+ },
+ {
+  "control_number": "20614",
+  "title": "Golf and Sports Turf Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LNT123",
+   "LNT132",
+   "LNT134",
+   "LNT136",
+   "LNT94"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/landscape-architecture-landscape-nursery-technology/golf-sports-turf-management-certificate/",
+   "title": "Golf and Sports Turf Management | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2722
+ },
+ {
+  "control_number": "20615",
+  "title": "Architecture Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20616",
+  "title": "Environmental Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20618",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "ACCT102",
+   "ACCT105",
+   "ACCT109",
+   "ACCT12",
+   "BUS142",
+   "BUS211",
+   "BUS212",
+   "BUS290",
+   "BUS291",
+   "BUS292",
+   "BUS293",
+   "CIS101",
+   "CIS133"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/accounting/as-accounting/",
+   "title": "Accounting | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3632
+ },
+ {
+  "control_number": "20619",
+  "title": "Business Management",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS120",
+   "BUS150",
+   "BUS152",
+   "LDR150"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/business-management/management-specialty-certificate/",
+   "title": "Business Management | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3024
+ },
+ {
+  "control_number": "20622",
+  "title": "OIS: Office Information Systems Professional-Advanced",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS200A",
+   "BUS200B",
+   "BUS206",
+   "BUS210",
+   "BUS211",
+   "BUS218",
+   "BUS290",
+   "BUS73",
+   "BUS74"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/office-information-systems-professional-bilingual/ois-office-information-systems-professional-bilingual-advanced-certificate/",
+   "title": "OIS: Office Information Systems Professional--Bilingual--Advanced | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 4222
+ },
+ {
+  "control_number": "20623",
+  "title": "OIS: Office Information Systems Professional--Bilingual--Advanced",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS200A",
+   "BUS200B",
+   "BUS206",
+   "BUS210",
+   "BUS211",
+   "BUS218",
+   "BUS290",
+   "BUS73",
+   "BUS74",
+   "SPAN216"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/office-information-systems-professional-bilingual/ois-office-information-systems-professional-bilingual-advanced-certificate/",
+   "title": "OIS: Office Information Systems Professional--Bilingual--Advanced | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4222
+ },
+ {
+  "control_number": "20665",
+  "title": "CIS---Systems Programming Emphasis",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.952,
+  "codes_found": [
+   "BUS211",
+   "BUS212",
+   "BUS290",
+   "BUS291",
+   "BUS292",
+   "BUS293",
+   "CIS101",
+   "CIS106",
+   "CIS109",
+   "CIS115",
+   "CIS117",
+   "CIS130",
+   "CIS139",
+   "CIS146",
+   "CIS150",
+   "CIS153",
+   "CIS165",
+   "CIS182",
+   "CIS226",
+   "ELEC10A"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/computer-information-systems/cis-systems-programming-emphasis-certificate/",
+   "title": "CIS---Systems Programming Emphasis | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 4126
+ },
+ {
+  "control_number": "20693",
+  "title": "Automotive Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AT101",
+   "AT102",
+   "AT109",
+   "AT110",
+   "AT120",
+   "AT130",
+   "AT131",
+   "AT140",
+   "AT220",
+   "AT230",
+   "AT234",
+   "AT236",
+   "AT242",
+   "AT247"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/automotive-technology/certificate-achievement-automotive/",
+   "title": "Automotive Technology | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4678
+ },
+ {
+  "control_number": "20698",
+  "title": "Computer Aided Design and Drafting---Advanced",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAD220",
+   "CAD222",
+   "CAD223",
+   "CAD224",
+   "CAD231"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/computer-aided-design-drafting/computer-aided-design-and-drafting-advanced-certificate/",
+   "title": "Computer Aided Design and Drafting---Advanced | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2740
+ },
+ {
+  "control_number": "20701",
+  "title": "3D Modeling and Animation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH201",
+   "ART192",
+   "CAD273",
+   "CAD274",
+   "CAD275A",
+   "CAD275B"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/computer-aided-design-drafting/3d-modeling-animation-cert/",
+   "title": "3D Modeling and Animation | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2792
+ },
+ {
+  "control_number": "20702",
+  "title": "Pharmaceutical and Laboratory Science",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20704",
+  "title": "Occupational Health and Safety",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20705",
+  "title": "Construction Management",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "ARCH115",
+   "ARCH165",
+   "ARCH200",
+   "ARCH209",
+   "ARCH235",
+   "ARCH265",
+   "ARCH266",
+   "BUS140",
+   "CI60",
+   "CI65",
+   "CI90"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/construction-inspection/construction-management-certificate/",
+   "title": "Construction Management | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3080
+ },
+ {
+  "control_number": "20707",
+  "title": "Construction Inspection",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CI10",
+   "CI105",
+   "CI20",
+   "CI40",
+   "CI50",
+   "CI60",
+   "CI65",
+   "CI70",
+   "SES105"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/construction-inspection/",
+   "title": "Construction Inspection | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 6770
+ },
+ {
+  "control_number": "20717",
+  "title": "Medical Assisting-Administrative",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM174",
+   "MEDOP121",
+   "MEDOP133",
+   "MEDOP135",
+   "MEDOP20",
+   "MEDOP21",
+   "MEDOP23",
+   "MEDOP230",
+   "MEDOP231",
+   "MEDOP236",
+   "MEDOP30"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/medical-office-professions/medical-assisting-administrative-certificate/",
+   "title": "Medical Assisting-Administrative | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3060
+ },
+ {
+  "control_number": "20728",
+  "title": "Emergency Medical Technology and Paramedic",
+  "award": "Certificate of Achievement requiring 60+S/90+Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL190",
+   "EMT113",
+   "EMT113L",
+   "EMTP200",
+   "EMTP200L",
+   "EMTP201",
+   "EMTP201L",
+   "EMTP202",
+   "EMTP203",
+   "EMTP225",
+   "EMTP230",
+   "EMTP231"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/emergency-medical-technology-paramedic/emergency-medical-technology-paramedic-certificate/",
+   "title": "Emergency Medical Technology and Paramedic | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3424
+ },
+ {
+  "control_number": "20731",
+  "title": "Nursing, Vocational",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYCC1000",
+   "VN103",
+   "VN103L",
+   "VN130",
+   "VN201",
+   "VN201L",
+   "VN250",
+   "VN251",
+   "VN30",
+   "VN31"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/nursing-health-occupations/vocational-nursing-certificate/",
+   "title": "Nursing, Vocational | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4171
+ },
+ {
+  "control_number": "20734",
+  "title": "Travel and Tourism",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS101",
+   "HTM150",
+   "T&T138",
+   "T&T160",
+   "T&T162",
+   "T&T164",
+   "T&T258",
+   "T&T260",
+   "T&T45"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/hospitality-tourism-management/hospitality-travel-tourism-management-advanced-certificate/",
+   "title": "Travel and Tourism | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3091
+ },
+ {
+  "control_number": "20741",
+  "title": "Event Management",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EVNT154",
+   "EVNT155",
+   "EVNT157",
+   "HTM150",
+   "HTM156"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/hospitality-tourism-management/hospitality-event-convention-management-advanced-certificate/",
+   "title": "Event Management | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2765
+ },
+ {
+  "control_number": "20742",
+  "title": "Hotel Operations",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS152",
+   "EVNT154",
+   "HTM150",
+   "HTM151",
+   "HTM156",
+   "LDR150"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/hospitality-tourism-management/hospitality-hotel-operations-management-advanced-certificate/",
+   "title": "Hotel Operations | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2853
+ },
+ {
+  "control_number": "20743",
+  "title": "Paralegal Studies",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ151",
+   "AJ181",
+   "BUS140",
+   "LEGL225",
+   "LEGL255",
+   "LEGL256",
+   "LEGL258",
+   "LEGL259",
+   "LEGL260",
+   "LEGL261",
+   "LEGL262",
+   "LEGL263",
+   "LEGL264",
+   "LEGL266",
+   "LEGL267",
+   "LEGL268",
+   "LEGL269",
+   "LEGL270",
+   "LEGL271",
+   "LEGL272",
+   "RE106"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/paralegal-studies/paralegal-studies-certificate/",
+   "title": "Paralegal Studies | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 4752
+ },
+ {
+  "control_number": "20744",
+  "title": "Administrative Office Assistant-Bilingual (English/Spanish) Intensive Training",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS200A",
+   "BUS200B",
+   "BUS206",
+   "BUS210",
+   "BUS218",
+   "BUS290",
+   "BUS71",
+   "CIS122B"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/office-intensive-training-bilingual-payroll-clerk/administrative-office-assistant-bilingual-english-spanish-intensive-training-certificate/",
+   "title": "Administrative Office Assistant-Bilingual (English/Spanish) Intensive Training | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3061
+ },
+ {
+  "control_number": "20745",
+  "title": "Paralegal Studies: Bilingual (English/Spanish)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LEGL225",
+   "LEGL255",
+   "LEGL256",
+   "LEGL258",
+   "LEGL259",
+   "LEGL260",
+   "LEGL261",
+   "LEGL262",
+   "LEGL263",
+   "LEGL264",
+   "LEGL266",
+   "LEGL267",
+   "LEGL268",
+   "LEGL269",
+   "LEGL270",
+   "LEGL271",
+   "LEGL272",
+   "LEGL291",
+   "LEGL292",
+   "LEGL293",
+   "SPAN216"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/paralegal-studies-bilingual/paralegal-studies-bilingual-english-spanish-certificate/",
+   "title": "Paralegal Studies: Bilingual (English/Spanish) | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 4865
+ },
+ {
+  "control_number": "24151",
+  "title": "Recreation Assistant in a Marine Environment---Advanced",
+  "award": null,
+  "shape": "other",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC1093",
+   "NC1098"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/rec-asst-advanced/",
+   "title": "Recreation Assistant in Marine Environment - Advanced | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2483
+ },
+ {
+  "control_number": "24152",
+  "title": "Recreational Assistant",
+  "award": null,
+  "shape": "other",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC1007",
+   "NC1046",
+   "NC1064",
+   "NC1085"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/rec-asst/",
+   "title": "Recreational Assistant | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2511
+ },
+ {
+  "control_number": "24168",
+  "title": "Marine Safety Service Advanced",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC1081",
+   "NC1082",
+   "NC1093"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/marinesafety-adv/",
+   "title": "Marine Safety Service - Advanced | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2763
+ },
+ {
+  "control_number": "24181",
+  "title": "Quality Home Care Provider",
+  "award": null,
+  "shape": "other",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC10",
+   "NC1050"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/homecare/",
+   "title": "Quality Home Care Provider | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2758
+ },
+ {
+  "control_number": "24182",
+  "title": "Entry Level ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC108",
+   "NC109",
+   "NC110"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/esl/",
+   "title": "Entry Level ESL | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2513
+ },
+ {
+  "control_number": "24225",
+  "title": "Recreation Assistant in a Marine Environment---Basic",
+  "award": null,
+  "shape": "other",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC1007",
+   "NC1046",
+   "NC1052",
+   "NC1064",
+   "NC15",
+   "NC70"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/rec-asst-basic/",
+   "title": "Recreation Assistant in a Marine Environment---Basic | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2658
+ },
+ {
+  "control_number": "24312",
+  "title": "Marine Safety Service Basic",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC1007",
+   "NC1010",
+   "NC1014",
+   "NC106",
+   "NC15",
+   "NC70"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/marinesafety-basic/",
+   "title": "Marine Safety Service - Basic | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2671
+ },
+ {
+  "control_number": "24385",
+  "title": "Tax Preparation",
+  "award": null,
+  "shape": "other",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC113",
+   "NC114"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/taxprep/",
+   "title": "Tax Preparation | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2374
+ },
+ {
+  "control_number": "30288",
+  "title": "Geospatial Technology Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEOG145",
+   "GEOG150",
+   "GEOG152",
+   "GEOG153",
+   "GEOG154",
+   "GEOG155",
+   "PHS154",
+   "PHS155"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/geography/geospatial-technology-technician-certificate/",
+   "title": "Geospatial Technology Technician | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 5359
+ },
+ {
+  "control_number": "30344",
+  "title": "Recording Arts and Technology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "FTMA111",
+   "MUS100",
+   "MUS150",
+   "MUS151",
+   "RA&T100",
+   "RA&T110",
+   "RA&T120"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/recording-arts-technology/",
+   "title": "Recording Arts and Technology | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 9610
+ },
+ {
+  "control_number": "30345",
+  "title": "Recording Arts and Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.882,
+  "codes_found": [
+   "FTMA111",
+   "FTMA121",
+   "MUS100",
+   "MUS150",
+   "MUS151",
+   "MUS155",
+   "RA&T105",
+   "RA&T110",
+   "RA&T120",
+   "RA&T121",
+   "RA&T122",
+   "RA&T131",
+   "RA&T141",
+   "RA&T151",
+   "RA&T290"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/recording-arts-technology/recording-arts-technology-as/",
+   "title": "Recording Arts and Technology | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3307
+ },
+ {
+  "control_number": "30841",
+  "title": "Italian",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITAL101",
+   "ITAL102",
+   "ITAL201",
+   "ITAL202"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/italian/italian-aa/",
+   "title": "Italian | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3365
+ },
+ {
+  "control_number": "30909",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "MATH252",
+   "MATH253",
+   "MATH254",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS270",
+   "PHYS271",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "31624",
+  "title": "Photography and Digital Imaging",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "ART101",
+   "ART138",
+   "ART156",
+   "ART188",
+   "ART192",
+   "ART197",
+   "ART205",
+   "ART206",
+   "ART207",
+   "ART208A",
+   "ART209",
+   "ART210",
+   "ART211",
+   "ART212A",
+   "ART213",
+   "ART216",
+   "ART290",
+   "FTMA108",
+   "FTMA217",
+   "GEOG108"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/art/photography-and-digital-imaging-aa/",
+   "title": "Photography and Digital Imaging | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 5485
+ },
+ {
+  "control_number": "31683",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH252",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS271",
+   "PHYS273"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "31729",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.677,
+  "codes_found": [
+   "AFRO110",
+   "AFRO111",
+   "ASIA112",
+   "ASIA113",
+   "ECONC2001",
+   "ECONC2002",
+   "HIST121",
+   "HIST122",
+   "HIST152",
+   "HIST153",
+   "HISTC1001",
+   "HISTC1002",
+   "MAS141",
+   "MAS142",
+   "POLSC1000",
+   "PS101",
+   "PS103",
+   "PS104",
+   "SOC270",
+   "SOC280",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/political-science/political-science-aat/",
+   "title": "Political Science | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 31,
+  "text_chars": 4083
+ },
+ {
+  "control_number": "31744",
+  "title": "Travel and Tourism---Advanced",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "CIS101",
+   "HTM150",
+   "T&T138",
+   "T&T160",
+   "T&T162",
+   "T&T164",
+   "T&T258",
+   "T&T260",
+   "T&T45"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/hospitality-tourism-management/hospitality-travel-tourism-management-advanced-certificate/",
+   "title": "Travel and Tourism | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3091
+ },
+ {
+  "control_number": "31826",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.848,
+  "codes_found": [
+   "ASL201",
+   "CHIN102",
+   "ENGL225",
+   "ENGL230",
+   "ENGL231",
+   "ENGL240",
+   "ENGL241",
+   "ENGL250",
+   "ENGL251",
+   "ENGL255",
+   "ENGL256",
+   "ENGL265",
+   "ENGL270",
+   "ENGL271",
+   "ENGL272",
+   "ENGL273",
+   "ENGL274",
+   "ENGL280",
+   "ENGL281",
+   "ENGLC1001",
+   "ENGLC1002",
+   "FIL102",
+   "FIL201",
+   "FREN201",
+   "FREN202",
+   "ITAL201",
+   "ITAL202",
+   "JPN201",
+   "JPN202",
+   "PORT102",
+   "SPAN102",
+   "SPAN201",
+   "SPAN202",
+   "SPAN215",
+   "SPAN216",
+   "SPAN221",
+   "SPAN225",
+   "SPAN226",
+   "TA101"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 46,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "31889",
+  "title": "Financial and Investment Services Specialty",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS120",
+   "BUS121",
+   "BUS123",
+   "BUS150",
+   "BUS183",
+   "BUS290",
+   "LDR150"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/business-management/financial-and-investment-services-specialty-certificate/",
+   "title": "Financial and Investment Services Specialty | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2834
+ },
+ {
+  "control_number": "32184",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS101",
+   "MUS102",
+   "MUS105",
+   "MUS109",
+   "MUS110",
+   "MUS111",
+   "MUS113",
+   "MUS114",
+   "MUS115",
+   "MUS124A",
+   "MUS124B",
+   "MUS124C",
+   "MUS124D",
+   "MUS125",
+   "MUS126",
+   "MUS127",
+   "MUS128",
+   "MUS132A",
+   "MUS132B",
+   "MUS132C",
+   "MUS158",
+   "MUS159",
+   "MUS160",
+   "MUS161",
+   "MUS163A",
+   "MUS163B",
+   "MUS163C",
+   "MUS163D",
+   "MUS165A",
+   "MUS165B",
+   "MUS165C",
+   "MUS165D",
+   "MUS170",
+   "MUS171",
+   "MUS172",
+   "MUS173",
+   "MUS175",
+   "MUS176",
+   "MUS177",
+   "MUS178",
+   "MUS185",
+   "MUS186",
+   "MUS187",
+   "MUS188"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/music/",
+   "title": "Music | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 44,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32216",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "ANTH101",
+   "ANTH101L",
+   "ANTH102",
+   "ANTH103",
+   "ANTH112",
+   "ANTH115",
+   "BIOL260",
+   "COMM176",
+   "GEOG106",
+   "GEOG145",
+   "GEOL100",
+   "GEOL101",
+   "GEOL104",
+   "PHIL106",
+   "PSYC270",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/anthropology/aa-anthropology-transfer/",
+   "title": "Anthropology | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4007
+ },
+ {
+  "control_number": "32545",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "PSYC116",
+   "PSYC270",
+   "SOC101",
+   "SOC106",
+   "SOC110",
+   "SOC135",
+   "SOC140",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/sociology/sociology-aat/",
+   "title": "Sociology | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3635
+ },
+ {
+  "control_number": "32645",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AFRO110",
+   "AFRO111",
+   "AFRO151",
+   "ANTH102",
+   "ART112",
+   "ART113",
+   "ART129",
+   "ART149",
+   "ART157",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ASIA112",
+   "ASIA113",
+   "ASIA114",
+   "ASIA115",
+   "ECON100",
+   "ENGL271",
+   "ENGL272",
+   "ENGL273",
+   "ENGL274",
+   "ENGL280",
+   "GEOG106",
+   "HIST104",
+   "HIST105",
+   "HIST106",
+   "HIST107",
+   "HIST110",
+   "HIST111",
+   "HIST112",
+   "HIST113",
+   "HIST114",
+   "HIST121",
+   "HIST122",
+   "HIST132",
+   "HIST141",
+   "HIST142",
+   "HIST152",
+   "HIST153",
+   "HIST160",
+   "HISTC1001",
+   "HISTC1002",
+   "HUM120",
+   "HUM121",
+   "HUM122",
+   "HUM123",
+   "MAS100",
+   "MAS110",
+   "MAS141",
+   "MAS142",
+   "MAS170",
+   "MAS180",
+   "MUS106",
+   "NAIS152",
+   "NAIS153",
+   "PS104",
+   "SOC106",
+   "SOC140"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/history/history-aat/",
+   "title": "History | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 57,
+  "text_chars": 6255
+ },
+ {
+  "control_number": "32659",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHIN102",
+   "ENGL270",
+   "ENGL271",
+   "ENGL272",
+   "ENGL273",
+   "ENGL274",
+   "ENGL280",
+   "FIL102",
+   "FIL201",
+   "FREN201",
+   "FREN202",
+   "FTMA162",
+   "HIST104",
+   "HIST105",
+   "HIST106",
+   "HIST107",
+   "HUM101",
+   "HUM102",
+   "HUM104",
+   "HUM112",
+   "HUM140",
+   "ITAL201",
+   "ITAL202",
+   "JPN201",
+   "JPN202",
+   "PHIL101",
+   "PHIL103",
+   "PHIL106",
+   "PHIL107",
+   "PHIL120",
+   "PORT102",
+   "SPAN102",
+   "SPAN201",
+   "SPAN202",
+   "SPAN215",
+   "SPAN216",
+   "SPAN221",
+   "SPAN225",
+   "SPAN226"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/philosophy/philosophy-aat/",
+   "title": "Philosophy | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 39,
+  "text_chars": 5147
+ },
+ {
+  "control_number": "32693",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.533,
+  "codes_found": [
+   "AJ111",
+   "POLSC1000",
+   "PSYC270",
+   "PSYCC1000",
+   "SOC101",
+   "SOC110",
+   "SOC270",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32733",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FTMA154",
+   "TA101",
+   "TA102",
+   "TA110",
+   "TA111",
+   "TA141",
+   "TA142",
+   "TA143",
+   "TA152",
+   "TA154",
+   "TA160",
+   "TA161",
+   "TA162",
+   "TA165"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/theatre-arts/theatre-arts-aat/",
+   "title": "Theatre Arts | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3749
+ },
+ {
+  "control_number": "32744",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART100",
+   "ART101",
+   "ART102",
+   "ART103",
+   "ART105",
+   "ART106",
+   "ART107",
+   "ART108",
+   "ART110",
+   "ART111",
+   "ART112",
+   "ART114",
+   "ART116",
+   "ART117",
+   "ART129",
+   "ART138",
+   "ART170",
+   "ART172",
+   "ART173A",
+   "ART182",
+   "ART185A",
+   "ART192",
+   "ART205",
+   "ART207",
+   "ART208A",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/art/studio-arts-aa/",
+   "title": "Studio Arts | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 4533
+ },
+ {
+  "control_number": "32747",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 60,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32754",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.846,
+  "codes_found": [
+   "AFRO110",
+   "AFRO111",
+   "ANTH102",
+   "ART104",
+   "ART112",
+   "ART113",
+   "ART129",
+   "ART130",
+   "ART149",
+   "ART156",
+   "ART157",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ASIA112",
+   "ASIA113",
+   "FIL201",
+   "FREN201",
+   "FREN202",
+   "FTMA161",
+   "HIST110",
+   "HIST111",
+   "HIST112",
+   "HIST113",
+   "HIST132",
+   "HIST141",
+   "HIST142",
+   "HISTC1001",
+   "HUM101",
+   "HUM120",
+   "HUM123",
+   "ITAL201",
+   "ITAL202",
+   "JPN201",
+   "JPN202",
+   "MAS141",
+   "MAS142",
+   "SOC140",
+   "SPAN201",
+   "SPAN202",
+   "SPAN215",
+   "SPAN216",
+   "SPAN221",
+   "SPAN225",
+   "SPAN226"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 52,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32760",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "GEOG100",
+   "GEOG101",
+   "GEOG106",
+   "GEOG120",
+   "GEOG130",
+   "GEOG145",
+   "GEOG150",
+   "GEOG152",
+   "GEOG154",
+   "GEOG155",
+   "GEOG160",
+   "GEOL100",
+   "MATH130",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/geography/geography-aat/",
+   "title": "Geography | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3871
+ },
+ {
+  "control_number": "32953",
+  "title": "California State University General Education Breadth",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 205,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32954",
+  "title": "Intersegmental General Education Transfer Curriculum (IGETC)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.851,
+  "codes_found": [
+   "AFRO110",
+   "AFRO111",
+   "AFRO151",
+   "AJ111",
+   "ANTH101",
+   "ANTH102",
+   "ANTH103",
+   "ANTH112",
+   "ART104",
+   "ART112",
+   "ART113",
+   "ART129",
+   "ART130",
+   "ART156",
+   "ART157",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ASIA112",
+   "ASIA113",
+   "ASIA114",
+   "ASIA115",
+   "ASTR100",
+   "ASTR120",
+   "ASTR150",
+   "ASTR170",
+   "ASTR180",
+   "BIOL100",
+   "BIOL130",
+   "BIOL140",
+   "BIOL143",
+   "BIOL145",
+   "BIOL160",
+   "BIOL180",
+   "BIOL185",
+   "BIOL190",
+   "BIOL211",
+   "BIOL212",
+   "BIOL260",
+   "BIOL261",
+   "BIOL265",
+   "CD170",
+   "CHEM100",
+   "CHEM110",
+   "CHEM170",
+   "CHEM200",
+   "CHEM210",
+   "CHEM240",
+   "CHEM250",
+   "CHIN102",
+   "COMM176",
+   "COMMC1000",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGL225",
+   "ENGL230",
+   "ENGL231",
+   "ENGL240",
+   "ENGL241",
+   "ENGL250",
+   "ENGL251",
+   "ENGL255",
+   "ENGL256",
+   "ENGL260",
+   "ENGL265",
+   "ENGL270",
+   "ENGL271",
+   "ENGL272",
+   "ENGL273",
+   "ENGL274",
+   "ENGL280",
+   "ENGL281",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1002",
+   "FIL102",
+   "FIL201",
+   "FREN201",
+   "FREN202",
+   "GEOG100",
+   "GEOG120",
+   "GEOG130",
+   "GEOL100",
+   "GEOL104",
+   "HIST104",
+   "HIST105",
+   "HIST106",
+   "HIST107",
+   "HIST110",
+   "HIST111",
+   "HIST112",
+   "HIST113",
+   "HIST114",
+   "HIST121",
+   "HIST122",
+   "HIST132",
+   "HIST141",
+   "HIST142",
+   "HISTC1001",
+   "HISTC1002",
+   "HUM101",
+   "HUM102",
+   "HUM104",
+   "HUM112",
+   "HUM140",
+   "ITAL201",
+   "ITAL202",
+   "JPN202",
+   "MAS141",
+   "MAS142",
+   "MAS150",
+   "MATH101",
+   "MATH118",
+   "MATH120",
+   "MATH121",
+   "MATH122",
+   "MATH244",
+   "MATH252",
+   "MATH253",
+   "MATH254",
+   "MATH260",
+   "MATHC2210",
+   "MATHC2220",
+   "MUS105",
+   "MUS106",
+   "MUS107",
+   "MUS195",
+   "MUS202",
+   "PHIL101",
+   "PHIL103",
+   "PHIL106",
+   "PHIL107",
+   "PHIL120",
+   "POLSC1000",
+   "PORT102",
+   "PS101",
+   "PS103",
+   "PS104",
+   "PSYC106",
+   "PSYC109",
+   "PSYC116",
+   "PSYC211",
+   "PSYC230",
+   "PSYC250",
+   "PSYC260",
+   "PSYCC1000",
+   "SOC101",
+   "SOC110",
+   "SOC116",
+   "SOC135",
+   "SOC270",
+   "SPAN102",
+   "SPAN201",
+   "SPAN202",
+   "SPAN215",
+   "SPAN216",
+   "SPAN221",
+   "SPAN225",
+   "SPAN226",
+   "STATC1000",
+   "TA101"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/general-education-courses-common-patterns/",
+   "title": "2026-2027 General Education Courses Common to Associate Degree Requirements and Cal-GETC | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.333
+   }
+  },
+  "listed": 188,
+  "text_chars": 12878
+ },
+ {
+  "control_number": "33132",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL211",
+   "MATH130",
+   "MATH140",
+   "MATH230",
+   "MATH265",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS270",
+   "PHYS271"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/computer-science/computer-science-ast/",
+   "title": "Computer Science | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3757
+ },
+ {
+  "control_number": "33611",
+  "title": "Elementary Teacher Education: Integrated Programs",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.957,
+  "codes_found": [
+   "ART104",
+   "BIOL100",
+   "BIOL101",
+   "CD170",
+   "COMMC1000",
+   "DANC200",
+   "ED200",
+   "ENGLC1000",
+   "ENGLC1002",
+   "GEOG106",
+   "GEOL101",
+   "GEOL104",
+   "HIST106",
+   "HISTC1001",
+   "MATH110",
+   "MATH111",
+   "MATH112",
+   "MUS103",
+   "MUS105",
+   "PHS101",
+   "POLSC1000",
+   "TA101"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/family-studies/education-aat/",
+   "title": "Elementary Teacher Education: Integrated Programs | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 4659
+ },
+ {
+  "control_number": "33630",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH112",
+   "ENGL271",
+   "ENGL272",
+   "ENGL274",
+   "HIST141",
+   "HIST142",
+   "MAS110",
+   "MAS141",
+   "MAS142",
+   "MAS150",
+   "NAIS154",
+   "SPAN101",
+   "SPAN102",
+   "SPAN201",
+   "SPAN202",
+   "SPAN215",
+   "SPAN216",
+   "SPAN221",
+   "SPAN225",
+   "SPAN226"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33642",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM200",
+   "CHEM210",
+   "GEOL100",
+   "GEOL101",
+   "GEOL115",
+   "GEOL115L",
+   "MATHC2210",
+   "MATHC2220"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33655",
+  "title": "Journalism",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.562,
+  "codes_found": [
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1001",
+   "PHIL103",
+   "POLSC1000",
+   "PS103",
+   "PSYC270",
+   "SOC270",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33897",
+  "title": "Preparation for Allied Health Programs",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "BIOL260",
+   "BIOL261",
+   "BIOL265",
+   "CHEM100",
+   "COMM103",
+   "COMM174"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/nursing-health-occupations/preparation-allied-health-programs-aa/",
+   "title": "Preparation for Allied Health Programs | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3976
+ },
+ {
+  "control_number": "35081",
+  "title": "Marketing and Sales",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS147",
+   "BUS174",
+   "CIS257"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/business-management/social-marketing-emphasis-certificate/",
+   "title": "Marketing and Sales | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3213
+ },
+ {
+  "control_number": "35082",
+  "title": "Ebusiness & Ecommerce",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS134",
+   "BUS143",
+   "BUS147",
+   "CIS255"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/business-management/ebusiness-intermediate-certificate/",
+   "title": "Ebusiness & Ecommerce | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3322
+ },
+ {
+  "control_number": "35083",
+  "title": "Entrepreneurship and Small Business",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS143",
+   "BUS147",
+   "BUS148",
+   "BUS149",
+   "LDR152"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/business-management/entrepreneurship-small-business-intermediate-certificate/",
+   "title": "Entrepreneurship and Small Business | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3114
+ },
+ {
+  "control_number": "35846",
+  "title": "Associate in Arts in Economics for Transfer",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36327",
+  "title": "Film, Television, and Media Arts",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FTMA100",
+   "FTMA101",
+   "FTMA102",
+   "FTMA103",
+   "FTMA105",
+   "FTMA111",
+   "FTMA112",
+   "FTMA113",
+   "FTMA115",
+   "FTMA120",
+   "FTMA160",
+   "FTMA161",
+   "FTMA162",
+   "FTMA163",
+   "FTMA164"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/film-television-media-arts/aat/",
+   "title": "Film, Television, and Media Arts | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4534
+ },
+ {
+  "control_number": "36429",
+  "title": "Emergency Medical Technology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMT101",
+   "EMT109",
+   "EMT113",
+   "EMT113L"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/emergency-medical-technology-paramedic/",
+   "title": "Emergency Medical Technology and Paramedic | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 7475
+ },
+ {
+  "control_number": "36634",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.824,
+  "codes_found": [
+   "BIOL100",
+   "BIOL211",
+   "PSYC106",
+   "PSYC109",
+   "PSYC116",
+   "PSYC211",
+   "PSYC230",
+   "PSYC250",
+   "PSYC260",
+   "PSYC270",
+   "PSYCC1000",
+   "SOC116",
+   "SOC270",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36636",
+  "title": "CHILD AND ADOLESCENT DEVELOPMENT",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "BIOL100",
+   "CD135",
+   "CD170",
+   "CD170L",
+   "CD175",
+   "CD181",
+   "CD284",
+   "PSYC230",
+   "PSYC270",
+   "PSYCC1000",
+   "SOC101",
+   "SOC106",
+   "SOC135",
+   "SOC270",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/family-studies/child-development-aat/",
+   "title": "Child and Adolescent Development | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3766
+ },
+ {
+  "control_number": "37775",
+  "title": "Drone Technology and Applications",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.706,
+  "codes_found": [
+   "AERO107",
+   "ART131",
+   "ART188",
+   "ART192",
+   "ART205",
+   "BUS120",
+   "FTMA100",
+   "FTMA102",
+   "FTMA108",
+   "GEOG145",
+   "PHS154",
+   "PHS155"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/drone-technology-applications/drone-certofachievement/",
+   "title": "Drone Technology and Applications | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3065
+ },
+ {
+  "control_number": "37890",
+  "title": "Bookkeeping Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "ACCT12",
+   "ACCT7",
+   "BUS183",
+   "BUS212",
+   "BUS290",
+   "CIS101",
+   "CIS133"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/accounting/certificate-bookkeeping-technician/",
+   "title": "Bookkeeping Technician | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3091
+ },
+ {
+  "control_number": "37893",
+  "title": "Bookkeeping/Payroll Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "ACCT12",
+   "ACCT7",
+   "ACCT8",
+   "BUS183",
+   "BUS212",
+   "CIS101",
+   "CIS133"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/accounting/certificate-bookkeeping-payroll-specialist/",
+   "title": "Bookkeeping/Payroll Specialist | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3062
+ },
+ {
+  "control_number": "38018",
+  "title": "Social Work and Human Services",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.87,
+  "codes_found": [
+   "AJ111",
+   "ANTH102",
+   "BIOL100",
+   "BIOL101",
+   "CD170",
+   "COMM176",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1001",
+   "HISTC1001",
+   "HISTC1002",
+   "PSYC230",
+   "PSYC250",
+   "PSYC270",
+   "PSYCC1000",
+   "SOC101",
+   "SOC106",
+   "SOC110",
+   "SOC270",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38035",
+  "title": "Theatre Arts - Technical Theatre",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FTMA154",
+   "TA101",
+   "TA102",
+   "TA110",
+   "TA152",
+   "TA154",
+   "TA165"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/theatre-arts/technical-theatre-certificate/",
+   "title": "Theatre Arts - Technical Theatre | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2900
+ },
+ {
+  "control_number": "38038",
+  "title": "American Sign Language",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL101",
+   "ASL102",
+   "ASL201",
+   "ASL202",
+   "ASL225"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/american-sign-language/american-sign-language-coa/",
+   "title": "American Sign Language | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3203
+ },
+ {
+  "control_number": "38040",
+  "title": "Advanced Emission Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AT101",
+   "AT102",
+   "AT120",
+   "AT130",
+   "AT140",
+   "AT220",
+   "AT230",
+   "AT242",
+   "AT247"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/automotive-technology/certificate-achievement-emission/",
+   "title": "Advanced Emission Specialist | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2985
+ },
+ {
+  "control_number": "38041",
+  "title": "Leadership and Supervision---Intermediate",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.696,
+  "codes_found": [
+   "ACCT101",
+   "ACCT7",
+   "BUS120",
+   "BUS121",
+   "BUS134",
+   "BUS140",
+   "BUS142",
+   "BUS174",
+   "BUS211",
+   "BUS212",
+   "BUS290",
+   "BUS291",
+   "BUS292",
+   "BUS293",
+   "CIS101",
+   "CL120"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/leadership-supervision/leadership-supervision-intermediate-certificate/",
+   "title": "Leadership and Supervision---Intermediate | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3598
+ },
+ {
+  "control_number": "38042",
+  "title": "International Business---Intermediate",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "ACCT101",
+   "ACCT7",
+   "BUS134",
+   "BUS142",
+   "BUS211",
+   "BUS212",
+   "BUS290",
+   "LDR152",
+   "LEGL256"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/international-business/international-business-intermediate-certificate/",
+   "title": "International Business---Intermediate | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3497
+ },
+ {
+  "control_number": "38043",
+  "title": "CIS: Computer Programming With an Emphasis on Applications---Basic",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS70",
+   "CIS101",
+   "CIS115",
+   "CIS130",
+   "CIS146",
+   "CIS167",
+   "CIS226"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/computer-information-systems/cis-computer-programming-emphasis-applications-basic-certificate/",
+   "title": "CIS: Computer Programming With an Emphasis on Applications---Basic | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2924
+ },
+ {
+  "control_number": "38045",
+  "title": "Sustainable Landscape Practices",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LNT100",
+   "LNT101",
+   "LNT120",
+   "LNT128",
+   "LNT129",
+   "LNT134",
+   "LNT136",
+   "LNT94"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/sustainable-energy-studies/sustainable-landscape-practices-certificate/",
+   "title": "Sustainable Landscape Practices | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2861
+ },
+ {
+  "control_number": "38048",
+  "title": "Criminal Justice",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "AJ111",
+   "AJ151",
+   "AJ161",
+   "AJ252",
+   "POLSC1000",
+   "SOC110",
+   "SOC270",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/political-science/law-public-policy-and-society-aa/",
+   "title": "Law, Public Policy, and Society | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 5215
+ },
+ {
+  "control_number": "38049",
+  "title": "Supply Chain Management and Logistics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "ACCT102",
+   "BUS126",
+   "BUS140",
+   "BUS173",
+   "BUS212",
+   "CIS101",
+   "ECONC2001",
+   "ECONC2002",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/logistics-transportation/international-logistics-and-transportation-aa/",
+   "title": "Supply Chain Management and Logistics | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3825
+ },
+ {
+  "control_number": "38050",
+  "title": "Urban Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH210",
+   "BUS212",
+   "ECONC2001",
+   "ECONC2002",
+   "GEOG120",
+   "GEOG145",
+   "LA104",
+   "LDR100",
+   "LDR155",
+   "LDR200",
+   "POLSC1000",
+   "PS101",
+   "PSYC270",
+   "SOC101",
+   "SOC270",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/community-economic-urban-development/community-economic-urban-development-aa/",
+   "title": "Urban Studies | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4964
+ },
+ {
+  "control_number": "38051",
+  "title": "International Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.737,
+  "codes_found": [
+   "ACCT101",
+   "BUS122",
+   "BUS126",
+   "BUS134",
+   "BUS140",
+   "BUS142",
+   "BUS177",
+   "BUS212",
+   "BUS290",
+   "BUS291",
+   "BUS292",
+   "BUS293",
+   "CIS101",
+   "CL120"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/international-business/",
+   "title": "International Business | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38052",
+  "title": "CIS: Computer Programming With an Emphasis on Applications",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.87,
+  "codes_found": [
+   "BUS120",
+   "BUS134",
+   "BUS142",
+   "BUS183",
+   "BUS211",
+   "BUS212",
+   "BUS239",
+   "CIS101",
+   "CIS108",
+   "CIS115",
+   "CIS117",
+   "CIS130",
+   "CIS139",
+   "CIS146",
+   "CIS153",
+   "CIS166",
+   "CIS167",
+   "CIS226",
+   "CIS290",
+   "CIS291"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/computer-information-systems/computer-programming-emphasis-applications-as/",
+   "title": "CIS: Computer Programming With an Emphasis on Applications | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3940
+ },
+ {
+  "control_number": "38053",
+  "title": "Sustainable Energy Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.625,
+  "codes_found": [
+   "ARCH201",
+   "LNT101",
+   "SES110",
+   "SES120",
+   "SES205"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/sustainable-energy-studies/sustainable-energy-studies-as/",
+   "title": "Sustainable Energy Studies | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2936
+ },
+ {
+  "control_number": "38054",
+  "title": "Literature",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL120",
+   "ENGL130",
+   "ENGL140",
+   "ENGL160",
+   "ENGL225",
+   "ENGL230",
+   "ENGL231",
+   "ENGL240",
+   "ENGL241",
+   "ENGL250",
+   "ENGL251",
+   "ENGL255",
+   "ENGL260",
+   "ENGL265",
+   "ENGL270",
+   "ENGL271",
+   "ENGL272",
+   "ENGL273",
+   "ENGL280",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1002"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/english/literature-aa/",
+   "title": "Literature | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 4699
+ },
+ {
+  "control_number": "38055",
+  "title": "Spanish for Bilinguals",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.556,
+  "codes_found": [
+   "SPAN215",
+   "SPAN216",
+   "SPAN221",
+   "SPAN225",
+   "SPAN226"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/spanish/spanish-transfer-aa/",
+   "title": "Spanish | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 9,
+  "text_chars": 4936
+ },
+ {
+  "control_number": "38092",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "BIOL100",
+   "BIOL260",
+   "BIOL261",
+   "BIOL265",
+   "CHEM100",
+   "CHEM110",
+   "CHEM160",
+   "CHEM170",
+   "CHEM200",
+   "CHEM240",
+   "HLTH121",
+   "PSYC270",
+   "PSYCC1000",
+   "SOC270",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38110",
+  "title": "Pathway to Law School",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.533,
+  "codes_found": [
+   "COMM160",
+   "ENGL115H",
+   "ENGLC1000",
+   "ENGLC1001",
+   "HISTC1001",
+   "HISTC1002",
+   "PHIL103",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/family-studies/liberal-studies-elem-edu/",
+   "title": "Liberal Studies: Elementary Education | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4914
+ },
+ {
+  "control_number": "38297",
+  "title": "Film Television and Media Arts",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART130",
+   "ART131",
+   "ART132",
+   "COMM185",
+   "FTMA100",
+   "FTMA101",
+   "FTMA102",
+   "FTMA103",
+   "FTMA105",
+   "FTMA111",
+   "FTMA112",
+   "FTMA113",
+   "FTMA116",
+   "FTMA120",
+   "FTMA124",
+   "FTMA127",
+   "FTMA160",
+   "FTMA161",
+   "FTMA162",
+   "FTMA290",
+   "HUM112",
+   "MUS151",
+   "RA&T120",
+   "TA115"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/film-television-media-arts/ftma-as/",
+   "title": "Film, Television and Media Arts | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 3813
+ },
+ {
+  "control_number": "38298",
+  "title": "Yoga Teacher Training - 200 Hour",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "link_search",
+  "coverage": 0.5,
+  "codes_found": [
+   "ES/T210",
+   "ES/T211",
+   "ES/T212"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/office-intensive-training-bilingual-payroll-clerk/administrative-office-assistant-bilingual-english-spanish-intensive-training-certificate/",
+   "title": "Administrative Office Assistant-Bilingual (English/Spanish) Intensive Training | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": null
+  },
+  "listed": 6,
+  "text_chars": 4000
+ },
+ {
+  "control_number": "38359",
+  "title": "Film Television and Media Arts Production Specialist-Advanced",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART131",
+   "COMM185",
+   "FTMA100",
+   "FTMA101",
+   "FTMA102",
+   "FTMA103",
+   "FTMA105",
+   "FTMA160",
+   "FTMA162",
+   "FTMA290",
+   "HUM112"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/film-television-media-arts/certificate-ftma-production-specialist-adv/",
+   "title": "Film, Television, and Media Arts Production Specialist-Advanced | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2956
+ },
+ {
+  "control_number": "39405",
+  "title": "Basic Musicianship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS100",
+   "MUS101",
+   "MUS102",
+   "MUS105",
+   "MUS109",
+   "MUS111",
+   "MUS113",
+   "MUS124A",
+   "MUS124B",
+   "MUS124C",
+   "MUS125",
+   "MUS126",
+   "MUS155",
+   "MUS157A",
+   "MUS157B",
+   "MUS157C",
+   "MUS158",
+   "MUS159",
+   "MUS160",
+   "MUS163A",
+   "MUS163B",
+   "MUS163C",
+   "MUS165A",
+   "MUS165B",
+   "MUS165C",
+   "MUS166",
+   "MUS167",
+   "MUS168",
+   "MUS170",
+   "MUS171",
+   "MUS172",
+   "MUS175",
+   "MUS176",
+   "MUS177",
+   "MUS180",
+   "MUS181",
+   "MUS182",
+   "MUS185",
+   "MUS186",
+   "MUS187"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/music/basic-musicianship-certificate/",
+   "title": "Basic Musicianship | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 40,
+  "text_chars": 4163
+ },
+ {
+  "control_number": "39578",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL210",
+   "BIOL211",
+   "BIOL212",
+   "CHEM200",
+   "CHEM210",
+   "MATH121",
+   "MATH122",
+   "MATHC2210",
+   "PHYS150",
+   "PHYS151",
+   "PHYS152",
+   "PHYS153"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/biology/biology-ast/",
+   "title": "Biology | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3634
+ },
+ {
+  "control_number": "39605",
+  "title": "Cyber-Forensic",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.7,
+  "codes_found": [
+   "CIS160",
+   "CIS169",
+   "CIS177",
+   "CIS178",
+   "CIS179",
+   "CIS182",
+   "CIS290"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/computer-information-systems/",
+   "title": "Computer Information Systems | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 15678
+ },
+ {
+  "control_number": "39677",
+  "title": "Infant, Child, and Adolescent Development",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC204",
+   "NC205",
+   "NC206",
+   "NC207"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/infant-child-adolescent/",
+   "title": "Infant, Child, and Adolescent Development | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2774
+ },
+ {
+  "control_number": "39701",
+  "title": "Family Child Care Business Provider",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39736",
+  "title": "Entry Level Firefighter",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FS101",
+   "FS102",
+   "FS103",
+   "FS104",
+   "FS106",
+   "FS108"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/fire-science-technology/entry-level-firefighter-as/",
+   "title": "Entry Level Firefighter | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 4210
+ },
+ {
+  "control_number": "39737",
+  "title": "Entry Level Firefighter",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMT101",
+   "EMT109",
+   "EMT113",
+   "EMT113L",
+   "FS10",
+   "FS150A",
+   "FS150B",
+   "FS150C",
+   "FS150D",
+   "FS160",
+   "FS161",
+   "FS162",
+   "FS163",
+   "FS164",
+   "FS165",
+   "FS281G"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/fire-science-technology/entry-level-firefighter-certificate/",
+   "title": "Entry Level Firefighter | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3493
+ },
+ {
+  "control_number": "39741",
+  "title": "Regional Fire Academy",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMT101",
+   "EMT109",
+   "EMT113",
+   "EMT113L",
+   "FS281F"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/fire-science-technology/regional-fire-academy-certificate/",
+   "title": "Regional Fire Academy | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2846
+ },
+ {
+  "control_number": "39985",
+  "title": "Optical Technician Training Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC311",
+   "NC312"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/opticaltech/",
+   "title": "Optical Technician Training Program | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2589
+ },
+ {
+  "control_number": "40246",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.744,
+  "codes_found": [
+   "AFRO110",
+   "AFRO151",
+   "AJ111",
+   "AJ252",
+   "ANTH102",
+   "ASIA113",
+   "ASIA115",
+   "COMM176",
+   "COMMC1000",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1000",
+   "ENGLC1001",
+   "GEOG120",
+   "HIST110",
+   "HIST113",
+   "HIST141",
+   "HISTC1001",
+   "HISTC1002",
+   "MAS141",
+   "MAS150",
+   "PHIL103",
+   "PHIL120",
+   "POLSC1000",
+   "PS101",
+   "PS103",
+   "PS104",
+   "PSYC270",
+   "SOC106",
+   "SOC110",
+   "SOC270",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 43,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "40251",
+  "title": "Environmental Horticulture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LNT100",
+   "LNT120",
+   "LNT122",
+   "LNT123",
+   "LNT124",
+   "LNT128",
+   "LNT129",
+   "LNT134",
+   "LNT136",
+   "LNT138",
+   "LNT140",
+   "LNT141",
+   "LNT146",
+   "LNT148",
+   "LNT151",
+   "LNT152"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/landscape-architecture-landscape-nursery-technology/environmental-horticulture-as/",
+   "title": "Environmental Horticulture | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3354
+ },
+ {
+  "control_number": "40581",
+  "title": "Drone Technology and Applications",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC327",
+   "NC328"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/drone/",
+   "title": "Drone Technology and Applications | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2625
+ },
+ {
+  "control_number": "40764",
+  "title": "ESL Communication",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM103",
+   "COMM160",
+   "COMM176",
+   "COMMC1000",
+   "ENGL115H",
+   "ENGLC1000",
+   "ESL115A",
+   "ESL159A",
+   "ESL159B"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/english-second-language/esl-communication-certificate/",
+   "title": "ESL Communication | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 4517
+ },
+ {
+  "control_number": "41779",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "ACCT102",
+   "BUS140",
+   "BUS212",
+   "CIS101",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH120",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/business-administration/business-administration-2.0-aa-transfer-prep/",
+   "title": "Business Administration 2.0 | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 5891
+ },
+ {
+  "control_number": "42056",
+  "title": "ESL College Readiness",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC109",
+   "NC221"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/esl-college/",
+   "title": "ESL College Readiness | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2632
+ },
+ {
+  "control_number": "42088",
+  "title": "College and Career Success: A 'Novel' Approach to Enhanced Literacy",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC158",
+   "NC159",
+   "NC160"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/collegecareer/",
+   "title": "College and Career Success: A 'Novel' Approach to Enhanced Literacy | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2781
+ },
+ {
+  "control_number": "42089",
+  "title": "Pragmatic Reading and Thinking Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC148",
+   "NC149",
+   "NC150"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/pragmatic-reading-thinking/",
+   "title": "Pragmatic Reading and Thinking Skills | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2698
+ },
+ {
+  "control_number": "42271",
+  "title": "Patient Care Coordinator Language and Academic Support",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC402",
+   "NC403"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/patientcare/",
+   "title": "Patient Care Coordinator Language and Academic Support | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2656
+ },
+ {
+  "control_number": "42272",
+  "title": "Certified Nursing Assistant Language and Academic Support",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC404",
+   "NC405"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/can/",
+   "title": "Certified Nursing Assistant Language and Academic Support | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2660
+ },
+ {
+  "control_number": "42273",
+  "title": "Medical Office Professional Language and Academic Support",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC400",
+   "NC401"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/medop/",
+   "title": "Medical Office Professional Language and Academic Support | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2708
+ },
+ {
+  "control_number": "42414",
+  "title": "Project Management",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS126",
+   "BUS150",
+   "BUS151",
+   "BUS239",
+   "BUS290"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/business-management/project-management-certificate/",
+   "title": "Project Management | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2725
+ },
+ {
+  "control_number": "42605",
+  "title": "Patient Care Coordinator",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MEDOP50",
+   "MEDOP51"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/medical-office-professions/patient-care-coordinator-certificate/",
+   "title": "Patient Care Coordinator | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2603
+ },
+ {
+  "control_number": "42809",
+  "title": "Manufacturing Technology",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC139",
+   "NC380",
+   "NC381",
+   "NC382",
+   "NC383"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/manufacturing-tech/",
+   "title": "Manufacturing Technology | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2742
+ },
+ {
+  "control_number": "42810",
+  "title": "Manufacturing Maintenance Technology",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC139",
+   "NC382",
+   "NC384",
+   "NC385",
+   "NC386"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/manufacturing/",
+   "title": "Manufacturing Maintenance Technology | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2769
+ },
+ {
+  "control_number": "43076",
+  "title": "Public Health",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL100",
+   "BIOL101",
+   "BIOL260",
+   "BIOL265",
+   "CHEM100",
+   "HLTH212",
+   "HLTH214",
+   "PSYC270",
+   "PSYC271",
+   "PSYCC1000",
+   "SOC101",
+   "SOC270",
+   "SOC271",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/healthandwellness/public-health-as/",
+   "title": "Public Health | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4478
+ },
+ {
+  "control_number": "43349",
+  "title": "Automotive Service Consultant",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC342",
+   "NC343"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/autoservice-consultant/",
+   "title": "Automotive Service Consultant | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2546
+ },
+ {
+  "control_number": "43350",
+  "title": "Basics of Automotive Technology",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC340",
+   "NC341"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/basics-autotech/",
+   "title": "Basics of Automotive Technology | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2560
+ },
+ {
+  "control_number": "43413",
+  "title": "Logistics Data Analyst",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS126",
+   "BUS177",
+   "BUS183",
+   "CIS101",
+   "GEOG145"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/logistics-transportation/logistics-data-analyst/",
+   "title": "Logistics Data Analyst | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3038
+ },
+ {
+  "control_number": "43431",
+  "title": "Customer Service: Effective Communication Approaches",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC1002",
+   "NC1003",
+   "NC1006"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/customerservice-effectivecomm/",
+   "title": "Customer Service: Effective Communication Approaches | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2938
+ },
+ {
+  "control_number": "43432",
+  "title": "Customer Service: Effective Teams",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC1070",
+   "NC1073",
+   "NC1074"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/customerservice-effectiveteams/",
+   "title": "Customer Service: Effective Teams | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2939
+ },
+ {
+  "control_number": "43433",
+  "title": "Automotive Parts Specialist",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC344",
+   "NC345"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/autoparts-specialist/",
+   "title": "Automotive Parts Specialist | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2522
+ },
+ {
+  "control_number": "43461",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM103",
+   "COMM160",
+   "COMM170",
+   "COMM174",
+   "COMM176",
+   "COMM200",
+   "COMM262",
+   "COMM263",
+   "COMM272",
+   "COMM273",
+   "COMMC1000",
+   "JOUR101",
+   "JOUR151"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/communication/communication-studies2-transfer-aa/",
+   "title": "Communication Studies 2.0 | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3775
+ },
+ {
+  "control_number": "43464",
+  "title": "Supply Chain Fundamentals",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS126",
+   "BUS173",
+   "LDR150"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/logistics-transportation/supply-chain-fundamentals/",
+   "title": "Supply Chain Fundamentals | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2991
+ },
+ {
+  "control_number": "43513",
+  "title": "Logistics Operations Specialist",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS126",
+   "BUS173",
+   "BUS239",
+   "LDR150"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/logistics-transportation/logistics-operations-specialist/",
+   "title": "Logistics Operations Specialist | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2684
+ },
+ {
+  "control_number": "43711",
+  "title": "Foods and Nutrition",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL100",
+   "BIOL101",
+   "BIOL260",
+   "BIOL265",
+   "CHEM100",
+   "CHEM110",
+   "CHEM160",
+   "HLTH121",
+   "HLTH200",
+   "HLTH201",
+   "HLTH205",
+   "PSYCC1000",
+   "SOC101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/healthandwellness/foodsnutrition-as/",
+   "title": "Foods and Nutrition | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3807
+ },
+ {
+  "control_number": "44011",
+  "title": "Yoga Teacher Training - 300 Hour",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 18,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44012",
+  "title": "Automotive Electric Vehicle Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AT101",
+   "AT102",
+   "AT109",
+   "AT110",
+   "AT120",
+   "AT130",
+   "AT131",
+   "AT140",
+   "AT190",
+   "AT191",
+   "AT192",
+   "AT193",
+   "AT220",
+   "AT230",
+   "AT234",
+   "AT236"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/automotive-technology/auto-ev-tech-as/",
+   "title": "Automotive Electric Vehicle Technology | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3829
+ },
+ {
+  "control_number": "44200",
+  "title": "Alcohol and Other Drug Studies",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYC250",
+   "PSYCC1000",
+   "SOC101",
+   "SWHS112",
+   "SWHS114",
+   "SWHS116",
+   "SWHS154",
+   "SWHS155",
+   "SWHS156",
+   "SWHS160",
+   "SWHS260",
+   "SWHS290",
+   "SWHS290A",
+   "SWHS291",
+   "SWHS291A"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/swhs/alcohol-drug-studies-cert/",
+   "title": "Alcohol and Other Drug Studies | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3566
+ },
+ {
+  "control_number": "44327",
+  "title": "Social Work and Human Services",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ111",
+   "BIOL100",
+   "BIOL101",
+   "ECONC2001",
+   "ECONC2002",
+   "PSYC109",
+   "PSYC230",
+   "PSYC250",
+   "PSYC260",
+   "PSYC270",
+   "PSYCC1000",
+   "SOC101",
+   "SOC110",
+   "SOC270",
+   "STATC1000",
+   "SWHS110",
+   "SWHS120",
+   "SWHS156"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/swhs/socialworkhumanservices-cert/",
+   "title": "Social Work and Human Services | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3392
+ },
+ {
+  "control_number": "44423",
+  "title": "Academic and Career Exploration",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.85,
+  "codes_found": [
+   "AJ111",
+   "AT101",
+   "BIOL100",
+   "BIOL101",
+   "BUS120",
+   "CA181",
+   "COMM103",
+   "COMMC1000",
+   "ECONC2001",
+   "ECONC2002",
+   "ED200",
+   "ENGLC1000",
+   "ENGR102",
+   "ESL115A",
+   "FS101",
+   "HIST111",
+   "HIST113",
+   "HIST142",
+   "HIST153",
+   "LS123",
+   "MATH100",
+   "MATH101",
+   "MATH110",
+   "MATH120",
+   "MATH121",
+   "MATH130",
+   "MATH244",
+   "MATHC2210",
+   "PD100",
+   "PD100A",
+   "PD100C",
+   "PSYC201",
+   "SOC270",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/academicexploration/academicexploration-cert/",
+   "title": "Academic and Career Exploration | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 40,
+  "text_chars": 4230
+ },
+ {
+  "control_number": "45089",
+  "title": "Office Support Fundamentals: Beginning",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC185",
+   "NC198",
+   "NC200"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/officesupportbegin/",
+   "title": "Office Support Fundamentals: Beginning | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3028
+ },
+ {
+  "control_number": "45090",
+  "title": "Office Support Fundamentals: Intermediate",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC186",
+   "NC187",
+   "NC24"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/officesupportintermed/",
+   "title": "Office Support Fundamentals: Intermediate | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3052
+ },
+ {
+  "control_number": "45091",
+  "title": "Office Support Fundamentals: Advanced",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC185",
+   "NC186",
+   "NC187",
+   "NC198",
+   "NC200",
+   "NC24"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/officesupportadv/",
+   "title": "Office Support Fundamentals: Advanced | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3128
+ },
+ {
+  "control_number": "45098",
+  "title": "California General Education Transfer Curriculum (Cal-GETC) Certification",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45155",
+  "title": "ESL Specialized Workplace Communication Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC224",
+   "NC225"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/esl-workplace-comm-skills/",
+   "title": "ESL Specialized Workplace Communication Skills | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2617
+ },
+ {
+  "control_number": "45294",
+  "title": "Japanese",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "JPN101",
+   "JPN102",
+   "JPN201",
+   "JPN202"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/japanese/",
+   "title": "Japanese | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 6172
+ },
+ {
+  "control_number": "45295",
+  "title": "Japanese",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "JPN101",
+   "JPN102",
+   "JPN201",
+   "JPN202"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/japanese/japanese-aa/",
+   "title": "Japanese | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3545
+ },
+ {
+  "control_number": "45309",
+  "title": "Math Foundation for Allied Health",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "link_search",
+  "coverage": 0.5,
+  "codes_found": [
+   "NC144"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/readiness-college-math/",
+   "title": "Readiness for College Math | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": null
+  },
+  "listed": 2,
+  "text_chars": 2604
+ },
+ {
+  "control_number": "45381",
+  "title": "Kinesiology-Sports Medicine",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.583,
+  "codes_found": [
+   "BIOL260",
+   "BIOL261",
+   "HLTH110",
+   "HLTH201",
+   "PHYS150",
+   "PHYS151",
+   "PSYC230"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/exercise-science/kinesiology-sports-med-as/",
+   "title": "Kinesiology-Sports Medicine | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3654
+ },
+ {
+  "control_number": "45457",
+  "title": "Automotive Technology Direct Assessment Competency-Based Education",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45458",
+  "title": "Automotive Brake and Suspension Systems Direct Assessment Competency-Based Education",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45464",
+  "title": "Algebra Preparation for BSTEM",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC146",
+   "NC147"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/algebra-prep-stem/",
+   "title": "Algebra Preparation for BSTEM | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2596
+ },
+ {
+  "control_number": "45465",
+  "title": "Preparation for Calculus",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC1104",
+   "NC147"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/prep-for-calculus/",
+   "title": "Preparation for Calculus | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2594
+ },
+ {
+  "control_number": "45466",
+  "title": "Readiness for College Math",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC144",
+   "NC145"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/readiness-college-math/",
+   "title": "Readiness for College Math | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2604
+ },
+ {
+  "control_number": "45467",
+  "title": "ESL Conversation Skills Development",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC109",
+   "NC110",
+   "NC222"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/esl-conversation-skills-dev/",
+   "title": "ESL Conversation Skills Development | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2600
+ },
+ {
+  "control_number": "45468",
+  "title": "ESL Workplace Literacy Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC109",
+   "NC110",
+   "NC221"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/noncredit-certificates-courses/esl-workplace-literacy-skills/",
+   "title": "ESL Workplace Literacy Skills | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2616
+ },
+ {
+  "control_number": "46192",
+  "title": "Certified Wellness Coach",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYC230",
+   "PSYC250",
+   "PSYCC1000",
+   "SWHS110",
+   "SWHS112",
+   "SWHS114",
+   "SWHS116",
+   "SWHS120",
+   "SWHS154",
+   "SWHS156",
+   "SWHS260"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/swhs/certified-wellness-coach-cert/",
+   "title": "Certified Wellness Coach | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3099
+ },
+ {
+  "control_number": "46193",
+  "title": "American Sign Language",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL101",
+   "ASL102",
+   "ASL201",
+   "ASL202",
+   "ASL225",
+   "ASL226"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/american-sign-language/american-sign-language-aa/",
+   "title": "American Sign Language | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3265
+ },
+ {
+  "control_number": "46356",
+  "title": "Commercial Music",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "MUS131",
+   "MUS132A",
+   "MUS150",
+   "MUS155",
+   "RA&T100",
+   "RA&T105",
+   "RA&T110"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/music/commercial-music-cert/",
+   "title": "Commercial Music | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2731
+ },
+ {
+  "control_number": "46387",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "MATH252",
+   "MATH253",
+   "MATH254",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS270",
+   "PHYS271"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "46516",
+  "title": "Physics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "MATH252",
+   "MATH253",
+   "MATH254",
+   "MATHC2210",
+   "MATHC2220",
+   "PHYS270",
+   "PHYS271",
+   "PHYS272",
+   "PHYS273",
+   "PHYS274",
+   "PHYS275"
+  ],
+  "source": {
+   "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog",
+   "h1": "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 16000
+ }
+]

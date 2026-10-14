@@ -15530,8 +15530,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 360,
+   "count": 361,
    "docs": [
+    {
+     "created": "2026-10-14",
+     "governs": [],
+     "n": 390,
+     "path": "docs/session_390_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "record-shape-5",
+      "reread",
+      "acalog",
+      "decision-sheet"
+     ],
+     "title": "Session 390 handoff: Sheet 79's replies, Fresno City's load, the Acalog reader",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-14",
      "governs": [],
@@ -21717,5 +21735,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1138
+ "total": 1139
 }
