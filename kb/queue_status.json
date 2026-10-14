@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-14T06:42:54Z",
-  "session": 388,
-  "moniker": "SkyBuckeye",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-10-14T13:29:04Z",
+  "session": 389,
+  "moniker": "SkyPersimmon",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_389_handoff.md",
+  "handoff": "docs/session_390_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -21328,28 +21328,1366 @@
       "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
       "control_number": "46524",
       "loaded": "2026-10-13"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Architecture Technology",
+      "award": "A.S. Degree",
+      "control_number": "05372",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Biology",
+      "award": "A.S. Degree",
+      "control_number": "05373",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Finance",
+      "award": "A.A. Degree",
+      "control_number": "05375",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Journalism",
+      "award": "A.A. Degree",
+      "control_number": "05378",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Exercise Science",
+      "award": "A.A. Degree",
+      "control_number": "05382",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Engineering",
+      "award": "A.S. Degree",
+      "control_number": "05383",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "3D Modeling and Animation",
+      "award": "A.S. Degree",
+      "control_number": "05384",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Automotive Technology",
+      "award": "A.S. Degree",
+      "control_number": "05387",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Construction Inspection",
+      "award": "A.S. Degree",
+      "control_number": "05391",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Art",
+      "award": "A.A. Degree",
+      "control_number": "05392",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Commercial Music",
+      "award": "A.A. Degree",
+      "control_number": "05394",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Theatre Arts---Performance",
+      "award": "A.A. Degree",
+      "control_number": "05395",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "French",
+      "award": "A.A. Degree",
+      "control_number": "05397",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Nursing",
+      "award": "A.S. Degree",
+      "control_number": "05399",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Nursing, Vocational",
+      "award": "A.S. Degree",
+      "control_number": "05400",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Surgical Technology",
+      "award": "A.S. Degree",
+      "control_number": "05401",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Emergency Medical Technology and Paramedic",
+      "award": "A.S. Degree",
+      "control_number": "05402",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Communication",
+      "award": "A.A. Degree",
+      "control_number": "05404",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Philosophy",
+      "award": "A.A. Degree",
+      "control_number": "05405",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Physics",
+      "award": "A.S. Degree",
+      "control_number": "05408",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Chemistry",
+      "award": "A.S. Degree",
+      "control_number": "05409",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Astronomy",
+      "award": "A.S. Degree",
+      "control_number": "05410",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Psychology",
+      "award": "A.A. Degree",
+      "control_number": "05412",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Public Administration",
+      "award": "A.A. Degree",
+      "control_number": "05413",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Social Work and Human Services",
+      "award": "A.A. Degree",
+      "control_number": "05414",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Child Development",
+      "award": "A.A. Degree",
+      "control_number": "05417",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Anthropology",
+      "award": "A.A. Degree",
+      "control_number": "05418",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Asian American Studies",
+      "award": "A.A. Degree",
+      "control_number": "05419",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "History",
+      "award": "A.A. Degree",
+      "control_number": "05421",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Sociology",
+      "award": "A.A. Degree",
+      "control_number": "05424",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Paralegal Studies",
+      "award": "A.S. Degree",
+      "control_number": "07364",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Paralegal Studies: Bilingual (English/Spanish)",
+      "award": "A.S. Degree",
+      "control_number": "07365",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Landscape Architecture",
+      "award": "A.S. Degree",
+      "control_number": "08148",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Architecture",
+      "award": "A.S. Degree",
+      "control_number": "08153",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Accounting",
+      "award": "A.A. Degree",
+      "control_number": "08156",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "OIS: Office Information Systems Professional",
+      "award": "A.S. Degree",
+      "control_number": "08172",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Legal Interpretation and Translation--Intermediate (English/Spanish)",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "08179",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Information Systems",
+      "award": "A.A. Degree",
+      "control_number": "08186",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Computer Aided Design and Drafting",
+      "award": "A.S. Degree",
+      "control_number": "08195",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Preparation for Allied Health Programs",
+      "award": "A.A. Degree",
+      "control_number": "08196",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "African American Studies",
+      "award": "A.A. Degree",
+      "control_number": "08207",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Construction Management",
+      "award": "A.S. Degree",
+      "control_number": "10548",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Computer Science",
+      "award": "A.A. Degree",
+      "control_number": "10550",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Graphic Design",
+      "award": "A.A. Degree",
+      "control_number": "10553",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Marketing",
+      "award": "A.A. Degree",
+      "control_number": "10557",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Dental Hygiene",
+      "award": "A.S. Degree",
+      "control_number": "11413",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Professional Baking and Pastry",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "16560",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "CIS---Web Site Designer and Developer",
+      "award": "A.S. Degree",
+      "control_number": "16625",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Travel and Tourism Management",
+      "award": "A.S. Degree",
+      "control_number": "16897",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Event and Convention Management",
+      "award": "A.S. Degree",
+      "control_number": "16899",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Hotel Management",
+      "award": "A.S. Degree",
+      "control_number": "16901",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Medical Assisting",
+      "award": "A.S. Degree",
+      "control_number": "17509",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Business Management",
+      "award": "A.S. Degree",
+      "control_number": "17514",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Culinary Arts: Cooking Essentials",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "17836",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Professional Cooking",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "17837",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Culinary Arts",
+      "award": "A.S. Degree",
+      "control_number": "17838",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Restaurant and Foodservice Management",
+      "award": "A.S. Degree",
+      "control_number": "17888",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Food and Beverage Management",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "17890",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "International Trade Logistics",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "17892",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Senior Data Analyst",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "17893",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Supply Chain Management and Logistics",
+      "award": "A.S. Degree",
+      "control_number": "17894",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Professional Photography",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "18896",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Legal Interpretation and Translation--Basic (English/Spanish)",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "18914",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Medical Laboratory Technician",
+      "award": "A.S. Degree",
+      "control_number": "19031",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Child Development Teacher",
+      "award": "A.A. Degree",
+      "control_number": "19072",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Medical Assisting-Clinical",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19259",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Medical Assisting-Medical Insurance Billing and Coding",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19261",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Community, Economic and Urban Development",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "19271",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Urban Studies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19272",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Community, Economic and Urban Development",
+      "award": "A.S. Degree",
+      "control_number": "19273",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Landscape Architecture",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20610",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Floral Design",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20612",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Plant Production",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20613",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Golf and Sports Turf Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20614",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Business Management",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "20619",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "OIS: Office Information Systems Professional-Advanced",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20622",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "OIS: Office Information Systems Professional--Bilingual--Advanced",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20623",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "CIS---Systems Programming Emphasis",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20665",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Automotive Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20693",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Computer Aided Design and Drafting---Advanced",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20698",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "3D Modeling and Animation",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20701",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Construction Management",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20705",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Medical Assisting-Administrative",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20717",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Emergency Medical Technology and Paramedic",
+      "award": "Certificate of Achievement requiring 60+S/90+Q units",
+      "control_number": "20728",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Nursing, Vocational",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20731",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Travel and Tourism",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20734",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Event Management",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "20741",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Hotel Operations",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "20742",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Paralegal Studies",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20743",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Administrative Office Assistant-Bilingual (English/Spanish) Intensive Training",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20744",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Paralegal Studies: Bilingual (English/Spanish)",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "20745",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Recreation Assistant in a Marine Environment---Advanced",
+      "award": null,
+      "control_number": "24151",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Recreational Assistant",
+      "award": null,
+      "control_number": "24152",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Marine Safety Service Advanced",
+      "award": "Noncredit program",
+      "control_number": "24168",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Quality Home Care Provider",
+      "award": null,
+      "control_number": "24181",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Entry Level ESL",
+      "award": "Noncredit program",
+      "control_number": "24182",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Recreation Assistant in a Marine Environment---Basic",
+      "award": null,
+      "control_number": "24225",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Marine Safety Service Basic",
+      "award": "Noncredit program",
+      "control_number": "24312",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Tax Preparation",
+      "award": null,
+      "control_number": "24385",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Geospatial Technology Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "30288",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Recording Arts and Technology",
+      "award": "A.S. Degree",
+      "control_number": "30345",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Italian",
+      "award": "A.A. Degree",
+      "control_number": "30841",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Photography and Digital Imaging",
+      "award": "A.A. Degree",
+      "control_number": "31624",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "31729",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Travel and Tourism---Advanced",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "31744",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Financial and Investment Services Specialty",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "31889",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "32216",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "32545",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "32645",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Philosophy",
+      "award": "A.A- T Degree",
+      "control_number": "32659",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Theatre Arts",
+      "award": "A.A- T Degree",
+      "control_number": "32733",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "32744",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Geography",
+      "award": "A.A- T Degree",
+      "control_number": "32760",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Computer Science",
+      "award": "A.S. T Degree",
+      "control_number": "33132",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Elementary Teacher Education: Integrated Programs",
+      "award": "A.A- T Degree",
+      "control_number": "33611",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Preparation for Allied Health Programs",
+      "award": "A.A. Degree",
+      "control_number": "33897",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Marketing and Sales",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "35081",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Ebusiness & Ecommerce",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "35082",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Entrepreneurship and Small Business",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "35083",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Film, Television, and Media Arts",
+      "award": "A.S. T Degree",
+      "control_number": "36327",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "CHILD AND ADOLESCENT DEVELOPMENT",
+      "award": "A.A- T Degree",
+      "control_number": "36636",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Drone Technology and Applications",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37775",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Bookkeeping Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37890",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Bookkeeping/Payroll Specialist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37893",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Theatre Arts - Technical Theatre",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38035",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "American Sign Language",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38038",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Advanced Emission Specialist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38040",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Leadership and Supervision---Intermediate",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "38041",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "International Business---Intermediate",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "38042",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "CIS: Computer Programming With an Emphasis on Applications---Basic",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38043",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Sustainable Landscape Practices",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38045",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Criminal Justice",
+      "award": "A.A. Degree",
+      "control_number": "38048",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Supply Chain Management and Logistics",
+      "award": "A.A. Degree",
+      "control_number": "38049",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Urban Studies",
+      "award": "A.A. Degree",
+      "control_number": "38050",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "CIS: Computer Programming With an Emphasis on Applications",
+      "award": "A.S. Degree",
+      "control_number": "38052",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Sustainable Energy Studies",
+      "award": "A.S. Degree",
+      "control_number": "38053",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Literature",
+      "award": "A.A. Degree",
+      "control_number": "38054",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Spanish for Bilinguals",
+      "award": "A.A. Degree",
+      "control_number": "38055",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Film Television and Media Arts",
+      "award": "A.S. Degree",
+      "control_number": "38297",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Film Television and Media Arts Production Specialist-Advanced",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38359",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Basic Musicianship",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39405",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "39578",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Infant, Child, and Adolescent Development",
+      "award": "Noncredit program",
+      "control_number": "39677",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Entry Level Firefighter",
+      "award": "A.S. Degree",
+      "control_number": "39736",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Entry Level Firefighter",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39737",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Regional Fire Academy",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39741",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Optical Technician Training Program",
+      "award": "Noncredit program",
+      "control_number": "39985",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Environmental Horticulture",
+      "award": "A.S. Degree",
+      "control_number": "40251",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Drone Technology and Applications",
+      "award": "Noncredit program",
+      "control_number": "40581",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "ESL Communication",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40764",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "41779",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "ESL College Readiness",
+      "award": "Noncredit program",
+      "control_number": "42056",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "College and Career Success: A 'Novel' Approach to Enhanced Literacy",
+      "award": "Noncredit program",
+      "control_number": "42088",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Pragmatic Reading and Thinking Skills",
+      "award": "Noncredit program",
+      "control_number": "42089",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Patient Care Coordinator Language and Academic Support",
+      "award": "Noncredit program",
+      "control_number": "42271",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Certified Nursing Assistant Language and Academic Support",
+      "award": "Noncredit program",
+      "control_number": "42272",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Medical Office Professional Language and Academic Support",
+      "award": "Noncredit program",
+      "control_number": "42273",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Project Management",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42414",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Patient Care Coordinator",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42605",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Manufacturing Technology",
+      "award": "Noncredit program",
+      "control_number": "42809",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Manufacturing Maintenance Technology",
+      "award": "Noncredit program",
+      "control_number": "42810",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Public Health",
+      "award": "A.S. Degree",
+      "control_number": "43076",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Automotive Service Consultant",
+      "award": "Noncredit program",
+      "control_number": "43349",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Basics of Automotive Technology",
+      "award": "Noncredit program",
+      "control_number": "43350",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Logistics Data Analyst",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43413",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Customer Service: Effective Communication Approaches",
+      "award": "Noncredit program",
+      "control_number": "43431",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Customer Service: Effective Teams",
+      "award": "Noncredit program",
+      "control_number": "43432",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Automotive Parts Specialist",
+      "award": "Noncredit program",
+      "control_number": "43433",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "43461",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Supply Chain Fundamentals",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "43464",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Logistics Operations Specialist",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "43513",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Foods and Nutrition",
+      "award": "A.S. Degree",
+      "control_number": "43711",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Automotive Electric Vehicle Technology",
+      "award": "A.S. Degree",
+      "control_number": "44012",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Alcohol and Other Drug Studies",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "44200",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Social Work and Human Services",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44327",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Academic and Career Exploration",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44423",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Office Support Fundamentals: Beginning",
+      "award": "Noncredit program",
+      "control_number": "45089",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Office Support Fundamentals: Intermediate",
+      "award": "Noncredit program",
+      "control_number": "45090",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Office Support Fundamentals: Advanced",
+      "award": "Noncredit program",
+      "control_number": "45091",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "ESL Specialized Workplace Communication Skills",
+      "award": "Noncredit program",
+      "control_number": "45155",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Japanese",
+      "award": "A.A. Degree",
+      "control_number": "45295",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Kinesiology-Sports Medicine",
+      "award": "A.S. Degree",
+      "control_number": "45381",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Algebra Preparation for BSTEM",
+      "award": "Noncredit program",
+      "control_number": "45464",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Preparation for Calculus",
+      "award": "Noncredit program",
+      "control_number": "45465",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Readiness for College Math",
+      "award": "Noncredit program",
+      "control_number": "45466",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "ESL Conversation Skills Development",
+      "award": "Noncredit program",
+      "control_number": "45467",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "ESL Workplace Literacy Skills",
+      "award": "Noncredit program",
+      "control_number": "45468",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Certified Wellness Coach",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "46192",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "American Sign Language",
+      "award": "A.A. Degree",
+      "control_number": "46193",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "Southwestern College",
+      "program": "Commercial Music",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "46356",
+      "loaded": "2026-10-14"
     }
   ],
   "next_step": {
-    "title": "Read Palo Verde's 2026-27 catalog, then carry out Sheet 78",
-    "text": "An Acalog reader captures Palo Verde's 2026-27 catalog once Sunday's census apply moves its registry row; El Camino and San Joaquin Delta follow. Sheet 78 waits on Sam."
+    "title": "Read Sheet 79, then load Fresno City",
+    "text": "Sheet 79 asks whether a degree total inside the range the requirements allow adds up, whether a transfer degree's 60 is filled by transferable electives, and whether to extract El Camino. Fresno City's extraction loads and displays under Sam's Sheet 78 go."
   },
   "calls": [
     {
-      "title": "Extract Southwestern and Fresno City",
-      "text": "Both catalogs are captured with a page for 94 percent of their programs; extraction costs about 29 dollars in model calls.",
-      "if_no_reply": "The two colleges stay captured and unrecorded.",
-      "link": "https://claude.ai/artifact/C7yerEAqAaTosz6XvzLv9Z",
-      "link_text": "Open Asks Sheet 78, card 1",
+      "title": "Count a degree total inside the requirements' range as adding up",
+      "text": "31 re-read records at Cabrillo and Palo Verde read 57 to 60 units against a printed 60 because general electives printed as a range are kept as one number.",
+      "if_no_reply": "They stay flagged as a check not met.",
+      "link": "https://claude.ai/artifact/V1vZDZuwRqphwkcPAYVnt8",
+      "link_text": "Open Asks Sheet 79, card 1",
       "part": "reading"
     },
     {
-      "title": "Record degree totals printed with general education",
-      "text": "79 records at Palo Verde and Cabrillo fail arithmetic because their pages print the degree total with general education; record both figures and re-read them (about 6 dollars), or change only the wording.",
-      "if_no_reply": "The 79 records keep failing the check and three pages keep saying the catalog prints no total.",
-      "link": "https://claude.ai/artifact/C7yerEAqAaTosz6XvzLv9Z",
-      "link_text": "Open Asks Sheet 78, card 2",
-      "part": "checks"
+      "title": "Count a transfer degree's 60 as filled by transferable electives",
+      "text": "Five Palo Verde transfer degrees print Total 60 and no elective line, so the major and general education read 52 to 57 against 60.",
+      "if_no_reply": "They stay flagged for the college.",
+      "link": "https://claude.ai/artifact/V1vZDZuwRqphwkcPAYVnt8",
+      "link_text": "Open Asks Sheet 79, card 2",
+      "part": "reading"
+    },
+    {
+      "title": "Extract El Camino",
+      "text": "The Acalog reader found a page for 124 of 135 programs with a course list; extraction costs about 8 to 14 dollars.",
+      "if_no_reply": "El Camino stays captured and unrecorded.",
+      "link": "https://claude.ai/artifact/V1vZDZuwRqphwkcPAYVnt8",
+      "link_text": "Open Asks Sheet 79, card 3",
+      "part": "reading"
     }
   ],
   "notes": {
@@ -21361,24 +22699,24 @@
   },
   "changes": [
     {
-      "at": "2026-10-14T05:16:39Z",
-      "text": "Cabrillo's course outcomes loaded: 1,124 courses"
+      "at": "2026-10-14T12:20:37Z",
+      "text": "Records keep the degree total and general education units a page prints, and the check adds against the degree total"
     },
     {
-      "at": "2026-10-14T05:41:00Z",
-      "text": "The eight read addenda filed with the programs and courses each one changes"
+      "at": "2026-10-14T13:09:00Z",
+      "text": "Palo Verde's 19 records re-read and replaced: 11 add up to the degree total"
     },
     {
-      "at": "2026-10-14T05:57:00Z",
-      "text": "The Common CR Reference tab's controls made underlined words, its rank text brought to AA"
+      "at": "2026-10-14T13:16:00Z",
+      "text": "Cabrillo's 55 records re-read and replaced: 13 add up to the degree total"
     },
     {
-      "at": "2026-10-14T06:22:00Z",
-      "text": "Modesto Junior's course outcomes loaded: 910 courses"
+      "at": "2026-10-14T13:16:30Z",
+      "text": "Southwestern loaded: 190 records, unchecked"
     },
     {
-      "at": "2026-10-14T06:39:30Z",
-      "text": "Coastline's course outcomes loaded: 522 courses; nine colleges now carry course outcomes"
+      "at": "2026-10-14T12:46:23Z",
+      "text": "COCI Lookup passes AA in light and dark"
     }
   ],
   "headline": [
@@ -21432,7 +22770,7 @@
   },
   "harvest": {
     "day": "2026-10-14",
-    "gaps": 353,
+    "gaps": 405,
     "parts": {
       "links": {
         "catalog": [
@@ -21449,11 +22787,11 @@
         ]
       },
       "roep": [
-        3155,
+        3207,
         20282
       ],
       "coci": [
-        2802,
+        2976,
         20282
       ],
       "outcomes": {
@@ -21462,12 +22800,12 @@
           89192
         ],
         "plo": [
-          2802,
+          2976,
           20282
         ]
       },
       "careers": [
-        1752,
+        1926,
         20282
       ]
     }

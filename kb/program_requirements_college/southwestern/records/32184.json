@@ -1,0 +1,372 @@
+{
+ "college": "Southwestern College",
+ "control_number": "32184",
+ "shape": "adt",
+ "title": "Music",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/music/",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13348,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13348,
+    "output_tokens": 1987,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1987,
+  "output_tokens_details": {
+   "thinking_tokens": 409
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09313,
+ "ms": 15930,
+ "seconds": 16.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 44,
+   "share": 0.0,
+   "missing": [
+    "MUS101",
+    "MUS102",
+    "MUS105",
+    "MUS109",
+    "MUS110",
+    "MUS111",
+    "MUS113",
+    "MUS114",
+    "MUS115",
+    "MUS124A",
+    "MUS124B",
+    "MUS124C",
+    "MUS124D",
+    "MUS125",
+    "MUS126",
+    "MUS127",
+    "MUS128",
+    "MUS132A",
+    "MUS132B",
+    "MUS132C",
+    "MUS158",
+    "MUS159",
+    "MUS160",
+    "MUS161",
+    "MUS163A",
+    "MUS163B",
+    "MUS163C",
+    "MUS163D",
+    "MUS165A",
+    "MUS165B",
+    "MUS165C",
+    "MUS165D",
+    "MUS170",
+    "MUS171",
+    "MUS172",
+    "MUS173",
+    "MUS175",
+    "MUS176",
+    "MUS177",
+    "MUS178",
+    "MUS185",
+    "MUS186",
+    "MUS187",
+    "MUS188"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 19,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Music (SB 1440)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "soloist",
+    "conductor",
+    "composer",
+    "private music teacher",
+    "high school or college instructor",
+    "music librarian",
+    "recording technician",
+    "band performer",
+    "backup artist",
+    "music critic",
+    "church music director",
+    "administrator",
+    "studio performer",
+    "record/CD producer",
+    "accompanist",
+    "arranger",
+    "copyist",
+    "publisher",
+    "music therapist"
+   ]
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MUS 101",
+    "why": "requirements not in the text; only a course description"
+   },
+   {
+    "code": "MUS 102",
+    "why": "requirements not in the text; only a course description"
+   },
+   {
+    "code": "MUS 105",
+    "why": "requirements not in the text; only a course description"
+   },
+   {
+    "code": "MUS 109",
+    "why": "requirements not in the text; only a course description"
+   },
+   {
+    "code": "MUS 110",
+    "why": "requirements not in the text; only a course description"
+   },
+   {
+    "code": "MUS 111",
+    "why": "requirements not in the text; only a course description"
+   },
+   {
+    "code": "MUS 113",
+    "why": "requirements not in the text; only a course description"
+   },
+   {
+    "code": "MUS 114",
+    "why": "requirements not in the text; only a course description"
+   },
+   {
+    "code": "MUS 115",
+    "why": "requirements not in the text; only a course description"
+   },
+   {
+    "code": "MUS 124A",
+    "why": "requirements not in the text; only a course description"
+   },
+   {
+    "code": "MUS 124B",
+    "why": "requirements not in the text; only a course description"
+   },
+   {
+    "code": "MUS 124C",
+    "why": "requirements not in the text; only a course description"
+   },
+   {
+    "code": "MUS 124D",
+    "why": "requirements not in the text; only a course description"
+   },
+   {
+    "code": "MUS 125",
+    "why": "requirements not in the text; only a course description"
+   },
+   {
+    "code": "MUS 126",
+    "why": "requirements not in the text; only a course description"
+   },
+   {
+    "code": "MUS 127",
+    "why": "requirements not in the text; only a course description"
+   },
+   {
+    "code": "MUS 128",
+    "why": "requirements not in the text; only a course description"
+   },
+   {
+    "code": "MUS 132A",
+    "why": "requirements not in the text; only a course description"
+   },
+   {
+    "code": "MUS 132B",
+    "why": "requirements not in the text; only a course description"
+   },
+   {
+    "code": "MUS 132C",
+    "why": "requirements not in the text; only a course description"
+   },
+   {
+    "code": "MUS 158",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 159",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 160",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 161",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 163A",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 163B",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 163C",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 163D",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 165A",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 165B",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 165C",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 165D",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 170",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 171",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 172",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 173",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 175",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 176",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 177",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 178",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 185",
+    "why": "not in the text as a requirement; named only as recommended preparation in course descriptions"
+   },
+   {
+    "code": "MUS 186",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 187",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 188",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text contains the department overview, the Programs tab listing (Associate Degree for Transfer (ADT): Music (SB 1440), major code 01245) and part of the Courses tab, but not the A.A.-T requirements themselves; no blocks, totals or GE pattern could be recorded.",
+   "The Courses tab is cut off mid-entry at MUS 138; course descriptions are not requirement lists and were not used to build blocks.",
+   "Careers come from the department-wide 'Career Options' section describing options for 'the music major'; they are shared by all music awards on the page, not specific to the A.A.-T.",
+   "No program learning outcomes are printed in the supplied text.",
+   "The requirements section for the ADT likely sits on the Programs tab detail page; a reviewer should fetch it."
+  ]
+ },
+ "extracted_run": "38563578596"
+}

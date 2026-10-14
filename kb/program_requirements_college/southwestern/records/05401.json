@@ -1,0 +1,266 @@
+{
+ "college": "Southwestern College",
+ "control_number": "05401",
+ "shape": "degree",
+ "title": "Surgical Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/nursing-health-occupations/surgical-technology-as/",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7247,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7247,
+    "output_tokens": 1995,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1995,
+  "output_tokens_details": {
+   "thinking_tokens": 506
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06889,
+ "ms": 17700,
+ "seconds": 18.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    48.0,
+    48.0
+   ],
+   "stated": [
+    48.0,
+    48.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Surgical Technology",
+   "measure": "units",
+   "total_units": {
+    "min": 48,
+    "max": 48
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Upon completion of the program, the student will demonstrate the ability to articulate professionally and competently in perioperative setting.",
+    "Upon completion of the program, the student will demonstrate the ability to analyze patient data related to their surgical condition and adjust the patient's intraoperative plan of care according to the findings.",
+    "Upon completion of the program, the student will analyze, compute and adjust operative equipment and instrument settings for the surgical patient in the perioperative setting.",
+    "Upon completion of the program, the student will demonstrate collegiality and appropriate communication techniques when working with diverse healthcare providers and patients in the perioperative setting.",
+    "Upon completion of the program, the student will demonstrate critical thinking skills and differentiation in provision of intraoperative care for patients from various cultural backgrounds."
+   ],
+   "careers": [
+    "Certified Surgical Technologist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "PREREQUISITES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "COMM 174",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 260",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 265",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDOP 230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "FIRST SEMESTER",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "ST 110",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ST 120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SECOND SEMESTER",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "ST 130",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ST 140",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ST 150",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "THIRD SEMESTER",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ST 160",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Total Units 48 is the Plan of Study Grid total, which includes the 17-unit prerequisite block; recorded as total_units. No degree total with general education is printed.",
+   "The prerequisite courses (COMM 174, BIOL 260, BIOL 265, MEDOP 230, PSYC C1000) are described as taken 'as part of the General Education and Graduation requirement' but are listed as program requirements and counted in the 48 total, so they are recorded in a block.",
+   "Closed list stores 'ST140' without a space; the catalog prints 'ST 140' (8 units). Treated as the same course, not a catalog addition.",
+   "Footnote: BIOL 260 and BIOL 265 may be met by four semester units of equivalent courses from an accredited institution; BIOL 100, BIOL 101 and CHEM 100 or CHEM 170 are named only as prerequisites to the science courses, not as program requirements, and are not recorded in blocks.",
+   "Acceptance into the Surgical Technology program (special application requirements) is required before the ST courses.",
+   "Career entry 'Certified Surgical Technologist' comes from the note that passing the certification exam allows use of that title; reviewer may check whether it should count as a career."
+  ]
+ },
+ "extracted_run": "38563578596"
+}

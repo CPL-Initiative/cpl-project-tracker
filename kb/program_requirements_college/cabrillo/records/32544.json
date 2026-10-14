@@ -5,11 +5,11 @@
  "title": "Energy Management",
  "award": "A.S. Degree",
  "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/energy-management-associate-in-science-a-s-fall-2026",
- "record_shape": 4,
+ "record_shape": 5,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6918,
+  "input_tokens": 7785,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6918,
-    "output_tokens": 2581,
+    "input_tokens": 7785,
+    "output_tokens": 2760,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 2581,
+  "output_tokens": 2760,
   "output_tokens_details": {
-   "thinking_tokens": 593
+   "thinking_tokens": 616
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.07929,
- "ms": 19450,
- "seconds": 19.9,
+ "cost_usd": 0.08634,
+ "ms": 20831,
+ "seconds": 21.1,
  "parts": null,
  "error": null,
  "score": {
@@ -64,16 +64,22 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    36.0,
-    36.0
+    60.0,
+    60.0
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
+   ],
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -94,7 +100,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -106,6 +112,15 @@
    },
    "open_elective_units": null,
    "ge_pattern": "Cabrillo College General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Compare and contrast various renewable energy technologies including solar photovoltaics, solar thermal, and solar passive, and how they conserve energy and reduce emissions.",
     "Detail, install, and troubleshoot energy systems for residential and commercial buildings.",
@@ -385,13 +400,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog states 60 credits for the whole degree (including 24 for Cabrillo College General Education) but prints no single total for the major; total_units left null. Core (21) and electives (15) are stated separately.",
-   "Catalog prints codes without a space (e.g., CEM151); these were matched to closed-list codes with a space (CEM 151).",
-   "CEM99 (CEM Internships/Work Experience, 2 units) is not in the closed list; marked catalog_addition.",
-   "Title differences vs. closed list: CEM169A printed as 'Fundamentals of the 2015 Uniform Mechanical Code'; CEM175R printed without the '2014' year.",
-   "The catalog text begins mid-sentence; the start of the program description is cut off.",
-   "Program outcomes are printed for 'this program' and recorded for the A.S. degree."
+   "The page prints no total for the major alone; it prints 'Complete the following number of credits: 60' for the degree (recorded in degree_total), Cabrillo College General Education 24 (ge_units), core 21 and electives 15. total_units left null rather than computed.",
+   "The sentence 'An Associate in Science degree requires 60 units ... at least 30 units in the major' is generic, but the page also prints 60 as this award's credit total.",
+   "Catalog prints codes without spaces (e.g., CEM151); matched to closed-list codes with spaces (CEM 151). CEM99 (CEM Internships/Work Experience, 2 units) is not in the closed list and is marked as a catalog addition.",
+   "Title differences vs. closed list: CEM169A printed as 2015 Uniform Mechanical Code (closed list has no year); CEM175R printed without '2014'. CEM162HR printed at 1 unit (closed list stores no units).",
+   "The catalog text begins mid-sentence; the start of the program description appears cut off.",
+   "WS 1, WS 2 and WS 48 appear as approved major electives, which is unusual for this program; reviewer may wish to confirm."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": "38565227455"
 }

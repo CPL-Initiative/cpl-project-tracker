@@ -5,11 +5,11 @@
  "title": "Agriculture Business",
  "award": "A.S. T Degree",
  "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/agriculture-business-associate-in-science-for-transfer-a-s-t-fall-2026",
- "record_shape": 4,
+ "record_shape": 5,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12356,
+  "input_tokens": 13223,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12356,
-    "output_tokens": 3051,
+    "input_tokens": 13223,
+    "output_tokens": 2904,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 3051,
+  "output_tokens": 2904,
   "output_tokens_details": {
-   "thinking_tokens": 1589
+   "thinking_tokens": 1423
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.11044,
- "ms": 26304,
- "seconds": 26.7,
+ "cost_usd": 0.11097,
+ "ms": 24217,
+ "seconds": 24.4,
  "parts": null,
  "error": null,
  "score": {
@@ -67,14 +67,22 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    23.0,
-    26.0
+    60.0,
+    63.0
    ],
-   "stated": null,
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
    "why": [
-    "the record names no total"
+    "the blocks and general education sum to 60.0-63.0; the catalog prints 60.0-60.0 for the degree"
    ]
   },
   "repeated": {
@@ -106,8 +114,17 @@
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
+   "open_elective_units": 3,
    "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Create and analyze reports, presentations, and other financial documents used in making agricultural business management decisions.",
     "Apply the concepts, principles, and terminology of business, including management, finance, and economics, to real-world issues in the agricultural and life sciences industries."
@@ -189,7 +206,7 @@
     ]
    },
    {
-    "name": "Major Requirements - Core (one statistics course)",
+    "name": "Major Requirements - Core (statistics: only one statistics course)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -265,17 +282,17 @@
   "missing_explained": [
    {
     "code": "ECON 1A",
-    "why": "not in the text; the catalog lists ECONC2002 (Principles of Macroeconomics) in its place"
+    "why": "not in the text; the catalog lists ECONC2002 Principles of Macroeconomics in its place"
    }
   ],
   "notes": [
-   "The first Core block is read as: take HORT2, or CHEM1A, or CHEM3 together with CHEM3L (catalog note: 'students should take HORT2 or CHEM1A or CHEM3/3L'), recorded as choose 4 units with the printed 4-5.",
-   "The second Core block prints 'Complete the following number of credits: 9-11' for ECONC2002, HORT12 and the statistics courses together; recorded as a required block (ECONC2002, HORT12) plus a nested choice of one statistics course ('students may take only one statistics course'). The 9-11 total applies to both blocks combined.",
-   "General Electives 'Complete the following number of credits: 0-3, any transferable course' is part of the 60-unit degree, not a stated major total; no block recorded and open_elective_units left null.",
-   "The catalog states only the 60-unit degree total and Cal-GETC 34; no total for the major is printed, so total_units is null.",
-   "Course codes are written as the catalog prints them, without a space (e.g., HORT2 = HORT 2 in the closed list; STATC1000 = STAT C1000).",
-   "Catalog text begins mid-sentence ('te in Science...') and the program map is cut off in the Cal-GETC Area 5C list; program map GE courses were not recorded."
+   "The first Core block prints 'Complete the following number of credits: 4-5' with the note 'students should take HORT2 or CHEM1A or CHEM3/3L'; recorded as choose_units 4 (stated 4-5). CHEM3 and CHEM3L are taken together as one option.",
+   "The second Core block prints 'Complete the following number of credits: 9-11' covering ECONC2002, HORT12 and one statistics course (BUS9, PSYCH2A or STATC1000; 'students may take only one statistics course'). Split into an 'all' block and a choose-one statistics block; the 9-11 total applies to the two together.",
+   "General Electives: 'Complete the following number of credits: 0-3, any transferable course. 3'; open_elective_units recorded as the printed 3, though the block header shows a 0-3 range.",
+   "No total for the major is printed; the 60 is the page's total for the degree including Cal-GETC 34.",
+   "ECONC2002 is not on the closed list (closed list has ECON 1A); marked as catalog addition.",
+   "Catalog text is cut off at the beginning (description) and end (program map Cal-GETC Area 5C list); the program map GE courses were not recorded."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": "38565227455"
 }

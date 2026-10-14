@@ -5962,3 +5962,6 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 ### INDEX update history, moved 2026-10-14 (S387)
 
 - 2026-10-13 S376 SkyLinden: the Requirements-tab re-reads loaded and displayed (Mesa #2064, San Diego City #2068, Miramar #2070; build `98becf9fafc7`, 2,203 rows); SDCCD's outline index (#2065) and SLOs by college group (#2066, draft, on #2049); the trigger-file gate (#2069); KB note `methodology-a-trigger-file-must-differ-from-main`; handoff 380 (SkyAlder).
+
+<!-- INDEX update history moved at S389 -->
+- 2026-10-13 S380 SkyAlder: course_outcomes live (Sam's paste) and loaded at RCCD (#2049) and SDCCD (#2066), 4,894 rows; Chaffey's outcomes not public (#2073); the eLumen reader (#2072, fast publish/content read) and Coastline's CourseLeaf fixes (#2074, index.html pages, no course listings), both colleges extracting; KB note methodology-read-a-catalog-through-its-own-content-call; handoff 381.

@@ -1,0 +1,338 @@
+{
+ "college": "Southwestern College",
+ "control_number": "05400",
+ "shape": "degree",
+ "title": "Nursing, Vocational",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/nursing-health-occupations/vocational-nursing-as/",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7480,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7480,
+    "output_tokens": 2412,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2412,
+  "output_tokens_details": {
+   "thinking_tokens": 678
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07816,
+ "ms": 19631,
+ "seconds": 20.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "BIOL260",
+    "BIOL261",
+    "ENGL115H",
+    "ENGLC1000",
+    "ESL115A",
+    "HLTH204",
+    "STATC1000"
+   ],
+   "flagged": [
+    "BIOL260",
+    "BIOL261",
+    "ENGL115H",
+    "ENGLC1000",
+    "ESL115A",
+    "HLTH204",
+    "STATC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    61.5,
+    61.5
+   ],
+   "stated": [
+    61.5,
+    70.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 61.5-61.5; the catalog states 61.5-70.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Nursing, Vocational",
+   "measure": "units",
+   "total_units": {
+    "min": 61.5,
+    "max": 70
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Upon completion of the program, the student will demonstrate the ability to articulate professionally and competently in the healthcare setting on issues regarding patient care.",
+    "Demonstrate the ability to analyze patient data related to the medical condition(s) and adjust patient care according to the findings.",
+    "Upon completion of the program, the student will demonstrate the ability to analyze patient data related to the medical condition(s) and adjust patient care according to the findings.",
+    "Upon completion of the program, the student will analyze, compute and correctly provide medications to the patient in the healthcare setting.",
+    "Upon completion of the program, the student will demonstrate collegiality and appropriate communication techniques when working with diverse healthcare providers, patients and family members.",
+    "Upon completion of the program, the student will demonstrate critical thinking skills and differentiation in plan of care for patients from various cultural backgrounds."
+   ],
+   "careers": [
+    "vocational nurse"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "PREREQUISITES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 27.5
+    },
+    "courses": [
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL 115H",
+        "units": 4,
+        "catalog_addition": true
+       },
+       {
+        "code": "ESL 115A",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 260",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 261",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HLTH 204",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "FIRST SEMESTER",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "VN 30",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 31",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 103",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 103L",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SECOND SEMESTER",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "VN 130",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 201",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 201L",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "THIRD SEMESTER",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14.5,
+     "max": 14.5
+    },
+    "courses": [
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 250",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 250L",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 251",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 251L",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Total Units 61.5-70 is the Plan of Study Grid total (prerequisites plus three semesters); the page says additional general education and graduation requirements must be completed for the degree, so it is recorded as the major total, not a degree total.",
+   "The PREREQUISITES block also lists 'CNA Certification or equivalent 0-8.5' units, which is not a course and is not recorded as one; it accounts for the 19-27.5 range.",
+   "ENGL C1000 / ENGL 115H / ESL 115A are printed as one row with a single 4-unit value; the 4 units were applied to each alternative.",
+   "COMM 103 or COMM 174 (Interpersonal Communication, 3 units) must be taken as part of the General Education requirements; as GE it is not placed in a block.",
+   "No GE pattern is named or given units on the page.",
+   "The outcomes list contains two near-duplicate outcomes (one without the 'Upon completion of the program' lead-in); both copied as printed."
+  ]
+ },
+ "extracted_run": "38563578596"
+}

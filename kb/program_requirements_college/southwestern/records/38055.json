@@ -1,0 +1,314 @@
+{
+ "college": "Southwestern College",
+ "control_number": "38055",
+ "shape": "degree",
+ "title": "Spanish for Bilinguals",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/spanish/spanish-transfer-aa/",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7742,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7742,
+    "output_tokens": 2528,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2528,
+  "output_tokens_details": {
+   "thinking_tokens": 955
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08153,
+ "ms": 21597,
+ "seconds": 22.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 9,
+   "share": 0.556,
+   "missing": [
+    "BUS226",
+    "BUS227",
+    "BUS233",
+    "BUS234"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 9,
+   "codes": [
+    "ANTH112",
+    "ENGL271",
+    "ENGL272",
+    "ENGL274",
+    "HIST/MAS141",
+    "HIST/MAS142",
+    "MAS110",
+    "MAS150",
+    "NAIS154"
+   ],
+   "flagged": [
+    "ANTH112",
+    "ENGL271",
+    "ENGL272",
+    "ENGL274",
+    "HIST/MAS141",
+    "HIST/MAS142",
+    "MAS110",
+    "MAS150",
+    "NAIS154"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    22.0
+   ],
+   "stated": [
+    21.0,
+    22.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Spanish for Bilinguals Required Core (bilingual students must take the following courses)",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Initiate, sustain and close a variety of uncomplicated communicative tasks in the target language, and handle social situations in a culturally sensitive and collegial manner."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Spanish for Bilinguals Required Core (bilingual students must take the following courses)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SPAN 215",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 216",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 221",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPAN 226",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select 1 course from List A above (3-4 units minimum)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "SPAN 225",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 226",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 271",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 272",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 274",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST/MAS 141",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST/MAS 142",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 112",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MAS 150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MAS 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NAIS 154",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS 226",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS 227",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS 233",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS 234",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The source page is the Spanish AA-T (Associate in Arts in Spanish for Transfer, Major Code 01462), not a standalone Spanish for Bilinguals A.A.; this record reads the 'Spanish for Bilinguals Required Core' course list on that page (Total Units 21-22). Reviewer should confirm the award match.",
+   "The Spanish (second-language) Required Core (SPAN 101, 102, 201, 202 plus List A, Total 23-24) is the other track on the page and was not recorded.",
+   "The page states generic AA-T requirements (minimum 60 units, Cal-GETC); no degree total or GE units are printed for this award, so degree_total and ge_units are null.",
+   "The single Program Student Learning Outcome is printed for the Spanish AA-T program as a whole; the bilingual track shares it.",
+   "List A courses print no individual units; the block's 3-4 units minimum is recorded in stated. SPAN 226 as the 'or' alternative to SPAN 225 prints no units.",
+   "Catalog titles SPAN 215/216 as 'SPANISH FOR HERITAGE LEARNERS I/II', while the closed list names them 'Spanish for Bilinguals I/II'.",
+   "The description mentions 'diverse professions that involve providing services or products to Spanish-speaking communities' but names no specific career; careers left empty.",
+   "Catalog text is cut off at the end of footnote 2."
+  ]
+ },
+ "extracted_run": "38563578596"
+}

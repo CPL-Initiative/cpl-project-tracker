@@ -5,11 +5,11 @@
  "title": "Computer Support",
  "award": "A.S. Degree",
  "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/computer-support-associate-in-science-a-s-fall-2025",
- "record_shape": 4,
+ "record_shape": 5,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6505,
+  "input_tokens": 7372,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6505,
-    "output_tokens": 2440,
+    "input_tokens": 7372,
+    "output_tokens": 2699,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 2440,
+  "output_tokens": 2699,
   "output_tokens_details": {
-   "thinking_tokens": 614
+   "thinking_tokens": 813
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.07482,
- "ms": 18955,
- "seconds": 19.5,
+ "cost_usd": 0.08347,
+ "ms": 31763,
+ "seconds": 32.1,
  "parts": null,
  "error": null,
  "score": {
@@ -64,16 +64,22 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    36.0,
-    36.0
+    60.0,
+    60.0
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
+   ],
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -94,7 +100,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -104,8 +110,17 @@
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
+   "open_elective_units": 0,
    "ge_pattern": "Cabrillo College General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Explain Information Technology (IT) concepts as they relate to the preparation and presentation of technical information.",
     "Document and communicate problem, analysis, and resolution process.",
@@ -349,14 +364,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog text begins mid-sentence; the start of the program description appears cut off.",
-   "No total for the major is stated explicitly. The page states 60 credits for the degree and a generic 'at least 30 units in the major'; the blocks state 25 (core) and 11 (electives) credits. total_units is left null and not computed.",
-   "Codes are printed without a space (e.g., CIS71); they are matched to the closed-list codes (e.g., CIS 71).",
-   "CIS103 (Technical Support as a Profession, 4 units) is in the core but not in the closed list; it is recorded as a catalog addition.",
-   "CS23 and MATH23 (both Discrete Mathematics) are printed as separate elective rows and appear to be cross-listed; a reviewer may want to check whether they count as the same choice.",
-   "'General electives: any transferable or degree applicable course' is printed with 0 credits after the major electives. It appears to refer to degree-level electives, not to part of the major, so open_elective_units is null.",
-   "The program outcomes are printed for the program as a whole and are recorded here for the A.S. degree."
+   "The page prints no total for the major alone; it prints the degree total (60), Cabrillo College General Education (24), Core (25) and Major Electives (11). total_units left null rather than computed.",
+   "The general statement 'at least 30 units in the major' is a rule for all A.S. degrees, not recorded as a total.",
+   "General electives ('any transferable or degree applicable course') are printed with 0 units; recorded open_elective_units as 0 as printed (24 + 25 + 11 = 60).",
+   "CS23 and MATH23 (both 'Discrete Mathematics') are printed as separate elective rows and recorded separately; they appear to be cross-listed, so a reviewer may want to treat them as alternatives.",
+   "CIS103 (Technical Support as a Profession) is in the core but not in the closed list; marked catalog_addition.",
+   "Catalog text begins mid-sentence (description is cut off at the start).",
+   "Source URL slug references 'fall-2025' although the catalog year is 2026-2027; check the section belongs to the intended year.",
+   "Program Outcomes are printed for the program as a whole on this A.S. page and recorded for this award."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": "38565227455"
 }

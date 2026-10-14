@@ -1,0 +1,346 @@
+{
+ "college": "Southwestern College",
+ "control_number": "40246",
+ "shape": "adt",
+ "title": "Law, Public Policy, and Society",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 16680,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 16680,
+    "output_tokens": 2449,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2449,
+  "output_tokens_details": {
+   "thinking_tokens": 752
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.1157,
+ "ms": 18875,
+ "seconds": 19.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 43,
+   "share": 0.0,
+   "missing": [
+    "ACCT101",
+    "AFRO110",
+    "AFRO151",
+    "AJ111",
+    "AJ151",
+    "AJ161",
+    "AJ252",
+    "ANTH102",
+    "ASIA113",
+    "ASIA115",
+    "BUS140",
+    "CIS101",
+    "COMM160",
+    "COMM176",
+    "COMMC1000",
+    "ECONC2001",
+    "ECONC2002",
+    "ENGLC1000",
+    "ENGLC1001",
+    "GEOG120",
+    "HIST110",
+    "HIST113",
+    "HIST141",
+    "HISTC1001",
+    "HISTC1002",
+    "LDR200",
+    "MAS141",
+    "MAS150",
+    "PA200",
+    "PA290",
+    "PD100",
+    "PHIL103",
+    "PHIL120",
+    "POLSC1000",
+    "PS101",
+    "PS103",
+    "PS104",
+    "PS200",
+    "PSYC270",
+    "SOC106",
+    "SOC110",
+    "SOC270",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "California General Education Transfer Curriculum (Cal-GETC)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACCT 101",
+    "why": "not in the text"
+   },
+   {
+    "code": "AFRO 110",
+    "why": "listed only in Cal-GETC Area 4 GE list, not program requirements"
+   },
+   {
+    "code": "AFRO 151",
+    "why": "listed only in Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "AJ 111",
+    "why": "listed only in Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "AJ 151",
+    "why": "not in the text"
+   },
+   {
+    "code": "AJ 161",
+    "why": "not in the text"
+   },
+   {
+    "code": "AJ 252",
+    "why": "listed only in Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "ANTH 102",
+    "why": "listed only in Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "ASIA 113",
+    "why": "listed only in Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "ASIA 115",
+    "why": "listed only in Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "BUS 140",
+    "why": "not in the text"
+   },
+   {
+    "code": "CIS 101",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM 160",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM 176",
+    "why": "listed only in Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "listed only in Cal-GETC Area 1C GE list"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "listed only in Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "listed only in Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "listed only in Cal-GETC Area 1A GE list"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "listed only in Cal-GETC Area 1B GE list"
+   },
+   {
+    "code": "GEOG 120",
+    "why": "listed only in Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "HIST 110",
+    "why": "listed only in Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "HIST 113",
+    "why": "listed only in Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "HIST 141",
+    "why": "listed only in Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "HIST C1001",
+    "why": "listed only in Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "listed only in Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "LDR 200",
+    "why": "not in the text"
+   },
+   {
+    "code": "MAS 141",
+    "why": "listed only in Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "MAS 150",
+    "why": "listed only in Cal-GETC Areas 3B and 4 GE lists"
+   },
+   {
+    "code": "PA 200",
+    "why": "not in the text"
+   },
+   {
+    "code": "PA 290",
+    "why": "not in the text"
+   },
+   {
+    "code": "PD 100",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHIL 103",
+    "why": "listed only in Cal-GETC Area 1B GE list"
+   },
+   {
+    "code": "PHIL 120",
+    "why": "listed only in Cal-GETC Area 3B GE list"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "listed only in Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "PS 101",
+    "why": "listed only in Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "PS 103",
+    "why": "listed only in Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "PS 104",
+    "why": "listed only in Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "PS 200",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC 270",
+    "why": "listed only in Cal-GETC Area 2 GE list"
+   },
+   {
+    "code": "SOC 106",
+    "why": "listed only in Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "SOC 110",
+    "why": "listed only in Cal-GETC Area 4 GE list"
+   },
+   {
+    "code": "SOC 270",
+    "why": "listed only in Cal-GETC Area 2 GE list"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "listed only in Cal-GETC Area 2 GE list"
+   }
+  ],
+  "notes": [
+   "The supplied text is the college's Cal-GETC general education page, not the Law, Public Policy, and Society A.A-T program page; it contains no section for this award, so no requirement blocks, totals, outcomes or careers could be recorded.",
+   "Many closed-list courses appear in the Cal-GETC area lists, but GE courses are not placed in blocks.",
+   "The text is cut off mid-list in Area 5C.",
+   "Reviewer should locate the actual program page for the 2026-2027 catalog."
+  ]
+ },
+ "extracted_run": "38563578596"
+}
