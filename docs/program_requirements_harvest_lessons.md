@@ -921,3 +921,14 @@ The one-shot record read stopped at PostgREST's 1,000-row cap (Content-Range 0-9
 - **Modesto and Palo Verde had no procedure record for their catalog reads.** S386 wrote Modesto v1 and Palo Verde
   v3 (v2's maps kept byte for byte by composing on the stored record in SQL); receipts
   `kb/receipts/program_source_procedure_modesto_junior_v1_2026-10-14_s386.sql` and `..._palo_verde_v3_...`.
+- **Palo Verde prints the degree total with general education, as Cabrillo does** (college page read 38497793717, two
+  pages). Automotive Technology A.S.: header *64.0 - 68.0 Units*, *Total 64 - 68* = core 24 + electives 6 + *CalGETC
+  34 - 38*. Psychology AA-T: *Total 60* = major 19-21 + CalGETC 34-38, the rest transferable electives. No major total
+  is printed, so the extraction leaves it blank and 79 records at the two colleges fail arithmetic. The display's
+  *"The catalog prints no program total"* (and Sierra's and CPL Pathways' same words) is wrong for these pages; the
+  wording waits on how the record carries the figure (Open Asks Sheet 78).
+- **Southwestern and Fresno City capture cleanly.** Southwestern (CourseLeaf sitemap, 451 loads, 36 min): 220 of 233
+  found, 167 full coverage, 10 no page (two Administration of Justice options, Forensic Studies, three environmental
+  and safety programs, Kinesiology AA-T at 21 of 60 codes, Yoga Teacher Training, a noncredit Family Child Care). Fresno
+  City (curriQunet JSON, 474 loads, 38 min): 237 of 251, 199 full coverage, 6 no page (five noncredit). Both above
+  Sheet 59's 85% bar; extraction waits on Sam (Sheet 78).
