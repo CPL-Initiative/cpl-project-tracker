@@ -24,6 +24,7 @@ every SAVE_EVERY loads so a slice that runs out of time keeps what it read.
 
 Usage (runner): python3 kb/_course_outcomes_read.py --index kb/course_outline_index/index_38313849383.json --trial 12
                 python3 kb/_course_outcomes_read.py --index ... --part 1 --of 4
+                python3 kb/_course_outcomes_read.py --elumen cabrillo --trial 12   (an eLumen college: no index)
 """
 from __future__ import annotations
 
@@ -303,6 +304,31 @@ def host_slug(url: str) -> str:
     return urllib.parse.urlparse(url).netloc.split(".")[0].lower()
 
 
+# An eLumen catalog prints each course's SLOs on the course's own catalog page, which
+# loads through the same light call the program read uses (college page read
+# 38504338656, S387: Cabrillo ASTRO 3, Modesto AG 115, Palo Verde ACC 101). A program
+# page links its courses at <catalog>/course/<code in lower case, no space>, so the
+# index is built from the codes, with no listing to read.
+EL_COURSE = "https://api-prod.elumenapp.com/catalog/sites/publish/content/%s,course,%s?tenant=%s"
+
+
+def elumen_index(slug: str) -> dict:
+    """The course index for an eLumen college, in the shape wanted_courses() reads:
+    each course the college's loaded records name, its catalog course page as the one
+    report. The catalog and host come from the college's capture."""
+    cap = json.load(open(os.path.join(HERE, "program_requirements_college", slug, "capture.json")))
+    catalog = (cap.get("elumen") or {}).get("catalog")
+    host = urllib.parse.urlparse(cap.get("catalog_url") or "").netloc
+    if not catalog or not host.endswith("elumenapp.com"):
+        raise SystemExit("%s: the capture names no eLumen catalog" % slug)
+    index = {}
+    for code in index_mod.record_codes([slug])[slug]:
+        path = re.sub(r"[^a-z0-9]", "", code.lower())
+        index[code] = [{"title": None, "course_id": None,
+                        "reports": [EL_COURSE % (catalog, path, host)]}]
+    return {"url": cap["catalog_url"], "index": index}
+
+
 def wanted_courses(index: dict, slugs: list[str]) -> list[dict]:
     """Each course the loaded records name that has an outline report, once, with the
     colleges (by slug) whose records name it."""
@@ -389,6 +415,7 @@ def reparse(folder: str) -> int:
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--index", default="", help="kb/course_outline_index/index_<run>.json")
+    ap.add_argument("--elumen", default="", help="an eLumen college's slug: its course pages, no index file")
     ap.add_argument("--slugs", default="riverside_city,moreno_valley,norco")
     ap.add_argument("--trial", type=int, default=0)
     ap.add_argument("--part", type=int, default=1)
@@ -398,9 +425,12 @@ def main(argv=None) -> int:
     a = ap.parse_args(argv)
     if a.reparse:
         return reparse(a.reparse)
-    if not a.index:
-        ap.error("--index FILE (or --reparse FOLDER)")
-    index = json.load(open(a.index))
+    if a.elumen:
+        index, a.slugs = elumen_index(a.elumen), a.elumen
+    elif a.index:
+        index = json.load(open(a.index))
+    else:
+        ap.error("--index FILE or --elumen SLUG (or --reparse FOLDER)")
     courses = wanted_courses(index, [s for s in a.slugs.split(",") if s])
     if a.trial:
         todo = spread(courses, a.trial)
@@ -413,7 +443,8 @@ def main(argv=None) -> int:
     out_dir = os.path.join(OUT_DIR, "trial_%s" % run) if a.trial else os.path.join(OUT_DIR, host)
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, "read.json" if a.trial else "read_%s_p%dof%d.json" % (run, a.part, a.of))
-    head = {"run": run, "index": os.path.relpath(a.index, os.path.dirname(HERE)), "host": index["url"],
+    head = {"run": run, "index": ("elumen:" + a.elumen) if a.elumen else os.path.relpath(a.index, os.path.dirname(HERE)),
+            "host": index["url"],
             "system": cor.system_of(index["url"]) or "other",
             "slugs": a.slugs, "part": a.part, "of": a.of, "wanted": len(courses), "slice": len(todo)}
     rows: list[dict] = []

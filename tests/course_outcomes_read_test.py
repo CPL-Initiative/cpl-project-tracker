@@ -178,6 +178,28 @@ def _():
         assert "needs.gate.outputs.go == '1'" in jobs, name
 
 
+@check("an eLumen college's index names each course's catalog page the way its program pages link it")
+def _():
+    # College page read 38504338656 (S387): Cabrillo's Astronomy A.S. links ASTRO 8A
+    # at 2026-2027/course/astro8a, and the content call for astro3 printed the course.
+    ix = reader.elumen_index("cabrillo")
+    assert ix["url"].startswith("https://cabrillo.elumenapp.com/catalog/2026-2027/"), ix["url"]
+    want = {c["code"]: c for c in reader.wanted_courses(ix, ["cabrillo"])}
+    assert want["ASTRO 8A"]["report"] == ("https://api-prod.elumenapp.com/catalog/sites/publish/content/"
+                                          "2026-2027,course,astro8a?tenant=cabrillo.elumenapp.com"), want["ASTRO 8A"]
+    assert want["ASTRO 8A"]["named_by"] == ["cabrillo"]
+    assert reader.host_slug(ix["url"]) == "cabrillo"
+    pv = {c["code"]: c for c in reader.wanted_courses(reader.elumen_index("palo_verde"), ["palo_verde"])}
+    assert pv["ACC 101"]["report"].endswith("/2025-2026,course,acc101?tenant=pvc.elumenapp.com"), pv["ACC 101"]
+
+
+@check("the read workflow hands an elumen= line to the reader in place of an index")
+def _():
+    wf = open(os.path.join(ROOT, ".github", "workflows", "course-outcomes-read.yml")).read()
+    assert "elumen=$(sed -n 's/^elumen=//p' kb/course_outcomes/.run)" in wf
+    assert 'args=(--elumen "$elumen")' in wf
+
+
 @check("the read loads pages only and never addresses the database")
 def _():
     src = open(os.path.join(ROOT, "kb", "_course_outcomes_read.py")).read()
