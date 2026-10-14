@@ -1,0 +1,265 @@
+{
+ "college": "Southwestern College",
+ "control_number": "08148",
+ "shape": "degree",
+ "title": "Landscape Architecture",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/landscape-architecture-landscape-nursery-technology/landscape-architecture-as/",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7293,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7293,
+    "output_tokens": 1342,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1342,
+  "output_tokens_details": {
+   "thinking_tokens": 215
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05601,
+ "ms": 10650,
+ "seconds": 11.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Landscape Architecture",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Graduates of this program will apply professional conventions in landscape design representation through written, oral, and graphic forms.",
+    "Graduates of this program will characterize the complex nature of problems, questions, and ethics associated with human/landscape interactions within the context of the profession of landscape architecture.",
+    "Graduates of this program will integrate and apply diverse perspectives to design solutions."
+   ],
+   "careers": [
+    "licensed landscape architect"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Major Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "LA 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LA 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LNT 100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LNT 120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LNT 122",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LNT 124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LNT 134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LNT 151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LNT 152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "LA 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LNT 128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LNT 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LNT 148",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Total Units 36 is the major total; the page prints no degree total and names no specific GE pattern, only that additional general education and graduation requirements must be completed.",
+   "Electives are a restricted list printed in a separate table (complete 6 units), so open_elective_units is null.",
+   "The description also mentions entry-level employment in local design firms and starting landscape design/construction businesses; only 'licensed landscape architect' was recorded as a named career."
+  ]
+ },
+ "extracted_run": "38563578596"
+}

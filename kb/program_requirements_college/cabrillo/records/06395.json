@@ -5,11 +5,11 @@
  "title": "Geography",
  "award": "A.A. Degree",
  "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/geography-associate-in-arts-a-a-fall-2025",
- "record_shape": 4,
+ "record_shape": 5,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6130,
+  "input_tokens": 6997,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6130,
-    "output_tokens": 2897,
+    "input_tokens": 6997,
+    "output_tokens": 2297,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 2897,
+  "output_tokens": 2297,
   "output_tokens_details": {
-   "thinking_tokens": 1225
+   "thinking_tokens": 687
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.08246,
- "ms": 23411,
- "seconds": 23.9,
+ "cost_usd": 0.07393,
+ "ms": 18301,
+ "seconds": 18.6,
  "parts": null,
  "error": null,
  "score": {
@@ -66,16 +66,22 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    36.0,
-    36.0
+    60.0,
+    60.0
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
+   ],
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -96,7 +102,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -108,6 +114,15 @@
    },
    "open_elective_units": 6,
    "ge_pattern": "Cabrillo College General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate and analyze global, regional, and local geographic distribution patterns of natural resources and human populations in the physical and social worlds.",
     "Utilize technological tools to collect, analyze, and interpret geographic data.",
@@ -289,15 +304,14 @@
    }
   ],
   "notes": [
-   "The catalog frames the major blocks as 'Recommended Major Requirements' and 'Recommended Major Electives' ('courses recommended by the department that can be used to meet major requirements'), yet each prints 'Complete the following number of credits' (19 and 11). They were recorded as required blocks (all; choose 11 units) because they count toward the degree; a reviewer should confirm whether the 'recommended' framing should change the rule.",
-   "The description says the A.A. requires 'at least 18 units in the major'; no single major total is stated, so total_units is null. Block totals printed are 19 and 11; the degree total is 60 (24 Cabrillo GE + 19 + 11 + 6 general electives).",
-   "open_elective_units set to 6 from 'General electives: any transferable or degree applicable course. 6', printed within the program requirements toward the 60-unit degree rather than within a major total.",
-   "ANTHR2H is recorded as the honors alternative to ANTHR2; the catalog lists them as separate rows.",
-   "Catalog note in electives: 'students may take only one statistics course.' (STATC1000, PSYCH2A, BUS9).",
-   "GEOG5 (California Geography) is not in the closed list; recorded as catalog addition.",
-   "Catalog text begins mid-sentence ('capes, peoples, places...'); the beginning of the program description is cut off.",
-   "Source URL references fall 2025 although catalog year is 2026-2027."
+   "The page labels the major lists 'Recommended Major Requirements' and 'Recommended Major Electives' and says these are 'courses recommended by the department that can be used to meet major requirements'; because their printed totals (19 and 11) plus GE 24 and general electives 6 make up the printed 60-unit degree total, they were recorded as required ('all') and 'choose_units' blocks rather than 'recommended'. Reviewer should check.",
+   "ANTHR2H (honors) is recorded as an alternative to ANTHR2; the catalog lists them as separate rows.",
+   "Catalog note in electives: 'students may take only one statistics course' (STATC1000, PSYCH2A, BUS9).",
+   "No total for the major alone is printed; the description says the A.A. requires 'at least 18 units in the major'. Degree total 60 recorded in degree_total.",
+   "General electives: 'any transferable or degree applicable course' 6 units, recorded as open_elective_units.",
+   "GEOG5 California Geography is not in the closed list (catalog addition).",
+   "Catalog text begins mid-sentence (cut off at start)."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": "38565227455"
 }

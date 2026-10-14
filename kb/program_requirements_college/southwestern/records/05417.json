@@ -1,0 +1,269 @@
+{
+ "college": "Southwestern College",
+ "control_number": "05417",
+ "shape": "degree",
+ "title": "Child Development",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/family-studies/child-development-aa/",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7395,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7395,
+    "output_tokens": 1546,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1546,
+  "output_tokens_details": {
+   "thinking_tokens": 473
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0605,
+ "ms": 13840,
+ "seconds": 14.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CD175",
+    "CD177"
+   ],
+   "flagged": [
+    "CD175",
+    "CD177"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    31.0
+   ],
+   "stated": [
+    31.0,
+    31.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Child Development",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 31
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply major concepts of child development and demonstrate the skills necessary to guide young children in a classroom setting."
+   ],
+   "careers": [
+    "advanced careers with children and families",
+    "early childhood"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 31,
+     "max": 31
+    },
+    "courses": [
+     {
+      "code": "CD 135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 170L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 181",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 184",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 282A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 284",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 270",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 278",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Electives",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CD 175",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CD 177",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'Total Units 31' printed under Program Requirements is recorded as both the award total and the block's stated total.",
+   "The catalog prints no units beside the 'or' alternatives PSYC C1000 and PSYC 270; their units are left null (the state file lists 3 each).",
+   "CD 170 is titled 'CHILD GROWTH AND DEVELOPMENT' in the catalog but 'PRINCIPLES OF CHILD DEVELOPMENT' in the closed list.",
+   "The page states only that additional general education and graduation requirements must be completed; it names no GE pattern and prints no degree total."
+  ]
+ },
+ "extracted_run": "38563578596"
+}

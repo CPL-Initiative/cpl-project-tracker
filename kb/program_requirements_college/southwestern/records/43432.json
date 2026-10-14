@@ -1,0 +1,164 @@
+{
+ "college": "Southwestern College",
+ "control_number": "43432",
+ "shape": "noncredit",
+ "title": "Customer Service: Effective Teams",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.swccd.edu/noncredit-certificates-courses/customerservice-effectiveteams/",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6824,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6824,
+    "output_tokens": 568,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 568,
+  "output_tokens_details": {
+   "thinking_tokens": 108
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03866,
+ "ms": 5631,
+ "seconds": 6.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Customer Service: Effective Teams",
+   "measure": "hours",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Course List",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "NC 1070",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC 1073",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC 1074",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The course table's column is headed 'Units' but the total row reads 'Total Hours 18'. This noncredit certificate is recorded in hours, with 6 hours per course.",
+   "The block's stated total of 18 comes from the 'Total Hours' row.",
+   "No program learning outcomes are printed in the text.",
+   "'team leader and team player' in the description is read as a role the courses build skills for, not as a named career."
+  ]
+ },
+ "extracted_run": "38563578596"
+}

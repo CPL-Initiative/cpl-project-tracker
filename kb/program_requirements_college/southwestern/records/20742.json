@@ -1,0 +1,205 @@
+{
+ "college": "Southwestern College",
+ "control_number": "20742",
+ "shape": "certificate",
+ "title": "Hotel Operations",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/hospitality-tourism-management/hospitality-hotel-operations-management-advanced-certificate/",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6766,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6766,
+    "output_tokens": 757,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 757,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0422,
+ "ms": 7347,
+ "seconds": 7.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    12.0,
+    12.0
+   ],
+   "stated": [
+    12.0,
+    12.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Hotel Operations",
+   "measure": "units",
+   "total_units": {
+    "min": 12,
+    "max": 12
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Student will explain to a group of employees how to register hotel guests.",
+    "Student will interact with hotel personnel and hotel guests of diverse backgrounds in a collegial and respectful manner."
+   ],
+   "careers": [
+    "guest service agent",
+    "concierge",
+    "sales associate",
+    "hotel event associate",
+    "careers in the lodging industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HTM 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HTM 151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HTM 156",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one of the following courses:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "LDR 150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 152",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EVNT 154",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Units are not printed beside LDR 150, BUS 152 and EVNT 154; the block total of 3 units is printed on the 'Choose one of the following courses' line, so units are left null.",
+   "The URL refers to an 'advanced certificate' but the page heading is 'Hotel Operations', Certificate of Achievement (Major Code B2993).",
+   "'careers in the lodging industry' is recorded as a career field alongside the four job titles named under 'Career opportunities include'."
+  ]
+ },
+ "extracted_run": "38563578596"
+}

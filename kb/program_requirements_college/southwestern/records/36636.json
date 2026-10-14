@@ -1,0 +1,279 @@
+{
+ "college": "Southwestern College",
+ "control_number": "36636",
+ "shape": "adt",
+ "title": "CHILD AND ADOLESCENT DEVELOPMENT",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/family-studies/child-development-aat/",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7422,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7422,
+    "output_tokens": 2419,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2419,
+  "output_tokens_details": {
+   "thinking_tokens": 959
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07807,
+ "ms": 20648,
+ "seconds": 21.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.0,
+    25.0
+   ],
+   "stated": [
+    22.0,
+    25.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Child and Adolescent Development",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be able to apply major concepts of child development and family theory to work in programs aimed at supporting children and families."
+   ],
+   "careers": [
+    "advanced careers with children and families",
+    "early childhood"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "CD 170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 270",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 270",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ANTH 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 101",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 106",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 135",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 230",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select two maximum",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CD 135",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 170L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 175",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 181",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 284",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints no units beside individual courses; only block totals (Required Core 9-10, LIST A Select three 9, Select two maximum 4-6) and Total Units 22-25 are printed, so course units are null.",
+   "LIST A 'Select three' lists the ANTH 102/SOC 101/SOC 106/SOC 135 'or' group, PSYC 230 and BIOL 100; read as choose 3 courses with the 'or' group as one choice. The structure of List A in the web table is ambiguous; reviewer should verify against the TMC.",
+   "The 'Select two maximum' block (4-6 units) is recorded as choose 2 courses; the word 'maximum' is ambiguous (could mean up to two courses). The arithmetic 9-10 + 9 + 4-6 = 22-25 matches the printed total.",
+   "The 60-unit requirement is a generic statement for all AA-T/AS-T degrees, not printed as this award's total, so degree_total is null.",
+   "Catalog titles differ from the state file for CD 170 ('CHILD GROWTH AND DEVELOPMENT' vs 'PRINCIPLES OF CHILD DEVELOPMENT') and BIOL 100 ('INTRODUCTION TO BIOLOGY' vs 'PRINCIPLES OF BIOLOGY').",
+   "The page does not display a catalog year; breadcrumb shows 'Child, Family and Education Studies' while the URL path uses 'family-studies'.",
+   "SDSU note: San Diego State University does not accept this ADT for Child Development."
+  ]
+ },
+ "extracted_run": "38563578596"
+}

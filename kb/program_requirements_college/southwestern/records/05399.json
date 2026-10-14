@@ -1,0 +1,422 @@
+{
+ "college": "Southwestern College",
+ "control_number": "05399",
+ "shape": "degree",
+ "title": "Nursing",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/nursing-health-occupations/nursing-as/",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8767,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8767,
+    "output_tokens": 3761,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3761,
+  "output_tokens_details": {
+   "thinking_tokens": 1207
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.11029,
+ "ms": 31333,
+ "seconds": 31.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 14,
+   "codes": [
+    "BIOL260",
+    "BIOL261",
+    "BIOL265",
+    "CD170",
+    "COMM103",
+    "COMM174",
+    "ENGL115H",
+    "ENGLC1000",
+    "ESL115A",
+    "PSYC230",
+    "PSYC270",
+    "PSYCC1000",
+    "SOC270",
+    "STATC1000"
+   ],
+   "flagged": [
+    "BIOL260",
+    "BIOL261",
+    "BIOL265",
+    "CD170",
+    "COMM103",
+    "COMM174",
+    "ENGL115H",
+    "ENGLC1000",
+    "ESL115A",
+    "PSYC230",
+    "PSYC270",
+    "PSYCC1000",
+    "SOC270",
+    "STATC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    65.0,
+    65.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Nursing — Associate in Science, Career/Technical (Major Code: 02360)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the ability to actively participate and contribute to patient report meetings and patient/family conferences and analyze as well as prioritize the information obtained.",
+    "Demonstrate the ability to articulate professionally and competently in the healthcare setting on issues regarding patient care.",
+    "Analyze, compute and correctly provide medications to the patient in the healthcare setting.",
+    "Demonstrate collegiality and appropriate communication techniques when working with diverse healthcare providers, patients and family members.",
+    "Demonstrate critical thinking skills and differentiation in plan of care for patients from various cultural backgrounds."
+   ],
+   "careers": [
+    "nursing",
+    "registered nurse"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Prerequisites",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 29,
+     "max": 29
+    },
+    "courses": [
+     {
+      "code": "BIOL 260",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 261",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 265",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CD 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 230",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 174",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL 115H",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ESL 115A",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 270",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "SOC 270",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "First Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ADN 112",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADN 112L",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADN 118",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADN 118L",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Second Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ADN 113",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADN 113L",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADN 119",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADN 119L",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Third Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ADN 221",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADN 221L",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Fourth Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ADN 214",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADN 223",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADN 223L",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADN 225",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints no single total for the major: the prerequisite list shows 'Total Units 29' (recorded as the Prerequisites block's stated) and the nursing course list (First through Fourth Semester) shows 'Total Units 36'. total_units left null rather than computed; a reviewer may decide whether 36 (nursing courses only) is the intended major total.",
+   "Closed-list code 'ADN221' (no space) is matched to the catalog's 'ADN 221 ADULT NURSING 4', treated as the same course (catalog_addition false).",
+   "Units for alternatives (PSYC 230, COMM 174, ENGL 115H, ESL 115A) are not printed beside them; recorded as null.",
+   "The math requirement may also be met with PSYC 270, SOC 270, or any transferable STEM math course except MATH 100; PSYC 270 and SOC 270 recorded as alternatives to STAT C1000 (units not printed); the open 'transferable STEM math course' option cannot be listed.",
+   "Required science courses at Southwestern College have prerequisites BIOL 100, BIOL 101 and CHEM 100 or CHEM 170 or equivalent; these are not part of the listed requirements and were not placed.",
+   "The page also prints an LVN to ADN Transition Program (prerequisites BIOL 260, BIOL 261, BIOL 265, ENGL C1000/ENGL 115H/ESL 115A, STAT C1000, Total Units 20; then ADN 115 1, ADN 115L 1, ADN 118, ADN 118L, ADN 221, ADN 221L, ADN 214, ADN 223, ADN 223L, ADN 225, Total Units 22) as an alternative pathway for licensed vocational nurses, with credit for first-year ADN courses granted upon licensure. ADN 115 and ADN 115L are not in the closed list. This pathway was not recorded as blocks; a reviewer may want it modeled as an option.",
+   "The page also prints a '30 Unit Option' for California LVNs (prerequisites BIOL 261, BIOL 265 (8 units) plus the same transition sequence, Total Units 30); the text says these students will not be graduates of the program or College unless all other requirements are met, so it was not recorded as part of the A.S. requirements.",
+   "General education: the page says additional General Education and Graduation requirements must be completed ('See SWC catalog and associate degree requirements') but names no specific pattern and prints no GE units or degree total; ge_pattern left null.",
+   "Program Student Learning Outcomes are printed once for the Nursing program; recorded for this A.S. award."
+  ]
+ },
+ "extracted_run": "38563578596"
+}
