@@ -8,22 +8,22 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 46894,
-  "pa": 42806,
+  "pe": 46904,
+  "pa": 42816,
   "ppa": 120,
-  "p2": 3579,
-  "p3": 16756,
+  "p2": 3580,
+  "p3": 16757,
   "pp": 6,
   "ppe": 130,
   "pac": 5258,
-  "ptc": 4617,
-  "pe_u": 1464587.7,
-  "pa_u": 239055.9,
+  "ptc": 4618,
+  "pe_u": 1465143.7,
+  "pa_u": 239127.9,
   "ppa_u": 724.5,
   "ppe_u": 6828.5,
   "pac_u": 37532.45,
-  "ptc_u": 31263.9,
-  "p3_u": 83674.6,
+  "ptc_u": 31296.9,
+  "p3_u": 83707.6,
   "pp_u": 63.5
  },
  "colleges": {
@@ -949,9 +949,9 @@ window.CPL_FUNDING_PERF = {
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 9.0,
-   "p2": 20,
-   "p3": 271,
-   "p3_u": 1034.0,
+   "p2": 21,
+   "p3": 272,
+   "p3_u": 1067.0,
    "pp": 0,
    "pp_u": 0.0,
    "ppe": null,
@@ -962,7 +962,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 109.0,
    "ptc": null,
    "ptc_suppressed": true,
-   "ptc_u": 64.0
+   "ptc_u": 97.0
   },
   "LA Trade": {
    "pe": 408,
@@ -1296,10 +1296,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Moreno Valley": {
-   "pe": 2521,
-   "pe_u": 54388.0,
-   "pa": 2192,
-   "pa_u": 13216.0,
+   "pe": 2528,
+   "pe_u": 54716.0,
+   "pa": 2199,
+   "pa_u": 13269.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 53.5,
@@ -1762,10 +1762,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "San Jose City": {
-   "pe": 120,
-   "pe_u": 6198.0,
-   "pa": 102,
-   "pa_u": 630.0,
+   "pe": 122,
+   "pe_u": 6400.0,
+   "pa": 104,
+   "pa_u": 645.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 6.0,
@@ -1804,10 +1804,10 @@ window.CPL_FUNDING_PERF = {
    "ptc_u": 0.0
   },
   "Santa Ana": {
-   "pe": 472,
-   "pe_u": 16794.5,
-   "pa": 467,
-   "pa_u": 2107.7,
+   "pe": 473,
+   "pe_u": 16820.5,
+   "pa": 468,
+   "pa_u": 2111.7,
    "ppa": 12,
    "ppa_u": 38.0,
    "p2": null,
@@ -3168,8 +3168,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 1027,
-    "pa": 1027,
+    "pe": 1034,
+    "pa": 1034,
     "p3": 974
    },
    "Standardized Assessment": {
@@ -3621,8 +3621,8 @@ window.CPL_FUNDING_PERF = {
   },
   "San Jose City": {
    "Military": {
-    "pe": 120,
-    "pa": 102,
+    "pe": 122,
+    "pa": 104,
     "p3": 0
    }
   },
@@ -3659,8 +3659,8 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Military": {
-    "pe": 380,
-    "pa": 380,
+    "pe": 381,
+    "pa": 381,
     "p3": 0
    },
    "Portfolio Review": {
@@ -3958,7 +3958,7 @@ window.CPL_FUNDING_PERF = {
   "Industry Certification": {
    "pe": 1417,
    "pa": 1394,
-   "p3": 1179
+   "p3": 1180
   },
   "Industry Certification | Military": {
    "pe": 56,
@@ -4003,8 +4003,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 28459,
-   "pa": 26152,
+   "pe": 28469,
+   "pa": 26162,
    "p3": 2592
   },
   "Military | Other": {
@@ -4060,14 +4060,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1464587.7,
-   "pa_u": 239055.9,
-   "p3_u": 83674.6
+   "pe_u": 1465143.7,
+   "pa_u": 239127.9,
+   "p3_u": 83707.6
   },
   "map": {
-   "pe_u": 1471416.2,
-   "pa_u": 239780.4,
-   "p3_u": 83738.1
+   "pe_u": 1471972.2,
+   "pa_u": 239852.4,
+   "p3_u": 83771.1
   },
   "ratio": {
    "pe_u": 1.0047,
@@ -4127,8 +4127,8 @@ window.CPL_FUNDING_PERF = {
   "West Hills Lemoore": false,
   "East LA": false,
   "Evergreen Valley": true,
-  "Oxnard": true,
   "San Jose City": true,
+  "Oxnard": true,
   "Golden West": false,
   "Cerritos": true,
   "Allan Hancock": false,
@@ -4228,8 +4228,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Moreno Valley": {
    "vets": 916,
-   "jst": 1047,
-   "pct": 1.143
+   "jst": 1054,
+   "pct": 1.1507
   },
   "Bakersfield": {
    "vets": 416,
@@ -4318,8 +4318,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Santa Ana": {
    "vets": 334,
-   "jst": 382,
-   "pct": 1.1437
+   "jst": 383,
+   "pct": 1.1467
   },
   "Barstow": {
    "vets": 106,
@@ -4451,15 +4451,15 @@ window.CPL_FUNDING_PERF = {
    "jst": 114,
    "pct": 1.3103
   },
+  "San Jose City": {
+   "vets": 148,
+   "jst": 124,
+   "pct": 0.8378
+  },
   "Oxnard": {
    "vets": 118,
    "jst": 160,
    "pct": 1.3559
-  },
-  "San Jose City": {
-   "vets": 148,
-   "jst": 122,
-   "pct": 0.8243
   },
   "Golden West": {
    "vets": 219,
