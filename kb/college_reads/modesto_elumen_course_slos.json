@@ -1,0 +1,36 @@
+{
+ "_readme": "S387 SkyMagnolia, 2026-10-14. Course outcomes are loaded at six colleges (RCCD, SDCCD); seven loaded colleges hold none. The outline census (run 5) found SLOs on Palo Verde's eLumen course pages, reached no course page at Cabrillo or Modesto, and found no outline system at the four CourseLeaf colleges. This read opens one program's content call (to show how it links its courses) and one course page, to learn whether the college's own catalog prints each course's SLOs before a reader is written. Pages only, no model call, no table write.",
+ "college": "Modesto Junior College",
+ "questions": {
+  "course_link_form": "How the program page links each course (the course path a reader builds).",
+  "course_slos": "Whether a course page prints the course's student learning outcomes, and under what heading."
+ },
+ "keywords": [
+  "[Ll]earning [Oo]utcomes?",
+  "\\bSLOs?\\b",
+  "[Uu]pon (successful )?completion",
+  "Objectives",
+  "course/"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "course_link_form"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,agriculture-science-communications-mjc-fall-2025?tenant=mjc.elumenapp.com",
+   "links": "/course/"
+  },
+  {
+   "answers": [
+    "course_slos"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,ag115?tenant=mjc.elumenapp.com"
+  },
+  {
+   "answers": [
+    "course_slos"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,ag-115?tenant=mjc.elumenapp.com"
+  }
+ ]
+}
