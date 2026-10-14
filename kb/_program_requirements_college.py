@@ -35,6 +35,12 @@ scales to a college. So this pass turns the search around:
              program_requirement_records_college_load() with the service key,
              and writes the receipt (kb/receipts/program_requirement_records_
              college_<slug>_<run>.json) that names every key it inserted.
+  reread     posts the records the newest extraction run filed to
+             program_requirement_records_college_reread(), which replaces a
+             row only while it is unchecked, unread by a person and from an
+             earlier run, and writes the receipt holding each replaced row's
+             before-values (kb/receipts/program_requirement_records_college_
+             reread_<slug>_<run>.json), which is the rollback.
 
 The reads follow the census's rules, as the pilot's do (Sam's call 5 on sheet
 23): robots.txt first for every host, CENSUS_DELAY_MS between loads, the census
@@ -1391,8 +1397,30 @@ def would_extract(college: str, recs: list[dict], folder: str | None = None) -> 
             "kept": kept, "programs": len(out), "list": out}
 
 
+def forced(folder: str, tokens: str) -> set[str]:
+    """The control numbers a re-read extracts again though their page is
+    unchanged: those it names, and with the word "incomplete" every filed record
+    whose arithmetic is incomplete and that places some listed course (Sam, Open
+    Asks Sheet 78 card 2: record shape 5 reads the degree total those pages
+    print). A record placing none read another program's page; reading it again
+    reads the same page."""
+    from _program_requirements_score import places_none
+    out = set()
+    for t in (x.strip() for x in (tokens or "").split(",")):
+        if t.lower() == "incomplete":
+            for path in glob.glob(os.path.join(folder, "records", "*.json")):
+                with open(path) as fh:
+                    r = json.load(fh)
+                sc = r.get("score") or {}
+                if (sc.get("arithmetic") or {}).get("status") == "incomplete" and not places_none(sc):
+                    out.add(r.get("control_number") or os.path.splitext(os.path.basename(path))[0])
+        elif t:
+            out.add(t)
+    return out
+
+
 def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: int = 6,
-            keep_from: str | None = None) -> int:
+            keep_from: str | None = None, force: set[str] | None = None) -> int:
     import _program_requirements_extract as X
     key = os.environ.get("SUPABASE_SERVICE_KEY")
     if not key:
@@ -1414,14 +1442,16 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         fresh = []
         for src in sources:
             path = os.path.join(keep_from, "records", src["control_number"] + ".json")
-            if unchanged(prev.get(src["control_number"]), src) and has_record(path):
+            if (src["control_number"] not in (force or ())
+                    and unchanged(prev.get(src["control_number"]), src) and has_record(path)):
                 with open(path) as fh:
                     _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), json.load(fh))
                 kept += 1
             else:
                 fresh.append(src)
         sources = fresh
-        print("kept %d records filed from the same page" % kept, flush=True)
+        print("kept %d records filed from the same page; %d to extract, %d of them forced"
+              % (kept, len(fresh), sum(1 for x in fresh if x["control_number"] in (force or ()))), flush=True)
     mine = shard_of(sources, shard, shards)
     print("extraction, shard %d of %d: %d of %d sources, %d at a time"
           % (shard + 1, shards, len(mine), len(sources), workers), flush=True)
@@ -1608,6 +1638,75 @@ def load_receipt(college: str, run_id: str, rows: list[dict], skipped: list[dict
     }
 
 
+REREAD_RPC = "rpc/program_requirement_records_college_reread"
+REREAD_FUNCTION = REREAD_RPC.split("/", 1)[1]
+
+
+def reread_receipt_path(college: str, run_id: str) -> str:
+    return os.path.join(RECEIPTS, "program_requirement_records_college_reread_%s_%s.json"
+                        % (slug_of(college), run_id))
+
+
+def reread_receipt(college: str, run_id: str, newest: str | None, rows: list[dict], skipped: list[dict],
+                   results: list[dict], error: str | None = None) -> dict:
+    """What the re-read replaced, and how to take it back: each replaced row's
+    before-values, restored where the row still holds the re-read's run and is
+    still unchecked (Rule 10 a2)."""
+    pick = lambda k: [x for r in results for x in (r.get(k) or [])]
+    before = pick("before")
+    return {
+        "college": college, "reread_run": run_id, "function": REREAD_FUNCTION, "extracted_run": newest,
+        "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "posted": len(rows), "batches": len(results), "skipped": skipped, "error": error,
+        "replaced": len(pick("replaced_keys")), "absent": len(pick("absent_keys")),
+        "held": len(pick("held_keys")), "kept": len(pick("kept_keys")),
+        "replaced_keys": pick("replaced_keys"), "absent_keys": pick("absent_keys"),
+        "held_keys": pick("held_keys"), "kept_keys": pick("kept_keys"),
+        "machine_pass": sum(1 for r in rows if r["checks"]["coverage"] is True and r["checks"]["invented"] is True
+                            and r["checks"]["arithmetic"] in ("equal", "unstated")),
+        "rollback": ("update public.program_requirement_records r set program_title = b.program_title, "
+                     "award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, "
+                     "measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, "
+                     "checks = b.checks, extracted_run = b.extracted_run from jsonb_to_recordset(<before>) as "
+                     "b(control_number text, program_title text, award text, catalog_year text, source_url text, "
+                     "measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, "
+                     "extracted_run bigint) where r.college = '%s' and r.control_number = b.control_number "
+                     "and r.checked = false and r.extracted_run = %s;  -- <before> is this receipt's before, "
+                     "as a jsonb literal" % (college.replace("'", "''"), newest)) if before else None,
+        "before": before,
+    }
+
+
+def reread(college: str, run_id: str | None, batch: int = LOAD_BATCH, post=None) -> int:
+    """Post the records the newest extraction run filed to the re-read function.
+    A record kept from an earlier run is not posted: its row already holds it."""
+    key = os.environ.get("SUPABASE_SERVICE_KEY")
+    if not key and post is None:
+        print("SUPABASE_SERVICE_KEY is not set; the re-read function takes only the service role.")
+        return 2
+    if not (run_id and str(run_id).isdigit()):
+        print("a numeric run id is required (--run, or GITHUB_RUN_ID)")
+        return 2
+    post = post or (lambda body: _rpc(REREAD_RPC, body, key))
+    rows, skipped = load_rows(college)
+    newest = max((r["extracted_run"] for r in rows), key=int, default=None)
+    rows = [r for r in rows if r["extracted_run"] == newest]
+    results, error = [], None
+    for i in range(0, len(rows), max(1, batch)):
+        try:
+            results.append(post({"p_college": college, "p_run": str(run_id), "p_rows": rows[i:i + batch]}))
+        except Exception as exc:   # the receipt still files what was replaced before it
+            error = "batch %d: %s" % (i // batch + 1, str(exc).splitlines()[0][:300])
+            break
+    receipt = reread_receipt(college, str(run_id), newest, rows, skipped, results, error)
+    os.makedirs(RECEIPTS, exist_ok=True)
+    _write(reread_receipt_path(college, str(run_id)), receipt)
+    print("re-read of %s (extraction run %s): %d posted, %d replaced, %d absent, %d held, %d kept%s"
+          % (college, newest, len(rows), receipt["replaced"], receipt["absent"], receipt["held"],
+             receipt["kept"], "; STOPPED at " + error if error else ""))
+    return 1 if error else 0
+
+
 def _rpc(path: str, body: dict, key: str) -> dict:
     import urllib.request
     req = urllib.request.Request(
@@ -1652,7 +1751,7 @@ def _write(path: str, obj) -> None:
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument("step", choices=["capture", "extract", "file", "load"])
+    ap.add_argument("step", choices=["capture", "extract", "file", "load", "reread"])
     ap.add_argument("--college", default="Cerritos College")
     ap.add_argument("--out", default="out")
     ap.add_argument("--shard", type=int, default=0)
@@ -1660,15 +1759,21 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--workers", type=int, default=6, help="extraction calls at once")
     ap.add_argument("--fresh", action="store_true", help="extract every program, keeping no filed record")
     ap.add_argument("--limit", type=int, default=0, help="the first N programs only (a trial)")
+    ap.add_argument("--force", default="", help="control numbers to extract again though their page is "
+                                                "unchanged, comma-separated; 'incomplete' names every filed "
+                                                "record whose arithmetic is incomplete")
     ap.add_argument("--run", default=os.environ.get("GITHUB_RUN_ID"))
     args = ap.parse_args(argv)
     if args.step == "capture":
         return capture(args.college, args.out, args.limit)
     if args.step == "load":
         return load(args.college, args.run)
+    if args.step == "reread":
+        return reread(args.college, args.run)
     if args.step == "extract":
         keep = None if args.fresh else os.path.join(COLLEGE_DIR, slug_of(args.college))
-        return extract(args.out, args.shard, args.shards, args.run, args.workers, keep)
+        force = forced(keep, args.force) if keep and args.force else None
+        return extract(args.out, args.shard, args.shards, args.run, args.workers, keep, force)
     return file_run(args.college, args.out, args.run)
 
 
