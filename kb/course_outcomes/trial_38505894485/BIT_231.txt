@@ -1,0 +1,92 @@
+Intermediate Word Processing
+BIT 231
+
+3.0 Units
+
+
+Print
+
+Provides an intermediate level of understanding of word processing features such as mail merge, styles, graphics, tab, and sorts. Preparation for the Microsoft Office Specialist Expert certification exam for Word. BIT 231 is cross-listed with CSCI 224. Formerly listed as OFADM 231.
+
+Toggle  
+Overview
+Requisites:
+
+Advisory
+
+BIT250 - Introduction to Microsoft Word
+
+Before enrolling in this course, students are strongly advised to satisfactorily complete OFADM 256 and/or satisfactorily complete OFADM 330.
+
+
+
+
+OR
+
+
+
+
+Advisory
+
+BIT330 - Beginning Word Processing
+
+Transferable:
+
+Transferable to CSU only
+
+General Education Approvals:
+C-ID: California's Course Identification Numbering System
+
+Office Technology/Business Information Worker (BIT) *CCC - C-ID: BSOT 121X
+C-ID: BSOT 131X
+
+Field Trips:
+
+Field trips are not required.
+
+Repeatability:
+
+Not Repeatable
+
+Grading Options:
+
+A-F or P/NP
+
+Toggle  
+Units and Hours
+Default Profile
+Minimum Units
+
+3.0
+
+Total Course In-Class (Contact) Hours
+
+90.0
+
+Total Student Learning Hours
+
+162.0
+
+Maximum Units
+
+3.0
+
+Total Course Out-of-Class Hours
+
+72.0
+
+In-Class Lab Hours
+
+54.0
+
+Weekly Lecture Hours
+
+2.0
+
+Toggle  
+Learning Outcomes
+SLO:
+Demonstrate competency in using mail merge features to create customized business correspondence in acceptable format.
+Customize documents utilizing/applying tools such as page numbering, styles, headers and footers, graphic objects, tables, columns, and forms.
+Protect and prepare documents for multiple users; e.g., restricting access, modifying document properties, creating digital signatures, using markup features, and saving files as read-only.
+See Available Sections

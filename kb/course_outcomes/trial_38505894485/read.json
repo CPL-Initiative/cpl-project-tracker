@@ -1,0 +1,287 @@
+{
+ "run": "38505894485",
+ "index": "elumen:modesto_junior",
+ "host": "https://mjc.elumenapp.com/catalog/2026-2027/mjc-ge",
+ "system": "elumen",
+ "slugs": "modesto_junior",
+ "part": 1,
+ "of": 1,
+ "wanted": 924,
+ "slice": 12,
+ "at": "2026-10-14T03:24:55Z",
+ "complete": true,
+ "summary": {
+  "read": 12,
+  "shapes": {
+   "none": 12
+  },
+  "status_not_200": 0,
+  "outcomes": 0
+ },
+ "rows": [
+  {
+   "code": "ADJU 201",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,adju201?tenant=mjc.elumenapp.com",
+   "named_by": [
+    "modesto_junior"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,adju201?tenant=mjc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1658,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "ANTHR 102",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,anthr102?tenant=mjc.elumenapp.com",
+   "named_by": [
+    "modesto_junior"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,anthr102?tenant=mjc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1997,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "BIT 231",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,bit231?tenant=mjc.elumenapp.com",
+   "named_by": [
+    "modesto_junior"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,bit231?tenant=mjc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1712,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "COMM 102",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,comm102?tenant=mjc.elumenapp.com",
+   "named_by": [
+    "modesto_junior"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,comm102?tenant=mjc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1875,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "EHS 201",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,ehs201?tenant=mjc.elumenapp.com",
+   "named_by": [
+    "modesto_junior"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,ehs201?tenant=mjc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1413,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "ENGTC 300",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,engtc300?tenant=mjc.elumenapp.com",
+   "named_by": [
+    "modesto_junior"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,engtc300?tenant=mjc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1253,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "GEOG 101",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,geog101?tenant=mjc.elumenapp.com",
+   "named_by": [
+    "modesto_junior"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,geog101?tenant=mjc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1479,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "IIS 901",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,iis901?tenant=mjc.elumenapp.com",
+   "named_by": [
+    "modesto_junior"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,iis901?tenant=mjc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1067,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "MICRO 101",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,micro101?tenant=mjc.elumenapp.com",
+   "named_by": [
+    "modesto_junior"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,micro101?tenant=mjc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1686,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "NURSE 270",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,nurse270?tenant=mjc.elumenapp.com",
+   "named_by": [
+    "modesto_junior"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,nurse270?tenant=mjc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1028,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "PHILO 101",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,philo101?tenant=mjc.elumenapp.com",
+   "named_by": [
+    "modesto_junior"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,philo101?tenant=mjc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 2051,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "PSYCH 103",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,psych103?tenant=mjc.elumenapp.com",
+   "named_by": [
+    "modesto_junior"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,psych103?tenant=mjc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1903,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  }
+ ]
+}
