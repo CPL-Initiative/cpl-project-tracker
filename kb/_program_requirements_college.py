@@ -1222,9 +1222,16 @@ AC_PROGRAM_NAV = re.compile(r"program|degree|certificate|areas? of (?:study|inte
 AC_MAX_NAVS = 12          # navigation pages read for program links, at most
 
 
-def ac_base(start: str) -> str:
+def ac_base(start: str, links: list[dict] | None = None) -> str:
+    """The catalog's own origin: the scheme its links to its own host use (El
+    Camino serves http only, and an https load of its menus was unreachable,
+    run 38565157199), else the start address's."""
     u = urllib.parse.urlparse(start)
-    return "%s://%s" % ("https" if u.scheme in ("", "http", "https") else u.scheme, u.netloc)
+    for ln in links or []:
+        h = urllib.parse.urlparse(ln.get("href") or "")
+        if h.netloc.lower() == u.netloc.lower() and h.scheme in ("http", "https"):
+            return "%s://%s" % (h.scheme, u.netloc)
+    return "%s://%s" % (u.scheme or "https", u.netloc)
 
 
 def ac_catoid(links: list[dict], start: str) -> int | None:
@@ -1277,13 +1284,14 @@ def ac_program_navs(links: list[dict], base: str, catoid: int) -> list[str]:
 
 def ac_urls(reader, start: str, cache: dict, report: dict) -> list[str]:
     """Every program page of the catalog the start page serves."""
-    base = ac_base(start)
     front = P.load(reader, start, cache, False)
     links = front.get("links") or []
+    base = ac_base(start, links)
     catoid = ac_catoid(links, start)
     if catoid is None and not start.rstrip("/").endswith("index.php"):
         front = P.load(reader, base + "/index.php", cache, False)
         links = front.get("links") or []
+        base = ac_base(start, links)
         catoid = ac_catoid(links, start)
     report["acalog"] = {"base": base, "start_status": front.get("status"), "catoid": catoid,
                         "start_links": len(links)}

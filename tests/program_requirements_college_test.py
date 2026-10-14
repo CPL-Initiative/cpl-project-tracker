@@ -1052,12 +1052,15 @@ ELC_LINKS = [{"text": "Programs", "href": "https://catalog.elcamino.edu/content.
 check(C.ac_catoid(ELC_LINKS, ELC) == 21,
       "the catalog the start page serves is the id its own links carry most, never an archived one in the picker")
 check(C.ac_catoid([], ELC) is None, "a page whose links name no catalog id names none")
-check(C.ac_base(ELC) == "https://catalog.elcamino.edu", "an Acalog host is read over https")
-check(C.ac_program_urls(ELC_LINKS, C.ac_base(ELC), 21) ==
+check(C.ac_base(ELC, ELC_LINKS) == "https://catalog.elcamino.edu"
+      and C.ac_base(ELC, [{"href": "http://catalog.elcamino.edu/content.php?catoid=13&navoid=886"}]) == "http://catalog.elcamino.edu"
+      and C.ac_base("https://catalog.deltacollege.edu/") == "https://catalog.deltacollege.edu",
+      "an Acalog host is read over the scheme its own links use (El Camino serves http only), else the start's")
+check(C.ac_program_urls(ELC_LINKS, C.ac_base(ELC, ELC_LINKS), 21) ==
       ["https://catalog.elcamino.edu/preview_program.php?catoid=21&poid=4410&print",
        "https://catalog.elcamino.edu/preview_program.php?catoid=21&poid=4423&print"],
       "each of this catalog's programs is read once, as its print-friendly page, and another catalog's never")
-check(C.ac_program_navs(ELC_LINKS, C.ac_base(ELC), 21) ==
+check(C.ac_program_navs(ELC_LINKS, C.ac_base(ELC, ELC_LINKS), 21) ==
       ["https://catalog.elcamino.edu/content.php?catoid=21&navoid=1001",
        "https://catalog.elcamino.edu/content.php?catoid=21&navoid=1003"],
       "the navigation pages read for programs are those named programs, degrees or certificates")
