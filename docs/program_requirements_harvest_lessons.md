@@ -799,3 +799,25 @@ from 2026-27 and its course outcomes. The other 71 listed addenda wait for the r
 - **Its registry row names no catalog year, and the reader reads none from the page.** Extraction stamps
   `catalog_year` from the registry, so Delta's records would carry none. Read the year from the catalog's own page into
   the capture report before Delta extracts. El Camino's row names 2026-2027.
+
+## S390 SkySaguaro (2026-10-14): Southwestern and Fresno City to display, the SLO links, the Records filters
+
+**Sam's rulings this run.** In chat: the harvested SLOs need *"a link to them on each course listing"*; *"no scrub needed"* and
+*"my email is fine to have public"* (the tabled line); and the Program requirements tab loses its Sierra window, opens on
+Progress, and filters Records with dropdowns, adding CIP Sectors and SWP Regions (`cpl_memory` rows of 2026-10-14).
+
+- **#2115 merged:** Southwestern's procedure record v1 (receipt `program_source_procedure_southwestern_v1_2026-10-14_s390.sql`).
+- **Fresno City (#2120):** load 38584860918 inserted 211 (26 place none); display build `04872c826890` applied to all 3,478 rows
+  (run 38591098013); procedure record v1. A `step=display` dispatch applies the build the page already carries and builds
+  nothing: build with `kb/_build_roep_display.py` first. A canceled re-apply of the old build wrote identical values.
+- **SLO links (#2116):** the records print codes without a space (`PSYCH35`) and the outlines with one (`PSYCH 35`); joined on
+  a key without spaces or hyphens, 7,018 of 8,352 record courses find outcomes, against 4,141 on the exact code.
+- **The Records filters (#2121):** every record's control number is in `coci_college_programs`; 3,306 of 3,478 carry a CIP.
+  `map_colleges.swp_region` names nine regions. A full re-render on a late read wipes the view's status line; add the late
+  filter in place instead.
+- **Main went red on PII (#2117):** the 14:38Z daily run baked a reviewer's email into the tabled line; `pii_guard` failed
+  every PR's merge ref. The generator and the live render now print the date only.
+- **A test that reports on a fixed timer under-counts on a loaded runner** (`nav_groups_overlay`, 30 of 31): report on
+  `Promise.all` of its blocks (in #2116).
+
+**NEXT.** El Camino's extraction waits on Sheet 79 card 3; San Joaquin Delta needs its catalog year read before it extracts.
