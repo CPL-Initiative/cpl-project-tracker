@@ -91,9 +91,14 @@ check("default basis is ftes", D.allocation_basis === "ftes");
 check("colleges carry a per-college noncredit FTES (one-pool sizing input)",
   D.colleges.every(function (c) { return typeof c.noncredit_ftes === "number"; }));
 {
-  const sizeBody = (consumerSrc.match(/function sizeOf\(c\)[\s\S]*?\n  \}/) || [""])[0];
-  check("the FTES basis is COMBINED — sizeOf sums credit_ftes + noncredit_ftes (one pool, 2026-08-31)",
-    /\(c\.credit_ftes \|\| 0\) \+ \(Number\(c\.noncredit_ftes\) \|\| 0\)/.test(sizeBody));
+  // The seam takes the noncredit weight since 2026-10-14 (noncredit's portion;
+  // 1 unless a curator sets one), so its body is sizeOfW and sizeOf passes the
+  // model's weight through. At weight 1 the sum is the plain combined FTES.
+  const sizeBody = (consumerSrc.match(/function sizeOfW\(c, w\)[\s\S]*?\n  \}/) || [""])[0];
+  check("the FTES basis is COMBINED — sizeOfW sums credit_ftes + noncredit_ftes, the noncredit side weighted (one pool, 2026-08-31)",
+    /\(c\.credit_ftes \|\| 0\) \+ \(Number\(c\.noncredit_ftes\) \|\| 0\) \* w/.test(sizeBody));
+  check("...and sizeOf is that seam at the model's own noncredit weight",
+    /function sizeOf\(c\) \{ return sizeOfW\(c, ncWeight\(\)\); \}/.test(consumerSrc));
   // The headcount basis stays headcount ALONE — an institution's headcount
   // already describes its whole student body, and adding noncredit FTES to a
   // headcount would mix units.
@@ -118,7 +123,7 @@ check("sizePct is COMPUTED, never read from a baked percentage",
   const body = m ? m[0] : "";
   check("allocModel contains no raw headcount arithmetic (all through sizeOf)",
     body.length > 0 && body.indexOf("c.headcount") === -1);
-  check("allocModel does use the seam", body.indexOf("sizeOf(c)") !== -1);
+  check("allocModel does use the seam", body.indexOf("sizeOfW(c, w)") !== -1);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

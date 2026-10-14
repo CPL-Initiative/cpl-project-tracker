@@ -324,6 +324,8 @@
     ".cplfund-bounds .cplfund-card .l { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; text-align: left; font-size: .9rem; margin-top: 4px; }",
     ".cplfund-bounds .cplfund-card .l .cplfund-pool-label-input { text-align: left; width: auto; min-width: 16ch; }",
     ".cplfund-bounds .cplfund-card .cplfund-card-note { flex-basis: 100%; }",
+    ".cplfund-bounds .cplfund-card .v .cplfund-ed-pct { width: 6ch; }",
+    ".cplfund-pct-sign { font-size: 1.3rem; }",
     // ── the two context figures, in the formula section ──
     ".cplfund-context { margin-top: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }",
     ".cplfund-context .cplfund-card { text-align: left; }",
@@ -2068,29 +2070,69 @@
   // its 1,000-FTES stand-in until a verified MIS figure — N3 a).
   // Falls back to headcount if a row has no FTES (fail-safe: a missing figure
   // must never zero an institution's allocation).
-  function sizeOf(c) {
+  //
+  // `w` is the NONCREDIT WEIGHT (below): each noncredit FTES counts as w. At
+  // w = 1, the default, this is the plain combined FTES the model has always
+  // used. sizeOf() is the size the allocation divides by; plainFtesOf() is the
+  // teaching a reader is told about, which the weight never changes.
+  function sizeOfW(c, w) {
     if (!c) return 0;
-    if (c.nco) return usesFtes() ? (Number(c.ftes) || 0) : (c.headcount || Number(c.ftes) || 0);
+    if (c.nco) return usesFtes() ? (Number(c.ftes) || 0) * w : (c.headcount || Number(c.ftes) || 0);
     if (usesFtes() && c.credit_ftes != null) {
-      return (c.credit_ftes || 0) + (Number(c.noncredit_ftes) || 0);
+      return (c.credit_ftes || 0) + (Number(c.noncredit_ftes) || 0) * w;
     }
     return c.headcount || 0;
   }
+  function sizeOf(c) { return sizeOfW(c, ncWeight()); }
+  function plainFtesOf(c) { return sizeOfW(c, 1); }
   // The DECOMPOSITION of an award into its credit and noncredit shares is by
   // FTES share, ALWAYS (ruled 2026-08-31: "every award decomposes on its face
   // into a credit share and a noncredit share, by each lane's share of the
   // institution's FTES") — never by the display basis. The noncredit share is
   // restricted to the noncredit measures; the credit program cannot draw it.
-  function laneShareOf(c) {
+  // The noncredit weight enters here too, the same w as the size: an award
+  // sized on weighted noncredit FTES must split on them, or the added funding
+  // would land in the credit share of the institution it was sized for.
+  function laneShareOfW(c, w) {
     if (!c) return { cr: 1, nc: 0 };
     if (c.nco) return { cr: 0, nc: 1 };
-    var cr = Number(c.credit_ftes) || 0, nc = Number(c.noncredit_ftes) || 0;
+    var cr = Number(c.credit_ftes) || 0, nc = (Number(c.noncredit_ftes) || 0) * w;
     var t = cr + nc;
     if (!(t > 0)) return { cr: 1, nc: 0 };
     return { cr: cr / t, nc: nc / t };
   }
+  function laneShareOf(c) { return laneShareOfW(c, ncWeight()); }
+  // ── NONCREDIT'S PORTION (Sam, 2026-10-14: "I think I want to give noncredit
+  //    a bigger portion (percentage) of the total available for the colleges")
+  // Unset, noncredit's portion is whatever the institutions' teaching mix adds
+  // up to (about 7% under the 2026-10-14 config). Set, the curator names the
+  // percentage of the total to institutions that supports noncredit, and the
+  // model finds the one weight on noncredit FTES that reaches it: in the size
+  // of every award and in its credit/noncredit split alike. Still one total,
+  // one solve, one base award and cap on the combined award. The added
+  // noncredit funding goes where the noncredit teaching is, in proportion to
+  // it, and the institutions that teach little or no noncredit give up the
+  // difference. A percentage the base award and cap cannot reach is reported
+  // on the dial's card (allocModel().ncPortion), never silently missed.
+  function ncPortionSet() {
+    var v = Number(poolField("nc_portion_pct"));
+    return (isFinite(v) && v > 0 && v < 100) ? v : null;
+  }
+  function ncWeight() {
+    if (ncPortionSet() == null) return 1;
+    return allocModel().ncW;
+  }
   function totalSize() {
     return oneRoster().reduce(function (s, c) { return s + sizeOf(c); }, 0);
+  }
+  function totalPlainFtes() {
+    return oneRoster().reduce(function (s, c) { return s + plainFtesOf(c); }, 0);
+  }
+  // What a figure sized on the allocation basis must say when the noncredit
+  // weight is set, so a weighted size never reads as plain FTES. Empty at 1.
+  function ncWeightWords() {
+    var w = ncWeight();
+    return Math.abs(w - 1) < 1e-9 ? "" : ", noncredit FTES counted at " + w.toFixed(2);
   }
   // ── the ONE-POOL roster (Sam, adopted 2026-08-31) ─────────────────────
   // Every institution once: the 115 college rows PLUS the noncredit-only
@@ -2163,8 +2205,8 @@
       // review item 3): the combined figure and the statewide total it is a
       // share of, at the precision the expand printed.
       ? fmtInt(c.credit_ftes) + " credit FTES (" + ftesVintage() + "). With its noncredit FTES, " +
-        fmtInt(sizeOf(c)) + " FTES in all: " + fmtPct(c.size_pct, 3) + " of the statewide " +
-        fmtInt(totalSize()) + ", the allocation basis. Headcount: " + fmtInt(c.headcount) +
+        fmtInt(plainFtesOf(c)) + " FTES in all: " + fmtPct(c.size_pct, 3) + " of the statewide " +
+        fmtInt(totalSize()) + ", the allocation basis" + ncWeightWords() + ". Headcount: " + fmtInt(c.headcount) +
         " (" + (c.hc_vintage || "n/a") + "), context only."
       : fmtInt(c.headcount) + " headcount (" + (c.hc_vintage || "n/a") + ") — " + pct +
         " of statewide, the allocation basis. Credit FTES: " + fmtInt(c.credit_ftes) +
@@ -3533,6 +3575,9 @@
     ["priority count", "l-nprio", "how many priorities, as a word"],
     ["to institutions", "f-main", "the total allocated to institutions"],
     ["noncredit total", "f-nc", "the noncredit shares of the awards"],
+    ["credit total", "f-cr", "the credit shares of the awards"],
+    ["noncredit portion", "f-ncpct", "noncredit's percentage of the total to institutions"],
+    ["noncredit weight", "f-ncw", "what one noncredit FTES counts as when noncredit's portion is set (1.00 when it is not)"],
     ["noncredit awards", "l-nc-count", "how many awards carry a noncredit share"],
     ["institutions", "l-basis-n", "how many institutions"],
     ["median award", "f-med", "the median award"],
@@ -3547,9 +3592,10 @@
   ];
   var FIG_ID = {}, FIG_NAME = {};
   FIG_TOKENS.forEach(function (t) { FIG_ID[t[0].toLowerCase()] = t[1]; FIG_NAME[t[1]] = t[0]; });
-  // The page's typed markup paints three figures under a second id as well;
-  // each reads back as the one name.
-  var FIG_ID_ALIAS = { "l-floor": "f-floorv", "l-cap": "f-capv", "l-avg-n": "l-basis-n" };
+  // The page's typed markup paints four figures under a second id as well;
+  // each reads back as the one name. (f-nc2: the noncredit total's copy under
+  // the three boxes, since the institutions box carries the first, 2026-10-14.)
+  var FIG_ID_ALIAS = { "l-floor": "f-floorv", "l-cap": "f-capv", "l-avg-n": "l-basis-n", "f-nc2": "f-nc" };
   // In page order. `sec` is the explainer section's data-fsec and `title` its
   // heading; `where` places the passage inside it for the curator.
   var EXPLAINER_BLOCKS = [
@@ -3577,7 +3623,20 @@
         "institution\u2019s own MAP data, against {priority count} priorities. An institution meets the " +
         "baseline requirements to take part; from that point the funding follows the outcomes."
     ].join("\n\n") },
-    { key: "x_lede_figs", sec: "lede", title: "Overview", where: "Beneath the two figures", rows: 6, plain: [
+    // The three boxes' words (Sam, 2026-10-14: "I'd like to be able to edit the
+    // text on the 3 funding boxes"). The figure each box leads with is the
+    // model's and is not text; the words under it are.
+    { key: "x_fig_total", sec: "lede", title: "Overview", where: "The appropriation box, under its figure", rows: 2, plain: [
+      "one-time 2026-27 appropriation for CPL implementation"
+    ].join("\n\n") },
+    { key: "x_fig_inst", sec: "lede", title: "Overview", where: "The institutions box, under its figure", rows: 3, plain: [
+      "allocated to the {institutions} institutions, on their CPL outcomes",
+      "**{credit total}** credit and **{noncredit total}** noncredit"
+    ].join("\n\n") },
+    { key: "x_fig_proj", sec: "lede", title: "Overview", where: "The statewide box, under its figure", rows: 3, plain: [
+      "statewide CPL projects and technology, and two Chancellor\u2019s Office posts supporting colleges across the two years"
+    ].join("\n\n") },
+    { key: "x_lede_figs", sec: "lede", title: "Overview", where: "Beneath the three boxes", rows: 6, plain: [
       "Those two lines account for the whole appropriation. The **{to institutions}** to institutions " +
         "is **one funding total**, shared among all 118 in proportion to combined credit + noncredit size " +
         "within the base award and the cap. Every award then splits into a credit share and a " +
@@ -3704,6 +3763,32 @@
       .replace(/\s*<li\b[^>]*>\s*/gi, "<br>- ")
       .replace(/\s*<\/li>/gi, "");
     return plainNormalize(htmlToPlain(t).split("\n").map(function (ln) { return ln.trim(); }).join("\n"));
+  }
+  // The Bold / Italic buttons' edit, a pure function of the text and the
+  // selection so a test can drive it. `ta`, when given, gets the new selection.
+  function wrapMark(text, a, b, mk, ta) {
+    text = String(text || ""); a = Math.max(0, a | 0); b = Math.max(a, b | 0);
+    while (a < b && /\s/.test(text.charAt(a))) a++;
+    while (b > a && /\s/.test(text.charAt(b - 1))) b--;
+    var n = mk.length, out, s0, s1;
+    var before = text.slice(Math.max(0, a - n), a), after = text.slice(b, b + n);
+    // Unwrap when this mark (and, for italic, not a bold mark) surrounds it.
+    var bold = function (i) { return text.slice(i, i + 2) === "**"; };
+    if (before === mk && after === mk && (n === 2 || (!bold(a - 2) && !bold(b)))) {
+      out = text.slice(0, a - n) + text.slice(a, b) + text.slice(b + n);
+      s0 = a - n; s1 = b - n;
+    } else if (a === b) {
+      out = text.slice(0, a) + mk + mk + text.slice(a);
+      s0 = s1 = a + n;
+    } else {
+      out = text.slice(0, a) + mk + text.slice(a, b) + mk + text.slice(b);
+      s0 = a + n; s1 = b + n;
+    }
+    if (ta && typeof ta.setSelectionRange === "function") {
+      ta.value = out;
+      try { ta.setSelectionRange(s0, s1); } catch (e) { /* a detached field */ }
+    }
+    return out;
   }
   function explainerTextHtml(key, seeds) {
     if (!EXPLAINER_BY_KEY[key]) return "";
@@ -4046,14 +4131,21 @@
       html += '<textarea class="cplfund-prose-ta" data-textarea="' + esc(key) + '" rows="' + meta.rows +
         '" aria-label="Edit ' + esc(meta.label) + '">' + esc(draft) + "</textarea>" +
         '<div class="cplfund-prose-ctl">' +
+        // Bold and Italic (Sam, 2026-10-14: "How do I change a bold font in the
+        // text when editing?"). The passages always took **bold** and *italic*;
+        // these put the marks around the selected words so nobody has to know.
+        (TEXT_BLOCKS[key] && TEXT_BLOCKS[key].rich
+          ? '<button type="button" class="cplfund-textbtn" data-textwrap="**" data-textfor="' + esc(key) + '">Bold</button>' +
+            '<button type="button" class="cplfund-textbtn" data-textwrap="*" data-textfor="' + esc(key) + '">Italic</button>'
+          : "") +
         '<button type="button" class="cplfund-textbtn primary" data-textsave="' + esc(key) + '">Save</button>' +
         '<button type="button" class="cplfund-textbtn" data-textcancel="' + esc(key) + '">Cancel</button>' +
         (custom ? '<button type="button" class="cplfund-textbtn" data-textreset="' + esc(key) + '">Restore the default text</button>' : "") +
         (key === "faq" ? '<span class="dk">Start each question on its own line with Q: and put its answer in the paragraphs below it.</span>' : "") +
         (TEXT_BLOCKS[key] && TEXT_BLOCKS[key].rich
-          ? '<span class="dk">Plain text. A blank line starts a new paragraph. **Two asterisks** on each side make words bold and ' +
-            '*one* makes them italic; a paragraph whose every line starts with - is a bulleted list. A name in braces, such as ' +
-            '{base award}, is a figure the explainer fills in from the model. Saves for everyone.</span></div>'
+          ? '<span class="dk">Plain text. Select words and press Bold or Italic, or type **two asterisks** on each side for bold ' +
+            'and *one* for italic. A blank line starts a new paragraph; a paragraph whose every line starts with - is a bulleted ' +
+            'list. A name in braces, such as {base award}, is a figure the explainer fills in from the model. Saves for everyone.</span></div>'
           : '<span class="dk">Plain text. A blank line starts a new paragraph; start every line with &gt; to set a passage as a quotation. Saves for everyone.</span></div>');
     } else {
       html += key === "faq" ? faqHtml(textPlain(key)) : textHtml(key);
@@ -6866,6 +6958,46 @@
     // maximum) was retired with one-pool adoption (R4–R5, 2026-08-31): one
     // window — the base and cap above — per institution, combined.
 
+    // NONCREDIT'S PORTION (Sam, 2026-10-14), beside the base award and cap
+    // because it is the same kind of statement: a rule for dividing the total
+    // to institutions. The Budget tab holds the amounts; this tab divides them.
+    // Blank is the default and means the teaching mix decides.
+    (function () {
+      var m = allocModel(), np = m.ncPortion || {};
+      var net = netCollege(), ncTot = 0;
+      oneRoster().forEach(function (c) { ncTot += instSplit(c).nc; });
+      var crTot = net - ncTot;
+      var setPct = ncPortionSet();
+      var shown = setPct == null ? "" : String(parseFloat(setPct.toFixed(2)));
+      var input = (publicMode() || !unlocked())
+        ? esc(fmtPctTrim(net > 0 ? ncTot / net : 0))
+        : '<input type="text" inputmode="decimal" class="cplfund-ed cplfund-ed-pct" data-edit="ncportion" value="' +
+          esc(shown) + '" aria-label="Noncredit portion of the total to institutions, as a percentage. Leave blank to follow each institution’s teaching mix.">' +
+          '<span class="cplfund-pct-sign">%</span>';
+      var split = fmtMoney(crTot) + " credit and " + fmtMoney(ncTot) + " noncredit";
+      var note;
+      if (setPct == null) {
+        note = "Blank: noncredit&rsquo;s portion follows each institution&rsquo;s own credit and noncredit FTES, " +
+          "<strong>" + esc(fmtPct(np.natural || 0, 1)) + "</strong> today (" + split + "). Type a percentage to set it. " +
+          "The model then counts each noncredit FTES at the weight that reaches it, in the size of every award and in its split, " +
+          "so the added noncredit funding goes to the institutions with noncredit programs, in proportion to them, " +
+          "and the base award and cap still hold.";
+      } else {
+        note = "<strong>" + split + "</strong> of " + fmtMoney(net) + ". To reach " + esc(fmtPctTrim(setPct / 100)) +
+          ", the model counts each noncredit FTES as <strong>" + esc(m.ncW.toFixed(2)) + "</strong> credit FTES, " +
+          "in the size of every award and in its split, so the added noncredit funding goes to the institutions with " +
+          "noncredit programs, in proportion to them. The teaching mix alone gives " + esc(fmtPct(np.natural || 0, 1)) +
+          "; clear the box to return to it.";
+        if (np.unreachable) {
+          note += ' <strong class="cplfund-capwarn">' + esc(fmtPctTrim(setPct / 100)) + " cannot be reached under this base award and cap: the model stops at " +
+            esc(fmtPct(np.reached || 0, 1)) + ". The base award holds a credit share for every institution without noncredit, and the cap holds the largest noncredit programs, so the portion runs from " +
+            esc(fmtPct(np.min || 0, 1)) + " to " + esc(fmtPct(np.max || 0, 1)) + ".</strong>";
+        }
+      }
+      bounds.push(card({ cls: " ncportion", v: input,
+        l: "Noncredit portion of the total to institutions", note: note }));
+    })();
+
     // ── Who moves — renders ONLY while a what-if overlay is changing awards.
     // The comparison the Budget Balance mock proved out (Sam, 2026-08-31):
     // each institution's combined credit + noncredit award under the dials as
@@ -6923,9 +7055,16 @@
     // The BOUND is a heading + a figure pair + its note, with its folds under
     // it — the same shape as the ledger's own detail folds, so "click into the
     // detail" works identically wherever a reader is on this section.
-    var boundsBlock = bounds.length
-      ? '<div class="cplfund-bounds"><h4>Funding base and cap</h4>' + bounds.join("") + "</div>"
+    // The noncredit portion is a second rule of the same kind, under its own
+    // heading so "base and cap" keeps naming only the pair it names.
+    var ncCard = bounds.filter(function (h) { return /cplfund-card ncportion/.test(h); });
+    var bcCards = bounds.filter(function (h) { return !/cplfund-card ncportion/.test(h); });
+    var boundsBlock = bcCards.length
+      ? '<div class="cplfund-bounds"><h4>Funding base and cap</h4>' + bcCards.join("") + "</div>"
       : "";
+    if (ncCard.length) {
+      boundsBlock += '<div class="cplfund-bounds cplfund-ncportion"><h4>Credit and noncredit</h4>' + ncCard.join("") + "</div>";
+    }
     return '<div class="cplfund-cards cplfund-ledger">' + out.join("") + "</div>" +
       boundsBlock + extras.join("") + pubNote + restore + add;
   }
@@ -9291,7 +9430,7 @@
     // relabels them instead of leaving one of the two lying.
     var basisTotal = totalSize();
     out.push(card({ v: fmtInt(basisTotal),
-      l: "Institution " + basisLabel() + " (allocation basis), summed over all " + oneRoster().length +
+      l: "Institution " + basisLabel() + " (allocation basis" + ncWeightWords() + "), summed over all " + oneRoster().length +
         " institutions",
       note: basisTotal > 0
         ? fmtRate(per / basisTotal) + " of the " + fmtMoney(per) + " annual tranche per " +
@@ -9910,20 +10049,58 @@
   // twice: once for real, once with the ceiling OFF, which is what makes the
   // "released" figure the money the ceiling actually moved rather than a proxy
   // for it.
-  function solveAlloc(cap) {
+  // `w` is the noncredit weight. It is passed, never read from ncWeight():
+  // allocModel() is where that weight is solved, so a solve that asked for it
+  // would ask itself.
+  function solveAlloc(cap, w) {
     return solveBounded({
       rows: oneRoster(),
       keyOf: function (c) { return c.college; },
-      sizeOf: sizeOf,
+      sizeOf: function (c) { return sizeOfW(c, w); },
       net: netCollege(),
       floor: floorWindow(),
       cap: cap
     });
   }
+  // The noncredit shares of every award, summed, under weight w.
+  function ncTotalAt(cap, w) {
+    var r = solveAlloc(cap, w), t = 0;
+    oneRoster().forEach(function (c) { t += (r.W[c.college] || 0) * laneShareOfW(c, w).nc; });
+    return t;
+  }
+  // The weight that brings noncredit's portion to the curator's percentage.
+  // The noncredit total rises with the weight (a heavier noncredit FTES both
+  // enlarges the awards that carry noncredit and moves more of each into its
+  // noncredit share), so a geometric bisection finds it. Between 1/10,000 and
+  // 10,000 lies every portion the base award and cap allow; outside that band
+  // the percentage cannot be reached, and the result says which side.
+  var NC_W_LO = 1e-4, NC_W_HI = 1e4;
+  function solveNcWeight(cap) {
+    var net = netCollege();
+    var natural = net > 0 ? ncTotalAt(cap, 1) / net : 0;
+    var pct = ncPortionSet();
+    var out = { set: pct, w: 1, natural: natural, reached: natural, unreachable: null };
+    if (pct == null || !(net > 0)) return out;
+    var goal = net * pct / 100;
+    var atLo = ncTotalAt(cap, NC_W_LO), atHi = ncTotalAt(cap, NC_W_HI);
+    out.min = atLo / net; out.max = atHi / net;
+    if (goal <= atLo) { out.w = NC_W_LO; out.reached = out.min; out.unreachable = "low"; return out; }
+    if (goal >= atHi) { out.w = NC_W_HI; out.reached = out.max; out.unreachable = "high"; return out; }
+    var lo = NC_W_LO, hi = NC_W_HI;
+    for (var i = 0; i < 64; i++) {
+      var mid = Math.sqrt(lo * hi);
+      if (ncTotalAt(cap, mid) < goal) lo = mid; else hi = mid;
+    }
+    out.w = Math.sqrt(lo * hi);
+    out.reached = ncTotalAt(cap, out.w) / net;
+    return out;
+  }
   function allocModel() {
     if (_allocCache) return _allocCache;
     var cap = capWindow();
-    var r = solveAlloc(cap);
+    var ncp = solveNcWeight(cap);
+    var w = ncp.w;
+    var r = solveAlloc(cap, w);
     var cols = oneRoster();
     // What the FLOOR costs the pool: the top-up vs a pure proportional split.
     // Every row is measured against the same floor now — the reduced-floor case
@@ -9931,7 +10108,7 @@
     var cost = 0;
     cols.forEach(function (c) {
       if (r.floored[c.college] && r.totSize > 0) {
-        cost += Math.max(0, r.floorFor(c) - sizeOf(c) / r.totSize * r.net);
+        cost += Math.max(0, r.floorFor(c) - sizeOfW(c, w) / r.totSize * r.net);
       }
     });
     // What the CEILING releases: measured against THIS SAME MODEL with the
@@ -9940,7 +10117,7 @@
     // roster, and only the first one is money that actually changed hands.
     var released = 0;
     if (cap > 0 && Object.keys(r.capped).length) {
-      var openW = solveAlloc(0).W;
+      var openW = solveAlloc(0, w).W;
       cols.forEach(function (c) {
         if (r.capped[c.college]) released += Math.max(0, (openW[c.college] || 0) - (r.W[c.college] || 0));
       });
@@ -9954,7 +10131,10 @@
       // A ceiling set below the floor is a curator typo, not a policy: capFor()
       // clamps it away so nobody is paid under the minimum, and this flag says
       // so on screen rather than leaving the two boxes silently contradicting.
-      capBelowFloor: cap > 0 && r.floor > 0 && cap < r.floor
+      capBelowFloor: cap > 0 && r.floor > 0 && cap < r.floor,
+      // The noncredit weight this solve used, and what it reached (fractions
+      // of the total to institutions): `natural` is the teaching mix alone.
+      ncW: w, ncPortion: ncp
     };
     return _allocCache;
   }
@@ -11000,7 +11180,7 @@
     return '<tr class="cplfund-detail"><td colspan="' + ncols + '">' +
       '<div class="cplfund-detail-grid">' +
       '<div><span class="dk">' + (usesFtes() ? "FTES:" : "Headcount:") + "</span> " +
-      fmtInt(totalSize()) + " statewide " + basisLabel() + " across " +
+      fmtInt(totalPlainFtes()) + " statewide " + basisLabel() + " across " +
       fmtInt(oneRoster().length) + " institutions</div>" +
       prio +
       "</div></td></tr>" +
@@ -12464,7 +12644,11 @@
     var out = [];
     var mount = document.getElementById("cplFundingMount");
     if (embedMode()) {
-      out.push({ surface: "Funding explainer", detail: "every figure and the institution table, " + scenarioWords() });
+      // The three boxes and their words, the credit and noncredit split and the
+      // noncredit portion (2026-10-14) are named because a curator edits them
+      // on the tab and presses Refresh to see them land.
+      out.push({ surface: "Funding explainer", detail: "every figure, the three boxes and their words, the credit and noncredit split " +
+        "and the noncredit portion, every passage, and the institution table, " + scenarioWords() });
     } else if (mount && mount.querySelector(".cplfund")) {
       out.push({ surface: "Implementation Funding, " + (state.previewPublic ? "Public view" : "Internal view"),
         detail: "every section and the College Dashboard, " + scenarioWords() });
@@ -13194,6 +13378,20 @@
       setFtesRate(fr);   // persistActive()/saveShared() re-render; don't double up
       return;
     }
+    // Noncredit's portion, a percentage. Blank (or 0) clears it, which returns
+    // the split to the teaching mix; anything outside (0, 100) bounces.
+    if (edit === "ncportion") {
+      var ov = activeOverride();
+      if (!String(raw).trim() || parseNum(raw) === 0) {
+        if (ov.pool) delete ov.pool.nc_portion_pct;
+        persistActive();
+        return;
+      }
+      var np = parseNum(raw);
+      if (np == null || !(np > 0 && np < 100)) { render(); return; }
+      setPool("nc_portion_pct", Math.round(np * 100) / 100);
+      return;
+    }
     if (edit === "pool-label") { setPoolLabel(el.getAttribute("data-field"), raw); return; }
     if (edit === "pool-custom-amt") {
       var ci = Number(idx), clist = customPool();
@@ -13608,6 +13806,18 @@
         state.textEditing = null; delete state.textDraft[key];
         savingState = "";
         setText(key, ta ? ta.value : "");
+      });
+    });
+    // Bold / Italic: wrap the selection in the mark, or unwrap it when the mark
+    // already surrounds it. Spaces at either edge of a selection stay outside
+    // the marks, because "**word **" does not read as bold.
+    document.querySelectorAll("#cplFundingMount [data-textwrap]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var key = b.getAttribute("data-textfor"), mk = b.getAttribute("data-textwrap");
+        var ta = document.querySelector('#cplFundingMount [data-textarea="' + key + '"]');
+        if (!ta) return;
+        state.textDraft[key] = ta.value = wrapMark(ta.value, ta.selectionStart, ta.selectionEnd, mk, ta);
+        ta.focus();
       });
     });
     document.querySelectorAll("#cplFundingMount [data-textcancel]").forEach(function (b) {
@@ -14342,6 +14552,11 @@
     // Every id a passage's figure can carry, for the page to seed and to give
     // the first copy of each its id (the painter and a deep link read by id).
     explainerFigIds: function () { return FIG_TOKENS.map(function (t) { return t[1]; }); },
+    _wrapMark: function (text, a, b, mk) { return wrapMark(text, a, b, mk); },
+    // An institution's share of the allocation basis, the noncredit weight
+    // included: what the explainer's illustration cards divide by when
+    // noncredit's portion is set (2026-10-14).
+    _sizePct: function (name) { var c = rosterRow(name); return c ? sizePct(c) : null; },
     _explainerBlocks: function () { return EXPLAINER_BLOCKS.slice(); },
     _explainerHtmlToPlain: richHtmlToPlain,
     _richPlainToHtml: richPlainToHtml,
@@ -14446,7 +14661,15 @@
           at_floor: m.floorCount, at_cap: m.cappedCount,
           unspent: m.unspent,
           floor_infeasible: !!m.floorInfeasible, cap_below_floor: !!m.capBelowFloor,
-          nc_college_shares: ncFace, nc_only_held_by_origination: trioHeld
+          nc_college_shares: ncFace, nc_only_held_by_origination: trioHeld,
+          // Noncredit's portion (2026-10-14): the curator's percentage (null =
+          // the teaching mix decides), the weight the model solved for it,
+          // what the teaching mix alone gives, and what was reached.
+          nc_portion_set: m.ncPortion ? m.ncPortion.set : null,
+          nc_weight: m.ncW,
+          nc_portion_natural: m.ncPortion ? m.ncPortion.natural : null,
+          nc_portion_reached: m.ncPortion ? m.ncPortion.reached : null,
+          nc_portion_unreachable: m.ncPortion ? m.ncPortion.unreachable : null
         },
         years: slots
       };

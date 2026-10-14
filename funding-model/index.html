@@ -195,14 +195,15 @@ details.fold > .fold-body{padding-top:1.4em}
 .fig .v{font-family:"Playfair Display",Georgia,serif; font-size:clamp(1.5rem,1.2rem + 1.2vw,2.1rem);
   color:var(--text-strong); font-variant-numeric:tabular-nums; line-height:1.1}
 .fig .k{font-size:.82rem; color:var(--text-muted); margin-top:.4em; max-width:none}
-/* The appropriation itself — the one figure a CO or Finance reader looks for
-   first, so it leads full width and the three destinations sit under it. */
-.topline{background:var(--tint-cobalt); border:1px solid var(--cobalt); border-radius:4px;
-  padding:18px 22px; margin:0 0 14px; max-width:none}
-.topline .v{font-family:"Playfair Display",Georgia,serif; color:var(--text-strong);
-  font-size:clamp(1.9rem,1.4rem + 1.6vw,2.6rem); font-variant-numeric:tabular-nums; line-height:1.1}
-.topline .k{font-size:.9rem; color:var(--text-muted); margin:.35em 0 0; max-width:none}
-.figs.two{grid-template-columns:repeat(2,1fr); margin-top:14px}
+/* Each box's words are a passage (2026-10-14), so they arrive as paragraphs. */
+.fig .k p{margin:0 0 .35em; max-width:none}
+.fig .k p:last-child{margin-bottom:0}
+.fig .k b, .fig .k strong{color:var(--text-strong); font-variant-numeric:tabular-nums; font-weight:600}
+/* The appropriation itself, the one figure a CO or Finance reader looks for
+   first: same width as its two destinations and on their row (Sam,
+   2026-10-14), marked by the cobalt tint rather than by size. */
+.fig.top{background:var(--tint-cobalt); border-color:var(--cobalt)}
+.figs.three{margin-top:14px}
 .figs-note{margin:1em 0 0; font-size:.92rem; color:var(--text-muted)}
 .figs-note b, .figs-note strong{color:var(--text-strong); font-variant-numeric:tabular-nums; font-weight:600}
 /* The passage blocks (2026-10-09) wrap their paragraphs in a div, so the
@@ -292,11 +293,14 @@ footer p{max-width:none}
 
 @media (max-width:820px){
   .figs{grid-template-columns:1fr 1fr}
+  /* Two columns cannot hold three equal boxes: the appropriation takes the
+     row, its two destinations share the next. */
+  .figs.three .fig.top{grid-column:1 / -1}
   .range{grid-template-columns:1fr}
   .duo{grid-template-columns:1fr}
 }
 @media (max-width:560px){
-  .figs, .figs.two{grid-template-columns:1fr}
+  .figs{grid-template-columns:1fr}
   .range{grid-template-columns:1fr}
   body{line-height:1.62}
 }
@@ -366,9 +370,10 @@ footer p{max-width:none}
   /* 4. the screen's max-width breakpoints all fire inside a 7.3in page box and
      re-stack grids that have the room to stay put. Print knows its width. */
   .figs, .range{grid-template-columns:repeat(3,1fr)}
+  .figs.three .fig.top{grid-column:auto}
   .duo{grid-template-columns:1fr 1fr}
   /* 5. blocks that lose their meaning when a page break lands inside them */
-  .fig, .rng, .card, .prio, .topline, .note, .tablebox{break-inside:avoid}
+  .fig, .rng, .card, .prio, .note, .tablebox{break-inside:avoid}
   .tablebox{overflow:visible}
   /* The tints carry no meaning a reader loses on a printer that drops them,
      so they are left to the browser's own color policy rather than forced. */
@@ -492,28 +497,36 @@ section[hidden]{display:none}
       institution&rsquo;s own MAP data, against <span id="l-nprio">four</span> priorities. An institution meets the baseline
       requirements to take part; from that point the funding follows the outcomes.</p>
     </div>
-    <div class="topline">
-      <div class="v num" id="f-total">$35,000,000</div>
-      <p class="k">one-time 2026-27 appropriation for CPL implementation</p>
-    </div>
-    <!-- TWO DESTINATIONS (Sam, 2026-10-01: "combine in one box the Projects &
-         Supports with Staff funding together with projects in one value"). The
-         statewide box is the projects and technology plus the two posts, painted
-         as one figure (P.scaling + P.admin), so the two boxes still sum to the
-         appropriation by construction. -->
-    <div class="figs two">
-      <div class="fig"><div class="v num" id="f-inst">$25,240,308</div><p class="k">allocated to the 118 institutions, on their CPL outcomes</p></div>
-      <div class="fig"><div class="v num" id="f-proj">$9,759,692</div><p class="k">statewide CPL projects and technology, and two Chancellor&rsquo;s Office posts supporting colleges across the two years</p></div>
+    <!-- THE APPROPRIATION AND ITS TWO DESTINATIONS, ONE ROW (Sam, 2026-10-14:
+         "the 3 funding boxes ... the same width and on the same row when full
+         screen"). The statewide box is the projects and technology plus the two
+         posts, painted as one figure (P.scaling + P.admin; Sam, 2026-10-01), so
+         the two destinations still sum to the appropriation by construction.
+         Each box's words are a passage the tab edits (Sam, 2026-10-14); the
+         institutions box carries its credit and noncredit split, which sums to
+         the figure above it. -->
+    <div class="figs three">
+      <div class="fig top"><div class="v num" id="f-total">$35,000,000</div>
+        <div class="k" data-ftext="x_fig_total"><p>one-time 2026-27 appropriation for CPL implementation</p></div></div>
+      <div class="fig"><div class="v num" id="f-inst">$25,240,308</div>
+        <div class="k" data-ftext="x_fig_inst"><p>allocated to the <span data-fig="l-basis-n">118</span> institutions, on their CPL outcomes</p>
+        <p><b id="f-cr">$23,427,905</b> credit and <b id="f-nc">$1,812,403</b> noncredit</p></div></div>
+      <div class="fig"><div class="v num" id="f-proj">$9,759,692</div>
+        <div class="k" data-ftext="x_fig_proj"><p>statewide CPL projects and technology, and two Chancellor&rsquo;s Office posts supporting colleges across the two years</p></div></div>
     </div>
     <div class="figs-note" data-ftext="x_lede_figs">
     <p>Those two lines account for the whole appropriation. The
       <b id="f-main">$25,240,308</b> to institutions is <b>one funding total</b>, shared among all 118 in
       proportion to combined credit + noncredit size within the base award and the cap. Every award then
       splits into a credit share and a <b>noncredit</b> share by the institution&rsquo;s own teaching mix:
-      statewide, <b id="f-nc">$1,783,399</b> is noncredit, carried within <b id="l-nc-count">108</b> college
+      statewide, <b id="f-nc2">$1,812,403</b> is noncredit, carried within <b id="l-nc-count">108</b> college
       awards and restricted to noncredit outcomes. The $9.04&nbsp;million remaining from 2025-26 is a
       separate distribution.</p>
     </div>
+    <!-- NONCREDIT'S PORTION (2026-10-14). Painted, and shown, only while a
+         curator has set it on the tab; unset, the teaching mix decides and the
+         passage above says all there is to say. -->
+    <p class="figs-note" id="nc-portion-note" hidden></p>
     <div class="range">
       <div class="rng">
         <p class="rk">Lowest</p>
@@ -630,6 +643,7 @@ section[hidden]{display:none}
         smaller target, so it qualifies at the same rate as every institution above the base award.</li>
     </ul>
     </div>
+    <p id="nc-weight-note" hidden></p>
     <!-- Built from the payload (D.cards) — see build_funding_model_explainer.js.
          Hand-typing these is how two of the four figures went stale. -->
     <div class="duo" id="cards"></div>
@@ -1198,9 +1212,38 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     setText("l-nc-count", String(D.nc.ncColleges));
     setText("t-nc", money(D.nc.face));
     setText("f-nc", money(D.nc.face));
+    setText("f-nc2", money(D.nc.face));   // its second copy, under the boxes
+    // The credit side of the institutions box (Sam, 2026-10-14): the box's own
+    // figure less the noncredit total, so the two printed figures add up to the
+    // one above them, rounding included.
+    setText("f-cr", money(inst - D.nc.face));
     // (The every-college table's own lead-in, which once hard-coded this
     // figure a fourth time, is gone with that table — the embedded table's
     // introduction is the tab's editable block.)
+  }
+  // Noncredit's portion (2026-10-14): two figures a passage can name, and
+  // one sentence in the Overview and one in the allocation steps while a
+  // curator has set it. Unset, both sentences stay hidden.
+  var NP = D.ncPortion;
+  if (NP) {
+    var pctWords = function (f) { return String(parseFloat((f * 100).toFixed(1))) + " percent"; };
+    var reached = NP.reached != null ? NP.reached : (inst > 0 && D.nc ? D.nc.face / inst : 0);
+    setText("f-ncpct", pctWords(reached));
+    setText("f-ncw", (Number(NP.w) || 1).toFixed(2));
+    var on = NP.set != null;
+    var pn = document.getElementById("nc-portion-note"), wn = document.getElementById("nc-weight-note");
+    if (pn) {
+      pn.hidden = !on;
+      pn.textContent = on ? "The Chancellor\u2019s Office sets noncredit\u2019s portion of the total to institutions at " +
+        pctWords(reached) + ". To reach it, the Chancellor\u2019s Office counts each noncredit FTES as " +
+        (Number(NP.w) || 1).toFixed(2) + " credit FTES when it sizes each award and splits it into its credit and noncredit shares." : "";
+    }
+    if (wn) {
+      wn.hidden = !on;
+      wn.textContent = on ? "While noncredit\u2019s portion is set, each noncredit FTES counts as " +
+        (Number(NP.w) || 1).toFixed(2) + " in that total. An institution\u2019s proportional share, here and in the two " +
+        "examples below, is its share of the weighted total." : "";
+    }
   }
   setText("f-floorv", money(D.pool.floor));
   setText("f-capv", money(D.pool.cap));
@@ -1305,7 +1348,8 @@ window.CPL_PAINT_EXPLAINER = function (D) {
       var who = document.createElement("p");
       who.className = "who";
       who.textContent = c.role + " — " + num(c.ftes) + " credit + noncredit FTES, about " + c.pct +
-        "% of the statewide total";
+        "% of the statewide total" + (D.ncPortion && D.ncPortion.set != null
+          ? " with noncredit FTES counted at " + (Number(D.ncPortion.w) || 1).toFixed(2) : "");
       el.appendChild(h); el.appendChild(who);
       [["Proportional share by size", money(c.share), false],
        ["Brought up to the minimum?", c.floored ? "Yes" : "No", false],
