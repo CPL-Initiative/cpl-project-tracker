@@ -5,11 +5,11 @@
  "title": "English",
  "award": "A.A- T Degree",
  "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/english-2025-2026-fall-2025fa",
- "record_shape": 4,
+ "record_shape": 5,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5516,
+  "input_tokens": 6383,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5516,
-    "output_tokens": 2230,
+    "input_tokens": 6383,
+    "output_tokens": 2453,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 2230,
+  "output_tokens": 2453,
   "output_tokens_details": {
-   "thinking_tokens": 985
+   "thinking_tokens": 1208
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.06666,
- "ms": 19530,
- "seconds": 20.1,
+ "cost_usd": 0.07459,
+ "ms": 21325,
+ "seconds": 21.9,
  "parts": null,
  "error": null,
  "score": {
@@ -68,16 +68,22 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    18.0,
-    18.0
+    59.0,
+    63.0
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    59.0,
+    63.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    38.0
+   ],
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -98,7 +104,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -108,8 +114,17 @@
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
+   "open_elective_units": 7,
    "ge_pattern": "CalGETC",
+   "degree_total": {
+    "min": 59,
+    "max": 63
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 38
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Acquire fundamental grounding in communication, critical thinking, scientific inquiry, and quantitative reasoning, the arts, literature and humanities, social, political and economic institutions, and self-development.",
     "Acquire a broad understanding and appreciation of writing, literature and the humanities."
@@ -118,9 +133,9 @@
   },
   "blocks": [
    {
-    "name": "Required Core",
-    "rule": "choose_units",
-    "minimum": 6,
+    "name": "Required Core: (6 units)",
+    "rule": "all",
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": 6,
@@ -144,7 +159,7 @@
     ]
    },
    {
-    "name": "List A",
+    "name": "List A: (6 units)",
     "rule": "choose_units",
     "minimum": 6,
     "option_group": null,
@@ -177,9 +192,9 @@
     ]
    },
    {
-    "name": "List B",
-    "rule": "choose_units",
-    "minimum": 3,
+    "name": "List B: (3 units)",
+    "rule": "all",
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": 3,
@@ -196,7 +211,7 @@
     ]
    },
    {
-    "name": "List C",
+    "name": "List C: (3 units)",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -233,19 +248,18 @@
   "missing_explained": [
    {
     "code": "ENGL C1002",
-    "why": "not in the text; the Required Core lists ENG102 (Composition and Introduction to Literature) instead, possibly the local equivalent"
+    "why": "not in the text; ENG102 - Composition and Introduction to Literature appears in its place in the Required Core"
    }
   ],
   "notes": [
-   "The catalog prints 'English (Total 59 - 63)' for the Program Requirements, but that total includes 7 units of electives and 34-38 units of CalGETC general education, so it is not recorded as the major total; no separate major total is printed (the general rules say a minimum of 18 units in the major). total_units left null.",
-   "'Electives (any GE course that has not been used) 7' is part of the 59-63 degree total, not a stated major total, so open_elective_units is left null; reviewer may wish to check.",
-   "Required Core says 'Complete the following number of credits: 6' with two 3-unit courses, so in practice both ENG102 and ENGLC1001 are required.",
-   "Codes recorded as printed without spaces (e.g., ENGLC1001 = ENGL C1001 on the closed list, ENG102, THA110).",
-   "ENG102 and THA110 are not on the closed list and are marked as catalog additions.",
-   "The outcomes are printed under 'Associate in Arts in English' within this A.A.-T section and are recorded for this award.",
-   "The description mentions 'a variety of careers requiring strong skills in communication and verbal expression' but names no specific career or field, so careers is empty.",
-   "Units: 60.0 shown at the top is the degree total, not the major total."
+   "The page header prints 'Units: 60.0 Units' while Program Requirements prints 'English (Total 59 - 63)'; the 59-63 figure (core, lists, 7 elective units and CalGETC 34-38) is recorded as degree_total. No separate major total is printed; total_units left null.",
+   "Electives line reads 'Electives (any GE course that has not been used) 7'; recorded as open_elective_units 7, though it is limited to GE courses not already used rather than any course.",
+   "Required Core and List B say 'Complete the following number of credits' equal to the sum of all listed courses, so they are recorded as 'all'.",
+   "ENG102 and THA110 are not in the closed list (catalog additions). ENG102 may be the local equivalent of ENGL C1002.",
+   "Codes are written as printed without spaces (e.g., ENG140 for ENG 140).",
+   "The description mentions 'a variety of careers requiring strong skills in communication and verbal expression' but names no specific career, so careers is empty.",
+   "Program outcomes are printed under the heading 'Associate in Arts in English'."
   ]
  },
- "extracted_run": "38477849603"
+ "extracted_run": "38567765687"
 }

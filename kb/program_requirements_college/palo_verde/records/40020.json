@@ -5,11 +5,11 @@
  "title": "Child and Adolescent Development",
  "award": "A.A- T Degree",
  "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/child-and-adolescent-development-2025-2026-fall-2025fa",
- "record_shape": 4,
+ "record_shape": 5,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6143,
+  "input_tokens": 7010,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6143,
-    "output_tokens": 2859,
+    "input_tokens": 7010,
+    "output_tokens": 2694,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 2859,
+  "output_tokens": 2694,
   "output_tokens_details": {
-   "thinking_tokens": 924
+   "thinking_tokens": 727
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.08175,
- "ms": 22345,
- "seconds": 22.7,
+ "cost_usd": 0.08192,
+ "ms": 20347,
+ "seconds": 20.9,
  "parts": null,
  "error": null,
  "score": {
@@ -72,14 +72,22 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    21.0,
-    22.0
+    55.0,
+    60.0
    ],
-   "stated": null,
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    38.0
+   ],
    "why": [
-    "the record names no total"
+    "the blocks and general education sum to 55.0-60.0; the catalog prints 60.0-60.0 for the degree"
    ]
   },
   "repeated": {
@@ -113,6 +121,15 @@
    },
    "open_elective_units": null,
    "ge_pattern": "CalGETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 38
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Acquired fundamental grounding in communication, critical thinking, scientific inquiry, and quantitative reasoning, the arts, literature and humanities, social, political and economic institutions, and self-development.",
     "Demonstrate a broad understanding of the needs and characteristics of children, shaped by the biological, cognitive, social, and cultural factors influencing development and learning."
@@ -348,22 +365,21 @@
   "missing_explained": [
    {
     "code": "CDEVC1000",
-    "why": "Not in the text; catalog prints CHD101 - Child Growth and Development instead (same title, recorded as catalog addition)."
+    "why": "not in the text; catalog prints local CHD101 Child Growth and Development instead"
    },
    {
     "code": "SOCIC1000",
-    "why": "Not in the text; catalog prints SOC101 - Introduction to Sociology in List A instead (same title, recorded as catalog addition)."
+    "why": "not in the text; catalog prints local SOC101 Introduction to Sociology instead"
    }
   ],
   "notes": [
-   "The catalog prints 'Total 60' for the program requirements, which is the 60-unit degree total including CalGETC GE (34-38); no separate major total is stated, so total_units is null. The degree text states a minimum of 18 semester units in the major.",
-   "'Required Courses (Total 9-10)' appears to include the nested 'Take one of the following' statistics choice (3-7); the stated 9-10 was recorded on the Required Courses block.",
-   "Catalog codes are printed without spaces (e.g., PSYCC1000, STATC1000); these were matched to closed-list PSYC C1000 and STAT C1000.",
-   "The final block's heading says 'Select one course' while the rule text says 'Complete the following number of credits: 3-6'; recorded as choose one course, with the stated 3-6.",
-   "CHD108 title printed as 'Practicum-Field Experience'; closed list spells it 'Practicum - Field Expereince'.",
-   "Program Outcomes are printed under 'Associate in Arts in Child and Adolescent Development' and recorded for this award.",
-   "No careers are named in the text."
+   "The 60 printed as 'Child and Adolescent Development (Total 60) / Complete the following number of credits: 60' is recorded as degree_total (it includes CalGETC 34-38); no separate major total is printed, so total_units is null.",
+   "The 'Required Courses' block states 9-10 units, which appears to include the nested 'Take one of the following' statistics choice (STATC1000 or PSY155); that choice is recorded as its own block.",
+   "CHD101 (Child Growth and Development) and SOC101 (Introduction to Sociology) are marked catalog additions because the closed list stores them as CDEVC1000 and SOCIC1000; reviewer should confirm these are the same courses.",
+   "PSYCC1000 and STATC1000 are treated as matching closed-list PSYC C1000 and STAT C1000 (spacing differs only).",
+   "The final block heading says 'Select one course not used in list A, not to exceed 6 units' with 'Complete the following number of credits: 3-6'; recorded as choose 1 course.",
+   "Program outcomes are listed under 'Associate in Arts in Child and Adolescent Development', which matches this award."
   ]
  },
- "extracted_run": "38477849603"
+ "extracted_run": "38567765687"
 }
