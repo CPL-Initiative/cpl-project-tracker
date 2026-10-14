@@ -610,6 +610,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_pilot/sequences/sources/mtsac_gps_s0401.json` | scripts: `kb/_program_map_parse.py` | — |
 | `kb/program_requirements_pilot/sequences/sources/smc_program_219.json` | scripts: `kb/_program_map_parse.py` | — |
 | `kb/program_requirements_pilot_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
+| `kb/program_requirements_reconcile.json` | scripts: `kb/_program_requirements_reconcile.py` | — |
 | `kb/project_lifecycle.json` | scripts: `kb/_load_projects.py` | scripts: `kb/_load_projects.py` · committed by: `daily-dashboard.yml` |
 | `kb/projects_seed_out` | none found | committed by: `projects-seed-apply.yml` |
 | `kb/projects_seed_plan.md` | none found | scripts: `kb/_seed_projects.py` · committed by: `projects-seed-apply.yml` |
@@ -1110,5 +1111,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 99 Supabase tables · 39 RPCs · 8 edge functions · 647 file
-datasets · 178 external services · 440 consumers · 53 workflows · 39 tabs.
+Coverage: 99 Supabase tables · 39 RPCs · 8 edge functions · 648 file
+datasets · 178 external services · 441 consumers · 53 workflows · 39 tabs.

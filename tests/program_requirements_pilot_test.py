@@ -1391,6 +1391,58 @@ check(S.places_none({"coverage": {"listed": 6, "placed": 0}}) and not S.places_n
       and not S.places_none({"coverage": {"listed": 0, "placed": 0}}) and not S.places_none(None),
       "places_none: a program with listed courses and none placed, and nothing else")
 
+
+# ── the reconcile pass (S392; Sam, 2026-10-14: "a secondary search of the catalog text to see if we
+# can reconcile after the initial PR harvest", each catalog's own steps) ──────────────────────────
+# The pages as the runner read them (college-page-read 38633618089), in the harvest's line form.
+import _program_requirements_reconcile as RC  # noqa: E402
+BIO_TEXT = ("An Associate in Science degree requires 60 units appropriate to your educational goal, including general "
+            "education and at least 30 units in the major.\nProgram Requirements\nBiology - Associate in Science (A.S.)\n"
+            "Complete the following number of credits: 60\nCabrillo College General Education 24\nRecommended Major "
+            "Requirements\nComplete the following number of credits: 15\nCHEM1A - General Chemistry I 5\n"
+            "General electives: any transferable or degree applicable course. 6")
+bio = {"program": {"total_units": {"min": 30, "max": None}, "open_elective_units": 6,
+                   "ge_pattern": "Cabrillo College General Education"}, "blocks": []}
+new, notes = RC.reconcile(bio, BIO_TEXT, "Cabrillo College", "A.S. Degree")
+p = new["program"]
+check(p["degree_total"] == {"min": 60, "max": 60} and p["ge_units"] == {"min": 24, "max": 24}
+      and p["total_units"] == {"min": None, "max": None} and p["open_elective_units"] == 6
+      and not p.get("degree_elective_units") and [n["field"] for n in notes] == ["degree_total", "ge_units", "total_units"],
+      "Cabrillo Biology (Sam's Needs a fix): the degree's 60 and GE 24 are read, the 30 from 'at least 30 units in the "
+      "major' is cleared, and the 6 electives the reading kept are not counted twice: %s" % json.dumps(notes))
+check(all(n["words"] for n in notes) and notes[0]["words"].endswith("60") and bio["program"].get("degree_total") is None,
+      "each change names the words it came from, and the record passed in is never altered")
+dot = BIO_TEXT.replace("\n", " \u00b7 ")
+check([n["field"] for n in RC.reconcile(bio, dot, "Cabrillo College", "A.S. Degree")[1]] == ["degree_total", "ge_units", "total_units"],
+      "the same steps read a page whose pieces are joined by middle dots")
+AST_TEXT = BIO_TEXT.replace("Biology", "Astronomy").replace(
+    "General electives: any transferable or degree applicable course. 6", "Recommended Major Electives\nComplete the following number of credits: 6")
+ast_r = {"program": {"total_units": {"min": 30, "max": 30}, "measure": "units"},
+         "blocks": [{"name": "Recommended Major Requirements", "rule": "all",
+                     "courses": [{"code": "ASTRO %d" % i, "units": 3} for i in range(1, 11)]},
+                    {"name": "Recommended Major Electives", "rule": "choose_units", "minimum": 6, "stated": {"min": 6, "max": 6},
+                     "courses": [{"code": "ASTRO 11", "units": 3}, {"code": "ASTRO 12", "units": 3}]}]}
+new, notes = RC.reconcile(ast_r, AST_TEXT, "Cabrillo College", "A.S. Degree")
+sc = S.score(new, [{"code": "ASTRO %d" % i, "units": 3} for i in range(1, 13)], AST_TEXT, "A.S. Degree")
+check(sc["arithmetic"]["status"] == "equal" and sc["arithmetic"]["against"] == "degree"
+      and sc["arithmetic"]["computed"] == [60.0, 60.0] and sc["degree"]["status"] == "read",
+      "Cabrillo Astronomy (Sam confirmed it): reconciled, a 30-unit major, 6 units of major electives and GE 24 make "
+      "the 60 the page prints: %s" % json.dumps(sc["arithmetic"]))
+cert_text = AST_TEXT.replace("Astronomy - Associate in Science (A.S.)", "Accounting Certificate of Achievement")
+check(RC.reconcile(ast_r, cert_text, "Cabrillo College", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units")[1] == [],
+      "a certificate's page prints its own total in the same words, and the degree steps leave it alone")
+check(RC.reconcile(ast_r, AST_TEXT, "Cerritos College", "A.S. Degree")[1] == [],
+      "a college with no reconcile steps keeps its records as read")
+read_already = {"program": {"total_units": {"min": None, "max": None}, "degree_total": {"min": 60, "max": 60},
+                            "ge_units": {"min": 34, "max": 34}, "open_elective_units": 5}, "blocks": []}
+check(RC.reconcile(read_already, BIO_TEXT, "Cabrillo College", "A.A- T Degree")[1] == [],
+      "a step never overwrites a figure the reading holds")
+both = {"program": {"total_units": {"min": 36, "max": 36}}, "blocks": []}
+new, notes = RC.reconcile(both, BIO_TEXT.replace("at least 30 units", "at least 18 units"), "Cabrillo College", "A.S. Degree")
+check(new["program"]["total_units"] == {"min": 36, "max": 36} and new["program"]["degree_elective_units"] == {"min": 6, "max": 6}
+      and not new["program"].get("open_elective_units"),
+      "a major total that is not the minimum sentence's stays, and the degree's electives go beside it")
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:

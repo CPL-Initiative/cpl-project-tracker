@@ -4,9 +4,9 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 8,
-  "file_datasets": 647,
+  "file_datasets": 648,
   "external_services": 178,
-  "consumers": 440,
+  "consumers": 441,
   "workflows": 53,
   "data_js_files": 69,
   "tabs": 39
@@ -12509,6 +12509,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/program_requirements_reconcile.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_reconcile.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 41
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/project_lifecycle.json": {
    "consumers": [
     {
@@ -19629,7 +19642,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 1722
+     "line": 1768
     }
    ],
    "main_committers": []
@@ -19641,7 +19654,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 1809
+     "line": 1855
     }
    ],
    "main_committers": []

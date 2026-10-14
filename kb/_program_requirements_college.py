@@ -37,8 +37,8 @@ scales to a college. So this pass turns the search around:
              college_<slug>_<run>.json) that names every key it inserted.
   reread     posts the records the newest extraction run filed to
              program_requirement_records_college_reread(), which replaces a
-             row only while it is unchecked, unread by a person and from an
-             earlier run, and writes the receipt holding each replaced row's
+             row only while it is unchecked and from an earlier run (a
+             person's reading no longer holds it, S392), and writes the receipt holding each replaced row's
              before-values (kb/receipts/program_requirement_records_college_
              reread_<slug>_<run>.json), which is the rollback.
 
@@ -1590,6 +1590,7 @@ def forced(folder: str, tokens: str) -> set[str]:
 def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: int = 6,
             keep_from: str | None = None, force: set[str] | None = None) -> int:
     import _program_requirements_extract as X
+    import _program_requirements_reconcile as R
     key = os.environ.get("SUPABASE_SERVICE_KEY")
     if not key:
         print("SUPABASE_SERVICE_KEY is not set; the Edge Function takes only the service key.")
@@ -1628,6 +1629,11 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         t0 = time.time()
         got = X.call(src, key)
         rec = got.get("record")
+        # The college's reconcile steps search the page again for a figure the reading left out
+        # (Sam, 2026-10-14; kb/_program_requirements_reconcile.py).
+        rec, notes = R.reconcile(rec, src["text"], src["college"], src.get("award"))
+        if notes:
+            got = dict(got, record=rec)
         try:
             sc = X.score(rec, src["closed_list"], src["text"], src.get("award")) if isinstance(rec, dict) else None
         except Exception as exc:   # one record the scorer cannot read never stops the others
@@ -1639,6 +1645,8 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                "cost_usd": X.cost(got.get("model"), got.get("usage")), "ms": got.get("ms"),
                "seconds": round(time.time() - t0, 1), "parts": got.get("parts"), "error": got.get("error"), "score": sc,
                "record": rec, "extracted_run": run_id}
+        if notes:
+            row["reconciled"] = notes
         _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), row)
         print("%-6s %s cov %-5s arith %-10s $%s %s" % (
             src["control_number"], "PASS" if sc and sc["pass"] else "fail",
@@ -1650,6 +1658,44 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     from concurrent.futures import ThreadPoolExecutor
     with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
         list(pool.map(one, mine))
+    return 0
+
+
+def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: str) -> int:
+    """A reconcile run (step=reconcile, no model call): every filed record goes to
+    out/records, and each one whose page the capture read again is reconciled with
+    the fresh text (kb/_program_requirements_reconcile.py) and rescored. A record
+    that changed carries the run as its extracted_run, its notes as reconciled and
+    the run it was read by as read_run, so step=reread posts it and only it."""
+    import _program_requirements_reconcile as R
+    import _program_requirements_score as S
+    sources = {}
+    for path in glob.glob(os.path.join(out_dir, "sources", "*.json")):
+        with open(path) as fh:
+            src = json.load(fh)
+        if src.get("text"):
+            sources[src["control_number"]] = src
+    os.makedirs(os.path.join(out_dir, "records"), exist_ok=True)
+    changed, unread = [], 0
+    for path in sorted(glob.glob(os.path.join(keep_from, "records", "*.json"))):
+        with open(path) as fh:
+            filed = json.load(fh)
+        src = sources.get(filed.get("control_number"))
+        rec = filed.get("record")
+        if src and isinstance(rec, dict):
+            new, notes = R.reconcile(rec, src["text"], college, filed.get("award") or src.get("award"))
+            if notes:
+                filed = dict(filed, record=new, reconciled=notes, read_run=filed.get("extracted_run"),
+                             extracted_run=int(run_id) if str(run_id or "").isdigit() else run_id,
+                             score=S.score(new, src["closed_list"], src["text"], filed.get("award") or src.get("award")))
+                changed.append(filed["control_number"])
+                a = filed["score"]["arithmetic"]
+                print("%-6s reconciled %s; arith %s" % (filed["control_number"],
+                      ", ".join(n["field"] for n in notes), a.get("status")), flush=True)
+        elif not src:
+            unread += 1
+        _write(os.path.join(out_dir, "records", os.path.basename(path)), filed)
+    print("reconcile: %d filed records changed, %d had no fresh page" % (len(changed), unread), flush=True)
     return 0
 
 
@@ -1919,7 +1965,7 @@ def _write(path: str, obj) -> None:
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument("step", choices=["capture", "extract", "file", "load", "reread"])
+    ap.add_argument("step", choices=["capture", "extract", "reconcile", "file", "load", "reread"])
     ap.add_argument("--college", default="Cerritos College")
     ap.add_argument("--out", default="out")
     ap.add_argument("--shard", type=int, default=0)
@@ -1938,6 +1984,8 @@ def main(argv: list[str] | None = None) -> int:
         return load(args.college, args.run)
     if args.step == "reread":
         return reread(args.college, args.run)
+    if args.step == "reconcile":
+        return reconcile_filed(args.college, args.out, args.run, os.path.join(COLLEGE_DIR, slug_of(args.college)))
     if args.step == "extract":
         keep = None if args.fresh else os.path.join(COLLEGE_DIR, slug_of(args.college))
         force = forced(keep, args.force) if keep and args.force else None

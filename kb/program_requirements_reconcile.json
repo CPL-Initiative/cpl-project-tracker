@@ -1,0 +1,45 @@
+{
+ "_what": "Each college's reconcile steps: after extraction, the reading procedure searches the page text again for a figure the record lacks and fills it, naming the words it came from (kb/_program_requirements_reconcile.py). Sam, 2026-10-14: \"Seems like our procedure should attempt to close gaps by doing a secondary search of the catalog text to see if we can reconcile after the initial PR harvest\" and \"we are configuring procedures for each catalog, right. So Cabrillo's procedure might require steps that others do not.\" (cpl_memory sam-reconcile-pass-after-harvest-2026-10-14). A step fills a field only where the record leaves it empty, and clears one only where a step says which words the reading took it from.",
+ "_kinds": {
+  "fill": "pattern's min (and max) fill program.<field> when it is empty; only_without / only_with name a field that must be empty / set; skip_if_equal names a field that already holds the same figure (no double count)",
+  "clear_minimum": "a sentence giving a kind of degree's least units in the major (pattern's n) is no major total: total_units equal to n is cleared, once the record reads a degree total",
+  "order": "steps run in order: a clear runs before the fills that depend on it",
+  "awards": "'associate': the steps read associate degrees only (a certificate's page prints its own total in the same words)"
+ },
+ "colleges": {
+  "Cabrillo College": {
+   "why": "Sam marked Biology A.S. (06328) Needs a fix on 2026-10-14: \"missing the Cabrillo College General Education credits required: 24 and the 6 units of Elective. Both are noted on the catalog.\" A runner read (college-page-read 38633618089) shows every degree page's requirements tree: \"Complete the following number of credits: 60\" under the award's title, then \"Cabrillo College General Education 24\" (or \"Cal-GETC General Education 34\"), the major, and \"General electives: any transferable or degree applicable course. 6\". Its prose says \"at least 30 units in the major\", which the reading took for the major total.",
+   "awards": "associate",
+   "steps": [
+    {
+     "kind": "fill",
+     "field": "degree_total",
+     "pattern": "Program Requirements[\\s\\u00b7]+[^\\n\\u00b7]+?[\\s\\u00b7]+Complete the following number of credits:\\s*(?P<min>\\d+(?:\\.\\d+)?)(?:\\s*-\\s*(?P<max>\\d+(?:\\.\\d+)?))?"
+    },
+    {
+     "kind": "fill",
+     "field": "ge_units",
+     "pattern": "(?P<label>(?:Cabrillo College|Cal-GETC|CSU|IGETC)[^\\n\\u00b7]{0,30}?General Education)\\s+(?P<min>\\d+(?:\\.\\d+)?)(?:\\s*-\\s*(?P<max>\\d+(?:\\.\\d+)?))?"
+    },
+    {
+     "kind": "clear_minimum",
+     "field": "total_units",
+     "pattern": "at least (?P<n>\\d+) units in the major"
+    },
+    {
+     "kind": "fill",
+     "field": "open_elective_units",
+     "only_without": "total_units",
+     "pattern": "General electives: any transferable or degree applicable course\\.?\\s*(?P<min>\\d+(?:\\.\\d+)?)"
+    },
+    {
+     "kind": "fill",
+     "field": "degree_elective_units",
+     "only_with": "total_units",
+     "pattern": "General electives: any transferable or degree applicable course\\.?\\s*(?P<min>\\d+(?:\\.\\d+)?)",
+     "skip_if_equal": "open_elective_units"
+    }
+   ]
+  }
+ }
+}
