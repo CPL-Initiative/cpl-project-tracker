@@ -267,7 +267,7 @@ window.COBI_ADMIN_SURFACE = {
         "map_college_goal2_pub",
         "map_colleges",
         "map_credential_student_rollup",
-        "program_requirement_records",
+        "program_record_college_items",
         "program_source_registry"
       ],
       "writes": [

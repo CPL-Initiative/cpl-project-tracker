@@ -133,9 +133,9 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `nc_integration_backlog` | tabs: `nc-learning-partners` | — |
 | `nc_partner_notes` | tabs: `nc-learning-partners` | — |
 | `personnel` | scripts: `excel_to_dashboard.py`, `kb/_load_budget.py`, `kb/_test_budget_cutover.py` | — |
-| `program_record_college_items` | tabs: `map-queue` | — |
+| `program_record_college_items` | tabs: `college-briefing`, `map-queue` | — |
 | `program_record_verdicts` | tabs: `program-requirements` | — |
-| `program_requirement_records` | tabs: `college-briefing`, `cpl-pathways`, `program-requirements` · scripts: `chatbox/smoke_test.sh`, `scripts/catalog_framing.py` · `edgefn:cpl-chat` | — |
+| `program_requirement_records` | tabs: `cpl-pathways`, `program-requirements` · scripts: `chatbox/smoke_test.sh`, `scripts/catalog_framing.py` · `edgefn:cpl-chat` | — |
 | `program_source_addenda` | tabs: `program-requirements` | — |
 | `program_source_registry` | tabs: `college-briefing`, `cpl-pathways`, `program-requirements` · scripts: `kb/_course_outline_census.py`, `kb/_program_requirements_pilot.py`, `kb/_program_source_census.py`, `scripts/catalog_framing.py` | — |
 | `project_lifecycle` | tabs: `raci`, `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py` | pages: `CPL_Dashboard.html` |
