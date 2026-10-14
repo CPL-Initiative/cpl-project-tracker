@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-10-13
+updated: 2026-10-14
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 87 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 56 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 356 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1134** | |
+| Session handoffs | 357 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1135** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- **2026-10-14 (S385 SkyHazel):** Sheet 77 cards 2, 3 and 5 built and merged (#2092 reviewer-only Table/Archive, #2093 the college's items on one line and in the MAP team queue, #2094 Modesto Junior and Palo Verde displayed); #2090 merged with clean first live reads; the migrate runner's first two applies; CLAUDE.md and the harvest lane back under budget. Handoff 386.
 - 2026-10-13 S384 SkyPoplar: #2083-#2086 merged and the build queue deployed; Program Requirements read in pages (#2088), once when signed in (#2089), and by college with a light index (#2090, open); the identity guard race fixed (#2087); Modesto and Palo Verde captures read; Open Asks Sheet 77; the pagination note updated.
 - 2026-10-13 (S383 SkySpruce): Cabrillo displayed (#2078), Sheet 75 answered and carried out (#2082, #2083), the whole-harvest measure (#2084), the eLumen hub reader (#2085); handoff 384 (SkyPoplar).
 - 2026-10-13 S382 SkyLarch: Coastline read (hidden Requirements tab), loaded and displayed; Cabrillo loaded; #2076 migrate runner and #2080 Annual Goals Under list merged; handoff 383.

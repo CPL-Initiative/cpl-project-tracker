@@ -2,6 +2,8 @@
 title: "Session 377 handoff — Annual Goals: read Sheet 72, land the Move control, then Refresh summaries"
 date: 2026-10-13
 tags: [handoff, workplan, annual-goals, move, a11y]
+superseded: true
+superseded_by: session_386_handoff.md
 ---
 
 # Session 377 handoff (from S375 SkyTally)

@@ -4,6 +4,8 @@ date: 2026-10-13
 session: 378 (SkyHemlock)
 tags: [handoff, workplan, annual-goals, move, ui-pass, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_386_handoff.md
 ---
 
 # You are Session 379

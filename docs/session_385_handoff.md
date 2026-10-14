@@ -4,6 +4,8 @@ date: 2026-10-13
 session: 384 (SkyPoplar)
 tags: [handoff, program-requirements, records-view, postgrest, annual-goals]
 status: current
+superseded: true
+superseded_by: session_386_handoff.md
 ---
 
 # You are Session 385

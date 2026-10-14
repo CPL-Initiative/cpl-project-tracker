@@ -4,6 +4,8 @@ date: 2026-10-13
 session: 380 (SkyAlder)
 tags: [handoff, program-requirements, elumen, courseleaf, course-outcomes, coastline, bakersfield]
 status: current
+superseded: true
+superseded_by: session_386_handoff.md
 ---
 
 # You are Session 381

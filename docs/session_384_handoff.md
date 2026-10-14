@@ -4,6 +4,8 @@ date: 2026-10-13
 session: 383 (SkySpruce)
 tags: [handoff, program-requirements, elumen, annual-goals, progress-view]
 status: current
+superseded: true
+superseded_by: session_386_handoff.md
 ---
 
 # You are Session 384

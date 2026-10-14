@@ -4,6 +4,8 @@ date: 2026-10-13
 session: 381 (SkyRowan)
 tags: [handoff, program-requirements, elumen, courseleaf, coastline, cabrillo, bakersfield, progress-view]
 status: current
+superseded: true
+superseded_by: session_386_handoff.md
 ---
 
 # You are Session 382

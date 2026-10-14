@@ -4,6 +4,8 @@ date: 2026-10-13
 session: 377 (SkySequoia)
 tags: [handoff, workplan, annual-goals, move, activity-summaries]
 status: current
+superseded: true
+superseded_by: session_386_handoff.md
 ---
 
 # You are Session 378
