@@ -866,3 +866,28 @@ reads the tab and `SUBJECT_TOKEN` takes the C (154 of 159, 124 pass, $8.52); 140
 (#2078, merged S383):** its menu lists departments, `el_department_slugs()` follows them (271 of 281, 183 pass,
 $18.17); 268 loaded; procedure v1 (md5 442d35fb). 88 fail arithmetic, 58 with no stated major total: the page prints
 a degree total, a core and electives (lessons S382).
+
+## S385 SkyHazel (2026-10-13): Modesto and Palo Verde end to end, the college's items on one line, and the migrate runner's first two applies
+
+- **Modesto Junior and Palo Verde, read to display.** Extraction (Sam, Sheet 77 card 5): Modesto 189 of 199 found, 159
+  pass, $12.03 (run 38477845911); Palo Verde 54 of 69, 29 pass, $4.40 (38477849603), 25 of its 54 failing arithmetic.
+  Dated reads gained both (162 and 58 course codes; md5 over code|recs|exhibits|untitled and over titles equal in SQL
+  and over the filed rows). Loads 38482987850 (185; 4 place none) and 38482990981 (52; 2 place none). Build
+  `2d812b8ce768` on all 3,077 rows, display run 38486049156.
+- **A display dispatch applies the build the page file carries, not a new one.** The first dispatch (38484189531)
+  re-applied `dc7d157aff73` to the 2,840 older rows and left the 237 new ones empty: no session had run the builder.
+  Run `kb/_build_roep_display.py`, commit `cpl_pathways_roep_data.js` and its receipt, then dispatch `step=display`.
+  A re-apply of the same build is harmless (its applied record files the same build as "before").
+- **A dated-read diff can look like a rewrite.** Inserting a college before others made git's default diff show
+  2,981 deletions; `--diff-algorithm=histogram` showed 3,653 additions and the two header lines. Read the diff that
+  way before believing an existing row changed.
+- **The college's items left the numbered boxes (Sheet 77 card 3, #2093).** 3,353 items on 947 records at 16
+  colleges (3,341 *Catalog and state file differ*, 12 *MAP names a second course*) against 438 procedure boxes. The
+  view `program_record_college_items` (one row an item, `security_invoker`) counts them in about 70 ms; the MAP team
+  queue reads it in pages and opens each college's list on demand.
+- **The migrate runner works without a wait** (`supabase-migrate.yml`, #2076): its first two applies (the
+  lifecycle policies, #2092; the view, #2093) ran in under a minute each, wrote the ledger row and committed a
+  receipt. The receipt commit is the bot's, so CI does not run on it: push a commit of your own on top before
+  waiting on `test`.
+- **#2090's first live reads were clean:** the light index paged `0-249/2840` then 250-row pages, 106-403 ms each,
+  no 400. The first college pick (`college=in.(...)`) waits on a visitor.
