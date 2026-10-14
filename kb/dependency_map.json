@@ -4,7 +4,7 @@
   "supabase_tables": 98,
   "rpcs": 38,
   "edge_functions": 8,
-  "file_datasets": 647,
+  "file_datasets": 648,
   "external_services": 177,
   "consumers": 440,
   "workflows": 53,
@@ -17835,6 +17835,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/program_source_addenda_read_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/program_source_census_test.py": {
    "consumers": [
     {
@@ -23497,6 +23510,7 @@
     "tests/supabase_table_grants_test.py",
     "tests/supabase_migrate_test.py",
     "tests/program_record_verdicts_sql_test.py",
+    "tests/program_source_addenda_read_test.py",
     "tests/library_file_test.py",
     "tests/program_source_census_test.py",
     "tests/program_requirements_pilot_test.py",
