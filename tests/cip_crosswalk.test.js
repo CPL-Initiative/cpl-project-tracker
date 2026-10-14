@@ -27,6 +27,14 @@ const groupsSrc = fs.readFileSync("nav_groups.js", "utf8");
 
 // ── Part A — static invariants ──────────────────────────────────────────────
 check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
+// UI pass (S390, `npm run a11y cobi:cip-crosswalk`): three source links measured 19.6px tall, the rail's
+// theme control 23.5px at 390px, and Coco's name 3.7:1 under its container's opacity. Each check fails on
+// the rule it replaced.
+check("ui pass: each source link is a 24px target", /\.cipx-hlinks a\{display:inline-flex;align-items:center;min-height:24px;/.test(src));
+check("ui pass: the rail's controls are underlined words, 24px tall, no border or fill",
+  /\.cipx-toprail \.cipx-themetog,\.cipx-toprail \.cipx-rev-expand,\.cipx-toprail \.cipx-rev-csv\{[^}]*min-height:24px;[^}]*border:0;[^}]*background:none;[^}]*text-decoration:underline;/.test(src));
+check("ui pass: Coco's name is not under the line art's opacity",
+  /\.cipx-coco\{(?![^}]*opacity)[^}]*\}/.test(src) && /\.cipx-coco-svg\{display:block;opacity:\.85;\}/.test(src));
 check("nav has the CIP tab button", /data-tab="cip-crosswalk" role="tab"/.test(cpl));
 check("pane #tab-cip-crosswalk exists", /id="tab-cip-crosswalk"/.test(cpl));
 check("mount #cip-crosswalk-root exists", /id="cip-crosswalk-root"/.test(cpl));
