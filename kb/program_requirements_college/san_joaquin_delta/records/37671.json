@@ -1,0 +1,235 @@
+{
+ "college": "San Joaquin Delta College",
+ "control_number": "37671",
+ "shape": "certificate",
+ "title": "Diesel Bus Technician",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3351&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6507,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6507,
+    "output_tokens": 1367,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1367,
+  "output_tokens_details": {
+   "thinking_tokens": 320
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05337,
+ "ms": 11352,
+ "seconds": 12.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "AGEGR30C",
+    "DIESL97"
+   ],
+   "flagged": [
+    "AGEGR30C",
+    "DIESL97"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.5,
+    32.5
+   ],
+   "stated": [
+    32.5,
+    32.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Diesel Bus Technician Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 32.5,
+    "max": 32.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Upon successful completion of the Diesel Bus Technician Certificate, the program students will demonstrate the necessary skills to receive state and national certification in two areas: Heavy Duty Diesel Engine Emissions Control by the state of California Air Resource Board (ARB); and Air Conditioning Certification by Society of Automotive Engineers (SAE)."
+   ],
+   "careers": [
+    "technician for bus dealerships/repair shops",
+    "technician for bus fleet shops",
+    "technician for truck dealerships/repair shops",
+    "technician for agricultural dealerships/repair shops",
+    "technician for industrial engine dealers",
+    "technician for marine engine repair facilities"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 32.5,
+     "max": 32.5
+    },
+    "courses": [
+     {
+      "code": "AGEGR 30C",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGEGR 88",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DIESL 89",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DIESL 91",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DIESL 94",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DIESL 97",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DIESL 98",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DIESL 99",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INDUS 35",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INDUS 94",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELDING 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "INDUS 94 is printed with 'or higher level mathematics course'; no specific alternative course code is named, so no alternative was recorded.",
+   "AGEGR 30C and DIESL 97 appear in the core list but are not in the closed list; recorded as catalog additions.",
+   "The program outcome is printed as a single paragraph including its lead-in clause; it was kept whole since the lead-in and outcome form one sentence.",
+   "Catalog text states all courses must be completed with a grade of 'C' or better."
+  ]
+ },
+ "extracted_run": "38631691511"
+}

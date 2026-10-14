@@ -1,0 +1,261 @@
+{
+ "college": "San Joaquin Delta College",
+ "control_number": "10142",
+ "shape": "degree",
+ "title": "Culinary Arts - Advanced",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3229&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6607,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6607,
+    "output_tokens": 1747,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1747,
+  "output_tokens_details": {
+   "thinking_tokens": 468
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06137,
+ "ms": 13523,
+ "seconds": 14.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "CULART25",
+    "CULART4",
+    "CULART5",
+    "CULART73"
+   ],
+   "flagged": [
+    "CULART25",
+    "CULART4",
+    "CULART5",
+    "CULART73"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    47.5,
+    47.5
+   ],
+   "stated": [
+    47.5,
+    47.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Culinary Arts - Advanced, AS",
+   "measure": "units",
+   "total_units": {
+    "min": 47.5,
+    "max": 47.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": "San Joaquin Delta College Associate Degree General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 71.5,
+    "max": 71.5
+   },
+   "ge_units": {
+    "min": 27,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate effective cost control and recipe conversions in a modern food service establishment.",
+    "Demonstrate proper cooking methods and techniques required of the food service industry.",
+    "Demonstrate proper safety and sanitation skills as it applies to the food service industry."
+   ],
+   "careers": [
+    "cooks",
+    "sous chef"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Requirements - Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 47.5,
+     "max": 47.5
+    },
+    "courses": [
+     {
+      "code": "CUL ART 1",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL ART 3",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL ART 4",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CUL ART 5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CUL ART 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL ART 8",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL ART 9",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL ART 11",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL ART 13",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL ART 19",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL ART 25",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CUL ART 29",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL ART 73",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FCS 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page offers two GE patterns: the local SJDC Associate Degree GE Pattern (27 units) or Cal-GETC (34 units); ge_units records 27-34 spanning the two printed figures.",
+   "Minimum Degree Units Required: 71.5 recorded as degree_total; Minimum Major Units Required: 47.5 recorded as total_units.",
+   "CUL ART 29 is printed with 3 units in the catalog, while the state closed list stores 1.5 units; catalog value used.",
+   "CUL ART 4, CUL ART 5, CUL ART 25 and CUL ART 73 are not in the closed list and are marked as catalog additions.",
+   "All major courses must be completed with a grade of C or better.",
+   "Contact line names the 'Agriculture Transfer and Career Pathway TrAC/Division', which seems unusual for a culinary program; reviewer may verify.",
+   "Careers taken from the description: 'work as cooks' and 'advance to sous chef level'."
+  ]
+ },
+ "extracted_run": "38631691511"
+}

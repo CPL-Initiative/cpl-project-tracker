@@ -1,0 +1,203 @@
+{
+ "college": "San Joaquin Delta College",
+ "control_number": "46025",
+ "shape": "noncredit",
+ "title": "Noncredit ESL Milestone for Multilingual Speakers - Introduction to Health Careers",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3418&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6476,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6476,
+    "output_tokens": 1528,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1528,
+  "output_tokens_details": {
+   "thinking_tokens": 534
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05646,
+ "ms": 12540,
+ "seconds": 13.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    240.0,
+    240.0
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Core Requirements' has no units",
+    "'Restricted Electives' chooses 1 courses but 0 carry units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Noncredit ESL Milestone for Multilingual Speakers - Introduction to Health Careers Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 240,
+    "max": 240
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify the educational requirements necessary to complete a healthcare career, and give a presentation about a selected healthcare career, including educational requirements, licensure or certification, salary, and career mobility.",
+    "Participate in introductory health-related discussions effectively, take clear notes, and give short oral presentations.",
+    "Evaluate brief written health-related communication and compose and organize sentences into effective paragraphs and short documents.",
+    "Apply techniques of written communication, sentence structure, word usage, punctuation, and spelling.",
+    "Write and edit paragraphs and short essays on academic topics and effectively use English as applied in Health Science classes as well as workplace environments in one of the Health Careers. Illustrate comprehension of introductory readings in the field of Health Science by quoting outside sources and incorporating them into intermediate-level writing."
+   ],
+   "careers": [
+    "Health Careers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "H S 9039",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 9082",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 9085",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESL 9080",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 9081",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award counted in hours: the catalog prints 'Total Contact Hours: 240', recorded as total_units 240 hours.",
+   "The catalog prints 'Units: 0' beside each course but no per-course hours, so course units fields are null (hours not printed).",
+   "'Minimum Units Required: 0' printed after the Restricted Electives list; not recorded as a block total.",
+   "Catalog prints 'H S 9039' (closed list HS9039) and 'ESL 9080' (closed list ESL9080); treated as the same courses.",
+   "Completion requires all courses with a grade of 'P'.",
+   "'Health Careers' recorded as a career field named in the description; reviewer may confirm."
+  ]
+ },
+ "extracted_run": "38631691511"
+}
