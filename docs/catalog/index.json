@@ -1883,7 +1883,7 @@
      ],
      "title": "A green check you did not scope is not evidence",
      "type": "methodology",
-     "updated": "2026-08-23"
+     "updated": "2026-10-14"
     },
     {
      "created": "2026-09-24",
@@ -11449,7 +11449,7 @@
      ],
      "title": "College action page & MAP-team queue \u2014 lessons",
      "type": null,
-     "updated": "2026-08-21"
+     "updated": "2026-10-14"
     },
     {
      "created": "2026-06-25",
@@ -15049,7 +15049,7 @@
      ],
      "title": "My College (college action page) / MAP-team queue \u2014 lane state",
      "type": null,
-     "updated": "2026-10-05"
+     "updated": "2026-10-14"
     },
     {
      "created": "2026-08-28",
@@ -15530,8 +15530,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 357,
+   "count": 358,
    "docs": [
+    {
+     "created": "2026-10-14",
+     "governs": [],
+     "n": 387,
+     "path": "docs/session_387_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "my-college",
+      "ui-pass",
+      "decision-sheet"
+     ],
+     "title": "Sheet 78 waits; Southwestern and Fresno City captured",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-14",
      "governs": [],
@@ -21664,5 +21681,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1135
+ "total": 1136
 }
