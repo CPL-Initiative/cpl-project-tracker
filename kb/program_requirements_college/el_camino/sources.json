@@ -1,0 +1,5494 @@
+[
+ {
+  "control_number": "02481",
+  "title": "Architecture - Professional Practice",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH100",
+   "ARCH107",
+   "ARCH108",
+   "ARCH119",
+   "ARCH121",
+   "ARCH125",
+   "ARCH149",
+   "ARCH170",
+   "ARCH171",
+   "ARCH172",
+   "ARCH199",
+   "ARCH251",
+   "ARCH252",
+   "ARCH258",
+   "ARCH299"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3523&print",
+   "title": "Degree & Certificate: Architecture - Professional Practice, AS - El Camino College",
+   "h1": "Architecture - Professional Practice, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2813
+ },
+ {
+  "control_number": "02483",
+  "title": "Business Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02485",
+  "title": "Business Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS101",
+   "BUS108",
+   "BUS109",
+   "BUS116",
+   "BUS118",
+   "BUS119",
+   "BUS120",
+   "BUS121",
+   "BUS122",
+   "BUS126",
+   "BUS150",
+   "BUS151",
+   "CIS13"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3548&print",
+   "title": "Degree & Certificate: Business Management, AS - El Camino College",
+   "h1": "Business Management, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 1786
+ },
+ {
+  "control_number": "02486",
+  "title": "Office Administration: Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02487",
+  "title": "Marketing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS101",
+   "BUS108",
+   "BUS110",
+   "BUS111",
+   "BUS112",
+   "BUS113",
+   "BUS119",
+   "BUS122",
+   "BUS126",
+   "BUS150",
+   "CIS13"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3551&print",
+   "title": "Degree & Certificate: Marketing, AS - El Camino College",
+   "h1": "Marketing, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1618
+ },
+ {
+  "control_number": "02488",
+  "title": "Real Estate",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02489",
+  "title": "Business Office Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 13,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02490",
+  "title": "Film/Video Production",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02491",
+  "title": "Journalism",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECONC2002",
+   "JOUR1",
+   "JOUR11ABCD",
+   "JOUR12",
+   "JOUR14ABCD",
+   "JOUR6",
+   "JOUR7AB",
+   "JOUR8",
+   "JOUR9ABCD",
+   "PHOT106",
+   "PHOT206AB",
+   "POLI5"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3621&print",
+   "title": "Degree & Certificate: Journalism, AA - El Camino College",
+   "h1": "Journalism, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2784
+ },
+ {
+  "control_number": "02493",
+  "title": "Liberal Studies (Elementary Teaching)",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.974,
+  "codes_found": [
+   "AHIS101",
+   "BIOL10",
+   "BIOL10H",
+   "CDEV103",
+   "COMMC1000",
+   "COMMC1000H",
+   "DANC101",
+   "ENGL15A",
+   "ENGL15B",
+   "ENGL35",
+   "ENGL36",
+   "ENGL40A",
+   "ENGL40B",
+   "ENGL42",
+   "ENGL43",
+   "ENGL44",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "GEOG5",
+   "HIST140",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H",
+   "MATH110",
+   "MATH115",
+   "MATH120",
+   "MATH130",
+   "MATH170",
+   "MUSI111",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSCI25",
+   "STATC1000",
+   "STATC1000H",
+   "THEA103"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3624&print",
+   "title": "Degree & Certificate: Liberal Studies (Elementary Teaching), AA - El Camino College",
+   "h1": "Liberal Studies (Elementary Teaching), AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 39,
+  "text_chars": 4131
+ },
+ {
+  "control_number": "02494",
+  "title": "Sign Language Interpreter Training",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "ANTH4",
+   "ASL111",
+   "ASL112",
+   "ASL113",
+   "ASL114",
+   "ASL130",
+   "ASL232",
+   "ASL234",
+   "ASL236",
+   "CDEV150",
+   "COMMC1000",
+   "THEA113"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3660&print",
+   "title": "Degree & Certificate: Sign Language/Interpreter Training, AA - El Camino College",
+   "h1": "Sign Language/Interpreter Training, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4280
+ },
+ {
+  "control_number": "02495",
+  "title": "Physical Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.982,
+  "codes_found": [
+   "ANAT30",
+   "DANC110",
+   "DANC120A",
+   "DANC120B",
+   "DANC130A",
+   "DANC130B",
+   "DANC140",
+   "DANC161",
+   "DANC162A",
+   "DANC165",
+   "DANC167",
+   "DANC168",
+   "DANC220A",
+   "DANC230A",
+   "DANC240",
+   "DANC250",
+   "DANC261",
+   "DANC262",
+   "DANC265",
+   "DANC268",
+   "FAID1",
+   "PE105ABC",
+   "PE106ABC",
+   "PE10A",
+   "PE10B",
+   "PE110ABC",
+   "PE111ABC",
+   "PE115ABC",
+   "PE116ABC",
+   "PE120ABC",
+   "PE121ABC",
+   "PE132ABC",
+   "PE133ABC",
+   "PE135ABCD",
+   "PE140ABC",
+   "PE15ABC",
+   "PE16ABC",
+   "PE18A",
+   "PE18B",
+   "PE201",
+   "PE204",
+   "PE20ABC",
+   "PE212",
+   "PE217",
+   "PE219A",
+   "PE219B",
+   "PE21ABC",
+   "PE224",
+   "PE239",
+   "PE240A",
+   "PE240B",
+   "PE240C",
+   "PE245",
+   "PE247",
+   "PE248",
+   "PE249",
+   "PE250",
+   "PE251A",
+   "PE251B",
+   "PE253",
+   "PE254",
+   "PE255A",
+   "PE257",
+   "PE258",
+   "PE259",
+   "PE266",
+   "PE270",
+   "PE272",
+   "PE273",
+   "PE275",
+   "PE277",
+   "PE280",
+   "PE290",
+   "PE2A",
+   "PE2B",
+   "PE35ABC",
+   "PE36ABC",
+   "PE400",
+   "PE401",
+   "PE402",
+   "PE404",
+   "PE409",
+   "PE45ABC",
+   "PE46ABC",
+   "PE4A",
+   "PE4B",
+   "PE54A",
+   "PE54B",
+   "PE54C",
+   "PE57ABC",
+   "PE58ABC",
+   "PE5ABC",
+   "PE60ABC",
+   "PE61ABC",
+   "PE66ABC",
+   "PE6ABC",
+   "PE7",
+   "PE70ABC",
+   "PE71ABC",
+   "PE74A",
+   "PE74B",
+   "PE75ABC",
+   "PE76ABC",
+   "PE79",
+   "PE80ABC",
+   "PE81ABC",
+   "PE85ABC",
+   "PE86ABC",
+   "PE87ABC",
+   "PSYCC1000",
+   "PSYCC1000H"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3512&print",
+   "title": "Degree & Certificate: Physical Education, AA - El Camino College",
+   "h1": "Physical Education, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 113,
+  "text_chars": 9088
+ },
+ {
+  "control_number": "02497",
+  "title": "Pre-Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02500",
+  "title": "Automotive Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02501",
+  "title": "Automotive Collision Repair/Painting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02503",
+  "title": "Computer Aided Design/Drafting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CADD14",
+   "CADD16",
+   "CADD22",
+   "CADD23",
+   "CADD24",
+   "CADD43",
+   "CADD45",
+   "CADD5",
+   "CADD7",
+   "CIS13",
+   "ECHT11",
+   "ECHT22",
+   "MTT101",
+   "MTT16",
+   "MTT46",
+   "WELD15"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3562&print",
+   "title": "Degree & Certificate: Computer Aided Design/Drafting, AS - El Camino College",
+   "h1": "Computer Aided Design/Drafting, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2807
+ },
+ {
+  "control_number": "02505",
+  "title": "Machine Tool Technology: Machinist",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02506",
+  "title": "Welding",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.952,
+  "codes_found": [
+   "ACR5",
+   "ACR61",
+   "CADD5",
+   "MTT101",
+   "MTT10A",
+   "MTT16",
+   "WELD10A",
+   "WELD10B",
+   "WELD10C",
+   "WELD15",
+   "WELD1A",
+   "WELD1B",
+   "WELD20A",
+   "WELD23",
+   "WELD28",
+   "WELD29",
+   "WELD40A",
+   "WELD40B",
+   "WELD40C",
+   "WELD45"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3668&print",
+   "title": "Degree & Certificate: Welding, AS - El Camino College",
+   "h1": "Welding, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3193
+ },
+ {
+  "control_number": "02508",
+  "title": "Art History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.735,
+  "codes_found": [
+   "ART110",
+   "ART129",
+   "ART130",
+   "ART131",
+   "ART132",
+   "ART133",
+   "ART141",
+   "ART143",
+   "ART146",
+   "ART147",
+   "ART152",
+   "ART153",
+   "ART160",
+   "ART161",
+   "ART173",
+   "ART181",
+   "ART187",
+   "ART210",
+   "ART217",
+   "ART218A",
+   "ART219",
+   "ART220",
+   "ART222",
+   "ART230",
+   "ART231",
+   "ART232",
+   "ART233",
+   "ART253",
+   "ART262",
+   "ART263",
+   "ART274",
+   "ART275",
+   "ART282",
+   "ART283",
+   "ART288",
+   "ART289"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3501&print",
+   "title": "Degree & Certificate: Art History, AA - El Camino College",
+   "h1": "Art History, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 49,
+  "text_chars": 3560
+ },
+ {
+  "control_number": "02511",
+  "title": "Theatre",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEA184",
+   "THEA185",
+   "THEA197ABCD"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3664&print",
+   "title": "Degree & Certificate: Theatre, AA - El Camino College",
+   "h1": "Theatre, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1976
+ },
+ {
+  "control_number": "02512",
+  "title": "Photography",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.842,
+  "codes_found": [
+   "ART130",
+   "ART141",
+   "FILM122",
+   "FILM234",
+   "JOUR6",
+   "JOUR7AB",
+   "PHOT102",
+   "PHOT106",
+   "PHOT150",
+   "PHOT204",
+   "PHOT206AB",
+   "PHOT223A",
+   "PHOT223B",
+   "PHOT254",
+   "PHOT257",
+   "PHYS11"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3639&print",
+   "title": "Degree & Certificate: Photography, AS - El Camino College",
+   "h1": "Photography, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3019
+ },
+ {
+  "control_number": "02513",
+  "title": "French",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "AHIS102C",
+   "ANTH2",
+   "ANTH4",
+   "ARTHC1200",
+   "ASL111",
+   "ASL112",
+   "ASL113",
+   "ASL114",
+   "COMS260",
+   "ENGL15A",
+   "ENGL15B",
+   "ENGL35",
+   "ENGL36",
+   "ESTU1",
+   "FILM154",
+   "FREN1",
+   "FREN2",
+   "FREN21",
+   "FREN22",
+   "FREN3",
+   "FREN4",
+   "FREN5",
+   "FREN6",
+   "FREN99",
+   "HIST140",
+   "HIST141",
+   "ITAL1",
+   "ITAL2",
+   "ITAL21",
+   "ITAL22",
+   "MUSI221",
+   "PHIL107",
+   "POLI10",
+   "POLI2",
+   "SPAN1",
+   "SPAN2",
+   "SPAN21",
+   "SPAN22",
+   "SPAN3",
+   "SPAN4",
+   "SPAN5",
+   "SPAN6"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3612&print",
+   "title": "Degree & Certificate: French, AA - El Camino College",
+   "h1": "French, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 45,
+  "text_chars": 4415
+ },
+ {
+  "control_number": "02515",
+  "title": "Spanish",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.935,
+  "codes_found": [
+   "ANTH2",
+   "ANTH4",
+   "ANTH7",
+   "ASL111",
+   "ASL112",
+   "ASL113",
+   "ASL114",
+   "COMS260",
+   "ENGL42",
+   "ENGL48",
+   "ESTU1",
+   "ESTU3",
+   "ESTU5",
+   "FILM154",
+   "FREN1",
+   "FREN2",
+   "FREN21",
+   "FREN22",
+   "FREN3",
+   "FREN4",
+   "FREN5",
+   "FREN6",
+   "HIST112",
+   "HIST154",
+   "ITAL1",
+   "ITAL2",
+   "ITAL21",
+   "ITAL22",
+   "MUSI221",
+   "PHIL107",
+   "POLI10",
+   "POLI2",
+   "SPAN1",
+   "SPAN2",
+   "SPAN21",
+   "SPAN22",
+   "SPAN24",
+   "SPAN3",
+   "SPAN4",
+   "SPAN5",
+   "SPAN52A",
+   "SPAN6",
+   "SPAN99"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3662&print",
+   "title": "Degree & Certificate: Spanish, AA - El Camino College",
+   "h1": "Spanish, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 46,
+  "text_chars": 5130
+ },
+ {
+  "control_number": "02517",
+  "title": "Japanese",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.966,
+  "codes_found": [
+   "ANTH2",
+   "ANTH4",
+   "ASL111",
+   "ASL112",
+   "ASL113",
+   "ASL114",
+   "CHIN1",
+   "CHIN2",
+   "CHIN21",
+   "CHIN22",
+   "CHIN3",
+   "COMS260",
+   "ENGL35",
+   "ENGL36",
+   "ESTU1",
+   "FILM154",
+   "HIST114",
+   "HIST141",
+   "JAPA1",
+   "JAPA2",
+   "JAPA21",
+   "JAPA22",
+   "JAPA25",
+   "JAPA3",
+   "JAPA4",
+   "JAPA99",
+   "POLI10",
+   "POLI2"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3620&print",
+   "title": "Degree & Certificate: Japanese, AA - El Camino College",
+   "h1": "Japanese, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 4172
+ },
+ {
+  "control_number": "02518",
+  "title": "Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2",
+   "COMMC1000",
+   "COMMC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "NURS220",
+   "NURS222",
+   "NURS224",
+   "NURS226",
+   "NURS230",
+   "NURS232",
+   "NURS234",
+   "NURS238",
+   "NURS240",
+   "NURS242",
+   "NURS244",
+   "NURS247",
+   "NURS248",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCI101",
+   "SOCI101H"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3511&print",
+   "title": "Degree & Certificate: Nursing, AS - El Camino College",
+   "h1": "Nursing, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 6862
+ },
+ {
+  "control_number": "02519",
+  "title": "Respiratory Care",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANAT30",
+   "CIS13",
+   "ENGLC1000",
+   "PSYCC1000",
+   "RC172",
+   "RC174",
+   "RC176",
+   "RC178",
+   "RC280",
+   "RC282",
+   "RC286",
+   "RC288",
+   "RC289",
+   "RC290",
+   "RC294",
+   "RC295",
+   "RC298"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3657&print",
+   "title": "Degree & Certificate: Respiratory Care, AS - El Camino College",
+   "h1": "Respiratory Care, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 7160
+ },
+ {
+  "control_number": "02520",
+  "title": "Radiologic Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RTEC104",
+   "RTEC106",
+   "RTEC109",
+   "RTEC111",
+   "RTEC123",
+   "RTEC124",
+   "RTEC216",
+   "RTEC217",
+   "RTEC218",
+   "RTEC220",
+   "RTEC233",
+   "RTEC244",
+   "RTEC255",
+   "RTEC91",
+   "RTEC93"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3651&print",
+   "title": "Degree & Certificate: Radiologic Technology, AS - El Camino College",
+   "h1": "Radiologic Technology, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 5294
+ },
+ {
+  "control_number": "02523",
+  "title": "Paralegal Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LAW11",
+   "LAW12",
+   "LAW13",
+   "LAW14",
+   "LAW15",
+   "LAW16",
+   "LAW17",
+   "LAW18",
+   "LAW19",
+   "LAW20",
+   "LAW4",
+   "LAW5",
+   "LAW95",
+   "PARA1",
+   "RE12A"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3635&print",
+   "title": "Degree & Certificate: Paralegal Studies, AA - El Camino College",
+   "h1": "Paralegal Studies, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3162
+ },
+ {
+  "control_number": "02524",
+  "title": "English",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.972,
+  "codes_found": [
+   "ENGL12",
+   "ENGL15A",
+   "ENGL15B",
+   "ENGL18",
+   "ENGL20",
+   "ENGL21",
+   "ENGL23A",
+   "ENGL24A",
+   "ENGL24B",
+   "ENGL25A",
+   "ENGL27",
+   "ENGL28",
+   "ENGL30",
+   "ENGL31",
+   "ENGL34",
+   "ENGL35",
+   "ENGL36",
+   "ENGL39",
+   "ENGL40A",
+   "ENGL40B",
+   "ENGL41B",
+   "ENGL42",
+   "ENGL43",
+   "ENGL44",
+   "ENGL46",
+   "ENGL48",
+   "ENGL78",
+   "ENGL90",
+   "ENGL98",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1002",
+   "ENGLC1002H"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3595&print",
+   "title": "Degree & Certificate: English, AA - El Camino College",
+   "h1": "English, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 36,
+  "text_chars": 4226
+ },
+ {
+  "control_number": "02527",
+  "title": "Mathematics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI1",
+   "CSCI2",
+   "CSCI3",
+   "MATH190",
+   "MATH191",
+   "MATH210",
+   "MATH220",
+   "MATH270",
+   "PHYS1A",
+   "PHYS3A",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3510&print",
+   "title": "Degree & Certificate: Mathematics, AS - El Camino College",
+   "h1": "Mathematics, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2394
+ },
+ {
+  "control_number": "02528",
+  "title": "Physical Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASTR12",
+   "ASTR20",
+   "ASTR20H",
+   "ASTR25",
+   "ASTR25H",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM4",
+   "CHEM4H",
+   "CHEM7A",
+   "CHEM7B",
+   "CSCI1",
+   "GEOG1",
+   "GEOL1",
+   "GEOL15",
+   "GEOL2",
+   "GEOL3",
+   "GEOL4",
+   "MATH190",
+   "MATH191",
+   "MATH220",
+   "MATH270",
+   "OCEA10",
+   "OCEA10H",
+   "PHYS1A",
+   "PHYS1B",
+   "PHYS1C",
+   "PHYS1D",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS3A",
+   "PHYS3B",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3643&print",
+   "title": "Degree & Certificate: Physical Science, AS - El Camino College",
+   "h1": "Physical Science, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 34,
+  "text_chars": 3016
+ },
+ {
+  "control_number": "02529",
+  "title": "Physics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02530",
+  "title": "Chemistry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02532",
+  "title": "Psychology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02533",
+  "title": "Administration of Justice",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02535",
+  "title": "Recreation",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ANAT30",
+   "CDEV103",
+   "FAID1",
+   "PE217",
+   "PE247",
+   "PE248",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "RECR207",
+   "RECR217",
+   "RECR307"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3656&print",
+   "title": "Degree & Certificate: Recreation, AA - El Camino College",
+   "h1": "Recreation, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2108
+ },
+ {
+  "control_number": "02536",
+  "title": "Fire and Emergency Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FTEC1",
+   "FTEC10",
+   "FTEC11",
+   "FTEC144",
+   "FTEC2",
+   "FTEC20",
+   "FTEC3",
+   "FTEC4",
+   "FTEC5",
+   "FTEC6",
+   "FTEC9",
+   "PE280"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3607&print",
+   "title": "Degree & Certificate: Fire and Emergency, AS - El Camino College",
+   "h1": "Fire and Emergency, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 12,
+  "text_chars": 2722
+ },
+ {
+  "control_number": "02537",
+  "title": "Anthropology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02538",
+  "title": "Economics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECONC2001",
+   "ECONC2002",
+   "ECONC2002H",
+   "HIST140",
+   "HIST141",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H",
+   "MATH165",
+   "MATH190",
+   "POLI10",
+   "POLI10H",
+   "POLSC1000",
+   "POLSC1000H"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3581&print",
+   "title": "Degree & Certificate: Economics, AA - El Camino College",
+   "h1": "Economics, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2756
+ },
+ {
+  "control_number": "02539",
+  "title": "History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02540",
+  "title": "Geography",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02541",
+  "title": "Political Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02544",
+  "title": "Cosmetology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM2A",
+   "COSM2B",
+   "COSM2C"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3577&print",
+   "title": "Degree & Certificate: Cosmetology, AS - El Camino College",
+   "h1": "Cosmetology, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2393
+ },
+ {
+  "control_number": "02546",
+  "title": "Manufacturing Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08020",
+  "title": "Biology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08021",
+  "title": "Computer Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS107",
+   "BUS145",
+   "BUS146",
+   "CIS11",
+   "CIS119",
+   "CIS120",
+   "CIS121",
+   "CIS122",
+   "CIS123",
+   "CIS132",
+   "CIS133",
+   "CIS134",
+   "CIS136",
+   "CIS137",
+   "CIS141",
+   "CIS142",
+   "CIS143",
+   "CIS150",
+   "CIS152",
+   "CIS154",
+   "CIS156",
+   "CIS16",
+   "CIS18",
+   "CIS198",
+   "CIS2",
+   "CIS26",
+   "CIS28",
+   "CIS29",
+   "CIS40",
+   "CIS80",
+   "CIS84"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3505&print",
+   "title": "Degree & Certificate: Computer Information Systems, AS - El Camino College",
+   "h1": "Computer Information Systems, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 31,
+  "text_chars": 3760
+ },
+ {
+  "control_number": "08023",
+  "title": "Dance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANC103",
+   "DANC105",
+   "DANC120A",
+   "DANC120B",
+   "DANC130A",
+   "DANC130B",
+   "DANC140",
+   "DANC161",
+   "DANC162A",
+   "DANC165",
+   "DANC167",
+   "DANC168",
+   "DANC170",
+   "DANC171A",
+   "DANC171B",
+   "DANC220A",
+   "DANC220B",
+   "DANC221",
+   "DANC230A",
+   "DANC230B",
+   "DANC240",
+   "DANC250",
+   "DANC261",
+   "DANC262",
+   "DANC265",
+   "DANC268",
+   "DANC271A",
+   "DANC271B",
+   "DANC287ABCD",
+   "DANC289ABCD"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3580&print",
+   "title": "Degree & Certificate: Dance, AA - El Camino College",
+   "h1": "Dance, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 3249
+ },
+ {
+  "control_number": "08024",
+  "title": "Jewelry Design and Fabrication",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "ART110",
+   "ART130",
+   "ART141",
+   "ART160",
+   "ART173",
+   "ART274",
+   "ART275"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3526&print",
+   "title": "Degree & Certificate: Jewelry Design and Fabrication Certificate of Achievement - El Camino College",
+   "h1": "Jewelry Design and Fabrication Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1110
+ },
+ {
+  "control_number": "08029",
+  "title": "Astronomy",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08031",
+  "title": "Fire Academy",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "FTEC1",
+   "FTEC3",
+   "FTEC5",
+   "FTEC6"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3609&print",
+   "title": "Degree & Certificate: Fire Academy Certificate of Achievement - El Camino College",
+   "h1": "Fire Academy Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2083
+ },
+ {
+  "control_number": "08032",
+  "title": "Ethnic Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08033",
+  "title": "General Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08636",
+  "title": "Paramedical Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FTEC130",
+   "FTEC131",
+   "FTEC132",
+   "FTEC133",
+   "FTEC134",
+   "FTEC135",
+   "FTEC136",
+   "FTEC137",
+   "FTEC138",
+   "FTEC139"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4008&print",
+   "title": "Degree & Certificate: Paramedical Technician, AS - El Camino College",
+   "h1": "Paramedical Technician, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2044
+ },
+ {
+  "control_number": "09526",
+  "title": "Gallery Management",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "13432",
+  "title": "Real Estate: Appraisal",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "13433",
+  "title": "Real Estate: Mortgage Brokerage",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "13436",
+  "title": "Infant/Toddler Education",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "13438",
+  "title": "Program Administration",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15250",
+  "title": "Digital Art & Design Foundation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART110",
+   "ART130",
+   "ART133",
+   "ART141",
+   "ART146",
+   "ART160",
+   "ART181",
+   "ART217",
+   "BUS107",
+   "COMMC1004",
+   "DART101",
+   "DART102",
+   "DART104",
+   "FASH4",
+   "FILM105"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3502&print",
+   "title": "Degree & Certificate: Digital Art & Design Foundation Certificate of Achievement - El Camino College",
+   "h1": "Digital Art & Design Foundation Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2035
+ },
+ {
+  "control_number": "15251",
+  "title": "Visual Communications",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART129",
+   "ART130",
+   "ART131",
+   "ART132",
+   "ART133",
+   "ART141",
+   "ART143",
+   "ART146",
+   "ART147",
+   "ART153",
+   "ART195",
+   "ART231",
+   "ART232",
+   "ART233",
+   "ART96",
+   "ART99",
+   "BUS110",
+   "BUS112",
+   "BUS124",
+   "CIS133",
+   "CIS136",
+   "COMMC1000",
+   "COMMC1000H",
+   "DART150",
+   "JOUR6",
+   "PHOT106"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3527&print",
+   "title": "Degree & Certificate: Visual Communications Certificate of Achievement - El Camino College",
+   "h1": "Visual Communications Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 2081
+ },
+ {
+  "control_number": "15253",
+  "title": "Digital Arts: Illustration",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15255",
+  "title": "Digital Arts: Digital Photography",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15492",
+  "title": "Retail Management (WAFC)",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15566",
+  "title": "Fashion Stylist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FASH10",
+   "FASH15",
+   "FASH2",
+   "FASH23",
+   "FASH31",
+   "FASH41",
+   "FASH44",
+   "FASH48",
+   "FASH95"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3604&print",
+   "title": "Degree & Certificate: Fashion Stylist Certificate of Achievement - El Camino College",
+   "h1": "Fashion Stylist Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1907
+ },
+ {
+  "control_number": "15581",
+  "title": "Electronics and Computer Hardware Technology: Computer Technology Option",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS13",
+   "CIS40",
+   "ECHT11",
+   "ECHT110",
+   "ECHT130",
+   "ECHT140",
+   "ECHT142",
+   "ECHT144",
+   "ECHT191",
+   "ECHT22",
+   "ECHT95"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3583&print",
+   "title": "Degree & Certificate: Electronics and Computer Hardware Technology: Computer Technology Option, AS - El Camino College",
+   "h1": "Electronics and Computer Hardware Technology: Computer Technology Option, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2291
+ },
+ {
+  "control_number": "15583",
+  "title": "Electronics & Comp. Hard. Tech/Industrial Comp Control Tech",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17488",
+  "title": "Liberal Studies (Teacher Preparation)",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18807",
+  "title": "CSU General Education - Breadth",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18808",
+  "title": "IGETC",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18925",
+  "title": "General Studies: Arts and Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18927",
+  "title": "General Studies: Biological and Physical Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18929",
+  "title": "General Studies: Communication Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18931",
+  "title": "General Studies: Fine and Applied Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18933",
+  "title": "General Studies: Social and Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19529",
+  "title": "Early Intervention Assistant",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19775",
+  "title": "General Studies: Kinesiology and Wellness",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19857",
+  "title": "Architecture",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.571,
+  "codes_found": [
+   "ARCH100",
+   "ARCH119",
+   "ARCH121",
+   "ARCH125",
+   "ARCH170",
+   "ARCH171",
+   "ARCH172",
+   "ARCH199"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3523&print",
+   "title": "Degree & Certificate: Architecture - Professional Practice, AS - El Camino College",
+   "h1": "Architecture - Professional Practice, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2813
+ },
+ {
+  "control_number": "19859",
+  "title": "Accounting - CPA Track",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19860",
+  "title": "Business Management",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19861",
+  "title": "Marketing",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS108",
+   "BUS110",
+   "BUS111",
+   "BUS112",
+   "BUS113"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3551&print",
+   "title": "Degree & Certificate: Marketing, AS - El Camino College",
+   "h1": "Marketing, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1618
+ },
+ {
+  "control_number": "19862",
+  "title": "Real Estate",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19863",
+  "title": "Real Estate: Appraisal",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19864",
+  "title": "Real Estate: Mortgage Brokerage",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19866",
+  "title": "Journalism",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "JOUR1",
+   "JOUR11ABCD",
+   "JOUR12",
+   "JOUR14ABCD",
+   "JOUR6",
+   "JOUR8",
+   "JOUR9ABCD",
+   "PHOT106"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3623&print",
+   "title": "Degree & Certificate: Journalism, AA-T - El Camino College",
+   "h1": "Journalism, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4513
+ },
+ {
+  "control_number": "19867",
+  "title": "Film/Video Production",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19869",
+  "title": "Sign Language Interpreter Training",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "ANTH4",
+   "ASL111",
+   "ASL112",
+   "ASL113",
+   "ASL114",
+   "ASL130",
+   "ASL232",
+   "ASL234",
+   "ASL236",
+   "CDEV150",
+   "COMMC1000",
+   "THEA113"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3660&print",
+   "title": "Degree & Certificate: Sign Language/Interpreter Training, AA - El Camino College",
+   "h1": "Sign Language/Interpreter Training, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4280
+ },
+ {
+  "control_number": "19870",
+  "title": "Electronics Engineering Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECHT11",
+   "ECHT110",
+   "ECHT130",
+   "ECHT140",
+   "ECHT142",
+   "ECHT144",
+   "ECHT191",
+   "ECHT22",
+   "ECHT95"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3585&print",
+   "title": "Degree & Certificate: Electronics Engineering Technician Certificate of Achievement - El Camino College",
+   "h1": "Electronics Engineering Technician Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2112
+ },
+ {
+  "control_number": "19871",
+  "title": "Computer Hardware Electronics Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS13",
+   "CIS40",
+   "ECHT11",
+   "ECHT110",
+   "ECHT130",
+   "ECHT140",
+   "ECHT142",
+   "ECHT144",
+   "ECHT191",
+   "ECHT22",
+   "ECHT95"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3584&print",
+   "title": "Degree & Certificate: Computer Hardware Electronics Technician Certificate of Achievement - El Camino College",
+   "h1": "Computer Hardware Electronics Technician Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2103
+ },
+ {
+  "control_number": "19872",
+  "title": "Heating, Ventilation, and Air Conditioning (HVAC) and Refrigeration",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "ACR21",
+   "ACR23",
+   "ACR25",
+   "ACR27",
+   "ACR30",
+   "ACR31",
+   "ACR5",
+   "ACR6",
+   "ACR61",
+   "ACR62"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3521&print",
+   "title": "Degree & Certificate: Heating, Ventilation, and Air Conditioning (HVAC) and Refrigeration Certificate of Achievement - El Camino College",
+   "h1": "Heating, Ventilation, and Air Conditioning (HVAC) and Refrigeration Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2130
+ },
+ {
+  "control_number": "19874",
+  "title": "Automotive Collision Repair/Painting",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19877",
+  "title": "Computer Aided Design/Drafting",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "ART141",
+   "CADD14",
+   "CADD16",
+   "CADD22",
+   "CADD23",
+   "CADD24",
+   "CADD43",
+   "CADD45",
+   "CADD5",
+   "CADD7",
+   "CIS13",
+   "ECHT11",
+   "ECHT22",
+   "MTT101",
+   "MTT16",
+   "MTT46",
+   "WELD15"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3562&print",
+   "title": "Degree & Certificate: Computer Aided Design/Drafting, AS - El Camino College",
+   "h1": "Computer Aided Design/Drafting, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 2807
+ },
+ {
+  "control_number": "19878",
+  "title": "Manufacturing Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19879",
+  "title": "Machine Tool Technology: Machinist",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19881",
+  "title": "Welding",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD10A",
+   "WELD10B",
+   "WELD10C",
+   "WELD15",
+   "WELD1A",
+   "WELD1B",
+   "WELD20A",
+   "WELD23",
+   "WELD28",
+   "WELD29",
+   "WELD40A",
+   "WELD40B",
+   "WELD40C",
+   "WELD45"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3668&print",
+   "title": "Degree & Certificate: Welding, AS - El Camino College",
+   "h1": "Welding, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3193
+ },
+ {
+  "control_number": "19883",
+  "title": "Photography",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FILM234",
+   "JOUR6",
+   "JOUR7AB",
+   "PHOT102",
+   "PHOT106",
+   "PHOT204",
+   "PHOT206AB",
+   "PHOT223A",
+   "PHOT223B",
+   "PHOT254",
+   "PHOT257"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3639&print",
+   "title": "Degree & Certificate: Photography, AS - El Camino College",
+   "h1": "Photography, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3019
+ },
+ {
+  "control_number": "19884",
+  "title": "Respiratory Care",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RC284",
+   "RC291",
+   "RC292",
+   "RC293",
+   "RC296",
+   "RC297"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3658&print",
+   "title": "Degree & Certificate: Respiratory Care Certificate of Achievement - El Camino College",
+   "h1": "Respiratory Care Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 4829
+ },
+ {
+  "control_number": "19885",
+  "title": "Paramedical Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FTEC130",
+   "FTEC131",
+   "FTEC132",
+   "FTEC133",
+   "FTEC134",
+   "FTEC135",
+   "FTEC136",
+   "FTEC137",
+   "FTEC138",
+   "FTEC139"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=4008&print",
+   "title": "Degree & Certificate: Paramedical Technician, AS - El Camino College",
+   "h1": "Paramedical Technician, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2044
+ },
+ {
+  "control_number": "19888",
+  "title": "Early Childhood Education",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEV103",
+   "CDEV104",
+   "CDEV108",
+   "CDEV112",
+   "CDEV114",
+   "CDEV115",
+   "CDEV116",
+   "CDEV117",
+   "CDEV118",
+   "CDEV119"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3557&print",
+   "title": "Degree & Certificate: Early Childhood Education Certificate of Achievement - El Camino College",
+   "h1": "Early Childhood Education Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1281
+ },
+ {
+  "control_number": "19889",
+  "title": "Paralegal Studies",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LAW11",
+   "LAW12",
+   "LAW13",
+   "LAW14",
+   "LAW15",
+   "LAW16",
+   "LAW17",
+   "LAW18",
+   "LAW19",
+   "LAW20",
+   "LAW4",
+   "LAW5",
+   "LAW95",
+   "PARA1",
+   "RE12A"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3635&print",
+   "title": "Degree & Certificate: Paralegal Studies, AA - El Camino College",
+   "h1": "Paralegal Studies, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3162
+ },
+ {
+  "control_number": "19890",
+  "title": "Administration of Justice",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19891",
+  "title": "Fire & Emergency Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FTEC3"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3608&print",
+   "title": "Degree & Certificate: Fire and Emergency Technology Certificate of Achievement - El Camino College",
+   "h1": "Fire and Emergency Technology Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 1135
+ },
+ {
+  "control_number": "19892",
+  "title": "Cosmetology Level II",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM2A",
+   "COSM2B",
+   "COSM2C"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3578&print",
+   "title": "Degree & Certificate: Cosmetology Level II Certificate of Achievement - El Camino College",
+   "h1": "Cosmetology Level II Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1207
+ },
+ {
+  "control_number": "30301",
+  "title": "Refrigeration",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACR21",
+   "ACR23",
+   "ACR6"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3518&print",
+   "title": "Degree & Certificate: Air Conditioning and Refrigeration, AS - El Camino College",
+   "h1": "Air Conditioning and Refrigeration, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2465
+ },
+ {
+  "control_number": "30302",
+  "title": "Air Conditioning",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACR21",
+   "ACR25",
+   "ACR27",
+   "ACR5"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3518&print",
+   "title": "Degree & Certificate: Air Conditioning and Refrigeration, AS - El Camino College",
+   "h1": "Air Conditioning and Refrigeration, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2465
+ },
+ {
+  "control_number": "30304",
+  "title": "Automotive Technology: Tune-Up Technician",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30305",
+  "title": "Engine and Driveline Technician",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "ATEC21",
+   "ATEC34",
+   "ATEC35",
+   "ATEC43",
+   "ATEC51"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3537&print",
+   "title": "Degree & Certificate: Engine and Driveline Technician Certificate of Achievement - El Camino College",
+   "h1": "Engine and Driveline Technician Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1800
+ },
+ {
+  "control_number": "30306",
+  "title": "Automotive Technology: Automotive Brakes/Suspension, Transmission/Drive Train Technician",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30307",
+  "title": "Machine Tool Technology:  CNC Machine Operator",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31023",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2",
+   "PSYC108",
+   "PSYC109A",
+   "PSYC112",
+   "PSYC116",
+   "SOCI101",
+   "SOCI102",
+   "SOCI104",
+   "SOCI107",
+   "SOCI108",
+   "SOCI109A",
+   "SOCI112",
+   "STATC1000",
+   "WSTU1"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3661&print",
+   "title": "Degree & Certificate: Sociology, AA-T - El Camino College",
+   "h1": "Sociology, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3796
+ },
+ {
+  "control_number": "31319",
+  "title": "Commercial Music",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "MUSI101",
+   "MUSI180",
+   "MUSI181A",
+   "MUSI181B",
+   "MUSI182",
+   "MUSI284",
+   "MUSI285"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3634&print",
+   "title": "Degree & Certificate: Commercial Music Certificate of Achievement - El Camino College",
+   "h1": "Commercial Music Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 957
+ },
+ {
+  "control_number": "31358",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM1B",
+   "GEOL1",
+   "GEOL2",
+   "GEOL3",
+   "GEOL4",
+   "MATH190",
+   "MATH191"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3617&print",
+   "title": "Degree & Certificate: Geology, AS-T - El Camino College",
+   "h1": "Geology, AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2859
+ },
+ {
+  "control_number": "31445",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "BIOL10",
+   "PSYC102",
+   "PSYC103",
+   "PSYC107",
+   "PSYC108",
+   "PSYC109A",
+   "PSYC109B",
+   "PSYC110",
+   "PSYC112",
+   "PSYC115",
+   "PSYC116",
+   "PSYCC1000",
+   "SOCI109A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3650&print",
+   "title": "Degree & Certificate: Psychology, AA-T - El Camino College",
+   "h1": "Psychology, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3571
+ },
+ {
+  "control_number": "31684",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH190",
+   "MATH191",
+   "MATH220",
+   "PHYS1A",
+   "PHYS1B",
+   "PHYS1C",
+   "PHYS1D"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3645&print",
+   "title": "Degree & Certificate: Physics, AS-T - El Camino College",
+   "h1": "Physics, AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2755
+ },
+ {
+  "control_number": "31728",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI1",
+   "CSCI2",
+   "CSCI3",
+   "MATH190",
+   "MATH191",
+   "MATH210",
+   "MATH220",
+   "MATH270",
+   "PHYS1A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3632&print",
+   "title": "Degree & Certificate: Mathematics, AS-T - El Camino College",
+   "h1": "Mathematics, AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3241
+ },
+ {
+  "control_number": "31942",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ100",
+   "AJ103",
+   "AJ107",
+   "AJ111",
+   "AJ115",
+   "AJ126",
+   "AJ130",
+   "AJ131",
+   "AJ132",
+   "PSYC109A",
+   "PSYCC1000",
+   "SOCI101",
+   "SOCI109A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3517&print",
+   "title": "Degree & Certificate: Administration of Justice, AS-T - El Camino College",
+   "h1": "Administration of Justice, AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3488
+ },
+ {
+  "control_number": "32141",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2",
+   "GEOG1",
+   "GEOG2",
+   "GEOG5",
+   "GEOG6",
+   "GEOG7",
+   "GEOG8",
+   "GEOG9",
+   "GEOL1"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3616&print",
+   "title": "Degree & Certificate: Geography, AA-T - El Camino College",
+   "h1": "Geography, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2745
+ },
+ {
+  "control_number": "32165",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.802,
+  "codes_found": [
+   "ANTH11",
+   "ANTH2",
+   "ANTH3",
+   "ANTH4",
+   "ANTH6",
+   "ANTH7",
+   "ANTH8",
+   "ANTH9",
+   "ASL111",
+   "ASL112",
+   "ASL113",
+   "ASL114",
+   "ASL130",
+   "CHIN1",
+   "CHIN2",
+   "CHIN24",
+   "ECON100",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGL28",
+   "ENGL31",
+   "ENGL35",
+   "ENGL36",
+   "ENGL42",
+   "ENGL43",
+   "ESTU1",
+   "FREN1",
+   "FREN2",
+   "FREN3",
+   "FREN4",
+   "FREN5",
+   "FREN6",
+   "GEOG2",
+   "GEOG5",
+   "GEOG7",
+   "GERM1",
+   "GERM2",
+   "HIST105",
+   "HIST106",
+   "HIST110",
+   "HIST111",
+   "HIST112",
+   "HIST114",
+   "HIST122",
+   "HIST140",
+   "HIST141",
+   "HIST152",
+   "HIST154",
+   "HISTC1001",
+   "HISTC1002",
+   "ITAL1",
+   "ITAL2",
+   "ITAL24",
+   "JAPA1",
+   "JAPA2",
+   "JAPA25",
+   "JAPA3",
+   "JAPA4",
+   "JOUR12",
+   "PE275",
+   "POLI10",
+   "POLI2",
+   "POLI3",
+   "POLI5",
+   "POLI6",
+   "POLSC1000",
+   "PSYC110",
+   "PSYCC1000",
+   "SOCI101",
+   "SOCI102",
+   "SOCI104",
+   "SOCI107",
+   "SOCI108",
+   "SOCI112",
+   "SPAN24",
+   "SPAN6",
+   "WSTU1"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3619&print",
+   "title": "Degree & Certificate: History, AA-T - El Camino College",
+   "h1": "History, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 96,
+  "text_chars": 8950
+ },
+ {
+  "control_number": "32177",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHIN2",
+   "CHIN3",
+   "ENGL12",
+   "ENGL15A",
+   "ENGL15B",
+   "ENGL18",
+   "ENGL20",
+   "ENGL21",
+   "ENGL23A",
+   "ENGL24A",
+   "ENGL24B",
+   "ENGL25A",
+   "ENGL25B",
+   "ENGL27",
+   "ENGL28",
+   "ENGL30",
+   "ENGL31",
+   "ENGL34",
+   "ENGL35",
+   "ENGL36",
+   "ENGL39",
+   "ENGL40A",
+   "ENGL40B",
+   "ENGL41B",
+   "ENGL42",
+   "ENGL43",
+   "ENGL44",
+   "ENGL46",
+   "ENGL48",
+   "ENGL78",
+   "ENGL90",
+   "ENGL98",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1002",
+   "ENGLC1002H",
+   "FREN2",
+   "FREN3",
+   "FREN4",
+   "FREN5",
+   "FREN6",
+   "GERM2",
+   "GERM3",
+   "HUMA1",
+   "ITAL2",
+   "JAPA2",
+   "JAPA3",
+   "JAPA4",
+   "JOUR1",
+   "SPAN2",
+   "SPAN3",
+   "SPAN4",
+   "SPAN5",
+   "SPAN52A",
+   "SPAN6"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3508&print",
+   "title": "Degree & Certificate: English, AA-T - El Camino College",
+   "h1": "English, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 55,
+  "text_chars": 5284
+ },
+ {
+  "control_number": "32238",
+  "title": "Forensics",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ111",
+   "AJ132",
+   "AJ133",
+   "AJ134",
+   "AJ135",
+   "ART110"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3516&print",
+   "title": "Degree & Certificate: Forensics Certificate of Achievement - El Camino College",
+   "h1": "Forensics Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1582
+ },
+ {
+  "control_number": "32273",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.952,
+  "codes_found": [
+   "BIOL10",
+   "CDEV103",
+   "COMMC1000",
+   "COMS120",
+   "DANC101",
+   "EDUC201",
+   "ENGLC1000",
+   "ENGLC1002",
+   "GEOG5",
+   "GEOL6",
+   "HIST140",
+   "HISTC1001",
+   "MATH110",
+   "MUSI111",
+   "PHIL105",
+   "PHIL106",
+   "POLSC1000",
+   "PSCI25",
+   "PSYC103",
+   "THEA103"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3625&print",
+   "title": "Degree & Certificate: Elementary Teacher Education, AA-T - El Camino College",
+   "h1": "Elementary Teacher Education, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 4270
+ },
+ {
+  "control_number": "32332",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32333",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "CDEV103",
+   "CDEV104",
+   "CDEV108",
+   "CDEV110",
+   "CDEV112",
+   "CDEV114",
+   "CDEV115",
+   "CDEV125"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3560&print",
+   "title": "Degree & Certificate: Early Childhood Education, AS-T - El Camino College",
+   "h1": "Early Childhood Education, AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3193
+ },
+ {
+  "control_number": "32354",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32378",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEA103",
+   "THEA104",
+   "THEA114",
+   "THEA175ABCD",
+   "THEA184",
+   "THEA185",
+   "THEA188",
+   "THEA189",
+   "THEA197ABCD",
+   "THEA214A",
+   "THEA270ABCD",
+   "THEA274ABCD",
+   "THEA297AB"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3666&print",
+   "title": "Degree & Certificate: Theatre Arts, AA-T - El Camino College",
+   "h1": "Theatre Arts, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3822
+ },
+ {
+  "control_number": "32939",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33577",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HIST140",
+   "HIST141",
+   "PHIL101",
+   "PHIL103",
+   "PHIL105",
+   "PHIL106",
+   "PHIL107",
+   "PHIL111",
+   "PHIL112",
+   "PHIL115",
+   "PHIL117",
+   "POLI7"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3638&print",
+   "title": "Degree & Certificate: Philosophy, AA-T - El Camino College",
+   "h1": "Philosophy, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3459
+ },
+ {
+  "control_number": "35049",
+  "title": "Business Programming",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS13",
+   "CIS132",
+   "CIS133",
+   "CIS134",
+   "CIS136",
+   "CIS16",
+   "CIS18",
+   "CIS80",
+   "CIS84"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3506&print",
+   "title": "Degree & Certificate: Business Programming Certificate of Achievement - El Camino College",
+   "h1": "Business Programming Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1973
+ },
+ {
+  "control_number": "36167",
+  "title": "Database Management",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "CIS119",
+   "CIS13",
+   "CIS18",
+   "CIS28",
+   "CIS29",
+   "CIS80"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3566&print",
+   "title": "Degree & Certificate: Database Management Certificate of Achievement - El Camino College",
+   "h1": "Database Management Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1404
+ },
+ {
+  "control_number": "36974",
+  "title": "ESL for Math",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NESL7A",
+   "NESL7B",
+   "NESL7C"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3691&print",
+   "title": "Degree & Certificate: ESL for Math Certificate of Competency - El Camino College",
+   "h1": "ESL for Math Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 858
+ },
+ {
+  "control_number": "37087",
+  "title": "ESL for Healthcare",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NESL504A",
+   "NESL504B"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3689&print",
+   "title": "Degree & Certificate: ESL for Healthcare Certificate of Competency - El Camino College",
+   "h1": "ESL for Healthcare Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 929
+ },
+ {
+  "control_number": "37091",
+  "title": "English as a Second Language",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37112",
+  "title": "Computer User Support Specialist",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.571,
+  "codes_found": [
+   "CIS11",
+   "CIS13",
+   "CIS28",
+   "CIS40"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3687&print",
+   "title": "Degree & Certificate: Computer User Support Specialist Certificate of Achievement - El Camino College",
+   "h1": "Computer User Support Specialist Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1686
+ },
+ {
+  "control_number": "37185",
+  "title": "ESL for Healthcare II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NESL10",
+   "NESL6",
+   "NESL8",
+   "NESL9A",
+   "NESL9B"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3690&print",
+   "title": "Degree & Certificate: ESL for Healthcare II Certificate of Competency - El Camino College",
+   "h1": "ESL for Healthcare II Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1224
+ },
+ {
+  "control_number": "37186",
+  "title": "ESL for Childhood Educators",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NESL505A",
+   "NESL505B"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3688&print",
+   "title": "Degree & Certificate: ESL for Childhood Educators Certificate of Competency - El Camino College",
+   "h1": "ESL for Childhood Educators Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 991
+ },
+ {
+  "control_number": "37191",
+  "title": "Business Information Worker",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37904",
+  "title": "Cloud Computing with Amazon Web Services",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "CIS150",
+   "CIS152",
+   "CIS154",
+   "CIS156"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3695&print",
+   "title": "Degree & Certificate: Cloud Computing and Programming with Amazon Web Services Certificate of Achievement - El Camino College",
+   "h1": "Cloud Computing and Programming with Amazon Web Services Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1371
+ },
+ {
+  "control_number": "38788",
+  "title": "Cisco Networking Administration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS13",
+   "CIS137",
+   "CIS141",
+   "CIS142",
+   "CIS143",
+   "CIS198",
+   "CIS40"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3700&print",
+   "title": "Degree & Certificate: Cisco Networking Administration Certificate of Achievement - El Camino College",
+   "h1": "Cisco Networking Administration Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1316
+ },
+ {
+  "control_number": "38791",
+  "title": "Cybersecurity",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ142",
+   "CIS119",
+   "CIS120",
+   "CIS121",
+   "CIS122",
+   "CIS13",
+   "CIS137",
+   "CIS198",
+   "CIS40"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3702&print",
+   "title": "Degree & Certificate: Cybersecurity Certificate of Achievement - El Camino College",
+   "h1": "Cybersecurity Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1482
+ },
+ {
+  "control_number": "38839",
+  "title": "Entrepreneurial Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS108",
+   "BUS110",
+   "BUS111",
+   "BUS113",
+   "BUS119",
+   "BUS120",
+   "BUS121",
+   "BUS122",
+   "BUS124",
+   "BUS125",
+   "BUS126",
+   "BUS127",
+   "BUS128",
+   "BUS150",
+   "CIS13",
+   "CIS132"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3697&print",
+   "title": "Degree & Certificate: Entrepreneurial Studies, AS - El Camino College",
+   "h1": "Entrepreneurial Studies, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 1937
+ },
+ {
+  "control_number": "38948",
+  "title": "Entrepreneurial Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS111",
+   "BUS113",
+   "BUS119",
+   "BUS120",
+   "BUS124",
+   "BUS125",
+   "BUS126",
+   "BUS127",
+   "BUS128",
+   "BUS150",
+   "CIS13"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3697&print",
+   "title": "Degree & Certificate: Entrepreneurial Studies, AS - El Camino College",
+   "h1": "Entrepreneurial Studies, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1937
+ },
+ {
+  "control_number": "38949",
+  "title": "Women, Gender and Sexual Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH9",
+   "ENGL18",
+   "ENGL28",
+   "ENGL46",
+   "HIST105",
+   "HIST106",
+   "PSYC112",
+   "PSYC119",
+   "PSYC125",
+   "SOCI102",
+   "SOCI104",
+   "SOCI113",
+   "SOCI118",
+   "WSTU1"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3698&print",
+   "title": "Degree & Certificate: Women’s, Gender and Sexuality Studies, AA - El Camino College",
+   "h1": "Women’s, Gender and Sexuality Studies, AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 14,
+  "text_chars": 2046
+ },
+ {
+  "control_number": "39004",
+  "title": "ESL Listening and Speaking",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39005",
+  "title": "ESL Reading and Vocabulary",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NESL52A",
+   "NESL52B",
+   "NESL52C"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3721&print",
+   "title": "Degree & Certificate: ESL Reading and Vocabulary Certificate of Competency - El Camino College",
+   "h1": "ESL Reading and Vocabulary Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 789
+ },
+ {
+  "control_number": "39006",
+  "title": "ESL Writing and Grammar",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NESL53A",
+   "NESL53B",
+   "NESL53C"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3722&print",
+   "title": "Degree & Certificate: ESL Writing and Grammar Certificate of Competency - El Camino College",
+   "h1": "ESL Writing and Grammar Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 729
+ },
+ {
+  "control_number": "39056",
+  "title": "Communication Studies",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMC1000",
+   "COMMC1000H",
+   "COMMC1004",
+   "COMS120",
+   "COMS140",
+   "COMS250",
+   "COMS260",
+   "COMS265",
+   "COMS270",
+   "COMS275"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3701&print",
+   "title": "Degree & Certificate: Communication Studies Certificate of Achievement - El Camino College",
+   "h1": "Communication Studies Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1643
+ },
+ {
+  "control_number": "40200",
+  "title": "Accounting - Tax Preparation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40201",
+  "title": "Accounting Clerical",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40635",
+  "title": "Fundamentals of Construction",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40650",
+  "title": "Technical Support and Networking Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS11",
+   "CIS119",
+   "CIS13",
+   "CIS137",
+   "CIS150",
+   "CIS40"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3705&print",
+   "title": "Degree & Certificate: Technical Support and Networking Specialist Certificate of Achievement - El Camino College",
+   "h1": "Technical Support and Networking Specialist Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1266
+ },
+ {
+  "control_number": "40668",
+  "title": "Introduction to College and Career Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HDEV500",
+   "HDEV504",
+   "HDEV510"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3709&print",
+   "title": "Degree & Certificate: Introduction to College and Career Success Certificate of Completion - El Camino College",
+   "h1": "Introduction to College and Career Success Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1330
+ },
+ {
+  "control_number": "40715",
+  "title": "Transition to College Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HDEV500",
+   "HDEV506"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3710&print",
+   "title": "Degree & Certificate: Introduction to College and University Success Certificate of Completion - El Camino College",
+   "h1": "Introduction to College and University Success Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 2,
+  "text_chars": 1341
+ },
+ {
+  "control_number": "41383",
+  "title": "Social Justice Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AHIS205A",
+   "AHIS205B",
+   "AHIS207",
+   "AHIS208",
+   "AHIS208H",
+   "AHIS209",
+   "ANTH2",
+   "ANTH6",
+   "ANTH7",
+   "ANTH8",
+   "ANTH9",
+   "COMS265",
+   "COMS275",
+   "ENGL28",
+   "ENGL31",
+   "ENGL35",
+   "ENGL36",
+   "ENGL42",
+   "ENGL43",
+   "ENGL44",
+   "ENGL48",
+   "ESTU1",
+   "ESTU3",
+   "ESTU5",
+   "GEOG2",
+   "GEOG5",
+   "GEOG5H",
+   "HIST105",
+   "HIST106",
+   "HIST108",
+   "HIST110",
+   "HIST111",
+   "HIST112",
+   "HIST114",
+   "HIST122",
+   "HIST122H",
+   "HIST128",
+   "HIST129",
+   "HIST140",
+   "HIST141",
+   "HIST152",
+   "HIST154",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H",
+   "ITAL1",
+   "ITAL2",
+   "JAPA1",
+   "JAPA2",
+   "MUSI112",
+   "MUSI113",
+   "PHIL103",
+   "PHIL117",
+   "POLI5",
+   "POLI6",
+   "POLI7",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYC102",
+   "PSYC108",
+   "PSYC109A",
+   "PSYC110",
+   "PSYC112",
+   "PSYC115",
+   "PSYC116",
+   "PSYC117",
+   "PSYC119",
+   "PSYC125",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCI101",
+   "SOCI102",
+   "SOCI104",
+   "SOCI107",
+   "SOCI108",
+   "SOCI109A",
+   "SOCI112",
+   "SOCI113",
+   "SPAN1",
+   "SPAN2",
+   "SPAN3",
+   "SPAN4",
+   "SPAN52A",
+   "SSCI103",
+   "STATC1000",
+   "STATC1000H",
+   "WSTU1"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3719&print",
+   "title": "Degree & Certificate: Social Justice Studies, AA-T - El Camino College",
+   "h1": "Social Justice Studies, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 88,
+  "text_chars": 13742
+ },
+ {
+  "control_number": "41395",
+  "title": "Real Estate Broker",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "LAW4",
+   "RE11",
+   "RE12A",
+   "RE13",
+   "RE14A",
+   "RE14B",
+   "RE16",
+   "RE19",
+   "RE26",
+   "RE31",
+   "RE40"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3711&print",
+   "title": "Degree & Certificate: Real Estate Broker Certificate of Achievement - El Camino College",
+   "h1": "Real Estate Broker Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1055
+ },
+ {
+  "control_number": "41396",
+  "title": "Real Estate Escrow",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RE11",
+   "RE13",
+   "RE26"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3712&print",
+   "title": "Degree & Certificate: Real Estate Escrow Certificate of Achievement - El Camino College",
+   "h1": "Real Estate Escrow Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 951
+ },
+ {
+  "control_number": "41400",
+  "title": "Real Estate Property Management",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RE11",
+   "RE13",
+   "RE19"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3715&print",
+   "title": "Degree & Certificate: Real Estate Property Management Certificate of Achievement - El Camino College",
+   "h1": "Real Estate Property Management Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1045
+ },
+ {
+  "control_number": "41401",
+  "title": "Real Estate Salesperson",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RE11",
+   "RE12A",
+   "RE13"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3716&print",
+   "title": "Degree & Certificate: Real Estate Salesperson Certificate of Achievement - El Camino College",
+   "h1": "Real Estate Salesperson Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 675
+ },
+ {
+  "control_number": "41531",
+  "title": "Real Estate Investments",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RE11",
+   "RE13",
+   "RE21"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3714&print",
+   "title": "Degree & Certificate: Real Estate Investments Certificate of Achievement - El Camino College",
+   "h1": "Real Estate Investments Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 834
+ },
+ {
+  "control_number": "41532",
+  "title": "Real Estate Finance",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RE11",
+   "RE13",
+   "RE14A",
+   "RE14B"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3713&print",
+   "title": "Degree & Certificate: Real Estate Finance Certificate of Achievement - El Camino College",
+   "h1": "Real Estate Finance Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 535
+ },
+ {
+  "control_number": "42541",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS101",
+   "BUS108",
+   "BUS116",
+   "BUS150",
+   "BUS151",
+   "CIS13",
+   "ECONC2001",
+   "ECONC2002",
+   "ECONC2002H",
+   "LAW4",
+   "LAW5",
+   "MATH140",
+   "MATH165",
+   "MATH190",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3555&print",
+   "title": "Degree & Certificate: Business Administration 2.0, AS-T - El Camino College",
+   "h1": "Business Administration 2.0, AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3439
+ },
+ {
+  "control_number": "42780",
+  "title": "Recreation Aquatics Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PE240B",
+   "PE240C",
+   "PE248",
+   "PE249",
+   "PE57ABC",
+   "PE58ABC",
+   "RECR207",
+   "RECR217"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3725&print",
+   "title": "Degree & Certificate: Recreation Aquatics Specialist Certificate of Achievement - El Camino College",
+   "h1": "Recreation Aquatics Specialist Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1736
+ },
+ {
+  "control_number": "43210",
+  "title": "Respiratory Care",
+  "award": "Baccalaureate of Science (B.S.) Degree.",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHIL374",
+   "PSYC378",
+   "SOCI380"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3723&print",
+   "title": "Degree & Certificate: Respiratory Care, BS - El Camino College",
+   "h1": "Respiratory Care, BS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2682
+ },
+ {
+  "control_number": "43815",
+  "title": "Piano Teaching",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS120",
+   "BUS124",
+   "MUSI103A",
+   "MUSI103B",
+   "MUSI111",
+   "MUSI131B",
+   "MUSI215B",
+   "MUSI231A",
+   "MUSI231B",
+   "MUSI232",
+   "MUSI284"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3724&print",
+   "title": "Degree & Certificate: Piano Teaching Certificate of Achievement - El Camino College",
+   "h1": "Piano Teaching Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1459
+ },
+ {
+  "control_number": "43963",
+  "title": "Personal Care Aide",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALH500",
+   "HDEV504"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3726&print",
+   "title": "Degree & Certificate: Personal Care Aide Certificate of Completion - El Camino College",
+   "h1": "Personal Care Aide Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 836
+ },
+ {
+  "control_number": "43992",
+  "title": "Hybrid, Electric and Alternative Fuels",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC21",
+   "ATEC22A",
+   "ATEC22B",
+   "ATEC23",
+   "ATEC24",
+   "ATEC25",
+   "ATEC26",
+   "ATEC34",
+   "ATEC35",
+   "ATEC51",
+   "ATEC52",
+   "ATEC53",
+   "ATEC81"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3729&print",
+   "title": "Degree & Certificate: Hybrid, Electric, and Alternative Fuels, AS - El Camino College",
+   "h1": "Hybrid, Electric, and Alternative Fuels, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2424
+ },
+ {
+  "control_number": "43993",
+  "title": "Hybrid, Electric, and Alternative Fuels",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC22B",
+   "ATEC25",
+   "ATEC26",
+   "ATEC51",
+   "ATEC52",
+   "ATEC53"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3729&print",
+   "title": "Degree & Certificate: Hybrid, Electric, and Alternative Fuels, AS - El Camino College",
+   "h1": "Hybrid, Electric, and Alternative Fuels, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2424
+ },
+ {
+  "control_number": "44035",
+  "title": "High School Equivalency Test",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PASS501",
+   "PASS502",
+   "PASS503",
+   "PASS504"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3727&print",
+   "title": "Degree & Certificate: High School Equivalency Test Certificate of Competency - El Camino College",
+   "h1": "High School Equivalency Test Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 776
+ },
+ {
+  "control_number": "44420",
+  "title": "Basic Office Computer Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PASS533",
+   "PASS534"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3740&print",
+   "title": "Degree & Certificate: Basic Computer Office Skills Certificate of Completion - El Camino College",
+   "h1": "Basic Computer Office Skills Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1423
+ },
+ {
+  "control_number": "44465",
+  "title": "Introduction to Child Development and Early Childhood Education",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEV500",
+   "CDEV501"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3732&print",
+   "title": "Degree & Certificate: Introduction to Child Development and Early Childhood Education - El Camino College",
+   "h1": "Introduction to Child Development and Early Childhood Education",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1370
+ },
+ {
+  "control_number": "44466",
+  "title": "Parenting/Caregiving",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PAR500",
+   "PAR501",
+   "PAR502"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3733&print",
+   "title": "Degree & Certificate: Parenting/Caregiving Certificate of Completion - El Camino College",
+   "h1": "Parenting/Caregiving Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1397
+ },
+ {
+  "control_number": "44467",
+  "title": "Medical Transcription",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALH501",
+   "HDEV504"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3734&print",
+   "title": "Degree & Certificate: Medical Transcription Certificate of Completion - El Camino College",
+   "h1": "Medical Transcription Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 926
+ },
+ {
+  "control_number": "44505",
+  "title": "Sterile Processing Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALH502",
+   "HDEV504"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3735&print",
+   "title": "Degree & Certificate: Sterile Processing Technician Certificate of Completion - El Camino College",
+   "h1": "Sterile Processing Technician Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 988
+ },
+ {
+  "control_number": "44583",
+  "title": "Actuarial Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS150",
+   "BUS151",
+   "COMS180",
+   "CSCI1",
+   "CSCI14",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH190",
+   "MATH191",
+   "MATH220",
+   "MATH270",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3736&print",
+   "title": "Degree & Certificate: Actuarial Science, AS - El Camino College",
+   "h1": "Actuarial Science, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2261
+ },
+ {
+  "control_number": "44584",
+  "title": "IRS Volunteer Income Tax Assistance (VITA) Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS563",
+   "BUS565C"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3739&print",
+   "title": "Degree & Certificate: IRS Volunteer Income Tax Assistance (VITA) Program Certificate of Completion - El Camino College",
+   "h1": "IRS Volunteer Income Tax Assistance (VITA) Program Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1215
+ },
+ {
+  "control_number": "44744",
+  "title": "Dance Teacher",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.963,
+  "codes_found": [
+   "DANC101",
+   "DANC105",
+   "DANC120A",
+   "DANC120B",
+   "DANC130A",
+   "DANC130B",
+   "DANC140",
+   "DANC161",
+   "DANC163",
+   "DANC165",
+   "DANC167",
+   "DANC168",
+   "DANC170",
+   "DANC171A",
+   "DANC171B",
+   "DANC183AB",
+   "DANC220A",
+   "DANC230A",
+   "DANC240",
+   "DANC250",
+   "DANC261",
+   "DANC262",
+   "DANC265",
+   "DANC268",
+   "DANC287ABCD",
+   "DANC289ABCD"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3741&print",
+   "title": "Degree & Certificate: Dance Teacher Certificate of Achievement - El Camino College",
+   "h1": "Dance Teacher Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 2167
+ },
+ {
+  "control_number": "44764",
+  "title": "Data Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMS180",
+   "CSCI1",
+   "CSCI14",
+   "CSCI2",
+   "CSCI8",
+   "CSCI9",
+   "PSYC109A",
+   "SOCI109A",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3737&print",
+   "title": "Degree & Certificate: Data Science Certificate of Achievement - El Camino College",
+   "h1": "Data Science Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1376
+ },
+ {
+  "control_number": "45070",
+  "title": "Digital Art and Design: 2D Animation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART110",
+   "ART130",
+   "ART131",
+   "ART147",
+   "ART217",
+   "ART218A",
+   "ART247A",
+   "DART111",
+   "DART115",
+   "DART121",
+   "DART211",
+   "DART221",
+   "DART290",
+   "DART95",
+   "DART99"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3745&print",
+   "title": "Degree & Certificate: Digital Art and Design: 2D Animation Certificate of Achievement - El Camino College",
+   "h1": "Digital Art and Design: 2D Animation Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 1633
+ },
+ {
+  "control_number": "45073",
+  "title": "Digital Art and Design: 3D Modeling & Animation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART160",
+   "ART181",
+   "DART111",
+   "DART115",
+   "DART131",
+   "DART140",
+   "DART211",
+   "DART231",
+   "DART241",
+   "DART290",
+   "DART95",
+   "DART99"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3746&print",
+   "title": "Degree & Certificate: Digital Art and Design: 3D Modeling & Animation Certificate of Achievement - El Camino College",
+   "h1": "Digital Art and Design: 3D Modeling & Animation Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1675
+ },
+ {
+  "control_number": "45129",
+  "title": "Digital Art and Design: Concept Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART110",
+   "ART130",
+   "ART131",
+   "ART141",
+   "ART210",
+   "ART217",
+   "ART218A",
+   "DART111",
+   "DART115",
+   "DART121",
+   "DART131",
+   "DART140",
+   "DART150",
+   "DART155",
+   "DART211",
+   "DART221",
+   "DART231",
+   "DART241",
+   "DART290",
+   "DART95",
+   "DART99"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3747&print",
+   "title": "Degree & Certificate: Digital Art and Design: Concept Design Certificate of Achievement - El Camino College",
+   "h1": "Digital Art and Design: Concept Design Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 1905
+ },
+ {
+  "control_number": "45130",
+  "title": "Digital Art and Design: Game Art and Animation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DART111",
+   "DART115",
+   "DART121",
+   "DART131",
+   "DART140",
+   "DART150",
+   "DART155",
+   "DART221",
+   "DART290",
+   "GPM110",
+   "GPM150"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3748&print",
+   "title": "Degree & Certificate: Digital Art and Design: Game Art and Animation Certificate of Achievement - El Camino College",
+   "h1": "Digital Art and Design: Game Art and Animation Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1578
+ },
+ {
+  "control_number": "45144",
+  "title": "Digital Art and Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART110",
+   "ART130",
+   "ART131",
+   "ART160",
+   "ART181",
+   "ART210",
+   "ART217",
+   "ART218A",
+   "DART101",
+   "DART102",
+   "DART104",
+   "DART111",
+   "DART115",
+   "DART121",
+   "DART131",
+   "DART140",
+   "DART150",
+   "DART155",
+   "DART211",
+   "DART221",
+   "DART231",
+   "DART241",
+   "DART290",
+   "DART95",
+   "DART99",
+   "FILM105",
+   "GPM110"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3744&print",
+   "title": "Degree & Certificate: Digital Art and Design, AS - El Camino College",
+   "h1": "Digital Art and Design, AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 2650
+ },
+ {
+  "control_number": "45290",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "AHIS101",
+   "AHIS102C",
+   "AHIS205A",
+   "AHIS205B",
+   "AHIS207",
+   "AHIS208",
+   "AHIS208H",
+   "AHIS209",
+   "AHIS210",
+   "AJ100",
+   "AJ103",
+   "AJ115",
+   "ANAT30",
+   "ANAT32",
+   "ANTH1",
+   "ANTH11",
+   "ANTH1H",
+   "ANTH2",
+   "ANTH2H",
+   "ANTH3",
+   "ANTH4",
+   "ANTH4H",
+   "ANTH5",
+   "ANTH6",
+   "ANTH7",
+   "ANTH8",
+   "ANTH9",
+   "APHY34A",
+   "APHY34B",
+   "ARCH104",
+   "ARCH107",
+   "ARCH108",
+   "ASTR12",
+   "ASTR15",
+   "ASTR20",
+   "ASTR20H",
+   "ASTR25",
+   "ASTR25H",
+   "BIOL10",
+   "BIOL10H",
+   "BIOL11",
+   "BIOL110",
+   "BIOL110H",
+   "BIOL120",
+   "BIOL120H",
+   "BIOL130",
+   "BIOL15",
+   "BIOL16",
+   "BIOL17",
+   "BIOL18",
+   "BIOL75",
+   "BIOL76",
+   "BIOL8",
+   "BUS116",
+   "CDEV103",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM20",
+   "CHEM21A",
+   "CHEM21B",
+   "CHEM4",
+   "CHEM4H",
+   "CHEM7A",
+   "CHEM7B",
+   "CHIN2",
+   "CHIN24",
+   "CHIN3",
+   "COMMC1000",
+   "COMMC1000H",
+   "COMS180",
+   "COMS260",
+   "COMS265",
+   "COMS265H",
+   "COMS275",
+   "DANC101",
+   "DANC103",
+   "ECON100",
+   "ENGL12",
+   "ENGL15A",
+   "ENGL15B",
+   "ENGL18",
+   "ENGL1AE",
+   "ENGL20",
+   "ENGL21",
+   "ENGL27",
+   "ENGL28",
+   "ENGL30",
+   "ENGL31",
+   "ENGL34",
+   "ENGL35",
+   "ENGL36",
+   "ENGL39",
+   "ENGL40A",
+   "ENGL40B",
+   "ENGL41B",
+   "ENGL42",
+   "ENGL43",
+   "ENGL44",
+   "ENGL46",
+   "ENGL48",
+   "ENGL90",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1002",
+   "ENGLC1002H",
+   "ESTU1",
+   "ESTU3",
+   "ESTU5",
+   "FILM100",
+   "FILM105",
+   "FILM110",
+   "FILM153",
+   "FILM154",
+   "FREN2",
+   "FREN3",
+   "FREN4",
+   "GEOG1",
+   "GEOG2",
+   "GEOG5",
+   "GEOG5H",
+   "GEOG6",
+   "GEOG7",
+   "GEOG9",
+   "GEOL1",
+   "GEOL15",
+   "GEOL2",
+   "GEOL3",
+   "GEOL30",
+   "GEOL32",
+   "GEOL34",
+   "GEOL36",
+   "GEOL4",
+   "GEOL7",
+   "GERM2",
+   "GERM3",
+   "HIST105",
+   "HIST106",
+   "HIST108",
+   "HIST110",
+   "HIST111",
+   "HIST112",
+   "HIST114",
+   "HIST122",
+   "HIST122H",
+   "HIST128",
+   "HIST129",
+   "HIST140",
+   "HIST141",
+   "HIST152",
+   "HIST154",
+   "HUMA1",
+   "ITAL2",
+   "ITAL24",
+   "JAPA2",
+   "JAPA25",
+   "JAPA3",
+   "JAPA4",
+   "JOUR12",
+   "LGBT101",
+   "MATH115",
+   "MATH120",
+   "MATH130",
+   "MATH140",
+   "MATH165",
+   "MATH180",
+   "MATH190",
+   "MATH191",
+   "MATH210",
+   "MATH220",
+   "MATH270",
+   "MICR33",
+   "MUSI111",
+   "MUSI112",
+   "MUSI112H",
+   "MUSI113",
+   "MUSI115",
+   "MUSI116",
+   "MUSI117",
+   "MUSI215A",
+   "MUSI215B",
+   "OCEA10",
+   "OCEA10H",
+   "PE212",
+   "PE275",
+   "PHIL101",
+   "PHIL101H",
+   "PHIL103",
+   "PHIL105",
+   "PHIL105H",
+   "PHIL107",
+   "PHIL111",
+   "PHIL112",
+   "PHIL113",
+   "PHIL115",
+   "PHIL117",
+   "PHOT150",
+   "PHYS11",
+   "PHYS1A",
+   "PHYS1B",
+   "PHYS1C",
+   "PHYS1D",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS3A",
+   "PHYS3B",
+   "POLI10",
+   "POLI10H",
+   "POLI2",
+   "POLI3",
+   "POLI5",
+   "POLI6",
+   "POLI7",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSCI25",
+   "PSYC102",
+   "PSYC103",
+   "PSYC103H",
+   "PSYC107",
+   "PSYC108",
+   "PSYC109A",
+   "PSYC110",
+   "PSYC112",
+   "PSYC115",
+   "PSYC116",
+   "PSYC116H",
+   "PSYC117",
+   "PSYC119",
+   "PSYC125",
+   "PSYCC1000H",
+   "SOCI101",
+   "SOCI101H",
+   "SOCI102",
+   "SOCI104",
+   "SOCI107",
+   "SOCI107H",
+   "SOCI108",
+   "SOCI109A",
+   "SOCI112",
+   "SOCI113",
+   "SOCI115",
+   "SOCI118",
+   "SPAN2",
+   "SPAN24",
+   "SPAN3",
+   "SPAN4",
+   "SPAN5",
+   "SPAN52A",
+   "SPAN52B",
+   "SPAN6",
+   "SSCI101",
+   "SSCI103",
+   "SSCI103H",
+   "STATC1000",
+   "STATC1000H",
+   "THEA103",
+   "THEA104",
+   "WSTU1"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3749&print",
+   "title": "Degree & Certificate: Cal-GETC GE Requirements and Certificate of Achievement - El Camino College",
+   "h1": "Cal-GETC GE Requirements and Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 289,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45307",
+  "title": "Adult High School Diploma",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AHSD500",
+   "AHSD501",
+   "AHSD502",
+   "AHSD503",
+   "AHSD504",
+   "AHSD505",
+   "AHSD506",
+   "AHSD507",
+   "AHSD510",
+   "AHSD511",
+   "AHSD512",
+   "AHSD513",
+   "AHSD514",
+   "AHSD520",
+   "AHSD521",
+   "AHSD522",
+   "AHSD523",
+   "AHSD524",
+   "AHSD530",
+   "AHSD531",
+   "AHSD532",
+   "AHSD533",
+   "AHSD534",
+   "AHSD536",
+   "AHSD537",
+   "AHSD540",
+   "AHSD541",
+   "AHSD542",
+   "AHSD550",
+   "AHSD551",
+   "AHSD552",
+   "AHSD553",
+   "AHSD554"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3750&print",
+   "title": "Degree & Certificate: Adult High School Diploma - El Camino College",
+   "h1": "Adult High School Diploma",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 33,
+  "text_chars": 2866
+ },
+ {
+  "control_number": "45647",
+  "title": "Biotechnology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.95,
+  "codes_found": [
+   "APHY34A",
+   "APHY34B",
+   "BIOL130",
+   "BIOL75",
+   "BIOL76",
+   "BIOL77",
+   "BIOL78",
+   "BIOL79",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM20",
+   "CHEM21A",
+   "CHEM4",
+   "CHEM4H",
+   "MATH170",
+   "MEDT1",
+   "NUTR110",
+   "PHYO31",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3751&print",
+   "title": "Degree & Certificate: Biotechnology, AS Degree - El Camino College",
+   "h1": "Biotechnology, AS Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 2571
+ },
+ {
+  "control_number": "45648",
+  "title": "Biotechnology Laboratory Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL75",
+   "BIOL76",
+   "BIOL77",
+   "CHEM1A",
+   "CHEM20",
+   "CHEM21A",
+   "CHEM4",
+   "CHEM4H",
+   "MICR33"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3752&print",
+   "title": "Degree & Certificate: Biotechnology Laboratory Assistant Certificate of Achievement - El Camino College",
+   "h1": "Biotechnology Laboratory Assistant Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1554
+ },
+ {
+  "control_number": "45649",
+  "title": "Biotechnology Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL75",
+   "BIOL76",
+   "BIOL77",
+   "BIOL78",
+   "BIOL79",
+   "CHEM1A",
+   "CHEM20",
+   "CHEM21A",
+   "CHEM4",
+   "CHEM4H",
+   "MICR33"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3753&print",
+   "title": "Degree & Certificate: Biotechnology Technician Certificate of Achievement - El Camino College",
+   "h1": "Biotechnology Technician Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1623
+ },
+ {
+  "control_number": "45744",
+  "title": "Fashion Entrepreneurship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FASH500",
+   "FASH501"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3754&print",
+   "title": "Degree & Certificate: Fashion Entrepreneurship Certificate of Completion - El Camino College",
+   "h1": "Fashion Entrepreneurship Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1086
+ },
+ {
+  "control_number": "45974",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2",
+   "COMMC1000",
+   "COMMC1004",
+   "COMS120",
+   "COMS140",
+   "COMS250",
+   "COMS260",
+   "COMS265",
+   "COMS292ABCD",
+   "COMS293ABCD",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1002",
+   "ENGLC1002H",
+   "JOUR1",
+   "JOUR12",
+   "PSYCC1000",
+   "SOCI101",
+   "SOCI101H"
+  ],
+  "source": {
+   "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3755&print",
+   "title": "Degree & Certificate: Communication Studies 2.0, AA-T - El Camino College",
+   "h1": "Communication Studies 2.0, AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 4217
+ },
+ {
+  "control_number": "46403",
+  "title": "Academic Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46404",
+  "title": "Math Essentials",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ }
+]
