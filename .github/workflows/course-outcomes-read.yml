@@ -85,11 +85,16 @@ jobs:
           CENSUS_DELAY_MS: '3000'
         run: |
           index=$(sed -n 's/^index=//p' kb/course_outcomes/.run)
+          catalog=$(sed -n 's/^catalog=//p' kb/course_outcomes/.run)
+          elumen=$(sed -n 's/^elumen=//p' kb/course_outcomes/.run)
+          catalog=${catalog:-$elumen}
           slugs=$(sed -n 's/^slugs=//p' kb/course_outcomes/.run)
           trial=$(sed -n 's/^trial=//p' kb/course_outcomes/.run)
           parts=$(sed -n 's/^parts=//p' kb/course_outcomes/.run)
-          args=(--index "$index")
-          [ -n "$slugs" ] && args+=(--slugs "$slugs")
+          # A college whose catalog addresses each course page by code (catalog=<slug>,
+          # or elumen=<slug>: eLumen, the Coast district) needs no index (S387).
+          if [ -n "$catalog" ]; then args=(--catalog "$catalog")
+          else args=(--index "$index"); [ -n "$slugs" ] && args+=(--slugs "$slugs"); fi
           if [ "${{ needs.plan.outputs.mode }}" = trial ]; then args+=(--trial "$trial")
           else args+=(--part "${{ matrix.part }}" --of "${parts:-1}"); fi
           python3 kb/_course_outcomes_read.py "${args[@]}"

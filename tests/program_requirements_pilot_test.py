@@ -510,6 +510,11 @@ _extract = re.search(r"- name: Extract and score\n\s+if: steps\.guard\.outputs\.
 check(bool(_guard) and bool(_extract) and xwf.index("id: guard") < xwf.index("- name: Extract and score"),
       "a push whose extraction script matches main's makes no model calls (the guard runs first, "
       "and Extract and score waits on it); a dispatch always runs")
+# S389: #2110 changed the script for record shape 5 and its first push ran the whole pilot ($1.6).
+check(re.search(r"id: guard\n(?:.*\n)*?\s+MSG: \$\{\{ github\.event\.head_commit\.message \}\}\n(?:.*\n)*?"
+                r"\s+case \"\$MSG\" in\n\s+\"\[extract\]\"\*\) ;;\n\s+\*\) echo \"run=no\"", xwf),
+      "a push makes model calls only when its commit message starts with [extract], read through the "
+      "environment, never pasted into the script")
 
 # ── The scorer: the plan's three automatic bars ──────────────────────────────
 rec = {"program": {"total_units": 33.5, "open_elective_units": 0},
@@ -656,6 +661,63 @@ r = S.score({"program": {}, "blocks": [{"name": "Core", "rule": "all",
 check(not r["arithmetic"]["pass"] and r["arithmetic"]["status"] == "incomplete",
       "a credit record with no total is never 'unstated': the state file holds its units")
 
+# Record shape 5 (Sam, Open Asks Sheet 78 card 2, 2026-10-14, "Record both figures"): a page that
+# prints the degree total with general education and no major total is checked against the degree.
+AUT = [{"code": c, "units": u} for c, u in (("AUT 100", 24), ("AUT 120", 3), ("AUT 121", 3), ("AUT 122", 3))]
+aut = {"program": {"total_units": {"min": None, "max": None}, "degree_total": {"min": 64, "max": 68},
+                   "ge_units": {"min": 34, "max": 38}, "ge_pattern": "CalGETC", "electives_fill_degree": False},
+       "blocks": [{"name": "Required Core", "rule": "all", "courses": [{"code": "AUT 100", "units": 24}]},
+                  {"name": "Electives", "rule": "choose_units", "minimum": 6, "stated": {"min": 6, "max": 6},
+                   "courses": [{"code": "AUT 120", "units": 3}, {"code": "AUT 121", "units": 3},
+                               {"code": "AUT 122", "units": 3}]}]}
+AUT_TEXT = "Required Core 24 units AUT 100 Electives 6 units AUT 120 AUT 121 AUT 122 CalGETC 34 - 38 Total 64 - 68"
+r = S.score(aut, AUT, AUT_TEXT)
+check(r["pass"] and r["arithmetic"]["against"] == "degree" and r["arithmetic"]["computed"] == [64.0, 68.0]
+      and r["arithmetic"]["stated"] == [64.0, 68.0],
+      "Palo Verde Automotive Technology A.S.: a 24-unit core, 6 units of electives and CalGETC 34-38 "
+      "make the 64-68 the page prints for the degree: %s" % json.dumps(r["arithmetic"]))
+r = S.score({**aut, "program": {**aut["program"], "degree_total": {"min": 60, "max": 60}}}, AUT, AUT_TEXT)
+check(not r["pass"] and r["arithmetic"]["status"] == "unequal" and r["arithmetic"]["against"] == "degree",
+      "blocks and general education that miss the printed degree total fail as unequal")
+r = S.score({**aut, "program": {**aut["program"], "ge_units": {"min": None, "max": None}}}, AUT, AUT_TEXT)
+check(not r["pass"] and r["arithmetic"]["status"] == "incomplete"
+      and "no units for it" in " ".join(r["arithmetic"]["why"]),
+      "a degree total with a general education pattern and no units for it cannot be added up")
+r = S.score({**aut, "program": {**aut["program"], "total_units": {"min": 30, "max": 30}}}, AUT, AUT_TEXT)
+check(r["pass"] and r["arithmetic"]["against"] == "program" and r["arithmetic"]["computed"] == [30.0, 30.0],
+      "a major total, when the page prints one, is still the one checked")
+check(S.has_figure({"program": {"degree_total": {"min": 60, "max": 60}}, "blocks": []}),
+      "a degree total is a figure: such a record is never 'unstated'")
+
+# Psychology AA-T: Total 60 = a 19-21-unit major, CalGETC 34-38 and transferable electives as needed.
+PSY = [{"code": "PSYC C1000", "units": 3}, {"code": "STAT C1000", "units": 4},
+       {"code": "PSY 107", "units": 3}, {"code": "PSY 108", "units": 3}, {"code": "BIO 101", "units": 5},
+       {"code": "PSY 115", "units": 3}, {"code": "PSY 116", "units": 3}]
+psy = {"program": {"total_units": {"min": None, "max": None}, "degree_total": {"min": 60, "max": 60},
+                   "ge_units": {"min": 34, "max": 38}, "ge_pattern": "CalGETC", "electives_fill_degree": True},
+       "blocks": [{"name": "Required Core", "rule": "all",
+                   "courses": [{"code": "PSYC C1000", "units": 3}, {"code": "STAT C1000", "units": 4},
+                               {"code": "PSY 107", "units": 3}]},
+                  {"name": "List A", "rule": "choose_courses", "minimum": 1, "stated": {"min": 3, "max": 5},
+                   "courses": [{"code": "PSY 108", "units": 3}, {"code": "BIO 101", "units": 5}]},
+                  {"name": "List B", "rule": "choose_courses", "minimum": 2, "stated": {"min": 6, "max": 6},
+                   "courses": [{"code": "PSY 115", "units": 3}, {"code": "PSY 116", "units": 3}]}]}
+PSY_TEXT = "Psychology (Total 60) Required Core ... CalGETC 34 - 38 Transferable electives to reach 60 units"
+r = S.score(psy, PSY, PSY_TEXT)
+check(r["pass"] and r["arithmetic"]["status"] == "equal" and r["arithmetic"]["computed"] == [53.0, 59.0]
+      and r["arithmetic"]["fill"] == [1.0, 7.0],
+      "Psychology AA-T: a 19-21-unit major and CalGETC 34-38 fit the 60, and the electives make up "
+      "1 to 7 units: %s" % json.dumps(r["arithmetic"]))
+r = S.score(psy, PSY, PSY_TEXT.replace("Transferable electives", "Transferable courses"))
+check(not r["pass"] and r["arithmetic"]["status"] == "incomplete",
+      "electives that fill the degree must be named in the catalog text")
+r = S.score({**psy, "program": {**psy["program"], "electives_fill_degree": False}}, PSY, PSY_TEXT)
+check(not r["pass"] and r["arithmetic"]["status"] == "unequal",
+      "without electives filling the rest, a major and general education short of the degree total fail")
+r = S.score({**psy, "program": {**psy["program"], "degree_total": {"min": 55, "max": 55}}}, PSY, PSY_TEXT)
+check(not r["pass"] and r["arithmetic"]["status"] == "unequal" and r["arithmetic"].get("fill") is None,
+      "a major and general education past the degree total fail even when electives fill the rest")
+
 # Sam's review, card 5: a course listed twice in one block is refused; the same
 # course in two blocks is not (Miramar Entrepreneurship's BUSE 155).
 TWICE = [{"code": "FIRE 1", "units": 3}, {"code": "FIRE 6", "units": 3}, {"code": "FIRE86", "units": None}]
@@ -709,7 +771,14 @@ for field in ('"outcomes"', '"course_outcomes"'):
 check("exactly as printed" in fn and "Never reword" in fn,
       "the prompt tells the model to copy each outcome as printed and never reword one")
 import _program_requirements_extract as X3  # noqa: E402
-check(X3.RECORD_SHAPE == 4, "the extraction pass stamps record shape 4 on what it files")
+check(X3.RECORD_SHAPE == 5, "the extraction pass stamps record shape 5 on what it files")
+# Record shape v5 (Sam, Open Asks Sheet 78 card 2): the degree total and the general education
+# units as printed, never in total_units, and electives that fill the degree named, never computed.
+for field in ('"degree_total"', '"ge_units"', '"electives_fill_degree"'):
+    check(re.search(r"required: \[[^\]]*%s" % field, fn),
+          "the function's schema requires %s (record shape 5)" % field)
+check("never in total_units" in fn and "never compute their units" in fn,
+      "the prompt keeps the degree total out of total_units and never computes the electives that fill it")
 
 PLO_TEXT = ("Program Learning Outcomes\nUpon completion of this program, the student will be able to:\n"
             "1. Meet the educational requirements to qualify for the \nDRE Real Estate Broker license exam. \n"

@@ -1,0 +1,328 @@
+{
+ "run": "38508460207",
+ "index": "catalog:coastline_community",
+ "host": "https://catalog.cccd.edu/coastline/",
+ "system": "courseleaf",
+ "source_kind": "course_outline",
+ "slugs": "coastline_community",
+ "part": 1,
+ "of": 1,
+ "wanted": 555,
+ "slice": 12,
+ "at": "2026-10-14T03:55:18Z",
+ "complete": true,
+ "summary": {
+  "read": 12,
+  "shapes": {
+   "list": 9,
+   "none": 3
+  },
+  "status_not_200": 3,
+  "outcomes": 28
+ },
+ "rows": [
+  {
+   "code": "ACCT C100",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/acct-c100/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 200,
+   "final_url": "https://catalog.cccd.edu/courses/acct-c100/",
+   "access": "public",
+   "title_printed": "ACCT C100: Introduction to Accounting < Coast Community College District",
+   "chars": 7291,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Course Level Student Learning Outcome(s)",
+   "lead": null,
+   "outcomes": [
+    "Complete an accounting cycle for sole proprietorship according to Generally Accepted Accounting Principles (GAAP).",
+    "Analyze and record in applicable journals, post to a general ledger, and prepare financial statements: Statement of Income, Statement of Owner's Equity, and Balance Sheet.",
+    "Generate and record payroll-related transactions in accordance with state and federal laws and regulations."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "234f44e99dddc0e18fa1beba2de42e3a"
+  },
+  {
+   "code": "ARTH C1100",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/arth-c1100/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 404,
+   "final_url": "https://catalog.cccd.edu/courses/arth-c1100/",
+   "access": "unreached",
+   "title_printed": "Page Not Found < Coast Community College District",
+   "chars": 528,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "BUS C100",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/bus-c100/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 200,
+   "final_url": "https://catalog.cccd.edu/courses/bus-c100/",
+   "access": "public",
+   "title_printed": "BUS C100: Introduction to Business < Coast Community College District",
+   "chars": 7207,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Course Level Student Learning Outcome(s)",
+   "lead": null,
+   "outcomes": [
+    "Evaluate the corporate social responsibility of firm, a corporate scenario, or a business in a case study.",
+    "Analyze the target market and marketing mix of a product or product line, a product scenario, or product in a case study.",
+    "Analyze and explain elements of and changes to corporate financial statements."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "4598915bc04f6db93b22524d4dcb34f1"
+  },
+  {
+   "code": "CMST C060N",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/cmst-c060n/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 200,
+   "final_url": "https://catalog.cccd.edu/courses/cmst-c060n/",
+   "access": "public",
+   "title_printed": "CMST C060N: Introduction to eSports < Coast Community College District",
+   "chars": 5812,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Course Level Student Learning Outcome(s)",
+   "lead": null,
+   "outcomes": [
+    "Describe the characteristics of effective Esports communication strategies.",
+    "Describe the functional methodologies of communication and their role in competitive gaming and the Esports ecosystem.",
+    "Analyze and adapt to the structure and audiences in competitive gaming and the Esports ecosystem."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "f799c8f4d099c5cc487b554d9c24be47"
+  },
+  {
+   "code": "DMC C100",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/dmc-c100/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 200,
+   "final_url": "https://catalog.cccd.edu/courses/dmc-c100/",
+   "access": "public",
+   "title_printed": "DMC C100: Introduction to Mass Communication < Coast Community College District",
+   "chars": 10363,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Course Level Student Learning Outcome(s)",
+   "lead": null,
+   "outcomes": [
+    "Analyze the role and impact of mass communication on societal and cultural communication practices.",
+    "Critically evaluate content on media platforms in terms of message, bias, ethics, and effect.",
+    "Establish how media literacy and communication skills provide a foundation for further studies in communication and related fields."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "27bd7e8ffe191ae77050ed4566b521b3"
+  },
+  {
+   "code": "ELL C020N",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/ell-c020n/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 200,
+   "final_url": "https://catalog.cccd.edu/courses/ell-c020n/",
+   "access": "public",
+   "title_printed": "ELL C020N: Integrated English Skills 1A < Coast Community College District",
+   "chars": 4904,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Course Level Student Learning Outcome(s)",
+   "lead": null,
+   "outcomes": [
+    "Correctly follow written or auditory 3-step directions.",
+    "Compose grammatically correct sentences in the present, present progressive, and past tense."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "dbf417f401361e305c1898af870a8c0d"
+  },
+  {
+   "code": "ETHS C100",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/eths-c100/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 200,
+   "final_url": "https://catalog.cccd.edu/courses/eths-c100/",
+   "access": "public",
+   "title_printed": "ETHS C100: Introduction to Ethnic Studies < Coast Community College District",
+   "chars": 15114,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Course Level Student Learning Outcome(s)",
+   "lead": null,
+   "outcomes": [
+    "Apply critical theoretical and culturally relevant frameworks and concepts to analyze the histories, experiences, cultural assets, contemporary issues, and activism of Native Americans, African Americans, Latinx/Chicanx, Asian Americans, and other Communities of Color.",
+    "Identify and utilize critical interdisciplinary research and scholarship, as well as the intellectual traditions of Native American, African American, Latinx/Chicanx, Asian American and other Communities of Color to explain ethnic studies concepts including but not limited to race and ethnicity, settler colonialism, racialization, systemic/institutional racism, equity, Euro/Anglocentrism, White supremacy, resistance, self-determination, liberation, decolonization, abolition, transformational praxis, and anti-racism.",
+    "Critically analyze the intersection of race/racism and ethnicity with other social positionalities of privilege and oppression, such as class, gender, sexuality, religion, immigration status, ability, and/or age in U.S. history, contemporary U.S. society, and in one's own life.",
+    "Demonstrate strategic and intentional engagement with racial justice issues, practices, and movements to build a diverse, equitable, and socially just society."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "c4643bc762b667fa8f155e4be0b52639"
+  },
+  {
+   "code": "HIST C1001",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/hist-c1001/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 404,
+   "final_url": "https://catalog.cccd.edu/courses/hist-c1001/",
+   "access": "unreached",
+   "title_printed": "Page Not Found < Coast Community College District",
+   "chars": 635,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  },
+  {
+   "code": "IT C104",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/it-c104/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 200,
+   "final_url": "https://catalog.cccd.edu/courses/it-c104/",
+   "access": "public",
+   "title_printed": "IT C104: IT Fundamentals (Tech+) < Coast Community College District",
+   "chars": 9400,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Course Level Student Learning Outcome(s)",
+   "lead": null,
+   "outcomes": [
+    "Explain the troubleshooting methodology commonly used in Information Technology (IT).",
+    "Compare and contrast components of an operating system.",
+    "Explain methods and best practices for securing devices.",
+    "Configure computing assets for incorporation into common business and enterprise networks."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "0addd9e79a29a8aaaa18ccb07184221e"
+  },
+  {
+   "code": "LIBR C110",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/libr-c110/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 200,
+   "final_url": "https://catalog.cccd.edu/courses/libr-c110/",
+   "access": "public",
+   "title_printed": "LIBR C110: Library Research and Information Competency < Coast Community College District",
+   "chars": 4155,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Course Level Student Learning Outcome(s)",
+   "lead": null,
+   "outcomes": [
+    "Demonstrate research and critical thinking skills to organize, synthesize, and evaluate information.",
+    "Locate, use, and evaluate print and/or electronic resources utilized to support college-level research."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "85060681f96219463d134a3ca7a05f60"
+  },
+  {
+   "code": "MUS C100",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/mus-c100/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 200,
+   "final_url": "https://catalog.cccd.edu/courses/mus-c100/",
+   "access": "public",
+   "title_printed": "MUS C100: History and Appreciation of Music < Coast Community College District",
+   "chars": 4502,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Course Level Student Learning Outcome(s)",
+   "lead": null,
+   "outcomes": [
+    "Apply listening skills developed in class to identify composer, era, and/or genre from a given short musical example.",
+    "Compare and contrast the stylistic traits of each of the major historical periods (Romantic, Baroque, Classical, etc.) and genres (symphony, opera, concerto, etc.) in music.",
+    "Analyze a given musical example based on its musical elements/properties (rhythm, harmony, forms, etc.).",
+    "Critique a musical performance based on understanding of musical performance practices."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "bb78965f05203ff67a8b499528a364cf"
+  },
+  {
+   "code": "POLS C1000",
+   "title": null,
+   "course_id": null,
+   "report": "https://catalog.cccd.edu/courses/pols-c1000/",
+   "named_by": [
+    "coastline_community"
+   ],
+   "status": 404,
+   "final_url": "https://catalog.cccd.edu/courses/pols-c1000/",
+   "access": "unreached",
+   "title_printed": "Page Not Found < Coast Community College District",
+   "chars": 667,
+   "offered_at": null,
+   "shape": "none",
+   "heading": null,
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": null
+  }
+ ],
+ "reparsed_at": "2026-10-14T03:56:17Z",
+ "reparsed_note": "The filed pages parsed again by parse_page, the read's own parser at the time of the reparse (S374: RCCD's objectives read as SLOs; S376: SDCCD's groups by college)."
+}

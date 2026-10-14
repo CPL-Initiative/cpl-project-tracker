@@ -4,6 +4,8 @@ date: 2026-10-14
 session: 385 (SkyHazel)
 tags: [handoff, program-requirements, records-view, annual-goals, map-team-queue, supabase-migrate]
 status: current
+superseded: true
+superseded_by: session_387_handoff.md
 ---
 
 # You are Session 386

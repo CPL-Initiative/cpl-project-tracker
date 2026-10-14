@@ -61,6 +61,16 @@
 // part's codes (part 1 also takes every catalog addition). The runner
 // (kb/_program_requirements_extract.py, call) sends the parts at once and merges
 // them. A body without part reads exactly as version 5 did.
+// Version 7 (S389, 2026-10-14): record shape version 5, Sam's Open Asks Sheet 78
+// card 2 ("Record both figures"). Palo Verde and Cabrillo pages print the degree
+// total with general education and no total for the major (Automotive
+// Technology A.S.: Total 64 - 68 = a 24-unit core, 6 units of electives and
+// CalGETC 34 - 38), and 79 records failed arithmetic for want of a total.
+// program.degree_total and program.ge_units keep both figures as printed, and
+// program.electives_fill_degree says the page fills the rest of the degree with
+// electives it prints no figure for. The scorer adds the blocks, the open
+// electives and the general education against the degree total when the page
+// prints no major total.
 // Deploy from main with cpl-chat-deploy.yml (function program-requirements-extract);
 // before S360 it went out with the Supabase MCP deploy_edge_function (project
 // hvuwhnbuahrtptokpqfh, slug program-requirements-extract).
@@ -86,7 +96,8 @@ const RECORD_SCHEMA = {
     program: {
       type: "object",
       additionalProperties: false,
-      required: ["section_heading", "measure", "total_units", "open_elective_units", "ge_pattern", "outcomes", "careers"],
+      required: ["section_heading", "measure", "total_units", "open_elective_units", "ge_pattern", "degree_total",
+        "ge_units", "electives_fill_degree", "outcomes", "careers"],
       properties: {
         section_heading: {
           type: "string",
@@ -106,11 +117,29 @@ const RECORD_SCHEMA = {
         },
         open_elective_units: {
           ...NUM_OR_NULL,
-          description: "Units of electives the requirements leave open (any course), when the catalog names them as part of this award's total; else null.",
+          description: "Units of electives open to any course that the checked total counts: total_units when the catalog prints one, else degree_total. Else null.",
         },
         ge_pattern: {
           anyOf: [{ type: "string" }, { type: "null" }],
           description: "The general education pattern a degree names (CSU GE, IGETC, Cal-GETC, local GE), else null. GE courses never go in a block.",
+        },
+        degree_total: {
+          type: "object",
+          additionalProperties: false,
+          required: ["min", "max"],
+          description: "The total the page prints for this whole award with general education in it ('Total 64 - 68', 'Complete the following number of credits: 60'), as printed. Null and null when the page prints none, or prints only the major's total.",
+          properties: { min: NUM_OR_NULL, max: NUM_OR_NULL },
+        },
+        ge_units: {
+          type: "object",
+          additionalProperties: false,
+          required: ["min", "max"],
+          description: "The units the page prints for its general education pattern ('CalGETC 34 - 38', 'Cabrillo College General Education 24'), as printed. Null and null when it prints none.",
+          properties: { min: NUM_OR_NULL, max: NUM_OR_NULL },
+        },
+        electives_fill_degree: {
+          type: "boolean",
+          description: "True when the page says electives make up the rest of degree_total and prints no units for them ('transferable electives as needed to reach 60 units'); else false.",
         },
         outcomes: {
           type: "array",
@@ -236,7 +265,9 @@ Write each code as the catalog prints it, with the units printed beside it. Writ
 
 program.measure is "units" unless the catalog counts the award in hours, as noncredit programs usually do ("Total Hours of Completion (136 Hours)", "Intro to Lighting Retrofits (40 Hours)"). With "hours", every units field holds hours: the hours printed beside each course and the total hours in total_units. The closed list's 0 units for a noncredit course are not its hours. List every closed-list course you do not place in missing_explained, with the reason in a few words (for example, "named only in the A.S. section", "not in the text").
 
-program.total_units is the total the catalog states for this award's requirements: the major or the certificate, without general education. A range ("27-29 units") is min 27 and max 29. When the text states no total, both are null; never compute one yourself. open_elective_units is set only when the catalog names open electives as part of that total. General education courses never go in a block.
+program.total_units is the total the catalog states for this award's requirements: the major or the certificate, without general education. A range ("27-29 units") is min 27 and max 29. When the text states no total, both are null; never compute one yourself. General education courses never go in a block.
+
+Many degree pages print the total for the whole degree with general education in it, and no total for the major ("Total 64 - 68" over a core, electives and "CalGETC 34 - 38"; "Complete the following number of credits: 60" over the major and "Cal-GETC 34"). Record that figure as printed in program.degree_total, never in total_units, and the units the page prints for the general education pattern in program.ge_units. A sentence that every degree of a kind requires 60 units is no degree total unless the page prints it as this award's total. When the page prints both a major total and a degree total, record each in its own field. open_elective_units holds the units of electives open to any course ("General Electives: any transferable course, 8 units") that the checked total counts: total_units when the page prints one, else degree_total. When the page says electives make up the rest of the degree total and prints no units for them ("transferable electives as needed to reach 60 units"), set electives_fill_degree true; never compute their units.
 
 Outcomes. Copy each program learning outcome (or program student learning outcome) the text prints for this award into program.outcomes exactly as printed: the same words, spelling, capitals and punctuation. One entry per outcome. Leave out its list number or bullet and the lead-in sentence ("Upon successful completion of this program, students should be able to:"). Read a line break inside an outcome as a space. Never reword, shorten, merge, split or complete an outcome, and never write one the text does not print. When the page prints one outcomes list for the program as a whole, and the award shares it, record it and say so in notes. Outcomes printed under a single course go in course_outcomes under that course's code, the same way. When the text prints a heading for outcomes but no outcomes under it, both stay empty; say so in notes.
 

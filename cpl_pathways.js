@@ -2019,6 +2019,11 @@
   function roepProgramCard(rec) {
     var disp = rec.display, fig = disp.figure || {}, checks = disp.checks || {};
     var m = roepMeasure(rec), tot = fig.total || {}, hasTot = tot.min != null;
+    // The degree total a page prints with general education where it prints no major total
+    // (record shape 5, Sam's Open Asks Sheet 78 card 2). The page names it and adds nothing.
+    var deg = (!hasTot && fig.degree && fig.degree.total && fig.degree.total.min != null) ? fig.degree : null;
+    var degWords = deg ? "the catalog prints no major total; the degree takes " + roepAmt(deg.total.min, deg.total.max, m)
+      + " with general education" + (deg.ge ? " (" + (deg.ge_pattern ? deg.ge_pattern + ", " : "") + roepAmt(deg.ge.min, deg.ge.max, m) + ")" : "") : "";
     var card = el("section", "cplpw-rprog");
     card.setAttribute("aria-label", rec.title + ", " + roepAward(rec));
     var top = el("div", "top");
@@ -2047,13 +2052,13 @@
     var label = el("div", "mlabel");
     var upTo = Number(fig.up_to) || 0;
     if (!upTo) {
-      label.appendChild(document.createTextNode("No course in this program carries CPL at this college yet" + (hasTot ? "; the catalog prints " + roepAmt(tot.min, tot.max, m) : "") + "."));
+      label.appendChild(document.createTextNode("No course in this program carries CPL at this college yet" + (hasTot ? "; the catalog prints " + roepAmt(tot.min, tot.max, m) : deg ? "; " + degWords : "") + "."));
     } else if (hasTot) {
       label.appendChild(document.createTextNode("Up to "));
       label.appendChild(el("b", null, roepAmt(upTo, null, m)));
       label.appendChild(document.createTextNode(" of the " + roepAmt(tot.min, tot.max, m) + " the catalog prints can be met through CPL."));
     } else {
-      label.appendChild(document.createTextNode("The catalog prints no program total; "));
+      label.appendChild(document.createTextNode(deg ? degWords.charAt(0).toUpperCase() + degWords.slice(1) + "; " : "The catalog prints no program total; "));
       label.appendChild(el("b", null, roepAmt(upTo, null, m)));
       label.appendChild(document.createTextNode(" of the listed courses carry CPL."));
     }
@@ -2093,8 +2098,10 @@
       row("Courses the state lists", (cov.placed != null ? cov.placed + " of " + cov.listed + " placed" : "Not measured")
         + (cov.placed < cov.listed ? "; " + (cov.listed - cov.placed) + " the catalog does not require, each explained" : ""));
       row("Catalog additions", checks.additions ? checks.additions + " printed in the catalog, not in the state's file" : "None");
-      row("Units", checks.arithmetic === "equal" ? "Add up to the printed total"
+      var byDegree = checks.against === "degree";
+      row("Units", checks.arithmetic === "equal" ? (byDegree ? "With general education, add up to the degree total the catalog prints" : "Add up to the printed total")
         : checks.arithmetic === "unstated" ? "The catalog prints no figure to check"
+        : byDegree ? "With general education, do not add up to the degree total the catalog prints"
         : hasTot ? "Do not add up to the printed total" : "No printed total to check", checks.arithmetic !== "equal" && checks.arithmetic !== "unstated");
       row("A person's reading", checks.reviewer === "ok" ? "Matches the catalog" : checks.reviewer === "fix" ? "Fixed by a procedure rerun" : "Not yet read");
       card.appendChild(dl);

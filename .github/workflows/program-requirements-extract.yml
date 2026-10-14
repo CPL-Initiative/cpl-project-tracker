@@ -23,6 +23,11 @@ name: Program requirements extraction
 # with nothing of the branch's to test. Three such runs in two sessions
 # (S360, S361). The guard step compares the script with main's and skips the
 # extraction when they match; a dispatch always runs.
+#
+# AND ONLY WHEN THE PUSHED COMMIT'S MESSAGE STARTS WITH [extract] (S389). A
+# branch that changes the script for another reason (record shape 5, #2110)
+# still ran the whole pilot on its first push, $1.6 nobody asked for (run
+# 38560251804). The college workflow already reads only on [read]/[extract].
 
 on:
   workflow_dispatch:
@@ -52,10 +57,18 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - name: On a push, run only when the branch's script differs from main's
+      - name: On a push, run only on [extract] and when the branch's script differs from main's
         id: guard
         if: github.event_name == 'push'
+        env:
+          MSG: ${{ github.event.head_commit.message }}
         run: |
+          case "$MSG" in
+            "[extract]"*) ;;
+            *) echo "run=no" >> "$GITHUB_OUTPUT"
+               echo "The pushed commit's message does not start with [extract], so no model calls. Dispatch the workflow, or push a commit marked [extract], to run it."
+               exit 0 ;;
+          esac
           git fetch --no-tags --depth=1 origin main
           if git diff --quiet FETCH_HEAD -- kb/_program_requirements_extract.py; then
             echo "run=no" >> "$GITHUB_OUTPUT"

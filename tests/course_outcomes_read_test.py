@@ -178,6 +178,92 @@ def _():
         assert "needs.gate.outputs.go == '1'" in jobs, name
 
 
+@check("an eLumen college's index names each course's catalog page the way its program pages link it")
+def _():
+    # College page read 38504338656 (S387): Cabrillo's Astronomy A.S. links ASTRO 8A
+    # at 2026-2027/course/astro8a, and the content call for astro3 printed the course.
+    ix = reader.elumen_index("cabrillo")
+    assert ix["url"].startswith("https://cabrillo.elumenapp.com/catalog/2026-2027/"), ix["url"]
+    want = {c["code"]: c for c in reader.wanted_courses(ix, ["cabrillo"])}
+    assert want["ASTRO 8A"]["report"] == ("https://api-prod.elumenapp.com/catalog/sites/publish/content/"
+                                          "2026-2027,course,astro8a?tenant=cabrillo.elumenapp.com"), want["ASTRO 8A"]
+    assert want["ASTRO 8A"]["named_by"] == ["cabrillo"]
+    assert reader.host_slug(ix["url"]) == "cabrillo"
+    pv = {c["code"]: c for c in reader.wanted_courses(reader.elumen_index("palo_verde"), ["palo_verde"])}
+    assert pv["ACC 101"]["report"].endswith("/2025-2026,course,acc101?tenant=pvc.elumenapp.com"), pv["ACC 101"]
+
+
+EL_MJC = os.path.join(ROOT, "kb", "course_outcomes", "trial_38505894485")   # Modesto: SLO: over a list
+EL_CAB = os.path.join(ROOT, "kb", "course_outcomes", "trial_38506174617")   # Cabrillo: a lead-in over a table
+
+
+def filed(folder, stem):
+    import gzip
+    return (gzip.open(os.path.join(folder, stem + ".html.gz"), "rt").read(),
+            open(os.path.join(folder, stem + ".txt")).read())
+
+
+@check("an eLumen course page's outcomes are read from its Learning Outcomes box, as printed (Modesto's list)")
+def _():
+    got = reader.parse_page(*filed(EL_MJC, "ADJU_201"), "elumen")
+    assert got["parsed_from"] == "html" and got["heading"] == "Learning Outcomes" and got["lead"] is None, got
+    assert got["outcomes"] == [
+        "Describe the origin and history of the Criminal Justice system in the United States.",
+        "Explain the functions of the police, courts, and corrections in the United States.",
+        "Define the concept of crime and the major theories of criminal behavior."], got
+
+
+@check("Cabrillo's table rows are outcomes with their numbers removed, its lead-in is kept, and the next accordion's Toggle is never an outcome")
+def _():
+    got = reader.parse_page(*filed(EL_CAB, "ACCT_151A"), "elumen")
+    assert got["parsed_from"] == "html", got
+    assert got["lead"] == "Upon successful completion of this course, students should be prepared to:", got
+    assert got["outcomes"] == [
+        "Analyze and synthesize information necessary to complete the full accounting cycle.",
+        "Construct fully classified financial statements for a sole proprietorship in a service and/or "
+        "merchandise business."], got
+    for folder in (EL_MJC, EL_CAB):
+        for name in os.listdir(folder):
+            if name.endswith(".html.gz"):
+                g = reader.parse_page(*filed(folder, name[:-8]), "elumen")
+                assert g["parsed_from"] == "html" and g["outcomes"], (folder, name)
+                assert not any(re.match(r"toggle|\d+\.", o, re.I) for o in g["outcomes"]), (name, g["outcomes"])
+
+
+@check("a Coast district college's index names each course's outline of record by its code, filed under the district")
+def _():
+    # College page read 38507237083 (S387): Coastline's ACCT C116 at /courses/acct-c116/.
+    ix = reader.catalog_index("coastline_community")
+    want = {c["code"]: c for c in reader.wanted_courses(ix, ["coastline_community"])}
+    assert want["ACCT C116"]["report"] == "https://catalog.cccd.edu/courses/acct-c116/", want["ACCT C116"]
+    assert ix["host"] == "cccd" and reader.page_system(want["ACCT C116"]["report"]) == "courseleaf"
+    assert reader.page_system(reader.catalog_index("cabrillo")["url"]) == "elumen"
+
+
+CCCD = os.path.join(ROOT, "kb", "course_outcomes", "trial_38508460207")   # Coastline: outlines of record
+
+
+@check("a Coast district outline's SLOs are the list under Course Level Student Learning Outcome(s), never its objectives")
+def _():
+    got = reader.parse_page(*filed(CCCD, "ACCT_C100"), "courseleaf")
+    assert got["parsed_from"] == "html" and got["heading"] == "Course Level Student Learning Outcome(s)", got
+    assert got["outcomes"] == [
+        "Complete an accounting cycle for sole proprietorship according to Generally Accepted Accounting Principles (GAAP).",
+        "Analyze and record in applicable journals, post to a general ledger, and prepare financial statements: "
+        "Statement of Income, Statement of Owner's Equity, and Balance Sheet.",
+        "Generate and record payroll-related transactions in accordance with state and federal laws and regulations."], got
+    # A common course number the district files elsewhere answers 404: no outcomes, never a guess.
+    assert reader.parse_page(*filed(CCCD, "ARTH_C1100"), "courseleaf")["outcomes"] == []
+
+
+@check("the read workflow hands a catalog= (or elumen=) line to the reader in place of an index")
+def _():
+    wf = open(os.path.join(ROOT, ".github", "workflows", "course-outcomes-read.yml")).read()
+    assert "catalog=$(sed -n 's/^catalog=//p' kb/course_outcomes/.run)" in wf
+    assert "elumen=$(sed -n 's/^elumen=//p' kb/course_outcomes/.run)" in wf and "catalog=${catalog:-$elumen}" in wf
+    assert 'args=(--catalog "$catalog")' in wf
+
+
 @check("the read loads pages only and never addresses the database")
 def _():
     src = open(os.path.join(ROOT, "kb", "_course_outcomes_read.py")).read()

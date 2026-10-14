@@ -1,0 +1,67 @@
+Computer-Aided Drafting
+ENGTC 300
+
+2.0 Units
+
+
+Print
+
+Introduction to the basic and intermediate features of AutoCAD, a 2D dimensional drawing and design software package. Creation of technical drawings in the AutoCAD environment using drawing and modification tools, dimensions, and text. Use of layers to separate components of technical drawings according to industry best practices. Use of viewports and layouts to organize drawing sheets and print.
+
+Toggle  
+Overview
+Requisites:
+
+None
+
+Transferable:
+
+Not transferable
+
+General Education Approvals:
+Field Trips:
+
+Field trips are not required.
+
+Repeatability:
+
+Not Repeatable
+
+Grading Options:
+
+A-F or P/NP
+
+Toggle  
+Units and Hours
+Default Profile
+Minimum Units
+
+2.0
+
+Total Course In-Class (Contact) Hours
+
+108.0
+
+Total Student Learning Hours
+
+108.0
+
+Maximum Units
+
+2.0
+
+Total Course Out-of-Class Hours
+
+0.0
+
+In-Class Lab Hours
+
+108.0
+
+Toggle  
+Learning Outcomes
+SLO:
+Use AutoCAD 2D drawing tools to efficiently and accurately draw predefined objects containing a variety of geometric shapes.
+Annotate a 2D AutoCAD drawing with predefined dimensions and notes.
+Use AutoCAD viewports and layouts to print a 2D drawing at the specified scale on various engineering paper sizes.
+See Available Sections
