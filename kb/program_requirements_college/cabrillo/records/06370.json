@@ -101,7 +101,26 @@
     60.75,
     60.75
    ],
-   "why": []
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     84.75,
+     84.75
+    ],
+    "stated": [
+     84.75,
+     84.75
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -122,6 +141,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
@@ -139,7 +161,19 @@
     "Demonstrate clinical competence in a variety of patient circumstances with respect to age, mobility, or special needs.",
     "Employ problem solving and critical thinking skills in routine and non-routine radiographic situations."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total": {
+    "min": 84.75,
+    "max": 84.75
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "degree_elective_units": {
+    "min": 0,
+    "max": 0
+   }
   },
   "blocks": [
    {
@@ -400,5 +434,35 @@
    "The Program Outcomes are printed once for the program, and this A.S. is the only award shown on the page."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 38639316727,
+ "reconciled": [
+  {
+   "field": "degree_total",
+   "was": null,
+   "now": {
+    "min": 84.75,
+    "max": 84.75
+   },
+   "words": "Program Requirements\nRadiologic Technology - Associate in Science (A.S.)\nComplete the following number of credits: 84.75"
+  },
+  {
+   "field": "ge_units",
+   "was": null,
+   "now": {
+    "min": 24,
+    "max": 24
+   },
+   "words": "Cabrillo College General Education\n24"
+  },
+  {
+   "field": "degree_elective_units",
+   "was": null,
+   "now": {
+    "min": 0,
+    "max": 0
+   },
+   "words": "General electives: any transferable or degree applicable course.\n0"
+  }
+ ],
+ "read_run": "38442109713"
 }

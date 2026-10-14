@@ -69,12 +69,17 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    18.0,
-    18.0
+    60.0,
+    60.0
    ],
    "stated": [
-    18.0,
-    18.0
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
    ],
    "why": []
   },
@@ -97,6 +102,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
@@ -104,10 +112,10 @@
    "section_heading": "Art History - Associate in Arts (A.A.)",
    "measure": "units",
    "total_units": {
-    "min": 18,
+    "min": null,
     "max": null
    },
-   "open_elective_units": null,
+   "open_elective_units": 18,
    "ge_pattern": "Cabrillo College General Education",
    "outcomes": [
     "Identify cultural objects from a range of artistic traditions by period, culture, and/or genre.",
@@ -123,7 +131,15 @@
     "travel writer",
     "art critic",
     "art business and management"
-   ]
+   ],
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   }
   },
   "blocks": [
    {
@@ -292,5 +308,44 @@
    "The text also mentions careers 'in the private and public sectors' in general terms; only the specific art history related careers were recorded."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 38639316727,
+ "reconciled": [
+  {
+   "field": "degree_total",
+   "was": null,
+   "now": {
+    "min": 60,
+    "max": 60
+   },
+   "words": "Program Requirements\nArt History - Associate in Arts (A.A.)\nComplete the following number of credits: 60"
+  },
+  {
+   "field": "ge_units",
+   "was": null,
+   "now": {
+    "min": 24,
+    "max": 24
+   },
+   "words": "Cabrillo College General Education\n24"
+  },
+  {
+   "field": "total_units",
+   "was": {
+    "min": 18,
+    "max": null
+   },
+   "now": {
+    "min": null,
+    "max": null
+   },
+   "words": "at least 18 units in the major"
+  },
+  {
+   "field": "open_elective_units",
+   "was": null,
+   "now": 18,
+   "words": "General electives: any transferable or degree applicable course.\n18"
+  }
+ ],
+ "read_run": "38442109713"
 }

@@ -60,17 +60,24 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    30.0,
-    30.0
+    54.0,
+    54.0
    ],
    "stated": [
-    30.0,
-    30.0
+    60.0,
+    60.0
    ],
-   "why": []
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
+   ],
+   "why": [
+    "the blocks and general education sum to 54.0-54.0; the catalog prints 60.0-60.0 for the degree"
+   ]
   },
   "repeated": {
    "codes": [],
@@ -91,15 +98,18 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": true
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
  },
  "record": {
   "program": {
    "section_heading": "Physics - Associate in Science (A.S.)",
    "measure": "units",
    "total_units": {
-    "min": 30,
-    "max": 30
+    "min": null,
+    "max": null
    },
    "open_elective_units": null,
    "ge_pattern": "Cabrillo College General Education",
@@ -121,7 +131,15 @@
     "experimental or theoretical research",
     "teaching at the university level",
     "basic research in government or industry"
-   ]
+   ],
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   }
   },
   "blocks": [
    {
@@ -230,5 +248,38 @@
    "Careers 'law', 'business', 'medicine' are named as professional programs physics majors are welcomed into."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": 38639316727,
+ "reconciled": [
+  {
+   "field": "degree_total",
+   "was": null,
+   "now": {
+    "min": 60,
+    "max": 60
+   },
+   "words": "Program Requirements\nPhysics - Associate in Science (A.S.)\nComplete the following number of credits: 60"
+  },
+  {
+   "field": "ge_units",
+   "was": null,
+   "now": {
+    "min": 24,
+    "max": 24
+   },
+   "words": "Cabrillo College General Education\n24"
+  },
+  {
+   "field": "total_units",
+   "was": {
+    "min": 30,
+    "max": 30
+   },
+   "now": {
+    "min": null,
+    "max": null
+   },
+   "words": "at least 30 units in the major"
+  }
+ ],
+ "read_run": "38442109713"
 }

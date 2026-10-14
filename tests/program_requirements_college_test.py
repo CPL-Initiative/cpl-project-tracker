@@ -761,7 +761,7 @@ finally:
     shutil.rmtree(parent, ignore_errors=True)
 
 # The re-read function (chatbox/supabase_program_requirement_records_college_reread.sql) replaces
-# a row only while it is unchecked, unread by a person and from an earlier run, never touches
+# a row only while it is unchecked and from an earlier run (S392: a person's reading no longer holds it), never touches
 # checked or display, returns the before-values, and answers the service role alone (Rule 10).
 RR = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "chatbox",
                        "supabase_program_requirement_records_college_reread.sql")).read()
@@ -769,14 +769,45 @@ RR_BODY = RR.split("as $$", 1)[1].split("$$;", 1)[0]
 check("auth.role(), '') <> 'service_role'" in RR_BODY and "from public, anon, authenticated" in RR
       and "to service_role" in RR,
       "the re-read function answers the service role alone, in its body and in its grants")
-check("cur.checked or exists" in RR_BODY and "program_record_verdicts" in RR_BODY
+check("elsif cur.checked then" in RR_BODY and "program_record_verdicts" not in RR_BODY
       and "cur.extracted_run >= new_run" in RR_BODY and "and checked = false;" in RR_BODY,
-      "the re-read holds a checked row and one a person has read, keeps a row from the same or a newer run, "
-      "and its UPDATE is guarded by checked = false")
+      "the re-read holds a checked row only (S392: a rerun is the fix a reviewer's Needs a fix or confirm "
+      "waits on), keeps a row from the same or a newer run, and its UPDATE is guarded by checked = false")
 check("insert into" not in RR_BODY.lower() and "delete from" not in RR_BODY.lower()
       and "display =" not in RR_BODY and "checked_by =" not in RR_BODY and "checked =" not in RR_BODY.replace("checked = false", ""),
       "the re-read never inserts, deletes, or writes checked, checked_by or display")
 check("'before', before" in RR_BODY, "the re-read returns each replaced row's before-values")
+
+# ── the reconcile step on filed records (S392; Sam, 2026-10-14) ───────────────
+# A capture read the pages again; each filed record with fresh text is reconciled by the
+# college's steps and rescored, and one that changed carries the run so step=reread posts it.
+rcd = tempfile.mkdtemp()
+try:
+    keep, outd = os.path.join(rcd, "keep"), os.path.join(rcd, "out")
+    os.makedirs(os.path.join(keep, "records")); os.makedirs(os.path.join(outd, "sources"))
+    filed = {"college": "Cabrillo College", "control_number": "06326", "award": "A.S. Degree", "extracted_run": 38442109713,
+             "record": {"program": {"total_units": {"min": 30, "max": 30}, "measure": "units"},
+                        "blocks": [{"name": "Major", "rule": "all", "courses": [{"code": "ASTRO 3", "units": 30}]}]},
+             "score": {"arithmetic": {"status": "equal", "against": "program"}}}
+    other = dict(filed, control_number="06999")
+    for f in (filed, other):
+        json.dump(f, open(os.path.join(keep, "records", f["control_number"] + ".json"), "w"))
+    json.dump({"control_number": "06326", "award": "A.S. Degree", "closed_list": [{"code": "ASTRO 3", "units": 30}],
+               "text": "at least 30 units in the major.\nProgram Requirements\nAstronomy - Associate in Science (A.S.)\n"
+                       "Complete the following number of credits: 60\nCabrillo College General Education 24\n"
+                       "General electives: any transferable or degree applicable course. 6"},
+              open(os.path.join(outd, "sources", "06326.json"), "w"))
+    C.reconcile_filed("Cabrillo College", outd, "38700000000", keep)
+    got = json.load(open(os.path.join(outd, "records", "06326.json")))
+    kept_r = json.load(open(os.path.join(outd, "records", "06999.json")))
+    check(got["extracted_run"] == 38700000000 and got["read_run"] == 38442109713
+          and [n["field"] for n in got["reconciled"]] == ["degree_total", "ge_units", "total_units", "open_elective_units"]
+          and got["score"]["arithmetic"]["against"] == "degree" and got["score"]["arithmetic"]["status"] == "equal",
+          "reconcile: a filed record with fresh text is reconciled, rescored (30 + 6 + GE 24 = 60) and stamped with the run")
+    check(kept_r["extracted_run"] == 38442109713 and "reconciled" not in kept_r,
+          "reconcile: a filed record with no fresh page is filed again as it was")
+finally:
+    shutil.rmtree(rcd, ignore_errors=True)
 
 # ── the link search never takes a course listing for a program (S380) ───────
 # Coastline run 38406172949: the link search accepted

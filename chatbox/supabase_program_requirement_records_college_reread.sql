@@ -14,13 +14,21 @@
 --
 -- What it may do, and nothing else:
 --   * UPDATE one row per posted record, of p_college, when the row is still
---     unchecked, carries no person's reading (program_record_verdicts), and was
---     read by an earlier extraction run than the posted record's. It writes the
+--     unchecked and was read by an earlier extraction run than the posted
+--     record's. A person's reading of an unchecked row does not hold it (S392,
+--     2026-10-14): Needs a fix sends the note to the reading procedure, and the
+--     Records view tells a reviewer who confirms a record failing a machine check
+--     that it "stays unchecked after you confirm, until its reading procedure
+--     takes the fix and a rerun passes". The rerun is that fix (Sam's Cabrillo
+--     Biology 06328, and his reconcile pass). The verdict rows stay in
+--     program_record_verdicts; program_requirement_records_follow_verdict applies
+--     the latest one while its fingerprint matches the new record, and a record
+--     whose requirements the rerun changed waits for a person again. It writes the
 --     record's own columns (title, award, catalog year, source, measure, totals,
 --     record, checks, extracted_run) and leaves checked, checked_by and display.
 --   * Every other posted record is reported and left alone: absent (no row; the
---     college load inserts it), held (checked, or a person has read it), kept
---     (the row is from the same run or a newer one).
+--     college load inserts it), held (checked), kept
+--     (the row is from the same run or a newer one). Held now means checked.
 --   * It returns each replaced row's before-values, and the workflow commits
 --     them in the receipt (kb/receipts/program_requirement_records_college_
 --     reread_<slug>_<run>.json), which is the rollback (Rule 10 a2): restore the
@@ -74,9 +82,7 @@ begin
      for update;
     if not found then
       absent := absent || (r->>'control_number');
-    elsif cur.checked or exists (
-        select 1 from public.program_record_verdicts v
-         where v.college = p_college and v.control_number = cur.control_number) then
+    elsif cur.checked then
       held := held || cur.control_number;
     elsif cur.extracted_run is not null and cur.extracted_run >= new_run then
       kept := kept || cur.control_number;

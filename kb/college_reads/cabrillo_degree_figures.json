@@ -1,0 +1,31 @@
+{
+ "_readme": "S392 SkyTamarack, 2026-10-14. Sam confirmed Cabrillo Astronomy (06326) and marked Biology (06328) Needs a fix: \"missing the Cabrillo College General Education credits required: 24 and the 6 units of Elective. Both are noted on the catalog.\" The record keeps the 30-unit major and puts the 6 elective units against it, with no GE units and no degree total. This read prints how each page states the degree's general education, electives and total, for the reconcile pass Sam asked for (cpl_memory sam-reconcile-pass-after-harvest-2026-10-14). Political Science (06396) reads within under Sheet 81 card 1. Six loads, no model call.",
+ "college": "Cabrillo College",
+ "questions": {
+  "ge_line": "How the page prints the general education units for the degree (the words and the number).",
+  "elective_line": "How the page prints the degree's electives, apart from the major's.",
+  "degree_total": "Whether and how the page prints the degree total (60)."
+ },
+ "keywords": [
+  "[Gg]eneral [Ee]ducation[^<\"]{0,120}",
+  "[Ee]lective[^<\"]{0,120}",
+  "credits required[^<\"]{0,80}",
+  "[Cc]omplete the following[^<\"]{0,120}",
+  "[Tt]otal[^<\"]{0,80}",
+  "rule-name|rule-credits"
+ ],
+ "pages": [
+  {
+   "answers": ["ge_line", "elective_line", "degree_total"],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,biology-associate-in-science-a-s-fall-2025?tenant=cabrillo.elumenapp.com"
+  },
+  {
+   "answers": ["ge_line", "elective_line", "degree_total"],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,astronomy-associate-in-science-a-s-fall-2025?tenant=cabrillo.elumenapp.com"
+  },
+  {
+   "answers": ["ge_line", "elective_line", "degree_total"],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,political-science-associate-in-arts-for-transfer-a-a-t-fall-2026?tenant=cabrillo.elumenapp.com"
+  }
+ ]
+}
