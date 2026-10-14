@@ -718,6 +718,58 @@ r = S.score({**psy, "program": {**psy["program"], "degree_total": {"min": 55, "m
 check(not r["pass"] and r["arithmetic"]["status"] == "unequal" and r["arithmetic"].get("fill") is None,
       "a major and general education past the degree total fail even when electives fill the rest")
 
+# Sam, Open Asks Sheet 81 card 1 ("count", 2026-10-14): a degree total inside the span the
+# requirements allow adds up (Cabrillo: 57-60 against a printed 60).
+r = S.score({**aut, "program": {**aut["program"], "degree_total": {"min": 66, "max": 66}}}, AUT, AUT_TEXT)
+check(r["pass"] and r["arithmetic"]["status"] == "equal" and r["arithmetic"].get("within") is True
+      and r["arithmetic"]["computed"] == [64.0, 68.0],
+      "a printed degree total of 66 inside the 64-68 the blocks and CalGETC allow adds up: %s"
+      % json.dumps(r["arithmetic"]))
+r = S.score({**aut, "program": {**aut["program"], "degree_total": {"min": 64, "max": 70}}}, AUT, AUT_TEXT)
+check(not r["pass"] and r["arithmetic"]["status"] == "unequal" and not r["arithmetic"].get("within"),
+      "a printed degree total reaching past the span (64-70 against 64-68) still fails")
+r = S.score(aut, AUT, AUT_TEXT)
+check(r["pass"] and not r["arithmetic"].get("within"), "an exact match is equal, not within")
+
+# Card 2 ("adt"): a transfer degree printing Total 60, its major and CalGETC, and no electives line
+# (Palo Verde's Sociology AA-T, 30710, read 53-57): transferable electives make up the 60.
+adt = {**psy, "program": {**psy["program"], "electives_fill_degree": False}}
+r = S.score(adt, PSY, PSY_TEXT, "A.A- T Degree")
+check(r["pass"] and r["arithmetic"]["status"] == "equal" and r["arithmetic"].get("transfer") is True
+      and r["arithmetic"]["fill"] == [1.0, 7.0],
+      "an AA-T whose major and CalGETC fit under 60 is filled by transferable electives: %s"
+      % json.dumps(r["arithmetic"]))
+r = S.score({**adt, "program": {**adt["program"], "section_heading": "AS-T in Psychology for Transfer"}}, PSY, PSY_TEXT)
+check(r["pass"] and r["arithmetic"].get("transfer") is True, "the page's heading names a transfer degree too")
+r = S.score(adt, PSY, PSY_TEXT, "A.S. Degree")
+check(not r["pass"] and r["arithmetic"]["status"] == "unequal",
+      "an A.S. that is not for transfer and falls short of its degree total still fails")
+r = S.score({**adt, "program": {**adt["program"], "open_elective_units": 0.5}}, PSY, PSY_TEXT, "A.S. T Degree")
+check(not r["pass"] and r["arithmetic"]["status"] == "unequal",
+      "a transfer degree whose page names its electives is checked against them, never filled")
+r = S.score({**adt, "program": {**adt["program"], "degree_total": {"min": 52, "max": 52}}}, PSY, PSY_TEXT, "A.A- T Degree")
+check(not r["pass"] and r["arithmetic"]["status"] == "unequal",
+      "a transfer degree whose major and general education run past its total fails")
+for award, want in (("A.A- T Degree", True), ("A.S. T Degree", True), ("A.S. Degree", False),
+                    ("A.A. Degree", False), ("Associate in Science for Transfer", True), (None, False)):
+    check(S.transfer_degree(award, {}) is want, "transfer_degree(%r) is %s" % (award, want))
+
+# The rescore (kb/_program_requirements_rescore.py) applies the same verdict to a filed record's sum.
+import _program_requirements_rescore as RS  # noqa: E402
+filed = {"award": "A.A. Degree", "record": {"program": {"electives_fill_degree": False}},
+         "score": {"arithmetic": {"pass": False, "status": "unequal", "computed": [57.0, 60.0],
+                                  "stated": [60.0, 60.0], "against": "degree", "why": ["..."]}}}
+new = RS.rescore(filed)
+check(new and new["pass"] and new["status"] == "equal" and new.get("within") and new["computed"] == [57.0, 60.0]
+      and not new["why"], "the rescore passes a filed 57-60 against 60 as within: %s" % json.dumps(new))
+check(RS.rescore({**filed, "score": {"arithmetic": {**filed["score"]["arithmetic"], "against": "program"}}}) is None,
+      "the rescore leaves a record checked against its major total alone")
+check(RS.rescore({**filed, "score": {"arithmetic": {**filed["score"]["arithmetic"], "computed": [50.0, 55.0]}}}) is None,
+      "the rescore leaves a record that still falls short alone")
+stale = RS.run(write=False)
+check(not stale, "every filed record's degree arithmetic is scored by the current rule (run "
+      "kb/_program_requirements_rescore.py): %s" % [(c["college"], c["control_number"]) for c in stale][:6])
+
 # Sam's review, card 5: a course listed twice in one block is refused; the same
 # course in two blocks is not (Miramar Entrepreneurship's BUSE 155).
 TWICE = [{"code": "FIRE 1", "units": 3}, {"code": "FIRE 6", "units": 3}, {"code": "FIRE86", "units": None}]
