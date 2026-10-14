@@ -1,5 +1,5 @@
 {
- "_readme": "S387 SkyMagnolia, 2026-10-14. Course outcomes are loaded at six colleges (RCCD, SDCCD); seven loaded colleges hold none. The outline census (run 5) found SLOs on Palo Verde's eLumen course pages, reached no course page at Cabrillo or Modesto, and found no outline system at the four CourseLeaf colleges. This read opens one program's content call (to show how it links its courses) and one course page, to learn whether the college's own catalog prints each course's SLOs before a reader is written. Pages only, no model call, no table write.",
+ "_readme": "S387 SkyMagnolia, 2026-10-14. Course outcomes are loaded at six colleges (RCCD, SDCCD); seven loaded colleges hold none. The outline census (run 5) found SLOs on Palo Verde's eLumen course pages, reached no course page at Cabrillo or Modesto, and found no outline system at the four CourseLeaf colleges. This read opens one program's content call (to show how it links its courses) and one course page, to learn whether the college's own catalog prints each course's SLOs before a reader is written. Pages only, no model call, no table write. Read 38504338656: CourseLeaf's /search/ is disallowed by robots.txt at all four hosts, so this second read opens the course description page CourseLeaf usually serves for a subject (/course-descriptions/<subject>/), and the catalog's home page with its course links shown, in case the college files them elsewhere.",
  "college": "Cerritos College",
  "questions": {
   "course_slos": "Whether the catalog's course entry prints the course's student learning outcomes, or links an outline that does."
@@ -16,15 +16,20 @@
    "answers": [
     "course_slos"
    ],
-   "url": "https://cerritos-public.courseleaf.com/search/?P=ACCT%20100",
-   "links": "outline|\\bCOR\\b|curriqunet|elumen|coursedog|courseadmin|outcome"
+   "url": "https://cerritos-public.courseleaf.com/course-descriptions/acct/"
   },
   {
    "answers": [
     "course_slos"
    ],
-   "url": "https://cerritos-public.courseleaf.com/search/?P=BA%20113",
-   "links": "outline|\\bCOR\\b|curriqunet|elumen|coursedog|courseadmin|outcome"
+   "url": "https://cerritos-public.courseleaf.com/course-descriptions/ba/"
+  },
+  {
+   "answers": [
+    "course_slos"
+   ],
+   "url": "https://cerritos-public.courseleaf.com/",
+   "links": "course"
   }
  ]
 }
