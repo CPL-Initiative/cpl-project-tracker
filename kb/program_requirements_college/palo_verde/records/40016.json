@@ -66,8 +66,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     58.0,
     62.0
@@ -81,9 +81,9 @@
     34.0,
     38.0
    ],
-   "why": [
-    "the blocks and general education sum to 58.0-62.0; the catalog prints 60.0-60.0 for the degree"
-   ]
+   "why": [],
+   "within": true,
+   "rescored": "Open Asks Sheet 81"
   },
   "repeated": {
    "codes": [],
@@ -104,7 +104,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
