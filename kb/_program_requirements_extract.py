@@ -55,7 +55,10 @@ MIN_COVERAGE = 0.5      # a fixture whose page named fewer listed codes was not 
 # Sam's Open Asks Sheet 78 card 2, "Record both figures"): program.degree_total,
 # program.ge_units and program.electives_fill_degree, so a page that prints the
 # degree total with general education and no major total is checked against it.
-RECORD_SHAPE = 5
+# Shape 6 (S392; Sam, 2026-10-14, Cabrillo Biology 06328 Needs a fix):
+# program.degree_elective_units beside a major total the page also prints, and a
+# major-minimum sentence is no major total; the scorer checks the major and the degree.
+RECORD_SHAPE = 6
 
 # A program read in parts (S361; Sam, 2026-10-11: "go with splitting the program
 # into two calls"). A record holds about 54 output tokens per course: 215 listed

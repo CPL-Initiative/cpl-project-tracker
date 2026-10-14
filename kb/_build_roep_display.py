@@ -77,7 +77,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 
 import _program_requirements_load as loader  # noqa: E402  (checked logic, one place)
-from _program_requirements_score import places_none  # noqa: E402
+from _program_requirements_score import degree_reading, places_none  # noqa: E402
 
 PILOT = os.path.join(HERE, "program_requirements_pilot")
 MAP_READ = os.path.join(PILOT, "map_cr_by_course.json")
@@ -699,6 +699,12 @@ def gaps_for(college: str, platform: str, award: str, measure: str, filed: dict,
         else:
             g.append({"kind": "No printed total", "owner": "procedure", "where": proc,
                       "text": "The catalog prints no program total, so the units cannot be checked against one."})
+    # An associate degree whose record holds the major alone (Sam, 2026-10-14, Cabrillo Biology
+    # 06328): the reading procedure's gap, found without a person reading the record.
+    if degree_reading(rec, award)["status"] == "major only":
+        g.append({"kind": "Major only", "owner": "procedure", "where": proc,
+                  "text": "The record holds the major's requirements. The degree's general education and "
+                          "electives, which bring an associate degree to at least 60 units, are not in it."})
     if re.search(r"noncredit", award or "", re.I) and measure != "hours":
         g.append({"kind": "Possible misread", "owner": "procedure", "where": proc,
                   "text": "A noncredit program recorded in %s; noncredit programs count hours." % measure})
@@ -708,6 +714,24 @@ def gaps_for(college: str, platform: str, award: str, measure: str, filed: dict,
     for n in rec.get("notes") or []:
         g.append({"kind": "Reader's note", "owner": "procedure", "where": proc, "text": n})
     return g
+
+
+def units_differ(arith: dict, total: dict) -> dict | None:
+    """The blocks' sum beside the printed total, both as the catalog prints them, where they
+    differ (Sam, 2026-10-11, Agricultural Science and Technology: "Preserve the unit difference
+    and highlight with a chip"). A degree total the blocks and general education miss gets the
+    same chip, its sum with the GE in it (Sam, 2026-10-14: "Highlight the mismatches in units in
+    the summary row")."""
+    comp = arith.get("computed") or [None, None]
+    if arith.get("status") != "unequal" or comp[0] is None:
+        return None
+    blocks = [comp[0], comp[1] if comp[1] is not None else comp[0]]
+    if arith.get("against") in (None, "program") and total.get("min") is not None:
+        return {"blocks": blocks, "printed": [total["min"], total["max"] if total.get("max") is not None else total["min"]]}
+    st = arith.get("stated") or [None, None]
+    if arith.get("against") == "degree" and st[0] is not None:
+        return {"blocks": blocks, "printed": [st[0], st[1] if st[1] is not None else st[0]], "against": "degree"}
+    return None
 
 
 def amount(lo, hi, unit) -> str:
@@ -984,13 +1008,10 @@ def build() -> dict:
                                            "electives_fill": bool(program.get("electives_fill_degree"))}
             display["checks"]["against"] = (score.get("arithmetic") or {}).get("against")
         # A unit difference kept and chipped (Sam, 2026-10-11, Agricultural Science and
-        # Technology: "Preserve the unit difference and highlight with a chip"): the blocks'
-        # sum beside the printed total, both as the catalog prints them.
-        arith = score.get("arithmetic") or {}
-        comp = arith.get("computed") or [None, None]
-        if arith.get("status") == "unequal" and total.get("min") is not None and comp[0] is not None:
-            display["checks"]["units_differ"] = {"blocks": [comp[0], comp[1] if comp[1] is not None else comp[0]],
-                                                 "printed": [total["min"], total["max"] if total["max"] is not None else total["min"]]}
+        # Technology: "Preserve the unit difference and highlight with a chip").
+        differ = units_differ(score.get("arithmetic") or {}, total)
+        if differ:
+            display["checks"]["units_differ"] = differ
         programs.append(OrderedDict([
             ("key", key), ("filed", folder),
             ("college", college), ("control_number", control),

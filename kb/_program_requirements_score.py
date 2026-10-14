@@ -413,6 +413,27 @@ ELECTIVE = re.compile(r"\belectives?\b", re.I)
 TRANSFER = re.compile(r"\bA\.?\s?[AS]\.?[-\s]*T\b|\bfor transfer\b", re.I)
 
 
+# An associate degree by the state file's award ("A.S. Degree", "A.A- T Degree").
+ASSOCIATE = re.compile(r"\bA\.?\s?[AS]\b\.?|\bassociate\b", re.I)
+
+
+def degree_reading(record: dict, award: str | None) -> dict:
+    """Whether an associate degree's record reads the degree or the major alone.
+    Sam, 2026-10-14 (Cabrillo Biology 06328, Needs a fix): the record held the
+    30-unit major, and the page prints the degree's 60, its general education 24
+    and 6 units of electives. An associate degree carries at least 60 units
+    (Title 5 section 55063), so a record naming no degree total and no general
+    education units holds the major only; the display names it as the reading
+    procedure's gap, with no person reading the record to find it."""
+    if not ASSOCIATE.search(award or "") or re.search(r"baccalaureate|certificate", award or "", re.I):
+        return {"status": "n/a"}
+    prog = record.get("program") or {}
+    if _span(prog.get("degree_total")) or _span(prog.get("ge_units")):
+        return {"status": "read"}
+    return {"status": "major only",
+            "why": ["the record names no degree total and no general education units"]}
+
+
 def transfer_degree(award: str | None, prog: dict) -> bool:
     return bool(TRANSFER.search(award or "") or TRANSFER.search(prog.get("section_heading") or ""))
 
@@ -491,8 +512,9 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
     lo, hi = lo + oe, hi + oe
     stated = _span(prog.get("total_units"))
     degree = _span(prog.get("degree_total"))
+    de = _span(prog.get("degree_elective_units")) or (0.0, 0.0)
     if stated is None and degree is not None:
-        arith = degree_check(prog, degree, lo, hi, reasons, text, award)
+        arith = degree_check(prog, degree, lo + de[0], hi + de[1], reasons, text, award)
     elif stated is None and not has_figure(record) and not any(listed.values()):
         figures = [m.group(0) for m in FIGURE.finditer(text or "")]
         ok = text is not None and not figures
@@ -513,6 +535,11 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
                  "computed": [round(lo, 2), round(hi, 2)], "stated": list(stated), "against": "program",
                  "why": [] if ok else ["the blocks sum to %s-%s; the catalog states %s-%s"
                                        % (round(lo, 2), round(hi, 2), stated[0], stated[1])]}
+        if degree is not None:
+            # Record shape 6: a page printing the major's total and the degree's checks both,
+            # and the record names the one it misses (the major first).
+            deg = degree_check(prog, degree, lo + de[0], hi + de[1], [], text, award)
+            arith = dict(arith, degree=deg) if not ok or deg["pass"] else dict(deg, major=arith)
 
     rep_codes = repeated(record)
     outs = outcomes_check(record, text)
@@ -536,6 +563,7 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
         "repeated": {"codes": rep_codes, "pass": not rep_codes},
         "outcomes": outs,
         "careers": careers_check(record, text),
+        "degree": degree_reading(record, award),
         "pass": (cov_ok and not unflagged and arith["pass"] and not rep_codes
                  and outs["pass"]),
     }

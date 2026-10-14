@@ -202,6 +202,35 @@ gk = b.gaps_for("X College", "courseleaf", "A.S. Degree", "units", filed_k, None
 named = sorted((g.get("coci") or [{}])[0].get("code") for g in gk if g["kind"] == "Catalog and state file differ")
 check(named == ["CC 3", "DD 4"], "gaps: no flag for a course the program lists through an older version (got %s)" % named)
 
+# 2d2. An associate degree whose record holds the major alone (Sam, 2026-10-14, Cabrillo Biology
+# 06328, Needs a fix: the page prints the degree's 60, GE 24 and 6 units of electives). The failure
+# this guards: a person reading every such record to find a gap the record itself shows.
+major = {"record": {"program": {"total_units": {"min": 30, "max": 30}}, "blocks": []},
+         "score": {"arithmetic": {"status": "equal", "against": "program", "computed": [30, 30]}}}
+gm = b.gaps_for("X College", "elumen", "A.S. Degree", "units", major, None, {"min": 30, "max": 30}, None, lambda c: None)
+check([g["owner"] for g in gm if g["kind"] == "Major only"] == ["procedure"],
+      "gaps: an associate degree holding the major only is the reading procedure's gap (got %s)" % gm)
+gm = b.gaps_for("X College", "elumen", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+                "units", major, None, {"min": 30, "max": 30}, None, lambda c: None)
+check(not any(g["kind"] == "Major only" for g in gm), "gaps: a certificate has no degree to read")
+read = {"record": {"program": {"total_units": {"min": 30, "max": 30}, "degree_total": {"min": 60, "max": 60},
+                               "ge_units": {"min": 24, "max": 24}}, "blocks": []},
+        "score": {"arithmetic": {"status": "equal", "against": "program", "computed": [30, 30]}}}
+gm = b.gaps_for("X College", "elumen", "A.S. Degree", "units", read, None, {"min": 30, "max": 30}, None, lambda c: None)
+check(not any(g["kind"] == "Major only" for g in gm), "gaps: a record that reads the degree raises no Major only gap")
+
+# 2d3. The units chip (Sam, 2026-10-11 and 2026-10-14: "Highlight the mismatches in units in the
+# summary row"): a major total and a degree total each get one, and an equal sum gets none.
+ud = b.units_differ({"status": "unequal", "against": "program", "computed": [33, 36]}, {"min": 30, "max": 30})
+check(ud == {"blocks": [33, 36], "printed": [30, 30]}, "units chip: the blocks beside the major's total (got %s)" % ud)
+ud = b.units_differ({"status": "unequal", "computed": [33, 36]}, {"min": 30, "max": None})
+check(ud == {"blocks": [33, 36], "printed": [30, 30]}, "units chip: a score from before record shape 5 still gets one")
+ud = b.units_differ({"status": "unequal", "against": "degree", "computed": [54, 54], "stated": [60, 60]}, {"min": None})
+check(ud == {"blocks": [54, 54], "printed": [60, 60], "against": "degree"},
+      "units chip: a degree total the blocks and general education miss (got %s)" % ud)
+check(b.units_differ({"status": "equal", "against": "degree", "computed": [60, 60], "stated": [60, 60]}, {"min": None}) is None,
+      "units chip: none where the units add up")
+
 # 2e. Record shape 5 (Sam, Open Asks Sheet 78 card 2, "Record both figures"): a page that prints the
 # degree total with general education and no major total. The failure this guards: the gaps saying
 # "The catalog prints no program total" for a page that prints one for the degree.
