@@ -24,7 +24,7 @@ every SAVE_EVERY loads so a slice that runs out of time keeps what it read.
 
 Usage (runner): python3 kb/_course_outcomes_read.py --index kb/course_outline_index/index_38313849383.json --trial 12
                 python3 kb/_course_outcomes_read.py --index ... --part 1 --of 4
-                python3 kb/_course_outcomes_read.py --elumen cabrillo --trial 12   (an eLumen college: no index)
+                python3 kb/_course_outcomes_read.py --catalog cabrillo --trial 12   (course pages by code: no index)
 """
 from __future__ import annotations
 
@@ -329,6 +329,43 @@ def elumen_index(slug: str) -> dict:
     return {"url": cap["catalog_url"], "index": index}
 
 
+# The Coast district's CourseLeaf catalog serves each course's Course Outline of
+# Record at /courses/<subject>-<number>/, its SLOs under Course Level Student
+# Learning Outcome(s) (college page read 38507237083, S387: Coastline ACCT C116 and
+# BUS C100). Golden West and Orange Coast share the host.
+CCCD_COURSE = "https://catalog.cccd.edu/courses/%s/"
+CATALOG_COURSE_HOSTS = {"catalog.cccd.edu": "courseleaf"}
+
+
+def cccd_index(slug: str) -> dict:
+    """The course index for a Coast district college: each course its loaded records
+    name, its outline of record addressed by code (ACCT C116 at acct-c116)."""
+    cap = json.load(open(os.path.join(HERE, "program_requirements_college", slug, "capture.json")))
+    if urllib.parse.urlparse(cap.get("catalog_url") or "").netloc != "catalog.cccd.edu":
+        raise SystemExit("%s: the capture names no Coast district catalog" % slug)
+    index = {}
+    for code in index_mod.record_codes([slug])[slug]:
+        path = "-".join(re.sub(r"[^a-z0-9 ]", "", code.lower()).split())
+        index[code] = [{"title": None, "course_id": None, "reports": [CCCD_COURSE % path]}]
+    # Filed under the district (the first label of catalog.cccd.edu names nothing).
+    return {"url": cap["catalog_url"], "host": "cccd", "index": index}
+
+
+def catalog_index(slug: str) -> dict:
+    """The course index for a college whose catalog addresses each course page by its
+    code: eLumen, or the Coast district's outlines."""
+    cap = json.load(open(os.path.join(HERE, "program_requirements_college", slug, "capture.json")))
+    host = urllib.parse.urlparse(cap.get("catalog_url") or "").netloc
+    return cccd_index(slug) if host == "catalog.cccd.edu" else elumen_index(slug)
+
+
+def page_system(url: str) -> str:
+    """The system a course page belongs to, for the parser: the census's outline
+    systems, or the catalog host that serves outlines itself."""
+    return (cor.system_of(url) or CATALOG_COURSE_HOSTS.get(urllib.parse.urlparse(url or "").netloc)
+            or "other")
+
+
 def wanted_courses(index: dict, slugs: list[str]) -> list[dict]:
     """Each course the loaded records name that has an outline report, once, with the
     colleges (by slug) whose records name it."""
@@ -410,7 +447,7 @@ def parse_page(page_html: str, text: str, system: str | None = None) -> dict:
 def read_one(reader, course: dict) -> dict:
     page = cor.load_full(reader, course["report"])
     body = page.get("body") or ""
-    got = parse_page(page.get("html") or "", body, cor.system_of(course["report"]))
+    got = parse_page(page.get("html") or "", body, page_system(course["report"]))
     return {**course, "status": page.get("status"), "final_url": page.get("final_url"),
             "access": cor.access_of(page), "title_printed": (page.get("title") or "")[:160],
             "chars": len(body), "offered_at": offered_at(body), **got}
@@ -449,7 +486,7 @@ def reparse(folder: str) -> int:
         page_html = gzip.open(os.path.join(folder, stem + ".html.gz"), "rt").read()
         text = open(os.path.join(folder, stem + ".txt")).read()
         row.pop("groups", None)
-        row.update(parse_page(page_html, text, cor.system_of(row.get("report") or "")), offered_at=offered_at(text))
+        row.update(parse_page(page_html, text, page_system(row.get("report") or "")), offered_at=offered_at(text))
     d["summary"] = summarize(d["rows"])
     d["reparsed_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     d["reparsed_note"] = ("The filed pages parsed again by parse_page, the read's own parser at the time of the "
@@ -463,7 +500,8 @@ def reparse(folder: str) -> int:
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--index", default="", help="kb/course_outline_index/index_<run>.json")
-    ap.add_argument("--elumen", default="", help="an eLumen college's slug: its course pages, no index file")
+    ap.add_argument("--catalog", "--elumen", dest="catalog", default="",
+                    help="a college whose catalog addresses course pages by code (eLumen, the Coast district): no index file")
     ap.add_argument("--slugs", default="riverside_city,moreno_valley,norco")
     ap.add_argument("--trial", type=int, default=0)
     ap.add_argument("--part", type=int, default=1)
@@ -473,29 +511,30 @@ def main(argv=None) -> int:
     a = ap.parse_args(argv)
     if a.reparse:
         return reparse(a.reparse)
-    if a.elumen:
-        index, a.slugs = elumen_index(a.elumen), a.elumen
+    if a.catalog:
+        index, a.slugs = catalog_index(a.catalog), a.catalog
     elif a.index:
         index = json.load(open(a.index))
     else:
-        ap.error("--index FILE or --elumen SLUG (or --reparse FOLDER)")
+        ap.error("--index FILE or --catalog SLUG (or --reparse FOLDER)")
     courses = wanted_courses(index, [s for s in a.slugs.split(",") if s])
     if a.trial:
         todo = spread(courses, a.trial)
     else:
         todo = [c for i, c in enumerate(courses) if i % a.of == a.part - 1]
     run = os.environ.get("GITHUB_RUN_ID", "local")
-    host = host_slug(index["url"])
+    host = index.get("host") or host_slug(index["url"])
     print("wanted %d courses with an outline; this run reads %d" % (len(courses), len(todo)), flush=True)
 
     out_dir = os.path.join(OUT_DIR, "trial_%s" % run) if a.trial else os.path.join(OUT_DIR, host)
     os.makedirs(out_dir, exist_ok=True)
     path = os.path.join(out_dir, "read.json" if a.trial else "read_%s_p%dof%d.json" % (run, a.part, a.of))
-    head = {"run": run, "index": ("elumen:" + a.elumen) if a.elumen else os.path.relpath(a.index, os.path.dirname(HERE)),
+    head = {"run": run, "index": ("catalog:" + a.catalog) if a.catalog else os.path.relpath(a.index, os.path.dirname(HERE)),
             "host": index["url"],
-            "system": cor.system_of(index["url"]) or "other",
-            # An eLumen row is read from the catalog's course page, not an outline report.
-            "source_kind": "catalog" if a.elumen else "course_outline",
+            "system": page_system(index["url"]),
+            # A row read from the catalog's own course page (eLumen) is a catalog row; the
+            # Coast district's catalog page is the outline of record itself.
+            "source_kind": "catalog" if a.catalog and page_system(index["url"]) == "elumen" else "course_outline",
             "slugs": a.slugs, "part": a.part, "of": a.of, "wanted": len(courses), "slice": len(todo)}
     rows: list[dict] = []
 

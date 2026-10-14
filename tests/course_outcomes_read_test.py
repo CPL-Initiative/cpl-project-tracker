@@ -230,11 +230,22 @@ def _():
                 assert not any(re.match(r"toggle|\d+\.", o, re.I) for o in g["outcomes"]), (name, g["outcomes"])
 
 
-@check("the read workflow hands an elumen= line to the reader in place of an index")
+@check("a Coast district college's index names each course's outline of record by its code, filed under the district")
+def _():
+    # College page read 38507237083 (S387): Coastline's ACCT C116 at /courses/acct-c116/.
+    ix = reader.catalog_index("coastline_community")
+    want = {c["code"]: c for c in reader.wanted_courses(ix, ["coastline_community"])}
+    assert want["ACCT C116"]["report"] == "https://catalog.cccd.edu/courses/acct-c116/", want["ACCT C116"]
+    assert ix["host"] == "cccd" and reader.page_system(want["ACCT C116"]["report"]) == "courseleaf"
+    assert reader.page_system(reader.catalog_index("cabrillo")["url"]) == "elumen"
+
+
+@check("the read workflow hands a catalog= (or elumen=) line to the reader in place of an index")
 def _():
     wf = open(os.path.join(ROOT, ".github", "workflows", "course-outcomes-read.yml")).read()
-    assert "elumen=$(sed -n 's/^elumen=//p' kb/course_outcomes/.run)" in wf
-    assert 'args=(--elumen "$elumen")' in wf
+    assert "catalog=$(sed -n 's/^catalog=//p' kb/course_outcomes/.run)" in wf
+    assert "elumen=$(sed -n 's/^elumen=//p' kb/course_outcomes/.run)" in wf and "catalog=${catalog:-$elumen}" in wf
+    assert 'args=(--catalog "$catalog")' in wf
 
 
 @check("the read loads pages only and never addresses the database")
