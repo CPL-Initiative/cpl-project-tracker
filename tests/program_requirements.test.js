@@ -1699,6 +1699,48 @@ block("(19)", function () {
     !!zz && /not on the state's list/.test(zz.textContent) && !zz.querySelector(".prh-coci"));
 });
 
+/* (19b) Sam, 2026-10-14: "Highlight the mismatches in units in the summary row" (his screenshot marks
+   "unequal" under Units and "1 place the catalog and the state file differ" under For the college).
+   The failure this guards: a mismatch printed as a bare status word in the row's gray. */
+block("(19b)", function () {
+  const m = loadModule();
+  function unitsOf(rec) {
+    m.M._state.registry = REGISTRY; m.M._state.records = [rec]; pickAll(m.M); m.M._state.view = "records"; m.M._render();
+    const art = m.root.querySelector("article.prh-rec");
+    return Array.prototype.filter.call(art.querySelectorAll(".prh-check"), function (d) { return d.querySelector("dt").textContent === "Units"; })[0];
+  }
+  const deg = JSON.parse(JSON.stringify(IRONWORKER));
+  deg.total_min = null; deg.total_max = null;
+  deg.display.figure = Object.assign({}, deg.display.figure, { degree: { total: { min: 60, max: 60 }, ge: { min: 24, max: 24 } } });
+  deg.display.checks = Object.assign({}, deg.display.checks, { arithmetic: "unequal",
+    units_differ: { blocks: [54, 54], printed: [60, 60], against: "degree" } });
+  let u = unitsOf(deg);
+  check("(19b) a degree total the blocks and general education miss is chipped with both figures",
+    !!u && !!u.querySelector(".prh-coci.prh-differ") &&
+    u.querySelector("dd").textContent === "Units differ: the blocks and general education add to 54; the catalog prints 60 units for the degree",
+    u && u.textContent);
+  delete deg.display.checks.units_differ;
+  u = unitsOf(deg);
+  check("(19b) an unequal check with no figures yet is still chipped, never the bare word",
+    !!u && !!u.querySelector(".prh-differ") && u.querySelector("dd").textContent === "Units differ from the printed total", u && u.textContent);
+  deg.display.checks.arithmetic = "incomplete";
+  u = unitsOf(deg);
+  check("(19b) a check that could not add the units is chipped too",
+    !!u && !!u.querySelector(".prh-differ") && /cannot be added up/.test(u.textContent), u && u.textContent);
+  deg.display.checks.arithmetic = "equal";
+  u = unitsOf(deg);
+  check("(19b) an equal check against the degree names the degree total, unchipped",
+    !!u && !u.querySelector(".prh-differ") && u.querySelector("dd").textContent === "Equal, 60 units for the degree", u && u.textContent);
+  const col = JSON.parse(JSON.stringify(IRONWORKER));
+  col.display.gaps = [{ kind: "Catalog and state file differ", owner: "college", where: "x", text: "The state's Program Course File lists EMS 1; the reader found it on no page." }];
+  m.M._state.records = [col]; m.M._render();
+  const sum = m.root.querySelector("article.prh-rec .prh-college-line summary");
+  check("(19b) the college's items stand out in the row", !!sum && sum.classList.contains("prh-differ-line"), sum && sum.outerHTML);
+  check("(19b) both marks are drawn on the alert token, never a raw color",
+    /\.prh-coci\.prh-differ \{ color:var\(--red-alert\); border-color:var\(--red-alert\); \}/.test(SRC) &&
+    /\.prh-differ-line \{ color:var\(--red-alert\)/.test(SRC));
+});
+
 // ── (20) Recommended electives as their own block, and the careers the catalog names (Sam, 2026-10-11) ──
 // "The recommended Electives should be added with blocks"; "grab the career info". The failures this
 // guards: a recommended block read as required, and careers the record keeps but the tab never shows.

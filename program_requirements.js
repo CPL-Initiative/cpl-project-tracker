@@ -1147,6 +1147,8 @@
       /* COCI's word on a mismatched course, and a unit difference kept as printed: quiet chips the college reads */
       ".prh-coci { display:inline-block; margin:2px 0 0; padding:0 6px; border:1px solid var(--border-strong); border-radius:4px; font-size:.75rem; font-weight:600; line-height:1.5; color:var(--text-muted); overflow-wrap:anywhere; }",
       ".prh-alts .prh-coci { display:table; }",
+      ".prh-coci.prh-differ { color:var(--red-alert); border-color:var(--red-alert); }",
+      ".prh-differ-line { color:var(--red-alert); font-weight:600; }",
       /* the verdict's actions are underlined words; the lead comes first, never filled (Sam, 2026-10-09) */
       ".prh-btn { font:inherit; font-size:.9rem; font-weight:600; color:var(--cobalt); background:none; border:0; padding:2px 0; min-height:24px; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
       ".prh-btn:hover { text-decoration-thickness:2px; }",
@@ -1551,12 +1553,14 @@
       return by[k] + " " + (by[k] === 1 ? w[0] : w[1]);
     }).join("; ");
   }
+  /* A mismatch in the summary row: the words carry it, the alert color makes it stand out. */
+  function mismatch(text) { return el("span", { cls: "prh-coci prh-differ", text: text }); }
   function collegeLine(p, items) {
     var kinds = {};
     items.forEach(function (i) { kinds[i.kind] = 1; });
     var several = Object.keys(kinds).length > 1;
     return el("details", { cls: "prh-college-line" }, [
-      el("summary", { text: collegeCount(items) }),
+      el("summary", { cls: "prh-differ-line", text: collegeCount(items) }),
       el("p", { cls: "prh-small prh-quiet", text: "For " + shortCollege(p.college) + " to correct; they do not hold the record back. " +
         "The college's full list is on My College and in the MAP team's queue." }),
       el("ul", {}, items.map(function (i) { return el("li", { text: (several && i.kind ? i.kind + ": " : "") + i.text }); }))]);
@@ -2403,11 +2407,21 @@
     function wide(d) { d.className += " prh-check-wide"; return d; }
     var placed = ck.listed != null ? ck.placed + " of " + ck.listed + " placed" : "Not measured";
     /* A unit difference is kept as printed and chipped (Sam, 2026-10-11: "Preserve the unit
-       difference and highlight with a chip"). */
+       difference and highlight with a chip"), and every mismatch stands out in the summary row
+       (Sam, 2026-10-14: "Highlight the mismatches in units in the summary row"). A record checked
+       against the degree total names that total (record shape 5). */
     var differ = (disp.checks || {}).units_differ;
-    var arith = ck.arithmetic === "equal" ? "Equal, " + span(p.total_min, p.total_max) + " " + unit
-      : differ ? el("span", { cls: "prh-coci prh-differ", text: "Units differ: the blocks add to " + span(differ.blocks[0], differ.blocks[1]) +
-          "; the catalog prints " + span(differ.printed[0], differ.printed[1]) + " " + unit })
+    var degTotal = ((figure.degree || {}).total) || {};
+    var arith = ck.arithmetic === "equal"
+        ? (p.total_min == null && degTotal.min != null ? "Equal, " + span(degTotal.min, degTotal.max) + " " + unit + " for the degree"
+          : "Equal, " + span(p.total_min, p.total_max) + " " + unit)
+      : differ ? mismatch(differ.against === "degree"
+          ? "Units differ: the blocks and general education add to " + span(differ.blocks[0], differ.blocks[1]) +
+            "; the catalog prints " + span(differ.printed[0], differ.printed[1]) + " " + unit + " for the degree"
+          : "Units differ: the blocks add to " + span(differ.blocks[0], differ.blocks[1]) +
+            "; the catalog prints " + span(differ.printed[0], differ.printed[1]) + " " + unit)
+      : ck.arithmetic === "unequal" ? mismatch("Units differ from the printed total")
+      : ck.arithmetic === "incomplete" ? mismatch("Units cannot be added up: the record lacks a figure")
       : ck.arithmetic === "unstated" ? "Catalog prints no total" : (ck.arithmetic || "Not measured");
     var reader = ck.reviewer === "ok" ? "Matches the catalog" : ck.reviewer === "fix" ? "Fixed after review" : "Not read";
     var cpl = counts.here
