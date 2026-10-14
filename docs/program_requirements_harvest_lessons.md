@@ -1,7 +1,7 @@
 ---
 title: Program requirements harvest — Decisions & Lessons
 date: 2026-10-03
-prs: [2049, 2050, 2012, 2015, 2016, 1836, 1838, 1839, 1841, 1844, 1845, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866, 1868, 1874, 1876, 1877, 1878, 1894]
+prs: [2101, 2102, 2103, 2104, 2105, 2049, 2050, 2012, 2015, 2016, 1836, 1838, 1839, 1841, 1844, 1845, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866, 1868, 1874, 1876, 1877, 1878, 1894]
 tags: [program-requirements, catalog-harvest, census, supabase, playwright, governance, lessons]
 artifacts:
   - kb/_program_source_census.py
@@ -972,3 +972,36 @@ on the college's harvest-tab row and My College to-dos; the MAP team sends.
   `program-requirements-college.yml` (`extract 0`, `step read`) on a branch cut from main; the concurrency group is
   per ref and the hosts differ, so Southwestern and Fresno City read side by side in about 37 minutes and each filed
   `capture_preview.json` to its own branch. Extraction then runs on the same branch after Sam's go.
+
+## S387 SkyMagnolia (2026-10-14): course SLOs from catalog pages, the eight addenda, and Palo Verde's catalog year
+
+- **eLumen prints each course's SLOs on its catalog course page** (college page read 38504338656): the program read's
+  `publish/content` call at `<catalog>,course,<code in lower case, no space>` (Cabrillo `astro3`, Modesto `ag115`, Palo
+  Verde `acc101`), the address a program page links. Each college has its own template inside the Learning Outcomes
+  accordion: Modesto a label `SLO:` over an `<ol>`; Cabrillo a lead-in label over a table, one outcome a row, numbered in
+  its text. The text reader read none of Modesto's and took Cabrillo's next *Toggle* as an outcome; the box parser reads
+  24 of 24 trial pages exactly (trials 38505894485, 38506174617). eLumen rows load as `source_kind = catalog` (#2103).
+- **The Coast district serves outlines of record by code** (`catalog.cccd.edu/courses/acct-c116/`): an `<h3>Course Level
+  Student Learning Outcome(s)</h3>` then the list, then Course Objectives. Nine of 12 trial pages parse exactly (trial
+  38508460207); the three common course numbers (ARTH C1100, HIST C1001, POLS C1000) answer 404 there. Filed under
+  `cccd`; `catalog=<slug>` in `.run` reads either form (#2105).
+- **CourseLeaf course entries print no SLOs** at Cerritos, Long Beach City and Mt. San Antonio; `/search/` is disallowed by
+  robots.txt at all four loaded CourseLeaf hosts (#2101). Course pages: Cerritos
+  `/degrees-certificates-courses/course-descriptions/<subj>/`, Long Beach `/course-descriptions/<subj>/`, Mt. SAC
+  `/programs/coursesaz/<subj>/`.
+- **An online catalog's addendum is a changelog of edits its pages already carry** (read 38504437775, #2102). eLumen
+  dates each change and flags the page; Cerritos, Norco and Moreno Valley list new and revised programs and courses. Two
+  checked against loaded records were already in the pages read: Norco's Successful Career Transitions (PDS-809 out of the
+  required block, 33 hours to 21) and Cerritos's EDT 110 (2 units to 3). Miramar's "addendum" is the whole 549-page
+  2025-26 catalog with an errata table on page 2.
+- **Palo Verde's catalog of record was a year behind** (read 38506078868): its catalog page lists *2026-2027 Catalog* at
+  `catalog.paloverde.edu` (Acalog) above *2025-2026 Catalog* on eLumen. `vendor_catalog_link` gives a vendor host two
+  points, more than a newer year's margin. The first fix passed its test and failed the dry run (38506794465): the live
+  page links eLumen in its own HTML, so it reads as eLumen, and the guard required a plain page; the fixture had no HTML.
+  The second follows the newest catalog a yearless page lists whatever the page's platform (dry run 38508144436: Palo
+  Verde alone moves; #2104). Its 52 loaded records stay 2025-26 until an Acalog reader re-reads them.
+- **A census push runs its own full dry run**: a hand dispatch on the same branch queues a duplicate (cancel it).
+
+### Moved from the lane (S387 compaction, verbatim)
+
+✅ **Sheet 77 card 3, built and merged (S385, #2093; Sam, *Build it*, 22:25Z):** numbered boxes are the reading procedure's alone. A record's college items (*Catalog and state file differ*, *MAP names a second course*) sit on one line in its head, *For the college*, that opens to the list; course rows carry no number for them (the quiet COCI chip and *Printed in the catalog* stay). The MAP team queue gains *Program record items for the colleges to correct*: a count a college, each a closed line that reads its list when opened, from the view `program_record_college_items` (`chatbox/supabase_program_record_college_items.sql`). My College's list is unchanged (it reads the same gaps from the table). Counts: lessons S385. ✅ Applied by `supabase-migrate.yml` run 38482375985 and read back (lessons S385). ✅ **My College reads the view too (S386, #2097):** one row an item, read a page at a time (Cerritos 577 rows, where every record's display was about 4 MB).

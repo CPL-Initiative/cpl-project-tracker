@@ -15530,8 +15530,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 358,
+   "count": 359,
    "docs": [
+    {
+     "created": "2026-10-14",
+     "governs": [],
+     "n": 388,
+     "path": "docs/session_388_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "course-outcomes",
+      "census",
+      "addenda",
+      "decision-sheet"
+     ],
+     "title": "course outcomes from catalog pages; Palo Verde's catalog year",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-14",
      "governs": [],
@@ -21681,5 +21699,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1136
+ "total": 1137
 }
