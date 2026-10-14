@@ -510,6 +510,11 @@ _extract = re.search(r"- name: Extract and score\n\s+if: steps\.guard\.outputs\.
 check(bool(_guard) and bool(_extract) and xwf.index("id: guard") < xwf.index("- name: Extract and score"),
       "a push whose extraction script matches main's makes no model calls (the guard runs first, "
       "and Extract and score waits on it); a dispatch always runs")
+# S389: #2110 changed the script for record shape 5 and its first push ran the whole pilot ($1.6).
+check(re.search(r"id: guard\n(?:.*\n)*?\s+MSG: \$\{\{ github\.event\.head_commit\.message \}\}\n(?:.*\n)*?"
+                r"\s+case \"\$MSG\" in\n\s+\"\[extract\]\"\*\) ;;\n\s+\*\) echo \"run=no\"", xwf),
+      "a push makes model calls only when its commit message starts with [extract], read through the "
+      "environment, never pasted into the script")
 
 # ── The scorer: the plan's three automatic bars ──────────────────────────────
 rec = {"program": {"total_units": 33.5, "open_elective_units": 0},
