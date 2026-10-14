@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-13T19:23:24.313090+00:00",
+  "scraped_at": "2026-10-14T11:59:58.893881+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 29044,
+    "jst": 29047,
     "star_colleges": 60
   },
   "computed_star_colleges": 60,
@@ -77,7 +77,7 @@
     },
     "De Anza College": {
       "vets": 903,
-      "jst": 1001,
+      "jst": 1002,
       "star": true
     },
     "Riverside City College": {
@@ -172,7 +172,7 @@
     },
     "Glendale Community College": {
       "vets": 196,
-      "jst": 226,
+      "jst": 227,
       "star": true
     },
     "Los Angeles Trade Technical College": {
@@ -222,7 +222,7 @@
     },
     "Ventura College": {
       "vets": 254,
-      "jst": 188,
+      "jst": 189,
       "star": false
     },
     "Los Angeles Mission College": {
