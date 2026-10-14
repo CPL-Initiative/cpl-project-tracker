@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-14T19:41:16Z",
-  "session": 391,
-  "moniker": "SkyJuniper",
+  "written_at": "2026-10-14T22:08:57Z",
+  "session": 392,
+  "moniker": "SkyTamarack",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_392_handoff.md",
+  "handoff": "docs/session_393_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -24135,50 +24135,2260 @@
       "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
       "control_number": "45956",
       "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Architecture - Professional Practice",
+      "award": "A.S. Degree",
+      "control_number": "02481",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Business Management",
+      "award": "A.S. Degree",
+      "control_number": "02485",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Marketing",
+      "award": "A.S. Degree",
+      "control_number": "02487",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Journalism",
+      "award": "A.A. Degree",
+      "control_number": "02491",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Liberal Studies (Elementary Teaching)",
+      "award": "A.A. Degree",
+      "control_number": "02493",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Sign Language Interpreter Training",
+      "award": "A.A. Degree",
+      "control_number": "02494",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Physical Education",
+      "award": "A.A. Degree",
+      "control_number": "02495",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Computer Aided Design/Drafting",
+      "award": "A.S. Degree",
+      "control_number": "02503",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Welding",
+      "award": "A.S. Degree",
+      "control_number": "02506",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Art History",
+      "award": "A.A. Degree",
+      "control_number": "02508",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Theatre",
+      "award": "A.A. Degree",
+      "control_number": "02511",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Photography",
+      "award": "A.S. Degree",
+      "control_number": "02512",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "French",
+      "award": "A.A. Degree",
+      "control_number": "02513",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Spanish",
+      "award": "A.A. Degree",
+      "control_number": "02515",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Japanese",
+      "award": "A.A. Degree",
+      "control_number": "02517",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Nursing",
+      "award": "A.S. Degree",
+      "control_number": "02518",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Respiratory Care",
+      "award": "A.S. Degree",
+      "control_number": "02519",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Radiologic Technology",
+      "award": "A.S. Degree",
+      "control_number": "02520",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Paralegal Studies",
+      "award": "A.A. Degree",
+      "control_number": "02523",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "English",
+      "award": "A.A. Degree",
+      "control_number": "02524",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Mathematics",
+      "award": "A.S. Degree",
+      "control_number": "02527",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Physical Science",
+      "award": "A.S. Degree",
+      "control_number": "02528",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Recreation",
+      "award": "A.A. Degree",
+      "control_number": "02535",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Fire and Emergency Technology",
+      "award": "A.S. Degree",
+      "control_number": "02536",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Economics",
+      "award": "A.A. Degree",
+      "control_number": "02538",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Cosmetology",
+      "award": "A.S. Degree",
+      "control_number": "02544",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Computer Information Systems",
+      "award": "A.S. Degree",
+      "control_number": "08021",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Dance",
+      "award": "A.A. Degree",
+      "control_number": "08023",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Jewelry Design and Fabrication",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "08024",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Fire Academy",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "08031",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Paramedical Technician",
+      "award": "A.S. Degree",
+      "control_number": "08636",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Digital Art & Design Foundation",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "15250",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Visual Communications",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "15251",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Fashion Stylist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "15566",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Electronics and Computer Hardware Technology: Computer Technology Option",
+      "award": "A.S. Degree",
+      "control_number": "15581",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Sign Language Interpreter Training",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19869",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Electronics Engineering Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19870",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Computer Hardware Electronics Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19871",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Heating, Ventilation, and Air Conditioning (HVAC) and Refrigeration",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "19872",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Computer Aided Design/Drafting",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19877",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Welding",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19881",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Photography",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "19883",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Respiratory Care",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19884",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Paramedical Technician",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19885",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Early Childhood Education",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "19888",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Paralegal Studies",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "19889",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Fire & Emergency Technology",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "19891",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Cosmetology Level II",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "19892",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Engine and Driveline Technician",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "30305",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "31023",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Commercial Music",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "31319",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Geology",
+      "award": "A.S. T Degree",
+      "control_number": "31358",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "31445",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "31684",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Mathematics",
+      "award": "A.S. T Degree",
+      "control_number": "31728",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "31942",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Geography",
+      "award": "A.A- T Degree",
+      "control_number": "32141",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "32165",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "32177",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Forensics",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "32238",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Elementary Teacher Education",
+      "award": "A.A- T Degree",
+      "control_number": "32273",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "32333",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Theatre Arts",
+      "award": "A.A- T Degree",
+      "control_number": "32378",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Philosophy",
+      "award": "A.A- T Degree",
+      "control_number": "33577",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Business Programming",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35049",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Database Management",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "36167",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "ESL for Math",
+      "award": "Noncredit program",
+      "control_number": "36974",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "ESL for Healthcare",
+      "award": "Noncredit program",
+      "control_number": "37087",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Computer User Support Specialist",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "37112",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "ESL for Healthcare II",
+      "award": "Noncredit program",
+      "control_number": "37185",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "ESL for Childhood Educators",
+      "award": "Noncredit program",
+      "control_number": "37186",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Cloud Computing with Amazon Web Services",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37904",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Cisco Networking Administration",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38788",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Cybersecurity",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38791",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Entrepreneurial Studies",
+      "award": "A.S. Degree",
+      "control_number": "38839",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Women, Gender and Sexual Studies",
+      "award": "A.A. Degree",
+      "control_number": "38949",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "ESL Reading and Vocabulary",
+      "award": "Noncredit program",
+      "control_number": "39005",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "ESL Writing and Grammar",
+      "award": "Noncredit program",
+      "control_number": "39006",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Communication Studies",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "39056",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Technical Support and Networking Specialist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40650",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Introduction to College and Career Success",
+      "award": "Noncredit program",
+      "control_number": "40668",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Transition to College Success",
+      "award": "Noncredit program",
+      "control_number": "40715",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Social Justice Studies",
+      "award": "A.A- T Degree",
+      "control_number": "41383",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Real Estate Broker",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41395",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Real Estate Escrow",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "41396",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Real Estate Property Management",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "41400",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Real Estate Salesperson",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "41401",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Real Estate Investments",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "41531",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Real Estate Finance",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "41532",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "42541",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Recreation Aquatics Specialist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42780",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Respiratory Care",
+      "award": "Baccalaureate of Science (B.S.) Degree.",
+      "control_number": "43210",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Piano Teaching",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43815",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Personal Care Aide",
+      "award": "Noncredit program",
+      "control_number": "43963",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Hybrid, Electric and Alternative Fuels",
+      "award": "A.S. Degree",
+      "control_number": "43992",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "High School Equivalency Test",
+      "award": "Noncredit program",
+      "control_number": "44035",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Basic Office Computer Skills",
+      "award": "Noncredit program",
+      "control_number": "44420",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Introduction to Child Development and Early Childhood Education",
+      "award": "Noncredit program",
+      "control_number": "44465",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Parenting/Caregiving",
+      "award": "Noncredit program",
+      "control_number": "44466",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Medical Transcription",
+      "award": "Noncredit program",
+      "control_number": "44467",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Sterile Processing Technician",
+      "award": "Noncredit program",
+      "control_number": "44505",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Actuarial Science",
+      "award": "A.S. Degree",
+      "control_number": "44583",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "IRS Volunteer Income Tax Assistance (VITA) Program",
+      "award": "Noncredit program",
+      "control_number": "44584",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Dance Teacher",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44744",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Data Science",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44764",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Digital Art and Design: 2D Animation",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45070",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Digital Art and Design: 3D Modeling & Animation",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45073",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Digital Art and Design: Concept Design",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45129",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Digital Art and Design: Game Art and Animation",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45130",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Digital Art and Design",
+      "award": "A.S. Degree",
+      "control_number": "45144",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Cal-GETC",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "45290",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Adult High School Diploma",
+      "award": "Noncredit program",
+      "control_number": "45307",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Biotechnology",
+      "award": "A.S. Degree",
+      "control_number": "45647",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Biotechnology Laboratory Assistant",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45648",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Biotechnology Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45649",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Fashion Entrepreneurship",
+      "award": "Noncredit program",
+      "control_number": "45744",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "El Camino College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "45974",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Agriculture Business: Plant Science",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "05577",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Agriculture Business",
+      "award": "A.S. Degree",
+      "control_number": "05579",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Agriculture Mechanics",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "05581",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Supervision and Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "05586",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Merchandising",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "05587",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Logistics and Transportation Supervisor",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "05588",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Real Estate",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "05589",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Computer Programming",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "05594",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Engineering Fundamentals",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "05597",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Electron Microscopy - Biological Concentration Advanced Sample Preparation",
+      "award": "Certificate of Achievement requiring 60+S/90+Q units",
+      "control_number": "05599",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Diesel Automotive Equipment Technician",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "05602",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Automotive Mechanics Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "05603",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Auto Body Intermediate Repair and Restoration",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "05604",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Industrial Technology - Level I",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "05612",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Manual Machining",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "05613",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Nursing R.N.",
+      "award": "A.S. Degree",
+      "control_number": "05623",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Interior Design",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "05628",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Fashion Design",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "05629",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Early Childhood Education Teacher",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "05630",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Correctional Science",
+      "award": "A.S. Degree",
+      "control_number": "05641",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Basic Peace Officer Academy",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "05642",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Horticulture - Sustainable Landscape Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "07273",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Agriculture Business: Animal Science",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "07274",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Computer Science",
+      "award": "A.S. Degree",
+      "control_number": "07304",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Fluid Power & Automation Technology",
+      "award": "A.S. Degree",
+      "control_number": "07347",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Electrical Technology - Electrical Maintenance",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "07402",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Electronics Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "07403",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Administrative Office Executive",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "07407",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Administrative Office Assistant II",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "07408",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Refrigeration",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "07419",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Diesel Equipment Technician",
+      "award": "A.S. Degree",
+      "control_number": "07420",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Automotive Electric Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "07422",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Automotive Master Technician",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "07423",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Architectural Drafting",
+      "award": "A.S. Degree",
+      "control_number": "07425",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Welding Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "07426",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Fashion Merchandising",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "07439",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Law Enforcement",
+      "award": "A.S. Degree",
+      "control_number": "07446",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Electron Microscopy - Crystalline Materials Advanced Training",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "10140",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Early Childhood Education Master Teacher",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "10141",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Culinary Arts - Advanced",
+      "award": "A.S. Degree",
+      "control_number": "10142",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Computer Support",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "10258",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Traffic Shipping & Receiving Technician",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "11844",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Engineering Technology",
+      "award": "A.S. Degree",
+      "control_number": "11968",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Engineering Computer-Aided Drafter",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "11969",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Early Childhood Education Site Supervisor",
+      "award": "Certificate of Achievement requiring 60+S/90+Q units",
+      "control_number": "11970",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Early Childhood Education Associate Teacher",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "11972",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Speech Language Pathology Assistant (SLPA)",
+      "award": "A.S. Degree",
+      "control_number": "12300",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Retail Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "12327",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Computer Web Developer",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "12666",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Computer Information Systems",
+      "award": "A.S. Degree",
+      "control_number": "13259",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Municipal Clerk",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "13497",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Business",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "13973",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "International Business",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "13976",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Medical Office Assistant",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "13977",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Horticulture - Nursery Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "13994",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Heavy Equipment Mechanic",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "14146",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Caterpillar Dealer Service Technician Apprenticeship",
+      "award": "A.S. Degree",
+      "control_number": "14290",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Baking and Pastry",
+      "award": "A.S. Degree",
+      "control_number": "14581",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Graphic Arts",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "14763",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Fitness Specialist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "14777",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Computer Network Technician",
+      "award": "A.S. Degree",
+      "control_number": "15050",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Music",
+      "award": "A.A. Degree",
+      "control_number": "16764",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "American Sign Language",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "17506",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Interdisciplinary Studies - Arts, Humanities, and Social Sciences Option",
+      "award": "A.A. Degree",
+      "control_number": "18586",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Interdisciplinary Studies - Mathematics and Science Option",
+      "award": "A.S. Degree",
+      "control_number": "18815",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Horticulture",
+      "award": "A.S. Degree",
+      "control_number": "19688",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Engineering - Mechanical, Aeronautical, and Manufacturing",
+      "award": "A.S. Degree",
+      "control_number": "19728",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Engineering Computer-Aided Drafting",
+      "award": "A.S. Degree",
+      "control_number": "19730",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Radiologic Technology",
+      "award": "Certificate of Achievement requiring 60+S/90+Q units",
+      "control_number": "19731",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Family and Consumer Sciences",
+      "award": "A.S. Degree",
+      "control_number": "19737",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "History",
+      "award": "A.A. Degree",
+      "control_number": "19744",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Art",
+      "award": "A.A. Degree",
+      "control_number": "19746",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Dance",
+      "award": "A.A. Degree",
+      "control_number": "19747",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Photography",
+      "award": "A.A. Degree",
+      "control_number": "19748",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "French Language",
+      "award": "A.A. Degree",
+      "control_number": "19749",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Administrative Assistant I",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19799",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Apparel Design",
+      "award": "A.A. Degree",
+      "control_number": "19950",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Physical Education",
+      "award": "A.S. Degree",
+      "control_number": "19951",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Theatre Arts: Technical Theatre",
+      "award": "A.A. Degree",
+      "control_number": "19952",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Theatre Arts - Acting",
+      "award": "A.A. Degree",
+      "control_number": "19953",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Agriculture Business",
+      "award": "Certificate of Achievement requiring 60+S/90+Q units",
+      "control_number": "22243",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Architectural Drafting",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22244",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Administrative Executive Professional/Office Manager",
+      "award": "A.S. Degree",
+      "control_number": "22246",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Computer Science",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22247",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Computer Networking Software",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22248",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Computer Network Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22249",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Fluid Power & Automation Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22250",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Heating and Air Conditioning",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22251",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Diesel Equipment Technician",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22252",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Heavy Equipment Technician",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22253",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Engineering Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22256",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Culinary Arts",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22259",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Baking and Pastry",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22260",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Law Enforcement",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22261",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Correctional Science",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22262",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Automotive Technology",
+      "award": "A.S. Degree",
+      "control_number": "30723",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "30758",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "31651",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Mathematics",
+      "award": "A.S. T Degree",
+      "control_number": "31655",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "31685",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "31692",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Geology",
+      "award": "A.S. T Degree",
+      "control_number": "31866",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Horticulture - Irrigation Technician",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "31879",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "32297",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Theatre Arts",
+      "award": "A.A- T Degree",
+      "control_number": "32302",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "32341",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Auto Body Basic Repair and Restoration",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "32386",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Auto Body Advanced Repair and Restoration",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "32387",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Stagecraft",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "32549",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "32913",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "32914",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Elementary Teacher Education",
+      "award": "A.A- T Degree",
+      "control_number": "32942",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Computer Numerical Control (CNC) Operator/Programmer",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "32950",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "33039",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Journalism",
+      "award": "A.A- T Degree",
+      "control_number": "33706",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Automotive Lubrication Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33753",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Computer Network Security Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33754",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Multimedia",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33757",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Automation Technology - Mechatronics",
+      "award": "A.S. Degree",
+      "control_number": "35050",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Computer Network Security Technician",
+      "award": "A.S. Degree",
+      "control_number": "35051",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Automation Technician - Mechatronics",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "35052",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Electrical Technology",
+      "award": "A.S. Degree",
+      "control_number": "35059",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Machining Technology",
+      "award": "A.S. Degree",
+      "control_number": "35066",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Solar Photovoltaic Installation Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35074",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Police Science",
+      "award": "A.S. Degree",
+      "control_number": "35077",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Electron Microscopy - Biological Concentration",
+      "award": "A.S. Degree",
+      "control_number": "35118",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Electron Microscopy - Materials",
+      "award": "A.S. Degree",
+      "control_number": "35119",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Health Science",
+      "award": "A.S. Degree",
+      "control_number": "35178",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Agriculture Business",
+      "award": "A.S. T Degree",
+      "control_number": "35634",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Photography",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35916",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Engineering - Electrical",
+      "award": "A.S. Degree",
+      "control_number": "35920",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Multimedia",
+      "award": "A.A. Degree",
+      "control_number": "35932",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Engineering - Civil",
+      "award": "A.S. Degree",
+      "control_number": "35939",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Engineering - Computer",
+      "award": "A.S. Degree",
+      "control_number": "35940",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Apparel Industry Sewing",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35974",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Small Business",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "36005",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Entrepreneurship",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "36006",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Pre-Law Studies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "36535",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Gas Tungsten Arc Welding (GTAW)",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "36595",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Oxy-Fuel Processes and Shielded Metal Arc Welding (SMAW)",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "36597",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Speech Language Pathology Assistant Advanced Placement",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "36607",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Gas Metal Arc Welding (GMAW)/Flux Core Arc Welding (FCAW)",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "36608",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Caterpillar Dealer Engine Technician Apprenticeship",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "36609",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Law, Public Policy, and Society",
+      "award": "A.A- T Degree",
+      "control_number": "36747",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "American Sign Language",
+      "award": "A.A. Degree",
+      "control_number": "37532",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Paralegal/Legal Assistant Studies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37610",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Paralegal/Legal Assistant",
+      "award": "A.S. Degree",
+      "control_number": "37612",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Social Justice Studies",
+      "award": "A.A- T Degree",
+      "control_number": "37638",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Agriculture Plant Science",
+      "award": "A.S. T Degree",
+      "control_number": "37666",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Industrial Technology - Level II - Mechanical",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "37670",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Diesel Bus Technician",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "37671",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Agriculture Animal Science",
+      "award": "A.S. T Degree",
+      "control_number": "37675",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Social Media",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39474",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "ECE Administration and Adult Supervision Add On",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "40069",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Paraprofessional Preparation",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40070",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "World Languages and Global Studies",
+      "award": "A.A. Degree",
+      "control_number": "40824",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Digital Media with Emphasis in Video",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40881",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Digital Media",
+      "award": "A.A. Degree",
+      "control_number": "40882",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Digital Media with Emphasis in Audio",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40883",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Hospitality Front of House Essentials",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40884",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Hospitality Front of House Service Operations",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40885",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Winery Sales and Marketing",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40902",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Winery Event Coordinator",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40903",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Winery Tasting Room Associate",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40904",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Horticulture, Landscape Arborist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40905",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Real Estate Salesperson",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42565",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Graphic Arts - Print Production",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42855",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "43281",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Power Performance and Data Collecting",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43308",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "ESL Milestone for Multilingual Speakers: Pathway to Electrical Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43785",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "ESL Milestone for Multilingual Speakers: Pathway to Business",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43786",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "ESL Milestone for Multilingual Speakers: Pathway to Health Careers",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43787",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Public Relations",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43791",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Caterpillar Dealer Service Technician Apprenticeship",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "44197",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "44322",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Noncredit ESL Milestone for Multilingual Speakers - Pathway to Health Careers",
+      "award": "Noncredit program",
+      "control_number": "44708",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Low-Intermediate ESL",
+      "award": "Noncredit program",
+      "control_number": "44710",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "High-Intermediate ESL",
+      "award": "Noncredit program",
+      "control_number": "44711",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Advanced ESL",
+      "award": "Noncredit program",
+      "control_number": "44712",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Creative Writing",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44860",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Agriculture Engineering Production Plant - Level 1 Safety",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44905",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Agriculture Engineering Production Plant - Level 2 Mechanical",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "44906",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Costume Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44907",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Scenic Artist",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "44908",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Scenic Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44909",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Stage Electrician",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "44910",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Stage Makeup Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44911",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Modern Policing",
+      "award": "A.S. Degree",
+      "control_number": "44912",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "California General Education Transfer Curriculum (Cal-GETC)",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "45621",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Noncredit ESL Milestone for Multilingual Speakers - Pathway to Digital Media",
+      "award": "Noncredit program",
+      "control_number": "46020",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Noncredit ESL Milestone for Multilingual Speakers - Introduction to Health Careers",
+      "award": "Noncredit program",
+      "control_number": "46025",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Intercollegiate Athletics",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "46048",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Electron Microscopy - Crystalline Materials Basic Imaging",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46173",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Electron Microscopy - Field Service Technician Basic Training",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46174",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Electron Microscopy - Biological Concentration Basic Sample Preparation",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "46175",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Electron Microscopy: Field Service Technician Advanced Training",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "46176",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Spanish for Medical Professions",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "46287",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Spanish for Medical Professions",
+      "award": "Noncredit program",
+      "control_number": "46410",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Electronics Technology - Manufacturing Associate",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46499",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Viticulture - Level 1",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46500",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Viticulture - Level 2",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "46501",
+      "loaded": "2026-10-14"
+    },
+    {
+      "college": "San Joaquin Delta College",
+      "program": "Nurse Assistant and Home Health Aide",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "46502",
+      "loaded": "2026-10-14"
     }
   ],
   "next_step": {
-    "title": "Read Sheet 81 and carry out what Sam answers",
-    "text": "Sheet 81 asks whether a degree total inside the range the requirements allow adds up, whether a transfer degree's 60 is filled by transferable electives, whether to extract El Camino and San Joaquin Delta, and who may read a reviewer's sign-in email. Palo Verde's 2026-27 catalog is read after Sunday's census apply."
+    "title": "Read Sheet 82 and carry out what Sam answers",
+    "text": "Sheet 82 asks whether a confirm carries over when a rerun changes only a record's degree figures, and whether transfer degrees whose major and general education run past their total add up. Then a display build for Cabrillo's re-read records and reconcile steps for the next college."
   },
   "calls": [
     {
-      "title": "Count a degree total inside the requirements' range as adding up",
-      "text": "31 re-read records at Cabrillo and Palo Verde read 57 to 60 units against a printed 60 because general electives printed as a range are kept as one number.",
-      "if_no_reply": "They stay flagged as a check not met.",
-      "link": "https://claude.ai/artifact/ExZErAUjsA1vh4kLHRfkt3",
-      "link_text": "Open Asks Sheet 81, card 1",
+      "title": "Carry a confirm over a degree-figure rerun",
+      "text": "Cabrillo's Astronomy, which Sam confirmed, now adds up after the reconcile pass read the degree's 60 and general education 24; a confirm follows a record only while its requirements stay the same.",
+      "if_no_reply": "A confirmed record whose degree figures a rerun changes waits for a person to read it again.",
+      "link": "https://claude.ai/artifact/Ef9Qou4fQbZtpKz1dyDc8B",
+      "link_text": "Open Asks Sheet 82, card 1",
       "part": "reading"
     },
     {
-      "title": "Count a transfer degree's 60 as filled by transferable electives",
-      "text": "Five Palo Verde transfer degrees print a total of 60, a major and CalGETC, and no line for electives.",
-      "if_no_reply": "They stay flagged for the college.",
-      "link": "https://claude.ai/artifact/ExZErAUjsA1vh4kLHRfkt3",
-      "link_text": "Open Asks Sheet 81, card 2",
-      "part": "reading"
-    },
-    {
-      "title": "Extract El Camino",
-      "text": "The Acalog reader found a page for 124 of El Camino's 135 programs with a course list, 94 at full coverage. Extraction costs about $8 to $14.",
-      "if_no_reply": "El Camino stays read but unrecorded.",
-      "link": "https://claude.ai/artifact/ExZErAUjsA1vh4kLHRfkt3",
-      "link_text": "Open Asks Sheet 81, card 3",
-      "part": "reading"
-    },
-    {
-      "title": "Who may read a reviewer's sign-in email",
-      "text": "Tabling a project writes the reviewer's sign-in email to a table anyone can read. One reviewer's sign-in is already public on 3,222 rows of four other tables.",
-      "if_no_reply": "The emails stay public as they are.",
-      "link": "https://claude.ai/artifact/ExZErAUjsA1vh4kLHRfkt3",
-      "link_text": "Open Asks Sheet 81, card 4"
-    },
-    {
-      "title": "Extract San Joaquin Delta",
-      "text": "The Acalog reader found a page for 203 of Delta's 233 programs with a course list, 125 at full coverage, and read its catalog year 2026-2027 from the catalog's own menu. Extraction costs about $12 to $22.",
-      "if_no_reply": "San Joaquin Delta stays read but unrecorded.",
-      "link": "https://claude.ai/artifact/ExZErAUjsA1vh4kLHRfkt3",
-      "link_text": "Open Asks Sheet 81, card 5",
+      "title": "Count a transfer degree past its total as adding up",
+      "text": "Ten transfer degrees print a total of 60 while their major and general education come to more, because courses count toward both.",
+      "if_no_reply": "They stay flagged as units that differ.",
+      "link": "https://claude.ai/artifact/Ef9Qou4fQbZtpKz1dyDc8B",
+      "link_text": "Open Asks Sheet 82, card 2",
       "part": "reading"
     }
   ],
@@ -24191,20 +26401,24 @@
   },
   "changes": [
     {
-      "at": "2026-10-14T17:31:00Z",
-      "text": "Fresno City's 211 records merged with their display build, and the Records view's District, College, SWP Region and CIP Sector filters"
+      "at": "2026-10-14T20:56:00Z",
+      "text": "Sheet 81 cards 1 and 2 carried out: a degree total inside the span and a transfer degree filled by transferable electives count as adding up; 35 records rescored"
     },
     {
-      "at": "2026-10-14T18:27:00Z",
-      "text": "Sheet 80 asks who may read a reviewer's sign-in email"
+      "at": "2026-10-14T21:11:00Z",
+      "text": "Every unit mismatch in the Records view's summary row is a red word chip, and the college's items take the same color"
     },
     {
-      "at": "2026-10-14T18:52:00Z",
-      "text": "The Program Requirements tab's controls are underlined words, and an open filter is measured for accessibility"
+      "at": "2026-10-14T21:12:00Z",
+      "text": "Record shape 6 and extraction version 8: the reading checks the major and the whole degree, and 1,487 associate degrees holding the major only are flagged for the reading procedure"
     },
     {
-      "at": "2026-10-14T19:38:00Z",
-      "text": "San Joaquin Delta's catalog year, 2026-2027, is read from its catalog menu, and its extraction is Sheet 81 card 5"
+      "at": "2026-10-14T21:28:00Z",
+      "text": "El Camino and San Joaquin Delta loaded and displayed: 117 and 202 records, unchecked"
+    },
+    {
+      "at": "2026-10-14T21:50:00Z",
+      "text": "The reconcile pass searched Cabrillo's pages again: 36 records changed, 7 now add up, and 35 were posted to the table"
     }
   ],
   "headline": [
@@ -24258,7 +26472,7 @@
   },
   "harvest": {
     "day": "2026-10-14",
-    "gaps": 434,
+    "gaps": 547,
     "parts": {
       "links": {
         "catalog": [
@@ -24275,11 +26489,11 @@
         ]
       },
       "roep": [
-        3621,
+        4048,
         20282
       ],
       "coci": [
-        3187,
+        3501,
         20282
       ],
       "outcomes": {
@@ -24288,12 +26502,12 @@
           89192
         ],
         "plo": [
-          3187,
+          3501,
           20282
         ]
       },
       "careers": [
-        2137,
+        2451,
         20282
       ]
     }

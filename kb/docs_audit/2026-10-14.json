@@ -10,18 +10,18 @@
     "other": 150000
   },
   "summary": {
-    "files": 1155,
-    "bytes": 11901650,
+    "files": 1157,
+    "bytes": 11913184,
     "over_budget": 8,
-    "handoff_max": 392,
+    "handoff_max": 393,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59989,
+    "always_loaded_bytes": 59990,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59989,
+        "bytes": 59990,
         "over": 0
       },
       "other": {
@@ -36,12 +36,12 @@
       },
       "lessons": {
         "files": 82,
-        "bytes": 2379199,
+        "bytes": 2382878,
         "over": 3
       },
       "kb_note": {
-        "files": 552,
-        "bytes": 2728854,
+        "files": 553,
+        "bytes": 2732190,
         "over": 0
       },
       "roadmap_lane": {
@@ -50,21 +50,21 @@
         "over": 2
       },
       "handoff": {
-        "files": 363,
-        "bytes": 2854471,
+        "files": 364,
+        "bytes": 2858989,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 23,
       "oversized_doc": 8,
+      "unindexed_kb_note": 1,
       "kb_note_dialect": 1,
-      "vault_heavy_path": 62,
-      "checkpoint_overdue": 1
+      "vault_heavy_path": 62
     },
     "vault": {
-      "files": 8851,
-      "bytes": 2349737239,
+      "files": 8853,
+      "bytes": 2349820782,
       "heavy_bytes": 1307357977,
       "heavy_share": 0.556,
       "ignore_filters": [
@@ -306,6 +306,15 @@
       },
       "message": "1 business-register term — utilize x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/kb-notes/methodology-a-frequency-is-not-a-rule.md"
+    },
+    {
+      "rule": "unindexed_kb_note",
+      "fixable": false,
+      "detail": {
+        "stem": "methodology-a-reviewer-confirm-is-a-probe-for-procedure-gaps"
+      },
+      "message": "not referenced from docs/INDEX.md or any catalog it links to — unreachable by browsing",
+      "path": "docs/kb-notes/methodology-a-reviewer-confirm-is-a-probe-for-procedure-gaps.md"
     },
     {
       "rule": "kb_note_dialect",
@@ -1144,17 +1153,6 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
-    },
-    {
-      "rule": "checkpoint_overdue",
-      "fixable": false,
-      "path": "docs/session_392_handoff.md",
-      "detail": {
-        "commits_since": 11,
-        "budget": 6,
-        "handoff": "session_392_handoff.md"
-      },
-      "message": "11 commit(s) have landed since `docs/session_392_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }

@@ -845,3 +845,39 @@ Progress, and filters Records with dropdowns, adding CIP Sectors and SWP Regions
 Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, Phase 2 paragraph:
 
 ✅ **Sheet 78 (Sam, 2026-10-14 11:18Z) carried out:** Southwestern (#2115) and Fresno City (#2120) extracted, loaded unchecked and displayed; the 79 re-read under record shape 5. 🔨 **Record shape 5 (S389):** `program.degree_total` and `program.ge_units` keep what a page prints for the degree and its general education, `program.electives_fill_degree` says electives make up the rest with no figure; with no major total the scorer adds the blocks, open electives and general education against the degree total (`against: "degree"`; with electives filling, every end must fit and `fill` names their units). The display, CPL Pathways and Sierra name the degree total instead of saying the catalog prints none. Extraction function version 7 deploys from `main`. The re-read path (S389, #2111): a newer read replaces a record only while unchecked and unread by a person, with before-values in its receipt (lessons S389; `force=incomplete`, `step=reread`). ✅ **Palo Verde's 19 re-read (S389; Sam, ~12:55Z: *"go ahead with Palo Verde's 19 now too"*):** run 38567765687 ($1.47, the same pages, coverage unchanged), replaced by run 38569469816 (19 of 19; receipt `kb/receipts/program_requirement_records_college_reread_palo_verde_38569469816.json`). 11 now equal against the degree total; 8 unequal (why: lessons S389). The 2026-27 Acalog read replaces all 52 rows the same way. ✅ **Cabrillo's 55 re-read and replaced (S389):** read 38565227455 ($6.13, the same pages), re-read 38570011602 (55 of 55, receipt beside Palo Verde's). 13 equal against the degree total; 42 unequal (mostly 57-60 against 60: open electives printed as a range, kept as one number; lessons S389). ✅ **Southwestern loaded (S389, card 1):** run 38563578596 ($13.77, 220 extracted, 162 pass), load 38570038760 inserted 190 (30 place none). Five of the 79 place none of their courses and stay out. Santiago Canyon's listing has no links.
+
+## S392 SkyTamarack (2026-10-14): Sheet 81 carried out, the degree check, the reconcile pass, El Camino and San Joaquin Delta
+
+**Sam's rulings and words this run.** Open Asks Sheet 81 (20:22Z, all his own call): count, adt, extract, public, extract. In
+session, after confirming Cabrillo Astronomy (06326) and marking Biology (06328) Needs a fix: the confirm step is a probe for
+procedure gaps that retires as they close; a reconcile pass searches the catalog text again after the harvest; each catalog's
+procedure carries its own steps; and "Highlight the mismatches in units in the summary row" (`cpl_memory` rows of 2026-10-14).
+
+- **Sheet 81 cards 1 and 2 (#2127).** `degree_verdict()`: a degree total inside the computed span adds up (`within`); a transfer
+  degree with no electives on its record is filled by transferable electives (`transfer`, `fill`; Ed. Code 66746(a)).
+  `kb/_program_requirements_rescore.py` re-reads only how the filed sum meets the printed total, because the closed list and page
+  text stay with the run. 35 rescored (one more than the sheet counted: Cabrillo AS-T 35651). The live `checks` moved through
+  `supabase-migrate.yml`: the repo's Supabase guard blocks a session's UPDATE, and the committed-file runner is the reviewed path.
+- **A runner's commit starts no CI.** The migrate job's receipt commit left #2127's head with no `test` run; a real follow-up
+  commit (the receipt's applied block) started it.
+- **The degree check (#2129, record shape 6, extraction v8).** About 1,560 associate degrees, 77 with a degree total: most records
+  were read before v7. Every Cabrillo degree page says "at least 30 units in the major", and the reading took it for the major
+  total. A page printing both totals now checks both; `degree_elective_units` keeps a degree's own electives; the **Major only**
+  gap marks 1,487 records. El Camino's v7 records read the degree total on 52 of 53 degrees, so v7's wording works.
+- **The summary row (#2128).** A units mismatch is a red word chip for either total, never the bare status; the For the college
+  summary takes the alert color; an equal degree check names "60 units for the degree" (it printed "Equal,  units").
+- **The reconcile pass (#2130).** Cabrillo's requirements tree prints "Complete the following number of credits: 60 · Cabrillo
+  College General Education 24", the major, and "General electives: any transferable or degree applicable course. 6" (page reads
+  38633618089, 38642988914). The first run (38639316727) changed 36 records: 7 now add up; 4 that passed against the major now
+  miss the degree (two transfer degrees whose major and Cal-GETC overlap past 60, Sheet 82 card 2; Theatre Arts and Physics,
+  whose reading dropped a Recommended Major Electives block). Re-read 38643400229 posted 35, none held.
+- **The re-read held every row a person had read**, while the Records view promised a rerun would fix it. It now holds a checked
+  row only (migrate 38639286293).
+- **El Camino and San Joaquin Delta (#2131):** 117 and 202 loaded unchecked; display build `0a22233cf694`, 3,797 rows.
+
+**What went wrong.** An amend after a push that had in fact landed forked the Delta branch (`check_generated.sh` prints its
+regenerate hint without failing, so a `&&` chain does not stop). A test fixture for "never overwrites" had a genuinely empty
+field. The first count of degree chips searched the receipt's JSON in the wrong key order (it sorts keys).
+
+**Patterns that worked.** Measure the blast radius live before answering a question about one record. Read the page on a runner
+before writing a reconcile pattern. Diff every reconciled record's check against main before posting it.

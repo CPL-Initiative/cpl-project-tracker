@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 550,
+   "count": 551,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3284,6 +3284,27 @@
      "title": "A retrieval route costs what the synonym table decides, and the batch waits for the slowest route",
      "type": "methodology",
      "updated": "2026-09-17"
+    },
+    {
+     "created": "2026-10-14",
+     "governs": [
+      "kb/_program_requirements_reconcile.py",
+      "kb/program_requirements_reconcile.json",
+      "kb/_program_requirements_score.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-reviewer-confirm-is-a-probe-for-procedure-gaps.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "program-requirements",
+      "harvest",
+      "review",
+      "procedure",
+      "audit"
+     ],
+     "title": "A reviewer's confirm is a probe for procedure gaps, and it retires as they close",
+     "type": "methodology",
+     "updated": "2026-10-14"
     },
     {
      "created": "2026-09-30",
@@ -15548,8 +15569,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 363,
+   "count": 364,
    "docs": [
+    {
+     "created": "2026-10-14",
+     "governs": [],
+     "n": 393,
+     "path": "docs/session_393_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "reconcile",
+      "decision-sheet",
+      "records-view"
+     ],
+     "title": "Session 393 handoff: Sheet 82, the reconcile pass beyond Cabrillo, a display build for Cabrillo's re-read",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-14",
      "governs": [],
@@ -21790,5 +21828,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1142
+ "total": 1144
 }
