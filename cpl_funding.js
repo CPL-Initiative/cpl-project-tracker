@@ -3578,6 +3578,10 @@
     ["credit total", "f-cr", "the credit shares of the awards"],
     ["noncredit portion", "f-ncpct", "noncredit's percentage of the total to institutions"],
     ["noncredit weight", "f-ncw", "what one noncredit FTES counts as when noncredit's portion is set (1.00 when it is not)"],
+    // The remaining 2025-26 balance (Sam, 2026-10-14: "an amount $9.04M in this
+    // explainer text is just text. Is there a field I can reference?"). The same
+    // pool field the $15M Distributions view and the Budget ledger carry.
+    ["2025-26 remaining", "f-rem2526", "the remaining 2025-26 balance, a separate distribution"],
     ["noncredit awards", "l-nc-count", "how many awards carry a noncredit share"],
     ["institutions", "l-basis-n", "how many institutions"],
     ["median award", "f-med", "the median award"],

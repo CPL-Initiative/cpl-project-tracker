@@ -177,7 +177,10 @@
     pool: { one_time: pool("one_time_2026_27"), admin: pool("admin_cost"),
             scaling: pool("scaling_projects_tech"),
             floor: pool("floor_window"),
-            cap: pool("cap_window"), rate: pool("ftes_rate_2026_27") },
+            cap: pool("cap_window"), rate: pool("ftes_rate_2026_27"),
+            // The remaining 2025-26 balance, a separate distribution; a passage
+            // names it {2025-26 remaining} (2026-10-14).
+            remaining: pool("remaining_2025_26") },
     net_main: Math.round(T._netCollege()),
     // The noncredit DECOMPOSITION under one pool (2026-08-31). Emitted so the
     // page can STATE it rather than have a writer describe it — a hand-typed

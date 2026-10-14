@@ -1180,6 +1180,9 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   // ONE STATEWIDE BOX (Sam, 2026-10-01): the projects and technology and the
   // two Chancellor's Office posts, as one figure.
   setText("f-proj", money(P.scaling + P.admin));
+  // The remaining 2025-26 balance, for a passage that names {2025-26 remaining}
+  // (2026-10-14). An older engine's payload has none, and nothing paints.
+  if (isFinite(P.remaining)) setText("f-rem2526", money(P.remaining));
   setText("f-main", money(D.net_main));
   setText("r-min", money(D.min));
   setText("r-max", money(D.max));
