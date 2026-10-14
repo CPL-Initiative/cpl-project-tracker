@@ -15548,8 +15548,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 362,
+   "count": 363,
    "docs": [
+    {
+     "created": "2026-10-14",
+     "governs": [],
+     "n": 392,
+     "path": "docs/session_392_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "acalog",
+      "catalog-year",
+      "decision-sheet",
+      "ui-pass",
+      "pii"
+     ],
+     "title": "Session 392 handoff: Sheet 81, San Joaquin Delta's extraction, Palo Verde's 2026-27 read after Sunday",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-14",
      "governs": [],
@@ -21771,5 +21790,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1141
+ "total": 1142
 }
