@@ -1035,3 +1035,14 @@ on the college's harvest-tab row and My College to-dos; the MAP team sends.
 
 **NEXT.** The Acalog reader once Sunday's census apply moves Palo Verde's registry row; then Palo Verde's records re-read
 from 2026-27 and its course outcomes. The other 71 listed addenda wait for the reader to reach their colleges.
+
+## S390 SkySaguaro (2026-10-14): San Joaquin Delta's Acalog capture
+
+- **San Joaquin Delta captures through the Acalog reader** (run 38569401921, capture only, 250 loads, 25 min): catoid 14,
+  no site map (404), three program menus. 203 of 233 programs with a list found a page, 125 at full coverage, 58 at
+  0.8-1.0, 20 at 0.5-0.8; 24 found none and 6 lost their page to a fuller program. On 15 of the 24 the best page
+  names none of the listed courses: six apprenticeship options, the two psychiatric technician programs, three
+  digital media certificates and four newer programs (45193-45195, 45583). Above Sheet 59's 85% bar.
+- **Its registry row names no catalog year, and the reader reads none from the page.** Extraction stamps
+  `catalog_year` from the registry, so Delta's records would carry none. Read the year from the catalog's own page into
+  the capture report before Delta extracts. El Camino's row names 2026-2027.

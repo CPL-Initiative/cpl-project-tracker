@@ -39,12 +39,14 @@
     ".cplcoci-head .sub { color: var(--text-muted); font-size:.8rem; }",
     ".cplcoci-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 10px; }",
     ".cplcoci-toolbar input, .cplcoci-toolbar select { padding:7px 10px; border:1px solid var(--border-strong); border-radius:6px; font-size:.84rem; background: var(--surface-opaque); color: var(--text-body); }",
-    ".cplcoci-toolbar input:focus, .cplcoci-toolbar select:focus { outline:none; border-color: var(--seal-blue); }",
+    ".cplcoci-toolbar input:focus, .cplcoci-toolbar select:focus { border-color: var(--cobalt); }",
+    ".cplcoci-toolbar input:focus-visible, .cplcoci-toolbar select:focus-visible { outline:2px solid var(--cobalt); outline-offset:1px; }",
     ".cplcoci-q { flex:1 1 230px; min-width:170px; }",
     ".cplcoci-count { font-size:.78rem; color: var(--text-muted); margin-left:auto; }",
-    ".cplcoci-btn { background: var(--seal-blue); color: var(--surface-opaque); border:none; border-radius:6px; padding:7px 13px; font-weight:600; font-size:.8rem; cursor:pointer; }",
-    ".cplcoci-btn:hover { opacity:.92; }",
-    ".cplcoci-btn.ghost { background: var(--surface-subtle); color: var(--text-body); border:1px solid var(--border-strong); }",
+    // Controls are underlined words (Sam, 2026-10-09; S389 UI pass): no border, no fill, 24px tall.
+    ".cplcoci-btn { border:0; background:none; color: var(--cobalt); font-weight:600; font-size:.8rem; padding:2px 0; min-height:24px; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; cursor:pointer; white-space:nowrap; }",
+    ".cplcoci-btn:hover { text-decoration-thickness:2px; }",
+    ".cplcoci-btn:focus-visible { outline:2px solid var(--cobalt); outline-offset:2px; }",
     ".cplcoci-wrap { border:1px solid var(--border); border-radius:8px; background: var(--surface-opaque); overflow-x:auto; }",
     ".cplcoci-table { width:100%; border-collapse:collapse; font-size:.82rem; }",
     ".cplcoci-table th { position:relative; background: var(--seal-blue); color:#fff; text-align:left; padding:7px 9px; font-size:.76rem; cursor:pointer; user-select:none; white-space:nowrap; }",
@@ -53,7 +55,7 @@
     ".cplcoci-table td { padding:5px 9px; border-top:1px solid var(--border); vertical-align:top; overflow:hidden; text-overflow:ellipsis; }",
     ".cplcoci-table tr.cplcoci-row:hover td { background: var(--surface-subtle); }",
     ".cplcoci-caret { cursor:pointer; color: var(--text-muted); width:18px; }",
-    ".cplcoci-chip { display:inline-block; padding:1px 7px; margin:1px 3px 1px 0; border-radius:8px; font-size:.7rem; font-weight:600; border:1px solid var(--border-strong); background: rgba(255,255,255,.5); white-space:nowrap; }",
+    ".cplcoci-chip { display:inline-block; padding:1px 7px; margin:1px 3px 1px 0; border-radius:8px; font-size:.7rem; font-weight:600; border:1px solid var(--border-strong); background: transparent; white-space:nowrap; }",
     ".cplcoci-chip.mid { color:var(--seal-blue-text,#002F6D); }",
     ".cplcoci-chip.cid { color: var(--hunter, #1d4d33); border-color: var(--hunter, #1d4d33); }",
     ".cplcoci-chip.ccn { color: var(--violet, #5b3d8f); border-color: var(--violet, #5b3d8f); }",
@@ -313,7 +315,7 @@
     wrap.appendChild(table);
 
     if (idxs.length > state.limit) {
-      var more = el("button", { class: "cplcoci-btn ghost" },
+      var more = el("button", { class: "cplcoci-btn" },
         ["Show " + Math.min(PAGE, idxs.length - state.limit).toLocaleString()
          + " more (" + (idxs.length - state.limit).toLocaleString() + " remaining)"]);
       more.onclick = function () { state.limit += PAGE; renderTable(); };
@@ -482,7 +484,7 @@
       [["all", "Credit: any"], ["C", "Credit"], ["E", "Noncredit Enhanced"], ["N", "Noncredit"]],
       state.credit, function (v) { state.credit = v; invalidate(); }));
 
-    var csv = el("button", { class: "cplcoci-btn", id: "cplcoci-csv", title: "Download the current filtered set as CSV" }, ["⬇ CSV"]);
+    var csv = el("button", { class: "cplcoci-btn", id: "cplcoci-csv", title: "Download the current filtered set as CSV" }, ["Download CSV"]);
     csv.onclick = exportCsv;
     tb.appendChild(csv);
     tb.appendChild(el("span", { class: "cplcoci-count", id: "cplcoci-count" }, [""]));
@@ -574,7 +576,7 @@
     P.statuses.slice().forEach(function (s) { if (s) statusOpts.push([s, s]); });
     tb.appendChild(mkSelect("cplcoci-pstatus", "Program status", statusOpts, state.pstatus, function (v) { state.pstatus = v; pInvalidate(); }));
 
-    var csv = el("button", { class: "cplcoci-btn", title: "Download the current filtered programs as CSV" }, ["⬇ CSV"]);
+    var csv = el("button", { class: "cplcoci-btn", title: "Download the current filtered programs as CSV" }, ["Download CSV"]);
     csv.onclick = exportProgCsv;
     tb.appendChild(csv);
     tb.appendChild(el("span", { class: "cplcoci-count", id: "cplcoci-pcount" }, [""]));
@@ -650,7 +652,7 @@
     table.appendChild(tbody);
     wrap.appendChild(table);
     if (idxs.length > state.plimit) {
-      var more = el("button", { class: "cplcoci-btn ghost" },
+      var more = el("button", { class: "cplcoci-btn" },
         ["Show " + Math.min(PAGE, idxs.length - state.plimit).toLocaleString() + " more ("
          + (idxs.length - state.plimit).toLocaleString() + " remaining)"]);
       more.onclick = function () { state.plimit += PAGE; renderProgTable(); };
