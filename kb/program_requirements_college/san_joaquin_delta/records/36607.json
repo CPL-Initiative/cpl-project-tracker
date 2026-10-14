@@ -1,0 +1,170 @@
+{
+ "college": "San Joaquin Delta College",
+ "control_number": "36607",
+ "shape": "certificate",
+ "title": "Speech Language Pathology Assistant Advanced Placement",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3344&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6433,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6433,
+    "output_tokens": 1075,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1075,
+  "output_tokens_details": {
+   "thinking_tokens": 294
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04723,
+ "ms": 8741,
+ "seconds": 9.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    12.0,
+    12.0
+   ],
+   "stated": [
+    12.0,
+    12.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Speech Language Pathology Assistant Advanced Placement Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 12,
+    "max": 12
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Provide direct treatment assistance to patients or clients in multiple settings, with diverse populations, under the supervision of a speech language pathologist by implementing treatment plans, completing speech and language screenings without interpretation, assisting with evaluations and documenting patient/client progress.",
+    "Provide program operational assistance to the supervising Speech Language Pathologist by completing clerical tasks, preparing appropriate therapy materials, scheduling, facilitating public relations and maintaining equipment.",
+    "Meet the educational requirements for licensure as a Speech Language Pathology Assistant with the State of California, Medical Quality Assurance, Speech Language Pathology and Audiology and Hearing Aid Dispensers Board.",
+    "Demonstrate appropriate workplace behaviors related to the American Speech and Hearing Association Code of Ethics and the scope of practice for a Speech Language Pathology Assistant."
+   ],
+   "careers": [
+    "Speech Language Pathology Assistant (SLPA)"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "COMM DIS 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM DIS 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM DIS 9",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Total taken from 'Minimum Units Required: 12'; block heading also states 'Complete 12 units'.",
+   "All courses must be completed with a grade of 'C' or better.",
+   "Admission requires a completed undergraduate degree in speech language pathology/communication sciences and disorders; others must complete the SLPA AS degree."
+  ]
+ },
+ "extracted_run": "38631691511"
+}

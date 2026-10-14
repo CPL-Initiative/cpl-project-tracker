@@ -1,0 +1,307 @@
+{
+ "college": "El Camino College",
+ "programs": 189,
+ "with_closed_list": 135,
+ "found": 124,
+ "extracted": 124,
+ "errors": 0,
+ "passed_machine_checks": 86,
+ "failed": {
+  "coverage": 7,
+  "invented": 0,
+  "arithmetic": 38,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 8.08,
+ "cost_per_program": 0.0652,
+ "not_found": [
+  {
+   "control_number": "02489",
+   "title": "Business Office Administration",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3553&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.154,
+    "body": 0.154,
+    "content": 0.0,
+    "net": 2,
+    "listed": 13,
+    "why": "coarse net: the page's code tokens name 2 of 13 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1789,
+     "content": 13953,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "15492",
+   "title": "Retail Management (WAFC)",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3550&print",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1366,
+     "content": 13538,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19859",
+   "title": "Accounting - CPA Track",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3547&print",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.25,
+    "body": 0.25,
+    "content": 0.125,
+    "net": 2,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 2 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1371,
+     "content": 13551,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19860",
+   "title": "Business Management",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3548&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1786,
+     "content": 13953,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37191",
+   "title": "Business Information Worker",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3686&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.429,
+    "body": 0.429,
+    "content": 0.143,
+    "net": 3,
+    "listed": 7,
+    "why": "coverage 0.43 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 1324,
+     "content": 13502,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "39004",
+   "title": "ESL Listening and Speaking",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3703&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 928,
+     "content": 13115,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "40200",
+   "title": "Accounting - Tax Preparation",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3708&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.4,
+    "body": 0.4,
+    "content": 0.0,
+    "net": 2,
+    "listed": 5,
+    "why": "coverage 0.40 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 1267,
+     "content": 13454,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "40201",
+   "title": "Accounting Clerical",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3707&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.333,
+    "body": 0.333,
+    "content": 0.0,
+    "net": 1,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 1 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 907,
+     "content": 13094,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "40635",
+   "title": "Fundamentals of Construction",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3706&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 993,
+     "content": 13180,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46403",
+   "title": "Academic Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3740&print",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1423,
+     "content": 13614,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46404",
+   "title": "Math Essentials",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3691&print",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 858,
+     "content": 13045,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "run": "38631686677"
+}

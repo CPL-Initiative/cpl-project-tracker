@@ -1,0 +1,245 @@
+{
+ "college": "El Camino College",
+ "control_number": "19892",
+ "shape": "certificate",
+ "title": "Cosmetology Level II",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3578&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5984,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5984,
+    "output_tokens": 1930,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1930,
+  "output_tokens_details": {
+   "thinking_tokens": 889
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06254,
+ "ms": 16474,
+ "seconds": 16.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "COSM1",
+    "COSM10",
+    "COSM11",
+    "COSM2D",
+    "COSM3",
+    "COSM4"
+   ],
+   "flagged": [
+    "COSM1",
+    "COSM10",
+    "COSM11",
+    "COSM2D",
+    "COSM3",
+    "COSM4"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    44.0,
+    46.0
+   ],
+   "stated": [
+    41.0,
+    42.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 44.0-46.0; the catalog states 41.0-42.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Cosmetology Level II Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 41,
+    "max": 42
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core: Completion of Level I Certificate of Accomplishment (COSM 1)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Level I",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COSM 1",
+      "units": 16,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Core: Completion of Level I Certificate of Accomplishment (COSM 10 and COSM 11)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Level I",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COSM 10",
+      "units": 8.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COSM 11",
+      "units": 8.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "28-29 units from",
+    "rule": "choose_units",
+    "minimum": 28,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 29
+    },
+    "courses": [
+     {
+      "code": "COSM 2A",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSM 2B",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSM 2C",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSM 2D",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COSM 3",
+      "units": 5.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COSM 4",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints 'Required Core: 13 units' above 'Completion of Level I Certificate of Accomplishment', but the Level I paths shown total 16 units (COSM 1) or 17 units (COSM 10 + COSM 11); the 13-unit figure was not recorded as a block total because it does not match. 13 + 28-29 = the printed Total Units 41-42.",
+   "Level I completion is recorded as two option blocks sharing option_group 'Level I': COSM 1, or COSM 10 and COSM 11.",
+   "COSM 3 or COSM 4 is printed after a blank line following the '28-29 units from:' list; it was placed in that choose_units block because COSM 2A-2D alone (8 units each) cannot sum to 28-29. A reviewer should check whether COSM 3/COSM 4 is instead a separate required item.",
+   "No program learning outcomes or careers are printed in the text."
+  ]
+ },
+ "extracted_run": "38631686677"
+}
