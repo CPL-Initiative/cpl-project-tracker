@@ -1,0 +1,2922 @@
+{
+ "college": "San Jose City College",
+ "catalog_url": "https://catalog.sjcc.edu/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 125,
+ "with_closed_list": 90,
+ "started": "2026-10-15T14:10:28Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://catalog.sjcc.edu/sitemap.xml",
+  "status": 200,
+  "listed": 377,
+  "nested": 0,
+  "program_pages": 207,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 203,
+ "child_pages": 8,
+ "banner_h1": null,
+ "loads": 258,
+ "seconds": 1325.1,
+ "found": 8,
+ "by_method": {
+  "link_search": 5,
+  "no_closed_list": 35,
+  "not_found": 82,
+  "sitemap_page": 3
+ },
+ "shared_pages": {
+  "https://catalog.sjcc.edu/degrees-certificates/art/art-associate-science/": [
+   "06210",
+   "12546"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "06185",
+   "title": "Accounting",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/accounting/accounting-associate-science/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4899,
+     "content": 36960,
+     "tabs": 653
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      862
+     ],
+     [
+      "Requirements",
+      633
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "06188",
+   "title": "Real Estate",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/business/real-estate-associate-science/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6248,
+     "content": 38002,
+     "tabs": 1309
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      445
+     ],
+     [
+      "Requirements",
+      1289
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "06202",
+   "title": "Construction Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/construction-technology-associate-science/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.071,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 14,
+    "why": "coarse net: the page's code tokens name 1 of 14 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5105,
+     "content": 37206,
+     "tabs": 1266
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      532
+     ],
+     [
+      "Requirements",
+      1246
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "06218",
+   "title": "Dental Assisting",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/dental-assisting/dental-assisting-associate-science/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 14,
+    "why": "coarse net: the page's code tokens name 0 of 14 listed courses",
+    "error": null,
+    "chars": {
+     "body": 7187,
+     "content": 41398,
+     "tabs": 1065
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      2603
+     ],
+     [
+      "Requirements",
+      1045
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "06230",
+   "title": "Administration of Justice",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/business/business-administration-2.0-associate-science-transfer/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 24,
+    "why": "coarse net: the page's code tokens name 0 of 24 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6037,
+     "content": 37525,
+     "tabs": 674
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      792
+     ],
+     [
+      "Requirements",
+      654
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "06236",
+   "title": "Cosmetology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/cosmetology/cosmetology-associate-science/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5804,
+     "content": 37398,
+     "tabs": 515
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      578
+     ],
+     [
+      "Requirements",
+      495
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "08859",
+   "title": "Construction Technology-Residential Maintenance-Level 2",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/residential-maintenance-certificate-achievement-level-2/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.083,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 1 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5053,
+     "content": 36786,
+     "tabs": 903
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      532
+     ],
+     [
+      "Requirements",
+      883
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "10540",
+   "title": "Alcohol & Drug Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/alcohol-drug-studies/alcohol-drug-studies-associate-arts/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 7478,
+     "content": 38999,
+     "tabs": 750
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      596
+     ],
+     [
+      "Requirements",
+      730
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "10541",
+   "title": "Construction Technology",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/construction-technology-associate-arts/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5386,
+     "content": 37471,
+     "tabs": 651
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      1116
+     ],
+     [
+      "Requirements",
+      631
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "16370",
+   "title": "Chemistry",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/chemistry/chemistry-associate-arts/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6411,
+     "content": 38258,
+     "tabs": 536
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      704
+     ],
+     [
+      "Requirements",
+      516
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "18449",
+   "title": "Liberal Arts: Arts & Humanities",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/counseling/liberal-arts-arts-humanities-associate-arts/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.056,
+    "body": 0.0,
+    "content": 0.049,
+    "net": 1,
+    "listed": 143,
+    "why": "coarse net: the page's code tokens name 1 of 143 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5556,
+     "content": 43385,
+     "tabs": 7185
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      534
+     ],
+     [
+      "Requirements",
+      7165
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "18450",
+   "title": "Liberal Arts: Scientific Inquiry and Quantitative Reasoning",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/counseling/liberal-arts-scientific-inquiry-quantitative-reasoning-associate-arts/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.268,
+    "body": 0.0,
+    "content": 0.232,
+    "net": 2,
+    "listed": 56,
+    "why": "coarse net: the page's code tokens name 2 of 56 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5397,
+     "content": 38966,
+     "tabs": 2620
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      626
+     ],
+     [
+      "Requirements",
+      2600
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "18451",
+   "title": "Liberal Arts: Social & Behavioral Sciences",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/counseling/liberal-arts-social-behavioral-sciences-associate-arts/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.181,
+    "body": 0.0,
+    "content": 0.097,
+    "net": 7,
+    "listed": 72,
+    "why": "coarse net: the page's code tokens name 7 of 72 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5217,
+     "content": 39979,
+     "tabs": 4094
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      395
+     ],
+     [
+      "Requirements",
+      4074
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "18738",
+   "title": "Residential Carpentry Technology",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/residential-carpentry-technology-certificate-achievement-level-1/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5070,
+     "content": 36156,
+     "tabs": 278
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      501
+     ],
+     [
+      "Requirements",
+      258
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22220",
+   "title": "Accounting",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/accounting/accounting-certificate-achievement/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 13,
+    "why": "coarse net: the page's code tokens name 0 of 13 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4684,
+     "content": 36786,
+     "tabs": 692
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      862
+     ],
+     [
+      "Requirements",
+      672
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22225",
+   "title": "Real Estate",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/business/real-estate-certificate-achievement-level-2/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6098,
+     "content": 37229,
+     "tabs": 685
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      445
+     ],
+     [
+      "Requirements",
+      665
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22232",
+   "title": "CIS Network Administration: General Networking",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/cis-general-networking-certificate-achievement-level-1/",
+    "label": {
+     "award": 1,
+     "title": 0.6
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6001,
+     "content": 37072,
+     "tabs": 263
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      1380
+     ],
+     [
+      "Requirements",
+      243
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22237",
+   "title": "Construction Technology-Level 3",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/construction-technology-certificate-achievement-level-3/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.071,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 14,
+    "why": "coarse net: the page's code tokens name 1 of 14 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5001,
+     "content": 36859,
+     "tabs": 1037
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      532
+     ],
+     [
+      "Requirements",
+      1017
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22239",
+   "title": "Dental Assisting",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/dental-assisting/dental-assisting-certificate-achievement-level-3/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 7163,
+     "content": 41103,
+     "tabs": 804
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      2603
+     ],
+     [
+      "Requirements",
+      784
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22241",
+   "title": "Alcohol & Drug Studies",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/alcohol-drug-studies/alcohol-drug-studies-certificate-achievement-level-2/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 7288,
+     "content": 38570,
+     "tabs": 517
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      596
+     ],
+     [
+      "Requirements",
+      497
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22242",
+   "title": "Cosmetology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/cosmetology/cosmetology-certificate-achievement-level-3/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5619,
+     "content": 36991,
+     "tabs": 278
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      604
+     ],
+     [
+      "Requirements",
+      258
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22991",
+   "title": "Judicial Administration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/business/business-administration-2.0-associate-science-transfer/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6037,
+     "content": 37525,
+     "tabs": 674
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      792
+     ],
+     [
+      "Requirements",
+      654
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22992",
+   "title": "Court Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/business/management-certificate-achievement-level-2/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5578,
+     "content": 38543,
+     "tabs": 398
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      2527
+     ],
+     [
+      "Requirements",
+      378
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22993",
+   "title": "Supervison/Lead",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "22994",
+   "title": "Court Operations",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "30403",
+   "title": "Medical Assisting: Administrative",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-assisting-administrative-associate-science/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.167,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 2,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 2 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5283,
+     "content": 38121,
+     "tabs": 1541
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      1100
+     ],
+     [
+      "Requirements",
+      1521
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "30443",
+   "title": "Medical Assistant: Administrative Level 3",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-assisting-administrative-certificate-achievement-level-3/",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 14,
+    "why": "coarse net: the page's code tokens name 0 of 14 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5277,
+     "content": 37297,
+     "tabs": 739
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      1100
+     ],
+     [
+      "Requirements",
+      719
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "32078",
+   "title": "Medical Assisting: Clinical",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-assisting-clinical-associate-science/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.111,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 3,
+    "listed": 27,
+    "why": "coarse net: the page's code tokens name 3 of 27 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5350,
+     "content": 38102,
+     "tabs": 1562
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      1018
+     ],
+     [
+      "Requirements",
+      1542
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "32214",
+   "title": "Medical Assisting: Clinical",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-assisting-clinical-certificate-achievement-level-3/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.083,
+    "body": 0.0,
+    "content": 0.083,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5347,
+     "content": 37478,
+     "tabs": 929
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      1018
+     ],
+     [
+      "Requirements",
+      909
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "32260",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/kinesiology/kinesiology-associate-arts-transfer/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.058,
+    "body": 0.0,
+    "content": 0.038,
+    "net": 3,
+    "listed": 52,
+    "why": "coarse net: the page's code tokens name 3 of 52 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5322,
+     "content": 38988,
+     "tabs": 2823
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      406
+     ],
+     [
+      "Requirements",
+      2803
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "32304",
+   "title": "Psychology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/psychology/child-and-adolescent-development-associate-arts-for-transfer/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.125,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 2,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 2 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5804,
+     "content": 37562,
+     "tabs": 779
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      534
+     ],
+     [
+      "Requirements",
+      759
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "32554",
+   "title": "Communication Studies and Mass Media",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/communication-studies/communication-studies-certificate-achievement-level-1/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.125,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 1 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5073,
+     "content": 36616,
+     "tabs": 645
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      420
+     ],
+     [
+      "Requirements",
+      625
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "32759",
+   "title": "Economics",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/economics/economics-associate-arts-transfer/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.25,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 3,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 3 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5705,
+     "content": 37816,
+     "tabs": 893
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      644
+     ],
+     [
+      "Requirements",
+      873
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "33766",
+   "title": "Dance Teaching",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/dance/dance-teaching-certificate-achievement-level-1/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.429,
+    "body": 0.429,
+    "content": 0.0,
+    "net": 0,
+    "listed": 14,
+    "why": "coarse net: the page's code tokens name 0 of 14 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4825,
+     "content": 37044,
+     "tabs": 1090
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      585
+     ],
+     [
+      "Requirements",
+      1070
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "33857",
+   "title": "Dance",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/dance/dance-associate-arts/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.355,
+    "body": 0.323,
+    "content": 0.0,
+    "net": 1,
+    "listed": 31,
+    "why": "coarse net: the page's code tokens name 1 of 31 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5055,
+     "content": 38463,
+     "tabs": 2341
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      562
+     ],
+     [
+      "Requirements",
+      2321
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "35032",
+   "title": "Early Childhood Education - Inclusion Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/early-childhood-education/early-childhood-education-inclusion-specialist-certificate-achievement/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5978,
+     "content": 37123,
+     "tabs": 509
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      489
+     ],
+     [
+      "Requirements",
+      489
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "35033",
+   "title": "Early Childhood Education - Teacher",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/early-childhood-education/early-childhood-education-associate-teacher-certificate-achievement/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5739,
+     "content": 36670,
+     "tabs": 255
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      526
+     ],
+     [
+      "Requirements",
+      235
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "35034",
+   "title": "Early Childhood Education - Master Teacher",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/early-childhood-education/early-childhood-education-master-teacher-certificate-achievement/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 22,
+    "why": "coarse net: the page's code tokens name 0 of 22 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6195,
+     "content": 39118,
+     "tabs": 2161
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      667
+     ],
+     [
+      "Requirements",
+      2141
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "35398",
+   "title": "Sociology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/sociology/sociology-associate-arts-transfer/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.25,
+    "body": 0.0,
+    "content": 0.167,
+    "net": 4,
+    "listed": 36,
+    "why": "coarse net: the page's code tokens name 4 of 36 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5783,
+     "content": 38812,
+     "tabs": 2172
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      336
+     ],
+     [
+      "Requirements",
+      2152
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "35591",
+   "title": "Patient Navigator",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/patient-navigator-certificate-of-achievement-level-1/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5417,
+     "content": 36219,
+     "tabs": 288
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      323
+     ],
+     [
+      "Requirements",
+      268
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "35596",
+   "title": "Political Science",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/political-science/political-science-associate-arts-transfer/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.24,
+    "body": 0.0,
+    "content": 0.12,
+    "net": 4,
+    "listed": 25,
+    "why": "coarse net: the page's code tokens name 4 of 25 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5878,
+     "content": 38340,
+     "tabs": 1496
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      495
+     ],
+     [
+      "Requirements",
+      1476
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "35835",
+   "title": "Geography",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/geography/geography-associate-arts-transfer/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.111,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 1 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5494,
+     "content": 37176,
+     "tabs": 703
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      402
+     ],
+     [
+      "Requirements",
+      683
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "36245",
+   "title": "Global Studies",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/global-studies/global-studies-associate-arts-transfer/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.188,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 0 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5731,
+     "content": 37651,
+     "tabs": 1062
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      362
+     ],
+     [
+      "Requirements",
+      1042
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "36415",
+   "title": "Journalism",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/journalism/journalism-associate-arts-transfer/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.188,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 3,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 3 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5764,
+     "content": 37756,
+     "tabs": 981
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      444
+     ],
+     [
+      "Requirements",
+      961
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "36929",
+   "title": "ESL in Career and College - Intermediate",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/english-as-a-second-language/english-as-a-second-language-certificate-competency/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4281,
+     "content": 35671,
+     "tabs": 487
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      414
+     ],
+     [
+      "Requirements",
+      467
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "37492",
+   "title": "Medical Career Preparation",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-career-preparation---certificate-completion-noncredit/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5008,
+     "content": 35955,
+     "tabs": 331
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      431
+     ],
+     [
+      "Requirements",
+      311
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "37604",
+   "title": "Spanish",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/spanish/spanish-associate-arts-transfer/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 14,
+    "why": "coarse net: the page's code tokens name 0 of 14 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5657,
+     "content": 38481,
+     "tabs": 1660
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      560
+     ],
+     [
+      "Requirements",
+      1640
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "38113",
+   "title": "Theatre Arts",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/theatrearts/theatre-arts-associate-in-arts-for-transfer/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5363,
+     "content": 37124,
+     "tabs": 769
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      416
+     ],
+     [
+      "Requirements",
+      749
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "38152",
+   "title": "Global Studies",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/global-studies/certificate-achievement-level1/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4426,
+     "content": 35741,
+     "tabs": 363
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      426
+     ],
+     [
+      "Requirements",
+      343
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "38426",
+   "title": "Child and Adolescent Development",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/psychology/child-and-adolescent-development-associate-arts-for-transfer/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.182,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 2,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 2 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5804,
+     "content": 37562,
+     "tabs": 779
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      534
+     ],
+     [
+      "Requirements",
+      759
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "38463",
+   "title": "Emerging Tech Entrepreneurship Level 1",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/emerging-tech-entrepreneurship-level-1/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.25,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 1 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5483,
+     "content": 36042,
+     "tabs": 382
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      745
+     ],
+     [
+      "Requirements",
+      362
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "38485",
+   "title": "Nutrition and Dietetics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/family-consumer-studies/nutrition-dietetics-associate-science-transfer/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.167,
+    "body": 0.0,
+    "content": 0.083,
+    "net": 2,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 2 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5383,
+     "content": 37277,
+     "tabs": 885
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      456
+     ],
+     [
+      "Requirements",
+      865
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "38498",
+   "title": "Emerging Tech Entrepreneurship Level 2",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/emerging-tech-entrepreneurship-level-1/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.056,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 18,
+    "why": "coarse net: the page's code tokens name 1 of 18 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5483,
+     "content": 36042,
+     "tabs": 382
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      745
+     ],
+     [
+      "Requirements",
+      362
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "38499",
+   "title": "Law, Public Policy, and Society",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "39247",
+   "title": "Biology",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/biology/biology-associate-science-transfer/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5676,
+     "content": 37670,
+     "tabs": 660
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      813
+     ],
+     [
+      "Requirements",
+      640
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "39391",
+   "title": "Kinesiology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/kinesiology/kinesiology-certificate-achievement-level-2/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.027,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 37,
+    "why": "coarse net: the page's code tokens name 1 of 37 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4600,
+     "content": 37043,
+     "tabs": 1526
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      451
+     ],
+     [
+      "Requirements",
+      1506
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "40370",
+   "title": "GOOGLE IT SUPPORT PROFESSIONAL",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/google-it-support-professional-certificate-achievement-level-1/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5768,
+     "content": 36168,
+     "tabs": 366
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      598
+     ],
+     [
+      "Requirements",
+      346
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "40372",
+   "title": "Community Health Worker",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/community-health-worker-certificate-completion-noncredit/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5448,
+     "content": 36644,
+     "tabs": 310
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      700
+     ],
+     [
+      "Required Courses",
+      286
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "40875",
+   "title": "Business and Data Analytics",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/computer-applications/business-data-analytics-certificate-achievement-level-1/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4847,
+     "content": 36131,
+     "tabs": 302
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      462
+     ],
+     [
+      "Requirements",
+      282
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "41473",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/business/business-administration-2.0-associate-science-transfer/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.091,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 1 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6037,
+     "content": 37525,
+     "tabs": 674
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      792
+     ],
+     [
+      "Requirements",
+      654
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "41533",
+   "title": "Graphic Design",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/graphic-design-associate-arts/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.167,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 1 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4895,
+     "content": 36587,
+     "tabs": 674
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      677
+     ],
+     [
+      "Requirements",
+      654
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "41629",
+   "title": "Environmental Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/environmental-science/environmental-science-associate-science-transfer/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.083,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 1 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6132,
+     "content": 38129,
+     "tabs": 589
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      859
+     ],
+     [
+      "Requirements",
+      569
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "41847",
+   "title": "Music Technology Recording Arts",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/music/music-technology-recording-arts-certificate-achievement-level-2/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.333,
+    "body": 0.333,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4346,
+     "content": 35831,
+     "tabs": 382
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      549
+     ],
+     [
+      "Requirements",
+      362
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "42242",
+   "title": "Engineering",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/engineering/engineering-associate-arts/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4613,
+     "content": 36605,
+     "tabs": 926
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      481
+     ],
+     [
+      "Requirements",
+      906
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "42529",
+   "title": "Computer Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/computer-science/computer-science-associate-science-transfer/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3303,
+     "content": 37420,
+     "tabs": 717
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      872
+     ],
+     [
+      "Requirements",
+      697
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "42654",
+   "title": "User Experience and Interaction Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/user-experience-interaction-design-certificate-achievement/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5552,
+     "content": 37147,
+     "tabs": 378
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      889
+     ],
+     [
+      "Requirements",
+      358
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "42682",
+   "title": "User Experience and Interaction Design",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/user-experience-interaction-design-associate-science/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5514,
+     "content": 37677,
+     "tabs": 937
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      889
+     ],
+     [
+      "Requirements",
+      917
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "43279",
+   "title": "Art History",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/art/art-history-associate-arts-transfer/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.217,
+    "body": 0.167,
+    "content": 0.0,
+    "net": 3,
+    "listed": 60,
+    "why": "coarse net: the page's code tokens name 3 of 60 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5583,
+     "content": 39675,
+     "tabs": 3283
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      458
+     ],
+     [
+      "Requirements",
+      3263
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "43327",
+   "title": "Career Preparedness",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/Disabled-Student-Programs-and-Services/career-preparedness-cert-competency/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 1.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4339,
+     "content": 35750,
+     "tabs": 457
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      433
+     ],
+     [
+      "Requirements",
+      437
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "43328",
+   "title": "Academic Success",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/Disabled-Student-Programs-and-Services/academic-success-cert-completion/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 1.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4311,
+     "content": 35720,
+     "tabs": 377
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      508
+     ],
+     [
+      "Requirements",
+      357
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "43633",
+   "title": "Communication Studies 2.0",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/communication-studies/communication-studies2-associate-arts-transfer/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.286,
+    "body": 0.0,
+    "content": 0.071,
+    "net": 4,
+    "listed": 14,
+    "why": "coarse net: the page's code tokens name 4 of 14 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5847,
+     "content": 37832,
+     "tabs": 1021
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      489
+     ],
+     [
+      "Requirements",
+      1001
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "44010",
+   "title": "Project Management",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/computer-applications/project-management-certificate-achievement-level-1/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4606,
+     "content": 36076,
+     "tabs": 400
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      570
+     ],
+     [
+      "Requirements",
+      380
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "44122",
+   "title": "Health Sciences",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/health-sciences/health-sciences-associate-arts/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.25,
+    "body": 0.0,
+    "content": 0.25,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4580,
+     "content": 36270,
+     "tabs": 728
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      427
+     ],
+     [
+      "Requirements",
+      708
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "44123",
+   "title": "Health Sciences",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/health-sciences/health-sciences-certificate-achievement-level-2/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4574,
+     "content": 35956,
+     "tabs": 432
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      427
+     ],
+     [
+      "Requirements",
+      412
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "44384",
+   "title": "Motion Graphic Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/motion-graphic-design-certificate-ofachievement-level-2/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5009,
+     "content": 36341,
+     "tabs": 355
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      652
+     ],
+     [
+      "Requirements",
+      335
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "44388",
+   "title": "Motion Graphic Design",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/motion-graphic-design-associate20in20science/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5194,
+     "content": 36978,
+     "tabs": 809
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      652
+     ],
+     [
+      "Requirements",
+      789
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "44596",
+   "title": "Public Health",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/biology/public-health-science-associate-science-transfer/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.154,
+    "body": 0.0,
+    "content": 0.038,
+    "net": 3,
+    "listed": 26,
+    "why": "coarse net: the page's code tokens name 3 of 26 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5571,
+     "content": 37780,
+     "tabs": 1352
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      369
+     ],
+     [
+      "Requirements",
+      1332
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "44925",
+   "title": "Ironworking",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/ironworking/ironworking-certificate-achievelment-level-1index.html",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4540,
+     "content": 36060,
+     "tabs": 335
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      610
+     ],
+     [
+      "Requirements",
+      315
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "45796",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/counseling/counseling-certificate-achievement/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 0.146,
+    "body": 0.0,
+    "content": 0.146,
+    "net": 1,
+    "listed": 158,
+    "why": "coarse net: the page's code tokens name 1 of 158 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5473,
+     "content": 46130,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      859
+     ],
+     [
+      "Requirements",
+      9532
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "45984",
+   "title": "Information Systems Security: Cybersecurity",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/cis-cisco-networks-ccna-certificate-achievement-level-2/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5990,
+     "content": 38543,
+     "tabs": 1798
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      1380
+     ],
+     [
+      "Requirements",
+      1778
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "46293",
+   "title": "Information Systems Security: Cybersecurity",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/cis-computer-programming-associate-science/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5955,
+     "content": 38883,
+     "tabs": 2168
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      1379
+     ],
+     [
+      "Requirements",
+      2148
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "46579",
+   "title": "Mathematics 2.0",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/mathematics/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5039,
+     "content": 61030,
+     "tabs": 25348
+    },
+    "tab_panels": [
+     [
+      "Degrees/Certificates",
+      64
+     ],
+     [
+      "Courses",
+      25333
+     ]
+    ]
+   }
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 7,
+  "0.8-1.0": 0,
+  "1.0": 1
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 8,
+  "list": [
+   {
+    "control_number": "06210",
+    "title": "Art - Drawing & Painting",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/art/art-associate-science/",
+    "coverage": 0.636,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12546",
+    "title": "Art - Photography",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/art/art-associate-science/",
+    "coverage": 0.727,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13569",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/art/art-associate-arts/",
+    "coverage": 0.714,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18390",
+    "title": "Laser Technology 1",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/laser-technology/laser-technology-certificate-achievement-level-1/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18921",
+    "title": "Air Conditioning & Refrigeration Technology 3",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/air-conditioning-refrigeration-technology/air-conditioning-refrigeration-technology-certificate-achievement-level-3/",
+    "coverage": 0.556,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33073",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/art/studio-arts-associate-arts-transfer/",
+    "coverage": 0.714,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38726",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sjcc.edu/graduation-certificate-general-education-requirements/associate-science-general-education-ge-pattern/",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46067",
+    "title": "Legal Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sjcc.edu/graduation-certificate-general-education-requirements/associate-arts-general-education-ge-pattern/",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38748870981"
+}
