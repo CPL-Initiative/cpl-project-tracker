@@ -4,6 +4,8 @@ date: 2026-10-14
 session: 388 (SkyBuckeye)
 tags: [handoff, program-requirements, course-outcomes, addenda, ui-pass, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_394_handoff.md
 ---
 
 # You are Session 389

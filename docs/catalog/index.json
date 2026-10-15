@@ -15587,8 +15587,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 364,
+   "count": 365,
    "docs": [
+    {
+     "created": "2026-10-15",
+     "governs": [],
+     "n": 394,
+     "path": "docs/session_394_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "reconcile",
+      "extraction",
+      "scheduled-sessions",
+      "decision-sheet"
+     ],
+     "title": "Session 394 handoff: merge Cerritos's reconcile steps, read Cabrillo under extraction v9, the overnight sweep",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-14",
      "governs": [],
@@ -21846,5 +21864,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1145
+ "total": 1146
 }

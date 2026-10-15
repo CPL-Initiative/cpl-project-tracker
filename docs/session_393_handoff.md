@@ -4,6 +4,8 @@ date: 2026-10-14
 session: 392 (SkyTamarack)
 tags: [handoff, program-requirements, reconcile, decision-sheet, records-view]
 status: current
+superseded: true
+superseded_by: session_394_handoff.md
 ---
 
 # You are Session 393

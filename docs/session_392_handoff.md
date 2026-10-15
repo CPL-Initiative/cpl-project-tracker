@@ -4,6 +4,8 @@ date: 2026-10-14
 session: 391 (SkyJuniper)
 tags: [handoff, program-requirements, acalog, catalog-year, decision-sheet, ui-pass, pii]
 status: current
+superseded: true
+superseded_by: session_394_handoff.md
 ---
 
 # You are Session 392
