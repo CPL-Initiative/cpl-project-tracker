@@ -1,0 +1,269 @@
+{
+ "college": "MiraCosta College",
+ "control_number": "39491",
+ "shape": "noncredit",
+ "title": "High School Equivalency Preparation",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.miracosta.edu/continuingeducation/noncreditcourses/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11845,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11845,
+    "output_tokens": 1657,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1657,
+  "output_tokens_details": {
+   "thinking_tokens": 521
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08052,
+ "ms": 14320,
+ "seconds": 14.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 27,
+   "share": 0.0,
+   "missing": [
+    "HSAGT10",
+    "HSECN10",
+    "HSSCI11",
+    "HSSCI12",
+    "HSSCI21",
+    "HSSCI22",
+    "HSSCI23",
+    "HSSCI41",
+    "HSUSH11",
+    "HSUSH12",
+    "HSWHG11",
+    "HSWHG12",
+    "NCABE11",
+    "NCABE92",
+    "NCENG15",
+    "NCENG16",
+    "NCENG17",
+    "NCENG21",
+    "NCENG22",
+    "NCENG23",
+    "NCENG25",
+    "NCMTH11",
+    "NCMTH12",
+    "NCMTH13",
+    "NCMTH20",
+    "NCMTH21",
+    "NCWFP11"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record states no figure, but the catalog text names 1.25 hours, 6 hours, 3 hours, 3 hours"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(no section for High School Equivalency Preparation program requirements in the text)",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HSAGT10",
+    "why": "not in the text"
+   },
+   {
+    "code": "HSECN 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "HSSCI 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "HSSCI 12",
+    "why": "not in the text"
+   },
+   {
+    "code": "HSSCI 21",
+    "why": "not in the text"
+   },
+   {
+    "code": "HSSCI 22",
+    "why": "not in the text"
+   },
+   {
+    "code": "HSSCI 23",
+    "why": "not in the text"
+   },
+   {
+    "code": "HSSCI 41",
+    "why": "not in the text"
+   },
+   {
+    "code": "HSUSH 12",
+    "why": "not in the text"
+   },
+   {
+    "code": "HSUSH11",
+    "why": "not in the text"
+   },
+   {
+    "code": "HSWHG 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "HSWHG 12",
+    "why": "not in the text"
+   },
+   {
+    "code": "NCABE 11",
+    "why": "course description only; no program requirements for this award in the text"
+   },
+   {
+    "code": "NCABE 92",
+    "why": "course description only; no program requirements for this award in the text"
+   },
+   {
+    "code": "NCENG 16",
+    "why": "course description only and in English Fundamentals certificates (other awards); no requirements for this award"
+   },
+   {
+    "code": "NCENG 17",
+    "why": "course description only and in English Fundamentals certificates (other awards); no requirements for this award"
+   },
+   {
+    "code": "NCENG 21",
+    "why": "course description only and in English Fundamentals certificate (other award); no requirements for this award"
+   },
+   {
+    "code": "NCENG 22",
+    "why": "course description only and in English Fundamentals certificate (other award); no requirements for this award"
+   },
+   {
+    "code": "NCENG 23",
+    "why": "course description only and in English Fundamentals certificate (other award); no requirements for this award"
+   },
+   {
+    "code": "NCENG 25",
+    "why": "course description only and in English Fundamentals certificate (other award); no requirements for this award"
+   },
+   {
+    "code": "NCENG15",
+    "why": "course description only and in English Fundamentals certificates (other awards); no requirements for this award"
+   },
+   {
+    "code": "NCMTH 11",
+    "why": "course description only; no program requirements for this award in the text"
+   },
+   {
+    "code": "NCMTH 13",
+    "why": "course description only; no program requirements for this award in the text"
+   },
+   {
+    "code": "NCMTH 21",
+    "why": "course description only; no program requirements for this award in the text"
+   },
+   {
+    "code": "NCMTH12",
+    "why": "course description only; no program requirements for this award in the text"
+   },
+   {
+    "code": "NCMTH20",
+    "why": "course description only; no program requirements for this award in the text"
+   },
+   {
+    "code": "NCWFP 11",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text contains no program section for the High School Equivalency Preparation noncredit program: it holds only the three English Fundamentals Certificates of Competency and a list of noncredit course descriptions (including NCABE 92: High School Equivalency Preparation, Lecture 6 hours). The program's requirements may be on another page; a reviewer should locate the correct section.",
+   "Measure set to hours because the page counts its noncredit awards and courses in hours.",
+   "No outcomes or careers are printed for this program in the text."
+  ]
+ },
+ "extracted_run": "38748842603"
+}
