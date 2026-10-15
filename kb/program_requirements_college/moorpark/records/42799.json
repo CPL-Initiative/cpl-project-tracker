@@ -1,0 +1,220 @@
+{
+ "college": "Moorpark College",
+ "control_number": "42799",
+ "shape": "degree",
+ "title": "Film Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.vcccd.edu/moorpark/graduation-requirements/associate-degree-general-studies-pattern-i/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13715,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13715,
+    "output_tokens": 1232,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1232,
+  "output_tokens_details": {
+   "thinking_tokens": 305
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0795,
+ "ms": 11113,
+ "seconds": 11.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 16,
+   "share": 0.0,
+   "missing": [
+    "FTMAM101",
+    "FTMAM102",
+    "FTMAM104",
+    "FTMAM105",
+    "FTMAM106",
+    "FTMAM107",
+    "FTMAM108",
+    "FTMAM109",
+    "FTMAM115",
+    "FTMAM124",
+    "FTMAM126A",
+    "FTMAM130",
+    "FTMAM134",
+    "FTMAM138",
+    "FTMAM140",
+    "FTMAM170"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Film Studies A.A. section not found in text (page is Associate Degree – General Studies Pattern I)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "FTMA M101",
+    "why": "Film Studies section not in text; appears only in a General Studies emphasis course list"
+   },
+   {
+    "code": "FTMA M102",
+    "why": "Film Studies section not in text; appears only in a General Studies emphasis course list"
+   },
+   {
+    "code": "FTMA M104",
+    "why": "Film Studies section not in text; appears only in a General Studies emphasis course list"
+   },
+   {
+    "code": "FTMA M105",
+    "why": "Film Studies section not in text; appears only in a General Studies emphasis course list"
+   },
+   {
+    "code": "FTMA M106",
+    "why": "Film Studies section not in text; appears only in a General Studies emphasis course list"
+   },
+   {
+    "code": "FTMA M107",
+    "why": "Film Studies section not in text; appears only in a General Studies emphasis course list"
+   },
+   {
+    "code": "FTMA M108",
+    "why": "Film Studies section not in text; appears only in General Studies emphasis course lists"
+   },
+   {
+    "code": "FTMA M109",
+    "why": "Film Studies section not in text; appears only in a General Studies emphasis course list"
+   },
+   {
+    "code": "FTMA M115",
+    "why": "Film Studies section not in text; appears only in a General Studies emphasis course list"
+   },
+   {
+    "code": "FTMA M124",
+    "why": "not in the text"
+   },
+   {
+    "code": "FTMA M126A",
+    "why": "not in the text"
+   },
+   {
+    "code": "FTMA M130",
+    "why": "not in the text"
+   },
+   {
+    "code": "FTMA M134",
+    "why": "not in the text"
+   },
+   {
+    "code": "FTMA M138",
+    "why": "not in the text"
+   },
+   {
+    "code": "FTMA M140",
+    "why": "not in the text"
+   },
+   {
+    "code": "FTMA M170",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The source URL and text are the Associate Degree General Studies Pattern I page (areas of emphasis: Arts & Humanities, STEM, Society/Human Behavior), not the Film Studies A.A. program page. No requirements for the Film Studies A.A. are printed, so no blocks, totals, outcomes or careers were recorded.",
+   "Several FTMA courses from the closed list appear in the General Studies Arts and Humanities emphasis list (and FTMA M108 in the Society emphasis list); those lists belong to the General Studies degree (18 units emphasis, 60 total units), not to Film Studies.",
+   "Reviewer should locate the actual Film Studies A.A. catalog page for 2026-2027."
+  ]
+ },
+ "extracted_run": "38748862351"
+}
