@@ -1,0 +1,253 @@
+{
+ "college": "San Bernardino Valley College",
+ "control_number": "33760",
+ "shape": "degree",
+ "title": "Heavy/Medium Duty Truck Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/hmdt/heavy-medium-duty-truck-technology-as-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8664,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8664,
+    "output_tokens": 1925,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1925,
+  "output_tokens_details": {
+   "thinking_tokens": 555
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07316,
+ "ms": 42201,
+ "seconds": 42.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    31.0
+   ],
+   "stated": [
+    31.0,
+    31.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Heavy/Medium Duty Truck Technology Associate of Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 31
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "SBVC General Education and Graduation Requirements or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Diagnose and repair malfunctions in electrical systems and components.",
+    "Disassemble, inspect and repair parts, which are reusable in a manner consistent with accepted trade practices and assemble a diesel engine in accordance with manufacturer instructions and specifications.",
+    "Perform all necessary adjustments, demonstrate sequential steps taken in diagnosing heavy–duty truck brake systems and remove and replace components in a manner consistent with industry standards.",
+    "Diagnose heavy–duty truck suspension and steering systems and remove and replace components in a manner consistent with industry standards.",
+    "Diagnose the fuel system and tune-up problems using various electronic test equipment's and remove and replace components in a manner consistent with industry standards.",
+    "Perform routine servicing of heavy-duty vehicles by evaluating tire and other equipment conditions and successfully and safely removing and replacing tires and other equipment in a manner consistent with industry practices and safety standards.",
+    "Troubleshoot a truck electrical system failure, diagnose the cause and correctly repair that failure in accordance with accepted industry standards.",
+    "Be prepared to transfer a core curriculum to an accredited, four-year college or university with junior class standing."
+   ],
+   "careers": [
+    "maintenance and repair of heavy/medium duty trucks"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIT 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HMDT 021",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HMDT 022",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HMDT 023",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HMDT 024",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HMDT 026",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HMDT 028",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HMDT 064",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AUTO 064",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Courses",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HMDT 098",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 010",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with leading zeros (HMDT 021, AUTO 064, WELD 010); matched to closed-list codes HMDT 21, AUTO 64, WELD 10 etc., so catalog_addition is false.",
+   "'Total Units 31' printed under the required course list recorded as total_units; no degree total or GE units printed.",
+   "AUTO 064 printed as 'or' alternative to HMDT 064 with no units beside it.",
+   "Student completes one of two GE patterns: SBVC General Education and Graduation Requirements or Cal-GETC.",
+   "Career entry taken from program description ('seek employment in maintenance and repair of heavy/medium duty trucks'); reviewer may check whether it counts as a career field."
+  ]
+ },
+ "extracted_run": "38748858322"
+}

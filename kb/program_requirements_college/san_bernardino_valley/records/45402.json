@@ -1,0 +1,217 @@
+{
+ "college": "San Bernardino Valley College",
+ "control_number": "45402",
+ "shape": "certificate",
+ "title": "Flight Operations - Professional Pilot",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/flight-operations-professional-pilot-as-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8289,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8289,
+    "output_tokens": 2182,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2182,
+  "output_tokens_details": {
+   "thinking_tokens": 855
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0768,
+ "ms": 18261,
+ "seconds": 18.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    28.0
+   ],
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Flight Operations - Professional Pilot Associate in Science Degree (Course List)",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate a thorough understanding of aviation concepts, including aerodynamics, aircraft systems, flight planning, and navigation, as well as Federal Aviation Regulations (FARs), necessary for safe and efficient flight operations.",
+    "Demonstrate an understanding of and commitment to diversity, equity, inclusion, and accessibility by fostering an inclusive aviation environment by actively engaging in practices that respect and value different perspectives, cultures, and abilities in both flight operations and aviation-related professional interactions.",
+    "Exhibit proficiency in piloting aircraft by successfully performing flight maneuvers, adhering to safety protocols, and applying risk management principles in both simulated and real-world flight scenarios.",
+    "Apply critical thinking and decision-making skills to assess and respond to dynamic situations in flight operations, ensuring safety and compliance with aviation standards.",
+    "Communicate clearly and effectively with air traffic control, flight crews, and other aviation professionals using standard aviation terminology and protocols."
+   ],
+   "careers": [
+    "aviation",
+    "professional pilots",
+    "commercial pilots"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "AERO 022",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 022L",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 040",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 041L",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 047",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 047L",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 046",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 070",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The supplied text is the Flight Operations - Professional Pilot A.S. Degree page (per the source URL and description); no separate Certificate of Achievement section is printed, only a navigation link to 'Flight Operations - Professional Pilot Certificate of Achievement'. The course list (28 units) was recorded on the assumption the certificate shares the major's requirements; 28 units fits the 16 to fewer than 30 unit certificate range and matches the closed list exactly. A reviewer should verify against the certificate's own page.",
+   "The degree page names GE patterns (SBVC General Education, Cal-GETC); ge_pattern left null because the award recorded is a certificate, which carries no GE.",
+   "Catalog prints zero-padded codes (AERO 022, AERO 040, AERO 046, AERO 047, AERO 070); treated as the same courses as closed-list AERO 22, AERO 40, AERO 46, AERO 47, AERO 70, so catalog_addition is false.",
+   "Program learning outcomes are printed once on the A.S. degree page's outcomes tab; recorded on the assumption the certificate shares them.",
+   "Careers taken from the A.S. description; 'positions with airlines, corporate flight departments, and other aviation enterprises' names employers rather than job titles and was not recorded."
+  ]
+ },
+ "extracted_run": "38748858322"
+}

@@ -1,0 +1,270 @@
+{
+ "college": "San Bernardino Valley College",
+ "control_number": "46166",
+ "shape": "certificate",
+ "title": "Data Science",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-science/data-science-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8717,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8717,
+    "output_tokens": 1851,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1851,
+  "output_tokens_details": {
+   "thinking_tokens": 426
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07189,
+ "ms": 14368,
+ "seconds": 14.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    22.0
+   ],
+   "stated": [
+    21.0,
+    22.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 11,
+   "courses": 0,
+   "count": 11,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Data Science Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply statistical techniques to analyze data sets, interpret results, to draw appropriate conclusions to support decision-making processes.",
+    "Use programming skills in languages commonly used in data science, such as Python or R, to manipulate data, perform analysis, and create visualizations.",
+    "Demonstrate proficiency in collecting, cleaning, and managing various types of data from diverse sources, including structured and unstructured data.",
+    "Explain fundamental concepts of machine learning algorithms and apply them to solve predictive modeling and pattern recognition problems.",
+    "Create visualization of data effectively using tools and libraries such as Matplotlib, Seaborn, or ggplot2 and communicate insights and findings clearly.",
+    "Administer data using database management systems, including querying databases using SQL, designing databases using design principles, and data warehousing concepts.",
+    "Discuss the ethical considerations and legal regulations surrounding data usage, privacy, and security, and apply ethical principles in their data-related work.",
+    "Develop critical thinking and problem-solving skills to identify data-related issues, formulate research questions, and propose appropriate solutions.",
+    "Collaborate effectively with team members, communicate findings and insights to both technical and non-technical stakeholders, and contribute within interdisciplinary teams.",
+    "Plan, implement, and administer data science projects effectively, including defining project scope, setting goals, allocating resources, and meeting deadlines.",
+    "Employ data analysis techniques emphasizing open-source inclusivity, diverse methodologies, and ethical practices, focusing on addressing institutional inequities and ensuring data-driven decisions are accessible and fair across all communities."
+   ],
+   "careers": [
+    "data science"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIT 103",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CS 102H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 160",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 180",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 104",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 189",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "One course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIT 116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIT 215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 188",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 190",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 265",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CS 265H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Alternatives (CS 102H, MATH 180, CS 265H) have no units printed beside them in the catalog table; recorded as null.",
+   "Career entry 'data science' is read from the description's phrase 'a pathway to meaningful careers and further education in the evolving field of data science'; reviewer may judge whether this names a career field.",
+   "Program learning outcomes taken from the page's outcomes tab for this certificate."
+  ]
+ },
+ "extracted_run": "38748858322"
+}

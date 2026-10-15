@@ -1,0 +1,449 @@
+{
+ "college": "San Bernardino Valley College",
+ "control_number": "12198",
+ "shape": "certificate",
+ "title": "Child Development - Site Supervisor",
+ "award": "Certificate of Achievement requiring 60+S/90+Q units",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-development-site-supervisor-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10114,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10114,
+    "output_tokens": 3343,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3343,
+  "output_tokens_details": {
+   "thinking_tokens": 765
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10732,
+ "ms": 25405,
+ "seconds": 25.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 26,
+   "listed": 39,
+   "share": 0.667,
+   "missing": [
+    "ARTH103",
+    "ASL109",
+    "BIOLC1000",
+    "ECON208",
+    "ENGLC1000",
+    "ENGLC1000H",
+    "MUS100",
+    "MUS100H",
+    "PSYC105",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "STATC1000",
+    "STATC1000H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    43.0,
+    43.0
+   ],
+   "stated": [
+    60.0,
+    64.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the CalGETC pattern, but no units for it"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Child Development - Site Supervisor Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "CalGETC",
+   "degree_total": {
+    "min": 60,
+    "max": 64
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop an integrated personal philosophy into classroom practices that reflects an understanding of typical child development, health, safety and nutrition, developmentally, culturally and linguistically appropriate practices and high quality standards.",
+    "Use the observation, planning and implementation cycle to create, implement and evaluate environments, individualized curriculum and activities that support developmentally, culturally and linguistically appropriate, inclusive, play and learning for children.",
+    "Develop strategies to respect the diversity of children and families and then empower families, and use resources that promote supportive relationships and partnerships between programs, teachers, families and their communities.",
+    "Analyze and apply effective positive guidance and interaction strategies that support young children's learning, self-confidence and identity.",
+    "Identify and analyze the stages of adult development and learning, and implement strategies to mentor adults who are learning to work with children.",
+    "Examine, analyze and apply administration skills related to various types of early care and education programs.",
+    "Analyze, describe and use inclusive, equitable, antibias and antiracist teaching practices and family interactions for working with children and families."
+   ],
+   "careers": [
+    "preschool or childcare center site supervisor",
+    "Child Development Center Directors"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CDEV C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 138",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 271",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 272",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Two courses from the following",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CDEV 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 136",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 137",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "One course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CDEV 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 061",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 127",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 185",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 186",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 244",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Experience Working with Children",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CDEV 205",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CDEV 215",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL C1000",
+    "why": "GE Area 1A recommendation; GE courses not placed in blocks"
+   },
+   {
+    "code": "ENGL C1000H",
+    "why": "GE Area 1A recommendation (honors alternative); GE not placed"
+   },
+   {
+    "code": "PSYC 105",
+    "why": "GE Area 2 recommendation; GE not placed"
+   },
+   {
+    "code": "ECON 208",
+    "why": "GE Area 2 recommendation; GE not placed"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "GE Area 2 recommendation; GE not placed"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "GE Area 2 recommendation; GE not placed"
+   },
+   {
+    "code": "ASL 109",
+    "why": "GE Area 3A recommendation; GE not placed"
+   },
+   {
+    "code": "ARTH103",
+    "why": "GE Area 3A recommendation; GE not placed"
+   },
+   {
+    "code": "MUS 100",
+    "why": "GE Area 3A recommendation; GE not placed"
+   },
+   {
+    "code": "MUS 100H",
+    "why": "GE Area 3A recommendation (honors alternative); GE not placed"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "GE Area 4 recommendation; GE not placed"
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "GE Area 4 recommendation (honors alternative); GE not placed"
+   },
+   {
+    "code": "BIOL C1000",
+    "why": "GE Area 5 recommendation; GE not placed"
+   }
+  ],
+  "notes": [
+   "The printed 'Total Units 60-64' includes the certificate's general education component, so it is recorded as degree_total; the page prints no separate total for the CDEV major courses (they sum to 43, not recorded).",
+   "The certificate requires one to two courses in each of five GE areas (1A, 2, 3A, 4, 5) referencing the CalGETC pattern; the department lists recommended courses per area, which are listed in missing_explained per the rule that GE courses never go in a block. ge_units not printed.",
+   "The page states students must have at least 60 units to qualify for the Site Supervisor Permit; no elective units are printed and electives_fill_degree left false.",
+   "Units printed only on the first row of 'or' pairs; alternatives (CDEV C1000H, CDEV 215) have no printed units.",
+   "Catalog prints 'CDEV C1000' while the closed list stores 'CDEVC1000'; treated as the same course.",
+   "Outcomes are from the page's Program Learning Outcomes tab for this certificate."
+  ]
+ },
+ "extracted_run": "38748858322"
+}

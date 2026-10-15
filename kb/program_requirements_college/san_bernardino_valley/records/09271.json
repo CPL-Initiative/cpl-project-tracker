@@ -1,0 +1,212 @@
+{
+ "college": "San Bernardino Valley College",
+ "control_number": "09271",
+ "shape": "degree",
+ "title": "Advanced Automotive Collision Repair and Refinishing",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/advanced-automotive-collision-repair-refinishing-as-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8107,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8107,
+    "output_tokens": 1396,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1396,
+  "output_tokens_details": {
+   "thinking_tokens": 477
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06035,
+ "ms": 11845,
+ "seconds": 12.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.0,
+    33.0
+   ],
+   "stated": [
+    33.0,
+    33.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Advanced Automotive Collision Repair and Refinishing Associate of Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "SBVC General Education and Graduation Requirements or Cal-GETC - California General Education Transfer Curriculum",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Estimate damage and make an appraisal.",
+    "Assess damage sustained by each of the three sections of the vehicle.",
+    "Use common resources to identify the damage sustained by the vehicle.",
+    "Measure and evaluate structural damage.",
+    "Identify and analyze types of damage to a vehicle.",
+    "Determine whether or not a vehicle is a total loss or a repairable vehicle.",
+    "Interpret computer-assisted and manually written estimates; verify the information is current."
+   ],
+   "careers": [
+    "auto collision repair technician",
+    "painter apprentice"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACR 020",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACR 022",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACR 024",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACR 026",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACR 030",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACR 050",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACR 060",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes with a leading zero (ACR 020, ACR 050, etc.); these were matched to closed-list codes ACR 20, ACR 50, etc., and not flagged as catalog additions.",
+   "No units are printed beside ACR 060 (the 'or' alternative to ACR 050); the closed list stores 4 units.",
+   "Total Units 33 is the major total. The description says students complete these courses plus general breadth requirements '(minimum total = 60 units)'; this reads as the generic associate degree minimum rather than a printed total for this award, so degree_total was left null. Reviewer may wish to check.",
+   "The page offers a choice of two GE patterns (SBVC General Education or Cal-GETC); no GE units are printed."
+  ]
+ },
+ "extracted_run": "38748858322"
+}
