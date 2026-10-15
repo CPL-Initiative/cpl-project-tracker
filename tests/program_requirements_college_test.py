@@ -259,6 +259,8 @@ for title, h1, want in [
 
 check({"COS60A1", "COS60B3", "BAK80", "THE30"} <= C.page_codes("COS-60A1 Cosmetology\nCOS-60B3\nBAK-80 THE-30"),
       "the code net reads a number ending in letters and digits (COS 60A1), as the exact test does")
+check({"HORT1F", "HORT164F"} <= C.page_codes("HORT 001 F · Principles of Horticulture I\t4 · HORT 164 F\nPlant ID"),
+      "the code net reads NOCCCD's campus letter written as its own word (HORT 001 F), as the state's file stores it")
 
 # ── curriQunet: the catalog's own JSON (S357) ──────────────────────────────
 print("curriQunet")

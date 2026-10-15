@@ -78,7 +78,14 @@ REFUSE = [
     ("KIN4", "KIN 40 Something"),
     ("CHLD 66", "CHLD 66L Observation Laboratory"),
     ("FIRE 1", "FIRE 12 Wildland Fire Control"),
+    # NOCCCD's campus letter is part of the code (S394): HORT 001 F is not Fundamentals, nor HORT 001 C
+    ("HORT 001 F", "HORT 001 Fundamentals of Horticulture"),
+    ("HORT 001 F", "HORT 001 C Principles of Horticulture I"),
 ]
+# NOCCCD writes the campus letter as its own word, in the state's file and on the page (S394)
+MATCH += [("HORT 001 F", "HORT 001 F · Principles of Horticulture I"),
+          ("HORT 001 F", "HORT 1F Principles of Horticulture I"),
+          ("ACCT 101A F", "ACCT 101AF Financial Accounting")]
 for code, text in MATCH:
     check(P.code_pattern(code).search(text), "%r must be found in %r" % (code, text))
 for code, text in REFUSE:

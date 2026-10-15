@@ -1,0 +1,386 @@
+{
+ "college": "Fullerton College",
+ "control_number": "30802",
+ "shape": "adt",
+ "title": "Sociology",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/sociology/sociology-associate-arts-degree-transfer/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8017,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8017,
+    "output_tokens": 2886,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2886,
+  "output_tokens_details": {
+   "thinking_tokens": 911
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08979,
+ "ms": 22598,
+ "seconds": 22.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 23,
+   "listed": 24,
+   "share": 0.958,
+   "missing": [
+    "SOC275HF"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "MATH120F",
+    "MATH120HF",
+    "MATH121F",
+    "PSY161F",
+    "PSY161HF"
+   ],
+   "flagged": [
+    "MATH120F",
+    "MATH120HF",
+    "MATH121F",
+    "PSY161F",
+    "PSY161HF"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Sociology Associate in Arts Degree for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "IGETC or California State University General Education – Breadth Requirements",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Assess the power dynamics that produce stratification and inequality and be able to examine how time and space shape these processes.",
+    "Evaluate key sociological theories and concepts, explain the development of these theories and concepts in their specific historical contexts, and apply them in explaining past and current social phenomena.",
+    "Appraise research, including assessing the theoretical ground on which it is based, interpreting the literature review, and critically evaluating the project's methodological strengths and limitations, and ethical and political implications."
+   ],
+   "careers": [
+    "sociology",
+    "social work",
+    "law",
+    "criminal justice",
+    "marketing research",
+    "counseling"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "SOC 101 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 101HF",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 102 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOSC 120 F",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 120 F",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 120HF",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 121 F",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "PSY 161 F",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "PSY 161HF",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A: Select two",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "SOSC 125 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 230 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 230HF",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 275 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 290 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 290HF",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 295 F",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 295HF",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 292 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 292HF",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY 251 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSY 251HF",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST B: Select one",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "SOC 201 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 250 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 277 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 277HF",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 280 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 285 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 285HF",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "SOC 275HF",
+    "why": "not in the text; List A prints 'or SOC 275 F' (a duplicate) where the honors twin likely belongs"
+   }
+  ],
+  "notes": [
+   "The 60-unit statement applies to all AA-T/AS-T degrees and is not printed as this award's total, so degree_total is null; the 18-unit minimum is likewise a generic rule.",
+   "GE pattern is IGETC or CSU GE-Breadth; no GE units printed.",
+   "In List A, SOC 275 F is followed by 'or SOC 275 F' (printed twice); probably a typo for SOC 275HF. Recorded once with no alternative.",
+   "In List A, SOC 295 F and SOC 295HF are printed as 'or' rows under SOC 290 F/290HF, so they were recorded as alternatives of SOC 290 F; reviewer should check whether Social Inequality is meant to be a separate choice.",
+   "Closed-list code 'SOC285F' (units not stored) was matched to the catalog's 'SOC 285 F' Drugs and Society, recorded with catalog_addition false.",
+   "The core note says MATH 120 F/HF, MATH 121 F, PSY 161 F/HF are equivalent to SOSC 120 F (SOSC 120 F recommended); recorded as alternatives with no units printed and catalog_addition true.",
+   "Program learning outcomes were taken from the page's outcomes tab; 'Outcome N:' labels removed."
+  ]
+ },
+ "extracted_run": "38675136988"
+}

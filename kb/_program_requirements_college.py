@@ -251,6 +251,10 @@ def program_candidates(urls: list[str], start: str, scope: str | None = None) ->
 # never reached the exact test (S357, run 38077405309).
 CODE_TOKEN = re.compile(r"\b([A-Z][A-Z&]{0,7})[\s\-]?(C?\d{1,4}(?:\.\d{1,2})?(?:[A-Z]{1,2}\d{0,2})?)\b")
 CODE_TOKEN_2 = re.compile(r"\b([A-Z][A-Z&]{0,7}\s[A-Z&]{1,6})[\s\-]?(C?\d{1,4}(?:\.\d{1,2})?(?:[A-Z]{1,2}\d{0,2})?)\b")
+# NOCCCD prints the campus letter as its own word, as the state's file stores it: HORT 001 F at
+# Fullerton, C at Cypress. The net read HORT 001 and found none of Nursery Management's 14
+# listed courses on its own page; 312 of 326 Fullerton programs went unfound (run 38670930336).
+CODE_TOKEN_3 = re.compile(r"\b([A-Z][A-Z&]{0,7})[\s\-]?(C?\d{1,4}(?:\.\d{1,2})?[A-Z]{0,2})[ \u00a0]([A-Z])\b")
 
 
 def page_codes(text: str) -> set[str]:
@@ -260,7 +264,8 @@ def page_codes(text: str) -> set[str]:
     only decides which programs are worth the exact test, so it may over-reach."""
     t = text or ""
     return ({P.norm_code(a + " " + b) for a, b in CODE_TOKEN.findall(t)} |
-            {P.norm_code(a + " " + b) for a, b in CODE_TOKEN_2.findall(t)})
+            {P.norm_code(a + " " + b) for a, b in CODE_TOKEN_2.findall(t)} |
+            {P.norm_code(a + " " + b + c) for a, b, c in CODE_TOKEN_3.findall(t)})
 
 
 def page_net(got: dict) -> set[str]:
