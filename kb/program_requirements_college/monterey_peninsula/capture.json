@@ -1,0 +1,2146 @@
+{
+ "college": "Monterey Peninsula College",
+ "catalog_url": "https://catalog.mpc.edu/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 206,
+ "with_closed_list": 205,
+ "started": "2026-10-15T03:15:38Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://catalog.mpc.edu/sitemap.xml",
+  "status": 200,
+  "listed": 460,
+  "nested": 0,
+  "program_pages": 307,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 307,
+ "child_pages": 0,
+ "banner_h1": "2026-2027\nCollege Catalog",
+ "loads": 313,
+ "seconds": 1572.2,
+ "found": 199,
+ "by_method": {
+  "no_closed_list": 1,
+  "not_found": 4,
+  "page_claimed": 2,
+  "sitemap_page": 199
+ },
+ "shared_pages": {
+  "https://catalog.mpc.edu/programs-study/ceramics/ceramics-glass-coa/": [
+   "22072",
+   "39294"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "03653",
+   "title": "Administration of Justice: Law Enforcement",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.mpc.edu/programs-study/law-enforcement-training-program/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.333,
+    "body": 0.0,
+    "content": 0.267,
+    "net": 5,
+    "listed": 15,
+    "why": "coarse net: the page's code tokens name 5 of 15 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3997,
+     "content": 149656,
+     "tabs": 60027
+    },
+    "tab_panels": [
+     [
+      "Course Descriptions",
+      60000
+     ],
+     [
+      "Print Options",
+      419
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22098",
+   "title": "Administration of Justice: Law Enforcement",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.mpc.edu/programs-study/law-enforcement-training-program/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.333,
+    "body": 0.0,
+    "content": 0.267,
+    "net": 5,
+    "listed": 15,
+    "why": "coarse net: the page's code tokens name 5 of 15 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3997,
+     "content": 149656,
+     "tabs": 60027
+    },
+    "tab_panels": [
+     [
+      "Course Descriptions",
+      60000
+     ],
+     [
+      "Print Options",
+      419
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "39356",
+   "title": "Administration of Justice - Level II Corrections",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "39361",
+   "title": "Administration of Justice - Level I Policing",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "32361",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.mpc.edu/programs-study/political-science/law-public-policy-society-aa-t/"
+   ]
+  },
+  {
+   "control_number": "45482",
+   "title": "Modern Policing",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.mpc.edu/programs-study/political-science/law-public-policy-society-aa-t/"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 12,
+  "0.8-1.0": 56,
+  "1.0": 131
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 199,
+  "list": [
+   {
+    "control_number": "03599",
+    "title": "Horticulture",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/horticulture/horticulture-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03602",
+    "title": "Biological Sciences",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/biology/biological-sciences-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03609",
+    "title": "Real Estate",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/real-estate/real-estate-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03610",
+    "title": "Computer Applications and Business Skills",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/business-skills/computer-application-business-skills-as/",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03614",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/engineering/engineering-as/",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03615",
+    "title": "Automotive Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/automotive-technology/automotive-technology-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03620",
+    "title": "Art History",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/art-history/art-history-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03621",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/music/music-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03622",
+    "title": "Theatre Arts",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/theatre-arts/theatre-arts-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03625",
+    "title": "Art Photography",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/photography/art-photography-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03633",
+    "title": "Nursing",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/nursing/nursing-as/",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03635",
+    "title": "Medical Assisting",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/medical-assisting/medical-assisting-as/",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03636",
+    "title": "Dental Assisting",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/dental-technology/dental-assisting-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03654",
+    "title": "Early Childhood Education",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/early-childhood-education/early-childhood-education-as/",
+    "coverage": 0.95,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03655",
+    "title": "Fire Protection Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/fire-protection-technology/fire-protection-technology-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03658",
+    "title": "Ethnic Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/ethnic-studies/ethnic-studies-aa/",
+    "coverage": 0.682,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03659",
+    "title": "Economics",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/economics/economics-aa/",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09976",
+    "title": "Business - Accounting",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/business/business-accounting-as/",
+    "coverage": 0.95,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09978",
+    "title": "Medical Office Administration",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/medical-assisting/medical-office-administration-as/",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09979",
+    "title": "Medical Insurance and Coding Specialist",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/medical-assisting/medical-insurance-coding-specialist-as/",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09988",
+    "title": "Painting",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/art/painting-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09989",
+    "title": "Sculpture",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/sculpture/sculpture-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09990",
+    "title": "Ceramics and Glass",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/ceramics/ceramics-glass-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09991",
+    "title": "Graphic Arts",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/graphic-arts/graphic-arts-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10000",
+    "title": "Fashion Merchandising and Management",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/fashion-design-merchandising/fashion-design-merchandising-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10005",
+    "title": "Sustainable Food and Beverage Management",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/sustainable-food-beverage-management-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11980",
+    "title": "Gender and Women's Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/gender-womens-studies/gender-womens-studies-aa/",
+    "coverage": 0.765,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11997",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/dance/dance-associate-arts/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12735",
+    "title": "Pre-Occupational Therapy",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/physiology/pre-occupational-therapy-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12736",
+    "title": "Pre-Dental Hygiene",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/dental-technology/pre-dental-hygiene-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12737",
+    "title": "Pre-Nursing",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/nursing/pre-nursing-as/",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12738",
+    "title": "Pre-Physical Therapy",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/physiology/pre-physical-therapy-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16191",
+    "title": "Printmaking",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/art/printmaking-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18641",
+    "title": "General Studies: Communication and Analytical Thinking",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/general-studies/general-studies-communication-analytical-thinking-emphasis-aa/",
+    "coverage": 0.897,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18642",
+    "title": "General Studies: Natural Sciences",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/general-studies/general-studies-natural-science-emphasis-as/",
+    "coverage": 0.957,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18643",
+    "title": "General Studies: Arts and Humanities",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/general-studies/general-studies-arts-humanities-emphasis-aa/",
+    "coverage": 0.979,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18644",
+    "title": "General Studies: Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/general-studies/general-studies-social-science-emphasis-aa/",
+    "coverage": 0.992,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18645",
+    "title": "General Studies: Intercultural Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/general-studies/general-studies-intercultural-studies-emphasis-aa/",
+    "coverage": 0.912,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22049",
+    "title": "Horticulture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/horticulture/horticulture-coa/",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22052",
+    "title": "Business - Accounting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.mpc.edu/programs-study/business/business-accounting-coa/",
+    "coverage": 0.95,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22055",
+    "title": "Real Estate",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/real-estate/real-estate-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22057",
+    "title": "Computer Applications and Business Skills",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/business-skills/computer-application-business-skills-coa/",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22058",
+    "title": "Medical Office Administration",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.mpc.edu/programs-study/medical-assisting/medical-office-administration-coa/",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22059",
+    "title": "Medical Insurance and Coding Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.mpc.edu/programs-study/medical-assisting/medical-insurance-coding-specialist-coa/",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22061",
+    "title": "Computer Networking and Security",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/computer-networking-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22065",
+    "title": "Automotive Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.mpc.edu/programs-study/automotive-technology/automotive-technology-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22066",
+    "title": "Ceramics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/ceramics/ceramics-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22067",
+    "title": "Art History",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/art-history/art-history-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22068",
+    "title": "Printmaking",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/art/printmaking-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22069",
+    "title": "Drawing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/art/drawing-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22070",
+    "title": "Painting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/art/painting-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22071",
+    "title": "Sculpture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/sculpture/sculpture-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22072",
+    "title": "Ceramics and Glass",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/ceramics/ceramics-glass-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22073",
+    "title": "Music",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/music/music-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22076",
+    "title": "Theatre Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/theatre-arts/theatre-arts-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22079",
+    "title": "Jewelry and Metal Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/jewelry-metal-arts/jewelry-metal-arts-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22080",
+    "title": "Art Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/photography/art-photography-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22081",
+    "title": "Graphic Arts",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.mpc.edu/programs-study/graphic-arts/graphic-arts-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22083",
+    "title": "Medical Assisting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.mpc.edu/programs-study/medical-assisting/medical-assisting-coa/",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22084",
+    "title": "Dental Assisting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/dental-technology/dental-assisting-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22087",
+    "title": "Fashion Merchandising and Management",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/fashion-design-merchandising/fashion-design-merchandising-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22090",
+    "title": "Early Childhood Education",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.mpc.edu/programs-study/early-childhood-education/early-childhood-education-coa/",
+    "coverage": 0.95,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22100",
+    "title": "Fire Protection Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.mpc.edu/programs-study/fire-protection-technology/fire-protection-technology-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31364",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/early-childhood-education/early-childhood-education-as-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31753",
+    "title": "English as a Second Language Intermediate Level",
+    "award": "Noncredit program",
+    "url": "https://catalog.mpc.edu/programs-study/english-second-language/english-second-language-intermediate-level-noncredit-coc/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31754",
+    "title": "English as a Second Language Advanced Level",
+    "award": "Noncredit program",
+    "url": "https://catalog.mpc.edu/programs-study/english-second-language/english-second-language-advanced-level-noncredit-coc/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31860",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/psychology/psychology-aa-t/",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32033",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/anthropology/anthropology-aa-t/",
+    "coverage": 0.824,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32034",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/sociology/sociology-associate-arts-transfer/",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32041",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/physics/physics-as-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32133",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/computer-science/computer-science-as-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32143",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/art/studio-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32230",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/art-history/art-history-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32381",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/history/history-aa-t/",
+    "coverage": 0.92,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32416",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/political-science/political-science-aa-t/",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33092",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/philosophy/philosophy-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33099",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/english/english-aa-t/",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33234",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/kinesiology/kinesiology-aa-t/",
+    "coverage": 0.986,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33584",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/spanish/spanish-aa-t/",
+    "coverage": 0.913,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33585",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/theatre-arts/theatre-arts-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33586",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/geology/geology-as-t/",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33587",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/economics/economics-as-t/",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33588",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/nutrition/nutrition-dietetics-as-t/",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33590",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/music/music-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33758",
+    "title": "Linguistics",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/linguistics/linguistics-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35218",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/biology/biology-as-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35988",
+    "title": "Computer Networking and Security",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/computer-networking-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36173",
+    "title": "Drawing",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/art/drawing-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36242",
+    "title": "Jewelry and Metal Arts",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/jewelry-metal-arts/jewelry-metal-arts-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36605",
+    "title": "Business Administration",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/business/business-administration-as/",
+    "coverage": 0.975,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36656",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/chemistry/chemistry-as-uc-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37243",
+    "title": "Global Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/global-studies/global-studies-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37306",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/education/elementary-teacher-education-as-t/",
+    "coverage": 0.786,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37534",
+    "title": "Social Justice Studies: Gender Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/gender-womens-studies/social-justice-studies-gender-studies-aa-t/",
+    "coverage": 0.722,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37536",
+    "title": "Social Justice Studies: Ethnic Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/ethnic-studies/social-justice-studies-ethnic-studies-aa-t/",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37701",
+    "title": "American Sign Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/american-sign-language/american-sign-language-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37709",
+    "title": "English: Creative Writing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/english/english-creative-writing-coa/",
+    "coverage": 0.95,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37710",
+    "title": "Engineering Fundamentals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/engineering/engineering-fundamentals-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37711",
+    "title": "Health Service Professions",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/health/health-service-professions-coa/",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37712",
+    "title": "Linguistics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/linguistics/linguistics-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37717",
+    "title": "Engineering",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.mpc.edu/programs-study/engineering/engineering-coa/",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37719",
+    "title": "Spanish",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/spanish/spanish-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37721",
+    "title": "Spanish for Spanish Speakers",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/spanish/spanish-spanish-speakers-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37722",
+    "title": "Software Development",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/computer-science/software-development-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38075",
+    "title": "Firefighter Academy",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/fire-protection-technology/firefighter-academy-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38076",
+    "title": "Automotive Maintenance and Light Repair",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/automotive-technology/automotive-maintenance-light-repair-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38077",
+    "title": "Basic EMS and Fire Training",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/emergency-medical-services/basic-ems-fire-training-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38078",
+    "title": "Emission Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/automotive-technology/emission-specialist-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38081",
+    "title": "Cisco Certified Network Associate (CCNA)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/cisco-ccna-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38101",
+    "title": "Emergency Medical Technician 1: Basic Training",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/emergency-medical-services/emergency-medical-technician-1-basic-training-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39196",
+    "title": "English as a Second Language High-Beginning Level",
+    "award": "Noncredit program",
+    "url": "https://catalog.mpc.edu/programs-study/english-second-language/english-second-language-high-beginning-level-noncredit-coc/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39201",
+    "title": "Baking and Pastry Arts",
+    "award": "Noncredit program",
+    "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/baking-pastry-arts-noncredit-coc/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39202",
+    "title": "Wine Professional Level II",
+    "award": "Noncredit program",
+    "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/wine-professional-level-ii-noncredit-coc/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39226",
+    "title": "French Language",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/french/french-language-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39245",
+    "title": "Business Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/business/business-technology-coa/",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39249",
+    "title": "Associate Teacher",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/early-childhood-education/associate-teacher-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39253",
+    "title": "Communication",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/communication-studies/communication-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39258",
+    "title": "Japanese Language",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/japanese/japanese-language-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39260",
+    "title": "Business - Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/business/business-entrepreneurship-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39261",
+    "title": "Business - Leadership",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/business/business-leadership-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39262",
+    "title": "Business - Human Resources",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/business/business-human-resources-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39263",
+    "title": "Latinx Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/spanish/latinx-studies-coa/",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39264",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/spanish/spanish-aa/",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39266",
+    "title": "American Sign Language",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/american-sign-language/american-sign-language-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39267",
+    "title": "Business - Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/business/business-sales-marketing-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39268",
+    "title": "Company Officer",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/fire-protection-technology/company-officer-coa/",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39269",
+    "title": "Certified Personal Trainer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/kinesiology/certified-personal-trainer-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39270",
+    "title": "Dietary Manager",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/nutrition/dietary-manager-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39292",
+    "title": "Art and Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/art/art-technology-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39294",
+    "title": "Glass",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/ceramics/ceramics-glass-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39312",
+    "title": "Baking and Pastry Arts",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/baking-pastry-arts-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39313",
+    "title": "Sustainable Culinary Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/sustainable-culinary-arts-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39314",
+    "title": "Business - Bookkeeping",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/business/business-accounting-bookkeeping-coa/",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39334",
+    "title": "Paramedic",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.mpc.edu/programs-study/emergency-medical-services/paramedic-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39344",
+    "title": "UCTP Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/chemistry/chemistry-as/",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39345",
+    "title": "UCTP Physics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/physics/physics-as-uc-transfer/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39352",
+    "title": "Paramedic",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/emergency-medical-services/paramedic-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39353",
+    "title": "Microsoft Office Specialist",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/business-skills/microsoft-office-specialist-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39362",
+    "title": "Wine Professional Level II",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/wine-professional-level-ii-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39378",
+    "title": "Business Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/business/business-administration-coat/",
+    "coverage": 0.974,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39407",
+    "title": "Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/chemistry/chemistry-as-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39463",
+    "title": "Nutrition and Food",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/nutrition/nutrition-food-coa/",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39536",
+    "title": "Athletic Coaching",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/kinesiology/athletic-coaching-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39834",
+    "title": "Sustainable Food and Beverage Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/sustainable-food-beverage-management-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40665",
+    "title": "English: Creative Writing",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/english/english-creative-writing-aa/",
+    "coverage": 0.958,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40721",
+    "title": "Company Officer",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/fire-protection-technology/company-officer/",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40722",
+    "title": "Landscape Pest Management",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/horticulture/landscape-pest-management-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40723",
+    "title": "Landscape Irrigation",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/horticulture/landscape-irrigation-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40724",
+    "title": "Tree Care Specialist",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/horticulture/tree-care-specialist-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40725",
+    "title": "Microsoft Operating Systems Skills",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/microsoft-operating-systems-skills-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40735",
+    "title": "Culinary Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/culinary-entrepreneurship-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40740",
+    "title": "Field Training - Firefighter Trainee",
+    "award": "Noncredit program",
+    "url": "https://catalog.mpc.edu/programs-study/fire-protection-technology/field-training-firefighter-trainee-noncredit-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40916",
+    "title": "Emergency Medical Technician 1: Basic Training",
+    "award": "Noncredit program",
+    "url": "https://catalog.mpc.edu/programs-study/emergency-medical-services/emergency-medical-technician-1-basic-training-noncredit-coc/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40920",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/business/business-administration-2-0-as-t/",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40925",
+    "title": "Sustainable Culinary Arts",
+    "award": "Noncredit program",
+    "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/sustainable-culinary-arts-noncredit-coc/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40936",
+    "title": "Business - Entry Level Office Worker",
+    "award": "Noncredit program",
+    "url": "https://catalog.mpc.edu/programs-study/business-skills/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41669",
+    "title": "Translation and Interpretation (Spanish/English)",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/spanish/translation-interpretation-spanish-english-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41831",
+    "title": "Hospitality Management",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/sustainable-hospitality-management-as-t/",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41840",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/biology/environmental-science-asot/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41977",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/human-services/social-work-human-services-as-t/",
+    "coverage": 0.913,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42127",
+    "title": "Ecological Horticulture",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/horticulture/ecological-horticulture-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42677",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/communication-studies/communication-studies-as-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42852",
+    "title": "Environmental Science",
+    "award": "A.S. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/biology/environmental-science-as/",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42989",
+    "title": "Kinesiology and Human Performance",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/kinesiology/kinesiology-aa/",
+    "coverage": 0.984,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43858",
+    "title": "Inclusion, Diversity, Equity, Anti-Racism, and Accessibility (IDEAA)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/ethnic-studies/idea-coa/",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43861",
+    "title": "Race, Anti-Racism, Culture and Ethnicity (RACE)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/ethnic-studies/race-coa/",
+    "coverage": 0.65,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43862",
+    "title": "African American Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/ethnic-studies/african-american-studies-coa/",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43863",
+    "title": "Chicano Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/ethnic-studies/chicano-studies-coa/",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43864",
+    "title": "Translation and Interpretation (Spanish/English)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.mpc.edu/programs-study/spanish/translation-interpretation-spanish-english-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43865",
+    "title": "General Studies: Lifelong Wellness and Self-Development",
+    "award": "A.A. Degree",
+    "url": "https://catalog.mpc.edu/programs-study/general-studies/general-studies-lifelong-wellness-emphasis-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43891",
+    "title": "Social Justice Studies: African American Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/ethnic-studies/social-justice-studies-african-american-studies-aa-t/",
+    "coverage": 0.765,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43902",
+    "title": "Social Justice Studies: Chicano Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/ethnic-studies/social-justice-studies-chicano-studies-aa-t/",
+    "coverage": 0.812,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43903",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/political-science/law-public-policy-society-aa-t/",
+    "coverage": 0.943,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43904",
+    "title": "Social Justice Studies: LGBTQ Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/gender-womens-studies/social-justice-studies-lgbtq-studies-aa-t/",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44876",
+    "title": "Intercollegiate Athletic Competition",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/kinesiology/intercollegiate-athletic-competition-coa/",
+    "coverage": 0.983,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45138",
+    "title": "Personal Finance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/business/business-personal-finance-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45184",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.mpc.edu/programs-study/health/public-health-ast/",
+    "coverage": 0.947,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45240",
+    "title": "Fundamental IT Networking & Security",
+    "award": "Noncredit program",
+    "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/computer-networking-security-coc/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45241",
+    "title": "Computer Networking and Security",
+    "award": "Noncredit program",
+    "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/computer-networking-coc/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45242",
+    "title": "Advanced IT Networking & Security",
+    "award": "Noncredit program",
+    "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/advanced-it-networking-security-coc/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45243",
+    "title": "Intermediate IT Networking & Security",
+    "award": "Noncredit program",
+    "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/intermediate-it-networking-security-coc/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45254",
+    "title": "Microsoft Operating Systems Skills",
+    "award": "Noncredit program",
+    "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/microsoft-operating-systems-skills-coc/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45264",
+    "title": "Business - Entrepreneurship",
+    "award": "Noncredit program",
+    "url": "https://catalog.mpc.edu/programs-study/business/business-entrepreneurship-coc/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45265",
+    "title": "Culinary Entrepreneurship",
+    "award": "Noncredit program",
+    "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/culinary-entrepreneurship-coc/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45266",
+    "title": "Wine Professional Level I",
+    "award": "Noncredit program",
+    "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/wine-professional-level-i-coc/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45271",
+    "title": "Workforce Skills",
+    "award": "Noncredit program",
+    "url": "https://catalog.mpc.edu/programs-study/work-experience/workforce-skills-coc/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45273",
+    "title": "Microsoft Office Specialist",
+    "award": "Noncredit program",
+    "url": "https://catalog.mpc.edu/programs-study/business-skills/microsoft-office-specialist-coc/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45481",
+    "title": "Fundamental IT Networking & Security",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/fundamental-it-networking-security-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45483",
+    "title": "Business Administration 2.0",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/business/business-administration-2-coa/",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45485",
+    "title": "Intermediate IT Networking & Security",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/intermediate-it-networking-security-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45623",
+    "title": "Business Fundamentals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/business/business-fundamentals-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45635",
+    "title": "Workforce Essentials",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/work-experience/workforce-essentials-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45636",
+    "title": "Advanced IT Networking & Security",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/advanced-it-networking-security-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46162",
+    "title": "Global Competency",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/political-science/global-competency-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46298",
+    "title": "Applied Artificial Intelligence",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/computer-science/applied-ai-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46309",
+    "title": "Archaeology Fieldwork",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/anthropology/archaeology-fieldwork-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46393",
+    "title": "English as a Second Language: American English Pronunciation",
+    "award": "Noncredit program",
+    "url": "https://catalog.mpc.edu/programs-study/english-second-language/american-english-pronounciation-coc/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46570",
+    "title": "Public Service and Civic Engagement",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/work-experience/public-service-civic-engagement-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46571",
+    "title": "Workforce Skills",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.mpc.edu/programs-study/work-experience/workforce-skills-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38675240344"
+}

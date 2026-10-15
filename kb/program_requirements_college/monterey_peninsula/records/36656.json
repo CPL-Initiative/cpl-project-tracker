@@ -1,0 +1,266 @@
+{
+ "college": "Monterey Peninsula College",
+ "control_number": "36656",
+ "shape": "degree",
+ "title": "Chemistry",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.mpc.edu/programs-study/chemistry/chemistry-as-uc-t/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7434,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7434,
+    "output_tokens": 1595,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1595,
+  "output_tokens_details": {
+   "thinking_tokens": 379
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06164,
+ "ms": 12884,
+ "seconds": 13.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "MATH32"
+   ],
+   "flagged": [
+    "MATH32"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    48.0,
+    48.0
+   ],
+   "stated": [
+    48.0,
+    48.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     69.0,
+     69.0
+    ],
+    "stated": [
+     69.0,
+     69.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [
+    "Describe the particle nature of matter, explain the attractions and/or bonds between chemical units, and predict the physical and chemical properties they possess.",
+    "Describe chemical compounds and their reactions using the fundamental language of chemistry, including the use of proper chemical names, molecular formulas, chemical equations, structural drawings, and reaction mechanisms.",
+    "Solve chemistry-specific problems by identifying the essential parts of the problem, formulating a strategy for solving the problem, applying appropriate techniques to arrive at a solution, testing the correctness of the solution, and interpreting the results.",
+    "Successfully execute chemistry experiments using standard laboratory equipment, modern instrumentation, and classical purification techniques."
+   ],
+   "why": [
+    "not in the catalog text as printed: Describe the particle nature of matter, explain the attractions and/or bonds bet",
+    "not in the catalog text as printed: Describe chemical compounds and their reactions using the fundamental language o",
+    "not in the catalog text as printed: Solve chemistry-specific problems by identifying the essential parts of the prob",
+    "not in the catalog text as printed: Successfully execute chemistry experiments using standard laboratory equipment, "
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science for UC Transfer Degree Major Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 48,
+    "max": 48
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 69,
+    "max": 69
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe the particle nature of matter, explain the attractions and/or bonds between chemical units, and predict the physical and chemical properties they possess.",
+    "Describe chemical compounds and their reactions using the fundamental language of chemistry, including the use of proper chemical names, molecular formulas, chemical equations, structural drawings, and reaction mechanisms.",
+    "Solve chemistry-specific problems by identifying the essential parts of the problem, formulating a strategy for solving the problem, applying appropriate techniques to arrive at a solution, testing the correctness of the solution, and interpreting the results.",
+    "Successfully execute chemistry experiments using standard laboratory equipment, modern instrumentation, and classical purification techniques.",
+    "Follow the proper procedures and regulations for safe handling and use of chemicals."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 12A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 12B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 20A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 20B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 20C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 32",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 3A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 3B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 3C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The source page is 'Chemistry, Associate in Science for UC Transfer'; the site menu also lists a separate 'Chemistry, Associate in Science' page. Reviewer should confirm that the UC Transfer page is the right section for this A.S. Degree award.",
+   "ge_units 21 is read from the row 'Additional Requirements 21', which the page describes as completing Information Competency and the Cal-GETC pattern, with one course each in Area 3 and Area 4 deferred until after transfer to UC.",
+   "Degree total 69 is printed as 'Total Units 69' (major 48 + additional requirements 21).",
+   "MATH 32 Differential Equations is required in the core but is not in the closed list, so it is recorded as a catalog addition.",
+   "The learning outcomes are printed once on the program page and are recorded for this award."
+  ]
+ },
+ "extracted_run": "38675240344"
+}
