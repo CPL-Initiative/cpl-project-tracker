@@ -433,7 +433,18 @@ check(C.cq_is_program({"text": "Business Administration 2.0 for Transfer - AS-T 
       and C.cq_is_program({"text": "Spanish - AA-T"})
       and not C.cq_is_program({"text": "Requirements"}) and not C.cq_is_program({"text": "Business, Technology & Hospitality"}),
       "Chaffey's entries name their award as AS-T Degree, A.S. Degree or a certificate, and hold children")
+# Santa Ana writes the award after a colon (page read 38749570529, S395): its 27 of 359
+# entries were the dashed titles; "Accounting: A.S. Degree" was walked as a department.
+check(C.cq_is_program({"text": "Accounting: A.S. Degree", "haschildbodynavs": True})
+      and C.cq_is_program({"text": "Certificate of Professional Accounting - Accounting Study & Ethics: Certificate of Achievement (Transcripted)"})
+      and C.cq_is_program({"text": "Science Degree - Astronomy Emphasis: A.S. Degree"})
+      and C.cq_is_program({"text": "Welding Technology: Certificate of Achievement"})
+      and not C.cq_is_program({"text": "Accounting", "haschildbodynavs": True})
+      and not C.cq_is_program({"text": "Degrees and Certificates: Explained"})
+      and not C.cq_is_program({"text": ": A.S. Degree"}),
+      "cq_is_program reads an award after the last colon (Santa Ana), never a department or an explainer")
 HIDE = json.dumps({"nodeConfig": {"excludeFromWebView": True}})
+
 check(C.cq_hidden({"text": " ", "config": HIDE}) and C.cq_hidden({"text": "Notes", "config": HIDE})
       and not C.cq_hidden({"text": "Requirements", "config": json.dumps({"nodeConfig": {"excludeFromWebView": False}})})
       and not C.cq_hidden({"text": "Requirements", "config": "not json"}),
