@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-15T00:47:56Z",
-  "session": 393,
-  "moniker": "SkySycamore",
+  "written_at": "2026-10-15T04:15:13Z",
+  "session": 394,
+  "moniker": "SkyMadrone",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_394_handoff.md",
+  "handoff": "docs/session_395_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -26364,8 +26364,8 @@
     }
   ],
   "next_step": {
-    "title": "Merge Cerritos's reconcile steps and apply its display",
-    "text": "Merge the Cerritos pull request once its test passes and apply display build 45fdd29240cb from main. Then read the Cabrillo re-extract under extraction version 9, and give the next college its reconcile steps."
+    "title": "Keep the catalog sweep rolling",
+    "text": "Apply display build 99dcfd1eed24 if it is not yet applied, load Santa Ana once its capture at the 1,200-call cap reads its programs, then read and extract the next CourseLeaf colleges one branch each and ship them in a batch with one display build."
   },
   "calls": [
     {
@@ -26400,6 +26400,18 @@
     "reading": "Cerritos read on Oct 9 and Mt. San Antonio on Oct 10. RCCD's three colleges were read on Oct 10 and their Liberal Arts emphasis programs recovered on Oct 11. 18 records that read another program's page were removed on Oct 11. Long Beach City was read on Oct 11 and re-read on Oct 12: 344 records, unchecked. Chaffey was read and loaded on Oct 12: 191 records, unchecked, for 1,745 in all. Palo Verde's records come from its 2025-26 catalog; its 2026-27 catalog is on a platform the reader does not read yet."
   },
   "changes": [
+    {
+      "at": "2026-10-15T02:24:00Z",
+      "text": "Extraction version 10 deployed: units a block holds never count twice; Cabrillo's Theatre Arts and Physics read 60 of 60."
+    },
+    {
+      "at": "2026-10-15T04:15:00Z",
+      "text": "The catalog sweep loaded Santa Barbara City, Orange Coast, Foothill and Sierra, applied as display build ad2f574f892c."
+    },
+    {
+      "at": "2026-10-15T04:30:00Z",
+      "text": "The catalog sweep loaded Fullerton, Citrus, Victor Valley and Monterey Peninsula; display build 99dcfd1eed24 follows its merge."
+    },
     {
       "at": "2026-10-14T23:16:00Z",
       "text": "Sheet 82 card 2 carried out: ten transfer degrees whose major and general education run past their total count as adding up"
@@ -26478,7 +26490,7 @@
   },
   "harvest": {
     "day": "2026-10-15",
-    "gaps": 547,
+    "gaps": 952,
     "parts": {
       "links": {
         "catalog": [
@@ -26495,11 +26507,11 @@
         ]
       },
       "roep": [
-        4048,
+        4989,
         20282
       ],
       "coci": [
-        3501,
+        4844,
         20282
       ],
       "outcomes": {
@@ -26508,12 +26520,12 @@
           89192
         ],
         "plo": [
-          3501,
+          4844,
           20282
         ]
       },
       "careers": [
-        2451,
+        3794,
         20282
       ]
     }

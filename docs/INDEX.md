@@ -68,10 +68,10 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
 | KB notes | 552 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 87 | [`catalog/lessons.md`](catalog/lessons.md) |
-| Workstream docs | 81 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
+| Workstream docs | 82 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 56 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 365 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1146** | |
+| Session handoffs | 366 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1148** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-15 (S394 SkyMadrone): extraction v10 (#2141); UI pass GR Priorities (#2142); the catalog sweep, waves 1 and 2, eight colleges (#2143, #2144) with the NOCCCD campus-letter and curriQunet cap fixes; procedure records v1 for wave 1; lessons archive 2; handoff 395 (SkyHawthorn).
 - 2026-10-15 (S393 SkySycamore): Sheet 82 carried out (#2136); extraction v9 (#2138; v8 failed every call); Cerritos's reconcile steps (#2139); the overnight schedule and the $40 go (#2134); Open Asks Sheet 83; handoff 394.
 - 2026-10-14 (the funding session beside S392): a noncredit-portion setting, the explainer's three funding boxes on one row with the credit and noncredit split and editable words, Bold and Italic in the passage editor (#2132, live 22:36Z); KB note methodology-a-share-target-inside-a-bounded-allocation-is-a-solved-weight; a section in handoff 393.
 - 2026-10-14 (S392 SkyTamarack): Sheet 81 carried out (#2127); the summary-row highlight (#2128); record shape 6 and the Major only gap (#2129); El Camino and San Joaquin Delta (#2131); the reconcile pass (#2130); Sheet 82; handoff 393 (SkySycamore).
