@@ -13154,7 +13154,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 81,
+   "count": 82,
    "docs": [
     {
      "created": "2026-05-30",
@@ -14088,6 +14088,21 @@
      "title": "Phrase scope \u2014 the measurement, and why GR is a one-line fix",
      "type": null,
      "updated": ""
+    },
+    {
+     "created": "2026-10-15",
+     "governs": [],
+     "path": "docs/program_requirements_harvest_lessons_archive_2.md",
+     "status": "internal",
+     "tags": [
+      "lessons",
+      "archive",
+      "program-requirements",
+      "catalog-harvest"
+     ],
+     "title": "Program requirements harvest lessons \u2014 archive 2 (S360-S371)",
+     "type": null,
+     "updated": "2026-10-15"
     },
     {
      "created": "2026-07-16",
@@ -15171,7 +15186,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-10-14"
+     "updated": "2026-10-15"
     },
     {
      "created": "2026-08-28",
@@ -15587,8 +15602,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 365,
+   "count": 366,
    "docs": [
+    {
+     "created": "2026-10-15",
+     "governs": [],
+     "n": 395,
+     "path": "docs/session_395_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "catalog-sweep",
+      "extraction",
+      "reader"
+     ],
+     "title": "Session 395 handoff: the catalog sweep, wave 3, Santa Ana's load, and the readers the sweep parked",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-15",
      "governs": [],
@@ -21864,5 +21896,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1146
+ "total": 1148
 }

@@ -15,7 +15,7 @@ related:
 
 Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` that is not a lessons doc or a session handoff.
 
-81 document(s).
+82 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -65,6 +65,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [Noncredit & Learning-Partner CPL — a thinking document](../noncredit_cpl_thinking.md) | `noncredit_cpl_thinking.md` | 2026-08-05 |  |
 | [Noncredit CIP categories — scope, and the pathway that does not need the TOP](../noncredit_cip_category_scope.md) | `noncredit_cip_category_scope.md` | 2026-08-14 |  |
 | [Phrase scope — the measurement, and why GR is a one-line fix](../phrase_scope_analysis.md) | `phrase_scope_analysis.md` | 2026-08-19 |  |
+| [Program requirements harvest lessons — archive 2 (S360-S371)](../program_requirements_harvest_lessons_archive_2.md) | `program_requirements_harvest_lessons_archive_2.md` | 2026-10-15 | 2026-10-15 |
 | [Program-Course pipeline — continuation handoff (for a fresh session)](../program_course_pipeline_handoff.md) | `program_course_pipeline_handoff.md` | 2026-07-16 |  |
 | [Public/private repo split — scope](../public_private_repo_split_scope.md) | `public_private_repo_split_scope.md` | 2026-08-19 |  |
 | [Re-loading map_student_credit with its credit columns](../map_student_credit_reload.md) | `map_student_credit_reload.md` | 2026-08-10 | 2026-08-10 |
