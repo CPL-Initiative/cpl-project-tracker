@@ -29,10 +29,8 @@ None. Open Asks Sheet 83 (https://claude.ai/artifact/X2yLySn9SR5jauQuTWQybN, cur
 
 ## Priority, in order
 
-1. **Wave 3's procedure records.** Branch `claude/s395-wave3-procedures` holds ten receipts, not yet applied when this was
-   written. Seven are v1 (expect `none`). Cypress, Moorpark and Napa Valley are v2, merged in SQL onto S346's map records
-   (expect 527fc4b1..., a5679f2d..., 604e70cc...). If `kb/receipts/` on `main` has the applied record for `515c9d71e086`,
-   apply each receipt with `execute_sql`, stamp the md5 in its header, and open a PR. If the PR already exists, merge it.
+1. **Wave 3's procedure records** are applied (S395, 15:50Z): seven v1, three v2 merged in SQL onto S346's map records for
+   Cypress, Moorpark and Napa Valley; each receipt records its md5. Merge **#2151** if it is still open (receipts only).
 2. **#2148, Santa Ana's reader.** `test` is green. A capture-only read is running on its branch; merge after it files.
    If `capture_preview.json` there finds most of 359, extract on a fresh branch (`step=read extract=1`, about $24) and load.
 3. **Ventura** is reading on `claude/s395-ventura`: load it, then **Oxnard** (same host, after Ventura). Then curriQunet,
