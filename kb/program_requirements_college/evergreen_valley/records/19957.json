@@ -1,0 +1,293 @@
+{
+ "college": "Evergreen Valley College",
+ "control_number": "19957",
+ "shape": "degree",
+ "title": "General Studies with Emphasis in Women and Gender Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.evc.edu/degrees-certificates/womens-studies/general-studies-associate-arts-emphasis-women-gender-studies-associate-arts/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7661,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7661,
+    "output_tokens": 2004,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2004,
+  "output_tokens_details": {
+   "thinking_tokens": 529
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07072,
+ "ms": 15461,
+ "seconds": 16.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 11,
+   "share": 0.909,
+   "missing": [
+    "ETH29"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "AJ123",
+    "HIST14",
+    "SERV2"
+   ],
+   "flagged": [
+    "AJ123",
+    "HIST14",
+    "SERV2"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    55.0,
+    55.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
+   "why": [],
+   "fill": [
+    5.0,
+    5.0
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "GENERAL STUDIES WITH EMPHASIS IN WOMEN AND GENDER STUDIES - ASSOCIATE IN ARTS",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Communicate both orally and in writing in a culturally responsible manner.",
+    "Analyze gender roles using intersectional analysis, of race, ethnicity, sex identity, gender, sexuality, social class, and ability, in various cultural and historical contexts.",
+    "Analyze and critique gender images in literature, visual and performing arts, digital media, and popular culture.",
+    "Identify and implement strategies to address societal and power inequities to promote social justice and human rights for all genders."
+   ],
+   "careers": [
+    "Healthcare",
+    "Non-profits",
+    "Social Work",
+    "Journalism",
+    "Public Policy",
+    "Education",
+    "Communications",
+    "Family Services",
+    "Research"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "PSYCH 025",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WOMS 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Electives",
+    "rule": "choose_courses",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "AJ 123",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART 097",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDIT 026",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 032",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 014",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYCH 026",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 096",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SERV 002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 011",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 019",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ETH 29",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Catalog prints codes with leading zeros (PSYCH 025, WOMS 010, ART 097, EDIT 026, ENGL 032, PSYCH 026, PSYCH 096, SOC 011, SOC 019); matched to closed-list codes PSYCH 25, WOMS 10, ART 97, EDIT026, ENGL 32, PSYCH 26, PSYCH 96, SOC 11, SOC 19.",
+   "Major Electives list prints no units beside individual courses; only the block total of 15 units for 5 courses.",
+   "Community Service-Learning/Public Service Requirement offers two non-course options (Option 1: 40 hours of Community Service-Learning in major or elective courses; Option 2: 40 hours of Public Service); no courses or units, so not recorded as blocks.",
+   "No major total printed; Total Requirements lists Major Requirements 6, Major Electives 15, General Education Requirements 34, electives as needed, Total Units 60. total_units left null.",
+   "The GE pattern is printed only as 'General Education Requirements' without naming CSU GE, IGETC, Cal-GETC or local GE; ge_pattern left null.",
+   "Footnote: some GE courses may be double-counted within the major; general electives may be needed to reach 60 units."
+  ]
+ },
+ "extracted_run": "38748875071"
+}

@@ -1,0 +1,241 @@
+{
+ "college": "Evergreen Valley College",
+ "control_number": "18692",
+ "shape": "degree",
+ "title": "General Studies with Emphasis in Astronomy",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.evc.edu/degrees-certificates/physical-science/general-studies-emphasis-astronomy-associate-arts/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7390,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7390,
+    "output_tokens": 1862,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1862,
+  "output_tokens_details": {
+   "thinking_tokens": 771
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0668,
+ "ms": 15709,
+ "seconds": 16.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ASTRO10"
+   ],
+   "flagged": [
+    "ASTRO10"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "GENERAL STUDIES WITH EMPHASIS IN ASTRONOMY - ASSOCIATE IN ARTS",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 8,
+    "max": 8
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate effective use of the language when communicating scientific information, using methodological skepticism to scrutinize knowledge and to formulate opinions about world situations",
+    "Analyze data collected in laboratory experimentation and formulate predictions using computer technology, mathematics, and consistent number of significant figures"
+   ],
+   "careers": [
+    "planetarium operator",
+    "science teachers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Area of Emphasis Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYS 007A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 007B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 007C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete two of the following courses",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ASTRO 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASTRO 014",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTRO 016",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTRO 098",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Total Requirements table prints Area of Emphasis Requirements 18 (recorded as total_units), AA applicable electives 8 (recommended from area \"5\"; recorded as degree_elective_units), General Education Requirements 34, Total Units 60.",
+   "The page does not name the GE pattern (only 'General Education Requirements'), so ge_pattern is null.",
+   "ASTRO 014, ASTRO 016, ASTRO 098 and PHYS codes are printed with leading zeros; matched to closed-list ASTRO 14, ASTRO 16, ASTRO 98. ASTRO 010 is not in the closed list.",
+   "Catalog prints ASTRO 098 at 3 units while the state file stores 0.5 units; reviewer may check.",
+   "Careers were taken from the description's list of potential students ('planetarium operator, science teachers'); 'Astronomy amateurs' and 'future astronomy baccalaureate majors' were not treated as careers.",
+   "Footnote says GE courses may be double-counted and general electives may be needed to reach 60 units; electives are printed with 8 units, so electives_fill_degree is false."
+  ]
+ },
+ "extracted_run": "38748875071"
+}
