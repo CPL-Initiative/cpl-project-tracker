@@ -5976,3 +5976,9 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 ## INDEX update history moved at the funding checkpoint (2026-10-14, beside S392)
 
 - **2026-10-14 (S385 SkyHazel):** Sheet 77 cards 2, 3 and 5 built and merged (#2092 reviewer-only Table/Archive, #2093 the college's items on one line and in the MAP team queue, #2094 Modesto Junior and Palo Verde displayed); #2090 merged with clean first live reads; the migrate runner's first two applies; CLAUDE.md and the harvest lane back under budget. Handoff 386.
+
+## INDEX update history, moved S395 (verbatim)
+
+- **2026-10-14 (S388 SkyBuckeye):** course SLOs loaded at Cabrillo, Modesto Junior (#2103) and Coastline (#2105), nine colleges and 20,891 SLOs live; the addenda reading agent `program_source_addenda_read()` and the eight reads filed (#2107); Common CR Reference UI pass (#2108); handoff 389 (SkyPersimmon).
+- **2026-10-14 (S387 SkyMagnolia):** course SLOs from catalog pages: eLumen (#2103, Cabrillo reading) and the Coast district outlines (#2105, Coastline reading); the seven colleges probed (#2101); the eight addenda read (#2102); Palo Verde's 2026-27 catalog picked by the census (#2104, two dry runs); KB note methodology-a-green-check-you-did-not-scope-is-not-evidence gains the fifth green; handoff 388 (SkyBuckeye).
+- **2026-10-14 (S386 SkyElm):** Palo Verde's noncredit and no-total pages read (the catalog names courses under other subjects; pages print the degree total with general education), Modesto and Palo Verde procedure records (#2096); My College reads `program_record_college_items` (#2097); Southwestern and Fresno City captured, Open Asks Sheet 78 (#2098, CPLBrain #338); harvest lane compacted under budget; KB note `methodology-a-green-check-you-did-not-scope-is-not-evidence` gains the stand-in section; handoff 387 (SkyMagnolia).

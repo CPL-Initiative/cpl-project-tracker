@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-15T04:15:13Z",
-  "session": 394,
-  "moniker": "SkyMadrone",
+  "written_at": "2026-10-15T15:39:43Z",
+  "session": 395,
+  "moniker": "SkyHawthorn",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_395_handoff.md",
+  "handoff": "docs/session_396_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -26364,8 +26364,8 @@
     }
   ],
   "next_step": {
-    "title": "Keep the catalog sweep rolling",
-    "text": "Apply display build 99dcfd1eed24 if it is not yet applied, load Santa Ana once its capture at the 1,200-call cap reads its programs, then read and extract the next CourseLeaf colleges one branch each and ship them in a batch with one display build."
+    "title": "Wave 3's procedure records, then Santa Ana and Ventura",
+    "text": "Apply the ten procedure records drafted on claude/s395-wave3-procedures once display build 515c9d71e086 is applied, merge the Santa Ana reader fix and extract Santa Ana if its capture finds most of its programs, then load Ventura and read Oxnard."
   },
   "calls": [
     {
@@ -26401,6 +26401,18 @@
   },
   "changes": [
     {
+      "at": "2026-10-15T14:12:00Z",
+      "text": "Procedure records filed for Fullerton, Citrus, Victor Valley and Monterey Peninsula, from a generator now kept in the repository."
+    },
+    {
+      "at": "2026-10-15T14:41:00Z",
+      "text": "The public dashboard no longer carries the email address of whoever wrote a progress note."
+    },
+    {
+      "at": "2026-10-15T15:33:00Z",
+      "text": "Ten more colleges loaded in the catalog sweep: 1,132 program records, unchecked, for thirty-seven colleges in all."
+    },
+    {
       "at": "2026-10-15T02:24:00Z",
       "text": "Extraction version 10 deployed: units a block holds never count twice; Cabrillo's Theatre Arts and Physics read 60 of 60."
     },
@@ -26411,26 +26423,6 @@
     {
       "at": "2026-10-15T04:30:00Z",
       "text": "The catalog sweep loaded Fullerton, Citrus, Victor Valley and Monterey Peninsula; display build 99dcfd1eed24 follows its merge."
-    },
-    {
-      "at": "2026-10-14T23:16:00Z",
-      "text": "Sheet 82 card 2 carried out: ten transfer degrees whose major and general education run past their total count as adding up"
-    },
-    {
-      "at": "2026-10-14T23:26:00Z",
-      "text": "Sheet 82 card 1 carried out: a confirm carries over a rerun that changes only the totals and the degree's figures; Astronomy is checked"
-    },
-    {
-      "at": "2026-10-15T00:01:00Z",
-      "text": "Display build b87c61607e71 applied: the overlap records and Cabrillo's re-read figures"
-    },
-    {
-      "at": "2026-10-15T00:36:00Z",
-      "text": "Extraction version 9 deployed: version 8 had failed every call at the API's limit of sixteen nullable fields"
-    },
-    {
-      "at": "2026-10-15T00:39:00Z",
-      "text": "Cerritos reconciled: 92 of its associate degrees read the degree's minimum of 60, general education 24 to 28 and electives as needed"
     }
   ],
   "headline": [
@@ -26486,11 +26478,11 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-15T05:12:14Z"
+    "at": "2026-10-16T05:12:14Z"
   },
   "harvest": {
     "day": "2026-10-15",
-    "gaps": 952,
+    "gaps": 1534,
     "parts": {
       "links": {
         "catalog": [
@@ -26507,11 +26499,11 @@
         ]
       },
       "roep": [
-        4989,
+        6967,
         20282
       ],
       "coci": [
-        4844,
+        5895,
         20282
       ],
       "outcomes": {
@@ -26520,12 +26512,12 @@
           89192
         ],
         "plo": [
-          4844,
+          5895,
           20282
         ]
       },
       "careers": [
-        3794,
+        4845,
         20282
       ]
     }
