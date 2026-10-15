@@ -1,0 +1,84 @@
+{
+ "college": "MiraCosta College",
+ "load_run": "38755965527",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-15T14:57:31Z",
+ "records": 29,
+ "posted": 18,
+ "batches": 1,
+ "inserted": 18,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "05130",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "05143",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07862",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07863",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07872",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "15183",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "17752",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31821",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36100",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36121",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39491",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "38748842603"
+ ],
+ "machine_pass": 12,
+ "inserted_keys": [
+  "07877",
+  "07879",
+  "07881",
+  "15310",
+  "16232",
+  "17628",
+  "18340",
+  "18345",
+  "18974",
+  "19039",
+  "19095",
+  "20765",
+  "21976",
+  "21978",
+  "36097",
+  "36272",
+  "39489",
+  "45045"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'MiraCosta College' and checked = false and control_number in ('07877', '07879', '07881', '15310', '16232', '17628', '18340', '18345', '18974', '19039', '19095', '20765', '21976', '21978', '36097', '36272', '39489', '45045');"
+}
