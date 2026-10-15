@@ -1,0 +1,356 @@
+{
+ "college": "Cuyamaca College",
+ "control_number": "14479",
+ "shape": "degree",
+ "title": "Water Treatment Plant Operations",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-treatment-plant-operations-as-cert-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7734,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7734,
+    "output_tokens": 2516,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2516,
+  "output_tokens_details": {
+   "thinking_tokens": 461
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08126,
+ "ms": 18980,
+ "seconds": 19.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 25,
+   "listed": 25,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    37.0
+   ],
+   "stated": [
+    36.0,
+    37.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 11,
+   "courses": 0,
+   "count": 11,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 37
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify in detail characteristics and sources of ground water and surface water supplies including the chemical, physical and bacterial characteristics, and explain the effects on quality of geological formations, stratifications, and watershed management.",
+    "Compare the basic principles of each water treatment process and list them in order performed.",
+    "Identify and classify water distribution system components.",
+    "Explain pump cavitation, corrosion, cross-connection, air valves, head loss and main flushing in relation to water and wastewater collection, distribution, and treatment.",
+    "Compare and contrast the basic principles of each water treatment process and list them in order performed.",
+    "Explain and prepare a plan for the use of chlorine including the characteristics of and methods for storing, feeding and measuring chlorine including the effects of moisture, pH and temperature on feed rate, and the health and safety effects, procedures and personal protective requirements.",
+    "Determine the methods used for coagulation, flocculation and sedimentation including common chemicals used, feed systems, effects of time temperature, turbidity and pH, and the measurement of turbidity and color.",
+    "Compare and contrast the six basic water quality parameters and explain in detail microbiological and chemical components, including sampling requirements and properties.",
+    "Demonstrate through testing basic knowledge of the regulations for monitoring water quality and performing water treatment.",
+    "Perform basic mathematical calculations and conversions relating to water flow, pressure, volume, velocity, chemical dosage, and hydraulic and organic loading.",
+    "Determine appropriate safety procedures applicable to service and operation of water treatment and distribution systems including potential problems."
+   ],
+   "careers": [
+    "Water Treatment Plant Operator"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Course List",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CWS-100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-204",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-212",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select at least six units from the following:",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "CWS-103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-114",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-206",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-207",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-210",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-214",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-230",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-268",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-270",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-280",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-282",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-290",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints one Program Learning Outcomes list for the program as a whole; the A.S. degree and the Certificate of Achievement share it.",
+   "Outcomes 2 and 5 are near-duplicates as printed; both recorded verbatim.",
+   "Units are not printed beside the elective-list courses; units left null.",
+   "The page says 'Plus General Education Requirements' without naming a pattern or printing a degree total or GE units.",
+   "Career 'Water Treatment Plant Operator' is taken from the exam name ('Grade T-1 and T-2 Water Treatment Plant Operator examinations required for certification and employment at water treatment plants'); reviewer may check whether it should count as a named career.",
+   "Catalog prints codes with a hyphen (CWS-100); these match closed-list codes (CWS 100), so catalog_addition is false."
+  ]
+ },
+ "extracted_run": "38748833332"
+}

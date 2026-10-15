@@ -1,0 +1,385 @@
+{
+ "college": "Cuyamaca College",
+ "control_number": "31510",
+ "shape": "degree",
+ "title": "Water Resources Management",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-resources-management-as-cert-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7559,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7559,
+    "output_tokens": 2530,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2530,
+  "output_tokens_details": {
+   "thinking_tokens": 615
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08084,
+ "ms": 18575,
+ "seconds": 19.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 21,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "CWS280",
+    "CWS284",
+    "OH140",
+    "OH221"
+   ],
+   "flagged": [
+    "CWS280",
+    "CWS284",
+    "OH140",
+    "OH221"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    32.5,
+    37.5
+   ],
+   "stated": [
+    33.5,
+    37.5
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 32.5-37.5; the catalog states 33.5-37.5"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 33.5,
+    "max": 37.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe the essential uses of water, the infrastructure that has been developed to meet demand, and the problems the water industry faces.",
+    "Identify a specified number of legal and financial constraints which complicate efficient and effective water resource management.",
+    "Explain the concept and importance of water portfolio diversification.",
+    "Describe the political/organizational structures and list the major agencies involved in providing water in the greater San Diego region.",
+    "Compare and contrast the sources of wastewater, the major collection/transportation networks, and the major wastewater treatment/reclamation facilities operating in San Diego County.",
+    "Identify the major regulatory agencies that monitor and regulate the water/wastewater industry.",
+    "Explain how the current carbon footprint of the water and wastewater infrastructure significantly impacts California’s energy and power demands.",
+    "Compare and contrast a specified number of resource recovery/alternative treatment methods."
+   ],
+   "careers": [
+    "water conservation",
+    "watershed management",
+    "water resources and groundwater",
+    "public information",
+    "community education",
+    "landscape and facilities maintenance",
+    "irrigation system design",
+    "urban water management",
+    "landscape design"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Associate in Science Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CWS-101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OH-120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OH-170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OH-221",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "OH-250",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-290",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "OH-290",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select two of the following:",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CWS-102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-112",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-114",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-132",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-280",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CWS-282",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CWS-284",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select two of the following:",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "OH-102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OH-140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "OH-174",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OH-220",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OH-235",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OH-238",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OH-255",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog text begins mid-sentence; the start of the program description is cut off.",
+   "The Program Learning Outcomes are printed once for the program as a whole; the A.S. degree and the Certificate of Achievement share them.",
+   "The Certificate of Achievement is stated to consist of the same major requirements; only the A.S. degree is recorded here.",
+   "Units are not printed beside the courses in the two 'Select two of the following' lists; only the block ranges (5-6 and 4-7) are printed.",
+   "CWS-290 is printed at 2 units while the state file stores 1 unit; OH-290 has no units printed beside it.",
+   "Page says 'Plus General Education Requirements' without naming a GE pattern, GE units, or a degree total.",
+   "OH-221, CWS-280, CWS-284 and OH-140 are not in the closed list and are marked as catalog additions."
+  ]
+ },
+ "extracted_run": "38748833332"
+}

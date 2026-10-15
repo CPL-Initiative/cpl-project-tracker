@@ -1,0 +1,318 @@
+{
+ "college": "Cuyamaca College",
+ "control_number": "05063",
+ "shape": "degree",
+ "title": "Mathematics",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/mathematics/mathematics-as-cert-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7486,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7486,
+    "output_tokens": 1970,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1970,
+  "output_tokens_details": {
+   "thinking_tokens": 529
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06934,
+ "ms": 16227,
+ "seconds": 17.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "PHYC202",
+    "PHYC203"
+   ],
+   "flagged": [
+    "PHYC202",
+    "PHYC203"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    21.0
+   ],
+   "stated": [
+    19.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 26,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Draw conclusions about simple and complex systems by collecting, assessing, and analyzing information.",
+    "Communicate technical ideas in group and professional settings in both written and oral form."
+   ],
+   "careers": [
+    "Accountant",
+    "Actuary",
+    "Air Traffic Controller",
+    "Auditor",
+    "Bank Officer",
+    "Budget Analyst",
+    "Computer Operator",
+    "Computer Programmer",
+    "Cost Estimator",
+    "Credit and Collection Manager",
+    "Data Processing Manager",
+    "Economist",
+    "Engineer",
+    "Financial Planner",
+    "Insurance Agent/Broker",
+    "Insurance Claim Examiner",
+    "Laboratory Examiner",
+    "Loan Officer",
+    "Market Research Analyst",
+    "Mathematician",
+    "Mathematics Teacher",
+    "Securities Trader",
+    "Semiconductor Technician",
+    "Statistician",
+    "Surveyor",
+    "Systems Analyst"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Curriculum",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH-C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-281",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "MATH-284",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-285",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CS-181",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR-120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-245",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYC-201",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT-C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Electives",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYC-201",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYC-202",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYC-203",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "List A and List B courses print no per-course units; only the block totals (3 and 3-5) are printed, so course units are null.",
+   "List B also allows 'Any course from List A not selected' (MATH-284 or MATH-285); these are recorded only in List A to avoid duplication.",
+   "The page says 'Plus General Education Requirements' without naming a specific GE pattern or units, so ge_pattern and ge_units are null; no degree total is printed.",
+   "Career titles carry footnote markers in the catalog (1 = Bachelor Degree or higher required; 2 = Bachelor Degree normally recommended); these superscript digits were removed from the career names.",
+   "PHYC-201 appears both as a List B option and in the recommended physics courses for transfer students.",
+   "The Certificate of Achievement shares the same major requirements; this record covers the A.S. degree section. The program learning outcomes are printed once for the page and are shared by the A.S. degree."
+  ]
+ },
+ "extracted_run": "38748833332"
+}
