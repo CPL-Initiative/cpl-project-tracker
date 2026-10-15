@@ -1085,6 +1085,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `www.wiche.edu` | tabs: `college-briefing` |
 | `www.wlac.edu` | tabs: `map-queue`, `map-users` |
 | `x` | scripts: `kb/_verify_cos_sync_lanes.py` |
+| `x.example.org` | modules: `a11y.config.js` |
 | `yc.yccd.edu` | tabs: `map-queue`, `map-users` |
 | `…` | tabs: `cpl-news`, `gr-priorities` |
 
@@ -1113,4 +1114,4 @@ check these BY HAND before trusting an absence:
 - `scripts/supabase_migrate.py`
 
 Coverage: 99 Supabase tables · 39 RPCs · 8 edge functions · 649 file
-datasets · 178 external services · 441 consumers · 53 workflows · 39 tabs.
+datasets · 179 external services · 441 consumers · 53 workflows · 39 tabs.
