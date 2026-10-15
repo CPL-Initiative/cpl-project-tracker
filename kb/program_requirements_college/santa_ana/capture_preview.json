@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 370,
  "with_closed_list": 359,
- "started": "2026-10-15T02:15:42Z",
+ "started": "2026-10-15T03:12:28Z",
  "curriqunet": {
   "catalog": 28,
   "view_prefix": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/",
@@ -15,17 +15,17 @@
    "Noncredit Certificates",
    "Instructional Programs "
   ],
-  "nodes_read": 200,
-  "calls": 400,
+  "nodes_read": 418,
+  "calls": 837,
   "entries": 27,
-  "stopped_at_cap": true,
+  "stopped_at_cap": false,
   "same_title_entries": 0,
   "entries_read": 27
  },
  "pages_read": 27,
  "banner_h1": null,
- "loads": 509,
- "seconds": 2215.8,
+ "loads": 946,
+ "seconds": 4052.0,
  "found": 28,
  "by_method": {
   "no_closed_list": 11,
@@ -3965,5 +3965,5 @@
    }
   ]
  },
- "run": "38669940195"
+ "run": "38674963853"
 }
