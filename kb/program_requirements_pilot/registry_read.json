@@ -1,8 +1,8 @@
 {
- "_what": "The harvest registry's catalog and map columns for the harvest's thirty colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline, Cabrillo, Modesto Junior, Palo Verde, Southwestern, Fresno City, El Camino, San Joaquin Delta, Santa Barbara City, Orange Coast, Foothill, Sierra, Fullerton, Citrus, Victor Valley and Monterey Peninsula), as the ROEP display builder reads them (kb/_build_roep_display.py). program_source_registry is public-read; this file is a dated copy so the builder runs offline and its output is reproducible.",
+ "_what": "The harvest registry's catalog and map columns for the harvest's forty colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline, Cabrillo, Modesto Junior, Palo Verde, Southwestern, Fresno City, El Camino, San Joaquin Delta, Santa Barbara City, Orange Coast, Foothill, Sierra, Fullerton, Citrus, Victor Valley, Monterey Peninsula, Golden West, Cuyamaca, Mt. San Jacinto, MiraCosta, College of the Sequoias, Napa Valley, San Bernardino Valley, Moorpark, Cypress and Evergreen Valley), as the ROEP display builder reads them (kb/_build_roep_display.py). program_source_registry is public-read; this file is a dated copy so the builder runs offline and its output is reproducible.",
  "_source": "public.program_source_registry (census columns written by the weekly census; the four sequence_* columns written by S326's receipts)",
  "_read_at": "2026-10-15",
- "_read_by": "SkyMadrone (S394) through the Supabase MCP, second batch: Fullerton, Citrus, Victor Valley and Monterey Peninsula added (census of 2026-10-11). SkyMadrone (S394) through the Supabase MCP: Santa Barbara City, Orange Coast, Foothill and Sierra added (census of 2026-10-11). Earlier: SkyTamarack (S392) through the Supabase MCP: El Camino and San Joaquin Delta added (Delta's row names no catalog year; its records carry 2026-2027 from the catalog menu, S391). Earlier: SkyPersimmon (S389) through the Supabase MCP: Southwestern and Fresno City added. Earlier: SkyHazel (S385) through the Supabase MCP: Modesto Junior and Palo Verde added. Earlier: SkySpruce (S383) through the Supabase MCP: Cabrillo added; Bakersfield and Coastline re-read, unchanged. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield and Coastline added; San Diego Mesa re-read, unchanged. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey and San Diego City added. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added. Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley and Norco added; Riverside City re-read, unchanged. Earlier: SkyLedger (S340) through the Supabase MCP: all seven rows read; the pilot's five unchanged since 2026-10-04, Santa Monica and Irvine Valley added",
+ "_read_by": "SkyHawthorn (S395) through the Supabase MCP, wave 3: Golden West, Cuyamaca, Mt. San Jacinto, MiraCosta, College of the Sequoias, Napa Valley, San Bernardino Valley, Moorpark, Cypress and Evergreen Valley added (census of 2026-10-11; Evergreen Valley's row names 2025-2026). SkyMadrone (S394) through the Supabase MCP, second batch: Fullerton, Citrus, Victor Valley and Monterey Peninsula added (census of 2026-10-11). SkyMadrone (S394) through the Supabase MCP: Santa Barbara City, Orange Coast, Foothill and Sierra added (census of 2026-10-11). Earlier: SkyTamarack (S392) through the Supabase MCP: El Camino and San Joaquin Delta added (Delta's row names no catalog year; its records carry 2026-2027 from the catalog menu, S391). Earlier: SkyPersimmon (S389) through the Supabase MCP: Southwestern and Fresno City added. Earlier: SkyHazel (S385) through the Supabase MCP: Modesto Junior and Palo Verde added. Earlier: SkySpruce (S383) through the Supabase MCP: Cabrillo added; Bakersfield and Coastline re-read, unchanged. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield and Coastline added; San Diego Mesa re-read, unchanged. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey and San Diego City added. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added. Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley and Norco added; Riverside City re-read, unchanged. Earlier: SkyLedger (S340) through the Supabase MCP: all seven rows read; the pilot's five unchanged since 2026-10-04, Santa Monica and Irvine Valley added",
  "_refresh": "Reread when the census applies or a sequence receipt lands: select the columns below for the harvest's colleges and file them here.",
  "colleges": {
   "Bakersfield College": {
@@ -364,6 +364,126 @@
    "sequence_url": "https://www.wlac.edu/academics/pathways/program-mapper",
    "sequence_note": "The college's page about its program mapper answered on 2026-10-04 and links to programmap.wlac.edu, which has not been read. Every mapper host probed that day refused the reader.",
    "sequence_checked_run": "program-sequence-ppm run 37198225537"
+  },
+  "Cypress College": {
+   "catalog_platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.nocccd.edu/cypress-college/",
+   "census_run_id": "census-20261011T162433Z-s4of4",
+   "sequence_source": "program_map_page",
+   "sequence_access": "refused",
+   "sequence_host": "programmap.cypresscollege.edu",
+   "sequence_url": "https://programmap.cypresscollege.edu/academics",
+   "sequence_note": "programmap.cypresscollege.edu answered 403 Forbidden to the CPL Initiative's reader on 2026-10-04, as did every program map host probed that day (17 of 17). The reader keeps its name and never retries a refusal another way. It looks for the sequence on the college's own pages and in its catalog, and asks this host's front page once a run whether it has opened (Sam, open-asks sheet 29 card 3, 2026-10-04).",
+   "sequence_checked_run": "program-sequence-ppm run 37198225537"
+  },
+  "Cuyamaca College": {
+   "catalog_platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.gcccd.edu/cuyamaca/",
+   "census_run_id": "census-20261011T162427Z-s3of4",
+   "sequence_source": "none_found",
+   "sequence_access": null,
+   "sequence_host": null,
+   "sequence_url": null,
+   "sequence_note": null,
+   "sequence_checked_run": null
+  },
+  "Moorpark College": {
+   "catalog_platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.vcccd.edu/moorpark/",
+   "census_run_id": "census-20261011T162433Z-s4of4",
+   "sequence_source": "program_map_page",
+   "sequence_access": "refused",
+   "sequence_host": "programmap.moorparkcollege.edu",
+   "sequence_url": "https://programmap.moorparkcollege.edu/",
+   "sequence_note": "programmap.moorparkcollege.edu answered 403 Forbidden to the CPL Initiative's reader on 2026-10-04, as did every program map host probed that day (17 of 17). The reader keeps its name and never retries a refusal another way. It looks for the sequence on the college's own pages and in its catalog, and asks this host's front page once a run whether it has opened (Sam, open-asks sheet 29 card 3, 2026-10-04).",
+   "sequence_checked_run": "program-sequence-ppm run 37198225537"
+  },
+  "MiraCosta College": {
+   "catalog_platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.miracosta.edu/",
+   "census_run_id": "census-20261011T162433Z-s4of4",
+   "sequence_source": "none_found",
+   "sequence_access": null,
+   "sequence_host": null,
+   "sequence_url": null,
+   "sequence_note": null,
+   "sequence_checked_run": null
+  },
+  "Golden West College": {
+   "catalog_platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.cccd.edu/golden-west/",
+   "census_run_id": "census-20261011T162427Z-s1of4",
+   "sequence_source": "none_found",
+   "sequence_access": null,
+   "sequence_host": null,
+   "sequence_url": null,
+   "sequence_note": null,
+   "sequence_checked_run": null
+  },
+  "Napa Valley College": {
+   "catalog_platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.napavalley.edu/",
+   "census_run_id": "census-20261011T162433Z-s4of4",
+   "sequence_source": "ppm",
+   "sequence_access": "refused",
+   "sequence_host": "napa-valley.programmapper.com",
+   "sequence_url": "https://napa-valley.programmapper.com/academics",
+   "sequence_note": "napa-valley.programmapper.com answered 403 Forbidden to the CPL Initiative's reader on 2026-10-04, as did every program map host probed that day (17 of 17). The reader keeps its name and never retries a refusal another way. It looks for the sequence on the college's own pages and in its catalog, and asks this host's front page once a run whether it has opened (Sam, open-asks sheet 29 card 3, 2026-10-04).",
+   "sequence_checked_run": "program-sequence-ppm run 37198225537"
+  },
+  "College of the Sequoias": {
+   "catalog_platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.cos.edu/",
+   "census_run_id": "census-20261011T162433Z-s2of4",
+   "sequence_source": "none_found",
+   "sequence_access": null,
+   "sequence_host": null,
+   "sequence_url": null,
+   "sequence_note": null,
+   "sequence_checked_run": null
+  },
+  "Mt. San Jacinto College": {
+   "catalog_platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.msjc.edu/",
+   "census_run_id": "census-20261011T162427Z-s3of4",
+   "sequence_source": "none_found",
+   "sequence_access": null,
+   "sequence_host": null,
+   "sequence_url": null,
+   "sequence_note": null,
+   "sequence_checked_run": null
+  },
+  "Evergreen Valley College": {
+   "catalog_platform": "courseleaf",
+   "catalog_year": "2025-2026",
+   "catalog_url": "https://catalog.evc.edu/",
+   "census_run_id": "census-20261011T162427Z-s1of4",
+   "sequence_source": "none_found",
+   "sequence_access": null,
+   "sequence_host": null,
+   "sequence_url": null,
+   "sequence_note": null,
+   "sequence_checked_run": null
+  },
+  "San Bernardino Valley College": {
+   "catalog_platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.valleycollege.edu/",
+   "census_run_id": "census-20261011T162427Z-s3of4",
+   "sequence_source": "none_found",
+   "sequence_access": null,
+   "sequence_host": null,
+   "sequence_url": null,
+   "sequence_note": null,
+   "sequence_checked_run": null
   }
  }
 }

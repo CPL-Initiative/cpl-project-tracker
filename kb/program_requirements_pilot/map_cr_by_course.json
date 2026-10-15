@@ -1,8 +1,8 @@
 {
- "_what": "MAP's credit recommendations per course at the harvest's thirty colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline, Cabrillo, Modesto Junior, Palo Verde, Southwestern, Fresno City, El Camino, San Joaquin Delta, Santa Barbara City, Orange Coast, Foothill, Sierra, Fullerton, Citrus, Victor Valley and Monterey Peninsula): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
+ "_what": "MAP's credit recommendations per course at the harvest's forty colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline, Cabrillo, Modesto Junior, Palo Verde, Southwestern, Fresno City, El Camino, San Joaquin Delta, Santa Barbara City, Orange Coast, Foothill, Sierra, Fullerton, Citrus, Victor Valley, Monterey Peninsula, Golden West, Cuyamaca, Mt. San Jacinto, MiraCosta, College of the Sequoias, Napa Valley, San Bernardino Valley, Moorpark, Cypress and Evergreen Valley): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
  "_source": "public.map_college_cr_unit (reviewer-gated) joined to map_colleges by college_id; exhibit titles from map_ace_exhibit_titles, else chatbox_exhibits. A college_course string naming several courses ('ADJ-13 ...(3.0), ADJ-19 ...(3.0)') counts toward each course it names. Course code = the SUBJ-NUM token with the hyphen read as a space.",
  "_read_at": "2026-10-15",
- "_read_by": "SkyMadrone (S394) through the Supabase MCP, second batch: Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles), Monterey Peninsula (3; eb85fce8, 1794bde6), Citrus and Victor Valley (none) added. SkyMadrone (S394) through the Supabase MCP: Santa Barbara City, Orange Coast, Foothill and Sierra added; MAP names no course code at any of the four (map_college_cr_unit rows carry no SUBJ-NUM college_course there). Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles) and Diablo Valley (2; 0daebf68, f20f5e51) were read the same day, matched in SQL, and are held until their records load. Earlier: SkyTamarack (S392) through the Supabase MCP: El Camino (no course code: its one college_course reads \"-\") and San Joaquin Delta (1 course code; md5 c814004d counts, d7d7ab68 titles; its \"CSU GE E\" line names no course) added. Earlier: SkyPersimmon (S389) through the Supabase MCP: Southwestern (3 course codes; md5 220de7f7 counts, b4f52863 titles) and Fresno City (2; afd80e74, 6b4b8433) added. Earlier: SkyHazel (S385) through the Supabase MCP: Modesto Junior (162 course codes) and Palo Verde (58) added; the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 44f69ec1a24823e14935781dbd760bd8 and 4acabc5730dedeb1e0f28194796eb23c, and the md5 over each code's titles (code#title#source#recs, in the read's order) 30765bf9ceef64b44a2e862b58111469 and 83bbe816ab4eb109b72be382c170d47a, in SQL and over the filed rows. Earlier: SkySpruce (S383) through the Supabase MCP: Cabrillo added (112 course codes); the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 51b488541fdab60ea9e4d093eb052c0a and the md5 over each code's titles (code#title#source#recs, in the read's order) d71fa73bd6952487451eaeafb878f3eb, in SQL and over the filed rows. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield (100 course codes) and Coastline (26) added; per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads c58de704f09a7b58007336979431dace and 8bccde4ad1bae0d610b6de34413e24e9 in SQL and over the filed rows. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added (44 course codes); the per-college md5 over code|recs|exhibits|untitled reads 9ad02bf038663b2c19ac0c6b8aed2574 and the md5 over each code's titles (title#source#recs, in the read's order) 38e86115426ffd0ca2856d3ad6713150, in SQL and over the filed rows. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey (94 course codes) and San Diego City (33) added; per-college md5 over code|recs|exhibits|untitled reads 115340c8a405300f47c2bd0223964f68 and 249410c6592148fbf3beb7b68b7f1cd0 in SQL and over the filed rows. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added (33 course codes; the per-course fingerprint over code, recs, exhibits, untitled exhibits and titles reads 5c7d3a90393e710daa4f686a2f56c917 in SQL and over the filed rows). Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
+ "_read_by": "SkyHawthorn (S395) through the Supabase MCP, wave 3: Cypress (41 course codes; md5 f23dc34b counts, 09bded16 titles), Napa Valley (25; 46024a39, 1cb28039), San Bernardino Valley (83; f18f1313, 4e38c8e4), Moorpark (4; 61571f0e, 0064e895), College of the Sequoias (3; 80563542, 0bba198e), Evergreen Valley (2; d32576cf, 0540a44c); Golden West, Cuyamaca, Mt. San Jacinto and MiraCosta (none) added. SkyMadrone (S394) through the Supabase MCP, second batch: Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles), Monterey Peninsula (3; eb85fce8, 1794bde6), Citrus and Victor Valley (none) added. SkyMadrone (S394) through the Supabase MCP: Santa Barbara City, Orange Coast, Foothill and Sierra added; MAP names no course code at any of the four (map_college_cr_unit rows carry no SUBJ-NUM college_course there). Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles) and Diablo Valley (2; 0daebf68, f20f5e51) were read the same day, matched in SQL, and are held until their records load. Earlier: SkyTamarack (S392) through the Supabase MCP: El Camino (no course code: its one college_course reads \"-\") and San Joaquin Delta (1 course code; md5 c814004d counts, d7d7ab68 titles; its \"CSU GE E\" line names no course) added. Earlier: SkyPersimmon (S389) through the Supabase MCP: Southwestern (3 course codes; md5 220de7f7 counts, b4f52863 titles) and Fresno City (2; afd80e74, 6b4b8433) added. Earlier: SkyHazel (S385) through the Supabase MCP: Modesto Junior (162 course codes) and Palo Verde (58) added; the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 44f69ec1a24823e14935781dbd760bd8 and 4acabc5730dedeb1e0f28194796eb23c, and the md5 over each code's titles (code#title#source#recs, in the read's order) 30765bf9ceef64b44a2e862b58111469 and 83bbe816ab4eb109b72be382c170d47a, in SQL and over the filed rows. Earlier: SkySpruce (S383) through the Supabase MCP: Cabrillo added (112 course codes); the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 51b488541fdab60ea9e4d093eb052c0a and the md5 over each code's titles (code#title#source#recs, in the read's order) d71fa73bd6952487451eaeafb878f3eb, in SQL and over the filed rows. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield (100 course codes) and Coastline (26) added; per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads c58de704f09a7b58007336979431dace and 8bccde4ad1bae0d610b6de34413e24e9 in SQL and over the filed rows. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added (44 course codes); the per-college md5 over code|recs|exhibits|untitled reads 9ad02bf038663b2c19ac0c6b8aed2574 and the md5 over each code's titles (title#source#recs, in the read's order) 38e86115426ffd0ca2856d3ad6713150, in SQL and over the filed rows. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey (94 course codes) and San Diego City (33) added; per-college md5 over code|recs|exhibits|untitled reads 115340c8a405300f47c2bd0223964f68 and 249410c6592148fbf3beb7b68b7f1cd0 in SQL and over the filed rows. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added (33 course codes; the per-course fingerprint over code, recs, exhibits, untitled exhibits and titles reads 5c7d3a90393e710daa4f686a2f56c917 in SQL and over the filed rows). Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
  "_refresh": "By hand, the way kb/ccr_cpl_funnel.json is refreshed: run kb/program_requirements_pilot/map_cr_by_course.sql through the Supabase MCP when the funnel reloads (map-custom-report-load.yml) or the harvest adds a college, and file the rows here.",
  "colleges": {
   "Bakersfield College": {
@@ -26209,6 +26209,2590 @@
     ],
     "untitled_exhibits": 0
    }
-  }
+  },
+  "College of the Sequoias": {
+   "FIRE 157": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Aircraft, Rescue and Firefighting Specialist",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "FIRE 159": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Aircraft, Rescue and Firefighting Specialist",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "PEAC 076": {
+    "recs": 1,
+    "titles": null,
+    "exhibits": 1,
+    "untitled_exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    }
+   }
+  },
+  "Cypress College": {
+   "AC/R 036": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Refrigerant Certification Training ( AC/R 036 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AC/R 115": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Gas Heat Transfer Systems (AC/R 115 C )",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AC/R 210": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Commercial Refrigeration (AC/R 210C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AC/R 230": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Heat Pumps (AC/R 230 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AJ 160": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Community and the Justice System (AJ 160 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AT 110": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Intro to Automotive Technology (AT 110 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ATC 132": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Private Pilot (ATC 132 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ATC 144": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Aircraft and Engines (ATC 144 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ATC 160": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "UAV-UAS Basic (ATC 160 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ATC 256": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Crew Resource Management (ATC 256 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ATC 274": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Passenger Services & Safety (ATC 274 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CE 295": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CE Teacher Training 3: Practicum (CE 295 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CIS 111": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Computer Information Systems",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CIS 172": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Data Visualization (CIS 172 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CIS 190": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "IT and Cybersecurity Fundamentals (CIS 190 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "CIS 195": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Network Security (CIS 195 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CIS 230": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cisco Networking 1 (CIS 230 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CIS 257": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cloud Implementation and Security (CIS 257 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "DMS 237": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Clinical Education IV (DMS 237 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ESL 107": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Hi-Inter Acad Rdg Wrtg(ESL 107 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ESL 108": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Adv Acad. Reading & Writing I (ESL 108 C)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Credit By Exam (ESL 108C)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Exploring Culture through Academic Discourse 1 (ESL 108 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 3
+    }
+   },
+   "ESL 109": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Exploring Culture through Academic Discourse II (ESL 109C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "HRC 120": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Sanitation and Safety (HRC 120 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "HRC 125": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Restaurant Management (HRC 125 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "HRC 135": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Culinary Fundamentals I (HRC 135 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "HRC 232": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Event Management (HRC 232 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "KIN 111": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Recruit Basic Military Training (BMT)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "KIN 121": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Self-Defense (KIN 121 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "KIN 133": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Recruit Basic Military Training (BMT)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "KIN 143": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Training",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "KIN 145": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Boot Camp Workout (KIN 145 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "KIN 201": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Athletic Fitness Development (KIN 201 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "KIN 235": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "First Aid, CPR and Emergencies (KIN 235 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MAD 116": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Graphic Design I (MAD 116 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MORT 204": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Funeral Service Administration II (MORT 204 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MORT 234": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Funeral Service Ethics Laws I (MORT 234 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MORT 236": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Funeral Service Ethics/Laws II (MORT 236 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MORT 248": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Funeral Service Thanatology (MORT 248 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "MORT 482": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Clinical Embalming (MORT 482 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MORT 492": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Funeral Service Externship 4 (MORT 492 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "NURS 293": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Mental Health Nursing (NURS 293 C)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   }
+  },
+  "Evergreen Valley College": {
+   "AUTO 102": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Maintenance Technician's Basic (AMTBC)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "CPL 1": {
+    "recs": 2,
+    "titles": null,
+    "exhibits": 1,
+    "untitled_exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    }
+   }
+  },
+  "Moorpark College": {
+   "CNSE M06": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cisco Fundamentals of IT Essentials: PC Hardware & Software",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "HOSP M130": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Culinary Specialist",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "MUS M02A": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Music Theory I",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MUS M02AL": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Musicianship I",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   }
+  },
+  "Napa Valley College": {
+   "ADMJ 121": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Introduction to Criminal Law - Military Training",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ARTS 101": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Portfolio for Arts - 2D Foundations",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ASTR 110": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Astronomy High School to College Articulation",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "BUSI 144": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Introduction to Entrepreneurship High School to College Articulation",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "BUSI 297": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Personal Money Management High School to College Articulation",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CHEM 110": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Chemistry Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CSU GE A2": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Written Communication Exam 3 Units",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ECON 101": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Microeconomics Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ENGL C1000": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP English Language and Composition",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "HCTM 100": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Sanitation and Safety High School to College Articulation",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "HCTM 120": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Introduction to Hospitality Management High School to College Articulation",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "HCTM 290": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Culinary Internship 2 Industry Experience",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "HELH 100": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Military Basic Training - Health",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 1,
+    "exhibits_by_source": {
+     "MAP": 1,
+     "unnamed": 1
+    }
+   },
+   "HEOC 171": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Medical Terminology High School to College Articulation",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "KINE 100": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Military Basic Training - Kinesiology",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "KINE 103": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fitness for Life Military Training",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "KINE 130": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Military Basic Training - Kinesiology",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "KINE 148": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Military Basic Training - Kinesiology",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "KINE 151": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Military Basic Training - Kinesiology",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MATH 120": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AP Calculus AB Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MATH C2210": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "NVC Administered Calculus I Exam",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "POLS C1000": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "American Government and Politics Military Training",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "WELD 100": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Welding Theory 1 High School to College Articulation",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "WELD 101": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Welding Theory 2 High School to College Articulation",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "WOEX 100": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Work Experience High School to College Articulation",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   }
+  },
+  "San Bernardino Valley College": {
+   "ADJUS 101": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ADJUS 101 - CA POST Training Record",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AERO 022": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AERO 022 - Private Pilot Ground School",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AERO 022 - Private Pilot Ground School - FAA Card",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AERO 022 - Private Pilot Ground School - Riverside Flight Academy FAA approved Private Pilot Certification Ground Course",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 3
+    }
+   },
+   "AERO 022L": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AERO 022L - Private Pilot Ground School Lab - FAA Card",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AERO 040": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AERO 040 - Instrument Ground School - FAA Card Holder",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AERO 040 - Instrument Ground School - Training Log",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "AERO 041L": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AERO 041L - Instrument Pilot Flight Lab - FAA Cardholder",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AERO 050": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Portfolio Review - Basic Electricity and Servicing Airframe and Powerplant Tech",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AERO 050L": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Portfolio Review - Basic Electricity and Servicing Airframe and Powerplant Tech",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AERO 051": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Portfolio Review - Basic Electricity and Servicing Airframe and Powerplant Tech",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AERO 051L": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Portfolio Review - Basic Electricity and Servicing Airframe and Powerplant Tech",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AUTO 050": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "AUTO 052": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "AUTO 052L": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AUTO 052L - Auto Suspension & Steering Laboratory - ASE Certification Automobile -Suspension and Steering",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AUTO 065": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ASE Medium/Heavy Truck Technician (T1-T8)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "AUTO 065 - Advanced Automotive Electrical Systems",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "AUTO 075": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automatic Transmissions",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "BUSAD 103": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Recruiter",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "BUSAD 108": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Personal Financial Management by Correspondence",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "BUSAD 110": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Master Leader",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "BUSAD 120": {
+    "recs": 6,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Distributed Leader I",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "First Line Leadership Development Program",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman Advanced Leader (ALC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Jumpmaster",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Leading Marines By Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Maintenance Management Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Power Generation Equipment Repairer Advanced Leader (ALC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Wire Chief",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 9,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 9
+    }
+   },
+   "BUSAD 127": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruiter",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 2
+    }
+   },
+   "CIT 021": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CIT 021 - Word Processing: Comprehensive Microsoft Word",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CIT 101": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Information Systems Technician Class 'A'",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "CIT 114": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CIT 114 - Spreadsheets: Excel (Microsoft Office Specialist Cert)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CIT 118": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CIT 118 - Microsoft PowerPoint (Microsoft Office Specialist Cert)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CIT 144": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CIT 144 - Medical Terminology",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "CIT 144 - Medical Terminology - BVNPT Licensure",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "CIT 144 - Medical Terminology - LVN",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Hospitalman",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 4,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 3
+    }
+   },
+   "CIT 160": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Information Systems Technician System Administration",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "CIT 232": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Information Systems Technician",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "COMM 174": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Psychological Operations Specialist",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "CULART 011": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CULART 011 CBE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CULART 041": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CUL ART 041",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CULART 043": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CULART 043 - Advanced Desserts and Pastry/Chocolate/Sugar",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CULART 201": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Cul Art 201-CBE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CULART 240": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CULART 240 CBE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CULART 250": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CULART 250 CBE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "ELECTR 110": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Marine Avionics (MV) Apprentice Technical Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Portfolio Review - Direct and Alternating Current Circuit Analysis and Laboratory",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    }
+   },
+   "ELECTR 111": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Marine Avionics (MV) Apprentice Technical Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Portfolio Review - Direct and Alternating Current Circuit Analysis and Laboratory",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    }
+   },
+   "ELECTR 115": {
+    "recs": 4,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Electronics Technician Class 'A' School",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Control Systems Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Avionics (MV) Apprentice Technical Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Portfolio Review - Direct and Alternating Current Circuit Analysis and Laboratory",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 4,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 3,
+     "MAP": 1
+    }
+   },
+   "ELECTR 116": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Marine Avionics (MV) Apprentice Technical Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Portfolio Review - Direct and Alternating Current Circuit Analysis and Laboratory",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    }
+   },
+   "ELECTR 230": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Marine Avionics (MV) Apprentice Technical Training",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "ELECTR 235": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Marine Avionics (MV) Apprentice Technical Training",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "HEALTH 101": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Indirect Fire Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 2,
+     "unnamed": 1
+    }
+   },
+   "HMDT 021": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Motor Vehicle Operators (MVOC)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "HVAC/R 007": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "HVAC/R 007 CBE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "INSPEC 012": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "INSPEC 012 - Fundamentals of Construction Inspection: Wood, Steel, Masonry",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Inter-service Builder Apprentice Training (Navy)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    }
+   },
+   "INSPEC 013": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "INSPEC 013 - Advanced Construction Inspection: International Building Code (IBC)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "INSPEC 013 - Advanced Construction Inspection: International Building Code (IBC) - PORTFOLIO",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "INSPEC 015": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "INSPEC 015 - Advanced Construction Inspection: Uniform Plumbing Code (UPC)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "INSPEC 017": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "INSPEC 017 - California State Energy Regulations for Residential Buildings - PORTFOLIO Review",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Inspection Portfolio Spring 2026 #1",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "INSPEC 018": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Inspection Portfolio Spring 2026 #1",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "INSPEC 026": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "INSPEC 026 - Non-Structural Plan Review",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "INSPEC 026 - Non-Structural Plan Review - PORTFOLIO",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "INSPEC 027": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "INSPEC 027 - Structural Plan Review - PORTFOLIO",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "INSPEC 028": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "INSPEC 028 - California Residential Code",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "INSPEC 029": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "INSPEC 029 - Community Relations for Building Personnel - Portfolio Review 5/6/26",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "INSPEC 030": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "INSPEC 030 - Aspects of Building and Safety",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Inspection Portfolio Spring 2026 #1",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "KIN 231": {
+    "recs": 9,
+    "titles": [
+     {
+      "recs": 3,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Indirect Fire Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "M1A1 Abrams Armor Crewman One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Military Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Health Care Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospitalman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M3 Bradley/CFV Cavalry Scout",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 9,
+    "untitled_exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 8,
+     "unnamed": 1
+    }
+   },
+   "KINF 138A": {
+    "recs": 5,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "21B10 Combat Engineer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Military Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 5,
+    "untitled_exhibits": 1,
+    "exhibits_by_source": {
+     "ACE": 4,
+     "unnamed": 1
+    }
+   },
+   "MATH 095": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Math 095 CBE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MATH 102": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Math 102-CBE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MATH 103": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Math 103 - CBE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "MATH 108": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "MATH 108 CBE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "NURS 150": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "NURS 150-CBE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "NURS 151": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "NURS 151 CBE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "NURS 160": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "NURS 160 CBE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "NURS 161": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "NURS 161 - CBE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "OSHA 030": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "OSHA 030 - Federal OSHA Outreach: Construction Industry Safety",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "OSHA 035": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "OSHA 035 - Federal OSHA Outreach: General Industry Safety",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "PHT 062": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Hospitalman",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "PHT 072": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "PHT 072 - Pharmacy Clinical Experience (student who has California State Board of Pharmacy License)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "PHT 074": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "PHT 074 - Pharmacy Seminar (students who are Certified Pharmacy Technician)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "SPAN 102": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "SPAN 102 CBE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "SPAN 103": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "SPAN 103 - CBE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "SPAN 157": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "SPAN 157 CBE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "SPAN 158": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "SPAN 158 CBE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "WELD 045": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "WELD 045 CBE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "WELD 046": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "WELD 046 CBE",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "WST 034": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "WST 034 -  Introduction to Water Resource Management - Portfolio Review",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "WST 061": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "WST 061 - State Water Resources Control Board - Grade D2",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "WST 071": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "WST 071 - State Water Resources Control Board - Grade T2",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "WST 072": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "WST 072 - Water Treatment II - State Water Resources Control Board - Grade T3 and D3",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "WST 081": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "WST 081 - Wastewater 1 - CWEA Grade Level 1",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "WST 082": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "WST 082 - Wastewater 2 - CWEA Grade Level 2",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "WST 130": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Water Supply Technology Portfolio Student 1",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "WST 140": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Water Supply Technology Portfolio Student 1",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "WST 145": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "WST 045 & WST 145 Backflow Prevention Devices - American Water Work Association Backflow Prevention Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "WST 150": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Water Supply Technology Portfolio Student 1",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   }
+  },
+  "Golden West College": {},
+  "Cuyamaca College": {},
+  "Mt. San Jacinto College": {},
+  "MiraCosta College": {}
  }
 }
