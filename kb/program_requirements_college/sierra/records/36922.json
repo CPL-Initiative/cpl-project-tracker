@@ -1,0 +1,292 @@
+{
+ "college": "Sierra College",
+ "control_number": "36922",
+ "shape": "certificate",
+ "title": "Allied Health - General Option",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.sierracollege.edu/student-resources/general-education/associate-degree-requirements/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13752,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13752,
+    "output_tokens": 1449,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1449,
+  "output_tokens_details": {
+   "thinking_tokens": 310
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08399,
+ "ms": 11504,
+ "seconds": 12.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 31,
+   "share": 0.0,
+   "missing": [
+    "ALH20",
+    "ANTH2",
+    "BIOL1",
+    "BIOL4",
+    "BIOL5",
+    "BIOL55",
+    "BIOL56",
+    "BIOL6",
+    "CHEM1A",
+    "CHEM1B",
+    "CHEM2A",
+    "CHEM2B",
+    "CHEM3A",
+    "CHEM3B",
+    "COMM3",
+    "COMM5",
+    "COMM7",
+    "COMM8",
+    "COMMC1000",
+    "CSCI10",
+    "ENGL0N",
+    "HDEV1",
+    "HSCI3",
+    "MATH13",
+    "NUTF10",
+    "NUTF5",
+    "PHYS10",
+    "PHYS105",
+    "PHYS105L",
+    "PSYCC1000",
+    "SOC1"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Sierra College Associate Degree Requirements 2026-2027",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ALH 20",
+    "why": "not in the text; page is the GE requirements page, not the program page"
+   },
+   {
+    "code": "ANTH 2",
+    "why": "appears only as ANTH 0002 in a GE area list, not as a program requirement"
+   },
+   {
+    "code": "BIOL 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL 4",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL 55",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL 56",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL 6",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHEM 0001A",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHEM 0001B",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHEM 0002A",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHEM 0002B",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHEM 0003A",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHEM 0003B",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM 3",
+    "why": "appears only as COMM 0003 in GE area lists, not as a program requirement"
+   },
+   {
+    "code": "COMM 5",
+    "why": "appears only as COMM 0005 in GE area lists, not as a program requirement"
+   },
+   {
+    "code": "COMM 7",
+    "why": "appears only as COMM 0007 in a GE area list, not as a program requirement"
+   },
+   {
+    "code": "COMM 8",
+    "why": "appears only as COMM 0008 in GE area lists, not as a program requirement"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "appears only in GE Area 1 list, not as a program requirement"
+   },
+   {
+    "code": "CSCI 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 0000N",
+    "why": "not in the text"
+   },
+   {
+    "code": "HDEV 1",
+    "why": "appears only as HDEV 0001 in a GE area list, not as a program requirement"
+   },
+   {
+    "code": "HSCI 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH0013",
+    "why": "not in the text"
+   },
+   {
+    "code": "NUTF 10",
+    "why": "appears only as NUTF 0010 in a GE area list, not as a program requirement"
+   },
+   {
+    "code": "NUTF 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 0105L",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 105",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "appears only in a GE area list, not as a program requirement"
+   },
+   {
+    "code": "SOC 1",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text is Sierra College's general education / associate degree requirements page, not the Allied Health - General Option certificate page. No section for this award appears, so no blocks, totals, outcomes or careers were recorded.",
+   "The GE list is also cut off at Area 5 - Natural Sciences.",
+   "A reviewer should obtain the Allied Health - General Option program page for the 2026-2027 catalog."
+  ]
+ },
+ "extracted_run": "38675248607"
+}
