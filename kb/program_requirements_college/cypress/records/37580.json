@@ -1,0 +1,243 @@
+{
+ "college": "Cypress College",
+ "control_number": "37580",
+ "shape": "adt",
+ "title": "Social Justice Studies: African-American Studies",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/ethnic-studies/aa-t-in-social-justice-african-american-studies/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7164,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7164,
+    "output_tokens": 1885,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1885,
+  "output_tokens_details": {
+   "thinking_tokens": 811
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06636,
+ "ms": 16576,
+ "seconds": 16.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "ETHS101C",
+    "ETHS101HC",
+    "ETHS129C",
+    "ETHS130C"
+   ],
+   "flagged": [
+    "ETHS101C",
+    "ETHS101HC",
+    "ETHS129C",
+    "ETHS130C"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "AA-T in Social Justice Studies: African-American Studies",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Summarize the key terminology, theoretical orientations, principles and methods used in the field of African-American Studies.",
+    "Identify and explain historical trends and common themes in African-American history from the era of the trans-Atlantic slave trade to the present.",
+    "Identify the social, cultural, political, and economic concepts central to the experiences of African Americans."
+   ],
+   "careers": [
+    "public and business administration",
+    "human and health services",
+    "marketing and communications",
+    "research and education",
+    "politics and government",
+    "fine and performing arts",
+    "multicultural affairs"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ETHS 101 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS 101HC",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 225 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS 129 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ETHS 130 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHS 131 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS 235 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POSC 209 C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page's heading is cut off at the start of the text; section_heading is taken from the phrase 'AA-T in Social Justice Studies: African-American Studies' in the description.",
+   "The outcomes tab prints a preamble labelled 'OUTCOME 1' describing the degree's transfer purpose, followed by three outcomes labelled Outcome 1-3; only the three labelled outcomes after 'The program outcome goals for students completing the program are:' are recorded.",
+   "No units are printed beside the alternatives ETHS 101HC and POSC 209 C; units left null.",
+   "The closed list's ETHS235C is matched to the printed ETHS 235 C.",
+   "List A says 'Select three courses' but prints only three choices (ETHS 235 C or POSC 209 C counting as one), so in effect all are required.",
+   "The 60-unit minimum is a general AA-T requirement sentence, not recorded as degree_total; electives fill the rest of the 60 CSU transferable units, so electives_fill_degree is true. No GE unit figure is printed."
+  ]
+ },
+ "extracted_run": "38748866826"
+}

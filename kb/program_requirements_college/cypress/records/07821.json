@@ -1,0 +1,235 @@
+{
+ "college": "Cypress College",
+ "control_number": "07821",
+ "shape": "certificate",
+ "title": "CART - Communication Access Realtime Translation",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/court-reporting/cart-communication-access-realtime-translation/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7396,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7396,
+    "output_tokens": 1174,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1174,
+  "output_tokens_details": {
+   "thinking_tokens": 242
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05306,
+ "ms": 9278,
+ "seconds": 9.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "CTRP51C",
+    "CTRP52C",
+    "CTRP54C",
+    "CTRP89C",
+    "CTRP90C"
+   ],
+   "flagged": [
+    "CTRP51C",
+    "CTRP52C",
+    "CTRP54C",
+    "CTRP89C",
+    "CTRP90C"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    25.5,
+    25.5
+   ],
+   "stated": [
+    25.5,
+    25.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "CART - Communication Access Realtime Translation Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 25.5,
+    "max": 25.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Acquire the necessary skills to work with a hearing-impaired individual providing realtime translation and feedback in seminars, classrooms, meetings, and large scale venues. The certificate focuses on accuracy and speed building emphasizing a variety of writing skillsets in legal, literary, and medical terminology, along with realtime training and vocabulary development for application to keyboard outlines. The development of these skills is necessary to provide the basis for employment as a CART reporter."
+   ],
+   "careers": [
+    "classroom captionist",
+    "CART reporter"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses are listed in suggested sequence (25.5 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25.5,
+     "max": 25.5
+    },
+    "courses": [
+     {
+      "code": "CTRP 051 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP 052 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP 054 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP 067 C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 068 C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 090 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP 089 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP 065 C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 091 C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 079 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Five required courses (CTRP 051 C, 052 C, 054 C, 089 C, 090 C) are not in the state's closed list and are recorded as catalog additions.",
+   "The single program outcome is printed as one paragraph labeled 'OUTCOME 1' and is recorded whole as one entry."
+  ]
+ },
+ "extracted_run": "38748866826"
+}
