@@ -1,0 +1,3492 @@
+[
+ {
+  "control_number": "03666",
+  "title": "Viticulture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL110",
+   "BIOL120",
+   "EART110",
+   "VWT132",
+   "VWT180",
+   "VWT230",
+   "VWT231",
+   "VWT232",
+   "VWT233",
+   "VWT234",
+   "VWT290"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/vineyard-and-winery-technology/viticulture-as/",
+   "title": "Viticulture: AS Degree | Napa Valley College",
+   "h1": "VITICULTURE: AS DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4205
+ },
+ {
+  "control_number": "03670",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.615,
+  "codes_found": [
+   "ACCT120",
+   "ACCT122",
+   "ACCT125",
+   "ACCT126",
+   "ACCT127",
+   "BUSI100",
+   "BUSI103",
+   "COMS165"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/accounting/accounting-as/",
+   "title": "Accounting: AS Degree | Napa Valley College",
+   "h1": "ACCOUNTING: AS DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2882
+ },
+ {
+  "control_number": "03685",
+  "title": "Digital Design Graphics Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "03686",
+  "title": "Machine Tool Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "03687",
+  "title": "Welding Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DDGT110",
+   "MACH100",
+   "PHOT120",
+   "PHYS110",
+   "PHYS111",
+   "TECH107",
+   "WELD120",
+   "WELD121",
+   "WELD240",
+   "WELD241"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/welding-technology/welding-technology-as/",
+   "title": "Welding Technology: AS Degree | Napa Valley College",
+   "h1": "WELDING TECHNOLOGY: AS DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3167
+ },
+ {
+  "control_number": "03695",
+  "title": "Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM120",
+   "COMMC1000",
+   "NURS151",
+   "NURS154",
+   "NURS155",
+   "NURS251",
+   "NURS252",
+   "NURS253"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/nursing/nursing-as/",
+   "title": "Nursing: AS Degree | Napa Valley College",
+   "h1": "NURSING: AS DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4496
+ },
+ {
+  "control_number": "03696",
+  "title": "Vocational Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "ENGLC1000",
+   "PSYC125"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/nursing/",
+   "title": "Nursing | Napa Valley College",
+   "h1": "NURSING",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.5
+   }
+  },
+  "listed": 3,
+  "text_chars": 4012
+ },
+ {
+  "control_number": "03697",
+  "title": "Respiratory Care",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYC125",
+   "RESP120",
+   "RESP140",
+   "RESP150",
+   "RESP160",
+   "RESP170",
+   "RESP175",
+   "RESP185",
+   "RESP200",
+   "RESP210",
+   "RESP230",
+   "RESP250",
+   "RESP260",
+   "RESP270",
+   "RESP280",
+   "RESP290",
+   "RESP290B",
+   "RESP292"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/respiratory-care/respiratory-care-as/",
+   "title": "Respiratory Care: AS Degree | Napa Valley College",
+   "h1": "RESPIRATORY CARE: AS DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 4590
+ },
+ {
+  "control_number": "03698",
+  "title": "Psychiatric Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "03707",
+  "title": "Administration of Justice",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "03708",
+  "title": "Child and Family Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.789,
+  "codes_found": [
+   "CDEVC1000",
+   "CFS122",
+   "CFS130",
+   "CFS135",
+   "CFS140",
+   "CFS145",
+   "CFS151",
+   "CFS155",
+   "CFS165",
+   "CFS180",
+   "CFS184",
+   "CFS196",
+   "CFS223",
+   "CFS250",
+   "CFS270"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/child-and-family-studies-and-education/child-and-family-studies-as/",
+   "title": "Child and Family Studies: AS Degree | Napa Valley College",
+   "h1": "CHILD AND FAMILY STUDIES: AS DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 4527
+ },
+ {
+  "control_number": "11482",
+  "title": "Winemaking",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL110",
+   "BIOL120",
+   "CHEM111",
+   "VWT130",
+   "VWT136",
+   "VWT137",
+   "VWT180",
+   "VWT271",
+   "VWT272",
+   "VWT281"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/vineyard-and-winery-technology/winemaking-as/",
+   "title": "Winemaking: AS Degree | Napa Valley College",
+   "h1": "WINEMAKING: AS DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4105
+ },
+ {
+  "control_number": "11483",
+  "title": "Wine Marketing & Sales",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI100",
+   "VWT130",
+   "VWT136",
+   "VWT137",
+   "VWT140",
+   "VWT147",
+   "VWT150",
+   "VWT151",
+   "VWT152",
+   "VWT153",
+   "VWT154",
+   "VWT180",
+   "VWT241"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/vineyard-and-winery-technology/wine-marketing-and-sales-as/",
+   "title": "Wine Marketing and Sales: AS Degree | Napa Valley College",
+   "h1": "WINE MARKETING AND SALES: AS DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3910
+ },
+ {
+  "control_number": "11494",
+  "title": "General Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "11495",
+  "title": "University Preparation in a Specific Major",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "12318",
+  "title": "Human Services",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "HSRV120",
+   "HSRV124",
+   "HSRV130",
+   "HSRV190"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/human-services/human-services-as/",
+   "title": "Human Services: AS Degree | Napa Valley College",
+   "h1": "HUMAN SERVICES: AS DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3832
+ },
+ {
+  "control_number": "12909",
+  "title": "Law Enforcement",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18047",
+  "title": "EMT-P: Paramedic",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18048",
+  "title": "EMT-P: Paramedic",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18382",
+  "title": "CSU General Education",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18383",
+  "title": "IGETC",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19036",
+  "title": "Hospitality Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HCTM100",
+   "HCTM110",
+   "HCTM120",
+   "HCTM121",
+   "HCTM122",
+   "HCTM124",
+   "HCTM125"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/hospitality-culinary-and-tourism-management/hospitality-management-certificate-of-achievement/",
+   "title": "Hospitality Management: Certificate of Achievement | Napa Valley College",
+   "h1": "HOSPITALITY MANAGEMENT: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2618
+ },
+ {
+  "control_number": "19114",
+  "title": "Music-Instrumental Emphasis",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSI112",
+   "MUSI114",
+   "MUSI120A",
+   "MUSI120B",
+   "MUSI120C",
+   "MUSI121",
+   "MUSI122",
+   "MUSI135",
+   "MUSI138",
+   "MUSI140",
+   "MUSI142",
+   "MUSI152",
+   "MUSI176",
+   "MUSI179",
+   "MUSI181",
+   "MUSI235",
+   "MUSI238",
+   "MUSI240",
+   "MUSI242",
+   "MUSI280"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/music/music-instrumental-aa/",
+   "title": "Music-Instrumental: AA Degree | Napa Valley College",
+   "h1": "MUSIC-INSTRUMENTAL: AA DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 20,
+  "text_chars": 3401
+ },
+ {
+  "control_number": "19115",
+  "title": "Music-Vocal Emphasis",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSI112",
+   "MUSI120A",
+   "MUSI120B",
+   "MUSI120C",
+   "MUSI121",
+   "MUSI122",
+   "MUSI130",
+   "MUSI132",
+   "MUSI135",
+   "MUSI138",
+   "MUSI160",
+   "MUSI161",
+   "MUSI230",
+   "MUSI232",
+   "MUSI235",
+   "MUSI238"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/music/music-vocal-aa/",
+   "title": "Music-Vocal: AA Degree | Napa Valley College",
+   "h1": "MUSIC-VOCAL: AA DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 16,
+  "text_chars": 3235
+ },
+ {
+  "control_number": "19117",
+  "title": "Musical Theater",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSI110",
+   "MUSI121",
+   "MUSI122",
+   "MUSI133",
+   "MUSI143",
+   "MUSI160",
+   "MUSI170",
+   "MUSI172",
+   "MUSI183",
+   "MUSI223",
+   "MUSI243",
+   "THEA100",
+   "THEA110",
+   "THEA153",
+   "THEA220"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/music/musical-theater-aa/",
+   "title": "Musical Theater: AA Degree | Napa Valley College",
+   "h1": "MUSICAL THEATER: AA DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3311
+ },
+ {
+  "control_number": "19120",
+  "title": "Psychology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19123",
+  "title": "Spanish for Non-Heritage Speakers Emphasis",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH121",
+   "ANTH131",
+   "ANTH200",
+   "ASL120",
+   "ASL121",
+   "ENGLC1003",
+   "FREN120",
+   "FREN121",
+   "HIST140",
+   "ITAL120",
+   "ITAL121",
+   "SPAN110",
+   "SPAN111",
+   "SPAN115",
+   "SPAN116",
+   "SPAN120",
+   "SPAN121",
+   "SPAN240",
+   "SPAN241",
+   "SPAN282",
+   "SPAN90"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/spanish/spanish-for-non-heritage-speakers-aa/",
+   "title": "Spanish for Non-Heritage Speakers: AA Degree | Napa Valley College",
+   "h1": "SPANISH FOR NON-HERITAGE SPEAKERS: AA DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.8
+   }
+  },
+  "listed": 21,
+  "text_chars": 4463
+ },
+ {
+  "control_number": "19125",
+  "title": "Spanish for Heritage Speakers",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "ANTH121",
+   "ANTH131",
+   "ANTH200",
+   "ASL120",
+   "ASL121",
+   "FREN120",
+   "FREN121",
+   "HIST140",
+   "ITAL120",
+   "ITAL121",
+   "SPAN115",
+   "SPAN116",
+   "SPAN280",
+   "SPAN282",
+   "SPAN90"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/spanish/spanish-for-heritage-speakers-aa/",
+   "title": "Spanish for Heritage Speakers: AA Degree | Napa Valley College",
+   "h1": "SPANISH FOR HERITAGE SPEAKERS: AA DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4291
+ },
+ {
+  "control_number": "19126",
+  "title": "Studio Arts-Painting and Drawing Emphasis",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 13,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19127",
+  "title": "Studio Arts-Ceramics Emphasis",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "ARTS110",
+   "ARTS111",
+   "ARTS112",
+   "ARTS140",
+   "ARTS145",
+   "ARTS150",
+   "ARTS240",
+   "ARTS241",
+   "ARTS244",
+   "ARTS248",
+   "ARTS249",
+   "ARTS261"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/arts/studio-arts-aa/",
+   "title": "Studio Arts: AA Degree | Napa Valley College",
+   "h1": "STUDIO ARTS: AA DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 15,
+  "text_chars": 5230
+ },
+ {
+  "control_number": "19128",
+  "title": "Theater Arts-Acting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEA100",
+   "THEA110",
+   "THEA111",
+   "THEA115",
+   "THEA122",
+   "THEA140",
+   "THEA151",
+   "THEA153",
+   "THEA174",
+   "THEA210",
+   "THEA220",
+   "THEA244"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/theater-arts/theater-arts-acting-aa/",
+   "title": "Theater Arts-Acting: AA Degree | Napa Valley College",
+   "h1": "THEATER ARTS-ACTING: AA DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3083
+ },
+ {
+  "control_number": "19129",
+  "title": "Theater Arts-Technical Theater",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEA100",
+   "THEA110",
+   "THEA140",
+   "THEA151",
+   "THEA153",
+   "THEA174"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/theater-arts/theater-arts-technical-theater-aa/",
+   "title": "Theater Arts-Technical Theater: AA Degree | Napa Valley College",
+   "h1": "THEATER ARTS-TECHNICAL THEATER: AA DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3121
+ },
+ {
+  "control_number": "19937",
+  "title": "Viticulture and Enology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VWT130",
+   "VWT132",
+   "VWT180",
+   "VWT230",
+   "VWT231",
+   "VWT232",
+   "VWT271",
+   "VWT280",
+   "VWT281"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/vineyard-and-winery-technology/viticulture-and-enology-certificate-of-achievement/",
+   "title": "Viticulture and Enology: Certificate of Achievement | Napa Valley College",
+   "h1": "VITICULTURE AND ENOLOGY: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3294
+ },
+ {
+  "control_number": "19938",
+  "title": "Wine Marketing & Sales",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VWT136",
+   "VWT137",
+   "VWT140",
+   "VWT180",
+   "VWT241"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/vineyard-and-winery-technology/wine-marketing-and-sales-certificate-of-achievement/",
+   "title": "Wine Marketing and Sales: Certificate of Achievement | Napa Valley College",
+   "h1": "WINE MARKETING AND SALES: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3166
+ },
+ {
+  "control_number": "19939",
+  "title": "Accounting: Bookkeeping",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "ACCT120",
+   "ACCT125",
+   "ACCT126",
+   "ACCT127",
+   "BUSI100",
+   "BUSI103",
+   "COMS165"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/accounting/accounting-bookkeeping-certificate-of-achievement/",
+   "title": "Accounting-Bookkeeping: Certificate of Achievement | Napa Valley College",
+   "h1": "ACCOUNTING-BOOKKEEPING: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2023
+ },
+ {
+  "control_number": "19942",
+  "title": "Digital Design Graphics Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19943",
+  "title": "Machine Tool Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19944",
+  "title": "Welding Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DDGT110",
+   "MACH100",
+   "WELD120",
+   "WELD121",
+   "WELD150",
+   "WELD240",
+   "WELD241"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/welding-technology/welding-technology-certificate-of-achievement/",
+   "title": "Welding Technology: Certificate of Achievement | Napa Valley College",
+   "h1": "WELDING TECHNOLOGY: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2485
+ },
+ {
+  "control_number": "19946",
+  "title": "Vocational Nursing",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19947",
+  "title": "Psychiatric Technician",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19948",
+  "title": "Child and Family Studies",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.853,
+  "codes_found": [
+   "CDEVC1000",
+   "CFS121",
+   "CFS122",
+   "CFS124",
+   "CFS130",
+   "CFS135",
+   "CFS140",
+   "CFS145",
+   "CFS150",
+   "CFS151",
+   "CFS155",
+   "CFS165",
+   "CFS180",
+   "CFS184",
+   "CFS185",
+   "CFS190",
+   "CFS196",
+   "CFS200",
+   "CFS223",
+   "CFS225",
+   "CFS250",
+   "CFS270",
+   "CFS271",
+   "EDUC100",
+   "LGBT120",
+   "LGBT121",
+   "LGBT122",
+   "LGBT123",
+   "LGBT199"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/child-and-family-studies-and-education/child-and-family-studies-certificate-of-achievement/",
+   "title": "Child and Family Studies: Certificate of Achievement | Napa Valley College",
+   "h1": "CHILD AND FAMILY STUDIES: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 34,
+  "text_chars": 4726
+ },
+ {
+  "control_number": "19949",
+  "title": "Human Services",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "HSRV120",
+   "HSRV124",
+   "HSRV130",
+   "HSRV190"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/human-services/human-services-certificate-of-achievement/",
+   "title": "Human Services: Certificate of Achievement | Napa Valley College",
+   "h1": "HUMAN SERVICES: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3514
+ },
+ {
+  "control_number": "22827",
+  "title": "Art History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "ARTH101",
+   "ARTH110",
+   "ARTH118",
+   "ARTH130",
+   "ARTH145",
+   "ARTH180",
+   "ARTS101",
+   "HIST122",
+   "HIST123"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/art-history/art-history-aa/",
+   "title": "Art History: AA Degree | Napa Valley College",
+   "h1": "ART HISTORY: AA DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4141
+ },
+ {
+  "control_number": "30819",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.625,
+  "codes_found": [
+   "COMS215",
+   "MATH220",
+   "MATH221",
+   "MATH222",
+   "PHYS140"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/mathematics/mathematics-2.0-as-t/",
+   "title": "Mathematics 2.0: AS-T Degree | Napa Valley College",
+   "h1": "MATHEMATICS 2.0: AS-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3950
+ },
+ {
+  "control_number": "31019",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEVC1000",
+   "CFS122",
+   "CFS140",
+   "CFS165",
+   "CFS184",
+   "CFS223"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/child-and-family-studies-and-education/early-childhood-education-as-t/",
+   "title": "Early Childhood Education: AS-T Degree | Napa Valley College",
+   "h1": "EARLY CHILDHOOD EDUCATION: AS-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3922
+ },
+ {
+  "control_number": "31158",
+  "title": "911 Dispatcher",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31467",
+  "title": "Communication Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ANTH121",
+   "COMM120",
+   "COMM126",
+   "COMM128",
+   "COMM130",
+   "COMM132",
+   "COMM134",
+   "COMMC1000",
+   "ENGLC1001",
+   "ENGLC1002",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/communication-studies/communication-studies-2.0-aa-t/",
+   "title": "Communication Studies 2.0: AA-T Degree | Napa Valley College",
+   "h1": "COMMUNICATION STUDIES 2.0: AA-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4300
+ },
+ {
+  "control_number": "31468",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.93,
+  "codes_found": [
+   "ADMJ120",
+   "ADMJ121",
+   "ANTH121",
+   "ANTH122",
+   "ANTH150",
+   "ANTH180",
+   "ANTH200",
+   "CDEVC1000",
+   "CFS140",
+   "CFS180",
+   "COMM126",
+   "ETHS112",
+   "ETHS113",
+   "ETHS160",
+   "GEOG101",
+   "HIST122",
+   "HIST123",
+   "HIST140",
+   "HIST145",
+   "HIST150",
+   "HIST152",
+   "HISTC1001",
+   "HISTC1002",
+   "LGBT120",
+   "LGBT121",
+   "POLI125",
+   "POLI135",
+   "POLI140",
+   "POLSC1000",
+   "PSYC123",
+   "PSYC128",
+   "PSYC220",
+   "PSYCC1000",
+   "SOCI122",
+   "SOCI130",
+   "SOCI140",
+   "SOCI150",
+   "SOCI154",
+   "SOCI190",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/sociology/sociology-aa-t/",
+   "title": "Sociology: AA-T Degree | Napa Valley College",
+   "h1": "SOCIOLOGY: AA-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 43,
+  "text_chars": 5594
+ },
+ {
+  "control_number": "31676",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.85,
+  "codes_found": [
+   "ARTH110",
+   "ARTH118",
+   "ARTH130",
+   "ARTH180",
+   "ARTS101",
+   "ARTS110",
+   "ARTS111",
+   "ARTS140",
+   "ARTS150",
+   "DART120",
+   "HIST122",
+   "HIST123",
+   "PHIL120",
+   "PHIL121",
+   "PHOT150",
+   "PHOT181",
+   "PHOT182"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/art-history/art-history-aa-t/",
+   "title": "Art History: AA-T Degree | Napa Valley College",
+   "h1": "ART HISTORY: AA-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 5468
+ },
+ {
+  "control_number": "31686",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.867,
+  "codes_found": [
+   "ARTH130",
+   "ARTS101",
+   "ARTS105",
+   "ARTS110",
+   "ARTS111",
+   "ARTS112",
+   "ARTS120",
+   "ARTS140",
+   "ARTS141",
+   "ARTS145",
+   "ARTS150",
+   "DART120",
+   "PHOT150"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/arts/studio-arts-aa-t/",
+   "title": "Studio Arts: AA-T Degree | Napa Valley College",
+   "h1": "STUDIO ARTS: AA-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4449
+ },
+ {
+  "control_number": "31745",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.897,
+  "codes_found": [
+   "BIOL218",
+   "BIOL219",
+   "CHEM120",
+   "DANS128A",
+   "DANS128B",
+   "DANS136",
+   "DANS136B",
+   "DANS137A",
+   "HELH100",
+   "KINE100",
+   "KINE100B",
+   "KINE103",
+   "KINE123",
+   "KINE123B",
+   "KINE130",
+   "KINE130B",
+   "KINE148",
+   "KINE148B",
+   "KINE151",
+   "KINE151B",
+   "KINE151C",
+   "KINE154",
+   "KINE154B",
+   "KINE201",
+   "PHYS120",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/kinesiology/kinesiology-aa-t/",
+   "title": "Kinesiology: AA-T Degree | Napa Valley College",
+   "h1": "KINESIOLOGY: AA-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 4971
+ },
+ {
+  "control_number": "32306",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32313",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32314",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL105",
+   "BIOL110",
+   "BIOL120",
+   "PSYC123",
+   "PSYC125",
+   "PSYC126",
+   "PSYC128",
+   "PSYC175",
+   "PSYC220",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/psychology/psychology-aa-t/",
+   "title": "Psychology: AA-T Degree | Napa Valley College",
+   "h1": "PSYCHOLOGY: AA-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3956
+ },
+ {
+  "control_number": "32315",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSI116",
+   "MUSI120A",
+   "MUSI120B",
+   "MUSI120C",
+   "MUSI121",
+   "MUSI122",
+   "MUSI160",
+   "MUSI176",
+   "MUSI179",
+   "MUSI181",
+   "MUSI221"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/music/music-aa-t/",
+   "title": "Music: AA-T Degree | Napa Valley College",
+   "h1": "MUSIC: AA-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4265
+ },
+ {
+  "control_number": "32329",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH121",
+   "ANTH200",
+   "ASL121",
+   "ENGLC1003",
+   "FREN120",
+   "FREN121",
+   "HIST142",
+   "ITAL120",
+   "ITAL121",
+   "SPAN110",
+   "SPAN111",
+   "SPAN115",
+   "SPAN116",
+   "SPAN120",
+   "SPAN121",
+   "SPAN240",
+   "SPAN241",
+   "SPAN280",
+   "SPAN282"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/spanish/spanish-aa-t/",
+   "title": "Spanish: AA-T Degree | Napa Valley College",
+   "h1": "SPANISH: AA-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 4900
+ },
+ {
+  "control_number": "32351",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.964,
+  "codes_found": [
+   "ANTH120",
+   "ANTH121",
+   "ANTH122",
+   "ANTH130",
+   "ANTH131",
+   "ANTH145",
+   "ANTH150",
+   "ANTH180",
+   "ANTH200",
+   "BIOL218",
+   "COMM126",
+   "EART110",
+   "ETHS112",
+   "GEOL110",
+   "GEOL111",
+   "HIST150",
+   "HIST152",
+   "HUMA125",
+   "HUMA151",
+   "LGBT120",
+   "PSYC128",
+   "PSYC220",
+   "SOCI122",
+   "SOCI140",
+   "SOCI150",
+   "SOCI190",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/anthropology/anthropology-aa-t/",
+   "title": "Anthropology: AA-T Degree | Napa Valley College",
+   "h1": "ANTHROPOLOGY: AA-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 5104
+ },
+ {
+  "control_number": "32409",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL200",
+   "ENGL201",
+   "ENGL202",
+   "ENGL213",
+   "ENGL214",
+   "ENGL215",
+   "ENGL216",
+   "ENGL220",
+   "ENGL224",
+   "ENGL226",
+   "ENGL228",
+   "ENGLC1001",
+   "ENGLC1002",
+   "ENGLC1003"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/english/english-aa-t/",
+   "title": "English: AA-T Degree | Napa Valley College",
+   "h1": "ENGLISH: AA-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4814
+ },
+ {
+  "control_number": "32822",
+  "title": "Business Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.692,
+  "codes_found": [
+   "ACCT125",
+   "ACCT126",
+   "BUSI100",
+   "BUSI103",
+   "BUSI105",
+   "BUSI142",
+   "BUSI251",
+   "BUSI297",
+   "COMS165"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/business-administration-as/",
+   "title": "Business Administration: AS Degree | Napa Valley College",
+   "h1": "BUSINESS ADMINISTRATION: AS DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3056
+ },
+ {
+  "control_number": "32965",
+  "title": "LGBT Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CFS140",
+   "HSRV124",
+   "LGBT120",
+   "LGBT121",
+   "LGBT122",
+   "LGBT123",
+   "PSYC125",
+   "SOCI130"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/lgbt-education/lgbt-studies-certificate-of-achievement/",
+   "title": "LGBT Studies: Certificate of Achievement | Napa Valley College",
+   "h1": "LGBT STUDIES: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3510
+ },
+ {
+  "control_number": "33287",
+  "title": "Theater Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEA100",
+   "THEA110",
+   "THEA140",
+   "THEA151",
+   "THEA153"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/theater-arts/theater-arts-aa-t/",
+   "title": "Theater Arts: AA-T Degree | Napa Valley College",
+   "h1": "THEATER ARTS: AA-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 4076
+ },
+ {
+  "control_number": "33722",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.926,
+  "codes_found": [
+   "ANTH121",
+   "ANTH122",
+   "ANTH130",
+   "ANTH131",
+   "ANTH150",
+   "ANTH180",
+   "ANTH200",
+   "HIST122",
+   "HIST123",
+   "HIST140",
+   "HIST142",
+   "HIST145",
+   "HIST150",
+   "HIST152",
+   "HISTC1001",
+   "HISTC1002",
+   "POLI125",
+   "POLSC1000",
+   "PSYC123",
+   "PSYC175",
+   "SOCI122",
+   "SOCI130",
+   "SOCI140",
+   "SOCI150",
+   "SOCI190"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/history/history-aa-t/",
+   "title": "History: AA-T Degree | Napa Valley College",
+   "h1": "HISTORY: AA-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 5901
+ },
+ {
+  "control_number": "35795",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "MATH221",
+   "PHYS140",
+   "PHYS240",
+   "PHYS241"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/physics/physics-2.0-as-t/",
+   "title": "Physics 2.0: AS-T Degree | Napa Valley College",
+   "h1": "PHYSICS 2.0: AS-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 4002
+ },
+ {
+  "control_number": "35806",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36251",
+  "title": "Natural Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "BIOL110",
+   "BIOL120",
+   "BIOL218",
+   "BIOL219",
+   "BIOL220",
+   "BIOL240",
+   "BIOL241",
+   "CHEM120",
+   "CHEM121",
+   "GEOL110",
+   "GEOL111",
+   "MATH108",
+   "PHYS120",
+   "PHYS121",
+   "PHYS140",
+   "PHYS240",
+   "PHYS241"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/biology/natural-science-as/",
+   "title": "Natural Science: AS Degree | Napa Valley College",
+   "h1": "NATURAL SCIENCE: AS DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 5027
+ },
+ {
+  "control_number": "36312",
+  "title": "Digital Art and Graphic Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.867,
+  "codes_found": [
+   "ARTH110",
+   "ARTS101",
+   "ARTS105",
+   "ARTS110",
+   "ARTS111",
+   "ARTS112",
+   "BUSI144",
+   "DART101",
+   "DART120",
+   "DART130",
+   "DART140",
+   "DART160",
+   "PHOT150"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/digital-art-and-design/graphic-design-aa/",
+   "title": "Graphic Design: AA Degree | Napa Valley College",
+   "h1": "GRAPHIC DESIGN: AA DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4097
+ },
+ {
+  "control_number": "36313",
+  "title": "Entrepreneurship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.714,
+  "codes_found": [
+   "ACCT120",
+   "ACCT127",
+   "BUSI100",
+   "BUSI103",
+   "BUSI105",
+   "BUSI142",
+   "BUSI144",
+   "BUSI251",
+   "BUSI297",
+   "COMS165"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/entrepreneurship-as/",
+   "title": "Entrepreneurship: AS Degree | Napa Valley College",
+   "h1": "ENTREPRENEURSHIP: AS DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2885
+ },
+ {
+  "control_number": "36453",
+  "title": "Pre-Health Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL105",
+   "BIOL120",
+   "BIOL218",
+   "BIOL219",
+   "BIOL220",
+   "CHEM120"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/biology/pre-health-science-as/",
+   "title": "Pre-Health Science: AS Degree | Napa Valley College",
+   "h1": "PRE-HEALTH SCIENCE: AS DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3612
+ },
+ {
+  "control_number": "36501",
+  "title": "Combination Welding Technician",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD121",
+   "WELD150",
+   "WELD240"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/welding-technology/combination-welding-technician-certificate-of-achievement/",
+   "title": "Combination Welding Technician: Certificate of Achievement | Napa Valley College",
+   "h1": "COMBINATION WELDING TECHNICIAN: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2449
+ },
+ {
+  "control_number": "36504",
+  "title": "Addiction Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "ADS100",
+   "ADS120",
+   "ADS123",
+   "ADS125",
+   "ADS127",
+   "ADS135",
+   "HSRV120",
+   "HSRV124"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/addiction-studies/addiction-studies-as/",
+   "title": "Addiction Studies: AS Degree | Napa Valley College",
+   "h1": "ADDICTION STUDIES: AS DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4301
+ },
+ {
+  "control_number": "36505",
+  "title": "Entrepreneurship",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 16,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36507",
+  "title": "Welding Technician Basic",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD121",
+   "WELD150"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/welding-technology/welding-technician-basic-certificate-of-achievement/",
+   "title": "Welding Technician Basic: Certificate of Achievement | Napa Valley College",
+   "h1": "WELDING TECHNICIAN BASIC: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2928
+ },
+ {
+  "control_number": "36509",
+  "title": "Early Childhood Early Intervention",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEVC1000",
+   "CFS122",
+   "CFS140",
+   "CFS190",
+   "CFS200"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/child-and-family-studies-and-education/early-childhood-intervention-certificate-of-achievement/",
+   "title": "Child & Family Studies-Early Childhood Intervention: Certificate of Achievement | Napa Valley College",
+   "h1": "CHILD & FAMILY STUDIES-EARLY CHILDHOOD INTERVENTION: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3107
+ },
+ {
+  "control_number": "36528",
+  "title": "Dance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36865",
+  "title": "Ethnic Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH150",
+   "COMM126",
+   "ENGL224",
+   "ENGL226",
+   "ETHS112",
+   "ETHS113",
+   "ETHS160",
+   "FILM110",
+   "HIST150",
+   "HIST152",
+   "HUMA151",
+   "MUSI114",
+   "PSYC128"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//getting-your-degree/general-education/",
+   "title": "General Education | Napa Valley College",
+   "h1": "GENERAL EDUCATION",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 10669
+ },
+ {
+  "control_number": "36866",
+  "title": "Addiction Studies",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "ADS100",
+   "ADS120",
+   "ADS123",
+   "ADS125",
+   "ADS127",
+   "ADS135",
+   "HSRV120",
+   "HSRV124"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/addiction-studies/addiction-studies-certificate-of-achievement/",
+   "title": "Addiction Studies: Certificate of Achievement | Napa Valley College",
+   "h1": "ADDICTION STUDIES: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3042
+ },
+ {
+  "control_number": "36867",
+  "title": "Content Marketing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI251",
+   "BUSI252",
+   "DART120",
+   "ENGL200",
+   "ENGLC1000",
+   "PHOT110"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/content-marketing-certificate-of-achievement/",
+   "title": "Content Marketing: Certificate of Achievement | Napa Valley College",
+   "h1": "CONTENT MARKETING: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2077
+ },
+ {
+  "control_number": "37330",
+  "title": "Child and Family Studies Associate Teacher",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEVC1000",
+   "CFS122",
+   "CFS140"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/child-and-family-studies-and-education/child-and-family-studies-associate-teacher-certificate-of-achievement/",
+   "title": "Child and Family Studies-Associate Teacher: Certificate of Achievement | Napa Valley College",
+   "h1": "CHILD AND FAMILY STUDIES-ASSOCIATE TEACHER: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2908
+ },
+ {
+  "control_number": "37331",
+  "title": "Child and Family Studies Associate Teacher with Administration",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEVC1000",
+   "CFS122",
+   "CFS140",
+   "CFS270"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/child-and-family-studies-and-education/child-and-family-studies-associate-teacher-with-administration-certificate-of-achievement/",
+   "title": "Child and Family Studies-Associate Teacher with Administration: Certificate of Achievement | Napa Valley College",
+   "h1": "CHILD AND FAMILY STUDIES-ASSOCIATE TEACHER WITH ADMINISTRATION: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3192
+ },
+ {
+  "control_number": "37677",
+  "title": "Social Justice Studies: Ethnic Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH150",
+   "COMM126",
+   "ENGL224",
+   "ENGL226",
+   "ENGL228",
+   "ETHS100",
+   "ETHS101",
+   "ETHS111",
+   "ETHS112",
+   "ETHS113",
+   "ETHS114",
+   "ETHS115",
+   "ETHS160",
+   "ETHS161",
+   "FILM110",
+   "HIST140",
+   "HIST142",
+   "HIST150",
+   "HIST152",
+   "HUMA125",
+   "HUMA151",
+   "HUMA174",
+   "LGBT120",
+   "MUSI114",
+   "THEA174"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/ethnic-studies/social-justice-studies-ethnic-studies-aa-t/",
+   "title": "Social Justice Studies-Ethnic Studies: AA-T Degree | Napa Valley College",
+   "h1": "SOCIAL JUSTICE STUDIES-ETHNIC STUDIES: AA-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4895
+ },
+ {
+  "control_number": "37678",
+  "title": "LGBT Education",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CFS140",
+   "HSRV124",
+   "LGBT120",
+   "LGBT121",
+   "LGBT122",
+   "LGBT123",
+   "PSYC125",
+   "SOCI130"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/lgbt-education/lgbt-education-as/",
+   "title": "LGBT Education: AS Degree | Napa Valley College",
+   "h1": "LGBT EDUCATION: AS DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4011
+ },
+ {
+  "control_number": "37927",
+  "title": "Mechanical Drafting and Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37928",
+  "title": "Architectural Drafting and Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38071",
+  "title": "Hospitality Management",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HCTM100",
+   "HCTM110",
+   "HCTM120",
+   "HCTM121",
+   "HCTM122",
+   "HCTM124",
+   "HCTM125"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/hospitality-culinary-and-tourism-management/hospitality-management-as-t/",
+   "title": "Hospitality Management: AS-T Degree | Napa Valley College",
+   "h1": "HOSPITALITY MANAGEMENT: AS-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 4091
+ },
+ {
+  "control_number": "38383",
+  "title": "LGBTQ Community Awareness",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LGBTNC30",
+   "LGBTNC40"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/lgbt-education/lgbtq-community-awareness-noncredit-certificate-of-completion/",
+   "title": "LGBTQ Community Awareness (Noncredit): Certificate of Completion | Napa Valley College",
+   "h1": "LGBTQ COMMUNITY AWARENESS (NONCREDIT): CERTIFICATE OF COMPLETION",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2621
+ },
+ {
+  "control_number": "39586",
+  "title": "LGBT Education for Educators",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LGBT120",
+   "LGBT121",
+   "LGBT122"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/lgbt-education/lgbt-education-educators-certificate-of-achievement/",
+   "title": "LGBT Education for Educators: Certificate of Achievement | Napa Valley College",
+   "h1": "LGBT EDUCATION FOR EDUCATORS: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2687
+ },
+ {
+  "control_number": "39587",
+  "title": "LGBT Education for Healthcare Professionals",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LGBT120",
+   "LGBT122",
+   "LGBT123"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/lgbt-education/lgbt-education-health-care-certificate-of-achievement/",
+   "title": "LGBT Education for Health Care Professionals: Certificate of Achievement | Napa Valley College",
+   "h1": "LGBT EDUCATION FOR HEALTH CARE PROFESSIONALS: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 3,
+  "text_chars": 2672
+ },
+ {
+  "control_number": "40867",
+  "title": "Film, Television and Electronic Media",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "ARTH110",
+   "ARTH118",
+   "ARTH130",
+   "ARTH180",
+   "FILM100",
+   "FILM101",
+   "FILM102",
+   "FILM105",
+   "FILM106",
+   "FILM110",
+   "FILM117",
+   "FILM120",
+   "FILM121",
+   "FILM141",
+   "PHOT180",
+   "THEA100",
+   "THEA115",
+   "THEA174"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/film-studies/film-television-and-electronic-media-as-t/",
+   "title": "Film, Television, and Electronic Media: AS-T Degree | Napa Valley College",
+   "h1": "FILM, TELEVISION, AND ELECTRONIC MEDIA: AS-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 4542
+ },
+ {
+  "control_number": "40869",
+  "title": "Social Work and Human Services",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.769,
+  "codes_found": [
+   "ADS120",
+   "BIOL105",
+   "BIOL120",
+   "BIOL218",
+   "BIOL219",
+   "HSRV120",
+   "HSRV124",
+   "HSRV190",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/human-services/social-work-and-human-services-aa-t/",
+   "title": "Social Work and Human Services: AA-T Degree | Napa Valley College",
+   "h1": "SOCIAL WORK AND HUMAN SERVICES: AA-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4570
+ },
+ {
+  "control_number": "41177",
+  "title": "ESL: Low-Advanced Academic",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC20",
+   "ESLNC26"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/english-second-language/esl-low-advanced-academic-certificate-of-competency/",
+   "title": "ESL: Low-Advanced Academic (Noncredit): Certificate of Competency | Napa Valley College",
+   "h1": "ESL: LOW-ADVANCED ACADEMIC (NONCREDIT): CERTIFICATE OF COMPETENCY",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2574
+ },
+ {
+  "control_number": "41178",
+  "title": "ESL: High-Intermediate Academic",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC15",
+   "ESLNC26"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/english-second-language/esl-high-intermediate-academic-certificate-of-competency/",
+   "title": "ESL: High-Intermediate Academic (Noncredit): Certificate of Competency | Napa Valley College",
+   "h1": "ESL: HIGH-INTERMEDIATE ACADEMIC (NONCREDIT): CERTIFICATE OF COMPETENCY",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2594
+ },
+ {
+  "control_number": "41179",
+  "title": "ESL: Low-Intermediate Academic",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC10",
+   "ESLNC16"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/english-second-language/esl-low-intermediate-academic-certificate-of-competency/",
+   "title": "ESL: Low-Intermediate Academic (Noncredit): Certificate of Competency | Napa Valley College",
+   "h1": "ESL: LOW-INTERMEDIATE ACADEMIC (NONCREDIT): CERTIFICATE OF COMPETENCY",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2590
+ },
+ {
+  "control_number": "41180",
+  "title": "ESL: Pre-Intermediate Academic",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC16",
+   "ESLNC5"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/english-second-language/esl-pre-intermediate-academic-certificate-of-competency/",
+   "title": "ESL: Pre-Intermediate Academic (Noncredit): Certificate of Competency | Napa Valley College",
+   "h1": "ESL: PRE-INTERMEDIATE ACADEMIC (NONCREDIT): CERTIFICATE OF COMPETENCY",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2589
+ },
+ {
+  "control_number": "41366",
+  "title": "Culinary Arts-Professional",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HCTM100",
+   "HCTM110",
+   "HCTM111",
+   "HCTM190",
+   "HCTM290"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/hospitality-culinary-and-tourism-management/culinary-arts-professional-aa/",
+   "title": "Culinary Arts-Professional: AA Degree | Napa Valley College",
+   "h1": "CULINARY ARTS-PROFESSIONAL: AA DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3838
+ },
+ {
+  "control_number": "41498",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "BIOL120",
+   "CHEM120",
+   "COMS215",
+   "COMS216",
+   "COMS217",
+   "COMS218",
+   "PHYS140",
+   "PHYS240"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/computer-science/computer-science-as-t/",
+   "title": "Computer Science: AS-T Degree | Napa Valley College",
+   "h1": "COMPUTER SCIENCE: AS-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4060
+ },
+ {
+  "control_number": "42588",
+  "title": "Culinary Arts-Advanced",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HCTM100",
+   "HCTM110",
+   "HCTM111",
+   "HCTM190",
+   "HCTM290"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/hospitality-culinary-and-tourism-management/culinary-arts-advanced-certificate-of-achievement/",
+   "title": "Culinary Arts-Advanced: Certificate of Achievement | Napa Valley College",
+   "h1": "CULINARY ARTS-ADVANCED: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3646
+ },
+ {
+  "control_number": "42589",
+  "title": "Wine Production",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VWT172",
+   "VWT173",
+   "VWT180",
+   "VWT270",
+   "VWT271",
+   "VWT283"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/vineyard-and-winery-technology/wine-production-coa/",
+   "title": "Wine Production: Certificate of Achievement | Napa Valley College",
+   "h1": "WINE PRODUCTION: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3244
+ },
+ {
+  "control_number": "42590",
+  "title": "Law Enforcement-Community Policing",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "ETHS112",
+   "ETHS113",
+   "ETHS160"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/ethnic-studies/ethnic-studies-aa/",
+   "title": "Ethnic Studies: AA Degree | Napa Valley College",
+   "h1": "ETHNIC STUDIES: AA DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 4063
+ },
+ {
+  "control_number": "42591",
+  "title": "Law Enforcement-Juvenile Justice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ120",
+   "ADMJ121",
+   "ADMJ122",
+   "ADMJ123",
+   "ADMJ125",
+   "ADMJ130"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//getting-your-degree/c-id/",
+   "title": "Course Identification Numbering System (C-ID) | Napa Valley College",
+   "h1": "COURSE IDENTIFICATION NUMBERING SYSTEM (C-ID)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3975
+ },
+ {
+  "control_number": "42592",
+  "title": "Law Enforcement-Mental Health and Addiction",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42609",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.545,
+  "codes_found": [
+   "ACCT125",
+   "ACCT126",
+   "BUSI100",
+   "BUSI103",
+   "MATH115",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/business-administration-as-t-2.0/",
+   "title": "Business Administration 2.0: AS-T Degree | Napa Valley College",
+   "h1": "BUSINESS ADMINISTRATION 2.0: AS-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3900
+ },
+ {
+  "control_number": "43353",
+  "title": "Law Enforcement-Crime Scene Investigation",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43354",
+  "title": "Law Enforcement-Career Preparation",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43712",
+  "title": "Environmental Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.769,
+  "codes_found": [
+   "BIOL120",
+   "CHEM120",
+   "CHEM121",
+   "GEOL110",
+   "GEOL111",
+   "PHYS120",
+   "PHYS121",
+   "PHYS140",
+   "PHYS240",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/environmental-sciences/environmental-science-as-t/",
+   "title": "Environmental Science: AS-T Degree | Napa Valley College",
+   "h1": "ENVIRONMENTAL SCIENCE: AS-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4167
+ },
+ {
+  "control_number": "43716",
+  "title": "Geographic Information Systems",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEOG120",
+   "GEOG121",
+   "GEOG130",
+   "GEOG131"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/geography/geographic-information-systems-coa/",
+   "title": "Geographic Information Systems: Certificate of Achievement | Napa Valley College",
+   "h1": "GEOGRAPHIC INFORMATION SYSTEMS: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2611
+ },
+ {
+  "control_number": "43889",
+  "title": "Social Justice Studies-Gender Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.92,
+  "codes_found": [
+   "ANTH121",
+   "ANTH150",
+   "ARTH101",
+   "ENGL231",
+   "ETHS101",
+   "ETHS114",
+   "FILM110",
+   "HIST140",
+   "HIST142",
+   "HIST150",
+   "HIST152",
+   "HUMA151",
+   "LGBT120",
+   "LGBT121",
+   "PHIL128",
+   "PSYC123",
+   "SOCI122",
+   "SOCI130",
+   "SOCI140",
+   "SOCI150",
+   "SOCI190",
+   "STATC1000",
+   "THEA174"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/sociology/sjs-gender-studies-aa-t/",
+   "title": "Social Justice Studies-Gender Studies: AA-T Degree | Napa Valley College",
+   "h1": "SOCIAL JUSTICE STUDIES-GENDER STUDIES: AA-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4908
+ },
+ {
+  "control_number": "43939",
+  "title": "Photography",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI144",
+   "PHOT110",
+   "PHOT181",
+   "PHOT182"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/photography/photography-aa/",
+   "title": "Photography: AA Degree | Napa Valley College",
+   "h1": "PHOTOGRAPHY: AA DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3475
+ },
+ {
+  "control_number": "43940",
+  "title": "Photography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHOT110",
+   "PHOT120",
+   "PHOT150",
+   "PHOT151",
+   "PHOT180",
+   "PHOT181",
+   "PHOT182",
+   "PHOT200"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/photography/photography-coa/",
+   "title": "Photography: Certificate of Achievement | Napa Valley College",
+   "h1": "PHOTOGRAPHY: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2904
+ },
+ {
+  "control_number": "44506",
+  "title": "Graphic Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "ARTH110",
+   "ARTH118",
+   "ARTH130",
+   "ARTH145",
+   "ARTH180",
+   "ARTS101",
+   "ARTS105",
+   "ARTS110",
+   "ARTS111",
+   "ARTS112",
+   "ARTS150",
+   "BUSI144",
+   "DART101",
+   "DART120",
+   "DART130",
+   "DART140",
+   "DART160",
+   "PHOT150"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/digital-art-and-design/graphic-design-aa/",
+   "title": "Graphic Design: AA Degree | Napa Valley College",
+   "h1": "GRAPHIC DESIGN: AA DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 4097
+ },
+ {
+  "control_number": "44507",
+  "title": "Digital Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "ARTH110",
+   "ARTH118",
+   "ARTH130",
+   "ARTH145",
+   "ARTH180",
+   "ARTS101",
+   "ARTS105",
+   "ARTS110",
+   "ARTS111",
+   "ARTS112",
+   "ARTS120",
+   "ARTS150",
+   "BUSI144",
+   "DART101",
+   "DART120",
+   "DART130",
+   "DART140",
+   "DART160",
+   "DDGT130",
+   "PHOT150"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/digital-art-and-design/digital-art-aa/",
+   "title": "Digital Art: AA Degree | Napa Valley College",
+   "h1": "DIGITAL ART: AA DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 3994
+ },
+ {
+  "control_number": "44508",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "ANTH121",
+   "COMM120",
+   "COMM124",
+   "COMM126",
+   "COMM128",
+   "COMM130",
+   "COMM132",
+   "COMM134",
+   "COMMC1000",
+   "ENGLC1001",
+   "ENGLC1002",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/communication-studies/communication-studies-2.0-aa-t/",
+   "title": "Communication Studies 2.0: AA-T Degree | Napa Valley College",
+   "h1": "COMMUNICATION STUDIES 2.0: AA-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4300
+ },
+ {
+  "control_number": "44535",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.792,
+  "codes_found": [
+   "ACCT125",
+   "ACCT126",
+   "BUSI100",
+   "BUSI103",
+   "BUSI105",
+   "COMS101",
+   "HIST150",
+   "HIST152",
+   "HISTC1001",
+   "HISTC1002",
+   "MATH115",
+   "MATH220",
+   "MATH221",
+   "POLI145",
+   "POLSC1000",
+   "PSYC123",
+   "PSYCC1000",
+   "SOCI122",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/economics/economics-aa-t/",
+   "title": "Economics: AA-T Degree | Napa Valley College",
+   "h1": "ECONOMICS: AA-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 4726
+ },
+ {
+  "control_number": "44536",
+  "title": "Social Justice Studies-LGBTQ Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.966,
+  "codes_found": [
+   "ANTH121",
+   "ANTH150",
+   "ARTH101",
+   "ENGL231",
+   "ETHS100",
+   "ETHS101",
+   "ETHS112",
+   "ETHS113",
+   "ETHS114",
+   "ETHS160",
+   "FILM110",
+   "HIST140",
+   "HIST142",
+   "HIST150",
+   "HIST152",
+   "HUMA151",
+   "HUMA174",
+   "LGBT120",
+   "LGBT121",
+   "PHIL128",
+   "PSYC123",
+   "SOCI122",
+   "SOCI130",
+   "SOCI140",
+   "SOCI150",
+   "SOCI190",
+   "STATC1000",
+   "THEA174"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/sociology/sjs-lgbtq-studies-aa-t/",
+   "title": "Social Justice Studies-LGBTQ Studies: AA-T Degree | Napa Valley College",
+   "h1": "SOCIAL JUSTICE STUDIES-LGBTQ STUDIES: AA-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 5124
+ },
+ {
+  "control_number": "45173",
+  "title": "Music-Mariachi",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSI116",
+   "MUSI120A",
+   "MUSI120B",
+   "MUSI120C",
+   "MUSI121",
+   "MUSI122",
+   "MUSI180",
+   "MUSI221"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/music/music-mariachi-coa/",
+   "title": "Music-Mariachi: Certificate of Achievement | Napa Valley College",
+   "h1": "MUSIC-MARIACHI: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2567
+ },
+ {
+  "control_number": "45176",
+  "title": "Theater Arts - Acting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEA110",
+   "THEA111",
+   "THEA114",
+   "THEA122",
+   "THEA151",
+   "THEA153",
+   "THEA210",
+   "THEA220",
+   "THEA244"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/theater-arts/theater-arts-acting-coa/",
+   "title": "Theater Arts-Acting: Certificate of Achievement | Napa Valley College",
+   "h1": "THEATER ARTS-ACTING: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3762
+ },
+ {
+  "control_number": "45206",
+  "title": "Career Communications",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI105",
+   "COMM120",
+   "COMM126",
+   "COMM130",
+   "COMMC1000",
+   "COUN110",
+   "ETHS100"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/communication-studies/career-communications-coa/",
+   "title": "Career Communication: Certificate of Achievement | Napa Valley College",
+   "h1": "CAREER COMMUNICATION: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3118
+ },
+ {
+  "control_number": "45286",
+  "title": "CalGETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45337",
+  "title": "Community Health Worker",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WORKNC30A",
+   "WORKNC30B"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/non-credit/community-health-worker-certificate-of-completion/",
+   "title": "Non-Credit: Community Health Worker Certificate of Completion | Napa Valley College",
+   "h1": "NON-CREDIT: COMMUNITY HEALTH WORKER CERTIFICATE OF COMPLETION",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2554
+ },
+ {
+  "control_number": "45338",
+  "title": "Fire Resilient Landscaping",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WORKNC1",
+   "WORKNC2"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/non-credit/fire-resilient-landscaping-certificate-of-completion/",
+   "title": "Non-Credit: Fire REsilient Landscaping Certificate of Completion | Napa Valley College",
+   "h1": "NON-CREDIT: FIRE RESILIENT LANDSCAPING CERTIFICATE OF COMPLETION",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3068
+ },
+ {
+  "control_number": "45339",
+  "title": "21st Century Employability Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WORKNC3A",
+   "WORKNC3B",
+   "WORKNC3C",
+   "WORKNC3D",
+   "WORKNC3E",
+   "WORKNC3F",
+   "WORKNC3G",
+   "WORKNC3H",
+   "WORKNC3I",
+   "WORKNC3J",
+   "WORKNC3K",
+   "WORKNC3L"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/non-credit/21st-century-employability-skills-certificate-of-completion/",
+   "title": "21st Century Employability Skills: Certificate of Completion | Napa Valley College",
+   "h1": "21ST CENTURY EMPLOYABILITY SKILLS: CERTIFICATE OF COMPLETION",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3848
+ },
+ {
+  "control_number": "45391",
+  "title": "Business-Marketing",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI251",
+   "ENGLC1000",
+   "PHOT110"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/business-marketing-coa/",
+   "title": "Business Marketing: Certificate of Achievement | Napa Valley College",
+   "h1": "BUSINESS MARKETING: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2748
+ },
+ {
+  "control_number": "45487",
+  "title": "Child and Family Studies-Trauma Informed Early Care and Education",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEVC1000",
+   "CFS140",
+   "CFS155",
+   "CFS185",
+   "CFS225"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/child-and-family-studies-and-education/cfs-trauma-informed-early-care-and-education-coa/",
+   "title": "Child and Family Studies-Trauma Informed Early Care and Education: Certificate of Achievement | Napa Valley College",
+   "h1": "CHILD AND FAMILY STUDIES-TRAUMA INFORMED EARLY CARE AND EDUCATION: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2370
+ },
+ {
+  "control_number": "45798",
+  "title": "Business Start-Up",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI104",
+   "BUSI251",
+   "BUSI252"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/business-start-up-certificate-of-achievement/",
+   "title": "Business Start-Up: Certificate of Achievement | Napa Valley College",
+   "h1": "BUSINESS START-UP: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2544
+ },
+ {
+  "control_number": "46378",
+  "title": "Machine Tool Technology-One Year",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MACH110",
+   "MACH111"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/machine-tool-technology/machine-tool-technology-one-year-coa/",
+   "title": "Machine Tool Technology-One Year: Certificate of Achievement | Napa Valley College",
+   "h1": "MACHINE TOOL TECHNOLOGY-ONE YEAR: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2700
+ },
+ {
+  "control_number": "46379",
+  "title": "Welder's Assistant",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD100",
+   "WELD101",
+   "WELD150"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/welding-technology/welders-assistant-coa/",
+   "title": "Welder's Assistant: Certificate of Achievement | Napa Valley College",
+   "h1": "WELDER'S ASSISTANT: CERTIFICATE OF ACHIEVEMENT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2184
+ },
+ {
+  "control_number": "46488",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "COMS120",
+   "COMS215",
+   "COMS216",
+   "MATH220",
+   "MATH221",
+   "MATH222",
+   "PHYS140"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/mathematics/mathematics-2.0-as-t/",
+   "title": "Mathematics 2.0: AS-T Degree | Napa Valley College",
+   "h1": "MATHEMATICS 2.0: AS-T DEGREE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3950
+ },
+ {
+  "control_number": "46582",
+  "title": "Respiratory Care",
+  "award": "Baccalaureate of Science (B.S.) Degree.",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM400",
+   "PHIL300",
+   "RESP300",
+   "RESP310",
+   "RESP320",
+   "RESP330",
+   "RESP340",
+   "RESP350",
+   "RESP360",
+   "RESP370",
+   "RESP380",
+   "SOCI360"
+  ],
+  "source": {
+   "url": "https://catalog.napavalley.edu//areas-of-study/respiratory-care/respiratory-care-bs/",
+   "title": "Respiratory Care: Bachelor's of Science | Napa Valley College",
+   "h1": "RESPIRATORY CARE: BACHELOR'S OF SCIENCE",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4027
+ }
+]
