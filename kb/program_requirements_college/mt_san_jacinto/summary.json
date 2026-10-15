@@ -1,0 +1,662 @@
+{
+ "college": "Mt. San Jacinto College",
+ "programs": 174,
+ "with_closed_list": 152,
+ "found": 99,
+ "extracted": 99,
+ "errors": 0,
+ "passed_machine_checks": 74,
+ "failed": {
+  "coverage": 5,
+  "invented": 0,
+  "arithmetic": 25,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 7.92,
+ "cost_per_program": 0.08,
+ "not_found": [
+  {
+   "control_number": "04392",
+   "title": "Business, Clerical",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/accounting-certificate/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "textContent",
+    "coverage": 0.308,
+    "body": 0.0,
+    "content": 0.308,
+    "net": 4,
+    "listed": 13,
+    "why": "coarse net: the page's code tokens name 4 of 13 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2994,
+     "content": 15440,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Map",
+      892
+     ],
+     [
+      "Requirements",
+      831
+     ],
+     [
+      "Career Exploration",
+      1844
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "08689",
+   "title": "Humanities",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "12877",
+   "title": "Horticulture",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "16038",
+   "title": "Business Clerical: Tech Prep",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "16774",
+   "title": "Advanced Audio Technology",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "17904",
+   "title": "Liberal Arts: Arts, Humanities & Communications",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/liberal-arts/liberal-arts-mathematics-science-aa/",
+    "label": {
+     "award": 1,
+     "title": 0.6
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2262,
+     "content": 16690,
+     "tabs": 5092
+    },
+    "tab_panels": [
+     [
+      "Requirements",
+      5072
+     ],
+     [
+      "Career Exploration",
+      604
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "18192",
+   "title": "Horticulture",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "22125",
+   "title": "Office Administration Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/business-office-administration/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3370,
+     "content": 13752,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Degrees/Certificates",
+      75
+     ],
+     [
+      "Program Learning Outcomes",
+      424
+     ],
+     [
+      "Careers and Salaries",
+      971
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22126",
+   "title": "Office Administration: Tech Prep",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/business-office-administration/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3370,
+     "content": 13752,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Degrees/Certificates",
+      75
+     ],
+     [
+      "Program Learning Outcomes",
+      424
+     ],
+     [
+      "Careers and Salaries",
+      971
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "24030",
+   "title": "Light Duty Automotive Service",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "24376",
+   "title": "ESL Multi-level",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "24448",
+   "title": "ESL General",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/degrees-certificates-curricula/general-education-option-a/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 26224,
+     "content": 32731,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "24450",
+   "title": "ABE-GED Preparation",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32553",
+   "title": "Interpreter Preparation",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/fire-technology/fire-academy-preparation-ecc/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2238,
+     "content": 12529,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Map",
+      620
+     ],
+     [
+      "Requirements",
+      186
+     ],
+     [
+      "Career Exploration",
+      604
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "32823",
+   "title": "Interpreter Preparation",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/fire-technology/fire-academy-preparation-ecc/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2238,
+     "content": 12529,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Map",
+      620
+     ],
+     [
+      "Requirements",
+      186
+     ],
+     [
+      "Career Exploration",
+      604
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "35093",
+   "title": "ESL-Advanced",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35829",
+   "title": "California Preschool Foundations and Framework",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38818",
+   "title": "Construction Technology",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/automotive-transportation-technology/automotive-technology-as/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2247,
+     "content": 14398,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Map",
+      1980
+     ],
+     [
+      "Requirements",
+      705
+     ],
+     [
+      "Career Exploration",
+      604
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "38819",
+   "title": "Culinary Arts",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/culinary-arts/culinary-arts--hospitality-certificate/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2418,
+     "content": 14372,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Map",
+      848
+     ],
+     [
+      "Requirements",
+      387
+     ],
+     [
+      "Career Exploration",
+      1854
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "38820",
+   "title": "Digital Communication",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/communication-studies/communication-studies-aat/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2475,
+     "content": 18981,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Map",
+      4881
+     ],
+     [
+      "Requirements",
+      2135
+     ],
+     [
+      "Career Exploration",
+      604
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "39949",
+   "title": "Health Careers",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/allied-health/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3450,
+     "content": 17310,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Degrees/Certificates",
+      53
+     ],
+     [
+      "Program Learning Outcomes",
+      3637
+     ],
+     [
+      "Careers and Salaries",
+      1238
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "40534",
+   "title": "Aviation Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/geospatial-information-science/geographic-information-science-as/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2479,
+     "content": 15563,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Map",
+      2306
+     ],
+     [
+      "Requirements",
+      1321
+     ],
+     [
+      "Career Exploration",
+      604
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "40535",
+   "title": "Certified Flight Instructor",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "40549",
+   "title": "Commercial Pilot",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43810",
+   "title": "Basic Principles and Occupational Skills for Early Childhood Educators",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45049",
+   "title": "Medical Laboratory Technician, A.S.",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/allied-health/medical-laboratory-assistant-certificate/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "textContent",
+    "coverage": 0.222,
+    "body": 0.0,
+    "content": 0.222,
+    "net": 2,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 2 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2824,
+     "content": 14499,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Map",
+      659
+     ],
+     [
+      "Requirements",
+      222
+     ],
+     [
+      "Careers and Salaries",
+      1853
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "45127",
+   "title": "Truck Driver Training and Occupational Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "46231",
+   "title": "Administrative Professional",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.msjc.edu/instructional-programs/medical-assisting/medical-assisting-administrative-certificate/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 13,
+    "why": "coarse net: the page's code tokens name 0 of 13 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2432,
+     "content": 14272,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Map",
+      784
+     ],
+     [
+      "Requirements",
+      315
+     ],
+     [
+      "Career Exploration",
+      1860
+     ]
+    ]
+   }
+  }
+ ],
+ "run": "38748837644"
+}

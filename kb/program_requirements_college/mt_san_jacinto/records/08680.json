@@ -1,0 +1,295 @@
+{
+ "college": "Mt. San Jacinto College",
+ "control_number": "08680",
+ "shape": "degree",
+ "title": "Dance",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.msjc.edu/instructional-programs/dance/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8458,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8458,
+    "output_tokens": 1918,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1918,
+  "output_tokens_details": {
+   "thinking_tokens": 519
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07219,
+ "ms": 15303,
+ "seconds": 15.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 30,
+   "share": 0.0,
+   "missing": [
+    "DAN100",
+    "DAN108",
+    "DAN120",
+    "DAN121A",
+    "DAN121B",
+    "DAN121C",
+    "DAN121D",
+    "DAN122A",
+    "DAN122B",
+    "DAN123A",
+    "DAN123B",
+    "DAN124",
+    "DAN125",
+    "DAN126A",
+    "DAN126B",
+    "DAN127A",
+    "DAN127B",
+    "DAN129",
+    "DAN131A",
+    "DAN131B",
+    "DAN133",
+    "DAN135A",
+    "DAN135B",
+    "DAN201",
+    "DAN212",
+    "DAN213",
+    "DAN214",
+    "DAN225",
+    "HIST151",
+    "THA108"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Dance",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop an awareness of the history, diversity, and cultural significance of dance.",
+    "Apply knowledge and skills gained to new and varied situations through dance expression.",
+    "Discover and evaluate movement through the use of aesthetic tools gained.",
+    "Compose, perform and evaluate works of artistic expression.",
+    "Examine anatomical ideas and discover the connections required to demonstrate depth of knowledge and technical ability."
+   ],
+   "careers": [
+    "dance therapists",
+    "dance historians"
+   ]
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "DAN 100",
+    "why": "not in the text"
+   },
+   {
+    "code": "DAN 108",
+    "why": "only in Related-Content Groups list (DAN/THA-108); no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 120",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 121A",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 121C",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 121D",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 122B",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 123A",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 123B",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 124",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 125",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 126A",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 126B",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 127A",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 127B",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 129",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 131A",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 131B",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 133",
+    "why": "not in the text"
+   },
+   {
+    "code": "DAN 135A",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 135B",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 201",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 212",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 213",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 214",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN 225",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN121B",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "DAN122A",
+    "why": "only in Related-Content Groups list; no A.A. requirements in text"
+   },
+   {
+    "code": "HIST 151",
+    "why": "not in the text"
+   },
+   {
+    "code": "THA 108",
+    "why": "only in Related-Content Groups list (DAN/THA-108); no A.A. requirements in text"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "38748837644"
+}
