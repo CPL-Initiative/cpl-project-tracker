@@ -1,0 +1,289 @@
+{
+ "college": "Fullerton College",
+ "control_number": "36798",
+ "shape": "adt",
+ "title": "Chemistry",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/chemistry-associate-in-science-degree-for-uc-transfer/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7477,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7477,
+    "output_tokens": 2105,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2105,
+  "output_tokens_details": {
+   "thinking_tokens": 829
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07201,
+ "ms": 16834,
+ "seconds": 17.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "CHEM111AF",
+    "MATH251F",
+    "MATH252F",
+    "MATH260F",
+    "PHYS223F"
+   ],
+   "flagged": [
+    "CHEM111AF",
+    "MATH251F",
+    "MATH252F",
+    "MATH260F",
+    "PHYS223F"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    48.0,
+    48.0
+   ],
+   "stated": [
+    47.0,
+    48.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 48.0-48.0; the catalog states 47.0-48.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     68.0,
+     68.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     20.0,
+     20.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Chemistry Associate in Science Degree for UC Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 47,
+    "max": 48
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "IGETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 20,
+    "max": 20
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge of inorganic and organic chemistry and have the ability to articulate this chemical knowledge in verbal, written, and/or computational form.",
+    "Demonstrate the ability to conduct experiments, analyze data, and interpret results, while observing responsible and ethical scientific conduct.",
+    "Demonstrate the use of proper procedures and regulations for safe handling and use of chemicals."
+   ],
+   "careers": [
+    "government agencies",
+    "various areas of industry",
+    "environmental",
+    "pharmaceutical",
+    "material chemistry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core (48 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 48,
+     "max": 48
+    },
+    "courses": [
+     {
+      "code": "CHEM 111AF",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 111BF",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 211AF",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 211BF",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 151 F",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 151HF",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 152 F",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 152HF",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 251 F",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 252 F",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 260 F",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 221 F",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 222 F",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 223 F",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The description states 47-48 units in the major, while the course table prints 'Required Core (48 units)' and 'Total Units 48'; total_units records the description's 47-48 range (likely reflecting the MATH 260 F alternative), and the block's stated records 48.",
+   "Units are not printed beside the alternatives MATH 151HF, MATH 152HF and MATH 260 F, so their units are null.",
+   "degree_total of 60 comes from the description's 'a minimum of 60 semester units' for this degree; ge_units of 20 comes from '20 units of Intersegmental General Education Transfer Curriculum (IGETC)'. Reviewer may check whether the 60-unit minimum should count as this award's degree total.",
+   "Program learning outcomes are taken from the page's outcomes tab, which prints one list for the program; the 'OUTCOME N:' labels were removed.",
+   "Description also requires a 3.5 GPA in the major for guaranteed UC transfer and a 2.0 overall GPA."
+  ]
+ },
+ "extracted_run": "38670930336"
+}
