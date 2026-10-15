@@ -1,0 +1,87 @@
+{
+ "college": "Sierra College",
+ "load_run": "38677102707",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-15T03:36:35Z",
+ "records": 35,
+ "posted": 25,
+ "batches": 1,
+ "inserted": 25,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "07963",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07964",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "10827",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21523",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21524",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21526",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21537",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21568",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21573",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36922",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "38675248607"
+ ],
+ "machine_pass": 21,
+ "inserted_keys": [
+  "04271",
+  "04279",
+  "04310",
+  "07978",
+  "08307",
+  "10506",
+  "10825",
+  "10854",
+  "11965",
+  "15307",
+  "16874",
+  "19209",
+  "21515",
+  "21522",
+  "21525",
+  "21529",
+  "21533",
+  "21557",
+  "21570",
+  "21584",
+  "21608",
+  "30471",
+  "30557",
+  "31922",
+  "31923"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Sierra College' and checked = false and control_number in ('04271', '04279', '04310', '07978', '08307', '10506', '10825', '10854', '11965', '15307', '16874', '19209', '21515', '21522', '21525', '21529', '21533', '21557', '21570', '21584', '21608', '30471', '30557', '31922', '31923');"
+}

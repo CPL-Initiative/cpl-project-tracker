@@ -1,0 +1,292 @@
+{
+ "college": "Sierra College",
+ "control_number": "16874",
+ "shape": "certificate",
+ "title": "Nutrition and Fitness",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.sierracollege.edu/departments/physical-education/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12416,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12416,
+    "output_tokens": 2149,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2149,
+  "output_tokens_details": {
+   "thinking_tokens": 632
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09264,
+ "ms": 19333,
+ "seconds": 19.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 13,
+   "share": 0.231,
+   "missing": [
+    "KIN10",
+    "KIN3A",
+    "KIN3B",
+    "KIN4",
+    "KIN5A",
+    "KIN5B",
+    "KIN6",
+    "KIN7",
+    "KIN9",
+    "NUTF10"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "BUS241",
+    "HED10",
+    "KIN11",
+    "KIN80",
+    "KIN83"
+   ],
+   "flagged": [
+    "BUS241",
+    "HED10",
+    "KIN11",
+    "KIN80",
+    "KIN83"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fitness Trainer (Formerly Nutrition and Fitness Trainer) Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Establish a measurable improvement  in one or more fitness components.",
+    "Distinguish principles of healthy weight management through exercise and nutrition.",
+    "Identify and practice high safety standards, support environmental needs, and provide a safe positive experience for other participants (students, student athletes, visiting athletes, community, faculty).",
+    "Demonstrate essential motor skills to fit a variety of activities. Describe and perform exercises reflecting increased knowledge and ability over the semester.",
+    "Generate knowledge of physical education and/or the benefits of exercise."
+   ],
+   "careers": [
+    "personal trainers",
+    "group fitness instructors",
+    "advanced fitness specialists"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HED 0010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN 0011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN 0012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 0080",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN 0083",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN 0095",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUS 0241",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NUTF 0014",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "KIN 0003A",
+    "why": "named only in the Kinesiology AA-T fitness area, not in the certificate section"
+   },
+   {
+    "code": "KIN 0003B",
+    "why": "named only in the Kinesiology AA-T fitness area, not in the certificate section"
+   },
+   {
+    "code": "KIN 0005A",
+    "why": "named only in the Kinesiology AA-T fitness area, not in the certificate section"
+   },
+   {
+    "code": "KIN 0005B",
+    "why": "named only in the Kinesiology AA-T fitness area, not in the certificate section"
+   },
+   {
+    "code": "KIN 4",
+    "why": "named only in the Kinesiology AA-T fitness area (as KIN 0004), not in the certificate section"
+   },
+   {
+    "code": "KIN 6",
+    "why": "named only in the Kinesiology AA-T fitness area (as KIN 0006), not in the certificate section"
+   },
+   {
+    "code": "KIN 7",
+    "why": "named only in the Kinesiology AA-T fitness area (as KIN 0007), not in the certificate section"
+   },
+   {
+    "code": "KIN 9",
+    "why": "named only in the Kinesiology AA-T fitness area (as KIN 0009), not in the certificate section"
+   },
+   {
+    "code": "KIN0010",
+    "why": "named only in the Kinesiology AA-T fitness area (as KIN 0010), not in the certificate section"
+   },
+   {
+    "code": "NUTF 10",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog has no section titled 'Nutrition and Fitness'; the 'Fitness Trainer (Formerly Nutrition and Fitness Trainer)' Certificate of Achievement was read as this award. Its requirements differ substantially from the closed list (many closed-list activity courses and NUTF 10 are absent), suggesting the program was revised; reviewer should confirm.",
+   "Units for BUS 0241 and NUTF 0014 are not printed beside them in the certificate table; the elective block requires 3 units.",
+   "The Program Student Learning Outcomes are printed once on the department page's outcomes tab, not specifically under this certificate; recorded as shared by this award. They appear generic to physical education/kinesiology.",
+   "The first outcome is copied with the double space as printed ('improvement  in')."
+  ]
+ },
+ "extracted_run": "38675248607"
+}

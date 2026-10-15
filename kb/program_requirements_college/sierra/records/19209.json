@@ -1,0 +1,693 @@
+{
+ "college": "Sierra College",
+ "control_number": "19209",
+ "shape": "degree",
+ "title": "Environmental Sciences",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.sierracollege.edu/departments/environmental-studies-sustainability/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11443,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11443,
+    "output_tokens": 4592,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4592,
+  "output_tokens_details": {
+   "thinking_tokens": 1198
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.13761,
+ "ms": 34978,
+ "seconds": 35.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 58,
+   "codes": [
+    "AGRI198",
+    "AGRI221",
+    "ANTH2",
+    "BIOL13",
+    "BIOL14",
+    "BIOL140",
+    "BIOL15",
+    "BIOL16A",
+    "BIOL16B",
+    "BIOL16C",
+    "BIOL16D",
+    "BIOL16E",
+    "BIOL16G",
+    "BIOL16H",
+    "BIOL16I",
+    "BIOL16J",
+    "BIOL16K",
+    "BIOL16L",
+    "BIOL16M",
+    "BIOL16N",
+    "BIOL16O",
+    "BIOL16P",
+    "BIOL16Q",
+    "BIOL16R",
+    "BIOL16T",
+    "BIOL16U",
+    "BIOL16V",
+    "BIOL16W",
+    "BIOL16Y",
+    "BIOL16Z",
+    "BIOL17B",
+    "BIOL2",
+    "BIOL21",
+    "BIOL23",
+    "BIOL24",
+    "BIOL3",
+    "CHEM1A",
+    "CHEM3A",
+    "CHEM3B",
+    "ECONC2001",
+    "ECONC2002",
+    "ESCI1",
+    "ESCI1L",
+    "ESS1",
+    "ESS10",
+    "ESS1L",
+    "ESS6",
+    "ESS6F",
+    "ESS7",
+    "ESS8",
+    "GEOG1",
+    "GEOG1L",
+    "GEOG90",
+    "GEOG91A",
+    "GEOG91B",
+    "MATH11",
+    "STATC1000",
+    "STATC1000E"
+   ],
+   "flagged": [
+    "AGRI198",
+    "AGRI221",
+    "ANTH2",
+    "BIOL13",
+    "BIOL14",
+    "BIOL140",
+    "BIOL15",
+    "BIOL16A",
+    "BIOL16B",
+    "BIOL16C",
+    "BIOL16D",
+    "BIOL16E",
+    "BIOL16G",
+    "BIOL16H",
+    "BIOL16I",
+    "BIOL16J",
+    "BIOL16K",
+    "BIOL16L",
+    "BIOL16M",
+    "BIOL16N",
+    "BIOL16O",
+    "BIOL16P",
+    "BIOL16Q",
+    "BIOL16R",
+    "BIOL16T",
+    "BIOL16U",
+    "BIOL16V",
+    "BIOL16W",
+    "BIOL16Y",
+    "BIOL16Z",
+    "BIOL17B",
+    "BIOL2",
+    "BIOL21",
+    "BIOL23",
+    "BIOL24",
+    "BIOL3",
+    "CHEM1A",
+    "CHEM3A",
+    "CHEM3B",
+    "ECONC2001",
+    "ECONC2002",
+    "ESCI1",
+    "ESCI1L",
+    "ESS1",
+    "ESS10",
+    "ESS1L",
+    "ESS6",
+    "ESS6F",
+    "ESS7",
+    "ESS8",
+    "GEOG1",
+    "GEOG1L",
+    "GEOG90",
+    "GEOG91A",
+    "GEOG91B",
+    "MATH11",
+    "STATC1000",
+    "STATC1000E"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.5,
+    28.0
+   ],
+   "stated": [
+    20.5,
+    28.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Required Courses (Environmental Sciences A.S. section; its own heading is cut off above the Cal-GETC line)",
+   "measure": "units",
+   "total_units": {
+    "min": 20.5,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify and describe the essential components of earth's natural environment, the physical, chemical, and biological components of the earth’s systems, and show how they function.",
+    "Describe and analyze core environmental problems, their causes, consequences, and practical solutions.",
+    "Appreciate the ethical, cross-cultural, and historical context of environmental issues and the links between human and natural systems.",
+    "Investigate the role of governmental policy, citizen involvement, and/or ethics/values/morals in influencing human interaction with the environment.",
+    "Demonstrate an integrative, interconnective and interdisciplinary approach to environmental issues, with a focus on sustainability."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 0140",
+      "units": 4.5,
+      "units_max": 9,
+      "alternatives": [
+       {
+        "code": "BIOL 0002",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "BIOL 0003",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 0001A",
+      "units": 5,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "CHEM 0003A",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "CHEM 0003B",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESCI 0001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG 0001",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESS 0001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESS 0001L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select 4-6 units from the following",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "AGRI 0198",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGRI 0221",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 0002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0013",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0014",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0015",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016E",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016G",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016H",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016I",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016J",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016K",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016M",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016N",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016O",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016P",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016Q",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016R",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016T",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016U",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016V",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016W",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016Y",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0016Z",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0017B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0021",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0023",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 0024",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESCI 0001L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESS 0006",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESS 0006F",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESS 0007",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESS 0008",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESS 0010",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESS 0013",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 0001L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 0090",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 0091A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 0091B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 0011",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The text begins mid-section: the Environmental Sciences A.S. heading, description and any general education pattern list are cut off; only 'California General Education Transfer Curriculum (Cal-GETC).' is visible, so ge_pattern is Cal-GETC but other patterns may also be allowed. The section was identified as Environmental Sciences because it precedes the Environmental Studies AA section and has a science core (BIOL 0140, CHEM 0001A).",
+   "BIOL 0002 & BIOL 0003 together are the alternative to BIOL 0140; CHEM 0003A & CHEM 0003B together are the alternative to CHEM 0001A; STAT C1000E & MATH 0011 together are the alternative to STAT C1000. Each pair is recorded as two alternatives.",
+   "The '1' printed after many field courses (BIOL 0016x, BIOL 0017B) is footnote 1, not units: 'A maximum of 2 units may be taken from the BIOL 0016, BIOL 0017, BIOL 0023 and ESCI 0016, 0054 and 0055 field studies courses.' Units for elective-list courses are not printed.",
+   "Program Student Learning Outcomes come from the page's outcomes tab, which appears to be one list for the department page; recorded as shared by this award—reviewer should confirm they apply to the Environmental Sciences A.S.",
+   "No careers named in this section; the career/transfer description shown belongs to the Environmental Studies AA.",
+   "The Environmental Studies AA section (Total Units 20-24) was not used."
+  ]
+ },
+ "extracted_run": "38675248607"
+}
