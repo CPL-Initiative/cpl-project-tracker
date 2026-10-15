@@ -68,7 +68,9 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 .num{font-variant-numeric:tabular-nums}
-.wrap{width:100%; max-width:1000px; margin:0 auto; padding:0 clamp(16px,4vw,28px)}
+/* One width for every section, the institution table's (Sam, 2026-10-15: "the
+   width of each section should be consistently full width"). */
+.wrap{width:100%; max-width:1320px; margin:0 auto; padding:0 clamp(16px,4vw,28px)}
 h1,h2,h3{font-family:"Playfair Display",Georgia,"Times New Roman",serif; color:var(--text-strong);
   text-wrap:balance; margin:0; font-weight:600; line-height:1.16; letter-spacing:-.005em}
 h1{font-size:clamp(1.9rem,1.4rem + 2.2vw,3rem)}
@@ -179,6 +181,8 @@ details.fold > .fold-body{padding-top:1.4em}
    Still `width:100%`, so it never exceeds the viewport, and the tab's own
    overflow-x remains the narrow-screen net beneath it. */
 .wrap.wide{max-width:1320px}
+.step1-wrap{padding-top:clamp(14px,2vw,22px)}
+.step1-wrap .cplfund-step1{margin:0}
 /* ⚠ AND THE TAB'S INPUTS, WHICH REMOVE THEIR OWN RING. cpl_funding.js writes
    `.cplfund-toolbar input:focus { outline: none; border-color:
    var(--navy-secondary) }` — it trades the outline for a border tint, and
@@ -283,6 +287,7 @@ details.strat-fold[open] .fold-word::before{content:"Hide"}
 .prio ul.strat{margin:.5em 0 0; padding-left:1.2em; font-size:.92rem}
 .prio ul.strat li{margin:.2em 0}
 .mile-h{margin-top:1.8em}
+.mile-h.dates-h{margin-top:0}
 ul.timing{margin:0; padding-left:1.2em}
 ul.timing li{margin:.25em 0; display:flex; flex-wrap:wrap; gap:0 12px; justify-content:space-between}
 ul.timing li .when{font-variant-numeric:tabular-nums; color:var(--text-muted); white-space:nowrap}
@@ -328,7 +333,7 @@ footer p{max-width:none}
         is narrower than the window that made widening necessary.
    ──────────────────────────────────────────────────────────────────────── */
 @media print{
-  @page{size:letter portrait; margin:.6in}
+  @page{size:letter landscape; margin:.45in}   /* landscape (Sam, 2026-10-15) */
   /* the action bar (with Ask Sierra in it) and the Contents are screen
      navigation; the PDF opens every fold instead */
   .skip, .mh-actions, #contents, #live-status{display:none}
@@ -433,6 +438,11 @@ section[hidden]{display:none}
      curator's rename, hide or reorder on the tab reaches it too; the markup
      here is the house list, for a reader whose script has not run. Outside
      <main>, which holds the sections and nothing else. -->
+<!-- STEP 1: CHOOSE YOUR COLLEGE (Sam, 2026-10-15: "Make the College selector
+     more prominent so folks see that it is an important first step"). The
+     funding tab paints its own chooser here (cpl_funding.js stepOneHtml), so the
+     tab's Public view and this page offer one chooser, written once. -->
+<div class="wrap step1-wrap"><div id="cplFundStep1Mount"></div></div>
 <nav class="wrap toc-wrap" id="contents" aria-labelledby="toc-h">
   <div class="toc-card">
     <h2 class="toc-h" id="toc-h">Contents</h2>
@@ -451,16 +461,52 @@ section[hidden]{display:none}
            rides the rebuild to the end (contentsFromSections). -->
       <li class="toc-video"><a id="video-link" href="../prototype/funding_video/funding_in_motion.html">Watch the 100-second introduction</a></li>
     </ul>
-    <p class="toc-note" id="pdf-note">PDF opens your browser&rsquo;s print dialog; choose
-      &ldquo;Save as PDF&rdquo;. The file holds the figures as they stand the day you save it.</p>
+    <p class="toc-note" id="pdf-note">PDF prints the whole page in landscape, your college first; it asks you to
+      choose a college when none is chosen. Choose &ldquo;Save as PDF&rdquo; in the print dialog. The file holds the
+      figures as they stand the day you save it.</p>
   </div>
 </nav>
 
 <main id="start">
 
+<!-- EVERY INSTITUTION — first on the page (Sam, 2026-10-15: "Move Funding by
+     Institution to the first item on the page"); before that, directly after the
+     introduction (Sam, 2026-09-02:
+     "so folks don't have to scroll down through the steps to see it — most
+     won't care about the details, just their funding"). The table is the
+     Implementation Funding tab's own college section, rendered here by the
+     same code in embed mode: the same rows, the same drill-in on an
+     institution's name, the same footnote. Its introduction is the tab's
+     editable block, so a curator's Publish reaches this page too. -->
+<section id="institutions" data-fsec="institutions">
+  <details class="fold" open>
+  <summary class="wrap wide">
+    <h2>Funding by institution</h2>
+    <span class="fold-word" aria-hidden="true"></span>
+  </summary>
+  <!-- ⚠ THE TABLE GETS THE WINDOW, THE PROSE KEEPS ITS COLUMN (Sam,
+       2026-09-15: "the information doesn't fit the window width", and then
+       "you can widen the table if helpful").
+       The table is the tab's own rendering, and the tab is a full-width app;
+       this page capped it at the 1000px prose column, so with the District
+       column shown it needed 1,039px in a 942px box and the NC award column
+       ran off the right edge into a sideways scroll. Measured before and
+       after at 1440/1280/1100/1024. The heading stays in the prose wrap so
+       the page's left edge does not jump; only the table widens. -->
+  <div class="wrap wide fold-body">
+    <div class="main-container">
+      <div id="cplFundingMount"><p class="loading">Loading the institution table&hellip;</p></div>
+    </div>
+  </div>
+  </details>
+</section>
+
+
+<!-- The Overview arrives folded (Sam, 2026-10-15: "auto hide the intro section
+     since it is a repeat"): one click opens it, and the PDF prints it open. -->
 <section id="overview" data-fsec="lede">
   <div class="wrap">
-    <details class="fold" open>
+    <details class="fold">
     <summary>
       <h2>Overview</h2>
       <span class="fold-word" aria-hidden="true"></span>
@@ -556,37 +602,6 @@ section[hidden]{display:none}
   </div>
 </section>
 
-<!-- EVERY INSTITUTION — directly after the introduction (Sam, 2026-09-02:
-     "so folks don't have to scroll down through the steps to see it — most
-     won't care about the details, just their funding"). The table is the
-     Implementation Funding tab's own college section, rendered here by the
-     same code in embed mode: the same rows, the same drill-in on an
-     institution's name, the same footnote. Its introduction is the tab's
-     editable block, so a curator's Publish reaches this page too. -->
-<section id="institutions" data-fsec="institutions">
-  <!-- The fold's summary carries the prose column (.wrap) and its body the wide
-       one, so the heading keeps the page's left edge while the table widens. -->
-  <details class="fold" open>
-  <summary class="wrap">
-    <h2>Funding by institution</h2>
-    <span class="fold-word" aria-hidden="true"></span>
-  </summary>
-  <!-- ⚠ THE TABLE GETS THE WINDOW, THE PROSE KEEPS ITS COLUMN (Sam,
-       2026-09-15: "the information doesn't fit the window width", and then
-       "you can widen the table if helpful").
-       The table is the tab's own rendering, and the tab is a full-width app;
-       this page capped it at the 1000px prose column, so with the District
-       column shown it needed 1,039px in a 942px box and the NC award column
-       ran off the right edge into a sideways scroll. Measured before and
-       after at 1440/1280/1100/1024. The heading stays in the prose wrap so
-       the page's left edge does not jump; only the table widens. -->
-  <div class="wrap wide fold-body">
-    <div class="main-container">
-      <div id="cplFundingMount"><p class="loading">Loading the institution table&hellip;</p></div>
-    </div>
-  </div>
-  </details>
-</section>
 
 <!-- WHAT COUNTS, AND WHEN (Sam, 2026-09-15: "a brief integration of the
      priorities and timeline"). The three priorities sat inside Step three and
@@ -598,7 +613,7 @@ section[hidden]{display:none}
   <div class="wrap">
     <details class="fold" open>
     <summary>
-      <h2>Funding outcomes and milestones</h2>
+      <h2>Funding outcomes</h2>
       <span class="fold-word" aria-hidden="true"></span>
     </summary>
     <div class="fold-body">
@@ -609,9 +624,42 @@ section[hidden]{display:none}
       shares and measures below and recommends the strategies under each.</p>
     <div id="prios"></div>
     <div id="reported"></div>
-    <h3 class="mile-h">Milestones</h3>
+    </div>
+    </details>
+  </div>
+</section>
+
+<section id="disbursement" data-fsec="timing">
+  <div class="wrap">
+    <details class="fold" open>
+    <summary>
+      <h2>Disbursement and the funding window</h2>
+      <span class="fold-word" aria-hidden="true"></span>
+    </summary>
+    <div class="fold-body">
+    <!-- THE DATES LEAD THE TIMELINE (Sam, 2026-10-15: "For the Timeline block
+         add the date bullets so folks know the full plan for qualifying and
+         disbursements"). They sat beside the priorities from 2026-09-15; with
+         the strategies open that list fell below twenty lines, so it moved here,
+         and this section opens by default and follows the outcomes. -->
+    <h3 class="mile-h dates-h">Dates</h3>
     <p>The Chancellor&rsquo;s Office has set the dates below. A milestone without a date is contingent.</p>
     <ul class="timing" id="timing-list"></ul>
+    <h3 class="mile-h">How the funding arrives</h3>
+    <div data-ftext="x_timing">
+    <p>Two timing settings are in effect. Neither changes the amount an institution
+      can qualify for.</p>
+    <ul>
+      <li><strong>The full two-year amount is made available in year one.</strong> The capacity this work
+        requires &mdash; staff time, faculty review of credit recommendations, and local process design
+        &mdash; is concentrated at the outset, and withholding half of the allocation until year two would
+        delay it. Funding remaining at the end of year one carries forward. Because the entire allocation is
+        available in year one, the targets shown are the full two-year figures.</li>
+      <li><strong>Year two mirrors year one.</strong> The two years are held identical so that a change to
+        one is reflected in the other. Disabling the mirror leaves both years as they were, so nothing
+        is overwritten.</li>
+    </ul>
+    </div>
     </div>
     </details>
   </div>
@@ -764,35 +812,6 @@ section[hidden]{display:none}
   </div>
 </section>
 
-<section id="disbursement" data-fsec="timing">
-  <div class="wrap">
-    <details class="fold">
-    <summary>
-      <h2>Disbursement and the funding window</h2>
-      <span class="fold-word" aria-hidden="true"></span>
-    </summary>
-    <div class="fold-body">
-    <div data-ftext="x_timing">
-    <p>Two timing settings are in effect. Neither changes the amount an institution
-      can qualify for.</p>
-    <ul>
-      <li><strong>The full two-year amount is made available in year one.</strong> The capacity this work
-        requires &mdash; staff time, faculty review of credit recommendations, and local process design
-        &mdash; is concentrated at the outset, and withholding half of the allocation until year two would
-        delay it. Funding remaining at the end of year one carries forward. Because the entire allocation is
-        available in year one, the targets shown are the full two-year figures.</li>
-      <li><strong>Year two mirrors year one.</strong> The two years are held identical so that a change to
-        one is reflected in the other. Disabling the mirror leaves both years as they were, so nothing
-        is overwritten.</li>
-    </ul>
-    </div>
-    <!-- The milestone LIST moved up into "What counts, and when" (2026-09-15);
-         this step keeps the two disbursement settings, which are about how the
-         funding arrives rather than about dates. One list, one place. -->
-    </div>
-    </details>
-  </div>
-</section>
 
 <section id="choices" data-fsec="choices">
   <div class="wrap">
@@ -867,6 +886,12 @@ section[hidden]{display:none}
 <div id="live-status" role="status" aria-live="polite" class="wrap" style="color:var(--ink-2,#5b544c);font-size:.85rem;"></div>
 
 <script>
+// The statewide strategies open until a college is chosen (Sam, 2026-10-15,
+// call 4); the painter and the chooser's event both ask this one question.
+function stratOpen() {
+  var T = window.CPL_FUNDING_TAB;
+  return !(T && typeof T.oneChoice === "function" && T.oneChoice());
+}
 window.CPL_PAINT_EXPLAINER = function (D) {
   "use strict";
   // ⚠ EVERY container this function APPENDS into must be emptied first.
@@ -1019,12 +1044,13 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     // (Sam, 2026-09-02). Painted from the payload, so an edit on the tab
     // reaches this page; a priority with none gets no empty heading.
     //
-    // FOLDED, CLOSED (Sam, 2026-09-15). Seven per priority is twenty-one
-    // bullets between the shares and the milestones. The heading is inside the
-    // summary so the fold has a name when it is shut, and the Show / Hide word
-    // is the same one the steps use.
+    // OPEN WHERE THE READER MEETS THEM FIRST (Sam, 2026-10-15, call 4: "Open
+    // one copy"). With no college chosen they open here; with one chosen they
+    // open inside its funding above, and this statewide copy folds (stratOpen).
+    // The heading is inside the summary so the fold has a name when it is shut.
     if (p.strategies && p.strategies.length) {
       var det = document.createElement("details"); det.className = "strat-fold";
+      det.open = stratOpen();
       var sum = document.createElement("summary");
       var sh = document.createElement("span"); sh.className = "strat-h";
       sh.textContent = "Recommended strategies";
@@ -1050,9 +1076,9 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   // every other painter here — a curator types a project name and a college
   // reads it, so nothing on this path goes through innerHTML.
   //
-  // The project STATUS is deliberately not here. It changes week to week and
-  // this page would carry whatever the config last stored; the live outcome is
-  // on the project dashboard, which the closing line points at.
+  // The project STATUS is deliberately not here, and neither is the project
+  // dashboard (Sam, 2026-10-15: "The CPL project dashboard is internal team
+  // information for now"). The names say which statewide work carries the goal.
   (function () {
     var host = document.getElementById("reported");
     if (!host || !D.reported || !D.reported.length) return;
@@ -1074,16 +1100,6 @@ window.CPL_PAINT_EXPLAINER = function (D) {
         ul.appendChild(li);
       });
       host.appendChild(ul);
-      var close = document.createElement("p");
-      close.appendChild(document.createTextNode("Each project reports its own progress on the "));
-      var a = document.createElement("a");
-      a.href = "https://cpl-initiative.github.io/cpl-project-tracker/";
-      a.target = "_blank";
-      a.rel = "noopener";
-      a.textContent = "CPL project dashboard";
-      close.appendChild(a);
-      close.appendChild(document.createTextNode("."));
-      host.appendChild(close);
     });
   })();
 
@@ -1652,8 +1668,20 @@ window.CPL_SIERRA_SUGGESTED = [
   }
   window.addEventListener("beforeprint", openAllFolds);
   window.addEventListener("afterprint", restoreFolds);
+  // PDF asks for a college first when none is chosen, with the statewide page
+  // as the second choice (Sam, 2026-10-15, call 5); the funding tab owns the
+  // prompt so the tab's Public view and this page ask the same way.
   var pdf = document.getElementById("pdf-btn");
-  if (pdf) pdf.addEventListener("click", function () { window.print(); });
+  if (pdf) pdf.addEventListener("click", function () {
+    var T = window.CPL_FUNDING_TAB;
+    if (T && typeof T.pdfGate === "function") T.pdfGate(function () { window.print(); });
+    else window.print();
+  });
+  // A college chosen or cleared: the statewide strategies fold or open.
+  document.addEventListener("cplfund:onechoice", function () {
+    var open = stratOpen();
+    Array.prototype.forEach.call(document.querySelectorAll("#prios details.strat-fold"), function (d) { d.open = open; });
+  });
   // My CPL Funding (Sam, 2026-09-30): the link still lands on the table when
   // the model has not loaded; once it has, it opens the one-institution view.
   var mine = document.getElementById("my-funding-btn");

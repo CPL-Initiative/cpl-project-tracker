@@ -1413,8 +1413,12 @@ check("(P) the repeated 'not measured here' flag is dropped in the nested view",
   nestRoot.querySelectorAll(".cb-strat .cb-flag").length === 0);
 check("(P) …but a strategy that IS measured still shows its figure",
   nestRoot.querySelectorAll(".cb-strat .cb-m").length > 0);
-check("(P) the nested steps are still closed by default",
-  Array.prototype.every.call(nestRoot.querySelectorAll("details.cb-strat"), function (d) { return !d.open; }));
+// Sam, 2026-10-15 (the My College mockup, call 4: "Open one copy"): the steps
+// under a college's own priorities arrive open; the statewide copy under the
+// explainer's Funding outcomes folds once a college is chosen.
+check("(P) the nested steps arrive open (Sam, 2026-10-15)",
+  nestRoot.querySelectorAll("details.cb-strat").length > 0 &&
+  Array.prototype.every.call(nestRoot.querySelectorAll("details.cb-strat"), function (d) { return d.open; }));
 // ⭐ THE LIVE SHAPE since 2026-09-22. THREE lists three priorities, as the live
 // config does, while the funding module carries a fourth (career attainment)
 // from its baked defaults at a 0% share. Counting it sent every college's steps

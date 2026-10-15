@@ -116,12 +116,15 @@ check("...rendered in EMBED mode: the table, its footnote, and nothing of the ta
   !doc.querySelector("#cplFundingMount .cplfund-summary"));
 check("...and in the PUBLIC rendering: no curate affordance reaches the page",
   !doc.querySelector("#cplFundingMount [data-edit], #cplFundingMount [data-textedit], #cplFundingMount #cplFundReset"));
-check("the institution section sits directly after the introduction, before the first step (Sam, 2026-09-02)",
+// Sam, 2026-10-15 (his My College mockup): "Move Funding by Institution to the
+// first item on the page" — it led from the introduction's heel since 2026-09-02.
+check("the institution section comes first, before the introduction and the first step (Sam, 2026-10-15)",
   (function () {
     const inst = doc.getElementById("institutions");
     const sections = Array.from(doc.querySelectorAll("main > section"));
     const firstStep = doc.getElementById("allocation");
-    return !!inst && !!firstStep && sections.indexOf(inst) === 1 &&
+    return !!inst && !!firstStep && sections.indexOf(inst) === 0 &&
+      sections.indexOf(doc.getElementById("overview")) === 1 &&
       !!inst.querySelector("#cplFundingMount") &&
       !!(inst.compareDocumentPosition(firstStep) & 4);
   })());
@@ -129,12 +132,14 @@ check("the institution section sits directly after the introduction, before the 
 // section should have a link at the top that take the user to the clicked
 // section and opens it to read or skim"). What opens with the page is
 // unchanged from 2026-09-02: the introduction, the table and the outcomes
-// open; the five steps that explain the mechanics closed.
-check("every section is one fold; the introduction, table and outcomes open, the five steps and the FAQ closed",
+// open; the five steps that explain the mechanics closed. 2026-10-15 (Sam's My
+// College mockup, calls 1 and 2): the introduction folds ("it is a repeat"), and
+// the Timeline, which now leads with the dates, opens.
+check("every section is one fold; the table, outcomes and Timeline open, the introduction, four steps and the FAQ closed",
   (function () {
     const sections = Array.from(doc.querySelectorAll("main > section"));
     const folds = sections.map((sec) => sec.querySelector("details.fold"));
-    const OPEN = ["overview", "institutions", "outcomes"];
+    const OPEN = ["institutions", "outcomes", "disbursement"];
     return sections.length === 9 && folds.every(Boolean) &&
       folds.every((f) => !!f.querySelector(":scope > summary h2") && !!f.querySelector(":scope > summary .fold-word")) &&
       sections.every((sec, i) => folds[i].open === OPEN.includes(sec.id)) &&
@@ -342,8 +347,10 @@ check("the status line is empty on a successful paint",
   check("the strategies sit in a fold under their own priority",
     !!fold && fold.querySelectorAll("ul.strat li").length === 2 &&
     doc.querySelectorAll("#prios details.strat-fold").length === 1);
-  check("...CLOSED on open, and named while it is shut",
-    fold.open === false && /Recommended strategies/.test(fold.querySelector("summary").textContent));
+  // Sam, 2026-10-15 (call 4, "Open one copy"): OPEN while no college is chosen;
+  // they were closed from 2026-09-15. The chosen-college half is tested below.
+  check("...OPEN while no college is chosen, and named by its summary",
+    fold.open === true && /Recommended strategies/.test(fold.querySelector("summary").textContent));
   check("...with the same Show / Hide WORD the steps use, not a marker glyph",
     !!fold.querySelector("summary .fold-word") &&
     /details\.strat-fold \.fold-word::before\{content:"Show"\}/.test(html) &&
@@ -351,9 +358,19 @@ check("the status line is empty on a successful paint",
     /details\.strat-fold > summary::marker\{content:''\}/.test(html));
   // A repaint must not leave a second fold, or a stale one, behind.
   repaint();
-  check("...and repainting leaves exactly one fold, still closed",
+  check("...and repainting leaves exactly one fold, still open",
     doc.querySelectorAll("#prios details.strat-fold").length === 1 &&
-    doc.querySelector("#prios details.strat-fold").open === false);
+    doc.querySelector("#prios details.strat-fold").open === true);
+  // With a college chosen, the college's own steps open in its funding above,
+  // so this statewide copy folds, and folds again on a repaint.
+  const oc = T.oneChoice;
+  T.oneChoice = function () { return "Butte"; };
+  doc.dispatchEvent(new win.CustomEvent("cplfund:onechoice", { detail: { value: "Butte" } }));
+  const foldedOnChoice = doc.querySelector("#prios details.strat-fold").open === false;
+  repaint();
+  check("...and with a college chosen, the statewide copy folds, on the choice and on a repaint",
+    foldedOnChoice && doc.querySelector("#prios details.strat-fold").open === false);
+  T.oneChoice = oc;
   T._setShared({});
   repaint();
   check("a priority with no strategies paints no fold at all",
@@ -433,8 +450,9 @@ check("the status line is empty on a successful paint",
         !!(doc.querySelector(".mh-actions").compareDocumentPosition(doc.querySelector("main")) & 4);
     })());
   const print = (html.match(/@media print\{[\s\S]*?\n\}/) || [""])[0];
-  check("the print stylesheet exists and sets a page box",
-    /@page\{size:letter portrait/.test(print));
+  // Landscape (Sam, 2026-10-15: "If you need to use horizontal layout, that's fine").
+  check("the print stylesheet exists and sets a landscape page box",
+    /@page\{size:letter landscape/.test(print));
   // ⚠️ THE FOLDS. Five steps and three strategy lists are CLOSED <details>. A
   // headless print-to-PDF never runs our beforeprint handler, so the CSS has
   // to open them on its own or the PDF carries the headings and none of the
@@ -730,8 +748,10 @@ check("the status line is empty on a successful paint",
   // and timeline"). The three priorities and the milestone list moved out of
   // the two folds that held them into one open section between the table and
   // the steps.
-  const IDS = ["lede", "institutions", "outcomes", "allocation", "qualify",
-               "earning", "timing", "choices", "questions"];
+  // 2026-10-15 (Sam's My College mockup): the institutions first, then the
+  // introduction; the Timeline follows the outcomes, carrying the dates.
+  const IDS = ["institutions", "lede", "outcomes", "timing", "allocation", "qualify",
+               "earning", "choices", "questions"];
   const secs = Array.from(doc.querySelectorAll("[data-fsec]"));
   check("every section carries a data-fsec id, in page order",
     secs.length === IDS.length &&

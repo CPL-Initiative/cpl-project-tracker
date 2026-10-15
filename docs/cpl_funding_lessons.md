@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-10-14
+updated: 2026-10-15
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -1169,3 +1169,34 @@ Sam's five asks and his note to wire them into Refresh everything (verbatim: `cp
 - **Parallel sessions:** S392 held the checkpoint, and a `send_message` put #2132 into its handoff 393.
   A third session (the queue, from 22:37Z) then held the next handoff, so this checkpoint wrote only the
   funding files and the shared generated ones.
+
+## 2026-10-15 — SkyHarbor (side session beside S395): the My College view
+
+Sam's asks for "the My College view of Implementation Funding" (verbatim: `cpl_memory`
+`sam-my-college-funding-view-asks-2026-10-15`), mocked up first
+(https://claude.ai/artifact/FvKVtQkj8z1GFpMtPUj4rm), nine calls answered as proposed.
+
+- **"The My College view" named two pages.** His quoted sentence lived only on the explainer, yet the intro he
+  called "a repeat from the explainer" was the tab's. One question settled it: "Both pages". Ask when an ask's
+  evidence splits between surfaces; a mockup of the wrong page costs more than the question.
+- **The explainer's Timeline had no dates.** The tab's `titles.timing` ("Timeline") retitles the explainer's
+  disbursement step through the shared `timing` id, so a section named Timeline held only the two timing
+  settings while the dates sat under the outcomes (the 2026-09-15 placement). Read the page under the live
+  config before believing its markup's headings.
+- **Every redraw re-reads the live folds (the 2026-09-29 fix), so a per-view default needs a view-switch
+  exception.** The Internal view's open Introduction carried into the Public view until `render()` skipped
+  the re-read for `about` across a switch (`_lastRenderPublic`).
+- **A grid with `auto-fit` cannot collapse a track a spanning label occupies.** The priorities filled two of
+  three columns; a wrapping flex row fixed it.
+- **Sam missed the calls at the foot of a long mockup** and answered in chat, then pressed Complete, which
+  arrived as an artifact comment. A mockup's calls want a line at its top saying they are there.
+
+## Moved from the lane (SkyHarbor, 2026-10-15)
+
+The lane sits at its 20 KB budget; these three moved here verbatim.
+
+✅ **CSU LA stays out by name (Sam, sheet 33 card 2, 2026-10-04):** *"funding is only provided to CCC colleges and campuses. We do have project funding that supports our work with our partners, but no need to focus on that in our materials--also no need to hide it"*. `_build_funding_performance.py` reads `kb/non_ccc_institutions.json` and skips Cal State LA at the row, beside the partners; `tests/funding_origination_test.py` §4 guards it.
+
+⚠️ **EVERY COMBINATOR IN `colHideStyleHtml()` IS A CHILD COMBINATOR** — a descendant one reached into the nested drill-in and hid its third cell for every reader; only `Element.matches()` can see it (`cpl_funding_col_hide_scope`).
+
+**HELD (Sam, 2026-09-12: "Hold, no action"):** the **LWDA partnership** stays undesignated on the (C) card — no register project names it and he chose to leave it; do **not** designate it on inference.

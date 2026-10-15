@@ -1,7 +1,7 @@
 ---
 title: "Implementation Funding tab / the $35M model — lane state"
 created: 2026-08-28
-updated: 2026-10-14
+updated: 2026-10-15
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -33,6 +33,8 @@ related:
 
 ⛔ **NEVER PIN A FIGURE THE DAILY CRON REGENERATES — it turned `main` RED on 2026-09-16** (three hard-coded numbers out of `cpl_funding_performance.js`; the cron moved them). **Every expectation is DERIVED from the artifact**, keyed to a measure, the rival asserted ABSENT, `chosen !== rival` asserted outright. ⚠️ **Nor its ABSENCE** (#1666: a "before" read off the feed went red when `ptc_u` landed). ⚠️ **A mutation that changes nothing proves nothing.** [note](../../kb-notes/methodology-a-test-that-pins-a-generated-figure-fails-on-a-data-refresh.md)
 
+✅ **THE MY COLLEGE VIEW (Sam, 2026-10-15, his mockup's nine calls; `cpl_memory` `sam-my-college-funding-view-asks-2026-10-15`).** One **Step 1** chooser (`stepOneHtml`, `cplFundOnePick`) leads the Public view's College Dashboard and sits above the explainer's Contents (`#cplFundStep1Mount`), remembered per browser; **PDF asks for a college first** (`pdfGate`), landscape. Public renderings fold the introduction, open the strategies and **name designated projects only (the register and dashboard are internal)**. Explainer: institutions first, Timeline after the outcomes with the dates, one width. ⚠️ Sam moves the tab's College Dashboard himself (Scenario 3 `secOrder`). Guard `cpl_funding_my_college_view`. **NEXT:** the My College text, editable with Bold/Italic.
+
 ⭐ **THE EXPLAINER READS THE MODEL, NOT COPIES OF IT (S265):** the card sentence is the config's `description`; the requirements and the deadline come from `_requirements()`; each priority's target, FTES reimbursement rate and progress and each condition's count from `_publicProgress()` (#1809). ⚠️ **The two vocabulary guards cannot see it**: `funding_model_page.test.js` scans its prose. ⚠️ **Its print stylesheet is the PDF's design** and must never hide `.cplfund-caret`, the institution's name. It defines its own `--focus-ring`.
 
 ✅ **THE MEASURES.** Credit: `pe` · `pa` · `p3` units. Access: `ppe`/`ppa` (+`_u`) among portal-origin students, disjoint from `pe`/`pa`, riding `Potential Student` until CollegeID2 lands. Completion with Counseling: `pac`/`pac_u`, the `accepted` milestone, serving **(B) alone** (Sam, 2026-09-22); ⭐ **the counselor step is a policy attestation, never a technical guarantee** (Sam, 2026-09-01). Transcribed + Counselor: `ptc`/`ptc_u` (#1664). Career: `ca_u` / `nc_ca_u` (milestone `career`, `origin: "co"`), measured and imported by the CO; `srcByCo()` keeps every surface from saying "MAP" or "daily feed" about them. ⚠️ `srcDelivered()` reads an undelivered key as **$0, never a cap**, so pinning a priority to an undelivered measure strands its share. **Re-run the earn diagnostic after the dials move.** ⭐ **MAP partner agencies are outside the model** (Sam, 2026-09-24): the builder skips `entity_kind: "partner"` rows. ★ Veteran Star: 59 flags on the college rows.
@@ -49,12 +51,8 @@ related:
 
 ⭐ **THE DRILL-IN IS ONE RENDERER, ONE TABLE PER LANE** (`prioDetailTableHtml(scope)`, college + statewide; #1679): credit first, then noncredit or one *Credit only* line, in Sam's six columns, the first header naming the lane · Max FTES · Max Funds · Actual FTES · Actual Funds · Difference (`diffMoney()` subtracts the COARSE public figure). First column left, the rest centered. No measure yet reads **TBA** (Sam, 2026-09-28). ⭐ **Statewide Actual Funds sums what institutions RECEIVE** (`earnAgg()` `crReleased`/`ncReleased`), matching the Statewide row; the cards' Progress line keeps the demonstrated figure (open-asks card 4). ⚠️ **The scope supplies the figures; the renderer never derives them.** ⚠️ **The statewide row must NOT carry `.cplfund-row`.** ⚠️ The `.cplfund-dtl-tscroll >` rules restate the nested geometry (`cpl_funding_dtl_align`). Guards: `cpl_funding_statewide_expand`, `cpl_funding_outcome_cards`, `cpl_funding_row_legibility`.
 
-⚠️ **EVERY COMBINATOR IN `colHideStyleHtml()` IS A CHILD COMBINATOR** — a descendant one reached into the nested drill-in and hid its third cell for every reader; only `Element.matches()` can see it (`cpl_funding_col_hide_scope`).
-
 ⚠️ **`target_rate` IS DEAD ON BOTH ENDS — LEAVE IT THAT WAY.** `prioTarget()` reads it only on the students path; no control
 renders it. Sam had S263's wiring (#1579) REVERTED (#1580): `rate = k/factor` reproduces every target. **Do not rebuild it.**
-
-**HELD (Sam, 2026-09-12: "Hold, no action"):** the **LWDA partnership** stays undesignated on the (C) card — no register project names it and he chose to leave it; do **not** designate it on inference.
 
 ⭐ **THE DIALS: read them live** (`scripts/funding_effective.js`). An unset `published` falls back to Scenario 1. ⭐ Do not build a combined ORIGIN+counselor source (Sam split them 2026-09-15; `pa_u` + `ppa_u` buys 0.3%).
 
@@ -63,7 +61,5 @@ renders it. Sam had S263's wiring (#1579) REVERTED (#1580): `rate = k/factor` re
 ⚠️ **THE CONFIG PATH IS NOT `config->'priorities'`:** `config -> projects -> <project> -> scenarios -> <scenario> -> yearPriorities -> <year> -> <slot>` (`jsonb_each`).
 
 ⭐ **GOAL (C) IS MEASURED BY THE CO FROM EDD WAGE DATA (Sam, 2026-09-22).** Career attainment (`ca_u`) derives (C) and qualifies nothing until the first import. ✅ **Receiver built:** `funding/career_attainment_import.json` ([format](../../kb-notes/reference-career-attainment-import.md)) → `read_career_attainment()`; units only, an unmasked count under 10 stops the import (`tests/funding_career_import_test.py`). **CO research sends the first file.**
-
-✅ **CSU LA stays out by name (Sam, sheet 33 card 2, 2026-10-04):** *"funding is only provided to CCC colleges and campuses. We do have project funding that supports our work with our partners, but no need to focus on that in our materials--also no need to hide it"*. `_build_funding_performance.py` reads `kb/non_ccc_institutions.json` and skips Cal State LA at the row, beside the partners; `tests/funding_origination_test.py` §4 guards it.
 
 **NEXT:** The statewide target is the institutions' targets summed (`sysTarget()`, #1821). ⭐ **"FTES reimbursement rate", never price (Sam, 2026-10-02)**; `cpl_funding_calm` bans it. ⓪a Still Sam's in the tab: card 11's two measure texts, both scenarios (Access *Applied CPL units (FTES) in MAP*; Completion *Transcribed CPL units (FTES) for students with the Counselor step checked in MAP*), and moving the six carried strategies to Completion in Year 1. ⓪b **CO research's first import** (the file; the share and factor 0.5 are set). Confirmation deadline **Dec 30, 2026** (`participationDeadline`). ⓪e **ONE REQUEST TO PEDRO** (Sam waits for Pedro, 2026-09-27; no session drafts it): Origin / CollegeID2, **completions** and a **per-CPL-type unit portion**. ⚠️ **That third ask is why the builder refuses per-type unit sums**: a source row carries the STUDENT's total credits. ① **The `ppa` cutover** the day CollegeID2 lands. ② Sweep the college briefing's display names (college-district-identity). ✅ ④ The explainer's 14 passages edit on the tab (*The explainer's text*), with **Bold**/**Italic** buttons (`wrapMark`). ⑨ Sam's **expended vs allocated** rule (2026-09-09): sweep the memo/report builder when it next moves. Story: [`docs/cpl_funding_lessons.md`](../../cpl_funding_lessons.md) ([archive](../../cpl_funding_lessons_archive.md)).

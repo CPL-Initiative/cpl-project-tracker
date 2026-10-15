@@ -701,7 +701,19 @@
       ".cb-resi a:hover{text-decoration:underline;}",
       ".cb-resi div{font-size:.76rem;color:var(--text-muted);margin-top:3px;line-height:1.45;}",
       // ── Funding, district roster, Sierra asks (2026-08-11) ──
-      ".cb-fund{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:12px;}",
+      // The two funding boxes stack, and the priorities sit side by side with
+      // their steps beneath (Sam, 2026-10-15, call 7): side by side, the open
+      // steps left the seed box beside a tall empty column.
+      ".cb-fund{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;}",
+      // A wrapping row, not a grid: the label spans the row, and a grid's empty
+      // third track could never collapse beneath it.
+      ".cb-fund .cb-prios{display:flex;flex-wrap:wrap;column-gap:28px;}",
+      ".cb-fund .cb-prios > .cb-prow{flex:1 1 320px;min-width:0;}",
+      ".cb-fund .cb-prios > .cb-plab{flex:0 0 100%;}",
+      // The boxes' tags read as plain words, and the noncredit line carries no
+      // red rule: red marks a state to act on (Sam, 2026-10-15, call 7).
+      ".cb-tagword{font-size:.82rem;font-weight:400;color:var(--text-muted);}",
+      ".cb-ncline{margin:10px 0 12px;}",
       ".cb-fbox{border:1px solid var(--border);border-radius:9px;padding:14px 15px;background:var(--surface);}",
       ".cb-fbox header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:8px;}",
       // The block also renders on the funding explainer (fundingPanel, 2026-09-30),
@@ -1721,12 +1733,13 @@
     return cap ? w.charAt(0).toUpperCase() + w.slice(1) : w;
   }
 
-  function stratHtml(items, label) {
+  function stratHtml(items, label, open) {
     if (!items || !items.length) return "";
     var n = items.length;
     // Sam, 2026-10-01 (mockup card 10): the steps name who suggests them; a
-    // college reader does not know "the team".
-    return '<details class="cb-strat"><summary>' + numWord(n, true) + " " + (n === 1 ? "step" : "steps")
+    // college reader does not know "the team". `open`: the funding block's
+    // steps arrive open (Sam, 2026-10-15, call 4: "Open one copy").
+    return '<details class="cb-strat"' + (open ? " open" : "") + '><summary>' + numWord(n, true) + " " + (n === 1 ? "step" : "steps")
       + " the CPL Initiative suggests" + (label ? " for " + esc(label) : "") + "</summary><ol>"
       + items.map(function (i) {
           var s = "<li>" + esc(i.text);
@@ -2762,7 +2775,7 @@
       fundBody += '<div class="cb-fund">';
       // The tag keeps the distribution date: Sam's opening (card 2) carries
       // the memo and the commitment, not the date.
-      fundBody += '<div class="cb-fbox"><header><h4>2025&ndash;2026 $50K Seed Funding</h4><span class="cb-tag">ESS 25-82, distributed spring 2026</span></header>';
+      fundBody += '<div class="cb-fbox"><header><h4>2025&ndash;2026 $50K Seed Funding</h4><span class="cb-tagword">ESS 25-82, distributed spring 2026</span></header>';
       if (f.grant.declined) {
         fundBody += '<div class="cb-fbig">Declined</div><div class="cb-lab">The college declined this grant pending further review.</div>';
       } else {
@@ -2798,7 +2811,7 @@
       // with the session, not a label a college would recognize. The tag is
       // the dashboard's own term for the figure (Sam's max award, 2026-09-01);
       // "cap" names the $400,000 ceiling.
-      fundBody += '<div class="cb-fbox"><header><h4>2026&ndash;2028 College Implementation Funding</h4><span class="cb-tag">max award</span></header>';
+      fundBody += '<div class="cb-fbox"><header><h4>2026&ndash;2028 College Implementation Funding</h4><span class="cb-tagword">max award</span></header>';
       if (!f.alloc) {
         fundBody += '<div class="cb-lab">CPL funding lists no allocation for this college.</div>';
       } else {
@@ -2827,7 +2840,7 @@
         // visible as noncredit funding — and it is the noncredit dean who
         // needs to see it. The share is INSIDE the combined figure above.
         if (f.nc != null && f.nc > 0) {
-          fundBody += '<div class="cb-note cb-floor">Noncredit portion of the max funding is ' + money(f.nc)
+          fundBody += '<div class="cb-note cb-ncline">Noncredit portion of the max funding is ' + money(f.nc)
             + ", which is based on CPL FTES that originate from the college or district's noncredit program.</div>";
         }
 
@@ -2849,7 +2862,7 @@
             // intimidating audit; six to ten attached to a priority read as
             // advice about that priority.
             var progPrio = stratsInline ? programPriorityFor(implProg, p, i) : null;
-            if (progPrio) fundBody += stratHtml(progPrio.items, null);
+            if (progPrio) fundBody += stratHtml(progPrio.items, null, true);
             fundBody += "</div>";
           });
           fundBody += "</div>";
