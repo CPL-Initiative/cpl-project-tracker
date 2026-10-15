@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8061,
-    "output_tokens": 2269,
+    "output_tokens": 2473,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 2269,
+  "output_tokens": 2473,
   "output_tokens_details": {
-   "thinking_tokens": 726
+   "thinking_tokens": 924
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.07762,
- "ms": 17821,
- "seconds": 18.5,
+ "cost_usd": 0.0817,
+ "ms": 19029,
+ "seconds": 19.4,
  "parts": null,
  "error": null,
  "score": {
@@ -90,7 +90,7 @@
    "pass": true
   },
   "careers": {
-   "count": 9,
+   "count": 10,
    "not_verbatim": [],
    "pass": true
   },
@@ -138,7 +138,8 @@
     "international economic systems",
     "corporations",
     "government",
-    "journalism and technical writing",
+    "journalism",
+    "technical writing",
     "non-profit organizations"
    ]
   },
@@ -333,11 +334,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "List B also accepts any List A course not already used; those courses are recorded once, in List A.",
-   "Units for 'or' alternatives are not printed beside them in the catalog, so alternative units are null; the STAT row prints 4-5 for the whole set of options.",
-   "Outcomes come from the page's Program Student Learning Outcomes tab; the 'Outcome N:' labels were dropped.",
-   "The description says 'This degree requires 20-25 units in the major, in addition to other graduation requirements'; no GE pattern or degree total is printed."
+   "List B also allows any List A course not already used; those courses are recorded only once, in List A.",
+   "Alternative (or/honors) courses print no units of their own; their units are left null. STAT C1000 row prints 4-5 covering its alternatives.",
+   "Total 20-25 is stated both in the description ('requires 20-25 units in the major') and as 'Total Units 20-25'. No GE pattern or degree total is printed on the page.",
+   "Outcomes taken from the page's Program Student Learning Outcomes tab; 'Outcome N:' labels removed."
   ]
  },
- "extracted_run": "38670930336"
+ "extracted_run": "38675136988"
 }

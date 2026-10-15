@@ -1,0 +1,212 @@
+{
+ "college": "Fullerton College",
+ "control_number": "18801",
+ "shape": "degree",
+ "title": "Child Development and Educational Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/child-development-educational-studies/child-development-educational-studies-associate-arts-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7523,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7523,
+    "output_tokens": 1172,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1172,
+  "output_tokens_details": {
+   "thinking_tokens": 162
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05353,
+ "ms": 10210,
+ "seconds": 10.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    21.0
+   ],
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Child Development and Educational Studies Associate in Arts Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Understand, assess, and apply historical and contemporary theories of child development.",
+    "Generate a comprehensive portfolio that illustrates, examines, and criticizes ongoing bias that children, individuals and families experience, in order to develop and justify becoming an anti-bias educator.",
+    "Analyze and interpret the teacher's extensive role in early learning and development settings.",
+    "Demonstrate and analyze the interrelationships of the child, family, school and greater community.",
+    "Analyze and interpret development in various domains of childhood development (biosocial, psychosocial, and cognitive, including typical and atypical development), and generate knowledge of the domains into comprehensive understanding of child development.",
+    "Design quality early childhood programs and curricula that reflect a comprehensive understanding of Developmentally Appropriate Practices (DAP), anti-bias-education, and inclusion."
+   ],
+   "careers": [
+    "teachers",
+    "teacher's assistants"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "CDES 120 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDES 122 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDES 125 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDES 201 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDES 204 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDES 210 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDES 238 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Outcomes come from the page's outcomes tab and were recorded without their 'Outcome N:' labels.",
+   "CDES 225 F (Early Childhood Student Teaching Practicum) is mentioned in the description only as an addition for the Title V Child Development Teacher Permit, not as a degree requirement; it is not placed in a block.",
+   "The catalog title for CDES 210 F reads 'Anti-Bias Perspective and Diversity Seminar' versus 'Anti-Bias Perspective/Diversity Seminar' in the state file; same code.",
+   "No general education pattern or degree total (with GE) is printed on the page; 21 units is the major total."
+  ]
+ },
+ "extracted_run": "38675136988"
+}

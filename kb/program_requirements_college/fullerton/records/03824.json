@@ -1,0 +1,349 @@
+{
+ "college": "Fullerton College",
+ "control_number": "03824",
+ "shape": "degree",
+ "title": "Accounting",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/accounting/accounting-associate-science-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8215,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8215,
+    "output_tokens": 2219,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2219,
+  "output_tokens_details": {
+   "thinking_tokens": 562
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07724,
+ "ms": 16105,
+ "seconds": 16.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 20,
+   "share": 0.95,
+   "missing": [
+    "ACCT104F"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "ACCT205F",
+    "ACCT220F",
+    "ACCT230F",
+    "BUS295F"
+   ],
+   "flagged": [
+    "ACCT205F",
+    "ACCT220F",
+    "ACCT230F",
+    "BUS295F"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.0,
+    34.0
+   ],
+   "stated": [
+    32.0,
+    34.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Accounting Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 34
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Recognize revenues and expenses in the proper period as required in accrual basis accounting and Generally Accepted Accounting Principles (GAAP), and make adjustments to ledger accounts accordingly.",
+    "Develop and use accounting information for daily recording of business financial transactions in a manufacturing environment, and develop and use operational budgets for a manufacturing company.",
+    "Use the computer to input routine cash and credit transactions involving sales, purchases, expenses and employees into a computerized general ledger accounting software program.",
+    "Prepare, comprehend, and analyze the basic accounting financial statements: Income Statement, Retained Earnings Statement, Balance Sheet, Statement of Cash Flows and the related notes to the financial statements."
+   ],
+   "careers": [
+    "accounting",
+    "bookkeeping",
+    "accounting manager",
+    "internal auditor",
+    "financial analyst",
+    "tax accountant",
+    "controller"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 27,
+     "max": 27
+    },
+    "courses": [
+     {
+      "code": "ACCT 101AF",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACCT 102HF",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 101BF",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 201AF",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 201BF",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 107 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 220 F",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives",
+    "rule": "choose_units",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "ACCT 100 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 110 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 202 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 203 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 204 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 205 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACCT 230 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 240 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 240HF",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 245 F",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 111 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 211 F",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 211HF",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 295 F",
+      "units": 2,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 106 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 205 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACCT 104 F",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Outcomes come from the page's outcomes tab and were printed with 'Outcome N:' labels, which were removed.",
+   "A footnote '1 See counselor for determination of correct course.' follows the total; its reference mark's location in the course list is not shown.",
+   "Alternatives (ACCT 102HF, BUS 240HF, BUS 245 F, BUS 211 F, BUS 211HF) have no units printed beside them in the catalog.",
+   "Careers 'accounting' and 'bookkeeping' taken from 'employment in the fields of accounting and/or bookkeeping'."
+  ]
+ },
+ "extracted_run": "38675136988"
+}

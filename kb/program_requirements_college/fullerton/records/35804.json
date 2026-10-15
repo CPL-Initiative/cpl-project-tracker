@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7716,
-    "output_tokens": 1849,
+    "output_tokens": 1790,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 1849,
+  "output_tokens": 1790,
   "output_tokens_details": {
-   "thinking_tokens": 487
+   "thinking_tokens": 451
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.06784,
- "ms": 14070,
- "seconds": 14.7,
+ "cost_usd": 0.06666,
+ "ms": 13385,
+ "seconds": 13.7,
  "parts": null,
  "error": null,
  "score": {
@@ -113,7 +113,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "Cal-GETC",
+   "ge_pattern": "California General Education Transfer Curriculum (Cal-GETC)",
    "degree_total": {
     "min": null,
     "max": null
@@ -131,7 +131,7 @@
   },
   "blocks": [
    {
-    "name": "Required Core (16 units)",
+    "name": "Required Core",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -183,7 +183,7 @@
     ]
    },
    {
-    "name": "List A: Select two courses (8-10 units)",
+    "name": "List A: Select two courses",
     "rule": "choose_courses",
     "minimum": 2,
     "option_group": null,
@@ -250,7 +250,7 @@
     ]
    },
    {
-    "name": "List B: Select one course (3 units)",
+    "name": "List B: Select one course",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -286,11 +286,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints no units beside alternatives (honors twins, ANAT 240 F) or beside any course in the statistics row (STAT C1000, STAT C1000H, PSY 161 F, PSY 161HF, SOSC 120 F); units recorded as null. The state file lists ANAT 240 F at 5 units and the statistics courses at 4.",
-   "The 60-unit requirement is a generic statement for all AA-T/AS-T degrees, not printed as this award's total, so degree_total is null. GE pattern named as 'The California General Education Transfer Curriculum' (Cal-GETC); no GE units printed.",
-   "Program outcomes taken from the page's outcomes tab; 'Outcome 1:'/'Outcome 2:' labels omitted.",
-   "FOOD 102 F is printed with '(formerly FOOD 101AF)'."
+   "Units are not printed beside alternatives (NUTR 210HF, PSYC C1000H, ANAT 240 F) nor beside any of the statistics options in List A (STAT C1000, STAT C1000H, PSY 161 F, PSY 161HF, SOSC 120 F); recorded as null. State file stores ANAT 240 F as 5 units and the statistics courses as 4 units.",
+   "The 60-unit sentence is the generic requirement for all AA-T/AS-T degrees, not a printed degree total; degree_total left null.",
+   "Outcomes taken from the page's Program Student Learning Outcomes tab; 'Outcome 1:'/'Outcome 2:' labels omitted.",
+   "FOOD 102 F printed as '(formerly FOOD 101AF)'."
   ]
  },
- "extracted_run": "38670930336"
+ "extracted_run": "38675136988"
 }

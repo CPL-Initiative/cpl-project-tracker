@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7806,
-    "output_tokens": 2380,
+    "output_tokens": 2241,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 2380,
+  "output_tokens": 2241,
   "output_tokens_details": {
-   "thinking_tokens": 761
+   "thinking_tokens": 663
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.07882,
- "ms": 18161,
- "seconds": 18.5,
+ "cost_usd": 0.07604,
+ "ms": 16879,
+ "seconds": 17.2,
  "parts": null,
  "error": null,
  "score": {
@@ -316,13 +316,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
+   "The catalog prints no units beside COMM 120 F, COMM 124 F, COMM 135 F, ENGL C1002, ENGL C1001, PSYC C1000 or any honors alternative; those units are left null (state file lists 3 or 4).",
    "List A note: COMM 138 F is a 2-unit repeatable course, but students may only count 3 units of COMM 138 F toward the AA-T.",
-   "List B may also be completed with any List A course not already used ('or from below or any LIST A course not already used'); List A courses are not repeated in the List B block.",
-   "The catalog prints no units beside several courses (COMM 120 F, COMM 124 F, COMM 135 F, ENGL C1001, ENGL C1002, PSYC C1000 and the honors alternatives); units left null as printed.",
-   "The 60-semester-unit requirement is a generic statement for all AA-T/AS-T degrees, not printed as this award's total; degree_total left null. Likewise the 18-unit minimum in a major is generic; total_units uses the page's 'This degree requires a total of 18-23 units in the major' / 'Total Units 18-23'.",
-   "GE pattern: the text names IGETC or CSU GE-Breadth; no GE units printed.",
-   "Outcomes are from the page's Program Level Student Learning Outcomes tab; 'Outcome 1:'/'Outcome 2:' labels removed."
+   "List B also allows any List A course not already used ('or from below or any LIST A course not already used'); List A courses are not repeated in the List B block.",
+   "The 60-unit requirement and 18-unit minimum major are generic statements for all AA-T/AS-T degrees, not recorded as degree_total or total_units; total_units is the printed 'Total Units 18-23'.",
+   "GE pattern named generically as IGETC or CSU GE-Breadth; no GE units printed.",
+   "Program outcomes taken from the page's outcomes tab; the 'Outcome 1:'/'Outcome 2:' labels were omitted."
   ]
  },
- "extracted_run": "38670930336"
+ "extracted_run": "38675136988"
 }

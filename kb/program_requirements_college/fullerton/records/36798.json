@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7477,
-    "output_tokens": 2105,
+    "output_tokens": 2025,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 2105,
+  "output_tokens": 2025,
   "output_tokens_details": {
-   "thinking_tokens": 829
+   "thinking_tokens": 655
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.07201,
- "ms": 16834,
- "seconds": 17.2,
+ "cost_usd": 0.07041,
+ "ms": 16292,
+ "seconds": 16.6,
  "parts": null,
  "error": null,
  "score": {
@@ -168,7 +168,7 @@
   },
   "blocks": [
    {
-    "name": "Required Core (48 units)",
+    "name": "Required Core",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -278,12 +278,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The description states 47-48 units in the major, while the course table prints 'Required Core (48 units)' and 'Total Units 48'; total_units records the description's 47-48 range (likely reflecting the MATH 260 F alternative), and the block's stated records 48.",
-   "Units are not printed beside the alternatives MATH 151HF, MATH 152HF and MATH 260 F, so their units are null.",
-   "degree_total of 60 comes from the description's 'a minimum of 60 semester units' for this degree; ge_units of 20 comes from '20 units of Intersegmental General Education Transfer Curriculum (IGETC)'. Reviewer may check whether the 60-unit minimum should count as this award's degree total.",
-   "Program learning outcomes are taken from the page's outcomes tab, which prints one list for the program; the 'OUTCOME N:' labels were removed.",
-   "Description also requires a 3.5 GPA in the major for guaranteed UC transfer and a 2.0 overall GPA."
+   "The description states '47-48 units in the major' while the course table prints 'Required Core (48 units)' and 'Total Units 48'; total_units records the 47-48 range from the description, and the block's stated records 48. The range likely reflects MATH 260 F (units not printed) as an alternative to MATH 252 F.",
+   "degree_total 60 comes from 'a minimum of 60 semester units' in this degree's description; ge_units 20 from '20 units of Intersegmental General Education Transfer Curriculum (IGETC)'. The page does not state how remaining units to 60 are filled, so electives_fill_degree is false.",
+   "Units for the alternatives MATH 151HF, MATH 152HF and MATH 260 F are not printed on their rows; recorded as null.",
+   "Outcomes come from the page's Program Level Student Learning Outcomes tab; the 'OUTCOME n:' labels were removed.",
+   "Careers are taken from the sentence 'Students with a degree in chemistry may pursue careers in government agencies or various areas of industry, including environmental, pharmaceutical, and material chemistry.'; a reviewer may prefer to treat the industry areas differently.",
+   "The program also requires a 3.5 GPA in the major for guaranteed UC transfer and a 2.0 overall GPA."
   ]
  },
- "extracted_run": "38670930336"
+ "extracted_run": "38675136988"
 }
