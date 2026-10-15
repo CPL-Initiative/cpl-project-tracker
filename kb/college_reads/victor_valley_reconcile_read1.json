@@ -1,0 +1,43 @@
+{
+ "_readme": "S395 SkyHawthorn, 2026-10-15. 69 of Victor Valley's 178 records fail the arithmetic check: 34 hold a required course with no units (34 of them certificates), and 15 name no total. Before writing its reconcile steps (kb/program_requirements_reconcile.json; Sam, 2026-10-14), this read prints how a certificate page prints its required courses' units and total (Automotive Alternate Propulsion, Automotive Electrical Specialist), and how the Criminal Justice page with no total read states it. Three loads, no model call.",
+ "college": "Victor Valley College",
+ "questions": {
+  "course_units": "How the page prints each required course's units (a column, a range, a footnote) where the reading found none.",
+  "degree_total": "Whether and how the page prints the degree total (60), apart from the major's total.",
+  "major_total": "Whether and how the page prints the major's total units."
+ },
+ "keywords": [
+  "[Gg]eneral [Ee]ducation[^<\"]{0,160}",
+  "[Ee]lective[^<\"]{0,120}",
+  "[Tt]otal[^<\"]{0,100}",
+  "60[^<\"]{0,100}",
+  "[Uu]nits [Rr]equired[^<\"]{0,100}",
+  "[Dd]egree [Rr]equirements[^<\"]{0,160}",
+  "courselistcomment[^<]{0,160}",
+  "listsum[^<]{0,80}",
+  "[Cc]al-?GETC[^<\"]{0,120}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "course_units",
+    "major_total"
+   ],
+   "url": "https://catalog.vvc.edu/degrees-certificates/automotive-technology/automotive-alternative-propulsion-ca/"
+  },
+  {
+   "answers": [
+    "course_units",
+    "major_total"
+   ],
+   "url": "https://catalog.vvc.edu/degrees-certificates/automotive-technology/automotive-electrical-specialist-technician-ca/"
+  },
+  {
+   "answers": [
+    "major_total",
+    "degree_total"
+   ],
+   "url": "https://catalog.vvc.edu/degrees-certificates/criminal-justice/"
+  }
+ ]
+}

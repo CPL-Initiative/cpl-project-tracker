@@ -1,0 +1,42 @@
+{
+ "_readme": "S395 SkyHawthorn, 2026-10-15. 117 of Monterey Peninsula's 199 records fail the arithmetic check: 65 name the degree total and the GE pattern (MPC General Education or Cal-GETC, 42; Cal-GETC alone, 23) with no GE units, and 47 sum their blocks unequal to the stated total by a half unit or a unit. Before writing its reconcile steps (kb/program_requirements_reconcile.json; Sam, 2026-10-14), this read prints how a degree page and a transfer degree page state the GE units and the degree total, and how a certificate page states the total its blocks miss by a half unit. Three loads, no model call.",
+ "college": "Monterey Peninsula College",
+ "questions": {
+  "block_sum": "How the page prints the total its blocks miss by a half unit or a unit (a range, a footnote, a choice).",
+  "degree_total": "Whether and how the page prints the degree total (60), apart from the major's total.",
+  "ge_line": "Whether and how the page prints the general education units for the degree, and which pattern."
+ },
+ "keywords": [
+  "[Gg]eneral [Ee]ducation[^<\"]{0,160}",
+  "[Ee]lective[^<\"]{0,120}",
+  "[Tt]otal[^<\"]{0,100}",
+  "60[^<\"]{0,100}",
+  "[Uu]nits [Rr]equired[^<\"]{0,100}",
+  "[Dd]egree [Rr]equirements[^<\"]{0,160}",
+  "courselistcomment[^<]{0,160}",
+  "listsum[^<]{0,80}",
+  "[Cc]al-?GETC[^<\"]{0,120}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "degree_total",
+    "ge_line"
+   ],
+   "url": "https://catalog.mpc.edu/programs-study/horticulture/horticulture-as/"
+  },
+  {
+   "answers": [
+    "degree_total",
+    "ge_line"
+   ],
+   "url": "https://catalog.mpc.edu/programs-study/psychology/psychology-aa-t/"
+  },
+  {
+   "answers": [
+    "block_sum"
+   ],
+   "url": "https://catalog.mpc.edu/programs-study/business/business-leadership-certificate-achievement/"
+  }
+ ]
+}

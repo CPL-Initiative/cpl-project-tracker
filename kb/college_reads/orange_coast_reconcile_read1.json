@@ -1,0 +1,44 @@
+{
+ "_readme": "S395 SkyHawthorn, 2026-10-15. 97 of Orange Coast's 242 records fail the arithmetic check: 36 name no total at all and 39 name the degree total and the OCC AS GE pattern with no GE units. Before writing its reconcile steps (kb/program_requirements_reconcile.json; Sam, 2026-10-14), this read prints how a degree page with no total read (Biology, Accounting) and one with the OCC AS GE line (Management and Leadership Studies) state the major total, the GE units and the degree total. Three loads, no model call.",
+ "college": "Orange Coast College",
+ "questions": {
+  "degree_total": "Whether and how the page prints the degree total (60), apart from the major's total.",
+  "ge_line": "Whether and how the page prints the general education units for the degree, and which pattern.",
+  "major_total": "Whether and how the page prints the major's total units."
+ },
+ "keywords": [
+  "[Gg]eneral [Ee]ducation[^<\"]{0,160}",
+  "[Ee]lective[^<\"]{0,120}",
+  "[Tt]otal[^<\"]{0,100}",
+  "60[^<\"]{0,100}",
+  "[Uu]nits [Rr]equired[^<\"]{0,100}",
+  "[Dd]egree [Rr]equirements[^<\"]{0,160}",
+  "courselistcomment[^<]{0,160}",
+  "listsum[^<]{0,80}",
+  "[Cc]al-?GETC[^<\"]{0,120}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "major_total",
+    "degree_total"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/biology/"
+  },
+  {
+   "answers": [
+    "major_total",
+    "degree_total",
+    "ge_line"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/accounting-associate-science-degree/"
+  },
+  {
+   "answers": [
+    "degree_total",
+    "ge_line"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/management/management-leadership-studies-associate-science-degree/"
+  }
+ ]
+}
