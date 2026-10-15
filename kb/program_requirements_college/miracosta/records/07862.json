@@ -1,0 +1,190 @@
+{
+ "college": "MiraCosta College",
+ "control_number": "07862",
+ "shape": "degree",
+ "title": "Nursery/Horticulture Crop Production",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.miracosta.edu/disciplines/horticulture/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11745,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11745,
+    "output_tokens": 1249,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1249,
+  "output_tokens_details": {
+   "thinking_tokens": 400
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07196,
+ "ms": 11706,
+ "seconds": 12.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 10,
+   "share": 0.0,
+   "missing": [
+    "HORT115",
+    "HORT116",
+    "HORT117",
+    "HORT122",
+    "HORT126",
+    "HORT134",
+    "HORT140",
+    "HORT144",
+    "HORT292",
+    "HORT299"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HORT 115",
+    "why": "A.A. degree section not in the text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 116",
+    "why": "A.A. degree section not in the text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 117",
+    "why": "A.A. degree section not in the text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 122",
+    "why": "A.A. degree section not in the text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 126",
+    "why": "A.A. degree section not in the text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 134",
+    "why": "A.A. degree section not in the text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 140",
+    "why": "A.A. degree section not in the text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 144",
+    "why": "A.A. degree section not in the text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 292",
+    "why": "A.A. degree section not in the text; named only in certificate sections"
+   },
+   {
+    "code": "HORT 299",
+    "why": "A.A. degree section not in the text; named only in certificate sections"
+   }
+  ],
+  "notes": [
+   "The supplied text contains only the CERTIFICATES tab and the start of the COURSES tab; no A.A. Degree section for Nursery/Horticulture Crop Production appears, so no section heading, blocks, totals, outcomes or careers were recorded for the degree.",
+   "The Certificate of Achievement in Nursery/Horticulture Crop Production lists as required: HORT 115 (3), HORT 116 (4), HORT 117 (3), HORT 122 (2), HORT 126 (3), HORT 134 (3), HORT 140 (3), HORT 144 (3), HORT 292 (1) or HORT 299; Total Units 25. Its PSLO: 'Upon completion of this program, the student will be able to integrate concepts and skills learned in core courses to manage environmental and other growth factors to produce healthy and marketable crops.' The degree may share these requirements, but this cannot be confirmed from the text.",
+   "A reviewer should retrieve the DEGREES tab of the catalog page to record the A.A. Degree requirements, including any general education pattern and degree total."
+  ]
+ },
+ "extracted_run": "38748842603"
+}
