@@ -1,0 +1,254 @@
+{
+ "college": "Santa Barbara City College",
+ "control_number": "41363",
+ "shape": "adt",
+ "title": "Business Administration 2.0",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.sbcc.edu/academic-departments/business-administration/business-administration-2.0-ast/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7571,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7571,
+    "output_tokens": 1316,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1316,
+  "output_tokens_details": {
+   "thinking_tokens": 340
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0566,
+ "ms": 11235,
+ "seconds": 11.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 15,
+   "share": 0.867,
+   "missing": [
+    "MATH138",
+    "MATH149"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    31.0
+   ],
+   "stated": [
+    31.0,
+    31.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Administration 2.0, Associate in Science for Transfer (AS-T)",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 31
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze the external environment of business as a means of assessing the threats and opportunities confronting businesses in the 21st century.",
+    "Define, analyze and devise solutions for complex business problems and issues by using logical reasoning patterns.",
+    "Explain the legal and ethical issues confronting today’s contemporary organizations."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT 230",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 240",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLAW 101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BLAW 110",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMP 271",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 130",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 150",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSY 150",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 125",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH 138",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH149",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Total Units 31.00 is printed under Major Requirements and recorded as total_units.",
+   "The 'At least 60 CSU transferable semester units' line is a general ADT graduation requirement, not printed as this award's total, so degree_total is null.",
+   "Alternatives (BLAW 110, COMP 271, MATH 150, PSY 150, SOC 125) are printed without units on their 'or' rows; units recorded as null.",
+   "The outcomes were taken from the page's outcomes tab container; they appear to apply to this award."
+  ]
+ },
+ "extracted_run": "38670933359"
+}

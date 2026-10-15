@@ -1,0 +1,179 @@
+{
+ "college": "Santa Barbara City College",
+ "control_number": "36907",
+ "shape": "noncredit",
+ "title": "Basic MAC Software Skills",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.sbcc.edu/sel/career-skills/basic-mac-software-skills-certificate-completion/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6649,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6649,
+    "output_tokens": 974,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 974,
+  "output_tokens_details": {
+   "thinking_tokens": 288
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04608,
+ "ms": 8232,
+ "seconds": 8.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Basic MAC Software Skills, Certificate of Completion",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the ability to import and retouch photos into iPhoto.",
+    "Demonstrate the ability to create a slide show.",
+    "Demonstrate the ability to import music into and export music out of iTunes.",
+    "Demonstrate the ability to create playlists.",
+    "Demonstrate ability to use Word and edit documents",
+    "Construct Excel spreadsheet that contain formulas and functions.",
+    "Demonstrate ability to create a presentation using PowerPoint",
+    "Demonstrate ability to use email, contacts, and calendar inside Outlook"
+   ],
+   "careers": [
+    "entry-level office clerk jobs",
+    "advertising industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Course List",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CMPW NC035",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMPW NC036",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMPW NC037",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate of completion, but the page prints no hours; it lists each course with 0 units, so measure is recorded as units with the printed 0 values. No total units or hours stated, so total_units is null.",
+   "The description says the program consists of three required courses; all three are recorded in one 'all' block.",
+   "Outcomes are taken from the page's Learning Outcomes tab for this certificate.",
+   "Careers: 'advertising industry' is named as a field for career laddering ('notable with the advertising industry'); reviewer may check whether it should count as a career field."
+  ]
+ },
+ "extracted_run": "38670933359"
+}

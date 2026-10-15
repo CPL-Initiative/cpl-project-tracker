@@ -1,0 +1,207 @@
+{
+ "college": "Santa Barbara City College",
+ "control_number": "32629",
+ "shape": "adt",
+ "title": "Physics",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.sbcc.edu/academic-departments/physics/physics-ast/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7661,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7661,
+    "output_tokens": 1329,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1329,
+  "output_tokens_details": {
+   "thinking_tokens": 329
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05722,
+ "ms": 11383,
+ "seconds": 12.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.0,
+    29.0
+   ],
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Physics, Associate in Science for Transfer (AS-T)",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate proficiency, both conceptually and mathematically with calculus, in solving mechanical static and dynamic mechanical problems involving both solids and fluids.",
+    "Demonstrate proficiency, both conceptually and mathematically with calculus, in solving mechanical wave problems.",
+    "Demonstrate proficiency, both conceptually and mathematically with calculus, in solving thermodynamic problems.",
+    "Demonstrate proficiency, both conceptually and mathematically with calculus, in solving electric, magnetic and electromagnetic problems.",
+    "Demonstrate proficiency, both conceptually and mathematically with calculus, in solving ray and wave optics problems.",
+    "Demonstrate proficiency, both conceptually and mathematically with calculus, in solving modern physics problems.",
+    "Demonstrate proficiency in construction and assembly of experimental apparatuses; conduct and analyze measurements of physical phenomena; assess experimental uncertainty; make meaningful comparisons between experiment and theory; and interpret results."
+   ],
+   "careers": [
+    "engineering",
+    "science"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH 150",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 160",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 200",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 121",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 122",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 123",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page's general ADT graduation requirements state 'At least 60 CSU transferable semester units'; read as the generic ADT rule, not a printed degree total, so degree_total is null.",
+   "Cal-GETC is named as the GE pattern but no GE units are printed.",
+   "PHYS 121W, 122W and 123W (EMSE workshops) are mentioned in the overview only, not as requirements; not placed.",
+   "Outcomes come from the page's Learning Outcomes tab for this AS-T page.",
+   "Careers 'engineering' and 'science' taken from the overview sentence 'preparing for a career in engineering, or science.'"
+  ]
+ },
+ "extracted_run": "38670933359"
+}

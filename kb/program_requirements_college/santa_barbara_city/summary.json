@@ -1,0 +1,372 @@
+{
+ "college": "Santa Barbara City College",
+ "programs": 319,
+ "with_closed_list": 287,
+ "found": 249,
+ "extracted": 249,
+ "errors": 0,
+ "passed_machine_checks": 206,
+ "failed": {
+  "coverage": 8,
+  "invented": 0,
+  "arithmetic": 42,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 18.02,
+ "cost_per_program": 0.0724,
+ "not_found": [
+  {
+   "control_number": "12075",
+   "title": "Database Programming and Applications Development",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "21689",
+   "title": "PC Support and Network Management",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "24154",
+   "title": "Medical Assistant Training Program",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.sbcc.edu/sel/career-skills/medical-assistant-training-program-certificate-completion/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1563,
+     "content": 16941,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      281
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "24266",
+   "title": "Adult Basic Education Advanced Reading and Writing Certificate",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "24270",
+   "title": "Adult Basic Education Intermediate Level 1 Reading and Writing Certificate",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "24271",
+   "title": "Adult Basic Education Math Foundations Certificate",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "24272",
+   "title": "Adult Basic Education Intermediate Level 2 Reading and Writing Certificate",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "24300",
+   "title": "Adult Basic Education Reading and Writing Foundations Certificate",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "24392",
+   "title": "Health Care Interpreter Training Program",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "30368",
+   "title": "ESL Beginning Level",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.sbcc.edu/sel/career-skills/beginning-mac-skills-certificate-completion/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1450,
+     "content": 16938,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      375
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "30380",
+   "title": "ESL Intermediate Level",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.sbcc.edu/sel/esl-noncredit/esl-intermediate-grammar-composition-certificate-competency/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1356,
+     "content": 12425,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      264
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "30381",
+   "title": "ESL Advanced Level",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.sbcc.edu/sel/esl-noncredit/esl-advanced-grammar-composition-certificate-competency/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1307,
+     "content": 12433,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      322
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "31493",
+   "title": "Computer Hardware Fundamentals",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.sbcc.edu/sel/career-skills/computer-hardware-fundamentals-certificate-completion/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1553,
+     "content": 17000,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      347
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "35508",
+   "title": "Strategic Marketing",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.sbcc.edu/sel/career-skills/strategic-marketing-certificate-completion/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1270,
+     "content": 16856,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      490
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "36839",
+   "title": "Green Documents: Documents for the Environment",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.sbcc.edu/sel/career-skills/green-documents-documents-for-the-environment-nc-completion/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1353,
+     "content": 16768,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      314
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "39376",
+   "title": "Digital Photograph Management",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.sbcc.edu/sel/career-skills/digital-photograph-management-certificate-completion/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1240,
+     "content": 16565,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      226
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "40083",
+   "title": "Cloud Computing Architect",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "44675",
+   "title": "Digital Photography Level 1",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.sbcc.edu/sel/career-skills/digital-photography-essentials-nc-completion/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1516,
+     "content": 16880,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      276
+     ]
+    ]
+   }
+  }
+ ],
+ "run": "38670933359"
+}
