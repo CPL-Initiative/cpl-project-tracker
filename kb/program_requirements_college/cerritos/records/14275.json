@@ -53,6 +53,7 @@
     "WGS207"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -78,7 +79,31 @@
     18.0,
     18.0
    ],
-   "why": []
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     42.0,
+     46.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     28.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     14.0,
+     18.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -93,6 +118,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": true
  },
@@ -111,7 +144,17 @@
     "Demonstrate an understanding of the obstacles, struggles and achievements of women throughout history.",
     "Use feminist frameworks to analyze the structure of gendered representations in media, language, and texts.",
     "Engage in critical self-reflection in order to demonstrate an understanding of agency and social responsibility in personal, professional, and community settings."
-   ]
+   ],
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "degree_total_minimum": true,
+   "ge_units": {
+    "min": 24,
+    "max": 28
+   },
+   "electives_fill_degree": true
   },
   "blocks": [
    {
@@ -358,5 +401,38 @@
    "Program Student Learning Outcomes are printed for the A.A. program; the page covers only this award."
   ]
  },
- "extracted_run": "37961137169"
+ "extracted_run": 38656800189,
+ "reconciled": [
+  {
+   "field": "degree_total",
+   "was": null,
+   "now": {
+    "min": 60,
+    "max": 60
+   },
+   "words": "Complete a minimum of 60 units to include (1) the above major requirements"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Complete a minimum of 60 units to include (1) the above major requirements"
+  },
+  {
+   "field": "ge_units",
+   "was": null,
+   "now": {
+    "min": 24,
+    "max": 28
+   },
+   "words": "(2) the General Education requirements (https://cerritos-public.courseleaf.com/policies-and-resources/graduation-and-transfer-requirements/cgec/: CGEC, which is 24-28 units, is intended to meet the GE requirements.)"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": null,
+   "now": true,
+   "words": "(3) electives as needed"
+  }
+ ],
+ "read_run": "37961137169"
 }

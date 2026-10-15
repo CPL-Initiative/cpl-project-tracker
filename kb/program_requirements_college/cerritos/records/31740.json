@@ -56,6 +56,7 @@
     "ENGT153"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -75,9 +76,33 @@
     24.0,
     27.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 25.0-27.0; the catalog states 24.0-27.0"
-   ]
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     49.0,
+     55.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     28.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     5.0,
+     11.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -92,6 +117,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": false
  },
@@ -113,7 +146,17 @@
     "an ability to function effectively on a team whose members together provide leadership, create a collaborative and inclusive environment, establish goals, plan tasks, and meet objectives.",
     "an ability to develop and conduct appropriate experimentation, analyze and interpret data, and use engineering judgment to draw conclusions.",
     "an ability to acquire and apply new knowledge as needed, using appropriate learning strategies."
-   ]
+   ],
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "degree_total_minimum": true,
+   "ge_units": {
+    "min": 24,
+    "max": 28
+   },
+   "electives_fill_degree": true
   },
   "blocks": [
    {
@@ -336,5 +379,38 @@
    "The page text spells it 'Solidworks Introduction' for ENGT 259."
   ]
  },
- "extracted_run": "37961137169"
+ "extracted_run": 38656800189,
+ "reconciled": [
+  {
+   "field": "degree_total",
+   "was": null,
+   "now": {
+    "min": 60,
+    "max": 60
+   },
+   "words": "Complete a minimum of 60 units to include (1) the above major requirements"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Complete a minimum of 60 units to include (1) the above major requirements"
+  },
+  {
+   "field": "ge_units",
+   "was": null,
+   "now": {
+    "min": 24,
+    "max": 28
+   },
+   "words": "(2) the General Education requirements (https://cerritos-public.courseleaf.com/policies-and-resources/graduation-and-transfer-requirements/cgec/: CGEC, which is 24-28 units, is intended to meet the GE requirements.)"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": null,
+   "now": true,
+   "words": "(3) electives as needed"
+  }
+ ],
+ "read_run": "37961137169"
 }

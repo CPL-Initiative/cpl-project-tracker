@@ -51,6 +51,7 @@
     "CS200"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -80,7 +81,31 @@
     28.0,
     31.0
    ],
-   "why": []
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     52.0,
+     59.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     28.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     1.0,
+     8.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -95,6 +120,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": true
  },
@@ -113,7 +146,17 @@
     "Transform through community-based learning in the context of the Latinx and racialized communities’ struggles with civic engagement activities led by the principles of racial and Social Justice.",
     "Communicate an internalized bilingual understanding of the special nature of the Chicana(o) ethnic identity process and the significance of this cognitive process to all groups.",
     "Create a social movement by graduating and seeking a transfer degree at four-year university."
-   ]
+   ],
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "degree_total_minimum": true,
+   "ge_units": {
+    "min": 24,
+    "max": 28
+   },
+   "electives_fill_degree": true
   },
   "blocks": [
    {
@@ -395,5 +438,38 @@
    "Stated total 28-31 is consistent with 22 required units plus 6-9 elective units."
   ]
  },
- "extracted_run": "37961137169"
+ "extracted_run": 38656800189,
+ "reconciled": [
+  {
+   "field": "degree_total",
+   "was": null,
+   "now": {
+    "min": 60,
+    "max": 60
+   },
+   "words": "Complete a minimum of 60 units to include (1) the above major requirements"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Complete a minimum of 60 units to include (1) the above major requirements"
+  },
+  {
+   "field": "ge_units",
+   "was": null,
+   "now": {
+    "min": 24,
+    "max": 28
+   },
+   "words": "(2) the General Education requirements (https://cerritos-public.courseleaf.com/policies-and-resources/graduation-and-transfer-requirements/cgec/: CGEC, which is 24-28 units, is intended to meet the GE requirements.)"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": null,
+   "now": true,
+   "words": "(3) electives as needed"
+  }
+ ],
+ "read_run": "37961137169"
 }

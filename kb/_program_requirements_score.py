@@ -446,6 +446,12 @@ def degree_verdict(prog: dict, degree: tuple[float, float], lo: float, hi: float
         # Sheet 82 card 2 ("overlap", Sam, 2026-10-14): a course counts toward the major and
         # Cal-GETC both, so a transfer degree's sum runs past the total it prints.
         return {"pass": True, "status": "equal", "overlap": True, "why": []}
+    if prog.get("degree_total_minimum") and (prog.get("electives_fill_degree") or lo >= degree[0] - TOL):
+        # The page prints the degree total as a floor (Cerritos: "Complete a minimum of 60 units to
+        # include (1) the above major requirements, (2) the General Education requirements, and (3)
+        # electives as needed"): electives make up a sum short of it, and a sum past it meets it.
+        short = [round(max(0.0, degree[0] - hi), 2), round(max(0.0, degree[0] - lo), 2)]
+        return {"pass": True, "status": "equal", "minimum": True, "fill": short if short[1] > 0 else None, "why": []}
     fits = lo <= degree[0] + TOL and hi <= degree[1] + TOL
     fill = [round(max(0.0, degree[0] - hi), 2), round(max(0.0, degree[1] - lo), 2)]
     if prog.get("electives_fill_degree"):

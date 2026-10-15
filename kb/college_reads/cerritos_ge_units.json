@@ -1,0 +1,26 @@
+{
+ "_readme": "S393 SkySycamore, 2026-10-14. The site map (read cerritos_ge_page, run 38655666139) names the catalog's graduation requirements under /policies-and-resources/graduation-and-transfer-requirements/, with cgec/ and calgetc/ beneath it. This read prints how many units each associate degree general education pattern requires and how the associate degree's 60 is stated, for Cerritos's reconcile steps. Two loads, no model call.",
+ "college": "Cerritos College",
+ "questions": {
+  "ge_units": "The units each general education pattern for the associate degree requires (Cerritos's own, Cal-GETC).",
+  "degree_rule": "How the catalog states the associate degree: 60 units, the major, general education, electives."
+ },
+ "keywords": [
+  "[Gg]eneral [Ee]ducation[^<\"]{0,200}",
+  "[0-9]{1,2}(?:\\.[0-9])? (?:semester )?units[^<\"]{0,160}",
+  "60[^<\"]{0,160}",
+  "[Tt]otal[^<\"]{0,120}",
+  "[Pp]lan [A-C][^<\"]{0,160}",
+  "[Oo]ption [0-9A-C][^<\"]{0,160}"
+ ],
+ "pages": [
+  {
+   "answers": ["degree_rule", "ge_units"],
+   "url": "https://cerritos-public.courseleaf.com/policies-and-resources/graduation-and-transfer-requirements/"
+  },
+  {
+   "answers": ["ge_units"],
+   "url": "https://cerritos-public.courseleaf.com/policies-and-resources/graduation-and-transfer-requirements/cgec/"
+  }
+ ]
+}

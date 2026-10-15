@@ -1450,7 +1450,7 @@ check(sc["arithmetic"]["status"] == "equal" and sc["arithmetic"]["against"] == "
 cert_text = AST_TEXT.replace("Astronomy - Associate in Science (A.S.)", "Accounting Certificate of Achievement")
 check(RC.reconcile(ast_r, cert_text, "Cabrillo College", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units")[1] == [],
       "a certificate's page prints its own total in the same words, and the degree steps leave it alone")
-check(RC.reconcile(ast_r, AST_TEXT, "Cerritos College", "A.S. Degree")[1] == [],
+check(RC.reconcile(ast_r, AST_TEXT, "Long Beach City College", "A.S. Degree")[1] == [],
       "a college with no reconcile steps keeps its records as read")
 read_already = {"program": {"total_units": {"min": None, "max": None}, "degree_total": {"min": 60, "max": 60},
                             "ge_units": {"min": 34, "max": 34}, "open_elective_units": 5}, "blocks": []}
@@ -1461,6 +1461,68 @@ new, notes = RC.reconcile(both, BIO_TEXT.replace("at least 30 units", "at least 
 check(new["program"]["total_units"] == {"min": 36, "max": 36} and new["program"]["degree_elective_units"] == {"min": 6, "max": 6}
       and not new["program"].get("open_elective_units"),
       "a major total that is not the minimum sentence's stays, and the degree's electives go beside it")
+
+# A set step (S393, Cerritos): a figure the catalog prints once for every degree, on its own page, set
+# where the program page's words point to it, never over a figure the reading holds, citing both.
+SET_STEPS = {"Test College": {"awards": "associate", "steps": [
+    {"kind": "set", "field": "ge_units", "value": {"min": 21, "max": 21},
+     "pattern": "\\(2\\) the General Education requirements",
+     "source": "https://example.edu/cgec/", "source_words": "a minimum of 21 units"}]}}
+SET_TEXT = ("Total Units 28 \u00b7 ASSOCIATE OF ARTS DEGREE REQUIREMENTS\nComplete a minimum of 60 units to include "
+            "(1) the above major requirements, (2) the General Education requirements, and (3) electives as needed")
+new, notes = RC.reconcile({"program": {"total_units": {"min": 28, "max": 28}}, "blocks": []}, SET_TEXT,
+                          "Test College", "A.A. Degree", steps=SET_STEPS)
+check(new["program"]["ge_units"] == {"min": 21, "max": 21} and len(notes) == 1
+      and "(2) the General Education requirements" in notes[0]["words"] and "https://example.edu/cgec/" in notes[0]["words"]
+      and "a minimum of 21 units" in notes[0]["words"],
+      "a set step fills the GE units the catalog's GE page states, citing the program page's words and that page's: %s"
+      % json.dumps(notes))
+check(RC.reconcile({"program": {"ge_units": {"min": 34, "max": 34}}, "blocks": []}, SET_TEXT, "Test College",
+                   "A.A. Degree", steps=SET_STEPS)[1] == []
+      and RC.reconcile({"program": {}, "blocks": []}, "Total Units 28", "Test College", "A.A. Degree", steps=SET_STEPS)[1] == [],
+      "a set step never overwrites the reading's figure, and needs the program page's words")
+
+# Cerritos (S393): every degree page prints the major's total and "Complete a minimum of 60 units to include
+# (1) the above major requirements, (2) the General Education requirements, and (3) electives as needed"
+# (college-page-read 38654411937); the CGEC page states GE of 24-28 (read 38656043692). The 60 is a floor.
+CER_BIO = ("Program Requirements \u00b7 Course List \u00b7 Code Number\tCourse Title\tUnits \u00b7 Required Courses\n"
+           "BIOL 120\tIntroduction To Biological Science\t4.0\nBIOL 200\tPrinciples of Biology\t5.0 \u00b7 BIOL 201\tPrinciples of "
+           "Biology\t5.0 \u00b7 CHEM 111\tGeneral Chemistry\t5.0 \u00b7 CHEM 112\tGeneral Chemistry\t5.0 \u00b7 Select one of the "
+           "following two courses\nMATH 116\tCalculus for Managerial, Biological and Social Sciences\t4.0\nor MATH 170\tAnalytic "
+           "Geometry and Calculus I \u00b7 Total Units\t28 \u00b7 ASSOCIATE OF ARTS DEGREE REQUIREMENTS\nComplete a minimum of 60 "
+           "units to include (1) the above major requirements, (2) the General Education requirements, and (3) electives as needed")
+CER_BIO_LIST = [{"code": c, "units": u} for c, u in (("BIOL 120", 4), ("BIOL 200", 5), ("BIOL 201", 5), ("CHEM 111", 5),
+                                                      ("CHEM 112", 5), ("MATH 116", 4), ("MATH 170", 4))]
+cer_bio = {"program": {"total_units": {"min": 28, "max": 28}, "measure": "units"},
+           "blocks": [{"name": "Required Courses", "rule": "all", "courses": [{"code": c} for c in
+                       ("BIOL 120", "BIOL 200", "BIOL 201", "CHEM 111", "CHEM 112")]},
+                      {"name": "Select one", "rule": "choose_courses", "minimum": 1,
+                       "courses": [{"code": "MATH 116"}, {"code": "MATH 170"}]}]}
+check(S.score(cer_bio, CER_BIO_LIST, CER_BIO, "A.A. Degree")["degree"]["status"] == "major only",
+      "Cerritos Biology as read: the major only")
+new, notes = RC.reconcile(cer_bio, CER_BIO, "Cerritos College", "A.A. Degree")
+sc = S.score(new, CER_BIO_LIST, CER_BIO, "A.A. Degree")
+check([n["field"] for n in notes] == ["degree_total", "degree_total_minimum", "ge_units", "electives_fill_degree"]
+      and new["program"]["total_units"] == {"min": 28, "max": 28} and new["program"]["ge_units"] == {"min": 24, "max": 28}
+      and "cgec" in notes[2]["words"] and sc["degree"]["status"] == "read" and sc["pass"]
+      and sc["arithmetic"]["against"] == "program" and sc["arithmetic"]["degree"]["pass"]
+      and sc["arithmetic"]["degree"].get("minimum") and sc["arithmetic"]["degree"]["fill"] == [4.0, 8.0],
+      "Cerritos Biology reconciled: the 28-unit major stays, the 60 is a minimum, GE 24-28 from the CGEC page, and "
+      "electives make up 4 to 8: %s" % json.dumps(sc["arithmetic"]))
+CER_AUTO = CER_BIO.replace("Total Units\t28", "Total Units\t42-43").replace("ARTS", "SCIENCE")
+auto = {**cer_bio, "program": {"total_units": {"min": 42, "max": 43}, "measure": "units"},
+        "blocks": [{"name": "Required Courses", "rule": "all", "courses": [{"code": "AUTO %d" % i} for i in range(1, 10)]}]}
+AUTO_LIST = [{"code": "AUTO %d" % i, "units": 5 if i > 1 else None} for i in range(1, 10)]
+new, notes = RC.reconcile(auto, CER_AUTO, "Cerritos College", "A.S. Degree")
+deg = S.degree_check(new["program"], (60.0, 60.0), 42.0, 43.0, [], CER_AUTO, "A.S. Degree")
+check(deg["pass"] and deg.get("minimum") and deg["computed"] == [66.0, 71.0] and deg.get("fill") is None,
+      "Cerritos Automotive: a 42-43-unit major and GE 24-28 come to 66-71, past the minimum of 60, which they meet: %s"
+      % json.dumps(deg))
+check(not S.degree_verdict({"electives_fill_degree": True}, (60.0, 60.0), 66.0, 71.0, "A.S. Degree")["pass"],
+      "without the minimum, a non-transfer degree past its printed total still fails")
+check(RC.reconcile(cer_bio, CER_BIO.replace("(2) the General Education requirements", "(2) Cal-GETC"),
+                   "Cerritos College", "A.A. Degree")[0]["program"].get("ge_units") is None,
+      "the GE step needs the page's own words for the local pattern")
 
 if failures:
     print("FAIL: %d" % len(failures))

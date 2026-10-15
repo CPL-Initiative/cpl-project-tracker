@@ -4,7 +4,8 @@
   "fill": "pattern's min (and max) fill program.<field> when it is empty; only_without / only_with name a field that must be empty / set; skip_if_equal names a field that already holds the same figure (no double count)",
   "clear_minimum": "a sentence giving a kind of degree's least units in the major (pattern's n) is no major total: total_units equal to n is cleared, once the record reads a degree total",
   "order": "steps run in order: a clear runs before the fills that depend on it",
-  "awards": "'associate': the steps read associate degrees only (a certificate's page prints its own total in the same words)"
+  "awards": "'associate': the steps read associate degrees only (a certificate's page prints its own total in the same words)",
+  "set": "a figure the page's words point to, set from the step's value where the field is empty: the catalog prints it once for every degree on its own page (source, source_words) or states a rule the record keeps as a flag (Cerritos's minimum of 60, its electives as needed)"
  },
  "colleges": {
   "Cabrillo College": {
@@ -38,6 +39,40 @@
      "only_with": "total_units",
      "pattern": "General electives: any transferable or degree applicable course\\.?\\s*(?P<min>\\d+(?:\\.\\d+)?)",
      "skip_if_equal": "open_elective_units"
+    }
+   ]
+  },
+  "Cerritos College": {
+   "why": "All 148 of Cerritos's associate-degree records held the major only (S393). Every degree page prints the major's own total and then \"Complete a minimum of 60 units to include (1) the above major requirements, (2) the General Education requirements, and (3) electives as needed\" (college-page-read 38654411937, Biology A.A. and Automotive Technology: General Technician A.S.). The catalog's CGEC page states the general education: \"To earn a local associate degree, a minimum of 60 degree-applicable units must be completed ... comprised of specific courses for a major, general education (GE), and electives as needed. CGEC, which is 24-28 units, is intended to meet the GE requirements\" (read 38656043692; majors of 32 units or more are exempt from Areas 8 and 9, which is the 24). The major total is right as read, so no step clears it.",
+   "awards": "associate",
+   "steps": [
+    {
+     "kind": "fill",
+     "field": "degree_total",
+     "pattern": "Complete a minimum of (?P<min>\\d+(?:\\.\\d+)?) units to include \\(1\\) the above major requirements"
+    },
+    {
+     "kind": "set",
+     "field": "degree_total_minimum",
+     "value": true,
+     "pattern": "Complete a minimum of \\d+(?:\\.\\d+)? units to include \\(1\\) the above major requirements"
+    },
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 24,
+      "max": 28
+     },
+     "pattern": "\\(2\\) the General Education requirements",
+     "source": "https://cerritos-public.courseleaf.com/policies-and-resources/graduation-and-transfer-requirements/cgec/",
+     "source_words": "CGEC, which is 24-28 units, is intended to meet the GE requirements."
+    },
+    {
+     "kind": "set",
+     "field": "electives_fill_degree",
+     "value": true,
+     "pattern": "\\(3\\) electives as needed"
     }
    ]
   }

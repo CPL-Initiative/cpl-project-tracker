@@ -2,14 +2,14 @@
  "college": "Cerritos College",
  "programs": 325,
  "with_closed_list": 321,
- "found": 305,
+ "found": 304,
  "extracted": 305,
  "errors": 0,
  "passed_machine_checks": 265,
  "failed": {
-  "coverage": 4,
+  "coverage": 5,
   "invented": 0,
-  "arithmetic": 37,
+  "arithmetic": 36,
   "repeated": 2,
   "outcomes": 0
  },
@@ -19,28 +19,159 @@
   {
    "control_number": "02243",
    "title": "Dental Hygienist",
-   "award": "A.A. Degree"
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/dental-assisting-certificate-achievement/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 26,
+    "why": "coarse net: the page's code tokens name 0 of 26 listed courses",
+    "error": null,
+    "chars": {
+     "body": 34153,
+     "content": 36476,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "14565",
+   "title": "Administration of Justice",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/business-administration-aa/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 20,
+    "why": "coarse net: the page's code tokens name 0 of 20 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15562,
+     "content": 17298,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
   },
   {
    "control_number": "19162",
    "title": "Liberal Arts and Sciences: Art and Culture",
-   "award": "A.A. Degree"
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/liberal-arts-sciences/",
+    "label": {
+     "award": 0,
+     "title": 0.6
+    },
+    "field": "innerText",
+    "coverage": 0.05,
+    "body": 0.05,
+    "content": 0.0,
+    "net": 1,
+    "listed": 20,
+    "why": "coarse net: the page's code tokens name 1 of 20 listed courses",
+    "error": null,
+    "chars": {
+     "body": 26962,
+     "content": 27999,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
   },
   {
    "control_number": "19174",
    "title": "Liberal Arts and Sciences: Media Studies",
-   "award": "A.A. Degree"
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/liberal-arts-sciences/",
+    "label": {
+     "award": 0,
+     "title": 0.6
+    },
+    "field": "innerText",
+    "coverage": 0.077,
+    "body": 0.077,
+    "content": 0.0,
+    "net": 1,
+    "listed": 13,
+    "why": "coarse net: the page's code tokens name 1 of 13 listed courses",
+    "error": null,
+    "chars": {
+     "body": 26962,
+     "content": 27999,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
   },
   {
    "control_number": "19180",
    "title": "Liberal Arts and Sciences: Visual Communication",
-   "award": "A.A. Degree"
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/liberal-arts-sciences/",
+    "label": {
+     "award": 0,
+     "title": 0.6
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 27,
+    "why": "coarse net: the page's code tokens name 0 of 27 listed courses",
+    "error": null,
+    "chars": {
+     "body": 26962,
+     "content": 27999,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
   },
   {
    "control_number": "32485",
    "title": "Political Science",
-   "award": "A.A- T Degree"
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/political-science-aa-t/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.375,
+    "body": 0.375,
+    "content": 0.312,
+    "net": 6,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 6 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16882,
+     "content": 18592,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
   }
  ],
- "run": "38064252862"
+ "run": "38656800189"
 }
