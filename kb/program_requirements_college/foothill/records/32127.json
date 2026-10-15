@@ -1,0 +1,343 @@
+{
+ "college": "Foothill College",
+ "control_number": "32127",
+ "shape": "adt",
+ "title": "Mathematics",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/mathematics-2-ast/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7624,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7624,
+    "output_tokens": 1701,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1701,
+  "output_tokens_details": {
+   "thinking_tokens": 344
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06452,
+ "ms": 13560,
+ "seconds": 13.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 24,
+   "share": 0.5,
+   "missing": [
+    "CS18",
+    "CS1B",
+    "CS1C",
+    "CS2B",
+    "CS2C",
+    "CS3B",
+    "CS3C",
+    "MATH17",
+    "MATH22",
+    "PSYC7",
+    "SOC7",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CS49"
+   ],
+   "flagged": [
+    "CS49"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    34.5,
+    36.0
+   ],
+   "stated": [
+    34.5,
+    36.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     79.5,
+     81.0
+    ],
+    "stated": [
+     90.0,
+     90.0
+    ],
+    "against": "degree",
+    "ge": [
+     45.0,
+     45.0
+    ],
+    "why": [],
+    "fill": [
+     9.0,
+     10.5
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science in Mathematics 2.0 for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 34.5,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 90,
+    "max": 90
+   },
+   "ge_units": {
+    "min": 45,
+    "max": 45
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Students will be able to clearly communicate mathematical ideas through graphs, tables of data, equations, and verbal descriptions.",
+    "Students will be able to construct appropriate mathematical models of natural phenomena, develop those models with appropriate mathematical techniques, and interpret results of those models."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 1AH",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 1BH",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 1C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 1D",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 2A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 2B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Support Courses: List A",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4.5,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "C S 1A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "C S 2A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "C S 3A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "C S 49",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 4A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "C S 001B",
+    "why": "not in the text"
+   },
+   {
+    "code": "C S 001C",
+    "why": "not in the text"
+   },
+   {
+    "code": "C S 002B",
+    "why": "not in the text"
+   },
+   {
+    "code": "C S 002C",
+    "why": "not in the text"
+   },
+   {
+    "code": "C S 003B",
+    "why": "not in the text"
+   },
+   {
+    "code": "C S 003C",
+    "why": "not in the text"
+   },
+   {
+    "code": "C S 18",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 17",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 22",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC 7",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 7",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Foothill uses quarter units; the degree requires a minimum of 90 units including Cal-GETC (45 units) and transferable electives to reach 90.",
+   "Catalog codes (e.g., MATH 1A, C S 1A, MATH 1AH) were matched to closed-list codes with zero-padding (MATH 001A, C S 001A, MATH 01AH).",
+   "Units are not printed beside the honors alternatives or the List A courses; List A block total printed as 4.5-6.",
+   "C S 49 (Foundations of Computer Programming) is not in the closed list.",
+   "The text begins mid-word ('iption'), suggesting the description heading was cut off; the section heading used is the degree name from the text."
+  ]
+ },
+ "extracted_run": "38675242638"
+}

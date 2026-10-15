@@ -1,0 +1,291 @@
+{
+ "college": "Foothill College",
+ "control_number": "32362",
+ "shape": "adt",
+ "title": "Physics",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/physics-2-ast/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7088,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7088,
+    "output_tokens": 1511,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1511,
+  "output_tokens_details": {
+   "thinking_tokens": 307
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05857,
+ "ms": 11444,
+ "seconds": 12.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "CS1A",
+    "CS2A",
+    "CS3A",
+    "MATH2A",
+    "MATH2B"
+   ],
+   "flagged": [
+    "CS1A",
+    "CS2A",
+    "CS3A",
+    "MATH2A",
+    "MATH2B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    58.5,
+    58.5
+   ],
+   "stated": [
+    58.5,
+    58.5
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     103.5,
+     103.5
+    ],
+    "stated": [
+     90.0,
+     90.0
+    ],
+    "against": "degree",
+    "ge": [
+     45.0,
+     45.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Core and Support Courses",
+   "measure": "units",
+   "total_units": {
+    "min": 58.5,
+    "max": 58.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 90,
+    "max": 90
+   },
+   "ge_units": {
+    "min": 45,
+    "max": 45
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Students will know basic physics principles.",
+    "Students will be able to apply their knowledge to practical, theoretical, and experimental problems.",
+    "Students will be prepared to advance to the next step in careers in science, industry, and education."
+   ],
+   "careers": [
+    "science",
+    "industry",
+    "education"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 58.5,
+     "max": 58.5
+    },
+    "courses": [
+     {
+      "code": "C S 1A",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "C S 2A",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "C S 3A",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 1AH",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 1BH",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 1C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 1D",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 2A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 2B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 4A",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4B",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4C",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4D",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Foothill College is on the quarter system; units are quarter units (90-unit degree minimum, 45-unit Cal-GETC).",
+   "Catalog codes (MATH 1A, MATH 1AH, PHYS 4A, etc.) were matched to closed-list codes printed with zero padding (MATH 001A, MATH 01AH, PHYS 004A); they are treated as the same courses, not catalog additions.",
+   "Degree total of 90 taken from 'Associate in Science in Physics 2.0 for Transfer requires completion of a minimum of 90 units'; transferable electives fill the remainder with no units printed.",
+   "Footnote says some core units may also satisfy GE; Cal-GETC full certification required; IGETC or CSU GE Breadth may apply for earlier catalog rights.",
+   "Units for alternatives (C S 2A, C S 3A, MATH 1AH, MATH 1BH) are not printed beside them; recorded as null.",
+   "The catalog text begins mid-sentence (truncated description at top)."
+  ]
+ },
+ "extracted_run": "38675242638"
+}

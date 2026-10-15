@@ -1,0 +1,330 @@
+{
+ "college": "Foothill College",
+ "control_number": "35719",
+ "shape": "adt",
+ "title": "Global Studies",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/global-studies-aat/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7825,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7825,
+    "output_tokens": 2751,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2751,
+  "output_tokens_details": {
+   "thinking_tokens": 977
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08632,
+ "ms": 21797,
+ "seconds": 22.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 20,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    28.0,
+    33.0
+   ],
+   "stated": [
+    29.0,
+    41.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 28.0-33.0; the catalog states 29.0-41.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     73.0,
+     78.0
+    ],
+    "stated": [
+     90.0,
+     90.0
+    ],
+    "against": "degree",
+    "ge": [
+     45.0,
+     45.0
+    ],
+    "why": [],
+    "fill": [
+     12.0,
+     17.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Core and Support Courses",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 41
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 90,
+    "max": 90
+   },
+   "ge_units": {
+    "min": 45,
+    "max": 45
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Students will be able to identify, analyze, and offer potential solutions to major global challenges from multiple perspectives and worldviews.",
+    "Students will be able to differentiate multiple perspectives on globalization.",
+    "Students will be able to explain how and why the environmental well-being of the world demands personal and collective responsibility.",
+    "Students will be able to explain the interconnectedness of global decisions and events."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GLST 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GLST 1H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GLST 2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GLST 2H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 33
+    },
+    "courses": [
+     {
+      "code": "ANTH 2A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 2AH",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 3B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 3C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLI 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLI 2H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLI 15",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLI 15H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page opening is cut off; the award heading is not in the text, so section_heading names the requirements table heading.",
+   "Units are quarter units (90-unit degree minimum, Cal-GETC 45 units). The 90-unit minimum is printed as this award's requirement and recorded as degree_total; transferable electives fill the rest.",
+   "List A rule: 'Complete five courses from at least four of the five areas' (Area 1 Culture and Society: ANTH 2A/2AH, HIST 3B & 3C; Area 2 Geography: GEOG 1, 2, 10; Area 3 Economics: ECON C2001, C2002; Area 4 Politics: POLI 2/2H, POLI 15/15H; Area 5 Humanities: SPAN 4 & 5 or SPAN 5 & 6). The area-distribution constraint is not captured by the block rule.",
+   "HIST 3B & HIST 3C is a paired option (footnote: both courses must be completed); likewise SPAN 4 & SPAN 5, and SPAN 5 & SPAN 6. SPAN 5 is shared by both Spanish pairs and is listed once. How a pair counts toward 'five courses' is ambiguous.",
+   "No units are printed beside the List A courses or the honors alternatives, so those units are null.",
+   "Catalog codes are printed without leading zeros (GLST 1H, GLST 2H, ANTH 2A, ANTH 2AH, HIST 3B, HIST 3C, POLI 2H, POLI 15H); they are treated as matching the closed-list codes GLST 001H, GLST 002H, ANTH 002A, ANTH 02AH, HIST 003B, HIST 003C, POLI 002H, POLI 015H.",
+   "The outcomes are printed on this award's page and recorded as the award's outcomes.",
+   "The text names transfer majors (e.g., International Relations, Political Science) but no careers, so careers is empty."
+  ]
+ },
+ "extracted_run": "38675242638"
+}
