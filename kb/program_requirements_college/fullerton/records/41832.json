@@ -1,0 +1,251 @@
+{
+ "college": "Fullerton College",
+ "control_number": "41832",
+ "shape": "certificate",
+ "title": "Practical Politics",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/political-science/practical-politics-certificate/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7606,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7606,
+    "output_tokens": 1580,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1580,
+  "output_tokens_details": {
+   "thinking_tokens": 528
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06202,
+ "ms": 13165,
+ "seconds": 13.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "JOUR110HF",
+    "POSC120F"
+   ],
+   "flagged": [
+    "JOUR110HF",
+    "POSC120F"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.0,
+    18.0
+   ],
+   "stated": [
+    17.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Practical Politics Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify the components of the transactional model of communication.",
+    "Utilize an understanding of the history, economics, and structure of the media to analyze and appraise media products and current controversies in the mass communications industries.",
+    "Identify and produce accurate and compelling social media posts in a timely manner and under deadline pressure.",
+    "Critically analyze what is needed to manage and the strategies of successful campaigns."
+   ],
+   "careers": [
+    "political professionals",
+    "community organizers",
+    "political campaigns",
+    "public service"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (17-18 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "COMM 105 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 110 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "JOUR 110HF",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 150 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POSC 135 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POSC 198 F",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POSC 199 F",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "POSC 299 F",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY 161 F",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "PSY 161HF",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "POSC 120 F",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Units are printed only on the first course of each 'or' group; alternatives' units are left null as the catalog prints none beside them.",
+   "POSC 120 F (Introduction to Political Theory) appears as an 'or' alternative within the statistics group (PSY 161 F 4-5); it is not in the closed list and is an unusual alternative to statistics courses — reviewer should verify.",
+   "Careers recorded from the description: 'aspiring political professionals, community organizers' and 'roles in political campaigns and public service'; 'civically engaged citizens' was not treated as a career.",
+   "Outcomes were taken from the page's Program Student Learning Outcome tab, printed with 'Outcome N:' labels, which were removed."
+  ]
+ },
+ "extracted_run": "38675136988"
+}

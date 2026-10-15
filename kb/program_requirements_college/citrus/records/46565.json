@@ -1,0 +1,309 @@
+{
+ "college": "Citrus College",
+ "control_number": "46565",
+ "shape": "degree",
+ "title": "Mathematics",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/mathematics/mathematics-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7859,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7859,
+    "output_tokens": 2166,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2166,
+  "output_tokens_details": {
+   "thinking_tokens": 512
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07476,
+ "ms": 17137,
+ "seconds": 17.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 18,
+   "share": 0.944,
+   "missing": [
+    "ECON101H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ECONC2002H"
+   ],
+   "flagged": [
+    "ECONC2002H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    42.0,
+    44.0
+   ],
+   "stated": [
+    42.0,
+    44.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Requirements (Mathematics A.S.)",
+   "measure": "units",
+   "total_units": {
+    "min": 42,
+    "max": 44
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "District General Education Pattern or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop an understanding of how to use proper vocabulary and notation when describing mathematical concepts, including the ability to read books and documents and extract quantitative information.",
+    "Develop appropriate computational skills including numeric calculation, evaluation of expressions, analysis of data, and application of concepts.",
+    "Develop an understanding of the physical world, which will include the formulation of analytical skills that will aid in the process of devising questions and proposing quantitative solutions.",
+    "Demonstrate computational skills and an understanding of mathematical reasoning that will increase self-esteem and set each student on the path of lifelong learning.",
+    "Demonstrate an understanding of how to use instructional software found by navigating the Web and found in the Windows’ environment.",
+    "Demonstrate competency at levels appropriate to a particular course, which will prepare students for the workforce, subsequent courses, and transfer to other educational institutions."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH 190",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 191",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 211",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 212",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select 18-20 (eighteen-twenty) units from the following courses:",
+    "rule": "choose_units",
+    "minimum": 18,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "CS 225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 232",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 242",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 252",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 201",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHYS 201H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 202",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 203",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 101H",
+    "why": "not in the text; the catalog lists ECON C2002H as the honors alternative instead"
+   }
+  ],
+  "notes": [
+   "The page prints no distinct section heading for the requirements; the section is the Requirements tab of the Mathematics A.S. page.",
+   "Honors alternatives (STAT C1000H, ECON C2002H, PHYS 201H) have no units printed beside them; recorded as null.",
+   "ECON C2002H is not in the closed list (closed list has ECON 101H, Principles of Macroeconomics - Honors, likely the same course under an older code).",
+   "MATH 190 and MATH 191 are printed with titles 'Calculus I/II: Late Transcendentals', differing from the closed-list titles.",
+   "Footnote 2 refers to 'STAT 1000' and 'STAT 1000S' and says only STAT 1000S units count if both are taken, which appears inconsistent with footnote 1's wording; reviewer should check.",
+   "A 'Career Information' tab is listed but no career content appears in the text; the description names disciplines (data science, economics, physics, computer science) as fields of study, not recorded as careers.",
+   "No degree total (with GE) or GE units printed; total 42-44 is the major total."
+  ]
+ },
+ "extracted_run": "38675245799"
+}

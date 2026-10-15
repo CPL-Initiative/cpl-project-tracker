@@ -1,0 +1,7638 @@
+[
+ {
+  "control_number": "03599",
+  "title": "Horticulture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL31",
+   "HORT202",
+   "HORT51",
+   "HORT52",
+   "HORT55",
+   "HORT61",
+   "HORT62",
+   "HORT64",
+   "HORT65",
+   "HORT70",
+   "HORT78"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/horticulture/horticulture-as/",
+   "title": "Horticulture, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3996
+ },
+ {
+  "control_number": "03602",
+  "title": "Biological Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL21",
+   "BIOL22",
+   "CHEM1A",
+   "CHEM1B",
+   "MATH20A"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/biology/biological-sciences-as/",
+   "title": "Biological Sciences, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3097
+ },
+ {
+  "control_number": "03609",
+  "title": "Real Estate",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI1",
+   "BUSI2",
+   "BUSI4",
+   "BUSI42",
+   "REAL50",
+   "REAL51",
+   "REAL52",
+   "REAL53",
+   "REAL54",
+   "REAL56",
+   "REAL57A"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/real-estate/real-estate-as/",
+   "title": "Real Estate, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2952
+ },
+ {
+  "control_number": "03610",
+  "title": "Computer Applications and Business Skills",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "BUSC109",
+   "BUSC140",
+   "BUSI1",
+   "BUSI10",
+   "BUSI12B",
+   "BUSI2",
+   "BUSI22",
+   "BUSI24",
+   "BUSI40",
+   "BUSI54",
+   "BUSI64",
+   "CSIS1",
+   "CSIS50",
+   "WORK96",
+   "WORK97",
+   "WORK98",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/business-skills/computer-application-business-skills-as/",
+   "title": "Computer Applications and Business Skills, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3826
+ },
+ {
+  "control_number": "03614",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM1B",
+   "ENGR12",
+   "ENGR17",
+   "ENGR1A",
+   "ENGR2",
+   "ENGR4",
+   "ENGR8",
+   "MATH31",
+   "MATH32",
+   "PHYS3A",
+   "PHYS3B",
+   "PHYS3C"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/engineering/engineering-as/",
+   "title": "Engineering, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3237
+ },
+ {
+  "control_number": "03615",
+  "title": "Automotive Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO100",
+   "AUTO101",
+   "AUTO102",
+   "AUTO103",
+   "AUTO104",
+   "AUTO105",
+   "AUTO106",
+   "AUTO107",
+   "AUTO108",
+   "AUTO111",
+   "AUTO161",
+   "AUTO162",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/automotive-technology/automotive-technology-as/",
+   "title": "Automotive Technology, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3516
+ },
+ {
+  "control_number": "03620",
+  "title": "Art History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTB2",
+   "ARTB3",
+   "ARTB4",
+   "ARTH1",
+   "ARTH12",
+   "ARTH14",
+   "ARTH8",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ARTS10A"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/art-history/art-history-aa/",
+   "title": "Art History, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3071
+ },
+ {
+  "control_number": "03621",
+  "title": "Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSI10A",
+   "MUSI10B",
+   "MUSI10C",
+   "MUSI20",
+   "MUSI22",
+   "MUSI25",
+   "MUSI30",
+   "MUSI32",
+   "MUSI35",
+   "MUSI36",
+   "MUSI37",
+   "MUSI40",
+   "MUSI48A",
+   "MUSI48B",
+   "MUSI50A",
+   "MUSI50B",
+   "MUSI50C",
+   "MUSI50D"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/music/music-aa/",
+   "title": "Music, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3544
+ },
+ {
+  "control_number": "03622",
+  "title": "Theatre Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTV1",
+   "DANC10A",
+   "DANC11A",
+   "DANC12A",
+   "MUSI10A",
+   "MUSI2",
+   "MUSI25",
+   "MUSI40",
+   "MUSI50A",
+   "THEA1",
+   "THEA10",
+   "THEA14",
+   "THEA15A",
+   "THEA15B",
+   "THEA16A",
+   "THEA19",
+   "THEA20",
+   "THEA23",
+   "THEA24",
+   "THEA25",
+   "THEA3",
+   "THEA31",
+   "THEA4",
+   "THEA40A",
+   "THEA40B",
+   "THEA40C",
+   "THEA40D",
+   "THEA6",
+   "THEA60A",
+   "THEA60B",
+   "THEA60C",
+   "THEA60D",
+   "THEA7A",
+   "THEA9"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/theatre-arts/theatre-arts-aa/",
+   "title": "Theatre Arts, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 34,
+  "text_chars": 4714
+ },
+ {
+  "control_number": "03625",
+  "title": "Art Photography",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTP10",
+   "ARTP11A",
+   "ARTP11B",
+   "ARTP11C",
+   "ARTP12A",
+   "ARTP12B",
+   "ARTP14",
+   "ARTP15",
+   "ARTP55",
+   "ARTP58"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/photography/art-photography-aa/",
+   "title": "Art Photography, Associate in Arts Degree < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4506
+ },
+ {
+  "control_number": "03633",
+  "title": "Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.962,
+  "codes_found": [
+   "ANAT1",
+   "BIOL25",
+   "BIOL26",
+   "COMM2",
+   "COMM3",
+   "COMMC1000",
+   "ENGLC1000",
+   "LIBR50",
+   "NURS10",
+   "NURS204",
+   "NURS205",
+   "NURS206",
+   "NURS207",
+   "NURS52A",
+   "NURS52B",
+   "NURS52C",
+   "NURS52D",
+   "NURS54",
+   "NURS55",
+   "NURS65",
+   "NURS65L",
+   "PHSO1",
+   "PHSO2",
+   "PSYC25",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/nursing/nursing-as/",
+   "title": "Nursing, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 6466
+ },
+ {
+  "control_number": "03635",
+  "title": "Medical Assisting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "ANAT5",
+   "CSIS50",
+   "ENGLC1000",
+   "HLTH4",
+   "MEDA100",
+   "MEDA101",
+   "MEDA105",
+   "MEDA110",
+   "MEDA112",
+   "MEDA114",
+   "MEDA118",
+   "MEDA120",
+   "MEDA121",
+   "MEDA122",
+   "NUTF1",
+   "PSYC50"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/medical-assisting/medical-assisting-as/",
+   "title": "Medical Assisting, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4133
+ },
+ {
+  "control_number": "03636",
+  "title": "Dental Assisting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DNTL100",
+   "DNTL101",
+   "DNTL102",
+   "DNTL103",
+   "DNTL104",
+   "DNTL105",
+   "DNTL107",
+   "DNTL108",
+   "DNTL111",
+   "DNTL116"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/dental-technology/dental-assisting-as/",
+   "title": "Dental Assisting, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3562
+ },
+ {
+  "control_number": "03653",
+  "title": "Administration of Justice: Law Enforcement",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "03654",
+  "title": "Early Childhood Education",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.95,
+  "codes_found": [
+   "ECED1",
+   "ECED2",
+   "ECED40",
+   "ECED51",
+   "ECED52",
+   "ECED55",
+   "ECED56",
+   "ECED61",
+   "ECED62A",
+   "ECED62B",
+   "ECED63A",
+   "ECED63B",
+   "ECED71A",
+   "ECED71B",
+   "ECED80",
+   "ECED81",
+   "ECED82",
+   "ECED83",
+   "ECED84"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/early-childhood-education/early-childhood-education-as/",
+   "title": "Early Childhood Education, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 7320
+ },
+ {
+  "control_number": "03655",
+  "title": "Fire Protection Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FPTC1",
+   "FPTC100",
+   "FPTC101",
+   "FPTC102A",
+   "FPTC102B",
+   "FPTC104A",
+   "FPTC105A",
+   "FPTC105B",
+   "FPTC112D",
+   "FPTC140",
+   "FPTC141",
+   "FPTC143",
+   "FPTC145",
+   "FPTC2",
+   "FPTC3",
+   "FPTC4",
+   "FPTC5",
+   "FPTC6"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/fire-protection-technology/fire-protection-technology-as/",
+   "title": "Fire Protection Technology, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3943
+ },
+ {
+  "control_number": "03658",
+  "title": "Ethnic Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.682,
+  "codes_found": [
+   "ETNC10",
+   "ETNC16",
+   "ETNC18",
+   "ETNC20",
+   "ETNC22",
+   "ETNC4",
+   "ETNC5",
+   "ETNC6",
+   "GWOS12",
+   "HIST12",
+   "HIST23",
+   "HIST24",
+   "HIST25",
+   "SOCI13",
+   "SOCI14"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/ethnic-studies/ethnic-studies-aa/",
+   "title": "Ethnic Studies, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 4527
+ },
+ {
+  "control_number": "03659",
+  "title": "Economics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "BUSI3A",
+   "CSIS1",
+   "ECONC2001",
+   "ECONC2002",
+   "GWOS10",
+   "MATH18",
+   "MATH20A",
+   "POLSC1000",
+   "PSYCC1000",
+   "SOCI19",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/economics/economics-aa/",
+   "title": "Economics, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3154
+ },
+ {
+  "control_number": "09976",
+  "title": "Business - Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.95,
+  "codes_found": [
+   "BUSC109",
+   "BUSC140",
+   "BUSI1",
+   "BUSI10",
+   "BUSI12A",
+   "BUSI12B",
+   "BUSI24",
+   "BUSI3A",
+   "BUSI3B",
+   "BUSI44",
+   "BUSI60",
+   "BUSI62",
+   "CSIS1",
+   "CSIS50",
+   "ECON1",
+   "WORK96",
+   "WORK97",
+   "WORK98",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/business/business-accounting-as/",
+   "title": "Business - Accounting, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3926
+ },
+ {
+  "control_number": "09978",
+  "title": "Medical Office Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "ANAT5",
+   "BUSI12A",
+   "BUSI12B",
+   "CSIS50",
+   "MEDA100",
+   "MEDA101",
+   "MEDA105",
+   "MEDA110",
+   "MEDA112",
+   "MEDA113",
+   "MEDA114",
+   "MEDA116",
+   "MEDA117",
+   "MEDA118",
+   "PSYC50"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/medical-assisting/medical-office-administration-as/",
+   "title": "Medical Office Administration, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3514
+ },
+ {
+  "control_number": "09979",
+  "title": "Medical Insurance and Coding Specialist",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "ANAT5",
+   "CSIS50",
+   "ENGL111",
+   "ENGLC1000",
+   "ENSL11",
+   "HLTH4",
+   "MEDA100",
+   "MEDA101",
+   "MEDA105",
+   "MEDA112",
+   "MEDA113",
+   "MEDA114",
+   "MEDA117",
+   "MEDA118",
+   "PSYC50"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/medical-assisting/medical-insurance-coding-specialist-as/",
+   "title": "Medical Insurance and Coding Specialist, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3633
+ },
+ {
+  "control_number": "09988",
+  "title": "Painting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTB2",
+   "ARTB4",
+   "ARTH14",
+   "ARTHC1200",
+   "ARTS10A",
+   "ARTS16",
+   "ARTS30A",
+   "ARTS30B",
+   "ARTS31",
+   "ARTS40A",
+   "ARTS40B",
+   "ARTS40C",
+   "ARTS40D",
+   "ARTS41A",
+   "ARTS41B",
+   "ARTS41C",
+   "ARTS51",
+   "ARTS9A"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/art/painting-aa/",
+   "title": "Painting, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 2941
+ },
+ {
+  "control_number": "09989",
+  "title": "Sculpture",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCE3A",
+   "ARTB3",
+   "ARTD1A",
+   "ARTD1B",
+   "ARTD1C",
+   "ARTD1D",
+   "ARTD2A",
+   "ARTD2B",
+   "ARTD2C",
+   "ARTD2D",
+   "ARTD3A",
+   "ARTD3B",
+   "ARTD3C",
+   "ARTD4A",
+   "ARTD4B",
+   "ARTD4C",
+   "ARTD5A",
+   "ARTD5B",
+   "ARTD5C",
+   "ARTD6A",
+   "ARTD6B",
+   "ARTD6C",
+   "ARTD7A",
+   "ARTD7B"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/sculpture/sculpture-aa/",
+   "title": "Sculpture, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 3331
+ },
+ {
+  "control_number": "09990",
+  "title": "Ceramics and Glass",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCE1",
+   "ARCE11",
+   "ARCE1A",
+   "ARCE1B",
+   "ARCE1C",
+   "ARCE1D",
+   "ARCE2A",
+   "ARCE2B",
+   "ARCE2C",
+   "ARCE2D",
+   "ARCE3A",
+   "ARCE3B",
+   "ARCE3C",
+   "ARCE3D",
+   "ARCE4A",
+   "ARCE4B",
+   "ARCE4C",
+   "ARCE4D",
+   "ARCE5",
+   "ARCE6",
+   "ARCE7",
+   "ARCE8",
+   "ARCE9"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/ceramics/ceramics-glass-aa/",
+   "title": "Ceramics and Glass, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3310
+ },
+ {
+  "control_number": "09991",
+  "title": "Graphic Arts",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTB2",
+   "ARTB4",
+   "ARTG10",
+   "ARTG11",
+   "ARTG12",
+   "ARTG15",
+   "ARTG16",
+   "ARTG17",
+   "ARTP11A",
+   "ARTS10A"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/graphic-arts/graphic-arts-as/",
+   "title": "Graphic Arts, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3281
+ },
+ {
+  "control_number": "10000",
+  "title": "Fashion Merchandising and Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTG10",
+   "ARTG11",
+   "ECONC2001",
+   "ECONC2002",
+   "FASH10",
+   "FASH15",
+   "FASH20",
+   "MATH18",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/fashion-design-merchandising/fashion-design-merchandising-as/",
+   "title": "Fashion Merchandising and Management, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3260
+ },
+ {
+  "control_number": "10005",
+  "title": "Sustainable Food and Beverage Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI12A",
+   "BUSI22",
+   "BUSI44",
+   "BUSI46",
+   "BUSI64",
+   "COMMC1000",
+   "ECONC2002",
+   "HOSP21",
+   "HOSP22",
+   "HOSP23",
+   "HOSP24",
+   "HOSP40",
+   "HOSP42",
+   "HOSP43",
+   "HOSP44",
+   "HOSP45",
+   "HOSP46",
+   "HOSP53",
+   "HOSP58",
+   "HOSP60",
+   "HOSP61",
+   "HOSP63",
+   "HOSP70",
+   "HOSP77",
+   "HOSP78",
+   "HOSP81",
+   "HOSP82",
+   "HOSP84",
+   "HOSP88",
+   "MATH17",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/sustainable-food-beverage-management-as/",
+   "title": "Sustainable Food and Beverage Management, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 31,
+  "text_chars": 4947
+ },
+ {
+  "control_number": "11980",
+  "title": "Gender and Women's Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.765,
+  "codes_found": [
+   "ANTH30",
+   "ENGL11",
+   "GWOS1",
+   "GWOS10",
+   "GWOS12",
+   "GWOS15",
+   "GWOS3",
+   "GWOS4",
+   "GWOS5",
+   "GWOS8",
+   "GWOS9",
+   "HIST12",
+   "PHIL40"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/gender-womens-studies/gender-womens-studies-aa/",
+   "title": "Gender and Women’s Studies, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4682
+ },
+ {
+  "control_number": "11997",
+  "title": "Dance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANC1",
+   "DANC10A",
+   "DANC10B",
+   "DANC10C",
+   "DANC10D",
+   "DANC11A",
+   "DANC11B",
+   "DANC11C",
+   "DANC11D",
+   "DANC12A",
+   "DANC12B",
+   "DANC12C",
+   "DANC12D",
+   "DANC14A",
+   "DANC14B",
+   "DANC14C",
+   "DANC14D",
+   "DANC15A",
+   "DANC15B",
+   "DANC15C",
+   "DANC15D",
+   "DANC17A",
+   "DANC18A",
+   "DANC18B",
+   "DANC18C",
+   "DANC18D",
+   "DANC19A",
+   "DANC19B",
+   "DANC19C",
+   "DANC19D",
+   "DANC20A",
+   "DANC20B",
+   "DANC20C",
+   "DANC21",
+   "DANC5",
+   "DANC6",
+   "DANC9",
+   "DANC90",
+   "KINS51",
+   "KINS63",
+   "PFIT15A",
+   "PFIT15B",
+   "PFIT17A",
+   "PFIT17B",
+   "PFIT21A",
+   "PFIT21B",
+   "THEA70A",
+   "THEA70B"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/dance/dance-associate-arts/",
+   "title": "Dance, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 48,
+  "text_chars": 4455
+ },
+ {
+  "control_number": "12735",
+  "title": "Pre-Occupational Therapy",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANAT1",
+   "ANTH4",
+   "ARTB2",
+   "ARTB4",
+   "ARTS10A",
+   "ARTS13A",
+   "ARTS16",
+   "PHSO1",
+   "PHSO2",
+   "PHYS2A",
+   "PSYC35",
+   "PSYCC1000",
+   "SOCI2",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/physiology/pre-occupational-therapy-as/",
+   "title": "Pre-Occupational Therapy, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2872
+ },
+ {
+  "control_number": "12736",
+  "title": "Pre-Dental Hygiene",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANAT1",
+   "BIOL25",
+   "BIOL26",
+   "CHEM30A",
+   "CHEM30B",
+   "PHSO1",
+   "PHSO2"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/dental-technology/pre-dental-hygiene-as/",
+   "title": "Pre-Dental Hygiene, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2769
+ },
+ {
+  "control_number": "12737",
+  "title": "Pre-Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "ANAT1",
+   "BIOL25",
+   "BIOL26",
+   "CHEM30A",
+   "PHSO1",
+   "PHSO2",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/nursing/pre-nursing-as/",
+   "title": "Pre-Nursing, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2843
+ },
+ {
+  "control_number": "12738",
+  "title": "Pre-Physical Therapy",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANAT1",
+   "CHEM1A",
+   "CHEM1B",
+   "PHSO1",
+   "PHSO2",
+   "PHYS2A",
+   "PHYS2B",
+   "PSYC35",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/physiology/pre-physical-therapy-as/",
+   "title": "Pre-Physical Therapy, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2685
+ },
+ {
+  "control_number": "16191",
+  "title": "Printmaking",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTB2",
+   "ARTB4",
+   "ARTH8",
+   "ARTS10A",
+   "ARTS60",
+   "ARTS61A",
+   "ARTS61B",
+   "ARTS61C",
+   "ARTS61D",
+   "ARTS62A",
+   "ARTS62B",
+   "ARTS63A",
+   "ARTS63B",
+   "ARTS63C",
+   "ARTS64A",
+   "ARTS64B",
+   "ARTS66A",
+   "ARTS66B",
+   "ARTS69",
+   "ARTS70",
+   "ARTS71",
+   "ARTS74",
+   "ARTS80",
+   "ARTS81",
+   "ARTS84",
+   "ARTS85",
+   "ARTS9A"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/art/printmaking-aa/",
+   "title": "Printmaking, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 3279
+ },
+ {
+  "control_number": "18641",
+  "title": "General Studies: Communication and Analytical Thinking",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.897,
+  "codes_found": [
+   "BUSI10",
+   "BUSI2",
+   "COMM2",
+   "COMM3",
+   "COMMC1000",
+   "CSCI10A",
+   "CSCI9",
+   "EDUC2",
+   "ENGLC1000",
+   "ENGLC1001",
+   "MATH10",
+   "MATH12",
+   "MATH13A",
+   "MATH17",
+   "MATH18",
+   "MATH20A",
+   "MATH20B",
+   "MATH20C",
+   "MATH31",
+   "MATH32",
+   "MATH40",
+   "PHIL10",
+   "PHIL6",
+   "PSYC19",
+   "SOCI19",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/general-studies/general-studies-communication-analytical-thinking-emphasis-aa/",
+   "title": "General Studies: Communication and Analytical Thinking Emphasis, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 4408
+ },
+ {
+  "control_number": "18642",
+  "title": "General Studies: Natural Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.957,
+  "codes_found": [
+   "ANAT1",
+   "ANAT5",
+   "ASTR10",
+   "ASTR10L",
+   "BIOL10",
+   "BIOL13",
+   "BIOL21",
+   "BIOL22",
+   "BIOL25",
+   "BIOL26",
+   "BIOL30",
+   "BIOL31",
+   "BIOL32",
+   "CHEM10",
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM2",
+   "CHEM30A",
+   "CHEM30B",
+   "ENGR9",
+   "GEOL12",
+   "GEOL12L",
+   "GEOL2",
+   "GEOL2L",
+   "GEOL3",
+   "GEOL3L",
+   "GEOL9",
+   "HORT53",
+   "NUTF10",
+   "NUTF10L",
+   "OCEN2",
+   "OCEN2L",
+   "PHSO1",
+   "PHSO2",
+   "PHYS10",
+   "PHYS12",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS3A",
+   "PHYS3B",
+   "PHYS3C",
+   "PSYC38"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/general-studies/general-studies-natural-science-emphasis-as/",
+   "title": "General Studies: Natural Science Emphasis, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 46,
+  "text_chars": 4702
+ },
+ {
+  "control_number": "18643",
+  "title": "General Studies: Arts and Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.979,
+  "codes_found": [
+   "ARCE1A",
+   "ARCE2A",
+   "ARCE3A",
+   "ARCE8",
+   "ARCE9",
+   "ARTB10",
+   "ARTB2",
+   "ARTB3",
+   "ARTB4",
+   "ARTD1A",
+   "ARTH1",
+   "ARTH12",
+   "ARTH14",
+   "ARTH7",
+   "ARTH8",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ARTP10",
+   "ARTP11A",
+   "ARTP14",
+   "ARTS10A",
+   "ARTS12A",
+   "ARTS40A",
+   "ARTS60",
+   "ARTV1",
+   "COMM35",
+   "COMM4",
+   "COMM7",
+   "DANC5",
+   "DANC6",
+   "ENGL11",
+   "ENGL17",
+   "ENGL22",
+   "ENGL40A",
+   "ENGL40B",
+   "ENGL43",
+   "ENGL44",
+   "ENGL45",
+   "ENGL46",
+   "ENGL47",
+   "ENGL49",
+   "ENGL63",
+   "ENGLC1002",
+   "ETNC24",
+   "ETNC25",
+   "ETNC4",
+   "ETNC5",
+   "ETNC6",
+   "FREN1A",
+   "FREN1B",
+   "GENT21",
+   "GENT22",
+   "GENT23",
+   "GWOS1",
+   "GWOS11",
+   "GWOS12",
+   "GWOS15",
+   "GWOS4",
+   "GWOS40",
+   "GWOS5",
+   "HIST12",
+   "HIST15",
+   "HIST23",
+   "HIST24",
+   "HIST25",
+   "HIST4",
+   "HIST6",
+   "HIST7",
+   "HIST8",
+   "HUMA10",
+   "HUMA30",
+   "HUMA40",
+   "JPNS1A",
+   "JPNS1B",
+   "JPNS2A",
+   "KINS20",
+   "LING10",
+   "LING15",
+   "LING25",
+   "LING30",
+   "LING35",
+   "LING45",
+   "LING46",
+   "MUSI1",
+   "MUSI10A",
+   "MUSI10B",
+   "MUSI2",
+   "MUSI3",
+   "MUSI5",
+   "PHIL13",
+   "PHIL2",
+   "PHIL4",
+   "PHIL40",
+   "PHIL8",
+   "POLS12",
+   "SIGN10",
+   "SIGN1A",
+   "SIGN1AL",
+   "SIGN1B",
+   "SIGN20",
+   "SIGN2A",
+   "SIGN2B",
+   "SPAN1",
+   "SPAN18",
+   "SPAN1S",
+   "SPAN2",
+   "SPAN22",
+   "SPAN2S",
+   "SPAN3",
+   "SPAN3S",
+   "SPAN4",
+   "SPAN45",
+   "SPAN4S",
+   "SPAN5",
+   "SPAN50A",
+   "SPAN50B",
+   "THEA1",
+   "THEA10",
+   "THEA4",
+   "THEA5",
+   "THEA53",
+   "THEA6",
+   "THEA7A",
+   "THEA8A",
+   "THEA9",
+   "WRLD1",
+   "WRLD10",
+   "WRLD11",
+   "WRLD12",
+   "WRLD13",
+   "WRLD14",
+   "WRLD15",
+   "WRLD2",
+   "WRLD20",
+   "WRLD3",
+   "WRLD4B",
+   "WRLD5",
+   "WRLD6",
+   "WRLD7",
+   "WRLD8",
+   "WRLD9"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/general-studies/general-studies-arts-humanities-emphasis-aa/",
+   "title": "General Studies: Arts and Humanities Emphasis, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 144,
+  "text_chars": 9239
+ },
+ {
+  "control_number": "18644",
+  "title": "General Studies: Social and Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.992,
+  "codes_found": [
+   "ADMJ2",
+   "ANTH30",
+   "ANTH4",
+   "ANTH6",
+   "ANTH8",
+   "ANTHC1001",
+   "BUSI22",
+   "BUSI4",
+   "BUSI46",
+   "COMM10",
+   "COMM35",
+   "COMM4",
+   "COMM5",
+   "ECED1",
+   "ECED55",
+   "ECED56",
+   "ECON1",
+   "ECONC2001",
+   "ECONC2002",
+   "EDUC1",
+   "EDUC1L",
+   "EDUC2",
+   "ETNC10",
+   "ETNC13",
+   "ETNC16",
+   "ETNC18",
+   "ETNC20",
+   "ETNC22",
+   "ETNC24",
+   "ETNC25",
+   "ETNC4",
+   "ETNC5",
+   "ETNC6",
+   "GENT21",
+   "GENT22",
+   "GENT23",
+   "GEOG2",
+   "GEOG4",
+   "GEOG5",
+   "GLST1",
+   "GLST2",
+   "GWOS1",
+   "GWOS10",
+   "GWOS12",
+   "GWOS15",
+   "GWOS3",
+   "GWOS30",
+   "GWOS4",
+   "GWOS40",
+   "GWOS5",
+   "GWOS8",
+   "GWOS9",
+   "HIST10",
+   "HIST12",
+   "HIST15",
+   "HIST20",
+   "HIST23",
+   "HIST24",
+   "HIST25",
+   "HIST4",
+   "HIST5",
+   "HIST6",
+   "HIST7",
+   "HIST8",
+   "HISTC1001",
+   "HISTC1002",
+   "HLTH12",
+   "HUMA40",
+   "KINS44",
+   "KINS48",
+   "LING15",
+   "LING18",
+   "LING25",
+   "LING30",
+   "LING35",
+   "LING45",
+   "LING46",
+   "LING50",
+   "PHIL40",
+   "POLS11",
+   "POLS12",
+   "POLS14",
+   "POLS2",
+   "POLS20",
+   "POLS3",
+   "POLS4",
+   "POLS5",
+   "POLS7",
+   "POLSC1000",
+   "PSYC19",
+   "PSYC25",
+   "PSYC3",
+   "PSYC30",
+   "PSYC35",
+   "PSYC38",
+   "PSYC40",
+   "PSYC50",
+   "PSYC6",
+   "PSYCC1000",
+   "SIGN10",
+   "SOCI1",
+   "SOCI11",
+   "SOCI12",
+   "SOCI13",
+   "SOCI14",
+   "SOCI15",
+   "SOCI17",
+   "SOCI19",
+   "SOCI2",
+   "SOCI3",
+   "SOCI40",
+   "WRLD1",
+   "WRLD10",
+   "WRLD11",
+   "WRLD12",
+   "WRLD13",
+   "WRLD14",
+   "WRLD15",
+   "WRLD2",
+   "WRLD20",
+   "WRLD3",
+   "WRLD4B",
+   "WRLD5",
+   "WRLD6",
+   "WRLD7",
+   "WRLD8",
+   "WRLD9"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/general-studies/general-studies-social-science-emphasis-aa/",
+   "title": "General Studies: Social Science Emphasis, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.6
+   }
+  },
+  "listed": 128,
+  "text_chars": 9358
+ },
+ {
+  "control_number": "18645",
+  "title": "General Studies: Intercultural Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.912,
+  "codes_found": [
+   "ANTH30",
+   "ANTH4",
+   "BUSI38",
+   "COMM4",
+   "ECED56",
+   "ENGL40A",
+   "ENGL40B",
+   "ETNC10",
+   "ETNC13",
+   "ETNC16",
+   "ETNC18",
+   "ETNC20",
+   "ETNC22",
+   "ETNC24",
+   "ETNC25",
+   "ETNC4",
+   "ETNC5",
+   "ETNC6",
+   "GWOS1",
+   "GWOS15",
+   "GWOS3",
+   "GWOS30",
+   "GWOS4",
+   "GWOS40",
+   "GWOS5",
+   "GWOS8",
+   "GWOS9",
+   "HIST10",
+   "HIST12",
+   "HIST15",
+   "HIST23",
+   "HIST24",
+   "HIST25",
+   "HIST6",
+   "HUMA30",
+   "HUMA40",
+   "LING18",
+   "LING25",
+   "LING45",
+   "LING50",
+   "PHIL40",
+   "PHIL8",
+   "SOCI13",
+   "SOCI14",
+   "SPAN18",
+   "SPAN1S",
+   "SPAN22",
+   "SPAN2S",
+   "SPAN3S",
+   "SPAN4S",
+   "SPAN5",
+   "THEA4"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/general-studies/general-studies-intercultural-studies-emphasis-aa/",
+   "title": "General Studies: Intercultural Studies Emphasis, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 57,
+  "text_chars": 6265
+ },
+ {
+  "control_number": "22049",
+  "title": "Horticulture",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "HORT202",
+   "HORT51",
+   "HORT52",
+   "HORT55",
+   "HORT61",
+   "HORT62",
+   "HORT64",
+   "HORT65",
+   "HORT70",
+   "HORT78"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/horticulture/horticulture-coa/",
+   "title": "Horticulture, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4043
+ },
+ {
+  "control_number": "22052",
+  "title": "Business - Accounting",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.95,
+  "codes_found": [
+   "BUSC109",
+   "BUSC140",
+   "BUSI1",
+   "BUSI10",
+   "BUSI12A",
+   "BUSI12B",
+   "BUSI24",
+   "BUSI3A",
+   "BUSI3B",
+   "BUSI44",
+   "BUSI60",
+   "BUSI62",
+   "CSIS1",
+   "CSIS50",
+   "ECON1",
+   "WORK96",
+   "WORK97",
+   "WORK98",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/business/business-accounting-coa/",
+   "title": "Business - Accounting, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3932
+ },
+ {
+  "control_number": "22055",
+  "title": "Real Estate",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI12A",
+   "BUSI3A",
+   "BUSI3B",
+   "BUSI4",
+   "REAL50",
+   "REAL51",
+   "REAL52",
+   "REAL53",
+   "REAL54",
+   "REAL56",
+   "REAL57A"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/real-estate/real-estate-coa/",
+   "title": "Real Estate, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2879
+ },
+ {
+  "control_number": "22057",
+  "title": "Computer Applications and Business Skills",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "BUSC109",
+   "BUSC140",
+   "BUSI1",
+   "BUSI10",
+   "BUSI12B",
+   "BUSI2",
+   "BUSI22",
+   "BUSI24",
+   "BUSI40",
+   "BUSI54",
+   "BUSI64",
+   "CSIS1",
+   "CSIS50",
+   "WORK96",
+   "WORK97",
+   "WORK98",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/business-skills/computer-application-business-skills-coa/",
+   "title": "Computer Applications and Business Skills, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3821
+ },
+ {
+  "control_number": "22058",
+  "title": "Medical Office Administration",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "ANAT5",
+   "BUSI12A",
+   "CSIS50",
+   "ENGL111",
+   "ENGLC1000",
+   "ENSL11",
+   "MEDA100",
+   "MEDA101",
+   "MEDA105",
+   "MEDA110",
+   "MEDA112",
+   "MEDA113",
+   "MEDA114",
+   "MEDA116",
+   "MEDA117",
+   "MEDA118"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/medical-assisting/medical-office-administration-coa/",
+   "title": "Medical Office Administration, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3569
+ },
+ {
+  "control_number": "22059",
+  "title": "Medical Insurance and Coding Specialist",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "ANAT5",
+   "CSIS50",
+   "ENGL111",
+   "ENGLC1000",
+   "ENSL11",
+   "HLTH4",
+   "MEDA100",
+   "MEDA101",
+   "MEDA105",
+   "MEDA112",
+   "MEDA113",
+   "MEDA114",
+   "MEDA117",
+   "MEDA118",
+   "PSYC50"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/medical-assisting/medical-insurance-coding-specialist-coa/",
+   "title": "Medical Insurance and Coding Specialist, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3636
+ },
+ {
+  "control_number": "22061",
+  "title": "Computer Networking and Security",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIS72A",
+   "CSIS72B",
+   "CSIS76A",
+   "CSIS76B",
+   "CSIS76C",
+   "CSIS80",
+   "CSIS83A",
+   "CSIS86",
+   "CSIS89",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/computer-networking-coa/",
+   "title": "Computer Networking and Security, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3886
+ },
+ {
+  "control_number": "22065",
+  "title": "Automotive Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO100",
+   "AUTO101",
+   "AUTO102",
+   "AUTO103",
+   "AUTO104",
+   "AUTO105",
+   "AUTO106",
+   "AUTO107",
+   "AUTO108",
+   "AUTO111",
+   "AUTO161",
+   "AUTO162",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/automotive-technology/automotive-technology-coa/",
+   "title": "Automotive Technology, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3301
+ },
+ {
+  "control_number": "22066",
+  "title": "Ceramics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCE1",
+   "ARCE1A",
+   "ARCE1B",
+   "ARCE1C",
+   "ARCE1D",
+   "ARCE2A",
+   "ARCE2B",
+   "ARCE2C",
+   "ARCE2D",
+   "ARCE3A",
+   "ARCE3B",
+   "ARCE3C",
+   "ARCE3D",
+   "ARCE5",
+   "ARCE6",
+   "ARCE7",
+   "ARCE8",
+   "ARCE9"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/ceramics/ceramics-coa/",
+   "title": "Ceramics, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3173
+ },
+ {
+  "control_number": "22067",
+  "title": "Art History",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTB2",
+   "ARTB3",
+   "ARTB4",
+   "ARTH1",
+   "ARTH12",
+   "ARTH14",
+   "ARTH8",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ARTS10A"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/art-history/art-history-coa/",
+   "title": "Art History, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3113
+ },
+ {
+  "control_number": "22068",
+  "title": "Printmaking",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTB2",
+   "ARTB4",
+   "ARTH8",
+   "ARTS10A",
+   "ARTS60",
+   "ARTS61A",
+   "ARTS61B",
+   "ARTS61C",
+   "ARTS61D",
+   "ARTS62A",
+   "ARTS62B",
+   "ARTS63A",
+   "ARTS63B",
+   "ARTS63C",
+   "ARTS64A",
+   "ARTS64B",
+   "ARTS66A",
+   "ARTS66B",
+   "ARTS69",
+   "ARTS70",
+   "ARTS71",
+   "ARTS74",
+   "ARTS80",
+   "ARTS81",
+   "ARTS84",
+   "ARTS85",
+   "ARTS9A"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/art/printmaking-coa/",
+   "title": "Printmaking, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 3293
+ },
+ {
+  "control_number": "22069",
+  "title": "Drawing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTB2",
+   "ARTHC1100",
+   "ARTS10A",
+   "ARTS10B",
+   "ARTS11A",
+   "ARTS11B",
+   "ARTS12A",
+   "ARTS12B",
+   "ARTS12C",
+   "ARTS12D",
+   "ARTS13A",
+   "ARTS13B",
+   "ARTS16"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/art/drawing-coa/",
+   "title": "Drawing, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2804
+ },
+ {
+  "control_number": "22070",
+  "title": "Painting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTB2",
+   "ARTB4",
+   "ARTH14",
+   "ARTHC1200",
+   "ARTS10A",
+   "ARTS16",
+   "ARTS30A",
+   "ARTS30B",
+   "ARTS31",
+   "ARTS40A",
+   "ARTS40B",
+   "ARTS40C",
+   "ARTS40D",
+   "ARTS41A",
+   "ARTS41B",
+   "ARTS41C",
+   "ARTS51",
+   "ARTS9A"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/art/painting-coa/",
+   "title": "Painting, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 2955
+ },
+ {
+  "control_number": "22071",
+  "title": "Sculpture",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCE3A",
+   "ARTB3",
+   "ARTD1A",
+   "ARTD1B",
+   "ARTD1C",
+   "ARTD1D",
+   "ARTD2A",
+   "ARTD2B",
+   "ARTD2C",
+   "ARTD2D",
+   "ARTD3A",
+   "ARTD3B",
+   "ARTD3C",
+   "ARTD4A",
+   "ARTD4B",
+   "ARTD4C",
+   "ARTD5A",
+   "ARTD5B",
+   "ARTD5C",
+   "ARTD6A",
+   "ARTD6B",
+   "ARTD6C",
+   "ARTD7A",
+   "ARTD7B"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/sculpture/sculpture-coa/",
+   "title": "Sculpture, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 3345
+ },
+ {
+  "control_number": "22072",
+  "title": "Ceramics and Glass",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCE1",
+   "ARCE11",
+   "ARCE1A",
+   "ARCE1B",
+   "ARCE1C",
+   "ARCE1D",
+   "ARCE2A",
+   "ARCE2B",
+   "ARCE2C",
+   "ARCE2D",
+   "ARCE3A",
+   "ARCE3B",
+   "ARCE3C",
+   "ARCE3D",
+   "ARCE4A",
+   "ARCE4B",
+   "ARCE4C",
+   "ARCE4D",
+   "ARCE5",
+   "ARCE6",
+   "ARCE7",
+   "ARCE8",
+   "ARCE9"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/ceramics/ceramics-glass-coa/",
+   "title": "Ceramics and Glass, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3326
+ },
+ {
+  "control_number": "22073",
+  "title": "Music",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSI10A",
+   "MUSI10B",
+   "MUSI10C",
+   "MUSI20",
+   "MUSI22",
+   "MUSI25",
+   "MUSI30",
+   "MUSI32",
+   "MUSI35",
+   "MUSI36",
+   "MUSI37",
+   "MUSI40",
+   "MUSI48A",
+   "MUSI48B",
+   "MUSI50A",
+   "MUSI50B",
+   "MUSI50C",
+   "MUSI50D"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/music/music-coa/",
+   "title": "Music, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3558
+ },
+ {
+  "control_number": "22076",
+  "title": "Theatre Arts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTV1",
+   "DANC10A",
+   "DANC11A",
+   "DANC12A",
+   "MUSI10A",
+   "MUSI2",
+   "MUSI25",
+   "MUSI40",
+   "MUSI50A",
+   "THEA1",
+   "THEA10",
+   "THEA14",
+   "THEA15A",
+   "THEA15B",
+   "THEA16A",
+   "THEA19",
+   "THEA20",
+   "THEA23",
+   "THEA24",
+   "THEA25",
+   "THEA3",
+   "THEA31",
+   "THEA4",
+   "THEA40A",
+   "THEA40B",
+   "THEA40C",
+   "THEA40D",
+   "THEA6",
+   "THEA60A",
+   "THEA60B",
+   "THEA60C",
+   "THEA60D",
+   "THEA7A",
+   "THEA9"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/theatre-arts/theatre-arts-coa/",
+   "title": "Theatre Arts, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 34,
+  "text_chars": 4163
+ },
+ {
+  "control_number": "22079",
+  "title": "Jewelry and Metal Arts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTD40",
+   "ARTD40A",
+   "ARTD40B",
+   "ARTD40C",
+   "ARTD40D",
+   "ARTD41A",
+   "ARTD41B",
+   "ARTD41C",
+   "ARTD41D",
+   "ARTD42A",
+   "ARTD42B",
+   "ARTD42C",
+   "ARTD43A",
+   "ARTD43B",
+   "ARTD43C",
+   "ARTD44A",
+   "ARTD44B",
+   "ARTD45",
+   "ARTD47A",
+   "ARTD47B",
+   "ARTD48",
+   "ARTD53",
+   "ARTD55",
+   "ARTD57"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/jewelry-metal-arts/jewelry-metal-arts-coa/",
+   "title": "Jewelry and Metal Arts, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 4105
+ },
+ {
+  "control_number": "22080",
+  "title": "Art Photography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTP11A",
+   "ARTP11B",
+   "ARTP11C",
+   "ARTP12A",
+   "ARTP12B",
+   "ARTP14",
+   "ARTP15",
+   "ARTP55"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/photography/art-photography-coa/",
+   "title": "Art Photography, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4443
+ },
+ {
+  "control_number": "22081",
+  "title": "Graphic Arts",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTB2",
+   "ARTB4",
+   "ARTG10",
+   "ARTG11",
+   "ARTG12",
+   "ARTG15",
+   "ARTG16",
+   "ARTG17",
+   "ARTP11A",
+   "ARTS10A"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/graphic-arts/graphic-arts-coa/",
+   "title": "Graphic Arts, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3286
+ },
+ {
+  "control_number": "22083",
+  "title": "Medical Assisting",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "ANAT5",
+   "CSIS50",
+   "ENGLC1000",
+   "MEDA100",
+   "MEDA101",
+   "MEDA105",
+   "MEDA110",
+   "MEDA112",
+   "MEDA114",
+   "MEDA118",
+   "MEDA120",
+   "MEDA121",
+   "MEDA122"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/medical-assisting/medical-assisting-coa/",
+   "title": "Medical Assisting, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3807
+ },
+ {
+  "control_number": "22084",
+  "title": "Dental Assisting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DNTL100",
+   "DNTL101",
+   "DNTL102",
+   "DNTL103",
+   "DNTL104",
+   "DNTL105",
+   "DNTL107",
+   "DNTL108",
+   "DNTL111",
+   "DNTL116"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/dental-technology/dental-assisting-coa/",
+   "title": "Dental Assisting, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3584
+ },
+ {
+  "control_number": "22087",
+  "title": "Fashion Merchandising and Management",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FASH10",
+   "FASH15",
+   "FASH20"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/fashion-design-merchandising/fashion-design-merchandising-coa/",
+   "title": "Fashion Merchandising and Management, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2765
+ },
+ {
+  "control_number": "22090",
+  "title": "Early Childhood Education",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.95,
+  "codes_found": [
+   "ECED1",
+   "ECED2",
+   "ECED40",
+   "ECED51",
+   "ECED52",
+   "ECED55",
+   "ECED56",
+   "ECED61",
+   "ECED62A",
+   "ECED62B",
+   "ECED63A",
+   "ECED63B",
+   "ECED71A",
+   "ECED71B",
+   "ECED80",
+   "ECED81",
+   "ECED82",
+   "ECED83",
+   "ECED84"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/early-childhood-education/early-childhood-education-coa/",
+   "title": "Early Childhood Education, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 7125
+ },
+ {
+  "control_number": "22098",
+  "title": "Administration of Justice: Law Enforcement",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22100",
+  "title": "Fire Protection Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FPTC1",
+   "FPTC2",
+   "FPTC3",
+   "FPTC4",
+   "FPTC5",
+   "FPTC6"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/fire-protection-technology/fire-protection-technology-coa/",
+   "title": "Fire Protection Technology, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3142
+ },
+ {
+  "control_number": "31364",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECED1",
+   "ECED2",
+   "ECED51",
+   "ECED52",
+   "ECED55",
+   "ECED56",
+   "ECED61",
+   "ECED80"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/early-childhood-education/early-childhood-education-as-t/",
+   "title": "Early Childhood Education, Associate in Science for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4321
+ },
+ {
+  "control_number": "31753",
+  "title": "English as a Second Language Intermediate Level",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENSL431",
+   "ENSL434",
+   "ENSL442",
+   "ENSL445"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/english-second-language/english-second-language-intermediate-level-noncredit-coc/",
+   "title": "English as a Second Language Intermediate Level, Noncredit Certificate of Completion < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3407
+ },
+ {
+  "control_number": "31754",
+  "title": "English as a Second Language Advanced Level",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENSL446",
+   "ENSL448"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/english-second-language/english-second-language-advanced-level-noncredit-coc/",
+   "title": "English as a Second Language Advanced Level, Noncredit Certificate of Completion < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3124
+ },
+ {
+  "control_number": "31860",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "PSYC10",
+   "PSYC25",
+   "PSYC30",
+   "PSYC35",
+   "PSYC38",
+   "PSYC40",
+   "PSYC50",
+   "PSYC6",
+   "PSYCC1000",
+   "SOCI19",
+   "SOCI3",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/psychology/psychology-aa-t/",
+   "title": "Psychology, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3557
+ },
+ {
+  "control_number": "32033",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.824,
+  "codes_found": [
+   "ANAT1",
+   "ANTH4",
+   "ANTH6",
+   "ANTH6L",
+   "ANTH8",
+   "ANTHC1001",
+   "ANTHC1001L",
+   "ETNC20",
+   "GEOG5",
+   "GEOL2",
+   "GWOS30",
+   "SOCI1",
+   "SOCI19",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/anthropology/anthropology-aa-t/",
+   "title": "Anthropology, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3914
+ },
+ {
+  "control_number": "32034",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "ETNC13",
+   "PSYC19",
+   "PSYC3",
+   "SOCI1",
+   "SOCI11",
+   "SOCI12",
+   "SOCI14",
+   "SOCI15",
+   "SOCI17",
+   "SOCI2",
+   "SOCI40",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/sociology/sociology-associate-arts-transfer/",
+   "title": "Sociology, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4210
+ },
+ {
+  "control_number": "32041",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH20A",
+   "MATH20B",
+   "MATH20C",
+   "PHYS3A",
+   "PHYS3B",
+   "PHYS3C"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/physics/physics-as-t/",
+   "title": "Physics 2.0, Associate in Science for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3433
+ },
+ {
+  "control_number": "32133",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI10A",
+   "CSCI10B",
+   "CSCI11",
+   "CSCI12",
+   "MATH20A",
+   "MATH20B",
+   "PHYS3A",
+   "PHYS3B"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/computer-science/computer-science-as-t/",
+   "title": "Computer Science, Associate in Science for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3515
+ },
+ {
+  "control_number": "32143",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCE1",
+   "ARTB2",
+   "ARTB3",
+   "ARTB4",
+   "ARTD1A",
+   "ARTD40",
+   "ARTD40A",
+   "ARTH8",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ARTP11A",
+   "ARTS10A",
+   "ARTS12A",
+   "ARTS40A",
+   "ARTS60",
+   "ARTS9A"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/art/studio-aa-t/",
+   "title": "Studio Arts, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3687
+ },
+ {
+  "control_number": "32230",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCE1",
+   "ARCE1A",
+   "ARTB2",
+   "ARTB3",
+   "ARTD1A",
+   "ARTH12",
+   "ARTH14",
+   "ARTH8",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ARTP11A",
+   "ARTP12A",
+   "ARTS10A",
+   "ARTS12A",
+   "ARTS9A",
+   "HIST4",
+   "HIST5",
+   "HUMA30",
+   "MUSI1",
+   "PHIL2",
+   "THEA1"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/art-history/art-history-aa-t/",
+   "title": "Art History, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 4069
+ },
+ {
+  "control_number": "32361",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 14,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32381",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.92,
+  "codes_found": [
+   "ANTH4",
+   "ANTH6",
+   "GWOS10",
+   "GWOS11",
+   "HIST12",
+   "HIST15",
+   "HIST20",
+   "HIST4",
+   "HIST5",
+   "HIST6",
+   "HIST7",
+   "HIST8",
+   "HISTC1001",
+   "HISTC1002",
+   "JPNS2A",
+   "SIGN2A",
+   "SOCI1",
+   "SOCI2",
+   "SOCI3",
+   "SPAN3",
+   "SPAN3S",
+   "SPAN4",
+   "SPAN4S"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/history/history-aa-t/",
+   "title": "History, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4367
+ },
+ {
+  "control_number": "32416",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.882,
+  "codes_found": [
+   "ECONC2001",
+   "ECONC2002",
+   "POLS11",
+   "POLS12",
+   "POLS14",
+   "POLS2",
+   "POLS3",
+   "POLS4",
+   "POLS5",
+   "POLS7",
+   "POLSC1000",
+   "PSYC19",
+   "SOCI13",
+   "SOCI19",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/political-science/political-science-aa-t/",
+   "title": "Political Science, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4217
+ },
+ {
+  "control_number": "33092",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HIST4",
+   "HIST5",
+   "PHIL10",
+   "PHIL13",
+   "PHIL2",
+   "PHIL4",
+   "PHIL6",
+   "PHIL8"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/philosophy/philosophy-aa-t/",
+   "title": "Philosophy, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3209
+ },
+ {
+  "control_number": "33099",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.962,
+  "codes_found": [
+   "COMM5",
+   "COMM6",
+   "ENGL17",
+   "ENGL21",
+   "ENGL22",
+   "ENGL31",
+   "ENGL32",
+   "ENGL40A",
+   "ENGL40B",
+   "ENGL43",
+   "ENGL44",
+   "ENGL45",
+   "ENGL46",
+   "ENGL47",
+   "ENGL49",
+   "ENGL51",
+   "ENGL53",
+   "ENGL63",
+   "ENGLC1001",
+   "ENGLC1002",
+   "GWOS11",
+   "GWOS15",
+   "HUMA10",
+   "LING15",
+   "THEA1"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/english/english-aa-t/",
+   "title": "English, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 4285
+ },
+ {
+  "control_number": "33234",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.986,
+  "codes_found": [
+   "ANAT1",
+   "CHEM1A",
+   "DANC10A",
+   "DANC10B",
+   "DANC11A",
+   "DANC11B",
+   "DANC12A",
+   "DANC12B",
+   "DANC14A",
+   "DANC14B",
+   "DANC15A",
+   "DANC15B",
+   "DANC18A",
+   "DANC18B",
+   "EMMS5",
+   "KINS40",
+   "PFIT10A",
+   "PFIT10B",
+   "PFIT15A",
+   "PFIT15B",
+   "PFIT16A",
+   "PFIT16B",
+   "PFIT17A",
+   "PFIT17B",
+   "PFIT18A",
+   "PFIT18B",
+   "PFIT19A",
+   "PFIT19B",
+   "PFIT2",
+   "PFIT20",
+   "PFIT21A",
+   "PFIT21B",
+   "PFIT22A",
+   "PFIT22B",
+   "PFIT23A",
+   "PFIT23B",
+   "PFIT24A",
+   "PFIT24B",
+   "PFIT30A",
+   "PFIT30B",
+   "PFIT6",
+   "PFIT7",
+   "PFIT8",
+   "PFIT9",
+   "PHED10A",
+   "PHED12B",
+   "PHED12C",
+   "PHED15A",
+   "PHED15B",
+   "PHED22A",
+   "PHED22B",
+   "PHED23A",
+   "PHED23B",
+   "PHED24A",
+   "PHED24B",
+   "PHED5A",
+   "PHED5B",
+   "PHED6A",
+   "PHED6B",
+   "PHED7A",
+   "PHED7B",
+   "PHED9A",
+   "PHED9B",
+   "PHSO1",
+   "PHSO2",
+   "PHYS2A",
+   "PSYCC1000",
+   "SOCI1",
+   "SOCI19",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/kinesiology/kinesiology-aa-t/",
+   "title": "Kinesiology, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 71,
+  "text_chars": 5487
+ },
+ {
+  "control_number": "33584",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.913,
+  "codes_found": [
+   "ETNC13",
+   "ETNC18",
+   "GEOG4",
+   "HIST10",
+   "HIST20",
+   "SOCI1",
+   "SOCI14",
+   "SPAN1",
+   "SPAN18",
+   "SPAN1S",
+   "SPAN2",
+   "SPAN22",
+   "SPAN2S",
+   "SPAN3",
+   "SPAN3S",
+   "SPAN4",
+   "SPAN45",
+   "SPAN4S",
+   "SPAN5",
+   "SPAN50A",
+   "SPAN50B"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/spanish/spanish-aa-t/",
+   "title": "Spanish, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 4808
+ },
+ {
+  "control_number": "33585",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEA1",
+   "THEA15A",
+   "THEA15B",
+   "THEA19",
+   "THEA20",
+   "THEA23",
+   "THEA24",
+   "THEA25",
+   "THEA40A",
+   "THEA40B",
+   "THEA40C",
+   "THEA40D",
+   "THEA6",
+   "THEA60A",
+   "THEA60B",
+   "THEA60C",
+   "THEA60D"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/theatre-arts/theatre-arts-aa-t/",
+   "title": "Theatre Arts, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3999
+ },
+ {
+  "control_number": "33586",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM1B",
+   "GEOL2",
+   "GEOL3",
+   "MATH20A",
+   "MATH20B"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/geology/geology-as-t/",
+   "title": "Geology, Associate in Science for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3213
+ },
+ {
+  "control_number": "33587",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "BUSI3A",
+   "BUSI3B",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH17",
+   "MATH18",
+   "MATH20A",
+   "MATH20B",
+   "MATH20C",
+   "MATH31",
+   "SOCI19",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/economics/economics-as-t/",
+   "title": "Economics, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3703
+ },
+ {
+  "control_number": "33588",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "ANAT1",
+   "BIOL25",
+   "BIOL26",
+   "CHEM12A",
+   "CHEM1A",
+   "CHEM1B",
+   "NUTF1",
+   "NUTF10",
+   "PHSO1",
+   "PHSO2",
+   "PSYC19",
+   "PSYCC1000",
+   "SOCI1",
+   "SOCI19",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/nutrition/nutrition-dietetics-as-t/",
+   "title": "Nutrition and Dietetics, Associate in Science for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4457
+ },
+ {
+  "control_number": "33590",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSI10A",
+   "MUSI10B",
+   "MUSI10C",
+   "MUSI10D",
+   "MUSI20",
+   "MUSI22",
+   "MUSI25",
+   "MUSI30",
+   "MUSI32",
+   "MUSI35",
+   "MUSI36",
+   "MUSI37",
+   "MUSI50A",
+   "MUSI50B",
+   "MUSI50C",
+   "MUSI50D"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/music/music-aa-t/",
+   "title": "Music, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3768
+ },
+ {
+  "control_number": "33758",
+  "title": "Linguistics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FREN1A",
+   "FREN1B",
+   "JPNS1A",
+   "JPNS1B",
+   "JPNS2A",
+   "LING10",
+   "LING15",
+   "LING18",
+   "LING25",
+   "LING30",
+   "LING35",
+   "LING45",
+   "LING46",
+   "LING50",
+   "SIGN1A",
+   "SIGN1B",
+   "SIGN2A",
+   "SPAN1",
+   "SPAN1S",
+   "SPAN2",
+   "SPAN2S",
+   "SPAN3",
+   "SPAN3S"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/linguistics/linguistics-aa/",
+   "title": "Linguistics, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 4789
+ },
+ {
+  "control_number": "35218",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL21",
+   "BIOL22",
+   "CHEM1A",
+   "CHEM1B",
+   "MATH18",
+   "MATH20A",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS3A",
+   "PHYS3B"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/biology/biology-as-t/",
+   "title": "Biology, Associate in Science for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3871
+ },
+ {
+  "control_number": "35988",
+  "title": "Computer Networking and Security",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI2",
+   "CSCI9",
+   "CSIS72A",
+   "CSIS72B",
+   "CSIS75",
+   "CSIS76A",
+   "CSIS76B",
+   "CSIS76C",
+   "CSIS80",
+   "CSIS81",
+   "CSIS83A",
+   "CSIS86",
+   "CSIS88",
+   "CSIS89",
+   "CSIS98"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/computer-networking-as/",
+   "title": "Computer Networking and Security, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4149
+ },
+ {
+  "control_number": "36173",
+  "title": "Drawing",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTB2",
+   "ARTHC1100",
+   "ARTS10A",
+   "ARTS10B",
+   "ARTS11A",
+   "ARTS11B",
+   "ARTS12A",
+   "ARTS12B",
+   "ARTS12C",
+   "ARTS12D",
+   "ARTS13A",
+   "ARTS13B",
+   "ARTS16"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/art/drawing-aa/",
+   "title": "Drawing, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2803
+ },
+ {
+  "control_number": "36242",
+  "title": "Jewelry and Metal Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTD40",
+   "ARTD40A",
+   "ARTD40B",
+   "ARTD40C",
+   "ARTD40D",
+   "ARTD41A",
+   "ARTD41B",
+   "ARTD41C",
+   "ARTD41D",
+   "ARTD42A",
+   "ARTD42B",
+   "ARTD42C",
+   "ARTD43A",
+   "ARTD43B",
+   "ARTD43C",
+   "ARTD44A",
+   "ARTD44B",
+   "ARTD45",
+   "ARTD47A",
+   "ARTD47B",
+   "ARTD48",
+   "ARTD53",
+   "ARTD55",
+   "ARTD57"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/jewelry-metal-arts/jewelry-metal-arts-aa/",
+   "title": "Jewelry and Metal Arts, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 4122
+ },
+ {
+  "control_number": "36605",
+  "title": "Business Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.975,
+  "codes_found": [
+   "BUSI1",
+   "BUSI12A",
+   "BUSI12B",
+   "BUSI2",
+   "BUSI22",
+   "BUSI24",
+   "BUSI38",
+   "BUSI39",
+   "BUSI3A",
+   "BUSI3B",
+   "BUSI4",
+   "BUSI40",
+   "BUSI42",
+   "BUSI43",
+   "BUSI44",
+   "BUSI46",
+   "BUSI47",
+   "BUSI49",
+   "BUSI5",
+   "BUSI50",
+   "BUSI54",
+   "BUSI60",
+   "BUSI62",
+   "BUSI64",
+   "BUSI89",
+   "CSIS1",
+   "CSIS50",
+   "CSIS75",
+   "CSIS76A",
+   "CSIS86",
+   "CSIS98",
+   "ECON1",
+   "ECONC2001",
+   "ECONC2002",
+   "PHIL10",
+   "WORK96",
+   "WORK97",
+   "WORK98",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/business/business-administration-as/",
+   "title": "Business Administration, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 40,
+  "text_chars": 7962
+ },
+ {
+  "control_number": "36656",
+  "title": "Chemistry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "MATH20A",
+   "MATH20B",
+   "MATH20C",
+   "PHYS3A",
+   "PHYS3B",
+   "PHYS3C"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/chemistry/chemistry-as-uc-t/",
+   "title": "Chemistry, Associate in Science for UC Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3966
+ },
+ {
+  "control_number": "37243",
+  "title": "Global Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH4",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGL44",
+   "ENGL45",
+   "GEOG2",
+   "GEOG4",
+   "GLST1",
+   "GLST2",
+   "HIST8",
+   "JPNS2A",
+   "POLS2",
+   "POLS4",
+   "SPAN3",
+   "SPAN3S",
+   "SPAN4",
+   "SPAN4S"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/global-studies/global-studies-aa-t/",
+   "title": "Global Studies, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4101
+ },
+ {
+  "control_number": "37306",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.786,
+  "codes_found": [
+   "ARTB10",
+   "ARTH1",
+   "ASTR10",
+   "BIOL10",
+   "COMMC1000",
+   "ECED1",
+   "EDUC1",
+   "ENGLC1000",
+   "ENGLC1002",
+   "GEOL12",
+   "HIST15",
+   "HIST7",
+   "HISTC1001",
+   "HISTC1002",
+   "HLTH4",
+   "MATH12",
+   "MUSI1",
+   "OCEN2",
+   "PHYS12",
+   "POLSC1000",
+   "PSYCC1000",
+   "THEA1"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/education/elementary-teacher-education-as-t/",
+   "title": "Elementary Teacher Education: Integrated Programs, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 4621
+ },
+ {
+  "control_number": "37534",
+  "title": "Social Justice Studies: Gender Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.722,
+  "codes_found": [
+   "ANTH30",
+   "ENGL11",
+   "ETNC10",
+   "GWOS1",
+   "GWOS12",
+   "GWOS15",
+   "GWOS3",
+   "GWOS4",
+   "SOCI1",
+   "SOCI13",
+   "SOCI19",
+   "SOCI2",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/gender-womens-studies/social-justice-studies-gender-studies-aa-t/",
+   "title": "Social Justice Studies: Gender Studies, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 4980
+ },
+ {
+  "control_number": "37536",
+  "title": "Social Justice Studies: Ethnic Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "ANTH30",
+   "ANTH4",
+   "ETNC10",
+   "ETNC16",
+   "ETNC18",
+   "ETNC20",
+   "ETNC22",
+   "ETNC4",
+   "ETNC5",
+   "ETNC6",
+   "GWOS1",
+   "HIST23",
+   "HIST24",
+   "HIST25",
+   "SOCI1",
+   "SOCI12",
+   "SOCI13",
+   "SOCI14",
+   "SOCI19",
+   "SOCI2",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/ethnic-studies/social-justice-studies-ethnic-studies-aa-t/",
+   "title": "Social Justice Studies: Ethnic Studies, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 5202
+ },
+ {
+  "control_number": "37701",
+  "title": "American Sign Language",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SIGN10",
+   "SIGN1A",
+   "SIGN1B",
+   "SIGN20",
+   "SIGN2A"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/american-sign-language/american-sign-language-coa/",
+   "title": "American Sign Language, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3159
+ },
+ {
+  "control_number": "37709",
+  "title": "English: Creative Writing",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.95,
+  "codes_found": [
+   "ENGL17",
+   "ENGL22",
+   "ENGL31",
+   "ENGL32",
+   "ENGL40A",
+   "ENGL40B",
+   "ENGL43",
+   "ENGL44",
+   "ENGL45",
+   "ENGL46",
+   "ENGL47",
+   "ENGL51",
+   "ENGL52",
+   "ENGL53",
+   "ENGL54",
+   "ENGL55",
+   "ENGL56A",
+   "ENGL56B",
+   "GWOS11"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/english/english-creative-writing-coa/",
+   "title": "English: Creative Writing, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3846
+ },
+ {
+  "control_number": "37710",
+  "title": "Engineering Fundamentals",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CSCI10A",
+   "CSCI10C",
+   "ENGR17",
+   "ENGR1A",
+   "ENGR1B",
+   "ENGR2",
+   "MATH20A",
+   "MATH20B",
+   "PHYS3A",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/engineering/engineering-fundamentals-coa/",
+   "title": "Engineering Fundamentals, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3143
+ },
+ {
+  "control_number": "37711",
+  "title": "Health Service Professions",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "ANAT5",
+   "CHEM1A",
+   "CHEM30A",
+   "DNTL100",
+   "HLTH4",
+   "HUMS50",
+   "KINS45",
+   "MEDA100",
+   "NUTF1",
+   "NUTF2"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/health/health-service-professions-coa/",
+   "title": "Health Service Professions, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3262
+ },
+ {
+  "control_number": "37712",
+  "title": "Linguistics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LING10",
+   "LING15",
+   "LING18",
+   "LING25",
+   "LING30",
+   "LING35",
+   "LING45",
+   "LING46",
+   "LING50"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/linguistics/linguistics-coa/",
+   "title": "Linguistics, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2930
+ },
+ {
+  "control_number": "37717",
+  "title": "Engineering",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "CHEM1A",
+   "COMMC1000",
+   "CSCI10A",
+   "CSCI10B",
+   "CSCI10C",
+   "CSCI12",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGR12",
+   "ENGR17",
+   "ENGR1A",
+   "ENGR2",
+   "ENGR4",
+   "ENGR8",
+   "MATH20A",
+   "MATH20B",
+   "MATH20C",
+   "MATH32",
+   "PHYS3A",
+   "PHYS3B",
+   "PHYS3C"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/engineering/engineering-coa/",
+   "title": "Engineering, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 4452
+ },
+ {
+  "control_number": "37719",
+  "title": "Spanish",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN1",
+   "SPAN2",
+   "SPAN3",
+   "SPAN4"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/spanish/spanish-coa/",
+   "title": "Spanish, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3175
+ },
+ {
+  "control_number": "37721",
+  "title": "Spanish for Spanish Speakers",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN1S",
+   "SPAN2S",
+   "SPAN3S",
+   "SPAN4S",
+   "SPAN5",
+   "SPAN7"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/spanish/spanish-spanish-speakers-coa/",
+   "title": "Spanish for Spanish Speakers, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 4133
+ },
+ {
+  "control_number": "37722",
+  "title": "Software Development",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI10A",
+   "CSCI10B",
+   "CSCI10C",
+   "CSCI114",
+   "CSCI9",
+   "CSIS98",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/computer-science/software-development-coa/",
+   "title": "Software Development, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3417
+ },
+ {
+  "control_number": "38075",
+  "title": "Firefighter Academy",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FPTC105A",
+   "FPTC105B"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/fire-protection-technology/firefighter-academy-coa/",
+   "title": "Firefighter Academy, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2726
+ },
+ {
+  "control_number": "38076",
+  "title": "Automotive Maintenance and Light Repair",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO100",
+   "AUTO102",
+   "AUTO106",
+   "AUTO111",
+   "AUTO162",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/automotive-technology/automotive-maintenance-light-repair-coa/",
+   "title": "Automotive Maintenance and Light Repair, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3067
+ },
+ {
+  "control_number": "38077",
+  "title": "Basic EMS and Fire Training",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMMS170A",
+   "EMMS170B",
+   "FPTC101"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/emergency-medical-services/basic-ems-fire-training-coa/",
+   "title": "Basic EMS and Fire Training, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2874
+ },
+ {
+  "control_number": "38078",
+  "title": "Emission Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO100",
+   "AUTO101",
+   "AUTO102",
+   "AUTO105",
+   "AUTO170",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/automotive-technology/emission-specialist-coa/",
+   "title": "Emission Specialist, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3029
+ },
+ {
+  "control_number": "38081",
+  "title": "Cisco Certified Network Associate (CCNA)",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIS76A",
+   "CSIS76B",
+   "CSIS76C",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/cisco-ccna-coa/",
+   "title": "Cisco Certified Network Associate (CCNA), Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2445
+ },
+ {
+  "control_number": "38101",
+  "title": "Emergency Medical Technician 1: Basic Training",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMMS170A",
+   "EMMS170B"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/emergency-medical-services/emergency-medical-technician-1-basic-training-coa/",
+   "title": "Emergency Medical Technician 1: Basic Training, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2806
+ },
+ {
+  "control_number": "39196",
+  "title": "English as a Second Language High-Beginning Level",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENSL412",
+   "ENSL413",
+   "ENSL421",
+   "ENSL423"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/english-second-language/english-second-language-high-beginning-level-noncredit-coc/",
+   "title": "English as a Second Language High-Beginning Level, Noncredit Certificate of Completion < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3387
+ },
+ {
+  "control_number": "39201",
+  "title": "Baking and Pastry Arts",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HOSP420",
+   "HOSP458",
+   "HOSP478",
+   "HOSP480",
+   "HOSP482",
+   "HOSP483",
+   "HOSP484",
+   "HOSP487",
+   "HOSP488",
+   "WORK496",
+   "WORK499"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/baking-pastry-arts-noncredit-coc/",
+   "title": "Baking and Pastry Arts, Noncredit Certificate of Completion < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3076
+ },
+ {
+  "control_number": "39202",
+  "title": "Wine Professional Level II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HOSP440",
+   "HOSP442",
+   "HOSP443",
+   "HOSP444",
+   "HOSP445",
+   "HOSP446"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/wine-professional-level-ii-noncredit-coc/",
+   "title": "Wine Professional Level II, Noncredit Certificate of Completion < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3320
+ },
+ {
+  "control_number": "39226",
+  "title": "French Language",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FREN1A",
+   "FREN1B"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/french/french-language-coa/",
+   "title": "French Language, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3278
+ },
+ {
+  "control_number": "39245",
+  "title": "Business Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "BUSI12B",
+   "BUSI54",
+   "CSIS1",
+   "CSIS50",
+   "CSIS75",
+   "CSIS76A",
+   "CSIS86",
+   "CSIS98",
+   "WORK96",
+   "WORK97",
+   "WORK98",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/business/business-technology-coa/",
+   "title": "Business Technology, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3563
+ },
+ {
+  "control_number": "39249",
+  "title": "Associate Teacher",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECED1",
+   "ECED51",
+   "ECED55",
+   "ECED80"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/early-childhood-education/associate-teacher-coa/",
+   "title": "Associate Teacher, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3059
+ },
+ {
+  "control_number": "39253",
+  "title": "Communication",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI2",
+   "COMM10",
+   "COMM2",
+   "COMM3",
+   "COMM4",
+   "COMM5",
+   "COMM6",
+   "COMMC1000",
+   "ENGLC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/communication-studies/communication-coa/",
+   "title": "Communication, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3195
+ },
+ {
+  "control_number": "39258",
+  "title": "Japanese Language",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "JPNS1A",
+   "JPNS1B",
+   "JPNS2A"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/japanese/japanese-language-coa/",
+   "title": "Japanese Language, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3070
+ },
+ {
+  "control_number": "39260",
+  "title": "Business - Entrepreneurship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI1",
+   "BUSI43",
+   "BUSI44",
+   "BUSI46",
+   "BUSI47",
+   "BUSI49",
+   "BUSI50",
+   "BUSI54",
+   "BUSI64",
+   "BUSI89",
+   "WORK97",
+   "WORK98",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/business/business-entrepreneurship-certificate-achievement/",
+   "title": "Business - Entrepreneurship, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3451
+ },
+ {
+  "control_number": "39261",
+  "title": "Business - Leadership",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI22",
+   "BUSI24",
+   "BUSI38",
+   "BUSI39",
+   "BUSI40",
+   "WORK97",
+   "WORK98",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/business/business-leadership-certificate-achievement/",
+   "title": "Business - Leadership, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3075
+ },
+ {
+  "control_number": "39262",
+  "title": "Business - Human Resources",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI1",
+   "BUSI2",
+   "BUSI38",
+   "BUSI4",
+   "BUSI40",
+   "BUSI42",
+   "BUSI5",
+   "WORK96",
+   "WORK97",
+   "WORK98",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/business/business-human-resources-certificate-achievement/",
+   "title": "Business - Human Resources, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3166
+ },
+ {
+  "control_number": "39263",
+  "title": "Latinx Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ETNC18",
+   "ETNC4",
+   "HIST20",
+   "SOCI13",
+   "SOCI14",
+   "SPAN1",
+   "SPAN1S",
+   "SPAN2",
+   "SPAN2S",
+   "SPAN5",
+   "SPAN7"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/spanish/latinx-studies-coa/",
+   "title": "Latinx Studies, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4169
+ },
+ {
+  "control_number": "39264",
+  "title": "Spanish",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "EDUC1",
+   "EDUC1L",
+   "EDUC2",
+   "ETNC18",
+   "ETNC4",
+   "HIST20",
+   "SOCI13",
+   "SOCI14",
+   "SPAN1",
+   "SPAN10",
+   "SPAN18",
+   "SPAN1S",
+   "SPAN2",
+   "SPAN22",
+   "SPAN2S",
+   "SPAN3",
+   "SPAN31",
+   "SPAN32",
+   "SPAN37",
+   "SPAN3S",
+   "SPAN4",
+   "SPAN4S",
+   "SPAN5",
+   "SPAN50A",
+   "SPAN50B",
+   "SPAN7"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/spanish/spanish-aa/",
+   "title": "Spanish, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 4320
+ },
+ {
+  "control_number": "39266",
+  "title": "American Sign Language",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LING10",
+   "SIGN10",
+   "SIGN1A",
+   "SIGN1B",
+   "SIGN20",
+   "SIGN2A",
+   "SIGN2B"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/american-sign-language/american-sign-language-aa/",
+   "title": "American Sign Language, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3198
+ },
+ {
+  "control_number": "39267",
+  "title": "Business - Marketing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI1",
+   "BUSI50",
+   "BUSI54",
+   "BUSI64",
+   "BUSI89",
+   "WORK96",
+   "WORK97",
+   "WORK98",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/business/business-sales-marketing-certificate-achievement/",
+   "title": "Business - Marketing, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3005
+ },
+ {
+  "control_number": "39268",
+  "title": "Company Officer",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "FPTC104A",
+   "FPTC112D",
+   "FPTC129A",
+   "FPTC129B",
+   "FPTC129C",
+   "FPTC130A",
+   "FPTC130B",
+   "FPTC130C",
+   "FPTC130D",
+   "FPTC130E",
+   "FPTC131",
+   "FPTC142",
+   "FPTC145",
+   "FPTC3"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/fire-protection-technology/company-officer-coa/",
+   "title": "Company Officer, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3460
+ },
+ {
+  "control_number": "39269",
+  "title": "Certified Personal Trainer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "KINS46",
+   "KINS47",
+   "KINS51",
+   "KINS63",
+   "KINS92",
+   "PFIT10A",
+   "PFIT17A",
+   "PFIT18A",
+   "PFIT19A",
+   "PFIT21A",
+   "PFIT22A",
+   "PFIT23A"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/kinesiology/certified-personal-trainer-coa/",
+   "title": "Certified Personal Trainer, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3204
+ },
+ {
+  "control_number": "39270",
+  "title": "Dietary Manager",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NUTF25",
+   "NUTF35",
+   "NUTF45",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/nutrition/dietary-manager-coa/",
+   "title": "Dietary Manager, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3120
+ },
+ {
+  "control_number": "39292",
+  "title": "Art and Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTB2",
+   "ARTB3",
+   "ARTB4",
+   "ARTD7A",
+   "ARTD7B",
+   "ARTG10",
+   "ARTG11",
+   "ARTS10A"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/art/art-technology-coa/",
+   "title": "Art and Technology, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2908
+ },
+ {
+  "control_number": "39294",
+  "title": "Glass",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCE4A",
+   "ARCE4B",
+   "ARCE4C",
+   "ARCE4D"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/ceramics/ceramics-glass-coa/",
+   "title": "Ceramics and Glass, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3176
+ },
+ {
+  "control_number": "39312",
+  "title": "Baking and Pastry Arts",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HOSP180",
+   "HOSP20",
+   "HOSP58",
+   "HOSP77",
+   "HOSP78",
+   "HOSP81",
+   "HOSP82",
+   "HOSP83",
+   "HOSP84",
+   "HOSP87",
+   "HOSP88",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/baking-pastry-arts-coa/",
+   "title": "Baking and Pastry Arts, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2911
+ },
+ {
+  "control_number": "39313",
+  "title": "Sustainable Culinary Arts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HOSP20",
+   "HOSP21",
+   "HOSP22",
+   "HOSP23",
+   "HOSP24",
+   "HOSP58",
+   "HOSP78",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/sustainable-culinary-arts-coa/",
+   "title": "Sustainable Culinary Arts, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2949
+ },
+ {
+  "control_number": "39314",
+  "title": "Business - Bookkeeping",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "BUSC109",
+   "BUSC140",
+   "BUSI10",
+   "BUSI12A",
+   "BUSI12B",
+   "CSIS50",
+   "WORK97",
+   "WORK98",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/business/business-accounting-bookkeeping-coa/",
+   "title": "Business - Bookkeeping, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3362
+ },
+ {
+  "control_number": "39334",
+  "title": "Paramedic",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMMS30",
+   "EMMS31",
+   "EMMS32"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/emergency-medical-services/paramedic-coa/",
+   "title": "Paramedic, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3262
+ },
+ {
+  "control_number": "39344",
+  "title": "UCTP Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "MATH20A",
+   "MATH20B",
+   "MATH20C",
+   "PHYS3A",
+   "PHYS3B",
+   "PHYS3C"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/chemistry/chemistry-as/",
+   "title": "Chemistry, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.5
+   }
+  },
+  "listed": 11,
+  "text_chars": 3884
+ },
+ {
+  "control_number": "39345",
+  "title": "UCTP Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM1B",
+   "MATH20A",
+   "MATH20B",
+   "MATH20C",
+   "MATH31",
+   "MATH32",
+   "PHYS3A",
+   "PHYS3B",
+   "PHYS3C"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/physics/physics-as-uc-transfer/",
+   "title": "Physics, Associate in Science for UC Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 10,
+  "text_chars": 3455
+ },
+ {
+  "control_number": "39352",
+  "title": "Paramedic",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMMS30",
+   "EMMS31",
+   "EMMS32"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/emergency-medical-services/paramedic-as/",
+   "title": "Paramedic, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3179
+ },
+ {
+  "control_number": "39353",
+  "title": "Microsoft Office Specialist",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSC109",
+   "BUSC140",
+   "BUSI2",
+   "WORK97",
+   "WORK98",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/business-skills/microsoft-office-specialist-coa/",
+   "title": "Microsoft Office Specialist, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2860
+ },
+ {
+  "control_number": "39356",
+  "title": "Administration of Justice - Level II Corrections",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39361",
+  "title": "Administration of Justice - Level I Policing",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39362",
+  "title": "Wine Professional Level II",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HOSP40",
+   "HOSP42",
+   "HOSP43",
+   "HOSP44",
+   "HOSP45",
+   "HOSP46"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/wine-professional-level-ii-coa/",
+   "title": "Wine Professional Level II, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3221
+ },
+ {
+  "control_number": "39378",
+  "title": "Business Administration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.974,
+  "codes_found": [
+   "BUSI1",
+   "BUSI12A",
+   "BUSI12B",
+   "BUSI2",
+   "BUSI22",
+   "BUSI24",
+   "BUSI38",
+   "BUSI39",
+   "BUSI3A",
+   "BUSI3B",
+   "BUSI4",
+   "BUSI40",
+   "BUSI42",
+   "BUSI43",
+   "BUSI44",
+   "BUSI46",
+   "BUSI47",
+   "BUSI49",
+   "BUSI50",
+   "BUSI54",
+   "BUSI60",
+   "BUSI62",
+   "BUSI64",
+   "BUSI89",
+   "CSIS1",
+   "CSIS50",
+   "CSIS75",
+   "CSIS76A",
+   "CSIS86",
+   "CSIS98",
+   "ECON1",
+   "ECONC2001",
+   "ECONC2002",
+   "PHIL10",
+   "WORK96",
+   "WORK97",
+   "WORK98",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/business/business-administration-coat/",
+   "title": "Business Administration, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 39,
+  "text_chars": 7687
+ },
+ {
+  "control_number": "39407",
+  "title": "Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "MATH20A",
+   "MATH20B",
+   "PHYS3A",
+   "PHYS3B"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/chemistry/chemistry-as-t/",
+   "title": "Chemistry, Associate in Science for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4259
+ },
+ {
+  "control_number": "39463",
+  "title": "Nutrition and Food",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "NUTF1",
+   "NUTF10",
+   "NUTF2",
+   "NUTF3"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/nutrition/nutrition-food-coa/",
+   "title": "Nutrition and Food, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2951
+ },
+ {
+  "control_number": "39536",
+  "title": "Athletic Coaching",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "KINS40",
+   "KINS41",
+   "KINS43",
+   "KINS44",
+   "KINS45",
+   "KINS48",
+   "KINS50",
+   "PFIT30A",
+   "PHED15A",
+   "PHED22A",
+   "PHED24A",
+   "PHED5A",
+   "PHED6A",
+   "PHED7A"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/kinesiology/athletic-coaching-coa/",
+   "title": "Athletic Coaching, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3208
+ },
+ {
+  "control_number": "39834",
+  "title": "Sustainable Food and Beverage Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI43",
+   "BUSI64",
+   "HOSP20",
+   "HOSP21",
+   "HOSP22",
+   "HOSP23",
+   "HOSP24",
+   "HOSP40",
+   "HOSP42",
+   "HOSP43",
+   "HOSP44",
+   "HOSP45",
+   "HOSP46",
+   "HOSP51",
+   "HOSP53",
+   "HOSP58",
+   "HOSP63",
+   "HOSP70",
+   "HOSP77",
+   "HOSP78",
+   "HOSP81",
+   "HOSP82",
+   "HOSP84",
+   "HOSP88",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/sustainable-food-beverage-management-coa/",
+   "title": "Sustainable Food and Beverage Management, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 3693
+ },
+ {
+  "control_number": "40665",
+  "title": "English: Creative Writing",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.958,
+  "codes_found": [
+   "ENGL17",
+   "ENGL22",
+   "ENGL31",
+   "ENGL32",
+   "ENGL40A",
+   "ENGL40B",
+   "ENGL43",
+   "ENGL44",
+   "ENGL45",
+   "ENGL46",
+   "ENGL47",
+   "ENGL51",
+   "ENGL52",
+   "ENGL53",
+   "ENGL54",
+   "ENGL55",
+   "ENGL56A",
+   "ENGL56B",
+   "GWOS11",
+   "THEA7A",
+   "THEA7B",
+   "THEA8A",
+   "THEA8B"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/english/english-creative-writing-aa/",
+   "title": "English: Creative Writing, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 3984
+ },
+ {
+  "control_number": "40721",
+  "title": "Company Officer",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "FPTC104A",
+   "FPTC112D",
+   "FPTC129A",
+   "FPTC129B",
+   "FPTC129C",
+   "FPTC130A",
+   "FPTC130B",
+   "FPTC130C",
+   "FPTC130D",
+   "FPTC130E",
+   "FPTC131",
+   "FPTC140",
+   "FPTC142",
+   "FPTC145",
+   "FPTC3",
+   "FPTC7"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/fire-protection-technology/company-officer/",
+   "title": "Company Officer, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3673
+ },
+ {
+  "control_number": "40722",
+  "title": "Landscape Pest Management",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HORT51",
+   "HORT52",
+   "HORT78"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/horticulture/landscape-pest-management-coa/",
+   "title": "Landscape Pest Management, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3443
+ },
+ {
+  "control_number": "40723",
+  "title": "Landscape Irrigation",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HORT51",
+   "HORT52",
+   "HORT70"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/horticulture/landscape-irrigation-coa/",
+   "title": "Landscape Irrigation, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2937
+ },
+ {
+  "control_number": "40724",
+  "title": "Tree Care Specialist",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HORT202",
+   "HORT51",
+   "HORT52",
+   "HORT55"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/horticulture/tree-care-specialist-coa/",
+   "title": "Tree Care Specialist, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2733
+ },
+ {
+  "control_number": "40725",
+  "title": "Microsoft Operating Systems Skills",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIS72A",
+   "CSIS72B",
+   "CSIS83A",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/microsoft-operating-systems-skills-coa/",
+   "title": "Microsoft Operating Systems Skills, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2786
+ },
+ {
+  "control_number": "40735",
+  "title": "Culinary Entrepreneurship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI1",
+   "BUSI43",
+   "BUSI44",
+   "BUSI46",
+   "BUSI50",
+   "BUSI64",
+   "HOSP23",
+   "HOSP58",
+   "HOSP63"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/culinary-entrepreneurship-coa/",
+   "title": "Culinary Entrepreneurship, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2775
+ },
+ {
+  "control_number": "40740",
+  "title": "Field Training - Firefighter Trainee",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FPTC415"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/fire-protection-technology/field-training-firefighter-trainee-noncredit-certificate-completion/",
+   "title": "Field Training - Firefighter Trainee, Noncredit Certificate of Completion < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 2843
+ },
+ {
+  "control_number": "40916",
+  "title": "Emergency Medical Technician 1: Basic Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMMS470A",
+   "EMMS470B"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/emergency-medical-services/emergency-medical-technician-1-basic-training-noncredit-coc/",
+   "title": "Emergency Medical Technician 1: Basic Training, Noncredit Certificate of Completion < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2810
+ },
+ {
+  "control_number": "40920",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "BUSI1",
+   "BUSI2",
+   "BUSI3A",
+   "BUSI3B",
+   "BUSI4",
+   "BUSI5",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH13",
+   "MATH17",
+   "MATH18",
+   "MATH20A",
+   "SOCI19",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/business/business-administration-2-0-as-t/",
+   "title": "Business Administration 2.0, Associate in Science for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3273
+ },
+ {
+  "control_number": "40925",
+  "title": "Sustainable Culinary Arts",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HOSP420",
+   "HOSP421",
+   "HOSP422",
+   "HOSP423",
+   "HOSP424",
+   "HOSP427",
+   "HOSP458",
+   "HOSP478",
+   "WORK496",
+   "WORK499"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/sustainable-culinary-arts-noncredit-coc/",
+   "title": "Sustainable Culinary Arts, Noncredit Certificate of Completion < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3124
+ },
+ {
+  "control_number": "40936",
+  "title": "Business - Entry Level Office Worker",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSC409",
+   "BUSC440",
+   "BUSC450",
+   "BUSC460"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/business-skills/",
+   "title": "Business Skills < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.25
+   }
+  },
+  "listed": 4,
+  "text_chars": 5751
+ },
+ {
+  "control_number": "41669",
+  "title": "Translation and Interpretation (Spanish/English)",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN10",
+   "SPAN11",
+   "SPAN12",
+   "SPAN15",
+   "SPAN18",
+   "SPAN22",
+   "SPAN31",
+   "SPAN32",
+   "SPAN33",
+   "SPAN34",
+   "SPAN36",
+   "SPAN37",
+   "SPAN40",
+   "SPAN45",
+   "SPAN5",
+   "SPAN50A",
+   "SPAN50B",
+   "SPAN50C",
+   "SPAN50D",
+   "SPAN7"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/spanish/translation-interpretation-spanish-english-aa/",
+   "title": "Translation and Interpretation (Spanish/English), Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 5075
+ },
+ {
+  "control_number": "41831",
+  "title": "Hospitality Management",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "BUSI3A",
+   "BUSI4",
+   "ECONC2001",
+   "HOSP23",
+   "HOSP51",
+   "HOSP53",
+   "HOSP70",
+   "NUTF58",
+   "SOCI19",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/sustainable-hospitality-management-as-t/",
+   "title": "Hospitality Management, Associate in Science for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3438
+ },
+ {
+  "control_number": "41840",
+  "title": "Environmental Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL21",
+   "BIOL22",
+   "BIOL31",
+   "CHEM1A",
+   "CHEM1B",
+   "ECONC2001",
+   "GEOL2",
+   "GEOL2L",
+   "MATH18",
+   "MATH20A",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS3A",
+   "PHYS3B",
+   "PSYC19",
+   "SOCI19",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/biology/environmental-science-asot/",
+   "title": "Environmental Science, Associate in Science for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4555
+ },
+ {
+  "control_number": "41977",
+  "title": "Social Work and Human Services",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.913,
+  "codes_found": [
+   "ADMJ2",
+   "ANAT1",
+   "ANAT5",
+   "ANTH4",
+   "BIOL10",
+   "ECED55",
+   "ECONC2001",
+   "ECONC2002",
+   "ETNC10",
+   "ETNC13",
+   "HUMS50",
+   "HUMS51A",
+   "HUMS51B",
+   "PHSO1",
+   "PHSO2",
+   "PSYC19",
+   "PSYC35",
+   "PSYCC1000",
+   "SOCI1",
+   "SOCI2",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/human-services/social-work-human-services-as-t/",
+   "title": "Social Work and Human Services, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 4949
+ },
+ {
+  "control_number": "42127",
+  "title": "Ecological Horticulture",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL31",
+   "HORT51",
+   "HORT52",
+   "HORT64"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/horticulture/ecological-horticulture-coa/",
+   "title": "Ecological Horticulture, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3509
+ },
+ {
+  "control_number": "42677",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM10",
+   "COMM2",
+   "COMM3",
+   "COMM4",
+   "COMM5",
+   "COMM6",
+   "COMMC1000",
+   "ENGLC1001",
+   "ENGLC1002",
+   "PSYCC1000",
+   "SOCI1"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/communication-studies/communication-studies-as-t/",
+   "title": "Communication Studies 2.0, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3740
+ },
+ {
+  "control_number": "42852",
+  "title": "Environmental Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "BIOL21",
+   "BIOL22",
+   "BIOL31",
+   "BIOL32",
+   "CHEM1A",
+   "CHEM1B",
+   "ECONC2001",
+   "GEOL2",
+   "MATH18",
+   "MATH20A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/biology/environmental-science-as/",
+   "title": "Environmental Science, Associate in Science < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3534
+ },
+ {
+  "control_number": "42989",
+  "title": "Kinesiology and Human Performance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.984,
+  "codes_found": [
+   "ANAT5",
+   "ATHL18",
+   "ATHL201",
+   "ATHL2011",
+   "ATHL2013",
+   "ATHL202",
+   "ATHL203",
+   "ATHL204",
+   "ATHL209",
+   "ATHL29",
+   "ATHL301",
+   "ATHL302",
+   "ATHL303",
+   "ATHL307",
+   "ATHL311",
+   "ATHL312",
+   "ATHL313",
+   "ATHL315",
+   "ATHL321",
+   "ATHL324",
+   "ATHL61A",
+   "ATHL90",
+   "HLTH4",
+   "HLTH7",
+   "KINS40",
+   "KINS41",
+   "KINS43",
+   "KINS44",
+   "KINS45",
+   "KINS46",
+   "KINS47",
+   "KINS48",
+   "KINS50",
+   "KINS51",
+   "KINS60",
+   "KINS63",
+   "NUTF1",
+   "NUTF10",
+   "NUTF10L",
+   "NUTF3",
+   "PFIT10A",
+   "PFIT10B",
+   "PFIT10C",
+   "PFIT14",
+   "PFIT15A",
+   "PFIT15B",
+   "PFIT15C",
+   "PFIT15D",
+   "PFIT16A",
+   "PFIT16B",
+   "PFIT16C",
+   "PFIT16D",
+   "PFIT17A",
+   "PFIT17B",
+   "PFIT17C",
+   "PFIT17D",
+   "PFIT18A",
+   "PFIT18B",
+   "PFIT18C",
+   "PFIT18D",
+   "PFIT19A",
+   "PFIT19B",
+   "PFIT19C",
+   "PFIT19D",
+   "PFIT2",
+   "PFIT20",
+   "PFIT21A",
+   "PFIT21B",
+   "PFIT21C",
+   "PFIT22A",
+   "PFIT22B",
+   "PFIT22C",
+   "PFIT22D",
+   "PFIT23A",
+   "PFIT23B",
+   "PFIT23C",
+   "PFIT23D",
+   "PFIT24A",
+   "PFIT24B",
+   "PFIT30A",
+   "PFIT30B",
+   "PFIT30C",
+   "PFIT50",
+   "PFIT6",
+   "PFIT7",
+   "PFIT8",
+   "PFIT9",
+   "PFIT90",
+   "PHED10A",
+   "PHED10B",
+   "PHED10C",
+   "PHED10D",
+   "PHED12B",
+   "PHED12C",
+   "PHED12D",
+   "PHED12E",
+   "PHED15A",
+   "PHED15B",
+   "PHED15D",
+   "PHED15E",
+   "PHED22A",
+   "PHED22B",
+   "PHED22C",
+   "PHED22D",
+   "PHED24A",
+   "PHED24B",
+   "PHED24C",
+   "PHED24D",
+   "PHED5A",
+   "PHED5B",
+   "PHED5D",
+   "PHED5E",
+   "PHED6A",
+   "PHED6B",
+   "PHED6C",
+   "PHED6D",
+   "PHED7A",
+   "PHED7B",
+   "PHED90",
+   "PHED9A",
+   "PHED9B",
+   "PHED9C",
+   "PHED9D",
+   "PSYC50",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/kinesiology/kinesiology-aa/",
+   "title": "Kinesiology and Human Performance, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 127,
+  "text_chars": 7784
+ },
+ {
+  "control_number": "43858",
+  "title": "Inclusion, Diversity, Equity, Anti-Racism, and Accessibility (IDEAA)",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "ETNC10",
+   "ETNC16",
+   "ETNC18",
+   "ETNC20",
+   "ETNC22",
+   "ETNC6",
+   "GWOS1",
+   "GWOS3",
+   "GWOS4",
+   "GWOS5",
+   "GWOS8",
+   "GWOS9",
+   "SOCI12",
+   "SOCI13",
+   "SOCI14"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/ethnic-studies/idea-coa/",
+   "title": "Inclusion, Diversity, Equity, Anti-Racism, and Accessibility (IDEAA), Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3841
+ },
+ {
+  "control_number": "43861",
+  "title": "Race, Anti-Racism, Culture and Ethnicity (RACE)",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.65,
+  "codes_found": [
+   "ETNC10",
+   "ETNC16",
+   "ETNC18",
+   "ETNC20",
+   "ETNC22",
+   "ETNC4",
+   "ETNC5",
+   "ETNC6",
+   "HIST23",
+   "HIST24",
+   "HIST25",
+   "SOCI13",
+   "SOCI14"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/ethnic-studies/race-coa/",
+   "title": "Race, Anti-Racism, Culture and Ethnicity (RACE) < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3696
+ },
+ {
+  "control_number": "43862",
+  "title": "African American Studies",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "ETNC16",
+   "ETNC5",
+   "HIST24",
+   "HIST25"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/ethnic-studies/african-american-studies-coa/",
+   "title": "African American Studies, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3467
+ },
+ {
+  "control_number": "43863",
+  "title": "Chicano Studies",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "ETNC18",
+   "ETNC4",
+   "HIST20",
+   "HIST23"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/ethnic-studies/chicano-studies-coa/",
+   "title": "Chicano Studies, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3327
+ },
+ {
+  "control_number": "43864",
+  "title": "Translation and Interpretation (Spanish/English)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMC1000",
+   "ENGLC1000",
+   "SPAN10",
+   "SPAN11",
+   "SPAN12",
+   "SPAN15",
+   "SPAN18",
+   "SPAN22",
+   "SPAN31",
+   "SPAN32",
+   "SPAN33",
+   "SPAN34",
+   "SPAN36",
+   "SPAN37",
+   "SPAN40",
+   "SPAN45",
+   "SPAN5",
+   "SPAN50A",
+   "SPAN50B",
+   "SPAN50C",
+   "SPAN50D",
+   "SPAN7"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/spanish/translation-interpretation-spanish-english-coa/",
+   "title": "Translation and Interpretation (Spanish/English), Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 5144
+ },
+ {
+  "control_number": "43865",
+  "title": "General Studies: Lifelong Wellness and Self-Development",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADPE10",
+   "ADPE13",
+   "ADPE14",
+   "ADPE15",
+   "ADPE16",
+   "ADPE6",
+   "ADPE8",
+   "ADPE9",
+   "BUSI22",
+   "BUSI60",
+   "COUN10",
+   "COUN50",
+   "COUN51",
+   "COUN59",
+   "COUN71",
+   "DANC10A",
+   "DANC10B",
+   "DANC10C",
+   "DANC10D",
+   "DANC11A",
+   "DANC11B",
+   "DANC11C",
+   "DANC11D",
+   "DANC12A",
+   "DANC12B",
+   "DANC12C",
+   "DANC12D",
+   "DANC14A",
+   "DANC14B",
+   "DANC14C",
+   "DANC14D",
+   "DANC15A",
+   "DANC15B",
+   "DANC15C",
+   "DANC15D",
+   "DANC17A",
+   "DANC18A",
+   "DANC18B",
+   "DANC18C",
+   "DANC18D",
+   "DANC19A",
+   "DANC19B",
+   "DANC19C",
+   "DANC19D",
+   "DANC21",
+   "EMMS5",
+   "HLTH4",
+   "HLTH7",
+   "HOSP21",
+   "HOSP22",
+   "KINS46",
+   "KINS51",
+   "KINS60",
+   "NUTF1",
+   "NUTF3",
+   "PFIT10A",
+   "PFIT10B",
+   "PFIT10C",
+   "PFIT14",
+   "PFIT15A",
+   "PFIT15B",
+   "PFIT15C",
+   "PFIT15D",
+   "PFIT16A",
+   "PFIT16B",
+   "PFIT16C",
+   "PFIT16D",
+   "PFIT17A",
+   "PFIT17B",
+   "PFIT17C",
+   "PFIT17D",
+   "PFIT18A",
+   "PFIT18B",
+   "PFIT18C",
+   "PFIT18D",
+   "PFIT19A",
+   "PFIT19B",
+   "PFIT19C",
+   "PFIT19D",
+   "PFIT2",
+   "PFIT20",
+   "PFIT21A",
+   "PFIT21B",
+   "PFIT21C",
+   "PFIT22A",
+   "PFIT22B",
+   "PFIT22C",
+   "PFIT22D",
+   "PFIT23A",
+   "PFIT23B",
+   "PFIT23C",
+   "PFIT23D",
+   "PFIT30A",
+   "PFIT30B",
+   "PFIT30C",
+   "PFIT50",
+   "PFIT6",
+   "PFIT7",
+   "PFIT8",
+   "PFIT9",
+   "PHED10A",
+   "PHED10B",
+   "PHED10C",
+   "PHED10D",
+   "PHED12B",
+   "PHED12C",
+   "PHED12D",
+   "PHED12E",
+   "PHED15A",
+   "PHED15B",
+   "PHED15D",
+   "PHED15E",
+   "PHED22A",
+   "PHED22B",
+   "PHED22C",
+   "PHED22D",
+   "PHED23A",
+   "PHED23B",
+   "PHED23C",
+   "PHED23D",
+   "PHED24A",
+   "PHED24B",
+   "PHED24C",
+   "PHED24D",
+   "PHED5A",
+   "PHED5B",
+   "PHED5D",
+   "PHED5E",
+   "PHED6A",
+   "PHED6B",
+   "PHED6C",
+   "PHED6D",
+   "PHED7A",
+   "PHED7B",
+   "PHED7C",
+   "PHED7D",
+   "PHED9A",
+   "PHED9B",
+   "PHED9C",
+   "PHED9D",
+   "PSYC25",
+   "PSYC40",
+   "PSYC50",
+   "PSYC6",
+   "SOCI40",
+   "WORK98"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/general-studies/general-studies-lifelong-wellness-emphasis-aa/",
+   "title": "General Studies: Lifelong Wellness and Self-Development, Associate in Arts < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 146,
+  "text_chars": 7776
+ },
+ {
+  "control_number": "43891",
+  "title": "Social Justice Studies: African American Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.765,
+  "codes_found": [
+   "ANTH4",
+   "ETNC10",
+   "ETNC16",
+   "ETNC5",
+   "GWOS1",
+   "HIST24",
+   "HIST25",
+   "SOCI1",
+   "SOCI12",
+   "SOCI13",
+   "SOCI19",
+   "SOCI2",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/ethnic-studies/social-justice-studies-african-american-studies-aa-t/",
+   "title": "Social Justice Studies: African American Studies, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4801
+ },
+ {
+  "control_number": "43902",
+  "title": "Social Justice Studies: Chicano Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.812,
+  "codes_found": [
+   "ANTH4",
+   "ETNC10",
+   "ETNC18",
+   "ETNC4",
+   "GWOS1",
+   "HIST23",
+   "SOCI1",
+   "SOCI12",
+   "SOCI13",
+   "SOCI14",
+   "SOCI19",
+   "SOCI2",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/ethnic-studies/social-justice-studies-chicano-studies-aa-t/",
+   "title": "Social Justice Studies: Chicano Studies, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4802
+ },
+ {
+  "control_number": "43903",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.943,
+  "codes_found": [
+   "ADMJ2",
+   "ADMJ4",
+   "ADMJ6",
+   "ADMJ70",
+   "ANTH4",
+   "BUSI4",
+   "BUSI5",
+   "COMM4",
+   "COMMC1000",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1000",
+   "ENGLC1001",
+   "GEOG4",
+   "GLST1",
+   "GLST2",
+   "HISTC1001",
+   "HISTC1002",
+   "PHIL4",
+   "PHIL6",
+   "POLS2",
+   "POLS20",
+   "POLS21",
+   "POLS3",
+   "POLS4",
+   "POLS7",
+   "POLSC1000",
+   "SOCI12",
+   "SOCI13",
+   "SOCI19",
+   "SOCI2",
+   "STATC1000",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/political-science/law-public-policy-society-aa-t/",
+   "title": "Law, Public Policy, and Society, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 35,
+  "text_chars": 4954
+ },
+ {
+  "control_number": "43904",
+  "title": "Social Justice Studies: LGBTQ Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "ANTH30",
+   "ETNC10",
+   "ETNC16",
+   "ETNC18",
+   "GWOS1",
+   "GWOS12",
+   "GWOS15",
+   "GWOS3",
+   "GWOS4",
+   "GWOS5",
+   "GWOS8",
+   "GWOS9",
+   "PHIL40",
+   "PSYC40",
+   "SOCI12",
+   "SOCI13",
+   "SOCI19",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/gender-womens-studies/social-justice-studies-lgbtq-studies-aa-t/",
+   "title": "Social Justice Studies: LGBTQ Studies, Associate in Arts for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 5358
+ },
+ {
+  "control_number": "44876",
+  "title": "Intercollegiate Athletic Competition",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.983,
+  "codes_found": [
+   "ATHL18",
+   "ATHL201",
+   "ATHL2011",
+   "ATHL2013",
+   "ATHL202",
+   "ATHL203",
+   "ATHL204",
+   "ATHL29",
+   "ATHL301",
+   "ATHL302",
+   "ATHL303",
+   "ATHL307",
+   "ATHL311",
+   "ATHL312",
+   "ATHL313",
+   "ATHL315",
+   "ATHL321",
+   "ATHL324",
+   "ATHL61A",
+   "COMM2",
+   "COMM3",
+   "COMMC1000",
+   "ETNC4",
+   "ETNC5",
+   "HIST12",
+   "HIST24",
+   "HIST25",
+   "HISTC1001",
+   "HISTC1002",
+   "KINS41",
+   "KINS43",
+   "KINS44",
+   "KINS45",
+   "KINS46",
+   "KINS47",
+   "KINS48",
+   "PFIT10A",
+   "PFIT10B",
+   "PFIT10C",
+   "PFIT2",
+   "PFIT20",
+   "PFIT50",
+   "PFIT7",
+   "PFIT8",
+   "PFIT9",
+   "PHED10A",
+   "PHED12B",
+   "PHED15A",
+   "PHED22A",
+   "PHED23A",
+   "PHED24A",
+   "PHED5A",
+   "PHED6A",
+   "PHED7A",
+   "PHED9A",
+   "PHIL2",
+   "POLSC1000",
+   "PSYC25",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/kinesiology/intercollegiate-athletic-competition-coa/",
+   "title": "Intercollegiate Athletic Competition, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 60,
+  "text_chars": 5541
+ },
+ {
+  "control_number": "45138",
+  "title": "Personal Finance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI3A",
+   "BUSI43",
+   "BUSI60",
+   "BUSI62",
+   "BUSI64",
+   "WORK96",
+   "WORK97",
+   "WORK98",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/business/business-personal-finance-certificate-achievement/",
+   "title": "Business - Personal Finance, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3073
+ },
+ {
+  "control_number": "45184",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "ANAT1",
+   "BIOL10",
+   "BIOL21",
+   "BIOL22",
+   "BIOL25",
+   "BIOL26",
+   "CHEM1A",
+   "HLTH1",
+   "HLTH12",
+   "HLTH4",
+   "HLTH7",
+   "NUTF1",
+   "PHSO1",
+   "PHSO2",
+   "PSYCC1000",
+   "SOCI1",
+   "SOCI19",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/health/public-health-ast/",
+   "title": "Public Health, Associate in Science for Transfer < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 4792
+ },
+ {
+  "control_number": "45240",
+  "title": "Fundamental IT Networking & Security",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIS475",
+   "CSIS476A",
+   "CSIS476B",
+   "CSIS476C",
+   "CSIS483A",
+   "CSIS486"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/computer-networking-security-coc/",
+   "title": "Fundamental IT Networking & Security, Certificate of Completion < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3214
+ },
+ {
+  "control_number": "45241",
+  "title": "Computer Networking and Security",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIS472A",
+   "CSIS472B",
+   "CSIS476A",
+   "CSIS476B",
+   "CSIS476C",
+   "CSIS480",
+   "CSIS483A",
+   "CSIS486",
+   "CSIS489"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/computer-networking-coc/",
+   "title": "Computer Networking and Security, Certificate of Completion < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3840
+ },
+ {
+  "control_number": "45242",
+  "title": "Advanced IT Networking & Security",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIS472A",
+   "CSIS472B",
+   "CSIS476A",
+   "CSIS476B",
+   "CSIS476C",
+   "CSIS486",
+   "CSIS488",
+   "CSIS489",
+   "CSIS495"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/advanced-it-networking-security-coc/",
+   "title": "Advanced IT Networking & Security, Certificate of Completion < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3647
+ },
+ {
+  "control_number": "45243",
+  "title": "Intermediate IT Networking & Security",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIS480",
+   "CSIS481",
+   "CSIS486",
+   "CSIS488",
+   "CSIS498"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/intermediate-it-networking-security-coc/",
+   "title": "Intermediate IT Networking & Security, Certificate of Completion < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3022
+ },
+ {
+  "control_number": "45254",
+  "title": "Microsoft Operating Systems Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIS472A",
+   "CSIS472B",
+   "CSIS483A"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/microsoft-operating-systems-skills-coc/",
+   "title": "Microsoft Operating Systems Skills, Certificate of Completion < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2740
+ },
+ {
+  "control_number": "45264",
+  "title": "Business - Entrepreneurship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI401",
+   "BUSI443",
+   "BUSI444",
+   "BUSI446",
+   "BUSI447",
+   "BUSI449",
+   "BUSI450",
+   "BUSI454",
+   "BUSI464",
+   "BUSI489"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/business/business-entrepreneurship-coc/",
+   "title": "Business - Entrepreneurship, Certificate of Completion < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3313
+ },
+ {
+  "control_number": "45265",
+  "title": "Culinary Entrepreneurship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI401",
+   "BUSI443",
+   "BUSI444",
+   "BUSI446",
+   "BUSI450",
+   "BUSI464",
+   "HOSP423",
+   "HOSP458",
+   "HOSP463"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/culinary-entrepreneurship-coc/",
+   "title": "Culinary Entrepreneurship, Certificate of Completion < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2995
+ },
+ {
+  "control_number": "45266",
+  "title": "Wine Professional Level I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HOSP440"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/hospitality-culinary-arts/wine-professional-level-i-coc/",
+   "title": "Wine Professional Level I, Certificate of Completion < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 3083
+ },
+ {
+  "control_number": "45271",
+  "title": "Workforce Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI402",
+   "BUSI464",
+   "WORK495",
+   "WORK496",
+   "WORK497",
+   "WORK498",
+   "WORK499"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/work-experience/workforce-skills-coc/",
+   "title": "Workforce Skills, Certificate of Completion < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3257
+ },
+ {
+  "control_number": "45273",
+  "title": "Microsoft Office Specialist",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSC409",
+   "BUSC440",
+   "BUSC450",
+   "BUSC460",
+   "BUSI402",
+   "BUSI464"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/business-skills/microsoft-office-specialist-coc/",
+   "title": "Microsoft Office Specialist, Certificate of Completion < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2750
+ },
+ {
+  "control_number": "45371",
+  "title": "General Education: California General Education Transfer Curriculum (Cal-GETC)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45481",
+  "title": "Fundamental IT Networking & Security",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIS75",
+   "CSIS76A",
+   "CSIS76B",
+   "CSIS76C",
+   "CSIS83A",
+   "CSIS86",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/fundamental-it-networking-security-coa/",
+   "title": "Fundamental IT Networking & Security, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3147
+ },
+ {
+  "control_number": "45482",
+  "title": "Modern Policing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 22,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45483",
+  "title": "Business Administration 2.0",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "BUSI1",
+   "BUSI2",
+   "BUSI3A",
+   "BUSI3B",
+   "BUSI4",
+   "BUSI5",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH17",
+   "MATH18",
+   "MATH20A",
+   "SOCI19",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/business/business-administration-2-coa/",
+   "title": "Business Administration 2.0, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3317
+ },
+ {
+  "control_number": "45485",
+  "title": "Intermediate IT Networking & Security",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI9",
+   "CSIS80",
+   "CSIS81",
+   "CSIS86",
+   "CSIS88",
+   "CSIS98",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/intermediate-it-networking-security-coa/",
+   "title": "Intermediate IT Networking & Security, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3094
+ },
+ {
+  "control_number": "45623",
+  "title": "Business Fundamentals",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI1",
+   "BUSI10",
+   "BUSI12A",
+   "BUSI2",
+   "BUSI3A",
+   "BUSI3B",
+   "BUSI4",
+   "BUSI5",
+   "ECON1",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1001",
+   "PHIL10"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/business/business-fundamentals-coa/",
+   "title": "Business Fundamentals, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3296
+ },
+ {
+  "control_number": "45635",
+  "title": "Workforce Essentials",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI2",
+   "BUSI22",
+   "BUSI38",
+   "BUSI39",
+   "BUSI40",
+   "BUSI64",
+   "HUMS50",
+   "HUMS53",
+   "WORK95",
+   "WORK96",
+   "WORK97",
+   "WORK98",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/work-experience/workforce-essentials-coa/",
+   "title": "Workforce Essentials, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3317
+ },
+ {
+  "control_number": "45636",
+  "title": "Advanced IT Networking & Security",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIS72A",
+   "CSIS72B",
+   "CSIS76A",
+   "CSIS76B",
+   "CSIS76C",
+   "CSIS86",
+   "CSIS88",
+   "CSIS89",
+   "CSIS95"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/computer-security-information-systems/advanced-it-networking-security-coa/",
+   "title": "Advanced IT Networking & Security, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3397
+ },
+ {
+  "control_number": "46162",
+  "title": "Global Competency",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH4",
+   "BUSI5",
+   "FREN1A",
+   "FREN1B",
+   "GLST1",
+   "GLST2",
+   "GWOS30",
+   "HIST6",
+   "HIST8",
+   "JPNS1A",
+   "JPNS1B",
+   "PHIL13",
+   "PHIL8",
+   "POLS11",
+   "POLS2",
+   "POLS4",
+   "POLS5",
+   "SPAN1",
+   "SPAN1S",
+   "SPAN2",
+   "SPAN2S",
+   "SPAN3S"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/political-science/global-competency-coa/",
+   "title": "Global Competency, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 3597
+ },
+ {
+  "control_number": "46298",
+  "title": "Applied Artificial Intelligence",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTG10",
+   "ARTG11",
+   "ARTG15",
+   "BIOL10",
+   "BUSI2",
+   "CSCI10A",
+   "CSCI40",
+   "CSCI42",
+   "CSCI44",
+   "CSCI9",
+   "CSIS1",
+   "CSIS86",
+   "ENGR1B",
+   "MATH17",
+   "PHIL10",
+   "PHIL4"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/computer-science/applied-ai-coa/",
+   "title": "Applied Artificial Intelligence, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4334
+ },
+ {
+  "control_number": "46309",
+  "title": "Archaeology Fieldwork",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH4",
+   "ANTH6",
+   "ANTH6L",
+   "ANTHC1001",
+   "ANTHC1001L",
+   "ETNC20"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/anthropology/archaeology-fieldwork-coa/",
+   "title": "Archaeology Fieldwork, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3192
+ },
+ {
+  "control_number": "46393",
+  "title": "English as a Second Language: American English Pronunciation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENSL428",
+   "ENSL429"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/english-second-language/american-english-pronounciation-coc/",
+   "title": "English as a Second Language: American English Pronunciation, Certificate of Completion < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2606
+ },
+ {
+  "control_number": "46570",
+  "title": "Public Service and Civic Engagement",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WORK93",
+   "WORK94",
+   "WORK97"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/work-experience/public-service-civic-engagement-coa/",
+   "title": "Public Service and Civic Engagement, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3271
+ },
+ {
+  "control_number": "46571",
+  "title": "Workforce Skills",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI2",
+   "BUSI64",
+   "WORK95",
+   "WORK96",
+   "WORK97",
+   "WORK98",
+   "WORK99"
+  ],
+  "source": {
+   "url": "https://catalog.mpc.edu/programs-study/work-experience/workforce-skills-coa/",
+   "title": "Workforce Skills, Certificate of Achievement < Monterey Peninsula College",
+   "h1": "2026-2027\nCollege Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3215
+ }
+]

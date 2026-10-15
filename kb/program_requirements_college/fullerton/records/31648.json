@@ -1,0 +1,266 @@
+{
+ "college": "Fullerton College",
+ "control_number": "31648",
+ "shape": "adt",
+ "title": "Theatre Arts",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/theatre-arts-drama/theatre-arts-associate-arts-degree-transfer/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7689,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7689,
+    "output_tokens": 1947,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1947,
+  "output_tokens_details": {
+   "thinking_tokens": 586
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0697,
+ "ms": 16318,
+ "seconds": 16.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the IGETC or CSU GE-Breadth pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     18.0,
+     19.0
+    ],
+    "stated": [
+     18.0,
+     19.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Theatre Arts Associate in Arts Degree for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "IGETC or CSU GE-Breadth",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze, interpret and evaluate dramatic literature and theatrical productions for the purpose creating culturally responsive storytelling through the dramatic arts.",
+    "Demonstrate the ability to coordinate and implement collaborative, critical thinking, creative, and organizational skills through the theatrical process to establish leadership, artistry, ensemble, and confidence.",
+    "Create and contribute artistically to the areas of performance, technical theatre, and production to gain experience and portfolio material.",
+    "Determine, evaluate, and articulate personal and career goals in preparation for further professional/academic training."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "THEA 100 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THEA 113 F",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 130 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THEA 134 F",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "THEA 178 F",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 180 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select (9-10) units from the following",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "THEA 109 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 143 F",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 170 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 171 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 172 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 181 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Closed list codes THEA100F and THEA180F are printed in the catalog as 'THEA 100 F' and 'THEA 180 F'; treated as the same courses.",
+   "Units for 'or' alternatives (THEA 113 F, THEA 134 F, THEA 178 F) are not printed beside them; the row's 3 units are printed only beside the first course.",
+   "The degree_total of 60 is from 'The Theatre Arts AA-T Degree requires a total of 60 units of courses as indicated below.' The major total 18-19 is printed as 'Total Units 18-19'.",
+   "GE pattern: IGETC or CSU GE-Breadth; no GE units are printed. No elective units are printed.",
+   "Footnote 1 (on THEA 130 F) requires concurrent enrollment of 0.5 units from THEA 153 F, THEA 159 F, THEA 249 F, or THEA 250 F for THEA 170 F, 171 F, 172 F, and 180 F; these co-requisite courses are not in the closed list and were not placed in blocks.",
+   "Outcomes come from the page's outcomes tab, with the 'Outcome N:' labels removed. Outcome 1 is copied as printed, including 'for the purpose creating'."
+  ]
+ },
+ "extracted_run": "38675136988"
+}

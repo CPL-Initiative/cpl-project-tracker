@@ -1,0 +1,5698 @@
+[
+ {
+  "control_number": "02310",
+  "title": "Wildland Resources and Forestry",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESCI180",
+   "FOR101",
+   "FOR102",
+   "FOR103",
+   "FOR104",
+   "FOR105",
+   "FOR106"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/forestry-wildland-resources/wildland-resources-forestry-certificate-achievement/",
+   "title": "Certificate in Wildland Resources and Forestry | Citrus College Academic Catalog",
+   "h1": "Certificate in Wildland Resources and Forestry",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 4969
+ },
+ {
+  "control_number": "02312",
+  "title": "Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.966,
+  "codes_found": [
+   "ACCT101",
+   "ACCT101H",
+   "ACCT102",
+   "ACCT102H",
+   "ACCT110",
+   "BUS130",
+   "BUS132",
+   "BUS140",
+   "BUS146",
+   "BUS152",
+   "BUS160",
+   "BUS160H",
+   "BUS161",
+   "BUS170",
+   "BUS172",
+   "BUS175",
+   "BUS185",
+   "BUS192",
+   "ECONC2001",
+   "ECONC2002",
+   "ITIS130",
+   "MATH180",
+   "MATH190",
+   "OFF101",
+   "REAL210",
+   "REAL212",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/business/business-as/",
+   "title": "A.S. in Business | Citrus College Academic Catalog",
+   "h1": "A.S. in Business",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 7737
+ },
+ {
+  "control_number": "02323",
+  "title": "Kinesiology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL200",
+   "BIOL201",
+   "KIN100",
+   "KIN118",
+   "KIN119",
+   "KIN164",
+   "KIN165",
+   "KIN167",
+   "KIN168",
+   "KIN169",
+   "KIN170",
+   "KIN171",
+   "KIN171H",
+   "KIN173",
+   "KIN176",
+   "KIN180",
+   "KIN181",
+   "KIN182",
+   "KIN185",
+   "KIN186",
+   "KIN188",
+   "KIN192",
+   "KINC145",
+   "KINC209",
+   "KINC211",
+   "KINC212",
+   "KINC213",
+   "KINC214",
+   "KINC216",
+   "KINC220",
+   "KINC221",
+   "KINC222",
+   "KINC224",
+   "KINC225",
+   "KINC227",
+   "KINC229",
+   "KINC230",
+   "KINC231",
+   "KINC232",
+   "KINC233",
+   "KINC234",
+   "KINC235",
+   "KINC236"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education-competitive-athletics/kinesiology-as/",
+   "title": "A.S. in Kinesiology | Citrus College Academic Catalog",
+   "h1": "A.S. in Kinesiology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 43,
+  "text_chars": 5087
+ },
+ {
+  "control_number": "02327",
+  "title": "Medium and Heavy-Duty Diesel Truck Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MTRK148",
+   "MTRK152A",
+   "MTRK156A",
+   "MTRK156B",
+   "MTRK159",
+   "MTRK160",
+   "MTRK163",
+   "MTRK164",
+   "MTRK167"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/medium-heavy-diesel-truck-technology-as/",
+   "title": "A.S. in Medium and Heavy-Duty Diesel Truck Technology | Citrus College Academic Catalog",
+   "h1": "A.S. in Medium and Heavy-Duty Diesel Truck Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3683
+ },
+ {
+  "control_number": "02328",
+  "title": "Automotive Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO151",
+   "AUTO154",
+   "AUTO163",
+   "AUTO167",
+   "AUTO168",
+   "AUTO172",
+   "AUTO230A",
+   "AUTO230B",
+   "AUTO230C",
+   "AUTO230D"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automotive-technology-as/",
+   "title": "A.S. in Automotive Technology | Citrus College Academic Catalog",
+   "h1": "A.S. in Automotive Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3828
+ },
+ {
+  "control_number": "02331",
+  "title": "Design and Engineering Drawing Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "ARCH100",
+   "ARCH200",
+   "DRAF102",
+   "DRAF160",
+   "DRAF161",
+   "DRAF290"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/drafting-design-technology/design-engineering-drawing-technology-as/",
+   "title": "A.S. in Design and Engineering Drawing Technology | Citrus College Academic Catalog",
+   "h1": "A.S. in Design and Engineering Drawing Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3863
+ },
+ {
+  "control_number": "02333",
+  "title": "Visual Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "ART101",
+   "ART102",
+   "ART103",
+   "ART104",
+   "ART105",
+   "ART110",
+   "ART111",
+   "ART112",
+   "ART115",
+   "ART116",
+   "ART120",
+   "ART121",
+   "ART130",
+   "ART131",
+   "ART140",
+   "ART141",
+   "ART142",
+   "ART143",
+   "ART145",
+   "ART146",
+   "ART150",
+   "ART152",
+   "ART153",
+   "ART158",
+   "ART159",
+   "ART162",
+   "ART167",
+   "ART168",
+   "ART180",
+   "ART181",
+   "ART182",
+   "ART183",
+   "ART184",
+   "ART189",
+   "ART199",
+   "ART199H",
+   "ART206",
+   "ART206H",
+   "ART207",
+   "ART207H",
+   "ART230",
+   "ART240",
+   "ART241",
+   "ART267",
+   "ART268",
+   "ARTHC1100",
+   "ARTHC1100H",
+   "ARTHC1200",
+   "ARTHC1200H",
+   "PHTO101",
+   "PHTO102"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/visual-arts-aa/",
+   "title": "A.A. in Visual Arts | Citrus College Academic Catalog",
+   "h1": "A.A. in Visual Arts",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 54,
+  "text_chars": 4967
+ },
+ {
+  "control_number": "02337",
+  "title": "Photography",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART108",
+   "PHTO101",
+   "PHTO102",
+   "PHTO103",
+   "PHTO125",
+   "PHTO202",
+   "PHTO204",
+   "PHTO205",
+   "PHTO213",
+   "PHTO216"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/photography-as/",
+   "title": "A.S. in Photography | Citrus College Academic Catalog",
+   "h1": "A.S. in Photography",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3424
+ },
+ {
+  "control_number": "02341",
+  "title": "Vocational Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VNRS150",
+   "VNRS151L",
+   "VNRS152",
+   "VNRS153",
+   "VNRS154",
+   "VNRS155",
+   "VNRS160",
+   "VNRS161L",
+   "VNRS162",
+   "VNRS163",
+   "VNRS164",
+   "VNRS165",
+   "VNRS170",
+   "VNRS171L",
+   "VNRS172",
+   "VNRS173",
+   "VNRS180",
+   "VNRS181",
+   "VNRS182",
+   "VNRS183"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/vocational-nursing/vocational-nursing-as/",
+   "title": "A.S. in Vocational Nursing | Citrus College Academic Catalog",
+   "h1": "A.S. in Vocational Nursing",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 4322
+ },
+ {
+  "control_number": "02343",
+  "title": "Dental Assisting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DENT100",
+   "DENT102",
+   "DENT104",
+   "DENT121",
+   "DENT122",
+   "DENT123",
+   "DENT125",
+   "DENT201",
+   "DENT202",
+   "DENT203",
+   "DENT204",
+   "DENT205"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/dental-assisting-registered/dental-assisting-as/",
+   "title": "A.S. in Dental Assisting | Citrus College Academic Catalog",
+   "h1": "A.S. in Dental Assisting",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3931
+ },
+ {
+  "control_number": "02355",
+  "title": "Public Works Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PUB150",
+   "PUB151",
+   "PUB155",
+   "PUB157",
+   "PUB160",
+   "PUB164",
+   "PUB166"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-as/",
+   "title": "A.S. in Public Works Administration | Citrus College Academic Catalog",
+   "h1": "A.S. in Public Works Administration",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 5059
+ },
+ {
+  "control_number": "02356",
+  "title": "Criminal Justice",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 13,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02357",
+  "title": "Social and Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02362",
+  "title": "Cosmetology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COS141",
+   "COS141A",
+   "COS141B",
+   "COS184",
+   "COS185",
+   "COS186",
+   "COS202",
+   "COS202A",
+   "COS202B",
+   "COS231"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/cosmetology/cosmetology-as/",
+   "title": "A.S. in Cosmetology | Citrus College Academic Catalog",
+   "h1": "A.S. in Cosmetology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3433
+ },
+ {
+  "control_number": "02369",
+  "title": "Child Development Teacher",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHLD110",
+   "CHLD112",
+   "CHLD114",
+   "CHLD116",
+   "CHLD120",
+   "CHLD121",
+   "CHLD122",
+   "CHLD123",
+   "CHLD124",
+   "CHLD134",
+   "CHLD144",
+   "CHLD150",
+   "CHLD154",
+   "CHLD156",
+   "CHLD156L",
+   "CHLD160",
+   "CHLD164",
+   "CHLD166",
+   "PSY206"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-teacher-certificate-achievement/",
+   "title": "Certificate in Child Development Teacher | Citrus College Academic Catalog",
+   "h1": "Certificate in Child Development Teacher",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 4919
+ },
+ {
+  "control_number": "07092",
+  "title": "Audio Recording Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "REC105",
+   "REC115",
+   "REC125",
+   "REC135",
+   "REC145",
+   "REC205",
+   "REC215",
+   "REC225",
+   "REC235",
+   "REC245"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/recording-technology/audio-recording-technology-certificate-achievement/",
+   "title": "Certificate in Audio Recording Technology | Citrus College Academic Catalog",
+   "h1": "Certificate in Audio Recording Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 5074
+ },
+ {
+  "control_number": "07412",
+  "title": "Ceramics - One Year",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART104",
+   "ART105",
+   "ART111",
+   "ART115",
+   "ART120",
+   "ART130",
+   "ART140",
+   "ART141",
+   "ART145",
+   "ART180",
+   "PHTO101"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/ceramics-one-year-certificate-achievement/",
+   "title": "Certificate in Ceramics - One Year | Citrus College Academic Catalog",
+   "h1": "Certificate in Ceramics - One Year",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3458
+ },
+ {
+  "control_number": "07413",
+  "title": "Ceramics - Two Year",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.588,
+  "codes_found": [
+   "ART112",
+   "ART121",
+   "ART180",
+   "ART181",
+   "ART182",
+   "ART183",
+   "ART240",
+   "ART241",
+   "BUS185",
+   "PHTO101"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/ceramics-two-year-certificate-achievement/",
+   "title": "Certificate in Ceramics - Two Year | Citrus College Academic Catalog",
+   "h1": "Certificate in Ceramics - Two Year",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3407
+ },
+ {
+  "control_number": "11207",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT100",
+   "ACCT101",
+   "ACCT101H",
+   "ACCT102",
+   "ACCT102H",
+   "ACCT110",
+   "ACCT115",
+   "BUS130",
+   "BUS132",
+   "BUS132H",
+   "BUS146",
+   "BUS152",
+   "BUS160",
+   "BUS160H",
+   "ITIS130",
+   "OFF101",
+   "OFF120"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/accounting/accounting-certificate-achievement/",
+   "title": "Certificate in Accounting | Citrus College Academic Catalog",
+   "h1": "Certificate in Accounting",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4655
+ },
+ {
+  "control_number": "11219",
+  "title": "Administrative Office Occupations",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS152",
+   "COMMC1004",
+   "COMMC1004H",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1000H",
+   "OFF101",
+   "OFF120",
+   "OFF215",
+   "OFF260",
+   "OFF281",
+   "OFF285",
+   "OFF294"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/office-technology/administrative-office-occupations-certificate-achievement/",
+   "title": "Certificate in Administrative Office Occupations | Citrus College Academic Catalog",
+   "h1": "Certificate in Administrative Office Occupations",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4482
+ },
+ {
+  "control_number": "11231",
+  "title": "Toyota/Lexus Technician",
+  "award": "Certificate of Achievement requiring 60+S/90+Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO101",
+   "AUTO101A",
+   "AUTO101B",
+   "AUTO151",
+   "AUTO154",
+   "AUTO163",
+   "AUTO167",
+   "AUTO168",
+   "AUTO172",
+   "AUTO230A",
+   "AUTO230B",
+   "AUTO230C",
+   "AUTO230D",
+   "AUTO282"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/toyota-lexus-technician-certificate-achievement/",
+   "title": "Certificate in Toyota/Lexus Technician | Citrus College Academic Catalog",
+   "h1": "Certificate in Toyota/Lexus Technician",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4439
+ },
+ {
+  "control_number": "11234",
+  "title": "Architectural Design",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 16,
+  "text_chars": 0
+ },
+ {
+  "control_number": "11235",
+  "title": "Computer Aided Design (CAD) Architecture and Drafting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH100",
+   "ARCH110",
+   "ARCH111",
+   "ARCH200",
+   "DRAF102",
+   "DRAF103",
+   "DRAF160",
+   "DRAF161"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/architecture/computer-aided-design-cad-architecture-drafting-certificate-achievement/",
+   "title": "Certificate in Computer-Aided Design (CAD) - Architecture and Drafting | Citrus College Academic Catalog",
+   "h1": "Certificate in Computer-Aided Design (CAD) - Architecture and Drafting",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4559
+ },
+ {
+  "control_number": "11236",
+  "title": "Computer Generated Imagery (CGI)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH102",
+   "ARCH200",
+   "ART111",
+   "ART115",
+   "DRAF102",
+   "DRAF160",
+   "DRAF161",
+   "DRAF290"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/drafting-design-technology/computer-generated-imagery-cgi-certificate-achievement/",
+   "title": "Certificate in Computer Generated Imagery (CGI) | Citrus College Academic Catalog",
+   "h1": "Certificate in Computer Generated Imagery (CGI)",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3705
+ },
+ {
+  "control_number": "11237",
+  "title": "Water Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL145",
+   "PUB155",
+   "PUB160",
+   "PUB161",
+   "PUB166",
+   "WATR150",
+   "WATR151",
+   "WATR153",
+   "WATR156",
+   "WATR157",
+   "WATR162",
+   "WATR164"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/water-technology/water-technology-as/",
+   "title": "A.S. in Water Technology | Citrus College Academic Catalog",
+   "h1": "A.S. in Water Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3831
+ },
+ {
+  "control_number": "11240",
+  "title": "Child Develop. Master Teacher: Early Intervention Specialty",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.533,
+  "codes_found": [
+   "CHLD110",
+   "CHLD112",
+   "CHLD114",
+   "CHLD150",
+   "CHLD154",
+   "CHLD156",
+   "CHLD156L",
+   "PSY206"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-as/",
+   "title": "A.S. in Child Development | Citrus College Academic Catalog",
+   "h1": "A.S. in Child Development",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.143
+   }
+  },
+  "listed": 15,
+  "text_chars": 5653
+ },
+ {
+  "control_number": "11242",
+  "title": "Child Development Master Teacher",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.65,
+  "codes_found": [
+   "CHLD110",
+   "CHLD112",
+   "CHLD114",
+   "CHLD120",
+   "CHLD150",
+   "CHLD154",
+   "CHLD156",
+   "CHLD156L",
+   "CHLD160",
+   "CHLD164",
+   "CHLD166",
+   "CHLD194",
+   "PSY206"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-master-teacher-early-intervention-certificate-achievement/",
+   "title": "Certificate in Child Development Master Teacher - Early Intervention | Citrus College Academic Catalog",
+   "h1": "Certificate in Child Development Master Teacher - Early Intervention",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 4966
+ },
+ {
+  "control_number": "11244",
+  "title": "Public Works Administration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.556,
+  "codes_found": [
+   "ITIS130",
+   "PUB160",
+   "PUB164",
+   "PUB165",
+   "PUB166"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-supervision-management-skill-award/",
+   "title": "Skill Award in Public Works Supervision and Management | Citrus College Academic Catalog",
+   "h1": "Skill Award in Public Works Supervision and Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.667
+   }
+  },
+  "listed": 9,
+  "text_chars": 4150
+ },
+ {
+  "control_number": "11247",
+  "title": "Esthetician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESTH140",
+   "ESTH141",
+   "ESTH142",
+   "ESTH144",
+   "ESTH145"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/esthetician/certificate-achievement-esthetician/",
+   "title": "Certificate in Esthetician | Citrus College Academic Catalog",
+   "h1": "Certificate in Esthetician",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3136
+ },
+ {
+  "control_number": "12397",
+  "title": "Commercial Dance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANC102",
+   "DANC130",
+   "DANC158",
+   "DANC159",
+   "DANC160",
+   "DANC162",
+   "DANC172",
+   "DANC258",
+   "DANC259",
+   "DANC260",
+   "DANC262",
+   "DANC263A",
+   "DANC263B",
+   "DANC264",
+   "DANC265A",
+   "DANC265B",
+   "DANC266",
+   "DANC269",
+   "DANC270",
+   "DANC272",
+   "DANC279",
+   "DANC281",
+   "DANC284",
+   "DANC289",
+   "DANC292",
+   "DANC296"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/dance/commercial-dance-certificate-achievement/",
+   "title": "Certificate in Commercial Dance | Citrus College Academic Catalog",
+   "h1": "Certificate in Commercial Dance",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 5553
+ },
+ {
+  "control_number": "14642",
+  "title": "Digital and Web Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "14643",
+  "title": "Digital and Web Design",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART111",
+   "ART120",
+   "ART150",
+   "ART153",
+   "ART158",
+   "ART162",
+   "ART167",
+   "ART168",
+   "ART189",
+   "PHTO101"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/digital-web-design-certificate-achievement/",
+   "title": "Certificate in Digital and Web Design | Citrus College Academic Catalog",
+   "h1": "Certificate in Digital and Web Design",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4066
+ },
+ {
+  "control_number": "14897",
+  "title": "Information Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS152",
+   "ITIS104",
+   "ITIS107",
+   "ITIS108",
+   "ITIS109",
+   "ITIS115",
+   "ITIS141",
+   "ITIS165",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/information-technology-certificate-achievement/",
+   "title": "Certificate in Information Technology | Citrus College Academic Catalog",
+   "h1": "Certificate in Information Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 5816
+ },
+ {
+  "control_number": "15315",
+  "title": "Automobile Fundamentals",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO101",
+   "AUTO101A",
+   "AUTO101B",
+   "AUTO151",
+   "AUTO156"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automobile-fundamentals-certificate-achievement/",
+   "title": "Certificate in Automobile Fundamentals | Citrus College Academic Catalog",
+   "h1": "Certificate in Automobile Fundamentals",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3706
+ },
+ {
+  "control_number": "15322",
+  "title": "Automobile Service",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO101",
+   "AUTO101A",
+   "AUTO101B",
+   "AUTO154",
+   "AUTO156",
+   "AUTO166",
+   "AUTO167"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automobile-service-certificate-achievement/",
+   "title": "Certificate in Automobile Service | Citrus College Academic Catalog",
+   "h1": "Certificate in Automobile Service",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3777
+ },
+ {
+  "control_number": "15941",
+  "title": "Automotive Research and Development",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO230A",
+   "AUTO230B",
+   "AUTO230C",
+   "AUTO230D",
+   "AUTO291",
+   "AUTO295",
+   "AUTO296",
+   "AUTO297",
+   "AUTO695A",
+   "AUTO695B",
+   "AUTO695C",
+   "AUTO695D",
+   "AUTO696A",
+   "AUTO696B",
+   "AUTO696C",
+   "AUTO696D",
+   "BUS130",
+   "BUS132",
+   "BUS132H",
+   "BUS170",
+   "DRAF160",
+   "PHIL108",
+   "PHIL108H",
+   "PHYS110"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automotive-research-development-certificate-achievement/",
+   "title": "Certificate in Automotive Research and Development | Citrus College Academic Catalog",
+   "h1": "Certificate in Automotive Research and Development",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 4464
+ },
+ {
+  "control_number": "17394",
+  "title": "Emerging Theatre Technologies",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "REC255",
+   "THEA126",
+   "THEA127",
+   "THEA150",
+   "THEA155",
+   "THEA160",
+   "THEA226",
+   "THEA227",
+   "THEA240",
+   "THEA255",
+   "THEA262",
+   "THEA270"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/theatre/emerging-theatre-technologies-certificate-achievement/",
+   "title": "Certificate in Emerging Theatre Technologies | Citrus College Academic Catalog",
+   "h1": "Certificate in Emerging Theatre Technologies",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4354
+ },
+ {
+  "control_number": "17502",
+  "title": "Registered Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RNRS100",
+   "RNRS101",
+   "RNRS102",
+   "RNRS105",
+   "RNRS106",
+   "RNRS107",
+   "RNRS200",
+   "RNRS202",
+   "RNRS205",
+   "RNRS206",
+   "RNRS210",
+   "RNRS215"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/registered-nursing/registered-nursing-as/",
+   "title": "A.S. in Registered Nursing | Citrus College Academic Catalog",
+   "h1": "A.S. in Registered Nursing",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 11638
+ },
+ {
+  "control_number": "18962",
+  "title": "Automobile Diagnostic Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO101",
+   "AUTO101A",
+   "AUTO101B",
+   "AUTO151",
+   "AUTO154",
+   "AUTO163",
+   "AUTO167",
+   "AUTO168",
+   "AUTO172",
+   "AUTO230A",
+   "AUTO230B",
+   "AUTO230C",
+   "AUTO230D"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automobile-diagnostic-technician-certificate-achievement/",
+   "title": "Certificate in Automobile Diagnostic Technician | Citrus College Academic Catalog",
+   "h1": "Certificate in Automobile Diagnostic Technician",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 5239
+ },
+ {
+  "control_number": "19636",
+  "title": "Liberal Arts - Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.989,
+  "codes_found": [
+   "ARCH250",
+   "ARCH251",
+   "ART100",
+   "ART101",
+   "ART102",
+   "ART103",
+   "ART104",
+   "ART105",
+   "ART110",
+   "ART199",
+   "ART199H",
+   "ART206",
+   "ART206H",
+   "ART207",
+   "ART207H",
+   "CHIN102",
+   "COMM136",
+   "COMM200",
+   "DANC102",
+   "ENGL213",
+   "ENGL213H",
+   "ENGL216",
+   "ENGL251",
+   "ENGL252",
+   "ENGL261",
+   "ENGL262",
+   "ENGL271",
+   "ENGL272",
+   "ENGL291",
+   "ENGL291H",
+   "ENGL293",
+   "ENGL293H",
+   "ENGL294",
+   "ENGL294H",
+   "ENGL298",
+   "ENGLC1002",
+   "GER102",
+   "GER201",
+   "GER202",
+   "HIST103",
+   "HIST103H",
+   "HIST104",
+   "HIST104H",
+   "HIST109",
+   "HIST111",
+   "HIST112",
+   "HIST130",
+   "HIST131",
+   "HIST132",
+   "HIST139",
+   "HIST140",
+   "HIST145",
+   "HIST155",
+   "HIST222",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTC1002H",
+   "HUM101",
+   "HUM101H",
+   "HUM102",
+   "HUM102H",
+   "HUM110",
+   "HUM115",
+   "HUM120",
+   "HUM123",
+   "HUM127",
+   "JPN102",
+   "MUSE109",
+   "MUSE112",
+   "MUSE113",
+   "MUSE114",
+   "PHIL101",
+   "PHIL106",
+   "PHIL106H",
+   "PHIL108",
+   "PHIL108H",
+   "PHIL130",
+   "PHIL131",
+   "PHIL140",
+   "PHIL210",
+   "SPAN102",
+   "SPAN127",
+   "SPAN201",
+   "SPAN202",
+   "SPAN210",
+   "SPAN211",
+   "SPCH150",
+   "THEA101",
+   "THEA101H",
+   "THEA200"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/liberal-arts-humanities-aa/",
+   "title": "A.A. in Liberal Arts - Humanities | Citrus College Academic Catalog",
+   "h1": "A.A. in Liberal Arts - Humanities",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 91,
+  "text_chars": 7588
+ },
+ {
+  "control_number": "20027",
+  "title": "Medium and Heavy-Duty Truck Service, Diagnosis and Repair Master Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.762,
+  "codes_found": [
+   "AUTO230A",
+   "AUTO230B",
+   "AUTO230C",
+   "AUTO230D",
+   "MTRK160",
+   "MTRK163",
+   "MTRK164",
+   "MTRK167",
+   "MTRK698A",
+   "MTRK698B",
+   "MTRK698C",
+   "MTRK698D",
+   "MTRK699A",
+   "MTRK699B",
+   "MTRK699C",
+   "MTRK699D"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/medium-heavy-truck-service-diagnosis-repair-technician-certificate-achievement/",
+   "title": "Certificate in Medium and Heavy-Duty Truck Service, Diagnosis, and Repair Master Technician | Citrus College Academic Catalog",
+   "h1": "Certificate in Medium and Heavy-Duty Truck Service, Diagnosis, and Repair Master Technician",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3983
+ },
+ {
+  "control_number": "20031",
+  "title": "Water Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL145",
+   "PUB160",
+   "PUB161",
+   "PUB165",
+   "WATR150",
+   "WATR151",
+   "WATR153",
+   "WATR156",
+   "WATR157",
+   "WATR162",
+   "WATR164"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/water-technology/water-technology-certificate-achievement/",
+   "title": "Certificate in Water Technology | Citrus College Academic Catalog",
+   "h1": "Certificate in Water Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4604
+ },
+ {
+  "control_number": "20032",
+  "title": "Photography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART108",
+   "PHTO101",
+   "PHTO102",
+   "PHTO103",
+   "PHTO125",
+   "PHTO202",
+   "PHTO204",
+   "PHTO205",
+   "PHTO213",
+   "PHTO216"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/photography-certificate-achievement/",
+   "title": "Certificate in Photography | Citrus College Academic Catalog",
+   "h1": "Certificate in Photography",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4192
+ },
+ {
+  "control_number": "20033",
+  "title": "Vocational Nursing",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VNRS150",
+   "VNRS151L",
+   "VNRS152",
+   "VNRS153",
+   "VNRS154",
+   "VNRS155",
+   "VNRS160",
+   "VNRS161L",
+   "VNRS162",
+   "VNRS163",
+   "VNRS164",
+   "VNRS165",
+   "VNRS170",
+   "VNRS171L",
+   "VNRS172",
+   "VNRS173",
+   "VNRS180",
+   "VNRS181",
+   "VNRS182",
+   "VNRS183"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/vocational-nursing/vocational-nursing-certificate-achievement/",
+   "title": "Certificate in Vocational Nursing | Citrus College Academic Catalog",
+   "h1": "Certificate in Vocational Nursing",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 5736
+ },
+ {
+  "control_number": "20034",
+  "title": "Dental Assisting",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DENT100",
+   "DENT102",
+   "DENT104",
+   "DENT121",
+   "DENT122",
+   "DENT123",
+   "DENT125",
+   "DENT201",
+   "DENT202",
+   "DENT203",
+   "DENT204",
+   "DENT205"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/dental-assisting-registered/dental-assisting-certificate-achievement/",
+   "title": "Certificate in Dental Assisting | Citrus College Academic Catalog",
+   "h1": "Certificate in Dental Assisting",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3955
+ },
+ {
+  "control_number": "20036",
+  "title": "Public Works Maintenance Services",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PUB150",
+   "PUB151",
+   "PUB157",
+   "PUB158",
+   "PUB163",
+   "WATR162"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-maintenance-services-certificate-achievement/",
+   "title": "Certificate in Public Works Maintenance Services | Citrus College Academic Catalog",
+   "h1": "Certificate in Public Works Maintenance Services",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3522
+ },
+ {
+  "control_number": "20037",
+  "title": "Criminal Justice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 16,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20038",
+  "title": "Cosmetology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COS141",
+   "COS141A",
+   "COS184",
+   "COS185",
+   "COS186",
+   "COS202",
+   "COS202A",
+   "COS202B",
+   "COS231"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/cosmetology/cosmetology-certificate-achievement/",
+   "title": "Certificate in Cosmetology | Citrus College Academic Catalog",
+   "h1": "Certificate in Cosmetology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3448
+ },
+ {
+  "control_number": "30174",
+  "title": "English Literature",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL202",
+   "ENGL213",
+   "ENGL213H",
+   "ENGL216",
+   "ENGL224",
+   "ENGL224H",
+   "ENGL233",
+   "ENGL243",
+   "ENGL251",
+   "ENGL252",
+   "ENGL261",
+   "ENGL262",
+   "ENGL271",
+   "ENGL272",
+   "ENGL280",
+   "ENGL290",
+   "ENGL291",
+   "ENGL291H",
+   "ENGL293",
+   "ENGL293H",
+   "ENGL294",
+   "ENGL294H",
+   "ENGL295",
+   "ENGL298",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/english/english-literature-aa/",
+   "title": "A.A. in English Literature | Citrus College Academic Catalog",
+   "h1": "A.A. in English Literature",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 7049
+ },
+ {
+  "control_number": "30175",
+  "title": "Literature",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL251",
+   "ENGL252",
+   "ENGL261",
+   "ENGL262",
+   "ENGL271",
+   "ENGL272",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/english/literature-certificate-achievement/",
+   "title": "Certificate in Literature | Citrus College Academic Catalog",
+   "h1": "Certificate in Literature",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 4941
+ },
+ {
+  "control_number": "30176",
+  "title": "Writing Competency",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM101",
+   "ENGL291",
+   "ENGL291H",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1000H",
+   "ENGLC1001H",
+   "ENGLC1002",
+   "ENGLC1003",
+   "ENGLC1003H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/english/writing-competency-certificate-achievement/",
+   "title": "Certificate in Writing Competency | Citrus College Academic Catalog",
+   "h1": "Certificate in Writing Competency",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4760
+ },
+ {
+  "control_number": "30269",
+  "title": "Child Development",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30365",
+  "title": "Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.93,
+  "codes_found": [
+   "MUSC100",
+   "MUSC104",
+   "MUSC105",
+   "MUSC106",
+   "MUSC107",
+   "MUSC120",
+   "MUSC121",
+   "MUSC122",
+   "MUSC123",
+   "MUSC130",
+   "MUSC131",
+   "MUSC140",
+   "MUSC141",
+   "MUSC142",
+   "MUSC143",
+   "MUSC146",
+   "MUSC148",
+   "MUSC149",
+   "MUSC151",
+   "MUSC152",
+   "MUSC160",
+   "MUSC161",
+   "MUSC170",
+   "MUSC171",
+   "MUSC175",
+   "MUSC177",
+   "MUSC179",
+   "MUSC190",
+   "MUSC204",
+   "MUSC206",
+   "MUSC207",
+   "MUSC209",
+   "MUSC220",
+   "MUSC221",
+   "MUSC222",
+   "MUSC223",
+   "MUSC230",
+   "MUSC231",
+   "MUSC240",
+   "MUSC241",
+   "MUSC242",
+   "MUSC243",
+   "MUSC248",
+   "MUSC249",
+   "MUSC251",
+   "MUSC253",
+   "MUSC254",
+   "MUSC271",
+   "MUSE101",
+   "MUSE102",
+   "MUSE103",
+   "MUSE104",
+   "MUSE109",
+   "MUSE112",
+   "MUSE113",
+   "MUSE114",
+   "MUSE120",
+   "MUSE121",
+   "MUSE130",
+   "MUSE131",
+   "MUSE140",
+   "MUSE141",
+   "MUSE151",
+   "MUSE160",
+   "MUSE161",
+   "MUSE170",
+   "MUSE171",
+   "MUSE188",
+   "MUSE189",
+   "MUSE191B",
+   "MUSE201",
+   "MUSE202",
+   "MUSE220",
+   "MUSE221",
+   "MUSE222",
+   "MUSE223",
+   "MUSE230",
+   "MUSE231",
+   "MUSE240",
+   "MUSE241",
+   "MUSE270",
+   "MUSE271",
+   "MUSP100",
+   "MUSP101",
+   "MUSP105",
+   "MUSP106",
+   "MUSP110",
+   "MUSP111",
+   "MUSP115",
+   "MUSP120",
+   "MUSP121",
+   "MUSP129",
+   "MUSP130",
+   "MUSP131",
+   "MUSP132",
+   "MUSP133",
+   "MUSP134",
+   "MUSP136",
+   "MUSP138",
+   "MUSP139",
+   "MUSP140",
+   "MUSP141",
+   "MUSP142",
+   "MUSP143",
+   "MUSP145",
+   "MUSP146",
+   "MUSP151",
+   "MUSP155",
+   "MUSP156",
+   "MUSP170",
+   "MUSP171",
+   "MUSP173",
+   "MUSP178",
+   "MUSP181",
+   "MUSP182",
+   "MUSP200",
+   "MUSP201",
+   "MUSP225",
+   "MUSP235",
+   "MUSP240",
+   "MUSP241",
+   "MUSP245",
+   "MUSP246",
+   "MUSP255",
+   "MUSP256",
+   "MUSP258",
+   "MUSP281",
+   "MUSP282",
+   "MUSP285",
+   "MUSP290",
+   "MUSP291",
+   "MUSP292"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/music/music-aa/",
+   "title": "A.A. in Music | Citrus College Academic Catalog",
+   "h1": "A.A. in Music",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 142,
+  "text_chars": 8663
+ },
+ {
+  "control_number": "30454",
+  "title": "Biological Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.958,
+  "codes_found": [
+   "BIOL124",
+   "BIOL125",
+   "BIOL145",
+   "CHEM111",
+   "CHEM112",
+   "CHEM210",
+   "CHEM211L",
+   "CHEM220",
+   "CHEM221L",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH190",
+   "MATH191",
+   "MATH210",
+   "PHYS111",
+   "PHYS111H",
+   "PHYS112",
+   "PHYS201",
+   "PHYS201H",
+   "PHYS202",
+   "PHYS203",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/biology/biological-sciences-as/",
+   "title": "A.S. in Biological Sciences | Citrus College Academic Catalog",
+   "h1": "A.S. in Biological Sciences",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 8229
+ },
+ {
+  "control_number": "30507",
+  "title": "Theatre Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEA101",
+   "THEA101H",
+   "THEA120",
+   "THEA130",
+   "THEA140",
+   "THEA200",
+   "THEA201",
+   "THEA202",
+   "THEA204A",
+   "THEA205",
+   "THEA206",
+   "THEA210",
+   "THEA211A",
+   "THEA211B",
+   "THEA211C",
+   "THEA211D",
+   "THEA221",
+   "THEA222",
+   "THEA241A",
+   "THEA245",
+   "THEA250",
+   "THEA270",
+   "THEA272",
+   "THEA276",
+   "THEA284",
+   "THEA284A",
+   "THEA284B",
+   "THEA284C",
+   "THEA284D",
+   "THEA292A",
+   "THEA293A",
+   "THEA294"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/theatre/theatre-arts-aa/",
+   "title": "A.A. in Theatre Arts | Citrus College Academic Catalog",
+   "h1": "A.A. in Theatre Arts",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 7482
+ },
+ {
+  "control_number": "30508",
+  "title": "Theatre Arts - Acting Emphasis",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.69,
+  "codes_found": [
+   "THEA101",
+   "THEA101H",
+   "THEA104A",
+   "THEA120",
+   "THEA202",
+   "THEA205",
+   "THEA206",
+   "THEA210",
+   "THEA211A",
+   "THEA211B",
+   "THEA211C",
+   "THEA211D",
+   "THEA220",
+   "THEA221",
+   "THEA222",
+   "THEA241A",
+   "THEA284",
+   "THEA292A",
+   "THEA293A",
+   "THEA294"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/theatre/theatre-arts-acting-emphasis-aa/",
+   "title": "A.A. in Theatre Arts - Acting Emphasis | Citrus College Academic Catalog",
+   "h1": "A.A. in Theatre Arts - Acting Emphasis",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 7279
+ },
+ {
+  "control_number": "30560",
+  "title": "Dance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANC102",
+   "DANC130",
+   "DANC158",
+   "DANC159",
+   "DANC160",
+   "DANC161",
+   "DANC162",
+   "DANC259",
+   "DANC260",
+   "DANC262",
+   "DANC270",
+   "DANC272",
+   "DANC289"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/dance/dance-aa/",
+   "title": "A.A. in Dance | Citrus College Academic Catalog",
+   "h1": "A.A. in Dance",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 5208
+ },
+ {
+  "control_number": "30830",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 16,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30877",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 19,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30937",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 14,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30940",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31179",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.556,
+  "codes_found": [
+   "CHLD112",
+   "CHLD114",
+   "CHLD116",
+   "CHLD144",
+   "PSY206"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-associate-teacher-skill-award/",
+   "title": "Skill Award in Child Development Associate Teacher | Citrus College Academic Catalog",
+   "h1": "Skill Award in Child Development Associate Teacher",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 4409
+ },
+ {
+  "control_number": "31205",
+  "title": "Recording Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "REC100",
+   "REC103",
+   "REC105",
+   "REC125",
+   "REC135",
+   "REC140",
+   "REC145",
+   "REC205",
+   "REC215",
+   "REC225",
+   "REC235",
+   "REC245"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/recording-technology/recording-technology-as/",
+   "title": "A.S. in Recording Technology | Citrus College Academic Catalog",
+   "h1": "A.S. in Recording Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3712
+ },
+ {
+  "control_number": "31430",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM101",
+   "ENGL202",
+   "ENGL204",
+   "ENGL210",
+   "ENGL213",
+   "ENGL213H",
+   "ENGL216",
+   "ENGL224",
+   "ENGL224H",
+   "ENGL233",
+   "ENGL243",
+   "ENGL251",
+   "ENGL252",
+   "ENGL261",
+   "ENGL262",
+   "ENGL271",
+   "ENGL272",
+   "ENGL280",
+   "ENGL290",
+   "ENGL291",
+   "ENGL291H",
+   "ENGL293",
+   "ENGL293H",
+   "ENGL294",
+   "ENGL294H",
+   "ENGL295",
+   "ENGL298",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1002",
+   "ENGLC1003",
+   "ENGLC1003H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
+   "title": "General Education Requirements: Option I | Citrus College Academic Catalog",
+   "h1": "General Education Requirements: Option I",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 13517
+ },
+ {
+  "control_number": "31431",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31539",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31572",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 34,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31840",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 32,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32305",
+  "title": "Journalism",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32404",
+  "title": "English as a Second Language - Beginning",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC305",
+   "NC306"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-beginning-certificate-competency/",
+   "title": "Certificate of Competency in English as a Second Language - Beginning | Citrus College Academic Catalog",
+   "h1": "Certificate of Competency in English as a Second Language - Beginning",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3953
+ },
+ {
+  "control_number": "32405",
+  "title": "English as a Second Language - Intermediate",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC307",
+   "NC308"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-intermediate-certificate-competency/",
+   "title": "Certificate of Competency in English as a Second Language - Intermediate | Citrus College Academic Catalog",
+   "h1": "Certificate of Competency in English as a Second Language - Intermediate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3973
+ },
+ {
+  "control_number": "32406",
+  "title": "English as a Second Language - Program Completion",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC307",
+   "NC308",
+   "NC309"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-program-completion-certificate-competency/",
+   "title": "Certificate of Competency in English as a Second Language - Program Completion | Citrus College Academic Catalog",
+   "h1": "Certificate of Competency in English as a Second Language - Program Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3989
+ },
+ {
+  "control_number": "32762",
+  "title": "Heating, Ventilation and Air Conditioning Technician",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33165",
+  "title": "Pre-Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM111",
+   "ENGR101",
+   "ENGR130",
+   "ENGR135",
+   "ENGR138",
+   "ENGR140",
+   "MATH190",
+   "MATH191",
+   "MATH210",
+   "MATH211",
+   "MATH212",
+   "PHYS201",
+   "PHYS201H",
+   "PHYS202",
+   "PHYS203"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/engineering/pre-engineering-as/",
+   "title": "A.S. in Pre-Engineering | Citrus College Academic Catalog",
+   "h1": "A.S. in Pre-Engineering",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4234
+ },
+ {
+  "control_number": "33308",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 22,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33327",
+  "title": "Correctional Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 12,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33350",
+  "title": "Biomanufacturing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "BIOT107",
+   "BIOT108",
+   "BIOT125",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/biotechnology/biomanufacturing-certificate-achievement/",
+   "title": "Certificate in Biomanufacturing | Citrus College Academic Catalog",
+   "h1": "Certificate in Biomanufacturing",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 4910
+ },
+ {
+  "control_number": "33599",
+  "title": "Correctional Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33602",
+  "title": "Pre-Allied Health",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL200",
+   "BIOL201",
+   "BIOL220",
+   "CHEM103",
+   "CHEM104",
+   "COMMC1000",
+   "COMMC1000H",
+   "COMMC1004",
+   "MATH170",
+   "PSY205",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC201",
+   "SOC201H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/biology/pre-allied-health-as/",
+   "title": "A.S. in Pre-Allied Health | Citrus College Academic Catalog",
+   "h1": "A.S. in Pre-Allied Health",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 6165
+ },
+ {
+  "control_number": "33607",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 33,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33609",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33688",
+  "title": "Physical Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM111",
+   "CHEM112",
+   "CHEM210",
+   "CHEM211L",
+   "CHEM220",
+   "CHEM221L",
+   "MATH190",
+   "MATH191",
+   "MATH210",
+   "PHYS201",
+   "PHYS201H",
+   "PHYS202",
+   "PHYS203"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/physical-science-as/",
+   "title": "A.S. in Physical Science | Citrus College Academic Catalog",
+   "h1": "A.S. in Physical Science",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 5881
+ },
+ {
+  "control_number": "33909",
+  "title": "Automotive General Service and Repair",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO140A",
+   "AUTO141",
+   "AUTO144",
+   "AUTO145",
+   "AUTO146",
+   "AUTO147",
+   "AUTO148"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automotive-general-service-repair-certificate-achievement/",
+   "title": "Certificate in Automotive General Service and Repair | Citrus College Academic Catalog",
+   "h1": "Certificate in Automotive General Service and Repair",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 4081
+ },
+ {
+  "control_number": "33960",
+  "title": "Biotechnology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOT107",
+   "BIOT108",
+   "BIOT110",
+   "BIOT125",
+   "BIOT150",
+   "CHEM103",
+   "CHEM104",
+   "CHEM111",
+   "CHEM112",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/biotechnology/biotechnology-as/",
+   "title": "A.S. in Biotechnology | Citrus College Academic Catalog",
+   "h1": "A.S. in Biotechnology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4246
+ },
+ {
+  "control_number": "35078",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35368",
+  "title": "Website Development",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "ITIS104",
+   "ITIS107",
+   "ITIS115",
+   "ITIS141"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/website-development-certificate-achievement/",
+   "title": "Certificate in Website Development | Citrus College Academic Catalog",
+   "h1": "Certificate in Website Development",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4666
+ },
+ {
+  "control_number": "35453",
+  "title": "Social Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.945,
+  "codes_found": [
+   "ANTH210",
+   "ANTH210H",
+   "ANTH216",
+   "ANTH216H",
+   "ANTH222",
+   "ANTH224",
+   "COMMC1000",
+   "COMMC1000H",
+   "ECONC2002",
+   "ENGL216",
+   "ENGL272",
+   "ENGL280",
+   "ESCI180",
+   "ETHN101",
+   "ETHN101H",
+   "ETHN116",
+   "GEOG102",
+   "GEOG118",
+   "HIST103",
+   "HIST103H",
+   "HIST104",
+   "HIST104H",
+   "HIST109",
+   "HIST130",
+   "HIST131",
+   "HIST132",
+   "HIST145",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTC1002H",
+   "PHIL101",
+   "PHIL106",
+   "PHIL106H",
+   "POLI105",
+   "POLI116",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSY226",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC118",
+   "SOC201",
+   "SOC201H",
+   "SOC220",
+   "SPAN130",
+   "SPAN201",
+   "SPAN202",
+   "SPAN210",
+   "SPAN211",
+   "SPCH103",
+   "THEA101",
+   "THEA101H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/social-sciences-aa/",
+   "title": "A.A. in Social Sciences | Citrus College Academic Catalog",
+   "h1": "A.A. in Social Sciences",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 55,
+  "text_chars": 7547
+ },
+ {
+  "control_number": "35598",
+  "title": "Database Administrator",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS152",
+   "ITIS104",
+   "ITIS107",
+   "ITIS115",
+   "ITIS141",
+   "ITIS160",
+   "ITIS165",
+   "ITIS170",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/database-administrator-certificate-achievement/",
+   "title": "Certificate in Database Administrator | Citrus College Academic Catalog",
+   "h1": "Certificate in Database Administrator",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 5508
+ },
+ {
+  "control_number": "35599",
+  "title": "Business Information Professional",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS152",
+   "ITIS115",
+   "OFF101",
+   "OFF120",
+   "OFF215",
+   "OFF260",
+   "OFF285",
+   "OFF294"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/office-technology/business-information-professional-certificate-of-achievement/",
+   "title": "Certificate in Business Information Professional | Citrus College Academic Catalog",
+   "h1": "Certificate in Business Information Professional",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3289
+ },
+ {
+  "control_number": "35775",
+  "title": "Real Estate Broker",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT100",
+   "ACCT101",
+   "ACCT101H",
+   "BUS160",
+   "BUS160H",
+   "REAL210",
+   "REAL212",
+   "REAL214",
+   "REAL215",
+   "REAL216",
+   "REAL220",
+   "REAL222",
+   "REAL224",
+   "REAL226",
+   "REAL228"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/real-estate/real-estate-certificate-achievement/",
+   "title": "Certificate in Real Estate Broker | Citrus College Academic Catalog",
+   "h1": "Certificate in Real Estate Broker",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4206
+ },
+ {
+  "control_number": "36306",
+  "title": "Architecture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "ARCH100",
+   "ARCH102",
+   "ARCH110",
+   "ARCH111",
+   "ARCH201",
+   "ARCH202",
+   "ARCH242",
+   "ARCH250",
+   "ARCH251",
+   "DRAF102",
+   "DRAF160",
+   "DRAF161",
+   "DRAF290"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/architecture/architecture-as/",
+   "title": "A.S. in Architecture | Citrus College Academic Catalog",
+   "h1": "A.S. in Architecture",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4024
+ },
+ {
+  "control_number": "36540",
+  "title": "Water Efficiency Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL145",
+   "BUS152",
+   "COMMC1004",
+   "COMMC1004H",
+   "ITIS130",
+   "MATH144",
+   "PUB159",
+   "PUB163",
+   "PUB165",
+   "WATR150",
+   "WATR151",
+   "WATR156",
+   "WATR162",
+   "WATR164"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/water-technology/water-efficiency-management-certificate-achievement/",
+   "title": "Certificate in Water Efficiency Management | Citrus College Academic Catalog",
+   "h1": "Certificate in Water Efficiency Management",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4759
+ },
+ {
+  "control_number": "36541",
+  "title": "Water Efficiency Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL145",
+   "BUS152",
+   "ITIS130",
+   "PUB159",
+   "PUB163",
+   "PUB165",
+   "WATR150",
+   "WATR151",
+   "WATR156",
+   "WATR162",
+   "WATR164"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/water-technology/water-efficiency-management-as/",
+   "title": "A.S. in Water Efficiency Management | Citrus College Academic Catalog",
+   "h1": "A.S. in Water Efficiency Management",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3539
+ },
+ {
+  "control_number": "36542",
+  "title": "IT Technician: Computer Retail Sales and Support",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS130",
+   "BUS152",
+   "BUS172",
+   "ITIS104",
+   "ITIS115",
+   "ITIS130"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/information-technology-information-systems/it-technican-computer-retail-certificate-achievement/",
+   "title": "Certificate in IT Technician: Computer Retail Sales and Support | Citrus College Academic Catalog",
+   "h1": "Certificate in IT Technician: Computer Retail Sales and Support",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3297
+ },
+ {
+  "control_number": "36543",
+  "title": "IT Technician: Support Specialist",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36626",
+  "title": "Esthetician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESTH140",
+   "ESTH141",
+   "ESTH142",
+   "ESTH144",
+   "ESTH145"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/esthetician/esthetician-as/",
+   "title": "A.S. in Esthetician | Citrus College Academic Catalog",
+   "h1": "A.S. in Esthetician",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3108
+ },
+ {
+  "control_number": "36663",
+  "title": "Gaming and Applications Development",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS112",
+   "CS157",
+   "CS177",
+   "CS225",
+   "CS232",
+   "CS242",
+   "CS252",
+   "CS257",
+   "CS277",
+   "MATH170"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/computer-science/gaming-applications-development-certificate-achievement/",
+   "title": "Certificate in Gaming and Applications Development | Citrus College Academic Catalog",
+   "h1": "Certificate in Gaming and Applications Development",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3496
+ },
+ {
+  "control_number": "36924",
+  "title": "Peace Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH210",
+   "ANTH210H",
+   "BIOL145",
+   "HIST155",
+   "HUM123",
+   "HUM130",
+   "PHIL101",
+   "PHIL108",
+   "PHIL108H",
+   "POLI116",
+   "PSY220",
+   "SOC202"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/peace-studies-aa/",
+   "title": "A.A. in Peace Studies | Citrus College Academic Catalog",
+   "h1": "A.A. in Peace Studies",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 5477
+ },
+ {
+  "control_number": "37121",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37131",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37315",
+  "title": "Global Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37384",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 22,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37501",
+  "title": "Construction Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CM110",
+   "CM121",
+   "CM130",
+   "CM270",
+   "CM275",
+   "CM281",
+   "CM282",
+   "CM290",
+   "CM295"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/construction-management/construction-management-as/",
+   "title": "A.S. in Construction Management | Citrus College Academic Catalog",
+   "h1": "A.S. in Construction Management",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 4582
+ },
+ {
+  "control_number": "37502",
+  "title": "Real Estate",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "ACCT100",
+   "ACCT101",
+   "ACCT101H",
+   "BUS160",
+   "BUS160H",
+   "REAL210",
+   "REAL212",
+   "REAL214",
+   "REAL215",
+   "REAL216",
+   "REAL220",
+   "REAL222",
+   "REAL224",
+   "REAL226",
+   "REAL228",
+   "REAL230"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/real-estate/real-estate-as/",
+   "title": "A.S. in Real Estate | Citrus College Academic Catalog",
+   "h1": "A.S. in Real Estate",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3672
+ },
+ {
+  "control_number": "37537",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37571",
+  "title": "Construction Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CM110",
+   "CM120",
+   "CM121",
+   "CM210",
+   "CM275",
+   "CM290",
+   "CM699A"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/construction-management/construction-management-certificate-achievement/",
+   "title": "Certificate in Construction Management | Citrus College Academic Catalog",
+   "h1": "Certificate in Construction Management",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 4233
+ },
+ {
+  "control_number": "37572",
+  "title": "Construction Quality Control",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CM110",
+   "CM120",
+   "CM121",
+   "CM145",
+   "CM270",
+   "CM285",
+   "CM699B"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/construction-management/construction-quality-control-certificate-achievement/",
+   "title": "Certificate in Construction Quality Control | Citrus College Academic Catalog",
+   "h1": "Certificate in Construction Quality Control",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3657
+ },
+ {
+  "control_number": "37629",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37635",
+  "title": "Construction Inspection",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CM110",
+   "CM121",
+   "CM145",
+   "CM699B"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/construction-management/construction-inspection-certificate-achievement/",
+   "title": "Certificate in Construction Inspection | Citrus College Academic Catalog",
+   "h1": "Certificate in Construction Inspection",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3686
+ },
+ {
+  "control_number": "37813",
+  "title": "English as a Second Language - Speaking",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37814",
+  "title": "English as a Second Language - Pronunciation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC318",
+   "NC319"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-pronunciation-certificate-competency/",
+   "title": "Certificate of Competency in English as a Second Language - Pronunciation | Citrus College Academic Catalog",
+   "h1": "Certificate of Competency in English as a Second Language - Pronunciation",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3877
+ },
+ {
+  "control_number": "37815",
+  "title": "English as a Second Language - Intermediate Grammar",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC312",
+   "NC313"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-intermediate-grammar-certificate-competency/",
+   "title": "Certificate of Competency in English as a Second Language - Intermediate Grammar | Citrus College Academic Catalog",
+   "h1": "Certificate of Competency in English as a Second Language - Intermediate Grammar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3946
+ },
+ {
+  "control_number": "37816",
+  "title": "English as a Second Language - Computer Literacy",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC315",
+   "NC316"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-computer-literacy-certificate-competency/",
+   "title": "Certificate of Competency in English as a Second Language - Computer Literacy | Citrus College Academic Catalog",
+   "h1": "Certificate of Competency in English as a Second Language - Computer Literacy",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3918
+ },
+ {
+  "control_number": "37817",
+  "title": "English as a Second Language - Beginning Grammar",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC310",
+   "NC311"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-beginning-grammar-certificate-competency/",
+   "title": "Certificate of Competency in English as a Second Language - Beginning Grammar | Citrus College Academic Catalog",
+   "h1": "Certificate of Competency in English as a Second Language - Beginning Grammar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3864
+ },
+ {
+  "control_number": "37962",
+  "title": "Wildland Resources and Forestry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "BIOL124",
+   "BIOL125",
+   "CHEM110",
+   "CHEM111",
+   "ESCI120",
+   "ESCI180",
+   "FOR101",
+   "FOR102",
+   "FOR103",
+   "FOR104",
+   "FOR105",
+   "FOR106",
+   "MATH180",
+   "MATH190",
+   "NAT180A",
+   "NAT180B",
+   "NAT181A",
+   "NAT181B",
+   "NAT182A",
+   "NAT182B",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/forestry-wildland-resources/wildland-resources-forestry-as/",
+   "title": "A.S. in Wildland Resources and Forestry | Citrus College Academic Catalog",
+   "h1": "A.S. in Wildland Resources and Forestry",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 4995
+ },
+ {
+  "control_number": "38167",
+  "title": "Stationary Power Generation Service, Diagnosis and Repair Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MTRK160",
+   "SPWG170A",
+   "SPWG170B",
+   "SPWG171"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/stationary-power-generation-service-diagnosis-repair-technician-certificate-achievement/",
+   "title": "Certificate in Stationary Power Generation Service, Diagnosis and Repair Technician | Citrus College Academic Catalog",
+   "h1": "Certificate in Stationary Power Generation Service, Diagnosis and Repair Technician",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3506
+ },
+ {
+  "control_number": "38207",
+  "title": "Diesel Engine Service, Diagnosis and Repair Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MTRK101",
+   "MTRK148",
+   "MTRK152A",
+   "MTRK156A",
+   "MTRK156B",
+   "MTRK159"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/diesel-engine-service-diagnosis-repair-technician-certificate-achievement/",
+   "title": "Certificate in Diesel Engine Service, Diagnosis and Repair Technician | Citrus College Academic Catalog",
+   "h1": "Certificate in Diesel Engine Service, Diagnosis and Repair Technician",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 4302
+ },
+ {
+  "control_number": "38431",
+  "title": "Clean Energy and Vehicle Electrification Technology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO190",
+   "AUTO282",
+   "AUTO283"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/clean-energy-vehicle-electrification-technology-certificate-achievement/",
+   "title": "Certificate in Clean Energy and Vehicle Electrification Technology | Citrus College Academic Catalog",
+   "h1": "Certificate in Clean Energy and Vehicle Electrification Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3007
+ },
+ {
+  "control_number": "38754",
+  "title": "Environmental Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 12,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40210",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40284",
+  "title": "Workforce Readiness",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC650",
+   "NC680",
+   "NC682",
+   "NC686"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/workforce-readiness-certificate-competency/",
+   "title": "Certificate of Competency in Workforce Readiness | Citrus College Academic Catalog",
+   "h1": "Certificate of Competency in Workforce Readiness",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 4134
+ },
+ {
+  "control_number": "40285",
+  "title": "Business Information Worker",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC650",
+   "NC680"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/business-information-worker-certificate-competency/",
+   "title": "Certificate of Competency in Business Information Worker | Citrus College Academic Catalog",
+   "h1": "Certificate of Competency in Business Information Worker",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 4032
+ },
+ {
+  "control_number": "40286",
+  "title": "Customer Service",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40287",
+  "title": "Customer Service and Call Center",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40288",
+  "title": "Customer Service for Retail",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40436",
+  "title": "Film Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART199",
+   "ART199H",
+   "ART200",
+   "ART201",
+   "COMM136",
+   "ENGL291",
+   "ENGL291H",
+   "PHTO204",
+   "PHTO207",
+   "THEA120",
+   "THEA140",
+   "THEA204A",
+   "THEA204B",
+   "THEA204C",
+   "THEA204D",
+   "THEA211A",
+   "THEA211B",
+   "THEA211C",
+   "THEA211D",
+   "THEA212",
+   "THEA240",
+   "THEA245",
+   "THEA270",
+   "THEA272"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/visual-arts/film-studies-aa/",
+   "title": "A.A. in Film Studies | Citrus College Academic Catalog",
+   "h1": "A.A. in Film Studies",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 4564
+ },
+ {
+  "control_number": "40641",
+  "title": "Payroll Accounting",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT100",
+   "ACCT115",
+   "ACCT118",
+   "OFF120"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/accounting/payroll-accounting-certificate-achievement/",
+   "title": "Certificate in Payroll Accounting | Citrus College Academic Catalog",
+   "h1": "Certificate in Payroll Accounting",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3437
+ },
+ {
+  "control_number": "40680",
+  "title": "Real Estate Appraisal",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "REAL226",
+   "REAL228",
+   "REAL230"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/real-estate/real-estate-appraisal-certificate-achievement/",
+   "title": "Certificate in Real Estate Appraisal | Citrus College Academic Catalog",
+   "h1": "Certificate in Real Estate Appraisal",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3838
+ },
+ {
+  "control_number": "40681",
+  "title": "Income Tax II (Income Tax Preparer)",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT111",
+   "ACCT112",
+   "ACCT114",
+   "ACCT116"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/accounting/income-tax-preparer-certificate-achievement/",
+   "title": "Certificate in Income Tax II (Income Tax Preparer) | Citrus College Academic Catalog",
+   "h1": "Certificate in Income Tax II (Income Tax Preparer)",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3774
+ },
+ {
+  "control_number": "40716",
+  "title": "Income Tax I (Income Tax Assistant)",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT100",
+   "ACCT101",
+   "ACCT101H",
+   "ACCT110",
+   "ACCT113",
+   "OFF120"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/accounting/income-tax-assistant-certificate-achievement/",
+   "title": "Certificate in Income Tax I (Income Tax Assistant) | Citrus College Academic Catalog",
+   "h1": "Certificate in Income Tax I (Income Tax Assistant)",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3662
+ },
+ {
+  "control_number": "40957",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40975",
+  "title": "Real Estate Sales",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT100",
+   "ACCT101",
+   "ACCT101H",
+   "BUS160",
+   "BUS160H",
+   "REAL210",
+   "REAL212",
+   "REAL214",
+   "REAL216",
+   "REAL220",
+   "REAL222",
+   "REAL224",
+   "REAL226"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/real-estate/real-estate-sales-certificate-achievement/",
+   "title": "Certificate in Real Estate Sales | Citrus College Academic Catalog",
+   "h1": "Certificate in Real Estate Sales",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4245
+ },
+ {
+  "control_number": "40977",
+  "title": "Media Arts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART153",
+   "ART167",
+   "COMM230",
+   "COMM250",
+   "PHTO202",
+   "PHTO204"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/media-arts-certificate-achievement/",
+   "title": "Certificate in Media Arts | Citrus College Academic Catalog",
+   "h1": "Certificate in Media Arts",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3193
+ },
+ {
+  "control_number": "40990",
+  "title": "Hardscape Maintenance Technology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PUB150",
+   "PUB151",
+   "PUB157"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/public-works/hardscape-maintenance-technology-certificate-achievement/",
+   "title": "Certificate in Hardscape Maintenance Technology | Citrus College Academic Catalog",
+   "h1": "Certificate in Hardscape Maintenance Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3569
+ },
+ {
+  "control_number": "41006",
+  "title": "Public Works Inspection",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH144",
+   "PUB150",
+   "PUB155",
+   "PUB161"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-inspection-certificate-achievement/",
+   "title": "Certificate in Public Works Inspection | Citrus College Academic Catalog",
+   "h1": "Certificate in Public Works Inspection",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3085
+ },
+ {
+  "control_number": "41080",
+  "title": "Greenscape Maintenance Technology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PUB158",
+   "PUB163",
+   "WATR162"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/public-works/greenscape-maintenance-technology-certificate-achievement/",
+   "title": "Certificate in Greenscape Maintenance Technology | Citrus College Academic Catalog",
+   "h1": "Certificate in Greenscape Maintenance Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3627
+ },
+ {
+  "control_number": "41167",
+  "title": "Business Entrepreneurship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC654",
+   "NC655",
+   "NC656"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/business-entrepreneurship-certificate-competency/",
+   "title": "Certificate of Competency in Business Entrepreneurship | Citrus College Academic Catalog",
+   "h1": "Certificate of Competency in Business Entrepreneurship",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4099
+ },
+ {
+  "control_number": "41356",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41616",
+  "title": "Medical Terminology",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC658",
+   "NC659"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/medical-terminology-certificate-competency/",
+   "title": "Certificate of Competency in Medical Terminology | Citrus College Academic Catalog",
+   "h1": "Certificate of Competency in Medical Terminology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 4046
+ },
+ {
+  "control_number": "41679",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 13,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41841",
+  "title": "CPA Exam Preparation: Accounting Subjects Requirement",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "ACCT101H",
+   "ACCT102",
+   "ACCT102H",
+   "ACCT110",
+   "ACCT203",
+   "ACCT204",
+   "ACCT205",
+   "ACCT206",
+   "BUS160H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/accounting/cpa-exam-preparation-accounting-subjects-requirement-certificate-achievement/",
+   "title": "Certificate in CPA Exam Preparation: Accounting Subjects Requirement | Citrus College Academic Catalog",
+   "h1": "Certificate in CPA Exam Preparation: Accounting Subjects Requirement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4744
+ },
+ {
+  "control_number": "41842",
+  "title": "CPA Exam Preparation: Business-Related Subjects Requirement",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.977,
+  "codes_found": [
+   "ACCT100",
+   "ACCT111",
+   "ACCT112",
+   "ACCT113",
+   "ACCT114",
+   "ACCT115",
+   "ACCT116",
+   "ACCT118",
+   "ACCT203",
+   "ACCT204",
+   "ACCT205",
+   "ACCT206",
+   "ACCT207",
+   "BUS130",
+   "BUS140",
+   "BUS141",
+   "BUS142",
+   "BUS152",
+   "BUS160",
+   "BUS160H",
+   "BUS161",
+   "BUS170",
+   "BUS171",
+   "BUS172",
+   "BUS175",
+   "BUS185",
+   "BUS192",
+   "ECONC2001",
+   "ECONC2002",
+   "ITIS104",
+   "ITIS107",
+   "ITIS108",
+   "ITIS109",
+   "ITIS115",
+   "ITIS120",
+   "ITIS130",
+   "ITIS160",
+   "ITIS165",
+   "ITIS180A",
+   "MATH180",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/accounting/cpa-exam-preparation-business-related-subjects-requirement-certificate-achievement/",
+   "title": "Certificate in CPA Exam Preparation: Business-Related Subjects Requirement | Citrus College Academic Catalog",
+   "h1": "Certificate in CPA Exam Preparation: Business-Related Subjects Requirement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 43,
+  "text_chars": 7407
+ },
+ {
+  "control_number": "41843",
+  "title": "CPA Licensure: Accounting Study and Ethics",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.987,
+  "codes_found": [
+   "ACCT100",
+   "ACCT110",
+   "ACCT111",
+   "ACCT112",
+   "ACCT113",
+   "ACCT114",
+   "ACCT115",
+   "ACCT116",
+   "ACCT118",
+   "ACCT203",
+   "ACCT204",
+   "ACCT205",
+   "ACCT206",
+   "ACCT207",
+   "ACCT208",
+   "ANTH210",
+   "ANTH210H",
+   "ANTH216",
+   "ANTH216H",
+   "ASL101",
+   "ASL101H",
+   "BUS130",
+   "BUS132",
+   "BUS132H",
+   "BUS140",
+   "BUS141",
+   "BUS142",
+   "BUS152",
+   "BUS160",
+   "BUS160H",
+   "BUS161",
+   "BUS170",
+   "BUS171",
+   "BUS172",
+   "BUS175",
+   "BUS185",
+   "BUS192",
+   "CHIN101",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "ETHN101",
+   "ETHN101H",
+   "FREN101",
+   "GER101",
+   "HIST130",
+   "ITAL101",
+   "ITIS104",
+   "ITIS107",
+   "ITIS108",
+   "ITIS109",
+   "ITIS115",
+   "ITIS120",
+   "ITIS130",
+   "ITIS160",
+   "ITIS165",
+   "JPN101",
+   "MATH180",
+   "PHIL106",
+   "PHIL106H",
+   "REAL210",
+   "REAL212",
+   "REAL214",
+   "REAL216",
+   "REAL220",
+   "REAL222",
+   "REAL224",
+   "REAL226",
+   "REAL228",
+   "REAL230",
+   "SPAN101",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/accounting/cpa-licensure-accounting-study-ethics-certificate-achievement/",
+   "title": "Certificate in CPA Licensure: Accounting Study and Ethics | Citrus College Academic Catalog",
+   "h1": "Certificate in CPA Licensure: Accounting Study and Ethics",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 77,
+  "text_chars": 8465
+ },
+ {
+  "control_number": "41913",
+  "title": "Small Business Management",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC656",
+   "NC661",
+   "NC663",
+   "NC664",
+   "NC665"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/small-business-management-certificate-completion/",
+   "title": "Certificate of Completion in Small Business Management | Citrus College Academic Catalog",
+   "h1": "Certificate of Completion in Small Business Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 4171
+ },
+ {
+  "control_number": "41914",
+  "title": "Introduction to Automotive Service",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC644",
+   "NC645"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/introduction-automotive-service-certificate-completion/",
+   "title": "Certificate of Completion in Introduction to Automotive Service | Citrus College Academic Catalog",
+   "h1": "Certificate of Completion in Introduction to Automotive Service",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3928
+ },
+ {
+  "control_number": "41931",
+  "title": "English as a Second Language - Noncredit to Credit Transition",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC309",
+   "NC313",
+   "NC330"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-noncredit-credit-transition-certificate-competency/",
+   "title": "Certificate of Competency in English as a Second Language - Noncredit to Credit Transition | Citrus College Academic Catalog",
+   "h1": "Certificate of Competency in English as a Second Language - Noncredit to Credit Transition",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4078
+ },
+ {
+  "control_number": "41932",
+  "title": "Introduction to American Sign Language (ASL)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC621",
+   "NC622",
+   "NC623"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/introduction-american-sign-language-asl-certificate-completion/",
+   "title": "Certificate of Completion in Introduction to American Sign Language (ASL) | Citrus College Academic Catalog",
+   "h1": "Certificate of Completion in Introduction to American Sign Language (ASL)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4085
+ },
+ {
+  "control_number": "41966",
+  "title": "Introduction to Careers in Health",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC602",
+   "NC604",
+   "NC605"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/introduction-careers-health-certificate-completion/",
+   "title": "Certificate of Completion in Introduction to Careers in Health | Citrus College Academic Catalog",
+   "h1": "Certificate of Completion in Introduction to Careers in Health",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4085
+ },
+ {
+  "control_number": "41987",
+  "title": "Special Inspection - Reinforced Concrete",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CM110",
+   "CM121",
+   "CM145",
+   "CM155"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/construction-management/special-inspection-reinforced-concrete-certificate-achievement/",
+   "title": "Certificate in Special Inspection - Reinforced Concrete | Citrus College Academic Catalog",
+   "h1": "Certificate in Special Inspection - Reinforced Concrete",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3639
+ },
+ {
+  "control_number": "42009",
+  "title": "Human Resources Management",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC660",
+   "NC661",
+   "NC664",
+   "NC665"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/human-resources-management-certificate-competency/",
+   "title": "Certificate of Competency in Human Resources Management | Citrus College Academic Catalog",
+   "h1": "Certificate of Competency in Human Resources Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 4115
+ },
+ {
+  "control_number": "42060",
+  "title": "Drone Technology",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC107",
+   "NC108",
+   "NC109"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/drone-technology-certificate-competency/",
+   "title": "Certificate of Competency in Drone Technology | Citrus College Academic Catalog",
+   "h1": "Certificate of Competency in Drone Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4054
+ },
+ {
+  "control_number": "42170",
+  "title": "Business - Accounting Emphasis",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.963,
+  "codes_found": [
+   "ACCT101",
+   "ACCT101H",
+   "ACCT102",
+   "ACCT102H",
+   "ACCT110",
+   "ACCT111",
+   "ACCT112",
+   "ACCT115",
+   "ACCT116",
+   "ACCT118",
+   "ACCT203",
+   "ACCT204",
+   "ACCT205",
+   "ACCT206",
+   "ACCT207",
+   "ACCT208",
+   "BUS152",
+   "BUS160",
+   "BUS160H",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH180",
+   "MATH190",
+   "OFF120",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/business/business-accounting-emphasis-as/",
+   "title": "A.S. in Business - Accounting Emphasis | Citrus College Academic Catalog",
+   "h1": "A.S. in Business - Accounting Emphasis",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 6963
+ },
+ {
+  "control_number": "42172",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT100",
+   "ACCT101",
+   "ACCT101H",
+   "ACCT102",
+   "ACCT102H",
+   "ACCT110",
+   "ACCT111",
+   "ACCT112",
+   "ACCT115",
+   "ACCT116",
+   "ACCT118",
+   "ACCT203",
+   "ACCT204",
+   "ACCT205",
+   "ACCT206",
+   "ACCT207",
+   "ACCT208",
+   "BUS152",
+   "BUS160",
+   "BUS160H",
+   "ITIS130",
+   "OFF101",
+   "OFF120"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/accounting/accounting-as/",
+   "title": "A.S. in Accounting | Citrus College Academic Catalog",
+   "h1": "A.S. in Accounting",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 5780
+ },
+ {
+  "control_number": "42353",
+  "title": "Management - Level II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS130",
+   "BUS132",
+   "BUS132H",
+   "BUS152",
+   "BUS160",
+   "BUS160H",
+   "BUS171",
+   "BUS172",
+   "BUS175",
+   "OFF120"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/business/management-level-ii-certificate-achievement/",
+   "title": "Certificate in Management - Level II | Citrus College Academic Catalog",
+   "h1": "Certificate in Management - Level II",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4154
+ },
+ {
+  "control_number": "42354",
+  "title": "Small Business Management/Entrepreneurship - Level I",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT115",
+   "BUS130",
+   "BUS161",
+   "BUS170"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/business/small-business-management-entrepreneurship-level-i-certificate-achievement/",
+   "title": "Certificate in Small Business Management/Entrepreneurship - Level I | Citrus College Academic Catalog",
+   "h1": "Certificate in Small Business Management/Entrepreneurship - Level I",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3668
+ },
+ {
+  "control_number": "42355",
+  "title": "Small Business Management/Entrepreneurship - Level II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT115",
+   "BUS130",
+   "BUS146",
+   "BUS152",
+   "BUS160",
+   "BUS160H",
+   "BUS161",
+   "BUS170",
+   "BUS185"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/business/small-business-management-entrepreneurship-level-ii-certificate-achievement/",
+   "title": "Certificate in Small Business Management/Entrepreneurship - Level II | Citrus College Academic Catalog",
+   "h1": "Certificate in Small Business Management/Entrepreneurship - Level II",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3996
+ },
+ {
+  "control_number": "42356",
+  "title": "Human Resources Management - Level II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS130",
+   "BUS132",
+   "BUS160",
+   "BUS160H",
+   "BUS161",
+   "BUS171",
+   "BUS172",
+   "BUS175",
+   "OFF120"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/business/human-resources-management-level-ii-certificate-achievement/",
+   "title": "Certificate in Human Resources Management - Level II | Citrus College Academic Catalog",
+   "h1": "Certificate in Human Resources Management - Level II",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3972
+ },
+ {
+  "control_number": "42357",
+  "title": "Management - Level I",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS130",
+   "BUS152",
+   "BUS171",
+   "BUS175"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/business/management-level-i-certificate-achievement/",
+   "title": "Certificate in Management - Level I | Citrus College Academic Catalog",
+   "h1": "Certificate in Management - Level I",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3929
+ },
+ {
+  "control_number": "42358",
+  "title": "Marketing",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS130",
+   "BUS185",
+   "BUS192"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/business/marketing-certificate-achievement/",
+   "title": "Certificate in Marketing | Citrus College Academic Catalog",
+   "h1": "Certificate in Marketing",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3439
+ },
+ {
+  "control_number": "42396",
+  "title": "Human Resources Management - Level I",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS130",
+   "BUS132",
+   "BUS132H",
+   "BUS161",
+   "BUS172"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/business/human-resources-management-level-i-certificate-achievement/",
+   "title": "Certificate in Human Resources Management - Level I | Citrus College Academic Catalog",
+   "h1": "Certificate in Human Resources Management - Level I",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3747
+ },
+ {
+  "control_number": "42707",
+  "title": "Public Relations",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS185",
+   "BUS192",
+   "COMM100",
+   "COMM101",
+   "COMM104",
+   "COMM111",
+   "COMM150",
+   "COMM230",
+   "COMM240A",
+   "COMM250",
+   "COMM260",
+   "KIN183",
+   "SPCH103"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/communications-journalism/public-relations-aa/",
+   "title": "A.A. in Public Relations | Citrus College Academic Catalog",
+   "h1": "A.A. in Public Relations",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 5158
+ },
+ {
+  "control_number": "42713",
+  "title": "Educational Teaching Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "CHLD100",
+   "COMMC1000",
+   "COMMC1000H",
+   "COUN142",
+   "COUN212",
+   "ESCI120",
+   "GEOG102",
+   "HIST103",
+   "HIST103H",
+   "HISTC1001",
+   "MATH168",
+   "PHYS110",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSY206"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/counseling-instruction/teacher-education-studies-aa/",
+   "title": "A.A. in Teacher Education Studies | Citrus College Academic Catalog",
+   "h1": "A.A. in Teacher Education Studies",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.333
+   }
+  },
+  "listed": 18,
+  "text_chars": 6120
+ },
+ {
+  "control_number": "42808",
+  "title": "Quickbooks",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT100",
+   "ACCT101",
+   "ACCT101H",
+   "ACCT115",
+   "OFF120"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/accounting/quickbooks-certificate-achievement/",
+   "title": "Certificate in QuickBooks | Citrus College Academic Catalog",
+   "h1": "Certificate in QuickBooks",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3796
+ },
+ {
+  "control_number": "42822",
+  "title": "Film, Television and Electronic Media",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42837",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 33,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42975",
+  "title": "Real Estate Investing II",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "REAL212",
+   "REAL215",
+   "REAL222"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/real-estate/real-estate-investing-ii-certificate-achievement/",
+   "title": "Certificate in Real Estate Investing II | Citrus College Academic Catalog",
+   "h1": "Certificate in Real Estate Investing II",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3441
+ },
+ {
+  "control_number": "43033",
+  "title": "Real Estate Investing I",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "REAL210",
+   "REAL214",
+   "REAL220"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/real-estate/real-estate-investing-i-certificate-achievement/",
+   "title": "Certificate in Real Estate Investing I | Citrus College Academic Catalog",
+   "h1": "Certificate in Real Estate Investing I",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3259
+ },
+ {
+  "control_number": "44264",
+  "title": "Basic Still-life and Portrait Drawing for Older Adults",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC705",
+   "NC706"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/basic-still-life-portrait-drawing-older-adults-certificate-competency/",
+   "title": "Certificate of Competency in Basic-Still Life and Portrait Drawing for Older Adults | Citrus College Academic Catalog",
+   "h1": "Certificate of Competency in Basic-Still Life and Portrait Drawing for Older Adults",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3955
+ },
+ {
+  "control_number": "44270",
+  "title": "Engineering Fundamentals",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGR101",
+   "ENGR135",
+   "ENGR138",
+   "ENGR140",
+   "MATH190",
+   "MATH191",
+   "MATH210"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/engineering/engineering-fundamentals-certificate-achievement/",
+   "title": "Certificate in Engineering Fundamentals | Citrus College Academic Catalog",
+   "h1": "Certificate in Engineering Fundamentals",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 4000
+ },
+ {
+  "control_number": "44410",
+  "title": "Hairstyling Program",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44427",
+  "title": "Construction Health and Safety Specialist",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CM110",
+   "CM210",
+   "CM270",
+   "CM280"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/construction-management/construction-health-safety-specialist-certificate-achievement/",
+   "title": "Certificate in Construction Health and Safety Specialist | Citrus College Academic Catalog",
+   "h1": "Certificate in Construction Health and Safety Specialist",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3106
+ },
+ {
+  "control_number": "44462",
+  "title": "Hairstyling Program",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44940",
+  "title": "Barbering",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BARB101",
+   "BARB102",
+   "BARB103",
+   "BARB104",
+   "BARB105"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/cosmetology/barbering-certificate-achievement/",
+   "title": "Certificate in Barbering | Citrus College Academic Catalog",
+   "h1": "Certificate in Barbering",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3288
+ },
+ {
+  "control_number": "45010",
+  "title": "Barbering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BARB101",
+   "BARB102",
+   "BARB103",
+   "BARB104",
+   "BARB105"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/cosmetology/barbering-as/",
+   "title": "A.S. in Barbering | Citrus College Academic Catalog",
+   "h1": "A.S. in Barbering",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3258
+ },
+ {
+  "control_number": "45031",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 235,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45069",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45304",
+  "title": "Kinesiology - Human Performance",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL200",
+   "BIOL201",
+   "KIN100",
+   "KIN118",
+   "KIN119",
+   "KIN163",
+   "KIN164",
+   "KIN165",
+   "KIN167",
+   "KIN168",
+   "KIN169",
+   "KIN170",
+   "KIN171",
+   "KIN171H",
+   "KIN172",
+   "KIN173",
+   "KIN176",
+   "KIN177",
+   "KIN178",
+   "KIN179",
+   "KIN181",
+   "KIN182",
+   "KIN185",
+   "KIN186",
+   "KIN188",
+   "KIN192",
+   "KINC145",
+   "KINC209",
+   "KINC211",
+   "KINC212",
+   "KINC213",
+   "KINC214",
+   "KINC216",
+   "KINC220",
+   "KINC221",
+   "KINC222",
+   "KINC224",
+   "KINC225",
+   "KINC227",
+   "KINC229",
+   "KINC231",
+   "KINC232",
+   "KINC233",
+   "KINC234",
+   "KINC235",
+   "KINC236"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education/kinesiology-human-performance-as/",
+   "title": "A.S. in Kinesiology - Human Performance | Citrus College Academic Catalog",
+   "h1": "A.S. in Kinesiology - Human Performance",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 46,
+  "text_chars": 5167
+ },
+ {
+  "control_number": "45347",
+  "title": "Kinesiology - Sport Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL200",
+   "BIOL201",
+   "KIN100",
+   "KIN118",
+   "KIN119",
+   "KIN163",
+   "KIN164",
+   "KIN165",
+   "KIN167",
+   "KIN168",
+   "KIN169",
+   "KIN170",
+   "KIN171",
+   "KIN171H",
+   "KIN173",
+   "KIN177",
+   "KIN178",
+   "KIN179",
+   "KIN180",
+   "KIN181",
+   "KIN182",
+   "KIN183",
+   "KIN185",
+   "KIN186",
+   "KIN188",
+   "KIN192",
+   "KINC145",
+   "KINC209",
+   "KINC210",
+   "KINC211",
+   "KINC212",
+   "KINC213",
+   "KINC214",
+   "KINC216",
+   "KINC220",
+   "KINC221",
+   "KINC222",
+   "KINC224",
+   "KINC225",
+   "KINC227",
+   "KINC229",
+   "KINC230",
+   "KINC231",
+   "KINC232",
+   "KINC233",
+   "KINC234",
+   "KINC235",
+   "KINC236"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education/kinesiology-sport-management-as/",
+   "title": "A.S. in Kinesiology - Sport Management | Citrus College Academic Catalog",
+   "h1": "A.S. in Kinesiology - Sport Management",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 48,
+  "text_chars": 5123
+ },
+ {
+  "control_number": "45514",
+  "title": "Drone Operations",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC110",
+   "NC111",
+   "NC112"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/drone-operations-certificate-competency/",
+   "title": "Certificate of Competency in Drone Operations | Citrus College Academic Catalog",
+   "h1": "Certificate of Competency in Drone Operations",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4090
+ },
+ {
+  "control_number": "45728",
+  "title": "Automotive Basic Service and Repair",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO140A",
+   "AUTO141",
+   "AUTO146"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automotive-basic-service-repair-certificate-achievement/",
+   "title": "Certificate in Automotive Basic Service and Repair | Citrus College Academic Catalog",
+   "h1": "Certificate in Automotive Basic Service and Repair",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3337
+ },
+ {
+  "control_number": "45759",
+  "title": "English as a Second Language - Grammar Completion",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC312",
+   "NC313",
+   "NC314"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/english-second-language-grammar-completion-certificate-competency/",
+   "title": "Certificate of Competency in English as a Second Language - Grammar Completion | Citrus College Academic Catalog",
+   "h1": "Certificate of Competency in English as a Second Language - Grammar Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3928
+ },
+ {
+  "control_number": "45761",
+  "title": "Medical Front Office Clerk",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC652",
+   "NC657",
+   "NC658",
+   "NC659"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/medical-front-office-clerk-certificate-competency/",
+   "title": "Certificate of Competency in Medical Front Office Clerk | Citrus College Academic Catalog",
+   "h1": "Certificate of Competency in Medical Front Office Clerk",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 4149
+ },
+ {
+  "control_number": "45762",
+  "title": "Life Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC504",
+   "NC505"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/life-skills-certificate-competency/",
+   "title": "Certificate of Competency in Life Skills | Citrus College Academic Catalog",
+   "h1": "Certificate of Competency in Life Skills",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 4036
+ },
+ {
+  "control_number": "45763",
+  "title": "Entry Level Healthcare Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC602",
+   "NC690",
+   "NC691"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/entry-level-healthcare-skills-certificate-competency/",
+   "title": "Certificate of Competency in Entry Level Healthcare Skills | Citrus College Academic Catalog",
+   "h1": "Certificate of Competency in Entry Level Healthcare Skills",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4093
+ },
+ {
+  "control_number": "45764",
+  "title": "Health and Wellness for Healthcare",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NC614",
+   "NC615"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/health-wellness-healthcare-certificate-competency/",
+   "title": "Certificate of Competency in Health and Wellness for Healthcare | Citrus College Academic Catalog",
+   "h1": "Certificate of Competency in Health and Wellness for Healthcare",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3798
+ },
+ {
+  "control_number": "45819",
+  "title": "Drone Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART110",
+   "ART150",
+   "ART153",
+   "ENGR132",
+   "FOR101",
+   "GEOG130",
+   "PHTO101",
+   "PHTO102",
+   "PHTO204",
+   "PUB150",
+   "PUB161",
+   "UAS100",
+   "UAS110",
+   "UAS120",
+   "UAS125"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/uas/drone-technology-as/",
+   "title": "A.S. in Drone Technology | Citrus College Academic Catalog",
+   "h1": "A.S. in Drone Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4076
+ },
+ {
+  "control_number": "45836",
+  "title": "Automotive Undercar Service and Repair",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO144",
+   "AUTO145",
+   "AUTO146"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automotive-undercar-service-repair-certificate-achievement/",
+   "title": "Certificate in Automotive Undercar Service and Repair | Citrus College Academic Catalog",
+   "h1": "Certificate in Automotive Undercar Service and Repair",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3033
+ },
+ {
+  "control_number": "45837",
+  "title": "Automotive Underhood Service and Repair",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO141",
+   "AUTO146",
+   "AUTO147",
+   "AUTO148"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/automotive-underhood-service-repair-certificate-achievement/",
+   "title": "Certificate in Automotive Underhood Service and Repair | Citrus College Academic Catalog",
+   "h1": "Certificate in Automotive Underhood Service and Repair",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3794
+ },
+ {
+  "control_number": "45946",
+  "title": "Heavy Truck Maintenance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MTRK101",
+   "MTRK156A",
+   "MTRK160",
+   "MTRK164"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/heavy-truck-maintenance-certificate-achievement/",
+   "title": "Certificate in Heavy Truck Maintenance | Citrus College Academic Catalog",
+   "h1": "Certificate in Heavy Truck Maintenance",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3310
+ },
+ {
+  "control_number": "46167",
+  "title": "Environmental Monitoring in Biomanufacturing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46195",
+  "title": "Athletics",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMC1000",
+   "COMMC1000H",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "KINC101",
+   "KINC102",
+   "KINC103",
+   "KINC104",
+   "KINC105",
+   "KINC106",
+   "KINC107",
+   "KINC108",
+   "KINC109",
+   "KINC110",
+   "KINC130",
+   "KINC131",
+   "KINC132",
+   "KINC133",
+   "KINC134",
+   "KINC135",
+   "KINC136",
+   "KINC137",
+   "KINC138",
+   "KINC139",
+   "KINC145",
+   "KINC209",
+   "KINC210",
+   "KINC211",
+   "KINC212",
+   "KINC213",
+   "KINC214",
+   "KINC216",
+   "KINC220",
+   "KINC221",
+   "KINC222",
+   "KINC224",
+   "KINC225",
+   "KINC227",
+   "KINC229",
+   "KINC230",
+   "KINC231",
+   "KINC232",
+   "KINC233",
+   "KINC234",
+   "KINC235",
+   "KINC236",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/kinesiology-physical-education-competitive-athletics/athletics-skill-award/",
+   "title": "Skill Award in Athletics | Citrus College Academic Catalog",
+   "h1": "Skill Award in Athletics",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 52,
+  "text_chars": 6316
+ },
+ {
+  "control_number": "46376",
+  "title": "Essentials for Computer-Aided Design (CAD) Architecture and Drafting",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAF101",
+   "DRAF160",
+   "DRAF161",
+   "DRAF190A",
+   "DRAF190B"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/architecture/essentials-computer-aided-design-cad-architecture-drafting-certificate-achievement/",
+   "title": "Certificate in Essentials for Computer-Aided Design (CAD) Architecture and Drafting | Citrus College Academic Catalog",
+   "h1": "Certificate in Essentials for Computer-Aided Design (CAD) Architecture and Drafting",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3502
+ },
+ {
+  "control_number": "46565",
+  "title": "Mathematics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "CS225",
+   "CS232",
+   "CS242",
+   "CS252",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH190",
+   "MATH191",
+   "MATH210",
+   "MATH211",
+   "MATH212",
+   "PHYS201",
+   "PHYS201H",
+   "PHYS202",
+   "PHYS203",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.citruscollege.edu/disciplines/mathematics/mathematics-as/",
+   "title": "A.S. in Mathematics | Citrus College Academic Catalog",
+   "h1": "A.S. in Mathematics",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 4851
+ }
+]

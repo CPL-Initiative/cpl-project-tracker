@@ -1,0 +1,6148 @@
+[
+ {
+  "control_number": "04938",
+  "title": "Environmental  Horticulture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04941",
+  "title": "Management",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BADM100",
+   "BADM103",
+   "BADM109",
+   "BADM110",
+   "BADM112",
+   "BADM116",
+   "BADM117",
+   "BADM122",
+   "BADM142",
+   "BADM144",
+   "BADM52",
+   "CIS101",
+   "ECON100",
+   "ECONC2001",
+   "ECONC2002"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-administration/management-ca/",
+   "title": "Management Certificate of Achievement | Victor Valley College",
+   "h1": "Management Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3360
+ },
+ {
+  "control_number": "04942",
+  "title": "Basic Business Real Estate",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04943",
+  "title": "Business Education Technologies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BET104",
+   "BET112",
+   "BET122",
+   "BET124",
+   "BET131",
+   "BET136",
+   "BET68"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-education-technologies/business-education-technology-as/",
+   "title": "Business Education Technology, AS | Victor Valley College",
+   "h1": "Business Education Technology, AS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2958
+ },
+ {
+  "control_number": "04946",
+  "title": "Automotive Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 45,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04947",
+  "title": "Welding",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD51",
+   "WELD53",
+   "WELD57A",
+   "WELD57B",
+   "WELD58A",
+   "WELD58B",
+   "WELD59"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/welding/welding-as/",
+   "title": "Welding, AS | Victor Valley College",
+   "h1": "Welding, AS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2885
+ },
+ {
+  "control_number": "04955",
+  "title": "Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.81,
+  "codes_found": [
+   "BIOL107",
+   "BIOL201",
+   "BIOL211",
+   "BIOL221",
+   "BIOL231",
+   "CHEM100",
+   "CMST107",
+   "CMST108",
+   "COMMC1000",
+   "ENGLC1000",
+   "NURS221",
+   "NURS222",
+   "NURS223",
+   "NURS224",
+   "PSYC110",
+   "PSYCC1000",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/nursing/nursing-as/",
+   "title": "Nursing, AS | Victor Valley College",
+   "h1": "Nursing, AS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 4345
+ },
+ {
+  "control_number": "04956",
+  "title": "Medical Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04957",
+  "title": "Respiratory Therapy",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "BIOL211",
+   "BIOL221",
+   "BIOL231",
+   "RSPT230",
+   "RSPT231",
+   "RSPT232",
+   "RSPT233",
+   "RSPT234",
+   "RSPT239",
+   "RSPT50"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/respiratory-therapy/respiratory-therapy-as/",
+   "title": "Respiratory Therapy, AS | Victor Valley College",
+   "h1": "Respiratory Therapy, AS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3711
+ },
+ {
+  "control_number": "04967",
+  "title": "Criminal Justice",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CJ101",
+   "CJ102",
+   "CJ103",
+   "CJ104",
+   "CJ127",
+   "CJ132",
+   "CJ135",
+   "CJ145",
+   "CJ150",
+   "CJ201",
+   "CJ58",
+   "CJ67",
+   "CJ80",
+   "CJ81",
+   "CJ92"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/criminal-justice/",
+   "title": "Criminal Justice | Victor Valley College",
+   "h1": "Criminal Justice",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 18567
+ },
+ {
+  "control_number": "04968",
+  "title": "Level I: Associate Teacher",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "CHDV100",
+   "CHDV106",
+   "CHDV110",
+   "CHDV142",
+   "CHDV150"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/child-development/associate-teacher-ca/",
+   "title": "Level I: Associate Teacher Certificate of Achievement | Victor Valley College",
+   "h1": "Level I: Associate Teacher Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2767
+ },
+ {
+  "control_number": "04969",
+  "title": "Fire Fighter",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS60",
+   "FIRE140A",
+   "FIRE61B",
+   "FIRE61H",
+   "FIRE66"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/fire-technology/fire-fighter-ca/",
+   "title": "Fire Fighter Certificate of Achievement | Victor Valley College",
+   "h1": "Fire Fighter Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3031
+ },
+ {
+  "control_number": "04974",
+  "title": "Restaurant Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RMGT120",
+   "RMGT81",
+   "RMGT82",
+   "RMGT86",
+   "RMGT87",
+   "RMGT88",
+   "RMGT89",
+   "RMGT90",
+   "RMGT91",
+   "RMGT93",
+   "RMGT94"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/restaurant-management/restaurant-management-as/",
+   "title": "Restaurant Management, AS | Victor Valley College",
+   "h1": "Restaurant Management, AS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3091
+ },
+ {
+  "control_number": "04976",
+  "title": "Math/Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "AGNR123",
+   "AGNR131",
+   "AGNR170",
+   "ANTH101",
+   "ANTH101L",
+   "ASTR101",
+   "BIOL107",
+   "BIOL110",
+   "BIOL201",
+   "BIOL202",
+   "BIOL203",
+   "BIOL211",
+   "BIOL215",
+   "BIOL221",
+   "BIOL231",
+   "BIOL233",
+   "CHEM100",
+   "CHEM201",
+   "CHEM206",
+   "CHEM207",
+   "CHEM281",
+   "CHEM282",
+   "GEOG101",
+   "GEOG101L",
+   "GEOG103",
+   "GEOG130",
+   "GEOL101",
+   "MATH104",
+   "MATH105",
+   "MATH129",
+   "MATH132",
+   "MATH226H",
+   "MATH227H",
+   "MATH228",
+   "MATH228H",
+   "MATH231",
+   "MATH270",
+   "OCEA101",
+   "PHYS100",
+   "PHYS201",
+   "PHYS202",
+   "PHYS203",
+   "PHYS204",
+   "PHYS221",
+   "PHYS222",
+   "PSCI101",
+   "PSYC215",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/math-science/math-science-as/",
+   "title": "Math/Science, AS | Victor Valley College",
+   "h1": "Math/Science, AS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 51,
+  "text_chars": 4784
+ },
+ {
+  "control_number": "04980",
+  "title": "Emergency Medical Services",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS80",
+   "EMS81",
+   "EMS82",
+   "EMS83",
+   "EMS84",
+   "EMS85",
+   "EMS86"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/emergency-medical-services-as/",
+   "title": "Emergency Medical Services, AS | Victor Valley College",
+   "h1": "Emergency Medical Services, AS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2796
+ },
+ {
+  "control_number": "07532",
+  "title": "Horticulture Specialist",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07546",
+  "title": "Medical Office",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALDH139",
+   "ALDH80",
+   "ALDH81",
+   "BET104",
+   "BET112",
+   "BET123M",
+   "BET131",
+   "BET136",
+   "BET141",
+   "BET68"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-education-technologies/medical-office-ca/",
+   "title": "Medical Office Certificate of Achievement | Victor Valley College",
+   "h1": "Medical Office Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3783
+ },
+ {
+  "control_number": "07547",
+  "title": "Computer Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07549",
+  "title": "Programming II",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07550",
+  "title": "Productivity Software Specialist",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07557",
+  "title": "Electronics Engineering Technology: Electronics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07558",
+  "title": "Electronics and Computer Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07564",
+  "title": "Construction Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CT101",
+   "CT103",
+   "CT104",
+   "CT105",
+   "CT106",
+   "CT107",
+   "CT110",
+   "CT116",
+   "CT131",
+   "ENGD103"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/construction-technology-as/",
+   "title": "Construction Technology, AS | Victor Valley College",
+   "h1": "Construction Technology, AS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2893
+ },
+ {
+  "control_number": "07565",
+  "title": "Building Inspection",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CT105",
+   "CT106",
+   "CT107",
+   "CT110",
+   "CT111A",
+   "CT111B",
+   "CT112",
+   "CT113",
+   "CT114",
+   "CT115",
+   "CT116",
+   "ENGD103"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/building-inspection-ca/",
+   "title": "Building Inspection Certificate of Achievement | Victor Valley College",
+   "h1": "Building Inspection Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3033
+ },
+ {
+  "control_number": "07566",
+  "title": "Construction Management",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CT101",
+   "CT103",
+   "CT104",
+   "CT105",
+   "CT106",
+   "CT109",
+   "CT110",
+   "CT111A",
+   "CT116",
+   "CT131",
+   "CT132",
+   "CT133",
+   "ENGD103"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/construction-management-ca/",
+   "title": "Construction Management Certificate of Achievement | Victor Valley College",
+   "h1": "Construction Management Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2999
+ },
+ {
+  "control_number": "07589",
+  "title": "Level II: Teacher (pre-school)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 28,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07591",
+  "title": "Level III: Site Supervisor (pre-school)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDV100",
+   "CHDV106",
+   "CHDV110",
+   "CHDV111",
+   "CHDV133",
+   "CHDV134",
+   "CHDV137",
+   "CHDV141",
+   "CHDV142",
+   "CHDV144",
+   "CHDV145",
+   "CHDV150",
+   "CHDV160",
+   "CHDV200",
+   "CHDV210",
+   "CHDV220",
+   "CHDV239",
+   "CHDV240"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/child-development/site-supervisor-pre-school-ca/",
+   "title": "Level III: Site Supervisor (Pre School) Certificate of Achievement | Victor Valley College",
+   "h1": "Level III: Site Supervisor (Pre School) Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3423
+ },
+ {
+  "control_number": "07594",
+  "title": "Fire Prevention Officer",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07595",
+  "title": "Fine Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 158,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10787",
+  "title": "Business Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10788",
+  "title": "Business Real Estate and Escrow",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10789",
+  "title": "Administrative Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BET100",
+   "BET104",
+   "BET107",
+   "BET112",
+   "BET118",
+   "BET122",
+   "BET131",
+   "BET136",
+   "BET137",
+   "BET77"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-education-technologies/administrative-assistant-ca/",
+   "title": "Administrative Assistant Certificate of Achievement | Victor Valley College",
+   "h1": "Administrative Assistant Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3093
+ },
+ {
+  "control_number": "10791",
+  "title": "Computer Systems II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "BET104",
+   "BET107",
+   "BET112",
+   "BET131",
+   "BET136",
+   "BET137",
+   "BET141"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-education-technologies/computer-systems-ca/",
+   "title": "Computer Systems II Certificate of Achievement | Victor Valley College",
+   "h1": "Computer Systems II Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3013
+ },
+ {
+  "control_number": "10796",
+  "title": "Programming I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS104",
+   "CIS201",
+   "CIS202",
+   "CIS205",
+   "CIS206",
+   "CIS221",
+   "CIS264"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/computer-information-science/programming-ca/",
+   "title": "Programming I Certificate of Achievement | Victor Valley College",
+   "h1": "Programming I Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2856
+ },
+ {
+  "control_number": "10798",
+  "title": "Electronics Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10799",
+  "title": "Building Construction",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CT101",
+   "CT104",
+   "CT105",
+   "CT106",
+   "CT107",
+   "CT110",
+   "CT116",
+   "CT120A",
+   "CT120B",
+   "CT121",
+   "CT122B",
+   "CT123",
+   "CT124",
+   "CT127",
+   "CT130",
+   "CT131",
+   "CT132",
+   "CT144",
+   "CT60A",
+   "CT60B",
+   "CT60C",
+   "CT60D",
+   "ENGD103"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/",
+   "title": "Construction and Manufacturing Technology | Victor Valley College",
+   "h1": "Construction and Manufacturing Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5
+   }
+  },
+  "listed": 23,
+  "text_chars": 16840
+ },
+ {
+  "control_number": "10800",
+  "title": "Drafting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10802",
+  "title": "Child Development",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDV100",
+   "CHDV106",
+   "CHDV110",
+   "CHDV142",
+   "CHDV150",
+   "CHDV160",
+   "CHDV200",
+   "CHDV210"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/child-development/child-development-as/",
+   "title": "Child Development, AS | Victor Valley College",
+   "h1": "Child Development, AS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2856
+ },
+ {
+  "control_number": "10809",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "11836",
+  "title": "Paralegal Studies",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "BADM117",
+   "BADM118",
+   "CJ103",
+   "CJ104",
+   "PAL100",
+   "PAL101",
+   "PAL102",
+   "PAL103",
+   "PAL104",
+   "PAL200",
+   "PAL201",
+   "PAL202",
+   "PAL203",
+   "PAL204",
+   "PAL205",
+   "PAL206",
+   "PAL207",
+   "PAL208"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/paralegal-studies/paralegal-studies-ca/",
+   "title": "Paralegal Studies Certificate of Achievement | Victor Valley College",
+   "h1": "Paralegal Studies Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3299
+ },
+ {
+  "control_number": "17586",
+  "title": "Aviation Airframe Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17587",
+  "title": "Aviation Powerplant Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVA71",
+   "AVA72",
+   "AVA73"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/aviation/aviation-powerplant-technician-ca/",
+   "title": "Aviation Powerplant Technician Certificate of Achievement | Victor Valley College",
+   "h1": "Aviation Powerplant Technician Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2591
+ },
+ {
+  "control_number": "18594",
+  "title": "Liberal Arts: Mathematics & Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.887,
+  "codes_found": [
+   "AGNR123",
+   "AGNR170",
+   "ALDH125",
+   "ANTH101",
+   "ANTH101L",
+   "ASTR101",
+   "BIOL107",
+   "BIOL118",
+   "BIOL201",
+   "BIOL202",
+   "BIOL203",
+   "BIOL211",
+   "BIOL221",
+   "BIOL231",
+   "CHEM100",
+   "CHEM201",
+   "CHEM202",
+   "CHEM206",
+   "CHEM207",
+   "CHEM281",
+   "CHEM282",
+   "GEOG101",
+   "GEOG101L",
+   "GEOG130",
+   "GEOL101",
+   "HLTH102",
+   "MATH104",
+   "MATH105",
+   "MATH132",
+   "MATH226H",
+   "MATH227H",
+   "MATH228",
+   "MATH228H",
+   "MATH231",
+   "MATH270",
+   "OCEA101",
+   "PHYS100",
+   "PHYS201",
+   "PHYS202",
+   "PHYS203",
+   "PHYS204",
+   "PHYS221",
+   "PHYS222",
+   "PSCI101",
+   "PSYC109",
+   "PSYC215",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/liberal-arts/liberal-arts-mathematics-science-emphasis-aa/",
+   "title": "Liberal Arts: Mathematics/Science Emphasis, AA | Victor Valley College",
+   "h1": "Liberal Arts: Mathematics/Science Emphasis, AA",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 53,
+  "text_chars": 4685
+ },
+ {
+  "control_number": "18595",
+  "title": "Liberal Arts: Arts & Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.798,
+  "codes_found": [
+   "ANTH106",
+   "ART104",
+   "ART105",
+   "ART106",
+   "ART107",
+   "ART108",
+   "ART109",
+   "ART110",
+   "ART111",
+   "ART112",
+   "ART113",
+   "ART114",
+   "ART122",
+   "ART125",
+   "ART150",
+   "ASL122",
+   "ASL123",
+   "ASL124",
+   "ASL125",
+   "CART133",
+   "CMST105",
+   "ENGL102H",
+   "ENGL109",
+   "ENGL116",
+   "ENGL242",
+   "ENGL245",
+   "FREN101",
+   "FREN102",
+   "HIST101",
+   "HIST102",
+   "HIST103",
+   "HIST104",
+   "HIST115",
+   "HIST130",
+   "HIST131",
+   "HIST153",
+   "HIST155",
+   "HIST157",
+   "KIN103",
+   "MUSC100",
+   "MUSC101",
+   "MUSC102",
+   "MUSC103",
+   "MUSC116",
+   "MUSC117",
+   "MUSC118",
+   "MUSC202",
+   "PHIL101",
+   "PHIL108",
+   "PHIL114",
+   "PHIL117",
+   "PHIL120",
+   "PHIL121",
+   "POLS114",
+   "RLST101",
+   "RLST105",
+   "RLST106",
+   "RLST110",
+   "RLST111",
+   "RLST115",
+   "RLST117",
+   "SPAN101",
+   "SPAN101A",
+   "SPAN101B",
+   "SPAN102",
+   "SPAN103",
+   "SPAN104",
+   "SPAN110",
+   "SPAN111",
+   "TA101",
+   "TA102",
+   "TA104",
+   "TA107",
+   "TA110",
+   "TA116"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/liberal-arts/liberal-arts-arts-humanities-emphasis-aa/",
+   "title": "Liberal Arts: Arts and Humanities Emphasis, AA | Victor Valley College",
+   "h1": "Liberal Arts: Arts and Humanities Emphasis, AA",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 94,
+  "text_chars": 5789
+ },
+ {
+  "control_number": "18596",
+  "title": "Liberal Arts: Social & Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.877,
+  "codes_found": [
+   "AGNR175",
+   "AGNR178",
+   "ANTH101",
+   "ANTH102",
+   "ANTH103",
+   "ANTH106",
+   "ANTH110",
+   "CHDV100",
+   "CHDV106",
+   "CJ101",
+   "CMST105",
+   "ETH101",
+   "ETH102",
+   "ETH103",
+   "ETH105",
+   "ETH106",
+   "GEOG101",
+   "GEOG102",
+   "GEOG103",
+   "GEOG104",
+   "GLST102",
+   "GUID101",
+   "GUID105",
+   "GUID107",
+   "HIST101",
+   "HIST102",
+   "HIST103",
+   "HIST104",
+   "HIST115",
+   "HIST130",
+   "HIST131",
+   "HIST153",
+   "HIST155",
+   "HIST157",
+   "HLTH204",
+   "KIN104",
+   "PHIL114",
+   "POLS101",
+   "POLS103",
+   "POLS110",
+   "POLS112",
+   "POLS113",
+   "POLS114",
+   "POLS206",
+   "POLSC1000",
+   "PSYC110",
+   "PSYC121",
+   "PSYC204",
+   "PSYC213",
+   "PSYCC1000",
+   "RLST113",
+   "RLST115",
+   "SOC102",
+   "SOC103",
+   "SOC107",
+   "SOC109",
+   "SOC110"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/liberal-arts/liberal-arts-social-behavioral-science-emphasis-aa/",
+   "title": "Liberal Arts: Social/Behavioral Science Emphasis, AA | Victor Valley College",
+   "h1": "Liberal Arts: Social/Behavioral Science Emphasis, AA",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.8
+   }
+  },
+  "listed": 65,
+  "text_chars": 5132
+ },
+ {
+  "control_number": "20541",
+  "title": "Automotive Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20542",
+  "title": "Welding",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD51",
+   "WELD52",
+   "WELD53",
+   "WELD57A",
+   "WELD57B",
+   "WELD58A",
+   "WELD58B",
+   "WELD59"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/welding/welding-ca/",
+   "title": "Welding Certificate of Achievement | Victor Valley College",
+   "h1": "Welding Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2885
+ },
+ {
+  "control_number": "20543",
+  "title": "Medical Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALDH139",
+   "ALDH80",
+   "ALDH81",
+   "ALDH82C",
+   "BET104",
+   "PSYC110"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/allied-health/medical-assistant-ca/",
+   "title": "Medical Assistant Certificate of Achievement | Victor Valley College",
+   "h1": "Medical Assistant Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3255
+ },
+ {
+  "control_number": "20544",
+  "title": "Respiratory Therapy",
+  "award": "Certificate of Achievement requiring 60+S/90+Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "BIOL211",
+   "BIOL221",
+   "BIOL231",
+   "RSPT230",
+   "RSPT231",
+   "RSPT232",
+   "RSPT233",
+   "RSPT234",
+   "RSPT239",
+   "RSPT50"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/respiratory-therapy/respiratory-therapy-ca/",
+   "title": "Respiratory Therapy Certificate of Achievement | Victor Valley College",
+   "h1": "Respiratory Therapy Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3652
+ },
+ {
+  "control_number": "20545",
+  "title": "Nursing Licensure",
+  "award": "Certificate of Achievement requiring 60+S/90+Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.867,
+  "codes_found": [
+   "BIOL211",
+   "BIOL221",
+   "BIOL231",
+   "CMST107",
+   "CMST108",
+   "COMMC1000",
+   "ENGLC1000",
+   "NURS221",
+   "NURS222",
+   "NURS223",
+   "NURS224",
+   "PSYC110",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/nursing/",
+   "title": "Nursing | Victor Valley College",
+   "h1": "Nursing",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.5
+   }
+  },
+  "listed": 15,
+  "text_chars": 12067
+ },
+ {
+  "control_number": "20546",
+  "title": "Paramedic",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS80",
+   "EMS81",
+   "EMS82",
+   "EMS83",
+   "EMS84",
+   "EMS85",
+   "EMS86"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/paramedic-ca/",
+   "title": "Paramedic Certificate of Achievement | Victor Valley College",
+   "h1": "Paramedic Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2796
+ },
+ {
+  "control_number": "20547",
+  "title": "Restaurant Management",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RMGT81",
+   "RMGT82",
+   "RMGT86",
+   "RMGT87",
+   "RMGT89",
+   "RMGT90",
+   "RMGT91",
+   "RMGT93",
+   "RMGT94"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/restaurant-management/restaurant-management-ca/",
+   "title": "Restaurant Management Certificate of Achievement | Victor Valley College",
+   "h1": "Restaurant Management Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3664
+ },
+ {
+  "control_number": "20548",
+  "title": "Criminal Justice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CJ101",
+   "CJ102",
+   "CJ103",
+   "CJ104",
+   "CJ127",
+   "CJ135",
+   "CJ201",
+   "CJ92"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/criminal-justice/criminal-justice-ca/",
+   "title": "Criminal Justice Certificate of Achievement | Victor Valley College",
+   "h1": "Criminal Justice Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2814
+ },
+ {
+  "control_number": "31025",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.714,
+  "codes_found": [
+   "MATH226H",
+   "MATH227H",
+   "MATH228",
+   "MATH231",
+   "MATH270"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/mathematics/mathematics-ast/",
+   "title": "Mathematics, AS-T | Victor Valley College",
+   "h1": "Mathematics, AS-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2773
+ },
+ {
+  "control_number": "31245",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "PSYC215",
+   "PSYCC1000",
+   "SOC102",
+   "SOC103",
+   "SOC107",
+   "SOC109",
+   "SOC110",
+   "SOC111",
+   "SOC112",
+   "SOC130",
+   "SOC160",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/sociology/sociology-aat/",
+   "title": "Sociology, AA-T | Victor Valley College",
+   "h1": "Sociology, AA-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3156
+ },
+ {
+  "control_number": "31612",
+  "title": "Communication Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "ANTH102",
+   "CMST105",
+   "CMST108",
+   "COMMC1000",
+   "ENGLC1002",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/communication-studies/communication-studies-2-aat/",
+   "title": "Communication Studies 2.0, AA-T | Victor Valley College",
+   "h1": "Communication Studies 2.0, AA-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3551
+ },
+ {
+  "control_number": "31788",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "ANTH102",
+   "ECONC2001",
+   "ECONC2002",
+   "GEOG102",
+   "HIST103",
+   "HIST104",
+   "HIST130",
+   "HIST131",
+   "HIST155",
+   "HISTC1001",
+   "HISTC1002",
+   "POLSC1000",
+   "PSYCC1000",
+   "SOC107"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/history/history-aat/",
+   "title": "History, AA-T | Victor Valley College",
+   "h1": "History, AA-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3248
+ },
+ {
+  "control_number": "31802",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDV100",
+   "CHDV106",
+   "CHDV110",
+   "CHDV142",
+   "CHDV150",
+   "CHDV160",
+   "CHDV200",
+   "CHDV210"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/child-development/early-childhood-education-ast/",
+   "title": "Early Childhood Education, AS-T | Victor Valley College",
+   "h1": "Early Childhood Education, AS-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2824
+ },
+ {
+  "control_number": "33022",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "PADM200",
+   "POLS101",
+   "POLS103",
+   "POLS110",
+   "POLS112",
+   "POLS113",
+   "POLS114",
+   "POLS206",
+   "POLSC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/political-science/political-science-aat/",
+   "title": "Political Science, AA-T | Victor Valley College",
+   "h1": "Political Science, AA-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3252
+ },
+ {
+  "control_number": "33025",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "GEOG101",
+   "GEOG101L",
+   "GEOG102",
+   "GEOG103",
+   "GEOG104",
+   "GEOG130"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/geography/",
+   "title": "Geography | Victor Valley College",
+   "h1": "Geography",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 5812
+ },
+ {
+  "control_number": "33026",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "PSYC109",
+   "PSYC110",
+   "PSYC121",
+   "PSYC204",
+   "PSYC213",
+   "PSYC215",
+   "PSYC217",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/psychology/psychology-aat/",
+   "title": "Psychology, AA-T | Victor Valley College",
+   "h1": "Psychology, AA-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3079
+ },
+ {
+  "control_number": "33082",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 33,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35439",
+  "title": "Aviation Maintenance Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "AVA71",
+   "AVA72",
+   "AVA73"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/aviation/aviation-maintenance-technology-as/",
+   "title": "Aviation Maintenance Technology, AS | Victor Valley College",
+   "h1": "Aviation Maintenance Technology, AS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2589
+ },
+ {
+  "control_number": "35831",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "BIOL211",
+   "BIOL231",
+   "CHEM201",
+   "HLTH102",
+   "HLTH102H",
+   "KIN102",
+   "KIN130A",
+   "KIN150",
+   "KIN160",
+   "KIN161",
+   "KIN163",
+   "KIN164",
+   "KIN165",
+   "KIN166",
+   "KIN166B",
+   "KIN166C",
+   "KIN170",
+   "KIN180A",
+   "KIN180B",
+   "KIN181",
+   "KIN185",
+   "KIN185B",
+   "KIN185C",
+   "KIND152",
+   "KIND160A",
+   "KIND160B",
+   "KIND160C",
+   "KIND161A",
+   "KIND161B",
+   "KIND161C",
+   "KIND162A",
+   "KIND162B",
+   "KIND163A",
+   "KIND163B",
+   "KIND166A",
+   "KIND166B",
+   "KIND166C",
+   "KIND167A",
+   "KIND167B",
+   "KIND167C",
+   "KIND169A",
+   "KIND169B",
+   "KIND169C",
+   "KIND169D",
+   "KIND170A",
+   "KIND170B",
+   "KIND170C",
+   "KIND176B",
+   "KIND176C",
+   "KIND176D",
+   "PHYS150",
+   "PHYS201",
+   "PSYC215",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/kinesiology/kinesiology-aat/",
+   "title": "Kinesiology, AA-T | Victor Valley College",
+   "h1": "Kinesiology, AA-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 66,
+  "text_chars": 5065
+ },
+ {
+  "control_number": "35957",
+  "title": "GENERAL AIRCRAFT MAINTENANCE TECHNICIAN",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36761",
+  "title": "Construction Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CT101",
+   "CT105",
+   "CT106",
+   "CT107",
+   "CT116",
+   "CT131",
+   "ENGD103"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/building-inspection-ca/",
+   "title": "Building Inspection Certificate of Achievement | Victor Valley College",
+   "h1": "Building Inspection Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3084
+ },
+ {
+  "control_number": "36806",
+  "title": "Intersegmental General Education Transfer Curriculum",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.839,
+  "codes_found": [
+   "AGNR170",
+   "AGNR175",
+   "ANTH101",
+   "ANTH101L",
+   "ANTH102",
+   "ANTH103",
+   "ANTH106",
+   "ART104",
+   "ART105",
+   "ART106",
+   "ART107",
+   "ART108",
+   "ART109",
+   "ASL124",
+   "ASL125",
+   "ASTR101",
+   "BIOL201",
+   "BIOL202",
+   "BIOL211",
+   "BIOL221",
+   "BIOL231",
+   "BIOLC1000",
+   "CHDV106",
+   "CHEM100",
+   "CHEM201",
+   "CHEM206",
+   "CHEM207",
+   "CHEM281",
+   "CHEM282",
+   "CMST105",
+   "COMMC1000",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGL104H",
+   "ENGL116",
+   "ENGL245",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1002",
+   "ENGLC1002H",
+   "GEOG101",
+   "GEOG101L",
+   "GEOG102",
+   "GEOG104",
+   "GEOL101",
+   "HIST103",
+   "HIST104",
+   "HIST115",
+   "HIST130",
+   "HIST131",
+   "HIST155",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H",
+   "KIN103",
+   "MATH105",
+   "MATH132",
+   "MATH226H",
+   "MATH227H",
+   "MATH228",
+   "MATH228H",
+   "MATH231",
+   "MATH270",
+   "MUSC100",
+   "MUSC101",
+   "MUSC102",
+   "MUSC103",
+   "MUSC116",
+   "MUSC117",
+   "MUSC118",
+   "MUSC202",
+   "OCEA101",
+   "PHIL101",
+   "PHIL108",
+   "PHIL114",
+   "PHIL117",
+   "PHIL120",
+   "PHIL121",
+   "PHIL207",
+   "PHYS100",
+   "PHYS201",
+   "PHYS202",
+   "PHYS203",
+   "PHYS204",
+   "PHYS221",
+   "PHYS222",
+   "POLS101",
+   "POLS110",
+   "POLS112",
+   "POLS113",
+   "POLS114",
+   "POLS206",
+   "POLSC1000",
+   "PSCI101",
+   "PSYC110",
+   "PSYC121",
+   "PSYC204",
+   "PSYC213",
+   "PSYC215",
+   "PSYCC1000",
+   "RLST101",
+   "RLST105",
+   "RLST106",
+   "RLST110",
+   "RLST111",
+   "RLST113",
+   "RLST115",
+   "RLST117",
+   "RLST207",
+   "SOC102",
+   "SOC107",
+   "SOCIC1000",
+   "SPAN103",
+   "SPAN104",
+   "STATC1000",
+   "TA101",
+   "TA102",
+   "TA116"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/calgetc/calgetc-ca/",
+   "title": "Cal-GETC (California General Education Transfer Curriculum) Certificate of Achievement | Victor Valley College",
+   "h1": "Cal-GETC (California General Education Transfer Curriculum) Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.8
+   }
+  },
+  "listed": 143,
+  "text_chars": 11918
+ },
+ {
+  "control_number": "36902",
+  "title": "California State University (CSU) General Education (GE) Requirements",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 152,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36999",
+  "title": "Automotive Service Advisor and Manager",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37000",
+  "title": "Light Duty Diesel Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "AUTO991",
+   "AUTO992",
+   "AUTO993",
+   "AUTO994"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/light-duty-diesel-technician-ca/",
+   "title": "Light Duty Diesel Technician Certificate of Achievement | Victor Valley College",
+   "h1": "Light Duty Diesel Technician Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2682
+ },
+ {
+  "control_number": "37006",
+  "title": "Automotive Alternate Propulsion",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "AUTO893",
+   "AUTO894"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-alternative-propulsion-ca/",
+   "title": "Automotive Alternative Propulsion Certificate of Achievement | Victor Valley College",
+   "h1": "Automotive Alternative Propulsion Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 4,
+  "text_chars": 2683
+ },
+ {
+  "control_number": "37007",
+  "title": "Automotive Brake and Suspension Specialist Technician",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37008",
+  "title": "Automotive Transmission Specialist Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37010",
+  "title": "Pathway to Law",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 18,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37051",
+  "title": "Composite Aerospace Manufacturing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVA50",
+   "AVA50B",
+   "AVA75",
+   "AVA76",
+   "AVA77"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/aviation/composite-aerospace-manufacturing-ca/",
+   "title": "Composite Aerospace Manufacturing Certificate of Achievement | Victor Valley College",
+   "h1": "Composite Aerospace Manufacturing Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2767
+ },
+ {
+  "control_number": "37067",
+  "title": "Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 52,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37076",
+  "title": "Automotive Detailer and Porter",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "AUTO58",
+   "AUTO62"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-detailer-porter-ca/",
+   "title": "Automotive Detailer and Porter Certificate of Achievement | Victor Valley College",
+   "h1": "Automotive Detailer and Porter Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2644
+ },
+ {
+  "control_number": "37136",
+  "title": "Drafting Technician I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CT105",
+   "CT107",
+   "ENGD101",
+   "ENGD103",
+   "ENGD110",
+   "MATH104",
+   "MATH105"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/engineering/drafting-technician-ca/",
+   "title": "Drafting Technician I Certificate of Achievement | Victor Valley College",
+   "h1": "Drafting Technician I Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2759
+ },
+ {
+  "control_number": "37137",
+  "title": "Architectural CADD Technician I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH108",
+   "ARCH250",
+   "ENGD101",
+   "ENGD103",
+   "ENGD110",
+   "ENGD210"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/architecture/architectural-cadd-technician-ca/",
+   "title": "Architectural CADD Technician I Certificate of Achievement | Victor Valley College",
+   "h1": "Architectural CADD Technician I Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2772
+ },
+ {
+  "control_number": "37138",
+  "title": "Engineering Drafting and Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH108",
+   "ENGD101",
+   "ENGD103",
+   "ENGD110",
+   "ENGD130",
+   "ENGD210"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/engineering/engineering-drafting-design-as/",
+   "title": "Engineering Drafting and Design, AS | Victor Valley College",
+   "h1": "Engineering Drafting and Design, AS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2755
+ },
+ {
+  "control_number": "37151",
+  "title": "CADD Technician I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CT107",
+   "ENGD101",
+   "ENGD103",
+   "ENGD110",
+   "ENGD120",
+   "ENGD130",
+   "ENGD210"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/engineering/cadd-computer-aided-design-drafting-technician-ca/",
+   "title": "CADD (Computer Aided Design and Drafting) Technician I Certificate of Achievement | Victor Valley College",
+   "h1": "CADD (Computer Aided Design and Drafting) Technician I Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2785
+ },
+ {
+  "control_number": "37152",
+  "title": "Architectural Drafting and Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH108",
+   "ARCH250",
+   "ENGD101",
+   "ENGD103",
+   "ENGD110",
+   "ENGD210"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/architecture/architectural-drafting-design-as/",
+   "title": "Architectural Drafting and Design, AS | Victor Valley College",
+   "h1": "Architectural Drafting and Design, AS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2772
+ },
+ {
+  "control_number": "37290",
+  "title": "Emergency Medical Technician",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS60"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/emergency-medical-technician-ca/",
+   "title": "Emergency Medical Technician Certificate of Achievement | Victor Valley College",
+   "h1": "Emergency Medical Technician Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 2555
+ },
+ {
+  "control_number": "37411",
+  "title": "Paralegal Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BADM117",
+   "BADM118",
+   "BET112",
+   "CJ103",
+   "CJ104",
+   "PAL100",
+   "PAL101",
+   "PAL102",
+   "PAL103",
+   "PAL104",
+   "PAL138",
+   "PAL200",
+   "PAL201",
+   "PAL202",
+   "PAL203",
+   "PAL204",
+   "PAL205",
+   "PAL206",
+   "PAL207"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/paralegal-studies/paralegal-studies-aa/",
+   "title": "Paralegal Studies, AA | Victor Valley College",
+   "h1": "Paralegal Studies, AA",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3462
+ },
+ {
+  "control_number": "37434",
+  "title": "Network Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37442",
+  "title": "Web Authoring",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "CIS150",
+   "CIS205"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/computer-information-science/",
+   "title": "Computer Information Systems | Victor Valley College",
+   "h1": "Computer Information Systems",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 6570
+ },
+ {
+  "control_number": "37514",
+  "title": "Agricultural Animal Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 23,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37515",
+  "title": "Agricultural Plant Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.957,
+  "codes_found": [
+   "AGNR121",
+   "AGNR122",
+   "AGNR123",
+   "AGNR131",
+   "AGNR140",
+   "AGNR141",
+   "AGNR150",
+   "AGNR152",
+   "AGNR170",
+   "AGNR175",
+   "AGNR178",
+   "BADM103",
+   "BADM104",
+   "CHEM100",
+   "CHEM201",
+   "CHEM202",
+   "CHEM281",
+   "CIS101",
+   "CT123",
+   "ECONC2001",
+   "PHYS100",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/agricultural-plant-sciences-ast/",
+   "title": "Agricultural Plant Sciences, AS-T | Victor Valley College",
+   "h1": "Agricultural Plant Sciences, AS-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 23,
+  "text_chars": 3545
+ },
+ {
+  "control_number": "37565",
+  "title": "UNIX Administrator",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "CIS190",
+   "CIS221"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/computer-information-science/unix-administrator-ca/",
+   "title": "Unix Administrator Certificate of Achievement | Victor Valley College",
+   "h1": "Unix Administrator Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2669
+ },
+ {
+  "control_number": "37582",
+  "title": "Business Administration",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BADM100",
+   "BADM103",
+   "BADM104",
+   "BADM117",
+   "BADM118",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH105",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-administration/business-administration-2-ast/",
+   "title": "Business Administration 2.0, AS-T | Victor Valley College",
+   "h1": "Business Administration 2.0, AS-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2950
+ },
+ {
+  "control_number": "37849",
+  "title": "MySQL Database Developer",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "CIS282",
+   "CIS91A",
+   "CIS91B"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/computer-information-science/mysql-database-developer-ca/",
+   "title": "MySQL Database Developer Certificate of Achievement | Victor Valley College",
+   "h1": "MySQL Database Developer Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2604
+ },
+ {
+  "control_number": "38120",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "PHIL101",
+   "PHIL108",
+   "PHIL109",
+   "PHIL120",
+   "PHIL121",
+   "POLS114",
+   "RLST117",
+   "RLST207"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/philosophy/philosophy-aat/",
+   "title": "Philosophy, AA-T | Victor Valley College",
+   "h1": "Philosophy, AA-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3067
+ },
+ {
+  "control_number": "38121",
+  "title": "Fire & Emergency Medical Services Foundation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "COMMC1000",
+   "EMS60",
+   "ENGLC1000",
+   "FIRE61B",
+   "FIRE66",
+   "FIRE82A",
+   "HLTH102",
+   "SPAN101",
+   "SPAN101A",
+   "SPAN101B"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/fire-and-emergency-medical-services-foundation-ca/",
+   "title": "Fire & Emergency Medical Services Foundation Certificate of Achievement | Victor Valley College",
+   "h1": "Fire & Emergency Medical Services Foundation Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3082
+ },
+ {
+  "control_number": "38197",
+  "title": "Physics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHYS201",
+   "PHYS202",
+   "PHYS203",
+   "PHYS204",
+   "PHYS210"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/physics/physics-as/",
+   "title": "Physics, AS | Victor Valley College",
+   "h1": "Physics, AS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2843
+ },
+ {
+  "control_number": "38235",
+  "title": "Photography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.727,
+  "codes_found": [
+   "PHOT100",
+   "PHOT101",
+   "PHOT105",
+   "PHOT110",
+   "PHOT111",
+   "PHOT115",
+   "PHOT133",
+   "PHOT154"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/photography/photography-ca/",
+   "title": "Photography Certificate of Achievement | Victor Valley College",
+   "h1": "Photography Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2948
+ },
+ {
+  "control_number": "38352",
+  "title": "Automotive Electrical Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "AUTO801",
+   "AUTO802"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-electrical-specialist-technician-ca/",
+   "title": "Automotive Electrical Specialist Certificate of Achievement | Victor Valley College",
+   "h1": "Automotive Electrical Specialist Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2629
+ },
+ {
+  "control_number": "38353",
+  "title": "Advanced Life Support Module 2",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS82",
+   "EMS83"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/advanced-life-support-module-2-ca/",
+   "title": "Advanced Life Support Module 2 Certificate of Achievement | Victor Valley College",
+   "h1": "Advanced Life Support Module 2 Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3133
+ },
+ {
+  "control_number": "38354",
+  "title": "Automotive Engine Performance Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "AUTO791",
+   "AUTO792",
+   "AUTO793"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-engine-performance-specialist-ca/",
+   "title": "Automotive Engine Performance Specialist Certificate of Achievement | Victor Valley College",
+   "h1": "Automotive Engine Performance Specialist Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2667
+ },
+ {
+  "control_number": "38355",
+  "title": "Automotive Emission Testing Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38356",
+  "title": "Automotive Heating and Air Conditioning Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38366",
+  "title": "Advanced Life Support Module 3",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS84"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/advanced-life-support-module-3-ca/",
+   "title": "Advanced Life Support Module 3 Certificate of Achievement | Victor Valley College",
+   "h1": "Advanced Life Support Module 3 Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 3118
+ },
+ {
+  "control_number": "38368",
+  "title": "Automotive Engine Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "AUTO51B",
+   "AUTO51C"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-engine-specialist-ca/",
+   "title": "Automotive Engine Specialist Certificate of Achievement | Victor Valley College",
+   "h1": "Automotive Engine Specialist Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2624
+ },
+ {
+  "control_number": "38502",
+  "title": "Paramedic Internship",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS85",
+   "EMS86"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/paramedic-internship-ca/",
+   "title": "Paramedic Internship Certificate of Achievement | Victor Valley College",
+   "h1": "Paramedic Internship Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3209
+ },
+ {
+  "control_number": "38503",
+  "title": "Advanced Life Support Module 1",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS60",
+   "EMS80",
+   "EMS81"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/advanced-life-support-module-1-ca/",
+   "title": "Advanced Life Support Module 1 Certificate of Achievement | Victor Valley College",
+   "h1": "Advanced Life Support Module 1 Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3230
+ },
+ {
+  "control_number": "38516",
+  "title": "Plant Sciences and Sustainable Agriculture",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGNR120",
+   "AGNR122",
+   "AGNR131",
+   "AGNR141",
+   "AGNR175"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/plant-science-sustainable-agriculture-ca/",
+   "title": "Plant Science and Sustainable Agriculture Certificate of Achievement | Victor Valley College",
+   "h1": "Plant Science and Sustainable Agriculture Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 5,
+  "text_chars": 2813
+ },
+ {
+  "control_number": "38569",
+  "title": "Intermediate Firefighter",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRE61B",
+   "FIRE66"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/fire-technology/intermediate-firefighter-ca/",
+   "title": "Intermediate Firefighter Certificate of Achievement | Victor Valley College",
+   "h1": "Intermediate Firefighter Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2696
+ },
+ {
+  "control_number": "38570",
+  "title": "All Risk Firefighter",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS60",
+   "FIRE53A",
+   "FIRE53B",
+   "FIRE61B",
+   "FIRE61E",
+   "FIRE63A",
+   "FIRE66",
+   "FIRE82A",
+   "FIRE95"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/fire-technology/all-risk-firefighter-ca/",
+   "title": "All Risk Firefighter Certificate of Achievement | Victor Valley College",
+   "h1": "All Risk Firefighter Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2941
+ },
+ {
+  "control_number": "38574",
+  "title": "Environmental Horticulture and Landscaping",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGNR121",
+   "AGNR122",
+   "AGNR140",
+   "AGNR150",
+   "AGNR152",
+   "AGNR153",
+   "AGNR60",
+   "AGNR74D"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/environmental-horticulture-landscaping-ca/",
+   "title": "Environmental Horticulture and Landscaping Certificate of Achievement | Victor Valley College",
+   "h1": "Environmental Horticulture and Landscaping Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2871
+ },
+ {
+  "control_number": "38575",
+  "title": "Basic Firefighter",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38576",
+  "title": "Introduction to Firefighting",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38577",
+  "title": "Wildland Firefighter",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRE61B",
+   "FIRE66"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/fire-technology/wildland-firefighter-ca/",
+   "title": "Wildland Firefighter Certificate of Achievement | Victor Valley College",
+   "h1": "Wildland Firefighter Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2696
+ },
+ {
+  "control_number": "38779",
+  "title": "Applied Developmental Psychology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "ASL122",
+   "ASL123",
+   "ASL124",
+   "ASL125",
+   "PSYC110",
+   "PSYC213",
+   "SPAN101",
+   "SPAN101A",
+   "SPAN101B"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/psychology/applied-developmental-psychology-ca/",
+   "title": "Applied Developmental Psychology Certificate of Achievement | Victor Valley College",
+   "h1": "Applied Developmental Psychology Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2971
+ },
+ {
+  "control_number": "38843",
+  "title": "Digital Media - Animation and Motion Graphics Maya",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANIM50",
+   "ANIM51",
+   "ANIM52",
+   "ANIM53",
+   "ANIM56",
+   "ANIM80"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/digital-media-animation-motion-graphics-maya-ca/",
+   "title": "Digital Media - Animation and Motion Graphics Maya Certificate of Achievement | Victor Valley College",
+   "h1": "Digital Media - Animation and Motion Graphics Maya Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2783
+ },
+ {
+  "control_number": "38844",
+  "title": "Digital Media - Animation and Motion Graphics 3ds Max",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANIM160",
+   "ANIM260",
+   "ANIM261",
+   "ANIM53",
+   "ANIM56",
+   "ANIM65"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/digital-media-animation-motion-graphics-3ds-max-ca/",
+   "title": "Digital Media - Animation and Motion Graphics 3ds Max Certificate of Achievement | Victor Valley College",
+   "h1": "Digital Media - Animation and Motion Graphics 3ds Max Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2806
+ },
+ {
+  "control_number": "38848",
+  "title": "IFSAC / Pro-Board I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38849",
+  "title": "Animal Science Speicalist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGNR100",
+   "AGNR101L",
+   "AGNR102",
+   "AGNR106",
+   "AGNR107"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/animal-science-specialist-ca/",
+   "title": "Animal Science Specialist Certificate of Achievement | Victor Valley College",
+   "h1": "Animal Science Specialist Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 5,
+  "text_chars": 2723
+ },
+ {
+  "control_number": "38850",
+  "title": "Equine Science Specialist",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGNR100",
+   "AGNR102",
+   "AGNR105",
+   "AGNR106"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/equine-science-specialist-ca/",
+   "title": "Equine Science Specialist Certificate of Achievement | Victor Valley College",
+   "h1": "Equine Science Specialist Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2656
+ },
+ {
+  "control_number": "38852",
+  "title": "Irrigation and Water Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.769,
+  "codes_found": [
+   "AGNR121",
+   "AGNR123",
+   "AGNR131",
+   "AGNR140",
+   "AGNR150",
+   "AGNR152",
+   "AGNR153",
+   "AGNR170",
+   "AGNR172",
+   "AGNR175"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/",
+   "title": "Agriculture and Natural Resources | Victor Valley College",
+   "h1": "Agriculture and Natural Resources",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 16474
+ },
+ {
+  "control_number": "39101",
+  "title": "Ecological Restoration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGNR121",
+   "AGNR122",
+   "AGNR141",
+   "AGNR172",
+   "AGNR173",
+   "AGNR60",
+   "AGNR74D"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/ecological-restoration-ca/",
+   "title": "Ecological Restoration Certificate of Achievement | Victor Valley College",
+   "h1": "Ecological Restoration Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2840
+ },
+ {
+  "control_number": "39102",
+  "title": "Geospatial Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 16,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39103",
+  "title": "Natural Resources and Environmental Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.95,
+  "codes_found": [
+   "AGNR121",
+   "AGNR122",
+   "AGNR131",
+   "AGNR138",
+   "AGNR141",
+   "AGNR152",
+   "AGNR170",
+   "AGNR171",
+   "AGNR172",
+   "AGNR175",
+   "AGNR177",
+   "AGNR74A",
+   "AGNR74B",
+   "AGNR74C",
+   "AGNR74D",
+   "AGNR74E",
+   "CT142",
+   "FIRE109",
+   "POLS206"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/natural-resource-environmental-technology-ca/",
+   "title": "Natural Resource and Environmental Technology Certificate of Achievement | Victor Valley College",
+   "h1": "Natural Resource and Environmental Technology Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3607
+ },
+ {
+  "control_number": "39450",
+  "title": "Athletic Trainer Aide I",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALDH141",
+   "KIN102"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/kinesiology/athletic-trainer-aide-i-ca/",
+   "title": "Athletic Trainer Aide I Certificate of Achievement | Victor Valley College",
+   "h1": "Athletic Trainer Aide I Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2643
+ },
+ {
+  "control_number": "39681",
+  "title": "Global Competency",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "CMST105",
+   "FREN101",
+   "GEOG102",
+   "GLST101",
+   "HIST104",
+   "HIST131",
+   "POLS110",
+   "POLS112",
+   "POLS113",
+   "POLS221",
+   "RLST110",
+   "SPAN101",
+   "SPAN101A",
+   "SPAN125"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/global-studies/global-competency-ca/",
+   "title": "Global Competency Certificate of Achievement | Victor Valley College",
+   "h1": "Global Competency Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3230
+ },
+ {
+  "control_number": "39915",
+  "title": "Religious Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "ANTH102",
+   "HIST103",
+   "PHIL108",
+   "PHIL117",
+   "PHIL207",
+   "RLST101",
+   "RLST105",
+   "RLST106",
+   "RLST110",
+   "RLST111",
+   "RLST113",
+   "RLST115",
+   "RLST117",
+   "RLST207"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/religious-studies/religious-studies-aa/",
+   "title": "Religious Studies, AA | Victor Valley College",
+   "h1": "Religious Studies, AA",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3560
+ },
+ {
+  "control_number": "40052",
+  "title": "Public Health Sciences",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "BIOL107",
+   "BIOL221",
+   "BIOL231",
+   "CHEM100",
+   "CHEM201",
+   "HLTH102",
+   "HLTH203",
+   "HLTH204",
+   "HLTH205",
+   "PSYC121",
+   "PSYC215",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/health/public-health-science-ast/",
+   "title": "Public Health Science, AS-T | Victor Valley College",
+   "h1": "Public Health Science, AS-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 20,
+  "text_chars": 3088
+ },
+ {
+  "control_number": "40071",
+  "title": "Urban Search and Technical Rescue",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRE61B",
+   "FIRE61H",
+   "FIRE66"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/fire-technology/",
+   "title": "Fire Technology | Victor Valley College",
+   "h1": "Fire Technology",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 13184
+ },
+ {
+  "control_number": "40093",
+  "title": "Dance Teacher I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.794,
+  "codes_found": [
+   "KIN103",
+   "KIND160A",
+   "KIND160B",
+   "KIND160C",
+   "KIND161A",
+   "KIND161B",
+   "KIND161C",
+   "KIND162A",
+   "KIND162B",
+   "KIND163A",
+   "KIND163B",
+   "KIND166A",
+   "KIND166B",
+   "KIND166C",
+   "KIND167A",
+   "KIND167B",
+   "KIND167C",
+   "KIND170A",
+   "KIND170B",
+   "KIND170C",
+   "KIND171A",
+   "KIND171B",
+   "KIND171C",
+   "KIND176B",
+   "KIND176C",
+   "KIND176D",
+   "KIND190"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/kinesiology-dance/dance-teacher-i-ca/",
+   "title": "Dance Teacher I Certificate of Achievement | Victor Valley College",
+   "h1": "Dance Teacher I Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 34,
+  "text_chars": 4997
+ },
+ {
+  "control_number": "40161",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL110",
+   "BIOL211",
+   "BIOL221",
+   "BIOL231",
+   "CHEM201",
+   "CHEM202",
+   "CHEM281",
+   "HLTH202",
+   "PSYC215",
+   "PSYCC1000",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/health/nutrition-dietetics-ast/",
+   "title": "Nutrition and Dietetics, AS-T | Victor Valley College",
+   "h1": "Nutrition and Dietetics, AS-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3013
+ },
+ {
+  "control_number": "40630",
+  "title": "Automotive Dealership Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40656",
+  "title": "Advanced Paralegal",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "PAL101",
+   "PAL200",
+   "PAL204",
+   "PAL205",
+   "PAL206",
+   "PAL207"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/paralegal-studies/",
+   "title": "Paralegal Studies | Victor Valley College",
+   "h1": "Paralegal Studies",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5
+   }
+  },
+  "listed": 10,
+  "text_chars": 11946
+ },
+ {
+  "control_number": "40891",
+  "title": "Dance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "KIN103",
+   "KIN210",
+   "KIND161A",
+   "KIND161B",
+   "KIND161C",
+   "KIND162A",
+   "KIND162B",
+   "KIND163A",
+   "KIND163B",
+   "KIND167A",
+   "KIND167B",
+   "KIND167C",
+   "KIND169C",
+   "KIND169D",
+   "KIND171A",
+   "KIND171B",
+   "KIND171C",
+   "KIND176B",
+   "KIND176C",
+   "KIND176D"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/kinesiology-dance/dance-aa/",
+   "title": "Dance, AA | Victor Valley College",
+   "h1": "Dance, AA",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 3927
+ },
+ {
+  "control_number": "40894",
+  "title": "Athletic Trainer Aide II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "ALDH142",
+   "BIOL211",
+   "BIOL231",
+   "HLTH102",
+   "HLTH202",
+   "KIN142"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/kinesiology/athletic-trainer-aide-ii-ca/",
+   "title": "Athletic Trainer Aide II Certificate of Achievement | Victor Valley College",
+   "h1": "Athletic Trainer Aide II Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2838
+ },
+ {
+  "control_number": "40909",
+  "title": "Advanced Life Support Provider",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMC42A",
+   "EMC42B"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-certification/advanced-life-support-provider-ccn/",
+   "title": "Advanced Life Support Provider Certificate of Completion | Victor Valley College",
+   "h1": "Advanced Life Support Provider Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2630
+ },
+ {
+  "control_number": "40910",
+  "title": "Basic Life Support Provider",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMC41A",
+   "EMC41B"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/basic-life-support-provider-ccn/",
+   "title": "Basic Life Support Provider Certificate of Completion | Victor Valley College",
+   "h1": "Basic Life Support Provider Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2615
+ },
+ {
+  "control_number": "40924",
+  "title": "Correctional Science",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CJ103",
+   "CJ127",
+   "CJ132",
+   "CJ201",
+   "CJ92"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/criminal-justice/correctional-science-ca/",
+   "title": "Correctional Science Certificate of Achievement | Victor Valley College",
+   "h1": "Correctional Science Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2699
+ },
+ {
+  "control_number": "41089",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "BIOL200",
+   "BIOL201",
+   "BIOL202",
+   "CHEM201",
+   "CHEM202",
+   "MATH226H",
+   "PHYS202",
+   "PHYS203",
+   "PHYS221",
+   "PHYS222"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/biological-science/biology-ast/",
+   "title": "Biology, AS-T | Victor Valley College",
+   "h1": "Biology, AS-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3150
+ },
+ {
+  "control_number": "41095",
+  "title": "Basic Framing and Carpentry",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CT101",
+   "CT107",
+   "CT111A",
+   "CT116",
+   "CT121",
+   "CT127",
+   "CT130",
+   "CTPW112",
+   "ENGD103"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/basic-framing-carpentry-ca/",
+   "title": "Basic Framing and Carpentry Certificate of Achievement | Victor Valley College",
+   "h1": "Basic Framing and Carpentry Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2877
+ },
+ {
+  "control_number": "41279",
+  "title": "Automotive Service Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41320",
+  "title": "Introduction to Automotive Drivability Theory",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "AUTO852",
+   "AUTO853"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/introduction-automotive-drivability-theory-ca/",
+   "title": "Introduction to Automotive Drivability Theory Certificate of Achievement | Victor Valley College",
+   "h1": "Introduction to Automotive Drivability Theory Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2628
+ },
+ {
+  "control_number": "41322",
+  "title": "Global Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "ANTH102",
+   "ECONC2001",
+   "ECONC2002",
+   "GEOG101",
+   "GEOG104",
+   "GLST101",
+   "HIST104",
+   "POLS110",
+   "POLS112"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/global-studies/global-studies-aat/",
+   "title": "Global Studies, AA-T | Victor Valley College",
+   "h1": "Global Studies, AA-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3462
+ },
+ {
+  "control_number": "41476",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.7,
+  "codes_found": [
+   "BIOL201",
+   "CHEM201",
+   "CIS201",
+   "CIS202",
+   "CIS208",
+   "CIS264",
+   "PHYS201"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/computer-information-science/computer-science-ast/",
+   "title": "Computer Science, AS-T | Victor Valley College",
+   "h1": "Computer Science, AS-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2929
+ },
+ {
+  "control_number": "41554",
+  "title": "Coaching",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "ALDH141",
+   "ALDH142",
+   "HLTH202",
+   "KIN102",
+   "KIN104",
+   "KIN108",
+   "KIN142",
+   "KIN163",
+   "KIN164",
+   "KIN208"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/kinesiology/coaching-ca/",
+   "title": "Coaching Certificate of Achievement | Victor Valley College",
+   "h1": "Coaching Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3015
+ },
+ {
+  "control_number": "41760",
+  "title": "Entrepreneurship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BADM118",
+   "BADM144",
+   "ENTR100",
+   "ENTR102",
+   "ENTR104",
+   "ENTR106",
+   "ENTR108",
+   "ENTR110"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/entrepreneurship/entrepreneurship-ca/",
+   "title": "Entrepreneurship Certificate of Achievement | Victor Valley College",
+   "h1": "Entrepreneurship Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2901
+ },
+ {
+  "control_number": "41784",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BADM100",
+   "BADM103",
+   "BADM104",
+   "BADM117",
+   "BADM118",
+   "BADM144",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH105",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-administration/business-administration-2-ast/",
+   "title": "Business Administration 2.0, AS-T | Victor Valley College",
+   "h1": "Business Administration 2.0, AS-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2950
+ },
+ {
+  "control_number": "41786",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANIM160",
+   "ART103",
+   "ART104",
+   "ART105",
+   "ART106",
+   "ART107",
+   "ART108",
+   "ART109",
+   "ART110",
+   "ART112",
+   "ART113",
+   "ART115",
+   "ART120",
+   "ART122",
+   "ART125",
+   "ART140",
+   "ART141",
+   "ART150",
+   "ART180",
+   "ARTHC1100",
+   "ARTHC1200",
+   "CART133",
+   "PHOT100",
+   "PHOT111",
+   "PHOT115"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/art-design/art-history-aat/",
+   "title": "Art History, AA-T | Victor Valley College",
+   "h1": "Art History, AA-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 3405
+ },
+ {
+  "control_number": "41981",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ANIM160",
+   "ART107",
+   "ART108",
+   "ART110",
+   "ART112",
+   "ART113",
+   "ART114",
+   "ART115",
+   "ART120",
+   "ART122",
+   "ART125",
+   "ART126",
+   "ART140",
+   "ART141",
+   "ART150",
+   "ART170",
+   "ART180",
+   "ARTHC1100",
+   "ARTHC1200",
+   "CART133",
+   "PHOT100",
+   "PHOT111"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/art-design/studio-arts-aat/",
+   "title": "Studio Arts, AA-T | Victor Valley College",
+   "h1": "Studio Arts, AA-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 3330
+ },
+ {
+  "control_number": "41994",
+  "title": "Apparel Construction",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AHOM20",
+   "AHOM201"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/adult-home-economics/apparel-construction-ccn/",
+   "title": "Apparel Construction Certificate of Completion | Victor Valley College",
+   "h1": "Apparel Construction Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2608
+ },
+ {
+  "control_number": "42092",
+  "title": "American Sign Language",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL121",
+   "ASL122",
+   "ASL123",
+   "ASL124",
+   "ASL125",
+   "ASL126",
+   "ASL130"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/american-sign-language/american-sign-language-ca/",
+   "title": "American Sign Language Certificate of Achievement | Victor Valley College",
+   "h1": "American Sign Language Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2775
+ },
+ {
+  "control_number": "42093",
+  "title": "Law Enforcement Module II basic Course",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CJ80"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/criminal-justice/law-enforcement-module-ii-basic-course-ca/",
+   "title": "Law Enforcement Module II Basic Course Certificate of Achievement | Victor Valley College",
+   "h1": "Law Enforcement Module II Basic Course Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 2616
+ },
+ {
+  "control_number": "42099",
+  "title": "Textile Measurement and Production",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AHOM75",
+   "AHOM751"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/adult-home-economics/textile-measurement-production-ccn/",
+   "title": "Textile Measurement and Production Certificate of Completion | Victor Valley College",
+   "h1": "Textile Measurement and Production Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2578
+ },
+ {
+  "control_number": "42106",
+  "title": "Corrections Officer Core",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42122",
+  "title": "ESL Level 2 High Beginning Language Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42301",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.952,
+  "codes_found": [
+   "ART105",
+   "BIOLC1000",
+   "CHDV100",
+   "CHEM100",
+   "COMMC1000",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1002",
+   "GEOG104",
+   "GEOL121",
+   "HIST103",
+   "HISTC1001",
+   "KIN103",
+   "MATH114",
+   "MUSC100",
+   "PHIL109",
+   "PHIL207",
+   "POLSC1000",
+   "RLST207",
+   "TA101"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/vvcge/",
+   "title": "VVC General Education | Victor Valley College",
+   "h1": "VVC General Education",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.333
+   }
+  },
+  "listed": 21,
+  "text_chars": 14469
+ },
+ {
+  "control_number": "42339",
+  "title": "Police Technician Specialist",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CJ103",
+   "CJ201",
+   "CJ67",
+   "CJ92"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/criminal-justice/police-technician-specialist-ccp/",
+   "title": "Police Technician Specialist Certificate of Career Preparation | Victor Valley College",
+   "h1": "Police Technician Specialist Certificate of Career Preparation",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2659
+ },
+ {
+  "control_number": "42419",
+  "title": "Commercial Driver Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDL41",
+   "CDL42",
+   "CDL43"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/commercial-drivers-license/commercial-driver-training-ccn/",
+   "title": "Commercial Driver Training Certificate of Completion | Victor Valley College",
+   "h1": "Commercial Driver Training Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2767
+ },
+ {
+  "control_number": "42596",
+  "title": "Community Mental Health",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HLTH105",
+   "HLTH106"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/health/community-mental-health-ccn/",
+   "title": "Community Mental Health Certificate of Completion | Victor Valley College",
+   "h1": "Community Mental Health Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2618
+ },
+ {
+  "control_number": "42603",
+  "title": "Office Services",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BET104",
+   "BET107",
+   "BET112",
+   "BET118",
+   "BET122",
+   "BET123T",
+   "BET124",
+   "BET131",
+   "BET136",
+   "BET137",
+   "BET68"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-education-technologies/office-services-ca/",
+   "title": "Office Services Certificate of Achievement | Victor Valley College",
+   "h1": "Office Services Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3077
+ },
+ {
+  "control_number": "42656",
+  "title": "Ethnic Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ETH101",
+   "ETH102",
+   "ETH103",
+   "ETH104",
+   "ETH105"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/ethnic-studies/ethnic-studies-ca/",
+   "title": "Ethnic Studies Certificate of Achievement | Victor Valley College",
+   "h1": "Ethnic Studies Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2756
+ },
+ {
+  "control_number": "42712",
+  "title": "Social Justice Studies: General",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.963,
+  "codes_found": [
+   "ANTH101",
+   "CMST105",
+   "ETH102",
+   "GEOG102",
+   "GEOG104",
+   "HIST130",
+   "HIST131",
+   "HIST153",
+   "HIST155",
+   "HISTC1001",
+   "HISTC1002",
+   "KIN103",
+   "MUSC100",
+   "POLSC1000",
+   "PSYC215",
+   "PSYC217",
+   "PSYCC1000",
+   "SOC102",
+   "SOC107",
+   "SOC109",
+   "SOC111",
+   "SOC112",
+   "SOC130",
+   "SOC217",
+   "STATC1000",
+   "TA101"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/sociology/social-justice-studies-aat/",
+   "title": "Social Justice Studies: General, AA-T | Victor Valley College",
+   "h1": "Social Justice Studies: General, AA-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 4078
+ },
+ {
+  "control_number": "42728",
+  "title": "Career Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WKPR11",
+   "WKPR12",
+   "WKPR14"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/work-force-preparation/career-success-ccn/",
+   "title": "Career Success Certificate of Completion | Victor Valley College",
+   "h1": "Career Success Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2685
+ },
+ {
+  "control_number": "42739",
+  "title": "Career Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WKPR15",
+   "WKPR16"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/work-force-preparation/career-preparation-ccn/",
+   "title": "Career Preparation Certificate of Completion | Victor Valley College",
+   "h1": "Career Preparation Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2617
+ },
+ {
+  "control_number": "42740",
+  "title": "Career and Industry Exploration",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WKPR10",
+   "WKPR13"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/work-force-preparation/career-industry-exploration-ccn/",
+   "title": "Career and Industry Exploration Certificate of Completion | Victor Valley College",
+   "h1": "Career and Industry Exploration Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2596
+ },
+ {
+  "control_number": "42750",
+  "title": "Athletics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.891,
+  "codes_found": [
+   "ANTH101",
+   "ART104",
+   "ATHL120",
+   "ATHL120P",
+   "ATHL121",
+   "ATHL121P",
+   "ATHL122",
+   "ATHL122P",
+   "ATHL123",
+   "ATHL123P",
+   "ATHL124",
+   "ATHL124P",
+   "ATHL125",
+   "ATHL125P",
+   "ATHL126",
+   "ATHL126P",
+   "ATHL127",
+   "ATHL127P",
+   "ATHL128",
+   "ATHL128P",
+   "ATHL129",
+   "ATHL129P",
+   "ATHL130",
+   "ATHL130P",
+   "ATHL131",
+   "ATHL132",
+   "ATHL132P",
+   "ATHL133",
+   "ATHL133P",
+   "ATHL140",
+   "ATHL140P",
+   "ATHL143",
+   "ATHL144",
+   "ATHL144P",
+   "BIOL107",
+   "CHEM100",
+   "CJ101",
+   "CMST105",
+   "COMMC1000",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ETH102",
+   "GEOG101",
+   "GUID101",
+   "GUID107",
+   "HIST153",
+   "HIST155",
+   "HLTH102",
+   "KIN103",
+   "MATH105",
+   "POLSC1000",
+   "PSYC215",
+   "PSYCC1000",
+   "SOC109",
+   "SOC110",
+   "STATC1000",
+   "TA101"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/athletics/athletics-ca/",
+   "title": "Athletics Certificate of Achievement | Victor Valley College",
+   "h1": "Athletics Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 64,
+  "text_chars": 5611
+ },
+ {
+  "control_number": "42760",
+  "title": "Law Enforcement Module III Basic Course",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CJ80"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/criminal-justice/law-enforcement-module-iii-basic-course-ca/",
+   "title": "Law Enforcement Module III Basic Course Certificate of Achievement | Victor Valley College",
+   "h1": "Law Enforcement Module III Basic Course Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 2549
+ },
+ {
+  "control_number": "42802",
+  "title": "3D Animation - 3ds Max",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANIM160",
+   "ANIM260",
+   "ANIM261",
+   "ANIM53",
+   "ANIM56",
+   "ANIM65"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/3d-animation-3ds-max-as/",
+   "title": "3D Animation - 3ds Max, AS | Victor Valley College",
+   "h1": "3D Animation - 3ds Max, AS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2806
+ },
+ {
+  "control_number": "42803",
+  "title": "3D Animation - Maya",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANIM50",
+   "ANIM51",
+   "ANIM52",
+   "ANIM53",
+   "ANIM56",
+   "ANIM80"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/3d-animation-maya-as/",
+   "title": "3D Animation - Maya, AS | Victor Valley College",
+   "h1": "3D Animation - Maya, AS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2783
+ },
+ {
+  "control_number": "42857",
+  "title": "ESL Level 1 Low-Beginning English Language Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL101",
+   "ESL102"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/english-second-language/esl-level-1-low-beginning-english-language-skills-ccy/",
+   "title": "ESL Level 1 Low-Beginning English Language Skills Certificate of Competency | Victor Valley College",
+   "h1": "ESL Level 1 Low-Beginning English Language Skills Certificate of Competency",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2598
+ },
+ {
+  "control_number": "42907",
+  "title": "ESL Level 3 Low-Intermediate English Language Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "ESL106"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/english-second-language/esl-level-3-low-intermediate-english-language-skills-ccy/",
+   "title": "ESL Level 3 Low-Intermediate English Language Skills Certificate of Competency | Victor Valley College",
+   "h1": "ESL Level 3 Low-Intermediate English Language Skills Certificate of Competency",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2572
+ },
+ {
+  "control_number": "43115",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.714,
+  "codes_found": [
+   "MATH228",
+   "PHYS201",
+   "PHYS202",
+   "PHYS203",
+   "PHYS204"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/physics/",
+   "title": "Physics | Victor Valley College",
+   "h1": "Physics",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 8667
+ },
+ {
+  "control_number": "43176",
+  "title": "Electronics Technician II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELCT133",
+   "ELCT134",
+   "ELCT76",
+   "ELCT78A"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/electronics-computer-technology/electronics-technician-ii-ca/",
+   "title": "Electronics Technician II Certificate of Achievement | Victor Valley College",
+   "h1": "Electronics Technician II Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2692
+ },
+ {
+  "control_number": "43177",
+  "title": "Electronics Technician I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS190",
+   "ELCT131",
+   "ELCT132",
+   "ELCT71",
+   "ELCT73"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/electronics-computer-technology/electronics-technician-I-ca/",
+   "title": "Electronics Technician I Certificate of Achievement | Victor Valley College",
+   "h1": "Electronics Technician I Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2747
+ },
+ {
+  "control_number": "43294",
+  "title": "Manicuring Academy",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM100",
+   "COSM201A",
+   "COSM201B"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/manicuring-academy-ccn/",
+   "title": "Manicuring Academy Certificate of Completion | Victor Valley College",
+   "h1": "Manicuring Academy Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2622
+ },
+ {
+  "control_number": "43295",
+  "title": "Barber Crossover",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM205",
+   "COSM206"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/barber-crossover-ccn/",
+   "title": "Barber Crossover Certificate of Completion | Victor Valley College",
+   "h1": "Barber Crossover Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2605
+ },
+ {
+  "control_number": "43296",
+  "title": "Esthetician Academy",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM100",
+   "COSM202"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/esthetician-academy-ccn/",
+   "title": "Esthetician Academy Certificate of Completion | Victor Valley College",
+   "h1": "Esthetician Academy Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2593
+ },
+ {
+  "control_number": "43297",
+  "title": "Introductory Cosmetology",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM100",
+   "COSM101"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/introductory-cosmetology-ccn/",
+   "title": "Introductory Cosmetology Certificate of Completion | Victor Valley College",
+   "h1": "Introductory Cosmetology Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2589
+ },
+ {
+  "control_number": "43298",
+  "title": "Advanced Barbering",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM114",
+   "COSM115"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/advanced-barbering-ccn/",
+   "title": "Advanced Barbering Certificate of Completion | Victor Valley College",
+   "h1": "Advanced Barbering Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2624
+ },
+ {
+  "control_number": "43299",
+  "title": "Introductory Barbering",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM100",
+   "COSM111"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/introductory-barbering-ccn/",
+   "title": "Introductory Barbering Certificate of Completion | Victor Valley College",
+   "h1": "Introductory Barbering Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2587
+ },
+ {
+  "control_number": "43306",
+  "title": "Advanced Cosmetology",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM104",
+   "COSM105"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/advanced-cosmetology-ccn/",
+   "title": "Advanced Cosmetology Certificate of Completion | Victor Valley College",
+   "h1": "Advanced Cosmetology Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2626
+ },
+ {
+  "control_number": "43307",
+  "title": "Intermediate Cosmetology",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM102",
+   "COSM103"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/intermediate-cosmetology-ccn/",
+   "title": "Intermediate Cosmetology Certificate of Completion | Victor Valley College",
+   "h1": "Intermediate Cosmetology Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2608
+ },
+ {
+  "control_number": "43329",
+  "title": "Intermediate Barbering",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM112",
+   "COSM113"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/intermediate-barbering-ccn/",
+   "title": "Intermediate Barbering Certificate of Completion | Victor Valley College",
+   "h1": "Intermediate Barbering Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2615
+ },
+ {
+  "control_number": "43449",
+  "title": "Forklift Class I, II, & III",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MNLO10",
+   "MNLO20"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/manufacturing-logistics/forklift-i-ii-iii-ccn/",
+   "title": "Forklift Class I, II, & III Certificate of Completion | Victor Valley College",
+   "h1": "Forklift Class I, II, & III Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2588
+ },
+ {
+  "control_number": "43568",
+  "title": "Forklift Class IV, & V",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MNLO10",
+   "MNLO25"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/manufacturing-logistics/forklift-iv-v-ccn/",
+   "title": "Forklift Class IV & V Certificate of Completion | Victor Valley College",
+   "h1": "Forklift Class IV & V Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2599
+ },
+ {
+  "control_number": "43569",
+  "title": "Fitness Specialist - Personal Trainer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "ALDH142",
+   "HLTH102",
+   "HLTH202",
+   "KIN102",
+   "KIN104",
+   "KIN142",
+   "KIN163",
+   "KIN201",
+   "KIN210"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/kinesiology/fitness-specialist-personal-trainer-ca/",
+   "title": "Fitness Specialist - Personal Trainer Certificate of Achievement | Victor Valley College",
+   "h1": "Fitness Specialist - Personal Trainer Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3114
+ },
+ {
+  "control_number": "43590",
+  "title": "Hairstylist Academy",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM100"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/hairstylist-academy-ccn/",
+   "title": "Hairstylist Academy Certificate of Completion | Victor Valley College",
+   "h1": "Hairstylist Academy Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 2564
+ },
+ {
+  "control_number": "43596",
+  "title": "Community Health Worker",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HLTH108",
+   "HLTH109"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/health/community-health-worker-ccn/",
+   "title": "Community Health Worker Certificate of Completion | Victor Valley College",
+   "h1": "Community Health Worker Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2594
+ },
+ {
+  "control_number": "43736",
+  "title": "ESL Level 5 Advanced English Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL109",
+   "ESL12A"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/english-second-language/esl-level-5-advanced-english-skills-ccy/",
+   "title": "ESL Level 5 Advanced English Skills Certificate of Competency | Victor Valley College",
+   "h1": "ESL Level 5 Advanced English Skills Certificate of Competency",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2620
+ },
+ {
+  "control_number": "44111",
+  "title": "Real Estate Career Professional",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BRE100",
+   "BRE101",
+   "BRE110",
+   "BRE120",
+   "BRE125",
+   "BRE126",
+   "BRE127",
+   "BRE139",
+   "BRE140",
+   "BRE142",
+   "BRE99"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-real-estate/real-estate-career-professional-ca/",
+   "title": "Real Estate Career Professional Certificate of Achievement | Victor Valley College",
+   "h1": "Real Estate Career Professional Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2932
+ },
+ {
+  "control_number": "44113",
+  "title": "Real Estate Management Professional",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BADM104",
+   "BADM118",
+   "BRE100",
+   "BRE101",
+   "BRE110",
+   "BRE120",
+   "BRE125",
+   "BRE126",
+   "BRE127",
+   "BRE139",
+   "BRE140",
+   "BRE142",
+   "BRE99"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-real-estate/real-estate-management-professional-ca/",
+   "title": "Real Estate Management Professional Certificate of Achievement | Victor Valley College",
+   "h1": "Real Estate Management Professional Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3020
+ },
+ {
+  "control_number": "44114",
+  "title": "Real Estate Sales Professional",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BRE100",
+   "BRE101",
+   "BRE110",
+   "BRE120",
+   "BRE125",
+   "BRE126",
+   "BRE127",
+   "BRE139",
+   "BRE140",
+   "BRE142",
+   "BRE99"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-real-estate/real-estate-sales-professional-ca/",
+   "title": "Real Estate Sales Professional Certificate of Achievement | Victor Valley College",
+   "h1": "Real Estate Sales Professional Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2950
+ },
+ {
+  "control_number": "44115",
+  "title": "Real Estate Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BRE100",
+   "BRE101",
+   "BRE110",
+   "BRE120",
+   "BRE125",
+   "BRE126",
+   "BRE127",
+   "BRE139",
+   "BRE140",
+   "BRE142",
+   "BRE99"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-real-estate/real-estate-business-as/",
+   "title": "Real Estate Business, AS | Victor Valley College",
+   "h1": "Real Estate Business, AS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2915
+ },
+ {
+  "control_number": "44148",
+  "title": "Trauma Life Support Provider",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMC45A",
+   "EMC45B"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-certification/trauma-life-support-provider-ccn/",
+   "title": "Trauma Life Support Provider Certificate of Completion | Victor Valley College",
+   "h1": "Trauma Life Support Provider Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2636
+ },
+ {
+  "control_number": "44149",
+  "title": "Pediatric Life Support Provider",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMC43A",
+   "EMC43B"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-certification/pediatric-life-support-provider-ccn/",
+   "title": "Pediatric Life Support Provider Certificate of Completion | Victor Valley College",
+   "h1": "Pediatric Life Support Provider Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2635
+ },
+ {
+  "control_number": "44151",
+  "title": "New Student Onboarding",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GUID40",
+   "GUID41",
+   "GUID42"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/guidance/new-student-onboarding-ccy/",
+   "title": "New Student Onboarding Certificate of Competency | Victor Valley College",
+   "h1": "New Student Onboarding Certificate of Competency",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2598
+ },
+ {
+  "control_number": "44214",
+  "title": "ESL Level 4 High Intermediate English Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "ESL108"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/english-second-language/esl-level-4-high-intermediate-english-skills-ccy/",
+   "title": "ESL Level 4 High Intermediate English Skills Certificate of Competency | Victor Valley College",
+   "h1": "ESL Level 4 High Intermediate English Skills Certificate of Competency",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2577
+ },
+ {
+  "control_number": "44287",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "ANTH102",
+   "CMST104",
+   "CMST105",
+   "CMST107",
+   "CMST108",
+   "CMST110",
+   "CMST160",
+   "CMST180",
+   "CMST181",
+   "CMST184",
+   "CMST188",
+   "CMST282",
+   "COMMC1000",
+   "ENGLC1001",
+   "ENGLC1002",
+   "ENGLC1002H",
+   "PSYCC1000",
+   "TA104"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/communication-studies/communication-studies-2-aat/",
+   "title": "Communication Studies 2.0, AA-T | Victor Valley College",
+   "h1": "Communication Studies 2.0, AA-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3551
+ },
+ {
+  "control_number": "44585",
+  "title": "Forensic Science, Biology Concentration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "ANTH107",
+   "BIOL118",
+   "BIOL145",
+   "BIOL146",
+   "BIOL221",
+   "BIOL231",
+   "CJ67"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/biological-science/forensic-science-biology-concentration-ca/",
+   "title": "Forensic Science, Biology Concentration Certificate of Achievement | Victor Valley College",
+   "h1": "Forensic Science, Biology Concentration Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2963
+ },
+ {
+  "control_number": "44842",
+  "title": "Two-Dimensional Studio Arts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART105",
+   "ART106",
+   "ART112",
+   "ART114",
+   "ART115",
+   "ART120",
+   "ART121",
+   "ART122",
+   "ART123",
+   "ART124",
+   "ART125",
+   "ART126",
+   "ART150",
+   "ART151"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/art-design/two-dimensional-studio-arts-ca/",
+   "title": "Two-Dimensional Studio Arts, Certificate of Achievement | Victor Valley College",
+   "h1": "Two-Dimensional Studio Arts, Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3056
+ },
+ {
+  "control_number": "44878",
+  "title": "Adapted Fitness Certification",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APE160",
+   "APE167",
+   "APE183"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/adapted-physical-education/adapted-fitness-certification-ccn/",
+   "title": "Adapted Fitness Certification Certificate of Completion | Victor Valley College",
+   "h1": "Adapted Fitness Certification Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2666
+ },
+ {
+  "control_number": "45047",
+  "title": "Full Cal-GETC Certification",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 153,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45067",
+  "title": "Bachelor of Science in Respiratory Therapy",
+  "award": "Baccalaureate of Science (B.S.) Degree.",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL211",
+   "BIOL221",
+   "BIOL231",
+   "BSRT300",
+   "BSRT301",
+   "BSRT302",
+   "BSRT303",
+   "BSRT304",
+   "BSRT305",
+   "BSRT306",
+   "BSRT307",
+   "BSRT308",
+   "BSRT401",
+   "BSRT402",
+   "BSRT403",
+   "BSRT404",
+   "BSRT405",
+   "BSRT406",
+   "BSRT407",
+   "BSRT408",
+   "ENGLC1000",
+   "ENGLC1001",
+   "PSYC109",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/respiratory-therapy/bachelor-science-respiratory-therapy-bs/",
+   "title": "Bachelor of Science in Respiratory Therapy, BS | Victor Valley College",
+   "h1": "Bachelor of Science in Respiratory Therapy, BS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4971
+ },
+ {
+  "control_number": "45081",
+  "title": "Heartsaver First Aid, CPR, AED Provider",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMC40A",
+   "EMC40B"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-certification/heartsaver-first-aid-cpr-aed-provider-ccn/",
+   "title": "Heartsaver First Aid, CPR, AED Provider Certificate of Completion | Victor Valley College",
+   "h1": "Heartsaver First Aid, CPR, AED Provider Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2623
+ },
+ {
+  "control_number": "45082",
+  "title": "Physical Therapy Aide",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PTS200",
+   "PTS201"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/physical-therapy-services/physical-therapy-aide-ccn/",
+   "title": "Physical Therapy Aide Certification of Completion | Victor Valley College",
+   "h1": "Physical Therapy Aide Certification of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2606
+ },
+ {
+  "control_number": "45110",
+  "title": "Basic Bleeding Control Provider",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMC44A",
+   "EMC44B"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-certification/basic-bleeding-control-provider-ccn/",
+   "title": "Basic Bleeding Control Provider Certificate of Completion | Victor Valley College",
+   "h1": "Basic Bleeding Control Provider Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2590
+ },
+ {
+  "control_number": "45140",
+  "title": "Case Management with a Cardiopulmonary Focus",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSRT303",
+   "BSRT305",
+   "BSRT306",
+   "BSRT307",
+   "BSRT308",
+   "BSRT401",
+   "BSRT402",
+   "BSRT403",
+   "BSRT404",
+   "BSRT405",
+   "BSRT406",
+   "BSRT407",
+   "BSRT408"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/respiratory-therapy/case-management-cardiopulmonary-focus-ca/",
+   "title": "Case Management with a Cardiopulmonary Focus Certificate of Achievement | Victor Valley College",
+   "h1": "Case Management with a Cardiopulmonary Focus Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3039
+ },
+ {
+  "control_number": "45628",
+  "title": "Expanded Animation Technician 3DSMAX",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANIM160",
+   "ANIM260",
+   "ANIM261",
+   "ANIM53",
+   "ANIM74",
+   "ANIM80"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/expanded-animation-technician-3ds-max-ca/",
+   "title": "Expanded Animation Technician 3ds Max Certificate of Achievement | Victor Valley College",
+   "h1": "Expanded Animation Technician 3ds Max Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 6,
+  "text_chars": 2788
+ },
+ {
+  "control_number": "45661",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "TA101",
+   "TA102",
+   "TA106",
+   "TA107",
+   "TA109",
+   "TA110",
+   "TA111",
+   "TA113",
+   "TA115",
+   "TA117",
+   "TA120",
+   "TA203"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/theater-arts/theatre-arts-aat/",
+   "title": "Theatre Arts, AA-T | Victor Valley College",
+   "h1": "Theatre Arts, AA-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2988
+ },
+ {
+  "control_number": "45663",
+  "title": "Digital Animation Artist Maya",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "ANIM50",
+   "ANIM51",
+   "ANIM52",
+   "ANIM56",
+   "ANIM74",
+   "ART104",
+   "ART112",
+   "ART113",
+   "ART122",
+   "ART124",
+   "ART125",
+   "ART141"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/digital-animation-artist-maya-ca/",
+   "title": "Digital Animation Artist Maya Certificate of Achievement | Victor Valley College",
+   "h1": "Digital Animation Artist Maya Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2964
+ },
+ {
+  "control_number": "45677",
+  "title": "Expanded Animation Technician MAYA",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANIM50",
+   "ANIM51",
+   "ANIM52",
+   "ANIM53",
+   "ANIM74",
+   "ANIM80"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/expanded-animation-technician-maya-ca/",
+   "title": "Expanded Animation Technician Maya Certificate of Achievement | Victor Valley College",
+   "h1": "Expanded Animation Technician Maya Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2784
+ },
+ {
+  "control_number": "45678",
+  "title": "Digital Animation Artist 3ds Max",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "ANIM160",
+   "ANIM260",
+   "ANIM261",
+   "ANIM56",
+   "ANIM74",
+   "ART104",
+   "ART112",
+   "ART113",
+   "ART122",
+   "ART124",
+   "ART125",
+   "ART141"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/digital-animation-artist-3ds-max-ca/",
+   "title": "Digital Animation Artist 3ds Max Certificate of Achievement | Victor Valley College",
+   "h1": "Digital Animation Artist 3ds Max Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2968
+ },
+ {
+  "control_number": "45844",
+  "title": "Basic Electrician Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CT101",
+   "CT107",
+   "CT114",
+   "CT116",
+   "CT120A",
+   "CT120B"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/basic-electrician-technician-ca/",
+   "title": "Basic Electrician Technician Certificate of Achievement | Victor Valley College",
+   "h1": "Basic Electrician Technician Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2727
+ },
+ {
+  "control_number": "45845",
+  "title": "Basic HVAC & Refrigeration Service Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CT101",
+   "CT107",
+   "CT112",
+   "CT116",
+   "CT122A",
+   "CT122B",
+   "CT136"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/basic-heating-ventilation-air-conditioning-refrigeration-hvacr-service-technician-ca/",
+   "title": "Basic Heating, Ventilation, Air Conditioning and Refrigeration (HVAC/R) Service Technician Certificate of Achievement | Victor Valley College",
+   "h1": "Basic Heating, Ventilation, Air Conditioning and Refrigeration (HVAC/R) Service Technician Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2779
+ },
+ {
+  "control_number": "45880",
+  "title": "Critical Care Paramedic Provider",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMC46A",
+   "EMC46B",
+   "EMC47A",
+   "EMS87A",
+   "EMS87B"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/critical-care-paramedic-provider-ccn/",
+   "title": "Critical Care Paramedic Provider Certificate of Completion | Victor Valley College",
+   "h1": "Critical Care Paramedic Provider Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2783
+ },
+ {
+  "control_number": "45906",
+  "title": "Plumbing Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CT101",
+   "CT107",
+   "CT113",
+   "CT116",
+   "CT124",
+   "CTMT121"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/plumbing-technician-ca/",
+   "title": "Plumbing Technician Certificate of Achievement | Victor Valley College",
+   "h1": "Plumbing Technician Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2713
+ },
+ {
+  "control_number": "45916",
+  "title": "Social Work and Human Services Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.706,
+  "codes_found": [
+   "CJ101",
+   "CMST105",
+   "HMSV110",
+   "HMSV120A",
+   "HMSV120B",
+   "PSYC110",
+   "PSYC213",
+   "PSYC215",
+   "PSYCC1000",
+   "SOC102",
+   "SOC107",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/human-services/social-work-and-human-services-assistant-ca/",
+   "title": "Social Work and Human Services Assistant Certificate of Achievement | Victor Valley College",
+   "h1": "Social Work and Human Services Assistant Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3165
+ },
+ {
+  "control_number": "45921",
+  "title": "Sociological Foundations",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "SOC102",
+   "SOC103",
+   "SOC107",
+   "SOC109",
+   "SOC110",
+   "SOC111",
+   "SOC112",
+   "SOC130",
+   "SOC160",
+   "SOC217"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/sociology/sociological-foundations-ca/",
+   "title": "Sociological Foundations Certificate of Achievement | Victor Valley College",
+   "h1": "Sociological Foundations Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2952
+ },
+ {
+  "control_number": "46064",
+  "title": "Photovoltaic Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CT101",
+   "CT107",
+   "CT114",
+   "CT116",
+   "CT120A",
+   "CT142",
+   "CT144"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/photovoltaic-technician-ca/",
+   "title": "Photovoltaic Technician Certificate of Achievement | Victor Valley College",
+   "h1": "Photovoltaic Technician Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2813
+ },
+ {
+  "control_number": "46065",
+  "title": "Basic Masonry and Concrete",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CT101",
+   "CT106",
+   "CT107",
+   "CT111A",
+   "CT111B",
+   "CT116",
+   "CT125",
+   "CT126",
+   "ENGD103"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/basic-masonry-concrete-ca/",
+   "title": "Basic Masonry and Concrete Certificate of Achievement | Victor Valley College",
+   "h1": "Basic Masonry and Concrete Certificate of Achievement",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2890
+ },
+ {
+  "control_number": "46076",
+  "title": "Pharmacy Principles",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHT40",
+   "PHT42"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/pharmacy-technician/pharmacy-principles-ccn/",
+   "title": "Pharmacy Principles Certificate of Completion | Victor Valley College",
+   "h1": "Pharmacy Principles Certificate of Completion",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2602
+ },
+ {
+  "control_number": "46577",
+  "title": "Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.812,
+  "codes_found": [
+   "BADM100",
+   "BADM103",
+   "BADM104",
+   "BADM109",
+   "BADM110",
+   "BADM116",
+   "BADM117",
+   "BADM118",
+   "BADM122",
+   "BADM180",
+   "MATH226H",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://catalog.vvc.edu//degrees-certificates/business-administration/management-as/",
+   "title": "Management, AS | Victor Valley College",
+   "h1": "Management, AS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3109
+ }
+]

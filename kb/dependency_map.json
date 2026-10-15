@@ -4,7 +4,7 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 8,
-  "file_datasets": 649,
+  "file_datasets": 648,
   "external_services": 179,
   "consumers": 441,
   "workflows": 53,
@@ -341,7 +341,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1057
+     "line": 1066
     }
    ],
    "main_committers": []
@@ -513,7 +513,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 996
+     "line": 1005
     }
    ],
    "main_committers": []
@@ -1910,7 +1910,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 968
+     "line": 978
     }
    ],
    "main_committers": []
@@ -2025,7 +2025,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 970
+     "line": 980
     }
    ],
    "main_committers": []
@@ -2037,7 +2037,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 971
+     "line": 981
     }
    ],
    "main_committers": []
@@ -2111,7 +2111,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 699
+     "line": 708
     }
    ],
    "main_committers": []
@@ -2191,7 +2191,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 969
+     "line": 979
     }
    ],
    "main_committers": []
@@ -12397,19 +12397,6 @@
    "served": false,
    "main_committers": []
   },
-  "file:kb/program_requirements_college/chaffey/capture_preview.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_program_requirements_college.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 1728
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
   "file:kb/program_requirements_maps_sample.json": {
    "consumers": [
     {
@@ -19667,7 +19654,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 1768
+     "line": 1777
     }
    ],
    "main_committers": []
@@ -19679,7 +19666,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 1855
+     "line": 1864
     }
    ],
    "main_committers": []
@@ -20304,7 +20291,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 365
+     "line": 375
     }
    ],
    "main_committers": []
@@ -20316,7 +20303,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 371
+     "line": 381
     }
    ],
    "main_committers": []
@@ -22339,7 +22326,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 388
+     "line": 398
     },
     {
      "id": "script:kb/_program_source_census.py",

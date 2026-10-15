@@ -1,0 +1,206 @@
+{
+ "college": "Fullerton College",
+ "control_number": "43726",
+ "shape": "degree",
+ "title": "American Sign Language and Deaf Culture",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/counseling/american-sign-language-and-deaf-culture-associate-in-arts-degrees/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7572,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7572,
+    "output_tokens": 1893,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1893,
+  "output_tokens_details": {
+   "thinking_tokens": 863
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06815,
+ "ms": 16198,
+ "seconds": 16.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "American Sign Language and Deaf Culture Associate in Arts Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate effective communication in English and in American Sign Language (ASL) to apply in a variety of settings with the Deaf and Hard of Hearing population.",
+    "Demonstrate knowledge of American Deaf Culture and History that will allow students to interact in culturally appropriate ways with members of the Deaf Community.",
+    "Identify local and national resources for Deaf, Hard of Hearing, and Late Deafened Adults to seek and promote developmental opportunities for self and for the Deaf Community."
+   ],
+   "careers": [
+    "working with Deaf and Hard of Hearing people"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (18-19 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "ASL 101 F",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 105 F",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 105HF",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL 102 F",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL 203 F",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL 204 F",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASL 206 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints a separate 'Substitution Course (3 units)' heading: fluent ASL students may have ASL 101 F waived with faculty approval and take ANTH 105 F or ANTH 105HF instead. Recorded as alternatives to ASL 101 F (rather than a separate block) so the 18-19 unit range is not double counted; the 18-19 range reflects ASL 101 F (4) vs. ANTH 105 F/105HF (3).",
+   "ANTH 105HF has no units printed beside it in the catalog; the state file lists 3 units.",
+   "Outcomes are taken from the page's Program Student Learning Outcomes tab; the 'OUTCOME n:' labels were removed.",
+   "The career entry comes from the description: 'prepared for a multitude of careers working with Deaf and Hard of Hearing people'. Deaf Studies, Interpretation, Deaf Education and Social Services are named there as bachelor's programs and certificates, not careers, so they were not recorded.",
+   "The page names no GE pattern or degree total; it says only 'in addition to other graduation requirements'."
+  ]
+ },
+ "extracted_run": "38675136988"
+}

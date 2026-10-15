@@ -1,0 +1,351 @@
+{
+ "college": "Fullerton College",
+ "control_number": "03881",
+ "shape": "degree",
+ "title": "Ethnic Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/ethnic-studies/ethnic-studies-associate-arts-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8703,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8703,
+    "output_tokens": 2742,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2742,
+  "output_tokens_details": {
+   "thinking_tokens": 577
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08965,
+ "ms": 20837,
+ "seconds": 21.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 24,
+   "listed": 25,
+   "share": 0.96,
+   "missing": [
+    "ETHS201F"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 10,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Ethnic Studies Associate in Arts Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply theories and knowledge produced by Indigenous, Afrodiasporic, Asian, Pacific Islander, and Chicanx/Latinx communities to interrogate and dismantle interlocking systems of oppression and dominant power structures.",
+    "Develop a critical understanding of the intersectional histories and cultures of Indigenous, African and Afrodiasporic, Asian Pacific Islander American, and Chicanx/Latinx communities as they relate to larger social structures to cultivate solidarity and coalitions across lines of difference.",
+    "Examine and actively engage with anti-colonial, decolonial, liberatory, and radical resistance strategies, practices, and movements within Indigenous, African and Afrodiasporic, Asian Pacific Islander American, and Chicanx/Latinx communities to advocate for the empowerment and liberation of minoritized and marginalized communities of color.",
+    "Interrogate media and cultural productions by describing ways they construct dominant narratives and controlling images that affect the lived experiences of Indigenous, African, and Afrodiasporic, Asian Pacific I",
+    "Demonstrate an understanding of critical race and media literacy strategies by producing counter-narratives of communities of color that contest existing oppressive experiences, stereotypes, and social norms within society."
+   ],
+   "careers": [
+    "education and research",
+    "community advocacy",
+    "union organizing",
+    "city planning and housing development",
+    "health and human services",
+    "mediation and conflict resolution",
+    "marketing and communications",
+    "law and policy",
+    "fine and performing arts",
+    "multicultural affairs"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (12 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "ETHS 101 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS 101HF",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS 111 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS 111HF",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS 202 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS 235 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS 235HF",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives (6 units)",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ETHS 129 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS 129HF",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS 130 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS 130HF",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS 131 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS 220 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS 150 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS 151 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS 150HF",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS 152 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS 153 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS 153HF",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS 159 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS 160 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS 162 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS 170 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS 171 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ETHS 201 F",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Restricted Electives: the catalog says courses must be chosen from two different subfields (Sub-field I Africana Studies: ETHS 129 F/129HF, 130 F/130HF, 131 F, 220 F; Sub-field II Chicanx/Latinx Studies: ETHS 150 F, 151 F, 150HF, 152 F, 153 F/153HF; Sub-field III American Indian and Indigenous Studies: ETHS 159 F, 160 F, 162 F; Sub-field IV Asian/Pacific Islander American Studies: ETHS 170 F, 171 F). Recorded as one 6-unit choose block; the subfield constraint is not encoded.",
+   "The catalog prints 'or ETHS 150HF' (Honors Introduction to Chicana/o Studies) under ETHS 151 F (Chicana/o History I); recorded as printed, but it likely belongs as the honors alternative to ETHS 150 F. Reviewer should check.",
+   "Outcome 4 is cut off in the source text ('...Asian Pacific I'); copied as printed without completion.",
+   "Program learning outcomes come from the page's outcomes tab for this degree.",
+   "Careers are listed as 'areas/fields' for transfer and career pathways; recorded each as printed. Total of 18 units stated in the description and 'Total Units 18'."
+  ]
+ },
+ "extracted_run": "38675136988"
+}

@@ -1,0 +1,35 @@
+{
+ "_readme": "S394 SkyMadrone, 2026-10-15. Diablo Valley's eLumen capture (run 38669937625) found the catalog's two hubs, transdegreecert and dvc-certs-and-degrees, and read no program page from them: the reader takes program links of the form <catalog>/program/<slug>, and these hubs link their programs some other way. Four page loads with \"network\": true, no model call: each hub rendered and as its publish/content call. Read 2 (run 38670917323): both hubs list no program link; dvc-certs-and-degrees is a grid of departments by award, and transdegreecert links dvcassocdegrees and ceprog. Read 3 asks those two, every link shown. Read 3 (run 38672223676): dvcassocdegrees and ceprog are policy prose with no program link. Read 4 asks courseandprogramofferings, every link shown.",
+ "college": "Diablo Valley College",
+ "questions": {
+  "program_links": "How each hub links a program: the href's shape (absolute, relative, another path segment), and one program's address.",
+  "hub_content": "What the hub's publish/content call returns, and whether its program links match the rendered page's.",
+  "award_lists": "Whether dvcassocdegrees and ceprog link each program, and the href's shape.",
+  "offerings": "Whether courseandprogramofferings links departments or programs, and the href's shape."
+ },
+ "keywords": [
+  "[Cc]ertificate",
+  "A\\.S\\.",
+  "A\\.A\\.",
+  "[Aa]ssociate",
+  "[Dd]egree",
+  "[Pp]rogram"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "offerings"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,courseandprogramofferings?tenant=dvc.elumenapp.com",
+   "links": "."
+  },
+  {
+   "answers": [
+    "offerings"
+   ],
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/courseandprogramofferings",
+   "network": true,
+   "links": "department|program|DVC2026"
+  }
+ ]
+}

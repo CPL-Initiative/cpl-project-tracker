@@ -1,8 +1,8 @@
 {
- "_what": "MAP's credit recommendations per course at the harvest's twenty-six colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline, Cabrillo, Modesto Junior, Palo Verde, Southwestern, Fresno City, El Camino, San Joaquin Delta, Santa Barbara City, Orange Coast, Foothill and Sierra): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
+ "_what": "MAP's credit recommendations per course at the harvest's thirty colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline, Cabrillo, Modesto Junior, Palo Verde, Southwestern, Fresno City, El Camino, San Joaquin Delta, Santa Barbara City, Orange Coast, Foothill, Sierra, Fullerton, Citrus, Victor Valley and Monterey Peninsula): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
  "_source": "public.map_college_cr_unit (reviewer-gated) joined to map_colleges by college_id; exhibit titles from map_ace_exhibit_titles, else chatbox_exhibits. A college_course string naming several courses ('ADJ-13 ...(3.0), ADJ-19 ...(3.0)') counts toward each course it names. Course code = the SUBJ-NUM token with the hyphen read as a space.",
  "_read_at": "2026-10-15",
- "_read_by": "SkyMadrone (S394) through the Supabase MCP: Santa Barbara City, Orange Coast, Foothill and Sierra added; MAP names no course code at any of the four (map_college_cr_unit rows carry no SUBJ-NUM college_course there). Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles) and Diablo Valley (2; 0daebf68, f20f5e51) were read the same day, matched in SQL, and are held until their records load. Earlier: SkyTamarack (S392) through the Supabase MCP: El Camino (no course code: its one college_course reads \"-\") and San Joaquin Delta (1 course code; md5 c814004d counts, d7d7ab68 titles; its \"CSU GE E\" line names no course) added. Earlier: SkyPersimmon (S389) through the Supabase MCP: Southwestern (3 course codes; md5 220de7f7 counts, b4f52863 titles) and Fresno City (2; afd80e74, 6b4b8433) added. Earlier: SkyHazel (S385) through the Supabase MCP: Modesto Junior (162 course codes) and Palo Verde (58) added; the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 44f69ec1a24823e14935781dbd760bd8 and 4acabc5730dedeb1e0f28194796eb23c, and the md5 over each code's titles (code#title#source#recs, in the read's order) 30765bf9ceef64b44a2e862b58111469 and 83bbe816ab4eb109b72be382c170d47a, in SQL and over the filed rows. Earlier: SkySpruce (S383) through the Supabase MCP: Cabrillo added (112 course codes); the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 51b488541fdab60ea9e4d093eb052c0a and the md5 over each code's titles (code#title#source#recs, in the read's order) d71fa73bd6952487451eaeafb878f3eb, in SQL and over the filed rows. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield (100 course codes) and Coastline (26) added; per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads c58de704f09a7b58007336979431dace and 8bccde4ad1bae0d610b6de34413e24e9 in SQL and over the filed rows. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added (44 course codes); the per-college md5 over code|recs|exhibits|untitled reads 9ad02bf038663b2c19ac0c6b8aed2574 and the md5 over each code's titles (title#source#recs, in the read's order) 38e86115426ffd0ca2856d3ad6713150, in SQL and over the filed rows. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey (94 course codes) and San Diego City (33) added; per-college md5 over code|recs|exhibits|untitled reads 115340c8a405300f47c2bd0223964f68 and 249410c6592148fbf3beb7b68b7f1cd0 in SQL and over the filed rows. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added (33 course codes; the per-course fingerprint over code, recs, exhibits, untitled exhibits and titles reads 5c7d3a90393e710daa4f686a2f56c917 in SQL and over the filed rows). Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
+ "_read_by": "SkyMadrone (S394) through the Supabase MCP, second batch: Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles), Monterey Peninsula (3; eb85fce8, 1794bde6), Citrus and Victor Valley (none) added. SkyMadrone (S394) through the Supabase MCP: Santa Barbara City, Orange Coast, Foothill and Sierra added; MAP names no course code at any of the four (map_college_cr_unit rows carry no SUBJ-NUM college_course there). Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles) and Diablo Valley (2; 0daebf68, f20f5e51) were read the same day, matched in SQL, and are held until their records load. Earlier: SkyTamarack (S392) through the Supabase MCP: El Camino (no course code: its one college_course reads \"-\") and San Joaquin Delta (1 course code; md5 c814004d counts, d7d7ab68 titles; its \"CSU GE E\" line names no course) added. Earlier: SkyPersimmon (S389) through the Supabase MCP: Southwestern (3 course codes; md5 220de7f7 counts, b4f52863 titles) and Fresno City (2; afd80e74, 6b4b8433) added. Earlier: SkyHazel (S385) through the Supabase MCP: Modesto Junior (162 course codes) and Palo Verde (58) added; the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 44f69ec1a24823e14935781dbd760bd8 and 4acabc5730dedeb1e0f28194796eb23c, and the md5 over each code's titles (code#title#source#recs, in the read's order) 30765bf9ceef64b44a2e862b58111469 and 83bbe816ab4eb109b72be382c170d47a, in SQL and over the filed rows. Earlier: SkySpruce (S383) through the Supabase MCP: Cabrillo added (112 course codes); the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 51b488541fdab60ea9e4d093eb052c0a and the md5 over each code's titles (code#title#source#recs, in the read's order) d71fa73bd6952487451eaeafb878f3eb, in SQL and over the filed rows. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield (100 course codes) and Coastline (26) added; per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads c58de704f09a7b58007336979431dace and 8bccde4ad1bae0d610b6de34413e24e9 in SQL and over the filed rows. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added (44 course codes); the per-college md5 over code|recs|exhibits|untitled reads 9ad02bf038663b2c19ac0c6b8aed2574 and the md5 over each code's titles (title#source#recs, in the read's order) 38e86115426ffd0ca2856d3ad6713150, in SQL and over the filed rows. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey (94 course codes) and San Diego City (33) added; per-college md5 over code|recs|exhibits|untitled reads 115340c8a405300f47c2bd0223964f68 and 249410c6592148fbf3beb7b68b7f1cd0 in SQL and over the filed rows. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added (33 course codes; the per-course fingerprint over code, recs, exhibits, untitled exhibits and titles reads 5c7d3a90393e710daa4f686a2f56c917 in SQL and over the filed rows). Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
  "_refresh": "By hand, the way kb/ccr_cpl_funnel.json is refreshed: run kb/program_requirements_pilot/map_cr_by_course.sql through the Supabase MCP when the funnel reloads (map-custom-report-load.yml) or the harvest adds a college, and file the rows here.",
  "colleges": {
   "Bakersfield College": {
@@ -7071,6 +7071,7 @@
     "untitled_exhibits": 0
    }
   },
+  "Citrus College": {},
   "Coastline Community College": {
    "BC C112": {
     "recs": 2,
@@ -7688,6 +7689,433 @@
     },
     "titles": null,
     "untitled_exhibits": 1
+   }
+  },
+  "Fullerton College": {
+   "AJ 100": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Maritime Enforcement Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master-at-Arms 'A' School",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 2
+    }
+   },
+   "AJ 223": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Master-At-Arms",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master-at-Arms 'A' School",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 3
+    }
+   },
+   "BUS 101": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Personal Financial Management by Correspondence",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "BUS 262": {
+    "recs": 5,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Aircraft Intermediate Level Hydraulic/Pneumatic Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Assault Amphibious Vehicle (AAV)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Boatswain's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman (FC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Flight Equipment Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Geographic Intelligence Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Helicopter Crew Chief, UH-1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Helicopter Mechanic U/AH-1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Helicopter Power Plants Mechanic, T-400/T-700",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1A1 Tank Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Maintenance Supervisor",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Maneuver Senior Leader (SLC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tiltrotor Crew Chief, MV-22",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warehouse Clerk",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 19,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 19
+    }
+   },
+   "BUS 267": {
+    "recs": 7,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Infantry Squad Leader (East)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aircraft Intermediate Level Hydraulic/Pneumatic Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Antiterrorism Training Supervisor",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electrician's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electronics Technician (AT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Maintenance Workcenter Supervisor by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman (AO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Structural Mechanic, Safety Equipment",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Communications Officer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Boatswain's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cannon Crewmember",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cargo Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Document Production Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Culinary Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Distributed Leader I",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Field Artillery (FA) Cannon Section Chief Advanced Leader (ALC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman (Aegis) (FCA)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman (FC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Flight Equipment Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Gas Turbine Systems Technician, Mechanical (GSM)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Geographic Intelligence Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Gunner's Mate (GM)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Helicopter Crew Chief, UH-1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Helicopter Mechanic U/AH-1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Helicopter Power Plants Mechanic, T-400/T-700",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospitalman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hull Maintenance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Technology Specialist Advanced Leader",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Logistics Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1 Armor Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1A2/M1A2 Sep Abrams Armor Crewman Basic Noncommissioned Officer (NCO), Phase 2",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mates, Nuclear Power",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Maintenance Management Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Maritime Enforcement Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Multimedia Illustrator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Navy Counselor (Councelor)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Religious Affairs Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Senior Automotive Maintenance Officer Advanced Course (RC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Signals Intelligence Analyst",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD-1)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tiltrotor Crew Chief, MV-22",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Transportation Management Coordinator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warehouse Clerk",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 53,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 53
+    }
+   },
+   "AJ 110AF": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Master-At-Arms",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
    }
   },
   "Irvine Valley College": {
@@ -11314,6 +11742,78 @@
     "untitled_exhibits": 0,
     "exhibits_by_source": {
      "MAP": 3
+    }
+   }
+  },
+  "Monterey Peninsula College": {
+   "SPCH 1": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Instructor",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1 Armor Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Corps Recruiter",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 3
+    }
+   },
+   "NURS 100": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman Basic (USN)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospitalman",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 2
+    }
+   },
+   "NURS 52A": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Health Care Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman Basic (USN)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 3
     }
    }
   },
@@ -23875,6 +24375,7 @@
     "untitled_exhibits": 1
    }
   },
+  "Victor Valley College": {},
   "West Los Angeles College": {
    "ALD HTH 021": {
     "recs": 2,

@@ -1,0 +1,20 @@
+{
+ "_readme": "S394 SkyMadrone, 2026-10-15. Fullerton's CourseLeaf capture (run 38670930336) gave 312 of 326 programs a page whose label names them (award and title both match) and found none of the program's listed courses on it: \"coarse net: the page's code tokens name 0 of 14 listed courses\" (Nursery Management 03816, its page 3,715 body and 6,515 content characters, one tab panel, Program Student Learning Outcomes). The 13 it found print codes like COSM 55BF, as the state's file does (HORT 153 F). One page, rendered, every link and table shown.",
+ "college": "Fullerton College",
+ "questions": {
+  "requirements": "Where the page prints the program's courses (a tab, a table, a linked page), and how it writes each code."
+ },
+ "keywords": [
+  "HORT",
+  "[Rr]equire",
+  "[Uu]nits?",
+  "[Cc]ourse"
+ ],
+ "pages": [
+  {
+   "answers": ["requirements"],
+   "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/horticulture/nursery-management-associate-arts-degree/",
+   "links": "horticulture|hort|requirement|#"
+  }
+ ]
+}

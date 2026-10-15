@@ -1,0 +1,389 @@
+{
+ "college": "Monterey Peninsula College",
+ "control_number": "03633",
+ "shape": "degree",
+ "title": "Nursing",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.mpc.edu/programs-study/nursing/nursing-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8716,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8716,
+    "output_tokens": 3628,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3628,
+  "output_tokens_details": {
+   "thinking_tokens": 1338
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10742,
+ "ms": 30020,
+ "seconds": 30.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 23,
+   "listed": 26,
+   "share": 0.885,
+   "missing": [
+    "ETNC22",
+    "NURS65",
+    "NURS65L"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    57.5,
+    63.0
+   ],
+   "stated": [
+    72.0,
+    72.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 57.5-63.0; the catalog states 72.0-72.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science Degree Major Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 72,
+    "max": 72
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Provide safe and effective nursing care to patients in a variety of clinical settings using Standards of Competent Performance and in accordance with California statutes and regulations outlined in the Nursing Practice Act.",
+    "Formulate the plan of care to incorporate evidence-based practice.",
+    "Integrate concepts of growth and development to enhance patient-centered care for diverse and dynamic patient populations.",
+    "Utilize technology to effectively communicate, manage knowledge, prevent errors, and support decision making.",
+    "Coordinate activities as a leader within the interdisciplinary health care team to advocate for patients, families, and communities."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Prerequisite Courses (Requires letter grade)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25,
+     "max": 25
+    },
+    "courses": [
+     {
+      "code": "ANAT 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 25",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 26",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHSO 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHSO 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 25",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "MATH - Transfer level or Higher (STAT C1000 recommended)",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "STAT C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Communication Skills",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Information Competency",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "LIBR 50",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Nursing Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NURS 52A",
+      "units": 8.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "NURS 54",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "NURS 55",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 204",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 52B",
+      "units": 8.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 205",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 52C",
+      "units": 9.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 206",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 52D",
+      "units": 9.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 207",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ETNC 22",
+    "why": "not in the text; Ethnic Studies is any course from MPC GE Area 6 list"
+   },
+   {
+    "code": "NURS 65",
+    "why": "required only of Advanced Placement LVN students, listed outside the 72-unit major table"
+   },
+   {
+    "code": "NURS 65L",
+    "why": "required only of Advanced Placement LVN students, listed outside the 72-unit major table"
+   }
+  ],
+  "notes": [
+   "Prerequisite block (25 units) prints no units beside individual courses; it also includes a 3-unit MATH requirement (transfer level or higher) with no specific course; STAT C1000 is only recommended (footnote 3: recommended for BSN transfer), so it is recorded as recommended.",
+   "Humanities (3 units, MPC GE Area 3) and Ethnic Studies (3 units, MPC GE Area 6) are list-based requirements with no named courses and are not recorded as blocks; footnote 2 says they may be waived for students with a prior baccalaureate.",
+   "Information Competency (LIBR 50) is named in footnote 5 as an MPC graduation requirement with no units printed; completing NURS 52A and NURS 52B or NURS 52B and NURS 54 meets the equivalency.",
+   "NURS 52A may be replaced by NURS 54 and NURS 55 together (a two-course alternative); recorded as alternatives on NURS 52A, no units printed for NURS 54/55.",
+   "Table sum: 25 prerequisites + 3 communication + 3 humanities + 3 ethnic studies + 38 nursing core = 72, matching the printed Total Units 72.",
+   "Advanced Placement LVN students may not need NURS 52A, NURS 204, NURS 52B, NURS 205, PSYC 25, NURS 10 (21 units) and must also take NURS 65 and NURS 65L (4 units).",
+   "Footnote 4 ('Recommended for BSN Transfer') is not attached to any visible line in the table.",
+   "Catalog text begins mid-sentence; program description may be cut off. No careers named. Learning outcomes are printed for the program on the A.S. page and recorded for this award.",
+   "No general education pattern is named as a requirement for this degree beyond the referenced MPC GE areas; ge_pattern left null."
+  ]
+ },
+ "extracted_run": "38675240344"
+}
