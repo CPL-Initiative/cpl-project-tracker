@@ -1,0 +1,152 @@
+{
+ "college": "Cypress College",
+ "control_number": "40708",
+ "shape": "certificate",
+ "title": "Administration of Local Anesthesia, Nitrous Oxide-Oxygen Analgesia and Periodontal Soft Tissue Curettage",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/dental-hygiene/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9322,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9322,
+    "output_tokens": 911,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 911,
+  "output_tokens_details": {
+   "thinking_tokens": 409
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05551,
+ "ms": 10685,
+ "seconds": 10.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 3,
+   "share": 0.0,
+   "missing": [
+    "DH220C",
+    "DH221C",
+    "DH255C"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(certificate section not found in the provided text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "DH 220 C",
+    "why": "appears only in the course descriptions; no certificate requirements in the text"
+   },
+   {
+    "code": "DH 221 C",
+    "why": "appears only in the course descriptions; no certificate requirements in the text"
+   },
+   {
+    "code": "DH 255 C",
+    "why": "appears only in the course descriptions; no certificate requirements in the text"
+   }
+  ],
+  "notes": [
+   "The provided text holds only part of the Dental Hygiene course descriptions (starting and ending mid-sentence) and the page's outcomes tab. It has no requirements section for the Administration of Local Anesthesia, Nitrous Oxide-Oxygen Analgesia and Periodontal Soft Tissue Curettage certificate, so no blocks or total were recorded.",
+   "The outcomes tab prints Department Program Student Learning Outcomes for the Dental Hygiene program as a whole. It also says that award-specific PSLOs are on the specific degree or certificate page. Those department outcomes were not recorded as this certificate's outcomes; a reviewer should check the certificate's own page.",
+   "No careers are named for this certificate in the text."
+  ]
+ },
+ "extracted_run": "38748866826"
+}

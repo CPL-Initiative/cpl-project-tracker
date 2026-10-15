@@ -1,0 +1,197 @@
+{
+ "college": "Cypress College",
+ "control_number": "15688",
+ "shape": "certificate",
+ "title": "Automotive Sales and Service",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/automotive-technology/automotive-sales-and-service-certificate/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7243,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7243,
+    "output_tokens": 1516,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1516,
+  "output_tokens_details": {
+   "thinking_tokens": 691
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05929,
+ "ms": 14770,
+ "seconds": 15.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    15.0,
+    16.0
+   ],
+   "stated": [
+    15.0,
+    16.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Sales and Service Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 15,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "The Automotive Technology program is designed to prepare students for employment as automotive technicians and in numerous other related areas of the automotive and transportation industry. Training is given in both theory and practical skills. Directed practical work is given in all areas of maintenance and repair under simulated on-the-job conditions."
+   ],
+   "careers": [
+    "service representative",
+    "salesperson",
+    "estimator"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses are listed in suggested sequence (15-16 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "AT 101 C",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "AT 110 C",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACR 112 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 222 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 208 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 266 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints '3-4' once beside the row 'AT 101 C ... or AT 110 C'; recorded as a range on AT 101 C, though it likely reflects AT 101 C (3) or AT 110 C (4, per the closed list; no units printed beside AT 110 C).",
+   "The only outcome printed on the outcomes tab ('OUTCOME 1') reads as a general Automotive Technology program description rather than a learning outcome specific to this certificate; it appears to be shared across the Automotive Technology program. Copied as printed.",
+   "Careers taken from the program description: 'service representative, salesperson, or estimator'. The description also mentions 'customer service and sales positions in the automotive industry'.",
+   "ACR 112 C is noted as 'formerly ACR 012 C'."
+  ]
+ },
+ "extracted_run": "38748866826"
+}

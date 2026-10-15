@@ -1,0 +1,418 @@
+{
+ "college": "Cypress College",
+ "control_number": "44699",
+ "shape": "certificate",
+ "title": "Foreign Language for Professionals in Culinary Arts and Hospitality Careers",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/foreign-language/foreign-language-for-professionals-in-culinary-arts-and-hospitality-careers-certificate/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8264,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8264,
+    "output_tokens": 3552,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3552,
+  "output_tokens_details": {
+   "thinking_tokens": 998
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.1041,
+ "ms": 28519,
+ "seconds": 28.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 22,
+   "listed": 24,
+   "share": 0.917,
+   "missing": [
+    "SPAN203C",
+    "SPAN204C"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    23.0,
+    27.0
+   ],
+   "stated": [
+    23.0,
+    26.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 23.0-27.0; the catalog states 23.0-26.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Foreign Language for Professionals in Culinary Arts and Hospitality Careers Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Communication Skills: Students will be able to effectively use basic foreign language skills in various professional scenarios, including culinary instruction, customer service, and cross-cultural interactions within the hospitality industry with 70% accuracy.",
+    "Cultural Understanding: Students will deepen their understanding of the cultural norms, culinary traditions, and hospitality practices associated with the regions where the language they are studying is spoken with 70% accuracy.",
+    "Cross-Cultural Competence: Students will demonstrate the ability to navigate intercultural situations, show respect for diversity, and adapt within the multicultural work environments of the culinary arts and hospitality industries with 70% accuracy."
+   ],
+   "careers": [
+    "Culinary Arts and Hospitality industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core: Courses to be taken as a discipline group in the suggested sequence listed (12-15 units).",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "ENGL C1000E",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 110 C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select TWO (2) Courses in ONE (1) Foreign Language Pathway: Chinese (Elementary)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Foreign Language Pathway",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHIN 101 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIN 102 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select TWO (2) Courses in ONE (1) Foreign Language Pathway: French (Elementary)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Foreign Language Pathway",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FREN 101 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 102 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select TWO (2) Courses in ONE (1) Foreign Language Pathway: Japanese (Elementary)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Foreign Language Pathway",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "JAPN 101 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPN 102 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select TWO (2) Courses in ONE (1) Foreign Language Pathway: Spanish (Elementary)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Foreign Language Pathway",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SPAN 101 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 102 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select TWO (2) Courses in ONE (1) Foreign Language Pathway: Chinese (Intermediate)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Foreign Language Pathway",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHIN 203 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIN 204 C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select TWO (2) Courses in ONE (1) Foreign Language Pathway: French (Intermediate)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Foreign Language Pathway",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FREN 203 C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 204 C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select TWO (2) Courses in ONE (1) Foreign Language Pathway: Japanese (Intermediate)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Foreign Language Pathway",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "JAPN 203 C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPN 204 C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select Culinary Arts and Hospitality Electives (11-12 units)",
+    "rule": "choose_units",
+    "minimum": 11,
+    "option_group": null,
+    "stated": {
+     "min": 11,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "HRC 101 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HRC 120 C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HRC 135 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HRC 160 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HRC 230 C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "SPAN 203 C",
+    "why": "not in the text; no intermediate Spanish pathway printed"
+   },
+   {
+    "code": "SPAN 204 C",
+    "why": "not in the text; no intermediate Spanish pathway printed"
+   }
+  ],
+  "notes": [
+   "Total discrepancy: the description says 'This certificate requires a total of 23-26 units' while the course table prints 'Total Units 23-27'. total_units records the description's 23-26; reviewer should check.",
+   "The 'Required Core' heading (12-15 units) spans both the English composition requirement (4-5) and the foreign language pathway choice (8-10); the 12-15 and 8-10 figures are not recorded on any single block's stated.",
+   "ENGL C1000 appears twice in the table (as the main row and as an 'or' row); recorded once with ENGL C1000E and ESL 110 C as alternatives. The 4-5 range printed beside it covers the alternatives.",
+   "Foreign language pathways printed as pairs separated by 'OR'; each pair recorded as its own block in option_group 'Foreign Language Pathway'. Pathway block names are descriptive labels derived from the courses, not printed headings.",
+   "The four HRC courses listed (with HRC 160 C or HRC 230 C) total 11 units, matching the minimum of the 11-12 unit elective range, so in practice all may be required; HRC 230 C units not printed.",
+   "Program outcomes are printed for the program on the outcomes tab; this certificate is the only award in the section, so they are recorded here. 'OUTCOME n:' labels omitted."
+  ]
+ },
+ "extracted_run": "38748866826"
+}

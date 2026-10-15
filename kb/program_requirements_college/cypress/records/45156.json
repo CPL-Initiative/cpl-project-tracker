@@ -1,0 +1,286 @@
+{
+ "college": "Cypress College",
+ "control_number": "45156",
+ "shape": "degree",
+ "title": "Religious Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/philosophy-religious-studies/religious-studies-associate-in-arts-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7851,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7851,
+    "output_tokens": 2318,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2318,
+  "output_tokens_details": {
+   "thinking_tokens": 665
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07776,
+ "ms": 17577,
+ "seconds": 17.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Religious Studies Associate in Arts Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cypress College Local General Education or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Compare, contrast, and assess at least two methodological approaches utilized in the academic study of religion, including the methods and theories of religious studies scholarship, in order to cultivate an objective understanding of the world's religious traditions.",
+    "Compare and contrast at least two of the major religious traditions, focusing on an ethical aspect and on an aspect of practice, in order to demonstrate the ability to synthesize knowledge of world religious traditions.",
+    "Identify, explain, and evaluate at least two aspects of the worldviews held by two of the major Asian traditions through critical analysis of topics introduced in courses, in order to cultivate objective knowledge of diverse Asian religious traditions.",
+    "Identify and evaluate at least two major theological issues dividing Protestantism, Roman Catholicism, and Eastern Orthodoxy in order to reflect on the historical, social, and cultural contexts out of which the global diversity of Christianity emerges."
+   ],
+   "careers": [
+    "various religious ministries",
+    "religious education"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (9 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "PHIL 101 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 101HC",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 105 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 225 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 110 C",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 120 C",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL 240 C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select three courses from the list below that have not already been taken, from the required list. (9 units):",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ANTH 107 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 112 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 112HC",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 100 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 100HC",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 110 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 120 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 160 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 230 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 240 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Third required row is a choice of PHIL 225 C or PHIL 110 C or PHIL 120 C or PHIL 240 C, recorded as one entry with alternatives; alternatives print no units beside them.",
+   "PHIL 110 C, PHIL 120 C and PHIL 240 C appear both as alternatives in the required list and in the select-three list; the catalog says the three chosen must not already have been taken for the required list.",
+   "Catalog titles PHIL 240 C 'Introduction to Christianity' while the state file titles it 'Jesus and His Interpreters'.",
+   "Degree requires electives to reach a minimum of 60 units; no elective units are printed, so electives_fill_degree is true and degree_total is null (60 is stated as a minimum, not printed as this award's total).",
+   "Fields named as preparation for further study (education, law, social work, counseling, government service) and 'teaching and/or doing research' were not recorded as careers; only the explicit 'career in various religious ministries or in religious education' was recorded.",
+   "Outcomes copied from the page's Program Student Learning Outcomes tab, with the 'Outcome N:' labels removed."
+  ]
+ },
+ "extracted_run": "38748866826"
+}

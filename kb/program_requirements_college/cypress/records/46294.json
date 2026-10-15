@@ -1,0 +1,344 @@
+{
+ "college": "Cypress College",
+ "control_number": "46294",
+ "shape": "adt",
+ "title": "Public Health",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/public-health-science/public-health-science-associate-in-science-degree-for-transfer/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7962,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7962,
+    "output_tokens": 2419,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2419,
+  "output_tokens_details": {
+   "thinking_tokens": 771
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08023,
+ "ms": 19756,
+ "seconds": 20.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 23,
+   "listed": 23,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    25.0
+   ],
+   "stated": [
+    24.0,
+    25.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Course List",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Acquire knowledge, skills, and competencies in the field of public health, including public health policies and health social justice practices using social determinants of health, necessary for transfer to a 4-year institution."
+   ],
+   "careers": [
+    "health-related professions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "PHS 280 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHS 280HC",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHS 284 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 101 C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 101HC",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 120PC",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSY 161 C",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSY 161HC",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 161 C",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 161HC",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Laboratory Sciences: Select one course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "BIOL 220 C",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 231 C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 241 C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 101 C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 111AC",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Public Health Concentration in Equity, Diversity and Justice",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PHS 281 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHS 281HC",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C: Public Health Focused Interest Area: Select One Course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PHS 283 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHS 285 C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHS 294 C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHS 107 C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHS 296 C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The extracted text prints no program heading (the text begins mid-sentence); section_heading uses the printed 'Course List' heading. The page is the Public Health Science AS-T page per the source URL.",
+   "List A prints '4-5' beside BIOL 220 C only, as the first 'or' row; this range likely reflects the whole list (4-unit biology courses, 4.5-5 unit chemistry courses) rather than BIOL 220 C alone. Units for the other List A courses are not printed.",
+   "List A and List C are printed as 'or' rows under 'Select one course' headings; recorded as choose-one blocks with each course as its own entry.",
+   "Honors and alternate statistics courses are printed without units; their units are left null.",
+   "The 60 CSU-transferable units is the generic AS-T requirement, not printed as this award's total; degree_total left null. Cal-GETC units are not printed.",
+   "The outcomes tab prints one Program Student Learning Outcome, recorded for this award."
+  ]
+ },
+ "extracted_run": "38748866826"
+}

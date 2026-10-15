@@ -1,0 +1,408 @@
+{
+ "college": "Cypress College",
+ "control_number": "37247",
+ "shape": "certificate",
+ "title": "Cyber Defense",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/cyber-defense-certificate/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8291,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8291,
+    "output_tokens": 4042,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4042,
+  "output_tokens_details": {
+   "thinking_tokens": 1712
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.114,
+ "ms": 34807,
+ "seconds": 35.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 22,
+   "listed": 22,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CIS190C"
+   ],
+   "flagged": [
+    "CIS190C"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    21.0,
+    26.0
+   ],
+   "stated": [
+    26.0,
+    28.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 21.0-26.0; the catalog states 26.0-28.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Cyber Defense Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Acquire the skills, including identifying and analyzing security threats and vulnerabilities, manage local and wide area networks, implement cloud computing and virtualization solutions, and administer Windows and Linux operating systems, necessary for workforce preparation and to pursue a professional career in the field of Cybersecurity Analyst, Network Management, Cloud Architect, and System Administration and Support."
+   ],
+   "careers": [
+    "Cybersecurity",
+    "Cybersecurity Analyst",
+    "Network Management",
+    "Cloud Architect",
+    "System Administration and Support"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required core courses (8 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "CIS 190 C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 230 C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective core courses (9 units)",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CIS 195 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 196 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 247 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "EMPHASIS 1: Cisco Networking Emphasis (9 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Emphasis area",
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CIS 231 C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 232 C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 233 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS 239 C",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS 258 C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "EMPHASIS 2: System Administration and Technical Support emphasis (9 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Emphasis area",
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CIS 164 C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 185 C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 189 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS 243 C",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS 110 C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "EMPHASIS 3: Development, Security, and Operations (DevSecOps) Engineering emphasis (10 units) - required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Emphasis area",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS 257 C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "EMPHASIS 3: Select two emphasis area's secondary courses (3 units)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": "Emphasis area",
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CIS 226 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 256 C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 259 C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 274 C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 275 C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "EMPHASIS 4: Virtualization and Cloud Computing Emphasis (9 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Emphasis area",
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CIS 201 C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 259 C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 202 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS 274 C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Total conflict: the description says 'This certificate requires a total of 26-28 units' and the table heading says '(26 to 28 units)', but the table ends 'Total Units 30-32'. total_units records 26-28; reviewer should check.",
+   "The emphasis block heading prints 9-11 units for 'Complete all courses in one emphasis area'.",
+   "Elective core courses (9 units) lists exactly three 3-unit courses, so in effect all three are required; recorded as choose_units 9.",
+   "Paired courses (CIS 231 C & CIS 232 C, CIS 164 C & CIS 185 C, CIS 201 C & CIS 259 C) are printed with a combined 6 units; individual units left null.",
+   "Each emphasis's secondary-course choice ('or' rows) is recorded as one entry with alternatives within that emphasis block; units for the 'or' alternatives are not printed.",
+   "Emphasis 3 is recorded as two blocks (required CIS 257 C plus a choice of two secondary courses), both of which must be completed together if that emphasis is chosen; all emphasis blocks share option_group 'Emphasis area'. Its secondary heading says '(3 units)' though two courses are chosen and the emphasis heading says 10 units; CIS 256 C is 4 units per the state file, which would make 11.",
+   "CIS 190 C (IT & Cybersecurity Fundamentals) is not in the closed list; recorded as a catalog addition.",
+   "Outcomes come from the page's outcomes tab for this certificate."
+  ]
+ },
+ "extracted_run": "38748866826"
+}
