@@ -2706,8 +2706,12 @@
   function conditionsHtml(cond) {
     if (!cond || !cond.items || !cond.items.length) return "";
     var n = cond.items.length;
-    var h = '<div class="cb-lab cb-flagp">CPL funding requires the following ' + numWord(n)
-      + " minimum condition" + (n === 1 ? "" : "s") + ":</div>";
+    // The editable passage speaks of conditions in the plural; one condition
+    // keeps the house sentence's singular.
+    var h = '<div class="cb-lab cb-flagp">' + (n === 1
+      ? "CPL funding requires the following " + numWord(n) + " minimum condition:"
+      : mcText("mc_conds", { "condition count": numWord(n) }, "CPL funding requires the following " + numWord(n)
+        + " minimum conditions:")) + "</div>";
     h += '<ol class="cb-ess-list cb-conds">';
     cond.items.forEach(function (it, i) {
       var st = it.pending ? "pending" : it.met ? "met" : "not";
@@ -2753,6 +2757,15 @@
    * drift. ctx: { funding, college, f, detail, b, implProg, stratsInline,
    * standalone }. Every figure is the funding module's; nothing here derives
    * one. */
+  /* A sentence of the block, from My CPL Funding's text on the funding tab
+   * (Sam, 2026-10-15, call 8: editable like the explainer's passages), with
+   * this institution's figures filled in. The house wording below is the
+   * fallback for a page the funding module has not reached. */
+  function mcText(key, figs, fallback) {
+    var T = window.CPL_FUNDING_TAB;
+    var h = T && typeof T.mcTextHtml === "function" ? T.mcTextHtml(key, figs || {}) : null;
+    return h != null ? h : fallback;
+  }
   function fundingBlockHtml(ctx) {
     var f = ctx.f, implProg = ctx.implProg, stratsInline = ctx.stratsInline;
     var fundBody = "";
@@ -2777,12 +2790,13 @@
       // the memo and the commitment, not the date.
       fundBody += '<div class="cb-fbox"><header><h4>2025&ndash;2026 $50K Seed Funding</h4><span class="cb-tagword">ESS 25-82, distributed spring 2026</span></header>';
       if (f.grant.declined) {
-        fundBody += '<div class="cb-fbig">Declined</div><div class="cb-lab">The college declined this grant pending further review.</div>';
+        fundBody += '<div class="cb-fbig">Declined</div><div class="cb-lab">' +
+          mcText("mc_seed_declined", {}, "The college declined this grant pending further review.") + "</div>";
       } else {
         fundBody += '<div class="cb-fbig">' + money(f.grant.amount) + "</div>"
-          + '<div class="cb-lab">Based on the guidance provided in memo ESS 25-82, the college received this funding '
-          + "through apportionment with a commitment to achieve the three priority outcomes measured by CPL data in "
-          + "the MAP platform.</div>";
+          + '<div class="cb-lab">' + mcText("mc_seed", {}, "Based on the guidance provided in memo ESS 25-82, the "
+          + "college received this funding through apportionment with a commitment to achieve the three priority "
+          + "outcomes measured by CPL data in the MAP platform.") + "</div>";
       }
       var ess = essProgress(f, ctx.detail, window.CPL_FUNDING_ESS, accessPriorityTitle(f.prios));
       if (ess) {
@@ -2816,21 +2830,22 @@
         fundBody += '<div class="cb-lab">CPL funding lists no allocation for this college.</div>';
       } else {
         fundBody += '<div class="cb-fbig">' + money(f.alloc.total) + "</div>";
-        fundBody += '<div class="cb-lab">Potential (max) funding available for the two-year period 2026-28 is allocated '
-          + "based on priority outcomes measured in full-time equivalent students (FTES) in MAP. Achievement of the "
-          + "following priority outcomes determines funding.</div>";
+        fundBody += '<div class="cb-lab">' + mcText("mc_impl", {}, "Potential (max) funding available for the "
+          + "two-year period 2026-28 is allocated based on priority outcomes measured in full-time equivalent students "
+          + "(FTES) in MAP. Achievement of the following priority outcomes determines funding.") + "</div>";
         if (f.alloc.floored) {
-          fundBody += '<div class="cb-lab cb-flagp">The college qualifies for ' + money(f.floor) + " base funding to "
-            + "implement the CPL policies and procedures needed to achieve the priority outcomes.</div>";
+          fundBody += '<div class="cb-lab cb-flagp">' + mcText("mc_base", { "base award": money(f.floor) },
+            "The college qualifies for " + money(f.floor) + " base funding to implement the CPL policies and "
+            + "procedures needed to achieve the priority outcomes.") + "</div>";
         }
         // The floor's mirror image. Say where the difference WENT, not just
         // that the college lost it — the same reason the funding explainer
         // names the beneficiary of every amount it shows.
         if (f.alloc.capped && f.cap) {
-          fundBody += "<div class=\"cb-lab cb-flagp\">The college's proportional share of the funding exceeds the "
-            + money(f.cap) + " cap, so its funding stops at the cap and the difference is redirected to the other "
-            + "colleges. Its targets scale to the cap, so it qualifies for funding at the same rate as every college "
-            + "above the base.</div>";
+          fundBody += '<div class="cb-lab cb-flagp">' + mcText("mc_cap", { cap: money(f.cap) },
+            "The college's proportional share of the funding exceeds the " + money(f.cap) + " cap, so its funding "
+            + "stops at the cap and the difference is redirected to the other colleges. Its targets scale to the cap, "
+            + "so it qualifies for funding at the same rate as every college above the base.") + "</div>";
         }
         fundBody += conditionsHtml(f.cond);
 
@@ -2840,8 +2855,9 @@
         // visible as noncredit funding — and it is the noncredit dean who
         // needs to see it. The share is INSIDE the combined figure above.
         if (f.nc != null && f.nc > 0) {
-          fundBody += '<div class="cb-note cb-ncline">Noncredit portion of the max funding is ' + money(f.nc)
-            + ", which is based on CPL FTES that originate from the college or district's noncredit program.</div>";
+          fundBody += '<div class="cb-note cb-ncline">' + mcText("mc_nc", { "noncredit portion": money(f.nc) },
+            "Noncredit portion of the max funding is " + money(f.nc) + ", which is based on CPL FTES that originate "
+            + "from the college or district's noncredit program.") + "</div>";
         }
 
         // ── What the max award is FOR — the priorities, each with this
@@ -2866,8 +2882,8 @@
             fundBody += "</div>";
           });
           fundBody += "</div>";
-          fundBody += '<div class="cb-lab" style="margin-top:8px;">Progress toward each priority goal is measured in FTES '
-            + "and funded up to the cap.</div>";
+          fundBody += '<div class="cb-lab" style="margin-top:8px;">' + mcText("mc_progress", {},
+            "Progress toward each priority goal is measured in FTES and funded up to the cap.") + "</div>";
         }
       }
       fundBody += "</div></div>";
@@ -2898,9 +2914,10 @@
       // 2026-09-30): the block sits beside the institution table it was drawn
       // from, so it points there rather than at a tab the reader cannot see.
       fundBody += ctx.standalone
-        ? '<div class="cb-note">CPL funding follows the same procedure for every institution under All institutions.</div>'
-        : '<div class="cb-note">CPL funding follows the same procedure for every institution. The Implementation '
-          + "Funding tab shows the full derivation and the year split.</div>";
+        ? '<div class="cb-note">' + mcText("mc_close", {},
+            "CPL funding follows the same procedure for every institution under All institutions.") + "</div>"
+        : '<div class="cb-note">' + mcText("mc_close_mc", {}, "CPL funding follows the same procedure for every "
+          + "institution. The Implementation Funding tab shows the full derivation and the year split.") + "</div>";
     }
     return fundBody;
   }

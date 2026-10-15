@@ -3318,15 +3318,29 @@
   // paragraph, and nobody can type markup into a page every visitor reads.
   // The eligibility introduction moved in here from its own always-open
   // textarea; its legacy `eligIntro` key still resolves so nothing saved is lost.
+  // `marks` (Sam, 2026-10-15: "Let me edit the My College text blocks the way I
+  // edit the explainer's passages"): Bold and Italic, **two** and *one*
+  // asterisks, on top of the plain text each block already took.
   var TEXT_BLOCKS = {
-    about:         { label: "the introduction", rows: 9 },
-    reading:       { label: "Reading the funding", rows: 5 },
-    elig_intro:    { label: "the eligibility introduction", rows: 3 },
-    nc_rules:      { label: "the noncredit funding rules", rows: 7 },
-    college_intro: { label: "the institution table introduction", rows: 4 },
-    timing_note:   { label: "the timeline note", rows: 2 },
-    faq:           { label: "the frequently asked questions", rows: 24 }
+    about:         { label: "the introduction", rows: 9, marks: true },
+    reading:       { label: "Reading the funding", rows: 5, marks: true },
+    elig_intro:    { label: "the eligibility introduction", rows: 3, marks: true },
+    nc_rules:      { label: "the noncredit funding rules", rows: 7, marks: true },
+    college_intro: { label: "the institution table introduction", rows: 4, marks: true },
+    timing_note:   { label: "the timeline note", rows: 2, marks: true },
+    faq:           { label: "the frequently asked questions", rows: 24, marks: true }
   };
+  function hasMarks(key) { return !!(TEXT_BLOCKS[key] && (TEXT_BLOCKS[key].marks || TEXT_BLOCKS[key].rich)); }
+  // **bold** and *italic* inside ESCAPED text, never across a tag or a line.
+  function markInline(h) {
+    return String(h).replace(/\*\*([^*<>\n]+?)\*\*/g, "<strong>$1</strong>")
+      .replace(/(^|[^*\w])\*([^*\s<>](?:[^*<>\n]*?[^*\s<>])?)\*(?![*\w])/g, "$1<em>$2</em>");
+  }
+  // A house text's own bold and italic survive into the edit box as marks.
+  function htmlToMarkedPlain(html) {
+    return htmlToPlain(String(html || "").replace(/<(strong|b)\b[^>]*>([\s\S]*?)<\/\1>/gi, "**$2**")
+      .replace(/<(em|i)\b[^>]*>([\s\S]*?)<\/\1>/gi, "*$2*"));
+  }
   // FREQUENTLY ASKED QUESTIONS (Sam, 2026-09-24: "Add an FAQ section to the
   // tab that I can edit by adding and revising questions and answers").
   // One editable prose block, so a curator's edit saves for everyone and
@@ -3391,10 +3405,10 @@
   }
   function faqHtml(plain) {
     var f = faqPairs(plain);
-    var para = function (t) { return "<p>" + linkify(esc(t)).replace(/\n/g, "<br>") + "</p>"; };
+    var para = function (t) { return "<p>" + markInline(linkify(esc(t))).replace(/\n/g, "<br>") + "</p>"; };
     return '<div class="cplfund-faq">' + f.lead.map(para).join("") +
       f.items.map(function (it) {
-        return '<details class="cplfund-faq-item"><summary>' + esc(it.q) + "</summary>" +
+        return '<details class="cplfund-faq-item"><summary>' + markInline(esc(it.q)) + "</summary>" +
           it.a.map(para).join("") + "</details>";
       }).join("") + "</div>";
   }
@@ -3465,8 +3479,6 @@
     "statewide. The receiving college counts the same CPL under its own measures &mdash; the same " +
     "CPL credits both institutions by design (ruled 2026-08-31).</li>" +
     "</ul>";
-  // The My CPL Funding view's introduction, Sam's sentence (2026-10-01).
-  var ONE_VIEW_INTRO = "My CPL Funding is a summary view of CPL funding and expected outcomes.";
   // Sam's College Dashboard intro (mockup rounds, 2026-09-28). The pie has no
   // column header to name it any more, so the intro names it once.
   var COLLEGE_INTRO_DEFAULT_HTML =
@@ -3552,16 +3564,18 @@
   function textIsCustom(key) { return textOverride(key) != null; }
   function textPlain(key) { var o = textOverride(key);
     if (o == null && isRich(key)) return richDefaultPlain(key);
-    if (key === "faq" && o == null) return plainNormalize(FAQ_DEFAULT_PLAIN); return o != null ? plainNormalize(o) : htmlToPlain(textDefaultHtml(key)); }
+    if (key === "faq" && o == null) return plainNormalize(FAQ_DEFAULT_PLAIN);
+    return o != null ? plainNormalize(o) : (hasMarks(key) ? htmlToMarkedPlain : htmlToPlain)(textDefaultHtml(key)); }
   function textHtml(key) {
     if (isRich(key)) return richPlainToHtml(textPlain(key), "tab");
-    var o = textOverride(key); return o != null ? plainToHtml(o) : textDefaultHtml(key);
+    var o = textOverride(key); return o != null ? (hasMarks(key) ? markInline(plainToHtml(o)) : plainToHtml(o)) : textDefaultHtml(key);
   }
   function setText(key, v) {
     var ov = activeOverride();
     var clean = plainNormalize(v);
     ov.text = isPlainObj(ov.text) ? ov.text : {};
-    if (!clean || clean === (isRich(key) ? richDefaultPlain(key) : htmlToPlain(textDefaultHtml(key)))) delete ov.text[key];
+    if (!clean || clean === (isRich(key) ? richDefaultPlain(key)
+        : (hasMarks(key) ? htmlToMarkedPlain : htmlToPlain)(textDefaultHtml(key)))) delete ov.text[key];
     else ov.text[key] = clean;
     if (!Object.keys(ov.text).length) delete ov.text;
     if (key === "elig_intro") delete ov.eligIntro;   // the legacy key this block replaced
@@ -3736,8 +3750,71 @@
     EXPLAINER_BY_KEY[b.key] = b;
     TEXT_BLOCKS[b.key] = { label: b.title + ": " + b.where.toLowerCase(), rows: b.rows, rich: true };
   });
+  // ── MY CPL FUNDING'S TEXT (Sam, 2026-10-15, call 8: "Let me edit the My
+  //    College text blocks the way I edit the explainer's passages") ────────
+  // The sentences every My CPL Funding view prints (college_briefing.js
+  // fundingBlockHtml: My College, the tab's Public view, the explainer), moved
+  // out of code into the saved text. Same editor as the explainer's passages;
+  // a name in braces is a figure filled in for each institution
+  // (mcTextHtml), so an edit never freezes one college's number into all.
+  // The house text is Sam's approved wording of 2026-10-01 (#1798).
+  var MC_FIGS = [["base award", "the base award"], ["cap", "the cap"],
+    ["condition count", "how many minimum conditions there are, in words"],
+    ["noncredit portion", "the institution's noncredit portion of its max award"]];
+  var MC_BLOCKS = [
+    { key: "mc_intro", where: "Above the chooser, on the tab and the explainer",
+      plain: "My CPL Funding is a summary view of CPL funding and expected outcomes." },
+    { key: "mc_seed", where: "The seed funding box, under the amount",
+      plain: "Based on the guidance provided in memo ESS 25-82, the college received this funding through " +
+        "apportionment with a commitment to achieve the three priority outcomes measured by CPL data in the MAP platform." },
+    { key: "mc_seed_declined", where: "The seed funding box, for a college that declined it",
+      plain: "The college declined this grant pending further review." },
+    { key: "mc_impl", where: "The implementation funding box, under the max award",
+      plain: "Potential (max) funding available for the two-year period 2026-28 is allocated based on priority " +
+        "outcomes measured in full-time equivalent students (FTES) in MAP. Achievement of the following priority " +
+        "outcomes determines funding." },
+    { key: "mc_base", where: "A college at the base award",
+      plain: "The college qualifies for {base award} base funding to implement the CPL policies and procedures " +
+        "needed to achieve the priority outcomes." },
+    { key: "mc_cap", where: "A college at the cap",
+      plain: "The college's proportional share of the funding exceeds the {cap} cap, so its funding stops at the cap " +
+        "and the difference is redirected to the other colleges. Its targets scale to the cap, so it qualifies for " +
+        "funding at the same rate as every college above the base." },
+    { key: "mc_conds", where: "Above the minimum conditions",
+      plain: "CPL funding requires the following {condition count} minimum conditions:" },
+    { key: "mc_nc", where: "A college with noncredit FTES",
+      plain: "Noncredit portion of the max funding is {noncredit portion}, which is based on CPL FTES that originate " +
+        "from the college or district's noncredit program." },
+    { key: "mc_progress", where: "Under the priority outcomes",
+      plain: "Progress toward each priority goal is measured in FTES and funded up to the cap." },
+    { key: "mc_close", where: "The closing line on the tab and the explainer",
+      plain: "CPL funding follows the same procedure for every institution under All institutions." },
+    { key: "mc_close_mc", where: "The closing line on My College",
+      plain: "CPL funding follows the same procedure for every institution. The Implementation Funding tab shows " +
+        "the full derivation and the year split." }
+  ];
+  var MC_BY_KEY = {};
+  MC_BLOCKS.forEach(function (b) {
+    MC_BY_KEY[b.key] = b;
+    TEXT_BLOCKS[b.key] = { label: "My CPL Funding: " + b.where.toLowerCase(), rows: 3, rich: true };
+  });
+  // One passage for one institution: its figures by name, then bold and italic.
+  // Inline HTML; a blank line in the passage becomes a line break.
+  function mcTextHtml(key, figs) {
+    if (!MC_BY_KEY[key]) return null;
+    figs = figs || {};
+    return plainNormalize(textPlain(key)).split(/\n\n/).map(function (para) {
+      return markInline(esc(para).replace(/\{([^{}]+)\}/g, function (m, name) {
+        var v = figs[String(name).trim().toLowerCase()];
+        return v == null ? m : esc(String(v));
+      })).replace(/\n/g, "<br>");
+    }).join("<br><br>");
+  }
   function isRich(key) { return !!(TEXT_BLOCKS[key] && TEXT_BLOCKS[key].rich); }
-  function richDefaultPlain(key) { return plainNormalize(EXPLAINER_BY_KEY[key] ? EXPLAINER_BY_KEY[key].plain : ""); }
+  function richDefaultPlain(key) {
+    var b = EXPLAINER_BY_KEY[key] || MC_BY_KEY[key];
+    return plainNormalize(b ? b.plain : "");
+  }
   // One line of rich text. `mode` "page" paints a figure as the span the
   // explainer's painter fills (seeded with the figure already on the page, so
   // nothing blinks empty between the two paints); "tab" shows the name, since
@@ -3844,6 +3921,23 @@
     // Hide (cpl_funding_section_titles excludes it by this mark alone).
     return '<details class="cplfund-sec" data-sec="explainer_text" data-curator-only="1"' + (sectionOpen("explainer_text") ? " open" : "") + ">" +
       '<summary class="cplfund-sec-sum"><h3>The explainer&rsquo;s text</h3>' +
+      '<span class="cplfund-sec-flag">Curator only</span>' +
+      '<span class="cplfund-sec-word" aria-hidden="true"></span></summary>' +
+      '<div class="cplfund-sec-body">' + body + "</div></details>";
+  }
+  function mcTextSectionHtml() {
+    if (!unlocked() || publicMode()) return "";
+    var body = '<p class="cplfund-xtext-lead">The sentences every My CPL Funding view prints: My College, this ' +
+      "tab&rsquo;s Public view and the explainer. Save an edit here and all three show it; Refresh everything " +
+      "reaches windows already open. A name in braces is a figure filled in for each institution.</p>";
+    MC_BLOCKS.forEach(function (b) {
+      body += '<p class="cplfund-xtext-k">' + esc(b.where) + "</p>" + proseBlockHtml(b.key, "cplfund-xtext");
+    });
+    body += '<details class="cplfund-xtext-figs"><summary>The figures a passage can name</summary><ul>' +
+      MC_FIGS.map(function (t) { return "<li><code>{" + esc(t[0]) + "}</code> " + esc(t[1]) + "</li>"; }).join("") +
+      "</ul></details>";
+    return '<details class="cplfund-sec" data-sec="mc_text" data-curator-only="1"' + (sectionOpen("mc_text") ? " open" : "") + ">" +
+      '<summary class="cplfund-sec-sum"><h3>My CPL Funding&rsquo;s text</h3>' +
       '<span class="cplfund-sec-flag">Curator only</span>' +
       '<span class="cplfund-sec-word" aria-hidden="true"></span></summary>' +
       '<div class="cplfund-sec-body">' + body + "</div></details>";
@@ -4159,7 +4253,7 @@
         // Bold and Italic (Sam, 2026-10-14: "How do I change a bold font in the
         // text when editing?"). The passages always took **bold** and *italic*;
         // these put the marks around the selected words so nobody has to know.
-        (TEXT_BLOCKS[key] && TEXT_BLOCKS[key].rich
+        (hasMarks(key)
           ? '<button type="button" class="cplfund-textbtn" data-textwrap="**" data-textfor="' + esc(key) + '">Bold</button>' +
             '<button type="button" class="cplfund-textbtn" data-textwrap="*" data-textfor="' + esc(key) + '">Italic</button>'
           : "") +
@@ -4171,6 +4265,10 @@
           ? '<span class="dk">Plain text. Select words and press Bold or Italic, or type **two asterisks** on each side for bold ' +
             'and *one* for italic. A blank line starts a new paragraph; a paragraph whose every line starts with - is a bulleted ' +
             'list. A name in braces, such as {base award}, is a figure the explainer fills in from the model. Saves for everyone.</span></div>'
+          : hasMarks(key)
+          ? '<span class="dk">Plain text. Select words and press Bold or Italic, or type **two asterisks** on each side for bold ' +
+            'and *one* for italic. A blank line starts a new paragraph; start every line with &gt; to set a passage as a ' +
+            "quotation. Saves for everyone.</span></div>"
           : '<span class="dk">Plain text. A blank line starts a new paragraph; start every line with &gt; to set a passage as a quotation. Saves for everyone.</span></div>');
     } else {
       html += key === "faq" ? faqHtml(textPlain(key)) : textHtml(key);
@@ -13127,7 +13225,7 @@
       // mockup card 1, his words); the table's introduction describes columns
       // and a pie this view does not show.
       (oneView ? '<div class="cplfund-prose dk cplfund-college-intro" data-textblock="college_intro_one"><p>' +
-        ONE_VIEW_INTRO + "</p></div>" : proseBlockHtml("college_intro", "dk cplfund-college-intro")) +
+        mcTextHtml("mc_intro", {}) + "</p></div>" : proseBlockHtml("college_intro", "dk cplfund-college-intro")) +
       collegeViewSwitchHtml() +
       (oneView ? oneCollegeHtml() :
       '<div class="cplfund-toolbar">' +
@@ -13207,7 +13305,7 @@
       }) +
       // The explainer's own passages, last and closed: a curator's tool, never
       // one of the sections a college reads (Sam, 2026-10-09).
-      explainerTextSectionHtml() +
+      explainerTextSectionHtml() + mcTextSectionHtml() +
       "</div>";
     updateCount();
     wire();
@@ -14645,6 +14743,8 @@
     boot: boot, render: render, _state: state,
     // The explainer's header button and the tab's top button open My CPL Funding.
     showMyFunding: showMyFunding,
+    // My CPL Funding's text, for college_briefing.js (Sam, 2026-10-15)
+    mcTextHtml: mcTextHtml,
     // Step 1 and the PDF prompt, for the explainer (Sam, 2026-10-15)
     oneChoice: function () { return oneCollegeView() && state.oneCollege ? state.oneCollege : ""; },
     chooseOne: chooseOne,

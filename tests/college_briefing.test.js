@@ -588,13 +588,14 @@ check("funding: a failed model load says the allocation is unread, never that it
 // REPLACEMENT and guard that the retired phrasing does not creep back.
 check("funding: the allocation is stated positively — driven by the college's own CPL results",
   // Sam's own sentence since 2026-10-01 (mockup card 6): outcomes determine funding.
-  /Achievement of the "\s*\+\s*"following priority outcomes determines funding\./.test(briefingSrc));
+  // Since 2026-10-15 it is also the house text of the editable passage mc_impl.
+  /Achievement of the following priority outcomes determines funding\./.test(briefingSrc));
 check("funding: the retired 'not a cheque' framing is gone",
   !/not a cheque/.test(briefingSrc) && !/ceiling, not a check/.test(briefingSrc));
 check("funding: a college held to the maximum is told where the difference went",
   // "cap" vocabulary (one pool + Sam's funding-vocabulary sweep, 2026-08-31);
   // the promise is unchanged — say where the difference WENT.
-  /cap, so its funding stops at the cap and the difference is redirected to the other "/.test(briefingSrc));
+  /cap, so its funding "\s*\+\s*"stops at the cap and the difference is redirected to the other colleges/.test(briefingSrc));
 
 // ⭐ The floor waterfall must not be re-implemented here. The handoff's
 // worked example — Bakersfield at 1.83% of a $23.24M pool — is a FLAT
