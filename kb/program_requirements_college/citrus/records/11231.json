@@ -1,0 +1,319 @@
+{
+ "college": "Citrus College",
+ "control_number": "11231",
+ "shape": "certificate",
+ "title": "Toyota/Lexus Technician",
+ "award": "Certificate of Achievement requiring 60+S/90+Q units",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/automotive-technology/toyota-lexus-technician-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7957,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7957,
+    "output_tokens": 2448,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2448,
+  "output_tokens_details": {
+   "thinking_tokens": 867
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08079,
+ "ms": 20346,
+ "seconds": 20.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "AUTO156",
+    "AUTO166",
+    "AUTO281"
+   ],
+   "flagged": [
+    "AUTO156",
+    "AUTO166",
+    "AUTO281"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    65.5,
+    65.5
+   ],
+   "stated": [
+    65.5,
+    65.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Toyota/Lexus Technician Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 65.5,
+    "max": 65.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Given any Toyota/Lexus vehicle complaint: verify the customer’s complaint, diagnose the failure or find the vehicle operating as designed, estimate the labor and parts cost, and make a clear needs/recommendations statement on the repair order citing both complaint and cause. In addition, once the student receives authorization, the student will service and/or repair the vehicle to industry standards, verify the repair has corrected the customer’s complaint and document the remedy within the “customer pay” labor time available in the Toyota flat-rate manual."
+   ],
+   "careers": [
+    "Toyota and Lexus technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Select one (1) of the following options: AUTO 101",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Fundamentals option",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "AUTO 101",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (1) of the following options: AUTO 101A & AUTO 101B",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Fundamentals option",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "AUTO 101A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 101B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AUTO 151",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 154",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 156",
+      "units": 6.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUTO 163",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 166",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUTO 167",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 168",
+      "units": 8.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 172",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 281",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUTO 282",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select four (4) units of the following cooperative education courses",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AUTO 230A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 230B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 230C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 230D",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Section heading taken from the outcomes lead-in ('Toyota/Lexus Technician Certificate of Achievement'); the page title itself is not in the extracted text.",
+   "The AUTO 101A & AUTO 101B option prints a combined 6 units on one row; individual units for 101A and 101B are not printed, so their units are null and the block's stated total is 6.",
+   "AUTO 281 carries footnote 1: it is a capstone course and must be taken after all other major coursework is completed.",
+   "AUTO 156, AUTO 166 and AUTO 281 are in the catalog requirements but not in the closed list (catalog additions).",
+   "Catalog Total Units is 65.5; the award description says 60+ semester units, consistent.",
+   "Career Information tab content was not included in the extracted text; the career entry comes from the overview description."
+  ]
+ },
+ "extracted_run": "38675245799"
+}

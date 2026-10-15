@@ -1,0 +1,223 @@
+{
+ "college": "Citrus College",
+ "control_number": "02355",
+ "shape": "degree",
+ "title": "Public Works Administration",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7600,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7600,
+    "output_tokens": 1504,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1504,
+  "output_tokens_details": {
+   "thinking_tokens": 248
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06048,
+ "ms": 11718,
+ "seconds": 12.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    21.0
+   ],
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 18,
+   "courses": 0,
+   "count": 18,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "District General Education Pattern or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Understand the fundamental principles of management and supervision, its role and ethical obligations.",
+    "Understand the various inter-divisional collaborations and synergies that are necessary to support publics’ best interest and service.",
+    "Apply oral and written communication skills appropriate to the Public Works profession.",
+    "Understand the fundamental principles of decision making and problem/conflict resolution processes.",
+    "Understand the broader divisional functions of the Public Works organization.",
+    "Understand the fundamentals of a Public Works Contract, related contract documents, conditions, plans, specifications, regulations, codes, standard, and their respective order of precedence in the context of compliance and mitigating potential litigation.",
+    "Understand the basic applications of construction surveying in Public Works civil improvements.",
+    "Understand the roles and relationships between the various public works construction project stakeholders.",
+    "Understand the fundamental principles of the estimating, bidding and scheduling processes.",
+    "Demonstrate the interpersonal skills to assimilate in culturally diverse project team environments.",
+    "Understand the fundamental public works budgeting process, as well as types of funding sources that support Public Works operations.",
+    "Apply current technology applications and innovations supporting the Public Works industry sector.",
+    "Understand the fundamental inter-relationships between the procurement and contract administration processes and alternative project deliveries.",
+    "Understand the fundamental principles of life-long learning.",
+    "Understand how to effectively use resources to deliver Public Works infrastructure maintenance projects.",
+    "Recognize basic construction means, methods, materials and equipment employed in public works maintenance operations.",
+    "Understand the quality assurance & control measures employed in public works, emphasizing the importance of the need for quality and longevity of capital construction and maintenance projects",
+    "Recognize basic safety hazards on a construction site and standard prevention measures."
+   ],
+   "careers": [
+    "public works occupations"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PUB 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PUB 151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PUB 155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PUB 157",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PUB 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PUB 164",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PUB 166",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The extracted text does not show the page's program title heading; section_heading uses the 'Requirements' tab label. The source URL is the Public Works A.S. page.",
+   "Outcomes are from the 'A.S. Degree Level Student Learning Outcomes' heading, which names the 'Public Works A.S. Degree'; the program title in the request is 'Public Works Administration'.",
+   "The page prints no degree total and no units for general education; 'Total Units 21' is the major total.",
+   "The career entry 'public works occupations' comes from the overview sentence; it is a general field rather than a specific job title."
+  ]
+ },
+ "extracted_run": "38675245799"
+}

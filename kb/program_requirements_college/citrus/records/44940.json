@@ -1,0 +1,197 @@
+{
+ "college": "Citrus College",
+ "control_number": "44940",
+ "shape": "certificate",
+ "title": "Barbering",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/cosmetology/barbering-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7120,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7120,
+    "output_tokens": 1039,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1039,
+  "output_tokens_details": {
+   "thinking_tokens": 339
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04926,
+ "ms": 10517,
+ "seconds": 10.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    34.5,
+    34.5
+   ],
+   "stated": [
+    34.5,
+    34.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Barbering Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 34.5,
+    "max": 34.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Be trained theoretically and practically in haircutting, shaving, beard trimming, facial treatments, scalp treatments, hairstyling, haircoloring, and chemical texture services",
+    "Demonstrate skills related to barbering using proper infection control procedures.",
+    "Be prepared to pass the California Board of Barbering and Cosmetology written exam and acquire licensure."
+   ],
+   "careers": [
+    "barber stylist",
+    "product sales",
+    "platform artist",
+    "salon manager",
+    "entrepreneur",
+    "business owner",
+    "educator",
+    "licensed barber"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BARB 101",
+      "units": 8.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BARB 102",
+      "units": 8.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BARB 103",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BARB 104",
+      "units": 8.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BARB 105",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The award is counted in units (Total Units 34.5); the page also requires a minimum of 1000 clocked hours and a minimum grade of 75% in all 5 courses to qualify for the State Board exam.",
+   "The Career Information tab content was not included in the text; careers were taken from the program description and requirements statement ('to be a licensed barber').",
+   "The first outcome is printed without a closing period; copied as printed."
+  ]
+ },
+ "extracted_run": "38675245799"
+}

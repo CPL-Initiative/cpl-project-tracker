@@ -1,0 +1,177 @@
+{
+ "college": "Citrus College",
+ "control_number": "41966",
+ "shape": "noncredit",
+ "title": "Introduction to Careers in Health",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/introduction-careers-health-certificate-completion/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7266,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7266,
+    "output_tokens": 1166,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1166,
+  "output_tokens_details": {
+   "thinking_tokens": 406
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05238,
+ "ms": 10864,
+ "seconds": 11.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    53.0,
+    53.0
+   ],
+   "stated": [
+    53.0,
+    53.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Completion in Introduction to Careers in Health",
+   "measure": "hours",
+   "total_units": {
+    "min": 53,
+    "max": 53
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify resources for researching potential healthcare occupations. Gain knowledge of educational requirements, responsibilities, and income potential of featured health careers. Develop a career plan using a guided pathways framework.",
+    "Demonstrate effective communication using both verbal and written forms. Communicate the importance of professionalism and accountability in the workplace. Verbalize understanding of cultural competence and how to develop culturally competent practices.",
+    "Recognize the signs of someone in need of CPR, respond confidently and quickly to assist, and activate the emergency response system early to increase the chances of survival."
+   ],
+   "careers": [
+    "healthcare profession"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NC 602",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC 604",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC 605",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The course table's column header reads 'Units', but the total row reads 'Total Hours 53' and this is a noncredit certificate, so the per-course figures (5, 36, 12) are recorded as hours.",
+   "The section heading is taken from the page's navigation listing 'Certificate of Completion in Introduction to Careers in Health'; the page body itself prints no heading above the program description.",
+   "Each outcome is recorded as printed: one paragraph per outcome, each containing several sentences. They are not split into separate sentences.",
+   "The career entry 'healthcare profession' comes from the description sentence 'It will prepare students entering the healthcare profession'. The page also mentions 'healthcare occupations' as course content. The 'Career Information' tab content is not included in the text."
+  ]
+ },
+ "extracted_run": "38675245799"
+}

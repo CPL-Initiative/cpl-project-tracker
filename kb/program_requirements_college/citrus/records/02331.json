@@ -1,0 +1,246 @@
+{
+ "college": "Citrus College",
+ "control_number": "02331",
+ "shape": "degree",
+ "title": "Design and Engineering Drawing Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/drafting-design-technology/design-engineering-drawing-technology-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7291,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7291,
+    "output_tokens": 1596,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1596,
+  "output_tokens_details": {
+   "thinking_tokens": 511
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06108,
+ "ms": 12922,
+ "seconds": 13.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 7,
+   "share": 0.857,
+   "missing": [
+    "DRAF190"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "ARCH102",
+    "DRAF101",
+    "DRAF190A",
+    "DRAF190B"
+   ],
+   "flagged": [
+    "ARCH102",
+    "DRAF101",
+    "DRAF190A",
+    "DRAF190B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.5,
+    26.5
+   ],
+   "stated": [
+    26.5,
+    26.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 26.5,
+    "max": 26.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "District General Education Pattern or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe effective engineering drawing, computer-generated imagery (CGI) and visualization techniques including graphic communication of design and technical drawings, orientation of design and technical drawings, and the decision making process for design and technical drawings.",
+    "Demonstrate the ability to use technology to prepare engineering drawing, architectural, computer-generated imagery (CGI), computer-aided drawings (CAD), and multimedia presentations. Estimate time, material, labor and equipment required for this expertise.",
+    "Demonstrate planning techniques and administration of engineering drawing, architectural, computer-generated imagery (CGI) and document control for design and technical working drawings."
+   ],
+   "careers": [
+    "CAD (computer-aided design) / design person",
+    "animation modeler"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARCH 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 102",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DRAF 102",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRAF 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DRAF 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRAF 161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRAF 190A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DRAF 190B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DRAF 290",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "DRAF 190",
+    "why": "not in the text; catalog lists DRAF 190A and DRAF 190B (Advanced Digital Design Tools Part I and II) instead"
+   }
+  ],
+  "notes": [
+   "The page's main heading is cut off at the start of the text; section_heading uses the Requirements tab label. The page appears to cover only the A.S. degree.",
+   "Total Units 26.5 is the major total; no degree total or GE unit count is printed.",
+   "DRAF 102 is printed as an 'or' alternative to ARCH 102 with no units beside it (cross-listed Visual Communication, 2.5 units in state file).",
+   "The closed list's DRAF 190 appears split in the catalog into DRAF 190A and DRAF 190B; reviewer should confirm."
+  ]
+ },
+ "extracted_run": "38675245799"
+}
