@@ -4,17 +4,17 @@
  "with_closed_list": 281,
  "found": 271,
  "extracted": 271,
- "errors": 0,
- "passed_machine_checks": 228,
+ "errors": 2,
+ "passed_machine_checks": 236,
  "failed": {
   "coverage": 3,
   "invented": 0,
-  "arithmetic": 42,
+  "arithmetic": 32,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 18.26,
- "cost_per_program": 0.0674,
+ "cost_usd": 18.1,
+ "cost_per_program": 0.0668,
  "not_found": [
   {
    "control_number": "06362",
@@ -199,5 +199,5 @@
    }
   }
  ],
- "run": "38639316727"
+ "run": "38656003434"
 }
