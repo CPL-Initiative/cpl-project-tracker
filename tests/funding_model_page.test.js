@@ -123,8 +123,10 @@ check("the institution section comes first, before the introduction and the firs
     const inst = doc.getElementById("institutions");
     const sections = Array.from(doc.querySelectorAll("main > section"));
     const firstStep = doc.getElementById("allocation");
+    // The Introduction joined before the Overview on 2026-10-15 (Sam's call 3).
     return !!inst && !!firstStep && sections.indexOf(inst) === 0 &&
-      sections.indexOf(doc.getElementById("overview")) === 1 &&
+      sections.indexOf(doc.getElementById("introduction")) === 1 &&
+      sections.indexOf(doc.getElementById("overview")) === 2 &&
       !!inst.querySelector("#cplFundingMount") &&
       !!(inst.compareDocumentPosition(firstStep) & 4);
   })());
@@ -134,31 +136,34 @@ check("the institution section comes first, before the introduction and the firs
 // unchanged from 2026-09-02: the introduction, the table and the outcomes
 // open; the five steps that explain the mechanics closed. 2026-10-15 (Sam's My
 // College mockup, calls 1 and 2): the introduction folds ("it is a repeat"), and
-// the Timeline, which now leads with the dates, opens.
-check("every section is one fold; the table, outcomes and Timeline open, the introduction, four steps and the FAQ closed",
+// the Timeline, which now leads with the dates, opens. 2026-10-15 (call 3): the
+// Introduction block joins, folded.
+check("every section is one fold; the table, outcomes and Timeline open, the Introduction, the Overview, four steps and the FAQ closed",
   (function () {
     const sections = Array.from(doc.querySelectorAll("main > section"));
     const folds = sections.map((sec) => sec.querySelector("details.fold"));
     const OPEN = ["institutions", "outcomes", "disbursement"];
-    return sections.length === 9 && folds.every(Boolean) &&
+    return sections.length === 10 && folds.every(Boolean) &&
       folds.every((f) => !!f.querySelector(":scope > summary h2") && !!f.querySelector(":scope > summary .fold-word")) &&
       sections.every((sec, i) => folds[i].open === OPEN.includes(sec.id)) &&
-      folds.filter((f) => !f.open).length === 6 &&
+      folds.filter((f) => !f.open).length === 7 &&
       !!doc.querySelector("#institutions details.fold #cplFundingMount");
   })());
-// THE FAQ is the tab's own block (Sam edits it on the tab, 2026-09-24): its
-// questions render here as the tab renders them, and an edit reaches this page.
-check("the FAQ section carries the tab's own questions, one fold each",
+// THE FAQ: its questions render here as the tab renders them. Since 2026-10-15
+// (Sam's call 2) the page keeps its own copy (x_faq), seeded with the tab's
+// house FAQ, so a curator's edit to the page's copy reaches it and an edit to
+// the tab's own FAQ does not.
+check("the FAQ section carries the tab's house questions, one fold each",
   (function () {
     const items = Array.from(doc.querySelectorAll("#faq-body details.cplfund-faq-item > summary"));
     return items.length >= 3 && /MAP/.test(doc.getElementById("faq-body").textContent);
   })());
-check("...and a curator's FAQ edit on the tab reaches this page, escaped",
+check("...and a curator's edit to the page's own FAQ reaches it, escaped",
   (function () {
     const T = win.CPL_FUNDING_TAB;
     const before = JSON.parse(JSON.stringify(T._getShared() || {}));
     T._setShared(Object.assign({}, before, { text: Object.assign({}, before.text || {},
-      { faq: "Q: Does <b>this</b> question reach the explainer?\n\nIt does." }) }));
+      { x_faq: "Q: Does <b>this</b> question reach the explainer?\n\nIt does." }) }));
     T.render();
     const items = Array.from(doc.querySelectorAll("#faq-body details.cplfund-faq-item > summary"));
     const ok = items.length === 1 && items[0].textContent === "Does <b>this</b> question reach the explainer?" &&
@@ -397,7 +402,10 @@ check("the status line is empty on a successful paint",
   const REQ_ITEMS = Array.isArray(REQ.items) ? REQ.items : null;
   check("the payload carries the model's requirement list and its intro",
     !!REQ_ITEMS && REQ_ITEMS.length > 0);
-  const painted = Array.from(doc.querySelectorAll("#req-list li")).map((li) => li.textContent);
+  // A condition's words, without the How to meet it control after them (Sam,
+  // 2026-10-15, call 5: the control rides each condition the passages cover).
+  const reqText = (li) => { const c = li.cloneNode(true); c.querySelectorAll("button").forEach((b) => b.remove()); return c.textContent.replace(/ $/, ""); };
+  const painted = Array.from(doc.querySelectorAll("#req-list li")).map(reqText);
   check("every requirement the model states is on the page, in its order",
     !!REQ_ITEMS && painted.length === REQ_ITEMS.length &&
     REQ_ITEMS.every((t, i) => painted[i] === t));
@@ -424,7 +432,7 @@ check("the status line is empty on a successful paint",
   repaint();
   check("...and a curator moving the deadline moves that cell",
     doc.getElementById("t-deadline").textContent === "2027-03-15");
-  const after = Array.from(doc.querySelectorAll("#req-list li")).map((li) => li.textContent);
+  const after = Array.from(doc.querySelectorAll("#req-list li")).map(reqText);
   check("a curator's requirement edit reaches this page",
     after.some((t) => /only a curator could have typed/.test(t)) &&
     after.some((t) => t === "And one more"));
@@ -750,7 +758,10 @@ check("the status line is empty on a successful paint",
   // the steps.
   // 2026-10-15 (Sam's My College mockup): the institutions first, then the
   // introduction; the Timeline follows the outcomes, carrying the dates.
-  const IDS = ["institutions", "lede", "outcomes", "timing", "allocation", "qualify",
+  // 2026-10-15 (Sam's calls 2 and 3 on the one public page): the Contents is a
+  // block, first; the Introduction joins before the Overview; the Timeline
+  // takes its own id.
+  const IDS = ["contents", "institutions", "intro", "lede", "outcomes", "timeline", "allocation", "qualify",
                "earning", "choices", "questions"];
   const secs = Array.from(doc.querySelectorAll("[data-fsec]"));
   check("every section carries a data-fsec id, in page order",
@@ -760,8 +771,8 @@ check("the status line is empty on a successful paint",
     !doc.querySelector("footer[data-fsec]") &&
     /working draft for discussion, not adopted policy/.test(doc.querySelector("footer").textContent));
 
-  // ⚠️ AN EXPLAINER SECTION MAY NOT SHARE AN ID WITH A TAB SECTION (except the
-  // one that does on purpose). This is not tidiness — curation is id-keyed, so
+  // ⚠️ AN EXPLAINER SECTION MAY NOT SHARE AN ID WITH A TAB SECTION. This is
+  // not tidiness — curation is id-keyed, so
   // a shared id means a curator's rename or hide on the TAB silently reaches
   // this page. `outcomes` shipped for one commit as `priorities`, which is a
   // tab section carrying the LIVE override "Funding Outcomes of Ed. Code
@@ -769,9 +780,9 @@ check("the status line is empty on a successful paint",
   // tab's priorities section hid this one too. Reproduced against the stored
   // value before the rename.
   //
-  // `timing` is the ONE deliberate collision — one subject, one switch — and it
-  // is named here so that adding a second requires editing this line and saying
-  // why, rather than inheriting the exemption by accident.
+  // `timing` was the one deliberate collision — one subject, one switch — until
+  // Sam's call 2 (2026-10-15: the page keeps its own order, titles, hidden
+  // blocks and text). The page's Timeline is `timeline` now, and no id is shared.
   {
     // ⚠️ THE TAB'S IDS ARE READ FROM THE SOURCE, not copied here. A typed copy
     // is the same mistake one level up: the tab adds a section, this list does
@@ -781,18 +792,14 @@ check("the status line is empty on a successful paint",
     const TAB_IDS = m ? (m[1].match(/"([a-z_]+)"/g) || []).map((q) => q.slice(1, -1)) : [];
     check("the tab's own section ids were read out of the source (the scan has input)",
       TAB_IDS.length >= 8 && TAB_IDS.indexOf("priorities") >= 0);
-    const DELIBERATE = ["timing"];
-    const collisions = IDS.filter((id) => TAB_IDS.indexOf(id) >= 0 &&
-                                          DELIBERATE.indexOf(id) < 0);
-    check("no explainer section shares an id with a tab section, beyond the " +
-          "deliberate `timing`" +
+    const collisions = IDS.filter((id) => TAB_IDS.indexOf(id) >= 0);
+    check("no explainer section shares an id with a tab section" +
           (collisions.length ? " — collides: " + collisions.join(", ") : ""),
       collisions.length === 0);
-    // The scan has to be able to fail, or it is decoration: `timing` IS in both
-    // lists, so the detector sees a real collision and only the exemption
-    // spares it.
-    check("...and the collision scan actually detects one (it sees `timing`)",
-      IDS.indexOf("timing") >= 0 && TAB_IDS.indexOf("timing") >= 0);
+    // The scan has to be able to fail, or it is decoration: the tab's `timing`
+    // stands in for an explainer id here, and the detector must see it.
+    check("...and the collision scan actually detects one (fed the tab's `timing`)",
+      IDS.concat(["timing"]).filter((id) => TAB_IDS.indexOf(id) >= 0).join(",") === "timing");
   }
 
   const qualify = doc.querySelector('[data-fsec="qualify"]');
@@ -814,13 +821,17 @@ check("the status line is empty on a successful paint",
   check("the institution table's heading covers the Max and Curr columns alike",
     !!instHead && instHead.textContent.trim() === "Funding by institution");
 
-  T2._setShared({ titles: { qualify: "Baseline <b>requirements</b>" }, secHidden: { timing: true } });
+  // The page's own titles since call 2: `pubTitles`, never the tab's `titles`.
+  T2._setShared({ pubTitles: { qualify: "Baseline <b>requirements</b>" }, titles: { lede: "A tab rename" },
+                  secHidden: { timeline: true } });
   win.CPL_CURATE_SECTIONS();
-  check("a rename from the tab reaches this page, escaped rather than rendered",
+  check("a rename of this page's block reaches it, escaped rather than rendered",
     qualify.querySelector("h2").textContent === "Baseline <b>requirements</b>" &&
     !qualify.querySelector("h2 b"));
-  check("a section hidden on the tab is hidden here too",
-    doc.querySelector('[data-fsec="timing"]').hidden === true &&
+  check("...and a tab rename under the same word never does (the page's titles are its own)",
+    doc.querySelector('[data-fsec="lede"] h2').textContent === "Overview");
+  check("a block hidden on this page is hidden",
+    doc.querySelector('[data-fsec="timeline"]').hidden === true &&
     doc.querySelector('[data-fsec="qualify"]').hidden === false);
 
   T2._setShared({});
@@ -828,15 +839,15 @@ check("the status line is empty on a successful paint",
   check("clearing the override restores the HOUSE title, not the last one typed",
     qualify.querySelector("h2").textContent === house);
   check("and un-hiding brings the section back",
-    doc.querySelector('[data-fsec="timing"]').hidden === false);
+    doc.querySelector('[data-fsec="timeline"]').hidden === false);
 
   // ── THE GUARD THAT WAS MISSING (Sam, 2026-09-11) ──────────────────────
   //
   // ⚠️ Every check above writes the id it then reads — `{ titles: { qualify } }`
   // straight into the shared map — so together they prove the RESOLVER works
   // and say nothing about whether a curator can ever reach that id. They
-  // could not: `timing` is the ONLY id these seven share with the tab's own
-  // section set, and it collides by coincidence of naming. Six of the seven
+  // could not: `timing` was the ONLY id these seven shared with the tab's own
+  // section set, and it collided by coincidence of naming. Six of the seven
   // sections on this page therefore honored a rename and a hide that no
   // control anywhere could produce. A guard that supplies its own input can
   // only test the half after the input.
@@ -848,11 +859,12 @@ check("the status line is empty on a successful paint",
     typeof T2.publicSectionOrder === "function" &&
     T2.publicSectionOrder().join(",") === IDS.join(","));
 
-  // The reorder appends each section to their shared parent, which is only
-  // correct while that parent holds the sections and nothing else. The day a
-  // banner or a nav is added inside <main>, this loop would move it to the top.
+  // The reorder appends each block to their shared parent, which is only
+  // correct while that parent holds the blocks and nothing else. The day a
+  // banner is added inside <main>, this loop would move it to the top. The
+  // Contents is a block since call 2, so it moves with the others on purpose.
   const main = doc.querySelector('[data-fsec="lede"]').parentNode;
-  check("the sections' parent holds the sections and nothing else",
+  check("the blocks' parent holds the blocks and nothing else",
     main.tagName === "MAIN" &&
     Array.from(main.children).length === IDS.length &&
     Array.from(main.children).every(function (el) { return el.hasAttribute("data-fsec"); }));
@@ -861,15 +873,15 @@ check("the status line is empty on a successful paint",
     return Array.from(doc.querySelectorAll("[data-fsec]"))
       .map(function (el) { return el.getAttribute("data-fsec"); });
   };
-  T2._setShared({ pubSecOrder: ["timing", "lede"] });
+  T2._setShared({ pubSecOrder: ["timeline", "lede"] });
   win.CPL_ORDER_SECTIONS();
   const reordered = fsecOrder();
   check("a curator's order MOVES the sections on this page",
-    reordered[0] === "timing" && reordered[1] === "lede");
+    reordered[0] === "timeline" && reordered[1] === "lede");
   check("...the ones not named append in the page's own order, none lost or doubled",
     reordered.length === IDS.length &&
     reordered.slice(2).join(",") ===
-      IDS.filter(function (id) { return id !== "timing" && id !== "lede"; }).join(",") &&
+      IDS.filter(function (id) { return id !== "timeline" && id !== "lede"; }).join(",") &&
     reordered.slice().sort().join(",") === IDS.slice().sort().join(","));
 
   T2._setShared({});

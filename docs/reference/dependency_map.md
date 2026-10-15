@@ -361,7 +361,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `cpl_memory.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_news.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_pathways.js` | pages: `CPL_Dashboard.html` | — |
-| `cpl_session.js` | pages: `CPL_Dashboard.html`, `fact-sheet/index.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
+| `cpl_session.js` | pages: `CPL_Dashboard.html`, `fact-sheet/index.html`, `funding-model/index.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
 | `cpl_theme.js` | pages: `CPL_Dashboard.html` | — |
 | `cr_reference.js` | pages: `CPL_Dashboard.html` | — |
 | `cr_reference_decisions_<date>_s280.json` | scripts: `kb/_jev_adjudicate.py`, `kb/_jev_battery.py`, `kb/_jev_score.py` | — |
@@ -967,6 +967,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `hartnell.catalog.prod.coursedog.com` | scripts: `kb/_course_outline_census.py` |
 | `huggingface.co` | scripts: `prototype/funding_video/cues.py`, `prototype/funding_video/narrate.py`, `prototype/noncredit_video/cues.py` |
 | `icangotocollege.com` | tabs: `cpl-pathways` |
+| `jst.doded.mil` | tabs: `college-briefing`, `implementation-funding` |
 | `laney.edu` | tabs: `map-queue`, `map-users` |
 | `launchapprenticeship.org` | tabs: `map-queue`, `map-users` |
 | `lmc.elumenapp.com` | scripts: `kb/_course_outline_census.py` |
@@ -1019,7 +1020,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `www.calbright.edu` | tabs: `map-queue`, `map-users` |
 | `www.canyons.edu` | tabs: `map-queue`, `map-users` |
 | `www.careeronestop.org` | scripts: `kb/_sync_cos_certifications.py` |
-| `www.cccco.edu` | tabs: `cip-crosswalk`, `cpl-pathways` · `edgefn:cpl-news-harvest` |
+| `www.cccco.edu` | tabs: `cip-crosswalk`, `college-briefing`, `cpl-pathways` · `edgefn:cpl-news-harvest` |
 | `www.chaffey.edu` | tabs: `map-queue`, `map-users` |
 | `www.citruscollege.edu` | tabs: `map-queue`, `map-users` |
 | `www.cmccd.edu` | tabs: `map-queue`, `map-users` |
@@ -1086,7 +1087,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `x` | scripts: `kb/_verify_cos_sync_lanes.py` |
 | `x.example.org` | modules: `a11y.config.js` |
 | `yc.yccd.edu` | tabs: `map-queue`, `map-users` |
-| `…` | tabs: `cpl-news`, `gr-priorities` |
+| `…` | tabs: `cpl-news`, `gr-priorities` · modules: `funding-model/edit_page.js` |
 
 ## Stale-copy risk
 
@@ -1113,4 +1114,4 @@ check these BY HAND before trusting an absence:
 - `scripts/supabase_migrate.py`
 
 Coverage: 99 Supabase tables · 39 RPCs · 8 edge functions · 648 file
-datasets · 179 external services · 441 consumers · 53 workflows · 39 tabs.
+datasets · 180 external services · 442 consumers · 53 workflows · 39 tabs.

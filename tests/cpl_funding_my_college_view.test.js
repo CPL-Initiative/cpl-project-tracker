@@ -3,8 +3,13 @@
 //
 //   1. STEP 1 FIRST. "Make the College selector more prominent so folks see that
 //      it is an important first step." One chooser (cplFundOnePick), first in the
-//      College Dashboard on the tab's Public view, and in its own mount above the
+//      College Dashboard on a public rendering, and in its own mount above the
 //      Contents on the explainer.
+//
+// ⚠ SINCE 2026-10-15 (Sam's call 1 on the one public funding page) the tab's
+// Public page view frames funding-model/ itself, so these checks draw the
+// public rendering the way the public page's engine does (CPL_FUNDING_PUBLIC)
+// rather than through the tab's retired preview.
 //   2. THE CHOICE IS REMEMBERED in the reader's browser (call 9), and "Choose
 //      another college" forgets it.
 //   3. THE PDF ASKS FOR A COLLEGE FIRST, with the statewide page as the second
@@ -53,9 +58,10 @@ function setup(opts) {
   ["college_short_names.js", "cpl_funding_data.js", "cpl_funding.js", "college_briefing.js"].forEach(run);
   const T = w.CPL_FUNDING_TAB;
   T.boot();
+  T.__win = w;
   return { w, doc: w.document, T, printed };
 }
-const pub = (T) => { T._state.previewPublic = true; T.render(); };
+const pub = (T) => { T.__win.CPL_FUNDING_PUBLIC = true; T.render(); };
 
 // ─────────────────────────────────────────────────────────────────────────────
 // 1-3. Step 1, the remembered choice, the PDF prompt (the tab's Public view)
@@ -66,7 +72,7 @@ const pub = (T) => { T._state.previewPublic = true; T.render(); };
   pub(T);
   const step = doc.querySelector(".cplfund-step1");
   const sec = step && step.closest('[data-sec="college"]');
-  check("1b: the Public view carries Step 1 inside the College Dashboard, before the view switch",
+  check("1b: a public rendering carries Step 1 inside the College Dashboard, before the view switch",
     !!step && !!sec && !!sec.querySelector(".cplfund-viewswitch") &&
     !!(step.compareDocumentPosition(sec.querySelector(".cplfund-viewswitch")) & 4));
   const pick = doc.getElementById("cplFundOnePick");
@@ -149,15 +155,12 @@ const pub = (T) => { T._state.previewPublic = true; T.render(); };
   check("5a: the Internal view keeps the introduction open", !!aboutInternal && aboutInternal.open);
   pub(T);
   {
-    // A fresh window: a reader of the Public view arrives there, never from the
-    // Internal view (a curator's own toggle holds for the visit, by design).
-    // The view switch, as a curator flips it: the introduction the Internal
-    // view opened folds on the Public view.
+    // A fresh window: a reader of a public rendering arrives there, never from
+    // the Internal view (a curator's own toggle holds for the visit, by design).
     const f = setup();
-    const sw = f.doc.querySelector('[data-viewmode="public"]');
-    if (sw) click(f.w, sw); else pub(f.T);
+    pub(f.T);
     const about = f.doc.querySelector('details[data-sec="about"]');
-    check("5b: a public rendering folds the introduction", !!about && !about.open && !!sw);
+    check("5b: a public rendering folds the introduction", !!about && !about.open);
   }
   const strat = doc.querySelectorAll("details.cplfund-strat");
   check("5c: a public rendering opens the recommended strategies",
@@ -211,8 +214,10 @@ const pub = (T) => { T._state.previewPublic = true; T.render(); };
   const html = read("funding-model/index.html");
   const doc = new JSDOM(html).window.document;
   const ids = Array.from(doc.querySelectorAll("main > section")).map((s) => s.id);
-  check("7a: the institutions first, the Overview next, the Timeline right after the outcomes",
-    ids[0] === "institutions" && ids[1] === "overview" && ids[2] === "outcomes" && ids[3] === "disbursement");
+  // The Introduction joined just before the Overview on 2026-10-15 (Sam's call 3).
+  check("7a: the institutions first, the Introduction and the Overview next, the Timeline right after the outcomes",
+    ids[0] === "institutions" && ids[1] === "introduction" && ids[2] === "overview" && ids[3] === "outcomes" &&
+    ids[4] === "disbursement");
   check("7b: the Overview arrives folded, the Timeline open",
     !doc.querySelector("#overview details.fold").hasAttribute("open") &&
     doc.querySelector("#disbursement details.fold").hasAttribute("open"));

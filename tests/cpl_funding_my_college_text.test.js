@@ -99,11 +99,15 @@ const SEVEN = ["about", "reading", "elig_intro", "nc_rules", "college_intro", "t
     !!sec && sec.getAttribute("data-curator-only") === "1" &&
     !!doc.querySelector('details[data-sec="explainer_text"]') &&
     /My CPL Funding.s text/.test(sec.querySelector("summary").textContent));
-  check("2b: it lists the eleven passages, each with its editor",
-    sec.querySelectorAll(".cplfund-prose[data-textblock^=\"mc_\"]").length === 11);
-  T._state.previewPublic = true; T.render();
-  check("2c: the Public view carries no such section", !doc.querySelector('details[data-sec="mc_text"]'));
-  T._state.previewPublic = false;
+  // Fifteen since 2026-10-15: the four How to meet it passages joined the one
+  // text (Sam's calls 4 and 5).
+  check("2b: it lists the fifteen passages, each with its editor",
+    sec.querySelectorAll(".cplfund-prose[data-textblock^=\"mc_\"]").length === 15);
+  // A public rendering, as the public page's engine draws it: since 2026-10-15
+  // (Sam's call 1) the tab's Public page view frames funding-model/.
+  w.CPL_FUNDING_PUBLIC = true; T.render();
+  check("2c: a public rendering carries no such section", !doc.querySelector('details[data-sec="mc_text"]'));
+  w.CPL_FUNDING_PUBLIC = false;
 
   check("2d: a passage fills in its institution's figure by name",
     /qualifies for \$150,000 base funding/.test(T.mcTextHtml("mc_base", { "base award": "$150,000" })) &&
@@ -113,7 +117,7 @@ const SEVEN = ["about", "reading", "elig_intro", "nc_rules", "college_intro", "t
   check("2f: an unknown key is not a passage", T.mcTextHtml("nope", {}) === null);
 
   T._setShared({ text: { mc_impl: "Your max award is **allocated** on *outcomes*.", mc_nc: "Noncredit: {noncredit portion}." } });
-  T._state.previewPublic = true; T.render();
+  w.CPL_FUNDING_PUBLIC = true; T.render();
   const pick = doc.getElementById("cplFundOnePick");
   const withNc = w.CPL_FUNDING.colleges.find(function (c) { return (c.ftes_nc || c.nc_ftes || 0) > 0; });
   pick.value = (withNc || w.CPL_FUNDING.colleges[0]).college;

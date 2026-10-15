@@ -182,9 +182,15 @@ const QTR = H.D.colleges.find((c) => c.quarter && PERF.colleges[c.college] && PE
       !!openDrill(w, doc, "c:" + SEM.college).cells[0].cr_current.td.querySelector("[data-srcopen]") &&
       !openDrill(w, doc, "c:" + SEM.college).cells[0].nc_current.td.querySelector("[data-srcopen]"));
     click(w, doc.querySelector('[data-viewmode="public"]'));
-    check("1j: the Public view carries no Refresh", !doc.getElementById("cplFundRefresh"));
+    check("1j: the Public page view frames the page and carries no Refresh",
+      !!doc.querySelector("#cplFundingMount iframe") && !doc.getElementById("cplFundRefresh"));
+    click(w, doc.querySelector('[data-viewmode="internal"]'));
+    // A public rendering, as the public page's engine draws it: since
+    // 2026-10-15 (Sam's call 1) the Public page view frames funding-model/.
+    w.CPL_FUNDING_PUBLIC = true;
+    T.render();
     const pd = openDrill(w, doc, "c:" + SEM.college);
-    check("5b: the Public view carries no Unit sources link", !doc.querySelector("[data-srcopen]"));
+    check("5b: a public rendering carries no Unit sources link", !doc.querySelector("[data-srcopen]"));
     check("3k: a public hover stops at the units (no exact qualifying product)",
       /units in MAP/.test(pd.cells[1].cr_current.tip) && !/so it qualifies for/.test(pd.cells[1].cr_current.tip));
     // 6. My CPL Funding beside the table
@@ -209,7 +215,8 @@ const QTR = H.D.colleges.find((c) => c.quarter && PERF.colleges[c.college] && PE
       /Priority outcomes/.test(panel.textContent));
     check("6d: it points at the table beside it, never at a tab the reader cannot see",
       /under All institutions\./.test(panel.textContent) && !/Implementation Funding tab shows/.test(panel.textContent));
-    click(w, doc.querySelector('[data-viewmode="internal"]'));
+    w.CPL_FUNDING_PUBLIC = false;
+    T.render();
     check("6e: the Internal view keeps the table alone", !doc.getElementById("cplFundCollegeView") && !!doc.getElementById("cplFundTable"));
   }
 
