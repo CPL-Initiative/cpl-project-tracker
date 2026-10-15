@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -74,6 +75,7 @@
     30.0,
     30.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -89,6 +91,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -108,7 +121,8 @@
     "Students apply professional practices to creatively express their personal experience with visual skill and clarity.",
     "Students appraise works of art that inform their own creative process by analyzing principles of visual composition, color theory, and lighting techniques.",
     "Students demonstrate through the creation of personal animated work, an understanding of the animation process and its use as a storytelling medium."
-   ]
+   ],
+   "electives_fill_degree": true
   },
   "blocks": [
    {
@@ -248,5 +262,14 @@
    "The 60-unit degree total includes electives 'as needed' but no specific open elective units are named within the 30-unit major."
   ]
  },
- "extracted_run": "37961137169"
+ "extracted_run": 38656800189,
+ "reconciled": [
+  {
+   "field": "electives_fill_degree",
+   "was": null,
+   "now": true,
+   "words": "(3) electives as needed"
+  }
+ ],
+ "read_run": "37961137169"
 }
