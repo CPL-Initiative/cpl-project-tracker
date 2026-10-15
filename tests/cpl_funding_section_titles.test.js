@@ -66,9 +66,11 @@ function clickSel(window, doc, sel) {
     doc.querySelectorAll(".cplfund-sec:not([data-curator-only])").length === nSections &&
     doc.querySelectorAll("[data-secrename]").length === nSections &&
     doc.querySelectorAll("[data-sechide], [data-secshow]").length === nSections);
-  check("...and the one curator-only section is the explainer's text, with neither control",
-    curatorOnly.length === 1 && curatorOnly[0].getAttribute("data-sec") === "explainer_text" &&
-    !curatorOnly[0].querySelector("[data-secrename], [data-sechide], [data-secshow]"));
+  // My CPL Funding's text joined it on 2026-10-15 (Sam, call 8): never public either.
+  check("...and the curator-only sections are the explainer's text and My CPL Funding's text, with neither control",
+    curatorOnly.length === 2 &&
+    curatorOnly.map((d) => d.getAttribute("data-sec")).join(",") === "explainer_text,mc_text" &&
+    curatorOnly.every((d) => !d.querySelector("[data-secrename], [data-sechide], [data-secshow]")));
   check("the controls sit in the section BODY, never inside the <summary>",
     !doc.querySelector(".cplfund-sec-sum [data-secrename]") &&
     !doc.querySelector(".cplfund-sec-sum button") &&
