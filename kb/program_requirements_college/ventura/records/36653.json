@@ -1,0 +1,168 @@
+{
+ "college": "Ventura College",
+ "control_number": "36653",
+ "shape": "certificate",
+ "title": "Pre-Allied Health Sciences",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/microbiology/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6732,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6732,
+    "output_tokens": 580,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 580,
+  "output_tokens_details": {
+   "thinking_tokens": 139
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03853,
+ "ms": 6035,
+ "seconds": 6.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 7,
+   "share": 0.0,
+   "missing": [
+    "ANATV1",
+    "CHEMV101",
+    "CHEMV104",
+    "CHEMV120A",
+    "MICRV1",
+    "PHSOV1",
+    "PHYSV1"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Microbiology",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANAT V01",
+    "why": "not in the text; page has no Pre-Allied Health Sciences requirements section"
+   },
+   {
+    "code": "CHEM V101",
+    "why": "named only as a prerequisite in the MICR V01 course description; no program requirements in text"
+   },
+   {
+    "code": "CHEM V104",
+    "why": "named only as a prerequisite in the MICR V01 course description; no program requirements in text"
+   },
+   {
+    "code": "CHEM V120A",
+    "why": "named only as a prerequisite in the MICR V01 course description; no program requirements in text"
+   },
+   {
+    "code": "MICR V01",
+    "why": "appears only as a course description on the Microbiology page, not in a program requirements list"
+   },
+   {
+    "code": "PHSO V01",
+    "why": "named only as a prerequisite in the MICR V01 course description; no program requirements in text"
+   },
+   {
+    "code": "PHYS V01",
+    "why": "not in the text; page has no Pre-Allied Health Sciences requirements section"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "38756014587"
+}
