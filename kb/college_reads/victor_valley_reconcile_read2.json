@@ -1,0 +1,35 @@
+{
+ "_readme": "S395 SkyHawthorn, 2026-10-15. Read 1 (run 38749721270) printed only the OVERVIEW tab of two certificate pages whose records hold a required course with no units. This read opens every tab, to see how the REQUIREMENTS tab prints each course's units and the total. Two loads, no model call.",
+ "college": "Victor Valley College",
+ "questions": {
+  "course_units": "How the REQUIREMENTS tab prints each required course's units (a column, a range, a footnote) and the total."
+ },
+ "keywords": [
+  "[Gg]eneral [Ee]ducation[^<\"]{0,160}",
+  "[Ee]lective[^<\"]{0,120}",
+  "[Tt]otal[^<\"]{0,100}",
+  "[Uu]nits [Rr]equired[^<\"]{0,100}",
+  "[Gg]raduation [Rr]equirements[^<\"]{0,160}",
+  "[Cc]al-?GETC[^<\"]{0,120}",
+  "general-education[^<\"]{0,80}",
+  "graduation[^<\"]{0,80}",
+  "cal-?getc[^<\"]{0,80}",
+  "listsum[^<]{0,80}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "course_units"
+   ],
+   "url": "https://catalog.vvc.edu/degrees-certificates/automotive-technology/automotive-alternative-propulsion-ca/",
+   "expand": true
+  },
+  {
+   "answers": [
+    "course_units"
+   ],
+   "url": "https://catalog.vvc.edu/degrees-certificates/automotive-technology/automotive-electrical-specialist-technician-ca/",
+   "expand": true
+  }
+ ]
+}

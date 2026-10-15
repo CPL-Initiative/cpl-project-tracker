@@ -1,0 +1,38 @@
+{
+ "_readme": "S395 SkyHawthorn, 2026-10-15. Read 1 (run 38749721270) printed only the OVERVIEW tab: a degree page says 'Complete the major program section as well and the Associate in Science Graduation Requirements as outlined in the Graduation Requirements section of the catalog', and its courses sit on the REQUIREMENTS tab. This read opens every tab of the Accounting and Management and Leadership Studies degree pages, to see how the REQUIREMENTS tab states the major total, and prints where the catalog's Graduation Requirements section is. Two loads, no model call.",
+ "college": "Orange Coast College",
+ "questions": {
+  "major_total": "How the REQUIREMENTS tab states the major's total units.",
+  "ge_line": "Where the catalog states the OCC AS GE pattern's units (a link to the Graduation Requirements section)."
+ },
+ "keywords": [
+  "[Gg]eneral [Ee]ducation[^<\"]{0,160}",
+  "[Ee]lective[^<\"]{0,120}",
+  "[Tt]otal[^<\"]{0,100}",
+  "[Uu]nits [Rr]equired[^<\"]{0,100}",
+  "[Gg]raduation [Rr]equirements[^<\"]{0,160}",
+  "[Cc]al-?GETC[^<\"]{0,120}",
+  "general-education[^<\"]{0,80}",
+  "graduation[^<\"]{0,80}",
+  "cal-?getc[^<\"]{0,80}",
+  "listsum[^<]{0,80}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "major_total",
+    "ge_line"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/accounting-associate-science-degree/",
+   "expand": true
+  },
+  {
+   "answers": [
+    "major_total",
+    "ge_line"
+   ],
+   "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/management/management-leadership-studies-associate-science-degree/",
+   "expand": true
+  }
+ ]
+}

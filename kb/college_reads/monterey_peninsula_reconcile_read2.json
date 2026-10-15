@@ -1,0 +1,27 @@
+{
+ "_readme": "S395 SkyHawthorn, 2026-10-15. Read 1 (run 38749721270): each degree page prints 'Additional Requirements 39-42' and 'Complete Competency Requirements, general education pattern (MPC General Education or Cal-GETC), and electives, if needed, for a total of 60 degree-applicable units', and no GE units of its own. This read prints the catalog's site map, to find the pages that state the units of the MPC General Education pattern and of Cal-GETC, the way Cerritos's CGEC page states 24-28. One load, no model call.",
+ "college": "Monterey Peninsula College",
+ "questions": {
+  "ge_pages": "Which catalog pages state the MPC General Education pattern and Cal-GETC, by address."
+ },
+ "keywords": [
+  "[Gg]eneral [Ee]ducation[^<\"]{0,160}",
+  "[Ee]lective[^<\"]{0,120}",
+  "[Tt]otal[^<\"]{0,100}",
+  "[Uu]nits [Rr]equired[^<\"]{0,100}",
+  "[Gg]raduation [Rr]equirements[^<\"]{0,160}",
+  "[Cc]al-?GETC[^<\"]{0,120}",
+  "general-education[^<\"]{0,80}",
+  "graduation[^<\"]{0,80}",
+  "cal-?getc[^<\"]{0,80}",
+  "listsum[^<]{0,80}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "ge_pages"
+   ],
+   "url": "https://catalog.mpc.edu/sitemap.xml"
+  }
+ ]
+}
