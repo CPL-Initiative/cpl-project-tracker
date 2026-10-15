@@ -1,0 +1,344 @@
+{
+ "college": "College of the Sequoias",
+ "control_number": "33662",
+ "shape": "degree",
+ "title": "Music",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.cos.edu//areas-study/music/associate-arts-music-transfer-aa/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7820,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7820,
+    "output_tokens": 2987,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2987,
+  "output_tokens_details": {
+   "thinking_tokens": 1068
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09102,
+ "ms": 24741,
+ "seconds": 29.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "MUS36"
+   ],
+   "flagged": [
+    "MUS36"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    54.0,
+    64.0
+   ],
+   "stated": [
+    60.0,
+    69.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
+   "why": [
+    "the blocks and general education sum to 54.0-64.0; the catalog prints 60.0-69.0 for the degree"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 13,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate of Arts in Music (AA)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "California-General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 60,
+    "max": 69
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Discriminate historical differences in music styles and use this knowledge to assess musical performances.",
+    "Implement the concepts of musical theory and analyze examples from a musical score.",
+    "Interpret a musical score and perform with technical accuracy, expression and artistry."
+   ],
+   "careers": [
+    "Studio Musician",
+    "Instrumental Teacher",
+    "Vocal Teacher",
+    "Music Director/Conductor/Producer",
+    "Accompanist",
+    "Media Composer/Arranger",
+    "Music Score Preparer",
+    "Composer",
+    "Music Therapist",
+    "Music Journalist",
+    "Audio Technician",
+    "Recording Engineer",
+    "Audio Designer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED MAJOR COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 26,
+     "max": 36
+    },
+    "courses": [
+     {
+      "code": "MUS 004",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 005",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 006",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 007",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 041AD",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "One of the following large ensemble courses must be completed 4 times for a total of 4-8 units",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "MUS 034AD",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 054AD",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 074AD",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "All Music majors are required to enroll in piano class until piano proficiency requirement is met",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUS 020AD",
+      "units": 2,
+      "units_max": 8,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "RESTRICTED ELECTIVES",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "MUS 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 014",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 030",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 036",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 037",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 038",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 039",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 072AD",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 180",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 26-36 printed for REQUIRED MAJOR COURSES covers the whole required section (theory, MUS 041AD, the ensemble choice and piano); it is recorded as stated on the first block only. It was not used as total_units because the page prints no separate major total; 'TOTAL 60-69' is recorded as degree_total.",
+   "MUS 041AD is printed at 1 unit but 'must be completed four times for a total of 4 units'; the ensemble course must be completed 4 times (4-8 units); MUS 020AD (2-8) is repeated until piano proficiency is met.",
+   "Restricted electives (0-3 units) are to be selected 'to complete 60 units'; minimum recorded as 0 from the printed 0-3 range. electives_fill_degree left false because the page prints units for this block.",
+   "Footnote: courses marked * (MUS 004-007) meet GE and 3 units may be double counted in Cal-GETC.",
+   "Catalog codes use leading zeros (MUS 004, MUS 010, etc.) matching closed-list codes MUS 4, MUS 10, etc.; MUS 036 Chamber Singers Renaissance is not in the closed list.",
+   "The source URL slug says 'associate-arts-music-transfer-aa' and the closing paragraph refers to 'The Associate of Arts Degree for Transfer requirements', but the page heading is Associate of Arts in Music (AA); reviewer may check this wording.",
+   "Description lists three emphases (instrumental, vocal, keyboard) while requirements text lists four (adds Composition).",
+   "'Media Composer/Arranger' is printed twice in the careers list; recorded once."
+  ]
+ },
+ "extracted_run": "38748848139"
+}

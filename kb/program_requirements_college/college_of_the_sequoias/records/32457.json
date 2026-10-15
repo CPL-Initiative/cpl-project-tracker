@@ -1,0 +1,285 @@
+{
+ "college": "College of the Sequoias",
+ "control_number": "32457",
+ "shape": "adt",
+ "title": "Geology",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.cos.edu//areas-study/geology/associate-science-geology-transfer-as-t/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7460,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7460,
+    "output_tokens": 2369,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2369,
+  "output_tokens_details": {
+   "thinking_tokens": 1077
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07722,
+ "ms": 20967,
+ "seconds": 21.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 6,
+   "share": 0.667,
+   "missing": [
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "GEOL151",
+    "GEOL152",
+    "GEOL153",
+    "GEOL154",
+    "MATH65",
+    "MATH66"
+   ],
+   "flagged": [
+    "GEOL151",
+    "GEOL152",
+    "GEOL153",
+    "GEOL154",
+    "MATH65",
+    "MATH66"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.0,
+    26.0
+   ],
+   "stated": [
+    26.0,
+    26.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     67.0,
+     67.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science in Geology for Transfer (AS-T)",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 7,
+    "max": 7
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Understand that geology involves the application of chemistry, physics, biology and mathematics to the study of geological phenomena.",
+    "Employ the scientific method to understand and explain geologic phenomena.",
+    "Know fundamental scientific explanations for major geological events in earth’s past, present and future."
+   ],
+   "careers": [
+    "entry-level field technician/geologist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED MAJOR COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 26,
+     "max": 26
+    },
+    "courses": [
+     {
+      "code": "CHEM 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 005",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 065",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 066",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "ELECTIVES",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOL 151",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOL 152",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOL 153",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOL 154",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH C2210",
+    "why": "not in the text; catalog prints MATH 065 Calculus 1, likely the same course under the local number"
+   },
+   {
+    "code": "MATH C2220",
+    "why": "not in the text; catalog prints MATH 066 Calculus 2, likely the same course under the local number"
+   }
+  ],
+  "notes": [
+   "CHEM 001, CHEM 002, GEOL 001, GEOL 005 are printed with leading zeros and treated as matching closed-list CHEM 1, CHEM 2, GEOL 1, GEOL 5.",
+   "MATH 065 and MATH 066 marked as catalog additions because the closed list names MATH C2210/C2220 (common course numbers); reviewer should confirm equivalence.",
+   "Electives 7 units: 'Select additional transferable courses numbered 1-199 to achieve 60 units'; recorded as degree_elective_units since a major total (26) is printed. GEOL 151-154 are only recommended by the Science Division toward this elective requirement.",
+   "Footnote: GEOL 001 and MATH 065 meet GE and 7 units may be double counted in Cal-GETC (34 + 26 + 7 = 67 printed vs. TOTAL 60).",
+   "Physics (PHYS 020 + PHYS 021 or PHYS 055 + PHYS 056 + PHYS 057) is suggested as additional preparation but not required; not recorded as a block.",
+   "Single Program Outcomes list printed on the page for this award."
+  ]
+ },
+ "extracted_run": "38748848139"
+}

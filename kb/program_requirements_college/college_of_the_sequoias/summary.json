@@ -1,0 +1,115 @@
+{
+ "college": "College of the Sequoias",
+ "programs": 137,
+ "with_closed_list": 137,
+ "found": 125,
+ "extracted": 125,
+ "errors": 0,
+ "passed_machine_checks": 85,
+ "failed": {
+  "coverage": 7,
+  "invented": 0,
+  "arithmetic": 40,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 8.75,
+ "cost_per_program": 0.07,
+ "not_found": [
+  {
+   "control_number": "10048",
+   "title": "Graphic Design",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.cos.edu//areas-study/graphic-design/associate-science-graphic-design-not-for-transfer-as/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.333,
+    "body": 0.333,
+    "content": 0.0,
+    "net": 3,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 3 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3949,
+     "content": 6034,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "10064",
+   "title": "Administration of Justice-Corrections",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "18585",
+   "title": "Administration of Justice: Law Enforcement",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32649",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.cos.edu//areas-study/business/associate-science-business-administration-transfer-as-t/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.05,
+    "body": 0.05,
+    "content": 0.05,
+    "net": 1,
+    "listed": 20,
+    "why": "coarse net: the page's code tokens name 1 of 20 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4609,
+     "content": 6697,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "42925",
+   "title": "Multimedia Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.cos.edu//areas-study/graphic-design/certificate-achievement-multimedia-production/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.286,
+    "body": 0.286,
+    "content": 0.0,
+    "net": 2,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 2 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3342,
+     "content": 5455,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "run": "38748848139"
+}

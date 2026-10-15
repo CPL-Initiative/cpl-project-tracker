@@ -1,0 +1,311 @@
+{
+ "college": "College of the Sequoias",
+ "control_number": "06764",
+ "shape": "degree",
+ "title": "Fire Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.cos.edu//areas-study/fire-technology/associate-science-fire-technology-not-for-transfer-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7760,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7760,
+    "output_tokens": 2643,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2643,
+  "output_tokens_details": {
+   "thinking_tokens": 880
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0839,
+ "ms": 21700,
+ "seconds": 22.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    56.0,
+    67.0
+   ],
+   "stated": [
+    60.0,
+    64.0
+   ],
+   "against": "degree",
+   "ge": [
+    25.0,
+    25.0
+   ],
+   "why": [
+    "the blocks and general education come to 56.0-67.0, past the 60.0-64.0 the catalog prints for the degree"
+   ],
+   "fill": null
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science: Fire Technology (Not for Transfer) A.S.",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "College of the Sequoias Associate Degree General Education (COS-GE)",
+   "degree_total": {
+    "min": 60,
+    "max": 64
+   },
+   "ge_units": {
+    "min": 25,
+    "max": 25
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Explain the history and basic principles of the fire service.",
+    "Demonstrate effective communication and interpersonal skills with supervisors, peers, and the public.",
+    "Demonstrate an understanding of the principles of fire development, cause, and prevention.",
+    "Demonstrate in-depth knowledge of the principles of fire control through the utilization of personnel, equipment, extinguishing agents on the fire ground.",
+    "Apply knowledge of building construction, fire protection systems, and fire prevention codes to affect safer occupancies and fire control.",
+    "Apply the theory and principles for the use of water in fire suppression activities, including hydraulic principles."
+   ],
+   "careers": [
+    "firefighter",
+    "firefighter-paramedic",
+    "fire investigation",
+    "fire prevention",
+    "hazardous materials",
+    "public education"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED MAJOR COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "FIRE 155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 157",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 159",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 163",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 182",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "CONCENTRATION A",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Restricted Electives - Concentration A or B",
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "EMT 251",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 285",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "CONCENTRATION B",
+    "rule": "choose_units",
+    "minimum": 13,
+    "option_group": "Restricted Electives - Concentration A or B",
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "EMT 251",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 230",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 231",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 232",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 233",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 234",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 280",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text begins mid-description and prints no heading; section_heading is taken from the page URL (associate-science-fire-technology-not-for-transfer-as).",
+   "No major total is printed; the page prints a degree TOTAL of 60-64 and GENERAL EDUCATION AND SUBJECT REQUIREMENTS 25 (COS-GE).",
+   "ELECTIVES are printed as 0-7 units with 'Select additional degree applicable courses numbered 1-299 to achieve 60 units.' Because the units are a range that depends on the concentration and fill the degree to 60, open_elective_units is left null and electives_fill_degree set true; reviewer should check.",
+   "Printed figures appear inconsistent: GE 25 + major 18 + Concentration A 24 = 67, which exceeds the printed total of 60-64; GE 25 + 18 + Concentration B 13 = 56, needing 4 elective units, not 7.",
+   "Students who completed Basic Fire Fighter Academy through Work Experience are exempt from FIRE 285 and should select Concentration B.",
+   "EMT 251 appears in both Concentration A and Concentration B.",
+   "Catalog titles FIRE 230-234 as 'SFM Company Officer 2A-2E'; the closed list titles some without 'SFM'.",
+   "Required Major and Restricted Elective courses require a grade of C or better and may be substituted with Division Chair approval."
+  ]
+ },
+ "extracted_run": "38748848139"
+}

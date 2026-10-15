@@ -1,0 +1,193 @@
+{
+ "college": "College of the Sequoias",
+ "control_number": "20059",
+ "shape": "certificate",
+ "title": "Cosmetology",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.cos.edu//areas-study/cosmetology/certificate-achievement-cosmetology/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7304,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7304,
+    "output_tokens": 1067,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1067,
+  "output_tokens_details": {
+   "thinking_tokens": 262
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05056,
+ "ms": 9624,
+ "seconds": 10.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    36.0
+   ],
+   "stated": [
+    20.0,
+    36.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Cosmetology",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Be prepared to take the licensing exam administered by the Department of Consumer Affairs Board of Barbering and Cosmetology."
+   ],
+   "careers": [
+    "Cosmetologist",
+    "Beautician",
+    "Beauty Shop Owner",
+    "Electrologist",
+    "Manicurist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CERTIFICATE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COSM 261",
+      "units": 10,
+      "units_max": 13,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSM 262",
+      "units": 10,
+      "units_max": 13,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "RESTRICTED ELECTIVES",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "COSM 263",
+      "units": 6,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The award is counted in units in the course table (TOTAL 20-36), though the text also says the certificate requires 1000 hours to complete; measure recorded as units.",
+   "Restricted electives: 'Select 0 - 10 units from the following courses to reach 1000 total hours' — minimum recorded as 0; COSM 263 is needed only if 1000 hours are not reached through COSM 261 and COSM 262.",
+   "The printed total of 20-36 units exceeds the award level named (fewer than 30 units); reviewer should check.",
+   "The text says 'a maximum of four (3) semesters', an internal inconsistency in the catalog.",
+   "Catalog title for COSM 263 is 'Cosmetology Theory and Practice' vs. state file 'Cosmetology Theory & Practice'; course units printed as variable ranges (10-13, 6-10) versus the state file's fixed units.",
+   "Units of credit are based on hours attended (140 hours = 6 units, plus one unit per 52.5 additional hours)."
+  ]
+ },
+ "extracted_run": "38748848139"
+}

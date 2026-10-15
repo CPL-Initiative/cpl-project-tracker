@@ -1,0 +1,4540 @@
+[
+ {
+  "control_number": "06715",
+  "title": "Plant Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG125",
+   "AG2",
+   "AG3",
+   "AG4",
+   "AGMT1",
+   "AGMT102",
+   "AGMT104",
+   "PLSI1",
+   "PLSI105",
+   "PLSI106",
+   "PLSI108",
+   "PLSI110",
+   "PLSI111",
+   "PLSI113",
+   "PLSI118",
+   "PLSI12",
+   "WEXP193F"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/plant-science/associate-science-plant-science-not-transfer-as/",
+   "title": "Associate of Science in Plant Science (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4014
+ },
+ {
+  "control_number": "06717",
+  "title": "Agricultural Business Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG110",
+   "AGMT1",
+   "AGMT102",
+   "AGMT103",
+   "AGMT104",
+   "AGMT108",
+   "AGMT5",
+   "WEXP193F"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/agricultural-business-management/associate-science-agricultural-business-management-not-for-transfer-as/",
+   "title": "Associate of Science in Agricultural Business Management (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3818
+ },
+ {
+  "control_number": "06718",
+  "title": "Architecture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH10",
+   "ARCH11",
+   "ARCH120",
+   "ARCH13",
+   "ARCH14",
+   "ARCH160",
+   "ARCH161",
+   "ARCH162",
+   "ARCH163",
+   "ARCH20",
+   "ARCH21",
+   "ARCH70",
+   "ARCH71",
+   "DRFT114",
+   "DRFT17"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/architecture/associate-science-architecture-not-for-transfer-as/",
+   "title": "Associate of Science in Architecture (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4137
+ },
+ {
+  "control_number": "06720",
+  "title": "Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS100",
+   "BUS112",
+   "BUS119",
+   "BUS174",
+   "BUS181",
+   "BUS184",
+   "BUS185",
+   "BUS188",
+   "BUS20",
+   "BUS268",
+   "BUS270",
+   "BUS271",
+   "BUS293",
+   "BUS295",
+   "BUS82",
+   "COMP130",
+   "COMP5",
+   "WEXP193I",
+   "WEXP194I",
+   "WEXP195I",
+   "WEXP196I"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/business/associate-science-business-not-for-transfer-as/",
+   "title": "Associate of Science in Business (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 4153
+ },
+ {
+  "control_number": "06721",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "ACCT210",
+   "ACCT282",
+   "BUS100",
+   "BUS119",
+   "BUS185",
+   "BUS188",
+   "BUS20",
+   "BUS268",
+   "BUS295",
+   "BUS82",
+   "COMP238"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/accounting/associate-science-accounting-not-for-transfer-as/",
+   "title": "Associate of Science in Accounting (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3999
+ },
+ {
+  "control_number": "06728",
+  "title": "Computer Programming & Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS271",
+   "COMP130",
+   "COMP200",
+   "COMP229",
+   "COMP230",
+   "COMP233",
+   "COMP250",
+   "COMP5",
+   "COMP6",
+   "COMP8",
+   "COMP9",
+   "ICT201",
+   "ICT210"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/computer/associate-science-computer-programming-information-systems-not-for-transfer-as/",
+   "title": "Associate of Science in Computer Programming & Information Systems (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4005
+ },
+ {
+  "control_number": "06732",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.824,
+  "codes_found": [
+   "CHEM1",
+   "CSCI1",
+   "CSCI2",
+   "CSCI20",
+   "CSCI6",
+   "ENGR1",
+   "ENGR110",
+   "ENGR2",
+   "ENGR3",
+   "ENGR4",
+   "MATH67",
+   "MATH81",
+   "PHYS55",
+   "PHYS56"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/engineering/associate-science-engineering-transfer-as/",
+   "title": "Associate of Science in Engineering (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4132
+ },
+ {
+  "control_number": "06735",
+  "title": "Environmental Control Technology (HVAC)",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECT242",
+   "ECT281",
+   "ECT282"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/environment-control-technology/associate-science-environmental-control-technology-hvac-not-for-transfer-as/",
+   "title": "Associate of Science in Environmental Control Technology (HVAC) (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3169
+ },
+ {
+  "control_number": "06736",
+  "title": "Automotive Technology (Basic)",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO130",
+   "AUTO136",
+   "AUTO231",
+   "AUTO232",
+   "AUTO233",
+   "AUTO234",
+   "AUTO235",
+   "AUTO237",
+   "AUTO238"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/automotive-technology/associate-science-automotive-technology-basic-not-for-transfer-as/",
+   "title": "Associate of Science in Automotive Technology (Basic) (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3767
+ },
+ {
+  "control_number": "06738",
+  "title": "Drafting Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH160",
+   "ARCH161",
+   "ARCH163",
+   "ARCH20",
+   "DRFT114",
+   "DRFT115",
+   "DRFT16",
+   "DRFT17",
+   "DRFT204",
+   "GD100"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/drafting/associate-science-drafting-technology-not-for-transfer-as/",
+   "title": "Associate of Science in Drafting Technology (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3820
+ },
+ {
+  "control_number": "06740",
+  "title": "Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART111",
+   "ART112",
+   "ART121",
+   "ART122",
+   "ART130",
+   "ART141",
+   "ART15",
+   "ART16",
+   "ART176",
+   "ART177",
+   "ART178",
+   "ART179",
+   "ART23",
+   "ART25",
+   "ART32",
+   "ART43",
+   "ART44",
+   "ART49",
+   "ART6",
+   "ART61",
+   "ART62",
+   "ART63",
+   "ART64",
+   "ART66",
+   "ART67",
+   "ART8",
+   "ART80",
+   "ART9",
+   "ARTH4",
+   "ARTH5",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/art/associate-arts-art-transfer-aa/",
+   "title": "Associate of Arts in Art (AA) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 5127
+ },
+ {
+  "control_number": "06742",
+  "title": "Dramatic Arts - Acting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINA31",
+   "CINA32",
+   "DRAM1",
+   "DRAM12",
+   "DRAM13",
+   "DRAM17",
+   "DRAM19",
+   "DRAM2",
+   "DRAM20",
+   "DRAM21",
+   "DRAM22",
+   "DRAM3",
+   "DRAM30",
+   "DRAM4",
+   "DRAM5",
+   "DRAM6"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/drama/associate-arts-dramatic-arts-acting-not-for-transfer-aa/",
+   "title": "Associate of Arts in Dramatic Arts - Acting (AA) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4136
+ },
+ {
+  "control_number": "06748",
+  "title": "Registered Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "ANTH10",
+   "COMM8",
+   "COMMC1000",
+   "COMMC1004",
+   "NURS106",
+   "NURS121",
+   "NURS123",
+   "NURS124",
+   "NURS133",
+   "NURS134",
+   "NURS135",
+   "NURS143",
+   "NURS144",
+   "NURS174",
+   "NURS175",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/nursing/associate-science-registered-nursing-not-for-transfer-as/",
+   "title": "Associate of Science in Registered Nursing (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 6576
+ },
+ {
+  "control_number": "06751",
+  "title": "Paralegal",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "AJ112",
+   "AJ14",
+   "AJ25",
+   "BUS18",
+   "BUS184",
+   "BUS271",
+   "BUS293",
+   "PARA101",
+   "PARA102",
+   "PARA142",
+   "PARA203",
+   "PARA205",
+   "PARA210",
+   "PARA237",
+   "WEXP193P",
+   "WEXP194P"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/paralegal/associate-science-paralegal-not-for-transfer-as/",
+   "title": "Associate of Science in Paralegal (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3956
+ },
+ {
+  "control_number": "06762",
+  "title": "Child Development",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "CHLD126",
+   "CHLD141",
+   "CHLD148",
+   "CHLD149",
+   "CHLD158",
+   "CHLD42"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/child-development/associate-science-child-development-not-for-transfer-as/",
+   "title": "Associate of Science in Child Development (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3806
+ },
+ {
+  "control_number": "06764",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMT251",
+   "FIRE125",
+   "FIRE155",
+   "FIRE157",
+   "FIRE159",
+   "FIRE160",
+   "FIRE163",
+   "FIRE182",
+   "FIRE230",
+   "FIRE231",
+   "FIRE232",
+   "FIRE233",
+   "FIRE234",
+   "FIRE280",
+   "FIRE285"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/fire-technology/associate-science-fire-technology-not-for-transfer-as/",
+   "title": "Associate of Science in Fire Technology (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4695
+ },
+ {
+  "control_number": "06770",
+  "title": "Sports Medicine/Athletic Training/Exercise Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "ANTH10",
+   "BIOL1",
+   "BIOL2",
+   "BIOL30",
+   "BIOL31",
+   "BIOL40",
+   "CHEM1",
+   "CHEM2",
+   "CHEM20",
+   "CHEM21",
+   "ENGLC1001",
+   "HW3",
+   "HW60",
+   "KINE1",
+   "KINE88",
+   "NURS256",
+   "PHYS20",
+   "PHYS21",
+   "PSYC34",
+   "PSYC80",
+   "PSYCC1000",
+   "SMED151",
+   "SMED152",
+   "SMED153",
+   "SMED154",
+   "SMED181",
+   "SMED182",
+   "SMED183",
+   "SMED184",
+   "SMED40",
+   "SMED60",
+   "STATC1000",
+   "WEXP193Y",
+   "WEXP194Y",
+   "WEXP195Y",
+   "WEXP196Y"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/sports-medicine/associate-science-sports-medicine-athletic-trainer-transfer-as/",
+   "title": "Associate of Science in Sports Medicine/Athletic Training/Exercise Science (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 39,
+  "text_chars": 6024
+ },
+ {
+  "control_number": "10022",
+  "title": "Animal Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGMT103",
+   "AGMT108",
+   "ASCI1",
+   "ASCI103",
+   "ASCI104",
+   "ASCI110",
+   "ASCI111",
+   "ASCI112",
+   "ASCI113",
+   "ASCI118",
+   "ASCI123",
+   "ASCI126",
+   "ASCI130",
+   "ASCI2",
+   "ASCI202",
+   "ASCI22",
+   "ASCI224",
+   "VT109",
+   "WEXP193F"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/animal-science/associate-science-animal-science-not-for-transfer-as/",
+   "title": "Associate of Science in Animal Science (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 4171
+ },
+ {
+  "control_number": "10027",
+  "title": "Ornamental Horticulture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG110",
+   "AG4",
+   "AGMT102",
+   "AGMT108",
+   "OH1",
+   "OH105",
+   "OH109",
+   "OH2",
+   "OH204",
+   "OH206",
+   "OH208",
+   "OH210",
+   "OH217",
+   "OH218",
+   "OH220",
+   "OH222",
+   "OH3",
+   "OH7",
+   "WEXP193F"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/ornamental-horticulture/associate-science-ornamental-horticulture-not-for-transfer-as/",
+   "title": "Associate of Science in Ornamental Horticulture (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 4239
+ },
+ {
+  "control_number": "10028",
+  "title": "Landscape Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGMT102",
+   "AGMT108",
+   "OH1",
+   "OH109",
+   "OH2",
+   "OH210",
+   "OH217",
+   "OH220",
+   "OH222",
+   "WEXP193F"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/ornamental-horticulture/associate-science-landscape-management-not-for-transfer-as/",
+   "title": "Associate of Science in Landscape Management (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3769
+ },
+ {
+  "control_number": "10039",
+  "title": "Industrial Maintenance Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITEC110",
+   "ITEC111",
+   "ITEC112",
+   "ITEC120",
+   "ITEC213",
+   "ITEC222",
+   "ITEC223",
+   "ITEC224",
+   "WEXP193M",
+   "WEXP194M"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/industrial-maintenance/associate-science-industrial-maintenance-technology-not-for-transfer-as/",
+   "title": "Associate of Science in Industrial Maintenance Technology (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3925
+ },
+ {
+  "control_number": "10040",
+  "title": "Construction Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CT100",
+   "CT101",
+   "CT105",
+   "CT132",
+   "CT205",
+   "CT220",
+   "CT221",
+   "CT222",
+   "CT223",
+   "CT270"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/construction-technology/associate-science-construction-technology-not-for-transfer-as/",
+   "title": "Associate of Science in Construction Technology (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3811
+ },
+ {
+  "control_number": "10043",
+  "title": "Welding Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGTC210",
+   "WELD104",
+   "WELD105",
+   "WELD161",
+   "WELD162",
+   "WELD171",
+   "WELD172",
+   "WELD181",
+   "WELD273",
+   "WELD274",
+   "WELD275",
+   "WELD276"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/welding/associate-science-welding-not-for-transfer-as/",
+   "title": "Associate of Science in Welding Technology (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3900
+ },
+ {
+  "control_number": "10045",
+  "title": "Dance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTH1",
+   "DANC160",
+   "DANC20",
+   "DANC41",
+   "DANC50",
+   "DANC51",
+   "DANC54",
+   "DANC55",
+   "DANC56",
+   "DANC58",
+   "DANC59",
+   "DANC61",
+   "DANC62",
+   "DANC63",
+   "DANC70",
+   "DANC71",
+   "DANC80",
+   "DANC81",
+   "DANC82",
+   "DANC85",
+   "DRAM17",
+   "MUS10",
+   "PEAC60",
+   "PEAC61"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/dance/associate-arts-dance-not-for-transfer-aa/",
+   "title": "Associate of Arts in Dance (AA) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 4191
+ },
+ {
+  "control_number": "10048",
+  "title": "Graphic Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10062",
+  "title": "Human Services (Social Work)",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.96,
+  "codes_found": [
+   "ANTH10",
+   "COMP130",
+   "COMP5",
+   "ECON25",
+   "ECONC2001",
+   "ETHN1",
+   "ETHN10",
+   "ETHN2",
+   "ETHN3",
+   "ETHN4",
+   "HSRV101",
+   "HSRV102",
+   "HSRV104",
+   "HSRV12",
+   "HSRV120",
+   "HSRV121",
+   "HSRV122",
+   "HSRV124",
+   "PSYC10",
+   "PSYC133",
+   "PSYC34",
+   "PSYC5",
+   "PSYCC1000",
+   "SOC26"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/human-services/associate-science-human-services-social-work-not-for-transfer-as/",
+   "title": "Associate of Science in Human Services (Social Work) (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4590
+ },
+ {
+  "control_number": "10063",
+  "title": "POST Certified Police Academy",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PS200M1",
+   "PS200M2",
+   "PS200M3"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/police-science/certificate-achievement-post-certified-basic-police-academy/",
+   "title": "Certificate of Achievement in POST Certified Basic Police Academy | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4038
+ },
+ {
+  "control_number": "10064",
+  "title": "Administration of Justice-Corrections",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 16,
+  "text_chars": 0
+ },
+ {
+  "control_number": "11572",
+  "title": "Dramatic Arts - Technical",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINA31",
+   "CINA32",
+   "DRAM1",
+   "DRAM12",
+   "DRAM13",
+   "DRAM14",
+   "DRAM15",
+   "DRAM16",
+   "DRAM17",
+   "DRAM19",
+   "DRAM2",
+   "DRAM20",
+   "DRAM21",
+   "DRAM22",
+   "DRAM3",
+   "DRAM6"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/drama/associate-arts-dramatic-arts-technical-not-for-transfer-aa/",
+   "title": "Associate of Arts in Dramatic Arts - Technical (AA) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3872
+ },
+ {
+  "control_number": "11883",
+  "title": "Computer Applications",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT210",
+   "BUS112",
+   "BUS184",
+   "BUS268",
+   "BUS270",
+   "BUS271",
+   "BUS293",
+   "COMP130",
+   "COMP229",
+   "COMP233",
+   "COMP238",
+   "COMP5",
+   "WEXP193I",
+   "WEXP194I",
+   "WEXP195I"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/computer/certificate-achievement-computer-applications/",
+   "title": "Certificate of Achievement in Computer Applications | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3010
+ },
+ {
+  "control_number": "18441",
+  "title": "Liberal Arts - Pathway to Public Health and Physical Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.98,
+  "codes_found": [
+   "DANC160",
+   "DANC41",
+   "DANC50",
+   "DANC51",
+   "DANC54",
+   "DANC55",
+   "DANC56",
+   "DANC58",
+   "DANC59",
+   "DANC61",
+   "DANC62",
+   "DANC63",
+   "DANC70",
+   "DANC71",
+   "DANC80",
+   "DANC81",
+   "DANC82",
+   "DANC85",
+   "HW1",
+   "HW104",
+   "HW3",
+   "HW7",
+   "IA12AD",
+   "IA16AD",
+   "IA1AD",
+   "IA23AD",
+   "IA24AD",
+   "IA29AD",
+   "IA2AD",
+   "IA30AD",
+   "IA31AD",
+   "IA32AD",
+   "IA3AD",
+   "IA47AD",
+   "IA49AD",
+   "IA51AD",
+   "IA6AD",
+   "IA8AD",
+   "KINE1",
+   "KINE82",
+   "KINE84",
+   "KINE88",
+   "KINE93",
+   "NUTR119",
+   "NUTR18",
+   "PEAC10",
+   "PEAC11",
+   "PEAC15",
+   "PEAC16",
+   "PEAC17",
+   "PEAC2",
+   "PEAC21",
+   "PEAC22",
+   "PEAC25",
+   "PEAC262",
+   "PEAC263",
+   "PEAC3",
+   "PEAC36",
+   "PEAC37",
+   "PEAC38",
+   "PEAC39",
+   "PEAC4",
+   "PEAC42",
+   "PEAC46",
+   "PEAC48",
+   "PEAC52",
+   "PEAC53",
+   "PEAC56",
+   "PEAC60",
+   "PEAC61",
+   "PEAC64",
+   "PEAC65",
+   "PEAC68",
+   "PEAC69",
+   "PEAC70",
+   "PEAC74",
+   "PEAC75",
+   "PEAC76",
+   "PEAC8",
+   "PEAC9",
+   "PHSC1",
+   "PHSC2",
+   "SMED151",
+   "SMED152",
+   "SMED153",
+   "SMED154",
+   "SMED181",
+   "SMED182",
+   "SMED183",
+   "SMED184",
+   "SMED40",
+   "SMED60",
+   "WEXP193Y",
+   "WEXP194Y",
+   "WEXP195Y",
+   "WEXP196Y"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/liberal-studies/associate-arts-liberal-arts-area-emphasis-health-physical-education-not-for-transfer-aa/",
+   "title": "Associate of Arts in Liberal Arts - Pathway to Public Health and Physical Education (AA) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 98,
+  "text_chars": 7210
+ },
+ {
+  "control_number": "18443",
+  "title": "Liberal Arts - Pathway to Social Behavioral Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.931,
+  "codes_found": [
+   "AJ11",
+   "ANTH10",
+   "CHLD42",
+   "ECON25",
+   "ECONC2001",
+   "ETHN1",
+   "ETHN10",
+   "ETHN2",
+   "ETHN3",
+   "ETHN4",
+   "GEOG2",
+   "HISTC1001",
+   "HISTC1002",
+   "HSRV12",
+   "HSRV120",
+   "HSRV122",
+   "POLS10",
+   "POLS12",
+   "POLSC1000",
+   "PSYC130",
+   "PSYC133",
+   "PSYC34",
+   "PSYC5",
+   "PSYC80",
+   "PSYCC1000",
+   "SOC2",
+   "SOC26"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/liberal-studies/associate-arts-liberal-arts-area-emphasis-social-behavioral-science-not-for-transfer-aa/",
+   "title": "Associate of Arts in Liberal Arts - Pathway to Social Behavioral Science (AA) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 4711
+ },
+ {
+  "control_number": "18585",
+  "title": "Administration of Justice: Law Enforcement",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 18,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19404",
+  "title": "Environmental Control Technology (HVAC)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECT242",
+   "ECT281",
+   "ECT282"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/environment-control-technology/certificate-achievement-environmental-control-technology/",
+   "title": "Certificate of Achievement in Environmental Control Technology (HVAC) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2656
+ },
+ {
+  "control_number": "19405",
+  "title": "Mechanical Drafting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH20",
+   "DRFT114",
+   "DRFT115",
+   "DRFT16",
+   "DRFT204"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/drafting/certificate-achievement-mechanical-drafting/",
+   "title": "Certificate of Achievement in Mechanical Drafting | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2514
+ },
+ {
+  "control_number": "19755",
+  "title": "Physical Therapist Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL30",
+   "BIOL31",
+   "PTA121",
+   "PTA125",
+   "PTA128",
+   "PTA130",
+   "PTA131",
+   "PTA139",
+   "PTA140",
+   "PTA145",
+   "PTA148",
+   "PTA150",
+   "PTA152",
+   "PTA155",
+   "PTA160",
+   "PTA161",
+   "PTA170"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/physical-therapist-assistant/associate-science-physical-therapist-assistant-not-for-transfer-as/",
+   "title": "Associate of Science in Physical Therapist Assistant (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4923
+ },
+ {
+  "control_number": "20021",
+  "title": "Animal Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGMT103",
+   "ASCI1",
+   "ASCI103",
+   "ASCI104",
+   "ASCI110",
+   "ASCI111",
+   "ASCI112",
+   "ASCI113",
+   "ASCI118",
+   "ASCI123",
+   "ASCI126",
+   "ASCI130",
+   "ASCI2",
+   "ASCI202",
+   "ASCI22",
+   "ASCI224",
+   "VT109",
+   "WEXP193F"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/animal-science/certificate-achievement-animal-science/",
+   "title": "Certificate of Achievement in Animal Science | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3596
+ },
+ {
+  "control_number": "20024",
+  "title": "Ornamental Horticulture",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGMT108",
+   "OH1",
+   "OH105",
+   "OH109",
+   "OH2",
+   "OH204",
+   "OH206",
+   "OH208",
+   "OH210",
+   "OH217",
+   "OH218",
+   "OH220",
+   "OH222",
+   "OH3",
+   "OH7",
+   "WEXP193F"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/ornamental-horticulture/certificate-achievement-ornamental-horticulture/",
+   "title": "Certificate of Achievement in Ornamental Horticulture | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3309
+ },
+ {
+  "control_number": "20025",
+  "title": "Landscape Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG4",
+   "AGMT108",
+   "OH1",
+   "OH109",
+   "OH2",
+   "OH204",
+   "OH206",
+   "OH208",
+   "OH210",
+   "OH217",
+   "OH218",
+   "OH220",
+   "OH222",
+   "OH7",
+   "WEXP193F"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/ornamental-horticulture/certificate-achievement-landscape-management/",
+   "title": "Certificate of Achievement in Landscape Management | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3169
+ },
+ {
+  "control_number": "20029",
+  "title": "Agricultural Business Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG110",
+   "AGMT1",
+   "AGMT102",
+   "AGMT103",
+   "AGMT104",
+   "AGMT108",
+   "WEXP193F"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/agricultural-business-management/certificate-achievement-agricultural-business-management/",
+   "title": "Certificate of Achievement in Agricultural Business Management | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2754
+ },
+ {
+  "control_number": "20059",
+  "title": "Cosmetology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM261",
+   "COSM262",
+   "COSM263"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/cosmetology/certificate-achievement-cosmetology/",
+   "title": "Certificate of Achievement in Cosmetology | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3446
+ },
+ {
+  "control_number": "20060",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMT251",
+   "FIRE159",
+   "FIRE285"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/fire-technology/certificate-achievement-fire-technology/",
+   "title": "Certificate of Achievement in Fire Technology | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2663
+ },
+ {
+  "control_number": "20061",
+  "title": "Human Services (Social Work)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.96,
+  "codes_found": [
+   "ANTH10",
+   "COMP130",
+   "COMP5",
+   "ECON25",
+   "ECONC2001",
+   "ETHN1",
+   "ETHN10",
+   "ETHN2",
+   "ETHN3",
+   "ETHN4",
+   "HSRV101",
+   "HSRV102",
+   "HSRV104",
+   "HSRV12",
+   "HSRV120",
+   "HSRV121",
+   "HSRV122",
+   "HSRV124",
+   "PSYC10",
+   "PSYC133",
+   "PSYC34",
+   "PSYC5",
+   "PSYCC1000",
+   "SOC26"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/human-services/certificate-achievement-human-services-social-work/",
+   "title": "Certificate of Achievement in Human Services (Social Work) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4076
+ },
+ {
+  "control_number": "20063",
+  "title": "Child Development-Teacher",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "CHLD126",
+   "CHLD141",
+   "CHLD148",
+   "CHLD149",
+   "CHLD158",
+   "CHLD42"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/child-development/certificate-achievement-child-development-teacher/",
+   "title": "Certificate of Achievement in Child Development-Teacher | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3326
+ },
+ {
+  "control_number": "20064",
+  "title": "Graphic Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "link_search",
+  "coverage": 1.0,
+  "codes_found": [
+   "GD100",
+   "GD101",
+   "GD102",
+   "GD209"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu/areas-study/graphic-design/",
+   "title": "Graphic Design | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText+tabs",
+   "label": null
+  },
+  "listed": 4,
+  "text_chars": 11033
+ },
+ {
+  "control_number": "20066",
+  "title": "Welding",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGTC210",
+   "WELD104",
+   "WELD105",
+   "WELD161",
+   "WELD162",
+   "WELD171",
+   "WELD172",
+   "WELD181",
+   "WELD273",
+   "WELD274",
+   "WELD275",
+   "WELD276"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/welding/certificate-achievement-welding/",
+   "title": "Certificate of Achievement in Welding | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3512
+ },
+ {
+  "control_number": "20067",
+  "title": "Construction Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CT101",
+   "CT105",
+   "CT132",
+   "CT205",
+   "CT220",
+   "CT221",
+   "CT222",
+   "CT223",
+   "CT270"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/construction-technology/certificate-achievement-construction-technology/",
+   "title": "Certificate of Achievement in Construction Technology | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3263
+ },
+ {
+  "control_number": "20068",
+  "title": "Industrial Maintenance Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITEC110",
+   "ITEC111",
+   "ITEC112",
+   "ITEC120",
+   "ITEC213",
+   "ITEC222",
+   "ITEC223",
+   "ITEC224",
+   "WEXP193M",
+   "WEXP194M",
+   "WEXP195M",
+   "WEXP196M"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/industrial-maintenance/certificate-achievement-industrial-maintenance-technology/",
+   "title": "Certificate of Achievement in Industrial Maintenance Technology | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3699
+ },
+ {
+  "control_number": "20070",
+  "title": "Computer Programming & Information Systems",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS271",
+   "COMP130",
+   "COMP200",
+   "COMP229",
+   "COMP230",
+   "COMP233",
+   "COMP250",
+   "COMP5",
+   "COMP6",
+   "COMP8",
+   "COMP9",
+   "ICT201",
+   "ICT210"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/computer/certificate-achievement-computer-programming-information-systems/",
+   "title": "Certificate of Achievement in Computer Programming & Information Systems | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3114
+ },
+ {
+  "control_number": "20073",
+  "title": "Equipment Technician Level 2",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGTC103",
+   "AGTC106",
+   "AGTC120",
+   "AGTC123",
+   "AGTC124",
+   "AGTC125",
+   "AGTC126",
+   "AGTC127",
+   "AGTC202",
+   "AGTC210",
+   "AGTC213",
+   "AGTC225"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/equipment-technician/certificate-achievement-agriculture-technology/",
+   "title": "Certificate of Achievement in Equipment Technician Level 2 | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3538
+ },
+ {
+  "control_number": "20074",
+  "title": "Architecture",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH11",
+   "ARCH13",
+   "ARCH14",
+   "ARCH160",
+   "ARCH161",
+   "ARCH162",
+   "ARCH163",
+   "ARCH21",
+   "DRFT114"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/architecture/certificate-achievement-architecture/",
+   "title": "Certificate of Achievement in Architecture | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3318
+ },
+ {
+  "control_number": "20075",
+  "title": "Business",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.955,
+  "codes_found": [
+   "BUS100",
+   "BUS112",
+   "BUS119",
+   "BUS174",
+   "BUS181",
+   "BUS184",
+   "BUS185",
+   "BUS188",
+   "BUS20",
+   "BUS268",
+   "BUS270",
+   "BUS271",
+   "BUS293",
+   "BUS295",
+   "BUS82",
+   "COMP130",
+   "COMP5",
+   "WEXP193I",
+   "WEXP194I",
+   "WEXP195I",
+   "WEXP196I"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/business/certificate-achievement-business/",
+   "title": "Certificate of Achievement in Business | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 3437
+ },
+ {
+  "control_number": "20076",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "ACCT210",
+   "ACCT282",
+   "BUS100",
+   "BUS119",
+   "BUS185",
+   "BUS188",
+   "BUS20",
+   "BUS268",
+   "BUS295",
+   "BUS82",
+   "COMP238"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/accounting/certificate-achievement-accounting/",
+   "title": "Certificate of Achievement in Accounting | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3326
+ },
+ {
+  "control_number": "22941",
+  "title": "Business Financial Recordkeeping",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "ACCT1",
+   "ACCT210",
+   "BUS119",
+   "BUS20",
+   "BUS268",
+   "BUS295",
+   "COMP238"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/business/certificate-achievement-business-financial-recordkeeping/",
+   "title": "Certificate of Achievement in Business Financial Recordkeeping | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2810
+ },
+ {
+  "control_number": "24184",
+  "title": "ESL Advanced Level",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL440",
+   "ESL441",
+   "ESL442",
+   "ESL450",
+   "ESL451",
+   "ESL452"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/english-second-language/certificate-competency-esl-advanced-level-noncredit/",
+   "title": "Certificate of Competency in ESL Advanced Level (Noncredit) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2382
+ },
+ {
+  "control_number": "24226",
+  "title": "ESL Beginning Level (Noncredit)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL411",
+   "ESL412"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/english-second-language/certificate-competency-esl-beginning-level-noncredit/",
+   "title": "Certificate of Competency in ESL Beginning Level (Noncredit) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2547
+ },
+ {
+  "control_number": "24256",
+  "title": "ESL Intermediate Level (Noncredit)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL420",
+   "ESL421",
+   "ESL422",
+   "ESL430",
+   "ESL431",
+   "ESL432"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/english-second-language/certificate-competency-esl-intermediate-level-noncredit/",
+   "title": "Certificate of Competency in ESL Intermediate Level (Noncredit) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2573
+ },
+ {
+  "control_number": "30703",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.846,
+  "codes_found": [
+   "ANTH10",
+   "PSYC10",
+   "PSYC130",
+   "PSYC133",
+   "PSYC29",
+   "PSYC34",
+   "PSYC5",
+   "PSYC80",
+   "PSYCC1000",
+   "SSCI25",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/psychology/associate-arts-psychology-transfer-aa-t/",
+   "title": "Associate in Arts in Psychology for Transfer (AA-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4063
+ },
+ {
+  "control_number": "30707",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "ETHN10",
+   "SOC10",
+   "SOC15",
+   "SOC2",
+   "SOC26",
+   "SOC43",
+   "SSCI25",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/sociology/associate-arts-sociology-transfer-aa-t/",
+   "title": "Associate in Arts in Sociology for Transfer (AA-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 4055
+ },
+ {
+  "control_number": "32175",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAM1",
+   "ENGL10",
+   "ENGL14",
+   "ENGL15",
+   "ENGL16",
+   "ENGL18",
+   "ENGL19",
+   "ENGL30",
+   "ENGL31",
+   "ENGL44",
+   "ENGL45",
+   "ENGL46",
+   "ENGLC1001",
+   "ENGLC1002",
+   "LING11"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/english/associate-arts-english-transfer-aa-t/",
+   "title": "Associate in Arts in English for Transfer (AA-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4214
+ },
+ {
+  "control_number": "32176",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "ANTH10",
+   "ENGL10",
+   "ETHN3",
+   "HIST23",
+   "SOC10",
+   "SPAN1",
+   "SPAN12",
+   "SPAN2",
+   "SPAN22",
+   "SPAN23",
+   "SPAN3",
+   "SPAN4"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/spanish/associate-arts-spanish-transfer-aa-t/",
+   "title": "Associate in Arts in Spanish for Transfer (AA-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4229
+ },
+ {
+  "control_number": "32245",
+  "title": "Architectural Drafting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH160",
+   "ARCH161",
+   "ARCH162",
+   "ARCH163",
+   "DRFT114"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/architecture/certificate-achievement-architectural-drafting/",
+   "title": "Certificate of Achievement in Architectural Drafting | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2626
+ },
+ {
+  "control_number": "32246",
+  "title": "Autodesk AutoCAD for Drafting",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRFT114",
+   "DRFT115"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/drafting/certificate-achievement-autodesk-autocad-drafting/",
+   "title": "Certificate of Achievement in Autodesk AutoCAD for Drafting | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2572
+ },
+ {
+  "control_number": "32247",
+  "title": "Dassault Systemes SolidWorks",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRFT114",
+   "DRFT115"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/drafting/certificate-achievement-dassault-systemes-solidworks/",
+   "title": "Certificate of Achievement in Dassault Systemes SolidWorks | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2668
+ },
+ {
+  "control_number": "32323",
+  "title": "Architectural Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH11",
+   "ARCH13",
+   "ARCH14"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/architecture/certificate-achievement-architectural-design/",
+   "title": "Certificate of Achievement in Architectural Design | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2509
+ },
+ {
+  "control_number": "32443",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART23",
+   "ART32",
+   "ART49",
+   "ART6",
+   "ART61",
+   "ART66",
+   "ART8",
+   "ART80",
+   "ARTH4",
+   "ARTH5",
+   "ARTH81",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/art/associate-arts-art-history-transfer-aa-t/",
+   "title": "Associate in Arts in Art History for Transfer (AA-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4311
+ },
+ {
+  "control_number": "32457",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "CHEM1",
+   "CHEM2",
+   "GEOL1",
+   "GEOL5"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/geology/associate-science-geology-transfer-as-t/",
+   "title": "Associate in Science in Geology for Transfer (AS-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 4030
+ },
+ {
+  "control_number": "32649",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 20,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32710",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS34AD",
+   "MUS4",
+   "MUS41AD",
+   "MUS5",
+   "MUS54AD",
+   "MUS6",
+   "MUS7",
+   "MUS74AD"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/music/associate-arts-music-transfer-aa-t/",
+   "title": "Associate in Arts in Music for Transfer (AA-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3808
+ },
+ {
+  "control_number": "32874",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "CSCI1",
+   "MATH67",
+   "MATH80",
+   "MATH81",
+   "PHYS55",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/mathematics/associate-science-mathematics-transfer-as-t/",
+   "title": "Associate in Science in Mathematics for Transfer (AS-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3694
+ },
+ {
+  "control_number": "32906",
+  "title": "Interpreter (Spanish)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ112",
+   "AJ115",
+   "BUS293",
+   "ENGL380",
+   "ENGLC1000",
+   "SPAN12",
+   "SPAN280",
+   "SPAN281",
+   "SPAN282",
+   "SPAN4",
+   "WEXP193C",
+   "WEXP194C",
+   "WEXP195C",
+   "WEXP196C"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/spanish/certificate-achievement-interpreter-spanish/",
+   "title": "Certificate of Achievement in Interpreter (Spanish) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3051
+ },
+ {
+  "control_number": "32955",
+  "title": "Writing Consultancy",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMC1004",
+   "ENGL123",
+   "ENGL124",
+   "ENGL125",
+   "ENGL126",
+   "ENGLC1000",
+   "ENGLC1001",
+   "LING11",
+   "WEXP193L"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/english/certificate-achievement-writing-consultancy/",
+   "title": "Certificate of Achievement in Writing Consultancy | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3183
+ },
+ {
+  "control_number": "32958",
+  "title": "NCCER Electrical Applications",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ET204",
+   "ET206"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/electrician-training/certificate-achievement-nccer-electrical-applications/",
+   "title": "Certificate of Achievement in NCCER Electrical Applications | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2547
+ },
+ {
+  "control_number": "33177",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART141",
+   "ART15",
+   "ART23",
+   "ART32",
+   "ART43",
+   "ART49",
+   "ART6",
+   "ART61",
+   "ART66",
+   "ART8",
+   "ART80",
+   "ART9",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/art/associate-arts-studio-arts-transfer-aa-t/",
+   "title": "Associate in Arts in Studio Arts for Transfer (AA-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3970
+ },
+ {
+  "control_number": "33183",
+  "title": "Equine Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG110",
+   "AGMT102",
+   "ASCI104",
+   "ASCI123",
+   "ASCI124",
+   "ASCI130",
+   "ASCI140",
+   "ASCI141",
+   "ASCI22",
+   "WEXP193F"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/animal-science/certificate-achievement-equine-science/",
+   "title": "Certificate of Achievement in Equine Science | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3162
+ },
+ {
+  "control_number": "33238",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "CHLD126",
+   "CHLD140",
+   "CHLD141",
+   "CHLD148",
+   "CHLD149",
+   "CHLD158",
+   "CHLD42"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/child-development/associate-science-early-childhood-education-transfer-as-t/",
+   "title": "Associate in Science in Early Childhood Education for Transfer (AS-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3634
+ },
+ {
+  "control_number": "33251",
+  "title": "Architectural Visual Communication",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH120",
+   "ARCH121",
+   "ARCH21"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/architecture/certificate-achievement-architectural-visual-communication/",
+   "title": "Certificate of Achievement in Architectural Visual Communication | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2518
+ },
+ {
+  "control_number": "33259",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "CSCI1",
+   "MATH67",
+   "MATH80",
+   "MATH81",
+   "PHYS55",
+   "PHYS56",
+   "PHYS57"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/physics/associate-science-physics-transfer-as-t/",
+   "title": "Associate in Science in Physics for Transfer (AS-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3514
+ },
+ {
+  "control_number": "33264",
+  "title": "Journalism",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM5",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1001",
+   "JOUR130",
+   "JOUR131",
+   "JOUR7",
+   "PHIL20",
+   "PHIL25",
+   "POLS6",
+   "POLSC1000",
+   "SSCI25",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/journalism/associate-arts-journalism-transfer-aa-t/",
+   "title": "Associate in Arts in Journalism for Transfer (AA-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3876
+ },
+ {
+  "control_number": "33344",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.714,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "ECONC2001",
+   "ECONC2002",
+   "SSCI25"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/economics/associate-arts-economics-transfer-aa-t/",
+   "title": "Associate in Arts in Economics for Transfer (AA-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3349
+ },
+ {
+  "control_number": "33396",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.846,
+  "codes_found": [
+   "ANTH10",
+   "ANTH12",
+   "BIOL30",
+   "COMM9",
+   "ETHN2",
+   "GEOG2",
+   "GEOL1",
+   "HIST23",
+   "PSYC29",
+   "SSCI25",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/anthropology/associate-arts-anthropology-transfer-aa-t/",
+   "title": "Associate in Arts in Anthropology for Transfer (AA-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3930
+ },
+ {
+  "control_number": "33662",
+  "title": "Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS10",
+   "MUS14",
+   "MUS180",
+   "MUS20AD",
+   "MUS30",
+   "MUS34AD",
+   "MUS37",
+   "MUS38",
+   "MUS39",
+   "MUS4",
+   "MUS41AD",
+   "MUS5",
+   "MUS54AD",
+   "MUS6",
+   "MUS7",
+   "MUS72AD",
+   "MUS74AD"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/music/associate-arts-music-transfer-aa/",
+   "title": "Associate of Arts in Music (AA) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4227
+ },
+ {
+  "control_number": "33712",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HIST23",
+   "HIST25",
+   "HIST4",
+   "HIST5",
+   "HISTC1001",
+   "HISTC1002"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/history/associate-arts-history-transfer-aa-t/",
+   "title": "Associate in Arts in History for Transfer (AA-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 4182
+ },
+ {
+  "control_number": "33777",
+  "title": "Landscape Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGMT108",
+   "OH109",
+   "OH2",
+   "OH206",
+   "OH208",
+   "OH218",
+   "OH3",
+   "OH7"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/ornamental-horticulture/certificate-achievement-landscape-design/",
+   "title": "Certificate of Achievement in Landscape Design | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2987
+ },
+ {
+  "control_number": "35163",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL44",
+   "HIST25",
+   "HIST4",
+   "HIST5",
+   "HISTC1001",
+   "PHIL1",
+   "PHIL12",
+   "PHIL20",
+   "PHIL5"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/philosophy/associate-arts-philosophy-transfer-aa-t/",
+   "title": "Associate in Arts in Philosophy for Transfer (AA-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3704
+ },
+ {
+  "control_number": "35304",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAM1",
+   "DRAM12",
+   "DRAM13",
+   "DRAM14",
+   "DRAM15",
+   "DRAM16",
+   "DRAM17",
+   "DRAM19",
+   "DRAM2",
+   "DRAM20",
+   "DRAM21",
+   "DRAM22",
+   "DRAM3",
+   "DRAM4",
+   "DRAM5"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/drama/associate-arts-theatre-arts-transfer-aa-t/",
+   "title": "Associate in Arts in Theatre Arts for Transfer (AA-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4226
+ },
+ {
+  "control_number": "35305",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "BIOL1",
+   "BIOL2",
+   "CHEM1",
+   "CHEM2",
+   "PHYS20",
+   "PHYS21",
+   "PHYS55",
+   "PHYS56"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/biology/associate-science-biology-transfer-as-t/",
+   "title": "Associate in Science in Biology for Transfer (AS-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3608
+ },
+ {
+  "control_number": "35415",
+  "title": "University Studies - Pathway to Math and Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "AG2",
+   "AG4",
+   "BIOL1",
+   "BIOL2",
+   "BIOL21",
+   "BIOL22",
+   "BIOL25",
+   "BIOL30",
+   "BIOL31",
+   "BIOL40",
+   "BUS119",
+   "BUS20",
+   "CHEM1",
+   "CHEM10",
+   "CHEM2",
+   "CHEM20",
+   "CHEM21",
+   "GEOG1",
+   "GEOL1",
+   "GEOL12",
+   "GEOL5",
+   "MATH10",
+   "MATH11",
+   "MATH54",
+   "MATH67",
+   "MATH80",
+   "MATH81",
+   "PHYS20",
+   "PHYS21",
+   "PHYS55",
+   "PHYS56",
+   "PHYS57",
+   "PLSI1",
+   "PSCI20",
+   "SSCI25",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/transfer-university-studies/associate-arts-university-studies-math-science-transfer-aa/",
+   "title": "Associate of Arts in University Studies - Pathway to Math and Science (AA) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 42,
+  "text_chars": 4799
+ },
+ {
+  "control_number": "35434",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.579,
+  "codes_found": [
+   "ARTH1",
+   "COMMC1000",
+   "DRAM1",
+   "ENGLC1000",
+   "ENGLC1002",
+   "GEOG2",
+   "HIST25",
+   "HISTC1001",
+   "MUS10",
+   "POLSC1000",
+   "PSCI20"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//transfer-information-requirements/",
+   "title": "Transfer Information and Requirements | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 14211
+ },
+ {
+  "control_number": "35456",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "BIOL30",
+   "BIOL31",
+   "CHEM1",
+   "DANC50",
+   "DANC54",
+   "DANC58",
+   "DANC62",
+   "DANC70",
+   "PEAC11",
+   "PEAC15",
+   "PEAC2",
+   "PEAC21",
+   "PEAC22",
+   "PEAC25",
+   "PEAC3",
+   "PEAC36",
+   "PEAC37",
+   "PEAC38",
+   "PEAC39",
+   "PEAC4",
+   "PEAC42",
+   "PEAC52",
+   "PEAC53",
+   "PEAC64",
+   "PEAC65",
+   "PEAC70",
+   "PEAC74",
+   "PEAC75",
+   "PEAC8",
+   "PEAC9",
+   "PHYS20",
+   "PHYS55",
+   "SSCI25",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//associate-degree-requirements/",
+   "title": "Associate Degree Requirements | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 36,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35527",
+  "title": "Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "CHEM1",
+   "CHEM12",
+   "CHEM13",
+   "CHEM2",
+   "PHYS55",
+   "PHYS56"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/chemistry/associate-science-chemistry-transfer-as-t/",
+   "title": "Associate in Science in Chemistry for Transfer (AS-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3395
+ },
+ {
+  "control_number": "35553",
+  "title": "Agriculture Plant Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG4",
+   "AGMT1",
+   "AGTC103",
+   "CHEM20",
+   "OH105",
+   "OH2",
+   "OH3",
+   "PLSI1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/plant-science/associate-science-agriculture-plant-science-as-t/",
+   "title": "Associate in Science in Agriculture Plant Science for Transfer (AS-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3695
+ },
+ {
+  "control_number": "35763",
+  "title": "Agriculture Business",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG4",
+   "AGMT1",
+   "AGMT102",
+   "AGMT103",
+   "AGMT104",
+   "AGMT108",
+   "AGMT5",
+   "ASCI1",
+   "BUS20",
+   "CHEM1",
+   "CHEM20",
+   "ECONC2002",
+   "PLSI1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/agricultural-business-management/associate-science-agricultural-business-as-t/",
+   "title": "Associate in Science in Agriculture Business for Transfer (AS-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3953
+ },
+ {
+  "control_number": "35764",
+  "title": "Animal Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGMT1",
+   "ASCI1",
+   "ASCI103",
+   "ASCI104",
+   "ASCI110",
+   "ASCI111",
+   "ASCI112",
+   "ASCI113",
+   "ASCI118",
+   "ASCI123",
+   "ASCI2",
+   "CHEM1",
+   "CHEM20",
+   "ECONC2001",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/animal-science/associate-science-animal-science-as-t/",
+   "title": "Associate in Science in Animal Science for Transfer (AS-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4155
+ },
+ {
+  "control_number": "36073",
+  "title": "American Sign Language",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL1",
+   "ASL110",
+   "ASL2",
+   "ASL210",
+   "ASL211",
+   "ASL3",
+   "ASL4",
+   "ASL5",
+   "ASL6",
+   "COMM9"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/american-sign-language/associate-arts-american-sign-language-not-for-transfer-aa/",
+   "title": "Associate of Arts in American Sign Language (AA) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3482
+ },
+ {
+  "control_number": "36152",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECONC2001",
+   "POLS11",
+   "POLS13",
+   "POLS6",
+   "POLS8",
+   "POLSC1000",
+   "SSCI25"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/political-science/associate-arts-political-science-transfer-aa-t/",
+   "title": "Associate in Arts in Political Science for Transfer (AA-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 4376
+ },
+ {
+  "control_number": "36486",
+  "title": "NCCER Electrical Theory",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ET200",
+   "ET201",
+   "ET202",
+   "ET203"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/electrician-training/certificate-achievement-nccer-electrical-theory/",
+   "title": "Certificate of Achievement in NCCER Electrical Theory | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2652
+ },
+ {
+  "control_number": "36532",
+  "title": "Child and Adolescent Development",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "BUS20",
+   "CHLD42",
+   "EDUC50",
+   "NUTR18",
+   "PSYCC1000",
+   "SSCI25",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/consumer-family-studies/child-adolescent-development-for-transfer-aa-t/",
+   "title": "Associate in Arts in Child & Adolescent Development for Transfer (AA-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3950
+ },
+ {
+  "control_number": "36561",
+  "title": "Fashion Merchandising and Design",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FASH139",
+   "FASH140",
+   "FASH141",
+   "FASH142",
+   "FASH143",
+   "FASH146",
+   "FASH160",
+   "FASH161",
+   "FASH162",
+   "FASH163",
+   "FASH165",
+   "FASH264",
+   "FASH268",
+   "FASH271",
+   "FASH272",
+   "FASH273",
+   "FASH76",
+   "WEXP193Z"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/fashion/certificate-achievement-fashion-merchandising/",
+   "title": "Certificate of Achievement in Fashion Merchandising and Design | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3912
+ },
+ {
+  "control_number": "36660",
+  "title": "Information Communication Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS112",
+   "BUS184",
+   "COMP233",
+   "COMP6",
+   "ICT201",
+   "ICT210",
+   "ICT221",
+   "ICT222",
+   "ICT223",
+   "ICT224",
+   "ICT230",
+   "ICT235",
+   "ICT240"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/information-communications-technology/associate-science-information-communication-technology-as/",
+   "title": "Associate of Science in Information Communication Technology (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3548
+ },
+ {
+  "control_number": "36805",
+  "title": "Social Justice Studies - Chicano Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL10",
+   "ETHN10",
+   "ETHN3",
+   "HIST23",
+   "SOC10",
+   "SSCI25"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//transfer-information-requirements/",
+   "title": "Transfer Information and Requirements | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 9745
+ },
+ {
+  "control_number": "37092",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "AJ11",
+   "ANTH10",
+   "BUS18",
+   "COMM5",
+   "COMM9",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1000",
+   "ENGLC1001",
+   "HISTC1001",
+   "HISTC1002",
+   "PHIL5",
+   "POLSC1000",
+   "SOC2",
+   "SSCI50",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/political-science/associate-arts-law-public-policy-society-transfer-aa-t/",
+   "title": "Associate in Arts in Law, Public Policy, and Society for Transfer (AA-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4039
+ },
+ {
+  "control_number": "37430",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "CSCI1",
+   "CSCI2",
+   "CSCI5",
+   "CSCI6",
+   "PHYS55",
+   "PHYS56"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/computer-science/associate-science-computer-science-transfer-as-t/",
+   "title": "Associate in Science in Computer Science for Transfer (AS-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3606
+ },
+ {
+  "control_number": "37457",
+  "title": "Industrial Automation",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITEC174",
+   "ITEC176",
+   "ITEC182",
+   "ITEC184",
+   "ITEC279",
+   "ITEC283",
+   "ITEC285",
+   "ITEC287"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/industrial-maintenance/certificate-achievement-industrial-automation/",
+   "title": "Certificate of Achievement in Industrial Automation | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3405
+ },
+ {
+  "control_number": "37463",
+  "title": "Industrial Automation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37613",
+  "title": "Fashion Merchandising and Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FASH139",
+   "FASH140",
+   "FASH141",
+   "FASH142",
+   "FASH143",
+   "FASH146",
+   "FASH160",
+   "FASH161",
+   "FASH162",
+   "FASH163",
+   "FASH165",
+   "FASH264",
+   "FASH268",
+   "FASH271",
+   "FASH272",
+   "FASH273",
+   "FASH76",
+   "WEXP193Z"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/fashion/associate-science-fashion-merchandising-design-as/",
+   "title": "Associate of Science in Fashion Merchandising and Design (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 4390
+ },
+ {
+  "control_number": "37743",
+  "title": "Rehabilitation Aide",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HLTH405",
+   "HLTH406"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/health/certificate-completion-rehabilitation-aide/",
+   "title": "Certificate of Completion in Rehabilitation Aide | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2800
+ },
+ {
+  "control_number": "37744",
+  "title": "Entry-Level Pharmacy Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGLC1000",
+   "MATH44",
+   "PT200",
+   "PT215",
+   "PT216",
+   "PT217",
+   "PT218",
+   "PT225",
+   "PT226",
+   "PT227",
+   "PT228",
+   "PT229",
+   "PT402",
+   "PT404"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/pharmacy-technician/certificate-achievement-pharmacy-technician/",
+   "title": "Certificate of Achievement in Entry-Level Pharmacy Technician | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3509
+ },
+ {
+  "control_number": "38674",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "BIOL30",
+   "BIOL31",
+   "BIOL40",
+   "CHEM1",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//transfer-information-requirements/",
+   "title": "Transfer Information and Requirements | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 9297
+ },
+ {
+  "control_number": "38742",
+  "title": "Issues in Family Violence",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HSRV101",
+   "HSRV104",
+   "HSRV12",
+   "HSRV120",
+   "HSRV121",
+   "HSRV124"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/human-services/certificate-achievement-issues-family-violence/",
+   "title": "Certificate of Achievement in Issues in Family Violence | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3279
+ },
+ {
+  "control_number": "39298",
+  "title": "Beginning Culinary Skills",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CULN221",
+   "CULN222",
+   "CULN223",
+   "CULN225",
+   "CULN226",
+   "NUTR107",
+   "NUTR20",
+   "WEXP194DD"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/culinary-nutrition/certificate-achievement-beginning-culinary-skills/",
+   "title": "Certificate of Achievement in Beginning Culinary Skills | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3068
+ },
+ {
+  "control_number": "39302",
+  "title": "Veterinary Assisting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGMT108",
+   "ASCI1",
+   "ASCI104",
+   "ASCI110",
+   "ASCI111",
+   "ASCI112",
+   "ASCI113",
+   "ASCI118",
+   "ASCI119",
+   "ASCI123",
+   "ASCI207",
+   "VT109",
+   "VT216"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/veterinary-assisting/certificate-achievement-veterinary-assisting/",
+   "title": "Certificate of Achievement in Veterinary Assisting | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3558
+ },
+ {
+  "control_number": "39328",
+  "title": "Culinary Arts Fundamentals",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CULN221",
+   "CULN222",
+   "CULN223",
+   "CULN225",
+   "CULN226",
+   "NUTR107",
+   "NUTR20",
+   "WEXP194DD",
+   "WEXP195DD"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/culinary-nutrition/certificate-achievement-culinary-arts-fundamentals/",
+   "title": "Certificate of Achievement in Culinary Arts Fundamentals | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3270
+ },
+ {
+  "control_number": "39329",
+  "title": "CISCO CCNA Academy",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ICT221",
+   "ICT222",
+   "ICT223",
+   "ICT224"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/information-communications-technology/certificate-achievement-cisco-ccna-academy/",
+   "title": "Certificate of Achievement in CISCO CCNA Academy | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2811
+ },
+ {
+  "control_number": "39330",
+  "title": "Computer and Network Support",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ICT201",
+   "ICT210",
+   "ICT235",
+   "ICT240"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/information-communications-technology/certificate-achievement-computer-network-support/",
+   "title": "Certificate of Achievement in Computer & Network Support | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2634
+ },
+ {
+  "control_number": "39336",
+  "title": "Culinary Arts",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39537",
+  "title": "Commercial Music",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS1",
+   "MUS10",
+   "MUS180",
+   "MUS20AD",
+   "MUS226",
+   "MUS227",
+   "MUS281",
+   "MUS282",
+   "MUS30",
+   "MUS34AD",
+   "MUS41AD",
+   "MUS54AD",
+   "MUS74AD"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/music/certificate-achievement-commercial-music/",
+   "title": "Certificate of Achievement in Commercial Music | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2901
+ },
+ {
+  "control_number": "41521",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "BUS119",
+   "BUS18",
+   "BUS20",
+   "BUS82",
+   "ECONC2001",
+   "ECONC2002",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/business/associate-science-business-administration-transfer-as-t/",
+   "title": "Associate in Science in Business Administration for Transfer 2.0 (AS-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3899
+ },
+ {
+  "control_number": "41641",
+  "title": "Special Education",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "CHLD140",
+   "CHLD146",
+   "CHLD148",
+   "CHLD154",
+   "CHLD42",
+   "WEXP193S"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/child-development/certificate-achievement-special-education/",
+   "title": "Certificate of Achievement in Special Education | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3329
+ },
+ {
+  "control_number": "41719",
+  "title": "Liberal Arts – Pathway to Educational Occupations",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.967,
+  "codes_found": [
+   "ART8",
+   "ARTH1",
+   "ASL1",
+   "BIOL21",
+   "BIOL25",
+   "CHEM10",
+   "CHEM20",
+   "CHLD126",
+   "CHLD134",
+   "CHLD140",
+   "CHLD148",
+   "CHLD42",
+   "COMM5",
+   "COMM7",
+   "COMM8",
+   "COMMC1000",
+   "COMMC1004",
+   "COMP130",
+   "COMP5",
+   "DRAM1",
+   "EDUC120",
+   "EDUC50",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1002",
+   "ESCI1",
+   "ETHN1",
+   "ETHN10",
+   "ETHN2",
+   "ETHN3",
+   "ETHN4",
+   "GEOG1",
+   "GEOG1L",
+   "GEOG2",
+   "GEOL1",
+   "HIST25",
+   "HIST4",
+   "HISTC1001",
+   "HISTC1002",
+   "HW1",
+   "LING11",
+   "MATH10",
+   "MATH11",
+   "MATH35",
+   "MATH44",
+   "MUS1",
+   "MUS10",
+   "NSCI131",
+   "NUTR18",
+   "PHIL1",
+   "PHIL20",
+   "PHIL25",
+   "POLS10",
+   "POLSC1000",
+   "PSYC10",
+   "PSYC80",
+   "SOC26",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/transfer-university-studies/associate-arts-transfer-studies-area-emphasis-elementary-teaching-preparation-transfer-aa/",
+   "title": "Associate of Arts in Liberal Arts – Pathway to Educational Occupations (AA) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 60,
+  "text_chars": 6804
+ },
+ {
+  "control_number": "42254",
+  "title": "Liberal Arts - Pathway to Health Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "ANTH10",
+   "BIOL30",
+   "BIOL31",
+   "BIOL40",
+   "CHEM20",
+   "CHEM21",
+   "COMM9",
+   "COMMC1000",
+   "COMMC1004",
+   "ENGLC1000",
+   "HW1",
+   "HW7",
+   "MATH44",
+   "NURS106",
+   "NURS256",
+   "PSYC80",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/liberal-studies/associate-arts-liberal-arts-pathway-health-science/",
+   "title": "Associate of Science in Liberal Arts - Pathway to Health Science (AS) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 5084
+ },
+ {
+  "control_number": "42410",
+  "title": "Electrical Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42925",
+  "title": "Multimedia Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43500",
+  "title": "Transitional Kindergarten",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "CHLD126",
+   "CHLD134",
+   "CHLD140",
+   "CHLD146",
+   "CHLD152",
+   "CHLD154",
+   "CHLD158",
+   "CHLD42"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/child-development/certificate-achievement-transitional-kindergarten/",
+   "title": "Certificate of Achievement in Transitional Kindergarten (TK) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3469
+ },
+ {
+  "control_number": "43520",
+  "title": "Infant Toddler Specialization",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "CHLD126",
+   "CHLD134",
+   "CHLD139",
+   "CHLD147",
+   "CHLD42"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/child-development/certificate-achievement-infant-toddler-specialization/",
+   "title": "Certificate of Achievement in Infant Toddler Specialization | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3235
+ },
+ {
+  "control_number": "43921",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM5",
+   "COMM7",
+   "COMM8",
+   "COMM9",
+   "COMMC1000",
+   "COMMC1004"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/communication/associate-arts-communication-studies-transfer-aa-t/",
+   "title": "Associate in Arts in Communication Studies for Transfer 2.0 (AA-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3751
+ },
+ {
+  "control_number": "44216",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.533,
+  "codes_found": [
+   "BIOL1",
+   "BIOL30",
+   "BIOL31",
+   "BIOL40",
+   "CHEM1",
+   "CHEM20",
+   "PHSC2",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//transfer-information-requirements/",
+   "title": "Transfer Information and Requirements | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 9297
+ },
+ {
+  "control_number": "44314",
+  "title": "Sanitary Welding Applications",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD172",
+   "WELD273",
+   "WELD274",
+   "WELD275"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/welding/certificate-achievement-sanitary-welding/",
+   "title": "Certificate of Achievement in Sanitary Welding Applications | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3157
+ },
+ {
+  "control_number": "44392",
+  "title": "Food Safety Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44493",
+  "title": "Paramedicine",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44617",
+  "title": "Paramedicine",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PM201",
+   "PM202",
+   "PM203",
+   "PM230"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/paramedic/certificate-achievement-paramedicine/",
+   "title": "Certificate of Achievement in Paramedicine | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3037
+ },
+ {
+  "control_number": "44801",
+  "title": "Social Work and Human Services",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "BIOL30",
+   "BIOL31",
+   "BUS20",
+   "CHLD42",
+   "COMM9",
+   "ECONC2001",
+   "ECONC2002",
+   "ETHN10",
+   "HISTC1001",
+   "HISTC1002",
+   "HSRV12",
+   "HSRV120",
+   "HSRV124",
+   "PSYC34",
+   "PSYC80",
+   "PSYCC1000",
+   "SSCI25",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/human-services/associate-science-social-work-human-services-as-t/",
+   "title": "Associate in Arts in Social Work and Human Services for Transfer (AA-T) | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 4545
+ },
+ {
+  "control_number": "45030",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.945,
+  "codes_found": [
+   "AG1",
+   "AG2",
+   "AG4",
+   "AGMT1",
+   "AJ45",
+   "ANTH10",
+   "ANTH12",
+   "ANTH13",
+   "ARCH70",
+   "ARCH71",
+   "ARTH1",
+   "ARTH4",
+   "ARTH5",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ASL3",
+   "ASL4",
+   "ASL5",
+   "BIOL1",
+   "BIOL2",
+   "BIOL21",
+   "BIOL22",
+   "BIOL25",
+   "BIOL30",
+   "BIOL31",
+   "BIOL40",
+   "BUS20",
+   "CHEM1",
+   "CHEM10",
+   "CHEM12",
+   "CHEM13",
+   "CHEM2",
+   "CHEM20",
+   "CHEM21",
+   "CHLD42",
+   "CINA31",
+   "CINA32",
+   "COMM2",
+   "COMM9",
+   "COMMC1000",
+   "DRAM1",
+   "DRAM6",
+   "ECON25",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGL10",
+   "ENGL15",
+   "ENGL16",
+   "ENGL30",
+   "ENGL31",
+   "ENGL44",
+   "ENGL45",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1002",
+   "ETHN1",
+   "ETHN10",
+   "ETHN2",
+   "ETHN3",
+   "ETHN4",
+   "GEOG1",
+   "GEOG1L",
+   "GEOG2",
+   "GEOG5",
+   "GEOL1",
+   "GEOL12",
+   "GEOL5",
+   "HIST23",
+   "HIST25",
+   "HIST4",
+   "HIST5",
+   "HISTC1001",
+   "HISTC1002",
+   "JOUR20",
+   "JOUR7",
+   "MATH35",
+   "MATH44",
+   "MATH54",
+   "MATH67",
+   "MATH80",
+   "MATH81",
+   "MUS10",
+   "MUS14",
+   "MUS4",
+   "MUS5",
+   "MUS6",
+   "MUS7",
+   "NUTR20",
+   "PHIL1",
+   "PHIL12",
+   "PHIL25",
+   "PHIL5",
+   "PHYS20",
+   "PHYS21",
+   "PHYS55",
+   "PHYS56",
+   "PHYS57",
+   "PLSI1",
+   "POLS11",
+   "POLS12",
+   "POLS6",
+   "POLS8",
+   "POLSC1000",
+   "PSCI20",
+   "PSYC10",
+   "PSYC34",
+   "PSYC5",
+   "PSYC80",
+   "PSYCC1000",
+   "SOC10",
+   "SOC2",
+   "SOC26",
+   "SOC43",
+   "SPAN12",
+   "SPAN23",
+   "SPAN3",
+   "SPAN4",
+   "SSCI25",
+   "SSCI50",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/counseling/certificate-achievement-cal-getc/",
+   "title": "Certificate of Achievement in Cal-GETC | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 127,
+  "text_chars": 12566
+ },
+ {
+  "control_number": "45379",
+  "title": "Plant Health",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "AG2",
+   "AG3",
+   "AG4",
+   "BIOL21",
+   "BIOL40",
+   "CHEM10",
+   "CHEM20",
+   "OH1",
+   "OH105",
+   "OH204",
+   "OH220",
+   "PLSI1",
+   "PLSI105",
+   "PLSI106",
+   "PLSI108",
+   "PLSI110",
+   "PLSI111",
+   "PLSI113",
+   "PLSI118",
+   "PLSI12"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//areas-study/plant-science/certificate-achievement-plant-health/",
+   "title": "Certificate of Achievement in Plant Health | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 4068
+ },
+ {
+  "control_number": "45497",
+  "title": "Equipment Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 14,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45498",
+  "title": "Modern Policing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 18,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45818",
+  "title": "Elementary Teacher Education: Integrated Programs",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.579,
+  "codes_found": [
+   "ARTH1",
+   "COMMC1000",
+   "DRAM1",
+   "ENGLC1000",
+   "ENGLC1002",
+   "GEOG2",
+   "HIST25",
+   "HISTC1001",
+   "MUS10",
+   "POLSC1000",
+   "PSCI20"
+  ],
+  "source": {
+   "url": "https://catalog.cos.edu//transfer-information-requirements/",
+   "title": "Transfer Information and Requirements | College of the Sequoias Academic Catalog",
+   "h1": "2026-2027 Academic Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 14211
+ }
+]

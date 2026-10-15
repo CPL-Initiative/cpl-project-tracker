@@ -1,0 +1,236 @@
+{
+ "college": "College of the Sequoias",
+ "control_number": "45818",
+ "shape": "adt",
+ "title": "Elementary Teacher Education: Integrated Programs",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.cos.edu//transfer-information-requirements/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11893,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11893,
+    "output_tokens": 1437,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1437,
+  "output_tokens_details": {
+   "thinking_tokens": 403
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07631,
+ "ms": 13558,
+ "seconds": 14.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 19,
+   "share": 0.0,
+   "missing": [
+    "ARTH1",
+    "BIOLC1000",
+    "CDEVC1000",
+    "COMMC1000",
+    "DRAM1",
+    "EDUC50",
+    "ENGLC1000",
+    "ENGLC1002",
+    "ESCI1",
+    "GEOG2",
+    "HIST25",
+    "HISTC1001",
+    "LING11",
+    "MATH10",
+    "MATH11",
+    "MUS10",
+    "NSCI131",
+    "POLSC1000",
+    "PSCI20"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "California - General Education Transfer Curriculum Pattern (Cal-GETC)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ARTH 1",
+    "why": "not in an award section; appears only as ARTH 001 in the Cal-GETC Area 3A list"
+   },
+   {
+    "code": "BIOL C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "CDEVC1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "not in an award section; appears only in the Cal-GETC Area 1C list"
+   },
+   {
+    "code": "DRAM 1",
+    "why": "not in an award section; appears only as DRAM 001 in the Cal-GETC Area 3A list"
+   },
+   {
+    "code": "EDUC 50",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "not in an award section; appears only in the Cal-GETC Area 1A list"
+   },
+   {
+    "code": "ENGL C1002",
+    "why": "not in an award section; appears only in the Cal-GETC Area 3B list"
+   },
+   {
+    "code": "ESCI 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 2",
+    "why": "not in an award section; appears only as GEOG 002 in the Cal-GETC Area 4 list"
+   },
+   {
+    "code": "HIST 25",
+    "why": "not in an award section; appears only as HIST 025 in the Cal-GETC Area 3B/4 lists"
+   },
+   {
+    "code": "HIST C1001",
+    "why": "not in an award section; appears only in the Cal-GETC Area 3B/4 and CSU American Institutions lists"
+   },
+   {
+    "code": "LING 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 10",
+    "why": "not in an award section; appears only as MUS 010 in the Cal-GETC Area 3A list"
+   },
+   {
+    "code": "NSCI 131",
+    "why": "not in the text"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "not in an award section; appears only in the Cal-GETC Area 4 and CSU American Institutions lists"
+   },
+   {
+    "code": "PSCI 20",
+    "why": "not in an award section; appears only as PSCI 020 in the Cal-GETC Area 5A list"
+   }
+  ],
+  "notes": [
+   "The supplied text is the College of the Sequoias transfer information page and the Cal-GETC general education pattern; it contains no section for the Elementary Teacher Education: Integrated Programs A.A-T degree, so no blocks, totals, outcomes or careers were recorded.",
+   "Several closed-list courses appear in the text only as Cal-GETC GE options; GE courses are never placed in blocks.",
+   "The text is cut off mid-sentence at the end of the Cal-GETC Certification section.",
+   "A reviewer should locate the program's own catalog page to record its requirements."
+  ]
+ },
+ "extracted_run": "38748848139"
+}
