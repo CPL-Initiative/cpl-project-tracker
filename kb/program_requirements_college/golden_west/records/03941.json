@@ -1,0 +1,150 @@
+{
+ "college": "Golden West College",
+ "control_number": "03941",
+ "shape": "degree",
+ "title": "Police Academy",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.cccd.edu/golden-west/pathways/career-education/criminal-justice-police-academy/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9038,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9038,
+    "output_tokens": 653,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 653,
+  "output_tokens_details": {
+   "thinking_tokens": 162
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04921,
+ "ms": 8231,
+ "seconds": 8.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "CJG64",
+    "CJG90"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Criminal Justice (CJ)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CJ G064",
+    "why": "text has only its course description; no program requirements for the Police Academy A.A. Degree"
+   },
+   {
+    "code": "CJ G090",
+    "why": "text has only its course description; no program requirements for the Police Academy A.A. Degree"
+   }
+  ],
+  "notes": [
+   "The catalog text is the Criminal Justice (CJ) course description listing, not the Police Academy A.A. Degree program section. The text names no requirements, total units, general education pattern, outcomes or careers for this award, so no blocks were recorded.",
+   "CJ G064 (33 units, 399 lecture hours; 610 lab hours) and CJ G090 (24.5 units) appear only as course descriptions. CJ G064's 'Catalog Program Pages' list names the Law Enforcement, Certificate of Achievement and Criminal Justice pages, not a Police Academy A.A. Degree.",
+   "The text is cut off at both ends: it starts mid-word ('Justice') and ends mid-entry at CJ G123. A reviewer should check the actual program page for the A.A. Degree requirements."
+  ]
+ },
+ "extracted_run": "38748828247"
+}

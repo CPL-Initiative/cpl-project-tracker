@@ -1,0 +1,318 @@
+{
+ "college": "Golden West College",
+ "control_number": "31436",
+ "shape": "adt",
+ "title": "Business Administration",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.cccd.edu/golden-west/pathways/business/business-administration/business-administration-ast/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7081,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7081,
+    "output_tokens": 1726,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1726,
+  "output_tokens_details": {
+   "thinking_tokens": 468
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06284,
+ "ms": 13618,
+ "seconds": 14.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 11,
+   "share": 0.636,
+   "missing": [
+    "BUSG110",
+    "CSG130",
+    "ECONG170",
+    "ECONG175"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 8,
+   "codes": [
+    "ECONC2001",
+    "ECONC2002",
+    "ECONG160",
+    "MATHG140S",
+    "MATHG180",
+    "PSYCG140",
+    "SOCG125",
+    "STATC1000E"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "ECONC2002",
+    "ECONG160",
+    "MATHG140S",
+    "MATHG180",
+    "PSYCG140",
+    "SOCG125",
+    "STATC1000E"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    27.0,
+    32.0
+   ],
+   "stated": [
+    27.0,
+    32.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     61.0,
+     66.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Administration 2.0, Associate in Science Degree for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Describe fundamental aspects of business and economic principles, including macroeconomics and microeconomics.",
+    "Identify laws affecting sole proprietorships, partnerships, and corporations.",
+    "Describe accounting information and statements used in business and organizational management.",
+    "Practice use of mathematical and statistical analyses used in business."
+   ],
+   "careers": [
+    "Accounting",
+    "Data analytics",
+    "Finance",
+    "Marketing",
+    "Human resource management",
+    "Supply chain management",
+    "Operations management",
+    "Global trade"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT G101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT G102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH G140",
+      "units": 4,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "MATH G140S",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH G180",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS G108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS G139",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 3,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ECON G160",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "SOC G125",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "PSYC G140",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS G110",
+    "why": "not in the text"
+   },
+   {
+    "code": "CS G130",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON G170",
+    "why": "not in the text; catalog prints ECON C2001 Principles of Microeconomics instead (likely renumbered)"
+   },
+   {
+    "code": "ECON G175",
+    "why": "not in the text; catalog prints ECON C2002 Principles of Macroeconomics instead (likely renumbered)"
+   }
+  ],
+  "notes": [
+   "ECON C2001 and ECON C2002 appear to be Common Course Numbering replacements for closed-list ECON G170 and ECON G175 (same titles); recorded as catalog additions.",
+   "The unit ranges printed beside MATH G140 (4-6) and STAT C1000 (3-6) span the alternatives in each 'or' group; units for individual alternatives are not printed, so they are null.",
+   "STAT C1000 has 4 units in the state file, but the catalog row prints 3-6.",
+   "Transferable electives fill the degree to 60 units; no elective units are printed.",
+   "The 60-unit general ADT requirement sentence is not used as the degree total; the 'Total Units 60' row printed for this award is."
+  ]
+ },
+ "extracted_run": "38748828247"
+}

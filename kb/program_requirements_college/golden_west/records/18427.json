@@ -1,0 +1,270 @@
+{
+ "college": "Golden West College",
+ "control_number": "18427",
+ "shape": "degree",
+ "title": "Dance",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/dance/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12726,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12726,
+    "output_tokens": 1434,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1434,
+  "output_tokens_details": {
+   "thinking_tokens": 363
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07958,
+ "ms": 12334,
+ "seconds": 13.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 26,
+   "share": 0.0,
+   "missing": [
+    "DANCG100",
+    "DANCG105",
+    "DANCG106",
+    "DANCG108",
+    "DANCG112",
+    "DANCG113",
+    "DANCG115",
+    "DANCG120",
+    "DANCG125",
+    "DANCG130",
+    "DANCG135",
+    "DANCG136",
+    "DANCG145",
+    "DANCG150",
+    "DANCG155",
+    "DANCG160",
+    "DANCG200",
+    "DANCG215",
+    "DANCG220",
+    "DANCG225",
+    "DANCG230",
+    "DANCG231",
+    "DANCG235",
+    "DANCG240",
+    "DANCG245",
+    "DANCG260"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Dance, Associate in Arts Degree",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "DANC G100",
+    "why": "only in course descriptions; no requirements section in text"
+   },
+   {
+    "code": "DANC G105",
+    "why": "only in course descriptions; no requirements section in text"
+   },
+   {
+    "code": "DANC G106",
+    "why": "only in course descriptions; no requirements section in text"
+   },
+   {
+    "code": "DANC G108",
+    "why": "only in course descriptions; no requirements section in text"
+   },
+   {
+    "code": "DANC G112",
+    "why": "only in course descriptions; no requirements section in text"
+   },
+   {
+    "code": "DANC G113",
+    "why": "only in course descriptions; no requirements section in text"
+   },
+   {
+    "code": "DANC G115",
+    "why": "only in course descriptions; no requirements section in text"
+   },
+   {
+    "code": "DANC G120",
+    "why": "only in course descriptions; no requirements section in text"
+   },
+   {
+    "code": "DANC G125",
+    "why": "only in course descriptions; no requirements section in text"
+   },
+   {
+    "code": "DANC G130",
+    "why": "only in course descriptions; no requirements section in text"
+   },
+   {
+    "code": "DANC G135",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANC G136",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANC G145",
+    "why": "only in course descriptions; no requirements section in text"
+   },
+   {
+    "code": "DANC G150",
+    "why": "only in course descriptions; no requirements section in text"
+   },
+   {
+    "code": "DANC G155",
+    "why": "only in course descriptions; no requirements section in text"
+   },
+   {
+    "code": "DANC G160",
+    "why": "only in course descriptions; no requirements section in text"
+   },
+   {
+    "code": "DANC G200",
+    "why": "only in course descriptions; no requirements section in text"
+   },
+   {
+    "code": "DANC G215",
+    "why": "only in course descriptions; no requirements section in text"
+   },
+   {
+    "code": "DANC G220",
+    "why": "only in course descriptions; no requirements section in text"
+   },
+   {
+    "code": "DANC G225",
+    "why": "only in course descriptions (cut off); no requirements section in text"
+   },
+   {
+    "code": "DANC G230",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANC G231",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANC G235",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANC G240",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANCG245",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANCG260",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text is the DANC course description listing, not the program requirements page; 'Dance, Associate in Arts Degree' appears only in 'Catalog Program Pages Referencing' link lists, so no blocks, totals, outcomes or careers could be recorded.",
+   "The text begins mid-description (DANC G100) and is cut off mid-description at DANC G225; the requirements section for the A.A. degree needs to be retrieved from the program page itself.",
+   "Courses described in the text but absent from the closed list (DANC G101, G119, G201, G212, G213, G219) were not placed because no requirement rule for them is printed."
+  ]
+ },
+ "extracted_run": "38748828247"
+}

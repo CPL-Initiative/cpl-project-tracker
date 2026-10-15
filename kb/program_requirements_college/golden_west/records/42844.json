@@ -1,0 +1,215 @@
+{
+ "college": "Golden West College",
+ "control_number": "42844",
+ "shape": "adt",
+ "title": "Computer Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.cccd.edu/golden-west/pathways/stem/computer-science/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10409,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10409,
+    "output_tokens": 1407,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1407,
+  "output_tokens_details": {
+   "thinking_tokens": 423
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06978,
+ "ms": 12410,
+ "seconds": 12.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 15,
+   "share": 0.0,
+   "missing": [
+    "BIOLG180",
+    "BIOLG186",
+    "CHEMG180",
+    "CSG131",
+    "CSG153",
+    "CSG154",
+    "CSG175",
+    "CSG189",
+    "CSG231",
+    "CSG242",
+    "CSG262",
+    "MATHG180",
+    "MATHG185",
+    "PHYSG185",
+    "PHYSG280"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Science, Associate in Science Degree for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOL G180",
+    "why": "not in the text; requirements section not provided"
+   },
+   {
+    "code": "BIOL G186",
+    "why": "not in the text; requirements section not provided"
+   },
+   {
+    "code": "CHEM G180",
+    "why": "not in the text; requirements section not provided"
+   },
+   {
+    "code": "CS G131",
+    "why": "only a course description is in the text; it lists the A.S.-T among referencing pages but no requirement rule is given"
+   },
+   {
+    "code": "CS G153",
+    "why": "only a course description is in the text; it lists the A.S.-T among referencing pages but no requirement rule is given"
+   },
+   {
+    "code": "CS G154",
+    "why": "only a course description is in the text; it lists the A.S.-T among referencing pages but no requirement rule is given"
+   },
+   {
+    "code": "CS G175",
+    "why": "only a course description is in the text; it lists the A.S.-T among referencing pages but no requirement rule is given"
+   },
+   {
+    "code": "CS G189",
+    "why": "only a course description is in the text; it lists the A.S.-T among referencing pages but no requirement rule is given"
+   },
+   {
+    "code": "CS G231",
+    "why": "only a course description is in the text; it lists the A.S.-T among referencing pages but no requirement rule is given"
+   },
+   {
+    "code": "CS G242",
+    "why": "only a course description is in the text; it lists the A.S.-T among referencing pages but no requirement rule is given"
+   },
+   {
+    "code": "CS G262",
+    "why": "only a course description is in the text; it lists the A.S.-T among referencing pages but no requirement rule is given"
+   },
+   {
+    "code": "MATH G180",
+    "why": "not in the text; requirements section not provided"
+   },
+   {
+    "code": "MATH G185",
+    "why": "not in the text; requirements section not provided"
+   },
+   {
+    "code": "PHYS G185",
+    "why": "not in the text; requirements section not provided"
+   },
+   {
+    "code": "PHYS G280",
+    "why": "not in the text; requirements section not provided"
+   }
+  ],
+  "notes": [
+   "The catalog text contains only Computer Science (CS) course descriptions and 'Catalog Program Pages Referencing' lists. It does not include the requirements section for the Computer Science, Associate in Science Degree for Transfer. No blocks, totals, GE pattern, outcomes or careers could be recorded.",
+   "The heading 'Computer Science, Associate in Science Degree for Transfer' is taken from the referencing lists under CS G131, G153, G154, G175, G189, G231, G242 and G262. Those lists suggest these courses appear in the A.S.-T. The rules (required vs. choose) are not shown.",
+   "A reviewer should fetch the actual program requirements page for the A.S.-T to extract the blocks."
+  ]
+ },
+ "extracted_run": "38748828247"
+}
