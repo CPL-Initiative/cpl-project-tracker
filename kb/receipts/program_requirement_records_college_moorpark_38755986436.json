@@ -1,0 +1,256 @@
+{
+ "college": "Moorpark College",
+ "load_run": "38755986436",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-15T14:57:55Z",
+ "records": 99,
+ "posted": 54,
+ "batches": 3,
+ "inserted": 54,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "06855",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "06871",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "06875",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "06881",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "06882",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "06883",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07114",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07124",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07129",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "12123",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "17779",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22116",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22117",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30484",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31117",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31394",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31714",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31900",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32055",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32056",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32891",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33686",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33710",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35172",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36857",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37292",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37450",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39112",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39414",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39958",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40301",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40636",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41151",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41164",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41402",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41403",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41404",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41450",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42447",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42643",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42647",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42791",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42799",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43405",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46473",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "38748862351"
+ ],
+ "machine_pass": 31,
+ "inserted_keys": [
+  "06847",
+  "06848",
+  "06859",
+  "06863",
+  "06878",
+  "06879",
+  "07106",
+  "07123",
+  "18393",
+  "18397",
+  "18398",
+  "18399",
+  "22102",
+  "22103",
+  "30626",
+  "30664",
+  "31118",
+  "31141",
+  "31142",
+  "31614",
+  "31617",
+  "31694",
+  "31822",
+  "31833",
+  "32507",
+  "32564",
+  "32565",
+  "32700",
+  "33647",
+  "33650",
+  "33654",
+  "33684",
+  "35443",
+  "35946",
+  "36061",
+  "36068",
+  "36855",
+  "37575",
+  "39413",
+  "40324",
+  "40537",
+  "40816",
+  "41185",
+  "41278",
+  "41375",
+  "42292",
+  "42451",
+  "42992",
+  "43055",
+  "43890",
+  "45352",
+  "45616",
+  "45617",
+  "45808"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Moorpark College' and checked = false and control_number in ('06847', '06848', '06859', '06863', '06878', '06879', '07106', '07123', '18393', '18397', '18398', '18399', '22102', '22103', '30626', '30664', '31118', '31141', '31142', '31614', '31617', '31694', '31822', '31833', '32507', '32564', '32565', '32700', '33647', '33650', '33654', '33684', '35443', '35946', '36061', '36068', '36855', '37575', '39413', '40324', '40537', '40816', '41185', '41278', '41375', '42292', '42451', '42992', '43055', '43890', '45352', '45616', '45617', '45808');"
+}
