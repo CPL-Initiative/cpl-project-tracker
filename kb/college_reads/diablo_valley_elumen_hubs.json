@@ -1,9 +1,10 @@
 {
- "_readme": "S394 SkyMadrone, 2026-10-15. Diablo Valley's eLumen capture (run 38669937625) found the catalog's two hubs, transdegreecert and dvc-certs-and-degrees, and read no program page from them: the reader takes program links of the form <catalog>/program/<slug>, and these hubs link their programs some other way. Four page loads with \"network\": true, no model call: each hub rendered and as its publish/content call.",
+ "_readme": "S394 SkyMadrone, 2026-10-15. Diablo Valley's eLumen capture (run 38669937625) found the catalog's two hubs, transdegreecert and dvc-certs-and-degrees, and read no program page from them: the reader takes program links of the form <catalog>/program/<slug>, and these hubs link their programs some other way. Four page loads with \"network\": true, no model call: each hub rendered and as its publish/content call. Read 2 (run 38670917323): both hubs list no program link; dvc-certs-and-degrees is a grid of departments by award, and transdegreecert links dvcassocdegrees and ceprog. Read 3 asks those two, every link shown.",
  "college": "Diablo Valley College",
  "questions": {
   "program_links": "How each hub links a program: the href's shape (absolute, relative, another path segment), and one program's address.",
-  "hub_content": "What the hub's publish/content call returns, and whether its program links match the rendered page's."
+  "hub_content": "What the hub's publish/content call returns, and whether its program links match the rendered page's.",
+  "award_lists": "Whether dvcassocdegrees and ceprog link each program, and the href's shape."
  },
  "keywords": [
   "[Cc]ertificate",
@@ -15,26 +16,26 @@
  ],
  "pages": [
   {
-   "answers": ["program_links"],
-   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/dvc-certs-and-degrees",
-   "network": true,
-   "links": "program|degree|certificate|DVC2026"
+   "answers": [
+    "award_lists"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvcassocdegrees?tenant=dvc.elumenapp.com",
+   "links": "."
   },
   {
-   "answers": ["program_links"],
-   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/transdegreecert",
-   "network": true,
-   "links": "program|degree|certificate|DVC2026"
+   "answers": [
+    "award_lists"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,ceprog?tenant=dvc.elumenapp.com",
+   "links": "."
   },
   {
-   "answers": ["hub_content"],
-   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,dvc-certs-and-degrees?tenant=dvc.elumenapp.com",
-   "links": "program|DVC2026"
-  },
-  {
-   "answers": ["hub_content"],
-   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,transdegreecert?tenant=dvc.elumenapp.com",
-   "links": "program|DVC2026"
+   "answers": [
+    "award_lists"
+   ],
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/dvcassocdegrees",
+   "network": false,
+   "links": "."
   }
  ]
 }
