@@ -126,7 +126,8 @@
     if (typeof T._requirements !== "function") return { intro: "", items: [] };
     const r = T._requirements() || {};
     return { intro: String(r.intro || ""), deadline: String(r.deadline || ""),
-             items: (r.items || []).map(function (t) { return String(t); }) };
+             items: (r.items || []).map(function (t) { return String(t); }),
+             kinds: (r.kinds || []).map(function (k) { return String(k || ""); }) };
   })();
 
   // The effective rate an UNBOUND college earns at, measured off the model rather

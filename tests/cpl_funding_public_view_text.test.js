@@ -18,6 +18,11 @@
 //      text there, and two bare text nodes in a flex row join into one
 //      anonymous item. Each value now has its own span.
 //
+// ⚠ SINCE 2026-10-15 (Sam's call 1 on the one public funding page) the tab's
+// Public page view frames funding-model/ itself, so these checks draw the
+// public rendering of the tab's sections the way a public page's engine does
+// (CPL_FUNDING_PUBLIC), and the link ?fundview=public opens the frame.
+//
 // Windows: 6. Run from repo root: `npm test`
 // (or `node tests/cpl_funding_public_view_text.test.js`).
 const fs = require("fs");
@@ -52,6 +57,7 @@ function setup(opts) {
   w.CPL_FUNDING_NO_REMOTE = true;
   w.fetch = function () { return new Promise(function () {}); };
   if (opts.signedIn) w.CPL_SESSION = session();
+  if (opts.pub) w.CPL_FUNDING_PUBLIC = true;
   const run = (f) => { const s = w.document.createElement("script"); s.textContent = read(f); w.document.body.appendChild(s); };
   ["college_short_names.js", "cpl_funding_data.js", "cpl_funding.js"].forEach(run);
   w.CPL_FUNDING_PERF = Object.assign({}, w.CPL_FUNDING_PERF || {}, {
@@ -60,8 +66,6 @@ function setup(opts) {
   T.boot();
   T._setShared({ extraReqs: [VET], partLabel: "Local confirmation on file by", timing: TIMING,
     participationDeadline: "2026-11-01" });
-  if (opts.preview) T._state.previewPublic = true;
-  if (opts.eye) T._state.publicEye = true;
   T.render();
   return { w, doc: w.document, T };
 }
@@ -74,7 +78,7 @@ function cssRule(css, sel) {
   return css.slice(at, css.indexOf("}", at) + 1);
 }
 {
-  const { doc } = setup({ url: "https://example.org/?fundview=public#implementation-funding" });
+  const { doc } = setup({ pub: true });
   const css = doc.getElementById("cpl-funding-css").textContent;
   const boxes = [".cplfund-elig", ".cplfund-timing", ".cplfund-formula", ".cplfund-basis", ".cplfund-otot"];
   boxes.forEach((sel) => {
@@ -97,7 +101,7 @@ function cssRule(css, sel) {
     css.indexOf(".cplfund-goalspine-fold > summary, .cplfund-ncrules > summary {") !== -1);
 }
 
-// ── the Public view, as a reader opens it by link ──────────────────────────
+// ── a public rendering of the tab's sections ──────────────────────────────
 function publicChecks(label, env) {
   const { doc } = env;
   const root = doc.querySelector("#cplFundingMount > .cplfund");
@@ -135,8 +139,15 @@ function publicChecks(label, env) {
     folds.every((s) => s && s.querySelector("strong") && s.querySelector(".dk")) &&
     norm(folds[1].textContent) === "The noncredit funding rules — show them");
 }
-publicChecks("by link", setup({ url: "https://example.org/?fundview=public#implementation-funding" }));
-publicChecks("As colleges see it", setup({ signedIn: true, preview: true, eye: true }));
+publicChecks("public rendering", setup({ pub: true }));
+publicChecks("public rendering, signed in", setup({ pub: true, signedIn: true }));
+{
+  // The link the videos carry opens the Public page view: the page itself.
+  const { doc } = setup({ url: "https://example.org/?fundview=public#implementation-funding" });
+  check("by link: ?fundview=public opens the Public page view, framing funding-model/",
+    !!doc.querySelector('#cplFundingMount iframe[src="funding-model/"]') &&
+    doc.querySelector('[data-viewmode="public"]').getAttribute("aria-pressed") === "true");
+}
 
 // ── the curator's own view keeps its tools and its editable fields ─────────
 {

@@ -1226,3 +1226,12 @@ The lane sits at its 20 KB budget; these moved here verbatim (the fourth, `targe
 
 ⚠️ **`target_rate` IS DEAD ON BOTH ENDS — LEAVE IT THAT WAY.** `prioTarget()` reads it only on the students path; no control
 renders it. Sam had S263's wiring (#1579) REVERTED (#1580): `rate = k/factor` reproduces every target. **Do not rebuild it.**
+
+## 2026-10-15 — SkyLantern (side session beside the queue): the one public page, built
+
+- **A frame taken out of the page reloads.** `render()` rewrites the mount on every remote load, so the Public page
+  view keeps its `<iframe>` in place and rewrites only the chrome above it (`renderPagePreview`).
+- **The model's subscribers hear before the mount is rewritten** (`notifyModel()` leads `render()`), so the page's
+  editor puts nothing inside `#cplFundingMount`: the table introduction's Edit sits just above the table.
+- **`.btn{display:inline-flex}` beats `[hidden]`**: a hidden masthead word needs its own `display:none`.
+- **A seed read beats a seed write.** `x_about` follows `about` until saved; no shared-config write was needed.

@@ -6,14 +6,18 @@
 //      curator's pick holds for the visit.
 //   2. AS COLLEGES SEE IT. "A button to the Public View that allows curators to
 //      see the public view as they see it (without the curator choices
-//      showing)", flipping back and forth. The Public view also opens by link,
+//      showing)". RETIRED 2026-10-15 (Sam's call 1, the one public funding
+//      page): the Public page view frames funding-model/ itself, a curator's
+//      controls show there only inside Edit this page, and leaving it is how a
+//      curator reads the page as colleges do. The view still opens by link,
 //      ?fundview=public (the videos' way back).
-//   3. MY CPL FUNDING AT THE TOP, BY COLLEGE OR DISTRICT, WITH A PDF. "Add
-//      another copy of the My CPL Funding view button (allowing users to select
-//      their college or district) to the top of the public view tab and
-//      Explainer view ... and add a pdf button on all the My CPL Funding views."
-//   4. The explainer's header button, My College's PDF button and the printer
-//      they share.
+//   3. MY CPL FUNDING, BY COLLEGE OR DISTRICT, WITH A PDF. "Add another copy of
+//      the My CPL Funding view button ... and add a pdf button on all the My
+//      CPL Funding views." The top buttons are RETIRED (2026-10-15, calls 1 and
+//      8: Step 1 is the one way in); the one-institution view stays, drawn here
+//      on the public rendering the public page's engine draws.
+//   4. The explainer's header (no My CPL Funding since call 8), My College's
+//      PDF button and the printer they share.
 //
 // Windows: 6. Run from repo root: `npm test`
 // (or `node tests/cpl_funding_public_view_asks.test.js`).
@@ -91,31 +95,25 @@ const CFG = { projects: { "cpl-implementation": { label: "CPL", area: "cpl", pub
 // 2. As colleges see it
 // ─────────────────────────────────────────────────────────────────────────────
 {
-  const { w, doc, T } = setup({ signedIn: true });
+  // Inverted 2026-10-15 (Sam's call 1): the Public page view frames the page.
+  const { doc, T } = setup({ signedIn: true });
   T._state.previewPublic = true;
   T.render();
   const mount = doc.getElementById("cplFundingMount");
-  const curatorBits = () => mount.querySelectorAll(
-    "[data-secpvhide], [data-secpvshow], [data-secpvpos], [data-pubsechide], [data-pubsecshow], [data-pubsecpos], " +
-    ".cplfund-pubsec, .cplfund-sec-stub, #cplFundSecOrderReset, #cplFundPubOrderReset").length;
-  const eye = () => doc.getElementById("cplFundPublicEye");
-  check("2a: in the Public view a curator sees the curator choices and the As colleges see it button, unpressed",
-    curatorBits() > 0 && !!eye() && eye().getAttribute("aria-pressed") === "false" && eye().textContent === "As colleges see it");
-  click(w, eye());
-  check("2b: pressed, every curator choice leaves the page and the button stays, pressed",
-    curatorBits() === 0 && !/Curator only/.test(mount.textContent) && !!eye() && eye().getAttribute("aria-pressed") === "true");
-  check("2c: …and focus stays on it, so a keyboard user can flip straight back", doc.activeElement === eye());
-  click(w, eye());
-  check("2d: pressed again, the curator choices return", curatorBits() > 0 && eye().getAttribute("aria-pressed") === "false");
+  check("2a: the Public page view frames funding-model/, with no As colleges see it switch and no curator chips of its own",
+    !!mount.querySelector('iframe[src="funding-model/"]') && !doc.getElementById("cplFundPublicEye") &&
+    !mount.querySelector("[data-secpvhide], [data-pubsechide], .cplfund-pubsec, .cplfund-sec-stub"));
+  check("2b: …and says where a curator edits it", /Edit this page/.test(mount.textContent));
   T._state.previewPublic = false;
   T.render();
-  check("2e: the Internal view has no such button", !eye());
+  check("2e: the Internal view has no such switch either", !doc.getElementById("cplFundPublicEye"));
 }
 {
   const { doc, T } = setup();
   T._state.previewPublic = true;
   T.render();
-  check("2f: signed out, the Public view offers no curator switch", !doc.getElementById("cplFundPublicEye"));
+  check("2f: signed out, the Public page view frames the same page and offers no curator switch",
+    !!doc.querySelector('#cplFundingMount iframe[src="funding-model/"]') && !doc.getElementById("cplFundPublicEye"));
 }
 {
   const { doc } = setup({ url: "https://example.org/?fundview=public#implementation-funding" });
@@ -130,15 +128,15 @@ const CFG = { projects: { "cpl-implementation": { label: "CPL", area: "cpl", pub
 {
   const { w, doc, T, printed } = setup();
   const D = w.CPL_FUNDING;
-  check("3a: the Internal view carries no top My CPL Funding button", !doc.getElementById("cplFundMyFundingTop"));
-  T._state.previewPublic = true;
+  check("3a: no view carries a top My CPL Funding button (calls 1 and 8: Step 1 is the one way in)",
+    !doc.getElementById("cplFundMyFundingTop"));
+  // The public rendering, as the public page's engine draws it.
+  w.CPL_FUNDING_PUBLIC = true;
   T.render();
-  const top = doc.getElementById("cplFundMyFundingTop");
-  check("3b: the Public view carries My CPL Funding in its top row of actions",
-    !!top && top.textContent === "My CPL Funding" && !!top.closest(".cplfund-actions"));
-  click(w, top);
+  check("3b: the public rendering carries no top My CPL Funding button either", !doc.getElementById("cplFundMyFundingTop"));
+  T.showMyFunding();
   const pick = doc.getElementById("cplFundOnePick");
-  check("3c: pressed, it opens the one-institution view and puts the reader on the chooser",
+  check("3c: showMyFunding opens the one-institution view and puts the reader on the chooser",
     T._state.collegeView === "one" && !!pick && doc.activeElement === pick);
   const groups = Array.from(pick.querySelectorAll("optgroup")).map((g) => g.getAttribute("label"));
   check("3d: the chooser offers Institutions and Districts", JSON.stringify(groups) === JSON.stringify(["Institutions", "Districts"]));
@@ -195,12 +193,11 @@ const CFG = { projects: { "cpl-implementation": { label: "CPL", area: "cpl", pub
   // In the masthead's control row since 2026-10-09 (the action bar above the
   // masthead before that), the one filled button there.
   const bar = html.slice(html.indexOf('<div class="mh-actions"'), html.indexOf("</header>"));
-  check("4a: the explainer's control row carries My CPL Funding as its lead button, linked to the table",
-    /<a class="btn primary" id="my-funding-btn" href="#institutions">My CPL Funding<\/a>/.test(bar) &&
-    (bar.match(/class="btn primary"/g) || []).length === 1);
-  check("4b: …and its click opens the table's fold, then the one-institution view through the module",
-    /getElementById\("my-funding-btn"\)[\s\S]{0,600}T\.showMyFunding\(\)/.test(html) &&
-    /getElementById\("my-funding-btn"\)[\s\S]{0,300}sectionFold\(document\.getElementById\("institutions"\)\)/.test(html));
+  // Inverted 2026-10-15 (Sam's call 8: "Remove it"): Step 1 sits directly
+  // under the masthead and is the one way in.
+  check("4a: the explainer's control row carries no My CPL Funding button, and no filled button at all",
+    !/my-funding-btn/.test(bar) && (bar.match(/class="btn primary"/g) || []).length === 0);
+  check("4b: …and nothing on the page handles one", !/getElementById\("my-funding-btn"\)/.test(html));
 }
 {
   const { w, B, printed } = setup();

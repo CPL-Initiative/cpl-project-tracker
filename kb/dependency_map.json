@@ -5,8 +5,8 @@
   "rpcs": 39,
   "edge_functions": 8,
   "file_datasets": 648,
-  "external_services": 179,
-  "consumers": 441,
+  "external_services": 180,
+  "consumers": 442,
   "workflows": 53,
   "data_js_files": 69,
   "tabs": 39
@@ -557,11 +557,21 @@
   "external:california.public.law": {
    "consumers": [
     {
+     "id": "module:college_briefing.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 2690,
+     "tabs": [
+      "college-briefing"
+     ]
+    },
+    {
      "id": "module:cpl_funding.js",
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 13296,
+     "line": 13558,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -843,7 +853,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 11814,
+     "line": 11881,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -1057,7 +1067,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2411,
+     "line": 2419,
      "tabs": [
       "college-briefing"
      ]
@@ -1579,6 +1589,22 @@
    ],
    "main_committers": []
   },
+  "external:jst.doded.mil": {
+   "consumers": [
+    {
+     "id": "module:cpl_funding.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 3885,
+     "tabs": [
+      "college-briefing",
+      "implementation-funding"
+     ]
+    }
+   ],
+   "main_committers": []
+  },
   "external:laney.edu": {
    "consumers": [
     {
@@ -1742,7 +1768,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2403,
+     "line": 2411,
      "tabs": [
       "college-briefing"
      ]
@@ -1752,7 +1778,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3386,
+     "line": 3430,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -2340,7 +2366,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2429,
+     "line": 2437,
      "tabs": [
       "college-briefing"
      ]
@@ -2484,6 +2510,16 @@
      "line": 38,
      "tabs": [
       "cip-crosswalk"
+     ]
+    },
+    {
+     "id": "module:college_briefing.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 2689,
+     "tabs": [
+      "college-briefing"
      ]
     },
     {
@@ -3487,7 +3523,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2431,
+     "line": 2439,
      "tabs": [
       "college-briefing"
      ]
@@ -3562,6 +3598,13 @@
      "tabs": [
       "cpl-news"
      ]
+    },
+    {
+     "id": "module:funding-model/edit_page.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 190
     },
     {
      "id": "module:gr_priorities.js",
@@ -3789,7 +3832,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 7208,
+     "line": 7289,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -5086,7 +5129,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1439
+     "line": 1490
     },
     {
      "id": "script:kb/_seed_college_short_names.py",
@@ -5269,7 +5312,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4037,
+     "line": 4094,
      "tabs": [
       "college-briefing"
      ]
@@ -5286,7 +5329,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1440
+     "line": 1495
     }
    ],
    "served": true,
@@ -5299,7 +5342,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3882,
+     "line": 3909,
      "tabs": [
       "college-briefing"
      ]
@@ -5309,7 +5352,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 14732,
+     "line": 14959,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -5337,7 +5380,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1430
+     "line": 1481
     },
     {
      "id": "script:excel_to_dashboard.py",
@@ -5377,7 +5420,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2801,
+     "line": 2822,
      "tabs": [
       "college-briefing"
      ]
@@ -5387,7 +5430,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 14677,
+     "line": 14896,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -5430,7 +5473,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 14662,
+     "line": 14881,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -5678,6 +5721,13 @@
      "direction": "read",
      "how": "markup",
      "line": 816
+    },
+    {
+     "id": "page:funding-model/index.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 1494
     },
     {
      "id": "page:prototype/ccr_atlas_v1.html",
@@ -6474,7 +6524,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3585,
+     "line": 3609,
      "tabs": [
       "college-briefing"
      ]
@@ -6494,7 +6544,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 12467,
+     "line": 12534,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -6609,7 +6659,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 7332,
+     "line": 7413,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -6708,7 +6758,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1454
+     "line": 1509
     }
    ],
    "served": true,
@@ -6939,7 +6989,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1431
+     "line": 1482
     }
    ],
    "served": true,
@@ -15035,7 +15085,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3923,
+     "line": 3950,
      "tabs": [
       "college-briefing"
      ]
@@ -16392,7 +16442,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 4374,
+     "line": 4455,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -16808,7 +16858,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3894,
+     "line": 3921,
      "tabs": [
       "college-briefing"
      ]
@@ -19421,7 +19471,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 4367,
+     "line": 4434,
      "tabs": [
       "college-briefing"
      ]
@@ -20038,7 +20088,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4625,
+     "line": 4706,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -20161,7 +20211,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1794,
+     "line": 1802,
      "tabs": [
       "college-briefing"
      ]
@@ -20493,7 +20543,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4542,
+     "line": 4609,
      "tabs": [
       "college-briefing"
      ]
@@ -20514,7 +20564,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 4517,
+     "line": 4598,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -20537,7 +20587,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5236,
+     "line": 5317,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -20548,7 +20598,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 5261,
+     "line": 5342,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -20575,7 +20625,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 4689,
+     "line": 4770,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -20591,7 +20641,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5296,
+     "line": 5377,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -20602,7 +20652,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 5352,
+     "line": 5433,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -21439,7 +21489,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 11041,
+     "line": 11108,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -21497,7 +21547,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4573,
+     "line": 4654,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -21541,7 +21591,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4574,
+     "line": 4655,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -21574,7 +21624,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 11017,
+     "line": 11084,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -21848,7 +21898,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4563,
+     "line": 4630,
      "tabs": [
       "college-briefing"
      ]
@@ -21868,7 +21918,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 10996,
+     "line": 11063,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -21982,7 +22032,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1791,
+     "line": 1799,
      "tabs": [
       "college-briefing"
      ]
@@ -22188,7 +22238,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1816,
+     "line": 1824,
      "tabs": [
       "college-briefing"
      ]
@@ -22289,7 +22339,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1813,
+     "line": 1821,
      "tabs": [
       "college-briefing"
      ]

@@ -304,15 +304,17 @@ function mountWords(doc) {
     T._getShared().text && T._getShared().text.elig_intro === "New intro sentence." &&
     T._getShared().eligIntro === undefined);
 
-  // the public preview renders the override with no control
+  // A public rendering renders the override with no control. Drawn the way
+  // the public page's engine draws it (CPL_FUNDING_PUBLIC): since 2026-10-15
+  // (Sam's call 1) the tab's Public page view frames funding-model/ instead.
   T._setShared({ text: { nc_rules: "Custom noncredit rule, for everyone." } });
-  T._state.previewPublic = true;
+  window.CPL_FUNDING_PUBLIC = true;
   T.render();
   const pubBlock = doc.querySelector('.cplfund-prose[data-textblock="nc_rules"]');
   check("the public rendering shows a customized block's text with NO Edit control",
     !!pubBlock && /Custom noncredit rule, for everyone\./.test(pubBlock.textContent) &&
     !doc.querySelector("[data-textedit], [data-textarea]"));
-  T._state.previewPublic = false;
+  window.CPL_FUNDING_PUBLIC = false;
   T._setShared({});
   T.render();
 }
