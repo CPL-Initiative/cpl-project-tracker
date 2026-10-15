@@ -33,9 +33,9 @@ CPL Queue routine started you, follow `docs/reference/scheduled_sessions.md`.
 
 ## Priority, in order
 
-1. **#2139, Cerritos's reconcile steps** (open, CI was running at sign-off). Merge on a green `test`, then dispatch
-   `step=display` on `main` (build `45fdd29240cb` is committed on the branch). The live rows are already replaced (re-read
-   38661017876: 89 replaced, 3 checked rows held: 02201, 02203, 02213; one confirm carried, 02235, unchecked).
+1. **Cerritos is done (#2139 merged; display `45fdd29240cb` dispatched on `main` at sign-off).** Confirm the display run
+   succeeded and committed its applied record. The live rows were replaced by re-read 38661017876 (89; 3 checked rows held:
+   02201, 02203, 02213; one confirm carried, 02235, unchecked).
 2. **Read Sheet 83's replies first** (`ArtifactData` list `replies` on the sheet). Card 1 is Sam's own action (the schedule);
    cards 2 and 3 are calls S393 proceeded on. A *narrow* or *flag* reply reverses them (the carry basis in
    `chatbox/supabase_program_requirement_records_college_reread.sql`; `degree_total_minimum` in the scorer).
@@ -69,5 +69,4 @@ CPL Queue routine started you, follow `docs/reference/scheduled_sessions.md`.
 
 ## Subscriptions and check-ins
 
-S393 drops its watch on #2139 and the Sheet 83 artifact watch at sign-off, and holds no check-in. Subscribe to #2139 and
-watch Sheet 83. The CPL Queue routine fires next at 2026-10-15 05:12 UTC (hourly overnight once Sam sets it).
+S393 drops every PR watch and the Sheet 83 artifact watch at sign-off, and holds no check-in. Watch Sheet 83. The CPL Queue routine fires next at 2026-10-15 05:12 UTC (hourly overnight once Sam sets it).
