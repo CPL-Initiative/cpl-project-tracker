@@ -1,0 +1,38 @@
+{
+ "_readme": "S395 SkyHawthorn, 2026-10-15. Read 2 (run 38752570705) found Monterey Peninsula's GE pages in its site map. Its degree pages name 'MPC General Education or Cal-GETC' (52 records) or 'Cal-GETC' (33) and print no GE units of their own. This read prints the pages that state each pattern's units, the way Cerritos's CGEC page states 24-28, so the reconcile step can cite the catalog's words. Three loads, no model call.",
+ "college": "Monterey Peninsula College",
+ "questions": {
+  "mpc_ge": "How many units the MPC General Education pattern requires, in the catalog's words.",
+  "calgetc": "How many units Cal-GETC requires, in the catalog's words.",
+  "degree": "How the catalog states the associate degree's 60 units and what fills them."
+ },
+ "keywords": [
+  "[Gg]eneral [Ee]ducation[^<\"]{0,200}",
+  "[Uu]nits?[^<\"]{0,120}",
+  "[Cc]al-?GETC[^<\"]{0,160}",
+  "[Mm]inimum[^<\"]{0,160}",
+  "[Tt]otal[^<\"]{0,100}",
+  "60[^<\"]{0,120}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "mpc_ge",
+    "degree"
+   ],
+   "url": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/"
+  },
+  {
+   "answers": [
+    "degree"
+   ],
+   "url": "https://catalog.mpc.edu/academic-information-policies/program-requirements/graduation-requirements/"
+  },
+  {
+   "answers": [
+    "calgetc"
+   ],
+   "url": "https://catalog.mpc.edu/academic-information-policies/transfer-information/general-education-transfer-requirements/"
+  }
+ ]
+}
