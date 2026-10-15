@@ -5,7 +5,7 @@
   "rpcs": 39,
   "edge_functions": 8,
   "file_datasets": 649,
-  "external_services": 178,
+  "external_services": 179,
   "consumers": 441,
   "workflows": 53,
   "data_js_files": 69,
@@ -60,7 +60,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1420,
+     "line": 1425,
      "tabs": [
       "gr-priorities"
      ]
@@ -1238,7 +1238,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1079
+     "line": 1145
     }
    ],
    "main_committers": []
@@ -3437,7 +3437,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2837,
+     "line": 2842,
      "tabs": [
       "gr-priorities"
      ]
@@ -3523,6 +3523,18 @@
    ],
    "main_committers": []
   },
+  "external:x.example.org": {
+   "consumers": [
+    {
+     "id": "module:a11y.config.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 980
+    }
+   ],
+   "main_committers": []
+  },
   "external:yc.yccd.edu": {
    "consumers": [
     {
@@ -3556,7 +3568,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2072,
+     "line": 2077,
      "tabs": [
       "gr-priorities"
      ]
@@ -5250,7 +5262,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1018
+     "line": 1084
     },
     {
      "id": "module:college_briefing.js",
@@ -20907,7 +20919,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 519,
+     "line": 524,
      "tabs": [
       "gr-priorities"
      ]
@@ -20932,7 +20944,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 524,
+     "line": 529,
      "tabs": [
       "gr-priorities"
      ]
@@ -20957,7 +20969,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 531,
+     "line": 536,
      "tabs": [
       "gr-priorities"
      ]
@@ -20982,7 +20994,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 525,
+     "line": 530,
      "tabs": [
       "gr-priorities"
      ]
@@ -21007,7 +21019,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 523,
+     "line": 528,
      "tabs": [
       "gr-priorities"
      ]

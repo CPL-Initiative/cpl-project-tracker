@@ -953,6 +953,72 @@ async function seedMapQueue(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// GR Priorities as a GR phrase holder sees it (S394 UI pass): the register is gated, so the
+// signed-out cobi sweep measures the lock. The seed holds a GR phrase and stubs the tab's
+// five reads with tests/gr_priorities.test.js's and tests/gr_memos.test.js's synthetic
+// shapes (never a live row: the register's content is gated), each state a row can take:
+// a derived citation, an adopted item, a red pathway, a memo with sections, two areas
+// sharing a section, and an artifact with no safe link.
+async function seedGrPriorities(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "gr-priorities") location.hash = "gr-priorities"; });
+  await page.waitForFunction(() => !!window.CPL_GR, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    try {
+      localStorage.setItem("cpl_gr_pass", "seed-phrase");
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const AREAS = [
+      { id: "cpl", title: "Credit for Prior Learning", division: "ESS", status: "active", sort: 1,
+        summary: "Title 5 and Ed. Code revisions under consideration for CPL.",
+        narrative: { thesis: "A <b>regulation</b> question.", caveat: "Seed text for the measurement." } },
+      { id: "dual-enrollment", title: "Dual Enrollment", division: "ESS", status: "active", sort: 2, summary: "Seed area." },
+    ];
+    const REVS = [
+      { id: "1", area_id: "cpl", n: 1, title: "Item one", grp: "Scope", summary: "<p>One <a href=\"https://x.example.org/a\">\u00a755050</a>.</p>",
+        consideration: "consider", instrument: null, pathway: ["g", "y"], citations: ["T5 \u00a755050"],
+        citations_derived: true, ed_first: "No", status: "proposed", updated_by: "someone@example.org" },
+      { id: "2", area_id: "cpl", n: 2, title: "Item two", grp: "Scope", summary: "Two.", consideration: null,
+        instrument: null, pathway: ["y"], citations: ["T5 \u00a755023", "EC \u00a776004"], citations_derived: false,
+        ed_first: "No", status: "adopted", updated_by: null },
+      { id: "3", area_id: "cpl", n: 7, title: "Apportionment", grp: "Funding", summary: "Hard one.", consideration: "risk",
+        instrument: null, pathway: ["r"], citations: ["T5 \u00a758050"], citations_derived: false,
+        ed_first: "Yes", status: "proposed", updated_by: null },
+    ];
+    const CROSS = REVS.map((r) => ({ area_id: r.area_id, citations: r.citations }))
+      .concat([{ area_id: "dual-enrollment", citations: ["EC \u00a776004"] }]);
+    const ARTS = [
+      { id: "a1", area_id: "cpl", title: "A memo", url: "https://x.example.org/m", kind: "memo", source: "CCCCO",
+        division: "ESS", why: "Sets the baseline.", citations: ["T5 \u00a755050"], added_by: "someone@example.org",
+        created_at: "2026-10-01T00:00:00Z" },
+      { id: "a2", area_id: "cpl", title: "Not a link", url: "javascript:alert(1)", kind: "other", source: null,
+        division: null, why: null, citations: [], added_by: null, created_at: "2026-09-01T00:00:00Z" },
+    ];
+    const MEMOS = [{ id: "m1", area_id: "cpl", memo_key: "A", title: "What existing law and regulation already provide",
+      audience: "CIOs, CSSOs, Senate Presidents", from_line: "[Office]", date_line: "[Issue upon adoption]",
+      status: "draft", hold_note: "Issues only after the pending revisions are adopted.",
+      purpose: "Colleges pause CPL work over requirements they believe exist.", sort: 1 }];
+    const SECS = [{ id: "s1", memo_id: "m1", n: 1, heading: "Every catalog course may be CPL-eligible",
+      body: "First paragraph with <b>validated</b> prose.\n\nSecond paragraph.", citations: ["T5 \u00a755002"],
+      citations_derived: false, revision_ns: [1, 2], authority: "existing regulation", confirm_note: null }];
+    const real = window.fetch;
+    window.fetch = function (url) {
+      const u = String(url);
+      const body = /\/gr_areas\?/.test(u) ? AREAS
+        : /\/gr_revisions\?select=area_id,citations/.test(u) ? CROSS
+        : /\/gr_revisions\?/.test(u) ? REVS : /\/gr_artifacts\?/.test(u) ? ARTS
+        : /\/gr_memos\?/.test(u) ? MEMOS : /\/gr_memo_sections\?/.test(u) ? SECS : null;
+      if (body) return Promise.resolve(new Response(JSON.stringify(body), { status: 200, headers: { "Content-Type": "application/json" } }));
+      return real.apply(this, arguments);
+    };
+    window.CPL_GR.activate();
+  });
+  await page.waitForFunction(() => !!document.querySelector("#gr-priorities-root .gx-item"), null, { timeout: 20000 });
+  await page.waitForTimeout(300);
+}
+
 // College Identity's roster (S371 UI pass). The tab reads map_colleges (public) and
 // map_college_contacts (reviewer or team phrase) live; with every read aborted the cobi
 // sweep paints only the failed-read notice and the snapshot's findings. The seed stands in
@@ -1643,6 +1709,25 @@ module.exports = {
     routes: [{ hash: "map-queue", name: "team" }],
     widths: [320, 390, 1440],
     seed: (page) => seedMapQueue(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── GR Priorities, unlocked with a GR phrase (S394) ───────────────────
+     The register, its filters, memos and artifacts paint only for a phrase
+     holder; the cobi sweep is signed out. */
+  "gr-priorities-gr": {
+    file: "index.html",
+    title: "GR Priorities unlocked with a GR phrase, the synthetic register",
+    routes: [{ hash: "gr-priorities", name: "gr" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedGrPriorities(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "gr-priorities-gr-dark": {
+    file: "index.html",
+    title: "GR Priorities unlocked with a GR phrase, the synthetic register, dark",
+    routes: [{ hash: "gr-priorities", name: "gr" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedGrPriorities(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "contracts": {
