@@ -4,6 +4,8 @@ date: 2026-10-14
 session: 387 (SkyMagnolia)
 tags: [handoff, program-requirements, course-outcomes, census, addenda, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_394_handoff.md
 ---
 
 # You are Session 388

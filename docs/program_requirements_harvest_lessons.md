@@ -919,6 +919,9 @@ recommended a page fingerprint in the census instead, so only changed colleges a
   a sum past it meets it, electives make up a sum short of it). Without the floor, every large Cerritos major (Automotive 42-43
   + GE 24-28 = 66-71) would trade Major only for a false Check not met.
 
+- **Extraction v8 failed every call (#2138, v9 deployed).** The API refuses a schema with more than 16 union-typed parameters (*"Schemas contains too many parameters with union types (17 ...)"*); v8's `degree_elective_units` took v7's 15 to 17, so no extraction succeeded after its deploy. Found re-extracting Cabrillo 06350 and 06378 (run 38656003434, both filed with record null; that branch stays unmerged). v9 makes each span one nullable object and returns a null span as `{min: null, max: null}`; `tests/program_requirements_extract_schema_test.py` counts the unions from the source (v8: 17).
+- **Cerritos reconciled (#2139).** Reconcile 38656800189 (no model call) changed 93 records: Major only 148 to 56 (34 transfer degrees, 22 AA/AS left); no record moved from pass to fail. Re-read 38661017876 replaced 89, held 3 checked rows (02201, 02203, 02213 keep their earlier live record), and carried one confirm (02235 Photography, unchecked: another check fails), the carry's first live run. Display build `45fdd29240cb`.
+
 **What went wrong.** A `&&` chain after `check_generated.sh` pushed a stale catalog once more (it prints its hint and exits 0);
 read its output before pushing. The builder of the open-asks sheet rewrites the current sheet's file when run with any argument,
 `--help` included; restore it with `git checkout`.
@@ -926,3 +929,9 @@ read its output before pushing. The builder of the open-asks sheet rewrites the 
 **Patterns that worked.** Measure the class before building for one record (Major only per college, then the page). Read the
 page, then its catalog's site map, then the page the site map names: three runner reads, no model call. Test SQL on a local
 Postgres before the migrate job.
+
+## Moved from the lane (S393 compaction)
+
+Verbatim from `docs/reference/lanes/program-requirements-harvest.md`:
+
+✅ **San Joaquin Delta's catalog year (S391):** read from its catalog menu where the registry names none; run 38619208635 filed 2026-2027. Extracted, loaded and displayed (Sam, Sheet 81 card 5; S392).

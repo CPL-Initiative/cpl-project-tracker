@@ -4,6 +4,8 @@ date: 2026-10-14
 session: 389 (SkyPersimmon)
 tags: [handoff, program-requirements, record-shape-5, reread, acalog, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_394_handoff.md
 ---
 
 # You are Session 390

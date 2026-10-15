@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-14",
+  "generated": "2026-10-15",
   "thresholds": {
     "always_loaded": 60000,
     "kb_note": 40000,
@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1158,
-    "bytes": 11924279,
+    "files": 1159,
+    "bytes": 11937505,
     "over_budget": 8,
-    "handoff_max": 393,
+    "handoff_max": 394,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59990,
     "superseded_files": 0,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 119,
-        "bytes": 3527362,
+        "bytes": 3528684,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 9928,
+        "bytes": 10152,
         "over": 0
       },
       "lessons": {
         "files": 82,
-        "bytes": 2378494,
+        "bytes": 2384383,
         "over": 3
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 37,
-        "bytes": 350396,
+        "bytes": 350597,
         "over": 2
       },
       "handoff": {
-        "files": 364,
-        "bytes": 2860622,
+        "files": 365,
+        "bytes": 2866212,
         "over": 0
       }
     },
@@ -62,10 +62,10 @@
       "vault_heavy_path": 62
     },
     "vault": {
-      "files": 8855,
-      "bytes": 2349797891,
-      "heavy_bytes": 1307357977,
-      "heavy_share": 0.556,
+      "files": 8864,
+      "bytes": 2384188143,
+      "heavy_bytes": 1341657794,
+      "heavy_share": 0.563,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/regional_cpl_out",
@@ -529,10 +529,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 447930482,
+        "bytes": 482230819,
         "kind": "dir"
       },
-      "message": "directory totals 447,930,482 B inside the vault"
+      "message": "directory totals 482,230,819 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -569,10 +569,10 @@
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 29019766,
+        "bytes": 29019246,
         "kind": "dir"
       },
-      "message": "directory totals 29,019,766 B inside the vault"
+      "message": "directory totals 29,019,246 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
