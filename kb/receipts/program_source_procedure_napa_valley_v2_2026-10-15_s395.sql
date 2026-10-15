@@ -5,6 +5,7 @@
 -- Through program_source_procedure_set, expecting v1's md5 604e70cc5c844ff5ac1b592b93dd69d3; the history trigger files v1.
 -- Rollback: program_source_registry_history holds v1.
 -- Additions written by kb/_program_source_procedure_v1.py.
+-- Applied 2026-10-15 ~15:50Z through execute_sql, after display build 515c9d71e086's apply (run 38761398479): was_md5 604e70cc5c844ff5ac1b592b93dd69d3, md5 3360c6defa1eac2c90853d20ae50617c.
 
 select public.program_source_procedure_set('Napa Valley College',
   p.procedure || jsonb_build_object('v', 2,

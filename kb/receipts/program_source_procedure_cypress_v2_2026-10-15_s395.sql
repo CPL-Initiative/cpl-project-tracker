@@ -5,6 +5,7 @@
 -- Through program_source_procedure_set, expecting v1's md5 527fc4b10a934c46251f3c87aa99775f; the history trigger files v1.
 -- Rollback: program_source_registry_history holds v1.
 -- Additions written by kb/_program_source_procedure_v1.py.
+-- Applied 2026-10-15 ~15:50Z through execute_sql, after display build 515c9d71e086's apply (run 38761398479): was_md5 527fc4b10a934c46251f3c87aa99775f, md5 0e4476987b9c29a16e8b0e6fa4e9f557.
 
 select public.program_source_procedure_set('Cypress College',
   p.procedure || jsonb_build_object('v', 2,
