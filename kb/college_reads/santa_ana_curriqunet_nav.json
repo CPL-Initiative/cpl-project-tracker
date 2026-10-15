@@ -1,0 +1,22 @@
+{
+ "_readme": "S395 SkyHawthorn, 2026-10-15. Santa Ana's capture at the 1,200-call cap (run 38674963853) walked 418 nodes in 837 calls and found 27 program entries for 359 programs with a course list. cq_index keeps a node as a program only when its title has ' - ' and an award word; Accounting, Management and QuickBooks Accounting all claimed one page (iq/34297/36100/36093), and Biological Science and Computer Science both near-missed 36168. This read prints catalog 28's top navigation and the pages of those nodes as JSON, to see how Santa Ana titles its program nodes and where their requirements sit. No model call; six loads.",
+ "college": "Santa Ana College",
+ "questions": {
+  "titles": "How Santa Ana titles a program node (the text cq_is_program tests), and which nodes are programs.",
+  "nesting": "Whether one department page lists several programs as its own body, or as child nodes (navlists) under it."
+ },
+ "keywords": [
+  "[Dd]egree",
+  "[Cc]ertificate",
+  "navlist",
+  "[Aa]ssociate"
+ ],
+ "pages": [
+  {"answers": ["nesting"], "url": "https://sac.curriqunet.com/Catalog/_getNavigation?id=28&navigationtypeId=1"},
+  {"answers": ["nesting"], "url": "https://sac.curriqunet.com/Catalog/_getPage?catalogId=28&id=34297"},
+  {"answers": ["titles", "nesting"], "url": "https://sac.curriqunet.com/Catalog/_getPage?catalogId=28&id=36100"},
+  {"answers": ["titles", "nesting"], "url": "https://sac.curriqunet.com/Catalog/_getPage?catalogId=28&id=36093"},
+  {"answers": ["titles", "nesting"], "url": "https://sac.curriqunet.com/Catalog/_getPage?catalogId=28&id=36167"},
+  {"answers": ["titles", "nesting"], "url": "https://sac.curriqunet.com/Catalog/_getPage?catalogId=28&id=36168"}
+ ]
+}
