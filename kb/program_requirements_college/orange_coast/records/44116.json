@@ -1,0 +1,225 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "44116",
+ "shape": "adt",
+ "title": "Communication Studies 2.0",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/communication-studies/communications-studies-2-aat/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7203,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7203,
+    "output_tokens": 1415,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1415,
+  "output_tokens_details": {
+   "thinking_tokens": 320
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05711,
+ "ms": 11392,
+ "seconds": 11.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 16,
+   "share": 0.0,
+   "missing": [
+    "CMSTA105",
+    "CMSTA109",
+    "CMSTA120",
+    "CMSTA150",
+    "CMSTA155",
+    "CMSTA165",
+    "CMSTA170",
+    "CMSTA180",
+    "CMSTA220",
+    "CMSTA236",
+    "CMSTA240",
+    "CMSTA260",
+    "COMMC1000",
+    "COMMC1004",
+    "GNDRA165",
+    "JOURA110"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Communications Studies 2.0, Associate in Arts Degree for Transfer (AA-T)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Provide students with communication skills that they can apply in personal, professional, and global contexts.",
+    "Students will be eligible and prepared for admission (SB 1440 and Education Code 66746) to California State University system schools."
+   ],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CMST A105",
+    "why": "not in the text; Requirements tab content not captured"
+   },
+   {
+    "code": "CMST A109",
+    "why": "not in the text; Requirements tab content not captured"
+   },
+   {
+    "code": "CMST A120",
+    "why": "not in the text; Requirements tab content not captured"
+   },
+   {
+    "code": "CMST A150",
+    "why": "named only in overview description, not as a requirement; Requirements tab not captured"
+   },
+   {
+    "code": "CMST A155",
+    "why": "named only in overview description, not as a requirement; Requirements tab not captured"
+   },
+   {
+    "code": "CMST A165",
+    "why": "named only in overview description, not as a requirement; Requirements tab not captured"
+   },
+   {
+    "code": "CMST A170",
+    "why": "named only in overview description, not as a requirement; Requirements tab not captured"
+   },
+   {
+    "code": "CMST A180",
+    "why": "named only in overview description, not as a requirement; Requirements tab not captured"
+   },
+   {
+    "code": "CMST A220",
+    "why": "named only in overview description, not as a requirement; Requirements tab not captured"
+   },
+   {
+    "code": "CMST A236",
+    "why": "not in the text; Requirements tab content not captured"
+   },
+   {
+    "code": "CMST A240",
+    "why": "named only in overview description, not as a requirement; Requirements tab not captured"
+   },
+   {
+    "code": "CMST A260",
+    "why": "not in the text; Requirements tab content not captured"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "named only in overview description, not as a requirement; Requirements tab not captured"
+   },
+   {
+    "code": "COMM C1004",
+    "why": "named only in overview description, not as a requirement; Requirements tab not captured"
+   },
+   {
+    "code": "GNDR A165",
+    "why": "not in the text; Requirements tab content not captured"
+   },
+   {
+    "code": "JOUR A110",
+    "why": "not in the text; Requirements tab content not captured"
+   }
+  ],
+  "notes": [
+   "The captured text contains only the Overview tab; the REQUIREMENTS and PROGRAM SEQUENCE - CAL-GETC tabs are named but their content is absent, so no blocks, totals or units could be recorded. A reviewer should fetch the Requirements tab.",
+   "The overview lists courses in which skills are developed (COMM C1004, COMM C1000, CMST A150, A155, A165, A170, A180, A220, A240); these are not stated as requirements and were not placed in blocks.",
+   "ge_pattern 'Cal-GETC' is inferred from the tab label 'PROGRAM SEQUENCE - CAL-GETC'; no GE units are printed.",
+   "The '60 units of upper-division coursework' sentence refers to the bachelor's degree, not this award's total.",
+   "The overview text says 'AS-T degree' once although the award is an AA-T."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

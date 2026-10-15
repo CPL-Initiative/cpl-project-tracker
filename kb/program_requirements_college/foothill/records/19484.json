@@ -1,0 +1,292 @@
+{
+ "college": "Foothill College",
+ "control_number": "19484",
+ "shape": "certificate",
+ "title": "Art History",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.foothill.edu/degree-certificate-requirements/cal-getc/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 16605,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 16605,
+    "output_tokens": 1967,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1967,
+  "output_tokens_details": {
+   "thinking_tokens": 227
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10576,
+ "ms": 15148,
+ "seconds": 15.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 31,
+   "share": 0.0,
+   "missing": [
+    "ANTH2A",
+    "ANTH2AH",
+    "ART1",
+    "ART19A",
+    "ART19B",
+    "ART2A",
+    "ART2AH",
+    "ART2B",
+    "ART2BH",
+    "ART2C",
+    "ART2F",
+    "ART2J",
+    "ART3",
+    "ART45A",
+    "ART45B",
+    "ART4A",
+    "HIST4A",
+    "HIST4B",
+    "HIST4C",
+    "HUMN1",
+    "HUMN1H",
+    "HUMN2",
+    "JAPN4",
+    "PHIL11",
+    "PHIL24",
+    "PHIL25",
+    "PHOT10",
+    "PHOT10H",
+    "PHOT8",
+    "PHOT8H",
+    "SPAN4"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "California General Education Transfer Curriculum (Cal-GETC) Requirements for 2026-2027",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH 002A",
+    "why": "appears only as a Cal-GETC Area 4 course; text has no Art History certificate section"
+   },
+   {
+    "code": "ANTH 02AH",
+    "why": "appears only as a Cal-GETC Area 4 honors option; no Art History certificate section"
+   },
+   {
+    "code": "ART 002A",
+    "why": "appears only as a Cal-GETC Area 3A course (ART 2A); no Art History certificate section"
+   },
+   {
+    "code": "ART 002B",
+    "why": "appears only as a Cal-GETC Area 3A course (ART 2B); no Art History certificate section"
+   },
+   {
+    "code": "ART 002C",
+    "why": "appears only as a Cal-GETC Area 3A course (ART 2C); no Art History certificate section"
+   },
+   {
+    "code": "ART 002F",
+    "why": "appears only as a Cal-GETC Area 3A course (ART 2F); no Art History certificate section"
+   },
+   {
+    "code": "ART 002J",
+    "why": "appears only as a Cal-GETC Area 3A course (ART 2J); no Art History certificate section"
+   },
+   {
+    "code": "ART 004A",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 019A",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 019B",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 02AH",
+    "why": "appears only as a Cal-GETC Area 3A honors option; no Art History certificate section"
+   },
+   {
+    "code": "ART 02BH",
+    "why": "appears only as a Cal-GETC Area 3A honors option; no Art History certificate section"
+   },
+   {
+    "code": "ART 045A",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 045B",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 1",
+    "why": "appears only as a Cal-GETC Area 3A course; no Art History certificate section"
+   },
+   {
+    "code": "ART 3",
+    "why": "appears only as a Cal-GETC Area 3A course; no Art History certificate section"
+   },
+   {
+    "code": "HIST 004A",
+    "why": "appears only as a Cal-GETC Area 3B/4 course (HIST 4A); no Art History certificate section"
+   },
+   {
+    "code": "HIST 004B",
+    "why": "appears only as a Cal-GETC Area 3B/4 course (HIST 4B); no Art History certificate section"
+   },
+   {
+    "code": "HIST 004C",
+    "why": "appears only as a Cal-GETC Area 3B/4 course (HIST 4C); no Art History certificate section"
+   },
+   {
+    "code": "HUMN 001H",
+    "why": "appears only as a Cal-GETC Area 3B honors option (HUMN 1H); no Art History certificate section"
+   },
+   {
+    "code": "HUMN 1",
+    "why": "appears only as a Cal-GETC Area 3B course; no Art History certificate section"
+   },
+   {
+    "code": "HUMN 2",
+    "why": "appears only as a Cal-GETC Area 3B course; no Art History certificate section"
+   },
+   {
+    "code": "JAPN 4",
+    "why": "appears only as a Cal-GETC Area 3B course; no Art History certificate section"
+   },
+   {
+    "code": "PHIL 11",
+    "why": "appears only as a Cal-GETC Area 3A course; no Art History certificate section"
+   },
+   {
+    "code": "PHIL 24",
+    "why": "appears only as a Cal-GETC Area 3B course; no Art History certificate section"
+   },
+   {
+    "code": "PHIL 25",
+    "why": "appears only as a Cal-GETC Area 3B course; no Art History certificate section"
+   },
+   {
+    "code": "PHOT 008H",
+    "why": "appears only as a Cal-GETC Area 3A/4 honors option (PHOT 8H); no Art History certificate section"
+   },
+   {
+    "code": "PHOT 010H",
+    "why": "appears only as a Cal-GETC Area 3A honors option (PHOT 10H); no Art History certificate section"
+   },
+   {
+    "code": "PHOT 10",
+    "why": "appears only as a Cal-GETC Area 3A course; no Art History certificate section"
+   },
+   {
+    "code": "PHOT 8",
+    "why": "appears only as a Cal-GETC Area 3A/4 course; no Art History certificate section"
+   },
+   {
+    "code": "SPAN 4",
+    "why": "appears only as a Cal-GETC Area 3B course; no Art History certificate section"
+   }
+  ],
+  "notes": [
+   "The source text is Foothill College's Cal-GETC general education pattern page (source URL /degree-certificate-requirements/cal-getc/), not the Art History Certificate of Achievement page. It contains no section, requirements, total, outcomes or careers for the Art History certificate, so no blocks were recorded.",
+   "Many closed-list courses appear in the text only as Cal-GETC area options (Areas 3A, 3B, 4); GE courses are not program requirements and were not placed in blocks.",
+   "The text is cut off at both ends (begins mid-sentence, ends at 'SOC 20' in Area 4). A reviewer should fetch the correct Art History program page for the 2026-2027 catalog."
+  ]
+ },
+ "extracted_run": "38675242638"
+}

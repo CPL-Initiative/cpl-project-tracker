@@ -10,7 +10,8 @@ with u as (
   where c.college_name in ('Cerritos College','Irvine Valley College','Moreno Valley College','Mt. San Antonio College','Norco College','Riverside City College','San Diego Miramar College','Santa Monica College','West Los Angeles College','Long Beach City College',
                          'Chaffey College','San Diego City College','San Diego Mesa College','Bakersfield College','Coastline Community College','Cabrillo College',
                          'Modesto Junior College','Palo Verde College','Southwestern College','Fresno City College',
-                         'El Camino College','San Joaquin Delta College')
+                         'El Camino College','San Joaquin Delta College',
+                         'Santa Barbara City College','Orange Coast College','Foothill College','Sierra College')
     and coalesce(u.college_course,'') <> ''
 ), p as (
   select college, m[1] || ' ' || m[2] code, source_code, exhibit_id, credit_rec from u

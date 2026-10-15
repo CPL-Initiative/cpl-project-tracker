@@ -1,0 +1,203 @@
+{
+ "college": "Foothill College",
+ "control_number": "45171",
+ "shape": "noncredit",
+ "title": "Theatre Costume and Makeup",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/non-credit-theatre-costume-and-makeup/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7168,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7168,
+    "output_tokens": 1134,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1134,
+  "output_tokens_details": {
+   "thinking_tokens": 302
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05135,
+ "ms": 9436,
+ "seconds": 9.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    432.0,
+    480.0
+   ],
+   "stated": [
+    432.0,
+    480.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Theatre Costume and Makeup Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 432,
+    "max": 480
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Graduates will be able to use the professional tools and techniques of theatrical costuming to create patterns, select appropriate materials, and build or alter costumes for theatrical productions.",
+    "Graduates will be able to use the professional tools, materials, and techniques of theatrical makeup to develop and implement a variety of makeup looks for theatrical productions.",
+    "Graduates will be able to demonstrate the ability to collaborate with theatre colleagues to create and/or execute costume and makeup designs.",
+    "Graduates will have the knowledge of the professional theatre landscape necessary to secure professional employment, including job research and resume and portfolio preparation."
+   ],
+   "careers": [
+    "theatrical costume and makeup"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Course List",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THTR 421A",
+      "units": 96,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 425",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 425B",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THTR 440B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 440A",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 445A",
+      "units": 120,
+      "units_max": 168,
+      "alternatives": [
+       {
+        "code": "THTR 445E",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog counts this noncredit certificate in hours; the 'Units' column holds hours. Total Hours 432-480.",
+   "Hours for the alternatives THTR 440B and THTR 445E are not printed on their own rows; recorded as null (the row's hours appear beside THTR 425B and THTR 445A).",
+   "The program description also says the certificate is ideal for 'people beginning careers in costume and makeup'; only the career field 'theatrical costume and makeup' was recorded."
+  ]
+ },
+ "extracted_run": "38675242638"
+}

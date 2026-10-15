@@ -1,0 +1,5490 @@
+[
+ {
+  "control_number": "06009",
+  "title": "Veterinary Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VT51B",
+   "VT51E"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/veterinary-technology/",
+   "title": "Veterinary Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 4827
+ },
+ {
+  "control_number": "06011",
+  "title": "Biological Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06014",
+  "title": "Accounting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06016",
+  "title": "Business Administration",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI22",
+   "BUSI59A",
+   "BUSI59B"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/business-administration/",
+   "title": "Business Administration < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 5400
+ },
+ {
+  "control_number": "06027",
+  "title": "Computer Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS18",
+   "CS20A",
+   "CS22A",
+   "CS30A",
+   "CS30B",
+   "CS31A",
+   "CS40A",
+   "CS63A",
+   "CS64A",
+   "CS80A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/computer-science/",
+   "title": "Computer Science < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 11897
+ },
+ {
+  "control_number": "06031",
+  "title": "Physical Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "KINS15",
+   "KINS2",
+   "KINS3",
+   "KINS4",
+   "KINS51",
+   "KINS8A",
+   "KINS9"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/physical-education/",
+   "title": "Physical Education < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3924
+ },
+ {
+  "control_number": "06033",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06043",
+  "title": "Art: General",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06044",
+  "title": "Art History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06045",
+  "title": "Music: General",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS2F"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/music-general/",
+   "title": "Music: General < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 4000
+ },
+ {
+  "control_number": "06046",
+  "title": "Music Technology Pro Tools",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06047",
+  "title": "Theatre Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "THTR1",
+   "THTR2A",
+   "THTR31",
+   "THTR38D",
+   "THTR45A",
+   "THTR47A",
+   "THTR48B",
+   "THTR48C",
+   "THTR49A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/theatre-arts/",
+   "title": "Theatre Arts < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 6348
+ },
+ {
+  "control_number": "06050",
+  "title": "Photography",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 28,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06051",
+  "title": "Graphic and Interactive Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06057",
+  "title": "Spanish",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06059",
+  "title": "Japanese",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06062",
+  "title": "Dental Assisting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06068",
+  "title": "Respiratory Therapy",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RSPT55A",
+   "RSPT55B",
+   "RSPT55C",
+   "RSPT55D",
+   "RSPT55E",
+   "RSPT55F",
+   "RSPT55G"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/respiratory-therapy/",
+   "title": "Respiratory Therapy < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 4868
+ },
+ {
+  "control_number": "06071",
+  "title": "Radiologic Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RT51A",
+   "RT51B",
+   "RT51C",
+   "RT63C"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/radiologic-technology/",
+   "title": "Radiologic Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 4216
+ },
+ {
+  "control_number": "06072",
+  "title": "Paramedic",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06074",
+  "title": "English",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL24"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/english/",
+   "title": "English < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 3424
+ },
+ {
+  "control_number": "06077",
+  "title": "Communication Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06079",
+  "title": "Philosophy",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHIL11"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/philosophy/",
+   "title": "Philosophy < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 4000
+ },
+ {
+  "control_number": "06082",
+  "title": "Mathematics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS18"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/mathematics/",
+   "title": "Mathematics < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 3469
+ },
+ {
+  "control_number": "06086",
+  "title": "Physics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06087",
+  "title": "Chemistry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06090",
+  "title": "Psychology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYC70R"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/psychology/",
+   "title": "Psychology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 3626
+ },
+ {
+  "control_number": "06092",
+  "title": "Child Development Teacher",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHLD59"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/child-development/",
+   "title": "Child Development < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.667
+   }
+  },
+  "listed": 1,
+  "text_chars": 8037
+ },
+ {
+  "control_number": "06093",
+  "title": "General Studies/Social Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06094",
+  "title": "Anthropology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH67B",
+   "ANTH70R"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/anthropology/",
+   "title": "Anthropology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 10249
+ },
+ {
+  "control_number": "06096",
+  "title": "Economics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECON70R",
+   "ECON9H"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/economics/",
+   "title": "Economics < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3420
+ },
+ {
+  "control_number": "06097",
+  "title": "History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06098",
+  "title": "Geography",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEOG11",
+   "GEOG70R",
+   "GIST11",
+   "GIST12"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/geography/",
+   "title": "Geography < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 4467
+ },
+ {
+  "control_number": "06099",
+  "title": "Political Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06100",
+  "title": "Sociology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06103",
+  "title": "General Studies: Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06104",
+  "title": "General Studies: Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "HUMN3",
+   "HUMN3H",
+   "HUMN4",
+   "HUMN4H"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/general-studies-social-science/",
+   "title": "General Studies: Social Science < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.667
+   }
+  },
+  "listed": 5,
+  "text_chars": 4137
+ },
+ {
+  "control_number": "09277",
+  "title": "Environmental Horticulture & Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "09287",
+  "title": "Sports Medicine",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL40A",
+   "BIOL40B",
+   "BIOL40C",
+   "CHEM25",
+   "CHEM30A",
+   "KINS1",
+   "KINS16A",
+   "KINS16B",
+   "KINS16C",
+   "KINS62A",
+   "KINS62B",
+   "KINS62C",
+   "KINS62D",
+   "KINS62E"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/sports-medicine/",
+   "title": "Sports Medicine < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 5769
+ },
+ {
+  "control_number": "09290",
+  "title": "Theatre Technology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "09293",
+  "title": "Women's Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "11042",
+  "title": "Diagnostic Medical Sonography",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "11058",
+  "title": "Music Technology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MTEC52B",
+   "MTEC72B",
+   "MTEC82A",
+   "MTEC88A",
+   "MTEC88B",
+   "MTEC88C"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/music-technology/",
+   "title": "Music Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 7102
+ },
+ {
+  "control_number": "11827",
+  "title": "Plumbing and Pipefitting Apprenticeship",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.96,
+  "codes_found": [
+   "APPR160A",
+   "APPT147B",
+   "APPT161",
+   "APPT162",
+   "APPT163",
+   "APPT164",
+   "APPT165",
+   "APPT166",
+   "APPT167",
+   "APPT168",
+   "APPT169",
+   "APPT170",
+   "APPT171",
+   "APPT185",
+   "APPT186",
+   "APPT187",
+   "APPT189",
+   "APPT191",
+   "APPT192",
+   "APPT193",
+   "APPT194",
+   "APPT195",
+   "APPT196",
+   "APPT198"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-plumbing-and-pipefitting/",
+   "title": "Apprenticeship - Plumbing and Pipefitting < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4531
+ },
+ {
+  "control_number": "11830",
+  "title": "Sheet Metal Building Trades",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.969,
+  "codes_found": [
+   "APSM101",
+   "APSM102",
+   "APSM103",
+   "APSM104",
+   "APSM105",
+   "APSM106",
+   "APSM107",
+   "APSM108",
+   "APSM109",
+   "APSM110",
+   "APSM111",
+   "APSM112",
+   "APSM113",
+   "APSM114",
+   "APSM116",
+   "APSM117",
+   "APSM118",
+   "APSM119",
+   "APSM120",
+   "APSM121",
+   "APSM122",
+   "APSM124",
+   "APSM125",
+   "APSM126",
+   "APSM127",
+   "APSM128",
+   "APSM133",
+   "APSM136",
+   "APSM159A",
+   "APSM175A",
+   "APSM177A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-sheet-metal/",
+   "title": "Apprenticeship - Sheet Metal < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.5
+   }
+  },
+  "listed": 32,
+  "text_chars": 5375
+ },
+ {
+  "control_number": "14561",
+  "title": "Program Supervision and Mentoring",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 28,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15549",
+  "title": "Pharmacy Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHT55A",
+   "PHT55B",
+   "PHT64A",
+   "PHT64B"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/pharmacy-technician/",
+   "title": "Pharmacy Technician < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 4089
+ },
+ {
+  "control_number": "17590",
+  "title": "Inside Wireman",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APEL112",
+   "APEL113",
+   "APEL119A",
+   "APEL120",
+   "APEL120A",
+   "APEL121",
+   "APEL121A",
+   "APEL122",
+   "APEL122A",
+   "APEL123",
+   "APEL123A",
+   "APEL124",
+   "APEL124A",
+   "APEL125",
+   "APEL125A",
+   "APEL126",
+   "APEL126A",
+   "APEL127",
+   "APEL127A",
+   "APEL128",
+   "APEL128A",
+   "APEL129",
+   "APEL129A",
+   "APEL135",
+   "APEL136",
+   "APEL137",
+   "APEL138"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-inside-wireman/",
+   "title": "Apprenticeship - Inside Wireman (formerly General Electrician) < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 6765
+ },
+ {
+  "control_number": "17612",
+  "title": "Enterprise Networking",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19476",
+  "title": "Environmental Horticulture and Design",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HORT15",
+   "HORT21",
+   "HORT22",
+   "HORT23",
+   "HORT24",
+   "HORT26",
+   "HORT30",
+   "HORT31",
+   "HORT40",
+   "HORT45",
+   "HORT52C",
+   "HORT52G",
+   "HORT52H",
+   "HORT54A",
+   "HORT54B",
+   "HORT54C",
+   "HORT55A",
+   "HORT60B",
+   "HORT60C",
+   "HORT60D",
+   "HORT60F",
+   "HORT60G",
+   "HORT60J",
+   "HORT80A",
+   "HORT80B",
+   "HORT80C",
+   "HORT80D",
+   "HORT90D",
+   "HORT90E",
+   "HORT90F",
+   "HORT90G",
+   "HORT90H",
+   "HORT90K",
+   "HORT90L",
+   "HORT90P",
+   "HORT90Q",
+   "HORT90U",
+   "HORT90V",
+   "HORT90X",
+   "HORT90Y",
+   "HORT91A",
+   "SPAN110"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/environmental-horticulture-design/",
+   "title": "Environmental Horticulture and Design < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 42,
+  "text_chars": 5213
+ },
+ {
+  "control_number": "19477",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG1A",
+   "ACTG1AH",
+   "ACTG1B",
+   "ACTG1BH",
+   "ACTG1C",
+   "ACTG1CH",
+   "ACTG51A",
+   "ACTG51B",
+   "ACTG51C",
+   "ACTG52",
+   "ACTG53",
+   "ACTG54",
+   "ACTG55",
+   "ACTG56",
+   "ACTG57",
+   "ACTG58",
+   "ACTG59",
+   "ACTG60",
+   "ACTG64A",
+   "ACTG64B",
+   "ACTG65",
+   "ACTG66",
+   "ACTG67",
+   "ACTG68A",
+   "ACTG68B",
+   "ACTG70R",
+   "ACTG71R",
+   "ACTG72R",
+   "ACTG73R",
+   "ACTG75",
+   "ACTG76",
+   "BUSI11",
+   "BUSI11H",
+   "BUSI18",
+   "BUSI19",
+   "BUSI22",
+   "BUSI22H",
+   "ECONC2001",
+   "ECONC2002"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/accounting/",
+   "title": "Accounting < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 39,
+  "text_chars": 13822
+ },
+ {
+  "control_number": "19484",
+  "title": "Art History",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.839,
+  "codes_found": [
+   "ANTH2A",
+   "ANTH2AH",
+   "ART1",
+   "ART2A",
+   "ART2AH",
+   "ART2B",
+   "ART2BH",
+   "ART2C",
+   "ART2F",
+   "ART2J",
+   "ART3",
+   "HIST4A",
+   "HIST4B",
+   "HIST4C",
+   "HUMN1",
+   "HUMN1H",
+   "HUMN2",
+   "JAPN4",
+   "PHIL11",
+   "PHIL24",
+   "PHIL25",
+   "PHOT10",
+   "PHOT10H",
+   "PHOT8",
+   "PHOT8H",
+   "SPAN4"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degree-certificate-requirements/cal-getc/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 31,
+  "text_chars": 14126
+ },
+ {
+  "control_number": "19486",
+  "title": "Theatre Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.81,
+  "codes_found": [
+   "MTEC51A",
+   "THTR1",
+   "THTR20A",
+   "THTR21A",
+   "THTR21B",
+   "THTR21C",
+   "THTR25",
+   "THTR25B",
+   "THTR27",
+   "THTR31",
+   "THTR40A",
+   "THTR42",
+   "THTR43A",
+   "THTR45A",
+   "THTR45B",
+   "THTR45E",
+   "THTR8"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/theatre-technology/",
+   "title": "Theatre Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 5003
+ },
+ {
+  "control_number": "19488",
+  "title": "Photography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHOT6B",
+   "PHOT6C"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/photography/",
+   "title": "Photography < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 8277
+ },
+ {
+  "control_number": "19489",
+  "title": "Dental Assisting",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DA51A",
+   "DA51B",
+   "DA51C",
+   "DA53A",
+   "DA53B",
+   "DA53C",
+   "DA56",
+   "DA57",
+   "DA58",
+   "DA60A",
+   "DA60B",
+   "DA62A",
+   "DA62B",
+   "DA62C",
+   "DA63",
+   "DA71",
+   "DA73",
+   "DA74",
+   "DA85",
+   "DA88"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/dental-assisting/",
+   "title": "Dental Assisting < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 4074
+ },
+ {
+  "control_number": "20084",
+  "title": "Inside Wireman",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 27,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20086",
+  "title": "Art",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ART1",
+   "ART15A",
+   "ART15B",
+   "ART19A",
+   "ART19B",
+   "ART19C",
+   "ART19D",
+   "ART45A",
+   "ART45B",
+   "ART45C",
+   "ART45F",
+   "ART46B",
+   "ART47A",
+   "ART47B",
+   "ART4A",
+   "ART4B",
+   "ART4C",
+   "ART4D",
+   "ART4E",
+   "ART4I",
+   "ART5A",
+   "ART5B"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/art/",
+   "title": "Art < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 3982
+ },
+ {
+  "control_number": "20087",
+  "title": "Music Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 56,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20088",
+  "title": "Graphic and Interactive Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART15A",
+   "ART15B",
+   "ART15D",
+   "ART20",
+   "ART4A",
+   "ART5A",
+   "GID1",
+   "GID1A",
+   "GID31",
+   "GID33",
+   "GID34",
+   "GID35",
+   "GID36",
+   "GID37",
+   "GID41",
+   "GID43",
+   "GID44A",
+   "GID47",
+   "GID49",
+   "GID53A",
+   "GID53B",
+   "GID53C",
+   "GID55",
+   "GID56",
+   "GID57",
+   "GID58",
+   "GID60",
+   "GID61",
+   "GID67",
+   "GID68A",
+   "GID68B",
+   "GID71",
+   "PHOT5"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/graphic-interactive-design/",
+   "title": "Graphic and Interactive Design < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 33,
+  "text_chars": 6158
+ },
+ {
+  "control_number": "20090",
+  "title": "Advanced-Level Pharmacy Technician (ASHP/ACPE Accredited)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20091",
+  "title": "Paramedic",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AHS50A",
+   "AHS50B",
+   "EMS60A",
+   "EMS60B",
+   "EMS61A",
+   "EMS61B",
+   "EMS62A",
+   "EMS62B",
+   "EMS63A",
+   "EMS63B",
+   "EMS64A",
+   "EMS64B"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/paramedic/",
+   "title": "Paramedic < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3590
+ },
+ {
+  "control_number": "30483",
+  "title": "Diagnostic Medical Sonography",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DMS50A",
+   "DMS51A",
+   "DMS52A",
+   "DMS52B",
+   "DMS52C",
+   "DMS53A",
+   "DMS53B",
+   "DMS53C",
+   "DMS54A",
+   "DMS54B",
+   "DMS55A",
+   "DMS55B",
+   "DMS56B",
+   "DMS60A",
+   "DMS60B",
+   "DMS60C",
+   "DMS60D",
+   "DMS60E",
+   "DMS60F",
+   "DMS70A",
+   "DMS70C",
+   "DMS70D",
+   "DMS70E",
+   "DMS72A",
+   "DMS80A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/diagnostic-medical-sonography/",
+   "title": "Diagnostic Medical Sonography < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4439
+ },
+ {
+  "control_number": "30912",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2A",
+   "ANTH2AH",
+   "ECON25",
+   "ECON25H",
+   "ETHN1",
+   "GEOG2",
+   "GLST1",
+   "GLST1H",
+   "MATH17",
+   "PHIL1",
+   "PSYC30",
+   "PSYC49",
+   "PSYC7",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC10",
+   "SOC11",
+   "SOC14",
+   "SOC15",
+   "SOC19",
+   "SOC1H",
+   "SOC20",
+   "SOC23",
+   "SOC28",
+   "SOC30",
+   "SOC40",
+   "SOC45",
+   "SOC7",
+   "SOC8",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/sociology-aat/",
+   "title": "Sociology, AA-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 31,
+  "text_chars": 3820
+ },
+ {
+  "control_number": "30914",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2A",
+   "ANTH2AH",
+   "BIOL10",
+   "BIOL14",
+   "BIOL1A",
+   "COMM3",
+   "CS2A",
+   "CS2B",
+   "CS2C",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "MATH17",
+   "MATH1A",
+   "MATH1AH",
+   "MATH1B",
+   "MATH1BH",
+   "POLSC1000",
+   "PSYC10",
+   "PSYC14",
+   "PSYC2",
+   "PSYC21",
+   "PSYC22",
+   "PSYC25",
+   "PSYC30",
+   "PSYC33",
+   "PSYC39",
+   "PSYC4",
+   "PSYC40",
+   "PSYC45",
+   "PSYC49",
+   "PSYC53",
+   "PSYC7",
+   "PSYC9",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC1H",
+   "SOC30",
+   "SOC7",
+   "STATC1000",
+   "WMN21"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/psychology-aat/",
+   "title": "Psychology, AA-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 41,
+  "text_chars": 4481
+ },
+ {
+  "control_number": "31970",
+  "title": "Sheet Metal Building Trades",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 34,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32127",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "CS1A",
+   "CS2A",
+   "CS3A",
+   "MATH1A",
+   "MATH1AH",
+   "MATH1B",
+   "MATH1BH",
+   "MATH1C",
+   "MATH1D",
+   "MATH2A",
+   "MATH2B",
+   "PHYS4A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/mathematics-2-ast/",
+   "title": "Mathematics 2.0, AS-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 3069
+ },
+ {
+  "control_number": "32152",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2A",
+   "ANTH2AH",
+   "ANTH2B",
+   "ANTH4",
+   "ANTH6",
+   "ART2E",
+   "COMM12",
+   "ENGL12",
+   "ENGL12A",
+   "ENGL31",
+   "ENGL40",
+   "ETHN1",
+   "ETHN2",
+   "ETHN3",
+   "ETHN4",
+   "ETHN5",
+   "GEOG10",
+   "GEOG2",
+   "GLST1",
+   "GLST1H",
+   "GLST2",
+   "HIST10",
+   "HIST17A",
+   "HIST17B",
+   "HIST17C",
+   "HIST18",
+   "HIST20",
+   "HIST3A",
+   "HIST3B",
+   "HIST3C",
+   "HIST4A",
+   "HIST4B",
+   "HIST4C",
+   "HIST8",
+   "MDIA8B",
+   "PHIL24",
+   "PHIL25",
+   "POLI15",
+   "POLI15H",
+   "POLI2",
+   "POLI2H",
+   "POLSC1000",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC1H",
+   "SOC23",
+   "WMN11",
+   "WMN5"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/history-aat/",
+   "title": "History, AA-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 49,
+  "text_chars": 5277
+ },
+ {
+  "control_number": "32281",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH14",
+   "CRWR6",
+   "ENGL10A",
+   "ENGL11",
+   "ENGL11H",
+   "ENGL12",
+   "ENGL12A",
+   "ENGL14",
+   "ENGL17",
+   "ENGL18B",
+   "ENGL22",
+   "ENGL24",
+   "ENGL27G",
+   "ENGL31",
+   "ENGL34C",
+   "ENGL37",
+   "ENGL38",
+   "ENGL40",
+   "ENGL43A",
+   "ENGL43AH",
+   "ENGL43B",
+   "ENGL43BH",
+   "ENGL45A",
+   "ENGL45AH",
+   "ENGL45B",
+   "ENGL45BH",
+   "ENGL49",
+   "ENGL5",
+   "ENGL7",
+   "ENGL8",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1002",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "HUMN3",
+   "HUMN3H",
+   "JAPN4",
+   "JAPN5",
+   "JAPN6",
+   "JRNL22A",
+   "SPAN4",
+   "SPAN5",
+   "SPAN6",
+   "THTR1",
+   "THTR2A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/english-aat/",
+   "title": "English, AA-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 46,
+  "text_chars": 5303
+ },
+ {
+  "control_number": "32359",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL1A",
+   "CS10",
+   "CS18",
+   "CS1A",
+   "CS1B",
+   "CS1C",
+   "CS2A",
+   "CS2B",
+   "CS2C",
+   "CS3A",
+   "CS3B",
+   "CS3C",
+   "MATH1A",
+   "MATH1AH",
+   "MATH1B",
+   "MATH1BH",
+   "MATH1C",
+   "MATH22",
+   "PHYS4A",
+   "PHYS4B"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/computer-science-ast/",
+   "title": "Computer Science, AS-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3381
+ },
+ {
+  "control_number": "32362",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH1A",
+   "MATH1AH",
+   "MATH1B",
+   "MATH1BH",
+   "MATH1C",
+   "MATH1D",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C",
+   "PHYS4D"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/physics-2-ast/",
+   "title": "Physics 2.0, AS-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2885
+ },
+ {
+  "control_number": "32417",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH1",
+   "ANTH12",
+   "ANTH13",
+   "ANTH13H",
+   "ANTH13L",
+   "ANTH14",
+   "ANTH15",
+   "ANTH15H",
+   "ANTH16L",
+   "ANTH17L",
+   "ANTH1H",
+   "ANTH1HL",
+   "ANTH1L",
+   "ANTH20",
+   "ANTH22",
+   "ANTH2A",
+   "ANTH2AH",
+   "ANTH2B",
+   "ANTH3",
+   "ANTH4",
+   "ANTH5",
+   "ANTH51",
+   "ANTH52",
+   "ANTH55",
+   "ANTH56",
+   "ANTH57",
+   "ANTH5H",
+   "ANTH6",
+   "ANTH67A",
+   "ANTH67B",
+   "ANTH67C",
+   "ANTH67E",
+   "ANTH6H",
+   "ANTH70R",
+   "ANTH71R",
+   "ANTH72R",
+   "ANTH73R",
+   "ANTH8",
+   "ANTH8H",
+   "COMM12",
+   "ECONC2002",
+   "ETHN1",
+   "ETHN2",
+   "ETHN3",
+   "ETHN4",
+   "ETHN5",
+   "GEOG10",
+   "GEOG12",
+   "GEOG2",
+   "GIST12",
+   "GLST1",
+   "GLST1H",
+   "GLST2",
+   "MATH17",
+   "PHIL24",
+   "PHIL25",
+   "PSYC10",
+   "PSYC7",
+   "SOC1",
+   "SOC10",
+   "SOC1H",
+   "SOC23",
+   "SOC7",
+   "SPAN4",
+   "SPAN5",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/anthropology-aat/",
+   "title": "Anthropology, AA-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 66,
+  "text_chars": 5758
+ },
+ {
+  "control_number": "32422",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.952,
+  "codes_found": [
+   "ENGL22",
+   "ENGLC1002",
+   "HIST4A",
+   "HIST4B",
+   "HIST4C",
+   "HUMN1",
+   "HUMN1H",
+   "HUMN2",
+   "HUMN3",
+   "HUMN3H",
+   "PHIL1",
+   "PHIL2",
+   "PHIL20A",
+   "PHIL20B",
+   "PHIL24",
+   "PHIL25",
+   "PHIL4",
+   "PHIL7",
+   "PHIL8",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/philosophy-aat/",
+   "title": "Philosophy, AA-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 4091
+ },
+ {
+  "control_number": "32431",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART19A",
+   "ART19B",
+   "ART19C",
+   "ART20",
+   "ART2A",
+   "ART2AH",
+   "ART2B",
+   "ART2BH",
+   "ART2C",
+   "ART2D",
+   "ART2F",
+   "ART3",
+   "ART44",
+   "ART45A",
+   "ART45B",
+   "ART47A",
+   "ART4A",
+   "ART4B",
+   "ART4C",
+   "ART4D",
+   "ART4E",
+   "ART5A",
+   "ART5B",
+   "GID41",
+   "PHOT5"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/studio-arts-aat/",
+   "title": "Studio Arts, AA-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4008
+ },
+ {
+  "control_number": "32468",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2A",
+   "ANTH2AH",
+   "BIOL10",
+   "BIOL9",
+   "ECONC2001",
+   "GEOG1",
+   "GEOG10",
+   "GEOG11",
+   "GEOG12",
+   "GEOG2",
+   "GEOG20",
+   "GIST11",
+   "GIST12",
+   "GIST52",
+   "MATH17",
+   "POLSC1000",
+   "PSYC7",
+   "SOC7",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/geography-aat/",
+   "title": "Geography, AA-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3568
+ },
+ {
+  "control_number": "32772",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2A",
+   "ANTH2AH",
+   "ANTH8",
+   "ANTH8H",
+   "ART1",
+   "ART19A",
+   "ART19B",
+   "ART2B",
+   "ART2BH",
+   "ART2C",
+   "ART2D",
+   "ART2E",
+   "ART2F",
+   "ART2G",
+   "ART2J",
+   "ART3",
+   "ART44",
+   "ART45A",
+   "ART45B",
+   "ART47A",
+   "ART4A",
+   "ART4B",
+   "ART4D",
+   "ART4E",
+   "ART5A",
+   "ART5B",
+   "ETHN1",
+   "ETHN2",
+   "ETHN3",
+   "ETHN4",
+   "ETHN5",
+   "GID41",
+   "HIST17A",
+   "HIST17B",
+   "HIST17C",
+   "HIST4A",
+   "HIST4B",
+   "HIST4C",
+   "HUMN1",
+   "HUMN1H",
+   "HUMN2",
+   "JAPN4",
+   "JAPN5",
+   "JAPN6",
+   "PHIL24",
+   "PHIL25",
+   "PHOT5",
+   "PHOT6A",
+   "SPAN4",
+   "SPAN5",
+   "SPAN6",
+   "WMN11",
+   "WMN5"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/art-history-aat/",
+   "title": "Art History, AA-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 53,
+  "text_chars": 5084
+ },
+ {
+  "control_number": "32843",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.877,
+  "codes_found": [
+   "BIOL40A",
+   "BIOL40B",
+   "BIOL40C",
+   "CHEM25",
+   "CHEM30A",
+   "DANC18A",
+   "DANC18B",
+   "EMS50",
+   "HLTH21",
+   "KINS1",
+   "MATH17",
+   "PHED10A",
+   "PHED10B",
+   "PHED11A",
+   "PHED11B",
+   "PHED13",
+   "PHED18",
+   "PHED18B",
+   "PHED21A",
+   "PHED21B",
+   "PHED22",
+   "PHED22A",
+   "PHED22B",
+   "PHED22C",
+   "PHED23A",
+   "PHED23B",
+   "PHED24",
+   "PHED26",
+   "PHED26A",
+   "PHED27",
+   "PHED27A",
+   "PHED27B",
+   "PHED27C",
+   "PHED31A",
+   "PHED31B",
+   "PHED33",
+   "PHED33A",
+   "PHED36A",
+   "PHED36B",
+   "PHED37",
+   "PHED37A",
+   "PHED37B",
+   "PHED38A",
+   "PHED38B",
+   "PHED38C",
+   "PHED40",
+   "PHED40A",
+   "PHED45A",
+   "PHED45C",
+   "PHED46",
+   "PHED46A",
+   "PHED47B",
+   "PHED47C",
+   "PHED49B",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS4A",
+   "PSYC7",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC1H",
+   "SOC7",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/kinesiology-aat/",
+   "title": "Kinesiology, AA-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 73,
+  "text_chars": 5231
+ },
+ {
+  "control_number": "33001",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.92,
+  "codes_found": [
+   "ACTG1A",
+   "ACTG1B",
+   "ACTG1BH",
+   "ACTG1C",
+   "ACTG1CH",
+   "ANTH2A",
+   "ANTH2AH",
+   "BUSI11",
+   "BUSI11H",
+   "BUSI18",
+   "BUSI22",
+   "BUSI22H",
+   "CS1A",
+   "CS2A",
+   "CS3A",
+   "ECON25",
+   "ECON9",
+   "ECON9H",
+   "ECONC2001",
+   "ECONC2002",
+   "ETHN1",
+   "ETHN2",
+   "ETHN3",
+   "ETHN4",
+   "ETHN5",
+   "GLST1",
+   "GLST1H",
+   "MATH12",
+   "MATH17",
+   "MATH1A",
+   "MATH1AH",
+   "MATH1B",
+   "MATH1BH",
+   "MATH1C",
+   "MATH1D",
+   "MATH2B",
+   "POLI9",
+   "POLI9H",
+   "POLSC1000",
+   "PSYC7",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC1H",
+   "SOC7",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/economics-aat/",
+   "title": "Economics, AA-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 50,
+  "text_chars": 5387
+ },
+ {
+  "control_number": "33003",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "ENGL31",
+   "POLSC1000",
+   "SPAN1",
+   "SPAN2",
+   "SPAN3",
+   "SPAN4",
+   "SPAN5",
+   "SPAN6"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/spanish-aat/",
+   "title": "Spanish, AA-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3301
+ },
+ {
+  "control_number": "33004",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THTR1",
+   "THTR20A",
+   "THTR20B",
+   "THTR21A",
+   "THTR25",
+   "THTR27",
+   "THTR2A",
+   "THTR40A",
+   "THTR42",
+   "THTR43A",
+   "THTR45A",
+   "THTR47A",
+   "THTR49A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/theatre-arts-aat/",
+   "title": "Theatre Arts, AA-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3334
+ },
+ {
+  "control_number": "33033",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2A",
+   "ANTH2AH",
+   "BUSI18",
+   "ECON9",
+   "ECON9H",
+   "ECONC2001",
+   "ECONC2002",
+   "ETHN1",
+   "ETHN2",
+   "ETHN3",
+   "ETHN4",
+   "ETHN5",
+   "HIST17A",
+   "HIST17B",
+   "HIST17C",
+   "HIST4A",
+   "HIST4B",
+   "HIST4C",
+   "MATH17",
+   "POLI15",
+   "POLI15H",
+   "POLI2",
+   "POLI2H",
+   "POLI3",
+   "POLI3H",
+   "POLI4",
+   "POLI9",
+   "POLI9H",
+   "POLSC1000",
+   "PSYC7",
+   "SOC11",
+   "SOC14",
+   "SOC20",
+   "SOC23",
+   "SOC7",
+   "STATC1000",
+   "WMN11"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/political-science-aat/",
+   "title": "Political Science, AA-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 37,
+  "text_chars": 4489
+ },
+ {
+  "control_number": "33034",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHLD1",
+   "CHLD2",
+   "CHLD51A",
+   "CHLD56",
+   "CHLD56N",
+   "CHLD8",
+   "CHLD86B",
+   "CHLD89",
+   "CHLD95"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/early-childhood-education-ast/",
+   "title": "Early Childhood Education, AS-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3047
+ },
+ {
+  "control_number": "33358",
+  "title": "Geographic Information Systems Technology II",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33359",
+  "title": "Geographic Information Systems Technology III",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 18,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33360",
+  "title": "Geographic Information Systems Technology I",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "CS22A",
+   "CS31A",
+   "CS3A",
+   "CS3B",
+   "CS48A",
+   "GEOG11",
+   "GEOG12",
+   "GIST11",
+   "GIST12",
+   "GIST52",
+   "GIST54A",
+   "GIST58"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/geographic-information-systems-technology/",
+   "title": "Geographic Information Systems Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 5972
+ },
+ {
+  "control_number": "33437",
+  "title": "Geographic Information Systems Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 13,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33521",
+  "title": "Air Conditioning and Refrigeration Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APPT129",
+   "APPT130",
+   "APPT151",
+   "APPT152",
+   "APPT153",
+   "APPT154",
+   "APPT155",
+   "APPT156",
+   "APPT157",
+   "APPT158",
+   "APPT159",
+   "APPT171",
+   "APPT172",
+   "APPT173",
+   "APPT174",
+   "APPT175",
+   "APPT176",
+   "APPT177",
+   "APPT178",
+   "APPT179",
+   "APPT180"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-air-conditioning-refrigeration-technology/",
+   "title": "Apprenticeship - Air Conditioning and Refrigeration Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 4368
+ },
+ {
+  "control_number": "33522",
+  "title": "Plumbing Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APPT129",
+   "APPT130",
+   "APPT131",
+   "APPT132",
+   "APPT133",
+   "APPT134A",
+   "APPT134B",
+   "APPT135A",
+   "APPT135B",
+   "APPT136",
+   "APPT137A",
+   "APPT137B",
+   "APPT138",
+   "APPT139A",
+   "APPT139B"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-plumbing-technology/",
+   "title": "Apprenticeship - Plumbing Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4511
+ },
+ {
+  "control_number": "33523",
+  "title": "Residential Plumbing",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33524",
+  "title": "Steamfitting and Pipefitting Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APPT129",
+   "APPT130",
+   "APPT134B",
+   "APPT134C",
+   "APPT139A",
+   "APPT139B",
+   "APPT141",
+   "APPT142",
+   "APPT143",
+   "APPT143A",
+   "APPT144A",
+   "APPT145",
+   "APPT146",
+   "APPT147A",
+   "APPT147B",
+   "APPT148"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-steamfitting-pipefitting-technology/",
+   "title": "Apprenticeship - Steamfitting and Pipefitting Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4027
+ },
+ {
+  "control_number": "33525",
+  "title": "Air Conditioning and Refrigeration Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 20,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33526",
+  "title": "Plumbing Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33527",
+  "title": "Steamfitting and Pipefitting Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 14,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33837",
+  "title": "Personal Trainer",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSI95",
+   "ITRN50",
+   "KINS15",
+   "KINS48",
+   "KINS53",
+   "KINS81",
+   "KINS8A",
+   "KINS8B",
+   "KINS9"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/personal-trainer/",
+   "title": "Personal Trainer < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2944
+ },
+ {
+  "control_number": "34003",
+  "title": "Dental Hygiene",
+  "award": "Baccalaureate of Science (B.S.) Degree.",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35561",
+  "title": "Humanities",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HUMN1",
+   "HUMN2",
+   "HUMN3",
+   "HUMN3H",
+   "HUMN4",
+   "HUMN4H",
+   "HUMN5",
+   "HUMN6",
+   "HUMN7"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degree-certificate-requirements/cal-getc/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 4702
+ },
+ {
+  "control_number": "35594",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL1A",
+   "BIOL1B",
+   "BIOL1BH",
+   "BIOL1C",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM1C",
+   "MATH1A",
+   "MATH1AH",
+   "MATH1B",
+   "MATH1BH",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS2C",
+   "PHYS4A",
+   "PHYS4B"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/biology-ast/",
+   "title": "Biology, AS-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3193
+ },
+ {
+  "control_number": "35719",
+  "title": "Global Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2A",
+   "ANTH2AH",
+   "ECONC2001",
+   "ECONC2002",
+   "GEOG1",
+   "GEOG10",
+   "GEOG2",
+   "GLST1",
+   "GLST1H",
+   "GLST2",
+   "GLST2H",
+   "HIST3B",
+   "HIST3C",
+   "POLI15",
+   "POLI15H",
+   "POLI2",
+   "POLI2H",
+   "SPAN4",
+   "SPAN5",
+   "SPAN6"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/global-studies-aat/",
+   "title": "Global Studies, AA-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3658
+ },
+ {
+  "control_number": "35772",
+  "title": "Music History & Literature",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS2A",
+   "MUS2B",
+   "MUS2C",
+   "MUS2D",
+   "MUS8",
+   "MUS8H"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degree-certificate-requirements/cal-getc/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 4546
+ },
+ {
+  "control_number": "35990",
+  "title": "English as a Second Language-Beginning",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCEL411",
+   "NCEL412",
+   "NCEL413"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-english-second-language-beginning/",
+   "title": "Non-Credit: English as a Second Language-Beginning < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2724
+ },
+ {
+  "control_number": "35991",
+  "title": "English as a Second Language-Intermediate",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCEL421",
+   "NCEL422",
+   "NCEL423"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-english-second-language-intermediate/",
+   "title": "Non-Credit: English as a Second Language-Intermediate < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2526
+ },
+ {
+  "control_number": "35993",
+  "title": "Emergency Medical Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS400",
+   "EMS401",
+   "EMS402"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-emergency-medical-technician/",
+   "title": "Non-Credit: Emergency Medical Technician (formerly Emergency Medical Technology) < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2573
+ },
+ {
+  "control_number": "36287",
+  "title": "Bridge to College ESL Pathway",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCEL400",
+   "NCEL403A",
+   "NCEL403B",
+   "NCEL411",
+   "NCEL421",
+   "NCEL425",
+   "NCEL426",
+   "NCEL427",
+   "NCEL435",
+   "NCEL436",
+   "NCEL437"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-bridge-college-esl-pathway/",
+   "title": "Non-Credit: Bridge to College ESL Pathway < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2802
+ },
+ {
+  "control_number": "36328",
+  "title": "Social Justice Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.986,
+  "codes_found": [
+   "ANTH20",
+   "ANTH2A",
+   "ANTH2AH",
+   "ANTH4",
+   "ANTH6",
+   "ART2E",
+   "ART2F",
+   "ART2J",
+   "COMM10",
+   "COMM12",
+   "ECON25",
+   "ECON25H",
+   "ENGL12",
+   "ENGL22",
+   "ENGL31",
+   "ENGL38",
+   "ENGL40",
+   "ENGL5",
+   "ENGL7",
+   "ETHN1",
+   "ETHN2",
+   "ETHN3",
+   "ETHN4",
+   "ETHN5",
+   "GEOG2",
+   "GLST1",
+   "GLST1H",
+   "GLST2",
+   "HIST10",
+   "HIST17A",
+   "HIST17B",
+   "HIST17C",
+   "HLTH20",
+   "HLTH22",
+   "HUMN11",
+   "HUMN11H",
+   "HUMN12",
+   "HUMN12H",
+   "MATH17",
+   "MDIA11",
+   "MDIA11H",
+   "MDIA12",
+   "MDIA12H",
+   "MDIA3",
+   "MUS8",
+   "MUS8H",
+   "PHIL24",
+   "PHIL25",
+   "PHOT8",
+   "PHOT8H",
+   "POLI15",
+   "POLI15H",
+   "POLSC1000",
+   "PSYC10",
+   "PSYC21",
+   "PSYC22",
+   "PSYC49",
+   "PSYC7",
+   "SOC1",
+   "SOC10",
+   "SOC1H",
+   "SOC23",
+   "SOC28",
+   "SOC45",
+   "SOC7",
+   "SOSC20",
+   "STATC1000",
+   "THTR8",
+   "WMN11",
+   "WMN21",
+   "WMN5"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/social-justice-studies-aat/",
+   "title": "Social Justice Studies, AA-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 72,
+  "text_chars": 12191
+ },
+ {
+  "control_number": "36342",
+  "title": "English as a Second Language for Food Service Workers",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCEL405",
+   "NCEL460",
+   "NCEL470",
+   "NCEL471",
+   "NCEL480"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-english-second-language-food-service-workers/",
+   "title": "Non-Credit: English as a Second Language for Food Service Workers < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2772
+ },
+ {
+  "control_number": "36414",
+  "title": "Interventional Pulmonology Assistant",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36426",
+  "title": "Game Audio II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36459",
+  "title": "Bridge to College Level Mathematics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCBS403A",
+   "NCBS403B",
+   "NCBS405"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-bridge-college-level-mathematics/",
+   "title": "Non-Credit: Bridge to College Level Mathematics < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2569
+ },
+ {
+  "control_number": "36735",
+  "title": "Child and Adolescent Development",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH2A",
+   "ANTH2AH",
+   "BIOL10",
+   "BIOL45",
+   "BIOL8",
+   "CHLD1",
+   "CHLD2",
+   "CHLD56",
+   "CHLD8",
+   "CHLD89",
+   "CHLD95",
+   "GEOG1",
+   "GEOG10",
+   "GEOG2",
+   "MATH17",
+   "PSYC14",
+   "PSYC40",
+   "PSYC7",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC11",
+   "SOC1H",
+   "SOC23",
+   "SOC40",
+   "SOC7",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/child-adolescent-development-aat/",
+   "title": "Child and Adolescent Development, AA-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 3853
+ },
+ {
+  "control_number": "37177",
+  "title": "Makerspace Coordinator",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 14,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37294",
+  "title": "Film, Television, and Electronic Media",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM5",
+   "HUMN11",
+   "HUMN11H",
+   "HUMN12",
+   "HUMN12H",
+   "HUMN13",
+   "MDIA1",
+   "MDIA11",
+   "MDIA11H",
+   "MDIA12",
+   "MDIA12H",
+   "MDIA13",
+   "MDIA1H",
+   "MDIA20",
+   "MDIA2A",
+   "MDIA2B",
+   "MDIA2C",
+   "MDIA3",
+   "MDIA30",
+   "MDIA31",
+   "MDIA5",
+   "MDIA52",
+   "MDIA81B",
+   "MDIA8A",
+   "MDIA8B"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/film-television-electronic-media-ast/",
+   "title": "Film, Television, and Electronic Media, AS-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4018
+ },
+ {
+  "control_number": "37567",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.576,
+  "codes_found": [
+   "ART1",
+   "BIOL10",
+   "CHLD1",
+   "CHLD2",
+   "COMMC1000",
+   "COMMC1000H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1002",
+   "GEOG20",
+   "HIST17A",
+   "HIST17B",
+   "HIST3A",
+   "HIST3B",
+   "MATH42",
+   "MUS1",
+   "POLSC1000",
+   "PSE20",
+   "THTR1"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/elementary-teacher-education-integrated-programs-aat/",
+   "title": "Elementary Teacher Education: Integrated Programs, AA-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 33,
+  "text_chars": 5426
+ },
+ {
+  "control_number": "38476",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.926,
+  "codes_found": [
+   "BIOL10",
+   "BIOL14",
+   "BIOL1A",
+   "BIOL40A",
+   "BIOL40B",
+   "BIOL40C",
+   "BIOL41",
+   "BIOL45",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM1C",
+   "MATH12",
+   "MATH17",
+   "MATH1A",
+   "MATH1AH",
+   "POLSC1000",
+   "PSYC14",
+   "PSYC40",
+   "PSYC7",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC1H",
+   "SOC7",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/nutrition-dietetics-ast/",
+   "title": "Nutrition and Dietetics, AS-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 3712
+ },
+ {
+  "control_number": "38653",
+  "title": "Acting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38825",
+  "title": "Digital Marketing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39211",
+  "title": "Veterinary Assisting",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39351",
+  "title": "Film, Television, and Electronic Media",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "COMM5",
+   "MDIA1",
+   "MDIA11",
+   "MDIA11H",
+   "MDIA12",
+   "MDIA13",
+   "MDIA1H",
+   "MDIA2A",
+   "MDIA2B",
+   "MDIA3"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degree-certificate-requirements/cal-getc/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 13097
+ },
+ {
+  "control_number": "39457",
+  "title": "Graphic Design",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39458",
+  "title": "Illustration",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39459",
+  "title": "Web Design",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39460",
+  "title": "Game Design",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39512",
+  "title": "Bridge to College Level English",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCEL400",
+   "NCEL403A",
+   "NCEL403B",
+   "NCEN400",
+   "NCEN401A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-bridge-college-level-english/",
+   "title": "Non-Credit: Bridge to College Level English < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2883
+ },
+ {
+  "control_number": "39538",
+  "title": "Environmental Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL1A",
+   "BIOL9",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM1C",
+   "ECONC2001",
+   "GEOG1",
+   "MATH12",
+   "MATH17",
+   "MATH1A",
+   "MATH1AH",
+   "MATH1B",
+   "MATH1BH",
+   "PHYS4A",
+   "PHYS4B",
+   "PSYC7",
+   "SOC7",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/environmental-science-ast/",
+   "title": "Environmental Science, AS-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3426
+ },
+ {
+  "control_number": "39675",
+  "title": "Bio-Health Diversity and Inclusion Leadership",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "BIOL1A",
+   "BIOL1B",
+   "BIOL1C",
+   "BIOL40A",
+   "BIOL40B",
+   "BIOL40C"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degree-certificate-requirements/cal-getc/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3587
+ },
+ {
+  "control_number": "39838",
+  "title": "Residential Wireman",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39843",
+  "title": "Sound and Communication Installer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APSC111",
+   "APSC112",
+   "APSC121",
+   "APSC122",
+   "APSC131",
+   "APSC132"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-sound-communication/",
+   "title": "Apprenticeship - Sound and Communication < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.667
+   }
+  },
+  "listed": 6,
+  "text_chars": 3010
+ },
+ {
+  "control_number": "39888",
+  "title": "Online and Blended Instruction",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39889",
+  "title": "Advanced Software Development",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "CS18",
+   "CS1A",
+   "CS1B",
+   "CS1C",
+   "CS2A",
+   "CS2B",
+   "CS2C",
+   "CS3A",
+   "MATH1A",
+   "MATH1AH",
+   "MATH22",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degree-certificate-requirements/general-education-graduation-requirements/",
+   "title": "Foothill College General Education & Graduation Requirements < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 5780
+ },
+ {
+  "control_number": "39890",
+  "title": "Software Development in Python",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS10",
+   "CS18",
+   "CS22A",
+   "CS30A",
+   "CS31A",
+   "CS3A",
+   "CS3B",
+   "CS3C",
+   "CS40A",
+   "CS50A",
+   "MATH1A",
+   "MATH1AH",
+   "MATH22",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/general-studies-science/",
+   "title": "General Studies: Science < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 6104
+ },
+ {
+  "control_number": "39891",
+  "title": "Software Development in Java",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.571,
+  "codes_found": [
+   "CS18",
+   "CS1A",
+   "CS1B",
+   "CS1C",
+   "MATH1A",
+   "MATH1AH",
+   "MATH22",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degree-certificate-requirements/general-education-graduation-requirements/",
+   "title": "Foothill College General Education & Graduation Requirements < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 5780
+ },
+ {
+  "control_number": "39973",
+  "title": "Early Childhood Education Fundamentals",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39974",
+  "title": "Early Childhood Special Education",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39975",
+  "title": "Elementary After Care Education",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39983",
+  "title": "Cloud Computing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS30A",
+   "CS50A",
+   "CS55A",
+   "CS55B",
+   "CS55C",
+   "CS55D"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/enterprise-networking/",
+   "title": "Enterprise Networking < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3332
+ },
+ {
+  "control_number": "39996",
+  "title": "Software Development in C++",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.571,
+  "codes_found": [
+   "CS18",
+   "CS2A",
+   "CS2B",
+   "CS2C",
+   "MATH1A",
+   "MATH1AH",
+   "MATH22",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degree-certificate-requirements/general-education-graduation-requirements/",
+   "title": "Foothill College General Education & Graduation Requirements < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 5614
+ },
+ {
+  "control_number": "40239",
+  "title": "Communication Studies I",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "COMM10",
+   "COMM12",
+   "COMM1B",
+   "COMM2",
+   "COMM3",
+   "COMM4",
+   "COMM55",
+   "COMMC1000",
+   "COMMC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degree-certificate-requirements/general-education-graduation-requirements/",
+   "title": "Foothill College General Education & Graduation Requirements < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "40240",
+  "title": "Communication Studies II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "COMM10",
+   "COMM12",
+   "COMM1B",
+   "COMM2",
+   "COMM3",
+   "COMM4",
+   "COMM55",
+   "COMMC1000",
+   "COMMC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degree-certificate-requirements/general-education-graduation-requirements/",
+   "title": "Foothill College General Education & Graduation Requirements < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "40360",
+  "title": "Audio Post Production",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40361",
+  "title": "Songwriting",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40363",
+  "title": "Electronic Music",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40369",
+  "title": "Game Audio I",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40491",
+  "title": "Child Development Teacher",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 28,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40689",
+  "title": "Air Conditioning Mechanic",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APSM151A",
+   "APSM151B",
+   "APSM151C",
+   "APSM152A",
+   "APSM152B",
+   "APSM152C",
+   "APSM153B",
+   "APSM153C",
+   "APSM154A",
+   "APSM154B",
+   "APSM155C",
+   "APSM156A",
+   "APSM156B",
+   "APSM156C",
+   "APSM157A",
+   "APSM158A",
+   "APSM158C",
+   "APSM173B",
+   "APSM173C",
+   "APSM174A",
+   "APSM174B",
+   "APSM174C",
+   "APSM177A",
+   "APSM177B",
+   "APSM177C",
+   "APSM178A",
+   "APSM178B",
+   "APSM178C",
+   "APSM180B",
+   "APSM181B",
+   "APSM181C"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-air-conditioning-mechanic/",
+   "title": "Apprenticeship - Air Conditioning Mechanic < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 31,
+  "text_chars": 4952
+ },
+ {
+  "control_number": "40691",
+  "title": "Test, Adjust and Balancing (TAB) Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.97,
+  "codes_found": [
+   "APSM171A",
+   "APSM171B",
+   "APSM171C",
+   "APSM172A",
+   "APSM172B",
+   "APSM172C",
+   "APSM173A",
+   "APSM173B",
+   "APSM173C",
+   "APSM174A",
+   "APSM174B",
+   "APSM174C",
+   "APSM175A",
+   "APSM175B",
+   "APSM175C",
+   "APSM176A",
+   "APSM176B",
+   "APSM176C",
+   "APSM177A",
+   "APSM177B",
+   "APSM177C",
+   "APSM178A",
+   "APSM178B",
+   "APSM178C",
+   "APSM179B",
+   "APSM179C",
+   "APSM180A",
+   "APSM180B",
+   "APSM180C",
+   "APSM181A",
+   "APSM181B",
+   "APSM181C"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-test-adjust-balancing-technician/",
+   "title": "Apprenticeship - Test, Adjust and Balancing (TAB) Technician < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 33,
+  "text_chars": 4941
+ },
+ {
+  "control_number": "40693",
+  "title": "Pharmacy Assistant (Aide/Clerk)",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40694",
+  "title": "Basic Pharmacy Technician",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40838",
+  "title": "Emerging Educational Technology Leadership",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 20,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40841",
+  "title": "STEAM Instructional Leadership",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 12,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40842",
+  "title": "Education Technology Specialist",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40962",
+  "title": "English as a Second Language for College and Careers (High-Intermediate)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCEL405",
+   "NCEL425",
+   "NCEL426",
+   "NCEL427",
+   "NCEL460",
+   "NCEL480"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-english-second-language-college-careers-high-intermediate/",
+   "title": "Non-Credit: English as a Second Language for College and Careers (High-Intermediate) < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2819
+ },
+ {
+  "control_number": "40963",
+  "title": "English as a Second Language for College and Careers (Advanced)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NCEL405",
+   "NCEL435",
+   "NCEL436",
+   "NCEL437",
+   "NCEL460",
+   "NCEL480"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-english-second-language-college-careers-advanced/",
+   "title": "Non-Credit: English as a Second Language for College and Careers (Advanced) < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2803
+ },
+ {
+  "control_number": "41127",
+  "title": "Biochemistry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL1A",
+   "BIOL1B",
+   "BIOL1C",
+   "CHEM12A",
+   "CHEM12AL",
+   "CHEM12B",
+   "CHEM12BL",
+   "CHEM12C",
+   "CHEM12CL",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM1C",
+   "MATH1A",
+   "MATH1AH",
+   "MATH1B",
+   "MATH1BH",
+   "MATH1C",
+   "MATH1D",
+   "MATH2A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/biochemistry/",
+   "title": "Biochemistry < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3328
+ },
+ {
+  "control_number": "41275",
+  "title": "Data Analytics",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41328",
+  "title": "Cybersecurity",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41642",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTG1A",
+   "ACTG1AH",
+   "ACTG1B",
+   "ACTG1BH",
+   "ACTG1C",
+   "ACTG1CH",
+   "BUSI18",
+   "BUSI22",
+   "BUSI22H",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH12",
+   "MATH17",
+   "MATH1A",
+   "MATH1AH",
+   "PSYC7",
+   "SOC7",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/business-administration-2-ast/",
+   "title": "Business Administration 2.0, AS-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3361
+ },
+ {
+  "control_number": "41696",
+  "title": "Plumbing and Pipefitting Apprenticeship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 17,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41898",
+  "title": "Network Computing",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41899",
+  "title": "Introduction to Sports Medicine",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 12,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41978",
+  "title": "IT Support",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42334",
+  "title": "Advanced Sports Medicine",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 21,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42336",
+  "title": "Air Conditioning Mechanic",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 30,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42475",
+  "title": "Test, Adjust and Balancing (TAB) Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 30,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42515",
+  "title": "Infant and Toddler Development and Care",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42516",
+  "title": "Nanny, Child, and Family Studies",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42517",
+  "title": "Financial Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42518",
+  "title": "CPA Exam Preparation - Audit",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42519",
+  "title": "CPA Exam Preparation - Business Environment and Concepts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42520",
+  "title": "CPA Exam Preparation - Regulations",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42521",
+  "title": "Bookkeeping",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42522",
+  "title": "Payroll Preparation",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42889",
+  "title": "Community Health Worker",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "HLTH101",
+   "HLTH21"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/community-health-worker/",
+   "title": "Community Health Worker < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2649
+ },
+ {
+  "control_number": "42901",
+  "title": "Tax Specialist",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42902",
+  "title": "CPA Exam Preparation - Financial Accounting Reporting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42903",
+  "title": "Accounting Ethics",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43189",
+  "title": "Social Work and Human Services",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.972,
+  "codes_found": [
+   "ANTH2A",
+   "ANTH2AH",
+   "BIOL14",
+   "BIOL40A",
+   "BIOL40B",
+   "BIOL40C",
+   "CHLD1",
+   "CHLD2",
+   "CHLD8",
+   "COMM12",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "HIST17A",
+   "HIST17B",
+   "HIST17C",
+   "HLTH23",
+   "MATH17",
+   "PSYC25",
+   "PSYC40",
+   "PSYC7",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC11",
+   "SOC1H",
+   "SOC20",
+   "SOC23",
+   "SOC50A",
+   "SOC50B",
+   "SOC7",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/social-work-and-human-services-aat/",
+   "title": "Social Work and Human Services, AA-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 36,
+  "text_chars": 4360
+ },
+ {
+  "control_number": "43194",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.966,
+  "codes_found": [
+   "ANTH2A",
+   "ANTH2AH",
+   "COMM10",
+   "COMM12",
+   "COMM1B",
+   "COMM2",
+   "COMM3",
+   "COMM4",
+   "COMM5",
+   "COMM55",
+   "COMMC1000",
+   "COMMC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1002",
+   "ENGLC1002H",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "JRNL22A",
+   "MATH17",
+   "PHIL1",
+   "PSYC7",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC1H",
+   "SOC7",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/communication-studies-2-aat/",
+   "title": "Communication Studies 2.0, AA-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 4019
+ },
+ {
+  "control_number": "43207",
+  "title": "Photography Criticism",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART1",
+   "MDIA3",
+   "PHOT10",
+   "PHOT10H",
+   "PHOT11",
+   "PHOT11H",
+   "PHOT8",
+   "PHOT8H"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degree-certificate-requirements/cal-getc/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 14126
+ },
+ {
+  "control_number": "43215",
+  "title": "Research, Design and Development for Global Good",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43399",
+  "title": "Commercial Photography",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHOT405",
+   "PHOT406A",
+   "PHOT406B",
+   "PHOT406C",
+   "PHOT422",
+   "PHOT457",
+   "PHOT472",
+   "PHOT474A",
+   "PHOT474B",
+   "PHOT474C"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-commercial-photography/",
+   "title": "Non-Credit: Commercial Photography < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3429
+ },
+ {
+  "control_number": "43401",
+  "title": "Photography",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHOT405",
+   "PHOT406A",
+   "PHOT406B",
+   "PHOT406C",
+   "PHOT407A",
+   "PHOT407B",
+   "PHOT407C",
+   "PHOT422",
+   "PHOT457",
+   "PHOT472",
+   "PHOT474A",
+   "PHOT474B",
+   "PHOT474C"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-photography/",
+   "title": "Non-Credit: Photography < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3631
+ },
+ {
+  "control_number": "43425",
+  "title": "Commercial Photography",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43426",
+  "title": "Digital Photography Techniques",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43445",
+  "title": "Non-Destructive Testing (NDT) Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AATA101A",
+   "AATA101B",
+   "AATA102A",
+   "AATA102B",
+   "AATA103A",
+   "AATA103B",
+   "AATA104A",
+   "AATA104B",
+   "AATA105A",
+   "AATA105B",
+   "AATA105C",
+   "AATA105R"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-non-destructive-testing-technician/",
+   "title": "Apprenticeship - Non-Destructive Testing (NDT) Technician < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3082
+ },
+ {
+  "control_number": "43676",
+  "title": "Web Applications Development",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "CS1A",
+   "CS1B",
+   "CS2A",
+   "CS2B",
+   "CS3A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degree-certificate-requirements/general-education-graduation-requirements/",
+   "title": "Foothill College General Education & Graduation Requirements < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4329
+ },
+ {
+  "control_number": "43688",
+  "title": "Educational Immersive Media",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LINC57A",
+   "LINC57B",
+   "LINC58",
+   "LINC67",
+   "LINC75A",
+   "LINC75C",
+   "LINC79A",
+   "LINC79B",
+   "LINC79C",
+   "LINC79D",
+   "LINC90C",
+   "LINC93B",
+   "LINC95B",
+   "LINC98"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/learning-in-new-media-classrooms/",
+   "title": "Learning in New Media Classrooms < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.333
+   }
+  },
+  "listed": 14,
+  "text_chars": 9614
+ },
+ {
+  "control_number": "43690",
+  "title": "Advanced Web Applications Development",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43828",
+  "title": "Spanish",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN1",
+   "SPAN2",
+   "SPAN3"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/spanish/",
+   "title": "Spanish < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3936
+ },
+ {
+  "control_number": "43983",
+  "title": "Semiconductor Processing",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44221",
+  "title": "Respiratory Care",
+  "award": "Baccalaureate of Science (B.S.) Degree.",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL300",
+   "HLTH300",
+   "IDS300",
+   "RSPT300",
+   "RSPT304",
+   "RSPT305",
+   "RSPT306",
+   "RSPT307",
+   "RSPT308"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/respiratory-care/",
+   "title": "Respiratory Care < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3447
+ },
+ {
+  "control_number": "44249",
+  "title": "Archaeological Field Work",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44253",
+  "title": "Spanish-Advanced",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN4",
+   "SPAN5",
+   "SPAN6"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degree-certificate-requirements/cal-getc/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4065
+ },
+ {
+  "control_number": "44565",
+  "title": "Retail Operations Specialist",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APPR140A",
+   "APPR140B",
+   "BUSI90A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-retail-operations-specialist/",
+   "title": "Apprenticeship - Retail Operations Specialist < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2731
+ },
+ {
+  "control_number": "44566",
+  "title": "Visual Storytelling and Comic Arts",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44600",
+  "title": "Business and Marketing",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44745",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.931,
+  "codes_found": [
+   "ANTH1",
+   "ANTH1H",
+   "ANTH2A",
+   "ANTH2AH",
+   "BIOL10",
+   "BIOL14",
+   "BIOL1A",
+   "BIOL41",
+   "BIOL45",
+   "CHEM25",
+   "CHEM30A",
+   "ECONC2001",
+   "HLTH20",
+   "HLTH21",
+   "HLTH22",
+   "HLTH23",
+   "MATH17",
+   "POLSC1000",
+   "PSYC40",
+   "PSYC49",
+   "PSYC7",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC1",
+   "SOC1H",
+   "SOC7",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/public-health-ast/",
+   "title": "Public Health, AS-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 3794
+ },
+ {
+  "control_number": "45169",
+  "title": "Theatre Production Organization",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THTR421A",
+   "THTR431",
+   "THTR442",
+   "THTR445A",
+   "THTR445E"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-theatre-production-organization/",
+   "title": "Non-Credit: Theatre Production Organization < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2831
+ },
+ {
+  "control_number": "45170",
+  "title": "Theatre Technology",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THTR421A",
+   "THTR425",
+   "THTR427",
+   "THTR440A",
+   "THTR442",
+   "THTR445A",
+   "THTR445E"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-theatre-technology/",
+   "title": "Non-Credit: Theatre Technology < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2968
+ },
+ {
+  "control_number": "45171",
+  "title": "Theatre Costume and Makeup",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THTR421A",
+   "THTR425",
+   "THTR425B",
+   "THTR440A",
+   "THTR440B",
+   "THTR445A",
+   "THTR445E"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-theatre-costume-and-makeup/",
+   "title": "Non-Credit: Theatre Costume and Makeup < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2957
+ },
+ {
+  "control_number": "45361",
+  "title": "Transfer Studies: Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45532",
+  "title": "Artificial Intelligence Empowered Instruction",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 14,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45656",
+  "title": "Vacuum Technology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM25",
+   "ENGR10",
+   "ENGR61B"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/engineering/",
+   "title": "Engineering < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4898
+ },
+ {
+  "control_number": "45694",
+  "title": "Semiconductor Process Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM1B",
+   "ENGR10",
+   "ENGR37",
+   "ENGR37L",
+   "ENGR45",
+   "ENGR61A",
+   "ENGR61B",
+   "MATH1A",
+   "MATH1B",
+   "MATH1C",
+   "MATH2A",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/semiconductor-process-engineering/",
+   "title": "Semiconductor Process Engineering < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4435
+ },
+ {
+  "control_number": "45722",
+  "title": "Emergency Medical Technician",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS50",
+   "EMS52",
+   "EMS53"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/emergency-medical-technician/",
+   "title": "Emergency Medical Technician < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2680
+ },
+ {
+  "control_number": "45754",
+  "title": "Principles of Machine Learning and Artificial Intelligence",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "CS3A",
+   "HUMN15",
+   "PHIL15"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degree-certificate-requirements/general-education-graduation-requirements/",
+   "title": "Foothill College General Education & Graduation Requirements < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 11584
+ },
+ {
+  "control_number": "45930",
+  "title": "12-Lead ECG Interpretation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS412",
+   "EMS413",
+   "EMS414"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/non-credit-12-lead-ecg-interpretation/",
+   "title": "Non-Credit: 12-Lead ECG Interpretation < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2299
+ },
+ {
+  "control_number": "46172",
+  "title": "Independence and Career Readiness",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALTW105",
+   "ALTW108",
+   "ALTW112",
+   "ALTW113",
+   "ALTW122",
+   "ALTW123",
+   "ALTW126",
+   "ALTW137",
+   "ALTW138",
+   "ALTW143",
+   "ALTW146",
+   "ALTW203",
+   "ALTW209",
+   "ALTW218A",
+   "ALTW218B",
+   "ALTW229",
+   "PHDA15A",
+   "PHDA16",
+   "PHDA17",
+   "PHDA18"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/independence-and-career-readiness/",
+   "title": "Independence and Career Readiness < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3413
+ },
+ {
+  "control_number": "46202",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS1A",
+   "CS2A",
+   "CS3A",
+   "CS49",
+   "MATH1A",
+   "MATH1AH",
+   "MATH1B",
+   "MATH1BH",
+   "MATH1C",
+   "MATH1D",
+   "MATH2A",
+   "MATH2B",
+   "PHYS4A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/mathematics-2-ast/",
+   "title": "Mathematics 2.0, AS-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3069
+ },
+ {
+  "control_number": "46285",
+  "title": "Physics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS1A",
+   "CS2A",
+   "CS3A",
+   "MATH1A",
+   "MATH1AH",
+   "MATH1B",
+   "MATH1BH",
+   "MATH1C",
+   "MATH1D",
+   "MATH2A",
+   "MATH2B",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C",
+   "PHYS4D"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/physics-2-ast/",
+   "title": "Physics 2.0, AS-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3067
+ },
+ {
+  "control_number": "46325",
+  "title": "Elementary Teacher Education: Integrated Programs",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART1",
+   "ART2A",
+   "ART2AH",
+   "ART2B",
+   "ART2BH",
+   "ART2C",
+   "BIOL10",
+   "CHEM25",
+   "CHLD1",
+   "CHLD2",
+   "COMMC1000",
+   "COMMC1000H",
+   "EDUC2",
+   "ENGL8",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1002",
+   "ENGLC1002H",
+   "ESLL26",
+   "GEOG20",
+   "HIST17A",
+   "HIST17B",
+   "HIST3A",
+   "HIST3B",
+   "MATH42",
+   "MUS1",
+   "PHYS12",
+   "POLSC1000",
+   "PSE20",
+   "THTR1",
+   "THTR2A"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degrees-certificates/elementary-teacher-education-integrated-programs-aat/",
+   "title": "Elementary Teacher Education: Integrated Programs, AA-T < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 31,
+  "text_chars": 5426
+ },
+ {
+  "control_number": "46561",
+  "title": "Pre-Law Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.533,
+  "codes_found": [
+   "COMM1B",
+   "ENGLC1000",
+   "HIST17A",
+   "PHIL1",
+   "PHIL7",
+   "POLSC1000",
+   "SOC15",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.foothill.edu/degree-certificate-requirements/general-education-graduation-requirements/",
+   "title": "Foothill College General Education & Graduation Requirements < Foothill College",
+   "h1": "Academic Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 16000
+ }
+]

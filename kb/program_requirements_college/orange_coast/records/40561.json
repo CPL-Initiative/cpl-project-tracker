@@ -1,0 +1,234 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "40561",
+ "shape": "certificate",
+ "title": "Drone Videography",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/photography/drone-videography-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7104,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7104,
+    "output_tokens": 1859,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1859,
+  "output_tokens_details": {
+   "thinking_tokens": 732
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0656,
+ "ms": 15794,
+ "seconds": 16.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    11.0,
+    12.0
+   ],
+   "stated": [
+    11.0,
+    12.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Drone Videography Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 11,
+    "max": 12
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be able to design and execute drone projects utilizing principles of visual communication and video editing for employment in the field of Drone Imaging.",
+    "Students will be able to deploy and pilot UAS while capturing appropriate imagery for a variety of industries.",
+    "Students may seek employment as a producer, production assistant, content creator, director, videographer, and visual communicator.",
+    "Students will be prepared for entry-level positions a as drone videographer."
+   ],
+   "careers": [
+    "UAS image capture specialist",
+    "drone videographer",
+    "producer",
+    "production assistant",
+    "content creator",
+    "director",
+    "videographer",
+    "visual communicator"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FILM A110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FILM A228",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FILM A229",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives - Select one course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "FILM A120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FILM A196",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FILM A220",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FILM A262",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS A160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page title is not printed in the extracted text; section_heading is taken from the description's own naming of the award ('The Drone Videography Certificate of Achievement').",
+   "The catalog prints FILM A196 'Introduction to Visual Effects'; the closed list stores it as 'FILMA196' (Intro to Visual Effects) without a space. Treated as the same course, not a catalog addition.",
+   "FILM A220 is titled 'Introduction to Immersive Media (VR/AR)' in the catalog but 'Introduction to Virtual Reality (VR)' in the closed list; same code, treated as the same course.",
+   "The catalog prints no units beside the restricted elective courses; only the block range 3-4 is printed, so course units are null.",
+   "The Program Learning Outcomes are printed as one paragraph; each sentence is recorded as a separate outcome. The third sentence ('Students may seek employment as...') is a career statement printed under the outcomes heading; the fourth contains the catalog's typo 'a as', copied as printed.",
+   "Total Units 11-12 printed for the certificate; the Program Sequence repeats the same requirements."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

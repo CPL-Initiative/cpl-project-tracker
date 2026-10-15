@@ -1,0 +1,375 @@
+{
+ "college": "Santa Barbara City College",
+ "control_number": "38315",
+ "shape": "noncredit",
+ "title": "ADHS: Adult High School Diploma",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.sbcc.edu/sel/ahs-ged/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12311,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12311,
+    "output_tokens": 2236,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2236,
+  "output_tokens_details": {
+   "thinking_tokens": 283
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09396,
+ "ms": 18626,
+ "seconds": 19.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 48,
+   "share": 0.0,
+   "missing": [
+    "HSCANC10",
+    "HSCANC20",
+    "HSCANC30",
+    "HSCANC40",
+    "HSCANC50",
+    "HSECNC10",
+    "HSECNC20",
+    "HSENNC1",
+    "HSENNC1A",
+    "HSENNC1B",
+    "HSENNC2",
+    "HSENNC2A",
+    "HSENNC2B",
+    "HSENNC3",
+    "HSENNC3A",
+    "HSENNC3B",
+    "HSENNC5",
+    "HSHENC10",
+    "HSHINC30",
+    "HSHINC40",
+    "HSHINC50",
+    "HSMANC10",
+    "HSMANC20",
+    "HSMANC30",
+    "HSMANC40",
+    "HSMANC50",
+    "HSPDNC10",
+    "HSPDNC100",
+    "HSPDNC20",
+    "HSPDNC30",
+    "HSPDNC40",
+    "HSPDNC50",
+    "HSPDNC60",
+    "HSPDNC70",
+    "HSPDNC80",
+    "HSPDNC90",
+    "HSPSNC20",
+    "HSPSNC30",
+    "HSSCNC10",
+    "HSSCNC20",
+    "HSSCNC30",
+    "HSSCNC40",
+    "HSVANC1",
+    "HSVANC1A",
+    "HSVANC1B",
+    "HSVANC4",
+    "HSWHNC10",
+    "HSWHNC20"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record states no figure, but the catalog text names 0 Units, 0 Units, 0 Units, 0 Units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "No program heading printed (text holds only course descriptions)",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HSCA NC010",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSCA NC020",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSCA NC030",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSCA NC040",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSCA NC050",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSEC NC010",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSEC NC020",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSEN NC001",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSEN NC002",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSEN NC003",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSEN NC005",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSEN NC01A",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSEN NC01B",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSEN NC02A",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSEN NC02B",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSEN NC03A",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSEN NC03B",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSHE NC010",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSHI NC030",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSHI NC040",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSHI NC050",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSMA NC010",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSMA NC020",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSMA NC030",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSMA NC040",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSMA NC050",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSPD NC010",
+    "why": "only a truncated course description in the text; no program requirements printed"
+   },
+   {
+    "code": "HSPD NC020",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "HSPD NC030",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "HSPD NC040",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "HSPD NC050",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "HSPD NC060",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "HSPD NC070",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "HSPD NC080",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "HSPD NC090",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "HSPD NC100",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "HSPS NC020",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "HSPS NC030",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "HSSC NC010",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "HSSC NC020",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "HSSC NC030",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "HSSC NC040",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "HSVA NC001",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "HSVA NC004",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "HSVA NC01A",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "HSVA NC01B",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "HSWH NC010",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "HSWH NC020",
+    "why": "not in the text (text cut off)"
+   }
+  ],
+  "notes": [
+   "The supplied text is a course-description listing (GED, GEDB, HSCA, HSEC, HSEN, HSHE, HSHI, HSMA, HSPD courses) and prints no requirements section, total hours, outcomes or careers for the Adult High School Diploma; no blocks were recorded.",
+   "The text begins mid-word and is cut off during the HSPD NC010 description; the program requirements may be on another part of the page.",
+   "Course descriptions show 'Transfer Information: AHS - <area>' (e.g., AHS - Elective, AHS - English LIT & COMP, AHS - US History, AHS - Mathematics, AHS - Algebra), suggesting subject-area requirement categories, but no credit amounts per area are printed.",
+   "Courses print both units (e.g., 1-5 Units) and hours (e.g., Hours: 100); a reviewer should confirm whether the diploma is counted in credits or hours once the requirements section is found."
+  ]
+ },
+ "extracted_run": "38670933359"
+}

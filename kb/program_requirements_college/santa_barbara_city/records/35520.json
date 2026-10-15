@@ -1,0 +1,294 @@
+{
+ "college": "Santa Barbara City College",
+ "control_number": "35520",
+ "shape": "degree",
+ "title": "Astronomy",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.sbcc.edu/academic-departments/earth-planetary-sciences/astronomy-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7613,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7613,
+    "output_tokens": 2007,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2007,
+  "output_tokens_details": {
+   "thinking_tokens": 558
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07059,
+ "ms": 15559,
+ "seconds": 16.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CS105"
+   ],
+   "flagged": [
+    "CS105"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    40.0,
+    43.0
+   ],
+   "stated": [
+    40.0,
+    43.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 15,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Astronomy, Associate of Science (AS)",
+   "measure": "units",
+   "total_units": {
+    "min": 40,
+    "max": 43
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "SBCC General Education pattern or Cal-GETC pattern",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Recognize how science works, the scientific method, the reliance on logic, critical thinking, data analysis and interpretation, cause and effect relationships.",
+    "Research historical facts that reveal the human dilemmas, the moral and ethical issues in science.",
+    "Learn the facts, and classify information, physical properties, and attributes of objects being studied.",
+    "Recognize famous theories, fields of study, scientific developments, milestones in science."
+   ],
+   "careers": [
+    "technicians for high-tech industries",
+    "museum and planetarium directors",
+    "astronomers/astrophysicists",
+    "space scientists",
+    "mission data analysts",
+    "spacecraft and instrument designers",
+    "teachers",
+    "observatory technicians",
+    "telescope operators",
+    "electronics technicians",
+    "computer programmers",
+    "optics",
+    "mathematics",
+    "electronics",
+    "computer programming"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 40,
+     "max": 43
+    },
+    "courses": [
+     {
+      "code": "CHEM 155",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 105",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "CS 133",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 137",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 140",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ERTH 101",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "ERTH 101H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ERTH 102",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ERTH 106",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "ERTH 111",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ERTH 111H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ERTH 141",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 101",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 150",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 160",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 121",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 122",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 123",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'Total Units 40.00-43.00' line is the major total; it is recorded both as total_units and as the Required Core block's stated total since the core is the only block.",
+   "The 3-4 unit ranges are printed only beside the first course of each 'or' group (CS 105, ERTH 101, ERTH 106); alternatives have no units printed beside them, so their units are null.",
+   "ERTH 141/GEOG 101 is printed as one cross-listed alternative (Physical Geography); recorded as two separate alternatives.",
+   "Footnote 1: students pursuing an astrophysics emphasis should take ERTH 106; planetary emphasis should take ERTH 111 (or 111H) or ERTH 141 (or GEOG 101). Advisory only.",
+   "The 60-unit minimum is the generic associate degree requirement, not a printed total for this award, so degree_total is null.",
+   "Careers are described for graduates with a bachelor's degree in astronomy; 'technicians for high-tech industries' comes from 'various vocational jobs as technicians for high-tech industries'.",
+   "Outcomes come from the page's Learning Outcomes tab for this program."
+  ]
+ },
+ "extracted_run": "38670933359"
+}

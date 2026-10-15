@@ -1,0 +1,445 @@
+{
+ "college": "Cabrillo College",
+ "reread_run": "38674737585",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "38670925488",
+ "at": "2026-10-15T03:09:26Z",
+ "posted": 2,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "09602",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20410",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31610",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 2,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "06350",
+  "06378"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 2,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Cabrillo College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 38670925488;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 16,
+    "placed": 16,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Recommended Major Requirements",
+      "rule": "choose_units",
+      "stated": {
+       "max": 18,
+       "min": 18
+      },
+      "courses": [
+       {
+        "code": "TA9",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA10A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA10B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA11",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA14",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA27",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA28",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "TA31",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 18,
+      "option_group": null
+     },
+     {
+      "name": "Recommended Major Electives",
+      "rule": "recommended",
+      "stated": {
+       "max": 18,
+       "min": 18
+      },
+      "courses": [
+       {
+        "code": "DANCE2A",
+        "units": 0.5,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA8",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA10C",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA12A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA13A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "TA13B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "TA17",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA21",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA29",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA30",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "TA33",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "TA34",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "TA35",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "TA73",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA74",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA75",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "design",
+      "scene painting",
+      "television production",
+      "theatre production management",
+      "stage management",
+      "teaching",
+      "directing",
+      "performance",
+      "business",
+      "sales",
+      "law"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 24,
+      "min": 24
+     },
+     "outcomes": [
+      "Collaboratively create theatrical productions that effectively use theatre tools, techniques, and processes.",
+      "Utilize basic theatre vocabulary to effectively communicate the aspects of the art form to an audience.",
+      "Critique a theatrical production and play text in terms of dramatic structure, aesthetic choices, and production and performance quality.",
+      "Understand and articulate the evolution of theatre, with its variety of artistic styles and genres, relating them to contemporary global issues, values, and concerns."
+     ],
+     "ge_pattern": "Cabrillo College General Education",
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Theatre Arts/Drama - Associate in Arts (A.A.)",
+     "open_elective_units": null
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/theatre-arts-drama-associate-in-arts-a-a-fall-2025",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38639316727,
+   "program_title": "Theatre Arts/Drama",
+   "control_number": "06350"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 10,
+    "placed": 10,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Recommended Major Requirements",
+      "rule": "all",
+      "stated": {
+       "max": 30,
+       "min": 30
+      },
+      "courses": [
+       {
+        "code": "MATH5A",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH5B",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH5C",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS4A",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS4B",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS4C",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Recommended Major Electives",
+      "rule": "recommended",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "MATH6",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH7",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS4D",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS11",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "technical positions with government or industry",
+      "law",
+      "business",
+      "medicine",
+      "Teaching at the high school or two-year college level",
+      "physicist",
+      "experimental or theoretical research",
+      "teaching at the university level",
+      "basic research in government or industry"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 24,
+      "min": 24
+     },
+     "outcomes": [
+      "Demonstrate mastery of the laws of classical physics through problem solving using multiple representations, appropriate diagrams and mathematics, both in independent and collaborative settings.",
+      "Show an ability to make physical estimates with sound scientific reasoning.",
+      "Design and carry out experiments to test hypotheses using appropriate equipment and methods and make valid comparisons with theoretical predictions.",
+      "Communicate experimental concepts and results through appropriate and effective written and verbal techniques.",
+      "Quantify, through estimation or calculation, the uncertainties involved in an experiment.",
+      "Create useful models of physical systems and perform basic numerical simulations using the model."
+     ],
+     "ge_pattern": "Cabrillo College General Education",
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Physics - Associate in Science (A.S.)",
+     "open_elective_units": null
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/physics-associate-in-science-a-s-fall-2025",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38639316727,
+   "program_title": "Physics",
+   "control_number": "06378"
+  }
+ ]
+}

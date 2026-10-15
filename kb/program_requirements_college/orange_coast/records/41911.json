@@ -1,0 +1,218 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "41911",
+ "shape": "certificate",
+ "title": "Emergency Medical Services",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/emergency-medical-services/emergency-medical-services-coa/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7200,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7200,
+    "output_tokens": 1261,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1261,
+  "output_tokens_details": {
+   "thinking_tokens": 413
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05402,
+ "ms": 13911,
+ "seconds": 14.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 6,
+   "share": 0.5,
+   "missing": [
+    "ALHA111",
+    "BIOLA221",
+    "COMMC1004"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "EMSA150L"
+   ],
+   "flagged": [
+    "EMSA150L"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    12.5,
+    12.5
+   ],
+   "stated": [
+    12.5,
+    12.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 12.5,
+    "max": 12.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Certified graduates of this program will have the affective, cognitive and psychomotor skills and knowledge necessary to enter the field of professional prehospital care as specified by the National Emergency Medical Services Education Standards and the National Registry of Emergency Medical Technicians."
+   ],
+   "careers": [
+    "lifeguards",
+    "ski patrol",
+    "fire fighters"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Recommended Preparation",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EMS A100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12.5,
+     "max": 12.5
+    },
+    "courses": [
+     {
+      "code": "EMS A150",
+      "units": 10,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMS A150L",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EMS A151",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ALH A111",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL A221",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM C1004",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The page text prints no program title heading; section_heading uses the 'Requirements' tab name.",
+   "EMS A151 is printed as '11'; read as 1 unit with footnote marker 1, consistent with the 12.5 total and the Plan of Study Grid.",
+   "EMS A150L (1.5 units) is not in the closed list; recorded as catalog addition.",
+   "Required prerequisite is valid American Heart Association BLS Provider CPR (not a course). EMS A100 is listed as recommended preparation and can substitute for the CPR prerequisite for EMS A150 if completed within 14 months.",
+   "Careers taken from the overview sentence that EMS certification may be required for lifeguards, ski patrol and fire fighters; ambulance service and emergency department are named as workplaces and were not recorded as careers."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

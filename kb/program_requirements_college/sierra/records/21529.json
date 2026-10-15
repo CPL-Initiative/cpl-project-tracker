@@ -1,0 +1,254 @@
+{
+ "college": "Sierra College",
+ "control_number": "21529",
+ "shape": "certificate",
+ "title": "IT: IT Technician",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.sierracollege.edu/departments/infotech/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11910,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11910,
+    "output_tokens": 1696,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1696,
+  "output_tokens_details": {
+   "thinking_tokens": 447
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08156,
+ "ms": 13491,
+ "seconds": 13.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "BUS250",
+    "BUS261",
+    "BUS265",
+    "BUS266"
+   ],
+   "flagged": [
+    "BUS250",
+    "BUS261",
+    "BUS265",
+    "BUS266"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.0,
+    22.0
+   ],
+   "stated": [
+    22.0,
+    22.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 12,
+   "courses": 0,
+   "count": 12,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Information Technology—IT Technician Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Design LAN and WAN logical topologies that support various sized organizations.",
+    "Assess security risks and identify ways to minimize their threat and/or impact.",
+    "Analyze various operating system options and make recommendations based on organization needs.",
+    "Demonstrate digital literacy and work habits required for a successful virtual business.",
+    "Evaluate effectiveness of web-based business tools for successful operation of a virtual business.",
+    "Develop and implement common deliverables for virtual office entrepreneur.",
+    "Diagnose common software and hardware problems.",
+    "Analyze and integrate software solutions for the business environment.",
+    "Demonstrate professional communication and customer services skills.",
+    "Demonstrate computer literacy.",
+    "Analyze scenarios, investigate options, and appropriately apply workplace computer programs.",
+    "Demonstrate file management proficiency."
+   ],
+   "careers": [
+    "computer retail",
+    "helpdesk",
+    "system administration",
+    "computer application installation",
+    "technically oriented administrative roles"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUS 0250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "IT 0015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT 0100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT 0105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT 0110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select 6 units from the following",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "BUS 0261",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 0265",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 0266",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "IT 0095",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with leading zeros (IT 0015, IT 0095, IT 0100, IT 0105, IT 0110); these were matched to closed-list IT 15, IT 95, IT 100, IT 105, IT 110.",
+   "Units are not printed beside the elective-list courses (BUS 0261, BUS 0265/0266, IT 0095), so their units are null; the state file stores 0.5 for IT 95, which is likely variable-unit internship.",
+   "The outcomes come from a single page-wide 'Program Student Learning Outcomes (PSLOs)' tab for the Information Technology department; it is not specific to this award (it includes virtual-office outcomes) and was recorded as shared by this certificate. Reviewer should confirm which PSLOs apply.",
+   "The AA/AS degree section with the same title prints identical major requirements; only the Certificate of Achievement section was read.",
+   "Careers are recorded from 'entry level positions in computer retail, helpdesk, system administration, computer application installation, and technically oriented administrative roles'."
+  ]
+ },
+ "extracted_run": "38675248607"
+}

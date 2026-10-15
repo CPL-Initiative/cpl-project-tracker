@@ -1,0 +1,381 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "32737",
+ "shape": "adt",
+ "title": "Spanish",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.cccd.edu/orange-coast/general-education-patterns/associate-degree-general-education-calgetc/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12686,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12686,
+    "output_tokens": 2869,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2869,
+  "output_tokens_details": {
+   "thinking_tokens": 606
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10812,
+ "ms": 21990,
+ "seconds": 22.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 48,
+   "share": 0.0,
+   "missing": [
+    "ANTHA100",
+    "ANTHA100H",
+    "ANTHA102",
+    "ANTHA190",
+    "ARTA114",
+    "CMSTA155",
+    "DANCA116",
+    "DANCA135",
+    "DANCA147",
+    "DANCA155",
+    "DANCA165",
+    "DANCA247",
+    "ENGLA152",
+    "ENGLA152H",
+    "ETHSA150",
+    "FRENA180",
+    "FRENA180H",
+    "FRENA190",
+    "FRENA199",
+    "GEOGA100",
+    "GEOGA100H",
+    "GEOGA185",
+    "GLSTA101",
+    "GNDRA100",
+    "GRMNA180",
+    "GRMNA185",
+    "HISTA140",
+    "HISTA150",
+    "HISTA161",
+    "HISTA161H",
+    "ITALA199",
+    "PSYCA190",
+    "PSYCA190H",
+    "PUBHA203",
+    "SJSA102",
+    "SOCA100",
+    "SOCA100H",
+    "SOCA150",
+    "SPANA160",
+    "SPANA165",
+    "SPANA180",
+    "SPANA180H",
+    "SPANA185",
+    "SPANA185H",
+    "SPANA199",
+    "SPANA280",
+    "SPANA280H",
+    "SPANA285"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "None found: the text is the Associate Degree General Education: CalGETC pattern page (Area 1 through Area 5 tabs), not the Spanish A.A-T section",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH A100",
+    "why": "only in Cal-GETC Area 4 GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "ANTH A100H",
+    "why": "only in Cal-GETC Area 4 GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "ANTH A102",
+    "why": "only in Cal-GETC Area 4 GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "ANTH A190",
+    "why": "only in Cal-GETC Area 4 GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "ART A114",
+    "why": "only in Cal-GETC Area 3A GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "CMST A155",
+    "why": "only in Cal-GETC Area 3B/4 GE lists; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "DANC A116",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANC A135",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANC A147",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANC A155",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANC A165",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANC A247",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL A152",
+    "why": "only in Cal-GETC Area 3B GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "ENGL A152H",
+    "why": "only in Cal-GETC Area 3B GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "ETHS A150",
+    "why": "only in Cal-GETC Area 3B GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "FREN A180",
+    "why": "not in the text"
+   },
+   {
+    "code": "FREN A180H",
+    "why": "not in the text"
+   },
+   {
+    "code": "FREN A190",
+    "why": "not in the text"
+   },
+   {
+    "code": "FREN A199",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG A100",
+    "why": "only in Cal-GETC Area 4 GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "GEOG A100H",
+    "why": "only in Cal-GETC Area 4 GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "GEOG A185",
+    "why": "only in Cal-GETC Area 4 GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "GLST A101",
+    "why": "only in Cal-GETC Area 4 GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "GNDR A100",
+    "why": "only in Cal-GETC Area 4 GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "GRMN A180",
+    "why": "not in the text"
+   },
+   {
+    "code": "GRMN A185",
+    "why": "only in Cal-GETC Area 3B GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "HIST A140",
+    "why": "only in Cal-GETC Area 4 GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "HIST A150",
+    "why": "only in Cal-GETC Area 3B GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "HIST A161",
+    "why": "only in Cal-GETC Area 3B/4 GE lists; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "HIST A161H",
+    "why": "only in Cal-GETC Area 3B/4 GE lists; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "ITAL A199",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC A190",
+    "why": "only in Cal-GETC Area 4 GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "PSYC A190H",
+    "why": "only in Cal-GETC Area 4 GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "PUBH A203",
+    "why": "only in Cal-GETC Area 4 GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "SJS A102",
+    "why": "only in Cal-GETC Area 4 GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "SOC A100",
+    "why": "only in Cal-GETC Area 4 GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "SOC A100H",
+    "why": "only in Cal-GETC Area 4 GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "SOC A150",
+    "why": "only in Cal-GETC Area 4 GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "SPAN A160",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN A165",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN A180",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN A180H",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN A185",
+    "why": "only in Cal-GETC Area 3B GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "SPAN A185H",
+    "why": "only in Cal-GETC Area 3B GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "SPAN A199",
+    "why": "not in the text"
+   },
+   {
+    "code": "SPAN A280",
+    "why": "only in Cal-GETC Area 3B GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "SPAN A280H",
+    "why": "only in Cal-GETC Area 3B GE list; no Spanish A.A-T section in text"
+   },
+   {
+    "code": "SPAN A285",
+    "why": "only in Cal-GETC Area 3B GE list; no Spanish A.A-T section in text"
+   }
+  ],
+  "notes": [
+   "The source URL and text are Orange Coast College's Associate Degree General Education CalGETC pattern page, not the Spanish A.A-T program page. No Spanish A.A-T requirements, totals, outcomes or careers appear in the text, so no blocks were recorded.",
+   "GE area course lists (Areas 1-5) were not recorded as blocks because general education courses never go in a block.",
+   "The text is cut off mid-way through Area 5A and begins mid-menu; a reviewer should fetch the correct Spanish A.A-T program page for this catalog year.",
+   "ge_pattern left null because the text does not show the Spanish A.A-T naming a GE pattern, though the page itself is the CalGETC pattern."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

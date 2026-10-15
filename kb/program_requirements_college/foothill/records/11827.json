@@ -1,0 +1,372 @@
+{
+ "college": "Foothill College",
+ "control_number": "11827",
+ "shape": "certificate",
+ "title": "Plumbing and Pipefitting Apprenticeship",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-plumbing-and-pipefitting/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8526,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8526,
+    "output_tokens": 2696,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2696,
+  "output_tokens_details": {
+   "thinking_tokens": 718
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08802,
+ "ms": 20766,
+ "seconds": 21.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 24,
+   "listed": 25,
+   "share": 0.96,
+   "missing": [
+    "APPT190"
+   ],
+   "unexplained": [
+    "APPT190"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CWE60A"
+   ],
+   "flagged": [
+    "CWE60A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    48.0,
+    50.0
+   ],
+   "stated": [
+    48.0,
+    50.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Plumbing and Pipefitting Apprenticeship",
+   "measure": "units",
+   "total_units": {
+    "min": 48,
+    "max": 50
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be able to recognize and classify materials used in the plumbing industry.",
+    "Students will be able to demonstrate proper use and care of industry tools and equipment.",
+    "Students will be able to recognize and apply on-the-job safety standards.",
+    "Students will be able to assemble piping systems using the latest codes and industry standards.",
+    "Students will be able to draw, interpret, read plans in the plumbing industry."
+   ],
+   "careers": [
+    "Foreman",
+    "General Foreman",
+    "Superintendent",
+    "Project Manager",
+    "Estimator",
+    "Detailer",
+    "Building Trades Inspector",
+    "Building Trades Instructor",
+    "Union Business Agent/Business Manager"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Pathway 1 - UA Local 467 students: Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Pathway",
+    "stated": {
+     "min": 48,
+     "max": 48
+    },
+    "courses": [
+     {
+      "code": "APPT 161",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 162",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 163",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 164",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 165",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 166",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 167",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 168",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 169",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Course",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CWE 60A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Pathway 2 - UA Local 62 students: Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Pathway",
+    "stated": {
+     "min": 48.5,
+     "max": 50
+    },
+    "courses": [
+     {
+      "code": "APPT 147B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 171",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "APPR 160A",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 185",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 186",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 187",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 189",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "APPT 196",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "APPT 198",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 191",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 192",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 193",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 194",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 195",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints one course list ('Core and Support Courses') shared by the A.S. and the Certificate of Achievement; the certificate is 'awarded upon completion of the core courses', units 48-50.",
+   "The catalog prints no units beside individual courses in the extracted text, so course units are null. Closed-list units sum to 48 for Pathway 1 and 48.5-50 for Pathway 2, matching the printed pathway totals.",
+   "CWE 60A is listed under Pathway 1 as 'Elective Course' with footnote 1 saying it is recommended to fulfill additional elective requirements to reach 90 units for the degree; recorded as recommended (it is not counted in the 48-unit Pathway 1 total). It is placed in Pathway 1 context but given option_group null since it is not required.",
+   "Pathway 1 and Pathway 2 are recorded as alternative blocks (option_group 'Pathway'), determined by the student's UA local (467 vs 62).",
+   "Program learning outcomes are printed once for the program as a whole; the certificate shares them.",
+   "Careers list includes job titles only; the text also names industries (energy, biopharmaceutical, healthcare, aerospace, construction, housing, water treatment, food and beverage processing) as where graduates would work.",
+   "Units are quarter units (Foothill; degree minimum 90 units). Degree total/GE fields are left null because this record is for the certificate, which requires no general education."
+  ]
+ },
+ "extracted_run": "38675242638"
+}

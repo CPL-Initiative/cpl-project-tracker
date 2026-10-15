@@ -1,0 +1,274 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "03960",
+ "shape": "degree",
+ "title": "Accounting",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/accounting-associate-science-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7792,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7792,
+    "output_tokens": 1905,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1905,
+  "output_tokens_details": {
+   "thinking_tokens": 698
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06927,
+ "ms": 15940,
+ "seconds": 16.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 27,
+   "share": 0.0,
+   "missing": [
+    "ACCTA101",
+    "ACCTA101H",
+    "ACCTA102",
+    "ACCTA102H",
+    "ACCTA107",
+    "ACCTA110",
+    "ACCTA111",
+    "ACCTA112",
+    "ACCTA116",
+    "ACCTA118",
+    "ACCTA119",
+    "ACCTA210",
+    "ACCTA212",
+    "ACCTA213",
+    "ACCTA215",
+    "ACCTA216",
+    "ACCTA218",
+    "ACCTA220",
+    "BUSA100",
+    "BUSA100H",
+    "BUSA110",
+    "BUSA110H",
+    "BUSA139",
+    "BUSA240",
+    "CISA111",
+    "CISA111H",
+    "MGMTA100"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Accounting, Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "OCC AS GE",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate various activities performed in the accounting function of industry, apply comprehensive accounting skills, utilize technical knowledge, utilize technology and display ethical behaviors and practices.",
+    "Demonstrate technical knowledge of accounting-related topics."
+   ],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACCT A101",
+    "why": "Requirements tab not in text; appears only in the Program Sequence plan (with ACCT A101H)"
+   },
+   {
+    "code": "ACCT A101H",
+    "why": "Requirements tab not in text; appears only in the Program Sequence plan as alternative to ACCT A101"
+   },
+   {
+    "code": "ACCT A102",
+    "why": "Requirements tab not in text; appears only in the Program Sequence plan (with ACCT A102H)"
+   },
+   {
+    "code": "ACCT A102H",
+    "why": "Requirements tab not in text; appears only in the Program Sequence plan as alternative to ACCT A102"
+   },
+   {
+    "code": "ACCT A107",
+    "why": "not in the text"
+   },
+   {
+    "code": "ACCT A110",
+    "why": "Requirements tab not in text; appears only in the Program Sequence plan"
+   },
+   {
+    "code": "ACCT A111",
+    "why": "Requirements tab not in text; appears only in the Program Sequence plan (or ACCT A116)"
+   },
+   {
+    "code": "ACCT A112",
+    "why": "not in the text"
+   },
+   {
+    "code": "ACCT A116",
+    "why": "Requirements tab not in text; appears only in the Program Sequence plan as alternative to ACCT A111"
+   },
+   {
+    "code": "ACCT A118",
+    "why": "not in the text"
+   },
+   {
+    "code": "ACCT A119",
+    "why": "not in the text"
+   },
+   {
+    "code": "ACCT A210",
+    "why": "Requirements tab not in text; appears only in the Program Sequence plan"
+   },
+   {
+    "code": "ACCT A212",
+    "why": "Requirements tab not in text; appears only in the Program Sequence plan"
+   },
+   {
+    "code": "ACCT A213",
+    "why": "Requirements tab not in text; appears only in the Program Sequence plan"
+   },
+   {
+    "code": "ACCT A215",
+    "why": "not in the text"
+   },
+   {
+    "code": "ACCT A216",
+    "why": "not in the text"
+   },
+   {
+    "code": "ACCT A218",
+    "why": "Requirements tab not in text; appears only in the Program Sequence plan"
+   },
+   {
+    "code": "ACCT A220",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS A100",
+    "why": "Requirements tab not in text; appears only in the Program Sequence plan (with BUS A100H)"
+   },
+   {
+    "code": "BUS A100H",
+    "why": "Requirements tab not in text; appears only in the Program Sequence plan as alternative to BUS A100"
+   },
+   {
+    "code": "BUS A110",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS A110H",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS A139",
+    "why": "Requirements tab not in text; appears only in the Program Sequence plan"
+   },
+   {
+    "code": "BUS A240",
+    "why": "not in the text"
+   },
+   {
+    "code": "CIS A111",
+    "why": "Requirements tab not in text; appears only in the Program Sequence plan (with CIS A111H)"
+   },
+   {
+    "code": "CIS A111H",
+    "why": "Requirements tab not in text; appears only in the Program Sequence plan as alternative to CIS A111"
+   },
+   {
+    "code": "MGMT A100",
+    "why": "not in the text"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "38670927724"
+}

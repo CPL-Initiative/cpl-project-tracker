@@ -1,0 +1,479 @@
+{
+ "college": "Foothill College",
+ "control_number": "06009",
+ "shape": "degree",
+ "title": "Veterinary Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/veterinary-technology/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8081,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8081,
+    "output_tokens": 2722,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2722,
+  "output_tokens_details": {
+   "thinking_tokens": 582
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08676,
+ "ms": 21058,
+ "seconds": 22.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 34,
+   "codes": [
+    "AHS50A",
+    "VT51A",
+    "VT51C",
+    "VT51D",
+    "VT51F",
+    "VT53A",
+    "VT53B",
+    "VT53C",
+    "VT54A",
+    "VT54B",
+    "VT55",
+    "VT56",
+    "VT57L",
+    "VT58L",
+    "VT60",
+    "VT61",
+    "VT66",
+    "VT70",
+    "VT72",
+    "VT75A",
+    "VT75B",
+    "VT75C",
+    "VT81",
+    "VT83A",
+    "VT83B",
+    "VT84",
+    "VT84L",
+    "VT85",
+    "VT86",
+    "VT89",
+    "VT91",
+    "VT92",
+    "VT93",
+    "VT95"
+   ],
+   "flagged": [
+    "AHS50A",
+    "VT51A",
+    "VT51C",
+    "VT51D",
+    "VT51F",
+    "VT53A",
+    "VT53B",
+    "VT53C",
+    "VT54A",
+    "VT54B",
+    "VT55",
+    "VT56",
+    "VT57L",
+    "VT58L",
+    "VT60",
+    "VT61",
+    "VT66",
+    "VT70",
+    "VT72",
+    "VT75A",
+    "VT75B",
+    "VT75C",
+    "VT81",
+    "VT83A",
+    "VT83B",
+    "VT84",
+    "VT84L",
+    "VT85",
+    "VT86",
+    "VT89",
+    "VT91",
+    "VT92",
+    "VT93",
+    "VT95"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    93.0,
+    93.0
+   ],
+   "stated": [
+    93.0,
+    93.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 93,
+    "max": 93
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Foothill College General Education or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "CORE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 93,
+     "max": 93
+    },
+    "courses": [
+     {
+      "code": "AHS 50A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 53A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 51A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 54A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 55",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 75A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 51B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "V T 53B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 54B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 56",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 60",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 75B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 51C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 53C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 61",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 75C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 81",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 70",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 83A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 89",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 51D",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 57L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 83B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 85",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 91",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 51E",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "V T 58L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 72",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 84",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 92",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 51F",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 66",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 84L",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 86",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 93",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "V T 95",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Closed-list codes V T 051B and V T 051E match the catalog's V T 51B and V T 51E (leading zero formatting difference); marked catalog_addition false.",
+   "The catalog text begins mid-section ('r equivalent'); BIOL 10, BIOL 41 and CHEM 30A appear to be admission/science prerequisites printed above the degree requirements, not counted in the 93-unit core total, so they were not placed in a block. Reviewer should check the truncated portion.",
+   "Core courses printed as a quarter-by-quarter Plan of Study Grid with seasonal subtotals; recorded as one 'all' block totaling 93 units (catalog states 'Core courses for the major (93 units total)').",
+   "'A minimum of 90 units is required to complete the associate degree' reads as the college's general associate degree minimum (quarter units), not a printed total for this award; degree_total left null. Footnote says additional electives 'may be necessary' to reach 90 units, but the 93-unit core exceeds it; electives_fill_degree left false.",
+   "Units are quarter units (Foothill is on the quarter system).",
+   "A valid Adult CPR certificate is required at graduation; full-time enrollment required.",
+   "The Certificate of Achievement in Veterinary Assisting (V T 52A, V T 52B, V T 88A; 12.5 units) is printed on the same page and was not recorded.",
+   "No program learning outcomes or careers are printed in the provided text."
+  ]
+ },
+ "extracted_run": "38675242638"
+}

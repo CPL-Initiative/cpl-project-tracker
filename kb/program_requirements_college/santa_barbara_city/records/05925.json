@@ -1,0 +1,318 @@
+{
+ "college": "Santa Barbara City College",
+ "control_number": "05925",
+ "shape": "degree",
+ "title": "Vocational Nursing (LVN)",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.sbcc.edu/academic-departments/nursing/vocational-nursing-vn-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7585,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7585,
+    "output_tokens": 2920,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2920,
+  "output_tokens_details": {
+   "thinking_tokens": 1193
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08874,
+ "ms": 25105,
+ "seconds": 25.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    54.0,
+    58.0
+   ],
+   "stated": [
+    54.0,
+    58.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate Degree Graduation Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 54,
+    "max": 58
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "SBCC General Education pattern or Cal-GETC pattern",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Function within the scope of practice of the LVN, as outlined by the California Board of Vocational Nurses and Psychiatric Technicians.",
+    "Apply the nursing process to practice by collaboratively assessing, planning, implementing and evaluating nursing care.",
+    "Practice within professional and legal standards, ethical principles and demonstrate sensitivity to the cultural differences of patients.",
+    "Apply principles of oral, written and verbal communication to convey relevant, accurate and complete information.",
+    "Demonstrate the art and science of professional caring incorporating professional values and client advocacy.",
+    "Be prepared to take the NCLEX-PN licensing examination"
+   ],
+   "careers": [
+    "Licensed Vocational Nurses (LVNs)"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Prior to first semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BMS 100",
+      "units": 4,
+      "units_max": 8,
+      "alternatives": [
+       {
+        "code": "BMS 107",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "BMS 108",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "First Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VN 161",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 162",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 163",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 164",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Second Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VN 165",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 166",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 167",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 168",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 169",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Third Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VN 170",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 171",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 172",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 173",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 174",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints no program-title heading in the extracted text; section_heading uses the requirements tab heading 'Associate Degree Graduation Requirements'.",
+   "Prior to first semester: 'BMS 100 4-8 or BMS 107 & BMS 108' means BMS 100 alone, or BMS 107 and BMS 108 together. Both are recorded as alternatives on one entry. The 4-8 range is printed on the row as a whole. No separate units are printed for BMS 107 or BMS 108; the closed list stores 4 each.",
+   "'Qualifying score on TEAS exam' is a non-course requirement listed prior to first semester.",
+   "Footnote 1 on VN 161: CNA 101 (Certified Nursing Assistant) is a prerequisite to VN 161. It is not listed as a major requirement, so it was not placed.",
+   "The closed list writes 'VN163' and 'VN171' without a space; the catalog prints 'VN 163' and 'VN 171'. These are treated as the same courses, not catalog additions. The catalog prints 4 units for each.",
+   "The 60-unit minimum is the generic associate degree requirement, not a printed total for this award, so degree_total is null. No GE unit figure is printed.",
+   "The outcomes come from the page's learning outcomes tab, which appears to apply to the program as a whole; the A.S. degree is assumed to share it.",
+   "The description also names work settings (skilled nursing facilities, hospice, clinics, etc.). These were not recorded as careers because they are workplaces, not job titles."
+  ]
+ },
+ "extracted_run": "38670933359"
+}

@@ -1,0 +1,3117 @@
+{
+ "college": "Santa Barbara City College",
+ "catalog_url": "https://catalog.sbcc.edu/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 319,
+ "with_closed_list": 287,
+ "started": "2026-10-15T02:26:50Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://catalog.sbcc.edu/sitemap.xml",
+  "status": 200,
+  "listed": 548,
+  "nested": 0,
+  "program_pages": 338,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 339,
+ "child_pages": 2,
+ "banner_h1": "Santa Barbara City College",
+ "loads": 375,
+ "seconds": 1756.5,
+ "found": 249,
+ "by_method": {
+  "link_search": 4,
+  "no_closed_list": 32,
+  "not_found": 18,
+  "page_claimed": 20,
+  "sitemap_page": 245
+ },
+ "shared_pages": {
+  "https://catalog.sbcc.edu/academic-departments/culinary-arts-hotel-management/culinary-arts-professional-as/": [
+   "05943",
+   "40203"
+  ],
+  "https://catalog.sbcc.edu/academic-departments/accounting-education/assistant-bookkeeper-level-IV-certificate-achievement/": [
+   "10898",
+   "41281"
+  ],
+  "https://catalog.sbcc.edu/academic-departments/early-childhood-education/associate-child-care-teacher-certificate-achievement/": [
+   "17419",
+   "21704"
+  ],
+  "https://catalog.sbcc.edu/sel/career-skills/digital-design-basics-certificate-completion/": [
+   "31416",
+   "36904"
+  ],
+  "https://catalog.sbcc.edu/sel/career-skills/basic-mac-software-skills-certificate-completion/": [
+   "31464",
+   "36907"
+  ],
+  "https://catalog.sbcc.edu/academic-departments/adult-high-school-ged/": [
+   "36970",
+   "36971"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "12075",
+   "title": "Database Programming and Applications Development",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "21689",
+   "title": "PC Support and Network Management",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "24154",
+   "title": "Medical Assistant Training Program",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.sbcc.edu/sel/career-skills/medical-assistant-training-program-certificate-completion/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1563,
+     "content": 16941,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      281
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "24266",
+   "title": "Adult Basic Education Advanced Reading and Writing Certificate",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "24270",
+   "title": "Adult Basic Education Intermediate Level 1 Reading and Writing Certificate",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "24271",
+   "title": "Adult Basic Education Math Foundations Certificate",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "24272",
+   "title": "Adult Basic Education Intermediate Level 2 Reading and Writing Certificate",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "24300",
+   "title": "Adult Basic Education Reading and Writing Foundations Certificate",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "24392",
+   "title": "Health Care Interpreter Training Program",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "30368",
+   "title": "ESL Beginning Level",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.sbcc.edu/sel/career-skills/beginning-mac-skills-certificate-completion/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1450,
+     "content": 16938,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      375
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "30380",
+   "title": "ESL Intermediate Level",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.sbcc.edu/sel/esl-noncredit/esl-intermediate-grammar-composition-certificate-competency/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1356,
+     "content": 12425,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      264
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "30381",
+   "title": "ESL Advanced Level",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.sbcc.edu/sel/esl-noncredit/esl-advanced-grammar-composition-certificate-competency/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1307,
+     "content": 12433,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      322
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "31493",
+   "title": "Computer Hardware Fundamentals",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.sbcc.edu/sel/career-skills/computer-hardware-fundamentals-certificate-completion/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1553,
+     "content": 17000,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      347
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "35508",
+   "title": "Strategic Marketing",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.sbcc.edu/sel/career-skills/strategic-marketing-certificate-completion/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1270,
+     "content": 16856,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      490
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "36839",
+   "title": "Green Documents: Documents for the Environment",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.sbcc.edu/sel/career-skills/green-documents-documents-for-the-environment-nc-completion/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1353,
+     "content": 16768,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      314
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "39376",
+   "title": "Digital Photograph Management",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.sbcc.edu/sel/career-skills/digital-photograph-management-certificate-completion/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1240,
+     "content": 16565,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      226
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "40083",
+   "title": "Cloud Computing Architect",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "44675",
+   "title": "Digital Photography Level 1",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.sbcc.edu/sel/career-skills/digital-photography-essentials-nc-completion/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1516,
+     "content": 16880,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      276
+     ]
+    ]
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "05914",
+   "title": "Engineering",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.sbcc.edu/academic-departments/engineering/engineering-aa/",
+    "https://catalog.sbcc.edu/academic-departments/physics/physics-aa/",
+    "https://catalog.sbcc.edu/academic-departments/mathematics/mathematics-aa/"
+   ]
+  },
+  {
+   "control_number": "05935",
+   "title": "Administration of Justice: Law Enforcement",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.sbcc.edu/academic-departments/liberal-arts-sciences/liberal-arts-sciences-aa-social-behavioral-sciences-emphasis/",
+    "https://catalog.sbcc.edu/academic-departments/political-science-economics/political-science-aat/"
+   ]
+  },
+  {
+   "control_number": "07093",
+   "title": "Accounting",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.sbcc.edu/academic-departments/accounting-education/assistant-bookkeeper-level-IV-certificate-achievement/"
+   ]
+  },
+  {
+   "control_number": "08570",
+   "title": "Computer Applications & Office Management: Business Software Specialist",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.sbcc.edu/academic-departments/computer-applications-office-management/computer-applications-office-management-certificate-achievement-office-management-emphasis/",
+    "https://catalog.sbcc.edu/academic-departments/computer-applications-office-management/computer-applications-office-management-as-office-management-emphasis/"
+   ]
+  },
+  {
+   "control_number": "08583",
+   "title": "French",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.sbcc.edu/academic-departments/communication/global-leadership-aa/",
+    "https://catalog.sbcc.edu/academic-departments/liberal-arts-sciences/liberal-arts-sciences-aa-humanities-emphasis/",
+    "https://catalog.sbcc.edu/academic-departments/communication/global-leadership-certificate-achievement/",
+    "https://catalog.sbcc.edu/academic-departments/art/art-history-aat/",
+    "https://catalog.sbcc.edu/academic-departments/history/history-aat/"
+   ]
+  },
+  {
+   "control_number": "10657",
+   "title": "Administration of Justice: Law Enforcement",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.sbcc.edu/academic-departments/liberal-arts-sciences/liberal-arts-sciences-aa-social-behavioral-sciences-emphasis/",
+    "https://catalog.sbcc.edu/academic-departments/political-science-economics/political-science-aat/"
+   ]
+  },
+  {
+   "control_number": "19677",
+   "title": "Administration of Justice: Criminology Emphasis",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.sbcc.edu/academic-departments/liberal-arts-sciences/liberal-arts-sciences-aa-social-behavioral-sciences-emphasis/",
+    "https://catalog.sbcc.edu/academic-departments/political-science-economics/political-science-aat/",
+    "https://catalog.sbcc.edu/academic-departments/sociology/social-work-and-human-services-aat/"
+   ]
+  },
+  {
+   "control_number": "19678",
+   "title": "Administration of Justice: Criminology Emphasis",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.sbcc.edu/academic-departments/liberal-arts-sciences/liberal-arts-sciences-aa-social-behavioral-sciences-emphasis/",
+    "https://catalog.sbcc.edu/academic-departments/political-science-economics/political-science-aat/",
+    "https://catalog.sbcc.edu/academic-departments/sociology/social-work-and-human-services-aat/"
+   ]
+  },
+  {
+   "control_number": "19683",
+   "title": "Administration of Justice: Legal Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.sbcc.edu/academic-departments/liberal-arts-sciences/liberal-arts-sciences-aa-social-behavioral-sciences-emphasis/",
+    "https://catalog.sbcc.edu/academic-departments/political-science-economics/political-science-aat/"
+   ]
+  },
+  {
+   "control_number": "19684",
+   "title": "Administration of Justice: Legal Studies",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.sbcc.edu/academic-departments/liberal-arts-sciences/liberal-arts-sciences-aa-social-behavioral-sciences-emphasis/",
+    "https://catalog.sbcc.edu/academic-departments/political-science-economics/political-science-aat/"
+   ]
+  },
+  {
+   "control_number": "19849",
+   "title": "Computer Applications & Office Management: Emphasis in Business Software Specialist",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.sbcc.edu/academic-departments/computer-applications-office-management/computer-applications-office-management-as-office-management-emphasis/",
+    "https://catalog.sbcc.edu/academic-departments/computer-applications-office-management/computer-applications-office-management-certificate-achievement-office-management-emphasis/"
+   ]
+  },
+  {
+   "control_number": "21702",
+   "title": "Administration of Justice: Law Enforcement",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.sbcc.edu/academic-departments/liberal-arts-sciences/liberal-arts-sciences-aa-social-behavioral-sciences-emphasis/",
+    "https://catalog.sbcc.edu/academic-departments/political-science-economics/political-science-aat/"
+   ]
+  },
+  {
+   "control_number": "30042",
+   "title": "Computer Information Systems: Emphasis in System Administration",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.sbcc.edu/academic-departments/computer-information-systems/computer-information-systems-as/"
+   ]
+  },
+  {
+   "control_number": "31338",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.sbcc.edu/academic-departments/sociology/social-work-and-human-services-aat/",
+    "https://catalog.sbcc.edu/academic-departments/political-science-economics/political-science-aat/",
+    "https://catalog.sbcc.edu/academic-departments/sociology/sociology-aat/",
+    "https://catalog.sbcc.edu/academic-departments/political-science-economics/economics-aat/",
+    "https://catalog.sbcc.edu/academic-departments/geography/geography-aat/",
+    "https://catalog.sbcc.edu/academic-departments/psychology/psychology-aat/",
+    "https://catalog.sbcc.edu/academic-departments/liberal-arts-sciences/liberal-arts-sciences-aa-social-behavioral-sciences-emphasis/"
+   ]
+  },
+  {
+   "control_number": "32675",
+   "title": "Philosophy",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.sbcc.edu/academic-departments/history/history-aat/",
+    "https://catalog.sbcc.edu/academic-departments/art/art-history-aat/",
+    "https://catalog.sbcc.edu/academic-departments/liberal-arts-sciences/liberal-arts-sciences-aa-humanities-emphasis/",
+    "https://catalog.sbcc.edu/academic-departments/communication/global-leadership-aa/",
+    "https://catalog.sbcc.edu/academic-departments/communication/global-leadership-certificate-achievement/"
+   ]
+  },
+  {
+   "control_number": "35643",
+   "title": "Film and Media Studies",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.sbcc.edu/academic-departments/film-media-studies/film-media-studies-aa/",
+    "https://catalog.sbcc.edu/academic-departments/liberal-arts-sciences/liberal-arts-sciences-aa-humanities-emphasis/"
+   ]
+  },
+  {
+   "control_number": "38145",
+   "title": "Screenwriting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.sbcc.edu/academic-departments/film-media-studies/film-media-studies-aa/"
+   ]
+  },
+  {
+   "control_number": "38147",
+   "title": "Middle East Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.sbcc.edu/academic-departments/communication/global-leadership-certificate-achievement/",
+    "https://catalog.sbcc.edu/academic-departments/political-science-economics/middle-east-studies-aa/",
+    "https://catalog.sbcc.edu/academic-departments/political-science-economics/global-studies-aa/",
+    "https://catalog.sbcc.edu/academic-departments/environmental-studies/environmental-studies-aa/",
+    "https://catalog.sbcc.edu/academic-departments/justice-studies/law-public-policy-and-society-aat/",
+    "https://catalog.sbcc.edu/academic-departments/political-science-economics/global-studies-aat/",
+    "https://catalog.sbcc.edu/academic-departments/history/history-aat/",
+    "https://catalog.sbcc.edu/academic-departments/communication/global-leadership-aa/",
+    "https://catalog.sbcc.edu/academic-departments/liberal-arts-sciences/liberal-arts-sciences-aa-social-behavioral-sciences-emphasis/",
+    "https://catalog.sbcc.edu/academic-departments/political-science-economics/political-science-aa/",
+    "https://catalog.sbcc.edu/academic-departments/political-science-economics/political-science-aat/",
+    "https://catalog.sbcc.edu/academic-departments/sociology/sociology-aat/"
+   ]
+  },
+  {
+   "control_number": "38583",
+   "title": "Film, Television, and Electronic Media",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.sbcc.edu/academic-departments/history/history-aat/",
+    "https://catalog.sbcc.edu/academic-departments/liberal-arts-sciences/liberal-arts-sciences-aa-humanities-emphasis/",
+    "https://catalog.sbcc.edu/academic-departments/communication/global-leadership-aa/"
+   ]
+  },
+  {
+   "control_number": "40084",
+   "title": "Technical Writing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.sbcc.edu/academic-departments/computer-information-systems/computer-information-systems-as/"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 6,
+  "0.8-1.0": 67,
+  "1.0": 176
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 249,
+  "list": [
+   {
+    "control_number": "05902",
+    "title": "Environmental Horticulture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/environmental-horticulture/environmental-horticulture-certificate-achievement/",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05903",
+    "title": "Interior Design",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/interior-design/interior-design-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05904",
+    "title": "Biological Sciences",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/biological-sciences/biological-sciences-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05905",
+    "title": "Business Administration",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/business-administration/business-administration-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05906",
+    "title": "Finance",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/finance/finance-aa/",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05908",
+    "title": "Hospitality",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/culinary-arts-hotel-management/hospitality-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05909",
+    "title": "Marketing",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/marketing/marketing-as/",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05911",
+    "title": "Computer Applications & Office Management: Emphasis in Office Management",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/computer-applications-office-management/computer-applications-office-management-as-office-management-emphasis/",
+    "coverage": 0.952,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05912",
+    "title": "Computer Information Systems",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/computer-information-systems/computer-information-systems-as/",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05913",
+    "title": "Physical Education",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/physical-education-health-education-dance-athletics/physical-education-aa/",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05916",
+    "title": "Automotive Service and Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/automotive-service-technology/automotive-service-technology-associate-science-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05919",
+    "title": "Art: Emphasis in Studio Art",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/art/art-aa-studio-emphasis/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05920",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/music/music-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05922",
+    "title": "Theatre Arts: General",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/theatre-arts/theatre-arts-aa-general/",
+    "coverage": 0.976,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05923",
+    "title": "Graphic Design and Photography: Graphic Design Concentration",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/graphic-design-photography/graphic-design-photography-aa-graphic-design-concentration/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05924",
+    "title": "Nursing (ADN)",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/nursing/nursing-rn-adn-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05925",
+    "title": "Vocational Nursing (LVN)",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/nursing/vocational-nursing-vn-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05926",
+    "title": "Radiography",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/medical-imaging-sciences/radiography-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05927",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/english-composition-literature/english-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05928",
+    "title": "Communication: Applied Communication Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/communication/communication-aa-applied-emphasis/",
+    "coverage": 0.895,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05929",
+    "title": "Philosophy",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/philosophy/philosophy-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05930",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/mathematics/mathematics-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05931",
+    "title": "Physics",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/liberal-arts-sciences/liberal-arts-sciences-aa-science-mathematics-emphasis/",
+    "coverage": 0.714,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05932",
+    "title": "Chemistry",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/chemistry/chemistry-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05933",
+    "title": "Geological Sciences",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/earth-planetary-sciences/geological-sciences-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05934",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/psychology/psychology-aa/",
+    "coverage": 0.958,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05936",
+    "title": "Early Childhood Education",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/early-childhood-education/early-childhood-education-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05937",
+    "title": "Anthropology",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/anthropology/anthropology-associate-arts-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05938",
+    "title": "Economics",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/political-science-economics/economics-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05939",
+    "title": "History",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/history/history-aa/",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05940",
+    "title": "Geography",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/geography/geography-aa/",
+    "coverage": 0.842,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05941",
+    "title": "Political Science",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/political-science-economics/political-science-aa/",
+    "coverage": 0.985,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05942",
+    "title": "Sociology",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/sociology/sociology-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05943",
+    "title": "Culinary Arts",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/culinary-arts-hotel-management/culinary-arts-professional-as/",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05944",
+    "title": "Cosmetology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/cosmetology/cosmetology-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05947",
+    "title": "Marine Diving Technician",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/marine-diving-technologies/marine-diving-technician-as/",
+    "coverage": 0.968,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05948",
+    "title": "Ethnic Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/american-ethnic-studies/ethnic-studies-aa/",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05950",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/computer-science/computer-science-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08565",
+    "title": "Environmental Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/environmental-studies/environmental-studies-aa/",
+    "coverage": 0.855,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08566",
+    "title": "Natural History",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/biological-sciences/natural-history-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08569",
+    "title": "Business Administration - Emphasis in Entrepreneurship",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/business-administration/business-administration-aa-entrepreneurship-emphasis/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08579",
+    "title": "Theatre Arts: Acting",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/theatre-arts/theatre-arts-aa-acting-directing/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08580",
+    "title": "Theatre Arts: Design/Lighting and/or Costuming/Makeup",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/theatre-arts/theatre-arts-aa-design-lighting-costuming-makeup/",
+    "coverage": 0.969,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08585",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/modern-languages/spanish-aa/",
+    "coverage": 0.982,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08587",
+    "title": "Diversity Issues in Early Childhood Education",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/early-childhood-education/diversity-issues-ece-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08588",
+    "title": "Infant/Toddler Development",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/early-childhood-education/infant-toddler-development-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08589",
+    "title": "Black Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/american-ethnic-studies/black-studies-aa/",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09879",
+    "title": "Health Information Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/health-information-technology-cancer-information/health-information-technology-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10630",
+    "title": "Computer Networking and Cybersecurity",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/computer-network-engineering/computer-networking-and-cybersecurity-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10661",
+    "title": "Engineering",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/engineering/engineering-aa/",
+    "coverage": 0.947,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10673",
+    "title": "Graphic Design and Photography: Graphic Design Concentration",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/graphic-design-photography/graphic-design-photography-certificate-achievement-graphic-design-concentration/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10674",
+    "title": "Physics",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/physics/physics-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10889",
+    "title": "Environmental Horticulture: Nursery & Greenhouse Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/environmental-horticulture/environmental-horticulture-as-nursery-greenhouse-technology-emphasis/",
+    "coverage": 0.968,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10890",
+    "title": "Environmental Horticulture: Landscape Design",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/environmental-horticulture/environmental-horticulture-as-landscape-design-emphasis/",
+    "coverage": 0.892,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10892",
+    "title": "Environmental Horticulture: Ecological Restoration & Management",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/environmental-horticulture/environmental-horticulture-as-ecological-restoration-management-emphasis/",
+    "coverage": 0.87,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10894",
+    "title": "Environmental Horticulture: Landscape Contracting C-27 License",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/environmental-horticulture/environmental-horticulture-as-landscape-contracting-emphasis/",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10898",
+    "title": "Accounting Assistant/Bookkeeper, Level IV",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/accounting-education/assistant-bookkeeper-level-IV-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10902",
+    "title": "Communication: Communication Science Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/communication/communication-aa-science-emphasis/",
+    "coverage": 0.905,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10905",
+    "title": "Media Arts",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/multimedia-arts-technologies/media-arts-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11730",
+    "title": "Medical Coding Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/health-information-technology-cancer-information/medical-coding-specialist-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12155",
+    "title": "Cancer Information Management",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/health-information-technology-cancer-information/cancer-information-management-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12335",
+    "title": "School-Age Care",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/early-childhood-education/school-age-care-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14794",
+    "title": "Addictive Disorders Counseling",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/addictive-disorders-counseling/addictive-disorders-counseling-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14881",
+    "title": "Art: Emphasis in Art History",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/art/art-aa-history-emphasis/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15172",
+    "title": "Law & Society",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/political-science-economics/law-society-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15418",
+    "title": "Journalism",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/journalism/journalism-aa/",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16609",
+    "title": "Film Production",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/film-television-production/film-production-aa/",
+    "coverage": 0.955,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16772",
+    "title": "Middle East Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/political-science-economics/middle-east-studies-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17419",
+    "title": "Associate Child Care Teacher",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.sbcc.edu/academic-departments/early-childhood-education/associate-child-care-teacher-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17441",
+    "title": "Post-Professional Practice in Alcohol & Drug Counseling",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/addictive-disorders-counseling/post-professional-practice-alcohol-drug-counseling-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19011",
+    "title": "Creative Writing: General",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/english-composition-literature/creative-writing-certificate-achievement/",
+    "coverage": 0.958,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19012",
+    "title": "Creative Writing: Professional",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/english-composition-literature/creative-writing-professional-certificate-achievement/",
+    "coverage": 0.885,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19099",
+    "title": "Liberal Studies: Education Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/liberal-studies/liberal-studies-aa-education-emphasis/",
+    "coverage": 0.963,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19451",
+    "title": "Liberal Arts: Biomedical Sciences",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/biological-sciences/liberal-arts-aa-bio-medical-sciences-emphasis/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19657",
+    "title": "Liberal Arts and Sciences: Arts & Humanities Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/liberal-arts-sciences/liberal-arts-sciences-aa-humanities-emphasis/",
+    "coverage": 0.934,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19659",
+    "title": "Liberal Arts and Sciences: Social & Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/liberal-arts-sciences/liberal-arts-sciences-aa-social-behavioral-sciences-emphasis/",
+    "coverage": 0.95,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21677",
+    "title": "Finance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/finance/finance-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21679",
+    "title": "Business Administration - Emphasis in Entrepreneurship",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/business-administration/business-administration-certificate-achievement-entrepreneurship-emphasis/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21680",
+    "title": "International Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/international-business/international-business-certificate-achievement/",
+    "coverage": 0.733,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21681",
+    "title": "Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/marketing/marketing-certificate-achievement/",
+    "coverage": 0.862,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21682",
+    "title": "Real Estate",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/business-administration/real-estate-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21683",
+    "title": "Computer Applications & Office Management: Office Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/computer-applications-office-management/computer-applications-office-management-certificate-achievement-office-management-emphasis/",
+    "coverage": 0.95,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21685",
+    "title": "Journalism",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/journalism/journalism-certificate-achievement/",
+    "coverage": 0.727,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21687",
+    "title": "Media Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/multimedia-arts-technologies/media-arts-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21688",
+    "title": "Animation and Gaming",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/multimedia-arts-technologies/animation-gaming-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21690",
+    "title": "Computer Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/computer-science/computer-science-certificate-achievement/",
+    "coverage": 0.955,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21691",
+    "title": "Computer Networking and Cybersecurity",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/computer-network-engineering/computer-networking-and-cybersecurity-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21692",
+    "title": "Automotive Service & Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/automotive-service-technology/automotive-service-technology-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21693",
+    "title": "Drafting/CAD",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/drafting-cad/drafting-cad-certificate-achievement/",
+    "coverage": 0.905,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21694",
+    "title": "Marine Diving Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/marine-diving-technologies/marine-diving-technician-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21695",
+    "title": "Cancer Information Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/health-information-technology-cancer-information/cancer-information-management-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21697",
+    "title": "Vocational Nursing",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/nursing/vocational-nursing-lvn-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21698",
+    "title": "Interior Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/interior-design/interior-design-certificate-achievement/",
+    "coverage": 0.957,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21699",
+    "title": "Culinary Arts: Professional",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/culinary-arts-hotel-management/culinary-arts-professional-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21700",
+    "title": "Hospitality",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/culinary-arts-hotel-management/hospitality-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21701",
+    "title": "Addictive Disorders Counseling",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/addictive-disorders-counseling/addictive-disorders-counseling-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21703",
+    "title": "Cosmetology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/cosmetology/cosmetology-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21704",
+    "title": "Early Childhood Education",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/early-childhood-education/associate-child-care-teacher-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22265",
+    "title": "Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/photography/photography-certificate-achievement/",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22267",
+    "title": "Photography",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/photography/applied-photography-as/",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30285",
+    "title": "Introduction to Graphic Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/graphic-design-photography/introduction-graphic-design-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30719",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/psychology/psychology-aat/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30746",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/sociology/sociology-aat/",
+    "coverage": 0.952,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31283",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/physical-education-health-education-dance-athletics/kinesiology-aat/",
+    "coverage": 0.956,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31391",
+    "title": "Construction Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/construction-technology/construction-technology-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31393",
+    "title": "Construction Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/construction-technology/construction-technology-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31415",
+    "title": "Beginning Computer Skills",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/computer-basic-skills-level-2-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31416",
+    "title": "Digital Design Basics",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/digital-design-basics-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31417",
+    "title": "Basic Office Software Skills",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31450",
+    "title": "Basic Internet Skills",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/basic-internet-skills-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31464",
+    "title": "Basic MAC Software Skills",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/basic-mac-software-skills-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31687",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/political-science-economics/political-science-aat/",
+    "coverage": 0.967,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31787",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/history/history-aat/",
+    "coverage": 0.971,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32450",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/theatre-arts/theatre-arts-aat/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32513",
+    "title": "ESL 4 Intermediate High",
+    "award": null,
+    "url": "https://catalog.sbcc.edu/degrees-certificates-awards/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32603",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/art/studio-art-aat/",
+    "coverage": 0.969,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32629",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/physics/physics-ast/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32650",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/mathematics/mathematics-ast/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32687",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/modern-languages/spanish-aat/",
+    "coverage": 0.966,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32698",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/art/art-history-aat/",
+    "coverage": 0.783,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32775",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/anthropology/anthropology-transfer-aat/",
+    "coverage": 0.956,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32776",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/earth-planetary-sciences/geology-ast/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33079",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/english-composition-literature/english-aat/",
+    "coverage": 0.967,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33098",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/early-childhood-education/early-childhood-education-ast/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33104",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/geography/geography-aat/",
+    "coverage": 0.948,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33257",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/journalism/journalism-aat/",
+    "coverage": 0.939,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33664",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/political-science-economics/economics-aat/",
+    "coverage": 0.971,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33741",
+    "title": "American Sign Language",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/modern-languages/american-sign-language-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35230",
+    "title": "Management Toolbox",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/management-toolbox-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35324",
+    "title": "Effective Marketing Communication Management",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/effective-marketing-communication-management-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35325",
+    "title": "Workplace Essentials",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/workplace-essentials-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35326",
+    "title": "Customer Relations",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/customer-relations-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35327",
+    "title": "High Performance Teams",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/high-performance-teams-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35328",
+    "title": "ESL Pronunciation and Conversation",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/esl-noncredit/esl-pronunciation-conversation-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35493",
+    "title": "Sales Techniques",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/sales-techniques-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35497",
+    "title": "Noncredit Construction Module",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/non-credit-construction-module-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35509",
+    "title": "Enterprise Communication 1",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/enterprise-communication-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35510",
+    "title": "ESL Level 1",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/esl-noncredit/esl-level1-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35520",
+    "title": "Astronomy",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/earth-planetary-sciences/astronomy-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35779",
+    "title": "Personal Care Attendant Program",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/personal-care-attendant-program-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35785",
+    "title": "ESL Intermediate Grammar and Composition",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/esl-noncredit/esl-intermediate-grammar-composition-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35786",
+    "title": "ESL Pre GED Math/English",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/esl-noncredit/esl-pre-ged-math-english-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35787",
+    "title": "Medical Assistant Training Program",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/medical-assistant-training-program-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35788",
+    "title": "Managing to Maximize Performance",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/managin-to-maximize-performance-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35791",
+    "title": "ESL Advanced Grammar and Composition",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/esl-noncredit/esl-advanced-grammar-composition-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35911",
+    "title": "Harness the Cloud to Maximize Work Performance",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/harness-the-cloud-to-maximize-work-performance-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35912",
+    "title": "Enterprise Communication 2",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/enterprise-communication2-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36020",
+    "title": "Healthcare Data Analytics",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/health-information-technology-cancer-information/healthcare-data-analytics-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36065",
+    "title": "Global Leadership",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/communication/global-leadership-aa/",
+    "coverage": 0.91,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36101",
+    "title": "Information Design",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/informational-design-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36109",
+    "title": "Career Strategist",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/career-strategist-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36110",
+    "title": "Basic Digital Imaging",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/basic-digital-imaging-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36113",
+    "title": "Restorative Nurse Assistant Training Program",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/restorative-nurse-assistant-training-program-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36140",
+    "title": "Film and Media Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/film-media-studies/film-media-studies-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36142",
+    "title": "Animation and Gaming",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/multimedia-arts-technologies/animation-gaming-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36180",
+    "title": "Emerging Leaders",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/emerging-leaders-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36183",
+    "title": "Thrive and Survive in the Workplace",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/thrive-and-survive-in-the-workplace-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36184",
+    "title": "Social Media for Business",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/social-media-for-business-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36185",
+    "title": "Project Management",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/project-management-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36186",
+    "title": "Powerful Presentations",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/powerful-presentations-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36192",
+    "title": "Fundamental Computer Skills (Bilingual)",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/fundamental-computer-skills-bilingual-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36206",
+    "title": "QuickBooks Basics for Small Business",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/quickbooks-basics-for-small-business-nc-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36207",
+    "title": "Visual Basic for Applications Fundamentals",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/visual-basic-for-applications-fundamentals-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36397",
+    "title": "Desktop Publishing Principles (Bilingual)",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/desktop-publishing-principles-bilingual-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36604",
+    "title": "Global Leadership",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/communication/global-leadership-certificate-achievement/",
+    "coverage": 0.94,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36674",
+    "title": "Global Trends in Human Resources",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/global-trends-in-human-resources-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36840",
+    "title": "Web Designer",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/web-designer-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36841",
+    "title": "Blogging for Business",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/blogging-for-business-nc-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36891",
+    "title": "Microsoft Office Skills, Level 1",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/microsoft-office-skills-level-1-certificate-of-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36904",
+    "title": "Digital Design Basics",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/digital-design-basics-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36905",
+    "title": "Computer Basic Skills, Level 1",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/computer-basic-skills-level-1-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36907",
+    "title": "Basic MAC Software Skills",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/basic-mac-software-skills-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36918",
+    "title": "Green Gardener",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/green-gardener-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36970",
+    "title": "Secondary Education/Bi-lingual/Biliterate GED Preparation",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/academic-departments/adult-high-school-ged/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36971",
+    "title": "Secondary Education/GED Preparation",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/academic-departments/adult-high-school-ged/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37183",
+    "title": "ESL Vocational Healthcare",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/esl-noncredit/esl-vocational-healthcare-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37250",
+    "title": "Beginning MAC Skills",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/beginning-mac-skills-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37272",
+    "title": "Noncredit Intermediate Construction Module",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/noncredit-intermediate-construction-module-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37273",
+    "title": "Noncredit  Electrical Training Module 1",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/noncredit-electrical-training-module-1-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37274",
+    "title": "Noncredit  Electrical Training Module 2",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/noncredit-electrical-training-module-2-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37275",
+    "title": "Noncredit  Electrical Training Module 3",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/noncredit-electrical-training-module-3-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37542",
+    "title": "Computer Hardware Fundamentals",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/computer-hardware-fundamentals-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38143",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/physical-education-health-education-dance-athletics/dance-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38188",
+    "title": "Acting Level One",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/theatre-arts/acting-level-i-certificate-achievem/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38189",
+    "title": "Costume Crafts and Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/theatre-arts/costume-crafts-design-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38190",
+    "title": "Technical Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/theatre-arts/technical-production-certificate/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38315",
+    "title": "ADHS: Adult High School Diploma",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/ahs-ged/",
+    "coverage": 0.979,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38526",
+    "title": "Global Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/political-science-economics/global-studies-aat/",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38595",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/biological-sciences/nutrition-dietetics-as-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38713",
+    "title": "Global and International Sudies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/political-science-economics/global-studies-aa/",
+    "coverage": 0.981,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39372",
+    "title": "Workplace Wellness",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/workplace-wellness-certificate-certificate-of-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39373",
+    "title": "Teaching with Humanizing Technology",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/teaching-with-humanizing-technology-certificate-of-completion20/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39488",
+    "title": "Successful Work and Life Transitions",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/successful-work-and-life-trans-certificate-of-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39496",
+    "title": "Computer Technology Fundamentals",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/computer-technology-fundamentals-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39563",
+    "title": "Honors",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/honors/honors-certificate-achievement/",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39575",
+    "title": "Drawing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/art/drawing-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39759",
+    "title": "Microsoft Office Skills, Level 2",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/microsoft-office-skills-level-2-certificate-of-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39934",
+    "title": "Sustainable Building Module",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/sustainable-building-module-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39956",
+    "title": "Microsoft Office Skills, Level 3",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/microsoft-office-skills-level-3-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40203",
+    "title": "Culinary Arts: Professional",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/culinary-arts-hotel-management/culinary-arts-professional-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40204",
+    "title": "Culinary Arts: Fundamentals",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/culinary-arts-hotel-management/culinary-arts-fundamentals-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40263",
+    "title": "Child and Adolescent Development",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/psychology/child-and-adolescent-development-aat/",
+    "coverage": 0.972,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40303",
+    "title": "IT Support Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/computer-information-systems/it-support-technician-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40349",
+    "title": "Acting Level Two",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/theatre-arts/acting-level-ii-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40782",
+    "title": "Tax Preparation",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/tax-preparation-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40803",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/computer-science/computer-science-ast/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40828",
+    "title": "Introduction to Bookkeeping and Accounting",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/introduction-to-bookkeeping-and-accounting/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40829",
+    "title": "Ecological Landscape Design",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/ecological-landscape-design-nc-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40958",
+    "title": "Theatre Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/art/theatre-arts-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40959",
+    "title": "Art History",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/art/art-history-certificate-achievement/",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41281",
+    "title": "Accounting Assistant/Bookkeeper, Level I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/accounting-education/assistant-bookkeeper-level-IV-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41282",
+    "title": "Accounting Assistant/Bookkeeper, Level II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/accounting-education/assistant-bookkeeper-level-ii-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41283",
+    "title": "Accounting Assistant/Bookkeeper, Level III",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/accounting-education/assistant-bookkeeper-level-iii-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41363",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/business-administration/business-administration-2.0-ast/",
+    "coverage": 0.867,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41587",
+    "title": "Safe Food Preparation and Food Service",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/safe-food-preparation-and-food-service/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41596",
+    "title": "Small Scale Food Production for the Home Landscape",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/small-scale-food-production-for-the-home-landscape-nc-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42078",
+    "title": "Nonprofit Marketing",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/nonprofit-marketing-nc-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42079",
+    "title": "Nonprofit Strategic Planning",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/nonprofit-strategic-planning-nc-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42080",
+    "title": "Nonprofits 101",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/nonprofits-101-nc-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42142",
+    "title": "Studio Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/art/studio-art-certificate-achievement/",
+    "coverage": 0.905,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42708",
+    "title": "Data Science",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/computer-science/data-science-as/",
+    "coverage": 0.926,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42709",
+    "title": "Data Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/computer-science/data-science-certificate-achievement/",
+    "coverage": 0.926,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42711",
+    "title": "Introduction to Entrepreneurship",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/introduction-to-entrepreneurship-certificate-of-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42806",
+    "title": "Nonprofit Manager's Toolbox",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/nonprofit-managers-toolbox-nc-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42856",
+    "title": "Digital Printing: Newsletter and Magazines",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/digital-printing-newsletter-and-magazines-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43183",
+    "title": "Automotive Basic Maintenance and Light Repair Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/automotive-service-technology/automotive-basic-maintenance-and-light-repair-technician-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43456",
+    "title": "Nonprofit Finance",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/nonprofit-finance-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43468",
+    "title": "Increase Efficiency and Productivity with Adobe Acrobat Tools",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/increase-efficiency-and-productivity-adobe-acrobat-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43469",
+    "title": "Visionary Leadership",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/visionary-leadership-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43470",
+    "title": "Nonprofit Fundraising",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/nonprofit-fundraising-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43539",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/sociology/social-work-and-human-services-aat/",
+    "coverage": 0.988,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43540",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/communication/communication-studies-2.0-aat/",
+    "coverage": 0.952,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43553",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/justice-studies/law-public-policy-and-society-aat/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43772",
+    "title": "Vocational ESL Landscaping and Gardening",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/esl-noncredit/esl-vocational-landscaping-gardening-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44222",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/environmental-studies/environmental-science-as-t/",
+    "coverage": 0.905,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44918",
+    "title": "Coaching",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/physical-education-health-education-dance-athletics/coaching-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44919",
+    "title": "Fitness Trainer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/physical-education-health-education-dance-athletics/fitness-trainer-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44920",
+    "title": "Pre-Sports Medicine",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/physical-education-health-education-dance-athletics/pre-sports-medicine-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44941",
+    "title": "Digital Content Creation",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/multimedia-arts-technologies/digital-content-creation-as/",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45280",
+    "title": "Career Launch and Job Search",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/career-launch-and-job-search-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45281",
+    "title": "AI Foundations and Creative Applications",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/ai-foundations-and-creative-applications-nc-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45322",
+    "title": "Digital Content Creation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/multimedia-arts-technologies/digital-content-creation-certificate-achievement/",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45369",
+    "title": "Certified Nursing Assistant",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/certified-nursing-assistant-nc-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45452",
+    "title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sbcc.edu/academic-departments/liberal-studies/elementary-teacher-education-integrated-programs-aat/",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45877",
+    "title": "AI for Entrepreneurs",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/ai-for-entrepreneurs-nc-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45911",
+    "title": "Legal Studies in Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/business-administration/legal-studies-in-business-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46105",
+    "title": "Spanish in the Workforce",
+    "award": "Noncredit program",
+    "url": "https://catalog.sbcc.edu/sel/career-skills/spanish-in-the-workforce-certificate-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46520",
+    "title": "Spanish for Heritage Speakers",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/modern-languages/spanish-for-heritage-speakers-certificate-achievement/",
+    "coverage": 0.982,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46521",
+    "title": "Spanish for Non-Heritage Speakers",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sbcc.edu/academic-departments/modern-languages/spanish-for-non-heritage-speakers-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38670933359"
+}

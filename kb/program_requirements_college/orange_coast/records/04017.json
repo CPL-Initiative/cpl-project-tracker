@@ -1,0 +1,477 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "04017",
+ "shape": "degree",
+ "title": "English",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/english/english-associate-arts-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9389,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9389,
+    "output_tokens": 2866,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2866,
+  "output_tokens_details": {
+   "thinking_tokens": 664
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09488,
+ "ms": 23368,
+ "seconds": 23.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 40,
+   "listed": 41,
+   "share": 0.976,
+   "missing": [
+    "ENGLA101H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ENGLC1003H"
+   ],
+   "flagged": [
+    "ENGLC1003H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the OCC AA General Education pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     19.0,
+     19.0
+    ],
+    "stated": [
+     19.0,
+     19.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "English, Associate in Arts Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "OCC AA General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Students will analyze, evaluate, and create their own fiction and/or non-fiction texts.",
+    "Students will critically analyze and compare literature from various cultures demonstrating an understanding of how life functions in the literary, social, and moral worlds."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGL C1003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1003H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select two of the following:",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ENGL A150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A150H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A151",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A151H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A160H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A161",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A161H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A270",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A270H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A275",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A275H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ENGL A117",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A119",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A141",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A141H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A143",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A143H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A147",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A147H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A148",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A148H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A152",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A152H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A156",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A156H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A168",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A168H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A170H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A173",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A173H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A176",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A176H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A181",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A181H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A187",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A187H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL A101H",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "ENGL A119 and ENGL A168 match closed-list entries printed without a space (ENGLA119, ENGLA168); treated as the same courses, not catalog additions.",
+   "ENGL C1003H is not in the closed list; recorded as a catalog addition.",
+   "The catalog prints no units beside individual courses in the 'Select two' and Restricted Electives lists; only block totals (6 and 9) are printed.",
+   "Restricted Electives may also be chosen from Required Core courses (the 'Select two' list) not already used; those courses are recorded only once, in the core choice block.",
+   "General education printed as 'Up to 27' units for OCC AA GE (Cal-GETC up to 34 units may be substituted); ge_units left null because no fixed figure is printed.",
+   "Degree-applicable electives are printed as 'Varies' to satisfy the 60-unit degree total, so electives_fill_degree is true.",
+   "Program Learning Outcomes are printed in the overview for this degree.",
+   "The program sequence lists ENGL C1000 as a GE/sequence course, not a major requirement; it is not placed in a block."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

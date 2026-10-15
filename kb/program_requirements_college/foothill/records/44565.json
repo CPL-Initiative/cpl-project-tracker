@@ -1,0 +1,182 @@
+{
+ "college": "Foothill College",
+ "control_number": "44565",
+ "shape": "certificate",
+ "title": "Retail Operations Specialist",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-retail-operations-specialist/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6732,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6732,
+    "output_tokens": 1082,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1082,
+  "output_tokens_details": {
+   "thinking_tokens": 256
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04857,
+ "ms": 8554,
+ "seconds": 9.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    12.0,
+    12.0
+   ],
+   "stated": [
+    12.0,
+    12.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 9,
+   "courses": 0,
+   "count": 9,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Retail Operations Specialist",
+   "measure": "units",
+   "total_units": {
+    "min": 12,
+    "max": 12
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be able to identify fixed mindsets and promote growth mindsets and resiliency to be successful in the workplace.",
+    "Students will be able to explain how retailers use merchandising processes to build a brand image and customer loyalty.",
+    "Students will be able to discuss the process of inventory management, merchandising, and valuation strategies leading to excellent customer service and sales.",
+    "Students will be able to recognize the financial implication of strategic retail decisions.",
+    "Students will be able to demonstrate an understanding of decisions retailers make to satisfy customer needs in a rapidly changing and competitive environment.",
+    "Students will be able to collaborate with team members to work through conflicts, problem solve, and achieve efficient results.",
+    "Students will be able to establish and use Kaizen decision-making, goal setting, problem solving, and time management skills to address personal/professional development issues.",
+    "Students will be able to assess the planning process and apply basic tenets in management and problem solving.",
+    "Students will be able to understand best practices for effective management and analyze the impact on organizational performance."
+   ],
+   "careers": [
+    "entry-level positions in retail operations"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Course List",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "APPR 140A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPR 140B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSI 90A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints BUSI 90A; the closed list stores it as BUSI 090A (leading-zero formatting). Treated as the same course, so catalog_addition is false.",
+   "Units are quarter units (Foothill is on the quarter system); the certificate total of 12 is printed both as 'Units Required' and as 'Total Units'.",
+   "The program is limited to students admitted to the Goodwill Retail Operations Specialist Apprenticeship program."
+  ]
+ },
+ "extracted_run": "38675242638"
+}

@@ -1,0 +1,257 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "39359",
+ "shape": "certificate",
+ "title": "Entertainment Art",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/art/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12437,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12437,
+    "output_tokens": 1188,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1188,
+  "output_tokens_details": {
+   "thinking_tokens": 198
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07351,
+ "ms": 10596,
+ "seconds": 11.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 24,
+   "share": 0.0,
+   "missing": [
+    "ARTA110",
+    "ARTA111",
+    "ARTA118",
+    "ARTA120",
+    "ARTA121",
+    "ARTA122",
+    "ARTA124",
+    "ARTA125",
+    "ARTA127",
+    "ARTA128",
+    "ARTA129",
+    "ARTA130",
+    "ARTA135",
+    "ARTA249",
+    "ARTA251",
+    "ARTA252",
+    "ARTA253",
+    "ARTA255",
+    "ARTA256",
+    "ARTA257",
+    "ARTA258",
+    "ARTA269",
+    "DMADA280",
+    "DMADA281"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "No Entertainment Art, Certificate of Achievement section in the text (excerpt holds only ART course descriptions from the Art page)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ART A110",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ART A111",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ART A118",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ART A120",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ART A121",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ART A122",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ART A124",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ART A125",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ART A127",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ART A128",
+    "why": "only a course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ART A129",
+    "why": "only a partial course description in the text; no program requirements printed"
+   },
+   {
+    "code": "ART A130",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART A135",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART A249",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART A251",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART A252",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART A253",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART A255",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART A256",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART A257",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART A258",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART A269",
+    "why": "not in the text"
+   },
+   {
+    "code": "DMAD A280",
+    "why": "not in the text"
+   },
+   {
+    "code": "DMAD A281",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog text contains only ART course descriptions (ART A109 through a truncated ART A129) and their 'Catalog Program Pages Referencing' lists; the Entertainment Art, Certificate of Achievement requirements section is not included, so no blocks, totals, outcomes or careers could be recorded.",
+   "Several course descriptions list 'Entertainment Art, Certificate of Achievement' among referencing program pages (ART A110, A111, A118, A120, A121, A122, A124, A125, A127, A128), which suggests these courses belong to the program, but the text prints no rule for how they count.",
+   "The text is cut off mid-description at ART A129; a reviewer should fetch the program's own requirements page."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

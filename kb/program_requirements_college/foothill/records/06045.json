@@ -1,0 +1,472 @@
+{
+ "college": "Foothill College",
+ "control_number": "06045",
+ "shape": "degree",
+ "title": "Music: General",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/music-general/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7645,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7645,
+    "output_tokens": 2507,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2507,
+  "output_tokens_details": {
+   "thinking_tokens": 662
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08072,
+ "ms": 31395,
+ "seconds": 32.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 32,
+   "codes": [
+    "MUS1",
+    "MUS10",
+    "MUS11B",
+    "MUS11E",
+    "MUS12A",
+    "MUS12B",
+    "MUS12C",
+    "MUS13A",
+    "MUS2A",
+    "MUS2AH",
+    "MUS2B",
+    "MUS2BH",
+    "MUS2C",
+    "MUS2CH",
+    "MUS2D",
+    "MUS3A",
+    "MUS3B",
+    "MUS3C",
+    "MUS47A",
+    "MUS47B",
+    "MUS47C",
+    "MUS47D",
+    "MUS48B",
+    "MUS48C",
+    "MUS8",
+    "MUS8H",
+    "THTR47A",
+    "THTR47B",
+    "THTR47C",
+    "THTR47D",
+    "THTR48B",
+    "THTR48C"
+   ],
+   "flagged": [
+    "MUS1",
+    "MUS10",
+    "MUS11B",
+    "MUS11E",
+    "MUS12A",
+    "MUS12B",
+    "MUS12C",
+    "MUS13A",
+    "MUS2A",
+    "MUS2AH",
+    "MUS2B",
+    "MUS2BH",
+    "MUS2C",
+    "MUS2CH",
+    "MUS2D",
+    "MUS3A",
+    "MUS3B",
+    "MUS3C",
+    "MUS47A",
+    "MUS47B",
+    "MUS47C",
+    "MUS47D",
+    "MUS48B",
+    "MUS48C",
+    "MUS8",
+    "MUS8H",
+    "THTR47A",
+    "THTR47B",
+    "THTR47C",
+    "THTR47D",
+    "THTR48B",
+    "THTR48C"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    43.0,
+    43.0
+   ],
+   "stated": [
+    90.0,
+    90.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Foothill College General Education or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     43.0,
+     43.0
+    ],
+    "stated": [
+     43.0,
+     43.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 43,
+    "max": 43
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Foothill College General Education or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 90,
+    "max": 90
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [],
+   "careers": [
+    "music industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "choose_units",
+    "minimum": 35,
+    "option_group": null,
+    "stated": {
+     "min": 35,
+     "max": 35
+    },
+    "courses": [
+     {
+      "code": "MUS 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 2A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUS 2AH",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 2B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUS 2BH",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 2C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUS 2CH",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 2D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 2F",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 3A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 3B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 3C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUS 8H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 11B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Support Courses",
+    "rule": "choose_units",
+    "minimum": 8,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "MUS 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 11E",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 12A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 12B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 12C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 13A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 47A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THTR 47A",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 47B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THTR 47B",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 47C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THTR 47C",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 47D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THTR 47D",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 48B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THTR 48B",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 48C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THTR 48C",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Closed-list MUS 002F is printed in the catalog as MUS 2F and placed in the Core Courses block.",
+   "The degree section prints no units beside individual courses; all course units are null. Units are quarter units.",
+   "Catalog note: courses listed in the core courses may also be used to fulfill the support course requirement.",
+   "degree_total 90 taken from 'A minimum of 90 units is required to complete the associate degree' on this page; this may be a generic Foothill associate degree minimum rather than an award-specific total. Reviewer should check.",
+   "electives_fill_degree set true from footnote: 'Additional elective course work may be necessary to meet the 90-unit minimum requirement for the associate degree.'",
+   "Text begins mid-sentence; any program learning outcomes printed above the excerpt were cut off and none are recorded.",
+   "Career entry 'music industry' taken from the Career Opportunities paragraph; no specific job titles are named.",
+   "The Certificate of Achievement in Music History and Literature section (cut off) was not read for this A.A. record."
+  ]
+ },
+ "extracted_run": "38675242638"
+}

@@ -1,0 +1,189 @@
+{
+ "college": "Foothill College",
+ "control_number": "40239",
+ "shape": "certificate",
+ "title": "Communication Studies I",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.foothill.edu/degree-certificate-requirements/general-education-graduation-requirements/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 16389,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 16389,
+    "output_tokens": 972,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 972,
+  "output_tokens_details": {
+   "thinking_tokens": 243
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.085,
+ "ms": 9496,
+ "seconds": 9.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 10,
+   "share": 0.0,
+   "missing": [
+    "COMM10",
+    "COMM12",
+    "COMM1B",
+    "COMM2",
+    "COMM3",
+    "COMM4",
+    "COMM5",
+    "COMM55",
+    "COMMC1000",
+    "COMMC1000H"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Foothill College General Education & Graduation Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 001B",
+    "why": "Not in a certificate section; appears only as COMM 1B in the GE Area 1B list"
+   },
+   {
+    "code": "COMM 10",
+    "why": "Not in the text"
+   },
+   {
+    "code": "COMM 12",
+    "why": "Not in the text"
+   },
+   {
+    "code": "COMM 2",
+    "why": "Not in a certificate section; appears only in the GE Area 1B list"
+   },
+   {
+    "code": "COMM 3",
+    "why": "Not in a certificate section; appears only in the GE Area 1B list"
+   },
+   {
+    "code": "COMM 4",
+    "why": "Not in a certificate section; appears only in the GE Area 1B list"
+   },
+   {
+    "code": "COMM 5",
+    "why": "Not in the text"
+   },
+   {
+    "code": "COMM 55",
+    "why": "Not in a certificate section; appears only in the GE Area 1B list"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "Not in a certificate section; appears only in the GE Area 1B list"
+   },
+   {
+    "code": "COMM C1000H",
+    "why": "Not in a certificate section; appears only as an honors alternative in the GE Area 1B list"
+   }
+  ],
+  "notes": [
+   "The source page is Foothill College's General Education & Graduation Requirements page, not the Communication Studies I Certificate of Achievement page. It contains no section for this award, so no blocks, totals, outcomes or careers were recorded.",
+   "The four institutional/general education student learning outcomes on the page belong to the GE pattern, not to this certificate. They were not recorded as program outcomes.",
+   "Several closed-list COMM courses appear on the page only as GE Area 1B (Oral Communication and Critical Thinking) options. GE courses never go in a block.",
+   "The page text is cut off at Area 5.",
+   "A reviewer should obtain the actual Communication Studies I certificate page (Programs of Study) for 2026-2027."
+  ]
+ },
+ "extracted_run": "38675242638"
+}
