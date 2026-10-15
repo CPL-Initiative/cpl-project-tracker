@@ -1,0 +1,403 @@
+{
+ "college": "Moorpark College",
+ "control_number": "06848",
+ "shape": "degree",
+ "title": "Business Administration",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/business-administration-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7975,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7975,
+    "output_tokens": 2420,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2420,
+  "output_tokens_details": {
+   "thinking_tokens": 585
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0803,
+ "ms": 19451,
+ "seconds": 19.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 26,
+   "listed": 27,
+   "share": 0.963,
+   "missing": [
+    "COMMM32"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "JOURM14",
+    "JOURM16"
+   ],
+   "flagged": [
+    "JOURM14",
+    "JOURM16"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     54.0,
+     76.0
+    ],
+    "stated": [
+     60.0,
+     61.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     34.0
+    ],
+    "why": [],
+    "within": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "REQUIREMENTS",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 0,
+    "max": 12
+   },
+   "ge_pattern": "Moorpark College General Education Pattern (Areas 1-7) or Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 61
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "demonstrate a comprehensive knowledge of the principles of business for the purpose of job entry or career enhancement or for academic transfer to some colleges and universities."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "LIST A",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT M01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACCT M110",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST B",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUS M30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M37",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M39",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M70",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives - Select and complete 2 courses (6 units)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ACCT M120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART M112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M41",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M71",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M72",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M73",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT M02E",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL M12E",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP M100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR M14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "JOUR M16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN M25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS M07",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL M22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM M32",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The page prints two degree paths: Moorpark College GE (24 units, 3-6 double-counted, 9-12 elective units, total 60) and Cal-GETC (34 units, 3-6 double-counted, 0-2 electives, total 61). degree_total, ge_units and degree_elective_units combine the two paths as ranges (60-61, 24-34, 0-12); reviewer should check.",
+   "Elective list also allows 'Any course from LIST A not already used' (i.e., ACCT M01 or ACCT M110 if not used in List A).",
+   "BIOT M02E/BIOL M12E printed as one cross-listed entry with 3 units; the state file stores 2 units for each.",
+   "JOUR M14 and JOUR M16 printed without titles; not in the closed list.",
+   "'Units from Elective 6' in the major list refers to the Electives block, not open electives.",
+   "The outcomes tab prints one program outcome for the program; recorded for this A.S. award."
+  ]
+ },
+ "extracted_run": "38748862351"
+}

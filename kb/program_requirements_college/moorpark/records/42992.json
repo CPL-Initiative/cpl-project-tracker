@@ -1,0 +1,426 @@
+{
+ "college": "Moorpark College",
+ "control_number": "42992",
+ "shape": "adt",
+ "title": "Communication Studies 2.0",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/communication-studies/communication-2-studies-aat/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8231,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8231,
+    "output_tokens": 2995,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2995,
+  "output_tokens_details": {
+   "thinking_tokens": 929
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09282,
+ "ms": 22651,
+ "seconds": 23.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 29,
+   "listed": 32,
+   "share": 0.906,
+   "missing": [
+    "COMMM30",
+    "COMMM4",
+    "JOURM1"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "COMMC1004"
+   ],
+   "flagged": [
+    "COMMC1004"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    20.0
+   ],
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     64.0,
+     77.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "REQUIREMENTS",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 12,
+    "max": 23
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "effectively communicate their ideas through oral performance.",
+    "effectively communicate in interpersonal, group, and intercultural settings.",
+    "critically evaluate messages presented in a variety of contexts."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE: Complete the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "LIST A: Minimum 9 units",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "COMM M02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM M05",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM M06",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM M10A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM M12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM M107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTMA M100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST B: Select one course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ANTH M02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM M13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM M16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM M17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM M18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM M19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM M20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM M23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM M25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM M26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1003H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM M04",
+    "why": "not in the text; the core lists COMM C1004 Interpersonal Communication instead"
+   },
+   {
+    "code": "COMM M30",
+    "why": "not in the text"
+   },
+   {
+    "code": "JOUR M01",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "LIST B also allows 'Any course from LIST A not already used.'; those courses are recorded only in the LIST A block.",
+   "COMM C1004 (Interpersonal Communication) is not in the closed list, which names COMM M04 with the same title; recorded as a catalog addition.",
+   "Closed list stores SOCIC1000 / SOCIC1000H without a space; matched to catalog's SOCI C1000 / SOCI C1000H and not flagged as additions.",
+   "ENGL C1003/C1003H, ENGL C1001/C1001H and PSYC C1000/C1000H are printed as separate rows in LIST B; recorded as honors twins (alternatives).",
+   "COMM M107 is titled 'Argumentation and Debate' in the catalog but 'Critical Thinking through Argumentation' in the closed list.",
+   "LIST A block heading says 'Minimum 9 units'; stated 9-10 comes from the core table's 'Units from LIST A 9 - 10'.",
+   "Degree table also prints 'Double-Counted Units 6 - 15'; Elective Units 12 - 23 recorded as degree_elective_units.",
+   "Section heading recorded is the page tab name 'REQUIREMENTS'; the outcomes come from the page's program student learning outcomes tab for this award."
+  ]
+ },
+ "extracted_run": "38748862351"
+}

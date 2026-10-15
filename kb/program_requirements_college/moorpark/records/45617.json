@@ -1,0 +1,272 @@
+{
+ "college": "Moorpark College",
+ "control_number": "45617",
+ "shape": "adt",
+ "title": "Physics 2.0",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/physics/physics-ast/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7664,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7664,
+    "output_tokens": 1857,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1857,
+  "output_tokens_details": {
+   "thinking_tokens": 642
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0678,
+ "ms": 15867,
+ "seconds": 16.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    39.0,
+    39.0
+   ],
+   "stated": [
+    39.0,
+    39.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     73.0,
+     73.0
+    ],
+    "stated": [
+     66.0,
+     66.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "REQUIREMENTS",
+   "measure": "units",
+   "total_units": {
+    "min": 39,
+    "max": 39
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 0,
+    "max": 0
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 66,
+    "max": 66
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "discern between relevant and irrelevant evidence, formulate appropriate hypotheses, and distinguish between experiments to determine which one(s) leads to an appropriate conclusion.",
+    "analyze mechanical systems.",
+    "analyze systems involving thermodynamics and electricity and magnetism.",
+    "analyze problems from mechanics, electricity  magnetism, modern physics, optics, and thermodynamics and will be able to recognize and apply equations to solve the problems."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE COURSES: Complete the following courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYS M20A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS M20AL",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS M20B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS M20BL",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS M20C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS M20CL",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH C2210H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH C2220H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH M25C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH M31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH M35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS M125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints no program heading in the text; section_heading uses the REQUIREMENTS tab label.",
+   "Total Units for the Major 39 recorded as total_units; Total Units for the AS-T Degree 66 as degree_total; Cal-GETC Pattern 34 as ge_units. The page also prints Double-Counted Units 7.",
+   "'Elective Units 0' in the degree summary is recorded as degree_elective_units 0.",
+   "The honors alternatives MATH C2210H and MATH C2220H have no units printed beside them; their units are left null. The closed list stores 5 units for each.",
+   "The outcomes come from the page's program student learning outcomes tab and apply to this award.",
+   "The fourth outcome prints 'electricity  magnetism' with a double space, possibly a dropped '&' or 'and'. It is copied as printed."
+  ]
+ },
+ "extracted_run": "38748862351"
+}

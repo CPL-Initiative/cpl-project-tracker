@@ -1,0 +1,294 @@
+{
+ "college": "Moorpark College",
+ "programs": 151,
+ "with_closed_list": 145,
+ "found": 99,
+ "extracted": 99,
+ "errors": 0,
+ "passed_machine_checks": 31,
+ "failed": {
+  "coverage": 46,
+  "invented": 1,
+  "arithmetic": 67,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 8.14,
+ "cost_per_program": 0.0822,
+ "not_found": [
+  {
+   "control_number": "06846",
+   "title": "Animal Care and Training",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/animal20care20and20training/animal-care-and-training-as/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 42,
+    "why": "coarse net: the page's code tokens name 0 of 42 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5463,
+     "content": 113585,
+     "tabs": 364
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      3855
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      433
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22101",
+   "title": "Animal Care and Training",
+   "award": "Certificate of Achievement requiring 60+S/90+Q units",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/animal20care20and20training/animal-care-and-training-coa/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.051,
+    "net": 2,
+    "listed": 39,
+    "why": "coarse net: the page's code tokens name 2 of 39 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5338,
+     "content": 111362,
+     "tabs": 364
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      1753
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      433
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "37389",
+   "title": "English as a Second Language: Academic",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/english-second-language-academic-cocy/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5502,
+     "content": 109096,
+     "tabs": 364
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      158
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      189
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "37438",
+   "title": "English as a Second Language: Foundational",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/english-second-language-foundational-cocy/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5540,
+     "content": 109156,
+     "tabs": 364
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      163
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      199
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "40304",
+   "title": "Emergency Medical Technician-EMT",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/emergency-medical-services/emergency-medical-technician-coa/",
+    "label": {
+     "award": 1,
+     "title": 0.75
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5815,
+     "content": 110323,
+     "tabs": 364
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      304
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      287
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "45480",
+   "title": "Emergency Medical Services",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/emergency-medical-services/ems-as/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5325,
+     "content": 111056,
+     "tabs": 364
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      1361
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      457
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "46405",
+   "title": "College Student Success",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/college-student-success-cocy/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6020,
+     "content": 109733,
+     "tabs": 364
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      191
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      323
+     ]
+    ]
+   }
+  }
+ ],
+ "run": "38748862351"
+}
