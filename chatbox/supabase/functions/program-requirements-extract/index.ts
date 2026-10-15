@@ -90,6 +90,11 @@
 // (total_units, degree_elective_units, degree_total, ge_units, a block's stated) is now
 // one nullable object of plain numbers, so the schema holds twelve unions, and the
 // function returns a null span as {min: null, max: null}, the shape the scorer reads.
+// Version 10 (S394, 2026-10-15): the same record. Under version 9 Cabrillo's Theatre Arts
+// 06350 and Physics 06378 read their Recommended Major Electives block (run 38661293784)
+// and also put its units in open_elective_units, because the block's list ends "or any
+// transferable or degree applicable course": 18 + 18 + 18 + 24 read 78 against the
+// printed 60. Units a block holds never go in open_elective_units too.
 // Deploy from main with cpl-chat-deploy.yml (function program-requirements-extract);
 // before S360 it went out with the Supabase MCP deploy_edge_function (project
 // hvuwhnbuahrtptokpqfh, slug program-requirements-extract).
@@ -159,7 +164,7 @@ const RECORD_SCHEMA = {
         },
         open_elective_units: {
           ...NUM_OR_NULL,
-          description: "Units of electives open to any course that the checked total counts: total_units when the catalog prints one, else degree_total. Else null.",
+          description: "Units of electives open to any course, printed outside every block, that the checked total counts: total_units when the catalog prints one, else degree_total. Never units a block already holds. Else null.",
         },
         degree_elective_units: {
           ...SPAN_OR_NULL,
@@ -304,7 +309,7 @@ program.measure is "units" unless the catalog counts the award in hours, as nonc
 
 program.total_units is the total the catalog states for this award's requirements: the major or the certificate, without general education. A range ("27-29 units") is min 27 and max 29. When the text states no total, it is null; never compute one yourself. General education courses never go in a block.
 
-Many degree pages print the total for the whole degree with general education in it, and no total for the major ("Total 64 - 68" over a core, electives and "CalGETC 34 - 38"; "Complete the following number of credits: 60" over the major and "Cal-GETC 34"). Record that figure as printed in program.degree_total, never in total_units, and the units the page prints for the general education pattern in program.ge_units. A sentence that every degree of a kind requires 60 units is no degree total unless the page prints it as this award's total. When the page prints both a major total and a degree total, record each in its own field, and put electives the page counts toward the degree and outside the major in program.degree_elective_units. A sentence giving the least a kind of degree requires in its major ("An Associate in Science degree requires 60 units ... and at least 30 units in the major") is no total for this award: total_units stays null unless the page prints the major's own total. open_elective_units holds the units of electives open to any course ("General Electives: any transferable course, 8 units") that the checked total counts: total_units when the page prints one, else degree_total. When the page says electives make up the rest of the degree total and prints no units for them ("transferable electives as needed to reach 60 units"), set electives_fill_degree true; never compute their units.
+Many degree pages print the total for the whole degree with general education in it, and no total for the major ("Total 64 - 68" over a core, electives and "CalGETC 34 - 38"; "Complete the following number of credits: 60" over the major and "Cal-GETC 34"). Record that figure as printed in program.degree_total, never in total_units, and the units the page prints for the general education pattern in program.ge_units. A sentence that every degree of a kind requires 60 units is no degree total unless the page prints it as this award's total. When the page prints both a major total and a degree total, record each in its own field, and put electives the page counts toward the degree and outside the major in program.degree_elective_units. A sentence giving the least a kind of degree requires in its major ("An Associate in Science degree requires 60 units ... and at least 30 units in the major") is no total for this award: total_units stays null unless the page prints the major's own total. open_elective_units holds the units of electives open to any course ("General Electives: any transferable course, 8 units") that the checked total counts: total_units when the page prints one, else degree_total. Count each unit once: units a block holds never go in open_elective_units too. A block whose list ends with any course ("or any transferable or degree applicable course") stays a block with its printed units, and open_elective_units holds only electives the page prints outside every block. When the page says electives make up the rest of the degree total and prints no units for them ("transferable electives as needed to reach 60 units"), set electives_fill_degree true; never compute their units.
 
 Outcomes. Copy each program learning outcome (or program student learning outcome) the text prints for this award into program.outcomes exactly as printed: the same words, spelling, capitals and punctuation. One entry per outcome. Leave out its list number or bullet and the lead-in sentence ("Upon successful completion of this program, students should be able to:"). Read a line break inside an outcome as a space. Never reword, shorten, merge, split or complete an outcome, and never write one the text does not print. When the page prints one outcomes list for the program as a whole, and the award shares it, record it and say so in notes. Outcomes printed under a single course go in course_outcomes under that course's code, the same way. When the text prints a heading for outcomes but no outcomes under it, both stay empty; say so in notes.
 
