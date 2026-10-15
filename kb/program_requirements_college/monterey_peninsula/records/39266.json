@@ -1,0 +1,228 @@
+{
+ "college": "Monterey Peninsula College",
+ "control_number": "39266",
+ "shape": "degree",
+ "title": "American Sign Language",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.mpc.edu/programs-study/american-sign-language/american-sign-language-aa/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7086,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7086,
+    "output_tokens": 1672,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1672,
+  "output_tokens_details": {
+   "thinking_tokens": 681
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06178,
+ "ms": 14217,
+ "seconds": 14.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    21.0,
+    24.0
+   ],
+   "stated": [
+    23.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 21.0-24.0; the catalog states 23.0-24.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "incomplete",
+    "computed": [
+     21.0,
+     24.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [
+     "the record names the degree total and the MPC General Education or Cal-GETC pattern, but no units for it"
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "AMERICAN SIGN LANGUAGE, ASSOCIATE IN ARTS",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "MPC General Education or Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Engage in conversation and interactions with users of ASL employing the necessary rules of pronunciation, grammar, and syntax.",
+    "Understand and interpret ASL and respond to it at all levels of proficiency.",
+    "Understand and interpret texts (video) in ASL at various levels of proficiency.",
+    "Convey information, concepts, and ideas in text (video) of the target language to an audience on a variety of topics.",
+    "Exhibit a comprehensive understanding of Deaf culture and its social and cultural influences."
+   ],
+   "careers": [
+    "ASL",
+    "Deaf Studies",
+    "interpreting",
+    "linguistics",
+    "education",
+    "audiology"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "LING 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SIGN 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SIGN 1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SIGN 2A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SIGN 2B",
+      "units": 5,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "SIGN 10",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SIGN 20",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The SIGN 2B row prints '5-6' and reads 'SIGN 2B or SIGN 10 & SIGN 20': the alternative is SIGN 10 and SIGN 20 taken together, not either one alone. Units 5 / units_max 6 reflect the printed row range; individual units for SIGN 10 and SIGN 20 are not printed on this page, so they are null.",
+   "'Additional Requirements 36-37' covers competency requirements, the GE pattern and electives together; it is not recorded as ge_units because it is not a GE-only figure.",
+   "Total Units 60 is printed as this award's total and is recorded as degree_total; electives fill the remainder 'if needed', with no units printed.",
+   "Careers are taken from the description: 'pursue a career or further degrees in ASL, Deaf Studies, interpreting, linguistics, education, audiology, and other related fields'. These fields are named for careers or further degrees together."
+  ]
+ },
+ "extracted_run": "38675240344"
+}
