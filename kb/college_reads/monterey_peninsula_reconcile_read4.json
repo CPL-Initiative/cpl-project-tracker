@@ -1,0 +1,25 @@
+{
+ "_readme": "S395 SkyHawthorn, 2026-10-15. Read 3 (run 38756364740) found the General Education Requirements page holds its patterns on two tabs, Cal-GETC and MPC GE, unread. This read opens both, for the units each pattern requires in the catalog's words. One load, no model call.",
+ "college": "Monterey Peninsula College",
+ "questions": {
+  "mpc_ge": "How many units the MPC GE tab says the pattern requires.",
+  "calgetc": "How many units the Cal-GETC tab says the pattern requires."
+ },
+ "keywords": [
+  "[Gg]eneral [Ee]ducation[^<\"]{0,200}",
+  "[Uu]nits?[^<\"]{0,120}",
+  "[Cc]al-?GETC[^<\"]{0,160}",
+  "[Mm]inimum[^<\"]{0,160}",
+  "[Tt]otal[^<\"]{0,100}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "mpc_ge",
+    "calgetc"
+   ],
+   "url": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
+   "expand": true
+  }
+ ]
+}
