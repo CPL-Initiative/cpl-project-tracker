@@ -654,7 +654,11 @@ CQ_SECTION = re.compile(r"degree|certificate|program|major|award", re.I)
 CQ_SECTION_FIRST = re.compile(r"degree|certificate", re.I)
 CQ_AWARD = re.compile(r"\b(?:associate|certificate|degree|bachelor|noncredit|non-credit)\b"
                       r"|\b(?:a\.\s?[as]\.|a[as]-t)(?!\w)", re.I)
-CQ_MAX_CALLS = 400        # navigation and section pages, before any program page
+# Navigation and section pages, before any program page. Santa Ana nests its programs under
+# department pages (Instructional Programs > department > entry): its walk stopped at 400 calls
+# with 27 of its 359 listed programs reached (run 38669940195, S394), where Fresno City listed
+# 301 in 172 calls. The cap bounds a walk gone wrong; each call still waits the census delay.
+CQ_MAX_CALLS = 1200
 CQ_MAX_CHILDREN = 4       # an entry's own child pages read (Chaffey's Requirements)
 CQ_MAX_DEPTH = 4
 CQ_BREAK = re.compile(r"<\s*(?:br|/p|/div|/tr|/li|/h[1-6]|/table)\b[^>]*>", re.I)
